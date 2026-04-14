@@ -1,7 +1,10 @@
 ---
 import BaseLayout from '../../../../../layouts/BaseLayout.astro';
 import QAPairCard from '../../../../../components/QAPairCard.astro';
+import TimelineView from '../../../../../components/TimelineView.jsx';
 import { getAllSessions, getSessionData, sessionSlug } from '../../../../../lib/data';
+import fs from 'node:fs';
+import path from 'node:path';
 
 export function getStaticPaths() {
   const sessions = getAllSessions();
@@ -17,6 +20,68 @@ export function getStaticPaths() {
 const { chamber, year, month, day, slug } = Astro.params;
 const data = getSessionData(chamber!, year!, month!, day!, slug!);
 const { metadata, qaPairs, summary } = data;
+
+// utterances.json からタイムラインデータを構築（存在する場合のみ）
+interface UtteranceSegment {
+  speaker: string;
+  role: string;
+  start_seconds: number;
+  end_seconds: number;
+  text: string;
+  video_url?: string;
+}
+interface UtterancesOutput {
+  segments?: UtteranceSegment[];
+}
+
+let timelineSegments: {
+  segmentIndex: number;
+  speaker: string;
+  role: string;
+  startSeconds: number;
+  endSeconds: number;
+  utteranceCount: number;
+  videoUrl: string;
+}[] = [];
+
+let qaConnections: { qaId: string; questionStart: number; answerStart: number; topic: string }[] = [];
+let totalDurationSeconds = 0;
+
+const DATA_DIR = path.resolve(process.cwd(), '../data');
+const sessionDir = path.join(DATA_DIR, chamber!, year!, month!, day!, slug!);
+const utterancesPath = path.join(sessionDir, 'utterances.json');
+if (fs.existsSync(utterancesPath)) {
+  try {
+    const utterances = JSON.parse(fs.readFileSync(utterancesPath, 'utf-8')) as UtterancesOutput;
+    const segs = utterances.segments ?? [];
+    timelineSegments = segs.map((seg, i) => ({
+      segmentIndex: i,
+      speaker: seg.speaker,
+      role: seg.role,
+      startSeconds: seg.start_seconds,
+      endSeconds: seg.end_seconds,
+      utteranceCount: 1,
+      videoUrl: seg.video_url ?? '',
+    }));
+    totalDurationSeconds = segs.reduce((max, s) => Math.max(max, s.end_seconds), 0);
+    // Q&Aコネクタ
+    qaConnections = qaPairs.pairs.flatMap((pair) => {
+      const qSeg = segs.findIndex((s) => s.speaker === pair.question.speaker);
+      const aSeg = segs.findIndex((s) => s.speaker === pair.answer.speaker && segs.indexOf(s) > qSeg);
+      if (qSeg >= 0 && aSeg >= 0) {
+        return [{
+          qaId: pair.id,
+          questionStart: segs[qSeg].start_seconds,
+          answerStart: segs[aSeg].start_seconds,
+          topic: pair.topic,
+        }];
+      }
+      return [];
+    });
+  } catch {
+    // utterances.json が読み込めない場合はスキップ
+  }
+}
 
 const chamberLabel = metadata.chamber === 'shugiin'
   ? '衆議院インターネット審議中継'
@@ -50,6 +115,19 @@ const chamberLabel = metadata.chamber === 'shugiin'
         </div>
       )}
     </section>
+
+    <!-- タイムライン（utterances.jsonがある場合） -->
+    {timelineSegments.length > 0 && (
+      <section class="section">
+        <h2>発言タイムライン</h2>
+        <TimelineView
+          client:visible
+          segments={timelineSegments}
+          qaConnections={qaConnections}
+          totalDurationSeconds={totalDurationSeconds}
+        />
+      </section>
+    )}
 
     <!-- 発言者一覧 -->
     <section class="section">

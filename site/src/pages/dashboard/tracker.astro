@@ -1,0 +1,20 @@
+---
+import DashboardLayout from '../../layouts/DashboardLayout.astro';
+import CommitmentTracker from '../../components/CommitmentTracker.jsx';
+import fs from 'node:fs';
+import path from 'node:path';
+
+let commitments = [];
+const commitPath = path.resolve(process.cwd(), 'public/api/commitments.json');
+if (fs.existsSync(commitPath)) {
+  commitments = JSON.parse(fs.readFileSync(commitPath, 'utf-8'));
+}
+---
+
+<DashboardLayout title="約束トラッカー - 国会議事録DB" activeTab="tracker">
+  <h1 style="font-size: 1.5rem; margin-bottom: 0.5rem;">約束トラッカー</h1>
+  <p style="font-size: 0.875rem; color: #6b7280; margin-bottom: 1.5rem;">
+    答弁者が国会で行った約束事項を一覧表示します。ソースリンクから該当Q&Aに直接飛べます。
+  </p>
+  <CommitmentTracker client:load commitments={commitments} />
+</DashboardLayout>

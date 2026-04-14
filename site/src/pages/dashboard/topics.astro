@@ -1,0 +1,48 @@
+---
+import DashboardLayout from '../../layouts/DashboardLayout.astro';
+import TopicHeatmap from '../../components/TopicHeatmap.jsx';
+import EvasionTracker from '../../components/EvasionTracker.jsx';
+import fs from 'node:fs';
+import path from 'node:path';
+
+let heatmapData = { topics: [], committees: [], matrix: [], committees_by_chamber: { shugiin: [], sangiin: [] } };
+const heatmapPath = path.resolve(process.cwd(), 'public/api/topics-heatmap.json');
+if (fs.existsSync(heatmapPath)) {
+  heatmapData = JSON.parse(fs.readFileSync(heatmapPath, 'utf-8'));
+}
+
+let evasionData = [];
+const evasionPath = path.resolve(process.cwd(), 'public/api/evasion.json');
+if (fs.existsSync(evasionPath)) {
+  evasionData = JSON.parse(fs.readFileSync(evasionPath, 'utf-8'));
+}
+---
+
+<DashboardLayout title="トピック分析 - 国会議事録DB" activeTab="topics">
+  <h1 style="font-size: 1.5rem; margin-bottom: 1.5rem;">トピック分析</h1>
+
+  <section class="section">
+    <h2 class="section-title">トピック × 委員会 ヒートマップ</h2>
+    <p class="desc">各セルをクリックすると、該当トピック・委員会のQ&A一覧が表示されます。</p>
+    <TopicHeatmap client:visible data={heatmapData} />
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">答弁回避度</h2>
+    <p class="desc">答弁者ごとの回避度を3色スタックバーで表示します。棒の長さは答弁数の合計です。</p>
+    <EvasionTracker client:visible data={evasionData} />
+  </section>
+</DashboardLayout>
+
+<style>
+  .section { margin-bottom: 2.5rem; }
+  .section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+    color: #374151;
+    border-left: 3px solid #2563eb;
+    padding-left: 0.5rem;
+  }
+  .desc { font-size: 0.85rem; color: #6b7280; margin: 0 0 1rem; }
+</style>

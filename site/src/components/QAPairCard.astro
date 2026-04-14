@@ -1,19 +1,49 @@
 ---
-import type { QAPair } from '../lib/data';
+import type { QAPair, SessionMetadata } from '../lib/data';
 
 interface Props {
   pair: QAPair;
+  session?: SessionMetadata;
 }
 
-const { pair } = Astro.props;
+const { pair, session } = Astro.props;
 const score = pair.answer.evasion_score;
 const evasionColor = score < 0.3 ? '#16a34a' : score < 0.7 ? '#d97706' : '#dc2626';
 const evasionLabel = score < 0.3 ? '低' : score < 0.7 ? '中' : '高';
+
+// 動画タイムスタンプを "M:SS〜" 形式に変換
+function formatVideoTime(videoUrl: string): string | null {
+  const shugiinMatch = videoUrl.match(/[?&]time=(\d+)/);
+  const sangiinMatch = videoUrl.match(/#(\d+)$/);
+  const seconds = shugiinMatch
+    ? parseInt(shugiinMatch[1], 10)
+    : sangiinMatch
+      ? parseInt(sangiinMatch[1], 10)
+      : null;
+  if (seconds === null) return null;
+  const m = Math.floor(seconds / 60);
+  const s = seconds % 60;
+  return `${m}:${String(s).padStart(2, '0')}〜`;
+}
+
+const videoTime = pair.video_url ? formatVideoTime(pair.video_url) : null;
+const videoTitle = videoTime ? `動画を見る（${videoTime}）` : '動画を見る';
+const chamberName = session?.chamber === 'shugiin' ? '衆議院TV' : session?.chamber === 'sangiin' ? '参議院TV' : null;
 ---
 <div class="qa-card">
   <div class="qa-header">
     <span class="topic">{pair.topic}</span>
-    <a class="video-link" href={pair.video_url} target="_blank" rel="noopener">▶ 動画</a>
+    {pair.video_url && (
+      <a
+        class="video-link"
+        href={pair.video_url}
+        target="_blank"
+        rel="noopener noreferrer"
+        title={videoTitle}
+      >
+        ▶ 動画{videoTime ? `（${videoTime}）` : ''}
+      </a>
+    )}
   </div>
 
   <div class="qa-columns">
@@ -41,6 +71,20 @@ const evasionLabel = score < 0.3 ? '低' : score < 0.7 ? '中' : '高';
       )}
     </div>
   </div>
+
+  {session && chamberName && (
+    <div class="qa-source">
+      出典:{' '}
+      <a
+        href={session.source_url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="source-link"
+      >
+        {chamberName}インターネット審議中継
+      </a>
+    </div>
+  )}
 </div>
 
 <style>
@@ -117,4 +161,19 @@ const evasionLabel = score < 0.3 ? '低' : score < 0.7 ? '中' : '高';
     line-height: 1.4;
   }
   .commitment-label { font-weight: 600; }
+  .qa-source {
+    padding: 0.4rem 1rem;
+    background: #f8fafc;
+    border-top: 1px solid #e5e7eb;
+    font-size: 0.75rem;
+    color: #9ca3af;
+  }
+  .source-link {
+    color: #9ca3af;
+    text-decoration: none;
+  }
+  .source-link:hover {
+    text-decoration: underline;
+    color: #6b7280;
+  }
 </style>

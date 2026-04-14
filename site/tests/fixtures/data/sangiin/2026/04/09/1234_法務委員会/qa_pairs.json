@@ -1,0 +1,50 @@
+{
+  "pairs": [
+    {
+      "id": "1234-qa-001",
+      "segment_index": 0,
+      "topic": "刑事訴訟法改正と被疑者の権利保護",
+      "question": {
+        "speaker": "佐藤けんじ",
+        "party": "公明党",
+        "summary": "刑事訴訟法の改正により被疑者の取調べ録音録画が義務化されたが、実施率と効果について問う。",
+        "full_text": "刑事訴訟法の改正から数年が経過し、取調べの録音録画が義務化されましたが...",
+        "intent": "制度の実効性確認"
+      },
+      "answer": {
+        "speaker": "法務大臣　橋本一郎",
+        "role": "法務大臣",
+        "summary": "録音録画の実施率は99%以上で推移しており、冤罪防止に効果があると評価している。",
+        "full_text": "取調べの録音録画制度については、現在実施率99.3%で...",
+        "evasion_score": 0.1,
+        "has_commitment": false,
+        "commitment_text": ""
+      },
+      "follow_up_ids": ["1234-qa-002"],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=1234#180"
+    },
+    {
+      "id": "1234-qa-002",
+      "segment_index": 1,
+      "topic": "外国人技能実習制度の廃止と新制度への移行",
+      "question": {
+        "speaker": "佐藤けんじ",
+        "party": "公明党",
+        "summary": "技能実習制度廃止後の新制度「育成就労」における人権保護の仕組みについて確認する。",
+        "full_text": "技能実習制度が廃止され、育成就労制度が導入されましたが...",
+        "intent": "外国人労働者の権利保護強化"
+      },
+      "answer": {
+        "speaker": "政府参考人　吉田次郎",
+        "role": "政府参考人",
+        "summary": "育成就労制度では転籍の自由化と支援機関の監督強化を行っており、人権侵害防止を徹底するとした。",
+        "full_text": "育成就労制度においては、これまでの技能実習制度の問題点を踏まえ...",
+        "evasion_score": 0.4,
+        "has_commitment": true,
+        "commitment_text": "支援機関の監査を年1回から半期1回に強化し、不正行為への対応を迅速化する。"
+      },
+      "follow_up_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=1234#2340"
+    }
+  ]
+}

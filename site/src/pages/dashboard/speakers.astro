@@ -1,0 +1,118 @@
+---
+import DashboardLayout from '../../layouts/DashboardLayout.astro';
+import EvasionTracker from '../../components/EvasionTracker.jsx';
+import fs from 'node:fs';
+import path from 'node:path';
+
+const base = import.meta.env.BASE_URL;
+
+let speakers: { name: string; affiliation: string; session_count: number }[] = [];
+const speakersPath = path.resolve(process.cwd(), 'public/api/speakers.json');
+if (fs.existsSync(speakersPath)) {
+  speakers = JSON.parse(fs.readFileSync(speakersPath, 'utf-8'));
+}
+
+let evasionData: {
+  speaker: string;
+  role: string;
+  totalAnswers: number;
+  avgEvasionScore: number;
+}[] = [];
+const evasionPath = path.resolve(process.cwd(), 'public/api/evasion.json');
+if (fs.existsSync(evasionPath)) {
+  evasionData = JSON.parse(fs.readFileSync(evasionPath, 'utf-8'));
+}
+
+// 発言者テーブル用データ — evasionデータとマージ
+const evasionMap = new Map(evasionData.map((e) => [e.speaker, e]));
+const speakerRows = speakers.map((s) => ({
+  ...s,
+  avgEvasionScore: evasionMap.get(s.name)?.avgEvasionScore ?? null,
+  totalAnswers: evasionMap.get(s.name)?.totalAnswers ?? 0,
+})).sort((a, b) => b.session_count - a.session_count);
+---
+
+<DashboardLayout title="発言者分析 - 国会議事録DB" activeTab="speakers">
+  <h1 style="font-size: 1.5rem; margin-bottom: 1.5rem;">発言者分析</h1>
+
+  {speakers.length === 0 ? (
+    <p style="color: #9ca3af; font-size: 0.875rem;">データが蓄積されると発言者分析が表示されます</p>
+  ) : (
+    <>
+      <section class="section">
+        <h2 class="section-title">答弁回避度（上位20名）</h2>
+        <p class="desc">答弁回数が多い発言者の回避度を表示します。</p>
+        <EvasionTracker client:visible data={evasionData} />
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">発言者一覧</h2>
+        <div style="overflow-x: auto;">
+          <table class="speaker-table">
+            <thead>
+              <tr>
+                <th>氏名</th>
+                <th>所属</th>
+                <th>セッション数</th>
+                <th>答弁数</th>
+                <th>平均回避度</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {speakerRows.map((s) => (
+                <tr>
+                  <td>{s.name}</td>
+                  <td style="color: #6b7280;">{s.affiliation}</td>
+                  <td style="text-align: right;">{s.session_count}</td>
+                  <td style="text-align: right;">{s.totalAnswers}</td>
+                  <td style="text-align: right;">
+                    {s.avgEvasionScore !== null ? (
+                      <span style={{
+                        color: s.avgEvasionScore >= 0.7 ? '#dc2626' :
+                               s.avgEvasionScore >= 0.3 ? '#ca8a04' : '#16a34a',
+                        fontWeight: 600,
+                      }}>
+                        {(s.avgEvasionScore * 100).toFixed(0)}%
+                      </span>
+                    ) : '—'}
+                  </td>
+                  <td>
+                    <a href={`${base}/browse?speaker=${encodeURIComponent(s.name)}`} style="color: #2563eb; text-decoration: none; font-size: 12px;">
+                      一覧 →
+                    </a>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </>
+  )}
+</DashboardLayout>
+
+<style>
+  .section { margin-bottom: 2.5rem; }
+  .section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+    color: #374151;
+    border-left: 3px solid #2563eb;
+    padding-left: 0.5rem;
+  }
+  .desc { font-size: 0.85rem; color: #6b7280; margin: 0 0 1rem; }
+  .speaker-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+  }
+  .speaker-table th, .speaker-table td {
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .speaker-table th { color: #6b7280; font-weight: 500; }
+  .speaker-table tr:hover td { background: #f9fafb; }
+</style>

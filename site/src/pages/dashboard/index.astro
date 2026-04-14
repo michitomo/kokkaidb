@@ -1,0 +1,252 @@
+---
+import DashboardLayout from '../../layouts/DashboardLayout.astro';
+import MonthlyTrendChart from '../../components/MonthlyTrendChart.jsx';
+import SessionCalendar from '../../components/SessionCalendar.jsx';
+import { getAllSessions, sessionPath } from '../../lib/data';
+import fs from 'node:fs';
+import path from 'node:path';
+
+const base = import.meta.env.BASE_URL;
+
+// stats.json をビルド時に読み込む
+let stats = {
+  totalSessions: 0,
+  totalQAPairs: 0,
+  totalSpeakers: 0,
+  totalCommitments: 0,
+  avgEvasionScore: 0,
+  sessionsByChamber: { shugiin: 0, sangiin: 0 },
+  sessionsByMonth: [],
+  topTopics: [],
+  lastUpdated: '',
+};
+
+const statsPath = path.resolve(process.cwd(), 'public/api/stats.json');
+if (fs.existsSync(statsPath)) {
+  stats = JSON.parse(fs.readFileSync(statsPath, 'utf-8'));
+}
+
+// calendar.json
+let calendarData = {};
+const calendarPath = path.resolve(process.cwd(), 'public/api/calendar.json');
+if (fs.existsSync(calendarPath)) {
+  calendarData = JSON.parse(fs.readFileSync(calendarPath, 'utf-8'));
+}
+
+// 最近5セッション
+const recentSessions = getAllSessions().slice(0, 5);
+
+const CHAMBER_LABEL: Record<string, string> = { shugiin: '衆議院', sangiin: '参議院' };
+---
+
+<DashboardLayout title="ダッシュボード - 国会議事録DB" activeTab="overview">
+  <h1 style="font-size: 1.5rem; margin-bottom: 1.5rem;">ダッシュボード</h1>
+
+  <!-- サマリカード -->
+  <section class="stats-cards">
+    <div class="stat-card">
+      <div class="stat-value">{stats.totalSessions}</div>
+      <div class="stat-label">セッション数</div>
+      <div class="stat-sub">衆 {stats.sessionsByChamber.shugiin} / 参 {stats.sessionsByChamber.sangiin}</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">{stats.totalQAPairs}</div>
+      <div class="stat-label">Q&Aペア数</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">{stats.totalSpeakers}</div>
+      <div class="stat-label">発言者数</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">{stats.totalCommitments}</div>
+      <div class="stat-label">約束事項数</div>
+    </div>
+  </section>
+
+  <!-- ナビゲーション -->
+  <section class="dash-nav">
+    <a href={base + '/dashboard/topics'} class="dash-nav-card">
+      <div class="dash-nav-icon">📊</div>
+      <div class="dash-nav-title">トピック分析</div>
+      <div class="dash-nav-desc">委員会×トピックのヒートマップ</div>
+    </a>
+    <a href={base + '/dashboard/tracker'} class="dash-nav-card">
+      <div class="dash-nav-icon">📋</div>
+      <div class="dash-nav-title">約束トラッカー</div>
+      <div class="dash-nav-desc">答弁者の約束事項を時系列で追跡</div>
+    </a>
+    <a href={base + '/dashboard/speakers'} class="dash-nav-card">
+      <div class="dash-nav-icon">👤</div>
+      <div class="dash-nav-title">発言者分析</div>
+      <div class="dash-nav-desc">答弁回避度・発言者一覧</div>
+    </a>
+  </section>
+
+  <!-- 月別トレンド -->
+  <section class="section">
+    <h2 class="section-title">月別セッション数</h2>
+    {stats.sessionsByMonth.length > 0 ? (
+      <MonthlyTrendChart client:visible data={stats.sessionsByMonth} />
+    ) : (
+      <p class="empty-msg">データが蓄積されると月別トレンドが表示されます</p>
+    )}
+  </section>
+
+  <!-- カレンダー -->
+  <section class="section">
+    <h2 class="section-title">セッションカレンダー</h2>
+    <SessionCalendar client:visible data={calendarData} />
+  </section>
+
+  <!-- 最近のセッション -->
+  <section class="section">
+    <h2 class="section-title">最近のセッション</h2>
+    {recentSessions.length === 0 ? (
+      <p class="empty-msg">セッションデータがまだありません</p>
+    ) : (
+      <table class="recent-table">
+        <thead>
+          <tr>
+            <th>日付</th>
+            <th>院</th>
+            <th>委員会</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {recentSessions.map((s) => (
+            <tr>
+              <td>{s.date}</td>
+              <td>{CHAMBER_LABEL[s.chamber] ?? s.chamber}</td>
+              <td>{s.committee}</td>
+              <td><a href={base + sessionPath(s)}>詳細 →</a></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    )}
+  </section>
+
+  <!-- 人気トピック -->
+  {stats.topTopics.length > 0 && (
+    <section class="section">
+      <h2 class="section-title">注目トピック</h2>
+      <div class="topic-list">
+        {stats.topTopics.map((t) => (
+          <a href={base + `/browse?topic=${encodeURIComponent(t.topic)}`} class="topic-chip">
+            {t.topic}
+            <span class="topic-count">{t.count}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  {stats.lastUpdated && (
+    <p class="updated-at">最終更新: {new Date(stats.lastUpdated).toLocaleString('ja-JP')}</p>
+  )}
+</DashboardLayout>
+
+<style>
+  .stats-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .stat-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+  }
+  .stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #111;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+  .stat-label {
+    font-size: 0.8rem;
+    color: #6b7280;
+  }
+  .stat-sub {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    margin-top: 2px;
+  }
+
+  .dash-nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .dash-nav-card {
+    display: block;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    text-decoration: none;
+    color: #111;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .dash-nav-card:hover {
+    border-color: #2563eb;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+  }
+  .dash-nav-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+  .dash-nav-title { font-weight: 600; margin-bottom: 0.25rem; }
+  .dash-nav-desc { font-size: 0.8rem; color: #6b7280; }
+
+  .section { margin-bottom: 2rem; }
+  .section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 0.75rem;
+    color: #374151;
+    border-left: 3px solid #2563eb;
+    padding-left: 0.5rem;
+  }
+  .empty-msg { color: #9ca3af; font-size: 0.875rem; }
+
+  .recent-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+  }
+  .recent-table th, .recent-table td {
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .recent-table th { color: #6b7280; font-weight: 500; }
+  .recent-table a { color: #2563eb; text-decoration: none; }
+  .recent-table a:hover { text-decoration: underline; }
+
+  .topic-list { display: flex; flex-wrap: wrap; gap: 8px; }
+  .topic-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    background: #eff6ff;
+    color: #2563eb;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .topic-chip:hover { background: #dbeafe; }
+  .topic-count {
+    background: #2563eb;
+    color: #fff;
+    border-radius: 9999px;
+    padding: 0 5px;
+    font-size: 0.7rem;
+  }
+
+  .updated-at { font-size: 0.75rem; color: #9ca3af; margin-top: 1rem; }
+</style>

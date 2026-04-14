@@ -1,10 +1,18 @@
 ---
 interface Props {
   title?: string;
+  activeTab?: 'overview' | 'topics' | 'tracker' | 'speakers';
 }
 
-const { title = '国会議事録リアルタイムDB' } = Astro.props;
+const { title = 'ダッシュボード - 国会議事録DB', activeTab = 'overview' } = Astro.props;
 const base = import.meta.env.BASE_URL;
+
+const tabs = [
+  { id: 'overview', label: '概要', href: `${base}/dashboard` },
+  { id: 'topics', label: 'トピック分析', href: `${base}/dashboard/topics` },
+  { id: 'tracker', label: '約束トラッカー', href: `${base}/dashboard/tracker` },
+  { id: 'speakers', label: '発言者分析', href: `${base}/dashboard/speakers` },
+];
 ---
 <!doctype html>
 <html lang="ja">
@@ -15,8 +23,7 @@ const base = import.meta.env.BASE_URL;
     <style>
       *, *::before, *::after { box-sizing: border-box; }
       body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans JP',
-          sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans JP', sans-serif;
         margin: 0;
         padding: 0;
         background: #fafafa;
@@ -32,7 +39,7 @@ const base = import.meta.env.BASE_URL;
         z-index: 10;
       }
       header .inner {
-        max-width: 960px;
+        max-width: 1100px;
         margin: 0 auto;
         display: flex;
         align-items: center;
@@ -55,8 +62,36 @@ const base = import.meta.env.BASE_URL;
         font-size: 0.9rem;
       }
       nav a:hover { color: #111; }
+      .dashboard-tabs {
+        background: #fff;
+        border-bottom: 1px solid #e5e7eb;
+        overflow-x: auto;
+      }
+      .dashboard-tabs .inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        display: flex;
+        gap: 0;
+      }
+      .tab-link {
+        display: inline-block;
+        padding: 0.75rem 1.25rem;
+        font-size: 0.875rem;
+        text-decoration: none;
+        color: #6b7280;
+        border-bottom: 2px solid transparent;
+        white-space: nowrap;
+        transition: color 0.15s, border-color 0.15s;
+      }
+      .tab-link:hover { color: #111; }
+      .tab-link.active {
+        color: #2563eb;
+        border-bottom-color: #2563eb;
+        font-weight: 600;
+      }
       main {
-        max-width: 960px;
+        max-width: 1100px;
         margin: 0 auto;
         padding: 1.5rem;
       }
@@ -69,6 +104,10 @@ const base = import.meta.env.BASE_URL;
         text-align: center;
       }
       footer a { color: #888; }
+      @media (max-width: 640px) {
+        .dashboard-tabs .inner { padding: 0 0.5rem; }
+        .tab-link { padding: 0.6rem 0.75rem; font-size: 0.8rem; }
+      }
     </style>
   </head>
   <body>
@@ -78,11 +117,21 @@ const base = import.meta.env.BASE_URL;
         <nav>
           <a href={base + '/browse'}>一覧</a>
           <a href={base + '/search'}>検索</a>
-          <a href={base + '/dashboard'}>ダッシュボード</a>
+          <a href={base + '/dashboard'} style="color: #2563eb; font-weight: 600;">ダッシュボード</a>
         </nav>
       </div>
     </header>
-    <main>
+    <div class="dashboard-tabs" data-pagefind-ignore>
+      <div class="inner">
+        {tabs.map((tab) => (
+          <a
+            href={tab.href}
+            class={`tab-link${activeTab === tab.id ? ' active' : ''}`}
+          >{tab.label}</a>
+        ))}
+      </div>
+    </div>
+    <main data-pagefind-ignore>
       <slot />
     </main>
     <footer>

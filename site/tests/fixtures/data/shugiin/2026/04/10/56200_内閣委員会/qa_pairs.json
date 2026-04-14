@@ -1,0 +1,50 @@
+{
+  "pairs": [
+    {
+      "id": "56200-qa-001",
+      "segment_index": 0,
+      "topic": "デジタル庁のシステム調達における随意契約の妥当性",
+      "question": {
+        "speaker": "山本花子",
+        "party": "立憲民主党",
+        "summary": "デジタル庁が特定ベンダーと随意契約を繰り返していることの問題点を指摘し、競争入札の徹底を求める。",
+        "full_text": "デジタル庁の調達において、特定のベンダーへの随意契約が...",
+        "intent": "調達の透明性確保と競争入札の徹底"
+      },
+      "answer": {
+        "speaker": "鈴木太郎",
+        "role": "内閣府特命担当大臣",
+        "summary": "随意契約には技術的な理由があるとしつつ、今後の見直しを検討すると述べた。",
+        "full_text": "ご指摘の随意契約については、技術的な連続性や...",
+        "evasion_score": 0.5,
+        "has_commitment": false,
+        "commitment_text": ""
+      },
+      "follow_up_ids": ["56200-qa-002"],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=300"
+    },
+    {
+      "id": "56200-qa-002",
+      "segment_index": 1,
+      "topic": "マイナンバーカードの普及促進策",
+      "question": {
+        "speaker": "山本花子",
+        "party": "立憲民主党",
+        "summary": "マイナンバーカードの普及率が伸び悩んでいる原因と対策について問う。",
+        "full_text": "マイナンバーカードの普及率について、直近の数字を見ますと...",
+        "intent": "普及施策の実効性の検証"
+      },
+      "answer": {
+        "speaker": "鈴木太郎",
+        "role": "内閣府特命担当大臣",
+        "summary": "健康保険証との一体化推進により2027年度中に全国民への普及を目指すと約束した。",
+        "full_text": "マイナンバーカードの普及につきましては、健康保険証との一体化を...",
+        "evasion_score": 0.2,
+        "has_commitment": true,
+        "commitment_text": "2027年度中にマイナンバーカードを全国民に普及させることを目標として施策を推進する。"
+      },
+      "follow_up_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=2100"
+    }
+  ]
+}

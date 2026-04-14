@@ -1,0 +1,73 @@
+{
+  "pairs": [
+    {
+      "id": "56149-qa-001",
+      "segment_index": 0,
+      "topic": "高額療養費の多数回該当リセット問題",
+      "question": {
+        "speaker": "古川あおい",
+        "party": "チームみらい",
+        "summary": "がん患者が毎年1月に多数回該当がリセットされ、上限額が高止まりする問題について政府の認識を問う。",
+        "full_text": "がん患者の方々から、毎年1月に多数回該当がリセットされてしまい...",
+        "intent": "制度上の不公平の是正を求める"
+      },
+      "answer": {
+        "speaker": "上野賢一郎",
+        "role": "厚生労働大臣",
+        "summary": "問題を認識しており、次期制度改正において検討する方針を示した。",
+        "full_text": "ご指摘の点については、厚生労働省としても課題として認識しており...",
+        "evasion_score": 0.3,
+        "has_commitment": true,
+        "commitment_text": "次期制度改正において多数回該当のリセット問題について具体的な改善策を検討する。"
+      },
+      "follow_up_ids": ["56149-qa-002"],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56149&time=120"
+    },
+    {
+      "id": "56149-qa-002",
+      "segment_index": 1,
+      "topic": "高額療養費の多数回該当リセット問題（追加質問）",
+      "question": {
+        "speaker": "古川あおい",
+        "party": "チームみらい",
+        "summary": "改正のスケジュールと具体的な内容について確認する。",
+        "full_text": "大臣のご答弁について、具体的にいつまでに...",
+        "intent": "具体的なスケジュールの明確化"
+      },
+      "answer": {
+        "speaker": "上野賢一郎",
+        "role": "厚生労働大臣",
+        "summary": "来年度の予算編成過程で検討するとしたが、具体的な時期は明言しなかった。",
+        "full_text": "具体的なスケジュールについては、来年度の予算編成過程において...",
+        "evasion_score": 0.6,
+        "has_commitment": false,
+        "commitment_text": ""
+      },
+      "follow_up_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56149&time=900"
+    },
+    {
+      "id": "56149-qa-003",
+      "segment_index": 2,
+      "topic": "消費税インボイス制度の中小事業者への影響",
+      "question": {
+        "speaker": "田中まこと",
+        "party": "日本維新の会",
+        "summary": "インボイス制度導入後の中小事業者の廃業増加について、政府の対策を問う。",
+        "full_text": "インボイス制度が導入されてから、中小事業者の廃業が増えているという報告があります...",
+        "intent": "中小事業者支援策の強化を求める"
+      },
+      "answer": {
+        "speaker": "上野賢一郎",
+        "role": "厚生労働大臣",
+        "summary": "所管外の部分が多いとしつつ、雇用面での支援策について言及した。",
+        "full_text": "インボイス制度については財務省が所管しておりますが...",
+        "evasion_score": 0.7,
+        "has_commitment": false,
+        "commitment_text": ""
+      },
+      "follow_up_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56149&time=2400"
+    }
+  ]
+}
