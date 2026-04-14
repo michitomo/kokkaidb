@@ -21,7 +21,7 @@ def test_publish_session(mock_git: object) -> None:
         date="2026-04-09",
         committee="本会議",
     )
-    assert mock_git.call_count == 3  # type: ignore[attr-defined]
+    assert mock_git.call_count == 4  # type: ignore[attr-defined]
     # add
     add_call = mock_git.call_args_list[0]  # type: ignore[attr-defined]
     assert add_call[0][0] == "add"
@@ -29,9 +29,13 @@ def test_publish_session(mock_git: object) -> None:
     commit_call = mock_git.call_args_list[1]  # type: ignore[attr-defined]
     assert commit_call[0][0] == "commit"
     assert "56149" in commit_call[0][2]
+    # symbolic-ref (branch detection)
+    branch_call = mock_git.call_args_list[2]  # type: ignore[attr-defined]
+    assert branch_call[0][0] == "symbolic-ref"
     # push
-    push_call = mock_git.call_args_list[2]  # type: ignore[attr-defined]
-    assert push_call[0] == ("push", "origin", "main")
+    push_call = mock_git.call_args_list[3]  # type: ignore[attr-defined]
+    assert push_call[0][0] == "push"
+    assert push_call[0][1] == "origin"
 
 
 @patch("src.publisher._run_git")
@@ -63,7 +67,7 @@ def test_publish_adds_relative_path(mock_git: object) -> None:
         date="2026-04-09",
         committee="本会議",
     )
-    add_call = mock_git.call_args_list[0]  # type: ignore[attr-defined]
+    add_call = mock_git.call_args_list[1]  # type: ignore[attr-defined]
     added_path = add_call[0][1]
     # パスがREPO_ROOTからの相対パスであること（絶対パスでないこと）
     assert not added_path.startswith("/") or "data/shugiin" in added_path

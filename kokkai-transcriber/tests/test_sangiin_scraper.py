@@ -257,12 +257,13 @@ class TestEdgeCases:
         soup = BeautifulSoup(html, "html.parser")
         assert _extract_committee(soup) == "不明"
 
-    def test_unknown_date(self) -> None:
+    def test_unknown_date_raises(self) -> None:
         from bs4 import BeautifulSoup
 
         html = "<html><body><p>No date</p></body></html>"
         soup = BeautifulSoup(html, "html.parser")
-        assert _extract_date(soup) == "unknown"
+        with pytest.raises(ValueError, match="Could not extract date"):
+            _extract_date(soup)
 
 
 @pytest.mark.integration

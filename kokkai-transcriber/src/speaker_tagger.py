@@ -7,9 +7,8 @@ from __future__ import annotations
 
 import json
 import logging
-import os
 
-import openai
+from src.api_client import get_client as _get_client, LLM_MODEL, DEEPINFRA_BASE_URL
 
 from src.models import (
     RawTranscript,
@@ -22,9 +21,6 @@ from src.models import (
 )
 
 logger = logging.getLogger(__name__)
-
-DEEPINFRA_BASE_URL = "https://api.deepinfra.com/v1/openai"
-LLM_MODEL = "deepseek-ai/DeepSeek-V3.2"
 
 SYSTEM_PROMPT = """あなたは国会議事録の話者タグ付けを行う専門家です。
 与えられた文字起こしテキストを分析し、発言者ごとに発言を分割してください。
@@ -43,13 +39,6 @@ SYSTEM_PROMPT = """あなたは国会議事録の話者タグ付けを行う専�
   ]
 }
 """
-
-
-def _get_client() -> openai.OpenAI:
-    api_key = os.environ.get("DEEPINFRA_API_KEY")
-    if not api_key:
-        raise EnvironmentError("DEEPINFRA_API_KEY environment variable is not set")
-    return openai.OpenAI(api_key=api_key, base_url=DEEPINFRA_BASE_URL)
 
 
 def tag_speakers(
@@ -106,14 +95,19 @@ def tag_speakers(
     data = json.loads(content)
     utterances_data = data.get("utterances", [])
 
-    return [
-        Utterance(
-            speaker=u["speaker"],
-            role=u["role"],
-            text=u["text"],
-        )
-        for u in utterances_data
-    ]
+    result = []
+    for u in utterances_data:
+        speaker = u.get("speaker", "")
+        role = u.get("role", "その他")
+        text = u.get("text", "")
+        if not text:
+            logger.warning("Skipping utterance with empty text: %s", u)
+            continue
+        if not speaker:
+            logger.warning("Utterance missing speaker, using segment speaker: %s", segment_speaker.name)
+            speaker = segment_speaker.name
+        result.append(Utterance(speaker=speaker, role=role, text=text))
+    return result
 
 
 def _build_video_url(chamber: str, session_id: str, start_seconds: float) -> str:

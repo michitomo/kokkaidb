@@ -21,87 +21,18 @@ const DATA_DIR = process.env.DATA_DIR
 const OUT_DIR = process.env.OUT_DIR
   ? path.resolve(process.cwd(), process.env.OUT_DIR)
   : path.resolve(process.cwd(), 'public/api');
+const LAWS_MD = process.env.LAWS_MD
+  ? path.resolve(process.cwd(), process.env.LAWS_MD)
+  : path.resolve(process.cwd(), '../docs/laws.md');
 
 // --- 型定義 ---
-interface SpeakerInfo {
-  name: string;
-  affiliation: string;
-  role: string;
-  start_seconds: number;
-  start_time: string;
-  duration_minutes: number;
-}
-
-interface SessionMetadata {
-  chamber: string;
-  session_id: string;
-  date: string;
-  committee: string;
-  duration: string;
-  hls_url: string;
-  source_url: string;
-  processed_at: string;
-  whisper_model: string;
-  llm_model: string;
-  speakers: SpeakerInfo[];
-}
-
-interface QAQuestion {
-  speaker: string;
-  party: string;
-  summary: string;
-  full_text: string;
-  intent: string;
-}
-
-interface QAAnswer {
-  speaker: string;
-  role: string;
-  summary: string;
-  full_text: string;
-  evasion_score: number;
-  has_commitment: boolean;
-  commitment_text: string;
-}
-
-interface QAPairRaw {
-  id: string;
-  segment_index: number;
-  topic: string;
-  question: QAQuestion;
-  answer: QAAnswer;
-  follow_up_ids: string[];
-  video_url: string;
-}
-
-interface QAPairsOutput {
-  pairs: QAPairRaw[];
-}
-
-interface TopicRaw {
-  name: string;
-  description: string;
-  related_qa_ids: string[];
-  related_speakers: string[];
-}
-
-interface TopicsOutput {
-  topics: TopicRaw[];
-}
-
-interface KeyCommitmentRaw {
-  speaker: string;
-  role: string;
-  text: string;
-  topic: string;
-  qa_id: string;
-}
-
-interface SummaryRaw {
-  session_summary: string;
-  key_topics: string[];
-  key_commitments: KeyCommitmentRaw[];
-}
+import type {
+  SessionMetadata,
+  QAPair as QAPairRaw,
+  QAPairsOutput,
+  SessionSummary as SummaryRaw,
+  TopicsOutput,
+} from '../src/types';
 
 // index.json のQ&Aペア形式
 interface IndexQAPair {
@@ -132,6 +63,7 @@ export interface IndexEntry {
   speakers: string[];
   parties: string[];
   topics: string[];
+  related_laws: string[];
   qa_pairs: IndexQAPair[];
 }
 
@@ -212,6 +144,120 @@ interface CommitteeEntry {
   name: string;
   chamber: string;
   session_count: number;
+}
+
+// laws.json のエントリ
+export interface LawEntry {
+  id: string;
+  title: string;
+  short_title: string;
+  ministry: string;
+  tags: string[];
+  summary: string;
+  submission_target: string;
+}
+
+// --- 法案マスタ パーサー ---
+function parseLawsMd(filePath: string): LawEntry[] {
+  if (!fs.existsSync(filePath)) {
+    console.log(`[generate-api] laws.md not found at ${filePath}, skipping law tagging`);
+    return [];
+  }
+  const text = fs.readFileSync(filePath, 'utf-8');
+  const laws: LawEntry[] = [];
+  let currentMinistry = '';
+  let lawIndex = 0;
+
+  const lines = text.split('\n');
+  for (let i = 0; i < lines.length; i++) {
+    // 省庁ヘッダ: # **内閣官房 計4件**
+    const ministryMatch = lines[i].match(/^# \*\*(.+?)(?:\s+計\d+件)?\*\*$/);
+    if (ministryMatch) {
+      // 「内閣提出予定法律案等件名・要旨調」や「件数表」はスキップ
+      const name = ministryMatch[1].trim();
+      if (!name.includes('件名') && !name.includes('件数') && !name.includes('第')) {
+        currentMinistry = name;
+      }
+      continue;
+    }
+
+    // 法案タイトル: ## **3月上旬 \- 防災庁設置法案（仮称）**
+    const lawMatch = lines[i].match(/^## \*\*(.+?)\s*\\?\s*-\s*(.+?)\*\*$/);
+    if (lawMatch) {
+      lawIndex++;
+      const submissionTarget = lawMatch[1].trim();
+      const title = lawMatch[2].trim();
+
+      // 短縮タイトル: 「〜法律案」の前の法律名を抽出、長すぎる場合は先頭40文字
+      const shortMatch = title.match(/^(.+?(?:法案|法律案|条約|協定|議定書))/);
+      let shortTitle = shortMatch ? shortMatch[1] : title;
+      if (shortTitle.length > 40) {
+        // 「の一部を改正する」の前で切る
+        const cutMatch = shortTitle.match(/^(.+?)(?:の一部を改正する|等の一部|及び)/);
+        shortTitle = cutMatch ? cutMatch[1] + '改正案' : shortTitle.slice(0, 40) + '…';
+      }
+
+      // タグ行: *`tag1` `tag2` ...*
+      let tags: string[] = [];
+      if (i + 2 < lines.length) {
+        const tagLine = lines[i + 2];
+        const tagMatches = tagLine.match(/`([^`]+)`/g);
+        if (tagMatches) {
+          tags = tagMatches.map(t => t.replace(/`/g, ''));
+        }
+      }
+
+      // 要旨: タグ行の次の非空行
+      let summary = '';
+      for (let j = i + 3; j < lines.length && j < i + 6; j++) {
+        const line = lines[j].trim();
+        if (line && !line.startsWith('#') && !line.startsWith('---') && !line.startsWith('*')) {
+          summary = line;
+          break;
+        }
+      }
+
+      laws.push({
+        id: `law_${String(lawIndex).padStart(3, '0')}`,
+        title,
+        short_title: shortTitle,
+        ministry: currentMinistry,
+        tags,
+        summary,
+        submission_target: submissionTarget,
+      });
+    }
+  }
+
+  console.log(`[generate-api] Parsed ${laws.length} laws from laws.md`);
+  return laws;
+}
+
+/**
+ * Q&Aペアのtopic/summaryと法案タグを照合し、関連法案IDを返す。
+ */
+function matchLaws(
+  qaPairs: IndexQAPair[],
+  laws: LawEntry[],
+): string[] {
+  if (laws.length === 0) return [];
+
+  // Q&Aペアのtopic/summaryを結合したテキスト
+  const qaText = qaPairs
+    .map(qa => `${qa.topic} ${qa.question_summary} ${qa.answer_summary}`)
+    .join(' ');
+  const qaTextLower = qaText.toLowerCase();
+
+  const matched: string[] = [];
+  for (const law of laws) {
+    // 法案のタグのうち、Q&Aテキストに含まれるものがあれば関連とみなす
+    const hitCount = law.tags.filter(tag => qaTextLower.includes(tag.toLowerCase())).length;
+    // タグの30%以上がヒット、かつ最低2つ以上
+    if (hitCount >= 2 && hitCount / law.tags.length >= 0.3) {
+      matched.push(law.id);
+    }
+  }
+  return matched;
 }
 
 // --- ユーティリティ ---
@@ -433,8 +479,12 @@ export function generateApi(dataDir: string, outDir: string): void {
     writeJson(path.join(outDir, 'commitments.json'), []);
     writeJson(path.join(outDir, 'calendar.json'), {});
     writeJson(path.join(outDir, 'evasion.json'), []);
+    writeJson(path.join(outDir, 'laws.json'), []);
     return;
   }
+
+  // 法案マスタを読み込み
+  const laws = parseLawsMd(LAWS_MD);
 
   const metadataFiles = glob.sync('**/metadata.json', { cwd: dataDir });
 
@@ -509,6 +559,9 @@ export function generateApi(dataDir: string, outDir: string): void {
       video_url: p.video_url,
     }));
 
+    // 法案マッチング
+    const relatedLaws = matchLaws(indexQAPairs, laws);
+
     indexEntries.push({
       session_id: metadata.session_id,
       chamber: metadata.chamber as 'shugiin' | 'sangiin',
@@ -518,6 +571,7 @@ export function generateApi(dataDir: string, outDir: string): void {
       speakers: sessionSpeakers,
       parties: sessionParties,
       topics: topicNames,
+      related_laws: relatedLaws,
       qa_pairs: indexQAPairs,
     });
 
@@ -591,6 +645,10 @@ export function generateApi(dataDir: string, outDir: string): void {
   writeJson(path.join(outDir, 'parties.json'), parties);
   writeJson(path.join(outDir, 'topics.json'), topics);
   writeJson(path.join(outDir, 'committees.json'), committees);
+
+  // 法案マスタ（フィルタUI用に short_title と id のみ抽出）
+  const lawsForApi = laws.map(l => ({ id: l.id, title: l.title, short_title: l.short_title, ministry: l.ministry }));
+  writeJson(path.join(outDir, 'laws.json'), lawsForApi);
 
   // ダッシュボード用JSON生成
   generateDashboard(indexEntries, summaryMap, outDir);

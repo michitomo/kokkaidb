@@ -37,9 +37,7 @@ export default function TopicHeatmap({ data }) {
 
   const max = Math.max(1, ...filteredMatrix.flat());
 
-  const base = typeof window !== "undefined"
-    ? (document.querySelector("base")?.href?.replace(/\/$/, "") || "")
-    : "";
+  const base = import.meta.env.BASE_URL?.replace(/\/$/, "") || "";
 
   const CELL_W = 44;
   const CELL_H = 28;

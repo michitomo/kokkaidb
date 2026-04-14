@@ -155,8 +155,7 @@ def _extract_date(soup: BeautifulSoup) -> str:
                 d = int(match.group(3))
                 return f"{year:04d}-{m:02d}-{d:02d}"
 
-    logger.warning("Could not extract date from sangiin page")
-    return "unknown"
+    raise ValueError("Could not extract date from sangiin detail page")
 
 
 def _extract_mediasp_hash(soup: BeautifulSoup) -> str:

@@ -9,9 +9,7 @@ export default function CommitmentTracker({ commitments }) {
   const [searchText, setSearchText] = useState("");
   const [groupByTopic, setGroupByTopic] = useState(false);
 
-  const base = typeof window !== "undefined"
-    ? (document.querySelector("base")?.href?.replace(/\/$/, "") || "")
-    : "";
+  const base = import.meta.env.BASE_URL?.replace(/\/$/, "") || "";
 
   const filtered = useMemo(() => {
     let items = commitments ?? [];

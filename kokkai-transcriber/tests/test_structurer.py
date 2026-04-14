@@ -10,12 +10,22 @@ import pytest
 from src.models import (
     QAPairsOutput,
     SegmentUtterances,
+    SpeakerInfo,
     SummaryOutput,
     TopicsOutput,
     Utterance,
     UtterancesOutput,
 )
-from src.structurer import generate_qa_pairs, generate_summary, generate_topics
+from src.structurer import (
+    _assemble_full_text_from_sentences,
+    _build_sentence_map,
+    _build_sentence_to_utterance_map,
+    _fuzzy_lookup,
+    _split_sentences,
+    generate_qa_pairs,
+    generate_summary,
+    generate_topics,
+)
 
 
 def _make_mock_llm_response(data: dict) -> MagicMock:
@@ -64,6 +74,148 @@ def sample_utterances() -> UtterancesOutput:
             ),
         ]
     )
+
+
+class TestSplitSentences:
+    def test_basic_split(self) -> None:
+        """句点で分割される。"""
+        result = _split_sentences("これは文1。これは文2。これは文3。")
+        assert len(result) == 3
+        assert result[0] == "これは文1。"
+        assert result[1] == "これは文2。"
+
+    def test_empty_input(self) -> None:
+        """空文字はそのまま返す。"""
+        result = _split_sentences("")
+        assert result == [""]
+
+    def test_no_period(self) -> None:
+        """句点なしの場合は元テキスト全体を返す。"""
+        result = _split_sentences("句点のないテキスト")
+        assert result == ["句点のないテキスト"]
+
+    def test_question_mark(self) -> None:
+        """疑問符でも分割される。"""
+        result = _split_sentences("質問ですか？はい、そうです。")
+        assert len(result) == 2
+
+    def test_exclamation_mark(self) -> None:
+        """感嘆符でも分割される。"""
+        result = _split_sentences("これは重要です！確認してください。")
+        assert len(result) == 2
+
+
+class TestFuzzyLookup:
+    @pytest.fixture
+    def speakers(self) -> dict[str, SpeakerInfo]:
+        return {
+            "森英介": SpeakerInfo(name="森英介", affiliation="自由民主党", start_seconds=0, start_time="", duration_minutes=0),
+            "森田俊和": SpeakerInfo(name="森田俊和", affiliation="立憲民主党", start_seconds=0, start_time="", duration_minutes=0),
+            "林芳正": SpeakerInfo(name="林芳正", affiliation="自由民主党", start_seconds=0, start_time="", duration_minutes=0),
+            "古川あおい": SpeakerInfo(name="古川あおい", affiliation="チームみらい", start_seconds=0, start_time="", duration_minutes=0),
+        }
+
+    def test_exact_match(self, speakers: dict[str, SpeakerInfo]) -> None:
+        """完全一致で見つかる。"""
+        result = _fuzzy_lookup("森英介", speakers)
+        assert result is not None
+        assert result.name == "森英介"
+
+    def test_no_match(self, speakers: dict[str, SpeakerInfo]) -> None:
+        """一致しない場合はNone。"""
+        result = _fuzzy_lookup("存在しない", speakers)
+        assert result is None
+
+    def test_two_char_surname(self, speakers: dict[str, SpeakerInfo]) -> None:
+        """2文字姓のマッチ。"""
+        result = _fuzzy_lookup("古川", speakers)
+        assert result is not None
+        assert result.name == "古川あおい"
+
+    def test_single_char_surname_disambiguation(self, speakers: dict[str, SpeakerInfo]) -> None:
+        """1文字姓（森）で複数候補がある場合。"""
+        # This tests the improved fuzzy_lookup behavior
+        result = _fuzzy_lookup("森", speakers)
+        # Should return one of the 森* speakers
+        assert result is not None
+        assert result.name.startswith("森")
+
+
+class TestAssembleFullText:
+    def test_valid_indices(self) -> None:
+        sentences = ["文1。", "文2。", "文3。"]
+        result = _assemble_full_text_from_sentences(sentences, [0, 2])
+        assert result == "文1。文3。"
+
+    def test_empty_indices(self) -> None:
+        """空インデックスは空文字を返す。"""
+        sentences = ["文1。", "文2。"]
+        result = _assemble_full_text_from_sentences(sentences, [])
+        assert result == ""
+
+    def test_out_of_range_indices(self) -> None:
+        """範囲外インデックスは無視される。"""
+        sentences = ["文1。", "文2。"]
+        result = _assemble_full_text_from_sentences(sentences, [0, 5, 10])
+        assert result == "文1。"
+
+    def test_all_out_of_range(self) -> None:
+        """全て範囲外なら空文字。"""
+        sentences = ["文1。"]
+        result = _assemble_full_text_from_sentences(sentences, [5, 10])
+        assert result == ""
+
+
+class TestBuildSentenceMap:
+    def test_basic_mapping(self) -> None:
+        """セグメントの文に通し番号が振られる。"""
+        seg = SegmentUtterances(
+            segment_index=0,
+            segment_speaker="テスト太郎",
+            segment_affiliation="テスト党",
+            start_seconds=0.0,
+            video_url="",
+            utterances=[
+                Utterance(speaker="テスト太郎", role="質疑者", text="質問です。回答をお願いします。"),
+                Utterance(speaker="テスト次郎", role="答弁者", text="お答えします。"),
+            ],
+        )
+        prompt_text, sentences = _build_sentence_map(seg)
+        assert len(sentences) == 3
+        assert "(0)" in prompt_text
+        assert "(1)" in prompt_text
+        assert "(2)" in prompt_text
+
+    def test_empty_utterances(self) -> None:
+        """空のutterancesでもエラーにならない。"""
+        seg = SegmentUtterances(
+            segment_index=0,
+            segment_speaker="テスト",
+            segment_affiliation="",
+            start_seconds=0.0,
+            video_url="",
+            utterances=[],
+        )
+        prompt_text, sentences = _build_sentence_map(seg)
+        assert len(sentences) == 0
+
+
+class TestBuildSentenceToUtteranceMap:
+    def test_mapping(self) -> None:
+        """各sentenceがどのutteranceに属するかマッピングされる。"""
+        seg = SegmentUtterances(
+            segment_index=0,
+            segment_speaker="テスト",
+            segment_affiliation="",
+            start_seconds=0.0,
+            video_url="",
+            utterances=[
+                Utterance(speaker="A", role="質疑者", text="文1。文2。"),
+                Utterance(speaker="B", role="答弁者", text="文3。"),
+            ],
+        )
+        mapping = _build_sentence_to_utterance_map(seg)
+        assert mapping == [0, 0, 1]
 
 
 class TestGenerateQAPairs:
@@ -306,6 +458,122 @@ class TestGenerateTopics:
 
         assert isinstance(result, TopicsOutput)
         assert len(result.topics) > 0
+
+
+class TestGenerateQAForSegmentErrorHandling:
+    """_generate_qa_for_segment のエラーハンドリングテスト。"""
+
+    @pytest.fixture
+    def segment(self) -> SegmentUtterances:
+        return SegmentUtterances(
+            segment_index=0,
+            segment_speaker="テスト太郎",
+            segment_affiliation="テスト党",
+            start_seconds=0.0,
+            video_url="",
+            utterances=[
+                Utterance(speaker="テスト太郎", role="質疑者", text="質問です。"),
+                Utterance(speaker="テスト次郎", role="答弁者", text="お答えします。"),
+            ],
+        )
+
+    def _make_mock_response(self, content: str) -> MagicMock:
+        mock_message = MagicMock()
+        mock_message.content = content
+        mock_choice = MagicMock()
+        mock_choice.message = mock_message
+        mock_response = MagicMock()
+        mock_response.choices = [mock_choice]
+        return mock_response
+
+    def test_malformed_json_returns_empty(self, segment: SegmentUtterances) -> None:
+        """不正なJSONが返された場合は空リストを返す。"""
+        from src.structurer import _generate_qa_for_segment
+
+        with patch("src.structurer._get_client") as mock_factory:
+            mock_client = MagicMock()
+            mock_client.chat.completions.create.return_value = self._make_mock_response(
+                "this is not json"
+            )
+            mock_factory.return_value = mock_client
+
+            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+                result = _generate_qa_for_segment(segment, "context", {})
+
+        assert result == []
+
+    def test_empty_response_returns_empty(self, segment: SegmentUtterances) -> None:
+        """空レスポンスの場合は空リストを返す。"""
+        from src.structurer import _generate_qa_for_segment
+
+        mock_message = MagicMock()
+        mock_message.content = None
+        mock_choice = MagicMock()
+        mock_choice.message = mock_message
+        mock_response = MagicMock()
+        mock_response.choices = [mock_choice]
+
+        with patch("src.structurer._get_client") as mock_factory:
+            mock_client = MagicMock()
+            mock_client.chat.completions.create.return_value = mock_response
+            mock_factory.return_value = mock_client
+
+            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+                result = _generate_qa_for_segment(segment, "context", {})
+
+        assert result == []
+
+    def test_missing_pairs_key_returns_empty(self, segment: SegmentUtterances) -> None:
+        """'pairs' キーがない場合は空リストを返す。"""
+        from src.structurer import _generate_qa_for_segment
+
+        with patch("src.structurer._get_client") as mock_factory:
+            mock_client = MagicMock()
+            mock_client.chat.completions.create.return_value = self._make_mock_response(
+                json.dumps({"no_pairs_key": []})
+            )
+            mock_factory.return_value = mock_client
+
+            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+                result = _generate_qa_for_segment(segment, "context", {})
+
+        assert result == []
+
+    def test_valid_response_extracts_pairs(self, segment: SegmentUtterances) -> None:
+        """正常なレスポンスからQ&Aペアを抽出する。"""
+        from src.structurer import _generate_qa_for_segment
+
+        valid_response = {
+            "pairs": [
+                {
+                    "topic": "テスト",
+                    "question": {
+                        "summary": "- 質問要旨",
+                        "sentence_indices": [0],
+                        "intent": "fact_check",
+                    },
+                    "answer": {
+                        "summary": "- 回答要旨",
+                        "sentence_indices": [1],
+                        "evasion_score": 0.2,
+                        "has_commitment": False,
+                    },
+                }
+            ]
+        }
+
+        with patch("src.structurer._get_client") as mock_factory:
+            mock_client = MagicMock()
+            mock_client.chat.completions.create.return_value = self._make_mock_response(
+                json.dumps(valid_response, ensure_ascii=False)
+            )
+            mock_factory.return_value = mock_client
+
+            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+                result = _generate_qa_for_segment(segment, "context", {})
+
+        assert len(result) == 1
+        assert result[0].topic == "テスト"
 
 
 @pytest.mark.integration

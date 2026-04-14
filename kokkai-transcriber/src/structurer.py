@@ -8,10 +8,10 @@ from __future__ import annotations
 
 import json
 import logging
-import os
+import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-import openai
+from src.api_client import get_client as _get_client, LLM_MODEL, DEEPINFRA_BASE_URL
 
 from src.models import (
     AnswerDetail,
@@ -29,9 +29,6 @@ from src.models import (
 
 logger = logging.getLogger(__name__)
 
-DEEPINFRA_BASE_URL = "https://api.deepinfra.com/v1/openai"
-LLM_MODEL = "deepseek-ai/DeepSeek-V3.2"
-
 # ---------------------------------------------------------------------------
 # System prompts
 # ---------------------------------------------------------------------------
@@ -42,8 +39,9 @@ QA_SEGMENT_SYSTEM_PROMPT = """あなたは国会質疑のQ&Aペアを構造化�
 重要なルール:
 - 質疑者が複数のテーマについて質問した場合、テーマごとに別のQ&Aペアを作成すること
 - 1つも漏らさずに抽出すること
-- full_textは返さないこと。代わりにutterance_indices（番号の配列）を返すこと
-- utterance_indicesは、そのQ&Aペアを構成するutterancesの番号（入力の[N]の数字）を配列で指定
+- full_textは返さないこと。代わりにsentence_indices（文番号の配列）を返すこと
+- sentence_indicesは、入力の(N)の番号を配列で指定。そのQ&Aの該当部分の文だけを選ぶこと
+- 1つのutteranceに複数テーマが含まれる場合（例: 代表質問）、テーマごとに該当する文だけを選択すること
 - summaryは箇条書き（各項目は「- 」で始める）。要点を2-4項目で簡潔に
 
 speaker, party, roleは返さないでください（コードで元データから自動取得します）。
@@ -55,12 +53,12 @@ speaker, party, roleは返さないでください（コードで元データか
       "topic": "質疑テーマ（簡潔に）",
       "question": {
         "summary": "- 要点1\n- 要点2\n- 要点3",
-        "utterance_indices": [0, 1, 2],
+        "sentence_indices": [0, 1, 2],
         "intent": "fact_check | policy_proposal | accountability | information_request | other"
       },
       "answer": {
         "summary": "- 要点1\n- 要点2\n- 要点3",
-        "utterance_indices": [3, 4, 5],
+        "sentence_indices": [12, 13, 14],
         "evasion_score": 0.0から1.0,
         "has_commitment": true | false,
         "commitment_text": "具体的な約束事項（has_commitmentがtrueの場合）"
@@ -112,21 +110,36 @@ Q&Aペアリストからトピックを抽出し、以下のJSON形式で出力�
 """
 
 
-def _get_client() -> openai.OpenAI:
-    api_key = os.environ.get("DEEPINFRA_API_KEY")
-    if not api_key:
-        raise EnvironmentError("DEEPINFRA_API_KEY environment variable is not set")
-    return openai.OpenAI(api_key=api_key, base_url=DEEPINFRA_BASE_URL)
+def _split_sentences(text: str) -> list[str]:
+    """テキストを文単位に分割する。句点・疑問符・感嘆符で分割。"""
+    # Split on sentence-ending punctuation, keeping the delimiter
+    parts = re.split(r'(?<=[。？！])', text)
+    result = [p.strip() for p in parts if p.strip()]
+    return result if result else [text]
 
 
-def _format_numbered_utterances(seg: SegmentUtterances) -> str:
-    """utterancesに番号を振ってLLMプロンプト用にテキスト化する。"""
+def _build_sentence_map(seg: SegmentUtterances) -> tuple[str, list[str]]:
+    """セグメント全体の文にフラットな通し番号を振り、プロンプト用テキストと文リストを返す。
+
+    Returns:
+        (prompt_text, sentences): 番号付きテキストと文のフラットリスト
+    """
     lines: list[str] = []
     lines.append(f"セグメント発言者: {seg.segment_speaker}（{seg.segment_affiliation}）")
     lines.append("")
-    for i, u in enumerate(seg.utterances):
-        lines.append(f"[{i}] [{u.role}] {u.speaker}: {u.text}")
-    return "\n".join(lines)
+
+    all_sentences: list[str] = []
+    sent_idx = 0
+    for u in seg.utterances:
+        lines.append(f"[{u.role}] {u.speaker}:")
+        sentences = _split_sentences(u.text)
+        for s in sentences:
+            lines.append(f"  ({sent_idx}) {s}")
+            all_sentences.append(s)
+            sent_idx += 1
+        lines.append("")
+
+    return "\n".join(lines), all_sentences
 
 
 def _format_segments_for_prompt(segments: list[SegmentUtterances]) -> str:
@@ -139,41 +152,82 @@ def _format_segments_for_prompt(segments: list[SegmentUtterances]) -> str:
     return "\n".join(lines)
 
 
-def _assemble_full_text(seg: SegmentUtterances, indices: list[int]) -> str:
-    """utterance_indicesからfull_textを機械的に組み立てる。"""
-    valid_indices = [i for i in indices if 0 <= i < len(seg.utterances)]
-    if not valid_indices:
-        # フォールバック: インデックスが無効な場合、セグメント全体を返す
-        return "\n".join(u.text for u in seg.utterances)
-    return "\n".join(seg.utterances[i].text for i in valid_indices)
+def _assemble_full_text_from_sentences(
+    all_sentences: list[str], indices: list[int],
+) -> str:
+    """sentence_indicesからfull_textを機械的に組み立てる。"""
+    valid = [i for i in indices if 0 <= i < len(all_sentences)]
+    if not valid:
+        return ""
+    return "".join(all_sentences[i] for i in valid)
 
 
-def _resolve_speaker_info(
+_SINGLE_CHAR_SURNAMES = {"林", "森", "原", "関", "堀", "岡", "辻", "塚", "柳", "萩", "菅", "泉", "馬"}
+
+
+def _fuzzy_lookup(name: str, speakers_lookup: dict[str, SpeakerInfo]) -> SpeakerInfo | None:
+    """名前の完全一致 → 姓一致でspeaker情報を取得する。"""
+    # 完全一致
+    if name in speakers_lookup:
+        return speakers_lookup[name]
+    # Try common surname lengths: 2-char (most common), then 1-char, then 3-char
+    best_match: SpeakerInfo | None = None
+    best_prefix_len = 0
+    for prefix_len in (2, 1, 3):
+        if prefix_len > len(name):
+            continue
+        # For 1-char prefix, only try if it's a known single-char surname
+        if prefix_len == 1 and name[0] not in _SINGLE_CHAR_SURNAMES:
+            continue
+        prefix = name[:prefix_len]
+        for key, info in speakers_lookup.items():
+            if key.startswith(prefix) and prefix_len > best_prefix_len:
+                best_match = info
+                best_prefix_len = prefix_len
+        if best_match is not None:
+            return best_match
+    return None
+
+
+def _build_sentence_to_utterance_map(seg: SegmentUtterances) -> list[int]:
+    """各sentenceがどのutteranceに属するかのマッピングを返す。"""
+    mapping: list[int] = []
+    for u_idx, u in enumerate(seg.utterances):
+        n_sentences = len(_split_sentences(u.text))
+        mapping.extend([u_idx] * n_sentences)
+    return mapping
+
+
+def _resolve_speaker_from_sentences(
     seg: SegmentUtterances,
-    indices: list[int],
+    sentence_indices: list[int],
+    sent_to_utt: list[int],
     speakers_lookup: dict[str, SpeakerInfo],
 ) -> tuple[str, str]:
-    """utterance_indicesから質疑者のspeakerとparty(=affiliation)を取得する。"""
-    valid = [i for i in indices if 0 <= i < len(seg.utterances)]
+    """sentence_indicesから質疑者のspeakerとparty(=affiliation)を取得する。"""
+    valid = [i for i in sentence_indices if 0 <= i < len(sent_to_utt)]
     if valid:
-        name = seg.utterances[valid[0]].speaker
-        info = speakers_lookup.get(name)
+        u_idx = sent_to_utt[valid[0]]
+        name = seg.utterances[u_idx].speaker
+        info = _fuzzy_lookup(name, speakers_lookup)
         if info:
             return info.name, info.affiliation
         return name, seg.segment_affiliation
     return seg.segment_speaker, seg.segment_affiliation
 
 
-def _resolve_answerer_info(
+def _resolve_answerer_from_sentences(
     seg: SegmentUtterances,
-    indices: list[int],
+    sentence_indices: list[int],
+    sent_to_utt: list[int],
     speakers_lookup: dict[str, SpeakerInfo],
 ) -> tuple[str, str]:
-    """utterance_indicesから答弁者のspeakerとrole(=affiliation)を取得する。"""
-    valid = [i for i in indices if 0 <= i < len(seg.utterances)]
+    """sentence_indicesから答弁者のspeakerとrole(=affiliation)を取得する。"""
+    valid = [i for i in sentence_indices if 0 <= i < len(sent_to_utt)]
     if valid:
-        name = seg.utterances[valid[0]].speaker
-        info = speakers_lookup.get(name)
+        u_idx = sent_to_utt[valid[0]]
+        name = seg.utterances[u_idx].speaker
+        info = _fuzzy_lookup(name, speakers_lookup)
         if info:
             return info.name, info.affiliation
         return name, ""
@@ -210,13 +264,13 @@ def _generate_qa_for_segment(
     """
     client = _get_client()
 
-    numbered_text = _format_numbered_utterances(seg)
+    sentence_text, all_sentences = _build_sentence_map(seg)
     user_prompt = (
         f"以下は国会質疑の1つの発言セグメントです。"
         f"この発言者の持ち時間で行われた質疑応答を**すべて**Q&Aペアとして抽出してください。\n"
-        f"utterance_indicesには入力の[N]の番号を使ってください。\n\n"
+        f"sentence_indicesには入力の(N)の番号を使ってください。\n\n"
         f"セッション情報: {session_context}\n\n"
-        f"{numbered_text}"
+        f"{sentence_text}"
     )
 
     logger.info(
@@ -243,23 +297,28 @@ def _generate_qa_for_segment(
         logger.warning("Empty response for segment %d", seg.segment_index)
         return []
 
-    data = json.loads(content)
+    try:
+        data = json.loads(content)
+    except json.JSONDecodeError as e:
+        logger.error("Failed to parse LLM JSON for segment %d: %s", seg.segment_index, e)
+        return []
     raw_pairs = data.get("pairs", [])
 
-    # utterance_indicesから full_text, speaker, party, role を機械的に組み立て
+    # sentence_indicesから full_text, speaker, party, role を機械的に組み立て
+    sent_to_utt = _build_sentence_to_utterance_map(seg)
     pairs: list[QAPair] = []
     for p in raw_pairs:
         q = p.get("question", {})
         a = p.get("answer", {})
 
-        q_indices = q.get("utterance_indices", [])
-        a_indices = a.get("utterance_indices", [])
-        q_full_text = _assemble_full_text(seg, q_indices)
-        a_full_text = _assemble_full_text(seg, a_indices)
+        q_indices = q.get("sentence_indices", [])
+        a_indices = a.get("sentence_indices", [])
+        q_full_text = _assemble_full_text_from_sentences(all_sentences, q_indices)
+        a_full_text = _assemble_full_text_from_sentences(all_sentences, a_indices)
 
-        # speaker/party/role を元データから取得（最初のutteranceから）
-        q_speaker, q_party = _resolve_speaker_info(seg, q_indices, speakers_lookup)
-        a_speaker, a_role = _resolve_answerer_info(seg, a_indices, speakers_lookup)
+        # speaker/party/role を元データから取得
+        q_speaker, q_party = _resolve_speaker_from_sentences(seg, q_indices, sent_to_utt, speakers_lookup)
+        a_speaker, a_role = _resolve_answerer_from_sentences(seg, a_indices, sent_to_utt, speakers_lookup)
 
         pairs.append(
             QAPair(
@@ -403,7 +462,10 @@ def generate_summary(
     if not content:
         raise ValueError("Empty response from LLM")
 
-    data = json.loads(content)
+    try:
+        data = json.loads(content)
+    except json.JSONDecodeError as e:
+        raise ValueError(f"Failed to parse LLM JSON for summary: {e}") from e
 
     commitments: list[KeyCommitment] = []
     for c in data.get("key_commitments", []):
@@ -452,7 +514,10 @@ def generate_topics(qa_pairs: QAPairsOutput) -> TopicsOutput:
     if not content:
         raise ValueError("Empty response from LLM")
 
-    data = json.loads(content)
+    try:
+        data = json.loads(content)
+    except json.JSONDecodeError as e:
+        raise ValueError(f"Failed to parse LLM JSON for topics: {e}") from e
 
     topics: list[Topic] = []
     for t in data.get("topics", []):

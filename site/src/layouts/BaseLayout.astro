@@ -1,9 +1,10 @@
 ---
 interface Props {
   title?: string;
+  description?: string;
 }
 
-const { title = '国会議事録リアルタイムDB' } = Astro.props;
+const { title = '国会議事録リアルタイムDB', description } = Astro.props;
 const base = import.meta.env.BASE_URL;
 ---
 <!doctype html>
@@ -12,6 +13,11 @@ const base = import.meta.env.BASE_URL;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
+    <meta name="description" content={description ?? "国会議事録をリアルタイムにデータベース化。衆議院TV・参議院TVの審議動画から質疑応答を構造化し、検索・フィルタ可能にするオープンデータプロジェクト。"} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content="国会議事録をリアルタイムにデータベース化。質疑応答の検索・フィルタ・分析が可能。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ja_JP" />
     <style>
       *, *::before, *::after { box-sizing: border-box; }
       body {

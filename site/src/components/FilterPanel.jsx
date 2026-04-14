@@ -31,6 +31,7 @@ function parseUrlParams() {
     speaker: params.get('speaker') || '',
     roles: params.getAll('role'),
     topics: params.getAll('topic'),
+    laws: params.getAll('law'),
     page: parseInt(params.get('page') || '1', 10),
   };
 }
@@ -49,6 +50,7 @@ function updateUrl(filters) {
   if (filters.speaker) params.set('speaker', filters.speaker);
   filters.roles.forEach((r) => params.append('role', r));
   filters.topics.forEach((t) => params.append('topic', t));
+  filters.laws.forEach((l) => params.append('law', l));
   if (filters.page > 1) params.set('page', String(filters.page));
   const qs = params.toString();
   const newUrl = qs ? `${window.location.pathname}?${qs}` : window.location.pathname;
@@ -70,6 +72,7 @@ export default function FilterPanel() {
   const [committees, setCommittees] = useState([]);
   const [parties, setParties] = useState([]);
   const [topicOptions, setTopicOptions] = useState([]);
+  const [lawOptions, setLawOptions] = useState([]);
 
   // フィルタ状態（URLから初期化）
   const initialParams = useMemo(() => parseUrlParams(), []);
@@ -83,6 +86,7 @@ export default function FilterPanel() {
     initialParams.roles && initialParams.roles.length > 0 ? initialParams.roles : ALL_ROLES
   );
   const [selectedTopics, setSelectedTopics] = useState(initialParams.topics || []);
+  const [selectedLaws, setSelectedLaws] = useState(initialParams.laws || []);
   const [page, setPage] = useState(initialParams.page || 1);
 
   // デバウンス済み発言者テキスト
@@ -95,24 +99,27 @@ export default function FilterPanel() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const [indexRes, committeesRes, partiesRes, topicsRes] = await Promise.all([
+        const [indexRes, committeesRes, partiesRes, topicsRes, lawsRes] = await Promise.all([
           fetch(`${BASE_URL}/api/index.json`),
           fetch(`${BASE_URL}/api/committees.json`),
           fetch(`${BASE_URL}/api/parties.json`),
           fetch(`${BASE_URL}/api/topics.json`),
+          fetch(`${BASE_URL}/api/laws.json`),
         ]);
 
-        const [indexJson, committeesJson, partiesJson, topicsJson] = await Promise.all([
+        const [indexJson, committeesJson, partiesJson, topicsJson, lawsJson] = await Promise.all([
           indexRes.json(),
           committeesRes.json(),
           partiesRes.json(),
           topicsRes.json(),
+          lawsRes.json(),
         ]);
 
         setIndexData(indexJson);
         setCommittees(committeesJson.map((c) => c.name));
         setParties(partiesJson.map((p) => p.name));
         setTopicOptions(topicsJson.map((t) => t.name));
+        setLawOptions(lawsJson);
       } catch (e) {
         setError(`データの読み込みに失敗しました: ${e.message}`);
       } finally {
@@ -133,9 +140,10 @@ export default function FilterPanel() {
       speaker: debouncedSpeaker,
       roles: selectedRoles.length === ALL_ROLES.length ? [] : selectedRoles,
       topics: selectedTopics,
+      laws: selectedLaws,
       page,
     }),
-    [chamber, dateFrom, dateTo, selectedCommittees, selectedParties, debouncedSpeaker, selectedRoles, selectedTopics, page]
+    [chamber, dateFrom, dateTo, selectedCommittees, selectedParties, debouncedSpeaker, selectedRoles, selectedTopics, selectedLaws, page]
   );
 
   useEffect(() => {
@@ -170,6 +178,11 @@ export default function FilterPanel() {
         if (selectedTopics.length > 0) {
           const hasTopic = entry.topics.some((t) => selectedTopics.includes(t));
           if (!hasTopic) return false;
+        }
+        // 関連法案フィルタ（OR条件）
+        if (selectedLaws.length > 0) {
+          const hasLaw = (entry.related_laws || []).some((l) => selectedLaws.includes(l));
+          if (!hasLaw) return false;
         }
         return true;
       })
@@ -214,7 +227,7 @@ export default function FilterPanel() {
         return { ...entry, qa_pairs: topicFiltered };
       })
       .filter((entry) => entry.qa_pairs.length > 0);
-  }, [indexData, chamber, dateFrom, dateTo, selectedCommittees, selectedParties, debouncedSpeaker, selectedRoles, selectedTopics]);
+  }, [indexData, chamber, dateFrom, dateTo, selectedCommittees, selectedParties, debouncedSpeaker, selectedRoles, selectedTopics, selectedLaws]);
 
   const totalCount = useMemo(
     () => indexData.reduce((sum, e) => sum + e.qa_pairs.length, 0),
@@ -236,6 +249,7 @@ export default function FilterPanel() {
     setSpeakerText('');
     setSelectedRoles(ALL_ROLES);
     setSelectedTopics([]);
+    setSelectedLaws([]);
     setPage(1);
   }
 
@@ -255,7 +269,8 @@ export default function FilterPanel() {
     selectedParties.length > 0 ||
     speakerText !== '' ||
     selectedRoles.length !== ALL_ROLES.length ||
-    selectedTopics.length > 0;
+    selectedTopics.length > 0 ||
+    selectedLaws.length > 0;
 
   if (loading) {
     return (
@@ -348,7 +363,7 @@ export default function FilterPanel() {
           </div>
         </div>
 
-        {/* 委員会・政党・トピック */}
+        {/* 委員会・政党・トピック・関連法案 */}
         <div className="filter-row filter-row-selects">
           <MultiSelect
             label="委員会"
@@ -368,6 +383,24 @@ export default function FilterPanel() {
             value={selectedTopics}
             onChange={handleFilterChange(setSelectedTopics)}
           />
+          {lawOptions.length > 0 && (
+            <MultiSelect
+              label="関連法案"
+              options={lawOptions.map((l) => l.short_title)}
+              value={selectedLaws.map((id) => {
+                const law = lawOptions.find((l) => l.id === id);
+                return law ? law.short_title : id;
+              })}
+              onChange={(titles) => {
+                const ids = titles.map((t) => {
+                  const law = lawOptions.find((l) => l.short_title === t);
+                  return law ? law.id : t;
+                });
+                handleFilterChange(setSelectedLaws)(ids);
+              }}
+              placeholder="法案で絞り込み..."
+            />
+          )}
         </div>
 
         {/* 発言者・役割 */}

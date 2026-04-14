@@ -51,9 +51,7 @@ function getMonthPositions(weeks) {
 
 export default function SessionCalendar({ data = {} }) {
   const [tooltip, setTooltip] = useState(null);
-  const base = typeof window !== "undefined"
-    ? (document.querySelector("base")?.href?.replace(/\/$/, "") || "")
-    : "";
+  const base = import.meta.env.BASE_URL?.replace(/\/$/, "") || "";
 
   const weeks = buildWeeks(data);
   const monthPositions = getMonthPositions(weeks);

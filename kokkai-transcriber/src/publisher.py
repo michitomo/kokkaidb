@@ -12,6 +12,17 @@ logger = logging.getLogger(__name__)
 REPO_ROOT = Path(__file__).parent.parent.parent
 
 
+def _get_default_branch() -> str:
+    """リモートのデフォルトブランチ名を取得する。"""
+    try:
+        result = _run_git("symbolic-ref", "refs/remotes/origin/HEAD")
+        # Output: "refs/remotes/origin/main" or "refs/remotes/origin/master"
+        return result.stdout.strip().split("/")[-1]
+    except subprocess.CalledProcessError:
+        logger.warning("Could not detect default branch, falling back to 'main'")
+        return "main"
+
+
 def publish_session(
     output_dir: Path,
     chamber: str,
@@ -41,7 +52,8 @@ def publish_session(
     commit_msg = f"data: {chamber} {date} {committee} ({session_id})"
     _run_git("commit", "-m", commit_msg)
 
-    _run_git("push", "origin", "main")
+    branch = _get_default_branch()
+    _run_git("push", "origin", branch)
 
     logger.info("Published: %s", commit_msg)
 

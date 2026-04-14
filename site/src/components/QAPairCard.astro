@@ -4,9 +4,11 @@ import type { QAPair, SessionMetadata } from '../lib/data';
 interface Props {
   pair: QAPair;
   session?: SessionMetadata;
+  segmentFullTextDuplicate?: boolean;
 }
 
 const { pair, session } = Astro.props;
+const segmentDup = Astro.props.segmentFullTextDuplicate ?? false;
 const score = pair.answer.evasion_score;
 const evasionColor = score < 0.3 ? '#16a34a' : score < 0.7 ? '#d97706' : '#dc2626';
 const evasionLabel = score < 0.3 ? '低' : score < 0.7 ? '中' : '高';
@@ -74,7 +76,7 @@ const chamberName = session?.chamber === 'shugiin' ? '衆議院TV' : session?.ch
       )}
       {pair.question.full_text && (
         <details class="full-text-details">
-          <summary class="expand-toggle">全文を表示</summary>
+          <summary class="expand-toggle">{segmentDup ? 'セグメント全文を表示' : '全文を表示'}</summary>
           <p class="full-text">{pair.question.full_text}</p>
         </details>
       )}
@@ -94,7 +96,7 @@ const chamberName = session?.chamber === 'shugiin' ? '衆議院TV' : session?.ch
       )}
       {pair.answer.full_text && (
         <details class="full-text-details">
-          <summary class="expand-toggle">全文を表示</summary>
+          <summary class="expand-toggle">{segmentDup ? 'セグメント全文を表示' : '全文を表示'}</summary>
           <p class="full-text">{pair.answer.full_text}</p>
         </details>
       )}

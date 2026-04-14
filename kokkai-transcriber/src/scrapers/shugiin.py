@@ -125,6 +125,7 @@ def _extract_hls_url(soup: BeautifulSoup) -> str:
     """hidden input #vtag_src_base_vod からHLS URLを取得する。"""
     tag = soup.find("input", {"id": "vtag_src_base_vod"})
     if not tag:
+        logger.debug("Hidden input #vtag_src_base_vod not found in page")
         return ""
     value = tag.get("value", "")
     if not value:
@@ -302,6 +303,10 @@ def _find_speaker_row_data(anchor_tag: object) -> tuple[str, int]:
             return _parse_table_row(parent)
         parent = getattr(parent, "parent", None)
 
+    logger.warning(
+        "Could not find parent <tr> for speaker anchor: %s",
+        getattr(anchor_tag, "text", "")[:50],
+    )
     return "", 0
 
 
