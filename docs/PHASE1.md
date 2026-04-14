@@ -147,14 +147,14 @@ kokkai-transcriber/
 
 **やること:**
 - `speaker_tagger.py` に `tag_speakers(raw_text: str, segment_speaker: SpeakerInfo, all_speakers: list[SpeakerInfo]) -> list[Utterance]` を実装
-- DeepInfra DeepSeek V3をOpenAI互換APIで呼び出す:
+- DeepInfra DeepSeek V3.2をOpenAI互換APIで呼び出す:
   ```python
   client = openai.OpenAI(
       api_key=os.environ["DEEPINFRA_API_KEY"],
       base_url="https://api.deepinfra.com/v1/openai",
   )
   response = client.chat.completions.create(
-      model="deepseek-ai/DeepSeek-V3",
+      model="deepseek-ai/DeepSeek-V3.2",
       messages=[system_prompt, user_prompt],
       temperature=0.1,
       response_format={"type": "json_object"},
@@ -185,7 +185,7 @@ kokkai-transcriber/
   - `generate_qa_pairs(utterances: list[SegmentUtterances]) -> QAPairsOutput`
   - `generate_summary(utterances: list[SegmentUtterances], qa_pairs: QAPairsOutput) -> SummaryOutput`
   - `generate_topics(qa_pairs: QAPairsOutput) -> TopicsOutput`
-- 各関数ともDeepInfra DeepSeek V3をJSON modeで呼び出す
+- 各関数ともDeepInfra DeepSeek V3.2をJSON modeで呼び出す
 - Q&Aペア生成のプロンプトには以下を含む:
   - 質問要旨と答弁要旨の要約
   - `evasion_score`: 0.0（明確回答）〜1.0（完全回避）

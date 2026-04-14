@@ -266,12 +266,12 @@ http://hlsvod.shugiintv.go.jp/vod/_definst_/amlst:YYYY/YYYY-MMDD-HHMM-SS/playlis
    promptパラメータに答弁者候補名を含めて固有名詞精度向上
    コスト: $0.0002/min → 3時間セッション = $0.036
 
-5. LLM話者タグ付け（DeepInfra DeepSeek V3等）
+5. LLM話者タグ付け（DeepInfra DeepSeek V3.2等）
    セグメント内の話者交代を検出
    委員長の指名発言パターン、答弁冒頭定型句で分離
    → utterances配列（speaker, role, text）
 
-6. LLM清書・構造化（DeepInfra DeepSeek V3等）
+6. LLM清書・構造化（DeepInfra DeepSeek V3.2等）
    Q&Aペア生成（質問要旨 + 答弁要旨 + 回避度 + 約束事項）
    セッション要約、トピック抽出
    → qa_pairs.json, summary.json, topics.json
@@ -410,7 +410,7 @@ kokkai-db/
   "source_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&deli_id=56149",
   "processed_at": "2026-04-09T18:30:00+09:00",
   "whisper_model": "deepinfra/whisper-large-v3-turbo",
-  "llm_model": "deepseek-ai/DeepSeek-V3",
+  "llm_model": "deepseek-ai/DeepSeek-V3.2",
   "speakers": [
     {
       "name": "古川あおい",
@@ -687,10 +687,10 @@ class OpenRouterClient {
 
 | 用途 | モデル | 理由 |
 |------|--------|------|
-| 話者タグ付け（ビルド時） | DeepSeek V3 | 安い、構造化出力が得意 |
+| 話者タグ付け（ビルド時） | DeepSeek V3.2 | 安い、構造化出力が得意 |
 | 答弁比較・分析 | Claude Sonnet / GPT-4o | ニュアンス分析に強い |
-| SNS・ブリーフ生成 | DeepSeek V3 | コスト優先 |
-| 自然言語クエリ | DeepSeek V3 | フィルタ→要約の2段処理 |
+| SNS・ブリーフ生成 | DeepSeek V3.2 | コスト優先 |
+| 自然言語クエリ | DeepSeek V3.2 | フィルタ→要約の2段処理 |
 
 UIにモデルセレクタを配置し、ユーザーが選択可能にする。
 
@@ -722,8 +722,8 @@ BYOK側のLLMコストはユーザー負担（OpenRouterの従量課金）。
 - [ ] HLSストリームからffmpegで音声抽出
 - [ ] 発言者タイムスタンプでWAVセグメント分割
 - [ ] DeepInfra Whisperで文字起こし（promptに答弁者名含む）
-- [ ] DeepSeek V3で話者タグ付け
-- [ ] DeepSeek V3でQ&Aペア生成・要約・トピック抽出
+- [ ] DeepSeek V3.2で話者タグ付け
+- [ ] DeepSeek V3.2でQ&Aペア生成・要約・トピック抽出
 - [ ] 全出力JSONの構造レビュー・確定
 
 ### Phase 2: Docker化 + サイト基盤 + Scraper抽象化（2-3日）

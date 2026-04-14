@@ -1,0 +1,47 @@
+{
+  "raw_content": "{\n  \"topics\": [\n    {\n      \"name\": \"健康保険法改正と制度持続可能性\",\n      \"description\": \"健康保険法等の一部改正案を通じ、少子高齢化や医療費増大に対応した持続可能な医療保険制度の構築に向けた政府の基本的方針を問うもの。\",\n      \"related_qa_ids\": [\"qa_001\"],\n      \"related_speakers\": [\"高階恵美子\"]\n    },\n    {\n      \"name\": \"OTC類似薬の保険給付見直し\",\n      \"description\": \"市販薬と類似する医薬品の保険給付対象見直しに伴い、患者の経済的負担や医療アクセス確保をどう配慮するかに関する判断基準を問うもの。\",\n      \"related_qa_ids\": [\"qa_002\"],\n      \"related_speakers\": [\"伊東信久\"]\n    },\n    {\n      \"name\": \"医療物資の安定供給体制\",\n      \"description\": \"医薬品や医療機器等の供給途絶を防ぐため、中長期的な調達・備蓄・生産体制の整備方針や具体的な対策を問うもの。\",\n      \"related_qa_ids\": [\"qa_003\"],\n      \"related_speakers\": [\"豊田真由子\"]\n    }\n  ]\n}",
+  "parsed": {
+    "topics": [
+      {
+        "name": "健康保険法改正と制度持続可能性",
+        "description": "健康保険法等の一部改正案を通じ、少子高齢化や医療費増大に対応した持続可能な医療保険制度の構築に向けた政府の基本的方針を問うもの。",
+        "related_qa_ids": [
+          "qa_001"
+        ],
+        "related_speakers": [
+          "高階恵美子"
+        ]
+      },
+      {
+        "name": "OTC類似薬の保険給付見直し",
+        "description": "市販薬と類似する医薬品の保険給付対象見直しに伴い、患者の経済的負担や医療アクセス確保をどう配慮するかに関する判断基準を問うもの。",
+        "related_qa_ids": [
+          "qa_002"
+        ],
+        "related_speakers": [
+          "伊東信久"
+        ]
+      },
+      {
+        "name": "医療物資の安定供給体制",
+        "description": "医薬品や医療機器等の供給途絶を防ぐため、中長期的な調達・備蓄・生産体制の整備方針や具体的な対策を問うもの。",
+        "related_qa_ids": [
+          "qa_003"
+        ],
+        "related_speakers": [
+          "豊田真由子"
+        ]
+      }
+    ]
+  },
+  "latency_seconds": 41.06,
+  "input_tokens": 363,
+  "output_tokens": 2233,
+  "total_tokens": 2596,
+  "model": "qwen-3.6-plus",
+  "model_id": "qwen/qwen3.6-plus",
+  "task": "topics",
+  "case_id": "topics_56149",
+  "json_valid": true,
+  "cost_estimate": 0.00447414
+}

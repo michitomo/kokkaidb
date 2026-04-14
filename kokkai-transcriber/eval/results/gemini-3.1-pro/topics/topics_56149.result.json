@@ -1,0 +1,39 @@
+{
+  "raw_content": "{\n  \"topics\": [\n    {\n      \"name\": \"医療保険制度の持続可能性と法改正\",\n      \"description\": \"健康保険法改正案の趣旨やOTC類似薬の保険給付見直しなど、持続可能な医療保険制度の実現に向けた議論。\",\n      \"related_qa_ids\": [\n        \"qa_001\",\n        \"qa_002\"\n      ],\n      \"related_speakers\": [\n        \"高階恵美子\",\n        \"伊東信久\"\n      ]\n    },\n    {\n      \"name\": \"医療物資の安定供給\",\n      \"description\": \"医療物資の安定供給に向けた中長期的な取り組みや具体的方針に関する議論。\",\n      \"related_qa_ids\": [\n        \"qa_003\"\n      ],\n      \"related_speakers\": [\n        \"豊田真由子\"\n      ]\n    }\n  ]\n}",
+  "parsed": {
+    "topics": [
+      {
+        "name": "医療保険制度の持続可能性と法改正",
+        "description": "健康保険法改正案の趣旨やOTC類似薬の保険給付見直しなど、持続可能な医療保険制度の実現に向けた議論。",
+        "related_qa_ids": [
+          "qa_001",
+          "qa_002"
+        ],
+        "related_speakers": [
+          "高階恵美子",
+          "伊東信久"
+        ]
+      },
+      {
+        "name": "医療物資の安定供給",
+        "description": "医療物資の安定供給に向けた中長期的な取り組みや具体的方針に関する議論。",
+        "related_qa_ids": [
+          "qa_003"
+        ],
+        "related_speakers": [
+          "豊田真由子"
+        ]
+      }
+    ]
+  },
+  "latency_seconds": 15.62,
+  "input_tokens": 352,
+  "output_tokens": 956,
+  "total_tokens": 1308,
+  "model": "gemini-3.1-pro",
+  "model_id": "google/gemini-3.1-pro-preview",
+  "task": "topics",
+  "case_id": "topics_56149",
+  "json_valid": true,
+  "cost_estimate": 0.012176
+}

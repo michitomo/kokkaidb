@@ -1,0 +1,47 @@
+{
+  "raw_content": "{\n  \"topics\": [\n    {\n      \"name\": \"健康保険法改正案\",\n      \"description\": \"持続可能な医療保険制度実現を目的とした健康保険法等の一部改正に関する政府の方針を問う質問。\",\n      \"related_qa_ids\": [\"qa_001\"],\n      \"related_speakers\": [\"高階恵美子\"]\n    },\n    {\n      \"name\": \"OTC類似薬の保険給付見直し\",\n      \"description\": \"OTC類似薬の保険給付対象の見直しに際し、患者配慮の判断基準を求める質問。\",\n      \"related_qa_ids\": [\"qa_002\"],\n      \"related_speakers\": [\"伊東信久\"]\n    },\n    {\n      \"name\": \"医療物資の安定供給\",\n      \"description\": \"医療物資の中長期的な安定供給に関する具体的な方針を質問。\",\n      \"related_qa_ids\": [\"qa_003\"],\n      \"related_speakers\": [\"豊田真由子\"]\n    }\n  ]\n}",
+  "parsed": {
+    "topics": [
+      {
+        "name": "健康保険法改正案",
+        "description": "持続可能な医療保険制度実現を目的とした健康保険法等の一部改正に関する政府の方針を問う質問。",
+        "related_qa_ids": [
+          "qa_001"
+        ],
+        "related_speakers": [
+          "高階恵美子"
+        ]
+      },
+      {
+        "name": "OTC類似薬の保険給付見直し",
+        "description": "OTC類似薬の保険給付対象の見直しに際し、患者配慮の判断基準を求める質問。",
+        "related_qa_ids": [
+          "qa_002"
+        ],
+        "related_speakers": [
+          "伊東信久"
+        ]
+      },
+      {
+        "name": "医療物資の安定供給",
+        "description": "医療物資の中長期的な安定供給に関する具体的な方針を質問。",
+        "related_qa_ids": [
+          "qa_003"
+        ],
+        "related_speakers": [
+          "豊田真由子"
+        ]
+      }
+    ]
+  },
+  "latency_seconds": 1.61,
+  "input_tokens": 494,
+  "output_tokens": 628,
+  "total_tokens": 1122,
+  "model": "gpt-oss-120b",
+  "model_id": "openai/gpt-oss-120b",
+  "task": "topics",
+  "case_id": "topics_56149",
+  "json_valid": true,
+  "cost_estimate": 0.000138586
+}

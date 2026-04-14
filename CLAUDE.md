@@ -39,7 +39,7 @@ kokkai-db/                          # このリポジトリ
 │       │   ├── extractor.py        # ffmpeg HLS/MP4 → WAVセグメント
 │       │   └── sangiin_resolver.py # mediasp.jp hash → ストリームURL解決
 │       ├── transcriber.py          # DeepInfra Whisper large-v3-turbo
-│       ├── speaker_tagger.py       # LLM話者タグ付け（DeepSeek V3）
+│       ├── speaker_tagger.py       # LLM話者タグ付け（DeepSeek V3.2）
 │       ├── structurer.py           # LLM Q&Aペア・要約・トピック生成
 │       ├── publisher.py            # git commit + push
 │       └── state.py                # SQLite状態管理
@@ -74,7 +74,7 @@ kokkai-db/                          # このリポジトリ
 | データ収集 | Python 3.12+、requests、BeautifulSoup4、ffmpeg |
 | 状態管理 | SQLite（両院統合、`chamber + session_id` 複合PK） |
 | 文字起こし | DeepInfra Whisper large-v3-turbo（$0.0002/min） |
-| LLM処理 | DeepInfra DeepSeek V3（話者タグ・構造化・要約） |
+| LLM処理 | DeepInfra DeepSeek V3.2（話者タグ・構造化・要約） |
 | SSG | Astro 5.x（Content Collections、partial hydration） |
 | 検索 | Pagefind（静的CJK全文検索） |
 | チャート | Recharts（React互換） |
@@ -202,7 +202,7 @@ CREATE TABLE processed_sessions (
 | `hlsvod.shugiintv.go.jp` | 衆議院HLS音声 | なし |
 | `public.mediasp.jp` | 参議院動画（hash指定） | なし（Playwright使用） |
 | DeepInfra Whisper | 文字起こし | `DEEPINFRA_API_KEY` |
-| DeepInfra DeepSeek V3 | 話者タグ・構造化 | `DEEPINFRA_API_KEY` |
+| DeepInfra DeepSeek V3.2 | 話者タグ・構造化 | `DEEPINFRA_API_KEY` |
 | OpenRouter | BYOK LLM（ブラウザのみ） | ユーザー入力キー |
 
 環境変数は `kokkai-transcriber/.env`（gitignore済み）に配置。`DEEPINFRA_API_KEY` のみ必須。

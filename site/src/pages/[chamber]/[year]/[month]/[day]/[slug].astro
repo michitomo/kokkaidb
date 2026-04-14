@@ -1,0 +1,137 @@
+---
+import BaseLayout from '../../../../../layouts/BaseLayout.astro';
+import QAPairCard from '../../../../../components/QAPairCard.astro';
+import { getAllSessions, getSessionData, sessionSlug } from '../../../../../lib/data';
+
+export function getStaticPaths() {
+  const sessions = getAllSessions();
+  return sessions.map(s => {
+    const [year, month, day] = s.date.split('-');
+    const slug = sessionSlug(s);
+    return {
+      params: { chamber: s.chamber, year, month, day, slug },
+    };
+  });
+}
+
+const { chamber, year, month, day, slug } = Astro.params;
+const data = getSessionData(chamber!, year!, month!, day!, slug!);
+const { metadata, qaPairs, summary } = data;
+
+const chamberLabel = metadata.chamber === 'shugiin'
+  ? '衆議院インターネット審議中継'
+  : '参議院インターネット審議中継';
+---
+<BaseLayout title={`${metadata.committee}（${metadata.date}）- 国会議事録DB`}>
+  <!-- 出所リンク（著作権法第48条） -->
+  <div class="source-link">
+    出所: <a href={metadata.source_url} target="_blank" rel="noopener">{chamberLabel}</a>
+  </div>
+
+  <h1 data-pagefind-meta="title">{metadata.committee}</h1>
+  <div class="meta">
+    <span class={`chamber-badge ${metadata.chamber}`}>
+      {metadata.chamber === 'shugiin' ? '衆議院' : '参議院'}
+    </span>
+    <span class="date">{metadata.date}</span>
+    {metadata.duration && <span class="duration">{metadata.duration}</span>}
+  </div>
+
+  <div data-pagefind-body>
+    <!-- セッション概要 -->
+    <section class="section">
+      <h2>概要</h2>
+      <p>{summary.session_summary}</p>
+      {summary.key_topics.length > 0 && (
+        <div class="topics">
+          {summary.key_topics.map(t => (
+            <span class="topic-tag">{t}</span>
+          ))}
+        </div>
+      )}
+    </section>
+
+    <!-- 発言者一覧 -->
+    <section class="section">
+      <h2>発言者（{metadata.speakers.length}名）</h2>
+      <ul class="speaker-list">
+        {metadata.speakers.map(s => (
+          <li>
+            <strong>{s.name}</strong>
+            {s.affiliation && <span class="affiliation">（{s.affiliation}）</span>}
+            {s.start_time && <span class="time"> — {s.start_time}</span>}
+            {s.duration_minutes > 0 && <span class="duration-min"> / {s.duration_minutes}分</span>}
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <!-- Q&Aペア -->
+    <section class="section">
+      <h2>質疑応答（{qaPairs.pairs.length}件）</h2>
+      {qaPairs.pairs.length === 0 ? (
+        <p>Q&Aペアが抽出されませんでした。</p>
+      ) : (
+        qaPairs.pairs.map(pair => (
+          <QAPairCard pair={pair} />
+        ))
+      )}
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .source-link {
+    font-size: 0.8rem;
+    color: #9ca3af;
+    margin-bottom: 0.5rem;
+  }
+  .source-link a { color: #9ca3af; }
+  h1 { font-size: 1.5rem; margin: 0 0 0.5rem; }
+  .meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+  }
+  .chamber-badge {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+  .chamber-badge.shugiin { background: #dbeafe; color: #1e40af; }
+  .chamber-badge.sangiin { background: #fce7f3; color: #9d174d; }
+  .date { color: #374151; }
+  .duration { color: #9ca3af; }
+  .section { margin-bottom: 2rem; }
+  .section h2 { font-size: 1.1rem; margin-bottom: 0.75rem; }
+  .topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.75rem;
+  }
+  .topic-tag {
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    padding: 0.15rem 0.5rem;
+    font-size: 0.8rem;
+    color: #475569;
+  }
+  .speaker-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .speaker-list li { font-size: 0.9rem; }
+  .affiliation { color: #6b7280; }
+  .time { color: #9ca3af; }
+  .duration-min { color: #9ca3af; }
+</style>

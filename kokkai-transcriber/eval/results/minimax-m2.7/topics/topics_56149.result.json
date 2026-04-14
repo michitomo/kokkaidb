@@ -1,0 +1,14 @@
+{
+  "raw_content": "```json\n{\n  \"topics\": [\n    {\n      \"name\": \"持続可能な医療保険制度改革\",\n      \"description\": \"健康保険法改正案を通じて、持続可能な医療保険制度を実現するための政府の考えや取り組みについて審議。\",\n      \"related_qa_ids\": [\"qa_001\"],\n      \"related_speakers\": [\"高階恵美子\"]\n    },\n    {\n      \"name\": \"OTC類似薬の保険給付見直し\",\n      \"description\": \"市販類似薬の保険給付再见を検討するにあたり、患者への配慮と判断基準に関する問題点についての質疑。\",\n      \"related_qa_ids\": [\"qa_002\"],\n      \"related_speakers\": [\"伊東信久\"]\n    },\n    {\n      \"name\": \"医療物資の安定供給体制\",\n      \"description\": \"医療物資の安定供給を確保するための中長期的な取り組みと具体的方針に関する議論。\",\n      \"related_qa_ids\": [\"qa_003\"],\n      \"related_speakers\": [\"豊田真由子\"]\n    }\n  ]\n}\n```",
+  "parsed": null,
+  "latency_seconds": 8.49,
+  "input_tokens": 299,
+  "output_tokens": 366,
+  "total_tokens": 665,
+  "model": "minimax-m2.7",
+  "model_id": "minimax/minimax-m2.7",
+  "task": "topics",
+  "case_id": "topics_56149",
+  "json_valid": false,
+  "cost_estimate": 0.0005289
+}

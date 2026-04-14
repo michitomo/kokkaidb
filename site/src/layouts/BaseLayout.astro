@@ -1,0 +1,94 @@
+---
+interface Props {
+  title?: string;
+}
+
+const { title = '国会議事録リアルタイムDB' } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <style>
+      *, *::before, *::after { box-sizing: border-box; }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans JP',
+          sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #fafafa;
+        color: #111;
+        line-height: 1.6;
+      }
+      header {
+        background: #fff;
+        border-bottom: 1px solid #e5e7eb;
+        padding: 0.75rem 1.5rem;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+      header .inner {
+        max-width: 960px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+      }
+      header a.logo {
+        font-weight: 700;
+        font-size: 1rem;
+        text-decoration: none;
+        color: #111;
+        white-space: nowrap;
+      }
+      nav {
+        display: flex;
+        gap: 1rem;
+      }
+      nav a {
+        text-decoration: none;
+        color: #555;
+        font-size: 0.9rem;
+      }
+      nav a:hover { color: #111; }
+      main {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 1.5rem;
+      }
+      footer {
+        margin-top: 3rem;
+        border-top: 1px solid #e5e7eb;
+        padding: 1rem 1.5rem;
+        font-size: 0.8rem;
+        color: #888;
+        text-align: center;
+      }
+      footer a { color: #888; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="inner">
+        <a class="logo" href={base + '/'}>🏛 国会議事録DB</a>
+        <nav>
+          <a href={base + '/browse'}>一覧</a>
+          <a href={base + '/search'}>検索</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      出所:
+      <a href="https://www.shugiintv.go.jp/" target="_blank" rel="noopener">衆議院インターネット審議中継</a>
+      ／
+      <a href="https://www.webtv.sangiin.go.jp/" target="_blank" rel="noopener">参議院インターネット審議中継</a>
+    </footer>
+  </body>
+</html>

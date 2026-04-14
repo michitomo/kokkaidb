@@ -1,0 +1,47 @@
+{
+  "raw_content": "{\n  \"topics\": [\n    {\n      \"name\": \"医療保険制度の持続可能性と法改正\",\n      \"description\": \"健康保険法等の一部を改正する法律案に基づき、将来にわたって持続可能な医療保険制度を構築するための政府の基本方針や考え方を扱う。\",\n      \"related_qa_ids\": [\n        \"qa_001\"\n      ],\n      \"related_speakers\": [\n        \"高階恵美子\"\n      ]\n    },\n    {\n      \"name\": \"医薬品の保険給付範囲と患者負担\",\n      \"description\": \"市販薬（OTC薬）と類似した医療用医薬品の保険給付見直しに関し、患者の不利益を避けるための判断基準や制度設計を扱う。\",\n      \"related_qa_ids\": [\n        \"qa_002\"\n      ],\n      \"related_speakers\": [\n        \"伊東信久\"\n      ]\n    },\n    {\n      \"name\": \"医療物資のサプライチェーン確保\",\n      \"description\": \"医療現場で必要とされる物資の安定供給を維持するため、中長期的な視点を含めた具体的な供給体制の強化策を扱う。\",\n      \"related_qa_ids\": [\n        \"qa_003\"\n      ],\n      \"related_speakers\": [\n        \"豊田真由子\"\n      ]\n    }\n  ]\n}",
+  "parsed": {
+    "topics": [
+      {
+        "name": "医療保険制度の持続可能性と法改正",
+        "description": "健康保険法等の一部を改正する法律案に基づき、将来にわたって持続可能な医療保険制度を構築するための政府の基本方針や考え方を扱う。",
+        "related_qa_ids": [
+          "qa_001"
+        ],
+        "related_speakers": [
+          "高階恵美子"
+        ]
+      },
+      {
+        "name": "医薬品の保険給付範囲と患者負担",
+        "description": "市販薬（OTC薬）と類似した医療用医薬品の保険給付見直しに関し、患者の不利益を避けるための判断基準や制度設計を扱う。",
+        "related_qa_ids": [
+          "qa_002"
+        ],
+        "related_speakers": [
+          "伊東信久"
+        ]
+      },
+      {
+        "name": "医療物資のサプライチェーン確保",
+        "description": "医療現場で必要とされる物資の安定供給を維持するため、中長期的な視点を含めた具体的な供給体制の強化策を扱う。",
+        "related_qa_ids": [
+          "qa_003"
+        ],
+        "related_speakers": [
+          "豊田真由子"
+        ]
+      }
+    ]
+  },
+  "latency_seconds": 3.27,
+  "input_tokens": 350,
+  "output_tokens": 325,
+  "total_tokens": 675,
+  "model": "gemini-3-flash",
+  "model_id": "google/gemini-3-flash-preview",
+  "task": "topics",
+  "case_id": "topics_56149",
+  "json_valid": true,
+  "cost_estimate": 0.00115
+}

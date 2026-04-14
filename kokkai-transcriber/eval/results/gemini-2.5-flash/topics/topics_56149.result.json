@@ -1,0 +1,39 @@
+{
+  "raw_content": "{\n  \"topics\": [\n    {\n      \"name\": \"医療保険制度改革\",\n      \"description\": \"持続可能な医療保険制度の実現に向けた政府の考え方や、具体的な制度改正に関する議論。\",\n      \"related_qa_ids\": [\n        \"qa_001\",\n        \"qa_002\"\n      ],\n      \"related_speakers\": [\n        \"高階恵美子\",\n        \"伊東信久\"\n      ]\n    },\n    {\n      \"name\": \"医療物資の安定供給\",\n      \"description\": \"医療現場における物資の安定的な確保に向けた、中長期的な政府の取り組みと方針。\",\n      \"related_qa_ids\": [\n        \"qa_003\"\n      ],\n      \"related_speakers\": [\n        \"豊田真由子\"\n      ]\n    }\n  ]\n}",
+  "parsed": {
+    "topics": [
+      {
+        "name": "医療保険制度改革",
+        "description": "持続可能な医療保険制度の実現に向けた政府の考え方や、具体的な制度改正に関する議論。",
+        "related_qa_ids": [
+          "qa_001",
+          "qa_002"
+        ],
+        "related_speakers": [
+          "高階恵美子",
+          "伊東信久"
+        ]
+      },
+      {
+        "name": "医療物資の安定供給",
+        "description": "医療現場における物資の安定的な確保に向けた、中長期的な政府の取り組みと方針。",
+        "related_qa_ids": [
+          "qa_003"
+        ],
+        "related_speakers": [
+          "豊田真由子"
+        ]
+      }
+    ]
+  },
+  "latency_seconds": 1.58,
+  "input_tokens": 350,
+  "output_tokens": 204,
+  "total_tokens": 554,
+  "model": "gemini-2.5-flash",
+  "model_id": "google/gemini-2.5-flash",
+  "task": "topics",
+  "case_id": "topics_56149",
+  "json_valid": true,
+  "cost_estimate": 0.000615
+}

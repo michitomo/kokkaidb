@@ -1,0 +1,47 @@
+{
+  "raw_content": "{\n  \"topics\": [\n    {\n      \"name\": \"医療保険制度の持続可能性\",\n      \"description\": \"健康保険法改正案を通じた持続可能な医療保険制度の実現に向けた政府の考え方や方針に関する議論。制度の長期的な安定性と財政基盤の強化が焦点。\",\n      \"related_qa_ids\": [\"qa_001\"],\n      \"related_speakers\": [\"高階恵美子（自由民主党・無所属の会）\"]\n    },\n    {\n      \"name\": \"医薬品の保険給付と患者負担\",\n      \"description\": \"OTC類似薬の保険給付見直しを中心に、患者負担の軽減や配慮の判断基準についての議論。医療費適正化と患者への影響のバランスが課題。\",\n      \"related_qa_ids\": [\"qa_002\"],\n      \"related_speakers\": [\"伊東信久（日本維新の会）\"]\n    },\n    {\n      \"name\": \"医療物資の供給体制強化\",\n      \"description\": \"医療物資の安定供確保に向けた中長期的な取り組みと具体的方針に関する議論。国内生産体制の強化やサプライチェーンのレジリエンス向上が焦点。\",\n      \"related_qa_ids\": [\"qa_003\"],\n      \"related_speakers\": [\"豊田真由子（参政党）\"]\n    }\n  ]\n}",
+  "parsed": {
+    "topics": [
+      {
+        "name": "医療保険制度の持続可能性",
+        "description": "健康保険法改正案を通じた持続可能な医療保険制度の実現に向けた政府の考え方や方針に関する議論。制度の長期的な安定性と財政基盤の強化が焦点。",
+        "related_qa_ids": [
+          "qa_001"
+        ],
+        "related_speakers": [
+          "高階恵美子（自由民主党・無所属の会）"
+        ]
+      },
+      {
+        "name": "医薬品の保険給付と患者負担",
+        "description": "OTC類似薬の保険給付見直しを中心に、患者負担の軽減や配慮の判断基準についての議論。医療費適正化と患者への影響のバランスが課題。",
+        "related_qa_ids": [
+          "qa_002"
+        ],
+        "related_speakers": [
+          "伊東信久（日本維新の会）"
+        ]
+      },
+      {
+        "name": "医療物資の供給体制強化",
+        "description": "医療物資の安定供確保に向けた中長期的な取り組みと具体的方針に関する議論。国内生産体制の強化やサプライチェーンのレジリエンス向上が焦点。",
+        "related_qa_ids": [
+          "qa_003"
+        ],
+        "related_speakers": [
+          "豊田真由子（参政党）"
+        ]
+      }
+    ]
+  },
+  "latency_seconds": 3.1,
+  "input_tokens": 353,
+  "output_tokens": 317,
+  "total_tokens": 670,
+  "model": "deepseek-v3.2",
+  "model_id": "deepseek/deepseek-v3.2",
+  "task": "topics",
+  "case_id": "topics_56149",
+  "json_valid": true,
+  "cost_estimate": 0.00021224000000000001
+}

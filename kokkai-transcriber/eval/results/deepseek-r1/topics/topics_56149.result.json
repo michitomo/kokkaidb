@@ -1,0 +1,14 @@
+{
+  "raw_content": "```json\n{\n  \"topics\": [\n    {\n      \"name\": \"健康保険法改正\",\n      \"description\": \"持続可能な医療保険制度を実現するための法改正に関する議論。保険制度の長期的な安定性と財源確保が焦点。\",\n      \"related_qa_ids\": [\"qa_001\"],\n      \"related_speakers\": [\"高階恵美子\"]\n    },\n    {\n      \"name\": \"OTC医薬品政策\",\n      \"description\": \"市販薬の保険給付見直しにおける患者負担軽減策。医療費適正化と国民のアクセス性のバランスが課題。\",\n      \"related_qa_ids\": [\"qa_002\"],\n      \"related_speakers\": [\"伊東信久\"]\n    },\n    {\n      \"name\": \"医療供給体制強化\",\n      \"description\": \"医療物資の安定供給を確保するための戦略的備蓄体制構築。災害時対応を含む中長期計画が求められる。\",\n      \"related_qa_ids\": [\"qa_003\"],\n      \"related_speakers\": [\"豊田真由子\"]\n    }\n  ]\n}\n```",
+  "parsed": null,
+  "latency_seconds": 25.27,
+  "input_tokens": 354,
+  "output_tokens": 609,
+  "total_tokens": 963,
+  "model": "deepseek-r1",
+  "model_id": "deepseek/deepseek-r1",
+  "task": "topics",
+  "case_id": "topics_56149",
+  "json_valid": false,
+  "cost_estimate": 0.0017703
+}

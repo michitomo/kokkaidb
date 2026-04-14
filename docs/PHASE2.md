@@ -6,6 +6,63 @@
 
 ---
 
+## Phase 1での確認事項（Phase 2開始前に把握すること）
+
+Phase 1（deli_id=56149、2026-04-09本会議）の実装・実行から得られた知見。Phase 2での実装時に考慮すること。
+
+### 確定した実装詳細
+
+**shugiintv.go.jpのパーシング**（`src/scrapers/shugiin.py`に実装済み）:
+- HLS URL: `vtag_src_base_vod` の value が `http://` で返るが実際は `https://`。`value.replace("http://", "https://", 1)` で正規化必須
+- 非発言者リンク除外: 「はじめから再生」「先頭から再生」「全体再生」は `_NON_SPEAKER_TEXTS` セットでフィルタ済み
+- 日付フォーマット: 西暦年 `(\d{4})年(\d+)月(\d+)日` を使用（令和年号ではなく西暦で返される）
+- 開始時刻フォーマット: `(\d{1,2})時\s*(\d{2})分` → `HH:MM` に変換
+- 委員会名: `<title>` タグから先に抽出し、本文が「本会議」なら直接使用
+
+**並列化パターン**（Step 1リファクタ後も維持すること）:
+- Whisper文字起こし（Step 4）: `ThreadPoolExecutor(max_workers=16)` + `as_completed` + `segment_index`でソート
+- LLM話者タグ付け（Step 5）: 同上。9セグメント並列で約5分
+- 要約・トピック生成（Step 6）: `ThreadPoolExecutor(max_workers=2)` で `generate_summary` と `generate_topics` を並列実行
+
+**依存関係・ビルド設定**:
+- ビルドバックエンド: `setuptools.build_meta`（`setuptools.backends.legacy:build` はPython 3.14で存在しない）
+- `python-dotenv>=1.0` がランタイム依存に必要（`.env` 読み込みのため）
+- `pyproject.toml` に `eval` オプショナル依存グループ（`pyyaml>=6.0`）あり
+- テスト: `tests/conftest.py` で `load_dotenv()` を最初に呼ぶことで統合テストが `.env` を読める
+
+**メタデータ**:
+- `metadata.duration` は空文字列のまま（実際のページにトータル時間の表示がない）。許容範囲
+
+### 実際のパイプライン実行時間（deli_id=56149、約2時間のセッション、9セグメント）
+
+| ステップ | 時間 |
+|---------|------|
+| Step 3: HLS音声ダウンロード + セグメント分割 | 約4分 |
+| Step 4: Whisper文字起こし（16並列） | 約2分 |
+| Step 5: LLM話者タグ付け（16並列） | 約5分 |
+| Step 6: Q&Aペア生成 + 要約・トピック（並列） | 約1分 |
+| **合計** | **約12分** |
+
+### 既知の問題（Phase 2以降で対応）
+
+| 問題 | 原因 | 対応フェーズ |
+|------|------|------------|
+| Whisperが答弁者の固有名詞を誤認識（例: 「高市早苗」→「高池晃」） | Whisperプロンプトに発言者名としてスクレイパー検出の質問者しか渡していない。答弁者（大臣等）が含まれない | Phase 3以降でプロンプト改善 |
+| Q&Aペア数が少ない（9セグメントで3ペアのみ） | `structurer.py` がセッション全体を1コンテキストとして扱い、関係性の薄いQ&Aを生成しない | Phase 3以降でプロンプト調整 |
+| `metadata.duration` が空 | 実ページに総時間要素がない | 低優先度。許容範囲 |
+
+### Step 1リファクタ時の注意点
+
+`src/scrapers/shugiin.py` を関数からクラスへリファクタする際、以下の修正済みロジックを必ず保持すること:
+- `http://` → `https://` のHLS URL正規化
+- `_NON_SPEAKER_TEXTS` による非発言者フィルタ
+- 西暦年日付パーシング
+- `(\d{1,2})時\s*(\d{2})分` の時刻パーシング
+
+既存のユニットテスト（`tests/test_shugiin_scraper.py`）がこれらのロジックをカバーしているので、リファクタ後も全テストがパスすることを確認すること。
+
+---
+
 ## 成果物
 
 Phase 2 完了時に以下が揃う:
@@ -52,6 +109,8 @@ Step 11: 結合テスト（Docker → data/ push → サイトビルド → デ�
 ### 目的
 
 Phase 1の`shugiin.py`はモジュールレベル関数で実装されている。Phase 3で参議院対応する際に同じインターフェースを使えるよう、`BaseScraper` ABCを定義し、`ShugiinScraper`クラスとして再編する。
+
+**注意**: リファクタ時に「Phase 1での確認事項 → Step 1リファクタ時の注意点」を参照し、修正済みパーシングロジックを必ず保持すること。
 
 ### やること
 
@@ -405,7 +464,7 @@ def test_chamber_filter(state_manager):
 
 - [ ] `src/state.py` に `StateManager` クラスが実装されている
 - [ ] 上記テストケースがすべてパスする
-- [ ] `state.db` が `.gitignore` に含まれている（Phase 1で対応済みか確認）
+- [ ] `state.db` が `.gitignore` に含まれている（未作成の場合は追加）
 - [ ] `ruff check src/state.py` と `mypy src/state.py` がエラーなし
 
 ---
@@ -627,6 +686,8 @@ def test_pipeline_no_push_flag():
 ### やること
 
 #### 5-1. `kokkai-transcriber/Dockerfile`
+
+**注意**: `pyproject.toml` のビルドバックエンドは `setuptools.build_meta` を使用すること（Phase 1で `setuptools.backends.legacy:build` はPython 3.14で存在しないことが判明）。ローカル開発環境がPython 3.14の場合にDockerで3.12を使う際も同様。
 
 ```dockerfile
 FROM python:3.12-slim
@@ -1426,6 +1487,8 @@ for s in sm.list_sessions():
 | GitHub Pagesの base path | リンク切れ | `astro.config.mjs` の `base` を正しく設定。全リンクで相対パスを使用 |
 | ShugiinScraperリファクタで既存テストが壊れる | CI失敗 | テストを先にクラスベースに書き換えてから本体を変更。red→greenの順 |
 | docker-compose のvolumesパーミッション | ファイル書き込み失敗 | Dockerfile で `--chown` を使うか、UID/GIDを合わせる |
+| **Phase 1確認済み** Whisper固有名詞誤認識 | metadata/utterancesの話者名が誤り | Phase 2では許容。Phase 3でWhisperプロンプトに答弁者（大臣等）の名前も渡す改善を行う |
+| **Phase 1確認済み** Q&Aペア生成数が少ない | 情報量不足 | Phase 2では許容。Phase 3でstructurer.pyのプロンプトを調整し、セグメント別Q&A生成を検討する |
 
 ---
 
@@ -1440,10 +1503,13 @@ for s in sm.list_sessions():
 Day 1完了時の確認:
 ```bash
 cd kokkai-transcriber
-python -m pytest -m "not integration"  # 全テストパス
+python -m pytest -m "not integration"  # 全テストパス（統合テスト除く）
+python -m pytest -m integration        # 統合テスト（DEEPINFRA_API_KEY必要）
 ruff check src/
 mypy src/
 ```
+
+**統合テストの`.env`読み込み**: `tests/conftest.py` の先頭で `from dotenv import load_dotenv; load_dotenv()` を呼ぶことで `DEEPINFRA_API_KEY` が自動読み込みされる（Phase 1で確立済み）。
 
 ### Day 2: インフラ + フロント（Step 5-9）
 

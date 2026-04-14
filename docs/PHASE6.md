@@ -88,7 +88,7 @@ Phase 6 完了時に以下が揃う:
 
 const STORAGE_KEY = "openrouter_api_key";
 const MODEL_KEY = "openrouter_model";
-const DEFAULT_MODEL = "deepseek/deepseek-chat-v3-0324";
+const DEFAULT_MODEL = "deepseek/deepseek-v3.2";
 
 export function getApiKey() {
   return sessionStorage.getItem(STORAGE_KEY);
@@ -221,7 +221,7 @@ export class OpenRouterError extends Error {
 │                                          │
 │ 分析モデル                               │
 │ ┌────────────────────────────────┐      │
-│ │ DeepSeek V3 (コスト優先)    ▼  │      │
+│ │ DeepSeek V3.2 (コスト優先)    ▼  │      │
 │ └────────────────────────────────┘      │
 │                                          │
 │ モデル説明:                              │
@@ -233,7 +233,7 @@ export class OpenRouterError extends Error {
 
 | 表示名 | モデルID | 用途の目安 |
 |--------|---------|-----------|
-| DeepSeek V3（コスト優先） | `deepseek/deepseek-chat-v3-0324` | SNS生成、要約、自然言語クエリ |
+| DeepSeek V3.2（コスト優先） | `deepseek/deepseek-v3.2` | SNS生成、要約、自然言語クエリ |
 | Claude Sonnet | `anthropic/claude-sonnet-4-20250514` | ニュアンス分析、答弁比較 |
 | GPT-4o | `openai/gpt-4o` | 汎用分析 |
 | Gemini 2.5 Flash | `google/gemini-2.5-flash-preview` | 高速・低コスト |

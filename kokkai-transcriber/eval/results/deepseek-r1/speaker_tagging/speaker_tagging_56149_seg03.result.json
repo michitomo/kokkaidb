@@ -1,0 +1,14 @@
+{
+  "raw_content": "```json\n{\n  \"utterances\": [\n    {\n      \"speaker\": \"早稲田ゆき\",\n      \"role\": \"質疑者\",\n      \"text\": \"中道改革連合の早稲田ゆきです...ご清聴ありがとうございました\"\n    },\n    {\n      \"speaker\": \"高市さなゆ\",\n      \"role\": \"答弁者\",\n      \"text\": \"早稲田ゆき議員のご質問にお答えいたします...在野の質問については関係大臣から答弁させます\"\n    },\n    {\n      \"speaker\": \"上野賢一郎\",\n      \"role\": \"厚生労働大臣\",\n      \"text\": \"早稲田ゆき議員のご質問にお答えをいたします...適切に運用してまいります\"\n    },\n    {\n      \"speaker\": \"山本一郎\",\n      \"role\": \"その他\",\n      \"text\": \"必要な費用を補助することとしており...適切に運用してまいります\"\n    }\n  ]\n}\n```",
+  "parsed": null,
+  "latency_seconds": 15.29,
+  "input_tokens": 4391,
+  "output_tokens": 1151,
+  "total_tokens": 5542,
+  "model": "deepseek-r1",
+  "model_id": "deepseek/deepseek-r1",
+  "task": "speaker_tagging",
+  "case_id": "speaker_tagging_56149_seg03",
+  "json_valid": false,
+  "cost_estimate": 0.0059512
+}

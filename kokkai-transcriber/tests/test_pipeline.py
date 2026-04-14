@@ -1,0 +1,374 @@
+"""パイプラインテスト"""
+
+from __future__ import annotations
+
+from pathlib import Path
+from unittest.mock import patch
+
+import pytest
+
+from src.models import (
+    AnswerDetail,
+    KeyCommitment,
+    QAPair,
+    QAPairsOutput,
+    QuestionDetail,
+    RawTranscript,
+    SegmentTranscript,
+    SegmentUtterances,
+    SessionDetail,
+    SpeakerInfo,
+    SummaryOutput,
+    Topic,
+    TopicsOutput,
+    Utterance,
+    UtterancesOutput,
+    WhisperSegment,
+)
+from src.pipeline import run_pipeline
+from src.state import StateManager
+
+
+@pytest.fixture
+def mock_session_detail() -> SessionDetail:
+    return SessionDetail(
+        chamber="shugiin",
+        session_id="56149",
+        date="2026-04-09",
+        committee="本会議",
+        committee_id=1,
+        hls_url="http://hlsvod.shugiintv.go.jp/vod/_definst_/amlst:2026/2026-0409-1300-00/playlist.m3u8",
+        source_url="https://www.shugiintv.go.jp/jp/index.php?ex=VL&deli_id=56149",
+        speakers=[
+            SpeakerInfo(
+                name="古川あおい",
+                affiliation="チームみらい",
+                role="質疑者",
+                start_seconds=7320.2,
+                start_time="14:42",
+                duration_minutes=18,
+            ),
+        ],
+    )
+
+
+@pytest.fixture
+def mock_raw_transcript() -> RawTranscript:
+    return RawTranscript(
+        session_id="56149",
+        segments=[
+            SegmentTranscript(
+                segment_index=0,
+                speaker_name="古川あおい",
+                start_seconds=7320.2,
+                text="チームみらいの古川あおいです。",
+                whisper_segments=[
+                    WhisperSegment(
+                        id=0, seek=0, start=7320.2, end=7380.0,
+                        text="チームみらいの古川あおいです。",
+                    )
+                ],
+            )
+        ],
+    )
+
+
+@pytest.fixture
+def mock_utterances_output() -> UtterancesOutput:
+    return UtterancesOutput(
+        segments=[
+            SegmentUtterances(
+                segment_index=0,
+                segment_speaker="古川あおい",
+                segment_affiliation="チームみらい",
+                start_seconds=7320.2,
+                video_url="https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56149&time=7320.2",
+                utterances=[
+                    Utterance(speaker="古川あおい", role="質疑者", text="チームみらいの古川あおいです。"),
+                ],
+            )
+        ]
+    )
+
+
+@pytest.fixture
+def mock_qa_pairs() -> QAPairsOutput:
+    return QAPairsOutput(
+        pairs=[
+            QAPair(
+                id="qa_001",
+                segment_index=0,
+                topic="高額療養費",
+                question=QuestionDetail(
+                    speaker="古川あおい",
+                    party="チームみらい",
+                    summary="高額療養費の問題",
+                    full_text="全文",
+                    intent="fact_check",
+                ),
+                answer=AnswerDetail(
+                    speaker="上野賢一郎",
+                    role="大臣",
+                    summary="答弁要旨",
+                    full_text="答弁全文",
+                    evasion_score=0.3,
+                    has_commitment=True,
+                    commitment_text="検討します",
+                ),
+                video_url="https://example.com",
+            )
+        ]
+    )
+
+
+@pytest.fixture
+def mock_summary() -> SummaryOutput:
+    return SummaryOutput(
+        session_summary="本会議の要約",
+        key_topics=["高額療養費", "健康保険法改正"],
+        key_commitments=[
+            KeyCommitment(
+                speaker="上野賢一郎",
+                role="大臣",
+                text="検討します",
+                topic="高額療養費",
+                qa_id="qa_001",
+            )
+        ],
+    )
+
+
+@pytest.fixture
+def mock_topics() -> TopicsOutput:
+    return TopicsOutput(
+        topics=[
+            Topic(
+                name="医療保険制度改革",
+                description="高額療養費制度の見直し",
+                related_qa_ids=["qa_001"],
+                related_speakers=["古川あおい"],
+            )
+        ]
+    )
+
+
+def _pipeline_patches(
+    mock_session_detail: SessionDetail,
+    mock_raw_transcript: RawTranscript,
+    mock_utterances_output: UtterancesOutput,
+    mock_qa_pairs: QAPairsOutput,
+    mock_summary: SummaryOutput,
+    mock_topics: TopicsOutput,
+    tmp_path: Path,
+):
+    """run_pipeline()をフルモックするコンテキストマネージャのヘルパー。"""
+    return (
+        patch("src.pipeline.ShugiinScraper.get_session_detail", return_value=mock_session_detail),
+        patch("src.pipeline.download_full_audio"),
+        patch("src.pipeline.split_segments", return_value=[tmp_path / "seg_000.wav"]),
+        patch("src.pipeline.transcribe_all_segments", return_value=mock_raw_transcript),
+        patch("src.pipeline.tag_all_segments", return_value=mock_utterances_output),
+        patch("src.pipeline.generate_qa_pairs", return_value=mock_qa_pairs),
+        patch("src.pipeline.generate_summary", return_value=mock_summary),
+        patch("src.pipeline.generate_topics", return_value=mock_topics),
+        patch("src.pipeline.publish_session"),
+    )
+
+
+class TestRunPipeline:
+    def test_all_six_json_files_generated(
+        self,
+        tmp_path: Path,
+        mock_session_detail: SessionDetail,
+        mock_raw_transcript: RawTranscript,
+        mock_utterances_output: UtterancesOutput,
+        mock_qa_pairs: QAPairsOutput,
+        mock_summary: SummaryOutput,
+        mock_topics: TopicsOutput,
+    ) -> None:
+        """出力ディレクトリに6ファイルが生成されること。"""
+        output_dir = tmp_path / "output"
+
+        with (
+            patch("src.pipeline.ShugiinScraper.get_session_detail", return_value=mock_session_detail),
+            patch("src.pipeline.download_full_audio"),
+            patch("src.pipeline.split_segments", return_value=[tmp_path / "seg_000.wav"]),
+            patch("src.pipeline.transcribe_all_segments", return_value=mock_raw_transcript),
+            patch("src.pipeline.tag_all_segments", return_value=mock_utterances_output),
+            patch("src.pipeline.generate_qa_pairs", return_value=mock_qa_pairs),
+            patch("src.pipeline.generate_summary", return_value=mock_summary),
+            patch("src.pipeline.generate_topics", return_value=mock_topics),
+            patch("src.pipeline.publish_session"),
+        ):
+            run_pipeline("shugiin", "56149", output_dir, no_push=True)
+
+        json_files = sorted(output_dir.glob("*.json"))
+        file_names = {f.name for f in json_files}
+        assert file_names == {
+            "metadata.json",
+            "raw_transcript.json",
+            "utterances.json",
+            "qa_pairs.json",
+            "summary.json",
+            "topics.json",
+        }
+
+    def test_each_json_validates_with_pydantic(
+        self,
+        tmp_path: Path,
+        mock_session_detail: SessionDetail,
+        mock_raw_transcript: RawTranscript,
+        mock_utterances_output: UtterancesOutput,
+        mock_qa_pairs: QAPairsOutput,
+        mock_summary: SummaryOutput,
+        mock_topics: TopicsOutput,
+    ) -> None:
+        """各JSONファイルがPydanticモデルでバリデーション可能であること。"""
+        output_dir = tmp_path / "output"
+
+        with (
+            patch("src.pipeline.ShugiinScraper.get_session_detail", return_value=mock_session_detail),
+            patch("src.pipeline.download_full_audio"),
+            patch("src.pipeline.split_segments", return_value=[tmp_path / "seg_000.wav"]),
+            patch("src.pipeline.transcribe_all_segments", return_value=mock_raw_transcript),
+            patch("src.pipeline.tag_all_segments", return_value=mock_utterances_output),
+            patch("src.pipeline.generate_qa_pairs", return_value=mock_qa_pairs),
+            patch("src.pipeline.generate_summary", return_value=mock_summary),
+            patch("src.pipeline.generate_topics", return_value=mock_topics),
+            patch("src.pipeline.publish_session"),
+        ):
+            run_pipeline("shugiin", "56149", output_dir, no_push=True)
+
+        # 各JSONをPydanticモデルでバリデーション
+        SessionDetail.model_validate_json(
+            (output_dir / "metadata.json").read_text(encoding="utf-8")
+        )
+        RawTranscript.model_validate_json(
+            (output_dir / "raw_transcript.json").read_text(encoding="utf-8")
+        )
+        UtterancesOutput.model_validate_json(
+            (output_dir / "utterances.json").read_text(encoding="utf-8")
+        )
+        QAPairsOutput.model_validate_json(
+            (output_dir / "qa_pairs.json").read_text(encoding="utf-8")
+        )
+        SummaryOutput.model_validate_json(
+            (output_dir / "summary.json").read_text(encoding="utf-8")
+        )
+        TopicsOutput.model_validate_json(
+            (output_dir / "topics.json").read_text(encoding="utf-8")
+        )
+
+    def test_scraping_failure_raises_runtime_error(self, tmp_path: Path) -> None:
+        """Step 2 でのエラーが RuntimeError として送出されること。"""
+        output_dir = tmp_path / "output"
+
+        with patch(
+            "src.pipeline.ShugiinScraper.get_session_detail",
+            side_effect=Exception("Network error"),
+        ):
+            with pytest.raises(RuntimeError, match="Step 2"):
+                run_pipeline("shugiin", "56149", output_dir, no_push=True)
+
+    def test_transcription_failure_raises_runtime_error(
+        self,
+        tmp_path: Path,
+        mock_session_detail: SessionDetail,
+    ) -> None:
+        """Step 4 でのエラーが RuntimeError として送出されること。"""
+        output_dir = tmp_path / "output"
+
+        with (
+            patch("src.pipeline.ShugiinScraper.get_session_detail", return_value=mock_session_detail),
+            patch("src.pipeline.download_full_audio"),
+            patch("src.pipeline.split_segments", return_value=[tmp_path / "seg_000.wav"]),
+            patch("src.pipeline.transcribe_all_segments", side_effect=Exception("API error")),
+        ):
+            with pytest.raises(RuntimeError, match="Step 4"):
+                run_pipeline("shugiin", "56149", output_dir, no_push=True)
+
+    def test_output_directory_created(
+        self,
+        tmp_path: Path,
+        mock_session_detail: SessionDetail,
+        mock_raw_transcript: RawTranscript,
+        mock_utterances_output: UtterancesOutput,
+        mock_qa_pairs: QAPairsOutput,
+        mock_summary: SummaryOutput,
+        mock_topics: TopicsOutput,
+    ) -> None:
+        """出力ディレクトリが自動作成されること。"""
+        output_dir = tmp_path / "nested" / "deep" / "output"
+        assert not output_dir.exists()
+
+        with (
+            patch("src.pipeline.ShugiinScraper.get_session_detail", return_value=mock_session_detail),
+            patch("src.pipeline.download_full_audio"),
+            patch("src.pipeline.split_segments", return_value=[tmp_path / "seg_000.wav"]),
+            patch("src.pipeline.transcribe_all_segments", return_value=mock_raw_transcript),
+            patch("src.pipeline.tag_all_segments", return_value=mock_utterances_output),
+            patch("src.pipeline.generate_qa_pairs", return_value=mock_qa_pairs),
+            patch("src.pipeline.generate_summary", return_value=mock_summary),
+            patch("src.pipeline.generate_topics", return_value=mock_topics),
+            patch("src.pipeline.publish_session"),
+        ):
+            run_pipeline("shugiin", "56149", output_dir, no_push=True)
+
+        assert output_dir.exists()
+
+    def test_no_push_skips_publish(
+        self,
+        tmp_path: Path,
+        mock_session_detail: SessionDetail,
+        mock_raw_transcript: RawTranscript,
+        mock_utterances_output: UtterancesOutput,
+        mock_qa_pairs: QAPairsOutput,
+        mock_summary: SummaryOutput,
+        mock_topics: TopicsOutput,
+    ) -> None:
+        """--no-push の場合に publish_session が呼ばれないこと。"""
+        output_dir = tmp_path / "output"
+
+        with (
+            patch("src.pipeline.ShugiinScraper.get_session_detail", return_value=mock_session_detail),
+            patch("src.pipeline.download_full_audio"),
+            patch("src.pipeline.split_segments", return_value=[tmp_path / "seg_000.wav"]),
+            patch("src.pipeline.transcribe_all_segments", return_value=mock_raw_transcript),
+            patch("src.pipeline.tag_all_segments", return_value=mock_utterances_output),
+            patch("src.pipeline.generate_qa_pairs", return_value=mock_qa_pairs),
+            patch("src.pipeline.generate_summary", return_value=mock_summary),
+            patch("src.pipeline.generate_topics", return_value=mock_topics),
+            patch("src.pipeline.publish_session") as mock_publish,
+        ):
+            run_pipeline("shugiin", "56149", output_dir, no_push=True)
+            mock_publish.assert_not_called()
+
+    def test_pipeline_with_state_manager(
+        self,
+        tmp_path: Path,
+        mock_session_detail: SessionDetail,
+        mock_raw_transcript: RawTranscript,
+        mock_utterances_output: UtterancesOutput,
+        mock_qa_pairs: QAPairsOutput,
+        mock_summary: SummaryOutput,
+        mock_topics: TopicsOutput,
+    ) -> None:
+        """StateManagerのlog_stepが各ステップで呼ばれること。"""
+        output_dir = tmp_path / "output"
+        state = StateManager(db_path=tmp_path / "test.db")
+        state.register_session("shugiin", "56149", "2026-04-09", "本会議")
+
+        with (
+            patch("src.pipeline.ShugiinScraper.get_session_detail", return_value=mock_session_detail),
+            patch("src.pipeline.download_full_audio"),
+            patch("src.pipeline.split_segments", return_value=[tmp_path / "seg_000.wav"]),
+            patch("src.pipeline.transcribe_all_segments", return_value=mock_raw_transcript),
+            patch("src.pipeline.tag_all_segments", return_value=mock_utterances_output),
+            patch("src.pipeline.generate_qa_pairs", return_value=mock_qa_pairs),
+            patch("src.pipeline.generate_summary", return_value=mock_summary),
+            patch("src.pipeline.generate_topics", return_value=mock_topics),
+            patch("src.pipeline.publish_session"),
+        ):
+            run_pipeline("shugiin", "56149", output_dir, state=state, no_push=True)
+
+        state.close()

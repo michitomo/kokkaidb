@@ -1,0 +1,94 @@
+# LLM モデル比較対象一覧（OpenRouter経由）
+# 2026-04-14 時点の価格・スペック
+
+models:
+  # --- Tier A: 激安枠 ---
+  gpt-oss-120b:
+    id: "openai/gpt-oss-120b"
+    provider: openrouter
+    input_price_per_m: 0.039
+    output_price_per_m: 0.19
+    context_window: 131072
+    tier: A
+    notes: "MoE 117B/5.1B active. 圧倒的に安い"
+
+  gemma-4-31b:
+    id: "google/gemma-4-31b-it"
+    provider: openrouter
+    input_price_per_m: 0.13
+    output_price_per_m: 0.38
+    context_window: 262144
+    tier: A
+    notes: "Apache 2.0. 140+言語. function calling対応"
+
+  # --- Tier B: コスパ重視 ---
+  deepseek-v3.2:
+    id: "deepseek/deepseek-v3.2"
+    provider: openrouter
+    input_price_per_m: 0.26
+    output_price_per_m: 0.38
+    context_window: 163840
+    tier: B
+    notes: "Weekly 1位. reasoning対応. 現行V3の後継"
+
+  qwen-3.6-plus:
+    id: "qwen/qwen3.6-plus"
+    provider: openrouter
+    input_price_per_m: 0.33
+    output_price_per_m: 1.95
+    context_window: 1000000
+    tier: B
+    notes: "Weekly 7位(+87%). 日本語に強い"
+
+  gemini-2.5-flash:
+    id: "google/gemini-2.5-flash"
+    provider: openrouter
+    input_price_per_m: 0.30
+    output_price_per_m: 2.50
+    context_window: 1048576
+    tier: B
+    notes: "Weekly 10位. thinking対応"
+
+  minimax-m2.7:
+    id: "minimax/minimax-m2.7"
+    provider: openrouter
+    input_price_per_m: 0.30
+    output_price_per_m: 1.20
+    context_window: 196608
+    tier: B
+    notes: "Weekly 4位. 構造化出力に強い"
+
+  # --- Tier C: 高品質 ---
+  gemini-3-flash:
+    id: "google/gemini-3-flash-preview"
+    provider: openrouter
+    input_price_per_m: 0.50
+    output_price_per_m: 3.00
+    context_window: 1048576
+    tier: C
+    notes: "Weekly 6位. structured output対応"
+
+  gemini-3.1-pro:
+    id: "google/gemini-3.1-pro-preview"
+    provider: openrouter
+    input_price_per_m: 2.00
+    output_price_per_m: 12.00
+    context_window: 1048576
+    tier: C
+    notes: "最高品質Gemini. 品質上限ベンチマーク用"
+
+  deepseek-r1:
+    id: "deepseek/deepseek-r1"
+    provider: openrouter
+    input_price_per_m: 0.70
+    output_price_per_m: 2.50
+    context_window: 64000
+    tier: C
+    notes: "reasoning特化. 構造化タスクに強い可能性"
+
+# タスク定義
+tasks:
+  - speaker_tagging    # 話者タグ付け
+  - qa_pairs           # Q&Aペア生成
+  - summary            # セッション要約
+  - topics             # トピック抽出
