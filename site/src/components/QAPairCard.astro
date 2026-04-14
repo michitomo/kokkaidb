@@ -27,6 +27,19 @@ function formatVideoTime(videoUrl: string): string | null {
 }
 
 const videoTime = pair.video_url ? formatVideoTime(pair.video_url) : null;
+
+/** 箇条書き（"- " 始まり行）をHTMLリストに変換。非箇条書きはそのまま返す */
+function formatSummary(text: string): { isList: boolean; items: string[] } {
+  const lines = text.split('\n').filter(l => l.trim());
+  const isList = lines.length > 1 && lines.every(l => l.trim().startsWith('- '));
+  if (isList) {
+    return { isList: true, items: lines.map(l => l.trim().replace(/^- /, '')) };
+  }
+  return { isList: false, items: [text] };
+}
+
+const qSummary = formatSummary(pair.question.summary);
+const aSummary = formatSummary(pair.answer.summary);
 const videoTitle = videoTime ? `動画を見る（${videoTime}）` : '動画を見る';
 const chamberName = session?.chamber === 'shugiin' ? '衆議院TV' : session?.chamber === 'sangiin' ? '参議院TV' : null;
 ---
@@ -52,7 +65,19 @@ const chamberName = session?.chamber === 'shugiin' ? '衆議院TV' : session?.ch
         質問 — <strong>{pair.question.speaker}</strong>
         {pair.question.party && <span class="party">（{pair.question.party}）</span>}
       </div>
-      <p class="summary">{pair.question.summary}</p>
+      {qSummary.isList ? (
+        <ul class="summary-list">
+          {qSummary.items.map(item => <li>{item}</li>)}
+        </ul>
+      ) : (
+        <p class="summary">{pair.question.summary}</p>
+      )}
+      {pair.question.full_text && (
+        <details class="full-text-details">
+          <summary class="expand-toggle">全文を表示</summary>
+          <p class="full-text">{pair.question.full_text}</p>
+        </details>
+      )}
     </div>
 
     <div class="answer">
@@ -60,7 +85,19 @@ const chamberName = session?.chamber === 'shugiin' ? '衆議院TV' : session?.ch
         答弁 — <strong>{pair.answer.speaker}</strong>
         {pair.answer.role && <span class="role">（{pair.answer.role}）</span>}
       </div>
-      <p class="summary">{pair.answer.summary}</p>
+      {aSummary.isList ? (
+        <ul class="summary-list">
+          {aSummary.items.map(item => <li>{item}</li>)}
+        </ul>
+      ) : (
+        <p class="summary">{pair.answer.summary}</p>
+      )}
+      {pair.answer.full_text && (
+        <details class="full-text-details">
+          <summary class="expand-toggle">全文を表示</summary>
+          <p class="full-text">{pair.answer.full_text}</p>
+        </details>
+      )}
       <div class="evasion" style={`color: ${evasionColor}`}>
         回避度 {evasionLabel}（{(score * 100).toFixed(0)}%）
       </div>
@@ -146,6 +183,15 @@ const chamberName = session?.chamber === 'shugiin' ? '衆議院TV' : session?.ch
     font-size: 0.9rem;
     line-height: 1.5;
   }
+  .summary-list {
+    margin: 0 0 0.5rem;
+    padding-left: 1.2rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .summary-list li {
+    margin-bottom: 0.15rem;
+  }
   .evasion {
     font-size: 0.8rem;
     font-weight: 600;
@@ -161,6 +207,29 @@ const chamberName = session?.chamber === 'shugiin' ? '衆議院TV' : session?.ch
     line-height: 1.4;
   }
   .commitment-label { font-weight: 600; }
+  .full-text-details {
+    margin-top: 0.5rem;
+  }
+  .expand-toggle {
+    font-size: 0.8rem;
+    color: #2563eb;
+    cursor: pointer;
+    user-select: none;
+  }
+  .expand-toggle:hover {
+    text-decoration: underline;
+  }
+  .full-text {
+    margin: 0.5rem 0 0;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #374151;
+    white-space: pre-line;
+    background: #f9fafb;
+    padding: 0.75rem;
+    border-radius: 4px;
+    border: 1px solid #e5e7eb;
+  }
   .qa-source {
     padding: 0.4rem 1rem;
     background: #f8fafc;

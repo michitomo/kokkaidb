@@ -16,6 +16,7 @@ const PAGE_SIZE = 20;
  */
 export default function FilteredQAList({ filteredEntries, totalCount, page, onPageChange }) {
   const [copyState, setCopyState] = useState('idle'); // idle | success | error
+  const [expandedIds, setExpandedIds] = useState(new Set());
 
   // 全フィルタ済みQ&Aペアをフラットに展開（セッション情報付き）
   const allPairs = filteredEntries.flatMap((entry) =>
@@ -51,6 +52,28 @@ export default function FilteredQAList({ filteredEntries, totalCount, page, onPa
     if (score < 0.3) return '低';
     if (score < 0.7) return '中';
     return '高';
+  }
+
+  function toggleExpand(qaId) {
+    setExpandedIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(qaId)) next.delete(qaId);
+      else next.add(qaId);
+      return next;
+    });
+  }
+
+  function renderSummary(text) {
+    const lines = text.split('\n').filter(l => l.trim());
+    const isList = lines.length > 1 && lines.every(l => l.trim().startsWith('- '));
+    if (isList) {
+      return (
+        <ul className="summary-list">
+          {lines.map((l, i) => <li key={i}>{l.trim().replace(/^- /, '')}</li>)}
+        </ul>
+      );
+    }
+    return <p className="summary">{text}</p>;
   }
 
   function chamberLabel(chamber) {
@@ -153,7 +176,21 @@ export default function FilteredQAList({ filteredEntries, totalCount, page, onPa
                           <span className="party">（{qa.question_party}）</span>
                         )}
                       </div>
-                      <p className="summary">{qa.question_summary}</p>
+                      {renderSummary(qa.question_summary)}
+                      {qa.question_full_text && (
+                        <>
+                          <button
+                            type="button"
+                            className="expand-toggle"
+                            onClick={() => toggleExpand(`${qa.id}-q`)}
+                          >
+                            {expandedIds.has(`${qa.id}-q`) ? '全文を閉じる' : '全文を表示'}
+                          </button>
+                          {expandedIds.has(`${qa.id}-q`) && (
+                            <p className="full-text">{qa.question_full_text}</p>
+                          )}
+                        </>
+                      )}
                     </div>
 
                     <div className="answer">
@@ -163,7 +200,21 @@ export default function FilteredQAList({ filteredEntries, totalCount, page, onPa
                           <span className="role">（{qa.answer_role}）</span>
                         )}
                       </div>
-                      <p className="summary">{qa.answer_summary}</p>
+                      {renderSummary(qa.answer_summary)}
+                      {qa.answer_full_text && (
+                        <>
+                          <button
+                            type="button"
+                            className="expand-toggle"
+                            onClick={() => toggleExpand(`${qa.id}-a`)}
+                          >
+                            {expandedIds.has(`${qa.id}-a`) ? '全文を閉じる' : '全文を表示'}
+                          </button>
+                          {expandedIds.has(`${qa.id}-a`) && (
+                            <p className="full-text">{qa.answer_full_text}</p>
+                          )}
+                        </>
+                      )}
                       <div
                         className="evasion"
                         style={{ color: evasionColor(qa.evasion_score) }}
@@ -355,6 +406,34 @@ export default function FilteredQAList({ filteredEntries, totalCount, page, onPa
         .speaker-label strong { color: #111; }
         .party, .role { color: #6b7280; }
         .summary { margin: 0 0 0.5rem; font-size: 0.9rem; line-height: 1.5; }
+        .summary-list {
+          margin: 0 0 0.5rem;
+          padding-left: 1.2rem;
+          font-size: 0.9rem;
+          line-height: 1.6;
+        }
+        .summary-list li { margin-bottom: 0.15rem; }
+        .expand-toggle {
+          background: none;
+          border: none;
+          padding: 0;
+          font-size: 0.8rem;
+          color: #2563eb;
+          cursor: pointer;
+          margin-bottom: 0.4rem;
+        }
+        .expand-toggle:hover { text-decoration: underline; }
+        .full-text {
+          margin: 0.5rem 0 0;
+          font-size: 0.85rem;
+          line-height: 1.7;
+          color: #374151;
+          white-space: pre-line;
+          background: #f9fafb;
+          padding: 0.75rem;
+          border-radius: 4px;
+          border: 1px solid #e5e7eb;
+        }
         .evasion { font-size: 0.8rem; font-weight: 600; margin-bottom: 0.4rem; }
         .commitment {
           font-size: 0.8rem;

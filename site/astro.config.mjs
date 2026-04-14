@@ -8,4 +8,9 @@ export default defineConfig({
   base: '/kokkaidb',
   output: 'static',
   integrations: [react()],
+  vite: {
+    optimizeDeps: {
+      include: ['react', 'react-dom', 'react-dom/client'],
+    },
+  },
 });

@@ -188,18 +188,30 @@ export default function FilterPanel() {
           return questionerMatch || answererMatch || refMatch || chairMatch;
         });
 
+        // 政党フィルタをQ&Aペアレベルでも適用
+        const partyFiltered = selectedParties.length > 0
+          ? filteredPairs.filter((qa) =>
+              selectedParties.includes(qa.question_party)
+            )
+          : filteredPairs;
+
         // 発言者フィルタをQ&Aペアレベルでも適用
         const speakerFiltered = debouncedSpeaker
-          ? filteredPairs.filter((qa) => {
+          ? partyFiltered.filter((qa) => {
               const lower = debouncedSpeaker.toLowerCase();
               return (
                 qa.question_speaker.toLowerCase().includes(lower) ||
                 qa.answer_speaker.toLowerCase().includes(lower)
               );
             })
-          : filteredPairs;
+          : partyFiltered;
 
-        return { ...entry, qa_pairs: speakerFiltered };
+        // トピックフィルタをQ&Aペアレベルでも適用
+        const topicFiltered = selectedTopics.length > 0
+          ? speakerFiltered.filter((qa) => selectedTopics.includes(qa.topic))
+          : speakerFiltered;
+
+        return { ...entry, qa_pairs: topicFiltered };
       })
       .filter((entry) => entry.qa_pairs.length > 0);
   }, [indexData, chamber, dateFrom, dateTo, selectedCommittees, selectedParties, debouncedSpeaker, selectedRoles, selectedTopics]);

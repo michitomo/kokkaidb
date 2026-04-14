@@ -178,7 +178,7 @@ def run_pipeline(
     # Step 6: Q&Aペア生成・要約・トピック抽出（要約・トピックは並列）
     logger.info("=== Step 6: Generating Q&A pairs, summary, and topics ===")
     try:
-        qa_pairs = generate_qa_pairs(utterances_output)
+        qa_pairs = generate_qa_pairs(utterances_output, speakers=session_detail.speakers)
         with ThreadPoolExecutor(max_workers=16) as executor:
             f_summary = executor.submit(generate_summary, utterances_output, qa_pairs)
             f_topics = executor.submit(generate_topics, qa_pairs)

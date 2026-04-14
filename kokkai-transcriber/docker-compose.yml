@@ -8,12 +8,9 @@ services:
     volumes:
       # リポジトリルート全体をマウント（git操作のため）
       - ..:/repo
-      # state.dbを永続化
-      - ./state.db:/app/state.db
     working_dir: /repo/kokkai-transcriber
     # デフォルトコマンド: 当日の衆議院セッションを処理
     command: >
       python -m src.pipeline
       --chamber shugiin
       --date today
-      --db-path /app/state.db

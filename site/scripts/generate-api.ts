@@ -110,10 +110,12 @@ interface IndexQAPair {
   question_speaker: string;
   question_party: string;
   question_summary: string;
+  question_full_text: string;
   question_intent: string;
   answer_speaker: string;
   answer_role: string;
   answer_summary: string;
+  answer_full_text: string;
   evasion_score: number;
   has_commitment: boolean;
   commitment_text: string;
@@ -495,10 +497,12 @@ export function generateApi(dataDir: string, outDir: string): void {
       question_speaker: p.question.speaker,
       question_party: p.question.party,
       question_summary: p.question.summary,
+      question_full_text: p.question.full_text || '',
       question_intent: p.question.intent,
       answer_speaker: p.answer.speaker,
       answer_role: p.answer.role,
       answer_summary: p.answer.summary,
+      answer_full_text: p.answer.full_text || '',
       evasion_score: p.answer.evasion_score,
       has_commitment: p.answer.has_commitment,
       commitment_text: p.answer.commitment_text,
