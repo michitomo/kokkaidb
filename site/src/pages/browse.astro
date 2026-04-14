@@ -1,69 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getAllSessions, sessionPath } from '../lib/data';
-
-const sessions = getAllSessions();
-const base = import.meta.env.BASE_URL;
+import FilterPanel from '../components/FilterPanel';
 ---
 <BaseLayout title="審議一覧 - 国会議事録リアルタイムDB">
   <h1>審議一覧</h1>
-  <p class="count">{sessions.length}件</p>
-  {sessions.length === 0 ? (
-    <p>まだデータがありません。</p>
-  ) : (
-    <ul class="session-list">
-      {sessions.map(s => (
-        <li class="session-card">
-          <a href={base + sessionPath(s)}>
-            <span class={`chamber-badge ${s.chamber}`}>
-              {s.chamber === 'shugiin' ? '衆' : '参'}
-            </span>
-            <span class="date">{s.date}</span>
-            <span class="committee">{s.committee}</span>
-            <span class="speakers">{s.speakers.length}名</span>
-          </a>
-        </li>
-      ))}
-    </ul>
-  )}
+  <p class="subtitle">院・日付・委員会・政党・発言者・役割・トピックで絞り込めます</p>
+  <FilterPanel client:load />
 </BaseLayout>
 
 <style>
   h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
-  .count { color: #6b7280; font-size: 0.9rem; margin-bottom: 1rem; }
-  .session-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .session-card { margin-bottom: 0.5rem; }
-  .session-card a {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.75rem 1rem;
-    background: #fff;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    text-decoration: none;
-    color: #111;
-    transition: border-color 0.15s;
-  }
-  .session-card a:hover { border-color: #2563eb; }
-  .chamber-badge {
-    display: inline-block;
-    width: 1.5rem;
-    height: 1.5rem;
-    line-height: 1.5rem;
-    text-align: center;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    flex-shrink: 0;
-  }
-  .chamber-badge.shugiin { background: #dbeafe; color: #1e40af; }
-  .chamber-badge.sangiin { background: #fce7f3; color: #9d174d; }
-  .date { color: #6b7280; font-size: 0.9rem; }
-  .committee { font-weight: 600; flex: 1; }
-  .speakers { color: #9ca3af; font-size: 0.85rem; white-space: nowrap; }
+  .subtitle { color: #6b7280; font-size: 0.9rem; margin-bottom: 1.25rem; }
 </style>

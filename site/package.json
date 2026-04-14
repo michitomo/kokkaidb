@@ -7,22 +7,35 @@
   },
   "scripts": {
     "dev": "astro dev",
+    "prebuild": "tsx scripts/generate-api.ts",
     "build": "astro build",
     "postbuild": "pagefind --site dist --glob '**/*.html'",
     "preview": "astro preview",
     "astro": "astro",
-    "check": "astro check"
+    "check": "astro check",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
     "astro": "^6.1.6",
+    "d3-force": "^3.0.0",
+    "d3-selection": "^3.0.0",
     "react": "^19.2.5",
-    "react-dom": "^19.2.5"
+    "react-dom": "^19.2.5",
+    "recharts": "^3.8.1"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^4.3.4",
     "glob": "^13.0.6",
-    "pagefind": "^1.5.2"
+    "jsdom": "^26.1.0",
+    "pagefind": "^1.5.2",
+    "tsx": "^4.19.3",
+    "vitest": "^3.1.1"
   }
 }
