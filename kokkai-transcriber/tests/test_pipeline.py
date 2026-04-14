@@ -25,7 +25,9 @@ from src.models import (
     UtterancesOutput,
     WhisperSegment,
 )
-from src.pipeline import run_pipeline
+from src.pipeline import _get_scraper, run_pipeline
+from src.scrapers.sangiin import SangiinScraper
+from src.scrapers.shugiin import ShugiinScraper
 from src.state import StateManager
 
 
@@ -372,3 +374,141 @@ class TestRunPipeline:
             run_pipeline("shugiin", "56149", output_dir, state=state, no_push=True)
 
         state.close()
+
+
+class TestGetScraper:
+    def test_shugiin_scraper(self) -> None:
+        scraper = _get_scraper("shugiin")
+        assert isinstance(scraper, ShugiinScraper)
+
+    def test_sangiin_scraper(self) -> None:
+        scraper = _get_scraper("sangiin")
+        assert isinstance(scraper, SangiinScraper)
+
+    def test_unknown_chamber_raises(self) -> None:
+        with pytest.raises(ValueError, match="Unknown chamber"):
+            _get_scraper("unknown")
+
+
+class TestSangiinPipeline:
+    """参議院パイプラインのテスト。"""
+
+    @pytest.fixture
+    def sangiin_session_detail(self) -> SessionDetail:
+        return SessionDetail(
+            chamber="sangiin",
+            session_id="7890",
+            date="2026-04-10",
+            committee="法務委員会",
+            hls_url="",
+            mediasp_hash="abc123def456",
+            source_url="https://webtv.sangiin.go.jp/webtv/detail.php?sid=7890",
+            speakers=[
+                SpeakerInfo(
+                    name="伊藤孝江",
+                    affiliation="法務委員長",
+                    role="委員長",
+                    start_seconds=0.0,
+                    start_time="10:00",
+                    duration_minutes=3,
+                ),
+                SpeakerInfo(
+                    name="田中太郎",
+                    affiliation="自由民主党",
+                    role="質疑者",
+                    start_seconds=180.5,
+                    start_time="10:03",
+                    duration_minutes=25,
+                ),
+            ],
+        )
+
+    def test_sangiin_pipeline_generates_six_json_files(
+        self,
+        tmp_path: Path,
+        sangiin_session_detail: SessionDetail,
+        mock_raw_transcript: RawTranscript,
+        mock_utterances_output: UtterancesOutput,
+        mock_qa_pairs: QAPairsOutput,
+        mock_summary: SummaryOutput,
+        mock_topics: TopicsOutput,
+    ) -> None:
+        """参議院パイプラインが6ファイルを出力すること。"""
+        output_dir = tmp_path / "output"
+
+        with (
+            patch("src.pipeline.SangiinScraper.get_session_detail", return_value=sangiin_session_detail),
+            patch("src.audio.sangiin_resolver.resolve_stream_url", return_value="https://vod.mediasp.jp/test/playlist.m3u8"),
+            patch("src.pipeline.download_full_audio"),
+            patch("src.pipeline.split_segments", return_value=[tmp_path / "seg_000.wav"]),
+            patch("src.pipeline.transcribe_all_segments", return_value=mock_raw_transcript),
+            patch("src.pipeline.tag_all_segments", return_value=mock_utterances_output),
+            patch("src.pipeline.generate_qa_pairs", return_value=mock_qa_pairs),
+            patch("src.pipeline.generate_summary", return_value=mock_summary),
+            patch("src.pipeline.generate_topics", return_value=mock_topics),
+            patch("src.pipeline.publish_session"),
+        ):
+            run_pipeline("sangiin", "7890", output_dir, no_push=True)
+
+        json_files = sorted(output_dir.glob("*.json"))
+        file_names = {f.name for f in json_files}
+        assert file_names == {
+            "metadata.json",
+            "raw_transcript.json",
+            "utterances.json",
+            "qa_pairs.json",
+            "summary.json",
+            "topics.json",
+        }
+
+    def test_sangiin_metadata_has_correct_chamber(
+        self,
+        tmp_path: Path,
+        sangiin_session_detail: SessionDetail,
+        mock_raw_transcript: RawTranscript,
+        mock_utterances_output: UtterancesOutput,
+        mock_qa_pairs: QAPairsOutput,
+        mock_summary: SummaryOutput,
+        mock_topics: TopicsOutput,
+    ) -> None:
+        """参議院のmetadata.jsonにchamber='sangiin'が記録されること。"""
+        output_dir = tmp_path / "output"
+
+        with (
+            patch("src.pipeline.SangiinScraper.get_session_detail", return_value=sangiin_session_detail),
+            patch("src.audio.sangiin_resolver.resolve_stream_url", return_value="https://vod.mediasp.jp/test/playlist.m3u8"),
+            patch("src.pipeline.download_full_audio"),
+            patch("src.pipeline.split_segments", return_value=[tmp_path / "seg_000.wav"]),
+            patch("src.pipeline.transcribe_all_segments", return_value=mock_raw_transcript),
+            patch("src.pipeline.tag_all_segments", return_value=mock_utterances_output),
+            patch("src.pipeline.generate_qa_pairs", return_value=mock_qa_pairs),
+            patch("src.pipeline.generate_summary", return_value=mock_summary),
+            patch("src.pipeline.generate_topics", return_value=mock_topics),
+            patch("src.pipeline.publish_session"),
+        ):
+            run_pipeline("sangiin", "7890", output_dir, no_push=True)
+
+        import json
+
+        metadata = json.loads((output_dir / "metadata.json").read_text(encoding="utf-8"))
+        assert metadata["chamber"] == "sangiin"
+        assert metadata["mediasp_hash"] == "abc123def456"
+        assert metadata["hls_url"] == ""
+
+    def test_sangiin_no_mediasp_hash_raises(self, tmp_path: Path) -> None:
+        """mediasp_hashもhls_urlもない参議院セッションがエラーになること。"""
+        detail = SessionDetail(
+            chamber="sangiin",
+            session_id="9999",
+            date="2026-04-10",
+            committee="不明",
+            hls_url="",
+            mediasp_hash="",
+            source_url="https://webtv.sangiin.go.jp/webtv/detail.php?sid=9999",
+            speakers=[],
+        )
+        output_dir = tmp_path / "output"
+
+        with patch("src.pipeline.SangiinScraper.get_session_detail", return_value=detail):
+            with pytest.raises(RuntimeError, match="Step 3"):
+                run_pipeline("sangiin", "9999", output_dir, no_push=True)

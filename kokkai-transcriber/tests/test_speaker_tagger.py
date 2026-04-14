@@ -8,7 +8,7 @@ from unittest.mock import MagicMock, patch
 import pytest
 
 from src.models import RawTranscript, SegmentTranscript, SpeakerInfo, Utterance, UtterancesOutput
-from src.speaker_tagger import tag_speakers, tag_all_segments
+from src.speaker_tagger import _build_video_url, tag_speakers, tag_all_segments
 
 
 @pytest.fixture
@@ -211,6 +211,24 @@ class TestTagSpeakers:
         with patch.dict("os.environ", env, clear=True):
             with pytest.raises(EnvironmentError):
                 tag_speakers("テスト", segment_speaker, all_speakers)
+
+
+class TestBuildVideoUrl:
+    def test_shugiin_url(self) -> None:
+        url = _build_video_url("shugiin", "56149", 7320.2)
+        assert "shugiintv.go.jp" in url
+        assert "deli_id=56149" in url
+        assert "time=7320.2" in url
+
+    def test_sangiin_url(self) -> None:
+        url = _build_video_url("sangiin", "7890", 180.5)
+        assert "webtv.sangiin.go.jp" in url
+        assert "sid=7890" in url
+        assert "#180.5" in url
+
+    def test_unknown_chamber_returns_empty(self) -> None:
+        url = _build_video_url("unknown", "123", 0.0)
+        assert url == ""
 
 
 @pytest.mark.integration

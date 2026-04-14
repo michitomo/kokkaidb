@@ -116,6 +116,21 @@ def tag_speakers(
     ]
 
 
+def _build_video_url(chamber: str, session_id: str, start_seconds: float) -> str:
+    """院に応じた動画リンクURLを生成する。"""
+    if chamber == "shugiin":
+        return (
+            f"https://www.shugiintv.go.jp/jp/index.php"
+            f"?ex=VL&media_type=&deli_id={session_id}&time={start_seconds}"
+        )
+    elif chamber == "sangiin":
+        return (
+            f"https://webtv.sangiin.go.jp/webtv/detail.php"
+            f"?sid={session_id}#{start_seconds}"
+        )
+    return ""
+
+
 def tag_all_segments(
     raw_transcript: RawTranscript,
     session_detail: SessionDetail,
@@ -125,7 +140,6 @@ def tag_all_segments(
     from concurrent.futures import ThreadPoolExecutor, as_completed
 
     speakers = session_detail.speakers
-    deli_id = session_detail.session_id
 
     def _resolve_speaker(seg: SegmentTranscript) -> SpeakerInfo:
         if seg.segment_index < len(speakers):
@@ -142,9 +156,8 @@ def tag_all_segments(
     def _tag(seg: SegmentTranscript) -> SegmentUtterances:
         segment_speaker = _resolve_speaker(seg)
         utterances = tag_speakers(seg.text, segment_speaker, speakers)
-        video_url = (
-            f"https://www.shugiintv.go.jp/jp/index.php"
-            f"?ex=VL&media_type=&deli_id={deli_id}&time={seg.start_seconds}"
+        video_url = _build_video_url(
+            session_detail.chamber, session_detail.session_id, seg.start_seconds
         )
         return SegmentUtterances(
             segment_index=seg.segment_index,

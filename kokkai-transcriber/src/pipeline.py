@@ -1,7 +1,13 @@
 """パイプライン統合エントリポイント
 
 使用方法:
-    # 手動実行（セッションID直接指定）
+    # 衆議院（セッションID直接指定）
+    python -m src.pipeline --chamber shugiin --session-id 56149
+
+    # 参議院
+    python -m src.pipeline --chamber sangiin --session-id 7890
+
+    # 後方互換（衆議院のみ）
     python -m src.pipeline --chamber shugiin --deli-id 56149
 
     # 日付指定の自動巡回
@@ -11,7 +17,7 @@
     python -m src.pipeline --chamber shugiin --process-pending
 
     # git pushなし（ローカルテスト用）
-    python -m src.pipeline --chamber shugiin --deli-id 56149 --no-push
+    python -m src.pipeline --chamber shugiin --session-id 56149 --no-push
 """
 
 from __future__ import annotations
@@ -32,6 +38,8 @@ except ImportError:
 
 from src.audio.extractor import download_full_audio, split_segments
 from src.publisher import publish_session
+from src.scrapers.base import BaseScraper
+from src.scrapers.sangiin import SangiinScraper
 from src.scrapers.shugiin import ShugiinScraper
 from src.speaker_tagger import tag_all_segments
 from src.state import StateManager
@@ -83,10 +91,8 @@ def run_pipeline(
     # Step 2: スクレイピング
     logger.info("=== Step 2: Scraping session detail (%s %s) ===", chamber, session_id)
     try:
-        if chamber == "shugiin":
-            session_detail = ShugiinScraper().get_session_detail(session_id)
-        else:
-            raise ValueError(f"Unsupported chamber: {chamber}")
+        scraper = _get_scraper(chamber)
+        session_detail = scraper.get_session_detail(session_id)
         _log("scrape", True)
     except Exception as e:
         _log("scrape", False, str(e))
@@ -102,11 +108,21 @@ def run_pipeline(
     # Step 3: HLS音声取得・分割
     logger.info("=== Step 3: Downloading and splitting audio ===")
     try:
+        # 参議院の場合、mediasp.jp hash から音声URLを解決
+        if session_detail.chamber == "sangiin" and not session_detail.hls_url:
+            from src.audio.sangiin_resolver import resolve_stream_url
+
+            if not session_detail.mediasp_hash:
+                raise ValueError(f"No mediasp_hash or hls_url for sangiin sid={session_id}")
+            audio_url = resolve_stream_url(session_detail.mediasp_hash)
+        else:
+            audio_url = session_detail.hls_url
+
         with tempfile.TemporaryDirectory() as tmpdir:
             tmp_path = Path(tmpdir)
             full_wav = tmp_path / "full_audio.wav"
 
-            download_full_audio(session_detail.hls_url, full_wav)
+            download_full_audio(audio_url, full_wav)
             segment_paths = split_segments(
                 full_wav,
                 session_detail.speakers,
@@ -213,6 +229,16 @@ def run_pipeline(
             logger.warning("Publish failed (non-fatal): %s", e)
 
 
+def _get_scraper(chamber: str) -> BaseScraper:
+    """院に応じたScraperインスタンスを返す。"""
+    if chamber == "shugiin":
+        return ShugiinScraper()
+    elif chamber == "sangiin":
+        return SangiinScraper()
+    else:
+        raise ValueError(f"Unknown chamber: {chamber}")
+
+
 def run_pipeline_for_session(
     chamber: str,
     session_id: str,
@@ -220,11 +246,7 @@ def run_pipeline_for_session(
     no_push: bool = False,
 ) -> None:
     """StateManagerと連携して1セッションを処理する。"""
-    # セッション情報を取得してoutput_dirを決める
-    if chamber == "shugiin":
-        scraper = ShugiinScraper()
-    else:
-        raise ValueError(f"Unsupported chamber: {chamber}")
+    scraper = _get_scraper(chamber)
 
     # 詳細をフェッチしてoutput_dirを決定
     detail = scraper.get_session_detail(session_id)
@@ -252,11 +274,15 @@ def main() -> None:
         help="院（デフォルト: shugiin）",
     )
 
-    # セッション指定モード（後方互換）
+    # セッション指定モード
     session_group = parser.add_mutually_exclusive_group()
     session_group.add_argument(
+        "--session-id",
+        help="セッションID（衆議院: deli_id、参議院: sid）",
+    )
+    session_group.add_argument(
         "--deli-id",
-        help="衆議院TV の deli_id（後方互換、--chamber shugiin と同等）",
+        help="衆議院TV の deli_id（後方互換、--session-id を推奨）",
     )
     session_group.add_argument(
         "--date",
@@ -294,9 +320,9 @@ def main() -> None:
     state = StateManager(**state_kwargs)
 
     try:
-        if args.deli_id:
-            # 後方互換モード: deli_idを直接指定
-            session_id = args.deli_id
+        if args.session_id or args.deli_id:
+            # セッションID直接指定モード
+            session_id = args.session_id or args.deli_id
             if args.output_dir:
                 output_dir = args.output_dir
                 output_dir.mkdir(parents=True, exist_ok=True)
@@ -321,11 +347,7 @@ def main() -> None:
             target_date = (
                 str(date_type.today()) if args.date == "today" else args.date
             )
-            if args.chamber == "shugiin":
-                scraper = ShugiinScraper()
-            else:
-                logger.error("sangiin not yet supported")
-                sys.exit(1)
+            scraper = _get_scraper(args.chamber)
 
             session_ids = scraper.detect_new_sessions(target_date)
             logger.info("Found %d sessions for %s", len(session_ids), target_date)

@@ -27,6 +27,7 @@ class SessionDetail(BaseModel):
     session_number: int | None = None
     duration: str = ""
     hls_url: str
+    mediasp_hash: str = ""  # 参議院のみ: mediasp.jp の hash 値
     source_url: str
     processed_at: str = ""
     whisper_model: str = "openai/whisper-large-v3-turbo"
