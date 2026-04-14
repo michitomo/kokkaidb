@@ -179,7 +179,7 @@ def run_pipeline(
     logger.info("=== Step 6: Generating Q&A pairs, summary, and topics ===")
     try:
         qa_pairs = generate_qa_pairs(utterances_output)
-        with ThreadPoolExecutor(max_workers=2) as executor:
+        with ThreadPoolExecutor(max_workers=16) as executor:
             f_summary = executor.submit(generate_summary, utterances_output, qa_pairs)
             f_topics = executor.submit(generate_topics, qa_pairs)
             summary = f_summary.result()
