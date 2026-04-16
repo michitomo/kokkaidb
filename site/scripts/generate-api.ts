@@ -584,6 +584,45 @@ export function generateApi(dataDir: string, outDir: string): void {
         : (existingSessionQALaws[p.id] || []),
     }));
 
+    // セッション内伝播
+    if (laws.length > 0 && indexQAPairs.length > 0) {
+      const propagateLaws = new Set<string>();
+
+      // (a) 法案タイトル一致: Q&Aのtopicに法案のコア名が含まれていれば全Q&Aに付与
+      //     例: topic="健康保険法等の一部を改正する法律案の趣旨" → 健康保険法 law
+      for (const qa of indexQAPairs) {
+        const topicLower = qa.topic?.toLowerCase() || '';
+        for (const law of laws) {
+          // 法案タイトルからコア名を抽出（「〜法案」「〜法律案」まで）
+          const coreMatch = law.title.match(/^(.+?(?:法案|法律案|条約))/);
+          if (coreMatch && coreMatch[1].length >= 4 && topicLower.includes(coreMatch[1].toLowerCase())) {
+            propagateLaws.add(law.id);
+          }
+        }
+      }
+
+      // (b) 頻度ベース: 同一法案がQ&Aの10%以上（最低3件）でマッチ → 全Q&Aに付与
+      const lawHitCounts = new Map<string, number>();
+      for (const qa of indexQAPairs) {
+        for (const lawId of qa.related_laws) {
+          lawHitCounts.set(lawId, (lawHitCounts.get(lawId) || 0) + 1);
+        }
+      }
+      const minHits = Math.max(3, Math.ceil(indexQAPairs.length * 0.1));
+      for (const [lawId, count] of lawHitCounts) {
+        if (count >= minHits) {
+          propagateLaws.add(lawId);
+        }
+      }
+
+      if (propagateLaws.size > 0) {
+        for (const qa of indexQAPairs) {
+          const merged = new Set([...qa.related_laws, ...propagateLaws]);
+          (qa as any).related_laws = [...merged];
+        }
+      }
+    }
+
     // セッションのrelated_lawsはQ&Aペアのunion
     const relatedLaws = [...new Set(indexQAPairs.flatMap(qa => qa.related_laws))];
 
