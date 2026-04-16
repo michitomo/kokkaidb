@@ -2,8 +2,17 @@
 dist/
 # generated types
 .astro/
-# build-generated API data
-public/api/
+# build-generated API data (laws.json is a committed snapshot of referenced laws — do not add it here)
+public/api/calendar.json
+public/api/commitments.json
+public/api/committees.json
+public/api/evasion.json
+public/api/index.json
+public/api/parties.json
+public/api/speakers.json
+public/api/stats.json
+public/api/topics-heatmap.json
+public/api/topics.json
 
 # dependencies
 node_modules/

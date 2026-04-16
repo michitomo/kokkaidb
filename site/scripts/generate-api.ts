@@ -646,9 +646,15 @@ export function generateApi(dataDir: string, outDir: string): void {
   writeJson(path.join(outDir, 'topics.json'), topics);
   writeJson(path.join(outDir, 'committees.json'), committees);
 
-  // 法案マスタ（フィルタUI用に short_title と id のみ抽出）
-  const lawsForApi = laws.map(l => ({ id: l.id, title: l.title, short_title: l.short_title, ministry: l.ministry }));
+  // 法案マスタ（参照されている法案のみをコミット可能なスナップショットとして出力）
+  // laws.md はgitignore済みなので、CIでは既存のlaws.jsonをそのまま使用する
+  // ローカルでlaws.mdが存在する場合のみ、参照済み法案に絞って上書き
+  const referencedLawIds = new Set(indexEntries.flatMap(e => e.related_laws));
+  const lawsForApi = laws
+    .filter(l => referencedLawIds.has(l.id))
+    .map(l => ({ id: l.id, title: l.title, short_title: l.short_title, ministry: l.ministry }));
   writeJson(path.join(outDir, 'laws.json'), lawsForApi);
+  console.log(`[generate-api] laws.json: ${lawsForApi.length} referenced laws (out of ${laws.length} total)`);
 
   // ダッシュボード用JSON生成
   generateDashboard(indexEntries, summaryMap, outDir);
