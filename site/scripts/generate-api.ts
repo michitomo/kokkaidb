@@ -51,6 +51,7 @@ interface IndexQAPair {
   has_commitment: boolean;
   commitment_text: string;
   video_url: string;
+  related_laws: string[];
 }
 
 // index.json のセッションエントリ
@@ -236,21 +237,20 @@ function parseLawsMd(filePath: string): LawEntry[] {
 /**
  * Q&Aペアのtopic/summaryと法案タグを照合し、関連法案IDを返す。
  */
-function matchLaws(
-  qaPairs: IndexQAPair[],
+/**
+ * 1つのQ&Aペアに対して関連法案IDを返す。
+ */
+function matchLawsForQA(
+  qa: { topic: string; question_summary: string; answer_summary: string },
   laws: LawEntry[],
 ): string[] {
   if (laws.length === 0) return [];
 
-  // Q&Aペアのtopic/summaryを結合したテキスト
-  const qaText = qaPairs
-    .map(qa => `${qa.topic} ${qa.question_summary} ${qa.answer_summary}`)
-    .join(' ');
+  const qaText = `${qa.topic} ${qa.question_summary} ${qa.answer_summary}`;
   const qaTextLower = qaText.toLowerCase();
 
   const matched: string[] = [];
   for (const law of laws) {
-    // 法案のタグのうち、Q&Aテキストに含まれるものがあれば関連とみなす
     const hitCount = law.tags.filter(tag => qaTextLower.includes(tag.toLowerCase())).length;
     // タグの30%以上がヒット、かつ最低2つ以上
     if (hitCount >= 2 && hitCount / law.tags.length >= 0.3) {
@@ -487,16 +487,17 @@ export function generateApi(dataDir: string, outDir: string): void {
   const laws = parseLawsMd(LAWS_MD);
 
   // laws.md がない場合（CI等）、コミット済みの related-laws-map.json から引き継ぐ
-  const existingRelatedLaws = new Map<string, string[]>();
+  // 形式: { session_id: { qa_id: law_id[] } }
+  const existingQALaws = new Map<string, Record<string, string[]>>();
   if (laws.length === 0) {
     const mapPath = path.join(outDir, 'related-laws-map.json');
     if (fs.existsSync(mapPath)) {
       try {
-        const mapping = readJson<Record<string, string[]>>(mapPath);
-        for (const [sid, lawIds] of Object.entries(mapping)) {
-          if (lawIds.length > 0) existingRelatedLaws.set(sid, lawIds);
+        const mapping = readJson<Record<string, Record<string, string[]>>>(mapPath);
+        for (const [sid, qaMap] of Object.entries(mapping)) {
+          existingQALaws.set(sid, qaMap);
         }
-        console.log(`[generate-api] Loaded ${existingRelatedLaws.size} sessions with related_laws from related-laws-map.json`);
+        console.log(`[generate-api] Loaded ${existingQALaws.size} sessions with per-QA related_laws from related-laws-map.json`);
       } catch {
         // ignore
       }
@@ -557,7 +558,8 @@ export function generateApi(dataDir: string, outDir: string): void {
       ),
     ];
 
-    // Q&AペアをIndexQAPair形式に変換
+    // Q&AペアをIndexQAPair形式に変換（法案マッチング込み）
+    const existingSessionQALaws = existingQALaws.get(metadata.session_id) || {};
     const indexQAPairs: IndexQAPair[] = rawPairs.map((p) => ({
       id: p.id,
       topic: p.topic,
@@ -574,12 +576,13 @@ export function generateApi(dataDir: string, outDir: string): void {
       has_commitment: p.answer.has_commitment,
       commitment_text: p.answer.commitment_text,
       video_url: p.video_url,
+      related_laws: laws.length > 0
+        ? matchLawsForQA({ topic: p.topic, question_summary: p.question.summary, answer_summary: p.answer.summary }, laws)
+        : (existingSessionQALaws[p.id] || []),
     }));
 
-    // 法案マッチング（laws.mdがない場合は既存index.jsonから引き継ぎ）
-    const relatedLaws = laws.length > 0
-      ? matchLaws(indexQAPairs, laws)
-      : (existingRelatedLaws.get(metadata.session_id) || []);
+    // セッションのrelated_lawsはQ&Aペアのunion
+    const relatedLaws = [...new Set(indexQAPairs.flatMap(qa => qa.related_laws))];
 
     indexEntries.push({
       session_id: metadata.session_id,
@@ -676,15 +679,22 @@ export function generateApi(dataDir: string, outDir: string): void {
     writeJson(path.join(outDir, 'laws.json'), lawsForApi);
     console.log(`[generate-api] laws.json: ${lawsForApi.length} referenced laws (out of ${laws.length} total)`);
 
-    // related-laws-map.json: session_id → law_id[] のマッピング（コミット用スナップショット）
-    const relatedLawsMap: Record<string, string[]> = {};
+    // related-laws-map.json: session_id → { qa_id → law_id[] } のマッピング（コミット用スナップショット）
+    const relatedLawsMap: Record<string, Record<string, string[]>> = {};
     for (const entry of indexEntries) {
-      if (entry.related_laws.length > 0) {
-        relatedLawsMap[entry.session_id] = entry.related_laws;
+      const qaMap: Record<string, string[]> = {};
+      for (const qa of entry.qa_pairs) {
+        if (qa.related_laws.length > 0) {
+          qaMap[qa.id] = qa.related_laws;
+        }
+      }
+      if (Object.keys(qaMap).length > 0) {
+        relatedLawsMap[entry.session_id] = qaMap;
       }
     }
+    const totalQAWithLaws = Object.values(relatedLawsMap).reduce((s, m) => s + Object.keys(m).length, 0);
     writeJson(path.join(outDir, 'related-laws-map.json'), relatedLawsMap);
-    console.log(`[generate-api] related-laws-map.json: ${Object.keys(relatedLawsMap).length} sessions`);
+    console.log(`[generate-api] related-laws-map.json: ${Object.keys(relatedLawsMap).length} sessions, ${totalQAWithLaws} Q&A pairs`);
   } else {
     console.log('[generate-api] laws.md not found — keeping existing laws.json and related-laws-map.json as-is');
   }

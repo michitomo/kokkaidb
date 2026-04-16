@@ -179,9 +179,11 @@ export default function FilterPanel() {
           const hasTopic = entry.topics.some((t) => selectedTopics.includes(t));
           if (!hasTopic) return false;
         }
-        // 関連法案フィルタ（OR条件）
+        // 関連法案フィルタ: セッション内にマッチするQ&Aがあるかで事前フィルタ
         if (selectedLaws.length > 0) {
-          const hasLaw = (entry.related_laws || []).some((l) => selectedLaws.includes(l));
+          const hasLaw = entry.qa_pairs.some((qa) =>
+            (qa.related_laws || []).some((l) => selectedLaws.includes(l))
+          );
           if (!hasLaw) return false;
         }
         return true;
@@ -224,7 +226,14 @@ export default function FilterPanel() {
           ? speakerFiltered.filter((qa) => selectedTopics.includes(qa.topic))
           : speakerFiltered;
 
-        return { ...entry, qa_pairs: topicFiltered };
+        // 関連法案フィルタをQ&Aペアレベルでも適用
+        const lawFiltered = selectedLaws.length > 0
+          ? topicFiltered.filter((qa) =>
+              (qa.related_laws || []).some((l) => selectedLaws.includes(l))
+            )
+          : topicFiltered;
+
+        return { ...entry, qa_pairs: lawFiltered };
       })
       .filter((entry) => entry.qa_pairs.length > 0);
   }, [indexData, chamber, dateFrom, dateTo, selectedCommittees, selectedParties, debouncedSpeaker, selectedRoles, selectedTopics, selectedLaws]);
