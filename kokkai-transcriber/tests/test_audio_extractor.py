@@ -153,19 +153,21 @@ class TestSplitSegments:
         # 3つのセグメントに対して3回 ffmpeg が呼ばれること
         assert mock_run.call_count == len(sample_speakers)
 
-        # 最初の呼び出しの引数確認
-        first_cmd = mock_run.call_args_list[0][0][0]
-        assert "-ss" in first_cmd
-        assert "0.0" in first_cmd
-        assert "-to" in first_cmd
-        assert "3.0" in first_cmd  # 次の発言者の開始秒
-        assert "-c" in first_cmd
-        assert "copy" in first_cmd
+        # 並列実行のため順序は不定 → 全呼び出しからコマンドを収集して検証
+        all_cmds = [call[0][0] for call in mock_run.call_args_list]
 
-        # 最後の呼び出し: -to が全体の長さ (10.0)
-        last_cmd = mock_run.call_args_list[-1][0][0]
-        assert "-to" in last_cmd
-        assert "10.0" in last_cmd
+        # -ss 0.0 / -to 3.0 のコマンドが存在すること（最初のセグメント）
+        first_seg = [c for c in all_cmds if "0.0" in c and "3.0" in c]
+        assert len(first_seg) == 1
+        assert "-ss" in first_seg[0]
+        assert "-to" in first_seg[0]
+        assert "-c" in first_seg[0]
+        assert "copy" in first_seg[0]
+
+        # -to 10.0 のコマンドが存在すること（最後のセグメント）
+        last_seg = [c for c in all_cmds if "10.0" in c]
+        assert len(last_seg) == 1
+        assert "-to" in last_seg[0]
 
     def test_segment_filename_format(
         self, dummy_wav: Path, sample_speakers: list[SpeakerInfo], tmp_path: Path

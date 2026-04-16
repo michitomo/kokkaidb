@@ -1,4 +1,8 @@
-"""LLM 話者タグ付けの単体テスト (Step 5)"""
+"""LLM 話者タグ付けの単体テスト (Step 5)
+
+文番号インデックス方式: LLMは話者交代ポイント(splits)のみ返し、
+テキスト本体はコード側で結合する。
+"""
 
 from __future__ import annotations
 
@@ -8,7 +12,7 @@ from unittest.mock import MagicMock, patch
 import pytest
 
 from src.models import RawTranscript, SegmentTranscript, SpeakerInfo, Utterance, UtterancesOutput
-from src.speaker_tagger import _build_video_url, tag_speakers, tag_all_segments
+from src.speaker_tagger import _build_video_url, _split_sentences, tag_speakers, tag_all_segments
 
 
 @pytest.fixture
@@ -45,9 +49,9 @@ def all_speakers() -> list[SpeakerInfo]:
     ]
 
 
-def _make_mock_llm_response(utterances_data: list[dict]) -> MagicMock:
-    """LLM APIレスポンスのモックを作成する。"""
-    content = json.dumps({"utterances": utterances_data}, ensure_ascii=False)
+def _make_mock_llm_response(splits_data: list[dict]) -> MagicMock:
+    """LLM APIレスポンスのモック（splits形式）。"""
+    content = json.dumps({"splits": splits_data}, ensure_ascii=False)
     mock_message = MagicMock()
     mock_message.content = content
     mock_choice = MagicMock()
@@ -57,72 +61,102 @@ def _make_mock_llm_response(utterances_data: list[dict]) -> MagicMock:
     return mock_response
 
 
+class TestSplitSentences:
+    def test_basic_split(self) -> None:
+        text = "これより会議を開きます。古川あおい君。チームみらいの古川あおいです。"
+        result = _split_sentences(text)
+        assert result == ["これより会議を開きます。", "古川あおい君。", "チームみらいの古川あおいです。"]
+
+    def test_question_mark(self) -> None:
+        text = "どうお考えですか？お答えいたします。"
+        result = _split_sentences(text)
+        assert result == ["どうお考えですか？", "お答えいたします。"]
+
+    def test_newline_split(self) -> None:
+        text = "第一の質問です。\n第二の質問です。"
+        result = _split_sentences(text)
+        assert len(result) == 2
+
+    def test_empty_text(self) -> None:
+        assert _split_sentences("") == []
+        assert _split_sentences("   ") == []
+
+
 class TestTagSpeakers:
     def test_chairperson_to_questioner_to_answerer_pattern(
         self,
         segment_speaker: SpeakerInfo,
         all_speakers: list[SpeakerInfo],
     ) -> None:
-        """委員長 → 質疑者 → 委員長 → 答弁者 の遷移パターン。"""
+        """委員長 → 質疑者 → 答弁者 の遷移パターン。"""
         raw_text = "古川あおい君。チームみらいの古川あおいです。お答えいたします。問題を認識しております。"
+        # 4文: (0)古川あおい君。(1)チームみらいの... (2)お答えいたします。(3)問題を...
 
-        mock_utterances = [
-            {"speaker": "藤原徹", "role": "委員長", "text": "古川あおい君。"},
-            {"speaker": "古川あおい", "role": "質疑者", "text": "チームみらいの古川あおいです。"},
-            {"speaker": "上野賢一郎", "role": "答弁者", "text": "お答えいたします。問題を認識しております。"},
+        mock_splits = [
+            {"start": 0, "speaker": "藤原徹", "role": "委員長"},
+            {"start": 1, "speaker": "古川あおい", "role": "質疑者"},
+            {"start": 2, "speaker": "上野賢一郎", "role": "答弁者"},
         ]
 
         with patch("src.speaker_tagger._get_client") as mock_client_factory:
             mock_client = MagicMock()
-            mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_utterances)
+            mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_splits)
             mock_client_factory.return_value = mock_client
 
             with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
                 result = tag_speakers(raw_text, segment_speaker, all_speakers)
 
         assert len(result) == 3
+        assert result[0].speaker == "藤原徹"
         assert result[0].role == "委員長"
+        assert "古川あおい君。" in result[0].text
+        assert result[1].speaker == "古川あおい"
         assert result[1].role == "質疑者"
+        assert "チームみらい" in result[1].text
+        assert result[2].speaker == "上野賢一郎"
         assert result[2].role == "答弁者"
+        assert "お答えいたします。" in result[2].text
 
-    def test_government_witness_pattern(
+    def test_text_assembled_from_sentences(
         self,
         segment_speaker: SpeakerInfo,
         all_speakers: list[SpeakerInfo],
     ) -> None:
-        """政府参考人の答弁パターン。"""
-        raw_text = "政府参考人として説明いたします。詳細については..."
+        """テキスト本体がコード側で正しく結合されること。"""
+        raw_text = "最初の文。二番目の文。三番目の文。四番目の文。"
 
-        mock_utterances = [
-            {"speaker": "田中参考人", "role": "政府参考人", "text": "政府参考人として説明いたします。詳細については..."},
+        mock_splits = [
+            {"start": 0, "speaker": "A", "role": "委員長"},
+            {"start": 2, "speaker": "B", "role": "質疑者"},
         ]
 
         with patch("src.speaker_tagger._get_client") as mock_client_factory:
             mock_client = MagicMock()
-            mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_utterances)
+            mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_splits)
             mock_client_factory.return_value = mock_client
 
             with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
                 result = tag_speakers(raw_text, segment_speaker, all_speakers)
 
-        assert len(result) == 1
-        assert result[0].role == "政府参考人"
+        assert len(result) == 2
+        assert result[0].text == "最初の文。二番目の文。"
+        assert result[1].text == "三番目の文。四番目の文。"
 
-    def test_no_speaker_change(
+    def test_single_speaker_no_split(
         self,
         segment_speaker: SpeakerInfo,
         all_speakers: list[SpeakerInfo],
     ) -> None:
-        """話者交代なし（質疑者の持ち時間全体が1人の発言）。"""
-        raw_text = "チームみらいの古川あおいです。高額療養費制度について質問します。..."
+        """話者交代なし（1人の発言）。"""
+        raw_text = "チームみらいの古川あおいです。高額療養費制度について質問します。"
 
-        mock_utterances = [
-            {"speaker": "古川あおい", "role": "質疑者", "text": "チームみらいの古川あおいです。高額療養費制度について質問します。..."},
+        mock_splits = [
+            {"start": 0, "speaker": "古川あおい", "role": "質疑者"},
         ]
 
         with patch("src.speaker_tagger._get_client") as mock_client_factory:
             mock_client = MagicMock()
-            mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_utterances)
+            mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_splits)
             mock_client_factory.return_value = mock_client
 
             with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
@@ -130,7 +164,51 @@ class TestTagSpeakers:
 
         assert len(result) == 1
         assert result[0].speaker == "古川あおい"
-        assert result[0].role == "質疑者"
+        assert "チームみらい" in result[0].text
+
+    def test_empty_splits_fallback(
+        self,
+        segment_speaker: SpeakerInfo,
+        all_speakers: list[SpeakerInfo],
+    ) -> None:
+        """LLMが空のsplitsを返した場合のフォールバック。"""
+        raw_text = "テスト発言です。"
+
+        with patch("src.speaker_tagger._get_client") as mock_client_factory:
+            mock_client = MagicMock()
+            mock_client.chat.completions.create.return_value = _make_mock_llm_response([])
+            mock_client_factory.return_value = mock_client
+
+            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+                result = tag_speakers(raw_text, segment_speaker, all_speakers)
+
+        assert len(result) == 1
+        assert result[0].speaker == segment_speaker.name
+
+    def test_start_not_zero_auto_corrected(
+        self,
+        segment_speaker: SpeakerInfo,
+        all_speakers: list[SpeakerInfo],
+    ) -> None:
+        """最初のsplitのstartが0でない場合に自動補正されること。"""
+        raw_text = "最初の文。二番目の文。三番目の文。"
+
+        mock_splits = [
+            {"start": 1, "speaker": "B", "role": "質疑者"},
+        ]
+
+        with patch("src.speaker_tagger._get_client") as mock_client_factory:
+            mock_client = MagicMock()
+            mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_splits)
+            mock_client_factory.return_value = mock_client
+
+            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+                result = tag_speakers(raw_text, segment_speaker, all_speakers)
+
+        # 文0がsegment_speakerに割り当てられる
+        assert len(result) == 2
+        assert result[0].speaker == segment_speaker.name
+        assert result[0].text == "最初の文。"
 
     def test_returns_utterance_objects(
         self,
@@ -138,15 +216,15 @@ class TestTagSpeakers:
         all_speakers: list[SpeakerInfo],
     ) -> None:
         """返り値が Utterance オブジェクトのリストであること。"""
-        raw_text = "テスト発言"
+        raw_text = "テスト発言。"
 
-        mock_utterances = [
-            {"speaker": "古川あおい", "role": "質疑者", "text": "テスト発言"},
+        mock_splits = [
+            {"start": 0, "speaker": "古川あおい", "role": "質疑者"},
         ]
 
         with patch("src.speaker_tagger._get_client") as mock_client_factory:
             mock_client = MagicMock()
-            mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_utterances)
+            mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_splits)
             mock_client_factory.return_value = mock_client
 
             with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
@@ -154,42 +232,18 @@ class TestTagSpeakers:
 
         assert all(isinstance(u, Utterance) for u in result)
 
-    def test_json_structure_validated(
-        self,
-        segment_speaker: SpeakerInfo,
-        all_speakers: list[SpeakerInfo],
-    ) -> None:
-        """LLM レスポンスの JSON 構造が検証されること（必須フィールドの存在）。"""
-        raw_text = "テスト"
-        valid_utterances = [
-            {"speaker": "話者A", "role": "質疑者", "text": "テキスト"},
-        ]
-
-        with patch("src.speaker_tagger._get_client") as mock_client_factory:
-            mock_client = MagicMock()
-            mock_client.chat.completions.create.return_value = _make_mock_llm_response(valid_utterances)
-            mock_client_factory.return_value = mock_client
-
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
-                result = tag_speakers(raw_text, segment_speaker, all_speakers)
-
-        for u in result:
-            assert hasattr(u, "speaker")
-            assert hasattr(u, "role")
-            assert hasattr(u, "text")
-
     def test_api_call_uses_json_mode(
         self,
         segment_speaker: SpeakerInfo,
         all_speakers: list[SpeakerInfo],
     ) -> None:
         """LLM API が JSON モードで呼ばれること。"""
-        raw_text = "テスト"
+        raw_text = "テスト。"
 
         with patch("src.speaker_tagger._get_client") as mock_client_factory:
             mock_client = MagicMock()
             mock_client.chat.completions.create.return_value = _make_mock_llm_response(
-                [{"speaker": "A", "role": "質疑者", "text": "テスト"}]
+                [{"start": 0, "speaker": "A", "role": "質疑者"}]
             )
             mock_client_factory.return_value = mock_client
 
@@ -210,7 +264,7 @@ class TestTagSpeakers:
         env = {k: v for k, v in os.environ.items() if k != "DEEPINFRA_API_KEY"}
         with patch.dict("os.environ", env, clear=True):
             with pytest.raises(EnvironmentError):
-                tag_speakers("テスト", segment_speaker, all_speakers)
+                tag_speakers("テスト。", segment_speaker, all_speakers)
 
 
 class TestBuildVideoUrl:

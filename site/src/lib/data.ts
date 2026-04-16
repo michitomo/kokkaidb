@@ -22,6 +22,37 @@ export type {
 
 import type { SessionMetadata, QAPairsOutput, SessionSummary, TopicsOutput } from '../types';
 
+export interface LawEntry {
+  id: string;
+  title: string;
+  short_title: string;
+  ministry: string;
+}
+
+const API_DIR = path.resolve(process.cwd(), 'public/api');
+
+/**
+ * セッションに関連する法案を返す（laws.json + index.jsonを参照）。
+ */
+export function getRelatedLaws(sessionId: string): LawEntry[] {
+  try {
+    const indexPath = path.join(API_DIR, 'index.json');
+    const lawsPath = path.join(API_DIR, 'laws.json');
+    if (!fs.existsSync(indexPath) || !fs.existsSync(lawsPath)) return [];
+
+    const index = readJson<{ session_id: string; related_laws?: string[] }[]>(indexPath);
+    const laws = readJson<LawEntry[]>(lawsPath);
+
+    const entry = index.find(e => e.session_id === sessionId);
+    if (!entry?.related_laws?.length) return [];
+
+    const lawMap = new Map(laws.map(l => [l.id, l]));
+    return entry.related_laws.flatMap(id => lawMap.get(id) ? [lawMap.get(id)!] : []);
+  } catch {
+    return [];
+  }
+}
+
 function readJson<T = unknown>(filePath: string): T {
   return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 }

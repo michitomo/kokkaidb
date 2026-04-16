@@ -2,7 +2,7 @@
 import BaseLayout from '../../../../../layouts/BaseLayout.astro';
 import QAPairCard from '../../../../../components/QAPairCard.astro';
 import TimelineView from '../../../../../components/TimelineView.jsx';
-import { getAllSessions, getSessionData, sessionSlug } from '../../../../../lib/data';
+import { getAllSessions, getSessionData, sessionSlug, getRelatedLaws } from '../../../../../lib/data';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -20,6 +20,7 @@ export function getStaticPaths() {
 const { chamber, year, month, day, slug } = Astro.params;
 const data = getSessionData(chamber!, year!, month!, day!, slug!);
 const { metadata, qaPairs, summary, topics: topicsData } = data;
+const relatedLaws = getRelatedLaws(metadata.session_id);
 
 // topics.json の name → related_qa_ids マッピング
 const topicQaMap: Record<string, string[]> = {};
@@ -117,6 +118,7 @@ if (fs.existsSync(utterancesPath)) {
 const chamberLabel = metadata.chamber === 'shugiin'
   ? '衆議院インターネット審議中継'
   : '参議院インターネット審議中継';
+const base = import.meta.env.BASE_URL;
 
 // セッション種別判定: Q&Aが0件なら手続き的セッション（趣旨説明・採決等）
 const hasQA = qaPairs.pairs.length > 0;
@@ -197,6 +199,20 @@ const sessionType = hasQA ? 'debate' : 'procedural';
     <!-- Q&Aペア -->
     <section class="section">
       <h2 id="qa-heading">質疑応答（{qaPairs.pairs.length}件）</h2>
+      {relatedLaws.length > 0 && (
+        <div class="related-laws">
+          <span class="related-laws-label">関連法案:</span>
+          {relatedLaws.map(law => (
+            <a
+              class="related-law-tag"
+              href={`${base}/browse?law=${law.id}`}
+              title={law.title}
+            >
+              📋 {law.short_title}
+            </a>
+          ))}
+        </div>
+      )}
       <p class="empty-note" id="qa-no-match" style="display:none;">
         この発言者・トピックに該当する質疑応答はありません。
       </p>
@@ -532,6 +548,35 @@ const sessionType = hasQA ? 'debate' : 'procedural';
   }
   .speaker-filter-reset:hover { background: #e2e8f0; }
   .empty-note { color: #6b7280; font-style: italic; }
+  .related-laws {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+  }
+  .related-laws-label {
+    color: #6b7280;
+    white-space: nowrap;
+  }
+  .related-law-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 4px;
+    padding: 0.15rem 0.5rem;
+    font-size: 0.8rem;
+    color: #1d4ed8;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .related-law-tag:hover {
+    background: #dbeafe;
+    text-decoration: underline;
+  }
   .utterance-segment {
     border: 1px solid #e5e7eb;
     border-radius: 8px;

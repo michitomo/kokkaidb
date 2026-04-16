@@ -1,9 +1,11 @@
 FROM python:3.12-slim
 
-# ffmpegとgitをインストール
+# ffmpegとgitとSSHクライアントをインストール
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends ffmpeg git && \
-    rm -rf /var/lib/apt/lists/*
+    apt-get install -y --no-install-recommends ffmpeg git openssh-client && \
+    rm -rf /var/lib/apt/lists/* && \
+    mkdir -p /root/.ssh && \
+    ssh-keyscan github.com >> /root/.ssh/known_hosts 2>/dev/null
 
 WORKDIR /app
 
@@ -16,4 +18,4 @@ COPY src/ src/
 
 # リポジトリルートをマウントするための作業ディレクトリ
 # docker-compose.yml で volumes 指定
-WORKDIR /repo
+WORKDIR /repo/kokkai-transcriber
