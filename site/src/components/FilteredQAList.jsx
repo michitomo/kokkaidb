@@ -14,7 +14,7 @@ const PAGE_SIZE = 300;
  * @param {number} props.page 現在のページ（1始まり）
  * @param {(page: number) => void} props.onPageChange
  */
-export default function FilteredQAList({ filteredEntries, totalCount, page, onPageChange }) {
+export default function FilteredQAList({ filteredEntries, totalCount, page, onPageChange, baseUrl = '' }) {
   const [copyState, setCopyState] = useState('idle'); // idle | success | error
   const [expandedIds, setExpandedIds] = useState(new Set());
 
@@ -78,6 +78,13 @@ export default function FilteredQAList({ filteredEntries, totalCount, page, onPa
 
   function chamberLabel(chamber) {
     return chamber === 'shugiin' ? '衆議院TV' : '参議院TV';
+  }
+
+  function sessionDetailUrl(entry) {
+    const [year, month, day] = entry.date.split('-');
+    const slug = `${entry.session_id}_${entry.committee}`;
+    const base = baseUrl.replace(/\/$/, '');
+    return `${base}/${entry.chamber}/${year}/${month}/${day}/${encodeURIComponent(slug)}`;
   }
 
   function formatVideoTime(videoUrl) {
@@ -149,8 +156,10 @@ export default function FilteredQAList({ filteredEntries, totalCount, page, onPa
                       <span className={`chamber-badge ${entry.chamber}`}>
                         {entry.chamber === 'shugiin' ? '衆' : '参'}
                       </span>
-                      <span className="qa-date">{entry.date}</span>
-                      <span className="qa-committee">{entry.committee}</span>
+                      <a href={sessionDetailUrl(entry)} className="session-link">
+                        <span className="qa-date">{entry.date}</span>
+                        <span className="qa-committee">{entry.committee}</span>
+                      </a>
                     </div>
                     <div className="qa-header-right">
                       <span className="qa-topic">{qa.topic}</span>
@@ -386,6 +395,18 @@ export default function FilteredQAList({ filteredEntries, totalCount, page, onPa
         }
         .chamber-badge.shugiin { background: #dbeafe; color: #1e40af; }
         .chamber-badge.sangiin { background: #fce7f3; color: #9d174d; }
+        .session-link {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          text-decoration: none;
+          color: inherit;
+        }
+        .session-link:hover .qa-date,
+        .session-link:hover .qa-committee {
+          color: #2563eb;
+          text-decoration: underline;
+        }
         .qa-date { color: #6b7280; font-size: 0.85rem; }
         .qa-committee { font-weight: 500; color: #374151; }
 

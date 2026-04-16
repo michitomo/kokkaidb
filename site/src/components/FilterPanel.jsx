@@ -459,6 +459,7 @@ export default function FilterPanel() {
         totalCount={totalCount}
         page={page}
         onPageChange={setPage}
+        baseUrl={BASE_URL}
       />
 
       <style>{`
