@@ -561,6 +561,20 @@ export function generateApi(dataDir: string, outDir: string): void {
       ),
     ];
 
+    // LLMが生成した法案タグをsummary.jsonから取得（存在する場合）
+    const summaryKey = `${metadata.chamber}::${metadata.session_id}`;
+    const sessionSummary = summaryMap.get(summaryKey);
+    const llmLawTags = new Map<string, string[]>(); // qa_id → law_ids
+    if (sessionSummary?.related_laws) {
+      for (const rl of sessionSummary.related_laws) {
+        for (const qaId of rl.qa_ids) {
+          const existing = llmLawTags.get(qaId) || [];
+          existing.push(rl.law_id);
+          llmLawTags.set(qaId, existing);
+        }
+      }
+    }
+
     // Q&AペアをIndexQAPair形式に変換（法案マッチング込み）
     const existingSessionQALaws = existingQALaws.get(metadata.session_id) || {};
     const indexQAPairs: IndexQAPair[] = rawPairs.map((p) => ({
@@ -579,9 +593,15 @@ export function generateApi(dataDir: string, outDir: string): void {
       has_commitment: p.answer.has_commitment,
       commitment_text: p.answer.commitment_text,
       video_url: p.video_url,
-      related_laws: laws.length > 0
-        ? matchLawsForQA({ topic: p.topic, question_summary: p.question.summary, answer_summary: p.answer.summary, question_full_text: p.question.full_text || '', answer_full_text: p.answer.full_text || '' }, laws)
-        : (existingSessionQALaws[p.id] || []),
+      related_laws: (() => {
+        // LLMタグ（summary.json由来）+ キーワードマッチをマージ
+        const llmTags = llmLawTags.get(p.id) || [];
+        const keywordTags = laws.length > 0
+          ? matchLawsForQA({ topic: p.topic, question_summary: p.question.summary, answer_summary: p.answer.summary, question_full_text: p.question.full_text || '', answer_full_text: p.answer.full_text || '' }, laws)
+          : [];
+        const fallback = existingSessionQALaws[p.id] || [];
+        return [...new Set([...llmTags, ...keywordTags, ...(llmTags.length === 0 && keywordTags.length === 0 ? fallback : [])])];
+      })(),
     }));
 
     // セッション内伝播

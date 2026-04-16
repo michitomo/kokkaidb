@@ -65,10 +65,16 @@ export interface KeyCommitment {
   qa_id: string;
 }
 
+export interface RelatedLawTag {
+  law_id: string;
+  qa_ids: string[];
+}
+
 export interface SessionSummary {
   session_summary: string;
   key_topics: string[];
   key_commitments: KeyCommitment[];
+  related_laws?: RelatedLawTag[];
 }
 
 export interface Topic {

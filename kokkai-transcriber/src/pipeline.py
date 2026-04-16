@@ -50,7 +50,7 @@ from src.scrapers.shugiin import ShugiinScraper
 from src.speaker_tagger import tag_all_segments
 from src.transcript_corrector import correct_transcript
 from src.state import StateManager
-from src.structurer import generate_qa_pairs, generate_summary, generate_topics
+from src.structurer import generate_qa_pairs, generate_summary, generate_summary_and_topics, generate_topics
 from src.transcriber import transcribe_all_segments
 
 # パイプライン起動時にfd上限を引き上げ
@@ -65,6 +65,36 @@ logger = logging.getLogger(__name__)
 
 # データ出力先（kokkai-transcriber/ の1つ上の data/）
 DATA_DIR = Path(__file__).parent.parent.parent / "data"
+
+# 法案一覧（docs/laws.md）
+LAWS_MD_PATH = Path(__file__).parent.parent.parent / "docs" / "laws.md"
+
+
+def _load_laws_compact() -> str:
+    """laws.mdからLLMプロンプト用のコンパクトな法案一覧テキストを生成する。
+
+    見つからない場合は空文字列を返す（法案タグ付けをスキップ）。
+    """
+    import re
+
+    if not LAWS_MD_PATH.exists():
+        logger.info("laws.md not found at %s, skipping law tagging", LAWS_MD_PATH)
+        return ""
+
+    content = LAWS_MD_PATH.read_text(encoding="utf-8")
+    lines = content.split("\n")
+    compact: list[str] = []
+    law_id = 0
+    for line in lines:
+        m = re.match(r'^## \*\*(.+?)\s*\\?\s*-\s*(.+?)\*\*$', line)
+        if m:
+            law_id += 1
+            title = m.group(2).strip()
+            compact.append(f"law_{law_id:03d}: {title}")
+
+    if compact:
+        logger.info("Loaded %d laws from laws.md for LLM tagging", len(compact))
+    return "\n".join(compact)
 
 
 def _output_dir_for(chamber: str, date: str, session_id: str, committee: str) -> Path:
@@ -197,15 +227,12 @@ def run_pipeline(
         "Saved utterances.json (%d segments)", len(utterances_output.segments)
     )
 
-    # Step 6: Q&Aペア生成・要約・トピック抽出（要約・トピックは並列）
-    logger.info("=== Step 6: Generating Q&A pairs, summary, and topics ===")
+    # Step 6: Q&Aペア生成 → 要約・トピック・法案タグ（統合LLM呼び出し）
+    logger.info("=== Step 6: Generating Q&A pairs, summary, topics, and law tags ===")
     try:
         qa_pairs = generate_qa_pairs(utterances_output, speakers=session_detail.speakers, max_workers=MAX_WORKERS_LLM)
-        with ThreadPoolExecutor(max_workers=MAX_WORKERS_LLM) as executor:
-            f_summary = executor.submit(generate_summary, utterances_output, qa_pairs)
-            f_topics = executor.submit(generate_topics, qa_pairs)
-            summary = f_summary.result()
-            topics = f_topics.result()
+        laws_text = _load_laws_compact()
+        summary, topics = generate_summary_and_topics(utterances_output, qa_pairs, laws_text=laws_text)
         _log("structure", True)
     except Exception as e:
         _log("structure", False, str(e))

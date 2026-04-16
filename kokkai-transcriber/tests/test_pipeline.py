@@ -171,8 +171,8 @@ def _pipeline_patches(
         patch("src.pipeline.transcribe_all_segments", return_value=mock_raw_transcript),
         patch("src.pipeline.tag_all_segments", return_value=mock_utterances_output),
         patch("src.pipeline.generate_qa_pairs", return_value=mock_qa_pairs),
-        patch("src.pipeline.generate_summary", return_value=mock_summary),
-        patch("src.pipeline.generate_topics", return_value=mock_topics),
+        patch("src.pipeline.generate_summary_and_topics", return_value=(mock_summary, mock_topics)),
+        patch("src.pipeline._load_laws_compact", return_value=""),
         patch("src.pipeline.publish_session"),
     )
 
@@ -198,8 +198,8 @@ class TestRunPipeline:
             patch("src.pipeline.transcribe_all_segments", return_value=mock_raw_transcript),
             patch("src.pipeline.tag_all_segments", return_value=mock_utterances_output),
             patch("src.pipeline.generate_qa_pairs", return_value=mock_qa_pairs),
-            patch("src.pipeline.generate_summary", return_value=mock_summary),
-            patch("src.pipeline.generate_topics", return_value=mock_topics),
+            patch("src.pipeline.generate_summary_and_topics", return_value=(mock_summary, mock_topics)),
+            patch("src.pipeline._load_laws_compact", return_value=""),
             patch("src.pipeline.publish_session"),
         ):
             run_pipeline("shugiin", "56149", output_dir, no_push=True)
@@ -235,8 +235,8 @@ class TestRunPipeline:
             patch("src.pipeline.transcribe_all_segments", return_value=mock_raw_transcript),
             patch("src.pipeline.tag_all_segments", return_value=mock_utterances_output),
             patch("src.pipeline.generate_qa_pairs", return_value=mock_qa_pairs),
-            patch("src.pipeline.generate_summary", return_value=mock_summary),
-            patch("src.pipeline.generate_topics", return_value=mock_topics),
+            patch("src.pipeline.generate_summary_and_topics", return_value=(mock_summary, mock_topics)),
+            patch("src.pipeline._load_laws_compact", return_value=""),
             patch("src.pipeline.publish_session"),
         ):
             run_pipeline("shugiin", "56149", output_dir, no_push=True)
@@ -310,8 +310,8 @@ class TestRunPipeline:
             patch("src.pipeline.transcribe_all_segments", return_value=mock_raw_transcript),
             patch("src.pipeline.tag_all_segments", return_value=mock_utterances_output),
             patch("src.pipeline.generate_qa_pairs", return_value=mock_qa_pairs),
-            patch("src.pipeline.generate_summary", return_value=mock_summary),
-            patch("src.pipeline.generate_topics", return_value=mock_topics),
+            patch("src.pipeline.generate_summary_and_topics", return_value=(mock_summary, mock_topics)),
+            patch("src.pipeline._load_laws_compact", return_value=""),
             patch("src.pipeline.publish_session"),
         ):
             run_pipeline("shugiin", "56149", output_dir, no_push=True)
@@ -338,8 +338,8 @@ class TestRunPipeline:
             patch("src.pipeline.transcribe_all_segments", return_value=mock_raw_transcript),
             patch("src.pipeline.tag_all_segments", return_value=mock_utterances_output),
             patch("src.pipeline.generate_qa_pairs", return_value=mock_qa_pairs),
-            patch("src.pipeline.generate_summary", return_value=mock_summary),
-            patch("src.pipeline.generate_topics", return_value=mock_topics),
+            patch("src.pipeline.generate_summary_and_topics", return_value=(mock_summary, mock_topics)),
+            patch("src.pipeline._load_laws_compact", return_value=""),
             patch("src.pipeline.publish_session") as mock_publish,
         ):
             run_pipeline("shugiin", "56149", output_dir, no_push=True)
@@ -367,8 +367,8 @@ class TestRunPipeline:
             patch("src.pipeline.transcribe_all_segments", return_value=mock_raw_transcript),
             patch("src.pipeline.tag_all_segments", return_value=mock_utterances_output),
             patch("src.pipeline.generate_qa_pairs", return_value=mock_qa_pairs),
-            patch("src.pipeline.generate_summary", return_value=mock_summary),
-            patch("src.pipeline.generate_topics", return_value=mock_topics),
+            patch("src.pipeline.generate_summary_and_topics", return_value=(mock_summary, mock_topics)),
+            patch("src.pipeline._load_laws_compact", return_value=""),
             patch("src.pipeline.publish_session"),
         ):
             run_pipeline("shugiin", "56149", output_dir, state=state, no_push=True)
@@ -444,8 +444,8 @@ class TestSangiinPipeline:
             patch("src.pipeline.transcribe_all_segments", return_value=mock_raw_transcript),
             patch("src.pipeline.tag_all_segments", return_value=mock_utterances_output),
             patch("src.pipeline.generate_qa_pairs", return_value=mock_qa_pairs),
-            patch("src.pipeline.generate_summary", return_value=mock_summary),
-            patch("src.pipeline.generate_topics", return_value=mock_topics),
+            patch("src.pipeline.generate_summary_and_topics", return_value=(mock_summary, mock_topics)),
+            patch("src.pipeline._load_laws_compact", return_value=""),
             patch("src.pipeline.publish_session"),
         ):
             run_pipeline("sangiin", "7890", output_dir, no_push=True)
@@ -482,8 +482,8 @@ class TestSangiinPipeline:
             patch("src.pipeline.transcribe_all_segments", return_value=mock_raw_transcript),
             patch("src.pipeline.tag_all_segments", return_value=mock_utterances_output),
             patch("src.pipeline.generate_qa_pairs", return_value=mock_qa_pairs),
-            patch("src.pipeline.generate_summary", return_value=mock_summary),
-            patch("src.pipeline.generate_topics", return_value=mock_topics),
+            patch("src.pipeline.generate_summary_and_topics", return_value=(mock_summary, mock_topics)),
+            patch("src.pipeline._load_laws_compact", return_value=""),
             patch("src.pipeline.publish_session"),
         ):
             run_pipeline("sangiin", "7890", output_dir, no_push=True)

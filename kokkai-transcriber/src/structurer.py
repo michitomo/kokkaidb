@@ -22,6 +22,7 @@ from src.models import (
     QAPair,
     QAPairsOutput,
     QuestionDetail,
+    RelatedLawTag,
     SegmentUtterances,
     SpeakerInfo,
     SummaryOutput,
@@ -46,6 +47,8 @@ QA_SEGMENT_SYSTEM_PROMPT = """あなたは国会質疑のQ&Aペアを構造化�
 - sentence_indicesは、入力の(N)の番号を配列で指定。そのQ&Aの該当部分の文だけを選ぶこと
 - 1つのutteranceに複数テーマが含まれる場合（例: 代表質問）、テーマごとに該当する文だけを選択すること
 - summaryは箇条書き（各項目は「- 」で始める）。要点を2-4項目で簡潔に
+- roleラベル（[委員長]等）は話者タグ付けの結果であり、誤分類の場合がある。roleではなく**発言の内容**でQ&Aを判断すること
+- 委員長の指名（「〇〇君。」）の直後に政策への質問・意見が続く場合、それは質疑者の発言である
 
 speaker, party, roleは返さないでください（コードで元データから自動取得します）。
 
@@ -77,8 +80,10 @@ evasion_scoreの目安:
 - 0.9-1.0: 完全に回避、「答えられない」等
 """
 
-SUMMARY_SYSTEM_PROMPT = """あなたは国会会議の要約を作成する専門家です。
-セッション全体のutterancesとQ&Aペアから、以下のJSON形式で要約を生成してください:
+SUMMARY_AND_TOPICS_SYSTEM_PROMPT = """あなたは国会会議の分析専門家です。
+セッション全体のutterancesとQ&Aペアから、要約・トピック分析・関連法案タグ付けを一括で行ってください。
+
+以下のJSON形式で出力してください:
 
 {
   "session_summary": "セッション全体の概要（3-5文）",
@@ -91,14 +96,7 @@ SUMMARY_SYSTEM_PROMPT = """あなたは国会会議の要約を作成する専�
       "topic": "関連トピック",
       "qa_id": "関連するQ&AペアのID"
     }
-  ]
-}
-"""
-
-TOPICS_SYSTEM_PROMPT = """あなたは国会質疑のトピック分析を行う専門家です。
-Q&Aペアリストからトピックを抽出し、以下のJSON形式で出力してください:
-
-{
+  ],
   "topics": [
     {
       "name": "トピック名",
@@ -106,10 +104,23 @@ Q&Aペアリストからトピックを抽出し、以下のJSON形式で出力�
       "related_qa_ids": ["qa_001", "qa_002"],
       "related_speakers": ["発言者名1", "発言者名2"]
     }
+  ],
+  "related_laws": [
+    {
+      "law_id": "law_001",
+      "qa_ids": ["qa_001", "qa_003"]
+    }
   ]
 }
 
-トピックは政策領域・法案・社会問題などの観点から分類してください。
+## トピック抽出ルール
+- 政策領域・法案・社会問題などの観点から分類する
+
+## 関連法案タグ付けルール
+- 法案一覧が提供された場合、各Q&Aペアが実質的にどの法案に関連するかを判断する
+- 法案名がtopicに含まれる場合だけでなく、質疑の内容・文脈から関連する法案を幅広く判断する
+- 確信度が低いものは含めない（明らかに関連するもののみ）
+- 法案一覧が提供されない場合、related_lawsは空配列を返す
 """
 
 
@@ -256,46 +267,21 @@ def _is_qa_segment(seg: SegmentUtterances) -> bool:
     return False
 
 
-def _generate_qa_for_segment(
+# QA密度チェックの閾値
+_MIN_QA_DENSITY = 0.5   # 1000文字あたり最低0.5ペア
+_QA_DENSITY_RETRY_HINT = (
+    "\n\n【注意】前回の抽出ではQ&Aペアが{prev_count}個しか得られませんでした（{total_chars}文字のセグメント）。"
+    "roleラベルに頼らず発言内容から判断し、すべてのQ&Aペアを漏れなく抽出してください。"
+)
+
+
+def _extract_pairs_from_response(
+    content: str | None,
     seg: SegmentUtterances,
-    session_context: str,
+    all_sentences: list[str],
     speakers_lookup: dict[str, SpeakerInfo],
 ) -> list[QAPair]:
-    """1セグメントからQ&Aペアを生成する。
-
-    LLMにはutterance_indicesと判断のみ返させ、full_textはコードで組み立てる。
-    """
-    client = _get_client()
-
-    sentence_text, all_sentences = _build_sentence_map(seg)
-    user_prompt = (
-        f"以下は国会質疑の1つの発言セグメントです。"
-        f"この発言者の持ち時間で行われた質疑応答を**すべて**Q&Aペアとして抽出してください。\n"
-        f"sentence_indicesには入力の(N)の番号を使ってください。\n\n"
-        f"セッション情報: {session_context}\n\n"
-        f"{sentence_text}"
-    )
-
-    logger.info(
-        "Generating Q&A pairs for segment %d: %s (%d utterances, %d chars)",
-        seg.segment_index,
-        seg.segment_speaker,
-        len(seg.utterances),
-        sum(len(u.text) for u in seg.utterances),
-    )
-
-    response = with_retry(lambda: client.chat.completions.create(
-        model=STRUCTURER_MODEL,
-        messages=[
-            {"role": "system", "content": QA_SEGMENT_SYSTEM_PROMPT},
-            {"role": "user", "content": user_prompt},
-        ],
-        temperature=0.1,
-        max_tokens=8192,
-        response_format={"type": "json_object"},
-    ))
-
-    content = response.choices[0].message.content
+    """LLMレスポンスをパースしてQAPairリストを組み立てる。"""
     if not content:
         logger.warning("Empty response for segment %d", seg.segment_index)
         return []
@@ -307,7 +293,6 @@ def _generate_qa_for_segment(
         return []
     raw_pairs = data.get("pairs", [])
 
-    # sentence_indicesから full_text, speaker, party, role を機械的に組み立て
     sent_to_utt = _build_sentence_to_utterance_map(seg)
     pairs: list[QAPair] = []
     for p in raw_pairs:
@@ -319,7 +304,6 @@ def _generate_qa_for_segment(
         q_full_text = _assemble_full_text_from_sentences(all_sentences, q_indices)
         a_full_text = _assemble_full_text_from_sentences(all_sentences, a_indices)
 
-        # speaker/party/role を元データから取得
         q_speaker, q_party = _resolve_speaker_from_sentences(seg, q_indices, sent_to_utt, speakers_lookup)
         a_speaker, a_role = _resolve_answerer_from_sentences(seg, a_indices, sent_to_utt, speakers_lookup)
 
@@ -347,6 +331,96 @@ def _generate_qa_for_segment(
                 video_url=seg.video_url,
             )
         )
+    return pairs
+
+
+def _generate_qa_for_segment(
+    seg: SegmentUtterances,
+    session_context: str,
+    speakers_lookup: dict[str, SpeakerInfo],
+) -> list[QAPair]:
+    """1セグメントからQ&Aペアを生成する。
+
+    LLMにはutterance_indicesと判断のみ返させ、full_textはコードで組み立てる。
+    QA密度が低い場合は1回リトライする。
+    """
+    client = _get_client()
+
+    sentence_text, all_sentences = _build_sentence_map(seg)
+    total_chars = sum(len(u.text) for u in seg.utterances)
+
+    base_user_prompt = (
+        f"以下は国会質疑の1つの発言セグメントです。"
+        f"この発言者の持ち時間で行われた質疑応答を**すべて**Q&Aペアとして抽出してください。\n"
+        f"sentence_indicesには入力の(N)の番号を使ってください。\n\n"
+        f"セッション情報: {session_context}\n\n"
+        f"{sentence_text}"
+    )
+
+    logger.info(
+        "Generating Q&A pairs for segment %d: %s (%d utterances, %d chars)",
+        seg.segment_index,
+        seg.segment_speaker,
+        len(seg.utterances),
+        total_chars,
+    )
+
+    response = with_retry(lambda: client.chat.completions.create(
+        model=STRUCTURER_MODEL,
+        messages=[
+            {"role": "system", "content": QA_SEGMENT_SYSTEM_PROMPT},
+            {"role": "user", "content": base_user_prompt},
+        ],
+        temperature=0.1,
+        max_tokens=8192,
+        response_format={"type": "json_object"},
+    ))
+
+    pairs = _extract_pairs_from_response(
+        response.choices[0].message.content, seg, all_sentences, speakers_lookup,
+    )
+
+    # QA密度チェック: 低密度ならリトライ（1回のみ）
+    if total_chars >= 2000:
+        density = len(pairs) / (total_chars / 1000)
+        if density < _MIN_QA_DENSITY:
+            logger.warning(
+                "Low Q&A density for segment %d (%s): "
+                "%d pairs / %d chars (density=%.2f < %.2f), retrying",
+                seg.segment_index, seg.segment_speaker,
+                len(pairs), total_chars, density, _MIN_QA_DENSITY,
+            )
+            retry_hint = _QA_DENSITY_RETRY_HINT.format(
+                prev_count=len(pairs), total_chars=total_chars,
+            )
+            retry_prompt = base_user_prompt + retry_hint
+
+            retry_response = with_retry(lambda: client.chat.completions.create(
+                model=STRUCTURER_MODEL,
+                messages=[
+                    {"role": "system", "content": QA_SEGMENT_SYSTEM_PROMPT},
+                    {"role": "user", "content": retry_prompt},
+                ],
+                temperature=0.3,  # リトライ時はやや高めで多様性を出す
+                max_tokens=8192,
+                response_format={"type": "json_object"},
+            ))
+
+            retry_pairs = _extract_pairs_from_response(
+                retry_response.choices[0].message.content, seg, all_sentences, speakers_lookup,
+            )
+
+            if len(retry_pairs) > len(pairs):
+                logger.info(
+                    "Retry improved segment %d: %d → %d pairs",
+                    seg.segment_index, len(pairs), len(retry_pairs),
+                )
+                pairs = retry_pairs
+            else:
+                logger.info(
+                    "Retry did not improve segment %d: %d → %d pairs, keeping original",
+                    seg.segment_index, len(pairs), len(retry_pairs),
+                )
 
     logger.info(
         "Segment %d (%s): extracted %d Q&A pairs",
@@ -429,31 +503,43 @@ def generate_qa_pairs(
     return QAPairsOutput(pairs=all_pairs)
 
 
-def generate_summary(
+def generate_summary_and_topics(
     utterances: UtterancesOutput,
     qa_pairs: QAPairsOutput,
-) -> SummaryOutput:
-    """utterancesとQ&AペアからセッションサマリーのJSONを生成する。"""
+    laws_text: str = "",
+) -> tuple[SummaryOutput, TopicsOutput]:
+    """要約・トピック・関連法案タグを1回のLLM呼び出しで生成する。
+
+    Args:
+        utterances: 話者タグ付き発言データ
+        qa_pairs: Q&Aペア
+        laws_text: 法案一覧テキスト（空の場合は法案タグ付けをスキップ）
+
+    Returns:
+        (SummaryOutput, TopicsOutput) のタプル
+    """
     client = _get_client()
 
     segments_text = _format_segments_for_prompt(utterances.segments)
     qa_text = "\n".join(
-        f"[{p.id}] {p.topic}: {p.question.summary} → {p.answer.summary}"
+        f"[{p.id}] トピック: {p.topic}\n  質問者: {p.question.speaker}（{p.question.party}）\n  要旨: {p.question.summary} → {p.answer.summary}"
         for p in qa_pairs.pairs
     )
 
     user_prompt = (
-        f"以下の国会質疑の要約を生成してください。\n\n"
+        f"以下の国会質疑を分析してください。\n\n"
         f"## Q&Aペア一覧\n{qa_text}\n\n"
         f"## 全発言\n{segments_text}"
     )
+    if laws_text:
+        user_prompt += f"\n\n## 法案一覧\n{laws_text}"
 
-    logger.info("Generating session summary")
+    logger.info("Generating summary, topics, and law tags (unified)")
 
     response = with_retry(lambda: client.chat.completions.create(
         model=STRUCTURER_MODEL,
         messages=[
-            {"role": "system", "content": SUMMARY_SYSTEM_PROMPT},
+            {"role": "system", "content": SUMMARY_AND_TOPICS_SYSTEM_PROMPT},
             {"role": "user", "content": user_prompt},
         ],
         temperature=0.1,
@@ -468,8 +554,9 @@ def generate_summary(
     try:
         data = json.loads(content)
     except json.JSONDecodeError as e:
-        raise ValueError(f"Failed to parse LLM JSON for summary: {e}") from e
+        raise ValueError(f"Failed to parse LLM JSON for summary+topics: {e}") from e
 
+    # SummaryOutput
     commitments: list[KeyCommitment] = []
     for c in data.get("key_commitments", []):
         commitments.append(
@@ -482,49 +569,28 @@ def generate_summary(
             )
         )
 
-    return SummaryOutput(
+    related_laws: list[RelatedLawTag] = []
+    for rl in data.get("related_laws", []):
+        law_id = rl.get("law_id") or ""
+        if law_id:
+            related_laws.append(
+                RelatedLawTag(
+                    law_id=law_id,
+                    qa_ids=rl.get("qa_ids") or [],
+                )
+            )
+
+    summary = SummaryOutput(
         session_summary=data.get("session_summary", ""),
         key_topics=data.get("key_topics", []),
         key_commitments=commitments,
+        related_laws=related_laws,
     )
 
-
-def generate_topics(qa_pairs: QAPairsOutput) -> TopicsOutput:
-    """Q&AペアからトピックリストのJSONを生成する。"""
-    client = _get_client()
-
-    qa_text = "\n".join(
-        f"[{p.id}] トピック: {p.topic}\n  質問者: {p.question.speaker}（{p.question.party}）\n  要旨: {p.question.summary}"
-        for p in qa_pairs.pairs
-    )
-
-    user_prompt = f"以下のQ&Aペアからトピックを抽出・整理してください:\n\n{qa_text}"
-
-    logger.info("Generating topics")
-
-    response = with_retry(lambda: client.chat.completions.create(
-        model=STRUCTURER_MODEL,
-        messages=[
-            {"role": "system", "content": TOPICS_SYSTEM_PROMPT},
-            {"role": "user", "content": user_prompt},
-        ],
-        temperature=0.1,
-        max_tokens=8192,
-        response_format={"type": "json_object"},
-    ))
-
-    content = response.choices[0].message.content
-    if not content:
-        raise ValueError("Empty response from LLM")
-
-    try:
-        data = json.loads(content)
-    except json.JSONDecodeError as e:
-        raise ValueError(f"Failed to parse LLM JSON for topics: {e}") from e
-
-    topics: list[Topic] = []
+    # TopicsOutput
+    topics_list: list[Topic] = []
     for t in data.get("topics", []):
-        topics.append(
+        topics_list.append(
             Topic(
                 name=t.get("name") or "",
                 description=t.get("description") or "",
@@ -533,4 +599,34 @@ def generate_topics(qa_pairs: QAPairsOutput) -> TopicsOutput:
             )
         )
 
-    return TopicsOutput(topics=topics)
+    topics = TopicsOutput(topics=topics_list)
+
+    logger.info(
+        "Unified output: %d topics, %d commitments, %d law tags",
+        len(topics_list),
+        len(commitments),
+        len(related_laws),
+    )
+
+    return summary, topics
+
+
+def generate_summary(
+    utterances: UtterancesOutput,
+    qa_pairs: QAPairsOutput,
+) -> SummaryOutput:
+    """後方互換ラッパー: generate_summary_and_topicsを呼び出す。"""
+    summary, _ = generate_summary_and_topics(utterances, qa_pairs)
+    return summary
+
+
+def generate_topics(qa_pairs: QAPairsOutput) -> TopicsOutput:
+    """後方互換ラッパー: generate_summary_and_topicsを呼び出す。
+
+    注意: この関数はutterancesなしで呼ばれるため、空のUtterancesOutputを使う。
+    新規コードではgenerate_summary_and_topicsを直接使うこと。
+    """
+    from src.models import UtterancesOutput as UO
+    dummy_utterances = UO(segments=[])
+    _, topics = generate_summary_and_topics(dummy_utterances, qa_pairs)
+    return topics

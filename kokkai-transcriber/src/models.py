@@ -142,12 +142,20 @@ class KeyCommitment(BaseModel):
     qa_id: str | None = None
 
 
+class RelatedLawTag(BaseModel):
+    """LLMが判定した関連法案タグ"""
+
+    law_id: str
+    qa_ids: list[str] = Field(default_factory=list)
+
+
 class SummaryOutput(BaseModel):
     """summary.json のルート"""
 
     session_summary: str
     key_topics: list[str]
     key_commitments: list[KeyCommitment]
+    related_laws: list[RelatedLawTag] = Field(default_factory=list)
 
 
 class Topic(BaseModel):
