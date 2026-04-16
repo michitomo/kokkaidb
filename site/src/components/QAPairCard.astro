@@ -77,7 +77,11 @@ const chamberName = session?.chamber === 'shugiin' ? '衆議院TV' : session?.ch
       {pair.question.full_text && (
         <details class="full-text-details">
           <summary class="expand-toggle">{segmentDup ? 'セグメント全文を表示' : '全文を表示'}</summary>
-          <p class="full-text">{pair.question.full_text}</p>
+          <div class="full-text">
+            {pair.question.full_text.split(/(?<=。)/).filter((s: string) => s.trim()).map((para: string) => (
+              <p>{para}</p>
+            ))}
+          </div>
         </details>
       )}
     </div>
@@ -97,7 +101,11 @@ const chamberName = session?.chamber === 'shugiin' ? '衆議院TV' : session?.ch
       {pair.answer.full_text && (
         <details class="full-text-details">
           <summary class="expand-toggle">{segmentDup ? 'セグメント全文を表示' : '全文を表示'}</summary>
-          <p class="full-text">{pair.answer.full_text}</p>
+          <div class="full-text">
+            {pair.answer.full_text.split(/(?<=。)/).filter((s: string) => s.trim()).map((para: string) => (
+              <p>{para}</p>
+            ))}
+          </div>
         </details>
       )}
       <div class="evasion" style={`color: ${evasionColor}`}>
@@ -226,12 +234,16 @@ const chamberName = session?.chamber === 'shugiin' ? '衆議院TV' : session?.ch
     font-size: 0.85rem;
     line-height: 1.7;
     color: #374151;
-    white-space: pre-line;
     background: #f9fafb;
     padding: 0.75rem;
     border-radius: 4px;
     border: 1px solid #e5e7eb;
   }
+  .full-text p {
+    margin: 0 0 0.5rem;
+    text-indent: 1em;
+  }
+  .full-text p:last-child { margin-bottom: 0; }
   .qa-source {
     padding: 0.4rem 1rem;
     background: #f8fafc;
