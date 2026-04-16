@@ -486,19 +486,17 @@ export function generateApi(dataDir: string, outDir: string): void {
   // 法案マスタを読み込み
   const laws = parseLawsMd(LAWS_MD);
 
-  // laws.md がない場合（CI等）、既存のindex.jsonから related_laws を引き継ぐ
+  // laws.md がない場合（CI等）、コミット済みの related-laws-map.json から引き継ぐ
   const existingRelatedLaws = new Map<string, string[]>();
   if (laws.length === 0) {
-    const existingIndexPath = path.join(outDir, 'index.json');
-    if (fs.existsSync(existingIndexPath)) {
+    const mapPath = path.join(outDir, 'related-laws-map.json');
+    if (fs.existsSync(mapPath)) {
       try {
-        const existing = readJson<{ session_id: string; related_laws?: string[] }[]>(existingIndexPath);
-        for (const e of existing) {
-          if (e.related_laws?.length) {
-            existingRelatedLaws.set(e.session_id, e.related_laws);
-          }
+        const mapping = readJson<Record<string, string[]>>(mapPath);
+        for (const [sid, lawIds] of Object.entries(mapping)) {
+          if (lawIds.length > 0) existingRelatedLaws.set(sid, lawIds);
         }
-        console.log(`[generate-api] Loaded ${existingRelatedLaws.size} sessions with related_laws from existing index.json`);
+        console.log(`[generate-api] Loaded ${existingRelatedLaws.size} sessions with related_laws from related-laws-map.json`);
       } catch {
         // ignore
       }
@@ -677,8 +675,18 @@ export function generateApi(dataDir: string, outDir: string): void {
       .map(l => ({ id: l.id, title: l.title, short_title: l.short_title, ministry: l.ministry }));
     writeJson(path.join(outDir, 'laws.json'), lawsForApi);
     console.log(`[generate-api] laws.json: ${lawsForApi.length} referenced laws (out of ${laws.length} total)`);
+
+    // related-laws-map.json: session_id → law_id[] のマッピング（コミット用スナップショット）
+    const relatedLawsMap: Record<string, string[]> = {};
+    for (const entry of indexEntries) {
+      if (entry.related_laws.length > 0) {
+        relatedLawsMap[entry.session_id] = entry.related_laws;
+      }
+    }
+    writeJson(path.join(outDir, 'related-laws-map.json'), relatedLawsMap);
+    console.log(`[generate-api] related-laws-map.json: ${Object.keys(relatedLawsMap).length} sessions`);
   } else {
-    console.log('[generate-api] laws.md not found — keeping existing laws.json as-is');
+    console.log('[generate-api] laws.md not found — keeping existing laws.json and related-laws-map.json as-is');
   }
 
   // ダッシュボード用JSON生成
