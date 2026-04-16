@@ -8,12 +8,10 @@ const base = import.meta.env.BASE_URL;
   <div id="search"></div>
 
   <link href={base + '/pagefind/pagefind-ui.css'} rel="stylesheet" />
-  <link rel="modulepreload" href={base + '/pagefind/pagefind-ui.js'} />
+  <script is:inline src={base + '/pagefind/pagefind-ui.js'}></script>
   <script define:vars={{ base }}>
-    // Pagefind UIをロード（ビルド後にdist/pagefind/に生成される）
-    window.addEventListener('load', async () => {
-      const { PagefindUI } = await import(base + '/pagefind/pagefind-ui.js');
-      new PagefindUI({
+    window.addEventListener('DOMContentLoaded', () => {
+      new window.PagefindUI({
         element: '#search',
         showSubResults: true,
         translations: {
