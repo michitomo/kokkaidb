@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import { indexEntriesToTsv } from '../lib/tsv-export';
 
-const PAGE_SIZE = 20;
+const PAGE_SIZE = 300;
 
 /**
  * フィルタ済みQ&Aペアのリスト表示コンポーネント。
@@ -187,7 +187,11 @@ export default function FilteredQAList({ filteredEntries, totalCount, page, onPa
                             {expandedIds.has(`${qa.id}-q`) ? '全文を閉じる' : '全文を表示'}
                           </button>
                           {expandedIds.has(`${qa.id}-q`) && (
-                            <p className="full-text">{qa.question_full_text}</p>
+                            <div className="full-text">
+                              {qa.question_full_text.split(/(?<=。)/).filter(s => s.trim()).map((para, i) => (
+                                <p key={i}>{para}</p>
+                              ))}
+                            </div>
                           )}
                         </>
                       )}
@@ -211,7 +215,11 @@ export default function FilteredQAList({ filteredEntries, totalCount, page, onPa
                             {expandedIds.has(`${qa.id}-a`) ? '全文を閉じる' : '全文を表示'}
                           </button>
                           {expandedIds.has(`${qa.id}-a`) && (
-                            <p className="full-text">{qa.answer_full_text}</p>
+                            <div className="full-text">
+                              {qa.answer_full_text.split(/(?<=。)/).filter(s => s.trim()).map((para, i) => (
+                                <p key={i}>{para}</p>
+                              ))}
+                            </div>
                           )}
                         </>
                       )}
@@ -428,12 +436,16 @@ export default function FilteredQAList({ filteredEntries, totalCount, page, onPa
           font-size: 0.85rem;
           line-height: 1.7;
           color: #374151;
-          white-space: pre-line;
           background: #f9fafb;
           padding: 0.75rem;
           border-radius: 4px;
           border: 1px solid #e5e7eb;
         }
+        .full-text p {
+          margin: 0 0 0.5rem;
+          text-indent: 1em;
+        }
+        .full-text p:last-child { margin-bottom: 0; }
         .evasion { font-size: 0.8rem; font-weight: 600; margin-bottom: 0.4rem; }
         .commitment {
           font-size: 0.8rem;

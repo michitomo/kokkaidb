@@ -64,6 +64,8 @@ class RawTranscript(BaseModel):
     """raw_transcript.json に対応"""
 
     session_id: str
+    corrected: bool = False
+    corrected_at: str = ""
     segments: list[SegmentTranscript]
 
 
@@ -111,7 +113,7 @@ class AnswerDetail(BaseModel):
     full_text: str
     evasion_score: float = Field(ge=0.0, le=1.0)
     has_commitment: bool
-    commitment_text: str = ""
+    commitment_text: str | None = ""
 
 
 class QAPair(BaseModel):
@@ -137,7 +139,7 @@ class KeyCommitment(BaseModel):
     role: str
     text: str
     topic: str
-    qa_id: str
+    qa_id: str | None = None
 
 
 class SummaryOutput(BaseModel):

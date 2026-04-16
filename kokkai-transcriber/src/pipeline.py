@@ -36,15 +36,25 @@ try:
 except ImportError:
     pass
 
+from src.api_client import (
+    MAX_WORKERS_AUDIO,
+    MAX_WORKERS_LLM,
+    MAX_WORKERS_WHISPER,
+    ensure_fd_limit,
+)
 from src.audio.extractor import download_full_audio, split_segments
 from src.publisher import publish_session
 from src.scrapers.base import BaseScraper
 from src.scrapers.sangiin import SangiinScraper
 from src.scrapers.shugiin import ShugiinScraper
 from src.speaker_tagger import tag_all_segments
+from src.transcript_corrector import correct_transcript
 from src.state import StateManager
 from src.structurer import generate_qa_pairs, generate_summary, generate_topics
 from src.transcriber import transcribe_all_segments
+
+# パイプライン起動時にfd上限を引き上げ
+ensure_fd_limit()
 
 logging.basicConfig(
     level=logging.INFO,
@@ -142,11 +152,21 @@ def run_pipeline(
             segment_paths,
             session_detail.speakers,
             session_id,
+            max_workers=MAX_WORKERS_WHISPER,
         )
         _log("transcribe", True)
     except Exception as e:
         _log("transcribe", False, str(e))
         raise RuntimeError(f"Step 4 (transcription) failed: {e}") from e
+
+    # Step 4.5: LLM 文字起こし修正（句読点補完・固有名詞修正）
+    logger.info("=== Step 4.5: Correcting transcript with LLM ===")
+    try:
+        raw_transcript = correct_transcript(raw_transcript, session_detail, max_workers=MAX_WORKERS_LLM)
+        _log("correct", True)
+    except Exception as e:
+        _log("correct", False, str(e))
+        logger.warning("Transcript correction failed (non-fatal, using original): %s", e)
 
     transcript_path = output_dir / "raw_transcript.json"
     transcript_path.write_text(
@@ -154,13 +174,15 @@ def run_pipeline(
         encoding="utf-8",
     )
     logger.info(
-        "Saved raw_transcript.json (%d segments)", len(raw_transcript.segments)
+        "Saved raw_transcript.json (%d segments, corrected=%s)",
+        len(raw_transcript.segments),
+        raw_transcript.corrected,
     )
 
     # Step 5: LLM 話者タグ付け
     logger.info("=== Step 5: Tagging speakers with LLM ===")
     try:
-        utterances_output = tag_all_segments(raw_transcript, session_detail)
+        utterances_output = tag_all_segments(raw_transcript, session_detail, max_workers=MAX_WORKERS_LLM)
         _log("tag", True)
     except Exception as e:
         _log("tag", False, str(e))
@@ -178,8 +200,8 @@ def run_pipeline(
     # Step 6: Q&Aペア生成・要約・トピック抽出（要約・トピックは並列）
     logger.info("=== Step 6: Generating Q&A pairs, summary, and topics ===")
     try:
-        qa_pairs = generate_qa_pairs(utterances_output, speakers=session_detail.speakers)
-        with ThreadPoolExecutor(max_workers=16) as executor:
+        qa_pairs = generate_qa_pairs(utterances_output, speakers=session_detail.speakers, max_workers=MAX_WORKERS_LLM)
+        with ThreadPoolExecutor(max_workers=MAX_WORKERS_LLM) as executor:
             f_summary = executor.submit(generate_summary, utterances_output, qa_pairs)
             f_topics = executor.submit(generate_topics, qa_pairs)
             summary = f_summary.result()

@@ -1,49 +1,126 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getAllSessions, sessionPath } from '../lib/data';
+import { getAllSessions, sessionPath, sessionSlug } from '../lib/data';
+import type { TopicsOutput, SessionSummary } from '../types';
+import fs from 'node:fs';
+import path from 'node:path';
 
-const sessions = getAllSessions().slice(0, 10);
+const DATA_DIR = path.resolve(process.cwd(), '../data');
+const sessions = getAllSessions();
 const base = import.meta.env.BASE_URL;
+
+const WEEKDAYS = ['日', '月', '火', '水', '木', '金', '土'];
+function formatDateWithDay(dateStr: string): string {
+  const d = new Date(dateStr + 'T00:00:00');
+  return `${dateStr}（${WEEKDAYS[d.getDay()]}）`;
+}
+
+// 各セッションのキーワードを取得
+function getSessionKeywords(s: { chamber: string; date: string; session_id: string; committee: string }): string[] {
+  const [year, month, day] = s.date.split('-');
+  const slug = `${s.session_id}_${s.committee}`;
+  const dir = path.join(DATA_DIR, s.chamber, year, month, day, slug);
+  // topics.json があればトピック名を使用
+  try {
+    const topics = JSON.parse(fs.readFileSync(path.join(dir, 'topics.json'), 'utf-8')) as TopicsOutput;
+    if (topics.topics.length > 0) return topics.topics.map(t => t.name);
+  } catch { /* ignore */ }
+  // フォールバック: summary.json の key_topics
+  try {
+    const summary = JSON.parse(fs.readFileSync(path.join(dir, 'summary.json'), 'utf-8')) as SessionSummary;
+    return summary.key_topics;
+  } catch { /* ignore */ }
+  return [];
+}
+
+const sessionKeywords = new Map<string, string[]>();
+for (const s of sessions) {
+  sessionKeywords.set(s.session_id, getSessionKeywords(s));
+}
+
+// 日付でグループ化（降順）
+const dateGroups: { date: string; label: string; sessions: typeof sessions }[] = [];
+let prevDate = '';
+for (const s of sessions) {
+  if (s.date !== prevDate) {
+    dateGroups.push({ date: s.date, label: formatDateWithDay(s.date), sessions: [] });
+    prevDate = s.date;
+  }
+  dateGroups[dateGroups.length - 1].sessions.push(s);
+}
 ---
 <BaseLayout title="国会議事録リアルタイムDB">
   <h1>最新の審議</h1>
   {sessions.length === 0 ? (
     <p>まだデータがありません。パイプラインを実行してください。</p>
   ) : (
-    <ul class="session-list">
-      {sessions.map(s => (
-        <li class="session-card">
-          <a href={base + sessionPath(s)}>
-            <span class={`chamber-badge ${s.chamber}`}>
-              {s.chamber === 'shugiin' ? '衆' : '参'}
-            </span>
-            <span class="date">{s.date}</span>
-            <span class="committee">{s.committee}</span>
-            <span class="speakers">{s.speakers.length}名</span>
-          </a>
-        </li>
+    <div class="date-groups">
+      {dateGroups.map(group => (
+        <section class="date-group">
+          <h2 class="date-heading">{group.label}</h2>
+          <ul class="session-list">
+            {group.sessions.map(s => {
+              const keywords = sessionKeywords.get(s.session_id) || [];
+              const totalMin = s.speakers.reduce((sum, sp) => sum + (sp.duration_minutes || 0), 0);
+              const durationLabel = totalMin > 0
+                ? totalMin >= 60
+                  ? `${Math.floor(totalMin / 60)}時間${totalMin % 60 > 0 ? `${totalMin % 60}分` : ''}`
+                  : `${totalMin}分`
+                : '';
+              return (
+                <li class="session-card">
+                  <a href={base + sessionPath(s)}>
+                    <div class="session-main">
+                      <span class={`chamber-badge ${s.chamber}`}>
+                        {s.chamber === 'shugiin' ? '衆' : '参'}
+                      </span>
+                      <span class="committee">{s.committee}</span>
+                      {durationLabel && <span class="duration">{durationLabel}</span>}
+                      <span class="speakers">{s.speakers.length}名</span>
+                    </div>
+                    {keywords.length > 0 && (
+                      <div class="session-keywords">
+                        {keywords.map(k => (
+                          <span class="keyword-tag">{k}</span>
+                        ))}
+                      </div>
+                    )}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
       ))}
-    </ul>
+    </div>
   )}
   {sessions.length > 0 && (
-    <a href={base + '/browse'} class="browse-link">全件を見る →</a>
+    <a href={base + '/browse'} class="browse-link">Q&Aフィルタ・検索 →</a>
   )}
 </BaseLayout>
 
 <style>
   h1 { font-size: 1.5rem; margin-bottom: 1rem; }
+  .date-groups { margin-bottom: 1.5rem; }
+  .date-group { margin-bottom: 1.25rem; }
+  .date-heading {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #374151;
+    margin: 0 0 0.5rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
   .session-list {
     list-style: none;
     padding: 0;
-    margin: 0 0 1.5rem;
+    margin: 0;
   }
   .session-card {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
   }
   .session-card a {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
+    display: block;
     padding: 0.75rem 1rem;
     background: #fff;
     border: 1px solid #e5e7eb;
@@ -53,6 +130,25 @@ const base = import.meta.env.BASE_URL;
     transition: border-color 0.15s;
   }
   .session-card a:hover { border-color: #2563eb; }
+  .session-main {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .session-keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-top: 0.4rem;
+    padding-left: 2.25rem;
+  }
+  .keyword-tag {
+    background: #f1f5f9;
+    border-radius: 3px;
+    padding: 0.1rem 0.4rem;
+    font-size: 0.7rem;
+    color: #64748b;
+  }
   .chamber-badge {
     display: inline-block;
     width: 1.5rem;
@@ -66,8 +162,8 @@ const base = import.meta.env.BASE_URL;
   }
   .chamber-badge.shugiin { background: #dbeafe; color: #1e40af; }
   .chamber-badge.sangiin { background: #fce7f3; color: #9d174d; }
-  .date { color: #6b7280; font-size: 0.9rem; }
   .committee { font-weight: 600; flex: 1; }
+  .duration { color: #9ca3af; font-size: 0.8rem; white-space: nowrap; }
   .speakers { color: #9ca3af; font-size: 0.85rem; white-space: nowrap; }
   .browse-link {
     display: inline-block;

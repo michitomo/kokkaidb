@@ -1,0 +1,27 @@
+{
+  "pairs": [
+    {
+      "id": "qa_001",
+      "segment_index": 1,
+      "topic": "理事の選出および指名",
+      "question": {
+        "speaker": "落合孝一",
+        "party": "政治改革特別委員長",
+        "summary": "- 理事の人数を8名とすること\n- 委員長による指名を求める動議の提出",
+        "full_text": "動議を提出いたします。理事はその数を8名とし、委員長において指名されることを望みます。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "美延映夫",
+        "role": "政治改革特別委員長",
+        "summary": "- 動議への異議なしを確認\n- 8名の理事を具体的に指名",
+        "full_text": "ただいまの落合孝一君の動議にご異議ありませんか。ご異議なし。ご異議なしと認めます。委員長は理事に、井出陽成君、大野啓太郎君、勝目康君、中曽根康隆君、古川芳佐君、落合孝一君、浦野康人君、薄木秀武君。以上、8名の方々を指名いたします。",
+        "evasion_score": 0.0,
+        "has_commitment": true,
+        "commitment_text": "井出陽成君、大野啓太郎君、勝目康君、中曽根康隆君、古川芳佐君、落合孝一君、浦野康人君、薄木秀武君の8名を理事に指名する。"
+      },
+      "follow_up_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56077&time=2182.5"
+    }
+  ]
+}

@@ -7,8 +7,10 @@ from __future__ import annotations
 
 import logging
 import subprocess
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
+from src.api_client import MAX_WORKERS_AUDIO
 from src.models import SpeakerInfo
 
 logger = logging.getLogger(__name__)
@@ -50,13 +52,15 @@ def split_segments(
     full_audio: Path,
     speakers: list[SpeakerInfo],
     output_dir: Path,
+    max_workers: int = MAX_WORKERS_AUDIO,
 ) -> list[Path]:
-    """発言者タイムスタンプに基づいて WAV を分割する。
+    """発言者タイムスタンプに基づいて WAV を並列分割する。
 
     Args:
         full_audio: 分割元の WAV ファイルパス
         speakers: 発言者リスト（start_seconds 昇順であること）
         output_dir: 出力先ディレクトリ
+        max_workers: ffmpeg 並列数（デフォルト: MAX_WORKERS_AUDIO）
 
     Returns:
         生成されたセグメントファイルのパスリスト（speakers と同順）
@@ -67,18 +71,11 @@ def split_segments(
     output_dir.mkdir(parents=True, exist_ok=True)
 
     total_duration = _get_audio_duration(full_audio)
-    segment_paths: list[Path] = []
 
-    for i, speaker in enumerate(speakers):
+    def _split_one(i: int, speaker: SpeakerInfo) -> tuple[int, Path]:
         start = speaker.start_seconds
+        end = speakers[i + 1].start_seconds if i + 1 < len(speakers) else total_duration
 
-        # 次の発言者の開始秒か、最後なら全体の終了時刻
-        if i + 1 < len(speakers):
-            end = speakers[i + 1].start_seconds
-        else:
-            end = total_duration
-
-        # ファイル名に使えない文字を置換
         safe_name = speaker.name.replace("/", "_").replace(" ", "_")
         output_path = output_dir / f"{i:03d}_{safe_name}.wav"
 
@@ -94,14 +91,23 @@ def split_segments(
 
         logger.info(
             "Splitting segment %d/%d: %s (%.1fs - %.1fs)",
-            i + 1,
-            len(speakers),
-            speaker.name,
-            start,
-            end,
+            i + 1, len(speakers), speaker.name, start, end,
         )
         subprocess.run(cmd, check=True, capture_output=True, text=True)
-        segment_paths.append(output_path)
+        return i, output_path
+
+    results: list[tuple[int, Path]] = []
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        futures = {
+            executor.submit(_split_one, i, speaker): i
+            for i, speaker in enumerate(speakers)
+        }
+        for future in as_completed(futures):
+            results.append(future.result())
+
+    # speakers と同順にソート
+    results.sort(key=lambda x: x[0])
+    segment_paths = [path for _, path in results]
 
     logger.info("Split %d segments into %s", len(segment_paths), output_dir)
     return segment_paths

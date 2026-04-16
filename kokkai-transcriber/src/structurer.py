@@ -11,7 +11,10 @@ import logging
 import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-from src.api_client import get_client as _get_client, LLM_MODEL, DEEPINFRA_BASE_URL
+from src.api_client import get_client as _get_client, LLM_MODEL, DEEPINFRA_BASE_URL, with_retry
+
+# Step 6はgemma-4-31Bを使用（ペア数抽出がV3.2より安定: 10/10 vs 6/10）
+STRUCTURER_MODEL = "google/gemma-4-31B-it"
 
 from src.models import (
     AnswerDetail,
@@ -281,8 +284,8 @@ def _generate_qa_for_segment(
         sum(len(u.text) for u in seg.utterances),
     )
 
-    response = client.chat.completions.create(
-        model=LLM_MODEL,
+    response = with_retry(lambda: client.chat.completions.create(
+        model=STRUCTURER_MODEL,
         messages=[
             {"role": "system", "content": QA_SEGMENT_SYSTEM_PROMPT},
             {"role": "user", "content": user_prompt},
@@ -290,7 +293,7 @@ def _generate_qa_for_segment(
         temperature=0.1,
         max_tokens=8192,
         response_format={"type": "json_object"},
-    )
+    ))
 
     content = response.choices[0].message.content
     if not content:
@@ -447,8 +450,8 @@ def generate_summary(
 
     logger.info("Generating session summary")
 
-    response = client.chat.completions.create(
-        model=LLM_MODEL,
+    response = with_retry(lambda: client.chat.completions.create(
+        model=STRUCTURER_MODEL,
         messages=[
             {"role": "system", "content": SUMMARY_SYSTEM_PROMPT},
             {"role": "user", "content": user_prompt},
@@ -456,7 +459,7 @@ def generate_summary(
         temperature=0.1,
         max_tokens=8192,
         response_format={"type": "json_object"},
-    )
+    ))
 
     content = response.choices[0].message.content
     if not content:
@@ -471,11 +474,11 @@ def generate_summary(
     for c in data.get("key_commitments", []):
         commitments.append(
             KeyCommitment(
-                speaker=c.get("speaker", ""),
-                role=c.get("role", ""),
-                text=c.get("text", ""),
-                topic=c.get("topic", ""),
-                qa_id=c.get("qa_id", ""),
+                speaker=c.get("speaker") or "",
+                role=c.get("role") or "",
+                text=c.get("text") or "",
+                topic=c.get("topic") or "",
+                qa_id=c.get("qa_id") or "",
             )
         )
 
@@ -499,8 +502,8 @@ def generate_topics(qa_pairs: QAPairsOutput) -> TopicsOutput:
 
     logger.info("Generating topics")
 
-    response = client.chat.completions.create(
-        model=LLM_MODEL,
+    response = with_retry(lambda: client.chat.completions.create(
+        model=STRUCTURER_MODEL,
         messages=[
             {"role": "system", "content": TOPICS_SYSTEM_PROMPT},
             {"role": "user", "content": user_prompt},
@@ -508,7 +511,7 @@ def generate_topics(qa_pairs: QAPairsOutput) -> TopicsOutput:
         temperature=0.1,
         max_tokens=8192,
         response_format={"type": "json_object"},
-    )
+    ))
 
     content = response.choices[0].message.content
     if not content:
@@ -523,10 +526,10 @@ def generate_topics(qa_pairs: QAPairsOutput) -> TopicsOutput:
     for t in data.get("topics", []):
         topics.append(
             Topic(
-                name=t.get("name", ""),
-                description=t.get("description", ""),
-                related_qa_ids=t.get("related_qa_ids", []),
-                related_speakers=t.get("related_speakers", []),
+                name=t.get("name") or "",
+                description=t.get("description") or "",
+                related_qa_ids=t.get("related_qa_ids") or [],
+                related_speakers=t.get("related_speakers") or [],
             )
         )
 

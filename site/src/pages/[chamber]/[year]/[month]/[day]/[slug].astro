@@ -19,16 +19,36 @@ export function getStaticPaths() {
 
 const { chamber, year, month, day, slug } = Astro.params;
 const data = getSessionData(chamber!, year!, month!, day!, slug!);
-const { metadata, qaPairs, summary } = data;
+const { metadata, qaPairs, summary, topics: topicsData } = data;
 
-// utterances.json からタイムラインデータを構築（存在する場合のみ）
-interface UtteranceSegment {
+// topics.json の name → related_qa_ids マッピング
+const topicQaMap: Record<string, string[]> = {};
+for (const t of topicsData.topics) {
+  topicQaMap[t.name] = t.related_qa_ids;
+}
+// タグとして表示するトピック一覧（topics.jsonのものを使用、key_topicsより正確）
+const displayTopics = topicsData.topics.length > 0
+  ? topicsData.topics.map(t => t.name)
+  : summary.key_topics;
+
+// utterances.json からタイムライン・発言全文データを構築（存在する場合のみ）
+interface Utterance {
   speaker: string;
   role: string;
-  start_seconds: number;
-  end_seconds: number;
   text: string;
+}
+interface UtteranceSegment {
+  segment_index: number;
+  segment_speaker: string;
+  segment_affiliation: string;
+  start_seconds: number;
+  end_seconds?: number;
   video_url?: string;
+  utterances: Utterance[];
+  // timeline互換
+  speaker?: string;
+  role?: string;
+  text?: string;
 }
 interface UtterancesOutput {
   segments?: UtteranceSegment[];
@@ -46,6 +66,7 @@ let timelineSegments: {
 
 let qaConnections: { qaId: string; questionStart: number; answerStart: number; topic: string }[] = [];
 let totalDurationSeconds = 0;
+let utteranceSegments: UtteranceSegment[] = [];
 
 const DATA_DIR = path.resolve(process.cwd(), '../data');
 const sessionDir = path.join(DATA_DIR, chamber!, year!, month!, day!, slug!);
@@ -54,20 +75,30 @@ if (fs.existsSync(utterancesPath)) {
   try {
     const utterances = JSON.parse(fs.readFileSync(utterancesPath, 'utf-8')) as UtterancesOutput;
     const segs = utterances.segments ?? [];
-    timelineSegments = segs.map((seg, i) => ({
-      segmentIndex: i,
-      speaker: seg.speaker,
-      role: seg.role,
-      startSeconds: seg.start_seconds,
-      endSeconds: seg.end_seconds,
-      utteranceCount: 1,
-      videoUrl: seg.video_url ?? '',
-    }));
-    totalDurationSeconds = segs.reduce((max, s) => Math.max(max, s.end_seconds), 0);
+    utteranceSegments = segs;
+    timelineSegments = segs.map((seg, i) => {
+      // end_seconds: 次セグメントの start_seconds、最後は start + 推定
+      const nextStart = i + 1 < segs.length ? segs[i + 1].start_seconds : 0;
+      const endSeconds = nextStart > seg.start_seconds
+        ? nextStart
+        : seg.start_seconds + 600; // 最後のセグメントは10分と仮定
+      return {
+        segmentIndex: i,
+        speaker: seg.segment_speaker ?? '',
+        role: seg.utterances?.[0]?.role ?? '',
+        startSeconds: seg.start_seconds,
+        endSeconds,
+        utteranceCount: seg.utterances?.length ?? 1,
+        videoUrl: seg.video_url ?? '',
+      };
+    });
+    totalDurationSeconds = timelineSegments.length > 0
+      ? Math.max(...timelineSegments.map(s => s.endSeconds))
+      : 0;
     // Q&Aコネクタ
     qaConnections = qaPairs.pairs.flatMap((pair) => {
-      const qSeg = segs.findIndex((s) => s.speaker === pair.question.speaker);
-      const aSeg = segs.findIndex((s) => s.speaker === pair.answer.speaker && segs.indexOf(s) > qSeg);
+      const qSeg = segs.findIndex((s) => s.segment_speaker === pair.question.speaker);
+      const aSeg = segs.findIndex((s) => s.segment_speaker === pair.answer.speaker && segs.indexOf(s) > qSeg);
       if (qSeg >= 0 && aSeg >= 0) {
         return [{
           qaId: pair.id,
@@ -86,6 +117,10 @@ if (fs.existsSync(utterancesPath)) {
 const chamberLabel = metadata.chamber === 'shugiin'
   ? '衆議院インターネット審議中継'
   : '参議院インターネット審議中継';
+
+// セッション種別判定: Q&Aが0件なら手続き的セッション（趣旨説明・採決等）
+const hasQA = qaPairs.pairs.length > 0;
+const sessionType = hasQA ? 'debate' : 'procedural';
 ---
 <BaseLayout title={`${metadata.committee}（${metadata.date}）- 国会議事録DB`}>
   <!-- 出所リンク（著作権法第48条） -->
@@ -100,6 +135,9 @@ const chamberLabel = metadata.chamber === 'shugiin'
     </span>
     <span class="date">{metadata.date}</span>
     {metadata.duration && <span class="duration">{metadata.duration}</span>}
+    <span class={`session-type-badge ${sessionType}`}>
+      {hasQA ? '質疑' : '趣旨説明・採決等'}
+    </span>
   </div>
 
   <div data-pagefind-body>
@@ -107,11 +145,18 @@ const chamberLabel = metadata.chamber === 'shugiin'
     <section class="section">
       <h2>概要</h2>
       <p>{summary.session_summary}</p>
-      {summary.key_topics.length > 0 && (
+      {displayTopics.length > 0 && (
         <div class="topics">
-          {summary.key_topics.map(t => (
-            <span class="topic-tag">{t}</span>
+          {displayTopics.map(t => (
+            <button
+              class="topic-tag topic-filter-btn"
+              data-topic={t}
+              data-qa-ids={JSON.stringify(topicQaMap[t] || [])}
+            >{t}</button>
           ))}
+          <button class="topic-filter-reset" id="topic-filter-reset" style="display:none;">
+            トピックフィルタ解除
+          </button>
         </div>
       )}
     </section>
@@ -135,27 +180,254 @@ const chamberLabel = metadata.chamber === 'shugiin'
       <ul class="speaker-list">
         {metadata.speakers.map(s => (
           <li>
-            <strong>{s.name}</strong>
+            <button class="speaker-filter-btn" data-speaker={s.name}>
+              <strong>{s.name}</strong>
+            </button>
             {s.affiliation && <span class="affiliation">（{s.affiliation}）</span>}
             {s.start_time && <span class="time"> — {s.start_time}</span>}
             {s.duration_minutes > 0 && <span class="duration-min"> / {s.duration_minutes}分</span>}
           </li>
         ))}
       </ul>
+      <button class="speaker-filter-reset" id="speaker-filter-reset" style="display:none;">
+        フィルタ解除
+      </button>
     </section>
 
     <!-- Q&Aペア -->
     <section class="section">
-      <h2>質疑応答（{qaPairs.pairs.length}件）</h2>
+      <h2 id="qa-heading">質疑応答（{qaPairs.pairs.length}件）</h2>
+      <p class="empty-note" id="qa-no-match" style="display:none;">
+        この発言者・トピックに該当する質疑応答はありません。
+      </p>
       {qaPairs.pairs.length === 0 ? (
-        <p>Q&Aペアが抽出されませんでした。</p>
+        <p class="empty-note" id="qa-empty">質疑応答は行われませんでした（所信表明・趣旨説明等のセッション）。</p>
       ) : (
         qaPairs.pairs.map(pair => (
-          <QAPairCard pair={pair} />
+          <div class="qa-filterable" data-speakers={[pair.question.speaker, pair.answer.speaker].join(',')} data-qa-id={pair.id}>
+            <QAPairCard pair={pair} />
+          </div>
         ))
       )}
     </section>
+
+    <!-- 発言全文 -->
+    {utteranceSegments.length > 0 && (
+      <section class="section">
+        <h2>{hasQA ? '発言全文' : '議事内容'}</h2>
+        {utteranceSegments.map(seg => hasQA ? (
+          <!-- 質疑セッション: 折りたたみ表示 -->
+          <details class="utterance-segment" data-speaker={seg.segment_speaker}>
+            <summary class="segment-header">
+              <strong>{seg.segment_speaker}</strong>
+              {seg.segment_affiliation && (
+                <span class="affiliation">（{seg.segment_affiliation}）</span>
+              )}
+              <span class="utt-count">{(seg.utterances ?? []).length}発言</span>
+              {seg.video_url && (
+                <a
+                  class="video-link"
+                  href={seg.video_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onclick="event.stopPropagation()"
+                >
+                  ▶ 動画
+                </a>
+              )}
+            </summary>
+            <div class="utterance-list">
+              {(seg.utterances ?? []).map(u => (
+                <div class="utterance">
+                  <div class="utt-header">
+                    <span class={`role-badge role-${u.role === '委員長' ? 'chair' : u.role === '質疑者' ? 'questioner' : 'answerer'}`}>
+                      {u.role}
+                    </span>
+                    <span class="utt-speaker">{u.speaker}</span>
+                  </div>
+                  <div class="utt-text">
+                    {u.text.split(/(?<=。)/).filter((s: string) => s.trim()).map((para: string) => (
+                      <p>{para}</p>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </details>
+        ) : (
+          <!-- 手続きセッション: 展開状態で表示 -->
+          <div class="utterance-segment utterance-segment--open" data-speaker={seg.segment_speaker}>
+            <div class="segment-header segment-header--static">
+              <strong>{seg.segment_speaker}</strong>
+              {seg.segment_affiliation && (
+                <span class="affiliation">（{seg.segment_affiliation}）</span>
+              )}
+              {seg.video_url && (
+                <a
+                  class="video-link"
+                  href={seg.video_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  ▶ 動画
+                </a>
+              )}
+            </div>
+            <div class="utterance-list">
+              {(seg.utterances ?? []).map(u => (
+                <div class="utterance">
+                  {seg.utterances!.length > 1 && (
+                    <div class="utt-header">
+                      <span class="utt-speaker">{u.speaker}</span>
+                    </div>
+                  )}
+                  <div class="utt-text">
+                    {u.text.split(/(?<=。)/).filter((s: string) => s.trim()).map((para: string) => (
+                      <p>{para}</p>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </section>
+    )}
   </div>
+
+  <script>
+    // --- フィルタ状態 ---
+    let activeSpeaker: string | null = null;
+    let activeTopic: string | null = null;
+    let activeQaIds: Set<string> | null = null;
+
+    function applyFilters() {
+      const qaItems = document.querySelectorAll('.qa-filterable');
+      const uttItems = document.querySelectorAll('.utterance-segment');
+
+      qaItems.forEach(el => {
+        const htm = el as HTMLElement;
+        let visible = true;
+        if (activeSpeaker) {
+          visible = (htm.dataset.speakers || '').includes(activeSpeaker);
+        }
+        if (visible && activeQaIds) {
+          visible = activeQaIds.has(htm.dataset.qaId || '');
+        }
+        htm.style.display = visible ? '' : 'none';
+      });
+
+      // 発言全文は発言者フィルタのみ
+      uttItems.forEach(el => {
+        const htm = el as HTMLElement;
+        htm.style.display = (!activeSpeaker || htm.dataset.speaker === activeSpeaker) ? '' : 'none';
+      });
+
+      // Q&A件数とno-matchメッセージ更新
+      const visibleCount = Array.from(qaItems).filter(el => (el as HTMLElement).style.display !== 'none').length;
+      const totalCount = qaItems.length;
+      const heading = document.getElementById('qa-heading');
+      const noMatch = document.getElementById('qa-no-match');
+      if (heading) {
+        if (activeSpeaker || activeTopic) {
+          heading.textContent = `質疑応答（${visibleCount}/${totalCount}件）`;
+        } else {
+          heading.textContent = `質疑応答（${totalCount}件）`;
+        }
+      }
+      if (noMatch) {
+        noMatch.style.display = (activeSpeaker || activeTopic) && visibleCount === 0 && totalCount > 0 ? '' : 'none';
+      }
+
+      // ボタン状態
+      document.querySelectorAll('.speaker-filter-btn').forEach(b => {
+        b.classList.toggle('active', (b as HTMLElement).dataset.speaker === activeSpeaker);
+      });
+      document.querySelectorAll('.topic-filter-btn').forEach(b => {
+        b.classList.toggle('active', (b as HTMLElement).dataset.topic === activeTopic);
+      });
+
+      const speakerReset = document.getElementById('speaker-filter-reset');
+      if (speakerReset) speakerReset.style.display = activeSpeaker ? '' : 'none';
+      const topicReset = document.getElementById('topic-filter-reset');
+      if (topicReset) topicReset.style.display = activeTopic ? '' : 'none';
+
+      // URLハッシュ更新
+      const parts: string[] = [];
+      if (activeSpeaker) parts.push(`speaker=${encodeURIComponent(activeSpeaker)}`);
+      if (activeTopic) parts.push(`topic=${encodeURIComponent(activeTopic)}`);
+      history.replaceState(null, '', parts.length ? `${location.pathname}#${parts.join('&')}` : location.pathname);
+    }
+
+    // 発言者フィルタ（共通関数）
+    function setSpeakerFilter(name: string | null) {
+      activeSpeaker = (activeSpeaker === name) ? null : name;
+      applyFilters();
+    }
+
+    document.querySelectorAll('.speaker-filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        setSpeakerFilter((btn as HTMLElement).dataset.speaker || '');
+      });
+    });
+    document.getElementById('speaker-filter-reset')?.addEventListener('click', () => {
+      activeSpeaker = null;
+      applyFilters();
+    });
+
+    // タイムラインからの発言者選択イベント
+    window.addEventListener('timeline-speaker-select', ((e: CustomEvent) => {
+      const speaker = e.detail?.speaker as string | null;
+      activeSpeaker = speaker;
+      applyFilters();
+    }) as EventListener);
+
+    // トピックフィルタ
+    document.querySelectorAll('.topic-filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const topic = (btn as HTMLElement).dataset.topic || '';
+        if (activeTopic === topic) {
+          activeTopic = null;
+          activeQaIds = null;
+        } else {
+          activeTopic = topic;
+          try {
+            const ids = JSON.parse((btn as HTMLElement).dataset.qaIds || '[]') as string[];
+            activeQaIds = new Set(ids);
+          } catch {
+            activeQaIds = null;
+          }
+        }
+        applyFilters();
+      });
+    });
+    document.getElementById('topic-filter-reset')?.addEventListener('click', () => {
+      activeTopic = null;
+      activeQaIds = null;
+      applyFilters();
+    });
+
+    // URLハッシュから初期フィルタ
+    const hash = location.hash.replace('#', '');
+    if (hash) {
+      for (const part of hash.split('&')) {
+        const [key, val] = part.split('=');
+        if (key === 'speaker') activeSpeaker = decodeURIComponent(val);
+        if (key === 'topic') {
+          activeTopic = decodeURIComponent(val);
+          // ボタンからqa_idsを取得
+          const btn = document.querySelector(`.topic-filter-btn[data-topic="${activeTopic}"]`) as HTMLElement | null;
+          if (btn) {
+            try {
+              const ids = JSON.parse(btn.dataset.qaIds || '[]') as string[];
+              activeQaIds = new Set(ids);
+            } catch { /* ignore */ }
+          }
+        }
+      }
+      applyFilters();
+    }
+  </script>
 </BaseLayout>
 
 <style>
@@ -199,7 +471,27 @@ const chamberLabel = metadata.chamber === 'shugiin'
     padding: 0.15rem 0.5rem;
     font-size: 0.8rem;
     color: #475569;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.15s;
   }
+  .topic-tag:hover { background: #e0e7ff; }
+  .topic-tag.active {
+    background: #dbeafe;
+    outline: 2px solid #3b82f6;
+    color: #1e40af;
+  }
+  .topic-filter-reset {
+    background: none;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    padding: 0.15rem 0.5rem;
+    font-size: 0.75rem;
+    color: #9ca3af;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .topic-filter-reset:hover { background: #f1f5f9; color: #475569; }
   .speaker-list {
     list-style: none;
     padding: 0;
@@ -212,4 +504,160 @@ const chamberLabel = metadata.chamber === 'shugiin'
   .affiliation { color: #6b7280; }
   .time { color: #9ca3af; }
   .duration-min { color: #9ca3af; }
+  .speaker-filter-btn {
+    background: none;
+    border: none;
+    padding: 0.1rem 0.3rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: inherit;
+    font-family: inherit;
+    transition: background 0.15s;
+  }
+  .speaker-filter-btn:hover { background: #e0e7ff; }
+  .speaker-filter-btn.active {
+    background: #dbeafe;
+    outline: 2px solid #3b82f6;
+  }
+  .speaker-filter-reset {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: #475569;
+    cursor: pointer;
+  }
+  .speaker-filter-reset:hover { background: #e2e8f0; }
+  .empty-note { color: #6b7280; font-style: italic; }
+  .utterance-segment {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+  .segment-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #f8fafc;
+    font-size: 0.9rem;
+    cursor: pointer;
+    list-style: none;
+  }
+  .segment-header::-webkit-details-marker { display: none; }
+  .segment-header::before {
+    content: "▶";
+    font-size: 0.65rem;
+    color: #9ca3af;
+    transition: transform 0.15s;
+  }
+  details[open] > .segment-header::before {
+    transform: rotate(90deg);
+  }
+  details[open] > .segment-header {
+    border-bottom: 1px solid #e5e7eb;
+  }
+  .utt-count {
+    color: #9ca3af;
+    font-size: 0.8rem;
+  }
+  .segment-header .video-link {
+    margin-left: auto;
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 0.8rem;
+  }
+  .segment-header .video-link:hover { text-decoration: underline; }
+  .utterance-list { padding: 0.75rem 1rem; }
+  .utterance {
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .utterance:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .utt-header {
+    margin-bottom: 0.25rem;
+  }
+  .role-badge {
+    display: inline-block;
+    padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-right: 0.3rem;
+    vertical-align: middle;
+  }
+  .role-chair { background: #fef3c7; color: #92400e; }
+  .role-questioner { background: #dbeafe; color: #1e40af; }
+  .role-answerer { background: #dcfce7; color: #166534; }
+  .utt-speaker {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #374151;
+  }
+  .utt-text {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #374151;
+  }
+  .utt-text p {
+    display: block;
+    margin: 0 0 0.75rem;
+    text-indent: 1em;
+  }
+  .utt-text p:last-child { margin-bottom: 0; }
+
+  /* 手続きセッション: 展開状態のセグメント */
+  .utterance-segment--open {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+  .segment-header--static {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #f8fafc;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  .segment-header--static .video-link {
+    margin-left: auto;
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 0.8rem;
+  }
+  .segment-header--static .video-link:hover { text-decoration: underline; }
+
+  /* セッション種別バッジ */
+  .session-type-badge {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+  .session-type-badge.procedural {
+    background: #fef3c7;
+    color: #92400e;
+  }
+  .session-type-badge.debate {
+    background: #dbeafe;
+    color: #1e40af;
+  }
+</style>
+<style is:global>
+  .utt-text p {
+    display: block;
+    margin: 0 0 0.75rem !important;
+    text-indent: 1em;
+  }
+  .utt-text p:last-child { margin-bottom: 0 !important; }
 </style>

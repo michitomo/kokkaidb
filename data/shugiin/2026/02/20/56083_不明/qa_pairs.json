@@ -1,3 +1,27 @@
 {
-  "pairs": []
+  "pairs": [
+    {
+      "id": "qa_001",
+      "segment_index": 1,
+      "topic": "幹事の選出方法および人数について",
+      "question": {
+        "speaker": "国重徹",
+        "party": "憲法審査会会長",
+        "summary": "- 幹事の人数を9名とすること\n- 会長による指名での選出を求める動議の提出",
+        "full_text": "「会長、動議を提出いたします。幹事の人数は9名とし、会長において指名されることを望みます。」",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "古屋圭司",
+        "role": "憲法審査会会長",
+        "summary": "- 動議に異議がないことを確認\n- 幹事として高谷恵美子君ら9名を指名",
+        "full_text": "ただいまの国重徹君の動議に、異議ございませんか？異議なしと認めます。よって、会長は幹事に高谷恵美子君、和田芳明君、国重徹君、馬場信之君、浅野さとち君、以上9名の方々を指名をいたします。",
+        "evasion_score": 0.0,
+        "has_commitment": true,
+        "commitment_text": "幹事に高谷恵美子君、和田芳明君、国重徹君、馬場信之君、浅野さとち君、以上9名の方々を指名する"
+      },
+      "follow_up_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56083&time=2648.7"
+    }
+  ]
 }

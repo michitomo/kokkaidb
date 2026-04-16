@@ -26,6 +26,14 @@ function readJson<T = unknown>(filePath: string): T {
   return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 }
 
+function readJsonSafe<T>(filePath: string, fallback: T): T {
+  try {
+    return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+  } catch {
+    return fallback;
+  }
+}
+
 /**
  * 全セッションのメタデータを読み込む（日付降順）。
  * data/ が空の場合は空配列を返す。
@@ -76,8 +84,8 @@ export function getSessionData(
   const dir = path.join(DATA_DIR, chamber, year, month, day, slug);
   return {
     metadata: readJson<SessionMetadata>(path.join(dir, 'metadata.json')),
-    qaPairs: readJson<QAPairsOutput>(path.join(dir, 'qa_pairs.json')),
-    summary: readJson<SessionSummary>(path.join(dir, 'summary.json')),
-    topics: readJson<TopicsOutput>(path.join(dir, 'topics.json')),
+    qaPairs: readJsonSafe<QAPairsOutput>(path.join(dir, 'qa_pairs.json'), { pairs: [] }),
+    summary: readJsonSafe<SessionSummary>(path.join(dir, 'summary.json'), { session_summary: '', key_topics: [], key_commitments: [] }),
+    topics: readJsonSafe<TopicsOutput>(path.join(dir, 'topics.json'), { topics: [] }),
   };
 }
