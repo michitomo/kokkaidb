@@ -239,21 +239,24 @@ function parseLawsMd(filePath: string): LawEntry[] {
  */
 /**
  * 1つのQ&Aペアに対して関連法案IDを返す。
+ * summary だけでなく full_text も照合対象に含め、スペース入りタグは分割して扱う。
  */
 function matchLawsForQA(
-  qa: { topic: string; question_summary: string; answer_summary: string },
+  qa: { topic: string; question_summary: string; answer_summary: string; question_full_text: string; answer_full_text: string },
   laws: LawEntry[],
 ): string[] {
   if (laws.length === 0) return [];
 
-  const qaText = `${qa.topic} ${qa.question_summary} ${qa.answer_summary}`;
+  const qaText = `${qa.topic} ${qa.question_summary} ${qa.answer_summary} ${qa.question_full_text} ${qa.answer_full_text}`;
   const qaTextLower = qaText.toLowerCase();
 
   const matched: string[] = [];
   for (const law of laws) {
-    const hitCount = law.tags.filter(tag => qaTextLower.includes(tag.toLowerCase())).length;
-    // タグの30%以上がヒット、かつ最低2つ以上
-    if (hitCount >= 2 && hitCount / law.tags.length >= 0.3) {
+    // スペースを含むタグは分割して個別タグとして扱う
+    const expandedTags = law.tags.flatMap(tag => tag.includes(' ') ? tag.split(/\s+/) : [tag]);
+    const hitCount = expandedTags.filter(tag => qaTextLower.includes(tag.toLowerCase())).length;
+    // タグの25%以上がヒット、かつ最低2つ以上
+    if (hitCount >= 2 && hitCount / expandedTags.length >= 0.25) {
       matched.push(law.id);
     }
   }
@@ -577,7 +580,7 @@ export function generateApi(dataDir: string, outDir: string): void {
       commitment_text: p.answer.commitment_text,
       video_url: p.video_url,
       related_laws: laws.length > 0
-        ? matchLawsForQA({ topic: p.topic, question_summary: p.question.summary, answer_summary: p.answer.summary }, laws)
+        ? matchLawsForQA({ topic: p.topic, question_summary: p.question.summary, answer_summary: p.answer.summary, question_full_text: p.question.full_text || '', answer_full_text: p.answer.full_text || '' }, laws)
         : (existingSessionQALaws[p.id] || []),
     }));
 
