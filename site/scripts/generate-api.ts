@@ -486,6 +486,25 @@ export function generateApi(dataDir: string, outDir: string): void {
   // 法案マスタを読み込み
   const laws = parseLawsMd(LAWS_MD);
 
+  // laws.md がない場合（CI等）、既存のindex.jsonから related_laws を引き継ぐ
+  const existingRelatedLaws = new Map<string, string[]>();
+  if (laws.length === 0) {
+    const existingIndexPath = path.join(outDir, 'index.json');
+    if (fs.existsSync(existingIndexPath)) {
+      try {
+        const existing = readJson<{ session_id: string; related_laws?: string[] }[]>(existingIndexPath);
+        for (const e of existing) {
+          if (e.related_laws?.length) {
+            existingRelatedLaws.set(e.session_id, e.related_laws);
+          }
+        }
+        console.log(`[generate-api] Loaded ${existingRelatedLaws.size} sessions with related_laws from existing index.json`);
+      } catch {
+        // ignore
+      }
+    }
+  }
+
   const metadataFiles = glob.sync('**/metadata.json', { cwd: dataDir });
 
   const indexEntries: IndexEntry[] = [];
@@ -559,8 +578,10 @@ export function generateApi(dataDir: string, outDir: string): void {
       video_url: p.video_url,
     }));
 
-    // 法案マッチング
-    const relatedLaws = matchLaws(indexQAPairs, laws);
+    // 法案マッチング（laws.mdがない場合は既存index.jsonから引き継ぎ）
+    const relatedLaws = laws.length > 0
+      ? matchLaws(indexQAPairs, laws)
+      : (existingRelatedLaws.get(metadata.session_id) || []);
 
     indexEntries.push({
       session_id: metadata.session_id,

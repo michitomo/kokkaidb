@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getAllSessions, sessionPath, sessionSlug } from '../lib/data';
-import type { TopicsOutput, SessionSummary } from '../types';
+import { getAllSessions, sessionPath, sessionSlug, getRelatedLaws } from '../lib/data';
+import type { TopicsOutput, SessionSummary, LawEntry } from '../lib/data';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -34,8 +34,10 @@ function getSessionKeywords(s: { chamber: string; date: string; session_id: stri
 }
 
 const sessionKeywords = new Map<string, string[]>();
+const sessionLaws = new Map<string, LawEntry[]>();
 for (const s of sessions) {
   sessionKeywords.set(s.session_id, getSessionKeywords(s));
+  sessionLaws.set(s.session_id, getRelatedLaws(s.session_id));
 }
 
 // 日付でグループ化（降順）
@@ -67,6 +69,7 @@ for (const s of sessions) {
                   ? `${Math.floor(totalMin / 60)}時間${totalMin % 60 > 0 ? `${totalMin % 60}分` : ''}`
                   : `${totalMin}分`
                 : '';
+              const laws = sessionLaws.get(s.session_id) || [];
               return (
                 <li class="session-card">
                   <a href={base + sessionPath(s)}>
@@ -78,8 +81,11 @@ for (const s of sessions) {
                       {durationLabel && <span class="duration">{durationLabel}</span>}
                       <span class="speakers">{s.speakers.length}名</span>
                     </div>
-                    {keywords.length > 0 && (
+                    {(keywords.length > 0 || laws.length > 0) && (
                       <div class="session-keywords">
+                        {laws.map(l => (
+                          <span class="law-tag">{l.short_title}</span>
+                        ))}
                         {keywords.map(k => (
                           <span class="keyword-tag">{k}</span>
                         ))}
@@ -148,6 +154,13 @@ for (const s of sessions) {
     padding: 0.1rem 0.4rem;
     font-size: 0.7rem;
     color: #64748b;
+  }
+  .law-tag {
+    background: #fef3c7;
+    border-radius: 3px;
+    padding: 0.1rem 0.4rem;
+    font-size: 0.7rem;
+    color: #92400e;
   }
   .chamber-badge {
     display: inline-block;
