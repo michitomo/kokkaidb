@@ -59,6 +59,7 @@ let timelineSegments: {
   segmentIndex: number;
   speaker: string;
   role: string;
+  affiliation: string;
   startSeconds: number;
   endSeconds: number;
   utteranceCount: number;
@@ -87,6 +88,7 @@ if (fs.existsSync(utterancesPath)) {
         segmentIndex: i,
         speaker: seg.segment_speaker ?? '',
         role: seg.utterances?.[0]?.role ?? '',
+        affiliation: seg.segment_affiliation ?? '',
         startSeconds: seg.start_seconds,
         endSeconds,
         utteranceCount: seg.utterances?.length ?? 1,
