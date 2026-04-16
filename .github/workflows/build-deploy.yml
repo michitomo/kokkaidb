@@ -2,7 +2,9 @@ name: Build and Deploy
 
 on:
   push:
-    paths: ['data/**']
+    paths:
+      - 'data/**'
+      - 'site/**'
     branches: [main]
 
 permissions:
