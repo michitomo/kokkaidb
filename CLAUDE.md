@@ -26,9 +26,7 @@ kokkai-db/                          # このリポジトリ
 │   │   └── topics.json
 │   └── sangiin/YYYY/MM/DD/{sid}_{委員会名}/
 │       └── (同上)
-├── kokkai-transcriber/             # Dockerコンテナ（データ収集・処理パイプライン）
-│   ├── Dockerfile
-│   ├── docker-compose.yml
+├── kokkai-transcriber/             # データ収集・処理パイプライン（venv実行、本番はGitHub Actions）
 │   ├── pyproject.toml
 │   └── src/
 │       ├── scrapers/
@@ -89,24 +87,38 @@ kokkai-db/                          # このリポジトリ
 
 ### データ収集パイプライン（kokkai-transcriber/）
 
-```bash
-# Docker起動
-docker compose up -d
+実行環境は venv（Dockerは廃止済み）。本番は GitHub Actions 上で動く（`.github/workflows/batch.yml`、今後追加予定）。
 
-# 特定セッションを手動処理（Phase 1 PoC用）
-docker compose run --rm transcriber python -m src.pipeline --chamber shugiin --session-id 56149
+```bash
+cd kokkai-transcriber
+
+# 初回セットアップ
+python -m venv .venv
+source .venv/bin/activate
+pip install -e .
+# ffmpeg が必要（macOS: brew install ffmpeg、Linux: apt install ffmpeg）
+
+# 特定セッションを手動処理
+python -m src.pipeline --chamber shugiin --session-id 56149 --no-push
 
 # 参議院
-docker compose run --rm transcriber python -m src.pipeline --chamber sangiin --session-id 1234
+python -m src.pipeline --chamber sangiin --session-id 1234 --no-push
+
+# バッチ（期間指定で並列処理）
+python -m src.batch --chamber shugiin --since 2026-02-01 --workers 4 --no-push
 
 # 状態確認
-docker compose run --rm transcriber python -m src.state list
+python -m src.state list
+
+# 法案リスト（laws.json）の更新
+python -m src.laws_builder --sessions 221
 
 # テスト
-cd kokkai-transcriber && python -m pytest
+python -m pytest
+python -m pytest -m integration  # ネットワーク必須の統合テスト
 
 # リント
-cd kokkai-transcriber && ruff check src/ && mypy src/
+ruff check src/ && mypy src/
 ```
 
 ### 静的サイト（site/）
