@@ -1,0 +1,61 @@
+2026-04-15T08:52:52 INFO __main__: Models to test: ['openai/gpt-oss-120b', 'Qwen/Qwen3-32B']
+2026-04-15T08:52:52 INFO __main__: Reference model: deepseek-ai/DeepSeek-V3.2
+2026-04-15T08:52:52 INFO __main__: Session: 56149_本会議
+2026-04-15T08:52:52 INFO __main__: ============================================================
+2026-04-15T08:52:52 INFO __main__: BENCHMARK: Step 4.5 Corrector
+2026-04-15T08:52:52 INFO __main__: ============================================================
+2026-04-15T08:52:52 INFO __main__: --- Segment 2: 高階恵美子 (2911 chars raw) ---
+2026-04-15T08:57:28 INFO httpx: HTTP Request: POST https://api.deepinfra.com/v1/openai/chat/completions "HTTP/1.1 200 OK"
+2026-04-15T08:57:28 INFO __main__:   [gpt-oss-120b] 275.8s | similarity=0.957 | len_ratio=0.97 | 3015 chars
+2026-04-15T08:57:28 INFO __main__:     REF: 高階恵美子君。自由民主党の高階恵美子です。会派を代表し、ただいま時代となりました健康保険法等の一部を改正する法律案について質問します。日本は国民の皆様のご理解のもと、国民皆保険制度によって、どこに住んでいても質の高い医療が受けられる社会保障を維持し、世界最長寿国を実現してきました。診断治療技術の高度
+2026-04-15T08:57:28 INFO __main__:     OUT: 高階恵美子議員（自由民主党・無所属の会）です。会派を代表して、ただいま時代となりました。健康保険法等の一部を改正する法律案について質問します。日本は国民の皆様のご理解のもと、介護保険制度によって、どこに住んでいても質の高い医療が受けられる社会保障を維持し、世界最長寿国を実現してきました。診断・治療技
+2026-04-15T08:57:59 INFO httpx: HTTP Request: POST https://api.deepinfra.com/v1/openai/chat/completions "HTTP/1.1 200 OK"
+2026-04-15T08:57:59 INFO __main__:   [Qwen3-32B] 31.5s | similarity=0.684 | len_ratio=1.83 | 5665 chars
+2026-04-15T08:57:59 INFO __main__:     REF: 高階恵美子君。自由民主党の高階恵美子です。会派を代表し、ただいま時代となりました健康保険法等の一部を改正する法律案について質問します。日本は国民の皆様のご理解のもと、国民皆保険制度によって、どこに住んでいても質の高い医療が受けられる社会保障を維持し、世界最長寿国を実現してきました。診断治療技術の高度
+2026-04-15T08:57:59 INFO __main__:     OUT: <think>\nAlright, let's tackle this correction task. First, I need to go through the provided Whisper text and apply the rules given. The main points a
+2026-04-15T08:57:59 INFO __main__: --- Segment 3: 早稲田ゆき (6051 chars raw) ---
+2026-04-15T09:04:07 INFO httpx: HTTP Request: POST https://api.deepinfra.com/v1/openai/chat/completions "HTTP/1.1 200 OK"
+2026-04-15T09:04:07 INFO __main__:   [gpt-oss-120b] 367.9s | similarity=0.375 | len_ratio=0.25 | 1602 chars
+2026-04-15T09:04:07 INFO __main__:     REF: 早稲田ゆきです。中道改革連合の早稲田ゆきです。私は健康保険法改正案につきまして、中道改革連合を代表して質問いたします。\nまず冒頭、中東情勢の正常化は世界にとって、我が国の国益、取り分け安心安全な医療提供体制の確保に最重要課題であります。総理、報道によればイラン大統領との電話会談を行われたということで
+2026-04-15T09:04:07 INFO __main__:     OUT: 早稲田ゆきです。私は健康保険法改正案につきまして、中道改革連合を代表して質問いたします。まず冒頭に、中東情勢の正常化は世界にとって我が国の国益であり、安心安全な医療提供体制の確保に最重要課題であります。総理、報道によればイラン大統領との電話会談を行われたということですが、永続的な停戦の働きかけ、ホル
+2026-04-15T09:06:21 INFO httpx: HTTP Request: POST https://api.deepinfra.com/v1/openai/chat/completions "HTTP/1.1 200 OK"
+2026-04-15T09:06:21 INFO __main__:   [Qwen3-32B] 133.8s | similarity=0.293 | len_ratio=2.52 | 16073 chars
+2026-04-15T09:06:21 INFO __main__:     REF: 早稲田ゆきです。中道改革連合の早稲田ゆきです。私は健康保険法改正案につきまして、中道改革連合を代表して質問いたします。\nまず冒頭、中東情勢の正常化は世界にとって、我が国の国益、取り分け安心安全な医療提供体制の確保に最重要課題であります。総理、報道によればイラン大統領との電話会談を行われたということで
+2026-04-15T09:06:21 INFO __main__:     OUT: <think>\nAlright, let's tackle this. The user provided a Japanese text that's a transcript of a parliamentary session, and they want me to correct it a
+2026-04-15T09:06:21 INFO __main__: ============================================================
+2026-04-15T09:06:21 INFO __main__: BENCHMARK: Step 5 Speaker Tagger
+2026-04-15T09:06:21 INFO __main__: ============================================================
+2026-04-15T09:06:21 INFO __main__: --- Segment 1: 上野賢一郎 (20 sentences, ref=3 splits) ---
+2026-04-15T09:06:21 INFO __main__:     REF speakers: [('森英介', '委員長'), ('上野賢一郎', '答弁者'), ('森英介', '委員長')]
+2026-04-15T09:07:07 INFO httpx: HTTP Request: POST https://api.deepinfra.com/v1/openai/chat/completions "HTTP/1.1 200 OK"
+2026-04-15T09:07:07 INFO __main__:   [gpt-oss-120b] 45.4s | splits=3 (ref=3) | name_overlap=1.00 | speakers=[('質問者', '質疑者'), ('上野賢一郎', '答弁者'), ('森英介', '委員長')]
+2026-04-15T09:07:09 INFO httpx: HTTP Request: POST https://api.deepinfra.com/v1/openai/chat/completions "HTTP/1.1 200 OK"
+2026-04-15T09:07:09 INFO __main__:   [Qwen3-32B] 2.1s | splits=4 (ref=3) | name_overlap=1.00 | speakers=[('高階恵美子', '質疑者'), ('森英介', '委員長'), ('上野賢一郎', '答弁者'), ('石井啓一', '委員長')]
+2026-04-15T09:07:09 INFO __main__: --- Segment 2: 高階恵美子 (55 sentences, ref=3 splits) ---
+2026-04-15T09:07:09 INFO __main__:     REF speakers: [('高階恵美子', '質疑者'), ('高市早苗', '答弁者'), ('上野賢一郎', '答弁者')]
+2026-04-15T09:08:10 INFO httpx: HTTP Request: POST https://api.deepinfra.com/v1/openai/chat/completions "HTTP/1.1 200 OK"
+2026-04-15T09:08:10 INFO __main__:   [gpt-oss-120b] 61.0s | splits=6 (ref=3) | name_overlap=1.00 | speakers=[('森英介', '委員長'), ('高階恵美子', '質疑者'), ('森英介', '委員長'), ('高市早苗', '答弁者'), ('森英介', '委員長'), ('上野賢一郎', '答弁者')]
+2026-04-15T09:08:11 INFO httpx: HTTP Request: POST https://api.deepinfra.com/v1/openai/chat/completions "HTTP/1.1 200 OK"
+2026-04-15T09:08:11 INFO __main__:   [Qwen3-32B] 1.5s | splits=3 (ref=3) | name_overlap=0.33 | speakers=[('高階恵美子', '質疑者'), ('内閣総理大臣 高市早苗', '答弁者'), ('厚生労働大臣 上野賢一郎', '答弁者')]
+2026-04-15T09:08:11 INFO __main__: ============================================================
+2026-04-15T09:08:11 INFO __main__: BENCHMARK: Step 6 Structurer (Q&A)
+2026-04-15T09:08:11 INFO __main__: ============================================================
+2026-04-15T09:08:11 INFO __main__: --- Speaker: 早稲田ゆき (ref=10 QA pairs) ---
+2026-04-15T09:08:11 INFO __main__:     REF topics: ['中東情勢（イラン首脳会談とホルムズ海峡の安全航行）', 'ナフサ由来資材の供給状況把握と支援', 'OTC類似薬の保険適用見直しによる患者負担増加', '出産費用の地域間・施設間格差是正', '助産所の事務負担軽減', '無痛分娩への支援拡充', '妊婦検診の標準額設定と実勢価格乖離防止', '地域医療介護総合確保基金の柔軟な運用', '医療従事者のタスクシフト・タスクシェアと数値目標', '高額療養費制度見直しと患者負担増加']
+2026-04-15T09:11:14 INFO httpx: HTTP Request: POST https://api.deepinfra.com/v1/openai/chat/completions "HTTP/1.1 200 OK"
+2026-04-15T09:11:14 INFO __main__:   [gpt-oss-120b] 182.8s | pairs=10 (ref=10) | topic_sim=0.641
+2026-04-15T09:11:14 INFO __main__:     OUT topics: ['イラン大統領との電話会談とホルムズ海峡の安全確保', 'ナフサ供給状況と医療資材調達体制', '医療・介護施設への資金支援と補正予算の必要性', 'OTC類似薬の保険給付見直しと患者負担増加', '出産費用の給付方式と無痛分娩支援', '妊婦検診の標準額設定と地方格差への対応', '医師業務のタスクシフトと数値目標設定', '高額療養費制度の見直しと患者負担軽減策']
+2026-04-15T09:11:40 INFO httpx: HTTP Request: POST https://api.deepinfra.com/v1/openai/chat/completions "HTTP/1.1 200 OK"
+2026-04-15T09:11:40 INFO __main__:   [Qwen3-32B] 26.3s | pairs=5 (ref=10) | topic_sim=0.329
+2026-04-15T09:11:40 INFO __main__:     OUT topics: ['中東情勢と医療供給', 'OTC類似薬の保険適用見直し', '出産費用と妊婦健診', '医療従事者の業務効率化', '高額療養費制度の見直し']
+2026-04-15T09:11:40 INFO __main__: --- Speaker: 豊田真由子 (ref=9 QA pairs) ---
+2026-04-15T09:11:40 INFO __main__:     REF topics: ['国民生活必須物資の安定供給', '社会保険料負担軽減', '医薬品の安定供給と創薬イノベーション', '金融所得勘案の他制度への応用', '周産期医療体制の確保と出産給付', 'DX化補助金の不正対策', '補助金返還の公正な運用', '高額療養費制度の所得区分細分化', '医療保険制度の今後のあり方']
+2026-04-15T09:14:15 INFO httpx: HTTP Request: POST https://api.deepinfra.com/v1/openai/chat/completions "HTTP/1.1 200 OK"
+2026-04-15T09:14:15 INFO __main__:   [gpt-oss-120b] 154.6s | pairs=9 (ref=9) | topic_sim=0.630
+2026-04-15T09:14:15 INFO __main__:     OUT topics: ['国民生活に必須の医療資材の安定供給', '社会保険料負担の軽減（現役世代）', '医薬品の安定供給とOTC類似薬の保険給付見直し', '金融所得の窓口負担への反映', '分娩の現物給付化と周産期医療体制の確保', 'ICT導入補助金の不正受給対策', 'ICT補助金返還要請の公平性', '高額療養費制度の見直しと公平性']
+2026-04-15T09:14:59 INFO httpx: HTTP Request: POST https://api.deepinfra.com/v1/openai/chat/completions "HTTP/1.1 200 OK"
+2026-04-15T09:14:59 INFO __main__:   [Qwen3-32B] 44.3s | pairs=8 (ref=9) | topic_sim=0.669
+2026-04-15T09:14:59 INFO __main__:     OUT topics: ['国民生活に必須の物資の安定供給', '医薬品の安定供給と創薬分野のイノベーション', '地域で安心して出産できる体制', '社会保険料の負担軽減', '保険制度における金融所得の勘案', 'デジタル化・AI導入補助金の不正受給対策', '高額療養費制度の公平性', '医療保険制度の今後のあり方']
+2026-04-15T09:14:59 INFO __main__: ============================================================
+2026-04-15T09:14:59 INFO __main__: BENCHMARK COMPLETE
+2026-04-15T09:14:59 INFO __main__: ============================================================
