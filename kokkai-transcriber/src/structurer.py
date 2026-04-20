@@ -230,22 +230,170 @@ def _resolve_speaker_from_sentences(
     return seg.segment_speaker, seg.segment_affiliation
 
 
+# 政党名パターン: このいずれかが所属に含まれていれば議員（答弁者にはならない）
+_PARTY_KEYWORDS = frozenset([
+    "自由民主党", "立憲民主党", "日本維新の会", "公明党", "日本共産党",
+    "国民民主党", "チームみらい", "参政党", "れいわ新選組", "日本保守党",
+    "社会民主党", "中道改革連合", "無所属",
+])
+
+
+def _is_member_of_parliament(affiliation: str) -> bool:
+    """所属から国会議員かどうかを判定する。委員長は議事進行なので議員扱いしない。"""
+    if not affiliation:
+        return False
+    if affiliation.endswith("委員長") or affiliation.endswith("議長"):
+        return False
+    return any(p in affiliation for p in _PARTY_KEYWORDS)
+
+
 def _resolve_answerer_from_sentences(
     seg: SegmentUtterances,
     sentence_indices: list[int],
     sent_to_utt: list[int],
     speakers_lookup: dict[str, SpeakerInfo],
 ) -> tuple[str, str]:
-    """sentence_indicesから答弁者のspeakerとrole(=affiliation)を取得する。"""
+    """sentence_indicesから答弁者のspeakerとrole(=affiliation)を取得する。
+
+    議員が答弁者として選ばれた場合は、同じsentence範囲内で「答弁者」roleを持つ
+    別の発言者（大臣・政府参考人）を探す。見つからなければ議員のまま返す（ログで警告）。
+    """
     valid = [i for i in sentence_indices if 0 <= i < len(sent_to_utt)]
-    if valid:
-        u_idx = sent_to_utt[valid[0]]
-        name = seg.utterances[u_idx].speaker
-        info = _fuzzy_lookup(name, speakers_lookup)
-        if info:
-            return info.name, info.affiliation
-        return name, ""
-    return "", ""
+    if not valid:
+        return "", ""
+
+    # 最初のsentenceの発言者を候補に
+    u_idx = sent_to_utt[valid[0]]
+    name = seg.utterances[u_idx].speaker
+    info = _fuzzy_lookup(name, speakers_lookup)
+    candidate_name = info.name if info else name
+    candidate_aff = info.affiliation if info else ""
+
+    # 議員でなければそのまま返す
+    if not _is_member_of_parliament(candidate_aff):
+        return candidate_name, candidate_aff
+
+    # 議員が答弁者に → 同範囲内で非議員の発言者を探す
+    seen_utt_indices = {sent_to_utt[i] for i in valid if 0 <= i < len(sent_to_utt)}
+    for ui in sorted(seen_utt_indices):
+        alt_name = seg.utterances[ui].speaker
+        alt_info = _fuzzy_lookup(alt_name, speakers_lookup)
+        alt_aff = alt_info.affiliation if alt_info else ""
+        if alt_name != candidate_name and not _is_member_of_parliament(alt_aff):
+            logger.info(
+                "Corrected answerer: %s (%s) → %s (%s)",
+                candidate_name, candidate_aff, alt_info.name if alt_info else alt_name, alt_aff,
+            )
+            return (alt_info.name if alt_info else alt_name), alt_aff
+
+    # 見つからない場合はそのまま返すが警告
+    logger.warning(
+        "MP '%s' (%s) resolved as answerer but no non-MP alternative found in sentence range",
+        candidate_name, candidate_aff,
+    )
+    return candidate_name, candidate_aff
+
+
+# ---------------------------------------------------------------------------
+# 案B: 委員長指名による質疑ブロック分割
+# ---------------------------------------------------------------------------
+# TVのタイムスタンプは質疑者単位だが、1セグメント内に複数の質疑者が
+# 含まれることがある。委員長の指名発言（「次に〇〇君。」「〇〇君。」）を
+# 境界として質疑ブロックに分割し、Q&A生成をブロック単位で行う。
+
+_CHAIR_NOMINATION_RE = re.compile(
+    r"^(?:次に)?(.+?)[君さ](?:ん)?[。.]?\s*$"
+)
+
+
+def _split_segment_into_blocks(seg: SegmentUtterances) -> list[SegmentUtterances]:
+    """委員長の質疑者交代指名を境界としてセグメントを質疑ブロックに分割する。
+
+    委員長が「次に〇〇君。」「〇〇君。」と発言している箇所を検出し、
+    **その後の質疑者が直前ブロックの質疑者と異なる場合のみ**ブロックを分割する。
+    同じ質疑者への続行指名（答弁後に「〇〇君。」と戻す）では分割しない。
+    """
+    # まず各 utterance の質疑者を特定するために、セグメント内の質疑者の変遷を追跡
+    # 委員長指名の位置を検出
+    candidate_splits: list[tuple[int, str]] = []  # (utterance_index_after_nomination, nominated_name)
+    for i, u in enumerate(seg.utterances):
+        if u.role != "委員長":
+            continue
+        text = u.text.strip()
+        m = _CHAIR_NOMINATION_RE.match(text)
+        if m and i + 1 < len(seg.utterances):
+            nominated_name = m.group(1).strip()
+            candidate_splits.append((i + 1, nominated_name))
+
+    if not candidate_splits:
+        return [seg]
+
+    # 各候補分割点で、実際に質疑者が変わるかを確認
+    def _find_questioner_before(idx: int) -> str:
+        """idx より前の最後の質疑者名を返す。"""
+        for j in range(idx - 1, -1, -1):
+            if seg.utterances[j].role == "質疑者":
+                return seg.utterances[j].speaker
+        return ""
+
+    def _find_questioner_after(idx: int) -> str:
+        """idx 以降の最初の質疑者名を返す。"""
+        for j in range(idx, len(seg.utterances)):
+            if seg.utterances[j].role == "質疑者":
+                return seg.utterances[j].speaker
+        return ""
+
+    split_points: list[int] = []
+    for utt_idx, _nominated in candidate_splits:
+        before = _find_questioner_before(utt_idx)
+        after = _find_questioner_after(utt_idx)
+        if before and after and before != after:
+            split_points.append(utt_idx)
+
+    if not split_points:
+        return [seg]
+
+    # 先頭が0でなければ追加（最初のブロック）
+    if split_points[0] != 0:
+        split_points = [0] + split_points
+
+    split_points = sorted(set(split_points))
+
+    if len(split_points) <= 1:
+        return [seg]
+
+    blocks: list[SegmentUtterances] = []
+    for idx, start in enumerate(split_points):
+        end = split_points[idx + 1] if idx + 1 < len(split_points) else len(seg.utterances)
+        block_utterances = seg.utterances[start:end]
+        if not block_utterances:
+            continue
+
+        questioners = [u.speaker for u in block_utterances if u.role == "質疑者"]
+        block_speaker = questioners[0] if questioners else seg.segment_speaker
+
+        blocks.append(SegmentUtterances(
+            segment_index=seg.segment_index,
+            segment_speaker=block_speaker,
+            segment_affiliation=seg.segment_affiliation,
+            start_seconds=seg.start_seconds,
+            video_url=seg.video_url,
+            utterances=block_utterances,
+        ))
+
+    if not blocks:
+        return [seg]
+
+    if len(blocks) > 1:
+        logger.info(
+            "Split segment %d (%s) into %d blocks: %s",
+            seg.segment_index,
+            seg.segment_speaker,
+            len(blocks),
+            ", ".join(b.segment_speaker for b in blocks),
+        )
+
+    return blocks
 
 
 def _is_qa_segment(seg: SegmentUtterances) -> bool:
@@ -457,49 +605,60 @@ def generate_qa_pairs(
             all_speakers.add(u.speaker)
     session_context = f"発言者: {', '.join(sorted(all_speakers))}"
 
-    # Q&A対象セグメントを選別
-    qa_segments = [seg for seg in utterances.segments if _is_qa_segment(seg)]
-    skipped = len(utterances.segments) - len(qa_segments)
+    # Q&A対象セグメントを選別し、委員長指名で質疑ブロックに分割
+    qa_blocks: list[SegmentUtterances] = []
+    skipped = 0
+    for seg in utterances.segments:
+        if not _is_qa_segment(seg):
+            skipped += 1
+            continue
+        blocks = _split_segment_into_blocks(seg)
+        for block in blocks:
+            if _is_qa_segment(block):
+                qa_blocks.append(block)
+
     logger.info(
-        "Processing %d Q&A segments (skipped %d procedural segments)",
-        len(qa_segments),
+        "Processing %d Q&A blocks (from %d segments, skipped %d procedural)",
+        len(qa_blocks),
+        len(utterances.segments),
         skipped,
     )
 
-    if not qa_segments:
+    if not qa_blocks:
         return QAPairsOutput(pairs=[])
 
-    # セグメント単位で並列にLLM呼び出し
-    segment_results: dict[int, list[QAPair]] = {}
+    # ブロック単位で並列にLLM呼び出し
+    block_results: list[tuple[int, int, list[QAPair]]] = []  # (seg_index, block_order, pairs)
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
         futures = {
-            executor.submit(_generate_qa_for_segment, seg, session_context, speakers_lookup): seg
-            for seg in qa_segments
+            executor.submit(_generate_qa_for_segment, block, session_context, speakers_lookup): (i, block)
+            for i, block in enumerate(qa_blocks)
         }
         for future in as_completed(futures):
-            seg = futures[future]
+            block_order, block = futures[future]
             try:
                 pairs = future.result()
-                segment_results[seg.segment_index] = pairs
+                block_results.append((block.segment_index, block_order, pairs))
             except Exception as e:
                 logger.error(
-                    "Failed to generate Q&A for segment %d (%s): %s",
-                    seg.segment_index,
-                    seg.segment_speaker,
+                    "Failed to generate Q&A for block %d (%s): %s",
+                    block.segment_index,
+                    block.segment_speaker,
                     e,
                 )
-                segment_results[seg.segment_index] = []
+                block_results.append((block.segment_index, block_order, []))
 
-    # セグメント順にマージし、通し番号を付与
+    # セグメント順 → ブロック順にマージし、通し番号を付与
+    block_results.sort(key=lambda x: (x[0], x[1]))
     all_pairs: list[QAPair] = []
     pair_counter = 0
-    for seg in sorted(qa_segments, key=lambda s: s.segment_index):
-        for pair in segment_results.get(seg.segment_index, []):
+    for _seg_idx, _block_order, pairs in block_results:
+        for pair in pairs:
             pair_counter += 1
             pair.id = f"qa_{pair_counter:03d}"
             all_pairs.append(pair)
 
-    logger.info("Total Q&A pairs generated: %d (from %d segments)", len(all_pairs), len(qa_segments))
+    logger.info("Total Q&A pairs generated: %d (from %d blocks)", len(all_pairs), len(qa_blocks))
     return QAPairsOutput(pairs=all_pairs)
 
 
@@ -520,16 +679,14 @@ def generate_summary_and_topics(
     """
     client = _get_client()
 
-    segments_text = _format_segments_for_prompt(utterances.segments)
     qa_text = "\n".join(
-        f"[{p.id}] トピック: {p.topic}\n  質問者: {p.question.speaker}（{p.question.party}）\n  要旨: {p.question.summary} → {p.answer.summary}"
+        f"[{p.id}] トピック: {p.topic}\n  質問者: {p.question.speaker}（{p.question.party}）\n  質問要旨: {p.question.summary}\n  回答要旨: {p.answer.summary}"
         for p in qa_pairs.pairs
     )
 
     user_prompt = (
-        f"以下の国会質疑を分析してください。\n\n"
-        f"## Q&Aペア一覧\n{qa_text}\n\n"
-        f"## 全発言\n{segments_text}"
+        f"以下の国会質疑のQ&Aペア一覧を分析してください。\n\n"
+        f"## Q&Aペア一覧\n{qa_text}"
     )
     if laws_text:
         user_prompt += f"\n\n## 法案一覧\n{laws_text}"

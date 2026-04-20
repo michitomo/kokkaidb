@@ -25,8 +25,8 @@ from pathlib import Path
 
 from src.api_client import get_client, with_retry
 
-# Step 4.5はgemma-4-31Bを使用（DeepSeek-V3.2比: 品質0.972 vs 0.984、省略なし、約2倍速）
-CORRECTOR_MODEL = "google/gemma-4-31B-it"
+# Step 4.5はDeepSeek-V3.2を使用（prompt cachingで長いsystem promptのコストを削減）
+CORRECTOR_MODEL = "deepseek-ai/DeepSeek-V3.2"
 from src.models import RawTranscript, SegmentTranscript, SessionDetail, SpeakerInfo, WhisperSegment
 
 logger = logging.getLogger(__name__)
@@ -108,6 +108,7 @@ Whisper音声認識が生成したテキストを、以下の観点で修正し�
 - 発言の順序を変えない
 - 存在しない発言を捏造しない
 - 発言者リストに記載された名前の表記を勝手に変えない
+- 「……」を出力しない。聞き取れない箇所があっても元のテキストをそのまま残すこと
 
 修正後のテキストのみを返してください。JSON形式ではなく、プレーンテキストで返してください。"""
 
@@ -149,8 +150,12 @@ def _chunk_segment(seg: SegmentTranscript, char_limit: int = CHUNK_CHAR_LIMIT) -
         ws_text = ws.text
         ws_len = len(ws_text)
 
-        # 現在のチャンクに追加すると上限を超える場合 → 切り出し
-        if current_len + ws_len > char_limit and current_len > 0:
+        current_texts.append(ws_text)
+        current_ids.append(ws.id)
+        current_len += ws_len
+
+        # whisper_segment を追加した後で上限チェック → 文の途中で切れない
+        if current_len >= char_limit:
             chunks.append(CorrectionChunk(
                 segment_index=seg.segment_index,
                 chunk_index=chunk_idx,
@@ -161,10 +166,6 @@ def _chunk_segment(seg: SegmentTranscript, char_limit: int = CHUNK_CHAR_LIMIT) -
             current_texts = []
             current_ids = []
             current_len = 0
-
-        current_texts.append(ws_text)
-        current_ids.append(ws.id)
-        current_len += ws_len
 
     # 残りを最後のチャンクとして追加
     if current_texts:
@@ -297,14 +298,23 @@ def correct_transcript(
             seg_idx, chunk_idx, corrected_text, original_len = future.result()
             corrected_len = len(corrected_text)
 
-            # 安全チェック: 80%未満に縮んだ場合は棄却
+            chunk_obj, _ = futures[future]
+
+            # 安全チェック1: ……が含まれていたら棄却（LLMが省略した証拠）
+            if "……" in corrected_text:
+                logger.warning(
+                    "Chunk seg=%d chunk=%d: rejected (contains ……, %d→%d chars)",
+                    seg_idx, chunk_idx, original_len, corrected_len,
+                )
+                corrected_text = chunk_obj.text
+
+            # 安全チェック2: 80%未満に縮んだ場合は棄却
             ratio = corrected_len / original_len if original_len > 0 else 1.0
             if ratio < 0.8:
                 logger.warning(
                     "Chunk seg=%d chunk=%d: rejected (%.0f%%, %d→%d chars)",
                     seg_idx, chunk_idx, ratio * 100, original_len, corrected_len,
                 )
-                chunk_obj, _ = futures[future]
                 corrected_text = chunk_obj.text  # 元テキストを使用
 
             corrected_chunks[(seg_idx, chunk_idx)] = corrected_text
