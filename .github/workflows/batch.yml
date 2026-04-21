@@ -30,20 +30,22 @@ concurrency:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
-  batch:
+  ingest:
     runs-on: ubuntu-latest
     timeout-minutes: 180
+    outputs:
+      has_new_data: ${{ steps.commit.outputs.has_new_data }}
     defaults:
       run:
         working-directory: kokkai-transcriber
     steps:
       - uses: actions/checkout@v4
         with:
-          # data/ の履歴を含める必要はない。直近だけで commit/push できれば OK。
           fetch-depth: 1
-          # git push のため GITHUB_TOKEN を残す
           persist-credentials: true
 
       - name: Configure git identity
@@ -80,7 +82,7 @@ jobs:
 
       - name: Refresh laws_compact.txt
         env:
-          # 当該国会の session 番号。ARCHや運用に応じて更新する。
+          # 当該国会の session 番号
           DIET_SESSION: '221'
         run: |
           python -m src.laws_builder --sessions "$DIET_SESSION" || \
@@ -96,4 +98,61 @@ jobs:
             --chamber "$CHAMBER" \
             --since "${{ steps.dates.outputs.since }}" \
             --until "${{ steps.dates.outputs.until }}" \
-            --workers "$WORKERS"
+            --workers "$WORKERS" \
+            --no-push
+
+      # batch.py の commit/push はスキップし、workflow 側で一元管理する。
+      # GITHUB_TOKEN で push すると他 workflow を発火しないため、
+      # 後続の build/deploy ジョブでサイト更新まで完結させる。
+      - name: Commit data/
+        id: commit
+        working-directory: ${{ github.workspace }}
+        run: |
+          git add data/
+          if git diff --cached --quiet --exit-code; then
+            echo "No data changes to commit"
+            echo "has_new_data=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "data: batch ${{ steps.dates.outputs.since }}〜${{ steps.dates.outputs.until }}"
+            git push origin main
+            echo "has_new_data=true" >> "$GITHUB_OUTPUT"
+          fi
+
+  build:
+    needs: ingest
+    if: needs.ingest.outputs.has_new_data == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main  # ingest が push した最新コミットを取得
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+          cache-dependency-path: site/package-lock.json
+
+      - name: Install dependencies
+        working-directory: site
+        run: npm ci
+
+      - name: Build Astro site (includes Pagefind via postbuild)
+        working-directory: site
+        run: npm run build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/dist
+
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

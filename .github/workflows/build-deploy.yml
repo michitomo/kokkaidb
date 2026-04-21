@@ -1,9 +1,10 @@
 name: Build and Deploy
 
+# data/ の更新は batch.yml が ingest→build→deploy を一気通貫で行うため、
+# ここでは site/ のコード変更と手動実行のみをトリガーにする。
 on:
   push:
     paths:
-      - 'data/**'
       - 'site/**'
     branches: [main]
   workflow_dispatch:
