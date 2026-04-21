@@ -45,7 +45,12 @@ const aSummary = formatSummary(pair.answer.summary);
 const videoTitle = videoTime ? `動画を見る（${videoTime}）` : '動画を見る';
 const chamberName = session?.chamber === 'shugiin' ? '衆議院TV' : session?.chamber === 'sangiin' ? '参議院TV' : null;
 ---
-<div class="qa-card">
+<div
+  class="qa-card"
+  id={`qa-${pair.id}`}
+  data-pagefind-body
+  data-pagefind-meta={`title:[Q&A] ${pair.question.speaker} → ${pair.answer.speaker}: ${pair.topic}`}
+>
   <div class="qa-header">
     <span class="topic">{pair.topic}</span>
     {pair.video_url && (

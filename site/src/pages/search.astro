@@ -5,6 +5,11 @@ const base = import.meta.env.BASE_URL;
 ---
 <BaseLayout title="検索 - 国会議事録リアルタイムDB">
   <h1>全文検索</h1>
+  <p class="search-hint">
+    検索結果は <strong>[概要]</strong>（セッション全体の要約）、
+    <strong>[Q&amp;A]</strong>（質疑応答カード）、
+    <strong>[発言]</strong>（個別発言）の3種類に分類されます。クリックで該当箇所に直接ジャンプします。
+  </p>
   <div id="search"></div>
 
   <link href={base + '/pagefind/pagefind-ui.css'} rel="stylesheet" />
@@ -14,6 +19,7 @@ const base = import.meta.env.BASE_URL;
       new window.PagefindUI({
         element: '#search',
         showSubResults: true,
+        excerptLength: 30,
         translations: {
           placeholder: '審議内容を検索...',
           zero_results: '「[SEARCH_TERM]」に一致する結果はありません',
@@ -24,5 +30,15 @@ const base = import.meta.env.BASE_URL;
 </BaseLayout>
 
 <style>
-  h1 { font-size: 1.5rem; margin-bottom: 1rem; }
+  h1 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+  .search-hint {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  .search-hint strong {
+    color: #374151;
+    font-weight: 600;
+  }
 </style>

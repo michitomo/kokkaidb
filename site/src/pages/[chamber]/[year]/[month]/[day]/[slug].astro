@@ -132,7 +132,7 @@ const sessionType = hasQA ? 'debate' : 'procedural';
     出所: <a href={metadata.source_url} target="_blank" rel="noopener">{chamberLabel}</a>
   </div>
 
-  <h1 data-pagefind-meta="title">{metadata.committee}</h1>
+  <h1>{metadata.committee}</h1>
   <div class="meta">
     <span class={`chamber-badge ${metadata.chamber}`}>
       {metadata.chamber === 'shugiin' ? '衆議院' : '参議院'}
@@ -144,26 +144,37 @@ const sessionType = hasQA ? 'debate' : 'procedural';
     </span>
   </div>
 
-  <div data-pagefind-body>
-    <!-- セッション概要 -->
-    <section class="section">
-      <h2>概要</h2>
-      <p>{summary.session_summary}</p>
-      {displayTopics.length > 0 && (
-        <div class="topics">
-          {displayTopics.map(t => (
-            <button
-              class="topic-tag topic-filter-btn"
-              data-topic={t}
-              data-qa-ids={JSON.stringify(topicQaMap[t] || [])}
-            >{t}</button>
-          ))}
-          <button class="topic-filter-reset" id="topic-filter-reset" style="display:none;">
-            トピックフィルタ解除
-          </button>
-        </div>
-      )}
-    </section>
+  <!-- Pagefind インデックスの最小単位:
+       - 概要 section（session全体の要約として独立レコード）
+       - 各 Q&A カード（QAPairCard.astro で data-pagefind-body 付与）
+       - 各発言セグメント（下部の utterance-segment に付与）
+       外側には data-pagefind-body を置かず、各ブロックを個別の検索結果にする。
+       各ブロックは必ず id を持ち、検索結果からアンカー付きで該当箇所に飛ぶ。 -->
+
+  <!-- セッション概要 -->
+  <section
+    class="section"
+    id="overview"
+    data-pagefind-body
+    data-pagefind-meta={`title:[概要] ${metadata.committee}（${metadata.date}）`}
+  >
+    <h2>概要</h2>
+    <p>{summary.session_summary}</p>
+    {displayTopics.length > 0 && (
+      <div class="topics">
+        {displayTopics.map(t => (
+          <button
+            class="topic-tag topic-filter-btn"
+            data-topic={t}
+            data-qa-ids={JSON.stringify(topicQaMap[t] || [])}
+          >{t}</button>
+        ))}
+        <button class="topic-filter-reset" id="topic-filter-reset" style="display:none;">
+          トピックフィルタ解除
+        </button>
+      </div>
+    )}
+  </section>
 
     <!-- タイムライン（utterances.jsonがある場合） -->
     {timelineSegments.length > 0 && (
@@ -233,9 +244,15 @@ const sessionType = hasQA ? 'debate' : 'procedural';
     {utteranceSegments.length > 0 && (
       <section class="section">
         <h2>{hasQA ? '発言全文' : '議事内容'}</h2>
-        {utteranceSegments.map(seg => hasQA ? (
+        {utteranceSegments.map((seg, segIdx) => hasQA ? (
           <!-- 質疑セッション: 折りたたみ表示 -->
-          <details class="utterance-segment" data-speaker={seg.segment_speaker}>
+          <details
+            class="utterance-segment"
+            id={`utt-${segIdx}`}
+            data-speaker={seg.segment_speaker}
+            data-pagefind-body
+            data-pagefind-meta={`title:[発言] ${seg.segment_speaker}${seg.segment_affiliation ? '（' + seg.segment_affiliation + '）' : ''} — ${metadata.committee}（${metadata.date}）`}
+          >
             <summary class="segment-header">
               <strong>{seg.segment_speaker}</strong>
               {seg.segment_affiliation && (
@@ -274,7 +291,13 @@ const sessionType = hasQA ? 'debate' : 'procedural';
           </details>
         ) : (
           <!-- 手続きセッション: 展開状態で表示 -->
-          <div class="utterance-segment utterance-segment--open" data-speaker={seg.segment_speaker}>
+          <div
+            class="utterance-segment utterance-segment--open"
+            id={`utt-${segIdx}`}
+            data-speaker={seg.segment_speaker}
+            data-pagefind-body
+            data-pagefind-meta={`title:[発言] ${seg.segment_speaker}${seg.segment_affiliation ? '（' + seg.segment_affiliation + '）' : ''} — ${metadata.committee}（${metadata.date}）`}
+          >
             <div class="segment-header segment-header--static">
               <strong>{seg.segment_speaker}</strong>
               {seg.segment_affiliation && (
@@ -311,7 +334,6 @@ const sessionType = hasQA ? 'debate' : 'procedural';
         ))}
       </section>
     )}
-  </div>
 
   <script>
     // --- フィルタ状態 ---
