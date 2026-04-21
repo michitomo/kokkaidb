@@ -40,6 +40,23 @@ from src.state import StateManager
 
 MAX_RETRIES = 5
 
+# data/ ルート: Actions ランナーで state.db が空のときに真実のソースとして参照する。
+_DATA_ROOT = Path(__file__).parent.parent.parent / "data"
+
+
+def _has_processed_output(chamber: str, session_id: str) -> bool:
+    """data/{chamber}/**/{session_id}_*/qa_pairs.json が存在すれば処理済みとみなす。
+
+    state.db が欠けている環境（Actions の初回ラン等）で冪等性を担保するため、
+    真実のソースとして data/ のコミット状態を使う。
+    """
+    chamber_dir = _DATA_ROOT / chamber
+    if not chamber_dir.exists():
+        return False
+    # data/{chamber}/YYYY/MM/DD/{session_id}_*/qa_pairs.json
+    matches = list(chamber_dir.glob(f"*/*/*/{session_id}_*/qa_pairs.json"))
+    return len(matches) > 0
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s %(levelname)s %(name)s: %(message)s",
@@ -92,7 +109,10 @@ def _discover_sessions(
 
         for sid in session_ids:
             if state.is_processed(chamber, sid):
-                logger.debug("Already processed: %s %s", chamber, sid)
+                logger.debug("Already processed (state.db): %s %s", chamber, sid)
+                continue
+            if _has_processed_output(chamber, sid):
+                logger.debug("Already processed (data/): %s %s", chamber, sid)
                 continue
             all_sessions.append((chamber, sid, date_str))
             seen_ids.add(sid)
