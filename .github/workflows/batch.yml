@@ -65,16 +65,6 @@ jobs:
       - name: Install dependencies
         run: pip install -e .
 
-      # state.db をワークフロー間で永続化（best-effort。重複処理が起きても
-      # _batch_push が差分なしなら no-op になるため害は少ない）
-      - name: Restore state.db cache
-        uses: actions/cache@v4
-        with:
-          path: kokkai-transcriber/state.db
-          key: kokkai-state-db-${{ github.run_id }}
-          restore-keys: |
-            kokkai-state-db-
-
       - name: Resolve date range
         id: dates
         run: |

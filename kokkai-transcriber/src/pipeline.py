@@ -13,9 +13,6 @@
     # 日付指定の自動巡回
     python -m src.pipeline --chamber shugiin --date 2026-04-09
 
-    # 未処理セッションを全て処理
-    python -m src.pipeline --chamber shugiin --process-pending
-
     # git pushなし（ローカルテスト用）
     python -m src.pipeline --chamber shugiin --session-id 56149 --no-push
 """
@@ -26,7 +23,6 @@ import argparse
 import logging
 import sys
 import tempfile
-from concurrent.futures import ThreadPoolExecutor
 from datetime import date as date_type
 from pathlib import Path
 
@@ -49,7 +45,6 @@ from src.scrapers.sangiin import SangiinScraper
 from src.scrapers.shugiin import ShugiinScraper
 from src.speaker_tagger import tag_all_segments
 from src.transcript_corrector import correct_transcript
-from src.state import StateManager
 from src.structurer import generate_qa_pairs, generate_summary, generate_summary_and_topics, generate_topics
 from src.transcriber import transcribe_all_segments
 
@@ -96,7 +91,6 @@ def run_pipeline(
     chamber: str,
     session_id: str,
     output_dir: Path,
-    state: StateManager | None = None,
     no_push: bool = False,
 ) -> None:
     """1セッションのパイプラインを実行する。
@@ -105,30 +99,23 @@ def run_pipeline(
         chamber: "shugiin" | "sangiin"
         session_id: セッションID
         output_dir: JSON出力先ディレクトリ
-        state: StateManagerインスタンス（Noneの場合は状態管理なし）
         no_push: Trueの場合git pushをスキップ
 
     Raises:
+        SessionNotReadyError: 発言者リスト未公開（呼び出し側で一時エラー扱い）
         RuntimeError: いずれかのステップが失敗した場合
     """
     output_dir.mkdir(parents=True, exist_ok=True)
-
-    def _log(step: str, success: bool, detail: str = "") -> None:
-        if state:
-            state.log_step(chamber, session_id, step, success, detail)
 
     # Step 2: スクレイピング
     logger.info("=== Step 2: Scraping session detail (%s %s) ===", chamber, session_id)
     try:
         scraper = _get_scraper(chamber)
         session_detail = scraper.get_session_detail(session_id)
-        _log("scrape", True)
     except SessionNotReadyError:
-        # 一時的な失敗は呼び出し側（batch）でリトライ扱いするため、そのまま再raise
-        _log("scrape", False, "speaker list not yet published")
+        # 一時的な失敗はそのまま再raise（呼び出し側でスキップ）
         raise
     except Exception as e:
-        _log("scrape", False, str(e))
         raise RuntimeError(f"Step 2 (scraping) failed: {e}") from e
 
     # バリデーション: 発言者0件はここに到達しないはず（SessionNotReadyErrorで弾かれる）が
@@ -194,9 +181,7 @@ def run_pipeline(
                 session_detail.speakers,
                 output_dir / "segments",
             )
-        _log("audio", True)
     except Exception as e:
-        _log("audio", False, str(e))
         raise RuntimeError(f"Step 3 (audio extraction) failed: {e}") from e
 
     logger.info("Created %d audio segments", len(segment_paths))
@@ -210,18 +195,14 @@ def run_pipeline(
             session_id,
             max_workers=MAX_WORKERS_WHISPER,
         )
-        _log("transcribe", True)
     except Exception as e:
-        _log("transcribe", False, str(e))
         raise RuntimeError(f"Step 4 (transcription) failed: {e}") from e
 
     # Step 4.5: LLM 文字起こし修正（句読点補完・固有名詞修正）
     logger.info("=== Step 4.5: Correcting transcript with LLM ===")
     try:
         raw_transcript = correct_transcript(raw_transcript, session_detail, max_workers=MAX_WORKERS_LLM)
-        _log("correct", True)
     except Exception as e:
-        _log("correct", False, str(e))
         logger.warning("Transcript correction failed (non-fatal, using original): %s", e)
 
     transcript_path = output_dir / "raw_transcript.json"
@@ -247,9 +228,7 @@ def run_pipeline(
     logger.info("=== Step 5: Tagging speakers with LLM ===")
     try:
         utterances_output = tag_all_segments(raw_transcript, session_detail, max_workers=MAX_WORKERS_LLM)
-        _log("tag", True)
     except Exception as e:
-        _log("tag", False, str(e))
         raise RuntimeError(f"Step 5 (speaker tagging) failed: {e}") from e
 
     utterances_path = output_dir / "utterances.json"
@@ -267,9 +246,7 @@ def run_pipeline(
         qa_pairs = generate_qa_pairs(utterances_output, speakers=session_detail.speakers, max_workers=MAX_WORKERS_LLM)
         laws_text = _load_laws_compact()
         summary, topics = generate_summary_and_topics(utterances_output, qa_pairs, laws_text=laws_text)
-        _log("structure", True)
     except Exception as e:
-        _log("structure", False, str(e))
         raise RuntimeError(f"Step 6 (structuring) failed: {e}") from e
 
     (output_dir / "qa_pairs.json").write_text(
@@ -325,36 +302,13 @@ def _get_scraper(chamber: str) -> BaseScraper:
 def run_pipeline_for_session(
     chamber: str,
     session_id: str,
-    state: StateManager,
     no_push: bool = False,
 ) -> None:
-    """StateManagerと連携して1セッションを処理する。"""
+    """セッション詳細を取得して output_dir を決めた上で run_pipeline を呼ぶ。"""
     scraper = _get_scraper(chamber)
-
-    # 詳細をフェッチしてoutput_dirを決定（発言者未公開なら SessionNotReadyError を投げる）
-    try:
-        detail = scraper.get_session_detail(session_id)
-    except SessionNotReadyError as e:
-        # date/committee は不明なので仮登録
-        state.register_session(chamber, session_id, "unknown", "unknown")
-        state.update_status(chamber, session_id, "pending_retry", error_msg=str(e))
-        logger.warning("Session not ready (pending_retry): %s %s — %s", chamber, session_id, e)
-        raise
-
+    detail = scraper.get_session_detail(session_id)
     output_dir = _output_dir_for(chamber, detail.date, session_id, detail.committee)
-
-    state.register_session(chamber, session_id, detail.date, detail.committee)
-    state.update_status(chamber, session_id, "processing")
-
-    try:
-        run_pipeline(chamber, session_id, output_dir, state=state, no_push=no_push)
-        state.update_status(chamber, session_id, "done")
-    except SessionNotReadyError as e:
-        state.update_status(chamber, session_id, "pending_retry", error_msg=str(e))
-        raise
-    except RuntimeError as e:
-        state.update_status(chamber, session_id, "error", error_msg=str(e))
-        raise
+    run_pipeline(chamber, session_id, output_dir, no_push=no_push)
 
 
 def main() -> None:
@@ -382,11 +336,6 @@ def main() -> None:
         "--date",
         help="指定日の全セッションを自動巡回（YYYY-MM-DD、'today'も可）",
     )
-    session_group.add_argument(
-        "--process-pending",
-        action="store_true",
-        help="未処理セッションを全て処理",
-    )
 
     parser.add_argument(
         "--output-dir",
@@ -398,82 +347,47 @@ def main() -> None:
         action="store_true",
         help="git pushをスキップ（ローカルテスト用）",
     )
-    parser.add_argument(
-        "--db-path",
-        type=Path,
-        default=None,
-        help="SQLite DBのパス（デフォルト: kokkai-transcriber/state.db）",
-    )
 
     args = parser.parse_args()
 
-    # StateManagerを初期化
-    state_kwargs = {}
-    if args.db_path:
-        state_kwargs["db_path"] = args.db_path
-    state = StateManager(**state_kwargs)
-
     try:
         if args.session_id or args.deli_id:
-            # セッションID直接指定モード
             session_id = args.session_id or args.deli_id
             if args.output_dir:
                 output_dir = args.output_dir
                 output_dir.mkdir(parents=True, exist_ok=True)
-                # 出力先が明示されている場合は状態管理なしでシンプルに実行
                 run_pipeline(
                     chamber=args.chamber,
                     session_id=session_id,
                     output_dir=output_dir,
-                    state=state,
                     no_push=args.no_push,
                 )
             else:
                 run_pipeline_for_session(
                     chamber=args.chamber,
                     session_id=session_id,
-                    state=state,
                     no_push=args.no_push,
                 )
 
         elif args.date:
-            # 日付指定の自動巡回モード
             target_date = (
                 str(date_type.today()) if args.date == "today" else args.date
             )
             scraper = _get_scraper(args.chamber)
-
             session_ids = scraper.detect_new_sessions(target_date)
             logger.info("Found %d sessions for %s", len(session_ids), target_date)
 
             for sid in session_ids:
-                if state.is_processed(args.chamber, sid):
-                    logger.info("Skipping already-processed session: %s", sid)
-                    continue
                 try:
                     run_pipeline_for_session(
                         chamber=args.chamber,
                         session_id=sid,
-                        state=state,
                         no_push=args.no_push,
                     )
+                except SessionNotReadyError as e:
+                    logger.warning("Session %s not ready: %s", sid, e)
                 except RuntimeError as e:
                     logger.error("Session %s failed: %s", sid, e)
-
-        elif args.process_pending:
-            # 未処理セッション全処理モード
-            pending = state.get_pending_sessions(chamber=args.chamber)
-            logger.info("Found %d pending sessions", len(pending))
-            for session in pending:
-                try:
-                    run_pipeline_for_session(
-                        chamber=session["chamber"],
-                        session_id=session["session_id"],
-                        state=state,
-                        no_push=args.no_push,
-                    )
-                except RuntimeError as e:
-                    logger.error("Session %s failed: %s", session["session_id"], e)
 
         else:
             parser.print_help()
@@ -482,8 +396,6 @@ def main() -> None:
     except Exception as e:
         logger.error("Pipeline failed: %s", e)
         sys.exit(1)
-    finally:
-        state.close()
 
 
 if __name__ == "__main__":

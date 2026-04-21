@@ -15,6 +15,12 @@
 
     # git push なし
     python -m src.batch --since 2026-02-01 --workers 4 --no-push
+
+冪等性:
+    data/{chamber}/**/{session_id}_*/qa_pairs.json の存在で処理済みを判定する。
+    真実のソースは常に data/ であり、それ以外に状態DBを持たない。
+    SessionNotReadyError（発言者リスト未公開）で失敗したセッションは、
+    単にその回のバッチでは処理されず、次回バッチでサイト側が準備できていれば自然に成功する。
 """
 
 from __future__ import annotations
@@ -36,26 +42,9 @@ except ImportError:
 from src.pipeline import _get_scraper, _output_dir_for, run_pipeline
 from src.publisher import _get_default_branch, _run_git
 from src.scrapers.base import SessionNotReadyError
-from src.state import StateManager
 
-MAX_RETRIES = 5
-
-# data/ ルート: Actions ランナーで state.db が空のときに真実のソースとして参照する。
+# data/ ルート: 処理済み判定の唯一の真実のソース。
 _DATA_ROOT = Path(__file__).parent.parent.parent / "data"
-
-
-def _has_processed_output(chamber: str, session_id: str) -> bool:
-    """data/{chamber}/**/{session_id}_*/qa_pairs.json が存在すれば処理済みとみなす。
-
-    state.db が欠けている環境（Actions の初回ラン等）で冪等性を担保するため、
-    真実のソースとして data/ のコミット状態を使う。
-    """
-    chamber_dir = _DATA_ROOT / chamber
-    if not chamber_dir.exists():
-        return False
-    # data/{chamber}/YYYY/MM/DD/{session_id}_*/qa_pairs.json
-    matches = list(chamber_dir.glob(f"*/*/*/{session_id}_*/qa_pairs.json"))
-    return len(matches) > 0
 
 logging.basicConfig(
     level=logging.INFO,
@@ -63,6 +52,15 @@ logging.basicConfig(
     datefmt="%Y-%m-%dT%H:%M:%S",
 )
 logger = logging.getLogger(__name__)
+
+
+def _has_processed_output(chamber: str, session_id: str) -> bool:
+    """data/{chamber}/**/{session_id}_*/qa_pairs.json が存在すれば処理済み。"""
+    chamber_dir = _DATA_ROOT / chamber
+    if not chamber_dir.exists():
+        return False
+    matches = list(chamber_dir.glob(f"*/*/*/{session_id}_*/qa_pairs.json"))
+    return len(matches) > 0
 
 
 def _date_range(since: date, until: date) -> list[date]:
@@ -80,11 +78,8 @@ def _discover_sessions(
     chamber: str,
     since: date,
     until: date,
-    state: StateManager,
 ) -> list[tuple[str, str, str]]:
     """指定期間のセッションを探索し、未処理のものを返す。
-
-    期間外の pending_retry セッションも一緒に返す（前回失敗分の自動再試行）。
 
     Returns:
         [(chamber, session_id, date_str), ...]
@@ -92,7 +87,6 @@ def _discover_sessions(
     scraper = _get_scraper(chamber)
     dates = _date_range(since, until)
     all_sessions: list[tuple[str, str, str]] = []
-    seen_ids: set[str] = set()
 
     logger.info(
         "Discovering %s sessions from %s to %s (%d weekdays)",
@@ -108,34 +102,19 @@ def _discover_sessions(
             continue
 
         for sid in session_ids:
-            if state.is_processed(chamber, sid):
-                logger.debug("Already processed (state.db): %s %s", chamber, sid)
-                continue
             if _has_processed_output(chamber, sid):
-                logger.debug("Already processed (data/): %s %s", chamber, sid)
+                logger.debug("Already processed: %s %s", chamber, sid)
                 continue
             all_sessions.append((chamber, sid, date_str))
-            seen_ids.add(sid)
 
         if session_ids:
-            logger.info("  %s: %d sessions found (%d new)", date_str, len(session_ids),
-                        sum(1 for c, s, _ in all_sessions if _ == date_str))
+            logger.info(
+                "  %s: %d sessions found (%d new)", date_str, len(session_ids),
+                sum(1 for _c, _s, dd in all_sessions if dd == date_str),
+            )
 
         # スクレイピング先への負荷軽減
         time.sleep(0.5)
-
-    # 期間外の pending_retry も拾う（サイト反映遅延などで前回失敗したもの）
-    retry_sessions = state.get_retry_sessions(chamber=chamber, max_retries=MAX_RETRIES)
-    added = 0
-    for row in retry_sessions:
-        sid = row["session_id"]
-        if sid in seen_ids:
-            continue
-        all_sessions.append((chamber, sid, row["date"]))
-        seen_ids.add(sid)
-        added += 1
-    if added > 0:
-        logger.info("Also retrying %d pending_retry sessions from previous runs", added)
 
     return all_sessions
 
@@ -143,7 +122,6 @@ def _discover_sessions(
 def _process_one(
     chamber: str,
     session_id: str,
-    state: StateManager,
 ) -> tuple[str, str, bool, str]:
     """1セッションを処理する（pushは常にスキップ、バッチ終了後にまとめてpush）。
 
@@ -154,34 +132,14 @@ def _process_one(
         detail = scraper.get_session_detail(session_id)
         output_dir = _output_dir_for(chamber, detail.date, session_id, detail.committee)
 
-        state.register_session(chamber, session_id, detail.date, detail.committee)
-        state.update_status(chamber, session_id, "processing")
-
         # バッチモードでは個別pushしない（最後にまとめてpush）
-        run_pipeline(chamber, session_id, output_dir, state=state, no_push=True)
-        state.update_status(chamber, session_id, "done")
+        run_pipeline(chamber, session_id, output_dir, no_push=True)
 
         return (chamber, session_id, True, f"{detail.date} {detail.committee}")
     except SessionNotReadyError as e:
-        # 一時的な失敗 → pending_retry に。次回バッチが自動で拾う。
-        retry = 0
-        try:
-            # dateとcommittee不明なので仮登録
-            state.register_session(chamber, session_id, "unknown", "unknown")
-            retry = state.get_retry_count(chamber, session_id) + 1
-            if retry > MAX_RETRIES:
-                state.update_status(chamber, session_id, "error",
-                                    error_msg=f"Exceeded max retries ({MAX_RETRIES}): {e}")
-                return (chamber, session_id, False, f"max retries exceeded: {e}")
-            state.update_status(chamber, session_id, "pending_retry", error_msg=str(e))
-        except Exception:
-            pass
-        return (chamber, session_id, False, f"not ready (retry {retry}/{MAX_RETRIES}): {e}")
+        # サイト反映待ち。次回バッチで自然に再挑戦される。
+        return (chamber, session_id, False, f"not ready: {e}")
     except Exception as e:
-        try:
-            state.update_status(chamber, session_id, "error", error_msg=str(e))
-        except Exception:
-            pass
         return (chamber, session_id, False, str(e))
 
 
@@ -214,18 +172,12 @@ def run_batch(
     max_workers: int = 4,
     no_push: bool = False,
     dry_run: bool = False,
-    db_path: Path | None = None,
 ) -> None:
     """バッチ処理のメインエントリポイント。"""
-    state_kwargs = {}
-    if db_path:
-        state_kwargs["db_path"] = db_path
-    state = StateManager(**state_kwargs)
-
     # Phase 1: 全セッション探索
     all_sessions: list[tuple[str, str, str]] = []
     for chamber in chambers:
-        sessions = _discover_sessions(chamber, since, until, state)
+        sessions = _discover_sessions(chamber, since, until)
         all_sessions.extend(sessions)
 
     logger.info("=" * 60)
@@ -236,54 +188,53 @@ def run_batch(
 
     if dry_run:
         logger.info("Dry run — exiting without processing")
-        state.close()
         return
 
     if not all_sessions:
         logger.info("No new sessions to process")
-        state.close()
         return
 
     # Phase 2: 並列処理
     succeeded = 0
     failed = 0
-    retried = 0  # pending_retry に回ったセッション数
+    not_ready = 0
     results: list[tuple[str, str, bool, str]] = []
 
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
         futures = {
-            executor.submit(
-                _process_one, chamber, sid, state,
-            ): (chamber, sid, date_str)
+            executor.submit(_process_one, chamber, sid): (chamber, sid, date_str)
             for chamber, sid, date_str in all_sessions
         }
 
         for future in as_completed(futures):
-            chamber, sid, date_str = futures[future]
+            chamber, sid, _date_str = futures[future]
             result = future.result()
             results.append(result)
             _, _, success, msg = result
+            done = succeeded + failed + not_ready + 1
             if success:
                 succeeded += 1
-                logger.info("OK  [%d/%d] %s %s: %s", succeeded + failed + retried, len(all_sessions), chamber, sid, msg)
+                logger.info("OK    [%d/%d] %s %s: %s", done, len(all_sessions), chamber, sid, msg)
             elif msg.startswith("not ready"):
-                retried += 1
-                logger.warning("RETRY [%d/%d] %s %s: %s", succeeded + failed + retried, len(all_sessions), chamber, sid, msg)
+                not_ready += 1
+                logger.warning("SKIP  [%d/%d] %s %s: %s", done, len(all_sessions), chamber, sid, msg)
             else:
                 failed += 1
-                logger.error("ERR [%d/%d] %s %s: %s", succeeded + failed + retried, len(all_sessions), chamber, sid, msg)
+                logger.error("ERR   [%d/%d] %s %s: %s", done, len(all_sessions), chamber, sid, msg)
 
     # サマリー
     logger.info("=" * 60)
-    logger.info("Batch complete: %d succeeded, %d retry-later, %d failed, %d total",
-                succeeded, retried, failed, len(all_sessions))
+    logger.info(
+        "Batch complete: %d succeeded, %d not-ready (skipped), %d failed, %d total",
+        succeeded, not_ready, failed, len(all_sessions),
+    )
     if failed > 0:
-        logger.info("Failed sessions (permanent):")
+        logger.info("Failed sessions:")
         for chamber, sid, success, msg in results:
             if not success and not msg.startswith("not ready"):
                 logger.info("  %s %s: %s", chamber, sid, msg)
-    if retried > 0:
-        logger.info("Pending-retry sessions (will retry on next batch):")
+    if not_ready > 0:
+        logger.info("Not-ready sessions (will auto-retry on next batch):")
         for chamber, sid, success, msg in results:
             if not success and msg.startswith("not ready"):
                 logger.info("  %s %s: %s", chamber, sid, msg)
@@ -296,8 +247,6 @@ def run_batch(
             _batch_push(since, until)
         except Exception as e:
             logger.error("Git push failed: %s", e)
-
-    state.close()
 
 
 def main() -> None:
@@ -336,12 +285,6 @@ def main() -> None:
         action="store_true",
         help="対象セッション一覧を表示するのみ（処理は行わない）",
     )
-    parser.add_argument(
-        "--db-path",
-        type=Path,
-        default=None,
-        help="SQLite DB パス（デフォルト: kokkai-transcriber/state.db）",
-    )
 
     args = parser.parse_args()
 
@@ -360,7 +303,6 @@ def main() -> None:
         max_workers=args.workers,
         no_push=args.no_push,
         dry_run=args.dry_run,
-        db_path=args.db_path,
     )
 
 

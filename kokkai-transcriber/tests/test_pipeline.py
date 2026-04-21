@@ -28,7 +28,6 @@ from src.models import (
 from src.pipeline import _get_scraper, run_pipeline
 from src.scrapers.sangiin import SangiinScraper
 from src.scrapers.shugiin import ShugiinScraper
-from src.state import StateManager
 
 
 @pytest.fixture
@@ -344,36 +343,6 @@ class TestRunPipeline:
         ):
             run_pipeline("shugiin", "56149", output_dir, no_push=True)
             mock_publish.assert_not_called()
-
-    def test_pipeline_with_state_manager(
-        self,
-        tmp_path: Path,
-        mock_session_detail: SessionDetail,
-        mock_raw_transcript: RawTranscript,
-        mock_utterances_output: UtterancesOutput,
-        mock_qa_pairs: QAPairsOutput,
-        mock_summary: SummaryOutput,
-        mock_topics: TopicsOutput,
-    ) -> None:
-        """StateManagerのlog_stepが各ステップで呼ばれること。"""
-        output_dir = tmp_path / "output"
-        state = StateManager(db_path=tmp_path / "test.db")
-        state.register_session("shugiin", "56149", "2026-04-09", "本会議")
-
-        with (
-            patch("src.pipeline.ShugiinScraper.get_session_detail", return_value=mock_session_detail),
-            patch("src.pipeline.download_full_audio"),
-            patch("src.pipeline.split_segments", return_value=[tmp_path / "seg_000.wav"]),
-            patch("src.pipeline.transcribe_all_segments", return_value=mock_raw_transcript),
-            patch("src.pipeline.tag_all_segments", return_value=mock_utterances_output),
-            patch("src.pipeline.generate_qa_pairs", return_value=mock_qa_pairs),
-            patch("src.pipeline.generate_summary_and_topics", return_value=(mock_summary, mock_topics)),
-            patch("src.pipeline._load_laws_compact", return_value=""),
-            patch("src.pipeline.publish_session"),
-        ):
-            run_pipeline("shugiin", "56149", output_dir, state=state, no_push=True)
-
-        state.close()
 
 
 class TestGetScraper:
