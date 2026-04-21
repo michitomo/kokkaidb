@@ -87,7 +87,7 @@ kokkai-db/                          # このリポジトリ
 
 ### データ収集パイプライン（kokkai-transcriber/）
 
-実行環境は venv（Dockerは廃止済み）。本番は GitHub Actions 上で動く（`.github/workflows/batch.yml`、今後追加予定）。
+実行環境は venv（Dockerは廃止済み）。本番は GitHub Actions 上で動く（`.github/workflows/batch.yml`、`schedule` cron で毎時起動、`concurrency: kokkai-batch` で多重実行を構造的に排除）。
 
 ```bash
 cd kokkai-transcriber

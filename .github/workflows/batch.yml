@@ -1,0 +1,109 @@
+name: Batch ingest sessions
+
+on:
+  schedule:
+    # 毎時 15 分に起動（衆議院TVの反映タイミングをずらす）
+    - cron: '15 * * * *'
+  workflow_dispatch:
+    inputs:
+      since:
+        description: '開始日 (YYYY-MM-DD)。省略時は7日前'
+        required: false
+        default: ''
+      chamber:
+        description: '対象の院'
+        required: false
+        default: 'shugiin'
+        type: choice
+        options:
+          - shugiin
+          - sangiin
+      workers:
+        description: '並列数'
+        required: false
+        default: '4'
+
+# 同一ワークフローは1つしか走らせない（構造的多重排除）
+concurrency:
+  group: kokkai-batch
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  batch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    defaults:
+      run:
+        working-directory: kokkai-transcriber
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # data/ の履歴を含める必要はない。直近だけで commit/push できれば OK。
+          fetch-depth: 1
+          # git push のため GITHUB_TOKEN を残す
+          persist-credentials: true
+
+      - name: Configure git identity
+        run: |
+          git config --global user.name "kokkaidb-bot"
+          git config --global user.email "kokkaidb-bot@users.noreply.github.com"
+
+      - name: Install ffmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+          cache-dependency-path: kokkai-transcriber/pyproject.toml
+
+      - name: Install dependencies
+        run: pip install -e .
+
+      # state.db をワークフロー間で永続化（best-effort。重複処理が起きても
+      # _batch_push が差分なしなら no-op になるため害は少ない）
+      - name: Restore state.db cache
+        uses: actions/cache@v4
+        with:
+          path: kokkai-transcriber/state.db
+          key: kokkai-state-db-${{ github.run_id }}
+          restore-keys: |
+            kokkai-state-db-
+
+      - name: Resolve date range
+        id: dates
+        run: |
+          if [ -n "${{ github.event.inputs.since }}" ]; then
+            SINCE="${{ github.event.inputs.since }}"
+          else
+            SINCE=$(date -u -d '7 days ago' +%Y-%m-%d)
+          fi
+          UNTIL=$(date -u +%Y-%m-%d)
+          echo "since=$SINCE" >> "$GITHUB_OUTPUT"
+          echo "until=$UNTIL" >> "$GITHUB_OUTPUT"
+          echo "Range: $SINCE .. $UNTIL"
+
+      - name: Refresh laws_compact.txt
+        env:
+          # 当該国会の session 番号。ARCHや運用に応じて更新する。
+          DIET_SESSION: '221'
+        run: |
+          python -m src.laws_builder --sessions "$DIET_SESSION" || \
+            echo "laws_builder failed (non-fatal, pipeline will skip law tagging)"
+
+      - name: Run batch
+        env:
+          DEEPINFRA_API_KEY: ${{ secrets.DEEPINFRA_API_KEY }}
+          CHAMBER: ${{ github.event.inputs.chamber || 'shugiin' }}
+          WORKERS: ${{ github.event.inputs.workers || '4' }}
+        run: |
+          python -m src.batch \
+            --chamber "$CHAMBER" \
+            --since "${{ steps.dates.outputs.since }}" \
+            --until "${{ steps.dates.outputs.until }}" \
+            --workers "$WORKERS"
