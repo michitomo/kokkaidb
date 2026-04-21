@@ -53,19 +53,11 @@ jobs:
           git config --global user.name "kokkaidb-bot"
           git config --global user.email "kokkaidb-bot@users.noreply.github.com"
 
-      - name: Install ffmpeg
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y ffmpeg
-
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           cache: 'pip'
           cache-dependency-path: kokkai-transcriber/pyproject.toml
-
-      - name: Install dependencies
-        run: pip install -e .
 
       - name: Resolve date range
         id: dates
@@ -80,7 +72,42 @@ jobs:
           echo "until=$UNTIL" >> "$GITHUB_OUTPUT"
           echo "Range: $SINCE .. $UNTIL"
 
+      # ここまでで新規セッションの有無だけ判定する。requests + BS4 だけ先に入れて
+      # dry-run を走らせ、対象ゼロなら ffmpeg / 全依存インストール / laws 更新 /
+      # 本処理すべてスキップして早期 exit する。スケジュール起動で新規がない
+      # ことが多いので、この短絡で runner 時間を節約する。
+      - name: Install scraping deps only
+        run: pip install requests beautifulsoup4 pydantic python-dotenv
+
+      - name: Probe for new sessions (dry-run)
+        id: probe
+        env:
+          CHAMBER: ${{ github.event.inputs.chamber || 'shugiin' }}
+        run: |
+          LOG=$(python -m src.batch \
+            --chamber "$CHAMBER" \
+            --since "${{ steps.dates.outputs.since }}" \
+            --until "${{ steps.dates.outputs.until }}" \
+            --dry-run 2>&1)
+          echo "$LOG"
+          TOTAL=$(echo "$LOG" | grep -oP 'Total sessions to process: \K\d+' | tail -1)
+          echo "total=${TOTAL:-0}" >> "$GITHUB_OUTPUT"
+          if [ "${TOTAL:-0}" = "0" ]; then
+            echo "No new sessions — skipping full pipeline"
+          fi
+
+      - name: Install ffmpeg
+        if: steps.probe.outputs.total != '0'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
+      - name: Install full pipeline dependencies
+        if: steps.probe.outputs.total != '0'
+        run: pip install -e .
+
       - name: Refresh laws_compact.txt
+        if: steps.probe.outputs.total != '0'
         env:
           # 当該国会の session 番号
           DIET_SESSION: '221'
@@ -89,6 +116,7 @@ jobs:
             echo "laws_builder failed (non-fatal, pipeline will skip law tagging)"
 
       - name: Run batch
+        if: steps.probe.outputs.total != '0'
         env:
           DEEPINFRA_API_KEY: ${{ secrets.DEEPINFRA_API_KEY }}
           CHAMBER: ${{ github.event.inputs.chamber || 'shugiin' }}
@@ -106,6 +134,7 @@ jobs:
       # 後続の build/deploy ジョブでサイト更新まで完結させる。
       - name: Commit data/
         id: commit
+        if: steps.probe.outputs.total != '0'
         working-directory: ${{ github.workspace }}
         run: |
           git add data/
