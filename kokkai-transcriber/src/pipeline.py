@@ -42,9 +42,9 @@ from src.api_client import (
     MAX_WORKERS_WHISPER,
     ensure_fd_limit,
 )
-from src.audio.extractor import download_full_audio, split_segments
+from src.audio.extractor import detect_leading_silence, download_full_audio, split_segments
 from src.publisher import publish_session
-from src.scrapers.base import BaseScraper
+from src.scrapers.base import BaseScraper, SessionNotReadyError
 from src.scrapers.sangiin import SangiinScraper
 from src.scrapers.shugiin import ShugiinScraper
 from src.speaker_tagger import tag_all_segments
@@ -66,35 +66,24 @@ logger = logging.getLogger(__name__)
 # データ出力先（kokkai-transcriber/ の1つ上の data/）
 DATA_DIR = Path(__file__).parent.parent.parent / "data"
 
-# 法案一覧（docs/laws.md）
-LAWS_MD_PATH = Path(__file__).parent.parent.parent / "docs" / "laws.md"
-
 
 def _load_laws_compact() -> str:
-    """laws.mdからLLMプロンプト用のコンパクトな法案一覧テキストを生成する。
+    """LLMプロンプト用のコンパクトな法案一覧テキストを読み込む。
 
+    `data/laws/laws_compact.txt`（`src.laws_builder` で事前生成）を読んでそのまま返す。
     見つからない場合は空文字列を返す（法案タグ付けをスキップ）。
     """
-    import re
+    laws_path = DATA_DIR / "laws" / "laws_compact.txt"
 
-    if not LAWS_MD_PATH.exists():
-        logger.info("laws.md not found at %s, skipping law tagging", LAWS_MD_PATH)
+    if not laws_path.exists():
+        logger.info("laws_compact.txt not found at %s, skipping law tagging", laws_path)
         return ""
 
-    content = LAWS_MD_PATH.read_text(encoding="utf-8")
-    lines = content.split("\n")
-    compact: list[str] = []
-    law_id = 0
-    for line in lines:
-        m = re.match(r'^## \*\*(.+?)\s*\\?\s*-\s*(.+?)\*\*$', line)
-        if m:
-            law_id += 1
-            title = m.group(2).strip()
-            compact.append(f"law_{law_id:03d}: {title}")
-
-    if compact:
-        logger.info("Loaded %d laws from laws.md for LLM tagging", len(compact))
-    return "\n".join(compact)
+    content = laws_path.read_text(encoding="utf-8")
+    line_count = sum(1 for line in content.splitlines() if line.strip())
+    if line_count:
+        logger.info("Loaded %d laws for LLM tagging", line_count)
+    return content
 
 
 def _output_dir_for(chamber: str, date: str, session_id: str, committee: str) -> Path:
@@ -134,9 +123,20 @@ def run_pipeline(
         scraper = _get_scraper(chamber)
         session_detail = scraper.get_session_detail(session_id)
         _log("scrape", True)
+    except SessionNotReadyError:
+        # 一時的な失敗は呼び出し側（batch）でリトライ扱いするため、そのまま再raise
+        _log("scrape", False, "speaker list not yet published")
+        raise
     except Exception as e:
         _log("scrape", False, str(e))
         raise RuntimeError(f"Step 2 (scraping) failed: {e}") from e
+
+    # バリデーション: 発言者0件はここに到達しないはず（SessionNotReadyErrorで弾かれる）が
+    # 念のため boundary check。
+    if not session_detail.speakers:
+        raise SessionNotReadyError(
+            f"Speaker list unexpectedly empty for {chamber} {session_id}"
+        )
 
     metadata_path = output_dir / "metadata.json"
     metadata_path.write_text(
@@ -163,6 +163,32 @@ def run_pipeline(
             full_wav = tmp_path / "full_audio.wav"
 
             download_full_audio(audio_url, full_wav)
+
+            # HLS先頭の無音パディングを検出してタイムスタンプを補正
+            # 衆議院TVの time= パラメータは映像トラック基準のため、
+            # 音声トラックの先頭に無音パディングがあるとズレが生じる。
+            # 最初のspeakerの start_seconds と実際の音声開始位置の差を
+            # オフセットとして計算し、全speakerのタイムスタンプを補正する。
+            leading_silence = detect_leading_silence(full_wav)
+            if leading_silence > 10.0 and session_detail.speakers:
+                first_speaker_time = session_detail.speakers[0].start_seconds
+                # 音声は leading_silence 秒目から始まる。TVはfirst_speaker_timeと言っている。
+                # first_speaker_time が leading_silence より十分大きければオフセットが存在。
+                offset = first_speaker_time - leading_silence
+                if offset > 30.0:
+                    logger.info(
+                        "Applying audio offset correction: %.1fs "
+                        "(leading_silence=%.1fs, first_speaker=%.1fs)",
+                        offset, leading_silence, first_speaker_time,
+                    )
+                    for speaker in session_detail.speakers:
+                        speaker.start_seconds -= offset
+                    # metadata.jsonも補正済みタイムスタンプで上書き
+                    metadata_path.write_text(
+                        session_detail.model_dump_json(indent=2, ensure_ascii=False),
+                        encoding="utf-8",
+                    )
+
             segment_paths = split_segments(
                 full_wav,
                 session_detail.speakers,
@@ -208,6 +234,14 @@ def run_pipeline(
         len(raw_transcript.segments),
         raw_transcript.corrected,
     )
+
+    # バリデーション: 文字起こし結果が極端に少ないセッションは異常
+    total_chars = sum(len(s.text) for s in raw_transcript.segments)
+    if total_chars < 100:
+        raise RuntimeError(
+            f"Transcript too short ({total_chars} chars). "
+            f"Audio extraction or Whisper may have failed."
+        )
 
     # Step 5: LLM 話者タグ付け
     logger.info("=== Step 5: Tagging speakers with LLM ===")
@@ -297,8 +331,16 @@ def run_pipeline_for_session(
     """StateManagerと連携して1セッションを処理する。"""
     scraper = _get_scraper(chamber)
 
-    # 詳細をフェッチしてoutput_dirを決定
-    detail = scraper.get_session_detail(session_id)
+    # 詳細をフェッチしてoutput_dirを決定（発言者未公開なら SessionNotReadyError を投げる）
+    try:
+        detail = scraper.get_session_detail(session_id)
+    except SessionNotReadyError as e:
+        # date/committee は不明なので仮登録
+        state.register_session(chamber, session_id, "unknown", "unknown")
+        state.update_status(chamber, session_id, "pending_retry", error_msg=str(e))
+        logger.warning("Session not ready (pending_retry): %s %s — %s", chamber, session_id, e)
+        raise
+
     output_dir = _output_dir_for(chamber, detail.date, session_id, detail.committee)
 
     state.register_session(chamber, session_id, detail.date, detail.committee)
@@ -307,6 +349,9 @@ def run_pipeline_for_session(
     try:
         run_pipeline(chamber, session_id, output_dir, state=state, no_push=no_push)
         state.update_status(chamber, session_id, "done")
+    except SessionNotReadyError as e:
+        state.update_status(chamber, session_id, "pending_retry", error_msg=str(e))
+        raise
     except RuntimeError as e:
         state.update_status(chamber, session_id, "error", error_msg=str(e))
         raise

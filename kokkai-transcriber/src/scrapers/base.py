@@ -7,6 +7,14 @@ from abc import ABC, abstractmethod
 from src.models import SessionDetail
 
 
+class SessionNotReadyError(Exception):
+    """セッションページは存在するが発言者リストがまだ公開されていない場合の例外。
+
+    動画アップロード後、発言者表の反映までに時間差がある。これはリトライで解決する
+    一時的な状態なので、恒久的なエラーと区別する。
+    """
+
+
 class BaseScraper(ABC):
     """両院共通のScraperインターフェース。
 

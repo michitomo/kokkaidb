@@ -35,7 +35,10 @@ except ImportError:
 
 from src.pipeline import _get_scraper, _output_dir_for, run_pipeline
 from src.publisher import _get_default_branch, _run_git
+from src.scrapers.base import SessionNotReadyError
 from src.state import StateManager
+
+MAX_RETRIES = 5
 
 logging.basicConfig(
     level=logging.INFO,
@@ -64,12 +67,15 @@ def _discover_sessions(
 ) -> list[tuple[str, str, str]]:
     """指定期間のセッションを探索し、未処理のものを返す。
 
+    期間外の pending_retry セッションも一緒に返す（前回失敗分の自動再試行）。
+
     Returns:
         [(chamber, session_id, date_str), ...]
     """
     scraper = _get_scraper(chamber)
     dates = _date_range(since, until)
     all_sessions: list[tuple[str, str, str]] = []
+    seen_ids: set[str] = set()
 
     logger.info(
         "Discovering %s sessions from %s to %s (%d weekdays)",
@@ -89,6 +95,7 @@ def _discover_sessions(
                 logger.debug("Already processed: %s %s", chamber, sid)
                 continue
             all_sessions.append((chamber, sid, date_str))
+            seen_ids.add(sid)
 
         if session_ids:
             logger.info("  %s: %d sessions found (%d new)", date_str, len(session_ids),
@@ -96,6 +103,19 @@ def _discover_sessions(
 
         # スクレイピング先への負荷軽減
         time.sleep(0.5)
+
+    # 期間外の pending_retry も拾う（サイト反映遅延などで前回失敗したもの）
+    retry_sessions = state.get_retry_sessions(chamber=chamber, max_retries=MAX_RETRIES)
+    added = 0
+    for row in retry_sessions:
+        sid = row["session_id"]
+        if sid in seen_ids:
+            continue
+        all_sessions.append((chamber, sid, row["date"]))
+        seen_ids.add(sid)
+        added += 1
+    if added > 0:
+        logger.info("Also retrying %d pending_retry sessions from previous runs", added)
 
     return all_sessions
 
@@ -122,6 +142,21 @@ def _process_one(
         state.update_status(chamber, session_id, "done")
 
         return (chamber, session_id, True, f"{detail.date} {detail.committee}")
+    except SessionNotReadyError as e:
+        # 一時的な失敗 → pending_retry に。次回バッチが自動で拾う。
+        retry = 0
+        try:
+            # dateとcommittee不明なので仮登録
+            state.register_session(chamber, session_id, "unknown", "unknown")
+            retry = state.get_retry_count(chamber, session_id) + 1
+            if retry > MAX_RETRIES:
+                state.update_status(chamber, session_id, "error",
+                                    error_msg=f"Exceeded max retries ({MAX_RETRIES}): {e}")
+                return (chamber, session_id, False, f"max retries exceeded: {e}")
+            state.update_status(chamber, session_id, "pending_retry", error_msg=str(e))
+        except Exception:
+            pass
+        return (chamber, session_id, False, f"not ready (retry {retry}/{MAX_RETRIES}): {e}")
     except Exception as e:
         try:
             state.update_status(chamber, session_id, "error", error_msg=str(e))
@@ -192,6 +227,7 @@ def run_batch(
     # Phase 2: 並列処理
     succeeded = 0
     failed = 0
+    retried = 0  # pending_retry に回ったセッション数
     results: list[tuple[str, str, bool, str]] = []
 
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
@@ -209,18 +245,27 @@ def run_batch(
             _, _, success, msg = result
             if success:
                 succeeded += 1
-                logger.info("OK  [%d/%d] %s %s: %s", succeeded + failed, len(all_sessions), chamber, sid, msg)
+                logger.info("OK  [%d/%d] %s %s: %s", succeeded + failed + retried, len(all_sessions), chamber, sid, msg)
+            elif msg.startswith("not ready"):
+                retried += 1
+                logger.warning("RETRY [%d/%d] %s %s: %s", succeeded + failed + retried, len(all_sessions), chamber, sid, msg)
             else:
                 failed += 1
-                logger.error("ERR [%d/%d] %s %s: %s", succeeded + failed, len(all_sessions), chamber, sid, msg)
+                logger.error("ERR [%d/%d] %s %s: %s", succeeded + failed + retried, len(all_sessions), chamber, sid, msg)
 
     # サマリー
     logger.info("=" * 60)
-    logger.info("Batch complete: %d succeeded, %d failed, %d total", succeeded, failed, len(all_sessions))
+    logger.info("Batch complete: %d succeeded, %d retry-later, %d failed, %d total",
+                succeeded, retried, failed, len(all_sessions))
     if failed > 0:
-        logger.info("Failed sessions:")
+        logger.info("Failed sessions (permanent):")
         for chamber, sid, success, msg in results:
-            if not success:
+            if not success and not msg.startswith("not ready"):
+                logger.info("  %s %s: %s", chamber, sid, msg)
+    if retried > 0:
+        logger.info("Pending-retry sessions (will retry on next batch):")
+        for chamber, sid, success, msg in results:
+            if not success and msg.startswith("not ready"):
                 logger.info("  %s %s: %s", chamber, sid, msg)
     logger.info("=" * 60)
 

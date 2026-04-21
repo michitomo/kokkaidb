@@ -14,7 +14,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from src.models import SessionDetail, SpeakerInfo
-from src.scrapers.base import BaseScraper
+from src.scrapers.base import BaseScraper, SessionNotReadyError
 
 logger = logging.getLogger(__name__)
 
@@ -77,6 +77,13 @@ class ShugiinScraper(BaseScraper):
 
         committee, date_str, duration = _extract_session_metadata(soup, session_id)
         speakers = _extract_speakers(soup, session_id)
+
+        # HLS動画はあるが発言者リストが空 → サイト側の反映遅延。一時的失敗としてリトライ対象に。
+        if not speakers:
+            raise SessionNotReadyError(
+                f"Speaker list not yet published for deli_id={session_id} "
+                f"(committee={committee}, date={date_str}). Will retry later."
+            )
 
         return SessionDetail(
             chamber="shugiin",

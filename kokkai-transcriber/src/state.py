@@ -34,6 +34,7 @@ class StateManager:
                 speaker_count INTEGER,
                 processed_at TEXT,
                 error_msg    TEXT,
+                retry_count  INTEGER DEFAULT 0,
                 PRIMARY KEY (chamber, session_id)
             );
 
@@ -50,6 +51,10 @@ class StateManager:
                     REFERENCES processed_sessions(chamber, session_id)
             );
         """)
+        # retry_count カラムの後付けマイグレーション
+        cols = {row[1] for row in self.conn.execute("PRAGMA table_info(processed_sessions)").fetchall()}
+        if "retry_count" not in cols:
+            self.conn.execute("ALTER TABLE processed_sessions ADD COLUMN retry_count INTEGER DEFAULT 0")
         self.conn.commit()
 
     def is_processed(self, chamber: str, session_id: str) -> bool:
@@ -83,17 +88,54 @@ class StateManager:
         status: str,
         error_msg: str = "",
     ) -> None:
-        """セッションのステータスを更新する。doneの場合はprocessed_atも記録。"""
+        """セッションのステータスを更新する。doneの場合はprocessed_atも記録。
+
+        status='pending_retry' の場合は retry_count をインクリメント。
+        """
         processed_at = ""
         if status == "done":
             processed_at = datetime.now(JST).isoformat()
-        self.conn.execute(
-            """UPDATE processed_sessions
-               SET status=?, processed_at=?, error_msg=?
-               WHERE chamber=? AND session_id=?""",
-            (status, processed_at, error_msg, chamber, session_id),
-        )
+
+        if status == "pending_retry":
+            self.conn.execute(
+                """UPDATE processed_sessions
+                   SET status=?, error_msg=?, retry_count=COALESCE(retry_count, 0) + 1
+                   WHERE chamber=? AND session_id=?""",
+                (status, error_msg, chamber, session_id),
+            )
+        else:
+            self.conn.execute(
+                """UPDATE processed_sessions
+                   SET status=?, processed_at=?, error_msg=?
+                   WHERE chamber=? AND session_id=?""",
+                (status, processed_at, error_msg, chamber, session_id),
+            )
         self.conn.commit()
+
+    def get_retry_count(self, chamber: str, session_id: str) -> int:
+        """セッションのリトライ回数を返す。"""
+        row = self.conn.execute(
+            "SELECT retry_count FROM processed_sessions WHERE chamber=? AND session_id=?",
+            (chamber, session_id),
+        ).fetchone()
+        return (row["retry_count"] or 0) if row else 0
+
+    def get_retry_sessions(self, chamber: str | None = None, max_retries: int = 5) -> list[dict]:  # type: ignore[type-arg]
+        """pending_retry 状態かつリトライ上限未満のセッションを返す。"""
+        if chamber:
+            rows = self.conn.execute(
+                """SELECT * FROM processed_sessions
+                   WHERE status='pending_retry' AND chamber=?
+                     AND COALESCE(retry_count, 0) < ?""",
+                (chamber, max_retries),
+            ).fetchall()
+        else:
+            rows = self.conn.execute(
+                """SELECT * FROM processed_sessions
+                   WHERE status='pending_retry' AND COALESCE(retry_count, 0) < ?""",
+                (max_retries,),
+            ).fetchall()
+        return [dict(r) for r in rows]
 
     def log_step(
         self,
