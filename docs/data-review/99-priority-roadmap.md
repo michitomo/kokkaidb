@@ -22,11 +22,14 @@
 - **章**: [02 §2.6](02-cross-cutting-issues.md#26-構造化-llm-呼び出しの-全部入り-json-が事故源), [07](07-summary-topics.md), [11](11-prompts-and-models.md)
 
 ### 3. 関連法案タグを Q&A ペア単位＋委員会×省庁プリフィルタで再設計（Step 6c）
+- **プロンプトに `committee` / `chamber` / `date` を必ず注入**（コスト 0、即効性最大）
 - 委員会名と所管省庁から法案リストを 75 → 14 件程度に予選
+- プロンプトの「幅広く判断／明らかに関連のみ」の矛盾を解消
 - Q&A ペアごとに関連法案を判定（recall 重視）
 - `qa_pairs[].related_law_ids` フィールドを追加
-- **効果**：94 セッションの `related_laws=0` 問題が解消。サイトの法案フィルタが機能する
-- **章**: [09](09-law-tagging.md)
+- `qa_ids: []` の幽霊タグを出力時に drop（簡易バリデーション）
+- **効果**：94 セッションの `related_laws=0`（recall）と、副タグ 1/3 誤り（precision）の双方を解消
+- **章**: [09](09-law-tagging.md), [09b](09b-law-tagging-accuracy.md)
 
 ### 4. 発言者名・役職の正規化レイヤを Step 5.5 として新設
 - `metadata.json` の speakers を ground truth として、`utterances.json` 内の speaker を必ず正規化
@@ -172,7 +175,10 @@ P0 の 8 項目を実装すると：
 |------------|------|
 | `qa_pairs.json` 空のセッション | 22 → ほぼ 0 |
 | `topics.json` 空のセッション | 21 → ほぼ 0 |
-| `related_laws=0` セッション | 94 → 多数解消（推定 30 以下）|
+| `related_laws=0` セッション (recall) | 94 → 推定 30 以下 |
+| 副タグ精度 (precision) | 67% → 85%+ |
+| 主タグ精度 | 87.5% → 98%+ |
+| `qa_ids: []` 幽霊タグ | 7 件 → 0 件 |
 | `committee="不明"` セッション | 5 → 0 |
 | `committee="特別委員会"` 修飾語欠落 | 4 → 0 以下 |
 | 答弁空＋回避度 1.0 のペア | 217 → 0 |

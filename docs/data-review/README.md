@@ -24,7 +24,8 @@
 | 6  | [06-qa-extraction.md](06-qa-extraction.md) | Step 6 前半: Q&A ペア抽出（qa_pairs.json） |
 | 7  | [07-summary-topics.md](07-summary-topics.md) | Step 6 後半: 要約・トピック・コミットメント |
 | 8  | [08-name-normalization.md](08-name-normalization.md) | 発言者名・役職の正規化（横串） |
-| 9  | [09-law-tagging.md](09-law-tagging.md) | 関連法案タグ（related_laws）の網羅性 |
+| 9  | [09-law-tagging.md](09-law-tagging.md) | 関連法案タグの網羅性（recall: 67% のセッションで 0 件）|
+| 9b | [09b-law-tagging-accuracy.md](09b-law-tagging-accuracy.md) | 関連法案タグの精度（precision: 副タグの 1/3 が委員会所管外）|
 | 10 | [10-schema-and-contracts.md](10-schema-and-contracts.md) | データ持ち方・スキーマ・モデル契約違反 |
 | 11 | [11-prompts-and-models.md](11-prompts-and-models.md) | プロンプト設計とモデル選定の課題 |
 | 99 | [99-priority-roadmap.md](99-priority-roadmap.md) | P0〜P3 のロードマップ |
@@ -54,11 +55,13 @@
    Gemma の出力 truncation により後半（`topics`, `key_commitments`, `related_laws`）を
    落としていると推定される。`max_tokens=8192` と「全部入り JSON」の組合せが原因
    （詳細: [07-summary-topics.md](07-summary-topics.md), [11-prompts-and-models.md](11-prompts-and-models.md)）。
-3. **140 セッション中 94（67%）で `related_laws` が空**。法案直接審議のセッション
-   （厚生労働委員会 7 セッションのうち 1 つは 0 件、残りも 1〜2 件）でも 法案リストとの
-   マッチングがほぼ機能していない。`laws_compact.txt` を 75 件まるごと突っ込む現プロンプトでは
-   LLM が「明らかに関連するもののみ」と保守的になりすぎる
-   （詳細: [09-law-tagging.md](09-law-tagging.md)）。
+3. **法案タグは「付かない」だけでなく「付いているタグの 1/3〜半数が誤り」**：
+   recall 観点では 140 セッション中 94（67%）で `related_laws` が空。precision 観点では
+   タグが付いているセッションでも、副タグの 33%（14/42）が委員会所管外、主タグも 12.5%
+   （5/40）が誤り、さらに `qa_ids: []` の幽霊タグが 7 件。原因はプロンプトに
+   `committee` 名が一切渡されておらず、LLM が 75 法案リストと Q&A 要約だけで
+   キーワードマッチを試みているため
+   （詳細: [09-law-tagging.md](09-law-tagging.md), [09b-law-tagging-accuracy.md](09b-law-tagging-accuracy.md)）。
 4. **発言者名の表記揺れが多数残っている**。`高市早苗` / `高市` / `高市内閣総理大臣` /
    `高市総理大臣` の 5 通り、`赤澤亮正` / `赤澤大臣` / `赤澤経済産業大臣` /
    `赤澤国家公安委員長`（誤）/ `赤澤防災大臣`（誤）の 5 通りなど。

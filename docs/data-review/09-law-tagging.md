@@ -1,5 +1,9 @@
 # 09. 関連法案タグ（related_laws）の網羅性
 
+> **本章は recall（タグが付かない問題）を扱う。precision（タグが間違っている問題）は
+> [09b-law-tagging-accuracy.md](09b-law-tagging-accuracy.md) を参照。**
+> 「タグが付いていない」と「付いているタグの大半が誤り」は別問題で、両方の対処が必要。
+
 ## 9.1 設計の良いところ
 
 - **`laws.json` を事前ビルド**（`laws_builder.py`）：CLB と Gian の 2 つの公式ソースから
