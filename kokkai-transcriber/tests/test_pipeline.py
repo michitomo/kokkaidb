@@ -169,8 +169,7 @@ def _pipeline_patches(
         patch("src.pipeline.split_segments", return_value=[tmp_path / "seg_000.wav"]),
         patch("src.pipeline.transcribe_all_segments", return_value=mock_raw_transcript),
         patch("src.pipeline.tag_all_segments", return_value=mock_utterances_output),
-        patch("src.pipeline.generate_qa_pairs", return_value=mock_qa_pairs),
-        patch("src.pipeline.generate_summary_and_topics", return_value=(mock_summary, mock_topics)),
+        patch("src.pipeline._run_step6", return_value=(mock_qa_pairs, mock_summary, mock_topics)),
         patch("src.pipeline._load_laws_compact", return_value=""),
         patch("src.pipeline.publish_session"),
     )
@@ -196,8 +195,7 @@ class TestRunPipeline:
             patch("src.pipeline.split_segments", return_value=[tmp_path / "seg_000.wav"]),
             patch("src.pipeline.transcribe_all_segments", return_value=mock_raw_transcript),
             patch("src.pipeline.tag_all_segments", return_value=mock_utterances_output),
-            patch("src.pipeline.generate_qa_pairs", return_value=mock_qa_pairs),
-            patch("src.pipeline.generate_summary_and_topics", return_value=(mock_summary, mock_topics)),
+            patch("src.pipeline._run_step6", return_value=(mock_qa_pairs, mock_summary, mock_topics)),
             patch("src.pipeline._load_laws_compact", return_value=""),
             patch("src.pipeline.publish_session"),
         ):
@@ -233,8 +231,7 @@ class TestRunPipeline:
             patch("src.pipeline.split_segments", return_value=[tmp_path / "seg_000.wav"]),
             patch("src.pipeline.transcribe_all_segments", return_value=mock_raw_transcript),
             patch("src.pipeline.tag_all_segments", return_value=mock_utterances_output),
-            patch("src.pipeline.generate_qa_pairs", return_value=mock_qa_pairs),
-            patch("src.pipeline.generate_summary_and_topics", return_value=(mock_summary, mock_topics)),
+            patch("src.pipeline._run_step6", return_value=(mock_qa_pairs, mock_summary, mock_topics)),
             patch("src.pipeline._load_laws_compact", return_value=""),
             patch("src.pipeline.publish_session"),
         ):
@@ -308,8 +305,7 @@ class TestRunPipeline:
             patch("src.pipeline.split_segments", return_value=[tmp_path / "seg_000.wav"]),
             patch("src.pipeline.transcribe_all_segments", return_value=mock_raw_transcript),
             patch("src.pipeline.tag_all_segments", return_value=mock_utterances_output),
-            patch("src.pipeline.generate_qa_pairs", return_value=mock_qa_pairs),
-            patch("src.pipeline.generate_summary_and_topics", return_value=(mock_summary, mock_topics)),
+            patch("src.pipeline._run_step6", return_value=(mock_qa_pairs, mock_summary, mock_topics)),
             patch("src.pipeline._load_laws_compact", return_value=""),
             patch("src.pipeline.publish_session"),
         ):
@@ -336,8 +332,7 @@ class TestRunPipeline:
             patch("src.pipeline.split_segments", return_value=[tmp_path / "seg_000.wav"]),
             patch("src.pipeline.transcribe_all_segments", return_value=mock_raw_transcript),
             patch("src.pipeline.tag_all_segments", return_value=mock_utterances_output),
-            patch("src.pipeline.generate_qa_pairs", return_value=mock_qa_pairs),
-            patch("src.pipeline.generate_summary_and_topics", return_value=(mock_summary, mock_topics)),
+            patch("src.pipeline._run_step6", return_value=(mock_qa_pairs, mock_summary, mock_topics)),
             patch("src.pipeline._load_laws_compact", return_value=""),
             patch("src.pipeline.publish_session") as mock_publish,
         ):
@@ -412,8 +407,7 @@ class TestSangiinPipeline:
             patch("src.pipeline.split_segments", return_value=[tmp_path / "seg_000.wav"]),
             patch("src.pipeline.transcribe_all_segments", return_value=mock_raw_transcript),
             patch("src.pipeline.tag_all_segments", return_value=mock_utterances_output),
-            patch("src.pipeline.generate_qa_pairs", return_value=mock_qa_pairs),
-            patch("src.pipeline.generate_summary_and_topics", return_value=(mock_summary, mock_topics)),
+            patch("src.pipeline._run_step6", return_value=(mock_qa_pairs, mock_summary, mock_topics)),
             patch("src.pipeline._load_laws_compact", return_value=""),
             patch("src.pipeline.publish_session"),
         ):
@@ -450,8 +444,7 @@ class TestSangiinPipeline:
             patch("src.pipeline.split_segments", return_value=[tmp_path / "seg_000.wav"]),
             patch("src.pipeline.transcribe_all_segments", return_value=mock_raw_transcript),
             patch("src.pipeline.tag_all_segments", return_value=mock_utterances_output),
-            patch("src.pipeline.generate_qa_pairs", return_value=mock_qa_pairs),
-            patch("src.pipeline.generate_summary_and_topics", return_value=(mock_summary, mock_topics)),
+            patch("src.pipeline._run_step6", return_value=(mock_qa_pairs, mock_summary, mock_topics)),
             patch("src.pipeline._load_laws_compact", return_value=""),
             patch("src.pipeline.publish_session"),
         ):

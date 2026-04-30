@@ -11,12 +11,8 @@ import logging
 import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-from src.api_client import get_client as _get_client, LLM_MODEL, DEEPINFRA_BASE_URL, with_retry
-from src.speaker_lookup import find_by_name
-
-# Step 6はgemma-4-31Bを使用（ペア数抽出がV3.2より安定: 10/10 vs 6/10）
-STRUCTURER_MODEL = "google/gemma-4-31B-it"
-
+from src.api_client import get_client as _get_client
+from src.api_client import with_retry
 from src.models import (
     AnswerDetail,
     KeyCommitment,
@@ -26,103 +22,26 @@ from src.models import (
     RelatedLawTag,
     SegmentUtterances,
     SpeakerInfo,
-    SummaryOutput,
     Topic,
     TopicsOutput,
     UtterancesOutput,
 )
+from src.prompts import (
+    COMMITMENTS_SYSTEM_PROMPT,
+    LAW_TAGGING_SYSTEM_PROMPT,
+    QA_SEGMENT_SYSTEM_PROMPT,
+    SESSION_SUMMARY_SYSTEM_PROMPT,
+    TOPICS_SYSTEM_PROMPT,
+)
+from src.speaker_lookup import find_by_name
+
+# Step 6はgemma-4-31Bを使用（ペア数抽出がV3.2より安定: 10/10 vs 6/10）
+STRUCTURER_MODEL = "google/gemma-4-31B-it"
+
+# 答弁本文がこの長さ未満かつ sentence_indices が空のペアは Q&A として成立していないため drop
+MIN_ANSWER_LENGTH = 30
 
 logger = logging.getLogger(__name__)
-
-# ---------------------------------------------------------------------------
-# System prompts
-# ---------------------------------------------------------------------------
-
-QA_SEGMENT_SYSTEM_PROMPT = """あなたは国会質疑のQ&Aペアを構造化する専門家です。
-与えられた番号付きutterancesリストから、質疑応答ペアを**すべて**抽出してください。
-
-重要なルール:
-- 質疑者が複数のテーマについて質問した場合、テーマごとに別のQ&Aペアを作成すること
-- 1つも漏らさずに抽出すること
-- full_textは返さないこと。代わりにsentence_indices（文番号の配列）を返すこと
-- sentence_indicesは、入力の(N)の番号を配列で指定。そのQ&Aの該当部分の文だけを選ぶこと
-- 1つのutteranceに複数テーマが含まれる場合（例: 代表質問）、テーマごとに該当する文だけを選択すること
-- summaryは箇条書き（各項目は「- 」で始める）。要点を2-4項目で簡潔に
-- roleラベル（[委員長]等）は話者タグ付けの結果であり、誤分類の場合がある。roleではなく**発言の内容**でQ&Aを判断すること
-- 委員長の指名（「〇〇君。」）の直後に政策への質問・意見が続く場合、それは質疑者の発言である
-
-speaker, party, roleは返さないでください（コードで元データから自動取得します）。
-
-以下のJSON形式で出力してください:
-{
-  "pairs": [
-    {
-      "topic": "質疑テーマ（簡潔に）",
-      "question": {
-        "summary": "- 要点1\n- 要点2\n- 要点3",
-        "sentence_indices": [0, 1, 2],
-        "intent": "fact_check | policy_proposal | accountability | information_request | other"
-      },
-      "answer": {
-        "summary": "- 要点1\n- 要点2\n- 要点3",
-        "sentence_indices": [12, 13, 14],
-        "evasion_score": 0.0から1.0,
-        "has_commitment": true | false,
-        "commitment_text": "具体的な約束事項（has_commitmentがtrueの場合）"
-      }
-    }
-  ]
-}
-
-evasion_scoreの目安:
-- 0.0-0.2: 具体的な数値・事実で回答
-- 0.3-0.5: 一般論で回答、具体性に欠ける
-- 0.6-0.8: 質問をはぐらかす、別の話題にすり替える
-- 0.9-1.0: 完全に回避、「答えられない」等
-"""
-
-SUMMARY_AND_TOPICS_SYSTEM_PROMPT = """あなたは国会会議の分析専門家です。
-セッション全体のutterancesとQ&Aペアから、要約・トピック分析・関連法案タグ付けを一括で行ってください。
-
-以下のJSON形式で出力してください:
-
-{
-  "session_summary": "セッション全体の概要（3-5文）",
-  "key_topics": ["主要トピック1", "主要トピック2", ...],
-  "key_commitments": [
-    {
-      "speaker": "発言者名",
-      "role": "役職",
-      "text": "約束・コミットメントの内容",
-      "topic": "関連トピック",
-      "qa_id": "関連するQ&AペアのID"
-    }
-  ],
-  "topics": [
-    {
-      "name": "トピック名",
-      "description": "トピックの説明（1-2文）",
-      "related_qa_ids": ["qa_001", "qa_002"],
-      "related_speakers": ["発言者名1", "発言者名2"]
-    }
-  ],
-  "related_laws": [
-    {
-      "law_id": "law_001",
-      "qa_ids": ["qa_001", "qa_003"]
-    }
-  ]
-}
-
-## トピック抽出ルール
-- 政策領域・法案・社会問題などの観点から分類する
-
-## 関連法案タグ付けルール
-- 法案一覧が提供された場合、各Q&Aペアが実質的にどの法案に関連するかを判断する
-- 法案名がtopicに含まれる場合だけでなく、質疑の内容・文脈から関連する法案を幅広く判断する
-- 確信度が低いものは含めない（明らかに関連するもののみ）
-- 法案一覧が提供されない場合、related_lawsは空配列を返す
-"""
 
 
 def _split_sentences(text: str) -> list[str]:
@@ -422,6 +341,7 @@ def _extract_pairs_from_response(
 
     sent_to_utt = _build_sentence_to_utterance_map(seg)
     pairs: list[QAPair] = []
+    dropped_short = 0
     for p in raw_pairs:
         q = p.get("question", {})
         a = p.get("answer", {})
@@ -430,6 +350,10 @@ def _extract_pairs_from_response(
         a_indices = a.get("sentence_indices", [])
         q_full_text = _assemble_full_text_from_sentences(all_sentences, q_indices)
         a_full_text = _assemble_full_text_from_sentences(all_sentences, a_indices)
+
+        if len(a_full_text) < MIN_ANSWER_LENGTH and not a_indices:
+            dropped_short += 1
+            continue
 
         q_speaker, q_party = _resolve_speaker_from_sentences(seg, q_indices, sent_to_utt, speakers_lookup)
         a_speaker, a_role = _resolve_answerer_from_sentences(seg, a_indices, sent_to_utt, speakers_lookup)
@@ -457,6 +381,13 @@ def _extract_pairs_from_response(
                 ),
                 video_url=seg.video_url,
             )
+        )
+    if dropped_short:
+        logger.info(
+            "Segment %d: dropped %d short-answer pair(s) (<%d chars + no indices)",
+            seg.segment_index,
+            dropped_short,
+            MIN_ANSWER_LENGTH,
         )
     return pairs
 
@@ -562,6 +493,7 @@ def generate_qa_pairs(
     utterances: UtterancesOutput,
     speakers: list[SpeakerInfo] | None = None,
     max_workers: int = 16,
+    skip_proposal_segments: bool = False,
 ) -> QAPairsOutput:
     """全セグメントからQ&Aペアを生成する（セグメント単位で並列処理）。
 
@@ -569,6 +501,8 @@ def generate_qa_pairs(
         utterances: 話者タグ付き発言データ
         speakers: metadata.jsonのspeakers（名前→役職の解決に使用）
         max_workers: 並列数
+        skip_proposal_segments: True なら、最初の質疑者 segment より前の答弁者 segment を
+            Q&A 抽出から除外する（本会議代表質問の冒頭の趣旨説明スキップ用）。
     """
 
     # speakers_lookup: 名前 → SpeakerInfo
@@ -584,10 +518,16 @@ def generate_qa_pairs(
             all_speakers.add(u.speaker)
     session_context = f"発言者: {', '.join(sorted(all_speakers))}"
 
+    target_segments = (
+        _drop_leading_proposal_segments(utterances.segments)
+        if skip_proposal_segments
+        else utterances.segments
+    )
+
     # Q&A対象セグメントを選別し、委員長指名で質疑ブロックに分割
     qa_blocks: list[SegmentUtterances] = []
     skipped = 0
-    for seg in utterances.segments:
+    for seg in target_segments:
         if not _is_qa_segment(seg):
             skipped += 1
             continue
@@ -641,128 +581,230 @@ def generate_qa_pairs(
     return QAPairsOutput(pairs=all_pairs)
 
 
-def generate_summary_and_topics(
-    utterances: UtterancesOutput,
-    qa_pairs: QAPairsOutput,
-    laws_text: str = "",
-) -> tuple[SummaryOutput, TopicsOutput]:
-    """要約・トピック・関連法案タグを1回のLLM呼び出しで生成する。
+def _drop_leading_proposal_segments(
+    segments: list[SegmentUtterances],
+) -> list[SegmentUtterances]:
+    """最初の質疑者 segment より前の答弁者 segment を除外する（代表質問の趣旨説明スキップ用）。"""
+    first_questioner_idx = next(
+        (
+            i
+            for i, seg in enumerate(segments)
+            if any(u.role == "質疑者" for u in seg.utterances)
+        ),
+        None,
+    )
+    if first_questioner_idx is None:
+        return segments
+    if first_questioner_idx == 0:
+        return segments
+    leading = segments[:first_questioner_idx]
+    is_only_proposal = all(
+        all(u.role == "答弁者" for u in seg.utterances) for seg in leading if seg.utterances
+    )
+    if not is_only_proposal:
+        return segments
+    return segments[first_questioner_idx:]
 
-    Args:
-        utterances: 話者タグ付き発言データ
-        qa_pairs: Q&Aペア
-        laws_text: 法案一覧テキスト（空の場合は法案タグ付けをスキップ）
 
-    Returns:
-        (SummaryOutput, TopicsOutput) のタプル
-    """
-    client = _get_client()
-
-    qa_text = "\n".join(
-        f"[{p.id}] トピック: {p.topic}\n  質問者: {p.question.speaker}（{p.question.party}）\n  質問要旨: {p.question.summary}\n  回答要旨: {p.answer.summary}"
+def _format_qa_pairs_for_prompt(qa_pairs: QAPairsOutput) -> str:
+    return "\n".join(
+        (
+            f"[{p.id}] トピック: {p.topic}\n"
+            f"  質問者: {p.question.speaker}（{p.question.party}）\n"
+            f"  質問要旨: {p.question.summary}\n"
+            f"  回答要旨: {p.answer.summary}"
+        )
         for p in qa_pairs.pairs
     )
 
-    user_prompt = (
-        f"以下の国会質疑のQ&Aペア一覧を分析してください。\n\n"
-        f"## Q&Aペア一覧\n{qa_text}"
+
+def _call_structurer(
+    system_prompt: str, user_prompt: str, *, max_tokens: int, temperature: float = 0.1
+) -> dict:
+    client = _get_client()
+    response = with_retry(
+        lambda: client.chat.completions.create(
+            model=STRUCTURER_MODEL,
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt},
+            ],
+            temperature=temperature,
+            max_tokens=max_tokens,
+            response_format={"type": "json_object"},
+        )
     )
-    if laws_text:
-        user_prompt += f"\n\n## 法案一覧\n{laws_text}"
-
-    logger.info("Generating summary, topics, and law tags (unified)")
-
-    response = with_retry(lambda: client.chat.completions.create(
-        model=STRUCTURER_MODEL,
-        messages=[
-            {"role": "system", "content": SUMMARY_AND_TOPICS_SYSTEM_PROMPT},
-            {"role": "user", "content": user_prompt},
-        ],
-        temperature=0.1,
-        max_tokens=8192,
-        response_format={"type": "json_object"},
-    ))
-
     content = response.choices[0].message.content
     if not content:
         raise ValueError("Empty response from LLM")
-
     try:
         data = json.loads(content)
     except json.JSONDecodeError as e:
-        raise ValueError(f"Failed to parse LLM JSON for summary+topics: {e}") from e
+        raise ValueError(f"Failed to parse LLM JSON: {e}") from e
+    return data
 
-    # SummaryOutput
+
+def generate_session_summary(
+    qa_pairs: QAPairsOutput, utterances: UtterancesOutput | None = None
+) -> str:
+    """セッション要約（3-5文）を生成する（Step 6b-1）。"""
+    if qa_pairs.pairs:
+        body = "## Q&Aペア一覧\n" + _format_qa_pairs_for_prompt(qa_pairs)
+    elif utterances is not None and utterances.segments:
+        body = "## 発言セグメント\n" + _format_segments_for_prompt(utterances.segments)
+    else:
+        return ""
+
+    user_prompt = "以下の国会セッションの内容から、概要を作成してください。\n\n" + body
+    data = _call_structurer(SESSION_SUMMARY_SYSTEM_PROMPT, user_prompt, max_tokens=1024)
+    summary = data.get("session_summary", "")
+    if not isinstance(summary, str):
+        return ""
+    return summary.strip()
+
+
+def generate_topics_and_key_topics(
+    qa_pairs: QAPairsOutput,
+) -> tuple[TopicsOutput, list[str]]:
+    """topics + key_topics を生成する（Step 6b-2）。
+
+    key_topics は topics[].name のサブセットになるよう post-validate する。
+    """
+    if not qa_pairs.pairs:
+        return TopicsOutput(topics=[]), []
+
+    user_prompt = "## Q&Aペア一覧\n" + _format_qa_pairs_for_prompt(qa_pairs)
+    data = _call_structurer(TOPICS_SYSTEM_PROMPT, user_prompt, max_tokens=4096)
+
+    valid_qa_ids = {p.id for p in qa_pairs.pairs}
+    topics_list: list[Topic] = []
+    for t in data.get("topics", []):
+        related_qa_ids = [q for q in (t.get("related_qa_ids") or []) if q in valid_qa_ids]
+        topics_list.append(
+            Topic(
+                name=t.get("name") or "",
+                description=t.get("description") or "",
+                related_qa_ids=related_qa_ids,
+                related_speakers=t.get("related_speakers") or [],
+            )
+        )
+
+    valid_topic_names = {t.name for t in topics_list}
+    raw_key_topics = data.get("key_topics") or []
+    key_topics: list[str] = []
+    dropped: list[str] = []
+    for name in raw_key_topics:
+        if isinstance(name, str) and name in valid_topic_names:
+            key_topics.append(name)
+        else:
+            dropped.append(str(name))
+    if dropped:
+        logger.warning(
+            "generate_topics: dropped %d key_topics not found in topics[].name: %s",
+            len(dropped),
+            dropped,
+        )
+
+    return TopicsOutput(topics=topics_list), key_topics
+
+
+def generate_key_commitments(qa_pairs: QAPairsOutput) -> list[KeyCommitment]:
+    """key_commitments を生成する（Step 6b-3）。"""
+    if not qa_pairs.pairs:
+        return []
+
+    user_prompt = "## Q&Aペア一覧\n" + _format_qa_pairs_for_prompt(qa_pairs)
+    data = _call_structurer(COMMITMENTS_SYSTEM_PROMPT, user_prompt, max_tokens=2048)
+
+    valid_qa_ids = {p.id for p in qa_pairs.pairs}
     commitments: list[KeyCommitment] = []
+    dropped = 0
     for c in data.get("key_commitments", []):
+        qa_id = c.get("qa_id") or ""
+        if qa_id and qa_id not in valid_qa_ids:
+            dropped += 1
+            continue
         commitments.append(
             KeyCommitment(
                 speaker=c.get("speaker") or "",
                 role=c.get("role") or "",
                 text=c.get("text") or "",
                 topic=c.get("topic") or "",
-                qa_id=c.get("qa_id") or "",
+                qa_id=qa_id or None,
             )
         )
-
-    related_laws: list[RelatedLawTag] = []
-    for rl in data.get("related_laws", []):
-        law_id = rl.get("law_id") or ""
-        if law_id:
-            related_laws.append(
-                RelatedLawTag(
-                    law_id=law_id,
-                    qa_ids=rl.get("qa_ids") or [],
-                )
-            )
-
-    summary = SummaryOutput(
-        session_summary=data.get("session_summary", ""),
-        key_topics=data.get("key_topics", []),
-        key_commitments=commitments,
-        related_laws=related_laws,
-    )
-
-    # TopicsOutput
-    topics_list: list[Topic] = []
-    for t in data.get("topics", []):
-        topics_list.append(
-            Topic(
-                name=t.get("name") or "",
-                description=t.get("description") or "",
-                related_qa_ids=t.get("related_qa_ids") or [],
-                related_speakers=t.get("related_speakers") or [],
-            )
+    if dropped:
+        logger.warning(
+            "generate_key_commitments: dropped %d commitments referencing unknown qa_id",
+            dropped,
         )
-
-    topics = TopicsOutput(topics=topics_list)
-
-    logger.info(
-        "Unified output: %d topics, %d commitments, %d law tags",
-        len(topics_list),
-        len(commitments),
-        len(related_laws),
-    )
-
-    return summary, topics
+    return commitments
 
 
-def generate_summary(
-    utterances: UtterancesOutput,
+def tag_related_laws(
     qa_pairs: QAPairsOutput,
-) -> SummaryOutput:
-    """後方互換ラッパー: generate_summary_and_topicsを呼び出す。"""
-    summary, _ = generate_summary_and_topics(utterances, qa_pairs)
-    return summary
+    *,
+    chamber: str,
+    committee: str,
+    date: str,
+    laws_text: str,
+    max_workers: int = 16,
+) -> QAPairsOutput:
+    """各 Q&A ペアに対し関連法案 ID を判定し、QAPair.related_law_ids に書き戻す（Step 6c）。"""
+    if not qa_pairs.pairs or not laws_text:
+        return qa_pairs
+
+    chamber_ja = "衆議院" if chamber == "shugiin" else "参議院" if chamber == "sangiin" else chamber
+    context = (
+        f"## セッション情報\n"
+        f"院: {chamber_ja}\n"
+        f"委員会: {committee}\n"
+        f"日付: {date}\n\n"
+        f"## 法案一覧（このセッションで議論される可能性が高い順に提示）\n{laws_text}\n\n"
+    )
+
+    def tag_one(pair: QAPair) -> tuple[str, list[str]]:
+        user_prompt = (
+            context
+            + "## 対象 Q&A ペア\n"
+            + f"id: {pair.id}\n"
+            + f"トピック: {pair.topic}\n"
+            + f"質問: {pair.question.summary}\n"
+            + f"答弁: {pair.answer.summary}"
+        )
+        try:
+            data = _call_structurer(LAW_TAGGING_SYSTEM_PROMPT, user_prompt, max_tokens=512)
+        except Exception as e:
+            logger.warning("tag_related_laws failed for %s: %s", pair.id, e)
+            return pair.id, []
+        raw = data.get("law_ids") or []
+        return pair.id, [law for law in raw if isinstance(law, str) and law]
+
+    results: dict[str, list[str]] = {}
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        futures = {executor.submit(tag_one, p): p.id for p in qa_pairs.pairs}
+        for future in as_completed(futures):
+            pid, law_ids = future.result()
+            results[pid] = law_ids
+
+    for pair in qa_pairs.pairs:
+        pair.related_law_ids = results.get(pair.id, [])
+
+    tagged = sum(1 for p in qa_pairs.pairs if p.related_law_ids)
+    logger.info(
+        "tag_related_laws: tagged %d/%d pairs with related laws", tagged, len(qa_pairs.pairs)
+    )
+    return qa_pairs
 
 
-def generate_topics(qa_pairs: QAPairsOutput) -> TopicsOutput:
-    """後方互換ラッパー: generate_summary_and_topicsを呼び出す。
-
-    注意: この関数はutterancesなしで呼ばれるため、空のUtterancesOutputを使う。
-    新規コードではgenerate_summary_and_topicsを直接使うこと。
-    """
-    from src.models import UtterancesOutput as UO
-    dummy_utterances = UO(segments=[])
-    _, topics = generate_summary_and_topics(dummy_utterances, qa_pairs)
-    return topics
+def build_summary_related_laws(qa_pairs: QAPairsOutput) -> list[RelatedLawTag]:
+    """qa_pairs.related_law_ids を集約して summary.related_laws を作る（幽霊タグは drop）。"""
+    by_law: dict[str, list[str]] = {}
+    for pair in qa_pairs.pairs:
+        for law_id in pair.related_law_ids:
+            by_law.setdefault(law_id, []).append(pair.id)
+    return [
+        RelatedLawTag(law_id=law_id, qa_ids=qa_ids)
+        for law_id, qa_ids in by_law.items()
+        if qa_ids
+    ]
