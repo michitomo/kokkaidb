@@ -14,6 +14,9 @@ from bs4 import BeautifulSoup
 
 from src.audio.sangiin_resolver import resolve_stream_url
 from src.models import SessionDetail, SpeakerInfo
+from src.scrapers._committee import resolve_committee
+from src.scrapers._role import derive_role
+from src.scrapers._session_kind import detect_session_kind
 from src.scrapers.base import BaseScraper
 
 logger = logging.getLogger(__name__)
@@ -71,16 +74,21 @@ class SangiinScraper(BaseScraper):
 
         soup = BeautifulSoup(response.text, "html.parser")
 
-        committee = _extract_committee(soup)
+        speakers = _extract_speakers(soup, session_id)
+        for s in speakers:
+            s.role = derive_role(s.affiliation)
+
+        committee = resolve_committee(soup, speakers)
         date_str = _extract_date(soup)
         mediasp_hash = _extract_mediasp_hash(soup)
-        speakers = _extract_speakers(soup, session_id)
+        session_kind = detect_session_kind(soup.get_text(), committee, speakers)
 
         return SessionDetail(
             chamber="sangiin",
             session_id=session_id,
             date=date_str,
             committee=committee,
+            session_kind=session_kind,
             hls_url="",  # mediasp.jp経由で別途解決
             mediasp_hash=mediasp_hash,
             source_url=url,
@@ -106,32 +114,6 @@ class SangiinScraper(BaseScraper):
 # ---------------------------------------------------------------------------
 # モジュールレベルのヘルパー関数
 # ---------------------------------------------------------------------------
-
-
-def _extract_committee(soup: BeautifulSoup) -> str:
-    """委員会名を抽出する。"""
-    # h2 タグから委員会名を探す
-    for tag in soup.find_all(["h2", "h3", "h1"]):
-        text = tag.get_text(strip=True)
-        if "委員会" in text:
-            return text
-        if "本会議" in text:
-            return "本会議"
-        if "審査会" in text:
-            return text
-        if "調査会" in text:
-            return text
-
-    # div/span 等から探すフォールバック
-    for tag in soup.find_all(["div", "span", "p", "td"]):
-        text = tag.get_text(strip=True)
-        match = re.search(r"[\u4e00-\u9fff]+委員会", text)
-        if match:
-            return match.group(0)
-        if "本会議" in text:
-            return "本会議"
-
-    return "不明"
 
 
 def _extract_date(soup: BeautifulSoup) -> str:

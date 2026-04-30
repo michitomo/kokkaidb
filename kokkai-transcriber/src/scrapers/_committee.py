@@ -1,0 +1,78 @@
+"""委員会名を 3 段階フォールバックで解決するモジュール。"""
+
+from __future__ import annotations
+
+import logging
+import re
+
+from bs4 import BeautifulSoup
+
+from src.models import SpeakerInfo
+
+logger = logging.getLogger(__name__)
+
+_KANJI = r"[一-鿿]"
+_COMMITTEE_PATTERN = re.compile(rf"{_KANJI}+委員会")
+_SPECIAL_CATEGORIES: tuple[str, ...] = ("審査会", "調査会", "公聴会")
+
+
+def find_committee_in_title(soup: BeautifulSoup) -> str:
+    """<title> タグ内から委員会名を探す（衆議院ページ向け）。"""
+    title_tag = soup.find("title")
+    if not title_tag:
+        return ""
+    text = title_tag.get_text(strip=True)
+    return _scan_text(text)
+
+
+def find_committee_in_body(soup: BeautifulSoup) -> str:
+    """body 内の代表的なタグから委員会名を探す。"""
+    for tag in soup.find_all(["h1", "h2", "h3", "td", "th", "div", "span", "p"]):
+        if found := _scan_text(tag.get_text(strip=True)):
+            return found
+    return ""
+
+
+def derive_committee_from_speakers(speakers: list[SpeakerInfo]) -> str:
+    """speakers の affiliation 末尾「委員長」を「委員会」に置換して返す。
+
+    Returns:
+        マッチした委員会名（例: "内閣委員長" → "内閣委員会"）。マッチなしは "".
+    """
+    for s in speakers:
+        if s.affiliation.endswith("委員長") and len(s.affiliation) > len("委員長"):
+            return s.affiliation[: -len("委員長")] + "委員会"
+    return ""
+
+
+def resolve_committee(soup: BeautifulSoup, speakers: list[SpeakerInfo]) -> str:
+    """3 段階フォールバックで委員会名を解決する。
+
+    Stage 1: title → body から「〇〇委員会」「本会議」「審査会」等を直接抽出
+    Stage 2: speakers.affiliation 末尾「委員長」→「委員会」に置換
+    Stage 3: "不明" を返す
+    """
+    if found := find_committee_in_title(soup):
+        return found
+    if found := find_committee_in_body(soup):
+        return found
+    if found := derive_committee_from_speakers(speakers):
+        logger.info("Committee resolved via speakers fallback: %s", found)
+        return found
+    return "不明"
+
+
+def _scan_text(text: str) -> str:
+    """1 行のテキストから委員会・本会議・審査会等を見つけて返す。"""
+    if not text:
+        return ""
+    if "本会議" in text:
+        return "本会議"
+    if match := _COMMITTEE_PATTERN.search(text):
+        return match.group(0)
+    for category in _SPECIAL_CATEGORIES:
+        if category in text:
+            if match := re.search(rf"{_KANJI}+{category}", text):
+                return match.group(0)
+            return category
+    return ""

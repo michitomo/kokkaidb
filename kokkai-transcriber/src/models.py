@@ -2,7 +2,30 @@
 
 from __future__ import annotations
 
+from typing import Literal
+
 from pydantic import BaseModel, Field
+
+SessionKind = Literal[
+    "regular_qa",
+    "representative_questions",
+    "floor_speech",
+    "procedural",
+    "expert_hearing",
+]
+
+SpeakerRole = Literal[
+    "委員長",
+    "質疑者",
+    "答弁者",
+    "政府参考人",
+    "参考人",
+    "その他",
+]
+
+SPEAKER_ROLES: frozenset[str] = frozenset(
+    ("委員長", "質疑者", "答弁者", "政府参考人", "参考人", "その他")
+)
 
 
 class SpeakerInfo(BaseModel):
@@ -10,7 +33,7 @@ class SpeakerInfo(BaseModel):
 
     name: str
     affiliation: str
-    role: str = ""  # 質疑者 / 答弁者 / 委員長 / 政府参考人 / 参考人 / その他
+    role: str = ""  # SpeakerRole 値域に正規化される（scrapers/_role.derive_role）
     start_seconds: float
     start_time: str  # HH:MM 形式
     duration_minutes: int
@@ -25,6 +48,7 @@ class SessionDetail(BaseModel):
     committee: str
     committee_id: int | None = None
     session_number: int | None = None
+    session_kind: SessionKind = "regular_qa"
     duration: str = ""
     hls_url: str
     mediasp_hash: str = ""  # 参議院のみ: mediasp.jp の hash 値
@@ -73,8 +97,9 @@ class Utterance(BaseModel):
     """話者タグ付き発言（utterances.json の utterances 配列要素）"""
 
     speaker: str
-    role: str  # 委員長 / 質疑者 / 答弁者 / 政府参考人 / 参考人 / その他
+    role: str  # SpeakerRole 値域に正規化される（normalizer.normalize_utterances）
     text: str
+    unmatched: bool = False  # speaker が metadata.speakers と一致しない場合 True
 
 
 class SegmentUtterances(BaseModel):
@@ -125,6 +150,7 @@ class QAPair(BaseModel):
     question: QuestionDetail
     answer: AnswerDetail
     follow_up_ids: list[str] = Field(default_factory=list)
+    related_law_ids: list[str] = Field(default_factory=list)
     video_url: str
 
 

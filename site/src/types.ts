@@ -2,6 +2,15 @@
  * 共通型定義: data.ts と generate-api.ts で共有
  */
 
+export type SessionKind =
+  | 'regular_qa'
+  | 'representative_questions'
+  | 'floor_speech'
+  | 'procedural'
+  | 'expert_hearing';
+
+export type SpeakerRole = '委員長' | '質疑者' | '答弁者' | '政府参考人' | '参考人' | 'その他';
+
 export interface SpeakerInfo {
   name: string;
   affiliation: string;
@@ -16,6 +25,7 @@ export interface SessionMetadata {
   session_id: string;
   date: string;
   committee: string;
+  session_kind?: SessionKind;
   duration: string;
   hls_url: string;
   source_url: string;
@@ -50,6 +60,7 @@ export interface QAPair {
   question: QAQuestion;
   answer: QAAnswer;
   follow_up_ids: string[];
+  related_law_ids?: string[];
   video_url: string;
 }
 

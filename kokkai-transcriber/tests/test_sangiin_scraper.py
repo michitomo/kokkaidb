@@ -8,9 +8,9 @@ from unittest.mock import MagicMock, patch
 import pytest
 
 from src.models import SessionDetail
+from src.scrapers._committee import resolve_committee
 from src.scrapers.sangiin import (
     SangiinScraper,
-    _extract_committee,
     _extract_date,
     _extract_mediasp_hash,
     _extract_speakers,
@@ -67,7 +67,7 @@ class TestExtractFromFixture:
         from bs4 import BeautifulSoup
 
         soup = BeautifulSoup(_load_fixture_html(), "html.parser")
-        committee = _extract_committee(soup)
+        committee = resolve_committee(soup, [])
         assert committee == "法務委員会"
 
     def test_extract_date(self) -> None:
@@ -160,6 +160,9 @@ class TestSangiinScraperClass:
         assert result.mediasp_hash == "abc123def456"
         assert result.hls_url == ""
         assert len(result.speakers) == 4
+        assert result.session_kind == "regular_qa"
+        for speaker in result.speakers:
+            assert speaker.role != ""
 
     def test_detect_new_sessions(self) -> None:
         html_content = _load_calendar_fixture_html()
@@ -255,7 +258,7 @@ class TestEdgeCases:
 
         html = "<html><body><p>Something else</p></body></html>"
         soup = BeautifulSoup(html, "html.parser")
-        assert _extract_committee(soup) == "不明"
+        assert resolve_committee(soup, []) == "不明"
 
     def test_unknown_date_raises(self) -> None:
         from bs4 import BeautifulSoup
