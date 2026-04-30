@@ -12,6 +12,7 @@ import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from src.api_client import get_client as _get_client, LLM_MODEL, DEEPINFRA_BASE_URL, with_retry
+from src.speaker_lookup import find_by_name
 
 # Step 6はgemma-4-31Bを使用（ペア数抽出がV3.2より安定: 10/10 vs 6/10）
 STRUCTURER_MODEL = "google/gemma-4-31B-it"
@@ -176,31 +177,9 @@ def _assemble_full_text_from_sentences(
     return "".join(all_sentences[i] for i in valid)
 
 
-_SINGLE_CHAR_SURNAMES = {"林", "森", "原", "関", "堀", "岡", "辻", "塚", "柳", "萩", "菅", "泉", "馬"}
-
-
 def _fuzzy_lookup(name: str, speakers_lookup: dict[str, SpeakerInfo]) -> SpeakerInfo | None:
-    """名前の完全一致 → 姓一致でspeaker情報を取得する。"""
-    # 完全一致
-    if name in speakers_lookup:
-        return speakers_lookup[name]
-    # Try common surname lengths: 2-char (most common), then 1-char, then 3-char
-    best_match: SpeakerInfo | None = None
-    best_prefix_len = 0
-    for prefix_len in (2, 1, 3):
-        if prefix_len > len(name):
-            continue
-        # For 1-char prefix, only try if it's a known single-char surname
-        if prefix_len == 1 and name[0] not in _SINGLE_CHAR_SURNAMES:
-            continue
-        prefix = name[:prefix_len]
-        for key, info in speakers_lookup.items():
-            if key.startswith(prefix) and prefix_len > best_prefix_len:
-                best_match = info
-                best_prefix_len = prefix_len
-        if best_match is not None:
-            return best_match
-    return None
+    """完全一致 → 姓一致で speaker 情報を取得する（structurer 互換ラッパー）。"""
+    return find_by_name(name, speakers_lookup, allow_single_char=True)
 
 
 def _build_sentence_to_utterance_map(seg: SegmentUtterances) -> list[int]:

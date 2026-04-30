@@ -39,6 +39,7 @@ from src.api_client import (
     ensure_fd_limit,
 )
 from src.audio.extractor import detect_leading_silence, download_full_audio, split_segments
+from src.normalizer import normalize_utterances
 from src.publisher import publish_session
 from src.scrapers.base import BaseScraper, SessionNotReadyError
 from src.scrapers.sangiin import SangiinScraper
@@ -230,6 +231,10 @@ def run_pipeline(
         utterances_output = tag_all_segments(raw_transcript, session_detail, max_workers=MAX_WORKERS_LLM)
     except Exception as e:
         raise RuntimeError(f"Step 5 (speaker tagging) failed: {e}") from e
+
+    # Step 5.5: speaker / role を metadata.speakers に正規化
+    logger.info("=== Step 5.5: Normalizing utterance speakers and roles ===")
+    utterances_output = normalize_utterances(utterances_output, session_detail.speakers)
 
     utterances_path = output_dir / "utterances.json"
     utterances_path.write_text(
