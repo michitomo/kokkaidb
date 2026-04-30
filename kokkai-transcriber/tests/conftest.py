@@ -172,16 +172,19 @@ def sample_qa_pairs() -> QAPairsOutput:
                     "summary": "高額療養費制度の問題点について質問",
                     "full_text": "チームみらいの古川あおいです。高額療養費制度について伺います。",
                     "intent": "fact_check",
+                    "question_sharpness": 0.7,
+                    "evidence_grounding": 0.6,
                 },
                 answer={  # type: ignore[arg-type]
                     "speaker": "上野賢一郎",
                     "role": "厚生労働大臣",
                     "summary": "問題を認識しており検討中と答弁",
                     "full_text": "お答えいたします。問題を認識しております。",
-                    "evasion_score": 0.3,
-                    "has_commitment": True,
+                    "answer_completeness": 0.4,
+                    "commitment_strength": 0.3,
                     "commitment_text": "次期制度改正の検討課題として位置づけてまいりたい",
                 },
+                record_value=0.5,
                 video_url="https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56149&time=7320.2",
             )
         ]

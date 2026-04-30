@@ -102,6 +102,11 @@ class QuestionDetail(BaseModel):
     summary: str
     full_text: str
     intent: str  # fact_check / policy_proposal / accountability / information_request / その他
+    # 質問の質指標（新設）
+    question_sharpness: float = Field(ge=0.0, le=1.0, default=0.5)
+    """質問の鋭さ: 問いが一文で言い切れるか、Yes/No・数値・期限で答えられるか (0=漠然, 1=精密)"""
+    evidence_grounding: float = Field(ge=0.0, le=1.0, default=0.5)
+    """根拠品質: 1次ソース・統計・過去答弁への言及度 (0=主観のみ, 1=1次ソース明示)"""
 
 
 class AnswerDetail(BaseModel):
@@ -111,9 +116,15 @@ class AnswerDetail(BaseModel):
     role: str
     summary: str
     full_text: str
-    evasion_score: float = Field(ge=0.0, le=1.0)
-    has_commitment: bool
+    # 答弁の質指標（新設）
+    answer_completeness: float = Field(ge=0.0, le=1.0, default=0.5)
+    """答弁網羅性: 質問の全論点を具体的に答えたか (0=完全回避, 1=全問に具体的回答)"""
+    commitment_strength: float = Field(ge=0.0, le=1.0, default=0.0)
+    """コミット強度: 約束の具体性・拘束力 (0=なし, 0.2=曖昧, 0.5=具体的行動, 0.8=期限付, 1.0=即時実施)"""
     commitment_text: str | None = ""
+    # 後方互換フィールド（旧データ読み込み用。新規生成では不要）
+    evasion_score: float = Field(ge=0.0, le=1.0, default=0.5)
+    has_commitment: bool = False
 
 
 class QAPair(BaseModel):
@@ -124,6 +135,9 @@ class QAPair(BaseModel):
     topic: str
     question: QuestionDetail
     answer: AnswerDetail
+    # ペアレベル指標（新設）
+    record_value: float = Field(ge=0.0, le=1.0, default=0.5)
+    """議事録価値: この質疑で議事録に残る新事実・解釈・前進があるか (0=既知のみ, 1=先例更新)"""
     follow_up_ids: list[str] = Field(default_factory=list)
     video_url: str
 

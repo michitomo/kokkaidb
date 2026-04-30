@@ -69,7 +69,8 @@ def score_qa_pairs(result: dict, expected: dict) -> dict:
     評価指標:
     - pair_count_diff: ペア数の差
     - topic_coverage: 期待トピックとの一致率
-    - evasion_score_mae: evasion_scoreの平均絶対誤差
+    - answer_completeness_mae: answer_completenessの平均絶対誤差
+    - record_value_mae: record_valueの平均絶対誤差
     """
     parsed = result.get("parsed")
     if not parsed:
@@ -94,27 +95,33 @@ def score_qa_pairs(result: dict, expected: dict) -> dict:
     else:
         topic_coverage = 1.0
 
-    # evasion_score の MAE
-    evasion_mae = _compute_evasion_mae(result_pairs, expected_pairs)
-
     return {
         "pair_count_diff": count_diff,
         "topic_coverage": topic_coverage,
-        "evasion_score_mae": evasion_mae,
+        "answer_completeness_mae": _compute_score_mae(result_pairs, expected_pairs, ("answer", "answer_completeness")),
+        "record_value_mae": _compute_score_mae(result_pairs, expected_pairs, ("record_value",)),
+        "question_sharpness_mae": _compute_score_mae(result_pairs, expected_pairs, ("question", "question_sharpness")),
     }
 
 
-def _compute_evasion_mae(result_pairs: list, expected_pairs: list) -> float | None:
-    """ペアをインデックス順で比較し、evasion_scoreのMAEを計算。"""
+def _compute_score_mae(result_pairs: list, expected_pairs: list, key_path: tuple) -> float | None:
+    """ペアをインデックス順で比較し、指定フィールドのMAEを計算。"""
     min_len = min(len(result_pairs), len(expected_pairs))
     if min_len == 0:
         return None
 
+    def get_nested(d: dict, path: tuple):
+        for k in path:
+            if not isinstance(d, dict):
+                return None
+            d = d.get(k)
+        return d
+
     total_error = 0.0
     count = 0
     for i in range(min_len):
-        r_score = result_pairs[i].get("answer", {}).get("evasion_score")
-        e_score = expected_pairs[i].get("answer", {}).get("evasion_score")
+        r_score = get_nested(result_pairs[i], key_path)
+        e_score = get_nested(expected_pairs[i], key_path)
         if r_score is not None and e_score is not None:
             total_error += abs(float(r_score) - float(e_score))
             count += 1

@@ -114,13 +114,13 @@ describe('generateApi', () => {
     }
   });
 
-  it('Q&Aペアに has_commitment=true のものが含まれる', () => {
+  it('Q&Aペアにコミットメントがあるものが含まれる', () => {
     generateApi(FIXTURES_DIR, tmpDir);
     const index: IndexEntry[] = JSON.parse(
       fs.readFileSync(path.join(tmpDir, 'index.json'), 'utf-8')
     );
     const allPairs = index.flatMap((s) => s.qa_pairs);
-    const withCommitment = allPairs.filter((p) => p.has_commitment);
+    const withCommitment = allPairs.filter((p) => (p.commitment_strength ?? 0) > 0);
     expect(withCommitment.length).toBeGreaterThanOrEqual(1);
   });
 });

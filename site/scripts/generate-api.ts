@@ -43,13 +43,18 @@ interface IndexQAPair {
   question_summary: string;
   question_full_text: string;
   question_intent: string;
+  question_sharpness: number;
+  evidence_grounding: number;
   answer_speaker: string;
   answer_role: string;
   answer_summary: string;
   answer_full_text: string;
-  evasion_score: number;
-  has_commitment: boolean;
+  answer_completeness: number;
+  commitment_strength: number;
   commitment_text: string;
+  record_value: number;
+  /** @deprecated answer_completeness を使用 */
+  evasion_score: number;
   video_url: string;
   related_laws: string[];
 }
@@ -81,6 +86,9 @@ export interface DashboardStats {
   totalQAPairs: number;
   totalSpeakers: number;
   totalCommitments: number;
+  avgAnswerCompleteness: number;
+  avgRecordValue: number;
+  /** @deprecated avgAnswerCompleteness を使用 */
   avgEvasionScore: number;
   sessionsByChamber: { shugiin: number; sangiin: number };
   sessionsByMonth: { month: string; shugiin: number; sangiin: number }[];
@@ -116,14 +124,21 @@ export interface CalendarData {
   [date: string]: { count: number; shugiin: number; sangiin: number };
 }
 
-// evasion.json のエントリ
+// evasion.json のエントリ（answer-quality.json と同一ファイルで提供）
 export interface EvasionEntry {
   speaker: string;
   role: string;
   totalAnswers: number;
+  /** 高網羅性（answer_completeness >= 0.7）の答弁数 */
   clearCount: number;
+  /** 中程度（0.3 <= answer_completeness < 0.7）の答弁数 */
   hedgingCount: number;
+  /** 低網羅性（answer_completeness < 0.3）の答弁数 */
   evasiveCount: number;
+  avgAnswerCompleteness: number;
+  avgCommitmentStrength: number;
+  avgRecordValue: number;
+  /** @deprecated avgAnswerCompleteness を使用 */
   avgEvasionScore: number;
   byTopic: { topic: string; avgScore: number; count: number }[];
 }
@@ -204,7 +219,7 @@ function parseLawsMd(filePath: string): LawEntry[] {
         const tagLine = lines[i + 2];
         const tagMatches = tagLine.match(/`([^`]+)`/g);
         if (tagMatches) {
-          tags = tagMatches.map(t => t.replace(/`/g, ''));
+          tags = tagMatches.map((t: string) => t.replace(/`/g, ''));
         }
       }
 
@@ -286,12 +301,20 @@ export function generateDashboard(indexEntries: IndexEntry[], summaries: Map<str
     totalCommitments += (summary.key_commitments ?? []).length;
   }
 
-  const allScores = indexEntries.flatMap((e) =>
-    e.qa_pairs.map((q) => q.evasion_score).filter((s) => typeof s === 'number')
+  const allCompleteness = indexEntries.flatMap((e) =>
+    e.qa_pairs.map((q) => q.answer_completeness).filter((s) => typeof s === 'number')
   );
-  const avgEvasionScore = allScores.length > 0
-    ? allScores.reduce((a, b) => a + b, 0) / allScores.length
+  const avgAnswerCompleteness = allCompleteness.length > 0
+    ? allCompleteness.reduce((a, b) => a + b, 0) / allCompleteness.length
     : 0;
+  const allRecordValues = indexEntries.flatMap((e) =>
+    e.qa_pairs.map((q) => q.record_value).filter((s) => typeof s === 'number')
+  );
+  const avgRecordValue = allRecordValues.length > 0
+    ? allRecordValues.reduce((a, b) => a + b, 0) / allRecordValues.length
+    : 0;
+  // 後方互換: evasion_score として answer_completeness の反転値を保持
+  const avgEvasionScore = allCompleteness.length > 0 ? Math.round((1 - avgAnswerCompleteness) * 100) / 100 : 0;
 
   const chamberCount = { shugiin: 0, sangiin: 0 };
   const monthMap = new Map<string, { shugiin: number; sangiin: number }>();
@@ -323,6 +346,8 @@ export function generateDashboard(indexEntries: IndexEntry[], summaries: Map<str
     totalQAPairs,
     totalSpeakers,
     totalCommitments,
+    avgAnswerCompleteness: Math.round(avgAnswerCompleteness * 100) / 100,
+    avgRecordValue: Math.round(avgRecordValue * 100) / 100,
     avgEvasionScore: Math.round(avgEvasionScore * 100) / 100,
     sessionsByChamber: chamberCount,
     sessionsByMonth,
@@ -408,10 +433,12 @@ export function generateDashboard(indexEntries: IndexEntry[], summaries: Map<str
   }
   writeJson(path.join(outDir, 'calendar.json'), Object.fromEntries(calendarMap));
 
-  // evasion.json — 答弁者別回避度集計
+  // evasion.json — 答弁者別品質指標集計
   const evasionMap = new Map<string, {
     role: string;
-    scores: number[];
+    completeness: number[];
+    commitmentStrength: number[];
+    recordValues: number[];
     clearCount: number;
     hedgingCount: number;
     evasiveCount: number;
@@ -421,45 +448,61 @@ export function generateDashboard(indexEntries: IndexEntry[], summaries: Map<str
     for (const qa of entry.qa_pairs) {
       const speaker = qa.answer_speaker;
       if (!speaker) continue;
-      const score = qa.evasion_score ?? 0;
-      const existing = evasionMap.get(speaker) ?? {
+      const completeness = qa.answer_completeness ?? (1 - (qa.evasion_score ?? 0.5));
+      const defaultEntry: {
+        role: string; completeness: number[]; commitmentStrength: number[];
+        recordValues: number[]; clearCount: number; hedgingCount: number;
+        evasiveCount: number; byTopic: Map<string, { scores: number[]; count: number }>;
+      } = {
         role: qa.answer_role,
-        scores: [],
+        completeness: [],
+        commitmentStrength: [],
+        recordValues: [],
         clearCount: 0,
         hedgingCount: 0,
         evasiveCount: 0,
         byTopic: new Map(),
       };
-      existing.scores.push(score);
-      if (score < 0.3) existing.clearCount++;
-      else if (score < 0.7) existing.hedgingCount++;
+      const existing = evasionMap.get(speaker) ?? defaultEntry;
+      existing.completeness.push(completeness);
+      existing.commitmentStrength.push(qa.commitment_strength ?? 0);
+      existing.recordValues.push(qa.record_value ?? 0.5);
+      if (completeness >= 0.7) existing.clearCount++;
+      else if (completeness >= 0.3) existing.hedgingCount++;
       else existing.evasiveCount++;
       if (qa.topic) {
         const t = existing.byTopic.get(qa.topic) ?? { scores: [], count: 0 };
-        t.scores.push(score);
+        t.scores.push(completeness);
         t.count++;
         existing.byTopic.set(qa.topic, t);
       }
       evasionMap.set(speaker, existing);
     }
   }
+  const avg = (arr: number[]) => arr.length > 0 ? arr.reduce((a, b) => a + b, 0) / arr.length : 0;
   const evasionEntries: EvasionEntry[] = Array.from(evasionMap.entries())
-    .filter(([, v]) => v.scores.length > 0)
-    .map(([speaker, v]) => ({
-      speaker,
-      role: v.role,
-      totalAnswers: v.scores.length,
-      clearCount: v.clearCount,
-      hedgingCount: v.hedgingCount,
-      evasiveCount: v.evasiveCount,
-      avgEvasionScore: Math.round((v.scores.reduce((a, b) => a + b, 0) / v.scores.length) * 100) / 100,
-      byTopic: Array.from(v.byTopic.entries()).map(([topic, t]) => ({
-        topic,
-        avgScore: Math.round((t.scores.reduce((a, b) => a + b, 0) / t.scores.length) * 100) / 100,
-        count: t.count,
-      })),
-    }))
-    .sort((a, b) => b.avgEvasionScore - a.avgEvasionScore);
+    .filter(([, v]) => v.completeness.length > 0)
+    .map(([speaker, v]) => {
+      const avgCompleteness = avg(v.completeness);
+      return {
+        speaker,
+        role: v.role,
+        totalAnswers: v.completeness.length,
+        clearCount: v.clearCount,
+        hedgingCount: v.hedgingCount,
+        evasiveCount: v.evasiveCount,
+        avgAnswerCompleteness: Math.round(avgCompleteness * 100) / 100,
+        avgCommitmentStrength: Math.round(avg(v.commitmentStrength) * 100) / 100,
+        avgRecordValue: Math.round(avg(v.recordValues) * 100) / 100,
+        avgEvasionScore: Math.round((1 - avgCompleteness) * 100) / 100,
+        byTopic: Array.from(v.byTopic.entries()).map(([topic, t]) => ({
+          topic,
+          avgScore: Math.round(avg(t.scores) * 100) / 100,
+          count: t.count,
+        })),
+      };
+    })
+    .sort((a, b) => b.avgAnswerCompleteness - a.avgAnswerCompleteness);
   writeJson(path.join(outDir, 'evasion.json'), evasionEntries);
 }
 
@@ -585,13 +628,17 @@ export function generateApi(dataDir: string, outDir: string): void {
       question_summary: p.question.summary,
       question_full_text: p.question.full_text || '',
       question_intent: p.question.intent,
+      question_sharpness: p.question.question_sharpness ?? 0.5,
+      evidence_grounding: p.question.evidence_grounding ?? 0.5,
       answer_speaker: p.answer.speaker,
       answer_role: p.answer.role,
       answer_summary: p.answer.summary,
       answer_full_text: p.answer.full_text || '',
-      evasion_score: p.answer.evasion_score,
-      has_commitment: p.answer.has_commitment,
+      answer_completeness: p.answer.answer_completeness ?? (p.answer.evasion_score != null ? 1 - p.answer.evasion_score : 0.5),
+      commitment_strength: p.answer.commitment_strength ?? (p.answer.has_commitment ? 0.5 : 0.0),
       commitment_text: p.answer.commitment_text,
+      record_value: p.record_value ?? 0.5,
+      evasion_score: p.answer.evasion_score ?? (p.answer.answer_completeness != null ? 1 - p.answer.answer_completeness : 0.5),
       video_url: p.video_url,
       related_laws: (() => {
         // LLMタグ（summary.json由来）+ キーワードマッチをマージ

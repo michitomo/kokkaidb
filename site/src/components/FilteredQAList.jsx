@@ -42,16 +42,35 @@ export default function FilteredQAList({ filteredEntries, totalCount, page, onPa
     }
   }, [filteredEntries]);
 
-  function evasionColor(score) {
-    if (score < 0.3) return '#16a34a';
-    if (score < 0.7) return '#d97706';
+  function completenessColor(score) {
+    if (score >= 0.7) return '#16a34a';
+    if (score >= 0.4) return '#d97706';
     return '#dc2626';
   }
 
-  function evasionLabel(score) {
-    if (score < 0.3) return '低';
-    if (score < 0.7) return '中';
-    return '高';
+  function completenessLabel(score) {
+    if (score >= 0.7) return '高';
+    if (score >= 0.4) return '中';
+    return '低';
+  }
+
+  function commitLabelText(strength) {
+    if (!strength || strength === 0) return '';
+    if (strength < 0.2) return '検討';
+    if (strength < 0.5) return '弱';
+    if (strength < 0.7) return '中';
+    if (strength < 0.9) return '強';
+    return '即時';
+  }
+
+  function dots(score, max = 5) {
+    const filled = Math.round(score * max);
+    return '●'.repeat(filled) + '○'.repeat(max - filled);
+  }
+
+  function stars(score) {
+    const filled = Math.round(score * 5);
+    return '★'.repeat(filled) + '☆'.repeat(5 - filled);
   }
 
   function toggleExpand(qaId) {
@@ -163,6 +182,12 @@ export default function FilteredQAList({ filteredEntries, totalCount, page, onPa
                     </div>
                     <div className="qa-header-right">
                       <span className="qa-topic">{qa.topic}</span>
+                      <span
+                        className="record-value"
+                        title={`議事録価値: この質疑で議事録に残る新事実・解釈・前進があるか（${((qa.record_value ?? 0.5) * 100).toFixed(0)}%）`}
+                      >
+                        📋 {stars(qa.record_value ?? 0.5)}
+                      </span>
                       {qa.video_url && (
                         <a
                           href={qa.video_url}
@@ -204,6 +229,20 @@ export default function FilteredQAList({ filteredEntries, totalCount, page, onPa
                           )}
                         </>
                       )}
+                      <div className="q-metrics">
+                        <span
+                          className="metric-tag"
+                          title={`質問の鋭さ: 一問一答で答えられるか（${((qa.question_sharpness ?? 0.5) * 100).toFixed(0)}%）`}
+                        >
+                          精度 {dots(qa.question_sharpness ?? 0.5)}
+                        </span>
+                        <span
+                          className="metric-tag"
+                          title={`根拠品質: 1次ソース・統計への言及度（${((qa.evidence_grounding ?? 0.5) * 100).toFixed(0)}%）`}
+                        >
+                          根拠 {dots(qa.evidence_grounding ?? 0.5)}
+                        </span>
+                      </div>
                     </div>
 
                     <div className="answer">
@@ -232,13 +271,24 @@ export default function FilteredQAList({ filteredEntries, totalCount, page, onPa
                           )}
                         </>
                       )}
-                      <div
-                        className="evasion"
-                        style={{ color: evasionColor(qa.evasion_score) }}
-                      >
-                        回避度 {evasionLabel(qa.evasion_score)}（{(qa.evasion_score * 100).toFixed(0)}%）
+                      <div className="a-metrics">
+                        <span
+                          className="completeness"
+                          style={{ color: completenessColor(qa.answer_completeness ?? 0.5) }}
+                          title={`答弁網羅性: 質問の全論点を具体的に答えたか（${((qa.answer_completeness ?? 0.5) * 100).toFixed(0)}%）`}
+                        >
+                          網羅性 {completenessLabel(qa.answer_completeness ?? 0.5)}（{((qa.answer_completeness ?? 0.5) * 100).toFixed(0)}%）
+                        </span>
+                        {(qa.commitment_strength ?? 0) > 0 && commitLabelText(qa.commitment_strength) && (
+                          <span
+                            className="commit-tag"
+                            title={`コミット強度（${((qa.commitment_strength ?? 0) * 100).toFixed(0)}%）`}
+                          >
+                            コミット {commitLabelText(qa.commitment_strength)}
+                          </span>
+                        )}
                       </div>
-                      {qa.has_commitment && qa.commitment_text && (
+                      {qa.commitment_text && (qa.commitment_strength ?? 0) > 0 && (
                         <div className="commitment">
                           <span className="commitment-label">約束:</span> {qa.commitment_text}
                         </div>
@@ -467,7 +517,12 @@ export default function FilteredQAList({ filteredEntries, totalCount, page, onPa
           text-indent: 1em;
         }
         .full-text p:last-child { margin-bottom: 0; }
-        .evasion { font-size: 0.8rem; font-weight: 600; margin-bottom: 0.4rem; }
+        .q-metrics { display: flex; gap: 0.4rem; margin-top: 0.5rem; flex-wrap: wrap; }
+        .metric-tag { font-size: 0.72rem; color: #4b5563; background: #f3f4f6; border-radius: 4px; padding: 0.15rem 0.4rem; cursor: default; white-space: nowrap; letter-spacing: -0.02em; }
+        .a-metrics { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem; flex-wrap: wrap; }
+        .completeness { font-size: 0.8rem; font-weight: 600; cursor: default; }
+        .commit-tag { font-size: 0.72rem; font-weight: 600; background: #ecfdf5; color: #065f46; border: 1px solid #6ee7b7; border-radius: 4px; padding: 0.1rem 0.4rem; cursor: default; }
+        .record-value { font-size: 0.75rem; color: #92400e; cursor: default; white-space: nowrap; }
         .commitment {
           font-size: 0.8rem;
           background: #f0fdf4;

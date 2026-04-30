@@ -130,9 +130,9 @@ describe('generateApi — dashboard outputs', () => {
     }
   });
 
-  it('evasion.json is sorted by avgEvasionScore descending', () => {
+  it('evasion.json is sorted by avgAnswerCompleteness descending', () => {
     const evasion = JSON.parse(fs.readFileSync(path.join(tmpOutDir, 'evasion.json'), 'utf-8'));
-    const scores = evasion.map((e: { avgEvasionScore: number }) => e.avgEvasionScore);
+    const scores = evasion.map((e: { avgAnswerCompleteness: number }) => e.avgAnswerCompleteness);
     const sorted = [...scores].sort((a, b) => b - a);
     expect(scores).toEqual(sorted);
   });

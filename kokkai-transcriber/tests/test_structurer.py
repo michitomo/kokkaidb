@@ -239,10 +239,11 @@ class TestGenerateQAPairs:
                         "role": "厚生労働大臣",
                         "summary": "問題を認識しており検討中",
                         "full_text": "お答えいたします。問題を認識しております。",
-                        "evasion_score": 0.3,
-                        "has_commitment": True,
+                        "answer_completeness": 0.4,
+                        "commitment_strength": 0.3,
                         "commitment_text": "次期制度改正の検討課題として位置づけてまいりたい",
                     },
+                    "record_value": 0.5,
                 }
             ]
         }
@@ -270,8 +271,9 @@ class TestGenerateQAPairs:
                     "answer": {
                         "speaker": "答弁者A", "role": "大臣A",
                         "summary": "答弁1", "full_text": "答弁1全文",
-                        "evasion_score": 0.2, "has_commitment": False, "commitment_text": "",
+                        "answer_completeness": 0.8, "commitment_strength": 0.0, "commitment_text": "",
                     },
+                    "record_value": 0.3,
                 },
                 {
                     "topic": "トピック2",
@@ -282,9 +284,10 @@ class TestGenerateQAPairs:
                     "answer": {
                         "speaker": "答弁者B", "role": "大臣B",
                         "summary": "答弁2", "full_text": "答弁2全文",
-                        "evasion_score": 0.7, "has_commitment": True,
+                        "answer_completeness": 0.4, "commitment_strength": 0.5,
                         "commitment_text": "検討します",
                     },
+                    "record_value": 0.6,
                 },
             ]
         }
@@ -300,8 +303,8 @@ class TestGenerateQAPairs:
         assert result.pairs[0].id == "qa_001"
         assert result.pairs[1].id == "qa_002"
 
-    def test_evasion_score_in_range(self, sample_utterances: UtterancesOutput) -> None:
-        """evasion_score が 0.0-1.0 の範囲であること。"""
+    def test_scores_in_range(self, sample_utterances: UtterancesOutput) -> None:
+        """各スコアが 0.0-1.0 の範囲内にクランプされること。"""
         mock_data = {
             "pairs": [
                 {
@@ -309,13 +312,16 @@ class TestGenerateQAPairs:
                     "question": {
                         "speaker": "A", "party": "B",
                         "summary": "Q", "full_text": "Q全文", "intent": "other",
+                        "question_sharpness": 1.5,  # 範囲外 → クランプ
+                        "evidence_grounding": -0.2,  # 範囲外 → クランプ
                     },
                     "answer": {
                         "speaker": "C", "role": "D",
                         "summary": "A", "full_text": "A全文",
-                        "evasion_score": 1.5,  # 範囲外 → クランプされること
-                        "has_commitment": False, "commitment_text": "",
+                        "answer_completeness": 1.5,  # 範囲外 → クランプ
+                        "commitment_strength": 0.0, "commitment_text": "",
                     },
+                    "record_value": 0.7,
                 }
             ]
         }
@@ -329,7 +335,10 @@ class TestGenerateQAPairs:
                 result = generate_qa_pairs(sample_utterances)
 
         for pair in result.pairs:
-            assert 0.0 <= pair.answer.evasion_score <= 1.0
+            assert 0.0 <= pair.answer.answer_completeness <= 1.0
+            assert 0.0 <= pair.question.question_sharpness <= 1.0
+            assert 0.0 <= pair.question.evidence_grounding <= 1.0
+            assert 0.0 <= pair.record_value <= 1.0
 
 
 class TestGenerateSummary:
@@ -356,8 +365,8 @@ class TestGenerateSummary:
                         role="大臣",
                         summary="認識している",
                         full_text="答弁全文",
-                        evasion_score=0.3,
-                        has_commitment=True,
+                        answer_completeness=0.4,
+                        commitment_strength=0.3,
                         commitment_text="検討する",
                     ),
                     video_url="https://example.com",
@@ -430,7 +439,7 @@ class TestGenerateTopics:
                     answer=AnswerDetail(
                         speaker="上野", role="大臣",
                         summary="答弁", full_text="答弁全文",
-                        evasion_score=0.2, has_commitment=False, commitment_text="",
+                        answer_completeness=0.8, commitment_strength=0.0, commitment_text="",
                     ),
                     video_url="https://example.com",
                 )
@@ -555,9 +564,10 @@ class TestGenerateQAForSegmentErrorHandling:
                     "answer": {
                         "summary": "- 回答要旨",
                         "sentence_indices": [1],
-                        "evasion_score": 0.2,
-                        "has_commitment": False,
+                        "answer_completeness": 0.8,
+                        "commitment_strength": 0.0,
                     },
+                    "record_value": 0.3,
                 }
             ]
         }
@@ -583,4 +593,5 @@ class TestStructurerIntegration:
         result = generate_qa_pairs(sample_utterances)
         assert isinstance(result, QAPairsOutput)
         for pair in result.pairs:
-            assert 0.0 <= pair.answer.evasion_score <= 1.0
+            assert 0.0 <= pair.answer.answer_completeness <= 1.0
+            assert 0.0 <= pair.answer.commitment_strength <= 1.0

@@ -5,7 +5,7 @@
 
 import type { IndexEntry } from '../../scripts/generate-api';
 
-// TSVの列ヘッダ（15列）
+// TSVの列ヘッダ（18列）
 const TSV_HEADERS = [
   '日付',
   '院',
@@ -14,12 +14,15 @@ const TSV_HEADERS = [
   '質問者',
   '質問者所属',
   '質問要旨',
+  '質問精度',
+  '根拠品質',
   '答弁者',
   '答弁者役職',
   '答弁要旨',
-  '回避度',
-  '約束有無',
+  '答弁網羅性',
+  'コミット強度',
   '約束内容',
+  '議事録価値',
   '動画URL',
   '出典URL',
 ] as const;
@@ -42,10 +45,15 @@ export function chamberLabel(chamber: string): string {
 }
 
 /**
- * has_commitment を「あり」/「なし」に変換する。
+ * commitment_strength を文字列ラベルに変換する。
  */
-export function commitmentLabel(hasCommitment: boolean): string {
-  return hasCommitment ? 'あり' : 'なし';
+export function commitmentStrengthLabel(strength: number | undefined): string {
+  if (!strength || strength === 0) return 'なし';
+  if (strength < 0.2) return '検討';
+  if (strength < 0.5) return '弱';
+  if (strength < 0.7) return '中';
+  if (strength < 0.9) return '強';
+  return '即時';
 }
 
 export interface TsvQAPair {
@@ -55,12 +63,15 @@ export interface TsvQAPair {
   question_party: string;
   question_summary: string;
   question_intent: string;
+  question_sharpness?: number;
+  evidence_grounding?: number;
   answer_speaker: string;
   answer_role: string;
   answer_summary: string;
-  evasion_score: number;
-  has_commitment: boolean;
+  answer_completeness?: number;
+  commitment_strength?: number;
   commitment_text: string;
+  record_value?: number;
   video_url: string;
 }
 
@@ -108,12 +119,15 @@ export function qaPairsToTsv(
       escapeTsv(pair.question_speaker),
       escapeTsv(pair.question_party),
       escapeTsv(pair.question_summary),
+      escapeTsv((pair.question_sharpness ?? 0.5).toFixed(2)),
+      escapeTsv((pair.evidence_grounding ?? 0.5).toFixed(2)),
       escapeTsv(pair.answer_speaker),
       escapeTsv(pair.answer_role),
       escapeTsv(pair.answer_summary),
-      escapeTsv(pair.evasion_score),
-      escapeTsv(commitmentLabel(pair.has_commitment)),
+      escapeTsv((pair.answer_completeness ?? 0.5).toFixed(2)),
+      escapeTsv(commitmentStrengthLabel(pair.commitment_strength)),
       escapeTsv(pair.commitment_text),
+      escapeTsv((pair.record_value ?? 0.5).toFixed(2)),
       escapeTsv(pair.video_url),
       escapeTsv(session?.source_url ?? ''),
     ].join('\t');

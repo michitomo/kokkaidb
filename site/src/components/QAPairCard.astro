@@ -9,9 +9,40 @@ interface Props {
 
 const { pair, session } = Astro.props;
 const segmentDup = Astro.props.segmentFullTextDuplicate ?? false;
-const score = pair.answer.evasion_score;
-const evasionColor = score < 0.3 ? '#16a34a' : score < 0.7 ? '#d97706' : '#dc2626';
-const evasionLabel = score < 0.3 ? '低' : score < 0.7 ? '中' : '高';
+
+// --- 新指標 ---
+const completeness = pair.answer.answer_completeness ?? (pair.answer.evasion_score != null ? 1 - pair.answer.evasion_score : 0.5);
+const commitStrength = pair.answer.commitment_strength ?? (pair.answer.has_commitment ? 0.5 : 0.0);
+const recordVal = pair.record_value ?? 0.5;
+const qSharpness = pair.question.question_sharpness ?? 0.5;
+const evGrounding = pair.question.evidence_grounding ?? 0.5;
+
+// 答弁網羅性の色（高=緑, 中=黄, 低=赤）
+const completenessColor = completeness >= 0.7 ? '#16a34a' : completeness >= 0.4 ? '#d97706' : '#dc2626';
+const completenessLabel = completeness >= 0.7 ? '高' : completeness >= 0.4 ? '中' : '低';
+
+// コミット強度ラベル
+function commitLabel(s: number): string {
+  if (s === 0) return '';
+  if (s < 0.2) return '検討';
+  if (s < 0.5) return '弱';
+  if (s < 0.7) return '中';
+  if (s < 0.9) return '強';
+  return '即時';
+}
+const commitLabelText = commitLabel(commitStrength);
+
+// 5段階ドット表示（例: ●●●○○）
+function dots(score: number): string {
+  const filled = Math.round(score * 5);
+  return '●'.repeat(filled) + '○'.repeat(5 - filled);
+}
+
+// 議事録価値の星表示
+function stars(score: number): string {
+  const filled = Math.round(score * 5);
+  return '★'.repeat(filled) + '☆'.repeat(5 - filled);
+}
 
 // 動画タイムスタンプを "M:SS〜" 形式に変換
 function formatVideoTime(videoUrl: string): string | null {
@@ -53,17 +84,22 @@ const chamberName = session?.chamber === 'shugiin' ? '衆議院TV' : session?.ch
 >
   <div class="qa-header">
     <span class="topic">{pair.topic}</span>
-    {pair.video_url && (
-      <a
-        class="video-link"
-        href={pair.video_url}
-        target="_blank"
-        rel="noopener noreferrer"
-        title={videoTitle}
-      >
-        ▶ 動画{videoTime ? `（${videoTime}）` : ''}
-      </a>
-    )}
+    <div class="header-right">
+      <span class="record-value" title={`議事録価値: この質疑で議事録に残る新事実・解釈・前進があるか（${(recordVal * 100).toFixed(0)}%）`}>
+        📋 {stars(recordVal)}
+      </span>
+      {pair.video_url && (
+        <a
+          class="video-link"
+          href={pair.video_url}
+          target="_blank"
+          rel="noopener noreferrer"
+          title={videoTitle}
+        >
+          ▶ 動画{videoTime ? `（${videoTime}）` : ''}
+        </a>
+      )}
+    </div>
   </div>
 
   <div class="qa-columns">
@@ -89,6 +125,20 @@ const chamberName = session?.chamber === 'shugiin' ? '衆議院TV' : session?.ch
           </div>
         </details>
       )}
+      <div class="q-metrics">
+        <span
+          class="metric-tag"
+          title={`質問の鋭さ: 一問一答で答えられるか、次のアクションを迫る精度（${(qSharpness * 100).toFixed(0)}%）`}
+        >
+          精度 {dots(qSharpness)}
+        </span>
+        <span
+          class="metric-tag"
+          title={`根拠品質: 1次ソース・統計・過去答弁への言及度（${(evGrounding * 100).toFixed(0)}%）`}
+        >
+          根拠 {dots(evGrounding)}
+        </span>
+      </div>
     </div>
 
     <div class="answer">
@@ -113,10 +163,21 @@ const chamberName = session?.chamber === 'shugiin' ? '衆議院TV' : session?.ch
           </div>
         </details>
       )}
-      <div class="evasion" style={`color: ${evasionColor}`}>
-        回避度 {evasionLabel}（{(score * 100).toFixed(0)}%）
+      <div class="a-metrics">
+        <span
+          class="completeness"
+          style={`color: ${completenessColor}`}
+          title={`答弁網羅性: 質問の全論点を具体的に答えたか（${(completeness * 100).toFixed(0)}%）`}
+        >
+          網羅性 {completenessLabel}（{(completeness * 100).toFixed(0)}%）
+        </span>
+        {commitStrength > 0 && commitLabelText && (
+          <span class="commit-tag" title={`コミット強度: 約束の具体性・拘束力（${(commitStrength * 100).toFixed(0)}%）`}>
+            コミット {commitLabelText}
+          </span>
+        )}
       </div>
-      {pair.answer.has_commitment && pair.answer.commitment_text && (
+      {pair.answer.commitment_text && commitStrength > 0 && (
         <div class="commitment">
           <span class="commitment-label">約束:</span> {pair.answer.commitment_text}
         </div>
@@ -155,15 +216,31 @@ const chamberName = session?.chamber === 'shugiin' ? '衆議院TV' : session?.ch
     background: #f8fafc;
     border-bottom: 1px solid #e5e7eb;
     font-size: 0.85rem;
+    gap: 0.5rem;
   }
   .topic {
     font-weight: 600;
     color: #374151;
+    flex: 1;
+    min-width: 0;
+  }
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+  }
+  .record-value {
+    font-size: 0.75rem;
+    color: #92400e;
+    cursor: default;
+    white-space: nowrap;
   }
   .video-link {
     color: #2563eb;
     text-decoration: none;
     font-size: 0.8rem;
+    white-space: nowrap;
   }
   .video-link:hover { text-decoration: underline; }
   .qa-columns {
@@ -207,10 +284,45 @@ const chamberName = session?.chamber === 'shugiin' ? '衆議院TV' : session?.ch
   .summary-list li {
     margin-bottom: 0.15rem;
   }
-  .evasion {
+  /* 質問指標バッジ */
+  .q-metrics {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .metric-tag {
+    font-size: 0.72rem;
+    color: #4b5563;
+    background: #f3f4f6;
+    border-radius: 4px;
+    padding: 0.15rem 0.4rem;
+    cursor: default;
+    white-space: nowrap;
+    letter-spacing: -0.02em;
+  }
+  /* 答弁指標 */
+  .a-metrics {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .completeness {
     font-size: 0.8rem;
     font-weight: 600;
-    margin-bottom: 0.4rem;
+    cursor: default;
+  }
+  .commit-tag {
+    font-size: 0.72rem;
+    font-weight: 600;
+    background: #ecfdf5;
+    color: #065f46;
+    border: 1px solid #6ee7b7;
+    border-radius: 4px;
+    padding: 0.1rem 0.4rem;
+    cursor: default;
   }
   .commitment {
     font-size: 0.8rem;

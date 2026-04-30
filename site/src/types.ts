@@ -31,6 +31,10 @@ export interface QAQuestion {
   summary: string;
   full_text: string;
   intent: string;
+  /** 質問の鋭さ: 0=漠然, 1=精密 */
+  question_sharpness?: number;
+  /** 根拠品質: 0=主観のみ, 1=1次ソース明示 */
+  evidence_grounding?: number;
 }
 
 export interface QAAnswer {
@@ -38,9 +42,15 @@ export interface QAAnswer {
   role: string;
   summary: string;
   full_text: string;
-  evasion_score: number;
-  has_commitment: boolean;
+  /** 答弁網羅性: 0=完全回避, 1=全問に具体的回答 */
+  answer_completeness?: number;
+  /** コミット強度: 0=なし, 0.5=具体的行動, 1=即時実施 */
+  commitment_strength?: number;
   commitment_text: string;
+  /** @deprecated answer_completeness を使用 */
+  evasion_score?: number;
+  /** @deprecated commitment_strength を使用 */
+  has_commitment?: boolean;
 }
 
 export interface QAPair {
@@ -49,6 +59,8 @@ export interface QAPair {
   topic: string;
   question: QAQuestion;
   answer: QAAnswer;
+  /** 議事録価値: 0=既知のみ, 1=先例更新 */
+  record_value?: number;
   follow_up_ids: string[];
   video_url: string;
 }

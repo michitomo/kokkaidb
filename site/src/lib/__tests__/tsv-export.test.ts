@@ -3,7 +3,7 @@ import {
   qaPairsToTsv,
   indexEntriesToTsv,
   chamberLabel,
-  commitmentLabel,
+  commitmentStrengthLabel,
   type TsvQAPair,
   type TsvSession,
 } from '../tsv-export';
@@ -25,12 +25,15 @@ const samplePair: TsvQAPair = {
   question_party: 'チームみらい',
   question_summary: 'がん患者への影響について',
   question_intent: '制度改善を求める',
+  question_sharpness: 0.7,
+  evidence_grounding: 0.6,
   answer_speaker: '上野賢一郎',
   answer_role: '厚生労働大臣',
   answer_summary: '検討すると回答した。',
-  evasion_score: 0.3,
-  has_commitment: true,
+  answer_completeness: 0.4,
+  commitment_strength: 0.3,
   commitment_text: '次期改正で対応する。',
+  record_value: 0.5,
   video_url: 'https://www.shugiintv.go.jp/jp/index.php?ex=VL&deli_id=test-001&time=120',
 };
 
@@ -48,13 +51,25 @@ describe('chamberLabel', () => {
   });
 });
 
-describe('commitmentLabel', () => {
-  it('true → あり', () => {
-    expect(commitmentLabel(true)).toBe('あり');
+describe('commitmentStrengthLabel', () => {
+  it('0 → なし', () => {
+    expect(commitmentStrengthLabel(0)).toBe('なし');
   });
 
-  it('false → なし', () => {
-    expect(commitmentLabel(false)).toBe('なし');
+  it('undefined → なし', () => {
+    expect(commitmentStrengthLabel(undefined)).toBe('なし');
+  });
+
+  it('0.1 → 検討', () => {
+    expect(commitmentStrengthLabel(0.1)).toBe('検討');
+  });
+
+  it('0.5 → 中', () => {
+    expect(commitmentStrengthLabel(0.5)).toBe('中');
+  });
+
+  it('1.0 → 即時', () => {
+    expect(commitmentStrengthLabel(1.0)).toBe('即時');
   });
 });
 
@@ -66,10 +81,10 @@ describe('qaPairsToTsv', () => {
     expect(lines[0]).toContain('日付');
   });
 
-  it('ヘッダが15列である', () => {
+  it('ヘッダが18列である', () => {
     const result = qaPairsToTsv([], []);
     const headers = result.split('\t');
-    expect(headers).toHaveLength(15);
+    expect(headers).toHaveLength(18);
   });
 
   it('ヘッダ列名が正しい順序', () => {
@@ -80,9 +95,12 @@ describe('qaPairsToTsv', () => {
     expect(headers[2]).toBe('委員会');
     expect(headers[3]).toBe('トピック');
     expect(headers[4]).toBe('質問者');
-    expect(headers[10]).toBe('回避度');
-    expect(headers[11]).toBe('約束有無');
-    expect(headers[14]).toBe('出典URL');
+    expect(headers[7]).toBe('質問精度');
+    expect(headers[8]).toBe('根拠品質');
+    expect(headers[12]).toBe('答弁網羅性');
+    expect(headers[13]).toBe('コミット強度');
+    expect(headers[15]).toBe('議事録価値');
+    expect(headers[17]).toBe('出典URL');
   });
 
   it('1件のデータが正しく変換される', () => {
@@ -96,7 +114,7 @@ describe('qaPairsToTsv', () => {
     expect(cols[3]).toBe('高額療養費制度');
     expect(cols[4]).toBe('古川あおい');
     expect(cols[5]).toBe('チームみらい');
-    expect(cols[11]).toBe('あり');
+    expect(cols[13]).toBe('弱'); // commitment_strength 0.3 → 弱
   });
 
   it('タブ文字がスペースに置換される', () => {
@@ -127,17 +145,17 @@ describe('qaPairsToTsv', () => {
     expect(result).toContain('高額療養費制度');
   });
 
-  it('has_commitment=false の場合「なし」が出力される', () => {
+  it('commitment_strength=0 の場合「なし」が出力される', () => {
     const pairNoCommitment: TsvQAPair = {
       ...samplePair,
-      has_commitment: false,
+      commitment_strength: 0,
       commitment_text: '',
     };
     const result = qaPairsToTsv([pairNoCommitment], [sampleSession]);
     const lines = result.split('\n');
     const cols = lines[1].split('\t');
-    expect(cols[11]).toBe('なし');
-    expect(cols[12]).toBe('');
+    expect(cols[13]).toBe('なし');
+    expect(cols[14]).toBe('');
   });
 
   it('参議院の院名が「参議院」になる', () => {
@@ -169,6 +187,7 @@ describe('indexEntriesToTsv', () => {
     speakers: ['古川あおい', '上野賢一郎'],
     parties: ['チームみらい', '自由民主党'],
     topics: ['高額療養費制度'],
+    related_laws: [],
     qa_pairs: [
       {
         id: 'test-001-qa-001',
@@ -176,14 +195,21 @@ describe('indexEntriesToTsv', () => {
         question_speaker: '古川あおい',
         question_party: 'チームみらい',
         question_summary: 'がん患者への影響について',
+        question_full_text: '',
         question_intent: '制度改善を求める',
+        question_sharpness: 0.7,
+        evidence_grounding: 0.6,
         answer_speaker: '上野賢一郎',
         answer_role: '厚生労働大臣',
         answer_summary: '検討すると回答した。',
-        evasion_score: 0.3,
-        has_commitment: true,
+        answer_full_text: '',
+        answer_completeness: 0.4,
+        commitment_strength: 0.3,
         commitment_text: '次期改正で対応する。',
+        record_value: 0.5,
+        evasion_score: 0.6,
         video_url: 'https://www.shugiintv.go.jp/jp/index.php?ex=VL&deli_id=test-001&time=120',
+        related_laws: [],
       },
     ],
   };

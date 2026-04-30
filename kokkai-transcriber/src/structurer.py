@@ -60,24 +60,54 @@ speaker, party, roleは返さないでください（コードで元データか
       "question": {
         "summary": "- 要点1\n- 要点2\n- 要点3",
         "sentence_indices": [0, 1, 2],
-        "intent": "fact_check | policy_proposal | accountability | information_request | other"
+        "intent": "fact_check | policy_proposal | accountability | information_request | other",
+        "question_sharpness": 0.0から1.0,
+        "evidence_grounding": 0.0から1.0
       },
       "answer": {
         "summary": "- 要点1\n- 要点2\n- 要点3",
         "sentence_indices": [12, 13, 14],
-        "evasion_score": 0.0から1.0,
-        "has_commitment": true | false,
-        "commitment_text": "具体的な約束事項（has_commitmentがtrueの場合）"
-      }
+        "answer_completeness": 0.0から1.0,
+        "commitment_strength": 0.0から1.0,
+        "commitment_text": "具体的な約束事項（commitment_strengthが0.2超の場合）"
+      },
+      "record_value": 0.0から1.0
     }
   ]
 }
 
-evasion_scoreの目安:
-- 0.0-0.2: 具体的な数値・事実で回答
-- 0.3-0.5: 一般論で回答、具体性に欠ける
-- 0.6-0.8: 質問をはぐらかす、別の話題にすり替える
-- 0.9-1.0: 完全に回避、「答えられない」等
+各スコアの採点基準:
+
+question_sharpness（質問の鋭さ）:
+- 0.0-0.2: 問いが漠然としているか、複数テーマが混在している
+- 0.3-0.5: 一定の焦点はあるが、答え方に幅がある一般論的な問い
+- 0.6-0.8: 具体的な数値・期限・是非を問う、一問一答型に近い問い
+- 0.9-1.0: Yes/No・数値・期限など単一回答が必要な精密な問い
+
+evidence_grounding（根拠品質）:
+- 0.0-0.2: 主観的主張のみ、具体的な根拠なし
+- 0.3-0.5: 一般的な言及・常識的な前提に依拠
+- 0.6-0.8: 統計データ・報告書・過去答弁を引用している
+- 0.9-1.0: 法令・政府統計・委員会記録など1次ソースを明示して問う
+
+answer_completeness（答弁網羅性）:
+- 0.0-0.2: 質問と無関係、または「答えられない」等の完全回避
+- 0.3-0.5: 部分的にしか答えない、話題をすり替える、「検討中」で逃げる
+- 0.6-0.8: 質問の要点を概ね押さえているが、一部に曖昧さが残る
+- 0.9-1.0: 全ての問いに具体的かつ直接的に答えている
+
+commitment_strength（コミット強度）:
+- 0.0: コミットメントなし
+- 0.1-0.3: 「検討する」「努力する」等の曖昧な言質
+- 0.4-0.6: 「調査し報告する」「措置を講じる」等の具体的行動の約束
+- 0.7-0.9: 期限・数値を伴う明確な約束
+- 1.0: 即時の具体的行動（「本日付で通知する」「予算措置済み」等）
+
+record_value（議事録価値）:
+- 0.0-0.2: 既知の事実の確認のみ、先例・解釈の変化なし
+- 0.3-0.5: やや新しい情報を含むが、先例として引用されるレベルではない
+- 0.6-0.8: 初めて公式に確認された見解・数字・方針であり、今後参照されうる
+- 0.9-1.0: 先例を更新または確定する答弁。法解釈のピン留め、数字の公式確定など
 """
 
 SUMMARY_AND_TOPICS_SYSTEM_PROMPT = """あなたは国会会議の分析専門家です。
@@ -466,16 +496,19 @@ def _extract_pairs_from_response(
                     summary=q.get("summary", ""),
                     full_text=q_full_text,
                     intent=q.get("intent", "other"),
+                    question_sharpness=max(0.0, min(1.0, float(q.get("question_sharpness", 0.5)))),
+                    evidence_grounding=max(0.0, min(1.0, float(q.get("evidence_grounding", 0.5)))),
                 ),
                 answer=AnswerDetail(
                     speaker=a_speaker,
                     role=a_role,
                     summary=a.get("summary", ""),
                     full_text=a_full_text,
-                    evasion_score=max(0.0, min(1.0, float(a.get("evasion_score", 0.5)))),
-                    has_commitment=bool(a.get("has_commitment", False)),
+                    answer_completeness=max(0.0, min(1.0, float(a.get("answer_completeness", 0.5)))),
+                    commitment_strength=max(0.0, min(1.0, float(a.get("commitment_strength", 0.0)))),
                     commitment_text=a.get("commitment_text", ""),
                 ),
+                record_value=max(0.0, min(1.0, float(p.get("record_value", 0.5)))),
                 video_url=seg.video_url,
             )
         )
