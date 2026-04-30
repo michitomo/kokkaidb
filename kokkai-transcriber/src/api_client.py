@@ -20,6 +20,7 @@ LLM_MODEL = "deepseek-ai/DeepSeek-V3.2"
 # DeepInfra 200 concurrent limit を前提に配分
 # ---------------------------------------------------------------------------
 MAX_WORKERS_AUDIO = 4        # Step 3: ffmpeg subprocess（fd重い）
+MAX_WORKERS_HLS = 8          # Step 3前段: HLSセグメント並列取得（HTTP keep-alive）
 MAX_WORKERS_WHISPER = 16     # Step 4: Whisper API
 MAX_WORKERS_LLM = 80         # Step 4.5/5/6: LLM API（fd軽い、1req=1socket）
 
