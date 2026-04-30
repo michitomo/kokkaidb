@@ -7,6 +7,7 @@
   },
   "scripts": {
     "dev": "astro dev",
+    "validate:data": "tsx scripts/validate-data.ts",
     "prebuild": "tsx scripts/generate-api.ts",
     "build": "astro build",
     "postbuild": "pagefind --site dist --glob '**/*.html'",
