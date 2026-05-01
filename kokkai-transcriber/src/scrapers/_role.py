@@ -42,13 +42,18 @@ def derive_role(affiliation: str) -> SpeakerRole:
     if not affiliation:
         return "その他"
 
-    if (
-        affiliation.endswith(("委員長", "議長", "副議長"))
-        or affiliation in {"委員長", "議長", "副議長"}
-    ):
+    if affiliation.endswith(("委員長", "議長", "副議長")) or affiliation in {
+        "委員長",
+        "議長",
+        "副議長",
+    }:
         return "委員長"
 
     if affiliation.endswith(("大臣", "副大臣", "政務官")):
+        return "答弁者"
+
+    # Multi-role affiliations e.g. "財務大臣 内閣府特命担当大臣（金融） ..."
+    if "大臣" in affiliation or "政務官" in affiliation:
         return "答弁者"
 
     if affiliation.endswith(_GOV_ATTENDEE_SUFFIXES):
