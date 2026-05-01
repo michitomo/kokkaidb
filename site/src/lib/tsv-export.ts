@@ -5,7 +5,7 @@
 
 import type { IndexEntry } from '../../scripts/generate-api';
 
-// TSVの列ヘッダ（15列）
+// TSVの列ヘッダ（14列）
 const TSV_HEADERS = [
   '日付',
   '院',
@@ -17,9 +17,8 @@ const TSV_HEADERS = [
   '答弁者',
   '答弁者役職',
   '答弁要旨',
-  '回避度',
-  '約束有無',
-  '約束内容',
+  '直接回答度',
+  'コミットメントLv',
   '動画URL',
   '出典URL',
 ] as const;
@@ -41,13 +40,6 @@ export function chamberLabel(chamber: string): string {
   return chamber === 'shugiin' ? '衆議院' : '参議院';
 }
 
-/**
- * has_commitment を「あり」/「なし」に変換する。
- */
-export function commitmentLabel(hasCommitment: boolean): string {
-  return hasCommitment ? 'あり' : 'なし';
-}
-
 export interface TsvQAPair {
   id: string;
   topic: string;
@@ -58,9 +50,8 @@ export interface TsvQAPair {
   answer_speaker: string;
   answer_role: string;
   answer_summary: string;
-  evasion_score: number;
-  has_commitment: boolean;
-  commitment_text: string;
+  as1_directness_score?: number;
+  as4_commitment_level?: number;
   video_url: string;
 }
 
@@ -111,9 +102,8 @@ export function qaPairsToTsv(
       escapeTsv(pair.answer_speaker),
       escapeTsv(pair.answer_role),
       escapeTsv(pair.answer_summary),
-      escapeTsv(pair.evasion_score),
-      escapeTsv(commitmentLabel(pair.has_commitment)),
-      escapeTsv(pair.commitment_text),
+      escapeTsv(pair.as1_directness_score ?? ''),
+      escapeTsv(pair.as4_commitment_level ?? ''),
       escapeTsv(pair.video_url),
       escapeTsv(session?.source_url ?? ''),
     ].join('\t');

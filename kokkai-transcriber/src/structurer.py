@@ -18,6 +18,7 @@ from src.models import (
     KeyCommitment,
     QAPair,
     QAPairsOutput,
+    QAMetrics,
     QuestionDetail,
     RelatedLawTag,
     SegmentUtterances,
@@ -29,6 +30,8 @@ from src.models import (
 from src.prompts import (
     COMMITMENTS_SYSTEM_PROMPT,
     LAW_TAGGING_SYSTEM_PROMPT,
+    QA_METRICS_V4_SYSTEM_PROMPT,
+    QA_METRICS_V4_USER_TEMPLATE,
     QA_SEGMENT_SYSTEM_PROMPT,
     SESSION_SUMMARY_SYSTEM_PROMPT,
     TOPICS_SYSTEM_PROMPT,
@@ -375,9 +378,6 @@ def _extract_pairs_from_response(
                     role=a_role,
                     summary=a.get("summary", ""),
                     full_text=a_full_text,
-                    evasion_score=max(0.0, min(1.0, float(a.get("evasion_score", 0.5)))),
-                    has_commitment=bool(a.get("has_commitment", False)),
-                    commitment_text=a.get("commitment_text", ""),
                 ),
                 video_url=seg.video_url,
             )
@@ -808,3 +808,85 @@ def build_summary_related_laws(qa_pairs: QAPairsOutput) -> list[RelatedLawTag]:
         for law_id, qa_ids in by_law.items()
         if qa_ids
     ]
+
+
+# V4評価プロンプトはDeepSeek V3.2（Gemma-4-31Bより評価タスク精度が高い）
+_METRICS_MODEL = "deepseek-ai/DeepSeek-V3.2"
+
+
+def _score_one_pair(pair: QAPair) -> QAMetrics | None:
+    """1ペアをV4プロンプトで評価してQAMetricsを返す。失敗時はNoneを返す。"""
+    if not pair.question.full_text or not pair.answer.full_text:
+        logger.warning("score_qa_pairs_metrics: skipping %s (empty text)", pair.id)
+        return None
+
+    user_msg = QA_METRICS_V4_USER_TEMPLATE.format(
+        intent=pair.question.intent or "other",
+        question_text=pair.question.full_text,
+        answer_text=pair.answer.full_text,
+    )
+
+    client = _get_client()
+
+    def _call() -> dict:
+        response = client.chat.completions.create(
+            model=_METRICS_MODEL,
+            messages=[
+                {"role": "system", "content": QA_METRICS_V4_SYSTEM_PROMPT},
+                {"role": "user", "content": user_msg},
+            ],
+            temperature=0,
+            max_tokens=1200,
+            response_format={"type": "json_object"},
+        )
+        raw = response.choices[0].message.content
+        return json.loads(raw)
+
+    try:
+        data = with_retry(_call)
+        return QAMetrics.model_validate(data)
+    except Exception as e:
+        logger.warning("score_qa_pairs_metrics: failed for %s: %s", pair.id, e)
+        return None
+
+
+def score_qa_pairs_metrics(
+    qa_pairs: QAPairsOutput,
+    *,
+    max_workers: int = 8,
+) -> QAPairsOutput:
+    """全Q&AペアにV4評価指標を付与して QAPairsOutput を返す（Step 6d）。
+
+    各ペアに QAMetrics を並列で付与する。失敗したペアは metrics=None のまま保持する。
+    成功した場合は score_schema_version="2.0", prompt_version="V4" を設定する。
+    """
+    if not qa_pairs.pairs:
+        return qa_pairs
+
+    scored: dict[str, QAMetrics | None] = {}
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        futures = {executor.submit(_score_one_pair, p): p.id for p in qa_pairs.pairs}
+        for future in as_completed(futures):
+            pid = futures[future]
+            try:
+                scored[pid] = future.result()
+            except Exception as e:
+                logger.warning("score_qa_pairs_metrics: unexpected error for %s: %s", pid, e)
+                scored[pid] = None
+
+    success = 0
+    for pair in qa_pairs.pairs:
+        pair.metrics = scored.get(pair.id)
+        if pair.metrics is not None:
+            success += 1
+
+    if success > 0:
+        qa_pairs.score_schema_version = "2.0"
+        qa_pairs.prompt_version = "V4"
+
+    logger.info(
+        "score_qa_pairs_metrics: scored %d/%d pairs with V4 metrics",
+        success,
+        len(qa_pairs.pairs),
+    )
+    return qa_pairs

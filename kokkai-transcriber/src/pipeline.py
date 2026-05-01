@@ -58,6 +58,7 @@ from src.structurer import (
     generate_qa_pairs,
     generate_session_summary,
     generate_topics_and_key_topics,
+    score_qa_pairs_metrics,
     tag_related_laws,
 )
 from src.transcriber import transcribe_all_segments
@@ -346,6 +347,10 @@ def _run_step6(
                 laws_text=laws_text,
                 max_workers=max_workers,
             )
+
+        # Step 6d: V4品質評価指標の付与（QQ/AS/OC 9軸）
+        logger.info("Step 6d: Scoring Q&A pairs with V4 quality metrics")
+        qa_pairs = score_qa_pairs_metrics(qa_pairs, max_workers=max_workers)
 
     summary = SummaryOutput(
         session_summary=session_summary,

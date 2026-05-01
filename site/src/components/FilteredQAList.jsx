@@ -42,16 +42,16 @@ export default function FilteredQAList({ filteredEntries, totalCount, page, onPa
     }
   }, [filteredEntries]);
 
-  function evasionColor(score) {
-    if (score < 0.3) return '#16a34a';
-    if (score < 0.7) return '#d97706';
+  function directnessColor(score) {
+    if (score >= 0.7) return '#16a34a';
+    if (score >= 0.4) return '#d97706';
     return '#dc2626';
   }
 
-  function evasionLabel(score) {
-    if (score < 0.3) return '低';
-    if (score < 0.7) return '中';
-    return '高';
+  function directnessLabel(score) {
+    if (score >= 0.7) return '高';
+    if (score >= 0.4) return '中';
+    return '低';
   }
 
   function toggleExpand(qaId) {
@@ -232,15 +232,17 @@ export default function FilteredQAList({ filteredEntries, totalCount, page, onPa
                           )}
                         </>
                       )}
-                      <div
-                        className="evasion"
-                        style={{ color: evasionColor(qa.evasion_score) }}
-                      >
-                        回避度 {evasionLabel(qa.evasion_score)}（{(qa.evasion_score * 100).toFixed(0)}%）
-                      </div>
-                      {qa.has_commitment && qa.commitment_text && (
+                      {qa.metrics?.as1_directness?.score != null && (
+                        <div
+                          className="directness"
+                          style={{ color: directnessColor(qa.metrics.as1_directness.score) }}
+                        >
+                          直接回答度 {directnessLabel(qa.metrics.as1_directness.score)}（{(qa.metrics.as1_directness.score * 100).toFixed(0)}%）
+                        </div>
+                      )}
+                      {qa.metrics?.as4_commitment?.level >= 1 && qa.metrics?.as4_commitment?.trigger_phrase && (
                         <div className="commitment">
-                          <span className="commitment-label">約束:</span> {qa.commitment_text}
+                          <span className="commitment-label">約束:</span> {qa.metrics.as4_commitment.trigger_phrase}
                         </div>
                       )}
                     </div>
@@ -467,7 +469,7 @@ export default function FilteredQAList({ filteredEntries, totalCount, page, onPa
           text-indent: 1em;
         }
         .full-text p:last-child { margin-bottom: 0; }
-        .evasion { font-size: 0.8rem; font-weight: 600; margin-bottom: 0.4rem; }
+        .directness { font-size: 0.8rem; font-weight: 600; margin-bottom: 0.4rem; }
         .commitment {
           font-size: 0.8rem;
           background: #f0fdf4;
