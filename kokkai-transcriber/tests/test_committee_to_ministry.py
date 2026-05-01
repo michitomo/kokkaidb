@@ -63,3 +63,21 @@ def test_mapping_includes_major_committees() -> None:
         "本会議",
     }
     assert expected.issubset(set(COMMITTEE_TO_MINISTRY.keys()))
+
+
+def test_short_name_aliases_pass_through() -> None:
+    laws = "law_001: [閣法] foo | 厚生労働省 | ..."
+    for alias in (
+        "原子力特別委員会",
+        "消費者問題特別委員会",
+        "沖縄北方特別委員会",
+        "政治改革特別委員会",
+        "拉致問題特別委員会",
+    ):
+        assert filter_laws_for_committee(laws, alias) == laws
+
+
+def test_fallback_names_pass_through() -> None:
+    laws = "law_001: [閣法] foo | 財務省 | ..."
+    for name in ("不明", "特別委員会"):
+        assert filter_laws_for_committee(laws, name) == laws
