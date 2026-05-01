@@ -378,9 +378,6 @@ def _extract_pairs_from_response(
                     role=a_role,
                     summary=a.get("summary", ""),
                     full_text=a_full_text,
-                    evasion_score=max(0.0, min(1.0, float(a.get("evasion_score", 0.5)))),
-                    has_commitment=bool(a.get("has_commitment", False)),
-                    commitment_text=a.get("commitment_text", ""),
                 ),
                 video_url=seg.video_url,
             )

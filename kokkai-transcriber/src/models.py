@@ -247,9 +247,6 @@ class AnswerDetail(BaseModel):
     role: str
     summary: str
     full_text: str
-    evasion_score: float = Field(ge=0.0, le=1.0)
-    has_commitment: bool
-    commitment_text: str | None = ""
 
 
 class QAPair(BaseModel):

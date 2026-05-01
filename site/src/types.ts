@@ -146,9 +146,6 @@ export interface QAAnswer {
   role: string;
   summary: string;
   full_text: string;
-  evasion_score: number;
-  has_commitment: boolean;
-  commitment_text: string;
 }
 
 export interface QAPair {

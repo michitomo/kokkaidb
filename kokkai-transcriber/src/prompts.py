@@ -34,20 +34,11 @@ speaker, party, roleは返さないでください（コードで元データか
       },
       "answer": {
         "summary": "- 要点1\n- 要点2\n- 要点3",
-        "sentence_indices": [12, 13, 14],
-        "evasion_score": 0.0から1.0,
-        "has_commitment": true | false,
-        "commitment_text": "具体的な約束事項（has_commitmentがtrueの場合）"
+        "sentence_indices": [12, 13, 14]
       }
     }
   ]
 }
-
-evasion_scoreの目安:
-- 0.0-0.2: 具体的な数値・事実で回答
-- 0.3-0.5: 一般論で回答、具体性に欠ける
-- 0.6-0.8: 質問をはぐらかす、別の話題にすり替える
-- 0.9-1.0: 完全に回避、「答えられない」等
 """
 
 SESSION_SUMMARY_SYSTEM_PROMPT = """あなたは国会会議の要約者です。

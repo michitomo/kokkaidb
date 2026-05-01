@@ -11,17 +11,14 @@ const { pair, session } = Astro.props;
 const segmentDup = Astro.props.segmentFullTextDuplicate ?? false;
 const metrics = pair.metrics;
 
-// P0: evasion_score を反転して「直接回答度」として表示
-const evasionScore = pair.answer.evasion_score;
-const directnessScore = metrics
-  ? metrics.as1_directness.score
-  : 1 - evasionScore;
-
-// P2: metricsがある場合は as1_directness.score を使用、なければ反転表示
-const directnessColor =
-  directnessScore >= 0.7 ? '#16a34a' : directnessScore >= 0.4 ? '#d97706' : '#dc2626';
-const directnessLabel =
-  directnessScore >= 0.7 ? '高' : directnessScore >= 0.4 ? '中' : '低';
+// metricsがある場合のみ直接回答度を表示
+const directnessScore = metrics ? metrics.as1_directness.score : null;
+const directnessColor = directnessScore !== null
+  ? (directnessScore >= 0.7 ? '#16a34a' : directnessScore >= 0.4 ? '#d97706' : '#dc2626')
+  : null;
+const directnessLabel = directnessScore !== null
+  ? (directnessScore >= 0.7 ? '高' : directnessScore >= 0.4 ? '中' : '低')
+  : null;
 
 // コミットメントレベルのラベル
 const commitmentLevelLabels: Record<number, string> = {
@@ -185,11 +182,11 @@ const recordValueLabel: Record<string, string> = {
         </details>
       )}
 
-      {/* P0/P2: 直接回答度表示（metricsがない場合はevasion_scoreを反転して表示） */}
-      <div class="directness" style={`color: ${directnessColor}`}>
-        直接回答度 {directnessLabel}（{(directnessScore * 100).toFixed(0)}%）
-        {!metrics && <span class="legacy-hint" title="旧evasion_scoreを反転表示">ⓘ</span>}
-      </div>
+      {directnessScore !== null && (
+        <div class="directness" style={`color: ${directnessColor}`}>
+          直接回答度 {directnessLabel}（{(directnessScore * 100).toFixed(0)}%）
+        </div>
+      )}
 
       {metrics ? (
         <details class="metrics-details">
@@ -231,13 +228,7 @@ const recordValueLabel: Record<string, string> = {
             <div class="low-confidence">⚠️ この評価はAI自身が低い自信度を示しています</div>
           )}
         </details>
-      ) : (
-        pair.answer.has_commitment && pair.answer.commitment_text && (
-          <div class="commitment">
-            <span class="commitment-label">約束:</span> {pair.answer.commitment_text}
-          </div>
-        )
-      )}
+      ) : null}
     </div>
   </div>
 
@@ -358,11 +349,6 @@ const recordValueLabel: Record<string, string> = {
     font-size: 0.8rem;
     font-weight: 600;
     margin-bottom: 0.4rem;
-  }
-  .legacy-hint {
-    font-weight: 400;
-    color: #9ca3af;
-    cursor: help;
   }
   .commitment {
     font-size: 0.8rem;
