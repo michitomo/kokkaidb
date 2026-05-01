@@ -160,15 +160,36 @@ def score_topics(result: dict, expected: dict) -> dict:
     """トピック抽出のスコアリング。
 
     評価指標:
-    - topic_count_diff: トピック数の差
-    - name_coverage: トピック名の部分一致率
+    - qa_coverage: QA IDのカバー率（最重要指標）。期待expected内の全QA IDのうち
+      result topicsで参照されているものの割合。
+    - topic_count_diff: トピック数の差（正=過多、負=過少）
+    - name_coverage: トピック名の部分一致率（expectedのトピック名がresultに含まれるか）
     """
     parsed = result.get("parsed")
     if not parsed:
-        return {"error": "JSON parse failed", "topic_count_diff": None, "name_coverage": 0.0}
+        return {
+            "error": "JSON parse failed",
+            "qa_coverage": 0.0,
+            "topic_count_diff": None,
+            "name_coverage": 0.0,
+        }
 
     result_topics = parsed.get("topics", [])
     expected_topics = expected.get("topics", [])
+
+    # QA IDカバレッジ: expectedの全QA IDをresultが何%カバーしているか
+    expected_qa_ids: set[str] = set()
+    for t in expected_topics:
+        expected_qa_ids.update(t.get("related_qa_ids", []))
+
+    result_qa_ids: set[str] = set()
+    for t in result_topics:
+        result_qa_ids.update(t.get("related_qa_ids", []))
+
+    if expected_qa_ids:
+        qa_coverage = round(len(result_qa_ids & expected_qa_ids) / len(expected_qa_ids), 3)
+    else:
+        qa_coverage = 1.0
 
     count_diff = len(result_topics) - len(expected_topics)
 
@@ -185,6 +206,7 @@ def score_topics(result: dict, expected: dict) -> dict:
         name_coverage = 1.0
 
     return {
+        "qa_coverage": qa_coverage,
         "topic_count_diff": count_diff,
         "name_coverage": name_coverage,
     }
