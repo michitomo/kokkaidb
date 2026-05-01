@@ -18,7 +18,7 @@
 | 2 | [02-cross-cutting-issues.md](02-cross-cutting-issues.md) | 全章にまたがる根本的な不具合・データ起因の問題（**P0 多数**） |
 | 3 | [03-information-architecture.md](03-information-architecture.md) | ナビ／URL／ページ間の重複（ホーム・一覧・セッション詳細・検索） |
 | 4 | [04-dashboard.md](04-dashboard.md) | ダッシュボードが使われていない理由とリデザイン |
-| 5 | [05-evasion-score.md](05-evasion-score.md) | 「回避度」がわからない問題 — 表示・方法論・統計信頼性 |
+| 5 | [05-qa-quality-metrics.md](05-qa-quality-metrics.md) | 「回避度」がわからない問題 — 表示・方法論・統計信頼性 |
 | 6 | [06-filtering-search.md](06-filtering-search.md) | 一覧フィルタと全文検索 |
 | 7 | [07-session-detail.md](07-session-detail.md) | セッション詳細（質疑応答・タイムライン・発言全文） |
 | 8 | [08-mobile-accessibility.md](08-mobile-accessibility.md) | モバイル／アクセシビリティ／i18n |
@@ -38,7 +38,7 @@
 ### 致命傷（最優先で直すべき）
 
 1. **トピックフィルタの 99.8% が機能不全**。`/browse?topic=...` に渡される「広域トピック」（topics.json の name）と、Q&A レコードが持つ「狭域トピック」（qa_pairs.json の topic）がほぼ別語彙で、フィルタを通すと 0 件になる。ヒートマップの全クリック・ダッシュボード「注目トピック」のチップ・ホームの法案タグ等、トピック起点の導線が**ほぼ全て死んでいる**（詳細: [02-cross-cutting-issues.md](02-cross-cutting-issues.md)）。
-2. **「回避度」のメンタルモデルがどこにも書かれていない**。スコアの算出根拠・閾値・サンプルサイズの目安が不在で、一見強い主張（「○○大臣 回避度 90%」）に見えてしまう。法的・社会的リスクが高く、メディアに引用されると損害が出る（詳細: [05-evasion-score.md](05-evasion-score.md)）。
+2. **「回避度」のメンタルモデルがどこにも書かれていない**。スコアの算出根拠・閾値・サンプルサイズの目安が不在で、一見強い主張（「○○大臣 回避度 90%」）に見えてしまう。法的・社会的リスクが高く、メディアに引用されると損害が出る（詳細: [05-qa-quality-metrics.md](05-qa-quality-metrics.md)）。
 3. **ホーム（一覧）／ /browse ／ セッション詳細のフィルタが、別実装で 3 重化**。ご指摘の通り Astro 側 `<script>` と React の FilterPanel が並走しており、URL 設計・状態同期も別。ナビ階層もホームと一覧がほぼ同じ役割を担っている（詳細: [03-information-architecture.md](03-information-architecture.md)）。
 4. **モバイルで一覧画面のフィルタが折りたたまれない**（`🔍 フィルタ ▼` トグルが効いていない／開閉ロジックが SSR / hydration とズレている）。スマホ閲覧時はファーストビューがフィルタで埋まる（詳細: [08-mobile-accessibility.md](08-mobile-accessibility.md)）。
 5. **発言者分析の 83%（966/1160 名）が `totalAnswers < 5` の超少数サンプル**で、回避度バーが赤一色になり判断材料にならない。委員長や政府参考人も混入しており、本当に追跡したい大臣・副大臣の比較が埋もれる。
@@ -223,7 +223,7 @@ window.location.href = `${base}/browse?topic=${encodeURIComponent(topic)}&commit
 
 ## 2.2【P0】「回避度」の方法論が利用者にも内部関係者にも見えない
 
-詳しくは [05-evasion-score.md](05-evasion-score.md) に分離するが、横断的な観点だけ:
+詳しくは [05-qa-quality-metrics.md](05-qa-quality-metrics.md) に分離するが、横断的な観点だけ:
 
 - どこにも算出根拠の説明文がない（フッタにも `/about/methodology` のような専用ページもない）。
 - LLM の解釈が後から変わると、過去スコアと比較できなくなる（モデル ID は metadata に記録されているが、UI に出ていない）。
@@ -509,7 +509,7 @@ window.location.href = `${base}/browse?topic=${encodeURIComponent(topic)}&commit
    - 「新たに記録された約束事項 上位 5 件」
    - 各カードはクリックで該当セッション or 議員ページへ
 2. **異常値・要注目**
-   - 「回避度高 + サンプル十分」な答弁ペア（[05 章](05-evasion-score.md) の改良版指標で）
+   - 「回避度高 + サンプル十分」な答弁ペア（[05 章](05-qa-quality-metrics.md) の改良版指標で）
    - 「同じ議員が複数委員会で同じ質問」を検出
    - 「閣僚が約束したが、まだ次回質疑が無い」
 3. **会期全体の統計**
@@ -556,7 +556,7 @@ window.location.href = `${base}/browse?topic=${encodeURIComponent(topic)}&commit
 - **しきい値を導入**: `totalAnswers >= 10` を満たさないと棒グラフに出さない（注釈で除外件数を表示）
 - 棒の右側に `n=152` のようにサンプルサイズを併記
 - 「答弁役割」フィルタを追加（大臣のみ／副大臣以上／全て）して、委員長や政府参考人を除外しやすく
-- 詳細は [05-evasion-score.md](05-evasion-score.md) で
+- 詳細は [05-qa-quality-metrics.md](05-qa-quality-metrics.md) で
 
 ---
 
@@ -639,7 +639,7 @@ const STATUS_COLOR = { unverified: "#9ca3af" };
 
 ---
 
-[← 戻る](README.md) ｜ [次の章: 05-evasion-score.md →](05-evasion-score.md)
+[← 戻る](README.md) ｜ [次の章: 05-qa-quality-metrics.md →](05-qa-quality-metrics.md)
 # 05. 「回避度」がわからない問題
 
 [← 戻る](README.md)
@@ -1165,7 +1165,7 @@ URL: `/[chamber]/[year]/[month]/[day]/[slug]`
 ## 7.11【P2】Q&A の「コミットメント」ハイライトが優しすぎる
 
 - 緑のサイドバーで小さく出る
-- 「具体的な行動約束」と「努力義務的な約束」を分けたい（[05 章](05-evasion-score.md) と連動）
+- 「具体的な行動約束」と「努力義務的な約束」を分けたい（[05 章](05-qa-quality-metrics.md) と連動）
 
 ---
 
@@ -1366,7 +1366,7 @@ P5（海外記者ペルソナ）の救済として、以下を**完全 i18n し�
 
 ## 9.1【P0】「サイトについて／方法論」ページが無い
 
-[05 章](05-evasion-score.md) でも触れたが、本格稼働前に最低限必要なページ:
+[05 章](05-qa-quality-metrics.md) でも触れたが、本格稼働前に最低限必要なページ:
 
 | ページ | URL | 必須項目 |
 |------|-----|--------|
@@ -1699,14 +1699,14 @@ P5（海外記者ペルソナ）の救済として、以下を**完全 i18n し�
 |---|------|----|------|--------|----------|
 | 1 | トピックフィルタの語彙ズレを修正（ヒートマップ → 一覧で 0 件問題） | [02.1](02-cross-cutting-issues.md) | M | 全トピック導線 | 信用 |
 | 2 | 「LLM 自動評価」注記を全画面フッタに追加 | [09.2](09-trust-transparency.md) | S | 全画面 | 法的 |
-| 3 | 「方法論」ページ（`/about/methodology`）を新設し、回避度の定義・閾値・サンプルサイズの注意を載せる | [05.2](05-evasion-score.md) [09.1](09-trust-transparency.md) | M | リファレンス | 法的 |
-| 4 | 発言者分析: `totalAnswers < 10` の除外しきい値、棒にサンプルサイズ併記、委員長の除外 | [04.3](04-dashboard.md) [05.4](05-evasion-score.md) | S | ダッシュボード | データ品質 |
+| 3 | 「方法論」ページ（`/about/methodology`）を新設し、回避度の定義・閾値・サンプルサイズの注意を載せる | [05.2](05-qa-quality-metrics.md) [09.1](09-trust-transparency.md) | M | リファレンス | 法的 |
+| 4 | 発言者分析: `totalAnswers < 10` の除外しきい値、棒にサンプルサイズ併記、委員長の除外 | [04.3](04-dashboard.md) [05.4](05-qa-quality-metrics.md) | S | ダッシュボード | データ品質 |
 | 5 | モバイル `/browse` のフィルタ折りたたみ修正 | [08.1](08-mobile-accessibility.md) | S | モバイル全体 | UX |
 | 6 | フィルタ結果 0 件時の「条件 1 つ外せば N 件」サジェスト | [06.1](06-filtering-search.md) | M | /browse | UX |
 | 7 | ホーム・/browse・セッション詳細フィルタを 1 コンポーネントに集約（QAFeed） | [03.1](03-information-architecture.md) | L | コア | 保守性 |
 | 8 | 役割フィルタを「発言タイプ × 答弁者属性」の 2 軸に分割 | [06.2](06-filtering-search.md) | S | /browse | UX |
 | 9 | settings ページの「Phase 6 で…」表記を「準備中」リッチデザインに置き換え or ナビから外す | [03.6](03-information-architecture.md) | XS | settings | UX |
-| 10 | 用語ラベルの強さを下げる（「回避度高」→「論点に直接触れていない」等） | [05.3](05-evasion-score.md) | S | Q&A カード | 法的 |
+| 10 | 用語ラベルの強さを下げる（「回避度高」→「論点に直接触れていない」等） | [05.3](05-qa-quality-metrics.md) | S | Q&A カード | 法的 |
 
 **P0 完了の判定基準（ローンチクライテリア）**
 - ヒートマップの全クリックでフィルタ結果が 0 件以外になる
