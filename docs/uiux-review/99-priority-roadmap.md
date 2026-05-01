@@ -17,14 +17,14 @@
 |---|------|----|------|--------|----------|
 | 1 | トピックフィルタの語彙ズレを修正（ヒートマップ → 一覧で 0 件問題） | [02.1](02-cross-cutting-issues.md) | M | 全トピック導線 | 信用 |
 | 2 | 「LLM 自動評価」注記を全画面フッタに追加 | [09.2](09-trust-transparency.md) | S | 全画面 | 法的 |
-| 3 | 「方法論」ページ（`/about/methodology`）を新設し、回避度の定義・閾値・サンプルサイズの注意を載せる | [05.2](05-evasion-score.md) [09.1](09-trust-transparency.md) | M | リファレンス | 法的 |
-| 4 | 発言者分析: `totalAnswers < 10` の除外しきい値、棒にサンプルサイズ併記、委員長の除外 | [04.3](04-dashboard.md) [05.4](05-evasion-score.md) | S | ダッシュボード | データ品質 |
+| 3 | 「方法論」ページ（`/about/methodology`）を新設し、回避度の定義・閾値・サンプルサイズの注意を載せる | [05.2](05-qa-quality-metrics.md) [09.1](09-trust-transparency.md) | M | リファレンス | 法的 |
+| 4 | 発言者分析: `totalAnswers < 10` の除外しきい値、棒にサンプルサイズ併記、委員長の除外 | [04.3](04-dashboard.md) [05.4](05-qa-quality-metrics.md) | S | ダッシュボード | データ品質 |
 | 5 | モバイル `/browse` のフィルタ折りたたみ修正 | [08.1](08-mobile-accessibility.md) | S | モバイル全体 | UX |
 | 6 | フィルタ結果 0 件時の「条件 1 つ外せば N 件」サジェスト | [06.1](06-filtering-search.md) | M | /browse | UX |
 | 7 | ホーム・/browse・セッション詳細フィルタを 1 コンポーネントに集約（QAFeed） | [03.1](03-information-architecture.md) | L | コア | 保守性 |
 | 8 | 役割フィルタを「発言タイプ × 答弁者属性」の 2 軸に分割 | [06.2](06-filtering-search.md) | S | /browse | UX |
 | 9 | settings ページの「Phase 6 で…」表記を「準備中」リッチデザインに置き換え or ナビから外す | [03.6](03-information-architecture.md) | XS | settings | UX |
-| 10 | 用語ラベルの強さを下げる（「回避度高」→「論点に直接触れていない」等） | [05.3](05-evasion-score.md) | S | Q&A カード | 法的 |
+| 10 | 用語ラベルの強さを下げる（「回避度高」→「論点に直接触れていない」等） | [05.3](05-qa-quality-metrics.md) | S | Q&A カード | 法的 |
 
 **P0 完了の判定基準（ローンチクライテリア）**
 - ヒートマップの全クリックでフィルタ結果が 0 件以外になる
