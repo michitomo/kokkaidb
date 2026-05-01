@@ -15,7 +15,6 @@ Whisperが生成したraw_transcriptを、セッションのコンテキスト�
 from __future__ import annotations
 
 import argparse
-import json
 import logging
 import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -24,10 +23,10 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from src.api_client import get_client, with_retry
+from src.models import RawTranscript, SegmentTranscript, SessionDetail, SpeakerInfo
 
 # Step 4.5はDeepSeek-V3.2を使用（prompt cachingで長いsystem promptのコストを削減）
 CORRECTOR_MODEL = "deepseek-ai/DeepSeek-V3.2"
-from src.models import RawTranscript, SegmentTranscript, SessionDetail, SpeakerInfo, WhisperSegment
 
 logger = logging.getLogger(__name__)
 

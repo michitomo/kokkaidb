@@ -55,6 +55,7 @@ def mock_session_detail() -> SessionDetail:
 
 @pytest.fixture
 def mock_raw_transcript() -> RawTranscript:
+    long_text = "チームみらいの古川あおいです。" * 8  # >100 chars to pass pipeline validation
     return RawTranscript(
         session_id="56149",
         segments=[
@@ -62,11 +63,11 @@ def mock_raw_transcript() -> RawTranscript:
                 segment_index=0,
                 speaker_name="古川あおい",
                 start_seconds=7320.2,
-                text="チームみらいの古川あおいです。",
+                text=long_text,
                 whisper_segments=[
                     WhisperSegment(
                         id=0, seek=0, start=7320.2, end=7380.0,
-                        text="チームみらいの古川あおいです。",
+                        text=long_text,
                     )
                 ],
             )
@@ -467,7 +468,16 @@ class TestSangiinPipeline:
             hls_url="",
             mediasp_hash="",
             source_url="https://webtv.sangiin.go.jp/webtv/detail.php?sid=9999",
-            speakers=[],
+            speakers=[
+                SpeakerInfo(
+                    name="テスト委員長",
+                    affiliation="委員長",
+                    role="委員長",
+                    start_seconds=0.0,
+                    start_time="10:00",
+                    duration_minutes=5,
+                )
+            ],
         )
         output_dir = tmp_path / "output"
 

@@ -70,7 +70,7 @@ def _build_whisper_prompt(
 def _get_client() -> openai.OpenAI:
     api_key = os.environ.get("DEEPINFRA_API_KEY")
     if not api_key:
-        raise EnvironmentError("DEEPINFRA_API_KEY environment variable is not set")
+        raise OSError("DEEPINFRA_API_KEY environment variable is not set")
     return openai.OpenAI(api_key=api_key, base_url=DEEPINFRA_BASE_URL)
 
 

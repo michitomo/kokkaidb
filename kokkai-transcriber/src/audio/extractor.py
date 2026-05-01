@@ -316,13 +316,14 @@ def split_segments(
         )
         subprocess.run(cmd, check=True, capture_output=True, text=True)
 
-        original_size = (end - start) * 16000 * 2  # 概算bytes (16kHz, 16bit)
-        actual_size = output_path.stat().st_size
-        reduction_pct = (1 - actual_size / original_size) * 100 if original_size > 0 else 0
-        logger.info(
-            "Segment %d silence-removed: %.1fMB (%.0f%% reduction)",
-            i, actual_size / 1024 / 1024, reduction_pct,
-        )
+        if output_path.exists():
+            original_size = (end - start) * 16000 * 2
+            actual_size = output_path.stat().st_size
+            reduction_pct = (1 - actual_size / original_size) * 100 if original_size > 0 else 0
+            logger.info(
+                "Segment %d silence-removed: %.1fMB (%.0f%% reduction)",
+                i, actual_size / 1024 / 1024, reduction_pct,
+            )
 
         return i, output_path
 
