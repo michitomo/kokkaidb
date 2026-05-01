@@ -190,9 +190,88 @@ def score_topics(result: dict, expected: dict) -> dict:
     }
 
 
+def score_qa_seg(result: dict, expected: dict) -> dict:
+    """QA_SEGMENTプロンプト（sentence_indices形式）のスコアリング。
+
+    評価指標:
+    - pair_count_diff: ペア数の差（0 = 完全一致）
+    - topic_coverage: 期待トピックとの一致率（部分一致）
+    - intent_accuracy: intentラベルの正解率（期待値と一致した割合）
+    - sentence_index_overlap: sentence_indicesのJaccard重複率（全ペア平均）
+    - has_empty_answer: 答弁sentence_indicesが空のペアが含まれるか（0.0 = なし = 良好）
+    """
+    parsed = result.get("parsed")
+    if not parsed:
+        return {
+            "error": "JSON parse failed",
+            "pair_count_diff": None,
+            "topic_coverage": 0.0,
+            "intent_accuracy": 0.0,
+            "sentence_index_overlap": 0.0,
+            "has_empty_answer": None,
+        }
+
+    result_pairs = parsed.get("pairs", [])
+    expected_pairs = expected.get("pairs", [])
+
+    # 1. ペア数の差（期待0ペアのケースでは符号付き数値が重要）
+    count_diff = len(result_pairs) - len(expected_pairs)
+
+    # 2. トピックカバレッジ（期待=0の場合は result も0でスコア1.0）
+    if not expected_pairs:
+        topic_coverage = 1.0 if not result_pairs else 0.0
+    else:
+        expected_topics = {p.get("topic", "") for p in expected_pairs}
+        result_topics = {p.get("topic", "") for p in result_pairs}
+        matched = sum(
+            1 for et in expected_topics
+            if any(et in rt or rt in et for rt in result_topics)
+        )
+        topic_coverage = round(matched / len(expected_topics), 3)
+
+    # 3. intent精度（期待intentと一致した割合を index順で比較）
+    min_len = min(len(result_pairs), len(expected_pairs))
+    intent_matches = sum(
+        1
+        for i in range(min_len)
+        if result_pairs[i].get("question", {}).get("intent")
+        == expected_pairs[i].get("question", {}).get("intent")
+    )
+    intent_accuracy = round(intent_matches / max(len(expected_pairs), 1), 3)
+
+    # 4. sentence_indices の Jaccard 重複率（Q+A の合算）
+    overlap_scores: list[float] = []
+    for i in range(min_len):
+        r_q = set(result_pairs[i].get("question", {}).get("sentence_indices", []))
+        r_a = set(result_pairs[i].get("answer", {}).get("sentence_indices", []))
+        e_q = set(expected_pairs[i].get("question", {}).get("sentence_indices", []))
+        e_a = set(expected_pairs[i].get("answer", {}).get("sentence_indices", []))
+        r_all = r_q | r_a
+        e_all = e_q | e_a
+        if r_all or e_all:
+            overlap_scores.append(len(r_all & e_all) / len(r_all | e_all))
+    sentence_index_overlap = round(sum(overlap_scores) / len(overlap_scores), 3) if overlap_scores else 0.0
+
+    # 5. 答弁 sentence_indices が空のペアが含まれるか（prompting issue の指標）
+    empty_answer_count = sum(
+        1 for p in result_pairs
+        if not p.get("answer", {}).get("sentence_indices")
+    )
+    has_empty_answer = round(empty_answer_count / max(len(result_pairs), 1), 3) if result_pairs else 0.0
+
+    return {
+        "pair_count_diff": count_diff,
+        "topic_coverage": topic_coverage,
+        "intent_accuracy": intent_accuracy,
+        "sentence_index_overlap": sentence_index_overlap,
+        "has_empty_answer": has_empty_answer,
+    }
+
+
 SCORERS = {
     "speaker_tagging": score_speaker_tagging,
     "qa_pairs": score_qa_pairs,
+    "qa_seg": score_qa_seg,
     "summary": score_summary,
     "topics": score_topics,
 }
