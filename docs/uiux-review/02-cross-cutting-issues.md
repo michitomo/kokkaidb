@@ -53,7 +53,7 @@ window.location.href = `${base}/browse?topic=${encodeURIComponent(topic)}&commit
 
 ## 2.2【P0】「回避度」の方法論が利用者にも内部関係者にも見えない
 
-詳しくは [05-evasion-score.md](05-evasion-score.md) に分離するが、横断的な観点だけ:
+詳しくは [05-qa-quality-metrics.md](05-qa-quality-metrics.md) に分離するが、横断的な観点だけ:
 
 - どこにも算出根拠の説明文がない（フッタにも `/about/methodology` のような専用ページもない）。
 - LLM の解釈が後から変わると、過去スコアと比較できなくなる（モデル ID は metadata に記録されているが、UI に出ていない）。

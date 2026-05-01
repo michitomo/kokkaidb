@@ -180,7 +180,7 @@ evasion_scoreの目安:
 
 ### 影響
 
-- ダッシュボードの「回避度ランキング」が破綻（`docs/uiux-review/05-evasion-score.md` の指摘と
+- ダッシュボードの「回避度ランキング」が破綻（`docs/uiux-review/05-qa-quality-metrics.md` の指摘と
   直結）。
 - 質問者の発言を「最大回避された質問」として晒してしまう。**メディアに引用されたら
   名誉毀損リスク**がある。

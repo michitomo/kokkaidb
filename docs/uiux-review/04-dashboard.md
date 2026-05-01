@@ -44,7 +44,7 @@
    - 「新たに記録された約束事項 上位 5 件」
    - 各カードはクリックで該当セッション or 議員ページへ
 2. **異常値・要注目**
-   - 「回避度高 + サンプル十分」な答弁ペア（[05 章](05-evasion-score.md) の改良版指標で）
+   - 「回避度高 + サンプル十分」な答弁ペア（[05 章](05-qa-quality-metrics.md) の改良版指標で）
    - 「同じ議員が複数委員会で同じ質問」を検出
    - 「閣僚が約束したが、まだ次回質疑が無い」
 3. **会期全体の統計**
@@ -91,7 +91,7 @@
 - **しきい値を導入**: `totalAnswers >= 10` を満たさないと棒グラフに出さない（注釈で除外件数を表示）
 - 棒の右側に `n=152` のようにサンプルサイズを併記
 - 「答弁役割」フィルタを追加（大臣のみ／副大臣以上／全て）して、委員長や政府参考人を除外しやすく
-- 詳細は [05-evasion-score.md](05-evasion-score.md) で
+- 詳細は [05-qa-quality-metrics.md](05-qa-quality-metrics.md) で
 
 ---
 
@@ -174,4 +174,4 @@ const STATUS_COLOR = { unverified: "#9ca3af" };
 
 ---
 
-[← 戻る](README.md) ｜ [次の章: 05-evasion-score.md →](05-evasion-score.md)
+[← 戻る](README.md) ｜ [次の章: 05-qa-quality-metrics.md →](05-qa-quality-metrics.md)
