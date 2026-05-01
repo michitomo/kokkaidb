@@ -1,0 +1,142 @@
+[
+  {
+    "case_id": "bench_001",
+    "case_label": "本会議・防災庁設置法案（直接言及・現在FAIL）",
+    "model": "google/gemma-4-31B-it",
+    "elapsed_s": 0.0,
+    "actual_laws": [],
+    "scores": {
+      "law_precision": 0.0,
+      "law_recall": 0.0,
+      "law_f1": 0.0,
+      "required_law_hits": [],
+      "required_law_misses": [
+        "law_013",
+        "law_014"
+      ],
+      "forbidden_law_hits": [],
+      "spurious_laws": [],
+      "qa_id_recalls": {
+        "law_013": 0.0,
+        "law_014": 0.0
+      },
+      "pass": false
+    }
+  },
+  {
+    "case_id": "bench_002",
+    "case_label": "本会議・健康保険法等改正案（直接言及・現在FAIL）",
+    "model": "google/gemma-4-31B-it",
+    "elapsed_s": 0.0,
+    "actual_laws": [],
+    "scores": {
+      "law_precision": 0.0,
+      "law_recall": 0.0,
+      "law_f1": 0.0,
+      "required_law_hits": [],
+      "required_law_misses": [
+        "law_025"
+      ],
+      "forbidden_law_hits": [],
+      "spurious_laws": [],
+      "qa_id_recalls": {
+        "law_025": 0.0
+      },
+      "pass": false
+    }
+  },
+  {
+    "case_id": "bench_003",
+    "case_label": "単一QA最小ケース（直接言及・現在FAIL）",
+    "model": "google/gemma-4-31B-it",
+    "elapsed_s": 0.0,
+    "actual_laws": [],
+    "scores": {
+      "law_precision": 0.0,
+      "law_recall": 0.0,
+      "law_f1": 0.0,
+      "required_law_hits": [],
+      "required_law_misses": [
+        "law_025"
+      ],
+      "forbidden_law_hits": [],
+      "spurious_laws": [],
+      "qa_id_recalls": {
+        "law_025": 0.0
+      },
+      "pass": false
+    }
+  },
+  {
+    "case_id": "bench_004",
+    "case_label": "委員会・文脈推論・2法案（現在PASS）",
+    "model": "google/gemma-4-31B-it",
+    "elapsed_s": 0.0,
+    "actual_laws": [],
+    "scores": {
+      "law_precision": 0.0,
+      "law_recall": 0.0,
+      "law_f1": 0.0,
+      "required_law_hits": [],
+      "required_law_misses": [
+        "law_025",
+        "law_067"
+      ],
+      "forbidden_law_hits": [],
+      "spurious_laws": [],
+      "qa_id_recalls": {
+        "law_025": 0.0,
+        "law_067": 0.0
+      },
+      "pass": false
+    }
+  },
+  {
+    "case_id": "bench_005",
+    "case_label": "タグなし（予算委員会・一般質疑・現在PASS）",
+    "model": "google/gemma-4-31B-it",
+    "elapsed_s": 0.0,
+    "actual_laws": [],
+    "scores": {
+      "law_precision": 1.0,
+      "law_recall": 1.0,
+      "law_f1": 1.0,
+      "required_law_hits": [],
+      "required_law_misses": [],
+      "forbidden_law_hits": [],
+      "spurious_laws": [],
+      "qa_id_recalls": {},
+      "pass": true
+    }
+  },
+  {
+    "case_id": "bench_006",
+    "case_label": "複数法案・財務金融委員会（現在PASS）",
+    "model": "google/gemma-4-31B-it",
+    "elapsed_s": 0.0,
+    "actual_laws": [],
+    "scores": {
+      "law_precision": 0.0,
+      "law_recall": 0.0,
+      "law_f1": 0.0,
+      "required_law_hits": [],
+      "required_law_misses": [
+        "law_001",
+        "law_003",
+        "law_005",
+        "law_007",
+        "law_057"
+      ],
+      "forbidden_law_hits": [],
+      "spurious_laws": [],
+      "qa_id_recalls": {
+        "law_001": 0.0,
+        "law_005": 0.0,
+        "law_003": 0.0,
+        "law_007": 0.0,
+        "law_057": 0.0
+      },
+      "pass": false
+    }
+  }
+]
