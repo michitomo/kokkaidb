@@ -9,9 +9,34 @@ interface Props {
 
 const { pair, session } = Astro.props;
 const segmentDup = Astro.props.segmentFullTextDuplicate ?? false;
-const score = pair.answer.evasion_score;
-const evasionColor = score < 0.3 ? '#16a34a' : score < 0.7 ? '#d97706' : '#dc2626';
-const evasionLabel = score < 0.3 ? '低' : score < 0.7 ? '中' : '高';
+const metrics = pair.metrics;
+
+// P0: evasion_score を反転して「直接回答度」として表示
+const evasionScore = pair.answer.evasion_score;
+const directnessScore = metrics
+  ? metrics.as1_directness.score
+  : 1 - evasionScore;
+
+// P2: metricsがある場合は as1_directness.score を使用、なければ反転表示
+const directnessColor =
+  directnessScore >= 0.7 ? '#16a34a' : directnessScore >= 0.4 ? '#d97706' : '#dc2626';
+const directnessLabel =
+  directnessScore >= 0.7 ? '高' : directnessScore >= 0.4 ? '中' : '低';
+
+// コミットメントレベルのラベル
+const commitmentLevelLabels: Record<number, string> = {
+  0: 'なし',
+  1: '努力義務',
+  2: '検討約束',
+  3: '行動約束',
+  4: '期限付き行動',
+};
+
+// 5段階ドット表示（0.0-1.0 → ●●●●○）
+function scoreToDots(score: number): string {
+  const filled = Math.round(score * 5);
+  return '●'.repeat(filled) + '○'.repeat(5 - filled);
+}
 
 // 動画タイムスタンプを "M:SS〜" 形式に変換
 function formatVideoTime(videoUrl: string): string | null {
@@ -44,6 +69,13 @@ const qSummary = formatSummary(pair.question.summary);
 const aSummary = formatSummary(pair.answer.summary);
 const videoTitle = videoTime ? `動画を見る（${videoTime}）` : '動画を見る';
 const chamberName = session?.chamber === 'shugiin' ? '衆議院TV' : session?.chamber === 'sangiin' ? '参議院TV' : null;
+
+// 議事録価値ラベル
+const recordValueLabel: Record<string, string> = {
+  high: '高',
+  medium: '中',
+  low: '低',
+};
 ---
 <div
   class="qa-card"
@@ -53,17 +85,25 @@ const chamberName = session?.chamber === 'shugiin' ? '衆議院TV' : session?.ch
 >
   <div class="qa-header">
     <span class="topic">{pair.topic}</span>
-    {pair.video_url && (
-      <a
-        class="video-link"
-        href={pair.video_url}
-        target="_blank"
-        rel="noopener noreferrer"
-        title={videoTitle}
-      >
-        ▶ 動画{videoTime ? `（${videoTime}）` : ''}
-      </a>
-    )}
+    <div class="qa-header-right">
+      {metrics && metrics.oc1_record_value && (
+        <span class={`record-value-badge record-value-${metrics.would_be_referenced}`}>
+          議事録価値: {recordValueLabel[metrics.would_be_referenced] ?? metrics.would_be_referenced}
+          <span class="llm-label" title="LLM自動評価">ⓘ</span>
+        </span>
+      )}
+      {pair.video_url && (
+        <a
+          class="video-link"
+          href={pair.video_url}
+          target="_blank"
+          rel="noopener noreferrer"
+          title={videoTitle}
+        >
+          ▶ 動画{videoTime ? `（${videoTime}）` : ''}
+        </a>
+      )}
+    </div>
   </div>
 
   <div class="qa-columns">
@@ -86,6 +126,37 @@ const chamberName = session?.chamber === 'shugiin' ? '衆議院TV' : session?.ch
             {pair.question.full_text.split(/(?<=。)/).filter((s: string) => s.trim()).map((para: string) => (
               <p>{para}</p>
             ))}
+          </div>
+        </details>
+      )}
+      {metrics && (
+        <details class="metrics-details">
+          <summary class="expand-toggle">質問の評価指標 <span class="llm-label">LLM自動評価</span></summary>
+          <div class="metrics-block">
+            <div class="metric-row">
+              <span class="metric-name">論点明確度</span>
+              <span class="metric-dots">{scoreToDots(metrics.qq1_clarity.score)}</span>
+              <span class="metric-hint" title={metrics.qq1_clarity.main_question_one_liner}>
+                {metrics.qq1_clarity.sub_asks.length <= 1 ? '明確' : `${metrics.qq1_clarity.sub_asks.length}論点`}
+              </span>
+            </div>
+            <div class="metric-row">
+              <span class="metric-name">一次ソース密度</span>
+              <span class="metric-dots">{scoreToDots(metrics.qq2_groundedness.score)}</span>
+              <span class="metric-hint">{metrics.qq2_groundedness.cited_sources.length}件引用</span>
+            </div>
+            <div class="metric-row">
+              <span class="metric-name">当事者性</span>
+              <span class="metric-dots">{scoreToDots(metrics.qq4_stakeholder.score)}</span>
+              <span class="metric-hint">
+                {metrics.qq4_stakeholder.concreteness === 'concrete' ? '具体的' :
+                 metrics.qq4_stakeholder.concreteness === 'mid' ? '中程度' : '抽象的'}
+              </span>
+            </div>
+            <div class="metric-row">
+              <span class="metric-name">行動要求度</span>
+              <span class="metric-dots">{scoreToDots(metrics.qq5_actionability.score)}</span>
+            </div>
           </div>
         </details>
       )}
@@ -113,13 +184,59 @@ const chamberName = session?.chamber === 'shugiin' ? '衆議院TV' : session?.ch
           </div>
         </details>
       )}
-      <div class="evasion" style={`color: ${evasionColor}`}>
-        回避度 {evasionLabel}（{(score * 100).toFixed(0)}%）
+
+      {/* P0/P2: 直接回答度表示（metricsがない場合はevasion_scoreを反転して表示） */}
+      <div class="directness" style={`color: ${directnessColor}`}>
+        直接回答度 {directnessLabel}（{(directnessScore * 100).toFixed(0)}%）
+        {!metrics && <span class="legacy-hint" title="旧evasion_scoreを反転表示">ⓘ</span>}
       </div>
-      {pair.answer.has_commitment && pair.answer.commitment_text && (
-        <div class="commitment">
-          <span class="commitment-label">約束:</span> {pair.answer.commitment_text}
-        </div>
+
+      {metrics ? (
+        <details class="metrics-details">
+          <summary class="expand-toggle">答弁の評価指標 <span class="llm-label">LLM自動評価</span></summary>
+          <div class="metrics-block">
+            <div class="metric-row">
+              <span class="metric-name">直接回答度</span>
+              <span class="metric-dots">{scoreToDots(metrics.as1_directness.score)}</span>
+              <span class="metric-hint">
+                {metrics.as1_directness.addresses_main_question === 'directly' ? '直接回答' :
+                 metrics.as1_directness.addresses_main_question === 'partially' ? '部分回答' :
+                 metrics.as1_directness.addresses_main_question === 'tangentially' ? '迂回回答' : '無回答'}
+              </span>
+            </div>
+            <div class="metric-row">
+              <span class="metric-name">具体情報量</span>
+              <span class="metric-dots">{scoreToDots(metrics.as2_information_density.score)}</span>
+              <span class="metric-hint">{metrics.as2_information_density.concrete_items_in_answer.length}件</span>
+            </div>
+            <div class="metric-row">
+              <span class="metric-name">コミットメント</span>
+              <span class={`commitment-lv commitment-lv-${metrics.as4_commitment.level}`}>
+                Lv{metrics.as4_commitment.level} {commitmentLevelLabels[metrics.as4_commitment.level]}
+              </span>
+            </div>
+          </div>
+          {metrics.as4_commitment.trigger_phrase && (
+            <div class="trigger-phrase">「{metrics.as4_commitment.trigger_phrase}」</div>
+          )}
+          {metrics.oc3_quotability.quote_candidate && (
+            <div class="quote-candidate">
+              <span class="quote-label">引用候補:</span> {metrics.oc3_quotability.quote_candidate}
+            </div>
+          )}
+          {metrics.evaluation_note && (
+            <div class="evaluation-note">{metrics.evaluation_note}</div>
+          )}
+          {metrics.scoring_confidence === 'low' && (
+            <div class="low-confidence">⚠️ この評価はAI自身が低い自信度を示しています</div>
+          )}
+        </details>
+      ) : (
+        pair.answer.has_commitment && pair.answer.commitment_text && (
+          <div class="commitment">
+            <span class="commitment-label">約束:</span> {pair.answer.commitment_text}
+          </div>
+        )
       )}
     </div>
   </div>
@@ -159,6 +276,36 @@ const chamberName = session?.chamber === 'shugiin' ? '衆議院TV' : session?.ch
   .topic {
     font-weight: 600;
     color: #374151;
+  }
+  .qa-header-right {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .record-value-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.15rem 0.45rem;
+    border-radius: 4px;
+  }
+  .record-value-high {
+    background: #dbeafe;
+    color: #1e40af;
+  }
+  .record-value-medium {
+    background: #fef3c7;
+    color: #92400e;
+  }
+  .record-value-low {
+    background: #f3f4f6;
+    color: #6b7280;
+  }
+  .llm-label {
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: #9ca3af;
+    margin-left: 0.2rem;
+    cursor: help;
   }
   .video-link {
     color: #2563eb;
@@ -207,10 +354,15 @@ const chamberName = session?.chamber === 'shugiin' ? '衆議院TV' : session?.ch
   .summary-list li {
     margin-bottom: 0.15rem;
   }
-  .evasion {
+  .directness {
     font-size: 0.8rem;
     font-weight: 600;
     margin-bottom: 0.4rem;
+  }
+  .legacy-hint {
+    font-weight: 400;
+    color: #9ca3af;
+    cursor: help;
   }
   .commitment {
     font-size: 0.8rem;
@@ -223,6 +375,9 @@ const chamberName = session?.chamber === 'shugiin' ? '衆議院TV' : session?.ch
   }
   .commitment-label { font-weight: 600; }
   .full-text-details {
+    margin-top: 0.5rem;
+  }
+  .metrics-details {
     margin-top: 0.5rem;
   }
   .expand-toggle {
@@ -249,6 +404,77 @@ const chamberName = session?.chamber === 'shugiin' ? '衆議院TV' : session?.ch
     text-indent: 1em;
   }
   .full-text p:last-child { margin-bottom: 0; }
+  .metrics-block {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+  }
+  .metric-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+  .metric-name {
+    width: 7rem;
+    color: #6b7280;
+    flex-shrink: 0;
+  }
+  .metric-dots {
+    font-family: monospace;
+    color: #2563eb;
+    letter-spacing: 0.05em;
+  }
+  .metric-hint {
+    color: #9ca3af;
+    font-size: 0.75rem;
+  }
+  .commitment-lv {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+  }
+  .commitment-lv-0 { background: #f3f4f6; color: #6b7280; }
+  .commitment-lv-1 { background: #fef3c7; color: #92400e; }
+  .commitment-lv-2 { background: #dbeafe; color: #1e40af; }
+  .commitment-lv-3 { background: #d1fae5; color: #065f46; }
+  .commitment-lv-4 { background: #a7f3d0; color: #064e3b; font-weight: 700; }
+  .trigger-phrase {
+    font-size: 0.78rem;
+    color: #374151;
+    background: #f9fafb;
+    border-left: 2px solid #d1d5db;
+    padding: 0.3rem 0.5rem;
+    margin-top: 0.35rem;
+    font-style: italic;
+  }
+  .quote-candidate {
+    font-size: 0.78rem;
+    color: #374151;
+    background: #eff6ff;
+    border-left: 2px solid #2563eb;
+    padding: 0.3rem 0.5rem;
+    margin-top: 0.35rem;
+  }
+  .quote-label {
+    font-weight: 600;
+    color: #1d4ed8;
+  }
+  .evaluation-note {
+    font-size: 0.78rem;
+    color: #6b7280;
+    margin-top: 0.4rem;
+    font-style: italic;
+  }
+  .low-confidence {
+    font-size: 0.75rem;
+    color: #b45309;
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+    margin-top: 0.4rem;
+  }
   .qa-source {
     padding: 0.4rem 1rem;
     background: #f8fafc;

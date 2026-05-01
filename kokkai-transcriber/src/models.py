@@ -6,6 +6,117 @@ from typing import Literal
 
 from pydantic import BaseModel, Field
 
+# ---------------------------------------------------------------------------
+# QA品質評価指標 V2.0 (QQ/AS/OC 12軸フレームワーク)
+# docs/uiux-review/05-qa-quality-metrics.md 参照
+# ---------------------------------------------------------------------------
+
+CitedSourceType = Literal["number", "organization", "law", "date", "past_answer", "field_case", "other"]
+ConcreteItemType = Literal["number", "proper_noun", "deadline", "evidence_citation"]
+StakeholderConcreteness = Literal["abstract", "mid", "concrete"]
+DirectnessLabel = Literal["directly", "partially", "tangentially", "not_at_all"]
+CommitmentLevel = Literal[0, 1, 2, 3, 4]
+ScoringConfidence = Literal["low", "medium", "high"]
+AnswererSeniority = Literal["minister", "vice_minister", "bureaucrat", "reference", "other"]
+
+
+class CitedSource(BaseModel):
+    type: CitedSourceType
+    excerpt: str
+
+
+class ConcreteItem(BaseModel):
+    type: ConcreteItemType
+    excerpt: str
+
+
+class QQ1Clarity(BaseModel):
+    """QQ-1 論点明確度 (Clarity)"""
+    main_question_one_liner: str
+    sub_asks: list[str] = Field(default_factory=list)
+    score: float = Field(ge=0.0, le=1.0)
+
+
+class QQ2Groundedness(BaseModel):
+    """QQ-2 具体性・一次ソース密度 (Groundedness)"""
+    cited_sources: list[CitedSource] = Field(default_factory=list)
+    translates_big_number_to_daily_life: bool = False
+    score: float = Field(ge=0.0, le=1.0)
+
+
+class QQ4Stakeholder(BaseModel):
+    """QQ-4 当事者性 (Stakeholder salience)"""
+    stakeholder_category: str | None = None
+    concreteness: StakeholderConcreteness
+    score: float = Field(ge=0.0, le=1.0)
+
+
+class QQ5Actionability(BaseModel):
+    """QQ-5 行動要求度 (Actionability)"""
+    is_yes_no_form: bool = False
+    has_deadline: bool = False
+    presents_options: bool = False
+    shifts_burden_of_proof: bool = False
+    score: float = Field(ge=0.0, le=1.0)
+
+
+class AS1Directness(BaseModel):
+    """AS-1 直接回答度 (Directness) ← 旧 evasion_score の反転"""
+    addresses_main_question: DirectnessLabel
+    topic_shift_detected: bool = False
+    score: float = Field(ge=0.0, le=1.0)
+
+
+class AS2InformationDensity(BaseModel):
+    """AS-2 具体情報量 (Information density)"""
+    concrete_items_in_answer: list[ConcreteItem] = Field(default_factory=list)
+    score: float = Field(ge=0.0, le=1.0)
+
+
+class AS4Commitment(BaseModel):
+    """AS-4 コミットメント強度 (Commitment level) Lv0-4"""
+    level: CommitmentLevel
+    trigger_phrase: str | None = None
+    matched_pattern: str | None = None
+
+
+class OC1RecordValue(BaseModel):
+    """OC-1 議事録価値 (Record value)"""
+    pins_legal_interpretation: bool = False
+    fixes_official_number: bool = False
+    goes_beyond_precedent: bool = False
+    surfaces_government_uncertainty: bool = False
+    answerer_seniority: AnswererSeniority = "other"
+    score: float = Field(ge=0.0, le=1.0)
+
+
+class OC3Quotability(BaseModel):
+    """OC-3 引用可能性 (Quotability)"""
+    quote_candidate: str | None = None
+    score: float = Field(ge=0.0, le=1.0)
+
+
+class QAMetrics(BaseModel):
+    """V4評価プロンプトの出力（QQ/AS/OC 9軸 + 補助フィールド）
+
+    score_schema_version: "2.0", prompt_version: "V4"
+    """
+    qq1_clarity: QQ1Clarity
+    qq2_groundedness: QQ2Groundedness
+    qq4_stakeholder: QQ4Stakeholder
+    qq5_actionability: QQ5Actionability
+    as1_directness: AS1Directness
+    as2_information_density: AS2InformationDensity
+    as4_commitment: AS4Commitment
+    oc1_record_value: OC1RecordValue
+    oc3_quotability: OC3Quotability
+    scoring_confidence: ScoringConfidence
+    evaluation_note: str
+    would_be_referenced: ScoringConfidence
+    issue_in_design: str | None = None
+    prompt_version: str = "V4"
+    schema_version: str = "2.0"
+
 SessionKind = Literal[
     "regular_qa",
     "representative_questions",
@@ -152,12 +263,15 @@ class QAPair(BaseModel):
     follow_up_ids: list[str] = Field(default_factory=list)
     related_law_ids: list[str] = Field(default_factory=list)
     video_url: str
+    metrics: QAMetrics | None = None  # V4評価プロンプト出力（score_schema_version 2.0）
 
 
 class QAPairsOutput(BaseModel):
     """qa_pairs.json のルート"""
 
     pairs: list[QAPair]
+    score_schema_version: str = "1.0"  # V4評価適用後は "2.0" になる
+    prompt_version: str = ""  # "V4" 等
 
 
 class KeyCommitment(BaseModel):

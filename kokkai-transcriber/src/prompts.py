@@ -123,10 +123,154 @@ JSON形式で次のように返してください:
 - 関連法案がなければ "law_ids": [] を返す
 """
 
+QA_METRICS_V4_SYSTEM_PROMPT = """This task evaluates one question-and-answer pair from a Japanese Diet
+(national parliament) committee. Q&A text is in Japanese; reason in English
+and output JSON only.
+
+# Context
+- "Question" = a Diet member questioning the government.
+- "Answer" = a minister, vice-minister, government bureaucrat (政府参考人),
+  or outside expert (参考人) responding.
+- A Q&A is valuable when it (a) records facts, interpretations, or
+  precedent that can later be cited; (b) extracts a commitment with a
+  next action; (c) makes a specific stakeholder visible; or (d) pins down
+  a legal/budgetary interpretation. Direct answers are not automatically
+  valuable; evasive answers are not automatically worthless. Score on
+  substance, not on tone or partisanship.
+
+# Scoring discipline
+1. For every score, FIRST populate the evidence fields by extracting
+   verbatim quotes. THEN choose the score consistent with what you listed.
+2. If an evidence list is empty, the score MUST sit in the bottom band.
+3. Do NOT round up on overall impression.
+4. Set "scoring_confidence" to "low" when the text is ambiguous, the answer
+   is empty, or you had to interpret heavily. This is used by the system
+   to flag uncertain pairs for human review.
+
+# Discriminating rules (read carefully)
+
+## QQ-1 clarity
+List sub-asks separately. ONE sub-ask = score 0.8-1.0. TWO sub-asks =
+0.5-0.7. THREE+ = 0.2-0.4. A "follow-up clarification within the same
+ask" (e.g. "and why?") does not count as a separate sub-ask. Pure
+opinion-statements with no question mark = 0.0-0.2.
+
+## QQ-4 stakeholder concreteness
+- "concrete": question names a specific person, organization, place, or
+  legal case (e.g. "袴田事件の元被告", "○○市の産科診療所", "養蜂業者○○団体").
+  A named profession alone is NOT concrete unless tied to a specific
+  instance.
+- "mid": a profession, condition, or demographic without a specific
+  instance (e.g. "がん患者", "中小企業", "妊婦", "養蜂業者").
+- "abstract": "国民", "事業者", "国民全体", "皆様".
+
+## AS-4 commitment level (THE single most error-prone field)
+Match phrases against these patterns. Pick the HIGHEST level that
+genuinely applies; do not promote on sympathetic tone.
+- Lv0: no commitment phrase. Acknowledgment of the issue ("ご指摘のとおり"
+  or "問題意識のとおり") with NO future-tense verb of action is Lv0.
+- Lv1: aspirational verb only — "努めてまいります", "取り組んでまいります",
+  "真摯に対応してまいります", "しっかり進めてまいります". No specific
+  mechanism named.
+- Lv2: explicit "検討" / "議論" verb in future tense with the government
+  as subject — "検討してまいります", "議論させていただきたい".
+- Lv3: future-tense verb describing a CONCRETE government action with a
+  named mechanism — "検討会を設置いたします", "次回までに整理いたします",
+  "公表いたします", "ガイドラインを策定いたします". Must have both a
+  named action object AND an action verb beyond "検討".
+- Lv4: Lv3 + an explicit time anchor — "○月までに", "今年度中に",
+  "来年度予算で", "次期○○計画で".
+
+## OC-1 record value
+Compute as base + bonus, then clamp to [0,1].
+- base = 0.25 * (number of true outcome flags below)
+- bonus = +0.15 if answerer_seniority is minister or vice_minister
+- bonus = +0.10 if answer admits government uncertainty / lack of
+  evidence (e.g. "把握しておりません" in response to a "立証責任転換"-style
+  question — this creates a citable record even though the answer is
+  evasive)
+Outcome flags:
+  pins_legal_interpretation, fixes_official_number, goes_beyond_precedent,
+  surfaces_government_uncertainty
+
+# Output JSON schema (use these exact keys; output JSON ONLY)
+
+{
+  "qq1_clarity": {
+    "main_question_one_liner": "<=25 Japanese chars summarising the core ask",
+    "sub_asks": ["each distinct sub-ask as a short Japanese phrase; [] if just one"],
+    "score": 0.0
+  },
+  "qq2_groundedness": {
+    "cited_sources": [
+      {"type": "number|organization|law|date|past_answer|field_case|other",
+       "excerpt": "short verbatim quote from the question"}
+    ],
+    "translates_big_number_to_daily_life": false,
+    "score": 0.0
+  },
+  "qq4_stakeholder": {
+    "stakeholder_category": "named entity from the question, or null",
+    "concreteness": "abstract|mid|concrete",
+    "score": 0.0
+  },
+  "qq5_actionability": {
+    "is_yes_no_form": false,
+    "has_deadline": false,
+    "presents_options": false,
+    "shifts_burden_of_proof": false,
+    "score": 0.0
+  },
+  "as1_directness": {
+    "addresses_main_question": "directly|partially|tangentially|not_at_all",
+    "topic_shift_detected": false,
+    "score": 0.0
+  },
+  "as2_information_density": {
+    "concrete_items_in_answer": [
+      {"type": "number|proper_noun|deadline|evidence_citation",
+       "excerpt": "short verbatim quote from the answer"}
+    ],
+    "score": 0.0
+  },
+  "as4_commitment": {
+    "level": 0,
+    "trigger_phrase": "verbatim quote justifying the level, or null if Lv0",
+    "matched_pattern": "which rule pattern matched, or null"
+  },
+  "oc1_record_value": {
+    "pins_legal_interpretation": false,
+    "fixes_official_number": false,
+    "goes_beyond_precedent": false,
+    "surfaces_government_uncertainty": false,
+    "answerer_seniority": "minister|vice_minister|bureaucrat|reference|other",
+    "score": 0.0
+  },
+  "oc3_quotability": {
+    "quote_candidate": "single most quotable sentence (30-80 Japanese chars)",
+    "score": 0.0
+  },
+  "scoring_confidence": "low|medium|high",
+  "evaluation_note": "1-2 sentences in Japanese summarising the verdict",
+  "would_be_referenced": "high|medium|low",
+  "issue_in_design": "one sentence in Japanese on a fixable design weakness in the question, or null"
+}"""
+
+QA_METRICS_V4_USER_TEMPLATE = """intent: {intent}
+
+=== QUESTION (Japanese) ===
+{question_text}
+
+=== ANSWER (Japanese) ===
+{answer_text}"""
+
+
 __all__ = [
     "QA_SEGMENT_SYSTEM_PROMPT",
     "SESSION_SUMMARY_SYSTEM_PROMPT",
     "TOPICS_SYSTEM_PROMPT",
     "COMMITMENTS_SYSTEM_PROMPT",
     "LAW_TAGGING_SYSTEM_PROMPT",
+    "QA_METRICS_V4_SYSTEM_PROMPT",
+    "QA_METRICS_V4_USER_TEMPLATE",
 ]
