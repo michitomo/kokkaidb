@@ -227,6 +227,36 @@ class TestGetSessionDetailWithFixture:
 
         assert result.committee == "本会議"
 
+    def test_session_kind_for_floor_meeting(self) -> None:
+        """本会議の session_kind が floor_speech 系列に分類されること。"""
+        html_content = _load_fixture_html()
+
+        mock_response = MagicMock()
+        mock_response.text = html_content
+        mock_response.raise_for_status = MagicMock()
+
+        with patch("src.scrapers.shugiin.requests.get", return_value=mock_response):
+            result = get_session_detail("56149")
+
+        assert result.session_kind in {
+            "floor_speech",
+            "representative_questions",
+        }
+
+    def test_speakers_have_role_assigned(self) -> None:
+        """全 speaker に role が派生（空文字でない）されていること。"""
+        html_content = _load_fixture_html()
+
+        mock_response = MagicMock()
+        mock_response.text = html_content
+        mock_response.raise_for_status = MagicMock()
+
+        with patch("src.scrapers.shugiin.requests.get", return_value=mock_response):
+            result = get_session_detail("56149")
+
+        for speaker in result.speakers:
+            assert speaker.role != ""
+
 
 class TestShugiinScraperClass:
     """ShugiinScraperクラスのテスト。"""

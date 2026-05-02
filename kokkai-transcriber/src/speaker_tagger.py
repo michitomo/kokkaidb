@@ -11,8 +11,8 @@ import json
 import logging
 import re
 
-from src.api_client import get_client as _get_client, LLM_MODEL, DEEPINFRA_BASE_URL, with_retry
-
+from src.api_client import LLM_MODEL, with_retry
+from src.api_client import get_client as _get_client
 from src.models import (
     RawTranscript,
     SegmentTranscript,

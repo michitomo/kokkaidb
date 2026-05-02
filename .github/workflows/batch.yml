@@ -167,6 +167,11 @@ jobs:
         working-directory: site
         run: npm ci
 
+      - name: Validate data referential integrity (non-blocking until reprocess)
+        working-directory: site
+        continue-on-error: true
+        run: npm run validate:data
+
       - name: Build Astro site (includes Pagefind via postbuild)
         working-directory: site
         run: npm run build

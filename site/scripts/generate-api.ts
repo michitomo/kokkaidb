@@ -234,35 +234,6 @@ function parseLawsMd(filePath: string): LawEntry[] {
   return laws;
 }
 
-/**
- * Q&Aペアのtopic/summaryと法案タグを照合し、関連法案IDを返す。
- */
-/**
- * 1つのQ&Aペアに対して関連法案IDを返す。
- * summary だけでなく full_text も照合対象に含め、スペース入りタグは分割して扱う。
- */
-function matchLawsForQA(
-  qa: { topic: string; question_summary: string; answer_summary: string; question_full_text: string; answer_full_text: string },
-  laws: LawEntry[],
-): string[] {
-  if (laws.length === 0) return [];
-
-  const qaText = `${qa.topic} ${qa.question_summary} ${qa.answer_summary} ${qa.question_full_text} ${qa.answer_full_text}`;
-  const qaTextLower = qaText.toLowerCase();
-
-  const matched: string[] = [];
-  for (const law of laws) {
-    // スペースを含むタグは分割して個別タグとして扱う
-    const expandedTags = law.tags.flatMap(tag => tag.includes(' ') ? tag.split(/\s+/) : [tag]);
-    const hitCount = expandedTags.filter(tag => qaTextLower.includes(tag.toLowerCase())).length;
-    // タグの25%以上がヒット、かつ最低2つ以上
-    if (hitCount >= 2 && hitCount / expandedTags.length >= 0.25) {
-      matched.push(law.id);
-    }
-  }
-  return matched;
-}
-
 // --- ユーティリティ ---
 function readJson<T>(filePath: string): T {
   return JSON.parse(fs.readFileSync(filePath, 'utf-8')) as T;
@@ -575,73 +546,39 @@ export function generateApi(dataDir: string, outDir: string): void {
       }
     }
 
-    // Q&AペアをIndexQAPair形式に変換（法案マッチング込み）
+    // Q&AペアをIndexQAPair形式に変換
+    // related_laws の優先順位:
+    //   1. qa_pairs.json::pairs[].related_law_ids (Step 6c per-pair tagging)
+    //   2. summary.json::related_laws の qa_id 逆引き（後方互換）
+    //   3. 旧 index.json の値（再生成時の保持）
     const existingSessionQALaws = existingQALaws.get(metadata.session_id) || {};
-    const indexQAPairs: IndexQAPair[] = rawPairs.map((p) => ({
-      id: p.id,
-      topic: p.topic,
-      question_speaker: p.question.speaker,
-      question_party: p.question.party,
-      question_summary: p.question.summary,
-      question_full_text: p.question.full_text || '',
-      question_intent: p.question.intent,
-      answer_speaker: p.answer.speaker,
-      answer_role: p.answer.role,
-      answer_summary: p.answer.summary,
-      answer_full_text: p.answer.full_text || '',
-      evasion_score: p.answer.evasion_score,
-      has_commitment: p.answer.has_commitment,
-      commitment_text: p.answer.commitment_text,
-      video_url: p.video_url,
-      related_laws: (() => {
-        // LLMタグ（summary.json由来）+ キーワードマッチをマージ
-        const llmTags = llmLawTags.get(p.id) || [];
-        const keywordTags = laws.length > 0
-          ? matchLawsForQA({ topic: p.topic, question_summary: p.question.summary, answer_summary: p.answer.summary, question_full_text: p.question.full_text || '', answer_full_text: p.answer.full_text || '' }, laws)
-          : [];
-        const fallback = existingSessionQALaws[p.id] || [];
-        return [...new Set([...llmTags, ...keywordTags, ...(llmTags.length === 0 && keywordTags.length === 0 ? fallback : [])])];
-      })(),
-    }));
-
-    // セッション内伝播
-    if (laws.length > 0 && indexQAPairs.length > 0) {
-      const propagateLaws = new Set<string>();
-
-      // (a) 法案タイトル一致: Q&Aのtopicに法案のコア名が含まれていれば全Q&Aに付与
-      //     例: topic="健康保険法等の一部を改正する法律案の趣旨" → 健康保険法 law
-      for (const qa of indexQAPairs) {
-        const topicLower = qa.topic?.toLowerCase() || '';
-        for (const law of laws) {
-          // 法案タイトルからコア名を抽出（「〜法案」「〜法律案」まで）
-          const coreMatch = law.title.match(/^(.+?(?:法案|法律案|条約))/);
-          if (coreMatch && coreMatch[1].length >= 4 && topicLower.includes(coreMatch[1].toLowerCase())) {
-            propagateLaws.add(law.id);
-          }
-        }
-      }
-
-      // (b) 頻度ベース: 同一法案がQ&Aの10%以上（最低3件）でマッチ → 全Q&Aに付与
-      const lawHitCounts = new Map<string, number>();
-      for (const qa of indexQAPairs) {
-        for (const lawId of qa.related_laws) {
-          lawHitCounts.set(lawId, (lawHitCounts.get(lawId) || 0) + 1);
-        }
-      }
-      const minHits = Math.max(3, Math.ceil(indexQAPairs.length * 0.1));
-      for (const [lawId, count] of lawHitCounts) {
-        if (count >= minHits) {
-          propagateLaws.add(lawId);
-        }
-      }
-
-      if (propagateLaws.size > 0) {
-        for (const qa of indexQAPairs) {
-          const merged = new Set([...qa.related_laws, ...propagateLaws]);
-          (qa as any).related_laws = [...merged];
-        }
-      }
-    }
+    const indexQAPairs: IndexQAPair[] = rawPairs.map((p) => {
+      const perPairTags = p.related_law_ids ?? [];
+      const summaryTags = llmLawTags.get(p.id) ?? [];
+      const fallback = existingSessionQALaws[p.id] ?? [];
+      const merged =
+        perPairTags.length > 0 ? perPairTags
+        : summaryTags.length > 0 ? summaryTags
+        : fallback;
+      return {
+        id: p.id,
+        topic: p.topic,
+        question_speaker: p.question.speaker,
+        question_party: p.question.party,
+        question_summary: p.question.summary,
+        question_full_text: p.question.full_text || '',
+        question_intent: p.question.intent,
+        answer_speaker: p.answer.speaker,
+        answer_role: p.answer.role,
+        answer_summary: p.answer.summary,
+        answer_full_text: p.answer.full_text || '',
+        evasion_score: p.answer.evasion_score,
+        has_commitment: p.answer.has_commitment,
+        commitment_text: p.answer.commitment_text,
+        video_url: p.video_url,
+        related_laws: [...new Set(merged)],
+      };
+    });
 
     // セッションのrelated_lawsはQ&Aペアのunion
     const relatedLaws = [...new Set(indexQAPairs.flatMap(qa => qa.related_laws))];

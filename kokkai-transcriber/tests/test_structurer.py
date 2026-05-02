@@ -22,9 +22,11 @@ from src.structurer import (
     _build_sentence_to_utterance_map,
     _fuzzy_lookup,
     _split_sentences,
+    build_summary_related_laws,
+    generate_key_commitments,
     generate_qa_pairs,
-    generate_summary,
-    generate_topics,
+    generate_session_summary,
+    generate_topics_and_key_topics,
 )
 
 
@@ -264,25 +266,30 @@ class TestGenerateQAPairs:
                 {
                     "topic": "トピック1",
                     "question": {
-                        "speaker": "話者A", "party": "党A",
-                        "summary": "質問1", "full_text": "質問1全文", "intent": "fact_check",
+                        "summary": "質問1",
+                        "sentence_indices": [0],
+                        "intent": "fact_check",
                     },
                     "answer": {
-                        "speaker": "答弁者A", "role": "大臣A",
-                        "summary": "答弁1", "full_text": "答弁1全文",
-                        "evasion_score": 0.2, "has_commitment": False, "commitment_text": "",
+                        "summary": "答弁1",
+                        "sentence_indices": [1],
+                        "evasion_score": 0.2,
+                        "has_commitment": False,
+                        "commitment_text": "",
                     },
                 },
                 {
                     "topic": "トピック2",
                     "question": {
-                        "speaker": "話者B", "party": "党B",
-                        "summary": "質問2", "full_text": "質問2全文", "intent": "accountability",
+                        "summary": "質問2",
+                        "sentence_indices": [0],
+                        "intent": "accountability",
                     },
                     "answer": {
-                        "speaker": "答弁者B", "role": "大臣B",
-                        "summary": "答弁2", "full_text": "答弁2全文",
-                        "evasion_score": 0.7, "has_commitment": True,
+                        "summary": "答弁2",
+                        "sentence_indices": [1],
+                        "evasion_score": 0.7,
+                        "has_commitment": True,
                         "commitment_text": "検討します",
                     },
                 },
@@ -332,132 +339,212 @@ class TestGenerateQAPairs:
             assert 0.0 <= pair.answer.evasion_score <= 1.0
 
 
-class TestGenerateSummary:
-    def test_returns_summary_output(
-        self, sample_utterances: UtterancesOutput
-    ) -> None:
-        """SummaryOutput が返されること。"""
-        from src.models import QAPair, QuestionDetail, AnswerDetail
-        qa_pairs = QAPairsOutput(
-            pairs=[
-                QAPair(
-                    id="qa_001",
-                    segment_index=1,
-                    topic="高額療養費",
-                    question=QuestionDetail(
-                        speaker="古川あおい",
-                        party="チームみらい",
-                        summary="高額療養費の問題",
-                        full_text="全文",
-                        intent="fact_check",
-                    ),
-                    answer=AnswerDetail(
-                        speaker="上野賢一郎",
-                        role="大臣",
-                        summary="認識している",
-                        full_text="答弁全文",
-                        evasion_score=0.3,
-                        has_commitment=True,
-                        commitment_text="検討する",
-                    ),
-                    video_url="https://example.com",
-                )
-            ]
-        )
+def _make_qa_pairs(*pair_ids: str) -> QAPairsOutput:
+    from src.models import AnswerDetail, QAPair, QuestionDetail
 
-        mock_data = {
-            "session_summary": "今回の会議では健康保険法改正が議題となった。",
-            "key_topics": ["高額療養費", "健康保険法改正"],
-            "key_commitments": [
-                {
-                    "speaker": "上野賢一郎",
-                    "role": "厚生労働大臣",
-                    "text": "次期制度改正の検討課題として位置づけてまいりたい",
-                    "topic": "高額療養費",
-                    "qa_id": "qa_001",
-                }
-            ],
-        }
+    return QAPairsOutput(
+        pairs=[
+            QAPair(
+                id=pid,
+                segment_index=i,
+                topic=f"トピック{i}",
+                question=QuestionDetail(
+                    speaker="古川あおい",
+                    party="チームみらい",
+                    summary="要旨",
+                    full_text="全文",
+                    intent="fact_check",
+                ),
+                answer=AnswerDetail(
+                    speaker="上野賢一郎",
+                    role="答弁者",
+                    summary="答弁要旨",
+                    full_text="答弁全文",
+                    evasion_score=0.3,
+                    has_commitment=False,
+                    commitment_text="",
+                ),
+                video_url="https://example.com",
+            )
+            for i, pid in enumerate(pair_ids)
+        ]
+    )
 
-        with patch("src.structurer._get_client") as mock_client_factory:
+
+class TestGenerateSessionSummary:
+    def test_returns_string_from_qa_pairs(self) -> None:
+        qa_pairs = _make_qa_pairs("qa_001")
+        mock_data = {"session_summary": "今回の会議では高額療養費について議論された。"}
+
+        with patch("src.structurer._get_client") as mock_factory:
             mock_client = MagicMock()
             mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_data)
-            mock_client_factory.return_value = mock_client
-
+            mock_factory.return_value = mock_client
             with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
-                result = generate_summary(sample_utterances, qa_pairs)
+                result = generate_session_summary(qa_pairs)
 
-        assert isinstance(result, SummaryOutput)
+        assert result == "今回の会議では高額療養費について議論された。"
 
-    def test_key_topics_not_empty(
-        self, sample_utterances: UtterancesOutput
-    ) -> None:
-        """key_topics が空でないこと。"""
-        from src.models import QAPairsOutput
-        qa_pairs = QAPairsOutput(pairs=[])
+    def test_empty_qa_with_no_utterances_returns_empty(self) -> None:
+        with patch("src.structurer._get_client") as mock_factory:
+            result = generate_session_summary(QAPairsOutput(pairs=[]), None)
 
-        mock_data = {
-            "session_summary": "要約テキスト",
-            "key_topics": ["トピック1", "トピック2"],
-            "key_commitments": [],
-        }
-
-        with patch("src.structurer._get_client") as mock_client_factory:
-            mock_client = MagicMock()
-            mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_data)
-            mock_client_factory.return_value = mock_client
-
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
-                result = generate_summary(sample_utterances, qa_pairs)
-
-        assert len(result.key_topics) > 0
+        assert result == ""
+        mock_factory.assert_not_called()
 
 
-class TestGenerateTopics:
-    def test_returns_topics_output(self) -> None:
-        """TopicsOutput が返されること。"""
-        from src.models import QAPair, QAPairsOutput, QuestionDetail, AnswerDetail
-        qa_pairs = QAPairsOutput(
-            pairs=[
-                QAPair(
-                    id="qa_001",
-                    segment_index=0,
-                    topic="健康保険法改正",
-                    question=QuestionDetail(
-                        speaker="古川あおい", party="チームみらい",
-                        summary="要旨", full_text="全文", intent="fact_check",
-                    ),
-                    answer=AnswerDetail(
-                        speaker="上野", role="大臣",
-                        summary="答弁", full_text="答弁全文",
-                        evasion_score=0.2, has_commitment=False, commitment_text="",
-                    ),
-                    video_url="https://example.com",
-                )
-            ]
-        )
-
+class TestGenerateTopicsAndKeyTopics:
+    def test_returns_topics_and_subset_key_topics(self) -> None:
+        qa_pairs = _make_qa_pairs("qa_001", "qa_002")
         mock_data = {
             "topics": [
                 {
                     "name": "医療保険制度改革",
-                    "description": "高額療養費制度の見直しを含む健康保険法改正に関する質疑",
+                    "description": "高額療養費制度の見直し",
                     "related_qa_ids": ["qa_001"],
-                    "related_speakers": ["古川あおい", "上野賢一郎"],
+                    "related_speakers": ["古川あおい"],
+                },
+                {
+                    "name": "周産期医療",
+                    "description": "妊婦支援",
+                    "related_qa_ids": ["qa_002"],
+                    "related_speakers": ["古川あおい"],
+                },
+            ],
+            "key_topics": ["医療保険制度改革", "存在しないトピック"],
+        }
+
+        with patch("src.structurer._get_client") as mock_factory:
+            mock_client = MagicMock()
+            mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_data)
+            mock_factory.return_value = mock_client
+            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+                topics, key_topics = generate_topics_and_key_topics(qa_pairs)
+
+        assert isinstance(topics, TopicsOutput)
+        assert len(topics.topics) == 2
+        assert key_topics == ["医療保険制度改革"]
+
+    def test_drops_unknown_qa_id_from_related_qa_ids(self) -> None:
+        qa_pairs = _make_qa_pairs("qa_001")
+        mock_data = {
+            "topics": [
+                {
+                    "name": "テーマ A",
+                    "description": "...",
+                    "related_qa_ids": ["qa_001", "qa_999"],
+                    "related_speakers": [],
                 }
+            ],
+            "key_topics": ["テーマ A"],
+        }
+
+        with patch("src.structurer._get_client") as mock_factory:
+            mock_client = MagicMock()
+            mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_data)
+            mock_factory.return_value = mock_client
+            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+                topics, _ = generate_topics_and_key_topics(qa_pairs)
+
+        assert topics.topics[0].related_qa_ids == ["qa_001"]
+
+    def test_empty_qa_returns_empty_without_llm_call(self) -> None:
+        with patch("src.structurer._get_client") as mock_factory:
+            topics, key_topics = generate_topics_and_key_topics(QAPairsOutput(pairs=[]))
+
+        assert topics.topics == []
+        assert key_topics == []
+        mock_factory.assert_not_called()
+
+
+class TestGenerateKeyCommitments:
+    def test_drops_unknown_qa_id(self) -> None:
+        qa_pairs = _make_qa_pairs("qa_001")
+        mock_data = {
+            "key_commitments": [
+                {
+                    "speaker": "上野賢一郎",
+                    "role": "答弁者",
+                    "text": "次期改正で位置づける",
+                    "topic": "高額療養費",
+                    "qa_id": "qa_001",
+                },
+                {
+                    "speaker": "誰か",
+                    "role": "答弁者",
+                    "text": "幽霊コミット",
+                    "topic": "?",
+                    "qa_id": "qa_999",
+                },
             ]
         }
 
-        with patch("src.structurer._get_client") as mock_client_factory:
+        with patch("src.structurer._get_client") as mock_factory:
             mock_client = MagicMock()
             mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_data)
-            mock_client_factory.return_value = mock_client
-
+            mock_factory.return_value = mock_client
             with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
-                result = generate_topics(qa_pairs)
+                commitments = generate_key_commitments(qa_pairs)
 
-        assert isinstance(result, TopicsOutput)
-        assert len(result.topics) > 0
+        assert len(commitments) == 1
+        assert commitments[0].qa_id == "qa_001"
+
+
+class TestBuildSummaryRelatedLaws:
+    def test_aggregates_per_pair_tags(self) -> None:
+        qa_pairs = _make_qa_pairs("qa_001", "qa_002", "qa_003")
+        qa_pairs.pairs[0].related_law_ids = ["law_001", "law_002"]
+        qa_pairs.pairs[1].related_law_ids = ["law_001"]
+        qa_pairs.pairs[2].related_law_ids = []
+
+        result = build_summary_related_laws(qa_pairs)
+        result_map = {r.law_id: sorted(r.qa_ids) for r in result}
+
+        assert result_map == {
+            "law_001": ["qa_001", "qa_002"],
+            "law_002": ["qa_001"],
+        }
+
+    def test_drops_ghost_tags(self) -> None:
+        qa_pairs = _make_qa_pairs("qa_001")
+        qa_pairs.pairs[0].related_law_ids = []
+        result = build_summary_related_laws(qa_pairs)
+        assert result == []
+
+
+class TestShortAnswerDrop:
+    def test_drops_pair_with_empty_answer_and_no_indices(self) -> None:
+        from src.structurer import _extract_pairs_from_response
+
+        seg = SegmentUtterances(
+            segment_index=0,
+            segment_speaker="古川あおい",
+            segment_affiliation="チームみらい",
+            start_seconds=0.0,
+            video_url="",
+            utterances=[
+                Utterance(speaker="古川あおい", role="質疑者", text="質問本文。"),
+            ],
+        )
+        all_sentences = ["質問本文。"]
+        content = json.dumps({
+            "pairs": [
+                {
+                    "topic": "ダミー",
+                    "question": {"summary": "Q", "sentence_indices": [0], "intent": "other"},
+                    "answer": {
+                        "summary": "A",
+                        "sentence_indices": [],
+                        "evasion_score": 1.0,
+                        "has_commitment": False,
+                        "commitment_text": "",
+                    },
+                }
+            ]
+        })
+
+        result = _extract_pairs_from_response(content, seg, all_sentences, {})
+        assert result == []
 
 
 class TestGenerateQAForSegmentErrorHandling:

@@ -18,10 +18,7 @@ DeepInfra 200 concurrent limit を活用して高速に処理する。
 from __future__ import annotations
 
 import argparse
-import json
 import logging
-import sys
-import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
 from pathlib import Path
@@ -34,11 +31,26 @@ except ImportError:
 
 from src.api_client import MAX_WORKERS_LLM, ensure_fd_limit
 from src.state import StateManager
-from src.models import RawTranscript, SessionDetail
-from src.transcript_corrector import correct_transcript, _chunk_segment, correct_chunk, CorrectionChunk
+from src.models import RawTranscript, SessionDetail, SummaryOutput
+from src.transcript_corrector import (
+    CorrectionChunk,
+    _chunk_segment,
+    correct_chunk,
+)
+from src.normalizer import normalize_utterances
 from src.speaker_tagger import tag_all_segments
-from src.structurer import generate_qa_pairs, generate_summary, generate_topics
-from src.pipeline import run_pipeline_for_session, DATA_DIR
+from src.structurer import (
+    build_summary_related_laws,
+    generate_key_commitments,
+    generate_qa_pairs,
+    generate_session_summary,
+    generate_topics_and_key_topics,
+    tag_related_laws,
+)
+from src.committee_to_ministry import filter_laws_for_committee
+from src.pipeline import run_pipeline_for_session, DATA_DIR, _load_laws_compact
+
+_FLOOR_LIKE_KINDS = frozenset(("floor_speech", "procedural"))
 
 ensure_fd_limit()
 
@@ -123,7 +135,6 @@ def rerun_step45_batch(
     logger.info("Step 4.5: %d chunks from %d sessions, workers=%d", len(tasks), len(sessions), max_workers)
 
     # 全チャンクを並列で修正
-    from src.api_client import get_client
     from src.models import SpeakerInfo
 
     corrected: dict[tuple[str, int, int], str] = {}  # (session_id, seg_idx, chunk_idx) → text
@@ -210,6 +221,7 @@ def _run_step5_one(
         rt = RawTranscript.model_validate_json(transcript_path.read_text(encoding="utf-8"))
         sd = SessionDetail.model_validate_json(metadata_path.read_text(encoding="utf-8"))
         utterances_output = tag_all_segments(rt, sd, max_workers=max_workers)
+        utterances_output = normalize_utterances(utterances_output, sd.speakers)
         (s.dir / "utterances.json").write_text(
             utterances_output.model_dump_json(indent=2, ensure_ascii=False), encoding="utf-8",
         )
@@ -269,9 +281,40 @@ def _run_step6_one(
         utterances_output = UO.model_validate_json(utterances_path.read_text(encoding="utf-8"))
         sd = SessionDetail.model_validate_json(metadata_path.read_text(encoding="utf-8"))
 
-        qa_pairs = generate_qa_pairs(utterances_output, speakers=sd.speakers, max_workers=max_workers)
-        summary = generate_summary(utterances_output, qa_pairs)
-        topics = generate_topics(qa_pairs)
+        sk = sd.session_kind
+        if sk in _FLOOR_LIKE_KINDS:
+            from src.models import QAPairsOutput
+            qa_pairs = QAPairsOutput(pairs=[])
+        else:
+            qa_pairs = generate_qa_pairs(
+                utterances_output,
+                speakers=sd.speakers,
+                max_workers=max_workers,
+                skip_proposal_segments=(sk == "representative_questions"),
+            )
+
+        session_summary = generate_session_summary(qa_pairs, utterances_output)
+        topics, key_topics = generate_topics_and_key_topics(qa_pairs)
+        commitments = generate_key_commitments(qa_pairs)
+
+        if qa_pairs.pairs:
+            laws_text = filter_laws_for_committee(_load_laws_compact(), sd.committee)
+            if laws_text:
+                qa_pairs = tag_related_laws(
+                    qa_pairs,
+                    chamber=sd.chamber,
+                    committee=sd.committee,
+                    date=sd.date,
+                    laws_text=laws_text,
+                    max_workers=max_workers,
+                )
+
+        summary = SummaryOutput(
+            session_summary=session_summary,
+            key_topics=key_topics,
+            key_commitments=commitments,
+            related_laws=build_summary_related_laws(qa_pairs),
+        )
 
         (s.dir / "qa_pairs.json").write_text(
             qa_pairs.model_dump_json(indent=2, ensure_ascii=False), encoding="utf-8",

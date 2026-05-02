@@ -33,20 +33,36 @@ except ImportError:
     pass
 
 from src.api_client import (
-    MAX_WORKERS_AUDIO,
     MAX_WORKERS_LLM,
     MAX_WORKERS_WHISPER,
     ensure_fd_limit,
 )
 from src.audio.extractor import detect_leading_silence, download_full_audio, split_segments
+from src.committee_to_ministry import filter_laws_for_committee
+from src.models import (
+    QAPairsOutput,
+    SessionDetail,
+    SummaryOutput,
+    TopicsOutput,
+    UtterancesOutput,
+)
+from src.normalizer import normalize_utterances
 from src.publisher import publish_session
 from src.scrapers.base import BaseScraper, SessionNotReadyError
 from src.scrapers.sangiin import SangiinScraper
 from src.scrapers.shugiin import ShugiinScraper
 from src.speaker_tagger import tag_all_segments
-from src.transcript_corrector import correct_transcript
-from src.structurer import generate_qa_pairs, generate_summary, generate_summary_and_topics, generate_topics
+from src.structurer import (
+    build_summary_related_laws,
+    generate_key_commitments,
+    generate_qa_pairs,
+    generate_session_summary,
+    generate_topics_and_key_topics,
+    score_qa_pairs_metrics,
+    tag_related_laws,
+)
 from src.transcriber import transcribe_all_segments
+from src.transcript_corrector import correct_transcript
 
 # パイプライン起動時にfd上限を引き上げ
 ensure_fd_limit()
@@ -193,6 +209,7 @@ def run_pipeline(
             segment_paths,
             session_detail.speakers,
             session_id,
+            committee=session_detail.committee,
             max_workers=MAX_WORKERS_WHISPER,
         )
     except Exception as e:
@@ -231,6 +248,10 @@ def run_pipeline(
     except Exception as e:
         raise RuntimeError(f"Step 5 (speaker tagging) failed: {e}") from e
 
+    # Step 5.5: speaker / role を metadata.speakers に正規化
+    logger.info("=== Step 5.5: Normalizing utterance speakers and roles ===")
+    utterances_output = normalize_utterances(utterances_output, session_detail.speakers)
+
     utterances_path = output_dir / "utterances.json"
     utterances_path.write_text(
         utterances_output.model_dump_json(indent=2, ensure_ascii=False),
@@ -240,12 +261,12 @@ def run_pipeline(
         "Saved utterances.json (%d segments)", len(utterances_output.segments)
     )
 
-    # Step 6: Q&Aペア生成 → 要約・トピック・法案タグ（統合LLM呼び出し）
+    # Step 6: Q&Aペア生成 → 要約 → トピック → コミットメント → 関連法案タグ
     logger.info("=== Step 6: Generating Q&A pairs, summary, topics, and law tags ===")
     try:
-        qa_pairs = generate_qa_pairs(utterances_output, speakers=session_detail.speakers, max_workers=MAX_WORKERS_LLM)
-        laws_text = _load_laws_compact()
-        summary, topics = generate_summary_and_topics(utterances_output, qa_pairs, laws_text=laws_text)
+        qa_pairs, summary, topics = _run_step6(
+            session_detail, utterances_output, max_workers=MAX_WORKERS_LLM
+        )
     except Exception as e:
         raise RuntimeError(f"Step 6 (structuring) failed: {e}") from e
 
@@ -287,6 +308,58 @@ def run_pipeline(
             )
         except Exception as e:
             logger.warning("Publish failed (non-fatal): %s", e)
+
+
+_FLOOR_LIKE_KINDS = frozenset(("floor_speech", "procedural"))
+
+
+def _run_step6(
+    session_detail: SessionDetail,
+    utterances_output: UtterancesOutput,
+    *,
+    max_workers: int,
+) -> tuple[QAPairsOutput, SummaryOutput, TopicsOutput]:
+    """session_kind に応じて Q&A・要約・トピック・法案タグを生成する。"""
+    sk = session_detail.session_kind
+
+    if sk in _FLOOR_LIKE_KINDS:
+        logger.info("Step 6: skipping Q&A extraction (session_kind=%s)", sk)
+        qa_pairs = QAPairsOutput(pairs=[])
+    else:
+        qa_pairs = generate_qa_pairs(
+            utterances_output,
+            speakers=session_detail.speakers,
+            max_workers=max_workers,
+            skip_proposal_segments=(sk == "representative_questions"),
+        )
+
+    session_summary = generate_session_summary(qa_pairs, utterances_output)
+    topics, key_topics = generate_topics_and_key_topics(qa_pairs)
+    commitments = generate_key_commitments(qa_pairs)
+
+    if qa_pairs.pairs:
+        laws_text = filter_laws_for_committee(_load_laws_compact(), session_detail.committee)
+        if laws_text:
+            qa_pairs = tag_related_laws(
+                qa_pairs,
+                chamber=session_detail.chamber,
+                committee=session_detail.committee,
+                date=session_detail.date,
+                laws_text=laws_text,
+                max_workers=max_workers,
+            )
+
+        # Step 6d: V4品質評価指標の付与（QQ/AS/OC 9軸）
+        logger.info("Step 6d: Scoring Q&A pairs with V4 quality metrics")
+        qa_pairs = score_qa_pairs_metrics(qa_pairs, max_workers=max_workers)
+
+    summary = SummaryOutput(
+        session_summary=session_summary,
+        key_topics=key_topics,
+        key_commitments=commitments,
+        related_laws=build_summary_related_laws(qa_pairs),
+    )
+    return qa_pairs, summary, topics
 
 
 def _get_scraper(chamber: str) -> BaseScraper:

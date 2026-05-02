@@ -76,10 +76,10 @@ def _sort_key(bill: BillDetail) -> tuple[int, int, tuple[int, str]]:
     )
 
 
-def _compact_line(law_id: int, bill: BillDetail) -> str:
+def _compact_line(bill: BillDetail) -> str:
     """laws_compact.txt の1行分を組み立てる。"""
     type_ja = _TYPE_JA.get(bill.type, bill.type)
-    parts: list[str] = [f"law_{law_id:03d}: [{type_ja}] {bill.title}"]
+    parts: list[str] = [f"{bill.id}: [{type_ja}] {bill.title}"]
     if bill.submitter:
         parts.append(bill.submitter)
     if bill.reason:
@@ -166,13 +166,13 @@ def build_laws_json(sessions: list[int], output_dir: Path) -> None:
     )
     logger.info("Wrote %s (%d bills)", laws_json_path, len(collected))
 
-    compact_lines = [_compact_line(idx + 1, bill) for idx, bill in enumerate(collected)]
+    compact_lines = [_compact_line(bill) for bill in collected]
     laws_compact_path.write_text("\n".join(compact_lines) + "\n", encoding="utf-8")
     logger.info("Wrote %s (%d lines)", laws_compact_path, len(compact_lines))
 
 
 def _parse_sessions(raw: str) -> list[int]:
-    """"217,218,219" のようなカンマ区切り文字列を整数リストに変換する。"""
+    """ "217,218,219" のようなカンマ区切り文字列を整数リストに変換する。"""
     parts = [p.strip() for p in raw.split(",") if p.strip()]
     if not parts:
         raise argparse.ArgumentTypeError("At least one session number is required")

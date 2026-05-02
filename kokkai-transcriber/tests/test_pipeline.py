@@ -55,6 +55,7 @@ def mock_session_detail() -> SessionDetail:
 
 @pytest.fixture
 def mock_raw_transcript() -> RawTranscript:
+    long_text = "チームみらいの古川あおいです。" * 8  # >100 chars to pass pipeline validation
     return RawTranscript(
         session_id="56149",
         segments=[
@@ -62,11 +63,11 @@ def mock_raw_transcript() -> RawTranscript:
                 segment_index=0,
                 speaker_name="古川あおい",
                 start_seconds=7320.2,
-                text="チームみらいの古川あおいです。",
+                text=long_text,
                 whisper_segments=[
                     WhisperSegment(
                         id=0, seek=0, start=7320.2, end=7380.0,
-                        text="チームみらいの古川あおいです。",
+                        text=long_text,
                     )
                 ],
             )
@@ -169,8 +170,7 @@ def _pipeline_patches(
         patch("src.pipeline.split_segments", return_value=[tmp_path / "seg_000.wav"]),
         patch("src.pipeline.transcribe_all_segments", return_value=mock_raw_transcript),
         patch("src.pipeline.tag_all_segments", return_value=mock_utterances_output),
-        patch("src.pipeline.generate_qa_pairs", return_value=mock_qa_pairs),
-        patch("src.pipeline.generate_summary_and_topics", return_value=(mock_summary, mock_topics)),
+        patch("src.pipeline._run_step6", return_value=(mock_qa_pairs, mock_summary, mock_topics)),
         patch("src.pipeline._load_laws_compact", return_value=""),
         patch("src.pipeline.publish_session"),
     )
@@ -196,8 +196,7 @@ class TestRunPipeline:
             patch("src.pipeline.split_segments", return_value=[tmp_path / "seg_000.wav"]),
             patch("src.pipeline.transcribe_all_segments", return_value=mock_raw_transcript),
             patch("src.pipeline.tag_all_segments", return_value=mock_utterances_output),
-            patch("src.pipeline.generate_qa_pairs", return_value=mock_qa_pairs),
-            patch("src.pipeline.generate_summary_and_topics", return_value=(mock_summary, mock_topics)),
+            patch("src.pipeline._run_step6", return_value=(mock_qa_pairs, mock_summary, mock_topics)),
             patch("src.pipeline._load_laws_compact", return_value=""),
             patch("src.pipeline.publish_session"),
         ):
@@ -233,8 +232,7 @@ class TestRunPipeline:
             patch("src.pipeline.split_segments", return_value=[tmp_path / "seg_000.wav"]),
             patch("src.pipeline.transcribe_all_segments", return_value=mock_raw_transcript),
             patch("src.pipeline.tag_all_segments", return_value=mock_utterances_output),
-            patch("src.pipeline.generate_qa_pairs", return_value=mock_qa_pairs),
-            patch("src.pipeline.generate_summary_and_topics", return_value=(mock_summary, mock_topics)),
+            patch("src.pipeline._run_step6", return_value=(mock_qa_pairs, mock_summary, mock_topics)),
             patch("src.pipeline._load_laws_compact", return_value=""),
             patch("src.pipeline.publish_session"),
         ):
@@ -308,8 +306,7 @@ class TestRunPipeline:
             patch("src.pipeline.split_segments", return_value=[tmp_path / "seg_000.wav"]),
             patch("src.pipeline.transcribe_all_segments", return_value=mock_raw_transcript),
             patch("src.pipeline.tag_all_segments", return_value=mock_utterances_output),
-            patch("src.pipeline.generate_qa_pairs", return_value=mock_qa_pairs),
-            patch("src.pipeline.generate_summary_and_topics", return_value=(mock_summary, mock_topics)),
+            patch("src.pipeline._run_step6", return_value=(mock_qa_pairs, mock_summary, mock_topics)),
             patch("src.pipeline._load_laws_compact", return_value=""),
             patch("src.pipeline.publish_session"),
         ):
@@ -336,8 +333,7 @@ class TestRunPipeline:
             patch("src.pipeline.split_segments", return_value=[tmp_path / "seg_000.wav"]),
             patch("src.pipeline.transcribe_all_segments", return_value=mock_raw_transcript),
             patch("src.pipeline.tag_all_segments", return_value=mock_utterances_output),
-            patch("src.pipeline.generate_qa_pairs", return_value=mock_qa_pairs),
-            patch("src.pipeline.generate_summary_and_topics", return_value=(mock_summary, mock_topics)),
+            patch("src.pipeline._run_step6", return_value=(mock_qa_pairs, mock_summary, mock_topics)),
             patch("src.pipeline._load_laws_compact", return_value=""),
             patch("src.pipeline.publish_session") as mock_publish,
         ):
@@ -412,8 +408,7 @@ class TestSangiinPipeline:
             patch("src.pipeline.split_segments", return_value=[tmp_path / "seg_000.wav"]),
             patch("src.pipeline.transcribe_all_segments", return_value=mock_raw_transcript),
             patch("src.pipeline.tag_all_segments", return_value=mock_utterances_output),
-            patch("src.pipeline.generate_qa_pairs", return_value=mock_qa_pairs),
-            patch("src.pipeline.generate_summary_and_topics", return_value=(mock_summary, mock_topics)),
+            patch("src.pipeline._run_step6", return_value=(mock_qa_pairs, mock_summary, mock_topics)),
             patch("src.pipeline._load_laws_compact", return_value=""),
             patch("src.pipeline.publish_session"),
         ):
@@ -450,8 +445,7 @@ class TestSangiinPipeline:
             patch("src.pipeline.split_segments", return_value=[tmp_path / "seg_000.wav"]),
             patch("src.pipeline.transcribe_all_segments", return_value=mock_raw_transcript),
             patch("src.pipeline.tag_all_segments", return_value=mock_utterances_output),
-            patch("src.pipeline.generate_qa_pairs", return_value=mock_qa_pairs),
-            patch("src.pipeline.generate_summary_and_topics", return_value=(mock_summary, mock_topics)),
+            patch("src.pipeline._run_step6", return_value=(mock_qa_pairs, mock_summary, mock_topics)),
             patch("src.pipeline._load_laws_compact", return_value=""),
             patch("src.pipeline.publish_session"),
         ):
@@ -474,7 +468,16 @@ class TestSangiinPipeline:
             hls_url="",
             mediasp_hash="",
             source_url="https://webtv.sangiin.go.jp/webtv/detail.php?sid=9999",
-            speakers=[],
+            speakers=[
+                SpeakerInfo(
+                    name="テスト委員長",
+                    affiliation="委員長",
+                    role="委員長",
+                    start_seconds=0.0,
+                    start_time="10:00",
+                    duration_minutes=5,
+                )
+            ],
         )
         output_dir = tmp_path / "output"
 

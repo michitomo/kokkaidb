@@ -165,17 +165,17 @@ def test_laws_compact_txt_format(mocked_scrapers, tmp_path: Path) -> None:
 
     # ソート: session desc → type (kakuhou→shuhou→sanhou) → bill_number asc
     # session はすべて 221 なので type 順になる
-    assert lines[0].startswith("law_001: [閣法] AAA法律案")
+    assert lines[0].startswith("clb-5149: [閣法] AAA法律案")
     assert "財務省" in lines[0]
     assert "提出理由: 理由本文。" in lines[0]
 
-    assert lines[1].startswith("law_002: [衆法] BBB法律案")
+    assert lines[1].startswith("shugiin-221-shuhou-1: [衆法] BBB法律案")
     # _shuhou は submitter を未設定にしているので含まれない
     assert "| 提出理由:" not in lines[1]
 
-    assert lines[2].startswith("law_003: [参法] CCC法律案")
+    assert lines[2].startswith("sangiin-221-sanhou-2: [参法] CCC法律案")
     # submitter も reason もないので、タイトルのみ
-    assert lines[2] == "law_003: [参法] CCC法律案"
+    assert lines[2] == "sangiin-221-sanhou-2: [参法] CCC法律案"
 
 
 def test_reason_truncation(mocked_scrapers, tmp_path: Path) -> None:

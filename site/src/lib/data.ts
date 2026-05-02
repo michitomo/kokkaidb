@@ -14,6 +14,7 @@ export type {
   QAAnswer,
   QAPair,
   QAPairsOutput,
+  QAMetrics,
   KeyCommitment,
   SessionSummary,
   Topic,
