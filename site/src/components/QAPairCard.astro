@@ -134,7 +134,7 @@ const recordValueLabel: Record<string, string> = {
               <span class="metric-name">論点明確度</span>
               <span class="metric-dots">{scoreToDots(metrics.qq1_clarity.score)}</span>
               <span class="metric-hint" title={metrics.qq1_clarity.main_question_one_liner}>
-                {metrics.qq1_clarity.sub_asks.length <= 1 ? '明確' : `${metrics.qq1_clarity.sub_asks.length}論点`}
+                {metrics.qq1_clarity.sub_asks.length < 2 ? '明確' : `${metrics.qq1_clarity.sub_asks.length}論点`}
               </span>
             </div>
             <div class="metric-row">
