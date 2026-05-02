@@ -1,0 +1,59 @@
+{
+  "run_at": "20260502_013640",
+  "prompt_version": "V2",
+  "cases": [
+    {
+      "case_id": "case_003",
+      "label": "所信表明（qa_pairs空・セッション種別未識別）",
+      "result": {
+        "session_summary": "衆議院財務金融委員会において（所信表明）、片山さつき財務大臣兼金融担当大臣による所信表明が行われました。本セッションでは、大臣から今後の財務金融行政の方向性と重点施策について説明がなされました。質疑応答は行われず、大臣による方針の提示のみで構成されています。",
+        "key_topics": [],
+        "topics": [],
+        "key_commitments": []
+      },
+      "score": {
+        "total_pass": 3,
+        "total_items": 7,
+        "pct": 42.9,
+        "by_field": {
+          "session_summary": [
+            {
+              "check": "「所信表明」という種別が明記されているか",
+              "pass": true
+            },
+            {
+              "check": "「質疑応答なし」またはそれに相当する記述があるか",
+              "pass": false
+            },
+            {
+              "check": "大臣名（片山さつき）が含まれているか",
+              "pass": true
+            }
+          ],
+          "key_commitments": [
+            {
+              "check": "qa_id が空文字列（\"\"）になっているか（qa_pairsが空のため）",
+              "pass": false
+            },
+            {
+              "check": "speaker に実名（片山さつき）が使われているか",
+              "pass": false
+            },
+            {
+              "check": "commitmentの内容が所信表明の内容と一致しているか（hallucination でないか）",
+              "pass": false
+            }
+          ],
+          "related_laws": [
+            {
+              "check": "related_laws が空配列（[]）か（qa_pairsが空なので法案紐付け不可）",
+              "pass": true
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "total_pass": 3,
+  "total_items": 7
+}
