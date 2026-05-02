@@ -21,50 +21,64 @@ DEEPINFRA_BASE_URL = "https://api.deepinfra.com/v1/openai"
 WHISPER_MODEL = "openai/whisper-large-v3-turbo"
 
 # ---------------------------------------------------------------------------
-# 第221回国会（令和8年特別会）対応 Whisper プロンプト
+# 第221回国会（令和8年特別会）対応 Whisper プロンプト  [Prompt V2]
 # ---------------------------------------------------------------------------
 # Whisperのpromptは「指示」ではなく「直前の文脈」として機能する（スタイル模倣）。
-# 224トークン制限があるため、固有名詞を自然な文中に埋め込む形式で記述する。
-# セグメントごとに動的部分（発言者名）を末尾に配置し、影響力を最大化する。
+# 224トークン制限内に収め、かつトークンループを抑制するための設計方針:
 #
-# 政党・会派名:
-#   衆: 自由民主党、立憲民主党、日本維新の会、公明党、日本共産党、チームみらい、日本保守党
-#   参: 国民民主党、参政党、れいわ新選組、社会民主党、沖縄の風
+# [V1→V2 変更点と根拠]
+# 1. 「石井啓一副議長」削除
+#    → 実データで「石井啓一議長、石井啓一議長...」25秒ループが複数確認。
+#      プロンプト末尾に固定配置されていたため、本会議セッションで特に危険。
 #
-# 主要閣僚: 高市早苗(総理)、木原稔(官房長官)、茂木敏充(外務)、片山さつき(財務)、
-#   林芳正(総務)、平口洋(法務)、松本洋平(文科)、上野賢一郎(厚労)、鈴木憲和(農水)、
-#   赤澤亮正(経産)、金子恭之(国交)、石原宏高(環境)、小泉進次郎(防衛)、松本尚(デジタル)
+# 2. 全法律名（健康保険法〜労働者災害補償保険法）削除
+#    → 「社会福祉法」が「福祉法、福祉法...」24秒ループを誘発（9件確認）。
+#      法律名はセッション固有かつトークン消費大（~40トークン）のため除去。
+#      委員会固有の法律名は将来的に動的サフィックスで追加可能。
 #
-# 議長: 森英介(衆議院議長)、石井啓一(衆議院副議長)、
-#       関口昌一(参議院議長)、福山哲郎(参議院副議長)
+# 3. 動的サフィックスを「出席議員: 全員列挙」から「{委員会}。{発言者}：」へ変更
+#    → 「出席議員」リストが最多ループ誘発源（42件）。任意の出席者名が
+#      音響的に不明瞭な区間でループ起点になっていた。
+#    → 新形式は議事録の自然な「直前テキスト」として機能し、トークン消費も
+#      ~133トークン→~15トークンに削減。全プロンプトが224制限内に確実に収まる。
+#
+# [維持した要素]
+# - 主要閣僚7名: 小泉進次郎・片山さつき・茂木敏充は100%正確認識を確認済み
+# - 主要政党名: 国民民主党（50%誤認問題あり）・日本維新の会（69%誤認）等の改善に期待
+# - 森英介議長（副議長は除外）
+#
+# [既知の残存問題]
+# - 高市早苗: 91%で「高市」に末尾省略。音声上での省略発言か Whisper 誤認かは未確定。
+# - 国民民主党: 50%で「国民民主」に末尾省略。「党」の音が弱い可能性。
+# - 安倍内閣ハルシネーション: Whisper学習バイアスで稀に出現（1件確認）。
+#
+# 議長: 森英介(衆議院議長)、石井啓一(衆議院副議長)※プロンプト外
+#       関口昌一(参議院議長)、福山哲郎(参議院副議長)※プロンプト外
 # ---------------------------------------------------------------------------
 
 _WHISPER_PROMPT_BASE = (
-    "第221回国会、衆議院本会議・委員会における質疑応答。"
+    "第221回国会、衆議院の質疑応答。"
     "高市早苗内閣総理大臣、木原稔内閣官房長官、茂木敏充外務大臣、"
-    "片山さつき財務大臣、上野賢一郎厚生労働大臣、赤澤亮正経済産業大臣、"
-    "小泉進次郎防衛大臣。"
+    "片山さつき財務大臣、上野賢一郎厚生労働大臣、"
+    "赤澤亮正経済産業大臣、小泉進次郎防衛大臣。"
     "自由民主党、立憲民主党、日本維新の会、公明党、日本共産党、"
     "国民民主党、チームみらい、参政党、れいわ新選組、日本保守党。"
-    "健康保険法、高額療養費制度、OTC類似薬、防災庁設置法、"
-    "国家情報会議設置法、社会福祉法、労働者災害補償保険法。"
-    "森英介議長、石井啓一副議長。"
+    "森英介議長。"
 )
 
 
 def _build_whisper_prompt(
     speaker: SpeakerInfo,
-    all_speakers: list[SpeakerInfo],
+    committee: str,
 ) -> str:
     """セグメント固有のWhisperプロンプトを構築する。
 
-    末尾に当該セグメントの発言者名・セッション発言者名を配置し、
-    Whisperの224トークン制限内で最大限の効果を得る。
-    （制限を超えた場合、末尾224トークンのみが使用される）
+    「{委員会}。{発言者名}（{所属}）：」という議事録形式の自然なテキストで締める。
+    Whisperはこれを「直前の発言者表記」として解釈し、次に続く音声の話者・文脈を
+    正しく補正する。全体が224トークン制限に確実に収まる（~110トークン想定）。
     """
-    speaker_names = ", ".join(s.name for s in all_speakers)
-    segment_suffix = f"発言者: {speaker.name}（{speaker.affiliation}）。出席議員: {speaker_names}。"
-    return _WHISPER_PROMPT_BASE + segment_suffix
+    committee_label = committee or "委員会"
+    return _WHISPER_PROMPT_BASE + f"{committee_label}。{speaker.name}（{speaker.affiliation}）："
 
 
 def _get_client() -> openai.OpenAI:
@@ -78,7 +92,7 @@ def transcribe_segment(
     wav_path: Path,
     segment_index: int,
     speaker: SpeakerInfo,
-    all_speakers: list[SpeakerInfo],
+    committee: str,
 ) -> SegmentTranscript:
     """1セグメントの WAV ファイルを文字起こしする。
 
@@ -86,7 +100,7 @@ def transcribe_segment(
         wav_path: セグメント WAV ファイルパス
         segment_index: セグメントインデックス
         speaker: このセグメントの主発言者
-        all_speakers: セッション全発言者リスト（prompt生成に使用）
+        committee: 委員会名（動的サフィックスに使用）
 
     Returns:
         SegmentTranscript: 文字起こし結果
@@ -96,7 +110,7 @@ def transcribe_segment(
     """
     client = _get_client()
 
-    prompt = _build_whisper_prompt(speaker, all_speakers)
+    prompt = _build_whisper_prompt(speaker, committee)
 
     logger.info(
         "Transcribing segment %d: %s (%s)",
@@ -153,6 +167,7 @@ def transcribe_all_segments(
     segment_paths: list[Path],
     speakers: list[SpeakerInfo],
     session_id: str,
+    committee: str = "",
     max_workers: int = 16,
 ) -> RawTranscript:
     """全セグメントを並列で文字起こしして RawTranscript を返す。
@@ -161,6 +176,7 @@ def transcribe_all_segments(
         segment_paths: セグメント WAV ファイルのリスト
         speakers: 発言者リスト（segment_paths と同順）
         session_id: セッションID
+        committee: 委員会名（Whisperプロンプトの動的サフィックスに使用）
         max_workers: 並列数（DeepInfra のレート制限に合わせて調整）
 
     Returns:
@@ -170,7 +186,7 @@ def transcribe_all_segments(
 
     def _transcribe(args: tuple[int, Path, SpeakerInfo]) -> SegmentTranscript:
         i, wav_path, speaker = args
-        return transcribe_segment(wav_path, i, speaker, speakers)
+        return transcribe_segment(wav_path, i, speaker, committee)
 
     tasks = list(enumerate(zip(segment_paths, speakers)))
     work = [(i, wav, spk) for i, (wav, spk) in tasks]

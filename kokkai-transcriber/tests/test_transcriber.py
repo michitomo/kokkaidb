@@ -64,7 +64,6 @@ class TestTranscribeSegment:
         self,
         tmp_path: Path,
         sample_speaker: SpeakerInfo,
-        all_speakers: list[SpeakerInfo],
         whisper_response_data: dict,
     ) -> None:
         """SegmentTranscript が返されること。"""
@@ -79,7 +78,7 @@ class TestTranscribeSegment:
             mock_client_factory.return_value = mock_client
 
             with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
-                result = transcribe_segment(wav_path, 1, sample_speaker, all_speakers)
+                result = transcribe_segment(wav_path, 1, sample_speaker, "内閣委員会")
 
         assert isinstance(result, SegmentTranscript)
         assert result.segment_index == 1
@@ -90,7 +89,6 @@ class TestTranscribeSegment:
         self,
         tmp_path: Path,
         sample_speaker: SpeakerInfo,
-        all_speakers: list[SpeakerInfo],
         whisper_response_data: dict,
     ) -> None:
         """文字起こしテキストが Whisper レスポンスのテキストと一致すること。"""
@@ -105,7 +103,7 @@ class TestTranscribeSegment:
             mock_client_factory.return_value = mock_client
 
             with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
-                result = transcribe_segment(wav_path, 1, sample_speaker, all_speakers)
+                result = transcribe_segment(wav_path, 1, sample_speaker, "内閣委員会")
 
         assert result.text == whisper_response_data["text"]
 
@@ -113,7 +111,6 @@ class TestTranscribeSegment:
         self,
         tmp_path: Path,
         sample_speaker: SpeakerInfo,
-        all_speakers: list[SpeakerInfo],
         whisper_response_data: dict,
     ) -> None:
         """Whisper セグメントが正しくパースされること。"""
@@ -128,7 +125,7 @@ class TestTranscribeSegment:
             mock_client_factory.return_value = mock_client
 
             with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
-                result = transcribe_segment(wav_path, 1, sample_speaker, all_speakers)
+                result = transcribe_segment(wav_path, 1, sample_speaker, "内閣委員会")
 
         assert len(result.whisper_segments) == len(whisper_response_data["segments"])
         assert result.whisper_segments[0].text == whisper_response_data["segments"][0]["text"]
@@ -137,10 +134,9 @@ class TestTranscribeSegment:
         self,
         tmp_path: Path,
         sample_speaker: SpeakerInfo,
-        all_speakers: list[SpeakerInfo],
         whisper_response_data: dict,
     ) -> None:
-        """API 呼び出しパラメータが正しいこと（言語、モデル、response_format）。"""
+        """API 呼び出しパラメータが正しいこと（言語、モデル、response_format、prompt内容）。"""
         wav_path = tmp_path / "test.wav"
         wav_path.write_bytes(b"")
 
@@ -152,21 +148,25 @@ class TestTranscribeSegment:
             mock_client_factory.return_value = mock_client
 
             with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
-                transcribe_segment(wav_path, 1, sample_speaker, all_speakers)
+                transcribe_segment(wav_path, 1, sample_speaker, "内閣委員会")
 
         call_kwargs = mock_client.audio.transcriptions.create.call_args.kwargs
         assert call_kwargs["model"] == "openai/whisper-large-v3-turbo"
         assert call_kwargs["language"] == "ja"
         assert call_kwargs["response_format"] == "verbose_json"
         assert "prompt" in call_kwargs
-        # prompt に発言者名が含まれること
-        assert "古川あおい" in call_kwargs["prompt"] or "藤原徹" in call_kwargs["prompt"]
+        # prompt に発言者名・委員会名が含まれること（V2サフィックス形式）
+        assert "古川あおい" in call_kwargs["prompt"]
+        assert "内閣委員会" in call_kwargs["prompt"]
+        # ループを誘発した出席議員リストが含まれないこと
+        assert "出席議員" not in call_kwargs["prompt"]
+        # 削除された石井啓一副議長が含まれないこと
+        assert "石井啓一" not in call_kwargs["prompt"]
 
     def test_missing_api_key_raises(
         self,
         tmp_path: Path,
         sample_speaker: SpeakerInfo,
-        all_speakers: list[SpeakerInfo],
     ) -> None:
         """DEEPINFRA_API_KEY が未設定の場合に EnvironmentError が送出されること。"""
         wav_path = tmp_path / "test.wav"
@@ -175,8 +175,8 @@ class TestTranscribeSegment:
         import os
         env = {k: v for k, v in os.environ.items() if k != "DEEPINFRA_API_KEY"}
         with patch.dict("os.environ", env, clear=True):
-            with pytest.raises(EnvironmentError):
-                transcribe_segment(wav_path, 1, sample_speaker, all_speakers)
+            with pytest.raises(OSError):
+                transcribe_segment(wav_path, 1, sample_speaker, "内閣委員会")
 
 
 class TestTranscribeAllSegments:
@@ -199,7 +199,7 @@ class TestTranscribeAllSegments:
             mock_client_factory.return_value = mock_client
 
             with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
-                result = transcribe_all_segments(wav_paths, all_speakers, "56149")
+                result = transcribe_all_segments(wav_paths, all_speakers, "56149", committee="内閣委員会")
 
         assert isinstance(result, RawTranscript)
         assert result.session_id == "56149"

@@ -209,6 +209,7 @@ def run_pipeline(
             segment_paths,
             session_detail.speakers,
             session_id,
+            committee=session_detail.committee,
             max_workers=MAX_WORKERS_WHISPER,
         )
     except Exception as e:
