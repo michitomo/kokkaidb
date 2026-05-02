@@ -85,11 +85,10 @@ def score_qa_pairs(result: dict, expected: dict) -> dict:
     result_topics = {p.get("topic", "") for p in result_pairs}
 
     if expected_topics:
-        # 部分一致: result の topic が expected の topic を含むか
-        matched = 0
-        for et in expected_topics:
-            if any(et in rt or rt in et for rt in result_topics):
-                matched += 1
+        matched = sum(
+            1 for et in expected_topics
+            if any(_topics_overlap(et, rt) for rt in result_topics)
+        )
         topic_coverage = round(matched / len(expected_topics), 3)
     else:
         topic_coverage = 1.0
@@ -102,6 +101,20 @@ def score_qa_pairs(result: dict, expected: dict) -> dict:
         "topic_coverage": topic_coverage,
         "evasion_score_mae": evasion_mae,
     }
+
+
+def _topics_overlap(a: str, b: str, min_shared: int = 6) -> bool:
+    """2つのトピック文字列が十分な共通部分を持つか判定。
+    完全な部分文字列マッチ、またはmin_shared文字以上の共通部分文字列があればTrue。
+    """
+    if a in b or b in a:
+        return True
+    shorter, longer = (a, b) if len(a) <= len(b) else (b, a)
+    for length in range(min_shared, len(shorter) + 1):
+        for i in range(len(shorter) - length + 1):
+            if shorter[i:i + length] in longer:
+                return True
+    return False
 
 
 def _compute_evasion_mae(result_pairs: list, expected_pairs: list) -> float | None:
@@ -140,7 +153,7 @@ def score_summary(result: dict, expected: dict) -> dict:
     if expected_topics:
         matched = sum(
             1 for et in expected_topics
-            if any(et in rt or rt in et for rt in result_topics)
+            if any(_topics_overlap(et, rt) for rt in result_topics)
         )
         coverage = round(matched / len(expected_topics), 3)
     else:
@@ -178,7 +191,7 @@ def score_topics(result: dict, expected: dict) -> dict:
     if expected_names:
         matched = sum(
             1 for en in expected_names
-            if any(en in rn or rn in en for rn in result_names)
+            if any(_topics_overlap(en, rn) for rn in result_names)
         )
         name_coverage = round(matched / len(expected_names), 3)
     else:
@@ -225,7 +238,7 @@ def score_qa_seg(result: dict, expected: dict) -> dict:
         result_topics = {p.get("topic", "") for p in result_pairs}
         matched = sum(
             1 for et in expected_topics
-            if any(et in rt or rt in et for rt in result_topics)
+            if any(_topics_overlap(et, rt) for rt in result_topics)
         )
         topic_coverage = round(matched / len(expected_topics), 3)
 

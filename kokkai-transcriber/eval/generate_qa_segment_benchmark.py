@@ -15,47 +15,16 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 from pathlib import Path
+
+# src.prompts を参照するためパスを追加
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from src.prompts import QA_SEGMENT_SYSTEM_PROMPT  # noqa: E402
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 DATA_DIR = PROJECT_ROOT / "data" / "shugiin"
 GOLDEN_DIR = Path(__file__).resolve().parent / "golden"
-
-# 現行 QA_SEGMENT_SYSTEM_PROMPT (prompts.py と同一)
-QA_SEGMENT_SYSTEM_PROMPT = """あなたは国会質疑のQ&Aペアを構造化する専門家です。
-与えられた番号付きutterancesリストから、質疑応答ペアを**すべて**抽出してください。
-
-重要なルール:
-- 質疑者が複数のテーマについて質問した場合、テーマごとに別のQ&Aペアを作成すること
-- 1つも漏らさずに抽出すること（ただしQ&A構造として成立しないものは除く）
-- 答弁が空・極端に短い・単なる相槌のみのQ&Aペアは含めないこと
-- full_textは返さないこと。代わりにsentence_indices（文番号の配列）を返すこと
-- sentence_indicesは、入力の(N)の番号を配列で指定。そのQ&Aの該当部分の文だけを選ぶこと
-- 1つのutteranceに複数テーマが含まれる場合（例: 代表質問）、テーマごとに該当する文だけを選択すること
-- summaryは箇条書き（各項目は「- 」で始める）。要点を2-4項目で簡潔に
-- roleラベル（[委員長]等）は話者タグ付けの結果であり、誤分類の場合がある。roleではなく**発言の内容**でQ&Aを判断すること
-- 委員長の指名（「〇〇君。」）の直後に政策への質問・意見が続く場合、それは質疑者の発言である
-
-speaker, party, roleは返さないでください（コードで元データから自動取得します）。
-
-以下のJSON形式で出力してください:
-{
-  "pairs": [
-    {
-      "topic": "質疑テーマ（簡潔に）",
-      "question": {
-        "summary": "- 要点1\\n- 要点2\\n- 要点3",
-        "sentence_indices": [0, 1, 2],
-        "intent": "fact_check | policy_proposal | accountability | information_request | other"
-      },
-      "answer": {
-        "summary": "- 要点1\\n- 要点2\\n- 要点3",
-        "sentence_indices": [12, 13, 14]
-      }
-    }
-  ]
-}
-"""
 
 
 # ---------------------------------------------------------------------------
