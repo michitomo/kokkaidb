@@ -3,16 +3,14 @@
     "case_id": "bench_001",
     "case_label": "本会議・防災庁設置法案（直接言及・現在FAIL）",
     "model": "google/gemma-4-31B-it",
-    "elapsed_s": 56.3,
+    "elapsed_s": 11.9,
     "actual_laws": [
       {
         "law_id": "clb-5175",
         "qa_ids": [
           "qa_001",
           "qa_003",
-          "qa_004",
-          "qa_005",
-          "qa_008"
+          "qa_004"
         ]
       },
       {
@@ -48,7 +46,7 @@
     "case_id": "bench_002",
     "case_label": "本会議・健康保険法等改正案（直接言及・現在FAIL）",
     "model": "google/gemma-4-31B-it",
-    "elapsed_s": 11.7,
+    "elapsed_s": 23.0,
     "actual_laws": [
       {
         "law_id": "clb-5199",
@@ -82,7 +80,7 @@
     "case_id": "bench_003",
     "case_label": "単一QA最小ケース（直接言及・現在FAIL）",
     "model": "google/gemma-4-31B-it",
-    "elapsed_s": 6.8,
+    "elapsed_s": 11.6,
     "actual_laws": [
       {
         "law_id": "clb-5199",
@@ -113,7 +111,7 @@
     "case_id": "bench_004",
     "case_label": "委員会・文脈推論・2法案（現在PASS）",
     "model": "google/gemma-4-31B-it",
-    "elapsed_s": 30.5,
+    "elapsed_s": 14.5,
     "actual_laws": [
       {
         "law_id": "clb-5199",
@@ -157,37 +155,12 @@
     "case_id": "bench_005",
     "case_label": "タグなし（予算委員会・一般質疑・現在PASS）",
     "model": "google/gemma-4-31B-it",
-    "elapsed_s": 12.3,
+    "elapsed_s": 18.4,
     "actual_laws": [
-      {
-        "law_id": "shugiin-221-shuhou-3",
-        "qa_ids": [
-          "qa_001"
-        ]
-      },
       {
         "law_id": "clb-5197",
         "qa_ids": [
           "qa_001"
-        ]
-      },
-      {
-        "law_id": "shugiin-221-sanhou-5",
-        "qa_ids": [
-          "qa_001",
-          "qa_003"
-        ]
-      },
-      {
-        "law_id": "shugiin-221-sanhou-6",
-        "qa_ids": [
-          "qa_003"
-        ]
-      },
-      {
-        "law_id": "clb-5280",
-        "qa_ids": [
-          "qa_005"
         ]
       }
     ],
@@ -199,11 +172,7 @@
       "required_law_misses": [],
       "forbidden_law_hits": [],
       "spurious_laws": [
-        "clb-5197",
-        "clb-5280",
-        "shugiin-221-sanhou-5",
-        "shugiin-221-sanhou-6",
-        "shugiin-221-shuhou-3"
+        "clb-5197"
       ],
       "qa_id_recalls": {},
       "pass": false
@@ -213,7 +182,7 @@
     "case_id": "bench_006",
     "case_label": "複数法案・財務金融委員会（現在PASS）",
     "model": "google/gemma-4-31B-it",
-    "elapsed_s": 19.8,
+    "elapsed_s": 27.6,
     "actual_laws": [
       {
         "law_id": "clb-5149",

@@ -1,0 +1,216 @@
+[
+  {
+    "case_id": "bench_001",
+    "case_label": "本会議・防災庁設置法案（直接言及・現在FAIL）",
+    "model": "google/gemma-4-31B-it",
+    "elapsed_s": 22.8,
+    "actual_laws": [
+      {
+        "law_id": "law_013",
+        "qa_ids": [
+          "qa_001",
+          "qa_004"
+        ]
+      },
+      {
+        "law_id": "law_014",
+        "qa_ids": [
+          "qa_002",
+          "qa_007"
+        ]
+      }
+    ],
+    "scores": {
+      "law_precision": 1.0,
+      "law_recall": 1.0,
+      "law_f1": 1.0,
+      "required_law_hits": [
+        "law_013",
+        "law_014"
+      ],
+      "required_law_misses": [],
+      "forbidden_law_hits": [],
+      "spurious_laws": [],
+      "qa_id_recalls": {
+        "law_013": 1.0,
+        "law_014": 1.0
+      },
+      "pass": true
+    }
+  },
+  {
+    "case_id": "bench_002",
+    "case_label": "本会議・健康保険法等改正案（直接言及・現在FAIL）",
+    "model": "google/gemma-4-31B-it",
+    "elapsed_s": 22.0,
+    "actual_laws": [
+      {
+        "law_id": "law_025",
+        "qa_ids": [
+          "qa_001",
+          "qa_002",
+          "qa_003",
+          "qa_006"
+        ]
+      }
+    ],
+    "scores": {
+      "law_precision": 1.0,
+      "law_recall": 1.0,
+      "law_f1": 1.0,
+      "required_law_hits": [
+        "law_025"
+      ],
+      "required_law_misses": [],
+      "forbidden_law_hits": [],
+      "spurious_laws": [],
+      "qa_id_recalls": {
+        "law_025": 1.0
+      },
+      "pass": true
+    }
+  },
+  {
+    "case_id": "bench_003",
+    "case_label": "単一QA最小ケース（直接言及・現在FAIL）",
+    "model": "google/gemma-4-31B-it",
+    "elapsed_s": 9.7,
+    "actual_laws": [
+      {
+        "law_id": "law_025",
+        "qa_ids": [
+          "qa_001"
+        ]
+      }
+    ],
+    "scores": {
+      "law_precision": 1.0,
+      "law_recall": 1.0,
+      "law_f1": 1.0,
+      "required_law_hits": [
+        "law_025"
+      ],
+      "required_law_misses": [],
+      "forbidden_law_hits": [],
+      "spurious_laws": [],
+      "qa_id_recalls": {
+        "law_025": 1.0
+      },
+      "pass": true
+    }
+  },
+  {
+    "case_id": "bench_004",
+    "case_label": "委員会・文脈推論・2法案（現在PASS）",
+    "model": "google/gemma-4-31B-it",
+    "elapsed_s": 12.6,
+    "actual_laws": [
+      {
+        "law_id": "law_025",
+        "qa_ids": [
+          "qa_002",
+          "qa_003",
+          "qa_004",
+          "qa_005"
+        ]
+      }
+    ],
+    "scores": {
+      "law_precision": 1.0,
+      "law_recall": 0.5,
+      "law_f1": 0.667,
+      "required_law_hits": [
+        "law_025"
+      ],
+      "required_law_misses": [
+        "law_067"
+      ],
+      "forbidden_law_hits": [],
+      "spurious_laws": [],
+      "qa_id_recalls": {
+        "law_025": 1.0,
+        "law_067": 0.0
+      },
+      "pass": false
+    }
+  },
+  {
+    "case_id": "bench_005",
+    "case_label": "タグなし（予算委員会・一般質疑・現在PASS）",
+    "model": "google/gemma-4-31B-it",
+    "elapsed_s": 13.0,
+    "actual_laws": [
+      {
+        "law_id": "law_024",
+        "qa_ids": [
+          "qa_001"
+        ]
+      }
+    ],
+    "scores": {
+      "law_precision": 0.0,
+      "law_recall": 0.0,
+      "law_f1": 0.0,
+      "required_law_hits": [],
+      "required_law_misses": [],
+      "forbidden_law_hits": [
+        "law_024"
+      ],
+      "spurious_laws": [],
+      "qa_id_recalls": {},
+      "pass": false
+    }
+  },
+  {
+    "case_id": "bench_006",
+    "case_label": "複数法案・財務金融委員会（現在PASS）",
+    "model": "google/gemma-4-31B-it",
+    "elapsed_s": 18.5,
+    "actual_laws": [
+      {
+        "law_id": "law_003",
+        "qa_ids": [
+          "qa_011",
+          "qa_012"
+        ]
+      },
+      {
+        "law_id": "law_007",
+        "qa_ids": [
+          "qa_022",
+          "qa_023"
+        ]
+      },
+      {
+        "law_id": "law_057",
+        "qa_ids": [
+          "qa_029"
+        ]
+      }
+    ],
+    "scores": {
+      "law_precision": 1.0,
+      "law_recall": 0.6,
+      "law_f1": 0.75,
+      "required_law_hits": [
+        "law_003",
+        "law_007",
+        "law_057"
+      ],
+      "required_law_misses": [
+        "law_001",
+        "law_005"
+      ],
+      "forbidden_law_hits": [],
+      "spurious_laws": [],
+      "qa_id_recalls": {
+        "law_001": 0.0,
+        "law_005": 0.0,
+        "law_003": 1.0,
+        "law_007": 1.0,
+        "law_057": 1.0
+      },
+      "pass": false
+    }
+  }
+]

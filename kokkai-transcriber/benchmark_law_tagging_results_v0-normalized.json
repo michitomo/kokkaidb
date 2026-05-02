@@ -3,20 +3,19 @@
     "case_id": "bench_001",
     "case_label": "本会議・防災庁設置法案（直接言及・現在FAIL）",
     "model": "google/gemma-4-31B-it",
-    "elapsed_s": 56.3,
+    "elapsed_s": 16.3,
     "actual_laws": [
       {
-        "law_id": "clb-5175",
+        "law_id": "law_013",
         "qa_ids": [
           "qa_001",
           "qa_003",
           "qa_004",
-          "qa_005",
           "qa_008"
         ]
       },
       {
-        "law_id": "clb-5177",
+        "law_id": "law_014",
         "qa_ids": [
           "qa_002",
           "qa_007"
@@ -24,34 +23,31 @@
       }
     ],
     "scores": {
-      "law_precision": 0.0,
-      "law_recall": 0.0,
-      "law_f1": 0.0,
-      "required_law_hits": [],
-      "required_law_misses": [
+      "law_precision": 1.0,
+      "law_recall": 1.0,
+      "law_f1": 1.0,
+      "required_law_hits": [
         "law_013",
         "law_014"
       ],
+      "required_law_misses": [],
       "forbidden_law_hits": [],
-      "spurious_laws": [
-        "clb-5175",
-        "clb-5177"
-      ],
+      "spurious_laws": [],
       "qa_id_recalls": {
-        "law_013": 0.0,
-        "law_014": 0.0
+        "law_013": 1.0,
+        "law_014": 1.0
       },
-      "pass": false
+      "pass": true
     }
   },
   {
     "case_id": "bench_002",
     "case_label": "本会議・健康保険法等改正案（直接言及・現在FAIL）",
     "model": "google/gemma-4-31B-it",
-    "elapsed_s": 11.7,
+    "elapsed_s": 10.5,
     "actual_laws": [
       {
-        "law_id": "clb-5199",
+        "law_id": "law_025",
         "qa_ids": [
           "qa_001",
           "qa_002",
@@ -61,62 +57,58 @@
       }
     ],
     "scores": {
-      "law_precision": 0.0,
-      "law_recall": 0.0,
-      "law_f1": 0.0,
-      "required_law_hits": [],
-      "required_law_misses": [
+      "law_precision": 1.0,
+      "law_recall": 1.0,
+      "law_f1": 1.0,
+      "required_law_hits": [
         "law_025"
       ],
+      "required_law_misses": [],
       "forbidden_law_hits": [],
-      "spurious_laws": [
-        "clb-5199"
-      ],
+      "spurious_laws": [],
       "qa_id_recalls": {
-        "law_025": 0.0
+        "law_025": 1.0
       },
-      "pass": false
+      "pass": true
     }
   },
   {
     "case_id": "bench_003",
     "case_label": "単一QA最小ケース（直接言及・現在FAIL）",
     "model": "google/gemma-4-31B-it",
-    "elapsed_s": 6.8,
+    "elapsed_s": 7.0,
     "actual_laws": [
       {
-        "law_id": "clb-5199",
+        "law_id": "law_025",
         "qa_ids": [
           "qa_001"
         ]
       }
     ],
     "scores": {
-      "law_precision": 0.0,
-      "law_recall": 0.0,
-      "law_f1": 0.0,
-      "required_law_hits": [],
-      "required_law_misses": [
+      "law_precision": 1.0,
+      "law_recall": 1.0,
+      "law_f1": 1.0,
+      "required_law_hits": [
         "law_025"
       ],
+      "required_law_misses": [],
       "forbidden_law_hits": [],
-      "spurious_laws": [
-        "clb-5199"
-      ],
+      "spurious_laws": [],
       "qa_id_recalls": {
-        "law_025": 0.0
+        "law_025": 1.0
       },
-      "pass": false
+      "pass": true
     }
   },
   {
     "case_id": "bench_004",
     "case_label": "委員会・文脈推論・2法案（現在PASS）",
     "model": "google/gemma-4-31B-it",
-    "elapsed_s": 30.5,
+    "elapsed_s": 17.9,
     "actual_laws": [
       {
-        "law_id": "clb-5199",
+        "law_id": "law_025",
         "qa_ids": [
           "qa_002",
           "qa_003",
@@ -125,7 +117,7 @@
         ]
       },
       {
-        "law_id": "shugiin-221-shuhou-7",
+        "law_id": "law_067",
         "qa_ids": [
           "qa_016",
           "qa_017"
@@ -133,22 +125,19 @@
       }
     ],
     "scores": {
-      "law_precision": 0.0,
-      "law_recall": 0.0,
-      "law_f1": 0.0,
-      "required_law_hits": [],
-      "required_law_misses": [
+      "law_precision": 1.0,
+      "law_recall": 1.0,
+      "law_f1": 1.0,
+      "required_law_hits": [
         "law_025",
         "law_067"
       ],
+      "required_law_misses": [],
       "forbidden_law_hits": [],
-      "spurious_laws": [
-        "clb-5199",
-        "shugiin-221-shuhou-7"
-      ],
+      "spurious_laws": [],
       "qa_id_recalls": {
-        "law_025": 0.0,
-        "law_067": 0.0
+        "law_025": 0.5,
+        "law_067": 1.0
       },
       "pass": false
     }
@@ -157,37 +146,25 @@
     "case_id": "bench_005",
     "case_label": "タグなし（予算委員会・一般質疑・現在PASS）",
     "model": "google/gemma-4-31B-it",
-    "elapsed_s": 12.3,
+    "elapsed_s": 21.9,
     "actual_laws": [
       {
-        "law_id": "shugiin-221-shuhou-3",
+        "law_id": "law_063",
         "qa_ids": [
           "qa_001"
         ]
       },
       {
-        "law_id": "clb-5197",
-        "qa_ids": [
-          "qa_001"
-        ]
-      },
-      {
-        "law_id": "shugiin-221-sanhou-5",
+        "law_id": "law_073",
         "qa_ids": [
           "qa_001",
           "qa_003"
         ]
       },
       {
-        "law_id": "shugiin-221-sanhou-6",
+        "law_id": "law_074",
         "qa_ids": [
           "qa_003"
-        ]
-      },
-      {
-        "law_id": "clb-5280",
-        "qa_ids": [
-          "qa_005"
         ]
       }
     ],
@@ -199,11 +176,9 @@
       "required_law_misses": [],
       "forbidden_law_hits": [],
       "spurious_laws": [
-        "clb-5197",
-        "clb-5280",
-        "shugiin-221-sanhou-5",
-        "shugiin-221-sanhou-6",
-        "shugiin-221-shuhou-3"
+        "law_063",
+        "law_073",
+        "law_074"
       ],
       "qa_id_recalls": {},
       "pass": false
@@ -213,75 +188,70 @@
     "case_id": "bench_006",
     "case_label": "複数法案・財務金融委員会（現在PASS）",
     "model": "google/gemma-4-31B-it",
-    "elapsed_s": 19.8,
+    "elapsed_s": 20.8,
     "actual_laws": [
       {
-        "law_id": "clb-5149",
+        "law_id": "law_001",
         "qa_ids": [
           "qa_001",
           "qa_002"
         ]
       },
       {
-        "law_id": "clb-5156",
+        "law_id": "law_005",
         "qa_ids": [
           "qa_003",
           "qa_004"
         ]
       },
       {
-        "law_id": "clb-5152",
+        "law_id": "law_003",
         "qa_ids": [
           "qa_011",
           "qa_012"
         ]
       },
       {
-        "law_id": "clb-5162",
+        "law_id": "law_007",
         "qa_ids": [
           "qa_022",
           "qa_023"
         ]
       },
       {
-        "law_id": "clb-5291",
+        "law_id": "law_057",
         "qa_ids": [
           "qa_029"
         ]
       },
       {
-        "law_id": "clb-5277",
+        "law_id": "law_051",
         "qa_ids": [
           "qa_032"
         ]
       }
     ],
     "scores": {
-      "law_precision": 0.0,
-      "law_recall": 0.0,
-      "law_f1": 0.0,
-      "required_law_hits": [],
-      "required_law_misses": [
+      "law_precision": 0.833,
+      "law_recall": 1.0,
+      "law_f1": 0.909,
+      "required_law_hits": [
         "law_001",
         "law_003",
         "law_005",
         "law_007",
         "law_057"
       ],
+      "required_law_misses": [],
       "forbidden_law_hits": [],
       "spurious_laws": [
-        "clb-5149",
-        "clb-5152",
-        "clb-5156",
-        "clb-5162",
-        "clb-5277",
-        "clb-5291"
+        "law_051"
       ],
       "qa_id_recalls": {
-        "law_001": 0.0,
-        "law_005": 0.0,
-        "law_003": 0.0,
-        "law_007": 0.0,
+        "law_001": 1.0,
+        "law_005": 1.0,
+        "law_003": 1.0,
+        "law_007": 1.0,
         "law_057": 0.0
       },
       "pass": false
