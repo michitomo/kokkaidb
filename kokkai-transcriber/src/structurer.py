@@ -607,15 +607,17 @@ def _drop_leading_proposal_segments(
 
 
 def _format_qa_pairs_for_prompt(qa_pairs: QAPairsOutput) -> str:
-    return "\n".join(
-        (
+    lines = []
+    for p in qa_pairs.pairs:
+        role_part = f"（{p.answer.role}）" if p.answer.role else ""
+        lines.append(
             f"[{p.id}] トピック: {p.topic}\n"
             f"  質問者: {p.question.speaker}（{p.question.party}）\n"
             f"  質問要旨: {p.question.summary}\n"
+            f"  回答者: {p.answer.speaker}{role_part}\n"
             f"  回答要旨: {p.answer.summary}"
         )
-        for p in qa_pairs.pairs
-    )
+    return "\n".join(lines)
 
 
 def _call_structurer(
@@ -645,17 +647,42 @@ def _call_structurer(
 
 
 def generate_session_summary(
-    qa_pairs: QAPairsOutput, utterances: UtterancesOutput | None = None
+    qa_pairs: QAPairsOutput,
+    utterances: UtterancesOutput | None = None,
+    session_meta: dict | None = None,
 ) -> str:
-    """セッション要約（3-5文）を生成する（Step 6b-1）。"""
+    """セッション要約（3-5文）を生成する（Step 6b-1）。
+
+    session_meta で院名・委員会名を渡すと冒頭の種別表記が正確になる。
+    使用可能なキー: chamber ("shugiin"|"sangiin"), committee, description (qa_pairs が空の場合のフォールバック)
+    """
     if qa_pairs.pairs:
         body = "## Q&Aペア一覧\n" + _format_qa_pairs_for_prompt(qa_pairs)
     elif utterances is not None and utterances.segments:
         body = "## 発言セグメント\n" + _format_segments_for_prompt(utterances.segments)
+    elif session_meta and session_meta.get("description"):
+        body = "## セッション概要\n" + session_meta["description"]
     else:
         return ""
 
-    user_prompt = "以下の国会セッションの内容から、概要を作成してください。\n\n" + body
+    meta_prefix = ""
+    if session_meta:
+        chamber_raw = session_meta.get("chamber", "")
+        committee = session_meta.get("committee", "")
+        chamber_ja = (
+            "衆議院" if chamber_raw == "shugiin"
+            else "参議院" if chamber_raw == "sangiin"
+            else chamber_raw
+        )
+        parts = []
+        if chamber_ja:
+            parts.append(f"院: {chamber_ja}")
+        if committee:
+            parts.append(f"委員会: {committee}")
+        if parts:
+            meta_prefix = "## セッション情報\n" + "\n".join(parts) + "\n\n"
+
+    user_prompt = "以下の国会セッションの内容から、概要を作成してください。\n\n" + meta_prefix + body
     data = _call_structurer(SESSION_SUMMARY_SYSTEM_PROMPT, user_prompt, max_tokens=1024)
     summary = data.get("session_summary", "")
     if not isinstance(summary, str):

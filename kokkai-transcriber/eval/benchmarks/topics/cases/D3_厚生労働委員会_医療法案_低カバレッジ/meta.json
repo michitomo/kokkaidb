@@ -1,0 +1,13 @@
+{
+  "case_id": "D3_厚生労働委員会_医療法案_低カバレッジ",
+  "session": "56196_厚生労働委員会",
+  "date": "2026-04-22",
+  "committee": "厚生労働委員会（医療保険制度改正）",
+  "n_qa_pairs": 117,
+  "n_topics_expected": 13,
+  "current_coverage": 0.59,
+  "target_coverage": 1.0,
+  "pattern": "low_coverage_single_bill_extended",
+  "description": "健康保険法改正案を中心とした厚生労働委員会。117QAで複数の質疑者が個別医療政策テーマを追加質問。現状6トピック・59%から13トピック・100%が目標。",
+  "problem_analysis": "LLMがOTC類似薬・高額療養費・出産費用・DX・後期高齢者・医薬品安定供給の主要6テーマに収束し、協会けんぽ・プレコンセプションケア・リハビリ専門職・少子化対策・社会保障の国際比較等の周辺質問を切り捨てた。"
+}

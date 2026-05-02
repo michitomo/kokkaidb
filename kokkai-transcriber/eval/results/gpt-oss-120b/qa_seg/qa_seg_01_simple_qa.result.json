@@ -1,0 +1,55 @@
+{
+  "raw_content": "{\n  \"pairs\": [\n    {\n      \"topic\": \"防災庁の勧告権の実効性と省庁連携\",\n      \"question\": {\n        \"summary\": \"- 勧告された省庁の実行力を確保する方法\\n- 防災庁が指導力を発揮できる環境整備\\n- すり合わせや共同訓練を通じた省庁間連携の方針\",\n        \"sentence_indices\": [1, 2],\n        \"intent\": \"policy_proposal\"\n      },\n      \"answer\": {\n        \"summary\": \"- 運用には情報共有と共通認識の醸成が重要\\n- 平時の連絡会議・共同訓練・人事交流等で共通理解を形成\\n- 必要に応じて勧告権を発動し、縦割りの抜け漏れを防止\",\n        \"sentence_indices\": [4, 5]\n      }\n    },\n    {\n      \"topic\": \"地方防災局の役割と機能\",\n      \"question\": {\n        \"summary\": \"- 防災庁設置法で定められた地方防災局の設置期間と目的\\n- 平時の事前防災における地方防災局の担うべき役割\\n- 発災後の多省庁・自治体との連携や役割分担の機能\",\n        \"sentence_indices\": [7, 8, 9],\n        \"intent\": \"information_request\"\n      },\n      \"answer\": {\n        \"summary\": \"- 防災局は地域の事前防災対策と迅速支援体制の検討を行う\\n- 平時は防災庁本体と連携し防災対策を支援\\n- 発災時は関係省庁と緊密連携し、復旧復興まで伴走型支援体制を構築\",\n        \"sentence_indices\": [12, 13, 14]\n      }\n    }\n  ]\n}",
+  "parsed": {
+    "pairs": [
+      {
+        "topic": "防災庁の勧告権の実効性と省庁連携",
+        "question": {
+          "summary": "- 勧告された省庁の実行力を確保する方法\n- 防災庁が指導力を発揮できる環境整備\n- すり合わせや共同訓練を通じた省庁間連携の方針",
+          "sentence_indices": [
+            1,
+            2
+          ],
+          "intent": "policy_proposal"
+        },
+        "answer": {
+          "summary": "- 運用には情報共有と共通認識の醸成が重要\n- 平時の連絡会議・共同訓練・人事交流等で共通理解を形成\n- 必要に応じて勧告権を発動し、縦割りの抜け漏れを防止",
+          "sentence_indices": [
+            4,
+            5
+          ]
+        }
+      },
+      {
+        "topic": "地方防災局の役割と機能",
+        "question": {
+          "summary": "- 防災庁設置法で定められた地方防災局の設置期間と目的\n- 平時の事前防災における地方防災局の担うべき役割\n- 発災後の多省庁・自治体との連携や役割分担の機能",
+          "sentence_indices": [
+            7,
+            8,
+            9
+          ],
+          "intent": "information_request"
+        },
+        "answer": {
+          "summary": "- 防災局は地域の事前防災対策と迅速支援体制の検討を行う\n- 平時は防災庁本体と連携し防災対策を支援\n- 発災時は関係省庁と緊密連携し、復旧復興まで伴走型支援体制を構築",
+          "sentence_indices": [
+            12,
+            13,
+            14
+          ]
+        }
+      }
+    ]
+  },
+  "latency_seconds": 0.98,
+  "input_tokens": 2127,
+  "output_tokens": 1284,
+  "total_tokens": 3411,
+  "model": "gpt-oss-120b",
+  "model_id": "openai/gpt-oss-120b",
+  "task": "qa_seg",
+  "case_id": "qa_seg_01_simple_qa",
+  "json_valid": true,
+  "cost_estimate": 0.000326913
+}
