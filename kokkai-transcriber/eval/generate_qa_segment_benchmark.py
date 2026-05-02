@@ -470,6 +470,101 @@ def gen_bench_07_role_label_confusion() -> None:
     )
 
 
+def gen_bench_08_preamble_background_inclusion() -> None:
+    """Case 8: 前置き・背景説明を含む質問のsentence_indices切り出し
+    Pattern: 質疑者が挨拶・背景説明を経て複数の政策質問を行う（代表的な国会質疑パターン）
+    Tests:
+      - 挨拶・自己紹介・感謝文がsentence_indicesから除外されること
+      - 背景説明・問題提起文がsentence_indicesに含まれること
+      - summaryは実際の問いかけ内容のみを記載し背景説明を含まないこと
+    Source: 56214_文部科学委員会 Seg 3 山崎正恭 (デジタル教科書法案質疑) utterances[3:6]
+
+    sentence numbering (after trimming to utterances[3:6]):
+      (0) 次に山崎正恭君。     ← 委員長指名
+      (1) 山崎君。
+      (2) 中道改革連合の山崎正恭です。    ← 自己紹介  → 除外
+      (3) 本日も…ありがとうございます。   ← 感謝     → 除外
+      (4) 貴重なお時間ですので…          ← 前置き   → 除外
+      (5) ギガスクール構想により…        ← 背景説明 → 含める
+      (6) 一方で…さまざまな指摘が…      ← 問題提起 → 含める
+      (7) こうした状況の中…質問をさせていただきます。← 遷移文 → 含める
+      (8) まず、デジタル教科書導入の…    ← 小見出し → 含める
+      (9) 法案においてデジタル教科書を…  ← 質問①   → 含める
+      (10) デジタル教科書の導入を通じて… ← 質問②   → 含める
+      (11) これまでのギガスクール構想の成果と課題を踏まえ… ← 質問③ → 含める
+      (12) 松本文部科学大臣。            ← 指名     → 除外
+      (13) はい。                        ← 相槌     → 除外
+      (14-16) 実質答弁                   → 含める
+    """
+    ut, qa = load_session("2026/04/24", "56214_文部科学委員会")
+    full_seg = ut["segments"][3]  # 山崎正恭
+
+    trimmed_seg = {
+        "segment_index": full_seg["segment_index"],
+        "segment_speaker": full_seg["segment_speaker"],
+        "segment_affiliation": full_seg["segment_affiliation"],
+        "start_seconds": full_seg.get("start_seconds", 0),
+        "video_url": full_seg.get("video_url", ""),
+        "utterances": full_seg["utterances"][3:6],  # 委員長指名 + 山崎Q + 松本A
+    }
+    sentence_text, all_sentences = build_sentence_map(trimmed_seg)
+
+    # 期待ペア: 手動定義（背景sentence_indicesを含む）
+    expected = [
+        {
+            "topic": "デジタル教科書導入の政策目的と学びの将来像",
+            "question": {
+                "summary": (
+                    "- デジタル教科書の法的位置づけに係る政策目的を政府はどう定義しているか\n"
+                    "- 導入を通じて子どもたちのどのような力を育てようとしているか\n"
+                    "- GIGAスクール構想の成果・課題を踏まえた学びの将来像を問う"
+                ),
+                # (5)(6): 背景説明、(7)(8): 遷移・小見出し、(9)(10)(11): 実質質問
+                "sentence_indices": [5, 6, 7, 8, 9, 10, 11],
+                "intent": "information_request",
+            },
+            "answer": {
+                "summary": (
+                    "- 変わるべきものと守るべきものの両輪を大切にすることが重要\n"
+                    "- 多様な子どもたちを包摂した主体的・対話的な深い学びの充実を目指す\n"
+                    "- デジタル教科書で教科書内容をより分かりやすくし学びの質を高めることが目的"
+                ),
+                # (12)指名・(13)相槌は除外、(14)(15)(16)が実質答弁
+                "sentence_indices": [14, 15, 16],
+            },
+        }
+    ]
+
+    session_context = "衆議院 2026-04-24 文部科学委員会 発言者: 山崎正恭（中道改革連合）、松本文部科学大臣"
+    save_case(
+        "qa_seg_08_preamble_background_inclusion",
+        QA_SEGMENT_SYSTEM_PROMPT,
+        build_user_prompt(sentence_text, session_context),
+        {
+            "session_id": "56214",
+            "segment_index": 3,
+            "utterances_slice": "3:6",
+            "chamber": "shugiin",
+            "committee": "文部科学委員会",
+            "date": "2026-04-24",
+            "pattern": "preamble_background_inclusion",
+            "description": (
+                "山崎正恭議員がデジタル教科書法案について質問する典型的な国会質疑パターン。"
+                "挨拶（自己紹介・感謝・前置き）に続いてGIGAスクール背景説明を行い、"
+                "その後に具体的な政策質問を3問連続で行う。"
+                "挨拶文をsentence_indicesから除外しつつ背景説明を含めること、"
+                "かつsummaryを実質的な問いかけのみに限定することが正解。"
+            ),
+            "design_note": {
+                "exclude_from_indices": "sentences 2-4 (自己紹介・感謝・前置き)",
+                "include_in_indices": "sentences 5-7 (背景説明・問題提起・遷移文)",
+                "summary_scope": "sentences 9-11 の内容のみ（実質的な問いかけ）",
+            },
+        },
+        expected,
+    )
+
+
 # ---------------------------------------------------------------------------
 # メイン
 # ---------------------------------------------------------------------------
@@ -478,26 +573,29 @@ def main() -> None:
     print("QA_SEGMENT ベンチマーク生成開始\n")
     print("=" * 60)
 
-    print("\n[1/7] bench_01: シンプルQ&A（単純2ペア）")
+    print("\n[1/8] bench_01: シンプルQ&A（単純2ペア）")
     gen_bench_01_simple_qa()
 
-    print("\n[2/7] bench_02: 複数テーマ委員会Q&A（3ペア）")
+    print("\n[2/8] bench_02: 複数テーマ委員会Q&A（3ペア）")
     gen_bench_02_multi_topic_committee()
 
-    print("\n[3/7] bench_03: 趣旨説明セグメント（0ペア・過剰抽出防止）")
+    print("\n[3/8] bench_03: 趣旨説明セグメント（0ペア・過剰抽出防止）")
     gen_bench_03_procedural_zero_pairs()
 
-    print("\n[4/7] bench_04: 政府参考人答弁（混在ケース）")
+    print("\n[4/8] bench_04: 政府参考人答弁（混在ケース）")
     gen_bench_04_bureaucrat_answerer()
 
-    print("\n[5/7] bench_05: 答弁なし質問の除外")
+    print("\n[5/8] bench_05: 答弁なし質問の除外")
     gen_bench_05_no_answer_filter()
 
-    print("\n[6/7] bench_06: 本会議Q&A（intent多様性）")
+    print("\n[6/8] bench_06: 本会議Q&A（intent多様性）")
     gen_bench_06_plenary_qanda()
 
-    print("\n[7/7] bench_07: 役割ラベル混乱への対応")
+    print("\n[7/8] bench_07: 役割ラベル混乱への対応")
     gen_bench_07_role_label_confusion()
+
+    print("\n[8/8] bench_08: 前置き・背景説明を含む質問のsentence_indices切り出し")
+    gen_bench_08_preamble_background_inclusion()
 
     print("\n" + "=" * 60)
     print("完了。eval/golden/ に以下のファイルが生成されました:")
