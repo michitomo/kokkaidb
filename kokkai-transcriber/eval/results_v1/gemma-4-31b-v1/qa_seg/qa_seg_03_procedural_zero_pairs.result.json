@@ -1,0 +1,105 @@
+{
+  "raw_content": "{\n  \"pairs\": [\n    {\n      \"topic\": \"公債の発行の特例に関する法律の一部を改正する法律案の趣旨\",\n      \"question\": {\n        \"summary\": \"- 提出された法律案の趣旨説明を求める\",\n        \"sentence_indices\": [0],\n        \"intent\": \"information_request\"\n      },\n      \"answer\": {\n        \"summary\": \"- 令和8年度から12年度までの財政運営に必要な公債発行の特例措置を定める\\n- 責任ある積極財政の下で投資を推進しつつ、債務残高対GDP比を安定的に引き下げ、財政の持続可能性を確保する\",\n        \"sentence_indices\": [3, 4, 5, 6, 7, 8, 9, 10]\n      }\n    },\n    {\n      \"topic\": \"東日本大震災からの復興のための施策を実施するために必要な財源の確保に関する特別措置法の一部を改正する法律案の趣旨\",\n      \"question\": {\n        \"summary\": \"- 提出された法律案の趣旨説明を求める\",\n        \"sentence_indices\": [0],\n        \"intent\": \"information_request\"\n      },\n      \"answer\": {\n        \"summary\": \"- 第2期復興創生期間以降の基本方針に基づき、必要な法律上の手当てを講じる\\n- 復興施策の期間および復興債の発行期間を令和12年度まで延長する\",\n        \"sentence_indices\": [11, 12, 13, 14]\n      }\n    },\n    {\n      \"topic\": \"所得税法等の一部を改正する法律案の趣旨\",\n      \"question\": {\n        \"summary\": \"- 提出された法律案の趣旨説明を求める\",\n        \"sentence_indices\": [0],\n        \"intent\": \"information_request\"\n      },\n      \"answer\": {\n        \"summary\": \"- 物価高対応として所得税の基礎控除額の引き上げや特例の見直しを行う\\n- 設備投資促進税制の創設、賃上げ促進税制の見直し、住宅ローン控除の拡充等により強い経済を実現する\\n- 高所得者への負担適正化措置の見直しや、防衛特別所得税の創設を行う\",\n        \"sentence_indices\": [15, 16, 17, 18, 19, 20, 21, 22]\n      }\n    },\n    {\n      \"topic\": \"関税定立法等の一部を改正する法律案の趣旨\",\n      \"question\": {\n        \"summary\": \"- 提出された法律案の趣旨説明を求める\",\n        \"sentence_indices\": [0],\n        \"intent\": \"information_request\"\n      },\n      \"answer\": {\n        \"summary\": \"- 暫定税率の適用期限を延長し、内外の経済情勢に対応する\\n- 保税制度における法令遵守体制の策定義務化と業務改善命令の規定を整備する\\n- 個人使用目的の輸入貨物に係る課税価格の特例廃止や、迂回輸入への割増関税課税を可能にする規定を整備する\",\n        \"sentence_indices\": [23, 24, 25, 26, 27, 28, 29, 30]\n      }\n    }\n  ]\n}",
+  "parsed": {
+    "pairs": [
+      {
+        "topic": "公債の発行の特例に関する法律の一部を改正する法律案の趣旨",
+        "question": {
+          "summary": "- 提出された法律案の趣旨説明を求める",
+          "sentence_indices": [
+            0
+          ],
+          "intent": "information_request"
+        },
+        "answer": {
+          "summary": "- 令和8年度から12年度までの財政運営に必要な公債発行の特例措置を定める\n- 責任ある積極財政の下で投資を推進しつつ、債務残高対GDP比を安定的に引き下げ、財政の持続可能性を確保する",
+          "sentence_indices": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        }
+      },
+      {
+        "topic": "東日本大震災からの復興のための施策を実施するために必要な財源の確保に関する特別措置法の一部を改正する法律案の趣旨",
+        "question": {
+          "summary": "- 提出された法律案の趣旨説明を求める",
+          "sentence_indices": [
+            0
+          ],
+          "intent": "information_request"
+        },
+        "answer": {
+          "summary": "- 第2期復興創生期間以降の基本方針に基づき、必要な法律上の手当てを講じる\n- 復興施策の期間および復興債の発行期間を令和12年度まで延長する",
+          "sentence_indices": [
+            11,
+            12,
+            13,
+            14
+          ]
+        }
+      },
+      {
+        "topic": "所得税法等の一部を改正する法律案の趣旨",
+        "question": {
+          "summary": "- 提出された法律案の趣旨説明を求める",
+          "sentence_indices": [
+            0
+          ],
+          "intent": "information_request"
+        },
+        "answer": {
+          "summary": "- 物価高対応として所得税の基礎控除額の引き上げや特例の見直しを行う\n- 設備投資促進税制の創設、賃上げ促進税制の見直し、住宅ローン控除の拡充等により強い経済を実現する\n- 高所得者への負担適正化措置の見直しや、防衛特別所得税の創設を行う",
+          "sentence_indices": [
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22
+          ]
+        }
+      },
+      {
+        "topic": "関税定立法等の一部を改正する法律案の趣旨",
+        "question": {
+          "summary": "- 提出された法律案の趣旨説明を求める",
+          "sentence_indices": [
+            0
+          ],
+          "intent": "information_request"
+        },
+        "answer": {
+          "summary": "- 暫定税率の適用期限を延長し、内外の経済情勢に対応する\n- 保税制度における法令遵守体制の策定義務化と業務改善命令の規定を整備する\n- 個人使用目的の輸入貨物に係る課税価格の特例廃止や、迂回輸入への割増関税課税を可能にする規定を整備する",
+          "sentence_indices": [
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30
+          ]
+        }
+      }
+    ]
+  },
+  "latency_seconds": 11.16,
+  "input_tokens": 2176,
+  "output_tokens": 795,
+  "total_tokens": 2971,
+  "model": "gemma-4-31b",
+  "model_id": "google/gemma-4-31b-it",
+  "task": "qa_seg",
+  "case_id": "qa_seg_03_procedural_zero_pairs",
+  "json_valid": true,
+  "cost_estimate": 0.00058498
+}
