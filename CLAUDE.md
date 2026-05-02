@@ -32,7 +32,8 @@ kokkai-db/                          # このリポジトリ
 │       ├── scrapers/
 │       │   ├── base.py             # BaseScraper ABC
 │       │   ├── shugiin.py          # 衆議院TV（EUC-JP、GET中心）
-│       │   └── sangiin.py          # 参議院TV（UTF-8、AJAX依存）
+│       │   ├── sangiin.py          # 参議院TV（UTF-8、AJAX依存）
+│       │   └── _sangiin_search.py  # 過去日付検索（Playwright、F5 ASM bypass）
 │       ├── audio/
 │       │   ├── extractor.py        # ffmpeg HLS/MP4 → WAVセグメント
 │       │   └── sangiin_resolver.py # mediasp.jp hash → ストリームURL解決
@@ -98,6 +99,9 @@ source .venv/bin/activate
 pip install -e .
 # ffmpeg が必要（macOS: brew install ffmpeg、Linux: apt install ffmpeg）
 
+# 参議院の過去日付検索を使う場合は browser extras + Chromium も必要
+pip install -e '.[browser]' && python -m playwright install --with-deps chromium
+
 # 特定セッションを手動処理
 python -m src.pipeline --chamber shugiin --session-id 56149 --no-push
 
@@ -161,9 +165,12 @@ npm run check
 - HLS URLは `hidden input #vtag_src_base_vod` のvalue属性から取得
 
 ### 参議院スクレイピング注意事項
-- `detail.php?sid=XXXX` のGETは安定。発言者リストは `class="play2"` のアンカーから抽出
-- 動画はmediasp.jp外部SaaSホスト。音声URL取得にはPlaywright（headless browser）またはAPIリバースエンジニアリングが必要（Phase 3で確定）
-- AJAX依存箇所（カレンダー月移動等）はsession/cookie管理が必要
+- 正規ホスト名は `www.webtv.sangiin.go.jp` (`webtv.sangiin.go.jp` は環境により名前解決不可)
+- `detail.php?sid=XXXX` の GET は安定。発言者リストは `class="play2"` のアンカーから抽出
+- **動画 URL 解決**: `public.mediasp.jp/v1/player?hash=XXX` のレスポンス本文に `video_info[0].url` として m3u8 URL が直書きされている。`audio/sangiin_resolver.py` の regex で抽出可能 (Playwright 不要)
+- 実 m3u8 ホスト: `sangiin-vod.live.ipcasting.jp` (IIJ Media Service Provider 経由)
+- **過去日付のセッション検出**: POST `keyword_search.php` が F5 BIG-IP ASM Bot Defense で保護されている。素の HTTP では弾かれるため Playwright + playwright-stealth + 信頼イベント (real mouse click) でフォーム送信する (`src/scrapers/_sangiin_search.py`)。`detect_new_sessions(date)` は本日 (JST) のみ GET 軽量経路、それ以外は Playwright 経路に自動分岐
+- 本日分は `result_selecter.php?mode=today_reload` の GET で取れる (`absdate` は実質無視され今日分のみ返る仕様)
 
 ### Tier 0 / Tier 1 分離
 - **Tier 0**: キー不要。ビルド時生成の全データを閲覧・検索・フィルタ。完全独立プロダクト
@@ -212,7 +219,9 @@ CREATE TABLE processed_sessions (
 | サービス | 用途 | 認証 |
 |---------|------|------|
 | `hlsvod.shugiintv.go.jp` | 衆議院HLS音声 | なし |
-| `public.mediasp.jp` | 参議院動画（hash指定） | なし（Playwright使用） |
+| `public.mediasp.jp/v1/player` | 参議院動画 (hash → m3u8 URL) | なし (regex で本文から抽出、Playwright 不要) |
+| `sangiin-vod.live.ipcasting.jp` | 参議院 HLS 配信 (IIJ MSP) | なし |
+| `www.webtv.sangiin.go.jp` (POST `keyword_search.php`) | 参議院 過去日付セッション検索 | なし (Playwright + stealth で F5 ASM bypass) |
 | DeepInfra Whisper | 文字起こし | `DEEPINFRA_API_KEY` |
 | DeepInfra DeepSeek V3.2 | 話者タグ・構造化 | `DEEPINFRA_API_KEY` |
 | OpenRouter | BYOK LLM（ブラウザのみ） | ユーザー入力キー |

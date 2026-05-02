@@ -178,11 +178,23 @@ conn.execute("PRAGMA busy_timeout=5000")
 - HTML構造変更を検出するバリデーション（期待するタグ階層がない場合はWARNING）
 - テスト用のHTMLフィクスチャを定期的に実サイトと比較するスモークテスト
 
-### 3-2. [Medium] 参議院の mediasp.jp 解決がPlaywrightなし
+### 3-2. [Resolved] 参議院の動画 URL 解決と過去日付検索
 
-**現象**: `sangiin_resolver.py` はAPIリクエストベースだが、mediasp.jp がJSレンダリング必須の場合に対応できない。コメントでは「Playwright fallback」と書かれているが未実装。
+**動画 URL 解決 (mediasp.jp hash → m3u8)**:
+`public.mediasp.jp/v1/player?hash=XXX` のレスポンス本文に `video_info[0].url` として
+m3u8 URL が直書きされていることを確認した (実 URL: `sangiin-vod.live.ipcasting.jp/...`)。
+`audio/sangiin_resolver.py` の regex が実応答に対して動作することを実証済み。
+Playwright は不要。
 
-**解決策**: Playwright fallback を実装するか、現在のAPIベース方式で対応可能であることを確認・文書化。
+**過去日付のセッション検出**:
+POST `keyword_search.php` が F5 BIG-IP ASM Bot Defense で保護されており、
+素の HTTP クライアント (urllib / requests / curl_cffi + chrome impersonate)
+は全て "Request Rejected" で弾かれる。Playwright + playwright-stealth +
+信頼イベント (実マウスクリック) でのみ通過可能。
+`src/scrapers/_sangiin_search.py` で実装済み。`detect_new_sessions(date)` は
+本日 (JST) のみ GET 軽量経路、それ以外を Playwright 経路に自動分岐する。
+
+依存: `pip install -e '.[browser]'` && `python -m playwright install --with-deps chromium`
 
 ### 3-3. [Low] 日付 "unknown" のフォールバック
 
