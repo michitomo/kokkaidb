@@ -1,6 +1,14 @@
-"""参議院TV (webtv.sangiin.go.jp) スクレイパー
+"""参議院TV (www.webtv.sangiin.go.jp) スクレイパー
 
 UTF-8 エンコーディング（特別な処理不要）。
+
+`detect_new_sessions(date)` の経路:
+  - 本日 (JST): `result_selecter.php?mode=today_reload&absdate=...` を GET で叩く。
+                参議院TVは `mode=today_reload` の場合 absdate に関わらず本日分のみを
+                返す仕様。GET 経由のため WAF を通過する。
+  - 過去日付:   POST `keyword_search.php` が必要。F5 BIG-IP ASM Bot Defense で
+                保護されているため、Playwright (要 stealth + 信頼イベント) で
+                ブラウザ経由のフォーム送信を行う (`_sangiin_search.py` を参照)。
 """
 
 from __future__ import annotations
@@ -21,12 +29,14 @@ from src.scrapers.base import BaseScraper
 
 logger = logging.getLogger(__name__)
 
-BASE_URL = "https://webtv.sangiin.go.jp/webtv"
+# 正規ホスト名は www.webtv.sangiin.go.jp (バレ webtv.sangiin.go.jp は環境により
+# 名前解決できないことがあるため www 付きを採用)。
+BASE_URL = "https://www.webtv.sangiin.go.jp/webtv"
 JST = timezone(timedelta(hours=9))
 
 
 class SangiinScraper(BaseScraper):
-    """参議院TV (webtv.sangiin.go.jp) スクレイパー。"""
+    """参議院TV (www.webtv.sangiin.go.jp) スクレイパー。"""
 
     chamber = "sangiin"
 
@@ -34,24 +44,49 @@ class SangiinScraper(BaseScraper):
         """指定日のセッションIDリストを返す。
 
         Args:
-            date: 検索対象日（YYYY-MM-DD形式）
+            date: 検索対象日（YYYY-MM-DD 形式）
 
         Returns:
-            sid の文字列リスト（重複なし）
+            sid の文字列リスト（重複なし、昇順）
+        """
+        today_jst = datetime.now(JST).strftime("%Y-%m-%d")
+        if date == today_jst:
+            return self._detect_today(date)
+        return self._detect_past_via_playwright(date)
+
+    def _detect_today(self, date: str) -> list[str]:
+        """本日分の高速取得 (GET、WAF 不要)。
+
+        `result_selecter.php?mode=today_reload` は `absdate` パラメータを
+        実質無視して常に「今日」分のみ返す。本メソッドは `date` が今日と
+        一致する前提で呼ばれる。
         """
         url = f"{BASE_URL}/result_selecter.php?mode=today_reload&absdate={date}"
-        logger.info("Fetching sangiin session list for date=%s: %s", date, url)
+        logger.info("Fetching sangiin session list for today=%s: %s", date, url)
 
-        # cookie/セッション依存の可能性があるので requests.Session() を使用
         session = requests.Session()
-        # 先にトップページにアクセスしてcookieを取得
+        # 先にトップページにアクセスして PHPSESSID を取得
         session.get(f"{BASE_URL}/index.php", timeout=30)
         response = session.get(url, timeout=30)
         response.raise_for_status()
 
-        # レスポンスからsidを抽出（HTML断片またはJSON）
-        sids = list(set(re.findall(r"detail\.php\?sid=(\d+)", response.text)))
-        logger.info("Found %d sangiin sessions for %s", len(sids), date)
+        sids = sorted(set(re.findall(r"detail\.php\?sid=(\d+)", response.text)))
+        logger.info("Found %d sangiin sessions for today=%s", len(sids), date)
+        return sids
+
+    def _detect_past_via_playwright(self, date: str) -> list[str]:
+        """過去日付の検索 (Playwright 必須)。
+
+        F5 BIG-IP ASM が POST keyword_search.php を遮断するため、ヘッドレス
+        ブラウザで JS チャレンジを通し、検索ボタンを信頼イベントでクリック
+        して結果 HTML を回収する。失敗時 (Playwright 未導入 / WAF 強化) は
+        例外を投げる。`batch.py` 側で warning 扱いになる。
+        """
+        from src.scrapers._sangiin_search import discover_sids_for_date
+
+        logger.info("Searching sangiin past sessions for date=%s via playwright", date)
+        sids = discover_sids_for_date(date)
+        logger.info("Found %d sangiin sessions for past date=%s", len(sids), date)
         return sids
 
     def get_session_detail(self, session_id: str) -> SessionDetail:

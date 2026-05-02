@@ -20,6 +20,13 @@ dev = [
 eval = [
     "pyyaml>=6.0",
 ]
+# 参議院の過去日付検索で WAF (F5 ASM) を通すために必要。
+# 衆議院のみを処理する場合は不要。
+# 利用時は別途 `python -m playwright install --with-deps chromium` も実行する。
+browser = [
+    "playwright>=1.49",
+    "playwright-stealth>=2.0",
+]
 
 [project.scripts]
 kokkai-pipeline = "src.pipeline:main"

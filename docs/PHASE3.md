@@ -10,6 +10,19 @@
 
 ---
 
+## 実装結果メモ (2026-05 検証)
+
+実 webtv.sangiin.go.jp / public.mediasp.jp に対する E2E 検証で以下が確定:
+
+- **正規ホスト名**: `www.webtv.sangiin.go.jp` (`webtv.sangiin.go.jp` は環境により名前解決不可。コードは `www` 付きを採用)
+- **mediasp.jp 解決**: 方法 A (regex で player 応答本文から抽出) で **動作する**。実 m3u8 URL は `sangiin-vod.live.ipcasting.jp/live/dirty/N/HEX/index_*.m3u8` 形式 (IIJ Media Service Provider)。Playwright 不要
+- **過去日付セッション検出**: 計画では `result_selecter.php?absdate=...` を想定していたが、実装では同エンドポイントが `mode=today_reload` の場合 `absdate` を実質無視し**本日分のみ返す**仕様と判明
+  - **本日 (JST) のみ**: 既存 GET 経路 (`result_selecter.php?mode=today_reload`) で軽量取得
+  - **過去日付**: POST `keyword_search.php` が F5 BIG-IP ASM Bot Defense で保護されており、urllib / requests / curl_cffi (Chrome impersonate) は全て弾かれる。**Playwright + playwright-stealth + 信頼イベント (実マウスクリック)** が必要 → `src/scrapers/_sangiin_search.py` を新設
+- **依存追加**: `[browser]` extras として `playwright>=1.49`, `playwright-stealth>=2.0`。CI は `chamber=sangiin` のときのみインストール
+
+---
+
 ## 成果物
 
 Phase 3 完了時に以下が揃う:

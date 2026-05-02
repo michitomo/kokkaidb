@@ -164,7 +164,13 @@ class TestSangiinScraperClass:
         for speaker in result.speakers:
             assert speaker.role != ""
 
-    def test_detect_new_sessions(self) -> None:
+    def test_detect_new_sessions_today_uses_get(self) -> None:
+        """本日 (JST) なら GET `result_selecter.php` 経路。"""
+        from datetime import datetime, timedelta, timezone
+
+        jst = timezone(timedelta(hours=9))
+        today = datetime.now(jst).strftime("%Y-%m-%d")
+
         html_content = _load_calendar_fixture_html()
 
         mock_response = MagicMock()
@@ -176,14 +182,19 @@ class TestSangiinScraperClass:
 
         with patch("src.scrapers.sangiin.requests.Session", return_value=mock_session):
             scraper = SangiinScraper()
-            ids = scraper.detect_new_sessions("2026-04-10")
+            ids = scraper.detect_new_sessions(today)
 
         assert "7890" in ids
         assert "7891" in ids
         assert "7892" in ids
         assert len(ids) == 3
 
-    def test_detect_new_sessions_no_duplicates(self) -> None:
+    def test_detect_new_sessions_today_no_duplicates(self) -> None:
+        from datetime import datetime, timedelta, timezone
+
+        jst = timezone(timedelta(hours=9))
+        today = datetime.now(jst).strftime("%Y-%m-%d")
+
         html_content = """
         <a href="detail.php?sid=7890">法務委員会</a>
         <a href="detail.php?sid=7890">法務委員会 (リプレイ)</a>
@@ -198,9 +209,22 @@ class TestSangiinScraperClass:
 
         with patch("src.scrapers.sangiin.requests.Session", return_value=mock_session):
             scraper = SangiinScraper()
-            ids = scraper.detect_new_sessions("2026-04-10")
+            ids = scraper.detect_new_sessions(today)
 
         assert ids.count("7890") == 1
+
+    def test_detect_new_sessions_past_uses_playwright(self) -> None:
+        """本日以外なら Playwright 経路 (`discover_sids_for_date`) に委譲する。"""
+        with patch(
+            "src.scrapers._sangiin_search.discover_sids_for_date",
+            return_value=["8932", "8933", "8941"],
+        ) as mock_discover:
+            scraper = SangiinScraper()
+            # 確実に「過去」となる古い日付を指定
+            ids = scraper.detect_new_sessions("2025-06-12")
+
+        mock_discover.assert_called_once_with("2025-06-12")
+        assert ids == ["8932", "8933", "8941"]
 
     def test_get_audio_url_calls_resolver(self) -> None:
         html_content = _load_fixture_html()
@@ -271,8 +295,26 @@ class TestEdgeCases:
 
 @pytest.mark.integration
 class TestSangiinScraperIntegration:
-    def test_detect_new_sessions_real(self) -> None:
-        """実際の webtv.sangiin.go.jp からセッションIDを取得する（結合テスト）。"""
+    def test_detect_today_real(self) -> None:
+        """本日 (JST) を渡して GET 経路を実走 (Playwright 不要)。"""
+        from datetime import datetime, timedelta, timezone
+
+        jst = timezone(timedelta(hours=9))
+        today = datetime.now(jst).strftime("%Y-%m-%d")
+
         scraper = SangiinScraper()
-        ids = scraper.detect_new_sessions("2026-04-10")
+        ids = scraper.detect_new_sessions(today)
         assert isinstance(ids, list)
+
+    def test_detect_past_date_real(self) -> None:
+        """過去日付を渡して Playwright 経路を実走 (chromium 必須)。
+
+        2026-04-02 は実際に 11 セッションが配信された日 (検証時点)。
+        セッション数が変わっても「11 件以上」を最低保証として検証する。
+        """
+        scraper = SangiinScraper()
+        ids = scraper.detect_new_sessions("2026-04-02")
+        assert isinstance(ids, list)
+        assert len(ids) >= 1
+        for sid in ids:
+            assert sid.isdigit()

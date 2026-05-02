@@ -75,8 +75,18 @@ jobs:
       # pip install は全依存入れる必要がある: batch.py → pipeline.py →
       # transcriber/structurer が openai 等を import するため。pip cache が
       # 効くので概ね10〜20秒。ffmpeg (apt) は本処理時のみ入れて節約する。
+      # 参議院の場合は [browser] extras と Chromium が要る
+      # (POST keyword_search.php が F5 ASM Bot Defense で保護されているため)。
       - name: Install pipeline dependencies
-        run: pip install -e .
+        env:
+          CHAMBER: ${{ github.event.inputs.chamber || 'shugiin' }}
+        run: |
+          if [ "$CHAMBER" = "sangiin" ]; then
+            pip install -e '.[browser]'
+            python -m playwright install --with-deps chromium
+          else
+            pip install -e .
+          fi
 
       - name: Probe for new sessions (dry-run)
         id: probe
