@@ -730,86 +730,24 @@ def generate_session_summary(
     return summary.strip()
 
 
-_TOPICS_CHUNK_SIZE = 30
-
-
 def _parse_topics_data(
-    data: dict[str, Any], valid_qa_ids: set[str]
+    data: dict,
+    valid_qa_ids: set[str],
 ) -> tuple[list[Topic], list[str]]:
-    """topics/key_topics を data dict からパースして返す。"""
+    """LLM 出力の topics データを Topic リストに変換する。"""
     topics_list: list[Topic] = []
     for t in data.get("topics", []):
         related_qa_ids = [q for q in (t.get("related_qa_ids") or []) if q in valid_qa_ids]
-        topics_list.append(
-            Topic(
-                name=t.get("name") or "",
-                description=t.get("description") or "",
-                related_qa_ids=related_qa_ids,
-                related_speakers=t.get("related_speakers") or [],
-            )
-        )
+        related_speakers = [s for s in (t.get("related_speakers") or []) if isinstance(s, str)]
+        topics_list.append(Topic(
+            name=t.get("name") or "",
+            description=t.get("description") or "",
+            related_qa_ids=related_qa_ids,
+            related_speakers=related_speakers,
+        ))
     raw_key_topics = data.get("key_topics") or []
     key_topics = [n for n in raw_key_topics if isinstance(n, str) and n]
     return topics_list, key_topics
-
-
-def _consolidate_chunk_topics(
-    chunk_topics: list[Topic],
-    total_pairs: int,
-    valid_qa_ids: set[str],
-) -> list[Topic]:
-    """チャンク分割で生成されたトピック群をLLMで意味的に統合する。"""
-    if total_pairs <= 50:
-        target = "5〜10件"
-    else:
-        target = "8〜15件"
-
-    topics_text = json.dumps(
-        [
-            {
-                "name": t.name,
-                "description": t.description,
-                "related_qa_ids": t.related_qa_ids,
-                "related_speakers": t.related_speakers,
-            }
-            for t in chunk_topics
-        ],
-        ensure_ascii=False,
-    )
-
-    consolidation_prompt = (
-        f"チャンク分割処理で生成されたトピック（計{len(chunk_topics)}件）を意味的に統合し、"
-        f"{target}のトピックにまとめてください。\n\n"
-        "ルール:\n"
-        "- 各 related_qa_id は必ずいずれかのトピックに引き継ぐ\n"
-        "- 意味的に近いトピックは統合する\n"
-        "- 出力フォーマットは入力と同じ JSON 構造\n\n"
-        f"入力トピック:\n{topics_text}"
-    )
-
-    system = (
-        "トピック統合器。入力トピックリストを指定数に統合し、"
-        '{"topics":[{"name":"...","description":"...","related_qa_ids":[...],"related_speakers":[...]}],'
-        '"key_topics":[...]} のJSON形式で返す。key_topicsは2〜5件。'
-    )
-
-    logger.info(
-        "_consolidate_chunk_topics: merging %d chunk topics for %d pairs → target %s",
-        len(chunk_topics), total_pairs, target,
-    )
-
-    try:
-        data = _call_structurer(system, consolidation_prompt, max_tokens=_MAX_TOKENS_CEILING)
-    except Exception as e:
-        logger.error("Topic consolidation failed, using raw chunk topics: %s", e)
-        return chunk_topics
-
-    topics_list, _ = _parse_topics_data(data, valid_qa_ids)
-    if not topics_list:
-        logger.warning("Topic consolidation returned empty list, using raw chunk topics")
-        return chunk_topics
-
-    return topics_list
 
 
 def generate_topics_and_key_topics(
@@ -817,69 +755,16 @@ def generate_topics_and_key_topics(
 ) -> tuple[TopicsOutput, list[str]]:
     """topics + key_topics を生成する（Step 6b-2）。
 
-    QAペア数が _TOPICS_CHUNK_SIZE を超える場合はチャンク分割して並列呼び出しし統合する。
+    全 QA ペアを一括で LLM に渡す。
     key_topics は topics[].name のサブセットになるよう post-validate する。
     """
     if not qa_pairs.pairs:
         return TopicsOutput(topics=[]), []
 
     valid_qa_ids = {p.id for p in qa_pairs.pairs}
-
-    pairs = qa_pairs.pairs
-    if len(pairs) <= _TOPICS_CHUNK_SIZE:
-        user_prompt = "## Q&Aペア一覧\n" + _format_qa_pairs_for_prompt(qa_pairs)
-        data = _call_structurer(TOPICS_SYSTEM_PROMPT, user_prompt, max_tokens=_MAX_TOKENS_CEILING)
-        topics_list, raw_key_topics = _parse_topics_data(data, valid_qa_ids)
-    else:
-        # チャンク分割して並列呼び出し
-        chunks = [
-            pairs[i : i + _TOPICS_CHUNK_SIZE]
-            for i in range(0, len(pairs), _TOPICS_CHUNK_SIZE)
-        ]
-        logger.info(
-            "generate_topics_and_key_topics: splitting %d QA pairs into %d chunks",
-            len(pairs),
-            len(chunks),
-        )
-
-        def _call_chunk(chunk: list[QAPair]) -> tuple[list[Topic], list[str]]:
-            chunk_output = QAPairsOutput(pairs=chunk)
-            prompt = "## Q&Aペア一覧\n" + _format_qa_pairs_for_prompt(chunk_output)
-            d = _call_structurer(TOPICS_SYSTEM_PROMPT, prompt, max_tokens=_MAX_TOKENS_CEILING)
-            return _parse_topics_data(d, valid_qa_ids)
-
-        chunk_results: list[tuple[list[Topic], list[str]]] = []
-        with ThreadPoolExecutor(max_workers=len(chunks)) as executor:
-            futures = [executor.submit(_call_chunk, chunk) for chunk in chunks]
-            for future in as_completed(futures):
-                try:
-                    chunk_results.append(future.result())
-                except Exception as e:
-                    logger.error("generate_topics chunk failed: %s", e)
-
-        # 統合: チャンクトピックをLLMで意味的に統合
-        all_chunk_topics: list[Topic] = []
-        for chunk_topics, _ in chunk_results:
-            all_chunk_topics.extend(chunk_topics)
-
-        if len(all_chunk_topics) <= 15:
-            # チャンク数が既に適切なら LLM統合不要
-            topics_list = all_chunk_topics
-        else:
-            # LLM統合パス: チャンクトピックを適切な粒度に圧縮
-            topics_list = _consolidate_chunk_topics(all_chunk_topics, len(pairs), valid_qa_ids)
-
-        # key_topics: 統合トピックから上位5件
-        all_raw_key_topics: list[str] = []
-        for _, chunk_key_topics in chunk_results:
-            for name in chunk_key_topics:
-                if name not in all_raw_key_topics:
-                    all_raw_key_topics.append(name)
-        # 統合後のトピック名セットでフィルタ
-        valid_consolidated = {t.name for t in topics_list}
-        raw_key_topics = [n for n in all_raw_key_topics if n in valid_consolidated][:5]
-        if not raw_key_topics:
-            raw_key_topics = [t.name for t in topics_list[:3]]
+    user_prompt = "## Q&Aペア一覧\n" + _format_qa_pairs_for_prompt(qa_pairs)
+    data = _call_structurer(TOPICS_SYSTEM_PROMPT, user_prompt, max_tokens=_MAX_TOKENS_CEILING)
+    topics_list, raw_key_topics = _parse_topics_data(data, valid_qa_ids)
 
     valid_topic_names = {t.name for t in topics_list}
     key_topics: list[str] = []
@@ -897,7 +782,6 @@ def generate_topics_and_key_topics(
         )
 
     return TopicsOutput(topics=topics_list), key_topics
-
 
 def generate_key_commitments(qa_pairs: QAPairsOutput) -> list[KeyCommitment]:
     """key_commitments を生成する（Step 6b-3）。"""
