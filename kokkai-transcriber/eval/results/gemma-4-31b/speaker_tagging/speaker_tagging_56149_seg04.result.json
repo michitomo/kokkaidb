@@ -1,5 +1,5 @@
 {
-  "raw_content": "{\"splits\": [{\"start\": 0, \"speaker\": \"伊東信久\", \"role\": \"質疑者\"}, {\"start\": 0, \"speaker\": \"高市早苗\", \"role\": \"答弁者\"}]}",
+  "raw_content": "{\"splits\": [{\"start\": 0, \"speaker\": \"伊東信久\", \"role\": \"質疑者\"}, {\"start\": 24, \"speaker\": \"高市早苗\", \"role\": \"答弁者\"}]}",
   "parsed": {
     "splits": [
       {
@@ -8,20 +8,20 @@
         "role": "質疑者"
       },
       {
-        "start": 0,
+        "start": 24,
         "speaker": "高市早苗",
         "role": "答弁者"
       }
     ]
   },
-  "latency_seconds": 3.06,
-  "input_tokens": 2827,
-  "output_tokens": 51,
-  "total_tokens": 2878,
+  "latency_seconds": 2.69,
+  "input_tokens": 2915,
+  "output_tokens": 52,
+  "total_tokens": 2967,
   "model": "gemma-4-31b",
   "model_id": "google/gemma-4-31b-it",
   "task": "speaker_tagging",
   "case_id": "speaker_tagging_56149_seg04",
   "json_valid": true,
-  "cost_estimate": 0.00038689
+  "cost_estimate": 0.00039871
 }
