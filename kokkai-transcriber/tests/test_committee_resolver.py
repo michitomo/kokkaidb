@@ -45,6 +45,30 @@ class TestStage1Body:
         soup = BeautifulSoup(html, "html.parser")
         assert resolve_committee(soup, []) == "憲法審査会"
 
+    def test_nav_honkaigi_does_not_poison_committee_h2(self) -> None:
+        """ナビゲーションの「本会議」span より h2 の委員会名を優先する（参議院TV再現）。"""
+        html = (
+            "<html><body>"
+            "<div id='nav'><span>本会議</span><span>委員会</span></div>"
+            "<div id='main'><h2>法務委員会</h2></div>"
+            "</body></html>"
+        )
+        soup = BeautifulSoup(html, "html.parser")
+        assert resolve_committee(soup, []) == "法務委員会"
+
+    def test_nav_honkaigi_does_not_poison_committee_in_outer_div(self) -> None:
+        """外側 div の get_text() に「本会議」が含まれても h2 の委員会名を優先する。"""
+        html = (
+            "<html><body>"
+            "<div id='wrapper'>"
+            "<div id='nav'><ul><li><span>本会議</span></li></ul></div>"
+            "<div id='content'><h2>財政金融委員会</h2></div>"
+            "</div>"
+            "</body></html>"
+        )
+        soup = BeautifulSoup(html, "html.parser")
+        assert resolve_committee(soup, []) == "財政金融委員会"
+
 
 class TestStage2SpeakerFallback:
     def test_chair_affiliation_recovers_committee(self) -> None:
