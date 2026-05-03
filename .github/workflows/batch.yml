@@ -2,7 +2,7 @@ name: Batch ingest sessions
 
 on:
   schedule:
-    # 毎時 15 分に起動（衆議院TVの反映タイミングをずらす）
+    # 毎時 15 分に起動。matrix で衆議院・参議院を並列に走らせる。
     - cron: '15 * * * *'
   workflow_dispatch:
     inputs:
@@ -11,11 +11,12 @@ on:
         required: false
         default: ''
       chamber:
-        description: '対象の院'
+        description: '対象の院 (両方 / 個別)'
         required: false
-        default: 'shugiin'
+        default: 'both'
         type: choice
         options:
+          - both
           - shugiin
           - sangiin
       workers:
@@ -23,10 +24,8 @@ on:
         required: false
         default: '4'
 
-# 同一ワークフローは1つしか走らせない（構造的多重排除）
-concurrency:
-  group: kokkai-batch
-  cancel-in-progress: false
+# 同一 chamber の重複起動を構造的に排除する。chamber 間は並列実行を許可。
+# ワークフロー全体の concurrency は外し、matrix 各 instance に持たせる。
 
 permissions:
   contents: write
@@ -34,11 +33,41 @@ permissions:
   id-token: write
 
 jobs:
+  setup:
+    # 走らせる chamber 集合を決定する。
+    # - cron / dispatch=both → ["shugiin", "sangiin"]
+    # - dispatch=shugiin or sangiin → 単独
+    runs-on: ubuntu-latest
+    outputs:
+      chambers: ${{ steps.chambers.outputs.chambers }}
+    steps:
+      - id: chambers
+        env:
+          CH: ${{ github.event.inputs.chamber }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          if [ "$EVENT" = "workflow_dispatch" ] && [ -n "$CH" ] && [ "$CH" != "both" ]; then
+            echo "chambers=[\"$CH\"]" >> "$GITHUB_OUTPUT"
+            echo "Selected chamber: $CH"
+          else
+            echo 'chambers=["shugiin","sangiin"]' >> "$GITHUB_OUTPUT"
+            echo "Selected chambers: shugiin + sangiin"
+          fi
+
   ingest:
+    needs: setup
     runs-on: ubuntu-latest
     timeout-minutes: 180
-    outputs:
-      has_new_data: ${{ steps.commit.outputs.has_new_data }}
+    strategy:
+      # 片方の chamber が落ちてももう片方は走らせ切る。
+      fail-fast: false
+      matrix:
+        chamber: ${{ fromJSON(needs.setup.outputs.chambers) }}
+    # chamber 単位の concurrency: 同一 chamber の前回ランが走っていれば
+    # 待つが、別 chamber は並列に走らせられる。
+    concurrency:
+      group: kokkai-batch-${{ matrix.chamber }}
+      cancel-in-progress: false
     defaults:
       run:
         working-directory: kokkai-transcriber
@@ -79,7 +108,7 @@ jobs:
       # (POST keyword_search.php が F5 ASM Bot Defense で保護されているため)。
       - name: Install pipeline dependencies
         env:
-          CHAMBER: ${{ github.event.inputs.chamber || 'shugiin' }}
+          CHAMBER: ${{ matrix.chamber }}
         run: |
           if [ "$CHAMBER" = "sangiin" ]; then
             pip install -e '.[browser]'
@@ -91,7 +120,7 @@ jobs:
       - name: Probe for new sessions (dry-run)
         id: probe
         env:
-          CHAMBER: ${{ github.event.inputs.chamber || 'shugiin' }}
+          CHAMBER: ${{ matrix.chamber }}
         run: |
           set +e
           LOG=$(python -m src.batch \
@@ -102,13 +131,13 @@ jobs:
           EXIT=$?
           echo "$LOG"
           if [ $EXIT -ne 0 ]; then
-            echo "::error::batch dry-run exited with $EXIT"
+            echo "::error::batch dry-run exited with $EXIT for chamber=$CHAMBER"
             exit $EXIT
           fi
           TOTAL=$(echo "$LOG" | grep -oP 'Total sessions to process: \K\d+' | tail -1)
           echo "total=${TOTAL:-0}" >> "$GITHUB_OUTPUT"
           if [ "${TOTAL:-0}" = "0" ]; then
-            echo "No new sessions — skipping full pipeline"
+            echo "No new sessions for $CHAMBER — skipping full pipeline"
           fi
 
       - name: Install ffmpeg
@@ -130,7 +159,7 @@ jobs:
         if: steps.probe.outputs.total != '0'
         env:
           DEEPINFRA_API_KEY: ${{ secrets.DEEPINFRA_API_KEY }}
-          CHAMBER: ${{ github.event.inputs.chamber || 'shugiin' }}
+          CHAMBER: ${{ matrix.chamber }}
           WORKERS: ${{ github.event.inputs.workers || '4' }}
         run: |
           python -m src.batch \
@@ -141,58 +170,95 @@ jobs:
             --no-push
 
       # batch.py の commit/push はスキップし、workflow 側で一元管理する。
-      # GITHUB_TOKEN で push すると他 workflow を発火しないため、
-      # 後続の build/deploy ジョブでサイト更新まで完結させる。
+      # 並列に走る別 chamber が同時に push する競合に備え、push 失敗時は
+      # `git pull --rebase` で取り込んでから retry する (5回まで指数バックオフ)。
+      # 衆議院は data/shugiin/、参議院は data/sangiin/ しか触らないのでファイル
+      # 単位の競合は理論上発生しない。git ref レベルの fast-forward 競合だけ
+      # rebase で解消する。
       - name: Commit data/
         id: commit
         if: steps.probe.outputs.total != '0'
         working-directory: ${{ github.workspace }}
+        env:
+          CHAMBER: ${{ matrix.chamber }}
         run: |
           git add data/
           if git diff --cached --quiet --exit-code; then
             echo "No data changes to commit"
-            echo "has_new_data=false" >> "$GITHUB_OUTPUT"
-          else
-            git commit -m "data: batch ${{ steps.dates.outputs.since }}〜${{ steps.dates.outputs.until }}"
-            git push origin main
-            echo "has_new_data=true" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
+          git commit -m "data: $CHAMBER batch ${{ steps.dates.outputs.since }}〜${{ steps.dates.outputs.until }}"
+          for i in 1 2 3 4 5; do
+            if git push origin main; then
+              echo "pushed (attempt $i)"
+              exit 0
+            fi
+            echo "push rejected; pull --rebase + retry ($i/5)"
+            git fetch origin main
+            git rebase origin/main
+            sleep $((i * 2))
+          done
+          echo "::error::push failed after 5 retries"
+          exit 1
 
   build:
+    # ingest 両 chamber の完了を待つ (success/failure いずれも next へ)。
+    # 何も新規 commit が無かった場合は build をスキップする。
     needs: ingest
-    if: needs.ingest.outputs.has_new_data == 'true'
+    if: always() && needs.ingest.result != 'cancelled' && needs.ingest.result != 'skipped'
     runs-on: ubuntu-latest
+    outputs:
+      built: ${{ steps.guard.outputs.built }}
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: main  # ingest が push した最新コミットを取得
+          ref: main
+          fetch-depth: 5
+
+      - name: Skip build if no new data commit
+        id: guard
+        run: |
+          # 直近5コミット内に "data: ... batch ..." の commit があれば build を実行
+          if git log -5 --format='%s' | grep -qE '^data: (shugiin|sangiin) batch'; then
+            echo "built=true" >> "$GITHUB_OUTPUT"
+            echo "New data detected — proceeding with build"
+          else
+            echo "built=false" >> "$GITHUB_OUTPUT"
+            echo "No new data commits — skipping build"
+          fi
 
       - uses: actions/setup-node@v4
+        if: steps.guard.outputs.built == 'true'
         with:
           node-version: 22
           cache: 'npm'
           cache-dependency-path: site/package-lock.json
 
       - name: Install dependencies
+        if: steps.guard.outputs.built == 'true'
         working-directory: site
         run: npm ci
 
       - name: Validate data referential integrity (non-blocking until reprocess)
+        if: steps.guard.outputs.built == 'true'
         working-directory: site
         continue-on-error: true
         run: npm run validate:data
 
       - name: Build Astro site (includes Pagefind via postbuild)
+        if: steps.guard.outputs.built == 'true'
         working-directory: site
         run: npm run build
 
       - name: Upload artifact
+        if: steps.guard.outputs.built == 'true'
         uses: actions/upload-pages-artifact@v3
         with:
           path: site/dist
 
   deploy:
     needs: build
+    if: needs.build.outputs.built == 'true'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
