@@ -1,0 +1,3564 @@
+{
+  "pairs": [
+    {
+      "id": "qa_001",
+      "segment_index": 1,
+      "topic": "オンライン申請の普及状況と周知",
+      "question": {
+        "speaker": "生稲晃子",
+        "party": "自由民主党・無所属の会",
+        "summary": "- オンライン申請がまだ十分に知られていないのではないかという懸念への見解を問う",
+        "full_text": "そのオンライン申請について伺います。恥ずかしながら私はこれを知らなくて、10年前と同じように当たり前に窓口へ行ったわけなんですけれども、でも国民の利便性向上という観点からオンライン申請の導入というのは極めて重要な前進であると思っています。でもこのオンライン申請についてはまだ十分知られていないのではないかなという印象も持っているんですね。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "三林領事局長",
+        "role": "",
+        "summary": "- マイナポータルやORRネットを経由して申請可能であり、戸籍謄本の用意が不要になる利便性がある\n- 2025年3月以降の利用率は約44%であり、パンフレットや動画での広報に加え、各都道府県と連携して普及に努める",
+        "full_text": "お答えいたします。オンライン申請は国内ではデジタル庁が提供するマイナポータルを経由して、そして国外では在留届の電子届出システム、これはORRネットと呼んでございますけれども、これを経由してオンラインにおいて旅券申請を行うものであります。このオンラインで申請を行うことにより、申請者の方々にとっては紙の 戸籍等本を用意する必要がなく旅券窓口には旅券の受領時に1回だけ行っていただければよいということになります。このオンライン申請の利用率でございますけれども、オンライン申請の対象が拡大した2025年、令和7年、3月以降は約44%となっていて、特に都市部ではオンライン申請率が高い傾向にあります。外務省としては各種のパンフレット、あと動画等を通じてオンライン申請の広報周知を。行っているところでありますけれども、引き続き、各都道府県と緊密に連携をして、このオンライン申請の普及に努めていきたいと考えています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5191"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#1897.86",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "オンライン申請の周知状況について",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "マイナポータル"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ORRネット"
+            },
+            {
+              "type": "number",
+              "excerpt": "約44%"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "令和7年、3月以降"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "このオンライン申請の普及に努めていきたいと考えています",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "オンライン申請の対象が拡大した令和7年3月以降は約44%となっていて、特に都市部ではオンライン申請率が高い傾向にあります。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は主観的な印象を述べるに留まり不明確ですが、回答側が具体的な利用率（44%）やシステム名などの事実を提示しており、記録としての価値があります。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "疑問符がなく、具体的な現状把握や改善策を求める問いかけになっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_002",
+      "segment_index": 1,
+      "topic": "旅券手数料の改定背景と見直し頻度",
+      "question": {
+        "speaker": "生稲晃子",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 今回の手数料改定が行われる背景と、このタイミングで見直す理由を説明すること\n- 将来的にどの程度の頻度で見直しが行われる想定か",
+        "full_text": "続いて今回の手数料の改定について伺います。さまざまな利便性向上やセキュリティ強化の取組が進められている中で、今回の手数料改定が行われる背景について、国民の皆様に分かりやすく説明していただきたいと思います。そしてまたなぜ今このタイミングで見直しを行うことになったのか、もし理由があれば教えてください。今後は政令において定めるとのことでありますが、将来的にどの程度の頻度で、その見直しというものが行われると想定しているんでしょうか。お伺いします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "三林領事局長",
+        "role": "",
+        "summary": "- 国際観光旅客税の拡充に伴い日本人出国者に配慮し手数料を軽減し、旅券所持率の向上と国際交流の活発化を図る\n- 事務の合理化による国民負担軽減に努めつつ、費用が適時適切に反映されるよう必要に応じて随時見直しを検討する",
+        "full_text": "お答え申し上げます。まず国際観光旅客税、この拡充に際して、日本人出国者に配慮する必要があるといったことを踏まえ、国分の旅券手数料を軽減するということにいたしました。また日本人の旅券所持率、コロナ禍前の水準をまだ回復しておらず、諸外国と比較しても低い水準であります。2025年は18.9%。という数字でありました。今回の旅券手数料の見直しを通じて、旅券の取得がさらに容易となること、そしてこれにより、国民の海外渡航を通じた国際交流の活発化につながることも期待されているところであります。本法案では、聴取する手数料の全体額で、旅券の発給に必要な費用を賄えるよう、政令で手数料の額を定めると。ということにしています。法改正後は事務の合理化を含む経費縮減に取り組むことで、国民負担の軽減に努めつつ、余計の発表にかかる費用が適時適切に手数料額に反映されるよう、これについては必要に応じ、随時見直しを検討していくということにしております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5191"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#1897.86",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "旅券手数料改定の背景と今後の見直し頻度について",
+          "sub_asks": [
+            "手数料改定が行われる背景の説明",
+            "今このタイミングで見直す理由",
+            "将来的な見直しの想定頻度"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "2025年は18.9%"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "必要に応じ、随時見直しを検討していく",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "国民負担の軽減に努めつつ、余計の発表にかかる費用が適時適切に手数料額に反映されるよう、これについては必要に応じ、随時見直しを検討していく",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "手数料改定の背景と目的については具体的に回答されているが、質問にある「見直しの頻度」については明確な回答を避け、「随時検討」という抽象的な表現に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どの程度の頻度で」という具体的な数値や期間を求める問い方をすることで、より拘束力のある回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_003",
+      "segment_index": 1,
+      "topic": "手数料引き下げに伴う申請集中への混雑対策",
+      "question": {
+        "speaker": "生稲晃子",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 7月1日の施行日以降に申請が集中し、窓口が混雑することへの具体的な対策を問う",
+        "full_text": "次に申請をするときの混雑対策について伺います。今回手数料が引き下げられる場合、特に施行日である7月1日以降に申請が集中する可能性があると考えられます。これまでも制度変更の際には窓口の混雑が課題になることがありました。そこで外務省としまして、申請の集中による混雑を防ぐために、 何か対策を講じていらっしゃるのか、あれば具体的な御説明をお願いしたいと思います。お願いします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "三林領事局長",
+        "role": "",
+        "summary": "- 国立印刷局に対し機材や人員配置の増強を指示し、自治体とも緊密に連携して準備している\n- 交付まで時間を要する可能性があることを、窓口やホームページ、旅行業界を通じて前広に周知広報している",
+        "full_text": "お答え申し上げます。外務省としても、7月1日以降の申請の増加の可能性というものは想定してございます。これへの対応に万全を期するため、旅券を作成している、先ほど申し上げましたけれども、国立印刷局に対して、機材や人員配置を増強するよう、 指示を行っております。また実際の旅券事務を行っている各自治体とも緊密に連携して準備を行ってございます。さらに国民の皆様に7月1日以降は旅券の申請から交付まで通常よりも時間を要する可能性があり十分な時間的余裕をもって申請をしていただきたいと。いうことについて都道府県旅券事務所の窓口や外務省ホームページなどにおいて前広に周知広報を行っているところでございます。あと旅行業界とも連携しつつ広報を強化している。そういった状況にございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5191"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#1897.86",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "7月1日以降の申請集中への混雑対策",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "施行日である7月1日"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国立印刷局"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "都道府県旅券事務所"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "外務省ホームページ"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "国立印刷局に対して、機材や人員配置を増強するよう、指示を行っております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "申請集中への具体的対策（印刷局への指示や広報）が明確に回答されており、実務的な記録価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_004",
+      "segment_index": 1,
+      "topic": "法人保護体制の安定的な確保",
+      "question": {
+        "speaker": "生稲晃子",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 手数料から国際観光旅客税などの税収へ財源が移行しても、法人保護体制が安定的かつ十分に確保される仕組みになっているか",
+        "full_text": "最後に茂木大臣にお伺いいたします。今回の改正によって、これまでパスポート手数料に含まれていた法人保護経費が、今後は国際観光旅客税などの税収によって賄われるという仕組みに移行すると承知をしています。法人保護というのは、国家の最も基本的な責務の一つであって、その安定性は何よりも 確保されなければならないというふうに考えます。今後の法人保護体制は安定的かつ十分に確保される仕組みになっているんでしょうか。大臣の御見解をお聞かせください。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "茂木外務大臣",
+        "role": "",
+        "summary": "- 法人保護経費の一部を国際観光旅客税で支弁し、それ以外は引き続き外務省の通常予算で支弁する\n- 予算上の位置づけに関わらず、海外法人の安全・安心の確保という最重要責務を果たすため万全を期す",
+        "full_text": "お答えさせていただく前に、日本のパスポートでありますが、幾何の方からも御指摘いただきましたように、 本人確認がですね、二重にも三重にもできる。さらにはですね、先ほどですね、富士山等の図柄の話もありましたが、 私が見ている限り世界で一番美しいパスポートじゃないかなと思っておりまして、こういったことも誇りに思えればと、こんなふうに感じております。その上でご質問にお答えいたしますと、委員御指摘のとおり、今般の見直しに差しまして、従来、旅券手数料で賄われていました法人保護に係る経費の一部を国際観光旅客税を財源として、 支弁をすることといたしました。国際観光医療学税を財源として支弁されない法人保護に係る契機については、引き続き外務省の通常の予算により支弁することといたしております。海外法人の安全・安心の確保は、外務省にとって最も重要な責務の一つであります。このことは、多くの国民の皆さんが、今回のイラン情勢をめぐっても、 多くの法人の方がですね、例えば旅行で行ってらしてですね、空港で足止めを食らっていると、そういった状況の中でですね、1100名を超える方のですね、帰国の支援もさせていただきましたが、 そういったところからもお感じいただいたんじゃないかなと思っております。従いまして、予算上の位置づけに関わらず、法人保護の役割をしっかりと果たせるように、引き続き万全を期していきたいと、このように考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5191"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#1897.86",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "法人保護体制の安定的な確保について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "今回の改正"
+            },
+            {
+              "type": "other",
+              "excerpt": "パスポート手数料に含まれていた法人保護経費"
+            },
+            {
+              "type": "other",
+              "excerpt": "国際観光旅客税などの税収"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "法人",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": true,
+          "score": 0.7
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国際観光旅客税"
+            },
+            {
+              "type": "number",
+              "excerpt": "1100名を超える方"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "イラン情勢"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "引き続き万全を期していきたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "予算上の位置づけに関わらず、法人保護の役割をしっかりと果たせるように、引き続き万全を期していきたい",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "予算の仕組みの変更について問われ、大臣は財源の構成を説明した上で、精神的な意欲を示す回答に留まった。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「安定的に確保される仕組みになっているか」という問いに対し、Yes/Noで答えやすいため、具体的な予算額や確保基準を問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_005",
+      "segment_index": 2,
+      "topic": "旅券法改正による18歳以上の旅券一本化の目的",
+      "question": {
+        "speaker": "青木愛",
+        "party": "立憲民主・無所属",
+        "summary": "- 18歳以上の旅券を10年有効に一本化することが、短期利用者の不利益や選択権の制限にならないか\n- 一本化の目的（行政コスト削減、不正防止、制度簡素化など）を問う",
+        "full_text": "まず、この10年旅券と、そして5年旅券、こちらの整理について伺っていきたいと思います。18歳以上につきましては、これまで10年有効旅券と5年有効旅券の2種類を取得できましたけれども、本改正案では18歳以上は10年有効旅券のみ、そして18歳未満は5年有効旅券のみと整理をされます。これまで18歳以上は10年旅券、5年旅券の選択が可能でありましたけれども、本改正において10年旅券に一本化されます。これは国民にとりまして、短期利用者の不利益、また選択権の制限、こういったことを意味するかと思います。この一本化は行政コストの削減なのか、あるいは不正の防止なのか、制度の簡素化なのか、いずれの どの目的をしたりとされているのかお伺いをさせていただきます。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "三林領事局長",
+        "role": "",
+        "summary": "- 旅券手数料から法人保護費用を除外するため、手数料に差がつかなくなり10年旅券に一本化した\n- 申請手続きの簡素化や誤納付の防止という意義もある\n- 改正後の10年旅券は、従来の5年旅券よりも手数料が安価になる",
+        "full_text": "これまで一般旅券の発給等における国分の手数料は 旅券発給にかかる費用に加え、海外における法人保護にかかる費用を合わせた額としてまいりました。現行の10年旅券と5年旅券との手数料の差額は、この旅券の有効期間に応じた法人保護金の差によるものであります。今後は旅券手数料の算定根拠から法人保護に係る費用を除外するということでこの差額による手数料額にも差がつかないということとなるため18歳以上の方については 有効期限5年の一般旅券を発資することといたしました。また今般の法改正及びそれに伴う政令改正により18歳以上の方にとってはこれまでの有効期間5年旅券よりも法改正後の10年旅券の方が手数料が安価になるということもございます。あとさらに今回の改正によって料金待機を簡素化しもって御申請やあと加護納付 を防止するといった意義もあるとこのように考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5191"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#2771.72",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "18歳以上の旅券を10年旅券に一本化する目的は何か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "本改正案"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": true,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "法人保護にかかる費用"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "旅券手数料の算定根拠から法人保護に係る費用を除外するということでこの差額による手数料額にも差がつかないということとなるため18歳以上の方については有効期限10年の一般旅券を発給することといたしました。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "旅券の一本化という制度変更の理由について、手数料算定根拠の変更という具体的な背景を回答しており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_006",
+      "segment_index": 2,
+      "topic": "旅券一本化に伴う利用実態の分析",
+      "question": {
+        "speaker": "青木愛",
+        "party": "立憲民主・無所属",
+        "summary": "- 生涯に一度しか海外旅行をしない国民にとって10年旅券の強制は過剰な負担にならないか\n- どのような利用実態データを分析して制度設計に至ったのかを問う",
+        "full_text": "中にはですね、生涯に一度の海外旅行を考える国民の方々もいらっしゃるかと思うんですが、その場合5年旅券でも十分であります。10年旅券を強制、いわば強制することになりますけれども、過剰な負担を課すことにならないか、 思います。利用実態をどのように分析した上で、今回の制度設計に至ったのか、データがあれば、それも添えて御説明をお願いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "三林領事局長",
+        "role": "",
+        "summary": "- 2023年の観光庁委託調査では、海外旅行回数が1〜4回と回答した人が約6割に上る\n- 5年旅券を選択する理由は多様であり、必ずしも期間のみが理由ではないと考えている\n- 改正後の10年旅券の方が、従来の5年旅券より手数料が安くなる点も考慮している",
+        "full_text": "必ずしも今回の 改正における根拠となったデータということではございませんけれども20代から60代の日本人を対象とした2023年の観光庁の委託調査というのがございます。これによればこれまで日本から海外旅行を行った合計回数として1回から4回と。回答された合計が約6割、63.2%、また11回以上との回答も15%というようなことがございます。いずれにしましても、18歳以上の方が5年旅券を取得する理由というのは様々あり、必ずしも5年間のみ旅行に行くということを理由とするものではないのではないかというふうにも考えております。あと先ほど申し上げましたように、今般の法改正、 それに伴う政令改正によって18歳以上の方にとってはこれまでの有効期間5年旅券よりも法改正後の10年旅券の方が手数料が安価になるというようなこともございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5191"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#2771.72",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "10年旅券制度設計の根拠と分析データの提示",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "2023年の観光庁の委託調査"
+            },
+            {
+              "type": "number",
+              "excerpt": "63.2%"
+            },
+            {
+              "type": "number",
+              "excerpt": "15%"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "必ずしも今回の改正における根拠となったデータということではございませんけれども2023年の観光庁の委託調査というのがございます。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "制度設計の根拠となるデータの提示を求めたが、回答者は直接的な根拠ではない別の調査データを提示しており、不十分な回答となっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_007",
+      "segment_index": 2,
+      "topic": "旅券発給に係る直接行政経費の増額内訳",
+      "question": {
+        "speaker": "青木愛",
+        "party": "立憲民主・無所属",
+        "summary": "- 直接行政経費が4,000円から7,000円に増額される具体的な内訳を問う",
+        "full_text": "旅券発給に伴う直接行政経費、こちらが4000円から7000円へと 増額されます。先ほども偽造防止の日本の技術についてお話がございましたけれども、そういった中身も入ってくるんだろうとは思いますけれども、この3,000円増額、この内訳について、より具体的に御説明をお願いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "三林領事局長",
+        "role": "",
+        "summary": "- 2025年3月導入のプラスチック旅券作成経費（国立印刷局）などの偽造変造対策強化費用が含まれる\n- ICチップの価格上昇などの物価上昇分や、職員の人件費上昇分を反映している",
+        "full_text": "現行の旅券手数料は2006年に改定して以来据え置かれております。コストの増加を踏まえ旅券発給に係る必要を改めて算出する必要がございます。その結果、旅券発給に係る直接行政経費として現行の4000円から7000円への変更を想定しているということでございます。このコスト増額の内容として申し上げれば、例えば 偽造変造対策強化のために、2025年3月から導入された国立印刷局におけるプラスチック旅券作成のための経費であるとか、あと旅券に使われるICチップの価格といった物価の上昇、あと職員人経費の上昇といったものを踏まえたものであるということを申し上げることができるかと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5191"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#2771.72",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "旅券発給経費3,000円増額の内訳について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "4000円から7000円へと 増額"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "2006年"
+            },
+            {
+              "type": "number",
+              "excerpt": "4000円から7000円"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "2025年3月"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国立印刷局"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "プラスチック旅券"
+            }
+          ],
+          "score": 0.9
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "偽造変造対策強化のために、2025年3月から導入された国立印刷局におけるプラスチック旅券作成のための経費であるとか、あと旅券に使われるICチップの価格といった物価の上昇、あと職員人経費の上昇といったものを踏まえたものである",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "旅券手数料増額の具体的な内訳（プラスチック旅券導入、ICチップ物価上昇、人件費）が明確に回答されており、記録としての価値が高い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_008",
+      "segment_index": 2,
+      "topic": "成人・未成年の旅券手数料の格差",
+      "question": {
+        "speaker": "青木愛",
+        "party": "立憲民主・無所属",
+        "summary": "- 18歳以上（7,000円）と18歳未満（2,500円）で手数料に大きな差がある理由を問う\n- 同一サービスであるにもかかわらず、実コストにそれほどの差があるのかを問う",
+        "full_text": "本改正で直接行政経費は18歳以上が7000円、そして18歳未満が2500円と大きな差があります。それぞれ10年旅券、5年旅券、有効期限の違いがあるものの倍以上の差があります。旅券発給の実務、こちらは成人であろうと未成年であろうと変わるとは考えにくいのですけれども、 同一サービスでありながら、ここまでの差が生じるのはなぜなのか、御説明をお願いいたします。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "三林領事局長",
+        "role": "",
+        "summary": "- ICAOの推奨に基づき、成長期の子どもの旅券は5年以下としており、期間の短さや年齢を勘案して低廉に設定している\n- 改定前よりも、18歳以上と18歳未満の国分手数料の差額は縮小している",
+        "full_text": "従来より18歳未満の方については、有効期間5年の一般旅券のみを発給してございます。子どもが成長期に外見が急速に変化することに鑑みて子どものようの旅券の有効期間は5年以下とするということを推奨していることから我が国において 民法が青年年齢を18歳と定めていることも踏まえて、このようにしていることでございます。今般の法改正案が成立した場合、この手数料は実費に加えて処分の性質も勘案することとなるところ、有効期間5年の一般旅券については、その有効期間の短さであるとか、あと申請者の年齢といった提案を勘案すれば、 18歳以上の者に対する有効期間の10年の一般旅券と比較して、より低廉な手数旅行額とすることが合理的であると、このように考えたものであります。あと7000円と2500円、差があるということでありますけれども、電子申請で申し上げると、これまでの18歳以上の方の10年旅券の国分の手数料は14000円。12歳以上18歳未満の者の5年旅券の国分の手数料は9000円で、その差額は5000円でございます。これに対して改定後の18歳以上の者の10年旅券の国分の手数料は7000円。そして18歳未満の5年6年の国分の手数料は2500円で、その差額は4500円になると。すなわち500円ではありますけれども、改定によって両者の差額は小さくなるというようなことがございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5191"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#2771.72",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "旅券発給手数料の年齢別格差の理由",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "18歳以上が7000円"
+            },
+            {
+              "type": "number",
+              "excerpt": "18歳未満が2500円"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "18歳未満・18歳以上の旅券申請者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "14000円"
+            },
+            {
+              "type": "number",
+              "excerpt": "9000円"
+            },
+            {
+              "type": "number",
+              "excerpt": "7000円"
+            },
+            {
+              "type": "number",
+              "excerpt": "2500円"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "民法"
+            }
+          ],
+          "score": 0.9
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "有効期間5年の一般旅券については、その有効期間の短さであるとか、あと申請者の年齢といった提案を勘案すれば、18歳以上の者に対する有効期間の10年の一般旅券と比較して、より低廉な手数旅行額とすることが合理的である",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "旅券手数料の格差という具体的な疑問に対し、根拠となる考え方と新旧の金額比較を提示して明確に回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_009",
+      "segment_index": 2,
+      "topic": "法人保護費の使途と積算根拠",
+      "question": {
+        "speaker": "青木愛",
+        "party": "立憲民主・無所属",
+        "summary": "- これまで手数料として徴収してきた法人保護費（間接行政経費）が具体的にどのように使われてきたのかを問う\n- 在外公館の新設や老朽化対策、警備車両経費に充てられていないかを確認する",
+        "full_text": "次に法人保護費、こちらが手数料から廃止されることについて、私も伺っていきたいと思います。これまで法人保護に係る費用として徴収されてきた間接行政経費、1年分として1000円、10年旅券として1万円と設定されていました。この法人保護費、まず実際どのように使われてきたのか、お伺いをいたします。その使われてきた中身なんですけれども、今おっしゃったのは人件費であったりとか情報発信ということでありますが、それによって今お示しいただいた280億、432億には当然届かないのでございまして、伺ったところによると、在外交換の新設ですとか老朽化対策、こういったことにも当たっているというふうに当てられているというふうに伺っておりましたが、もう少し中身を詳しく教えてください。先ほどおっしゃったその432億という金額には、これをもってしても到底及ばないのでございますが、これまでの手数料の中に含まれていた法人保護費、こちらの使い道、もう少し明確に示していただけないでしょうか。在外交換の老朽化対策等々には含まれ、老朽化対策とか、あるいは、 警備車両の関係経費、こういったものは含まれないでしょうか。在外交換の新設、老朽化対策、あるいは警備車両の関係、経費、こういったものには充てられないということでよろしいでしょうか。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "三林領事局長",
+        "role": "",
+        "summary": "- 主に法人保護に従事する職員の人件費、旅費、安全情報の収集・発信費用、困窮者の帰国貸出金などに充てている\n- 通信機材の導入や法人保護に関連する公館の改修には充てるが、建物自体の新築や外構整備などの一般経費には充てない",
+        "full_text": "この法人保護費としての間接行政経費でございますけれどもこれは主に外務省及び在外交換において法人保護に従事する職員の人件費や旅費、安全情報の収集、発信に係る費用などの処刑費をかなうことを想定して徴収してございました。法人保護費に関する経費に当たるものとして通信費のように法人保護のほかにも政務、経済、広報文化とさまざまな業務のために通信改正が使用されるなど予算しつつ案件が複数の目的を兼ねるような場合もございます。もう少し先ほどの部分を敷衍して申し上げますと間接行政経費はこれまでの間接行政経費は法人保護に係る費用として今申し上げるみたいな経費に重当することを想定して徴収をしてきてございます1つは法人保護活動経費といってこれは本省の領事局職員であるとか在外交換領事の法人保護業務に関連する旅費 公法に係る費用、消耗品等、あと、困窮法人。に対する帰国のための貸出金といったものも含まれます。それから法人保護業務に関与する外務本省および在外交換の職員の人件費ということもあって、あとその他処刑費として施設費、情報処理費、通信費といったことがありまして、在外におけるさまざまな施設設備といったことは、そういった処刑費のところにカウントされるのではないということになるかと思います。今後、日本人旅行者の 安全安心な海外旅行環境の整備における主な事業として 法人保護経費ということをやっていくわけですけれども、その中には安全情報の収集・発信、この中には最新技術を活用した観光地等において、日本人旅行者が特に観光地において、自然災害、犯罪、テロ、その方等の海外における、緊急事態における情報収集の強化であるとか、あと動画等により日本人海外旅行者等に対する安全情報の発信の強化等々あります。このことについても緊急時の法人保護の拠点ともなる在外交換施設の避難所機能等の強化ということもこれに含めて考えてございますし、あと緊急時の法人退避として、例えば大規模退避を要する事態が生じた際の日本人海外旅行者への紹介連絡の対応を強化するためのコールセンターの設置と。もう少し明確に申し上げますと、在外交換そのものの建物を更新したり、これから必要になってきますけど、 その経費に充てるということではございませんけれど、例えば今回のイランの問題でも通信が途絶をするということで、様々な新しい通信手段等々も活用して、イランにいらっしゃる法人の方と2日間で全員連絡を取ることができました。新たな通信ツール、また様々な情報発信の手段であったりとか、含めたそういった機材であったりとか、 また法人保護に関連するような在外交換の改修といいますか、その部分については当てますけれど、在外交換そのものを新しくするとか、そういう建物の外側をどうするとか、庭をどうするとか、そういうことに当てることはございません。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#2771.72",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "法人保護費（間接行政経費）の具体的な使途の明確化",
+          "sub_asks": [
+            "法人保護費の具体的な使い道",
+            "在外公館の新設・老朽化対策への充当有無",
+            "警備車両の関係経費への充当有無"
+          ],
+          "score": 0.4
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "1年分として1000円、10年旅券として1万円"
+            },
+            {
+              "type": "number",
+              "excerpt": "280億、432億"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "領事局職員"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "困窮法人に対する帰国のための貸出金"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "コールセンターの設置"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "イランの問題"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "在外公館そのものを新しくするとか、そういう建物の外側をどうするとか、庭をどうするとか、そういうことに当てることはございません。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "法人保護費の使途について、人件費や通信費などの内訳を説明し、公館の新設や外構整備には充てないことを明確に回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が重複しており、また「280億、432億」という数字の根拠が文脈から不明確である。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_010",
+      "segment_index": 2,
+      "topic": "法人保護費の財源変更（国際観光旅客税への移行）の妥当性",
+      "question": {
+        "speaker": "青木愛",
+        "party": "立憲民主・無所属",
+        "summary": "- 法人保護費を国際観光旅客税で補うことは妥当か\n- 財源が観光庁予算になることで、外務省の法人保護責任の所在が曖昧にならないか",
+        "full_text": "先ほども質疑にございましたけれども、本改正で法人保護費、これが手数料から廃止され、その財源は、観光庁の国際観光旅客税から補うということになってきます。この国際観光旅客税、出国1回当たり、現行のこれまで1000円から、今回3000円に引き上げられます。国際観光旅客税の拡充というのは、オーバーツーリズム対策の強化をはじめとした観光施策に必要となる財源を確保するため、これが主たる目的だと思いますが、この財源を法人保護に充てるということは妥当なのかということを考えます。法人保護とは明記されていません。法人保護の財源構造が、このように変わることで、法人の安全確保、維持されるのかどうか、心配ですが、いかがでしょうか。ストレスフリーと法人保護とは、その意味は全くとは言わないものの、道義とはちょっと理解しがたい部分もあるのではありますが、 ご質問させていただきたいと思いますが、利用者側からいたしますと、これまでは法人保護という明確な目的が定められた手数料を旅券発給時に納めていましたけれども、 法人保護の責任を負う外務省の所管ではない、官公庁の予算の配分で、この部分が補われるということ、これはですね、法人の安全確保の責任の所在が曖昧になるのではないか、この財源の元がですね、官公庁でありますので、本来、外務省が法人保護の第一義的な責任を負うところでありますが、そちら、官公庁から 先ほどの答弁と若干ダブル部分もあるんですが 海外法人の安全の確保と、これは外務省にとって最も重要な責務の一つでありまして、日頃から安全対策であったりとか、緊急時の対応と、外務省が責任を持ってですね、対応してきているところであります。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "三林領事局長",
+        "role": "",
+        "summary": "- 日本人旅行者の安全安心な環境整備はアウトバウンド回復に貢献し、旅客税の基本方針である「ストレスフリーな環境整備」に該当するため妥当である\n- 予算上の位置づけに関わらず、法人保護は外務省の最重要責務として責任を持って万全を期す",
+        "full_text": "まず国際観光旅客税を法人保護経費に充てることの妥当性ということについて申し上げますと、国際観光旅客税を財源として行う今般の外務省の施策は、日本人海外旅行者の海外における治安、災害への不安等を払拭することを通じて、観光立国推進基本計画で目標が設定されているアウトバウンド。の回復に貢献するため、日本人海外旅行者の安全安心な海外旅行環境の整備に係る経費として計上したものでございます。具体的には、安全情報の収集、発信、法人からの相談対応、在外交換施設の避難所機能等の強化、緊急時の法人退避等の関連事業を行うものであります。当該こうした施策は、日本人の安全安心な海外旅行環境の整備に貢献するものであり、 国際観光旅客税の使徒を定めた基本方針におけるストレスフリーで快適に旅行できる環境の整備に該当するものであると、このように考えてございます。これまでも先ほど申し上げたとおりですね、2020年の武漢、そしてアフリカからのですね、コロナ禍での法人のですね、帰国支援。そして今般の中東の間の避難、出国支援、これも1100名を超えているわけでありますが、含め全力を尽くしてきておりまして、強調させていただきたいのは、予算上の位置づけ、これにかかわらず法人保護、これは外務省として責任を持って万全を期していきたいと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#2771.72",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "法人保護費の財源変更による責任所在の曖昧化への懸念",
+          "sub_asks": [
+            "国際観光旅客税を法人保護に充てることの妥当性",
+            "財源構造の変化で法人の安全確保が維持されるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "国際観光旅客税"
+            },
+            {
+              "type": "number",
+              "excerpt": "1000円から、今回3000円に引き上げられます"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "法人",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "観光立国推進基本計画"
+            },
+            {
+              "type": "number",
+              "excerpt": "1100名を超えている"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "責任を持って万全を期していきたいと思っております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "予算上の位置づけ、これにかかわらず法人保護、これは外務省として責任を持って万全を期していきたいと思っております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "財源変更に伴う責任所在の懸念に対し、予算上の位置づけに関わらず外務省が責任を持つと明確に答弁している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問文が口語的で冗長であり、論点が分散している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_011",
+      "segment_index": 2,
+      "topic": "旅券法改正の意義と取得率向上",
+      "question": {
+        "speaker": "青木愛",
+        "party": "立憲民主・無所属",
+        "summary": "- 日本人の旅券取得率が諸外国に比べて低い中、本改正が取得率向上や海外旅行の促進に結びつくと考えているか、その意義を問う",
+        "full_text": "時間も残りわずかとなりましたので、質問を飛ばさせていただきまして、最後ですね、この改正の意義についてお伺いをいたしたいと思います。先ほども質疑に若干出ておりましたが、日本人の旅券取得率は約18.9%、低い水準になっております。各国は、例えばアメリカ53%、イギリス76.7%、オーストラリア56%以上などです。本改正は、日本人の 旅刑取得率向上や海外施行に結びつくと考えての改正なのか、本改正の意義についてお伺いをさせてください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "茂木外務大臣",
+        "role": "",
+        "summary": "- 日本人の取得率が低いのは事実であり、オンライン申請の導入等に取り組んできた\n- 手数料の見直しを通じて取得を容易にし、国民の海外渡航を通じた国際交流の活発化につながることを期待している",
+        "full_text": "確かにですね、諸外国と比べて、日本の国民のですね、この旅刑の取得率というのは低いなと感じます。また私の周りでも海外に行っているという方が多いんですけれど、海外の方、特にバカンスを、夏のバカンスを海外で楽しんだり、生活習慣の違い等々もあるのかなと感じておりますが、日本人の旅券の取得率、コロナ前の水準、これを 改革しておらず、諸外国と比較しても低い水準であるのは事実でありまして、政府としてはこれまでも旅券のオンライン申請の導入等に取り組んできたところであります。今回の旅券手数料の見直しを通じて、旅券の取得がさらに容易になること、そしてそれによって国民の海外渡航を通じた国際交流の活発化につながることを期待したいとこのように考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5191"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#2771.72",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "旅券法改正の意義について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "日本人の旅券取得率は約18.9%"
+            },
+            {
+              "type": "number",
+              "excerpt": "アメリカ53%"
+            },
+            {
+              "type": "number",
+              "excerpt": "イギリス76.7%"
+            },
+            {
+              "type": "number",
+              "excerpt": "オーストラリア56%以上"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "日本人",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "旅券のオンライン申請"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "旅券手数料の見直し"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "旅券手数料の見直しを通じて、旅券の取得がさらに容易になること、そしてそれによって国民の海外渡航を通じた国際交流の活発化につながることを期待したい",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "旅券取得率の低さを前提とした改正の意義を問う質問に対し、手数料見直しによる取得容易化と国際交流活発化への期待という趣旨で回答している。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「結びつくと考えての改正なのか」というYes/No形式で問えば、より明確な政府の意図を確定させられた。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_012",
+      "segment_index": 3,
+      "topic": "防衛装備品移転の審査基準",
+      "question": {
+        "speaker": "山田吉彦",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 紛争当事国の制限対象にならない国（ロシアやイラン等）への移転について、個別の審査を厳格に行い基準を明確にするよう求める",
+        "full_text": "このままで紛争当時刻が今発生しないということは、イランもロシアもすべて対象に、この制限の対象にならないということになります。個別の審査、厳格に、そしてその基準というものを明確にお作りいただけたらと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "小泉防衛大臣",
+        "role": "",
+        "summary": "- 国際約束を締結している相手国（17カ国）に限定しており、審査項目も追加している\n- 厳正な審査を行い、相手国に適正な管理を義務付ける",
+        "full_text": "今、先生がありましたように、事実上、じゃあ、ロシアもイランも大丈夫じゃないかということをおっしゃいますけれども、現実には、国際約束を締結している相手国、こういったことに限定もしております。それは締結国は17カ国ということでもありますし、審査項目も 今までと比べても追加をしております。厳正な審査をもって、そして相手国に対して適正な管理を義務付けると。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#5083.5",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "審査基準の明確化と厳格な運用の要望",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "イラン"
+            },
+            {
+              "type": "organization",
+              "excerpt": "ロシア"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "イラン、ロシア",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "17カ国"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "国際約束を締結している相手国、こういったことに限定もしております。それは締結国は17カ国ということでもあります",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "審査基準の明確化を求める要望に対し、締結国数などの現状説明で回答しており、具体的な改善へのコミットメントは得られていない。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "要望形式（～いただけたらと思います）であるため、政府の明確な回答や約束を引き出しにくい構成になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_013",
+      "segment_index": 4,
+      "topic": "若手有識者会議の設置提案",
+      "question": {
+        "speaker": "平木大作",
+        "party": "公明党",
+        "summary": "- 次世代の日本の有識者が育っている現状を踏まえ、若手の有識者会議を設置して登用することを提案する",
+        "full_text": "今日ぜひですね、茂木大臣にご提案したいんですけれども、今回のこのNPTを迎えるにあたって、私もいろんな指揮者の方と意見交換をさせていただきました。その時にですね、嬉しいことにというか、実は日本人の若手の有機者の方が、 各地で活躍していますよと。時には国外で大変有名な例えばシンクタンク研究所等でも活躍している日本の若手研究者いますよということで私もちょっと名前存じ上げなかった方とかもいたんですけれども本当にそういう意味でいくと次の世代の日本の有識者が育ってきているなということを嬉しい思いで聞かせていただきました。ぜひとも茂木大臣のもとに何て言うんでしょうか 次の県人会議に変わるような若手の有識者会議みたいなものを設置していただいて、こういうどんどん日本人の有識者の方を投与していっていただけたらなというふうに思うんですが、大臣いかがでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "茂木外務大臣",
+        "role": "",
+        "summary": "- 提案について前向きに検討する\n- NPT運用会議に若手を含む日本人研究者を政府代表団に加える予定である\n- ジャパンチェアの下で若手研究者が参加する研究や成果発表を進めている",
+        "full_text": "茂木上大臣各の軍備管理、軍縮の分野では国際的にアカデミアの 発信力であったりとか、また影響力が強く、政府もこれまで研究者の知見を積極的に聴取して政策立案に生かしてきたところでありますが、今、平木議員からご提案をいただいた点につきましては、よく検討させていただきたいと、こんなふうに思っております。その上で、今回のNPTの運用会議におきましても、ご指摘いただいた若手を含みます複数の日本人研究者に政府代表団に加わっていただいて、その知見を取り入れながら会議に臨むこと、これを予定をいたしております。核兵器のない世界に向けたジャパンチェアの下ででは、日本人の若手研究者も参加する形で、核軍縮不拡散分野の研究や、その成果の発表も進めております。ご指摘のとおり、活躍が顕著な若手研究者の協力を得ながら、政策を発展させていくことは重要でありまして、このような取り組みを進めていきたい。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#6516.4",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "若手有識者会議の設置提案",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "若手の有識者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "NPTの運用会議"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ジャパンチェア"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "よく検討させていただきたい",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "若手を含みます複数の日本人研究者に政府代表団に加わっていただいて、その知見を取り入れながら会議に臨むこと、これを予定をいたしております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "若手有識者会議の設置という具体的な提案に対し、大臣が「検討」と回答し、かつ現状のNPT運用会議への若手起用という具体策を提示したため、一定の記録価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "提案が抽象的なため、設置の条件や目的を具体化して問えば、より踏み込んだ回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_014",
+      "segment_index": 4,
+      "topic": "米イラン情勢と政府の認識",
+      "question": {
+        "speaker": "平木大作",
+        "party": "公明党",
+        "summary": "- 米イランの停戦期限に伴う現状と、イラン内部の統治体制の混乱への懸念を示す\n- 現時点での政府の認識と、今後の打開に向けた取り組みについて問う",
+        "full_text": "もう1問本題に入る前にお伺いしておきたいんですがちょうどこの委員会をやっている時間帯つまり本日の午前中を期限としてきたのがアメリカとイランの定戦期限ということでありました事前にアメリカの方から今回は定戦の延長ということの不穏目があったわけでありますけれども 戦闘状態に戻らなかったという意味では、一つの安堵を持っているわけですが、同時に、例えばトランプ大統領の表面の中にも、イラン政府の深刻な分裂というような表現、かきぶりもありました。要するに、イランの中で、 ペデシキュアン大統領を率いる政権ということと、このいわゆる革命防衛隊、どうもここがうまく連携取れていないんじゃないかという話もありますし、一方で最高指導者、文字玉氏の今ずっと公の場に出ないという状況も続いております。こういう中である意味ですね、定選 この交渉がいつ始まるんだろうということも含めてちょっとやはり協議が先行きがむしろ見えにくくなってきてしまっているのかなという懸念も持っております。現時点でのこの政府の御認識、そして今後次回の打開に向けた取組についてお伺いをしたいというふうに思っております。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "茂木外務大臣",
+        "role": "",
+        "summary": "- 米国は停戦期間の延長を発表したが、イラン側からの反応は現時点で確認できていない\n- 再協議がいつどのような形で行われるかは不透明な状況である\n- 情報収集を継続し、事態の早期鎮静化と協議再開を期待している",
+        "full_text": "茂木外務大臣 委員御指摘のようにですね、米国時間で言いますと21日にですね、トランプ大統領は議論が何らかの形で決着するまで、定選期間を延長する旨、発表いたしましたが、イラン側からですね、少なくとも今日この委員会が 始まる時間までにはですね、反応は出ていない。このことについては様々な意見というか見方がありまして、私の方からイランの今、統治体制がこうであると断定的に申し上げることは控えたいと思いますが、いずれにしても米イランの再協議というものが いつどのような形で行われるか、現時点では不透明な状況であります。我が国としても関連の情報につきまして、情報収支を自ら進めるとともに、引き続き重大な関心を持って、注視をしていきたいと思っております。最も重要なことは、今後ホルムズ海峡の高校の安全も含めまして、事態の早期鎮静化が 一刻も早く実際に図られるということでありまして、米イラン側の協議が再開をされ、話し合いを通じてですね、最終的な早期の合意に至ることをですね、期待をいただいております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#6516.4",
+      "metrics": null
+    },
+    {
+      "id": "qa_015",
+      "segment_index": 4,
+      "topic": "旅券法改正に伴う法人保護経費の財源",
+      "question": {
+        "speaker": "平木大作",
+        "party": "公明党",
+        "summary": "- 旅券手数料から切り離された法人保護に関する経費の、従来の予算規模と国際観光旅客税による対応額について説明を求める",
+        "full_text": "平木大作君その意味でちょっと関連する問いになるかと思うんですけれども今回この旅券手数料から切り離されたこの法人保護に関する経緯ですねこれちょっと答弁もあった分でありますけどまずやっぱりこれまでどの程度の予算を見込んできた使ってきたものなのかということそして今回国際観光旅客税ですねこれでどのくらい 実費ベースで対応されることになるのか、この財政的な対応関係について改めて、通常をもとに御説明いただけたらと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "三林領事局長",
+        "role": "",
+        "summary": "- 2024年度基準の間接行政経費（法人保護相当額）は約280億円と試算している\n- 国際観光旅客税を財源として支弁する額は、令和8年度予算で約175億円を計上している\n- それ以外の経費は引き続き外務省の通常予算で支弁する",
+        "full_text": "個々の経費が複数の目的を持っていることもございまして、法人保護経費に当たる範囲を確定的に述べるということは困難なんでありますけれども、2024年度 の旅券手数料を基準にそのうちの間接行政経費の相当額ということで申し上げればこれは約280億円と試算してございます。そして今般の見直しに際しては従来、旅券手数料で賄われていた 法人法に係る経費の一部を国際観光旅客税を財源として支弁することとするわけでございますけれどもこれは例年8年度予算において約175億円を計上してございます。国際観光旅客税を財源として支弁されない 法人保護に係る経費については、引き続き外務省の通常の予算により、指便することとしております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5191"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#6516.4",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "法人保護経費の予算実績と国際観光旅客税での対応額",
+          "sub_asks": [
+            "これまでどの程度の予算を見込んできたか",
+            "国際観光旅客税でどのくらい実費ベースで対応されるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "約280億円"
+            },
+            {
+              "type": "number",
+              "excerpt": "約175億円"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "2024年度"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.6
+        },
+        "oc3_quotability": {
+          "quote_candidate": "法人法に係る経費の一部を国際観光旅客税を財源として支弁することとするわけでございますけれどもこれは例年8年度予算において約175億円を計上してございます。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "予算額という具体的な数字が提示されており、財政的な対応関係が明確に記録されているため価値が高い。",
+        "would_be_referenced": "high",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_016",
+      "segment_index": 4,
+      "topic": "若者の海外渡航促進策",
+      "question": {
+        "speaker": "平木大作",
+        "party": "公明党",
+        "summary": "- 旅券手数料の引き下げを機に、海外に関心の高い若者世代の背中を後押しする政策を強化してほしいと求める",
+        "full_text": "次の問いに移りたいんですが長期のトレンドとしてやはりコロナということは一つあったわけですけれどもやはり旅券のそもそものいわゆる発行数自体が減少している傾向にあるそして若い人にちょっと目を向けたときに海外に留学する生徒数みたいなこともずっと一貫して減り続けている残念なことがあるわけであります今回この旅券の発行手数料が引き下がるということは 若者世代が海外に出て、この見本を広める、そういう意味ではプラスに働くんだろうというふうに思っています。これぜひ、今、旅券だけじゃなくて、為替のこととかいろいろありますから、単純にこれで費用が安くなるという話ではないんですけれども、やっぱりこういう大きく手数料が見直されたということと、気を一にして、政府として海外に関心を持っている、関心の高い若者世代の背中を後押しをするような、そんな政策を しっかり今まで以上に力を入れてやっていただきたいと思います。今日は文科省、そして観光庁からも来ていただいておりますので、ぜひともそのお考えをお伺いしたいというふうに思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "田中審議官",
+        "role": "",
+        "summary": "- 旅券手数料の引き下げがアウトバウンドの回復を後押しすると受け止めている\n- 海外教育旅行のプログラム開発促進や情報発信などを通じ、若者のアウトバウンド促進を図る",
+        "full_text": "旅券法改正によります旅券手数料の引下げは、日本人の旅券取得が容易となることを通じまして、アウトバウンドの回復を後押しするものと受け止めております。このため、観光庁といたしましては、関係部局等と連携いたしまして、海外教育旅行の促進に向けた旅行会社と学校などが連携したプログラムの開発の促進や、各国の政府観光局等と連携した情報発信などの取組を進め、 この旅券手数料の引き下げの機能も活用しつつ、若者のアウトバウンドの促進を図ってまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5191"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#6516.4",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "若者の海外渡航を後押しする政策への考え",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "若者世代",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "旅券法改正"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "観光庁"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "若者のアウトバウンドの促進を図ってまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "海外教育旅行の促進に向けた旅行会社と学校などが連携したプログラムの開発の促進や、各国の政府観光局等と連携した情報発信などの取組を進め",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "若者の海外渡航促進という要望に対し、観光庁が具体的な連携策を挙げて回答しているが、コミットメントレベルは意向表明に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "要望形式の問いであるため、具体的な数値目標や期限を設けた回答を引き出す構成になっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_017",
+      "segment_index": 4,
+      "topic": "18歳未満の残存有効期間同一料金制度の廃止",
+      "question": {
+        "speaker": "平木大作",
+        "party": "公明党",
+        "summary": "- 廃止される制度の利用実態（件数や場面）について問う\n- 制度廃止による利用者（氏名変更時など）の負担増や不便さについての認識を問う",
+        "full_text": "今回の改正で18歳未満の方の残存有効期間同一料金の制度が廃止となります。ちょっと私もこういう制度があるということ自体はちゃんと認識していなかったんですけど、そもそも制度として従来どの程度利用されてきたのか、件数ですとか利用の場面ですね、どう実態を把握しているのかということを御答弁いただきたいのと、制度廃止した場合にですね、例えばこの氏名の変更などがあった場合に、従来よりも新規発給の手続きとか、 手数料負担が増えるということも当然想定されるわけですが利用者にとっての負担増不便さこういったものについてはどうご認識をされているのかお伺いしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "三林領事局長",
+        "role": "",
+        "summary": "- 2025年の18歳未満の利用数は21件と少なく、実態としては5年旅券を新規申請する場合が多い\n- 改定後の手数料は、従来の残存有効期間同一旅券の手数料よりも引き下げられるため、制度を廃止した",
+        "full_text": "現在所持する旅券と有効期間を同じくする旅券、これを議員も言及された残存有効期間同一旅券といって、氏名や本席地の記載事項に変更があった場合などに申請されているものであります。2025年における18歳未満の方に限った残存有効期間同一旅券の発行数が21件ということで、記載事項 有効に変更があった場合には有効期間5年の旅券が新たに申請されている場合が実態として多いというふうに考えてございます。また今回の法改正によって18歳未満の方が 有効期間5年の旅券を新しく申請する際の手数料は18歳以上未満を問わず改定前の残存有効期間同一旅券の手数料そして改定後の18歳以上の方の残存有効期間同一旅券の手数料よりも引き下げられる予定でございます。こうした点を踏まえて今般まさに御指摘された制度については廃止するということにいたしたものでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5191"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#6516.4",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "18歳未満の残存有効期間同一料金制度廃止の影響と実態",
+          "sub_asks": [
+            "制度の利用件数や利用場面などの実態",
+            "制度廃止による利用者の負担増・不便さへの認識"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "今回の改正"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.2
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "18歳未満の方",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "21件"
+            },
+            {
+              "type": "number",
+              "excerpt": "有効期間5年"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "2025年における18歳未満の方に限った残存有効期間同一旅券の発行数が21件ということで",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "制度の利用実態について具体的な数値（21件）が提示されており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_018",
+      "segment_index": 4,
+      "topic": "旅券未受領時の手数料追加徴収の仕組み",
+      "question": {
+        "speaker": "平木大作",
+        "party": "公明党",
+        "summary": "- 発行後6ヶ月以内に受領しなかった場合の追加徴収制度について、申請時に費用を徴収する方法を取らなかった理由を問う",
+        "full_text": "次の問いですが、今回の旅券を改正で、一般旅券の発給を申請した方が、旅券の発行後6ヶ月以内に受領しなかった場合、この効力を失った場合に、執行後5年以内に最初に一般旅券を申請するときに、この国分の手数料、通常の2倍徴収するという仕組みが導入となります。発行に要した直接行政経費を確実に回収するという観点で考えると、例えば申請時に費用を聴取するような考え方も考えられるわけでありますけれども、今回そうした方法を取らなかった理由についてお伺いしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "三林領事局長",
+        "role": "",
+        "summary": "- 審査の結果、発給拒否や限定旅券となる可能性があるため、申請時点では手数料を確定できない\n- 交付時に厳格な本人確認を行うため、その際に徴収するのが合理的である\n- 申請時徴収の可能性については、今後の状況を踏まえて検討したい",
+        "full_text": "旅刑は渡航先で入国拒否処分を受けている方とか、あと刑事罰によって訴追されている方などを対象にして、発給の審査の結果、この発給の拒否であるとか、なぜならその限定旅券、渡航先を限定する旅券の発給といった処分を行う可能性があります。そのため、申請時には手数料が確定できないという事情がございます。旅刑の交付時には厳格な本人確認を行う必要がありまして原則として旅刑の名義に本人がお出ましいただいて交付するということをしているわけである種出逃を義務づけているわけでございますけれどもその際に手数料を徴収する方が合理的であるという面もございます実際1951年に旅刑法制定以来ですね 交付時に手数料を徴収してまいりました。経緯としては以上のとおりでありますけれども、手数料を申請時に徴収する可能性についても、今後、追徴金制度導入後の この状況や要するコストなども踏まえて検討してまいりたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5191"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#6516.4",
+      "metrics": null
+    },
+    {
+      "id": "qa_019",
+      "segment_index": 5,
+      "topic": "旅券料金改定に伴う地方窓口への支援",
+      "question": {
+        "speaker": "松沢成文",
+        "party": "日本維新の会",
+        "summary": "- 旅券料金改定による申請急増で地方のパスポートセンターが混雑し、住民からの苦情処理等の負担が増える懸念がある\n- 国としてどのような財政支援や人員支援を講じるのか",
+        "full_text": "7月の1日に新料金が適用になりますとちょうど夏の旅行シーズンとの直前ですから重なって申請が急増して交付まで最長1ヶ月を要すると外務省自らが地方に警告しているというわけなんですね。この混雑の対応や住民からの苦情処理を実務を担う都道府県のパスポートセンターに委ねるのは すべて委ねるのは国として私はちょっと無責任じゃないかなというふうに思うんです。国の料金変更によってまたパスポートセンター大混雑その対応を県にやらせるだけではなくて市が持っているとかありますけどね。国としてどのような財政支援や人員の支援を講じていくのか。そのあたり大臣伺いたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "茂木外務大臣",
+        "role": "",
+        "summary": "- 外務省にて問い合わせ対応用のコールセンターを設置する\n- 各種媒体を通じて、申請から交付まで通常より時間を要する旨を周知・広報している\n- 国立印刷局に対し、機材や人員配置の増設を要請している",
+        "full_text": "外務省としても7月1日以降の申請の増加の可能性、多分そうなるんだと思うんですけど、それを想定して対応に万全を期すために各都道府県とも連携をしておりまして、都道府県側の要望を踏まえて、6月以降に取り合わせを受けるコールセンターを 外務省にて設置をすることにいたしました。また都道府県と連携して各種媒体で7月1日以降は旅券の申請から交付まで通常よりも時間を要する可能性がある旨ですね。これは行政だけではなくて、前広に一般にですね、周知、広報を行っているところであります。また、申請の増加に対応できるようにですね、旅券を作成しております国立印刷局に対しましては、機材や人員配置、増設するように要請を行っているところであります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5191"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#7897.2",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "パスポート料金変更に伴う財政・人員支援策について",
+          "sub_asks": [
+            "財政支援をどのように講じるか",
+            "人員支援をどのように講じるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "7月の1日に新料金が適用"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "都道府県のパスポートセンター",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.6
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "コールセンターを 外務省にて設置"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国立印刷局"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 3,
+          "trigger_phrase": "コールセンターを 外務省にて設置をすることにいたしました",
+          "matched_pattern": "future-tense verb describing a CONCRETE government action with a named mechanism"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "都道府県側の要望を踏まえて、6月以降に取り合わせを受けるコールセンターを 外務省にて設置をすることにいたしました。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "料金改定に伴う混雑への具体的対策（コールセンター設置、印刷局への要請）が示されており、一定の記録価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "財政支援か人員支援かという二択の問いに対し、回答が包括的な「対応策」に留まっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_020",
+      "segment_index": 5,
+      "topic": "オンライン申請の促進策（手数料割引）",
+      "question": {
+        "speaker": "松沢成文",
+        "party": "日本維新の会",
+        "summary": "- オンライン申請の割合は増加しているが、依然として窓口利用が多く地方自治体の負担が大きい\n- オンライン申請の手数料割引幅を拡大し、実効性のある誘導策を設けるべきではないか",
+        "full_text": "次に、先ほど一久井先生からもお話がありました、オンライン申請ですね。これ、今のところオンライン申請の割合が約44%まで増加してきている。これ、評価できるところだと思いますが、それでも過半数はやはり窓口。来訪となっておりまして、地方自治体の負担は依然として大きいわけです。窓口の処理能力の限界に達するという事態を防ぐためには、このオンライン申請の、私は手数料の割引幅、今まで400円しか違わないんですよ。これをもう少し大きくして、1000円単位でオンラインでやった方がお金がかかりません。安くなりますよというふうにしないとこれなかなか拡大していかないというふうに思うんですね。国民が積極的にオンラインを選択するように実効性のある誘導策を設けるべきではないかと思いますがいかがでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "茂木外務大臣",
+        "role": "",
+        "summary": "- 手数料は都道府県条例で定められており、現在は外務省の標準額（オンライン1900円、窓口2300円）が採用されている\n- 差を広げて誘導する意見は理解するが、都道府県側からは手数料引き上げの要望があると考えられる\n- 引き続きオンライン申請の利便性について広報を行う",
+        "full_text": "茂木外務大臣 各都道府県が聴取します手数料につきましては、旅券法施行令におきまして、標準額を定めて、各都道府県条例において、具体的な金額を定めることとなっております。現在すべての都道府県が外務省がお示しをしました標準額であります オンライン申請1900円、窓口申請2300円を採用しておりまして、オンライン申請と窓口申請の手数料額に差をつけていると承知をいたしております。松山委員のおっしゃっている もっと差をつけてオンラインに誘導したらどうかという御意見は十分分かりますが今多分都道府県にどう思いますかと聞いたらもっと手数料を上げてくれという意見があったら大半というか全体になるんじゃないかなと思っておりますけどいずれにしても御意見としては理解をするところでありますまた新規に料金を新設する場合には オンライン申請の場合は紙での紙の戸籍等本取得して提出する必要がありません。外務省として引き続き都道府県と連携してこのようなオンライン申請の利便性についても広報を行っていきたいとこんなふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5191"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#7897.2",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "オンライン申請誘導のため手数料割引幅を拡大すべきか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "オンライン申請の割合が約44%"
+            },
+            {
+              "type": "number",
+              "excerpt": "今まで400円しか違わない"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "旅券法施行令"
+            },
+            {
+              "type": "number",
+              "excerpt": "オンライン申請1900円"
+            },
+            {
+              "type": "number",
+              "excerpt": "窓口申請2300円"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "広報を行っていきたいとこんなふうに考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "オンライン申請1900円、窓口申請2300円を採用しておりまして、オンライン申請と窓口申請の手数料額に差をつけていると承知をいたしております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "手数料の割引幅拡大という具体的な提案に対し、大臣は現状の制度（旅券法施行令）と金額を説明し、提案には理解を示すものの、具体的な変更への言及は避け、広報活動という抽象的な対応に留めた。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_021",
+      "segment_index": 5,
+      "topic": "デジタル旅券（DTC）の導入ロードマップ",
+      "question": {
+        "speaker": "松沢成文",
+        "party": "日本維新の会",
+        "summary": "- 国際的にスマートフォンにパスポート機能を搭載するデジタル旅券の議論が進展している\n- 日本としていつまでに導入するのか、法整備に向けたロードマップはどうなっているか",
+        "full_text": "ちょっと時間がないんで次の質問飛ばしますけれども今度偽造問題についてこれもこれまでいろんなご意見出てますが国際民間航空機関ですか以下を中心にですねスマートフォンにパスポート機能を掲載するデジタル旅券ですねの議論が国際的には進展をしております現状では紙の旅券の手数料に関する議論 が起こられているわけですけれども日本としてこれいつまでにデジタル旅券を導入していくのかその法整備に向けた労働マップはどのようになっているかお伺いしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "三林領事局長",
+        "role": "",
+        "summary": "- ICAOにおける技術面での議論を注視し、情報収集を行っている\n- 具体的な時期の明言は難しいが、技術発展や諸外国の動向を踏まえ、セキュリティと利便性の向上に向けて対応していく",
+        "full_text": "議員ご指摘のスマートフォンに予見情報が搭載されるデジタル渡航証明、これはDTCでデジタルトラベルクレデンシャルというものだそうですけれども、これについてはまさに国際民間航空機関以下において、技術面での議論が行われてございます。外務省としても、予見のこうしたデジタル化に関する状況を注視して、情報収集を行ってきてございます。いつまで何をというのはなかなか難しいところでございますけれども、今後デジタル技術の発展、旅券に関する以下の議論や、あと諸外国の動向、こうしたところも踏まえながら、旅券のセキュリティや利便性を向上させるよう、引き続き対応してまいりたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5191"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#7897.2",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "デジタル旅券の導入時期とロードマップについて",
+          "sub_asks": [
+            "いつまでにデジタル旅券を導入していくのか",
+            "法整備に向けたロードマップはどうなっているか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "国際民間航空機関"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "DTCでデジタルトラベルクレデンシャル"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国際民間航空機関"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "引き続き対応してまいりたいと考えてございます",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "旅券のセキュリティや利便性を向上させるよう、引き続き対応してまいりたいと考えてございます。",
+          "score": 0.2
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "導入時期とロードマップという具体的な問いに対し、抽象的な意向表明に留まっており、実質的な回答が得られていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「いつまでに」という期限を問うているが、政府側の検討状況を具体的に提示させるための前提条件（現状の課題など）を問う構成にすればより具体的回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_022",
+      "segment_index": 5,
+      "topic": "新旅券の偽造防止対策の有効性",
+      "question": {
+        "speaker": "松沢成文",
+        "party": "日本維新の会",
+        "summary": "- 2025年旅券からポリカーボネード機材やレーザー印字が導入され、国立印刷局で集中作成されるようになった\n- これにより物理的な偽造や変造が極めて困難になり、セキュリティが強化されたという認識でよいか",
+        "full_text": "この先ほどありました成島市の件なんですけれども、昨年の2025年旅券からポリカーボネード機材やレーザー印字が導入されまして、国立印刷局での集中作成となりました。この物理的な偽造対策の高度化は高く評価をいたしますが、新技術の導入後、日本のパスポートの 物理的な偽造や変造は極めて困難になったと。セキュリティがすごく強化されたという認識でよろしいんですか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "三林領事局長",
+        "role": "",
+        "summary": "- 顔写真ページのプラスチック機材化やレーザー印字、紙幣製造技術の導入により、偽造変造対策を大幅に強化した\n- 現時点での2025年旅券の偽造変造は非常に困難であると考えている",
+        "full_text": "偽造変造防止対策の観点からすべての旅券を1カ所多くとも2カ所の拠点で発行することを検討すべきという以下の勧告に基づいて国内外において申請されるすべての旅券を日本国内の国立印刷局で集中的に作成してございます。この国立印刷局で作成する旅券はまさに議員言及されたように偽造変造対策を大幅に強化いたしまして旅券の顔写真ページを プラスチック機材に変更し、文字や 顔写真をレーザーにより印字、印がしているほか、紙幣の製造にも使用されている技術を用いて、細部にさまざまな偽造変造対策を施してございます。こうした取り組みにより、我が国の旅券の偽造変造対策は大幅に進んだというふうに考えてございます。現時点で、まさにこのいわゆる2025年旅券の偽造変造、非常に困難であると考えてございますけれども、技術は日進月歩であるため、引き続き 続き国際表情を踏まえた日本旅行への信頼性、セキュリティの確保、デジタル化を通じたですね、新選者にとっての安全性、そして利便性の向上に取り組んでまいりたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5191"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#7897.2",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "新旅券の物理的偽造・変造の困難性とセキュリティ強化の認識確認",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "昨年の2025年旅券"
+            },
+            {
+              "type": "organization",
+              "excerpt": "国立印刷局"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国立印刷局"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "プラスチック機材"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "レーザーにより印字"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "セキュリティの確保、デジタル化を通じたですね、新選者にとっての安全性、そして利便性の向上に取り組んでまいりたい",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "現時点で、まさにこのいわゆる2025年旅券の偽造変造、非常に困難であると考えてございます",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "新旅券のセキュリティ強化について政府の認識を明確に回答させており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_023",
+      "segment_index": 5,
+      "topic": "マイナンバーカードの偽造防止技術の脆弱性",
+      "question": {
+        "speaker": "松沢成文",
+        "party": "日本維新の会",
+        "summary": "- マイナンバーカードの券面偽造防止技術がパスポート（ポリカーボネード・レーザー印字）に比べて著しく脆弱であり、詐欺被害が相次いでいる\n- 政府はこの点についてどのような認識を持っているか",
+        "full_text": "次にこのパスポートとマイナンバーカード。比較の問題を取り上げたいと思います。パスポートと比べてマイナンバーカードの懸面の偽造防止技術が弱いために、成功に作られた偽造マイナンバーカードを悪用した高額商品の不正購入や不正口座の開設といった詐欺被害が相次いでおります。マイナンバーカードの懸面における偽造防止技術、これ一般的なプラスチックと これは表面印刷なんですね。マイナンバーカードは。一方、パスポートはポリカーボネードとレーザー印字。これを比較して、パスポートと比較すると、マイナンバーカードは著しく脆弱であるとの指摘がありますが、政府はどのような認識を持っているんでしょうか。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "上刈谷審議官",
+        "role": "",
+        "summary": "- 発行当初からレーザー印字などの偽造防止対策を講じている\n- 2028年度中の導入を目指して次期マイナンバーカードを検討しており、さらなる対策強化に取り組む",
+        "full_text": "その件面の疑変増を容易に行えないように、マイナンバーカードは2016年1月の発行当初から、委員の御指摘のありましたレーザー印字、氏名等についてはこれを行うほか、様々な疑変増防止対策を講じているところでございます。また、2028年度中の導入を目指して、次期のマイナンバーカードという検討をしておりますけれども、これにつきましても、各種標準規格等を踏まえ、関係機関等で検討を進めております。ますますの危険増防止対策の強化に向けて、しっかりと取り組んでまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#7897.2",
+      "metrics": null
+    },
+    {
+      "id": "qa_024",
+      "segment_index": 5,
+      "topic": "次期マイナンバーカードの偽造防止策の具体化",
+      "question": {
+        "speaker": "松沢成文",
+        "party": "日本維新の会",
+        "summary": "- 国家基盤に関わるマイナンバーカードの偽造による混乱を防ぐため、対策を強化すべきである（文脈より）",
+        "full_text": "そうであるならば、国家の基盤に関わるマイナンバーカードの偽造。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "上刈谷審議官",
+        "role": "",
+        "summary": "- 次期カードの検討において、国立印刷局と緊密に連携し技術的知見を得ている\n- 券面の偽造防止策を強化するとともに、対面確認では偽造が困難なICチップ読み取りを推奨する取り組みを進める",
+        "full_text": "2028年度中の導入を目指して検討を進めております次期マイナンバーカードの検討におきましては議員御指摘のありましたとおり高度な専門性を要する国民印刷機構で緊密に連携ご参画をいただいてその技術的知見をいただいて検討を進めております引き続きデジタル庁は次期マイナンバーカードにおける懸命の偽造防止対策の強化に向けた取組を着実に進めるほか 対面の本人確認でも、偽造が困難なICチップの読み取りを推奨する取組も積極的に進めて、マイナンバーカードを活用した本人確認が安全確実に行われるよう、取組を進めてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#7897.2",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "マイナンバーカードの偽造について",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "deadline",
+              "excerpt": "2028年度中"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国民印刷機構"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "デジタル庁"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "取組を進めてまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "2028年度中の導入を目指して検討を進めております次期マイナンバーカードの検討におきましては、国民印刷機構で緊密に連携ご参画をいただいて検討を進めております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "質問が断片的で不完全ですが、回答側で次期カードの偽造防止策と導入目標時期を具体的に提示しています。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が名詞句で終わっており、具体的な問い（どうすべきか、現状はどうなっているか等）が欠落している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_025",
+      "segment_index": 6,
+      "topic": "国際観光旅客税を財源とする法人保護予算の十分性",
+      "question": {
+        "speaker": "山中泉",
+        "party": "参政党",
+        "summary": "- 国際観光旅客税から法人保護に充てられる予算（175億円）で、複数の地域で同時に有事が発生した場合に十分に対応可能か",
+        "full_text": "その中で法人保護に充てられる予算は今回、その中から175億円という金額なのと聞いておりますが、最近では中東、またはウクライナ情勢、非常に不安定になって、在外法人の対外支援、 確保の重要性がさらに一層高まっている。こういう実際有事のときに輸送、現地調整、在外交換の機能維持、多くの費用が、即応体制が必要になるんじゃないかと考えており、私自身はこの175億円という予算で、例えば複数の地域で同時に有事が発生した場合に、 十分に対応可能なのかどうか。ということで、その認識を大臣にお伺いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "",
+        "summary": "- 令和8年度予算に約175億円を計上している\n- それで十分ではない分については、引き続き外務省の通常予算によって対応する",
+        "full_text": "今般の見直しに際して、従来の料金、手数料で賄えられていた法人保護に係る経費の一部を 国際観光旅客税を財源として支援することとして、令和8年度予算において約175億円計上しております。これで十分ではないと、当然のことでありまして、国際観光旅客税を財源として支援されない法人保護に係る経費については、引き続き外務省の通常の予算によって、 山中泉君。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#8707.54",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "法人保護予算175億円で有事に十分対応可能か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "175億円"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "在外法人",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "約175億円"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "令和8年度予算"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国際観光旅客税"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "国際観光旅客税を財源として支援されない法人保護に係る経費については、引き続き外務省の通常の予算によって",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "予算額の妥当性について問い、大臣が財源の構成（観光税＋通常予算）を明確に回答したため、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_026",
+      "segment_index": 6,
+      "topic": "有事における在外公館の受け入れ体制と通信手段の確保",
+      "question": {
+        "speaker": "山中泉",
+        "party": "参政党",
+        "summary": "- 大規模有事の際、在外公館で数百人規模の避難場所、食料・医薬品の備蓄、滞在設備などの対応が可能か\n- 携帯や無線通信が不能になった場合、在留邦人と連絡を確保するための代替手段があるか",
+        "full_text": "ちょっと時間が本当に迫ってきておりますので、その後の外務省への2-1の質問、それからちょっと2-2番をちょっと一緒にさせていただきまして、お伺いしたいと思うんですが、有事における在外交換、この役割はもう最後に頼るべきところ、最後の拠点ですね。これはもう間違いないんですね。ただ、この場合、大規模な有事が発生した、そうしたときに、 例えば数百人規模で法人を受け入れることのできる条件、例えば三つほどあると思っているんですが、避難場所としての役割、あるいは食料や医薬品の備蓄、研究備蓄体制、一定期間滞在できるような設備、こういったものをあるような形、どの程度現在在外交換は対応できる体制になっているのか。またこれは2-2の質問でちょっと一緒にさせていただきますけれども、2001年の9.11ですね、9月11日のニューヨーク同時多発テロ事件がありましたけれども、私ニューヨークで勤務した時期がありまして、あの9.11のときも多くの友人が被害を受けたわけなんです。彼らから直接聞いた話なんですけれども、ツインタワーが崩壊したとき、アンテナが破壊されましたので、無線通信インフラが 大きくダメージを受けた。周辺地域では無線電話がほぼ使えなくなってしまった。在外交換では携帯や無線通信が使えなくなった場合に在留法人との連絡、あるいはそれを確保するための代わりの手段、何か準備されているのか、ちょっとここをぜひ教えていただきたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "",
+        "summary": "- 在外公館の体制・基盤の整備と強靭化を進め、食料・機材等の整備に万全を期している\n- NHKの短波放送との連携、FM放送無線機、衛星携帯電話、無線機の配備を行っている\n- 令和8年度予算で衛星ブロードバンド活用のための予算を計上し、導入手続きを進めている",
+        "full_text": "まず、在外交換の法人保護に関連した体制の点についてありますけれども。平素から在外法人の保護が必要となるさまざまな状況を想定し、在外交換をはじめ、体制や基盤の整備、強靭化を進めていて、法人保護の強化を図っているところであります。海外で重大な緊急事態が発生し、法人渡航者等が在外交換施設等に避難、ある意味、牢状。山中泉大臣 いったことも順次行っているところでございます。今後も食料等、機材等の整備含め、引き続き万全を期していきたいと思います。そして通信の分でございますけれども、まさに御指摘のとおり、緊急事態発生時の在外法人との連絡については、可能な限り多くの手段を確保していくことが重要であると考えてございます。その観点から政府としては、緊急時において全世界向けに短波放送を実施しているNHK。と連携して対応する体制を構築しているほか、現地通信インフラに依存しない通信手段として、在外交換へのFM放送無線機や衛星携帯電話、そして無線機の配備等を行ってきたところであります。加えて、令和8年度予算においては衛星ブロードバンド 活用のための予算を計上させていただいているところで現在その速やかな導入に向けた調達手続きを進めているところであります。今後もこうした取り組みとともに適時適切な方法で法人の安全確保に万全を期していきたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#8707.54",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "有事における在外公館の受入体制と通信手段について",
+          "sub_asks": [
+            "数百人規模の避難・備蓄・滞在設備への対応状況",
+            "通信インフラ途絶時の在留邦人との連絡手段の確保状況"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "2001年の9.11ですね、9月11日のニューヨーク同時多発テロ事件"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "在留邦人",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.6
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "NHK"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "FM放送無線機や衛星携帯電話"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "令和8年度予算"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 3,
+          "trigger_phrase": "令和8年度予算においては衛星ブロードバンド活用のための予算を計上させていただいているところで現在その速やかな導入に向けた調達手続きを進めている",
+          "matched_pattern": "future-tense verb describing a CONCRETE government action with a named mechanism"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "現地通信インフラに依存しない通信手段として、在外公館へのFM放送無線機や衛星携帯電話、そして無線機の配備等を行ってきた",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "避難体制への回答は抽象的だが、通信手段については具体的な機材名や予算措置（令和8年度）に言及しており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "避難体制に関する質問が「どの程度対応できるか」というオープンエンドな形式であるため、回答が抽象的な表現に逃げやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_027",
+      "segment_index": 6,
+      "topic": "有事における邦人退避の段階的な枠組みと即応体制",
+      "question": {
+        "speaker": "山中泉",
+        "party": "参政党",
+        "summary": "- 米国のように「商用便→政府チャーター便→軍用機」という段階的な救出枠組みが日本でも整理されているか",
+        "full_text": "ちょっとこれ質問として最後に準備しておりましたのは、いわゆる今回のイラン紛争でも法人退避の場合に、いわゆる通常は民間の商用便の活用を一位とする。そして状況に応じて自衛隊機で法人を退避させる。こういうことだと理解しているわけなんですが、例えばアメリカなんかでは、政府によるチャーター便の活用という、これですね、つまり商用便が最初、次に政府のチャーター便。最終的に軍用機で民間人を救出するとこういう段階的な枠組みが決まっておりまして状況に応じて機動的に手段を切り替えることが 対応な即応体制が整っているんですね。ただ日本はその場合まだまだこの段階において民間機が使えないというときに自衛隊機能投入まで必要のないあるいはどちらセーフチャーターという選択肢があるのか明確にはまだ決まっていないと聞いておりますがその辺でちょっと何か整理できるような我々つまり海外に法人が 危機に陥ったとき、いくつかのそういった段階で救出がされる形が整っているのか、ぜひお聞きしたいと思っております。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "三林正夫",
+        "role": "",
+        "summary": "- まずは商用航空便等での出国を促す\n- それが困難な場合は、状況に応じて陸路での退避、チャーター機や自衛隊機の運航など、あらゆる可能性を追求する\n- 最も迅速かつ安全な方策を最優先に、個別具体的に検討する",
+        "full_text": "緊急事態発生時における法人大使についての一般的な考え方としては、対被害が必要となる事態が発生する、改善性が高まった場合に、状況に応じて海外安全情報の危険レベルを 渡航中止勧告であるとかさらには退避勧告に引き上げてです。法人の方々の新規流入を抑制するとともに在留されている法人の方々に対してはまずは極力商用航空便などが利用可能なうちの出国を促すということでございます。そしてこの通常の航空機等での出国が困難また不十分となった場合には個別具体的な状況に応じてでありますけれども それでも陸路での退避、出国支援のほか、セーフチャーター機や自衛隊機の運航可能性など、あらゆる可能性を追求するということでございます。こうした一例の過程において、実際にいかなる方策を用いるかということについては、もっとも迅速かつ安全に法人の方々の退避支援を行うということを最優先として、個別具体的な状況に応じ、検討するということで考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#8707.54",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "邦人退避の段階的な救出枠組みの整備状況",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "アメリカなんかでは、政府によるチャーター便の活用という"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "海外に法人が 危機に陥ったとき",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "海外安全情報の危険レベル"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "渡航中止勧告"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "退避勧告"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "セーフチャーター機"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "自衛隊機"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "個別具体的な状況に応じ、検討するということで考えてございます",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "通常の航空機等での出国が困難また不十分となった場合には個別具体的な状況に応じて、セーフチャーター機や自衛隊機の運航可能性など、あらゆる可能性を追求する",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "邦人退避の優先順位（商用便→チャーター機・自衛隊機）について政府の一般的考え方が示された。具体的な制度化へのコミットメントはなく、個別検討に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「段階的な枠組みが決まっているか」というYes/No形式で問えば、より明確な回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_028",
+      "segment_index": 7,
+      "topic": "イラン核問題と米国・IAEAの協議状況",
+      "question": {
+        "speaker": "山添拓",
+        "party": "日本共産党",
+        "summary": "- ホルムズ海峡の状況や、米国との協議における核問題・制裁解除の議題、IAEA事務局長の参加についての認識を問う",
+        "full_text": "前にはホルムズ海峡は平穏で正常だったと強調しておりました。そして攻撃前の米国との協議では主要な議題は2つ、すなわち核問題とイランへの制裁解除であり、この核をめぐってはIAEAの事務局長も交渉に参加し、透明な形で前進を図っていたとお話でした。大臣の認識を伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "茂木外務大臣",
+        "role": "",
+        "summary": "- 各国大使と会談し多様な意見があることを認識している\n- イランの核兵器開発は許されないという一貫した立場であり、米国との協議とIAEAへの完全協力を求めている\n- IAEAの査察再開には米イラン間の早期合意が前提になると考えている",
+        "full_text": "茂木外務大臣 山添委員、中日イラン大使ともお話をされたということでありますが、私もお話をしましたし、その時は同時にですね、同じ日時間をずらしてイスラエルの大使とも話をさせていただきました。さらにはですね、湾岸諸国の大使ともお話をさせていただきました。いろんな意見がございます。ぜひ、 各国のご意見を山添委員もお聞きいただいて それぞれ立場が違ったりとか、事実認識が違うということもですね、お聞きいただくとよろしいんじゃないかな、こんなふうに思っているところであります。その上でですね、イランによります核兵器開発、これは決して許されないというのが、我が国の一貫した立場でありまして、イランに対してもですね、米国との協議とIAEAとの完全な協力を求めていきました。関与していたというお話があったんですが、少なくとも私がそのような実質関係については私は承知をいたしておりません。その上でIAEAがイランの核関連施設への射殺を再開をすると。そのためにも米イラン間の早期の合意が図られることが 当然私は前提になるんではないかなと思っております。この合意なしにですね、IAEAの左札、イランの各施設への左札が再開されるということは、おそらくどういう状況だったらできるのかなというのは、私には想像できないところであります。先ほど来ですね、イランとそして米国の間のですね、 再協議につきましては私の方から答弁をさせていただいておりまして時間の関係もあって多分ですねあまりにも答弁が長くなってしまいますと次の質問に移れないと思いますのでその点は省略をさせていただきたいと思いますがいずれにしてもですね一刻も早く協議が再開をされて 実際にホルムズ海峡の安全な高校の確保を含め地域の情勢の鎮静化が実際に図られるということは何よりも重要だと思っておりましてそのことがまたIAEAの実行ある活動にもつながるとこのように考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#9458.14",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "ホルムズ海峡の状況と米イラン協議の認識について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "IAEAの事務局長"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "IAEAの事務局長",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": true,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "イスラエルの大使"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "湾岸諸国の大使"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "minister",
+          "score": 0.5
+        },
+        "oc3_quotability": {
+          "quote_candidate": "イランによります核兵器開発、これは決して許されないというのが、我が国の一貫した立場でありまして",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は過去の経緯に基づいた認識を問うているが、大臣は外交上の一般論と他国大使との面会事実に終始し、具体的な協議内容への回答を避けている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「認識を伺います」という形式的な問いかけであるため、大臣が一般論で逃げる余地を与えている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_029",
+      "segment_index": 7,
+      "topic": "イスラエルによるイラン攻撃の正当性",
+      "question": {
+        "speaker": "山添拓",
+        "party": "日本共産党",
+        "summary": "- 核合意から離脱した米国と、NPT非加盟で核保有が疑われるイスラエルがイランを非難し攻撃したことは不条理ではないか",
+        "full_text": "山添拓君イランの核開発が許されないというお話がありました。だからこそイラン側が 濃度問題がありましたので、イランが濃縮度を下げ、IAEAの左札を受け入れる方向での交渉が行われていたわけです。IAEAのグロッシ事務局長が出席していたことについては、既に報道もありますから、おそらくご承知なんだと思うんですけどね。ところが、米国の違法な攻撃の結果、協議の議題は、核と制裁だけではなく、戦争の終結、ホルムズ海峡、レバノン問題、被害保障、多岐にわたり、はるかに複雑になってしまった。核問題も含めて解決を困難にしてしまっているのが現状ではないかと思います。ところでイランは1970年発行のNPT核不拡散条約の減加明国です。したがって民生利用はIAEAの監視下で認められております。また2015年、米国など6カ国とのイラン核合意に基づいて核開発が抑制されていました。ところが2018年、この核合意から一方的に離脱し、 核拡散防止に背を向けたのが第一次トランプ政権でありました。大臣伺いたいんですが、その核拡散防止に背を向けたトランプ大統領の米国と、NPTに加盟せず、核保有が疑われるイスラエルが、イランの核開発を非難して攻撃したわけです。これは不条理じゃありませんか。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "茂木外務大臣",
+        "role": "",
+        "summary": "- イスラエル・イラン関係や米イラン関係など複雑な要因があり、一つの要因だけで対立しているとは理解していない",
+        "full_text": "イスラエルとイランの関係、また1979年以来の米国と、また米国との関係、イランと米国との関係等もありまして、1つの要因だけによって対立が行われていると、そのようには理解をいたしておりません。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#9458.14",
+      "metrics": null
+    },
+    {
+      "id": "qa_030",
+      "segment_index": 7,
+      "topic": "イスラエルのNPT加盟に関する国連決議と日本政府の態度",
+      "question": {
+        "speaker": "山添拓",
+        "party": "日本共産党",
+        "summary": "- イスラエルにNPT加盟を求める国連総会決議の内容と、それに対する日本政府の態度を問う",
+        "full_text": "山添拓君。私は大臣が。イランの核開発を強く非難する。決して許されないとおっしゃるので、この問題を指摘しているわけです。ストックホルム国際平和研究所によると、イスラエルは核弾頭約90発を保有していると推定されます。イスラエルは肯定も否定もしておりません。曖昧戦略と言われますが、核保有について曖昧など、もとより許されません。昨年12月国連総会で、イスラエルに対して、NPTへの加盟を求める決議が採択されました。その内容と日本政府の態度をご説明ください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "茂木外務大臣",
+        "role": "",
+        "summary": "- 決議の内容は、中東における核不拡散の実現に向けた取り組みや、イスラエルのNPT加入およびIAEA保障措置下への核施設置くことの重要性の再確認である\n- 日本はNPTの普遍化と核不拡散体制の維持強化の観点から、近年は賛成票を投じている",
+        "full_text": "御指摘の国連総会決議の80スラッシュ67のことをおっしゃっているんだと思いますが この中東における核開発、核拡散の危険に関する国連決議、これは昨年採択をされたものでありまして、その主な内容は1つには1995年のNPT運用検討会議において採択をされました中東に関する決議の完全な実施に向けて直ちに取組を行うことの要請。2つ目に 中東地域におけるNPTの不現的な遵守の確保という目標を実現するために、イスラエルがNPTに加入をし、同国のすべての核関連施設、IAEAの包括的保障措置のもちのに置くことの重要性の再確認。さらにですね、NPTの定約国に対して、 核兵器を開発、製造、実験、または取得をしないこと、及び核兵器の保有を断念することの要請、こういったことが主な内容となっております。この決議に類するものは毎年のように提出をされて採択をされてきているところでありまして、我が国はその時々の内容や関連する国際情勢を考慮して投票態度を決めてきておりますが、 近年は賛成票を投じてきておりまして、昨年もNPTの普遍化であったり、また国際的な核不拡散体制の維持強化を重視する、こういう観点から賛成票を投じたところであります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#9458.14",
+      "metrics": null
+    },
+    {
+      "id": "qa_031",
+      "segment_index": 7,
+      "topic": "イスラエルへのNPT加盟要請の立場",
+      "question": {
+        "speaker": "山添拓",
+        "party": "日本共産党",
+        "summary": "- 政府はイスラエルに対してNPTへの加盟を求める立場であるか確認する",
+        "full_text": "山添拓君。御答弁があったように、イスラエルを名指しして、NPTの加盟やIAEAの査察の受け入れを求める同様の決議は、1970年代、 今78年79年頃からほぼ毎年継続しており、近年日本はほぼ賛成してきております。大臣、改めて伺いますが、政府はイスラエルに対して、NPTへの加盟を求める立場ですね。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "茂木外務大臣",
+        "role": "",
+        "summary": "- その理解で結構である",
+        "full_text": "そのような理解で結構です。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#9458.14",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "イスラエルにNPT加盟を求める立場か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "1970年代、 今78年79年頃から"
+            },
+            {
+              "type": "organization",
+              "excerpt": "NPT"
+            },
+            {
+              "type": "organization",
+              "excerpt": "IAEA"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "イスラエル",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "政府はイスラエルに対して、NPTへの加盟を求める立場ですね。（そのような理解で結構です。）",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "政府の外交的立場を明確に確認させたやり取りであり、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_032",
+      "segment_index": 7,
+      "topic": "イスラエルへの直接的な働きかけ",
+      "question": {
+        "speaker": "山添拓",
+        "party": "日本共産党",
+        "summary": "- 大臣自身がイスラエル側に直接NPT加盟を求めたことがあるか問う",
+        "full_text": "山添拓君。大臣自身はイスラエル側に直接求めたことはおありでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "茂木外務大臣",
+        "role": "",
+        "summary": "- イスラエル首相や外相と会談し、日本の立場を踏まえて率直に要求を行っている\n- 西岸地区への入植問題など、国際法違反である点についてもしっかりと伝えている",
+        "full_text": "外交上の様々なやり取りでありますが、私も1月にもですね 中途訪問して、イスラエル、ネタニヤフ氏はですね、また外相とも会談を行っております。前回の大臣時代にもですね、イスラエルは訪問をいたしております。日本の立場を踏まえて、様々な要求、率直にですね、イスラエルに対してもですね、イスラエルにとって決して、耳にですね、聞き心地の良くないことについても、 しっかりと例えば西岸地域への入植の問題であったりとか一番気にすることなんですよ。それもしっかりとこれは国際法違反だとかそういった話もさせていただいております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#9458.14",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "大臣がイスラエル側に直接要求したか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "イスラエル",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "ネタニヤフ氏"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "西岸地域への入植の問題"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "西岸地域への入植の問題であったりとか、これは国際法違反だとかそういった話もさせていただいております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "大臣がイスラエル側に対し、西岸地区への入植が国際法違反である旨を直接伝えたという事実が記録された。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_033",
+      "segment_index": 7,
+      "topic": "イスラエルのNPT加盟拒否に対する評価",
+      "question": {
+        "speaker": "山添拓",
+        "party": "日本共産党",
+        "summary": "- イランの核開発を許さないとする一方で、イスラエルがNPT加盟やIAEA査察を拒んでいることは許されないのではないか",
+        "full_text": "山添拓君。今日は核の問題を聞いております。そしてイランに対しては核開発は決して許されないと明言されたのですがイスラエルについてはそのようにおっしゃっていないんですね。大臣はそうは言っても求めてきているわけですから、政府の立場として。にもかかわらず、類似の国連総会決議に反して、イスラエルがNPT加盟を拒み、IAEAの左札受入れを拒んでいる。これは許されないことですよね。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "茂木外務大臣",
+        "role": "",
+        "summary": "- 国際的な核不拡散体制の維持強化を重視する立場から、イスラエルに対しても非核兵器国としてNPTに加入することを求めている",
+        "full_text": "茂木大臣 先ほど来お話しておりますように、我が国が国際的な核不拡散体制の維持強化を重視すると、こういう立場から、イスラエルに対しても包括的保障措置が適用されます非核兵器国としてNPTに加入する、このことを求めてきております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#9458.14",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "イスラエルのNPT不加盟は許されないか",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "国連総会決議"
+            },
+            {
+              "type": "organization",
+              "excerpt": "NPT"
+            },
+            {
+              "type": "organization",
+              "excerpt": "IAEA"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "イスラエル",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "包括的保障措置"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "NPT"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "このことを求めてきております",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "イスラエルに対しても包括的保障措置が適用されます非核兵器国としてNPTに加入することを求めてきております。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "イスラエルの核不拡散体制への加入を求める政府の基本的立場を再確認したやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「許されないことですよね」という同意を求める形式のため、大臣が外交的配慮から直接的な肯定を避ける余地を与えている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_034",
+      "segment_index": 7,
+      "topic": "NPT再検討会議における核保有国への働きかけ",
+      "question": {
+        "speaker": "山添拓",
+        "party": "日本共産党",
+        "summary": "- NPT第6条に基づく核軍縮の誠実交渉義務について、核保有国にどのように履行を迫るのか問う",
+        "full_text": "はっきりしませんね。27日からニューヨークでNPT再検討会議が始まります。私は今不透明な状況の中で、だからこそ日本が核保有国に対して正面から主張する必要があると思います。NPT6条で、締約国は核軍縮のための誠実交渉義務を負っています。ところが現実には、これに逆行する動きが続いています。再検討会議に当たって、核保有国に対して、この6条に基づく義務の履行、どのように迫っていくのか、大臣に伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "茂木外務大臣",
+        "role": "",
+        "summary": "- 議長国を支えつつ、各国のコミットメントを最大限に確認できるよう最善を尽くす\n- NPDI（軍縮不拡散イニシアティブ）等を通じて、核兵器国に核軍縮を進展させるよう要請しており、今後も連携して働きかける",
+        "full_text": "NPTの運用検討会議これは1日2日で終わる会議ではなくてご案内のとおり4週間という長丁場になるわけでありますが日本として議長をベトナムを支えつつNPT体制の各国のコミットメントを最大限に確認できるよう 最善を尽くしたいと思っております。NPTの第6条の履行につきましては、例えば昨年3月に地域横断的な非拡散兵器グループであります 軍縮不拡散イニシアティブ、NPDIを指導して提出をしました、運用検討会議の成果文書に関する提案におきましても、第6条に基づき、核軍縮を進展させることを、核兵器国に対して要請をしているところであります。運用検討会議の場合におきましても、核と連携しながら、こうした働きかけを行っていく考えであります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#9458.14",
+      "metrics": null
+    },
+    {
+      "id": "qa_035",
+      "segment_index": 7,
+      "topic": "NPDI提案の具体的削減内容",
+      "question": {
+        "speaker": "山添拓",
+        "party": "日本共産党",
+        "summary": "- NPDIの提案において、いつまでにどれだけ核兵器を削減するという具体的な内容になっているか問う",
+        "full_text": "そのNPDI、いつまでどれだけ削減するという提案になっていますか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "茂木外務大臣",
+        "role": "",
+        "summary": "- 詳細な通告を受けていないため、通告があれば答弁する。また、参考人から答える機会があればありがたい",
+        "full_text": "通告を受けておりませんので、通告をしていただきましたら答えますし、またそういった詳細なことにつきまして、参考人の出席によりまして、参考人から答えるような機会を作っていただけると、大変ありがたいと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#9458.14",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "NPDIの削減期限と削減量の提案内容",
+          "sub_asks": [
+            "いつまで削減するか",
+            "どれだけ削減するか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "そのNPDI"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.2
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "not_at_all",
+          "topic_shift_detected": false,
+          "score": 0.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "通告を受けておりませんので、通告をしていただきましたら答えます",
+          "score": 0.2
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な数値や期限を問う質問に対し、政府側が情報を把握していない（通告を受けていない）ことを回答したため、実質的な情報は得られていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "NPDIの定義や前提となる提案書を具体的に提示して質問すれば、回答を拒否しにくかったと考えられる。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_036",
+      "segment_index": 7,
+      "topic": "パスポート保有率の低下",
+      "question": {
+        "speaker": "福島みずほ",
+        "party": "社会民主党",
+        "summary": "- 日本人のパスポート保有率が諸外国に比べて低く、コロナ前よりも低下している現状について\n- 円安や貧困、物価高、少子高齢化などが影響しているのではないかという懸念と、有意識事態であるかという問い",
+        "full_text": "さっき青木理事からもありましたが、パスポートの保有率が17.8%、やはり非常に低い、アメリカ48%、韓国45%、ドイツ80%、2010年代は20から25%、2019年は23.8%だったのが、どんどん下がっています。これは円安、あるいは貧困、あるいは物価高や、 やはり少子高齢化いろいろあると思いますが、これちょっとやっぱり有意識事態ではないか、いかがでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "三林領事局長",
+        "role": "",
+        "summary": "- 日本人のパスポート所持率がコロナ禍前の水準を回復しておらず、諸外国と比較しても低い水準にあることを認めた\n- こうした状況について改善に取り組んでいる旨を述べた",
+        "full_text": "議員も言及されたみたいに日本人の予見所持率がコロナ禍前の水準を回復しておらず、諸外国と比較しても低い水準だということはございます。こうしたことは我々としてもある種改善をしております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5191"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#9458.14",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "パスポート保有率低下を憂慮すべき事態と考えるか",
+          "sub_asks": [],
+          "score": 0.9
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "17.8%"
+            },
+            {
+              "type": "number",
+              "excerpt": "アメリカ48%"
+            },
+            {
+              "type": "number",
+              "excerpt": "韓国45%"
+            },
+            {
+              "type": "number",
+              "excerpt": "ドイツ80%"
+            },
+            {
+              "type": "number",
+              "excerpt": "2019年は23.8%"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "日本人のパスポート保有者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "ある種改善をしております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "日本人の予見所持率がコロナ禍前の水準を回復しておらず、諸外国と比較しても低い水準だということはございます。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は具体的な数値を挙げて現状を指摘したが、回答は現状の肯定と抽象的な改善への言及に留まっており、実質的な価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「いかがでしょうか」という開かれた問いのため、政府が具体策を答えずとも「認識している」という回答で完結してしまう。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_037",
+      "segment_index": 8,
+      "topic": "在留資格変更手数料の負担",
+      "question": {
+        "speaker": "福島みずほ",
+        "party": "社会民主党",
+        "summary": "- 手数料が増額されることで、支払いが困難になり退去せざるを得ない外国人が出ることへの懸念",
+        "full_text": "私たちの団体だけでも月平均約20人の方に対して、計数万円 これから多い月で20万円以上の手数料を支援しています。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "磯部",
+        "role": "",
+        "summary": "- 手数料額は実費や諸外国の状況を勘案して定める規定であること\n- パブリックコメントを踏まえ、適切な額となるよう検討すること",
+        "full_text": "という今でも何とか支払っているのが金額が上がれば払えなくて退去しなければならないというこの負担状についてどうお考えでしょうか出入国在留管理庁磯部在留管理支援部長お答えいたします 外国人は在留資格の変更の許可等を受けて我が国に在留することができることにより、その在留期間に応じ、多種多様な恩恵を受け売ることになりますが、 改正法案では在留資格の変更の許可等に係る手数料の額が無限定なものとならないようその額を定めるに当たっては審査に要する実費のほか外国人の出入国及び在留の公正な管理に要する費用の額諸外国における同種の手数料の額を勘案することを規定しておりますこのうち外国人の出入国及び在留の公正な管理に関する施策とは具体的には外国人の適正な在留の確保我が国に適法に在留する外国人が安定 安倍内閣総理大臣 パブリックコメントで提出された意見も踏まえながら検討を行うこととなりますが、適切な額となるよう検討してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5191"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#10291.87",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "手数料負担増による退去リスクへの考え",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "月平均約20人"
+            },
+            {
+              "type": "number",
+              "excerpt": "多い月で20万円以上"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "私たちの団体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "出入国在留管理庁"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "パブリックコメント"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "適切な額となるよう検討してまいりたい",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "パブリックコメントで提出された意見も踏まえながら検討を行うこととなりますが、適切な額となるよう検討してまいりたいと考えております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "質問者が提示した具体的な支援実績に対し、政府側は法案の規定と検討方針を述べるに留まっており、実効的な回答とは言い難い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "手数料の具体的上限や減免措置の有無など、Yes/Noで答えられる具体的な仕組みについて問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_038",
+      "segment_index": 8,
+      "topic": "経営管理ビザの資本金要件引き上げ",
+      "question": {
+        "speaker": "福島みずほ",
+        "party": "社会民主党",
+        "summary": "- 資本金要件が500万円から3000万円に引き上げられることで、小規模店が廃業に追い込まれる問題点について",
+        "full_text": "それから外国人の経営管理ピザの資本金要件が500万円から3000万円へ引き上げられます。ですからこれを3年後に3000万円に6倍に上げたらもうお店を閉鎖しなければならない。これ問題ではないですか。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "磯部",
+        "role": "",
+        "summary": "- 改正前から在留している者には一定の配慮を行うこと\n- 施行から3年までは、新基準に適合しないことのみをもって不許可とはしないこと",
+        "full_text": "ご指摘の資本金の金額の引上げに伴う関係でございますけれども、昨年10月16日に許可基準を改正しておりますが、 改正前から在留資格、経営管理で在留中の方については、改正後の許可基準を直ちに適用することなく、一定の配慮を行うこととしております。具体的には、許可基準の見直しの施行日から3年を経過する日までの間は、改正後の許可基準に適合しないことのみをもって、在留期間更新許可申請を不許可とはしないこととしております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#10291.87",
+      "metrics": null
+    },
+    {
+      "id": "qa_039",
+      "segment_index": 8,
+      "topic": "経営管理ビザのペーパーカンパニー対策",
+      "question": {
+        "speaker": "福島みずほ",
+        "party": "社会民主党",
+        "summary": "- 資本金要件の引き上げではなく、個別の実態調査などでペーパーカンパニー対策を行うべきではないか",
+        "full_text": "また、施行日から3年を経過した後は、原則として改正後の許可基準に適合することを求めることとなりますが、 適合しない場合であっても経営状況や法人税等の納付状況等を総合的に考慮して拒否の判断を行うなど個別の状況を踏まえて対応する予定でございます福島みずほ君経営管理ビザがペーパーカンパニーなどに乱用されたケースは実際に確認されたんでしょうか磯部在留管理支援部長 お答えいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "磯部",
+        "role": "",
+        "summary": "- すでに実地調査を行っており、事業実態が認められない事例が多数あることを確認していること",
+        "full_text": "在留資格、経営管理の在留審査におきましては、事業の実態に疑義のある案件については、入管職員が事業所に出向いて、実地調査を行っております。これらの調査を行った結果、事業所としての使用実態が確認できず、事業実態があるとは認められない事例が多数あることを確認しております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#10291.87",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "経営管理ビザの乱用事例の有無",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "ペーパーカンパニー",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "事業所としての使用実態が確認できず、事業実態があるとは認められない事例が多数あることを確認しております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "経営管理ビザの乱用（実態のない事業）が多数存在することを政府が認めたやり取りであり、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_040",
+      "segment_index": 8,
+      "topic": "国家情報局のプライバシー配慮規定",
+      "question": {
+        "speaker": "福島みずほ",
+        "party": "社会民主党",
+        "summary": "- 国家情報局の設置にあたり、プライバシーの配慮規定を盛り込まない理由について",
+        "full_text": "国家情報局の設置について、プライバシーの配慮規定をなぜ盛り込まないんですか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "蒲谷",
+        "role": "",
+        "summary": "- 新たな調査権限や捜査権限を規定するものではなく、プライバシー侵害は危惧されないこと\n- 個人情報保護法等のルールに従うことは従前と変わらないため、別途規定を設けていないこと",
+        "full_text": "各省庁が行う情報活動の基本方針等を示す国家情報会議を設置するとともに、同会議で示された基本方針等の下で、各省庁が行う情報活動の総合調整を担う国家情報局を設置することで、インテリジェンスの司令塔機能を強化するものでございまして、個人のプライバシーに関わるものであるかに関係なく、情報を取得することを要因する調査権限や捜査権限を新たに規定するものではございません。従いましてご指摘のように国家情報局の設置によってプライバシー侵害が危惧されるとは考えてございません。国家情報局やその他のインテリジェンス関係機関に新たな調査・捜査権限が設けられるものではなく、またこれらの機関が個人情報保護法等のルールに則って業務を行わなければならないことは従前より変わらないことから本法案において重ねて委員御指摘の配慮規定というのは設けていないところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#10291.87",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "国家情報局設置にプライバシー配慮規定を盛り込まない理由",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国家情報会議"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国家情報局"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "個人情報保護法"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "国家情報局やその他のインテリジェンス関係機関に新たな調査・捜査権限が設けられるものではなく、個人情報保護法等のルールに則って業務を行わなければならないことは従前より変わらない",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "国家情報局に新たな捜査権限を与えないため、既存の個人情報保護法で十分であるという政府の解釈が明確に示されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_041",
+      "segment_index": 8,
+      "topic": "国家情報局の政治的中立性の明記",
+      "question": {
+        "speaker": "福島みずほ",
+        "party": "社会民主党",
+        "summary": "- 政治的に中立でなければならないという趣旨の内容を法案に明記しない理由について",
+        "full_text": "次に政治的に中立なものでなければならないという趣旨の内容も、なぜ明記しないんですか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "蒲谷",
+        "role": "",
+        "summary": "- 国民の安全や国益を守る観点からの機関であり、政治的利用や特定党派の利益を図るものでないことは明白であること\n- あえて規定する必要はないと考えていること",
+        "full_text": "国家情報会議設置法案では、国家情報会議、特に期待される役割の性質を、法文上明らかにするために、第2条において、 重要国政運営の例示として、安全保障の確保、テロリズムの発生の防止、緊急の事態への対処を掲げているところでございます。同会議では、こうした国民の安全や国益を守る観点から、各省庁が行う情報活動の基本方針等を定める機関であって、情報を政治的に利用しようとするものでも、一部の団体や党派だけの利益の実現を図ろうとするものではないことは、明白であると考えております。委員が御指摘される政治的に中立なものでなければならないということをあえて規定する必要はないと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5181"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#10291.87",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "政治的中立性の明記をしない理由",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国家情報会議設置法案"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "第2条"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "政治的に中立なものでなければならないということをあえて規定する必要はないと考えております。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "政治的中立性の明記が不要であるという政府の解釈が明確に示されており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_042",
+      "segment_index": 8,
+      "topic": "国家情報局の独立監視機関の設置",
+      "question": {
+        "speaker": "福島みずほ",
+        "party": "社会民主党",
+        "summary": "- 政府から完全に独立した是正権限を持つ監視機関を設けない理由について",
+        "full_text": "政府から完全に独立した是正の権限を持つ独立の監視機関はなぜ設けられないんでしょうか。これは問題じゃないですか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "蒲谷",
+        "role": "",
+        "summary": "- 新たな調査・捜査権限を与えるものではなく、国民の権利義務に直接関わる権限は設けられないこと\n- 各省庁の閣僚による監督体制に変わりはないため、独立監視機関は設けていないこと",
+        "full_text": "本法案において設けられる国家情報会議への資料提供等に関する規定や、国家情報局の総合調整に関する規定は、あくまでも行政機関総合の関係を立つするものであり、同会議、同局を含め、インテリジェンス関係機関に新しい調査・捜査権限を与えるものではございません。従いまして本法案により国民の権利義務に直接関わるような権限に関する規定が新たに設けられることはございません。また各省庁において行われる情報活動はこれまで通り当該省庁を担当する閣僚の監督の下で適切に推進されることに変わりはありません。こうしたことから御指摘の政府から完全に独立した監視機関に関する規定は設けることとはしておりません。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#10291.87",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "独立の監視機関を設けない理由は何か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国家情報会議"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国家情報局"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "本法案により国民の権利義務に直接関わるような権限に関する規定が新たに設けられることはございません。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "独立監視機関を設けない理由について、法案の権限範囲を説明して回答している。具体的なコミットメントはないが、政府の立場は明確である。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「これは問題じゃないですか」という感情的な問いかけが含まれており、論点が分散している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_043",
+      "segment_index": 8,
+      "topic": "国家情報局による市民監視の危険性",
+      "question": {
+        "speaker": "福島みずほ",
+        "party": "社会民主党",
+        "summary": "- 膨大な情報が集積されることで、AI分析等による市民監視の危険性が高まるのではないか",
+        "full_text": "ここに膨大な情報が集められるんですよ。普通の市民と普通でない市民ってどうやって分けるんですか。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "蒲谷",
+        "role": "",
+        "summary": "- 国家情報局は政府全体を俯瞰し、重要国政運営に支障を与える恐れのある情報を取得するものであること",
+        "full_text": "先ほど来申し上げていますように国家情報会議設置法については国家情報局が政府全体を俯瞰する立場から各省庁が行う重要情報活動あるいは外国情報活動への対処これは公になっていない情報の情報その他の漏洩が重要国政運営に支障を与える恐れのあるものを取得するようなものであって外国の利益を図る。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8980#10291.87",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "市民の区別基準について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "市民",
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "not_at_all",
+          "topic_shift_detected": true,
+          "score": 0.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国家情報会議設置法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国家情報局"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": null,
+          "score": 0.0
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "市民の区別基準という具体的な問いに対し、回答者が制度の一般的説明に終始しており、問いに答えていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「普通でない市民」という定義が曖昧なため、回答者が逃げ道を作りやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    }
+  ],
+  "score_schema_version": "2.0",
+  "prompt_version": "V4"
+}
