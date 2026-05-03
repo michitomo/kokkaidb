@@ -1,0 +1,74 @@
+{
+  "raw_content": "{\"pairs\":[{\"topic\":\"設備投資促進税制の効果検証と予算配分\",\"question\":{\"summary\":\"- 設備投資促進税制は税制措置単体での効果検証が困難である\\n- 検証可能な官民投資プロジェクトへの直接予算配分に振り替える選択肢はないか\",\"sentence_indices\":[6,11,14],\"intent\":\"policy_proposal\"},\"answer\":{\"summary\":\"- EBPMの視点に基づき、事業の性質に応じて必要な見直しを行うことが重要である\\n- 行政事業レビューや租税特別措置の見直し等を通じ、予算編成のPDCAサイクルを回していく\",\"sentence_indices\":[34,35,36]}},{\"topic\":\"ひとり親控除の所得制限\",\"question\":{\"summary\":\"- ひとり親控除の所得制限を設ける合理的な根拠はあるのか\\n- 配偶者控除との整合性を踏まえ、年収要件の撤廃または大幅引き上げを検討する意思はあるか\",\"sentence_indices\":[18,21,28],\"intent\":\"policy_proposal\"},\"answer\":{\"summary\":\"- 所得要件の引き上げについては、予算面や他の支援策とのバランスを踏まえ、引き続き検討していく\",\"sentence_indices\":[38,40]}},{\"topic\":\"児童扶養手当の所得制限\",\"question\":{\"summary\":\"- 収入増により支援が途絶える「支援の崖」が生じている現状に対し、抜本的な強化を検討するか\",\"sentence_indices\":[25,26,28],\"intent\":\"policy_proposal\"},\"answer\":{\"summary\":\"- 児童扶養手当の所得制限については、子ども未来戦略の加速化プランに基づき、限度額の引き上げを行っている\",\"sentence_indices\":[41]}}]}",
+  "parsed": {
+    "pairs": [
+      {
+        "topic": "設備投資促進税制の効果検証と予算配分",
+        "question": {
+          "summary": "- 設備投資促進税制は税制措置単体での効果検証が困難である\n- 検証可能な官民投資プロジェクトへの直接予算配分に振り替える選択肢はないか",
+          "sentence_indices": [
+            6,
+            11,
+            14
+          ],
+          "intent": "policy_proposal"
+        },
+        "answer": {
+          "summary": "- EBPMの視点に基づき、事業の性質に応じて必要な見直しを行うことが重要である\n- 行政事業レビューや租税特別措置の見直し等を通じ、予算編成のPDCAサイクルを回していく",
+          "sentence_indices": [
+            34,
+            35,
+            36
+          ]
+        }
+      },
+      {
+        "topic": "ひとり親控除の所得制限",
+        "question": {
+          "summary": "- ひとり親控除の所得制限を設ける合理的な根拠はあるのか\n- 配偶者控除との整合性を踏まえ、年収要件の撤廃または大幅引き上げを検討する意思はあるか",
+          "sentence_indices": [
+            18,
+            21,
+            28
+          ],
+          "intent": "policy_proposal"
+        },
+        "answer": {
+          "summary": "- 所得要件の引き上げについては、予算面や他の支援策とのバランスを踏まえ、引き続き検討していく",
+          "sentence_indices": [
+            38,
+            40
+          ]
+        }
+      },
+      {
+        "topic": "児童扶養手当の所得制限",
+        "question": {
+          "summary": "- 収入増により支援が途絶える「支援の崖」が生じている現状に対し、抜本的な強化を検討するか",
+          "sentence_indices": [
+            25,
+            26,
+            28
+          ],
+          "intent": "policy_proposal"
+        },
+        "answer": {
+          "summary": "- 児童扶養手当の所得制限については、子ども未来戦略の加速化プランに基づき、限度額の引き上げを行っている",
+          "sentence_indices": [
+            41
+          ]
+        }
+      }
+    ]
+  },
+  "latency_seconds": 4.54,
+  "input_tokens": 1943,
+  "output_tokens": 383,
+  "total_tokens": 2326,
+  "model": "gemma-4-26b-moe",
+  "model_id": "google/gemma-4-26b-a4b-it",
+  "task": "qa_seg",
+  "case_id": "qa_seg_06_plenary_intent_variety",
+  "json_valid": true,
+  "cost_estimate": 0.00023204
+}

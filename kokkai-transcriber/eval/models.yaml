@@ -21,6 +21,15 @@ models:
     tier: A
     notes: "Apache 2.0. 140+言語. function calling対応"
 
+  gemma-4-26b-moe:
+    id: "google/gemma-4-26b-a4b-it"
+    provider: openrouter
+    input_price_per_m: 0.08
+    output_price_per_m: 0.20
+    context_window: 262144
+    tier: A
+    notes: "MoE 26B/4B active. gemma-4-31bより軽量・安価"
+
   # --- Tier B: コスパ重視 ---
   deepseek-v3.2:
     id: "deepseek/deepseek-v3.2"

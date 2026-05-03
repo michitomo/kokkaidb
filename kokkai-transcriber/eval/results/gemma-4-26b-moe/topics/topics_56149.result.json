@@ -1,0 +1,43 @@
+{
+  "raw_content": "{\"topics\": [{\"name\": \"医療保険制度の持続可能性と給付見直し\", \"description\": \"健康保険法の改正や、OTC類似薬の保険給付見直しなど、医療保険制度の維持・運用に関する議論。\", \"related_qa_ids\": [\"qa_001\", \"qa_002\"], \"related_speakers\": [\"高階恵美子\", \"伊東信久\"]}, {\"name\": \"医療物資の安定供給体制\", \"description\": \"医療物資を中長期的に安定して供給するための具体的方針に関する議論。\", \"related_qa_ids\": [\"qa_003\"], \"related_speakers\": [\"豊田真由子\"]}], \"key_topics\": [\"医療保険制度の持続可能性と給付見直し\", \"医療物資の安定供給体制\"]}",
+  "parsed": {
+    "topics": [
+      {
+        "name": "医療保険制度の持続可能性と給付見直し",
+        "description": "健康保険法の改正や、OTC類似薬の保険給付見直しなど、医療保険制度の維持・運用に関する議論。",
+        "related_qa_ids": [
+          "qa_001",
+          "qa_002"
+        ],
+        "related_speakers": [
+          "高階恵美子",
+          "伊東信久"
+        ]
+      },
+      {
+        "name": "医療物資の安定供給体制",
+        "description": "医療物資を中長期的に安定して供給するための具体的方針に関する議論。",
+        "related_qa_ids": [
+          "qa_003"
+        ],
+        "related_speakers": [
+          "豊田真由子"
+        ]
+      }
+    ],
+    "key_topics": [
+      "医療保険制度の持続可能性と給付見直し",
+      "医療物資の安定供給体制"
+    ]
+  },
+  "latency_seconds": 1.1,
+  "input_tokens": 696,
+  "output_tokens": 178,
+  "total_tokens": 874,
+  "model": "gemma-4-26b-moe",
+  "model_id": "google/gemma-4-26b-a4b-it",
+  "task": "topics",
+  "case_id": "topics_56149",
+  "json_valid": true,
+  "cost_estimate": 9.128000000000001e-05
+}

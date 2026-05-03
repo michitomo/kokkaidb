@@ -1,0 +1,37 @@
+{
+  "raw_content": "{\"pairs\":[{\"topic\":\"デジタル教科書の導入目的と将来像\",\"question\":{\"summary\":\"- デジタル教科書を正式な教科書として位置づける政策目的の定義\\n- デジタル教科書を通じて伸ばそうとしている能力\\n- ギガスクール構想の成果と課題を踏まえた将来像\",\"sentence_indices\":[8,9,10,11],\"intent\":\"information_request\"},\"answer\":{\"summary\":\"- 情報技術の特性を生かし、多様な子どもを包摂した「主体的・対話的で深い学び」の充実を目指す\\n- デジタルの特性を活かして内容を分かりやすくし、学びの質を高めること\",\"sentence_indices\":[15,16]}}]}",
+  "parsed": {
+    "pairs": [
+      {
+        "topic": "デジタル教科書の導入目的と将来像",
+        "question": {
+          "summary": "- デジタル教科書を正式な教科書として位置づける政策目的の定義\n- デジタル教科書を通じて伸ばそうとしている能力\n- ギガスクール構想の成果と課題を踏まえた将来像",
+          "sentence_indices": [
+            8,
+            9,
+            10,
+            11
+          ],
+          "intent": "information_request"
+        },
+        "answer": {
+          "summary": "- 情報技術の特性を生かし、多様な子どもを包摂した「主体的・対話的で深い学び」の充実を目指す\n- デジタルの特性を活かして内容を分かりやすくし、学びの質を高めること",
+          "sentence_indices": [
+            15,
+            16
+          ]
+        }
+      }
+    ]
+  },
+  "latency_seconds": 2.65,
+  "input_tokens": 1148,
+  "output_tokens": 161,
+  "total_tokens": 1309,
+  "model": "gemma-4-26b-moe",
+  "model_id": "google/gemma-4-26b-a4b-it",
+  "task": "qa_seg",
+  "case_id": "qa_seg_08_preamble_background_inclusion",
+  "json_valid": true,
+  "cost_estimate": 0.00012404
+}
