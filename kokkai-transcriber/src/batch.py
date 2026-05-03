@@ -54,8 +54,10 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-def _has_processed_output(chamber: str, session_id: str) -> bool:
+def _has_processed_output(chamber: str, session_id: str, force: bool = False) -> bool:
     """data/{chamber}/**/{session_id}_*/qa_pairs.json が存在すれば処理済み。"""
+    if force:
+        return False
     chamber_dir = _DATA_ROOT / chamber
     if not chamber_dir.exists():
         return False
@@ -78,6 +80,7 @@ def _discover_sessions(
     chamber: str,
     since: date,
     until: date,
+    force: bool = False,
 ) -> list[tuple[str, str, str]]:
     """指定期間のセッションを探索し、未処理のものを返す。
 
@@ -102,7 +105,7 @@ def _discover_sessions(
             continue
 
         for sid in session_ids:
-            if _has_processed_output(chamber, sid):
+            if _has_processed_output(chamber, sid, force=force):
                 logger.debug("Already processed: %s %s", chamber, sid)
                 continue
             all_sessions.append((chamber, sid, date_str))
@@ -172,12 +175,13 @@ def run_batch(
     max_workers: int = 4,
     no_push: bool = False,
     dry_run: bool = False,
+    force: bool = False,
 ) -> None:
     """バッチ処理のメインエントリポイント。"""
     # Phase 1: 全セッション探索
     all_sessions: list[tuple[str, str, str]] = []
     for chamber in chambers:
-        sessions = _discover_sessions(chamber, since, until)
+        sessions = _discover_sessions(chamber, since, until, force=force)
         all_sessions.extend(sessions)
 
     logger.info("=" * 60)
@@ -297,6 +301,11 @@ def main() -> None:
         action="store_true",
         help="JSON形式で出力（--dry-run時のみ有効）",
     )
+    parser.add_argument(
+        "--reprocess",
+        action="store_true",
+        help="既存の出力を無視して再処理する",
+    )
 
     args = parser.parse_args()
 
@@ -315,6 +324,7 @@ def main() -> None:
         max_workers=args.workers,
         no_push=args.no_push,
         dry_run=args.dry_run,
+        force=args.reprocess,
     )
 
 

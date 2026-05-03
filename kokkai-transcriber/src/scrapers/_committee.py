@@ -11,9 +11,33 @@ from src.models import SpeakerInfo
 
 logger = logging.getLogger(__name__)
 
-_KANJI = r"[一-鿿]"
+_KANJI = r"[一-鿿ぁ-んァ-ヶ・]"
 _COMMITTEE_PATTERN = re.compile(rf"{_KANJI}+委員会")
 _SPECIAL_CATEGORIES: tuple[str, ...] = ("審査会", "調査会", "公聴会")
+
+
+def find_committee_by_label(soup: BeautifulSoup) -> str:
+    """「会議名」というラベルの隣にあるテキストを探す。"""
+    # 参議院TV: <dt>会議名</dt><dd>...</dd>
+    dt = soup.find("dt", string=re.compile(r"会議名"))
+    if dt:
+        dd = dt.find_next_sibling("dd")
+        if dd:
+            return _scan_text(dd.get_text(strip=True))
+
+    # 衆議院TV: <td><b>会議名</b></td> ... <td>...</td>
+    label = soup.find(["b", "td", "th"], string=re.compile(r"会議名"))
+    if label:
+        # 親の tr を探して、その中の td を走査
+        tr = label.find_parent("tr")
+        if tr:
+            for td in tr.find_all("td"):
+                t = td.get_text(strip=True)
+                if t and "会議名" not in t and ":" not in t and "：" not in t:
+                    if found := _scan_text(t):
+                        return found
+    return ""
+
 
 
 def find_committee_in_title(soup: BeautifulSoup) -> str:
@@ -35,7 +59,7 @@ def find_committee_in_body(soup: BeautifulSoup) -> str:
     for tag in soup.find_all(["h1", "h2", "h3"]):
         if found := _scan_text(tag.get_text(strip=True)):
             return found
-    for tag in soup.find_all(["td", "th", "div", "span", "p"]):
+    for tag in soup.find_all(["td", "th", "dd", "div", "span", "p"]):
         if found := _scan_text(tag.get_text(strip=True)):
             return found
     return ""
@@ -54,12 +78,15 @@ def derive_committee_from_speakers(speakers: list[SpeakerInfo]) -> str:
 
 
 def resolve_committee(soup: BeautifulSoup, speakers: list[SpeakerInfo]) -> str:
-    """3 段階フォールバックで委員会名を解決する。
+    """4 段階フォールバックで委員会名を解決する。
 
-    Stage 1: title → body から「〇〇委員会」「本会議」「審査会」等を直接抽出
-    Stage 2: speakers.affiliation 末尾「委員長」→「委員会」に置換
-    Stage 3: "不明" を返す
+    Stage 1: 「会議名」ラベルの隣から抽出
+    Stage 2: title → body から「〇〇委員会」「本会議」「審査会」等を直接抽出
+    Stage 3: speakers.affiliation 末尾「委員長」→「委員会」に置換
+    Stage 4: "不明" を返す
     """
+    if found := find_committee_by_label(soup):
+        return found
     if found := find_committee_in_title(soup):
         return found
     if found := find_committee_in_body(soup):
@@ -74,8 +101,13 @@ def _scan_text(text: str) -> str:
     """1 行のテキストから委員会・本会議・審査会等を見つけて返す。"""
     if not text:
         return ""
+
+    # "本会議" のマッチング。
+    # 免責事項などの長い文章（30文字以上）に含まれる場合は誤検知として無視する。
     if "本会議" in text:
-        return "本会議"
+        if len(text) < 30:
+            return "本会議"
+
     if match := _COMMITTEE_PATTERN.search(text):
         return match.group(0)
     for category in _SPECIAL_CATEGORIES:
