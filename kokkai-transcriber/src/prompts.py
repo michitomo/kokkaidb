@@ -6,45 +6,21 @@
 
 from __future__ import annotations
 
-QA_SEGMENT_SYSTEM_PROMPT = """国会質疑のQ&Aペア抽出専門家として動作してください。
-番号付きutterancesから質疑応答ペアを**すべて**抽出し、以下のJSON形式のみで返してください。
-抽出できるペアがない場合は `{"pairs": []}` を返すこと。speaker/party/roleフィールドは出力しないこと。
+QA_SEGMENT_SYSTEM_PROMPT = """国会質疑のQ&Aペア抽出器。番号付きutterancesから質疑応答ペアをすべて抽出し、JSONのみ返す。ペアなし→{"pairs":[]}。speaker/party/roleフィールド禁止。
 
-```json
-{
-  "pairs": [{
-    "topic": "質疑テーマ（簡潔に）",
-    "question": {
-      "summary": "- 要点1\n- 要点2",
-      "sentence_indices": [0, 1, 2],
-      "intent": "fact_check|policy_proposal|accountability|information_request|other"
-    },
-    "answer": {
-      "summary": "- 要点1\n- 要点2",
-      "sentence_indices": [12, 13, 14]
-    }
-  }]
-}
-```
+{"pairs":[{"topic":"テーマ","question":{"summary":"- 要点\n- 要点","sentence_indices":[0,1],"intent":"..."},"answer":{"summary":"- 要点","sentence_indices":[5,6]}}]}
 
-**intent**（全ペアに必須）:
-- `fact_check`: 過去発言の齟齬・数値・事実認識を問う
-- `policy_proposal`: 新政策・制度変更・法改正等の導入を求める
-- `accountability`: 過去の政策判断・不作為・公約違反の責任を問う
-- `information_request`: 現状数字・制度・政府見解・計画等の開示を求める
-- `other`: 上記以外
+intent（必須）: fact_check=過去発言・数値の齟齬を問う / policy_proposal=新政策・制度変更を求める / accountability=政策判断・公約違反の責任を問う / information_request=現状・政府見解の開示を求める / other=上記以外
 
-**ルール**:
-1. テーマが異なれば別Q&Aペアを作成（例: 道路整備と航空政策は別ペア）
-2. 質問者と答弁者は**別人**であること。同一人物のみの発言からペアを作らない
-3. **趣旨説明・所信表明・法案説明など一方的な演説はQ&Aペアとして抽出しない**（問いかけ＋応答の往復が必要）
-4. 答弁が空・極端に短い・相槌のみのペアは除外
-5. `full_text`は返さない。`sentence_indices`は入力の`(N)`番号を配列で指定
-6. `sentence_indices`から挨拶・自己紹介・感謝（「ありがとうございます」等）を除く
-7. `sentence_indices`に質問の文脈・背景説明（現状説明・問題提起）は含める
-8. 1つのutteranceに複数テーマがある場合、テーマごとに該当文のみを選択
-9. `summary`は「- 」始まりの箇条書き2〜4項目。実際の問いかけ内容のみ記載（挨拶・背景・フレーミング不要）
-10. roleラベル（[委員長]等）は誤分類の可能性あり。**発言の内容**でQ&Aを判断すること
+ルール:
+- 質疑者が異なるテーマで質問するたびに別のペアを作る。同一テーマの継続追及も別ペアとして抽出
+- 質問者と答弁者は別人であること
+- 趣旨説明・所信表明・法案説明（一方的演説）はペア抽出不可。問いかけ＋応答の往復が必須
+- 答弁が空・相槌のみのペアは除外
+- sentence_indicesは(N)番号の配列。挨拶・自己紹介・感謝は除外し、背景説明・問題提起は含める
+- 複数テーマのutteranceはテーマごとに該当文のみ選択
+- summaryは「- 」箇条書き2〜4項目。実質的な問いかけ内容のみ（挨拶・背景不要）
+- full_text禁止。roleラベルは誤分類あり、発言内容でQ&Aを判断すること
 """
 
 SESSION_SUMMARY_SYSTEM_PROMPT = """国会会議の要約者。入力に基づきセッション全体の概要を3-5文の日本語で作成する。
