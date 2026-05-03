@@ -187,7 +187,14 @@ def run_batch(
     logger.info("=" * 60)
 
     if dry_run:
-        logger.info("Dry run — exiting without processing")
+        if any(arg == "--json" for arg in sys.argv):
+            import json
+            print(json.dumps([
+                {"chamber": c, "sid": s, "date": d}
+                for c, s, d in all_sessions
+            ]))
+        else:
+            logger.info("Dry run — exiting without processing")
         return
 
     if not all_sessions:
@@ -284,6 +291,11 @@ def main() -> None:
         "--dry-run",
         action="store_true",
         help="対象セッション一覧を表示するのみ（処理は行わない）",
+    )
+    parser.add_argument(
+        "--json",
+        action="store_true",
+        help="JSON形式で出力（--dry-run時のみ有効）",
     )
 
     args = parser.parse_args()

@@ -2,7 +2,7 @@ name: Batch ingest sessions
 
 on:
   schedule:
-    # 毎時 15 分に起動。matrix で衆議院・参議院を並列に走らせる。
+    # 毎時 15 分に起動。
     - cron: '15 * * * *'
   workflow_dispatch:
     inputs:
@@ -11,7 +11,7 @@ on:
         required: false
         default: ''
       chamber:
-        description: '対象の院 (両方 / 個別)'
+        description: '対象の院 (both / shugiin / sangiin)'
         required: false
         default: 'both'
         type: choice
@@ -19,13 +19,6 @@ on:
           - both
           - shugiin
           - sangiin
-      workers:
-        description: '並列数'
-        required: false
-        default: '4'
-
-# 同一 chamber の重複起動を構造的に排除する。chamber 間は並列実行を許可。
-# ワークフロー全体の concurrency は外し、matrix 各 instance に持たせる。
 
 permissions:
   contents: write
@@ -33,62 +26,27 @@ permissions:
   id-token: write
 
 jobs:
-  setup:
-    # 走らせる chamber 集合を決定する。
-    # - cron / dispatch=both → ["shugiin", "sangiin"]
-    # - dispatch=shugiin or sangiin → 単独
+  discovery:
     runs-on: ubuntu-latest
     outputs:
-      chambers: ${{ steps.chambers.outputs.chambers }}
-    steps:
-      - id: chambers
-        env:
-          CH: ${{ github.event.inputs.chamber }}
-          EVENT: ${{ github.event_name }}
-        run: |
-          if [ "$EVENT" = "workflow_dispatch" ] && [ -n "$CH" ] && [ "$CH" != "both" ]; then
-            echo "chambers=[\"$CH\"]" >> "$GITHUB_OUTPUT"
-            echo "Selected chamber: $CH"
-          else
-            echo 'chambers=["shugiin","sangiin"]' >> "$GITHUB_OUTPUT"
-            echo "Selected chambers: shugiin + sangiin"
-          fi
-
-  ingest:
-    needs: setup
-    runs-on: ubuntu-latest
-    timeout-minutes: 180
-    strategy:
-      # 片方の chamber が落ちてももう片方は走らせ切る。
-      fail-fast: false
-      matrix:
-        chamber: ${{ fromJSON(needs.setup.outputs.chambers) }}
-    # chamber 単位の concurrency: 同一 chamber の前回ランが走っていれば
-    # 待つが、別 chamber は並列に走らせられる。
-    concurrency:
-      group: kokkai-batch-${{ matrix.chamber }}
-      cancel-in-progress: false
-    defaults:
-      run:
-        working-directory: kokkai-transcriber
+      sessions: ${{ steps.probe.outputs.sessions }}
+      total: ${{ steps.probe.outputs.total }}
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
-          persist-credentials: true
-
-      - name: Configure git identity
-        run: |
-          git config --global user.name "kokkaidb-bot"
-          git config --global user.email "kokkaidb-bot@users.noreply.github.com"
-
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
           cache: 'pip'
           cache-dependency-path: kokkai-transcriber/pyproject.toml
+      
+      - name: Install discovery dependencies
+        run: |
+          cd kokkai-transcriber
+          # 参議院の探索には playwright が必要
+          pip install -e '.[browser]'
+          python -m playwright install --with-deps chromium
 
-      - name: Resolve date range
+      - name: Resolve dates
         id: dates
         run: |
           if [ -n "${{ github.event.inputs.since }}" ]; then
@@ -96,101 +54,136 @@ jobs:
           else
             SINCE=$(date -u -d '7 days ago' +%Y-%m-%d)
           fi
-          UNTIL=$(date -u +%Y-%m-%d)
           echo "since=$SINCE" >> "$GITHUB_OUTPUT"
-          echo "until=$UNTIL" >> "$GITHUB_OUTPUT"
-          echo "Range: $SINCE .. $UNTIL"
 
-      # pip install は全依存入れる必要がある: batch.py → pipeline.py →
-      # transcriber/structurer が openai 等を import するため。pip cache が
-      # 効くので概ね10〜20秒。ffmpeg (apt) は本処理時のみ入れて節約する。
-      # 参議院の場合は [browser] extras と Chromium が要る
-      # (POST keyword_search.php が F5 ASM Bot Defense で保護されているため)。
-      - name: Install pipeline dependencies
-        env:
-          CHAMBER: ${{ matrix.chamber }}
+      - name: Probe for new sessions
+        id: probe
         run: |
-          if [ "$CHAMBER" = "sangiin" ]; then
+          CH="${{ github.event.inputs.chamber }}"
+          if [ "$CH" = "shugiin" ]; then
+            ARGS="--chamber shugiin"
+          elif [ "$CH" = "sangiin" ]; then
+            ARGS="--chamber sangiin"
+          else
+            ARGS="--chamber shugiin --chamber sangiin"
+          fi
+          cd kokkai-transcriber
+          JSON=$(python -m src.batch $ARGS --since "${{ steps.dates.outputs.since }}" --dry-run --json)
+          echo "sessions=$JSON" >> "$GITHUB_OUTPUT"
+          TOTAL=$(echo "$JSON" | jq 'length')
+          echo "total=$TOTAL" >> "$GITHUB_OUTPUT"
+          
+          # サマリー出力
+          echo "### Discovered Sessions ($TOTAL)" >> $GITHUB_STEP_SUMMARY
+          echo "| Chamber | Session ID | Date |" >> $GITHUB_STEP_SUMMARY
+          echo "|---------|------------|------|" >> $GITHUB_STEP_SUMMARY
+          echo "$JSON" | jq -r '.[] | "| \(.chamber) | \(.sid) | \(.date) |"' >> $GITHUB_STEP_SUMMARY
+
+      - name: Refresh laws
+        if: steps.probe.outputs.total != '0'
+        run: |
+          cd kokkai-transcriber
+          python -m src.laws_builder --sessions "221"
+
+      - name: Upload laws
+        if: steps.probe.outputs.total != '0'
+        uses: actions/upload-artifact@v4
+        with:
+          name: laws-data
+          path: data/laws/
+          retention-days: 1
+
+  ingest:
+    needs: discovery
+    if: needs.discovery.outputs.total != '0'
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      matrix:
+        session: ${{ fromJSON(needs.discovery.outputs.sessions) }}
+    name: ingest (${{ matrix.session.chamber }}-${{ matrix.session.sid }})
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+          cache-dependency-path: kokkai-transcriber/pyproject.toml
+      
+      - name: Download laws
+        uses: actions/download-artifact@v4
+        with:
+          name: laws-data
+          path: data/laws/
+      
+      - name: Install dependencies
+        run: |
+          cd kokkai-transcriber
+          if [ "${{ matrix.session.chamber }}" = "sangiin" ]; then
             pip install -e '.[browser]'
             python -m playwright install --with-deps chromium
           else
             pip install -e .
           fi
-
-      - name: Probe for new sessions (dry-run)
-        id: probe
-        env:
-          CHAMBER: ${{ matrix.chamber }}
-        run: |
-          set +e
-          LOG=$(python -m src.batch \
-            --chamber "$CHAMBER" \
-            --since "${{ steps.dates.outputs.since }}" \
-            --until "${{ steps.dates.outputs.until }}" \
-            --dry-run 2>&1)
-          EXIT=$?
-          echo "$LOG"
-          if [ $EXIT -ne 0 ]; then
-            echo "::error::batch dry-run exited with $EXIT for chamber=$CHAMBER"
-            exit $EXIT
-          fi
-          TOTAL=$(echo "$LOG" | grep -oP 'Total sessions to process: \K\d+' | tail -1)
-          echo "total=${TOTAL:-0}" >> "$GITHUB_OUTPUT"
-          if [ "${TOTAL:-0}" = "0" ]; then
-            echo "No new sessions for $CHAMBER — skipping full pipeline"
-          fi
-
+      
       - name: Install ffmpeg
-        if: steps.probe.outputs.total != '0'
         run: |
           sudo apt-get update
           sudo apt-get install -y ffmpeg
 
-      - name: Refresh laws_compact.txt
-        if: steps.probe.outputs.total != '0'
-        env:
-          # 当該国会の session 番号
-          DIET_SESSION: '221'
-        run: |
-          python -m src.laws_builder --sessions "$DIET_SESSION" || \
-            echo "laws_builder failed (non-fatal, pipeline will skip law tagging)"
-
-      - name: Run batch
-        if: steps.probe.outputs.total != '0'
+      - name: Run pipeline
         env:
           DEEPINFRA_API_KEY: ${{ secrets.DEEPINFRA_API_KEY }}
-          CHAMBER: ${{ matrix.chamber }}
-          WORKERS: ${{ github.event.inputs.workers || '4' }}
         run: |
-          python -m src.batch \
-            --chamber "$CHAMBER" \
-            --since "${{ steps.dates.outputs.since }}" \
-            --until "${{ steps.dates.outputs.until }}" \
-            --workers "$WORKERS" \
+          cd kokkai-transcriber
+          python -m src.pipeline \
+            --chamber ${{ matrix.session.chamber }} \
+            --session-id ${{ matrix.session.sid }} \
             --no-push
+      
+      - name: Upload session data
+        uses: actions/upload-artifact@v4
+        with:
+          name: session-${{ matrix.session.chamber }}-${{ matrix.session.sid }}
+          path: data/
+          retention-days: 1
 
-      # batch.py の commit/push はスキップし、workflow 側で一元管理する。
-      # 並列に走る別 chamber が同時に push する競合に備え、push 失敗時は
-      # `git pull --rebase` で取り込んでから retry する (5回まで指数バックオフ)。
-      # 衆議院は data/shugiin/、参議院は data/sangiin/ しか触らないのでファイル
-      # 単位の競合は理論上発生しない。git ref レベルの fast-forward 競合だけ
-      # rebase で解消する。
-      - name: Commit data/
+  finalize:
+    needs: ingest
+    if: always() && (needs.ingest.result == 'success' || needs.ingest.result == 'failure')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      
+      - name: Configure git identity
+        run: |
+          git config --global user.name "kokkaidb-bot"
+          git config --global user.email "kokkaidb-bot@users.noreply.github.com"
+      
+      - name: Download all session data
+        uses: actions/download-artifact@v4
+        with:
+          pattern: session-*
+          path: data/
+          merge-multiple: true
+      
+      - name: Commit and push
         id: commit
-        if: steps.probe.outputs.total != '0'
-        working-directory: ${{ github.workspace }}
-        env:
-          CHAMBER: ${{ matrix.chamber }}
         run: |
           git add data/
           if git diff --cached --quiet --exit-code; then
             echo "No data changes to commit"
+            echo "committed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          git commit -m "data: $CHAMBER batch ${{ steps.dates.outputs.since }}〜${{ steps.dates.outputs.until }}"
+          git commit -m "data: batch ingestion ($(date +%Y-%m-%d))"
           for i in 1 2 3 4 5; do
             if git push origin main; then
               echo "pushed (attempt $i)"
+              echo "committed=true" >> "$GITHUB_OUTPUT"
               exit 0
             fi
             echo "push rejected; pull --rebase + retry ($i/5)"
@@ -200,12 +193,14 @@ jobs:
           done
           echo "::error::push failed after 5 retries"
           exit 1
+    outputs:
+      committed: ${{ steps.commit.outputs.committed }}
 
   build:
-    # ingest 両 chamber の完了を待つ (success/failure いずれも next へ)。
-    # 何も新規 commit が無かった場合は build をスキップする。
-    needs: ingest
-    if: always() && needs.ingest.result != 'cancelled' && needs.ingest.result != 'skipped'
+    needs: [discovery, finalize]
+    # finalize が成功したか、あるいは finalize がスキップされた（新規セッションなし）が build は常にチェックする
+    # ただし cancelled は避ける
+    if: always() && !cancelled() && needs.discovery.result == 'success'
     runs-on: ubuntu-latest
     outputs:
       built: ${{ steps.guard.outputs.built }}
@@ -218,8 +213,8 @@ jobs:
       - name: Skip build if no new data commit
         id: guard
         run: |
-          # 直近5コミット内に "data: ... batch ..." の commit があれば build を実行
-          if git log -5 --format='%s' | grep -qE '^data: (shugiin|sangiin) batch'; then
+          # 直近5コミット内に "data: ... batch" または "data: batch ingestion" の commit があれば build を実行
+          if git log -5 --format='%s' | grep -qE '(data: (shugiin|sangiin) batch|data: batch ingestion)'; then
             echo "built=true" >> "$GITHUB_OUTPUT"
             echo "New data detected — proceeding with build"
           else
@@ -239,13 +234,13 @@ jobs:
         working-directory: site
         run: npm ci
 
-      - name: Validate data referential integrity (non-blocking until reprocess)
+      - name: Validate data referential integrity
         if: steps.guard.outputs.built == 'true'
         working-directory: site
         continue-on-error: true
         run: npm run validate:data
 
-      - name: Build Astro site (includes Pagefind via postbuild)
+      - name: Build Astro site
         if: steps.guard.outputs.built == 'true'
         working-directory: site
         run: npm run build
