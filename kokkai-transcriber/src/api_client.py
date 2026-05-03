@@ -13,7 +13,7 @@ from typing import TypeVar
 import openai
 
 DEEPINFRA_BASE_URL = "https://api.deepinfra.com/v1/openai"
-LLM_MODEL = "deepseek-ai/DeepSeek-V3.2"
+LLM_MODEL = "google/gemma-4-31b-it"
 
 # ---------------------------------------------------------------------------
 # ステップごとのデフォルト並列数
