@@ -1,0 +1,47 @@
+{
+  "raw_content": "{\"splits\": [{\"start\": 0, \"speaker\": \"坂本哲志\", \"role\": \"委員長\"}, {\"start\": 1, \"speaker\": \"本田太郎\", \"role\": \"質疑者\"}, {\"start\": 5, \"speaker\": \"木原稔\", \"role\": \"答弁者\"}, {\"start\": 7, \"speaker\": \"本田太郎\", \"role\": \"質疑者\"}, {\"start\": 10, \"speaker\": \"高市早苗\", \"role\": \"答弁者\"}, {\"start\": 12, \"speaker\": \"本田太郎\", \"role\": \"質疑者\"}]}",
+  "parsed": {
+    "splits": [
+      {
+        "start": 0,
+        "speaker": "坂本哲志",
+        "role": "委員長"
+      },
+      {
+        "start": 1,
+        "speaker": "本田太郎",
+        "role": "質疑者"
+      },
+      {
+        "start": 5,
+        "speaker": "木原稔",
+        "role": "答弁者"
+      },
+      {
+        "start": 7,
+        "speaker": "本田太郎",
+        "role": "質疑者"
+      },
+      {
+        "start": 10,
+        "speaker": "高市早苗",
+        "role": "答弁者"
+      },
+      {
+        "start": 12,
+        "speaker": "本田太郎",
+        "role": "質疑者"
+      }
+    ]
+  },
+  "latency_seconds": 1.12,
+  "input_tokens": 1541,
+  "output_tokens": 140,
+  "total_tokens": 1681,
+  "model": "gemma-4-26b-moe",
+  "model_id": "google/gemma-4-26b-a4b-it",
+  "task": "speaker_tagging",
+  "case_id": "speaker_tagging_rand_56089_seg02",
+  "json_valid": true,
+  "cost_estimate": 0.00015128
+}

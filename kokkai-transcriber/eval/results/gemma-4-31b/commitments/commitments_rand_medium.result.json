@@ -1,0 +1,38 @@
+{
+  "raw_content": "{\n  \"key_commitments\": [\n    {\n      \"speaker\": \"松本洋平\",\n      \"role\": \"文部科学大臣\",\n      \"text\": \"中学校35人学級の実現に向け、今国会で関連法案の成立を目指す\",\n      \"topic\": \"教職員の処遇改善と環境整備\",\n      \"qa_id\": \"qa_002\"\n    },\n    {\n      \"speaker\": \"松本洋平\",\n      \"role\": \"文部科学大臣\",\n      \"text\": \"高校無償化に係る関連法案を今国会に提出し、4月実施に向け取り組む\",\n      \"topic\": \"教育費の負担軽減と高校無償化\",\n      \"qa_id\": \"qa_008\"\n    },\n    {\n      \"speaker\": \"松本洋平\",\n      \"role\": \"文部科学大臣\",\n      \"text\": \"国立劇場の再整備を2033年度再開場目標で国の責任で進める\",\n      \"topic\": \"文化芸術の振興とコンテンツ産業\",\n      \"qa_id\": \"qa_014\"\n    }\n  ]\n}",
+  "parsed": {
+    "key_commitments": [
+      {
+        "speaker": "松本洋平",
+        "role": "文部科学大臣",
+        "text": "中学校35人学級の実現に向け、今国会で関連法案の成立を目指す",
+        "topic": "教職員の処遇改善と環境整備",
+        "qa_id": "qa_002"
+      },
+      {
+        "speaker": "松本洋平",
+        "role": "文部科学大臣",
+        "text": "高校無償化に係る関連法案を今国会に提出し、4月実施に向け取り組む",
+        "topic": "教育費の負担軽減と高校無償化",
+        "qa_id": "qa_008"
+      },
+      {
+        "speaker": "松本洋平",
+        "role": "文部科学大臣",
+        "text": "国立劇場の再整備を2033年度再開場目標で国の責任で進める",
+        "topic": "文化芸術の振興とコンテンツ産業",
+        "qa_id": "qa_014"
+      }
+    ]
+  },
+  "latency_seconds": 6.27,
+  "input_tokens": 2787,
+  "output_tokens": 276,
+  "total_tokens": 3063,
+  "model": "gemma-4-31b",
+  "model_id": "google/gemma-4-31b-it",
+  "task": "commitments",
+  "case_id": "commitments_rand_medium",
+  "json_valid": true,
+  "cost_estimate": 0.00046719
+}

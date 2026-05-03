@@ -1,0 +1,55 @@
+{
+  "raw_content": "{\"pairs\":[{\"topic\":\"防災庁の指導力と関係省庁との連携方針\",\"question\":{\"summary\":\"- 防災庁が勧告権を実効性のあるものにするための環境づくり\\n- 関係省庁とのすり合わせや共同訓練を通じた連携強化の方針\",\"sentence_indices\":[1,2],\"intent\":\"information_request\"},\"answer\":{\"summary\":\"- 関係省庁との情報共有と共通認識の醸成を重視\\n- 平時からの連絡会議、共同訓練、人事交流等を通じた共通理解の形成\\n- 客観的根拠に基づく施策レベルの調整と、必要に応じた勧告権の発動\",\"sentence_indices\":[4,5]}},{\"topic\":\"地方防災局の役割と機能\",\"question\":{\"summary\":\"- 平時の事前防災における地方防災局の役割\\n- 発災後の緊急対応から復旧復興における多省庁・自治体との連携・役割分担\",\"sentence_indices\":[7,8,9],\"intent\":\"information_request\"},\"answer\":{\"summary\":\"- 地域における事前防災対策や迅速な被災地支援体制の構築に向けた検討を実施\\n- 平時は地域における防災対策の充実を支援\\n- 発災時は関係省庁や地方支分部局と連携し、復旧復興まで伴走型の被災地支援を行う\",\"sentence_indices\":[12,13,14]}}]}",
+  "parsed": {
+    "pairs": [
+      {
+        "topic": "防災庁の指導力と関係省庁との連携方針",
+        "question": {
+          "summary": "- 防災庁が勧告権を実効性のあるものにするための環境づくり\n- 関係省庁とのすり合わせや共同訓練を通じた連携強化の方針",
+          "sentence_indices": [
+            1,
+            2
+          ],
+          "intent": "information_request"
+        },
+        "answer": {
+          "summary": "- 関係省庁との情報共有と共通認識の醸成を重視\n- 平時からの連絡会議、共同訓練、人事交流等を通じた共通理解の形成\n- 客観的根拠に基づく施策レベルの調整と、必要に応じた勧告権の発動",
+          "sentence_indices": [
+            4,
+            5
+          ]
+        }
+      },
+      {
+        "topic": "地方防災局の役割と機能",
+        "question": {
+          "summary": "- 平時の事前防災における地方防災局の役割\n- 発災後の緊急対応から復旧復興における多省庁・自治体との連携・役割分担",
+          "sentence_indices": [
+            7,
+            8,
+            9
+          ],
+          "intent": "information_request"
+        },
+        "answer": {
+          "summary": "- 地域における事前防災対策や迅速な被災地支援体制の構築に向けた検討を実施\n- 平時は地域における防災対策の充実を支援\n- 発災時は関係省庁や地方支分部局と連携し、復旧復興まで伴走型の被災地支援を行う",
+          "sentence_indices": [
+            12,
+            13,
+            14
+          ]
+        }
+      }
+    ]
+  },
+  "latency_seconds": 5.0,
+  "input_tokens": 1160,
+  "output_tokens": 305,
+  "total_tokens": 1465,
+  "model": "gemma-4-26b-moe",
+  "model_id": "google/gemma-4-26b-a4b-it",
+  "task": "qa_seg",
+  "case_id": "qa_seg_01_simple_qa",
+  "json_valid": true,
+  "cost_estimate": 0.0001538
+}

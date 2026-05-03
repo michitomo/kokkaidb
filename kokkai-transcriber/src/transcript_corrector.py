@@ -26,7 +26,7 @@ from src.api_client import get_client, with_retry
 from src.models import RawTranscript, SegmentTranscript, SessionDetail, SpeakerInfo
 
 # Step 4.5はDeepSeek-V3.2を使用（prompt cachingで長いsystem promptのコストを削減）
-CORRECTOR_MODEL = "deepseek-ai/DeepSeek-V3.2"
+CORRECTOR_MODEL = "google/gemma-4-31b-it"
 
 logger = logging.getLogger(__name__)
 

@@ -10,15 +10,16 @@ import json
 import logging
 import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from typing import Any
 
 from src.api_client import get_client as _get_client
 from src.api_client import with_retry
 from src.models import (
     AnswerDetail,
     KeyCommitment,
+    QAMetrics,
     QAPair,
     QAPairsOutput,
-    QAMetrics,
     QuestionDetail,
     RelatedLawTag,
     SegmentUtterances,
@@ -38,7 +39,7 @@ from src.prompts import (
 )
 from src.speaker_lookup import find_by_name
 
-# Step 6はgemma-4-31Bを使用（ペア数抽出がV3.2より安定: 10/10 vs 6/10）
+# Step 6はgemma-4-31bを使用（ペア数抽出がV3.2より安定: 10/10 vs 6/10）
 STRUCTURER_MODEL = "google/gemma-4-31B-it"
 
 # 答弁本文がこの長さ未満かつ sentence_indices が空のペアは Q&A として成立していないため drop
@@ -407,6 +408,18 @@ def _generate_qa_for_segment(
     sentence_text, all_sentences = _build_sentence_map(seg)
     total_chars = sum(len(u.text) for u in seg.utterances)
 
+    # 方向性4: 入力テキストが長すぎる場合は先頭20000文字で切り捨て（暫定措置）
+    # TODO: 将来的には _split_segment_into_blocks を利用して sub-block ごとに QA 生成してマージ
+    _INPUT_CHAR_LIMIT = 20000
+    if len(sentence_text) > _INPUT_CHAR_LIMIT:
+        logger.warning(
+            "Segment %d input text too long (%d chars), truncating to %d chars",
+            seg.segment_index,
+            len(sentence_text),
+            _INPUT_CHAR_LIMIT,
+        )
+        sentence_text = sentence_text[:_INPUT_CHAR_LIMIT]
+
     base_user_prompt = (
         f"以下は国会質疑の1つの発言セグメントです。"
         f"この発言者の持ち時間で行われた質疑応答を**すべて**Q&Aペアとして抽出してください。\n"
@@ -423,16 +436,25 @@ def _generate_qa_for_segment(
         total_chars,
     )
 
-    response = with_retry(lambda: client.chat.completions.create(
-        model=STRUCTURER_MODEL,
-        messages=[
-            {"role": "system", "content": QA_SEGMENT_SYSTEM_PROMPT},
-            {"role": "user", "content": base_user_prompt},
-        ],
-        temperature=0.1,
-        max_tokens=8192,
-        response_format={"type": "json_object"},
-    ))
+    def _qa_call(prompt: str, tokens: int, temperature: float) -> Any:
+        return with_retry(lambda: client.chat.completions.create(
+            model=STRUCTURER_MODEL,
+            messages=[
+                {"role": "system", "content": QA_SEGMENT_SYSTEM_PROMPT},
+                {"role": "user", "content": prompt},
+            ],
+            temperature=temperature,
+            max_tokens=tokens,
+            response_format={"type": "json_object"},
+        ))
+
+    response = _qa_call(base_user_prompt, _MAX_TOKENS_CEILING, 0.1)
+    if response.choices[0].finish_reason == "length":
+        logger.error(
+            "Q&A output still truncated for segment %d at max_tokens=%d",
+            seg.segment_index,
+            _MAX_TOKENS_CEILING,
+        )
 
     pairs = _extract_pairs_from_response(
         response.choices[0].message.content, seg, all_sentences, speakers_lookup,
@@ -453,16 +475,13 @@ def _generate_qa_for_segment(
             )
             retry_prompt = base_user_prompt + retry_hint
 
-            retry_response = with_retry(lambda: client.chat.completions.create(
-                model=STRUCTURER_MODEL,
-                messages=[
-                    {"role": "system", "content": QA_SEGMENT_SYSTEM_PROMPT},
-                    {"role": "user", "content": retry_prompt},
-                ],
-                temperature=0.3,  # リトライ時はやや高めで多様性を出す
-                max_tokens=8192,
-                response_format={"type": "json_object"},
-            ))
+            retry_response = _qa_call(retry_prompt, _MAX_TOKENS_CEILING, 0.3)
+            if retry_response.choices[0].finish_reason == "length":
+                logger.warning(
+                    "Q&A density-retry output truncated for segment %d at max_tokens=%d",
+                    seg.segment_index,
+                    _MAX_TOKENS_CEILING,
+                )
 
             retry_pairs = _extract_pairs_from_response(
                 retry_response.choices[0].message.content, seg, all_sentences, speakers_lookup,
@@ -620,22 +639,43 @@ def _format_qa_pairs_for_prompt(qa_pairs: QAPairsOutput) -> str:
     return "\n".join(lines)
 
 
+_MAX_TOKENS_CEILING = 16384
+
+
 def _call_structurer(
     system_prompt: str, user_prompt: str, *, max_tokens: int, temperature: float = 0.1
 ) -> dict:
     client = _get_client()
-    response = with_retry(
-        lambda: client.chat.completions.create(
-            model=STRUCTURER_MODEL,
-            messages=[
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": user_prompt},
-            ],
-            temperature=temperature,
-            max_tokens=max_tokens,
-            response_format={"type": "json_object"},
+
+    def _do_call(tokens: int) -> Any:
+        return with_retry(
+            lambda: client.chat.completions.create(
+                model=STRUCTURER_MODEL,
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_prompt},
+                ],
+                temperature=temperature,
+                max_tokens=tokens,
+                response_format={"type": "json_object"},
+            )
         )
-    )
+
+    response = _do_call(max_tokens)
+    finish_reason = response.choices[0].finish_reason
+    if finish_reason == "length":
+        retry_tokens = min(max_tokens * 2, _MAX_TOKENS_CEILING)
+        logger.warning(
+            "Output truncated (finish_reason=length, max_tokens=%d), retrying with max_tokens=%d",
+            max_tokens,
+            retry_tokens,
+        )
+        response = _do_call(retry_tokens)
+        if response.choices[0].finish_reason == "length":
+            raise ValueError(
+                f"Output still truncated after retry with max_tokens={retry_tokens}"
+            )
+
     content = response.choices[0].message.content
     if not content:
         raise ValueError("Empty response from LLM")
@@ -683,11 +723,31 @@ def generate_session_summary(
             meta_prefix = "## セッション情報\n" + "\n".join(parts) + "\n\n"
 
     user_prompt = "以下の国会セッションの内容から、概要を作成してください。\n\n" + meta_prefix + body
-    data = _call_structurer(SESSION_SUMMARY_SYSTEM_PROMPT, user_prompt, max_tokens=1024)
+    data = _call_structurer(SESSION_SUMMARY_SYSTEM_PROMPT, user_prompt, max_tokens=4096)
     summary = data.get("session_summary", "")
     if not isinstance(summary, str):
         return ""
     return summary.strip()
+
+
+def _parse_topics_data(
+    data: dict,
+    valid_qa_ids: set[str],
+) -> tuple[list[Topic], list[str]]:
+    """LLM 出力の topics データを Topic リストに変換する。"""
+    topics_list: list[Topic] = []
+    for t in data.get("topics", []):
+        related_qa_ids = [q for q in (t.get("related_qa_ids") or []) if q in valid_qa_ids]
+        related_speakers = [s for s in (t.get("related_speakers") or []) if isinstance(s, str)]
+        topics_list.append(Topic(
+            name=t.get("name") or "",
+            description=t.get("description") or "",
+            related_qa_ids=related_qa_ids,
+            related_speakers=related_speakers,
+        ))
+    raw_key_topics = data.get("key_topics") or []
+    key_topics = [n for n in raw_key_topics if isinstance(n, str) and n]
+    return topics_list, key_topics
 
 
 def generate_topics_and_key_topics(
@@ -695,29 +755,18 @@ def generate_topics_and_key_topics(
 ) -> tuple[TopicsOutput, list[str]]:
     """topics + key_topics を生成する（Step 6b-2）。
 
+    全 QA ペアを一括で LLM に渡す。
     key_topics は topics[].name のサブセットになるよう post-validate する。
     """
     if not qa_pairs.pairs:
         return TopicsOutput(topics=[]), []
 
-    user_prompt = "## Q&Aペア一覧\n" + _format_qa_pairs_for_prompt(qa_pairs)
-    data = _call_structurer(TOPICS_SYSTEM_PROMPT, user_prompt, max_tokens=4096)
-
     valid_qa_ids = {p.id for p in qa_pairs.pairs}
-    topics_list: list[Topic] = []
-    for t in data.get("topics", []):
-        related_qa_ids = [q for q in (t.get("related_qa_ids") or []) if q in valid_qa_ids]
-        topics_list.append(
-            Topic(
-                name=t.get("name") or "",
-                description=t.get("description") or "",
-                related_qa_ids=related_qa_ids,
-                related_speakers=t.get("related_speakers") or [],
-            )
-        )
+    user_prompt = "## Q&Aペア一覧\n" + _format_qa_pairs_for_prompt(qa_pairs)
+    data = _call_structurer(TOPICS_SYSTEM_PROMPT, user_prompt, max_tokens=_MAX_TOKENS_CEILING)
+    topics_list, raw_key_topics = _parse_topics_data(data, valid_qa_ids)
 
     valid_topic_names = {t.name for t in topics_list}
-    raw_key_topics = data.get("key_topics") or []
     key_topics: list[str] = []
     dropped: list[str] = []
     for name in raw_key_topics:
@@ -734,14 +783,13 @@ def generate_topics_and_key_topics(
 
     return TopicsOutput(topics=topics_list), key_topics
 
-
 def generate_key_commitments(qa_pairs: QAPairsOutput) -> list[KeyCommitment]:
     """key_commitments を生成する（Step 6b-3）。"""
     if not qa_pairs.pairs:
         return []
 
     user_prompt = "## Q&Aペア一覧\n" + _format_qa_pairs_for_prompt(qa_pairs)
-    data = _call_structurer(COMMITMENTS_SYSTEM_PROMPT, user_prompt, max_tokens=2048)
+    data = _call_structurer(COMMITMENTS_SYSTEM_PROMPT, user_prompt, max_tokens=8192)
 
     valid_qa_ids = {p.id for p in qa_pairs.pairs}
     commitments: list[KeyCommitment] = []
@@ -837,8 +885,8 @@ def build_summary_related_laws(qa_pairs: QAPairsOutput) -> list[RelatedLawTag]:
     ]
 
 
-# V4評価プロンプトはDeepSeek V3.2（Gemma-4-31Bより評価タスク精度が高い）
-_METRICS_MODEL = "deepseek-ai/DeepSeek-V3.2"
+# V4評価プロンプトはDeepSeek V3.1を使用
+_METRICS_MODEL = "google/gemma-4-31B-it"
 
 
 def _score_one_pair(pair: QAPair) -> QAMetrics | None:
@@ -863,7 +911,7 @@ def _score_one_pair(pair: QAPair) -> QAMetrics | None:
                 {"role": "user", "content": user_msg},
             ],
             temperature=0,
-            max_tokens=1200,
+            max_tokens=4096,
             response_format={"type": "json_object"},
         )
         raw = response.choices[0].message.content

@@ -1,0 +1,42 @@
+{
+  "raw_content": "{\"topics\": [{\"name\": \"子ども・若者政策と少子化対策\", \"description\": \"子ども政策、少子化対策、および若者の活躍推進に関する所信表明。\", \"related_qa_ids\": [\"qa_001\"], \"related_speakers\": [\"丹羽秀樹\"]}, {\"name\": \"地方創生と地方分権改革\", \"description\": \"地域未来戦略、地方創生、および地方分権改革や道州制に関する所信表明。\", \"related_qa_ids\": [\"qa_002\", \"qa_003\"], \"related_speakers\": [\"丹羽秀樹\"]}], \"key_topics\": [\"子ども・若者政策と少子化対策\", \"地方創生と地方分権改革\"]}",
+  "parsed": {
+    "topics": [
+      {
+        "name": "子ども・若者政策と少子化対策",
+        "description": "子ども政策、少子化対策、および若者の活躍推進に関する所信表明。",
+        "related_qa_ids": [
+          "qa_001"
+        ],
+        "related_speakers": [
+          "丹羽秀樹"
+        ]
+      },
+      {
+        "name": "地方創生と地方分権改革",
+        "description": "地域未来戦略、地方創生、および地方分権改革や道州制に関する所信表明。",
+        "related_qa_ids": [
+          "qa_002",
+          "qa_003"
+        ],
+        "related_speakers": [
+          "丹羽秀樹"
+        ]
+      }
+    ],
+    "key_topics": [
+      "子ども・若者政策と少子化対策",
+      "地方創生と地方分権改革"
+    ]
+  },
+  "latency_seconds": 4.14,
+  "input_tokens": 737,
+  "output_tokens": 165,
+  "total_tokens": 902,
+  "model": "gemma-4-31b",
+  "model_id": "google/gemma-4-31b-it",
+  "task": "topics",
+  "case_id": "topics_rand_small_3pairs",
+  "json_valid": true,
+  "cost_estimate": 0.00015851
+}

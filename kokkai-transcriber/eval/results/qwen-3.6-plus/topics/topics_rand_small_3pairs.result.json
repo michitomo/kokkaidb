@@ -1,0 +1,52 @@
+{
+  "raw_content": "{\n  \"topics\": [\n    {\n      \"name\": \"子ども・若者政策および少子化対策\",\n      \"description\": \"少子化対策の推進や若者の活躍支援、子ども政策に関する政府の所信表明を求める質疑。\",\n      \"related_qa_ids\": [\"qa_001\"],\n      \"related_speakers\": [\"丹羽秀樹\"]\n    },\n    {\n      \"name\": \"地方創生および地域未来戦略\",\n      \"description\": \"地方創生の深化と地域未来戦略の策定・実施に関する政府の所信表明を求める質疑。\",\n      \"related_qa_ids\": [\"qa_002\"],\n      \"related_speakers\": [\"丹羽秀樹\"]\n    },\n    {\n      \"name\": \"地方分権改革および道州制\",\n      \"description\": \"地方分権改革の推進および道州制の導入に関する政府の所信表明を求める質疑。\",\n      \"related_qa_ids\": [\"qa_003\"],\n      \"related_speakers\": [\"丹羽秀樹\"]\n    }\n  ],\n  \"key_topics\": [\"子ども・若者政策および少子化対策\", \"地方創生および地域未来戦略\", \"地方分権改革および道州制\"]\n}",
+  "parsed": {
+    "topics": [
+      {
+        "name": "子ども・若者政策および少子化対策",
+        "description": "少子化対策の推進や若者の活躍支援、子ども政策に関する政府の所信表明を求める質疑。",
+        "related_qa_ids": [
+          "qa_001"
+        ],
+        "related_speakers": [
+          "丹羽秀樹"
+        ]
+      },
+      {
+        "name": "地方創生および地域未来戦略",
+        "description": "地方創生の深化と地域未来戦略の策定・実施に関する政府の所信表明を求める質疑。",
+        "related_qa_ids": [
+          "qa_002"
+        ],
+        "related_speakers": [
+          "丹羽秀樹"
+        ]
+      },
+      {
+        "name": "地方分権改革および道州制",
+        "description": "地方分権改革の推進および道州制の導入に関する政府の所信表明を求める質疑。",
+        "related_qa_ids": [
+          "qa_003"
+        ],
+        "related_speakers": [
+          "丹羽秀樹"
+        ]
+      }
+    ],
+    "key_topics": [
+      "子ども・若者政策および少子化対策",
+      "地方創生および地域未来戦略",
+      "地方分権改革および道州制"
+    ]
+  },
+  "latency_seconds": 42.63,
+  "input_tokens": 844,
+  "output_tokens": 2297,
+  "total_tokens": 3141,
+  "model": "qwen-3.6-plus",
+  "model_id": "qwen/qwen3.6-plus",
+  "task": "topics",
+  "case_id": "topics_rand_small_3pairs",
+  "json_valid": true,
+  "cost_estimate": 0.00475767
+}

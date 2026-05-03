@@ -166,7 +166,7 @@ class SessionDetail(BaseModel):
     source_url: str
     processed_at: str = ""
     whisper_model: str = "openai/whisper-large-v3-turbo"
-    llm_model: str = "deepseek-ai/DeepSeek-V3.2"
+    llm_model: str = "google/gemma-4-31b-it"
     speakers: list[SpeakerInfo]
 
 

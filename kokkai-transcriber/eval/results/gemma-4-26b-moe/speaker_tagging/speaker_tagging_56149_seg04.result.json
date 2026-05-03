@@ -1,0 +1,27 @@
+{
+  "raw_content": "{\"splits\": [{\"start\": 0, \"speaker\": \"伊東信久\", \"role\": \"質疑者\"}, {\"start\": 56, \"speaker\": \"高市早苗\", \"role\": \"答弁者\"}]}",
+  "parsed": {
+    "splits": [
+      {
+        "start": 0,
+        "speaker": "伊東信久",
+        "role": "質疑者"
+      },
+      {
+        "start": 56,
+        "speaker": "高市早苗",
+        "role": "答弁者"
+      }
+    ]
+  },
+  "latency_seconds": 1.0,
+  "input_tokens": 3274,
+  "output_tokens": 52,
+  "total_tokens": 3326,
+  "model": "gemma-4-26b-moe",
+  "model_id": "google/gemma-4-26b-a4b-it",
+  "task": "speaker_tagging",
+  "case_id": "speaker_tagging_56149_seg04",
+  "json_valid": true,
+  "cost_estimate": 0.00027232
+}
