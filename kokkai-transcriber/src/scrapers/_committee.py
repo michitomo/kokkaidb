@@ -26,8 +26,16 @@ def find_committee_in_title(soup: BeautifulSoup) -> str:
 
 
 def find_committee_in_body(soup: BeautifulSoup) -> str:
-    """body 内の代表的なタグから委員会名を探す。"""
-    for tag in soup.find_all(["h1", "h2", "h3", "td", "th", "div", "span", "p"]):
+    """body 内の代表的なタグから委員会名を探す。
+
+    見出しタグ (h1〜h3) を優先して走査する。実際のサイトでは「本会議」「委員会」
+    等がナビゲーション要素 (div/span) に含まれることが多く、コンテンツより先に
+    文書順で現れるため、見出しタグを先に確認することで誤検出を防ぐ。
+    """
+    for tag in soup.find_all(["h1", "h2", "h3"]):
+        if found := _scan_text(tag.get_text(strip=True)):
+            return found
+    for tag in soup.find_all(["td", "th", "div", "span", "p"]):
         if found := _scan_text(tag.get_text(strip=True)):
             return found
     return ""
