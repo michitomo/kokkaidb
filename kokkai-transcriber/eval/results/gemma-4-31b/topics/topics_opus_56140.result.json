@@ -1,0 +1,85 @@
+{
+  "raw_content": "{\"topics\": [\n    {\n      \"name\": \"安全保障環境と外交方針\",\n      \"description\": \"現状の安全保障環境の認識、中国やイランなどの特定国への対応、および同盟国・同志国との連携に関する質疑。\",\n      \"related_qa_ids\": [\"qa_001\", \"qa_002\", \"qa_003\", \"qa_005\", \"qa_011\"],\n      \"related_speakers\": [\"西村明宏\", \"宮崎政久\"]\n    },\n    {\n      \"name\": \"防衛力整備と予算計画\",\n      \"description\": \"防衛力の強化・変革、令和8年度予算の概要および重点施策（宇宙・南西地域等）に関する質疑。\",\n      \"related_qa_ids\": [\"qa_004\", \"qa_009\", \"qa_010\"],\n      \"related_speakers\": [\"西村明宏\", \"宮崎政久\"]\n    },\n    {\n      \"name\": \"防衛産業と装備移転\",\n      \"description\": \"防衛生産技術基盤の強化、維持、および装備移転に関する質疑。\",\n      \"related_qa_ids\": [\"qa_006\", \"qa_012\"],\n      \"related_speakers\": [\"西村明宏\", \"宮崎政久\"]\n    },\n    {\n      \"name\": \"自衛官の処遇改善と人材確保\",\n      \"description\": \"自衛官の処遇改善、勤務環境の整備、および人材確保に関する質疑。\",\n      \"related_qa_ids\": [\"qa_007\", \"qa_013\"],\n      \"related_speakers\": [\"西村明宏\", \"宮崎政久\"]\n    },\n    {\n      \"name\": \"法案提出に関する手続き\",\n      \"description\": \"国会に提出予定の法案の内容に関する説明。\",\n      \"related_qa_ids\": [\"qa_008\"],\n      \"related_speakers\": [\"西村明宏\"]\n    }\n  ],\n  \"key_topics\": [\"安全保障環境と外交方針\", \"防衛力整備と予算計画\", \"防衛産業と装備移転\", \"自衛官の処遇改善と人材確保\"]\n}",
+  "parsed": {
+    "topics": [
+      {
+        "name": "安全保障環境と外交方針",
+        "description": "現状の安全保障環境の認識、中国やイランなどの特定国への対応、および同盟国・同志国との連携に関する質疑。",
+        "related_qa_ids": [
+          "qa_001",
+          "qa_002",
+          "qa_003",
+          "qa_005",
+          "qa_011"
+        ],
+        "related_speakers": [
+          "西村明宏",
+          "宮崎政久"
+        ]
+      },
+      {
+        "name": "防衛力整備と予算計画",
+        "description": "防衛力の強化・変革、令和8年度予算の概要および重点施策（宇宙・南西地域等）に関する質疑。",
+        "related_qa_ids": [
+          "qa_004",
+          "qa_009",
+          "qa_010"
+        ],
+        "related_speakers": [
+          "西村明宏",
+          "宮崎政久"
+        ]
+      },
+      {
+        "name": "防衛産業と装備移転",
+        "description": "防衛生産技術基盤の強化、維持、および装備移転に関する質疑。",
+        "related_qa_ids": [
+          "qa_006",
+          "qa_012"
+        ],
+        "related_speakers": [
+          "西村明宏",
+          "宮崎政久"
+        ]
+      },
+      {
+        "name": "自衛官の処遇改善と人材確保",
+        "description": "自衛官の処遇改善、勤務環境の整備、および人材確保に関する質疑。",
+        "related_qa_ids": [
+          "qa_007",
+          "qa_013"
+        ],
+        "related_speakers": [
+          "西村明宏",
+          "宮崎政久"
+        ]
+      },
+      {
+        "name": "法案提出に関する手続き",
+        "description": "国会に提出予定の法案の内容に関する説明。",
+        "related_qa_ids": [
+          "qa_008"
+        ],
+        "related_speakers": [
+          "西村明宏"
+        ]
+      }
+    ],
+    "key_topics": [
+      "安全保障環境と外交方針",
+      "防衛力整備と予算計画",
+      "防衛産業と装備移転",
+      "自衛官の処遇改善と人材確保"
+    ]
+  },
+  "latency_seconds": 16.67,
+  "input_tokens": 1458,
+  "output_tokens": 522,
+  "total_tokens": 1980,
+  "model": "gemma-4-31b",
+  "model_id": "google/gemma-4-31b-it",
+  "task": "topics",
+  "case_id": "topics_opus_56140",
+  "json_valid": true,
+  "cost_estimate": 0.00038790000000000005
+}
