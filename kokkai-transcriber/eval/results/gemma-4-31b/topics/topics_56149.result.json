@@ -1,9 +1,9 @@
 {
-  "raw_content": "{\"topics\": [{\"name\": \"医療保険制度の持続可能性と法改正\", \"description\": \"健康保険法改正案の趣旨および持続可能な医療保険制度の実現に向けた政府の方針について。\", \"related_qa_ids\": [\"qa_001\"], \"related_speakers\": [\"高階恵美子\"]}, {\"name\": \"OTC類似薬の保険給付基準\", \"description\": \"OTC類似薬の保険給付見直しにおける、患者への配慮および判断基準について。\", \"related_qa_ids\": [\"qa_002\"], \"related_speakers\": [\"伊東信久\"]}, {\"name\": \"医療物資の安定供給体制\", \"description\": \"医療物資の安定的な供給に向けた中長期的な取り組みと具体的方針について。\", \"related_qa_ids\": [\"qa_003\"], \"related_speakers\": [\"豊田真由子\"]}], \"key_topics\": [\"医療保険制度の持続可能性と法改正\", \"医療物資の安定供給体制\"]}",
+  "raw_content": "{\"topics\": [{\"name\": \"健康保険制度の持続可能性と法改正\", \"description\": \"健康保険法改正案の趣旨および持続可能な医療保険制度の実現に向けた政府の方針について。\", \"related_qa_ids\": [\"qa_001\"], \"related_speakers\": [\"高階恵美子\"]}, {\"name\": \"OTC類似薬の保険給付基準\", \"description\": \"OTC類似薬の保険給付見直しにおける、患者への配慮および判断基準について。\", \"related_qa_ids\": [\"qa_002\"], \"related_speakers\": [\"伊東信久\"]}, {\"name\": \"医療物資の安定供給体制\", \"description\": \"医療物資の安定供給に向けた中長期的な取り組みと具体的方針について。\", \"related_qa_ids\": [\"qa_003\"], \"related_speakers\": [\"豊田真由子\"]}], \"key_topics\": [\"健康保険制度の持続可能性と法改正\", \"医療物資の安定供給体制\"]}",
   "parsed": {
     "topics": [
       {
-        "name": "医療保険制度の持続可能性と法改正",
+        "name": "健康保険制度の持続可能性と法改正",
         "description": "健康保険法改正案の趣旨および持続可能な医療保険制度の実現に向けた政府の方針について。",
         "related_qa_ids": [
           "qa_001"
@@ -24,7 +24,7 @@
       },
       {
         "name": "医療物資の安定供給体制",
-        "description": "医療物資の安定的な供給に向けた中長期的な取り組みと具体的方針について。",
+        "description": "医療物資の安定供給に向けた中長期的な取り組みと具体的方針について。",
         "related_qa_ids": [
           "qa_003"
         ],
@@ -34,18 +34,18 @@
       }
     ],
     "key_topics": [
-      "医療保険制度の持続可能性と法改正",
+      "健康保険制度の持続可能性と法改正",
       "医療物資の安定供給体制"
     ]
   },
-  "latency_seconds": 3.24,
-  "input_tokens": 744,
-  "output_tokens": 222,
-  "total_tokens": 966,
+  "latency_seconds": 4.48,
+  "input_tokens": 738,
+  "output_tokens": 221,
+  "total_tokens": 959,
   "model": "gemma-4-31b",
   "model_id": "google/gemma-4-31b-it",
   "task": "topics",
   "case_id": "topics_56149",
   "json_valid": true,
-  "cost_estimate": 0.00018108
+  "cost_estimate": 0.00017992000000000003
 }
