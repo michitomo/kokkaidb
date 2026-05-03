@@ -39,7 +39,7 @@ from src.prompts import (
 )
 from src.speaker_lookup import find_by_name
 
-# Step 6はgemma-4-31Bを使用（ペア数抽出がV3.2より安定: 10/10 vs 6/10）
+# Step 6はgemma-4-31bを使用（ペア数抽出がV3.2より安定: 10/10 vs 6/10）
 STRUCTURER_MODEL = "google/gemma-4-31b-it"
 
 # 答弁本文がこの長さ未満かつ sentence_indices が空のペアは Q&A として成立していないため drop
@@ -753,6 +753,65 @@ def _parse_topics_data(
     return topics_list, key_topics
 
 
+def _consolidate_chunk_topics(
+    chunk_topics: list[Topic],
+    total_pairs: int,
+    valid_qa_ids: set[str],
+) -> list[Topic]:
+    """チャンク分割で生成されたトピック群をLLMで意味的に統合する。"""
+    if total_pairs <= 50:
+        target = "5〜10件"
+    else:
+        target = "8〜15件"
+
+    topics_text = json.dumps(
+        [
+            {
+                "name": t.name,
+                "description": t.description,
+                "related_qa_ids": t.related_qa_ids,
+                "related_speakers": t.related_speakers,
+            }
+            for t in chunk_topics
+        ],
+        ensure_ascii=False,
+    )
+
+    consolidation_prompt = (
+        f"チャンク分割処理で生成されたトピック（計{len(chunk_topics)}件）を意味的に統合し、"
+        f"{target}のトピックにまとめてください。\n\n"
+        "ルール:\n"
+        "- 各 related_qa_id は必ずいずれかのトピックに引き継ぐ\n"
+        "- 意味的に近いトピックは統合する\n"
+        "- 出力フォーマットは入力と同じ JSON 構造\n\n"
+        f"入力トピック:\n{topics_text}"
+    )
+
+    system = (
+        "トピック統合器。入力トピックリストを指定数に統合し、"
+        '{"topics":[{"name":"...","description":"...","related_qa_ids":[...],"related_speakers":[...]}],'
+        '"key_topics":[...]} のJSON形式で返す。key_topicsは2〜5件。'
+    )
+
+    logger.info(
+        "_consolidate_chunk_topics: merging %d chunk topics for %d pairs → target %s",
+        len(chunk_topics), total_pairs, target,
+    )
+
+    try:
+        data = _call_structurer(system, consolidation_prompt, max_tokens=_MAX_TOKENS_CEILING)
+    except Exception as e:
+        logger.error("Topic consolidation failed, using raw chunk topics: %s", e)
+        return chunk_topics
+
+    topics_list, _ = _parse_topics_data(data, valid_qa_ids)
+    if not topics_list:
+        logger.warning("Topic consolidation returned empty list, using raw chunk topics")
+        return chunk_topics
+
+    return topics_list
+
+
 def generate_topics_and_key_topics(
     qa_pairs: QAPairsOutput,
 ) -> tuple[TopicsOutput, list[str]]:
@@ -798,36 +857,29 @@ def generate_topics_and_key_topics(
                 except Exception as e:
                     logger.error("generate_topics chunk failed: %s", e)
 
-        # 統合: 同名トピックは related_qa_ids をマージ
-        merged_topics: dict[str, Topic] = {}
+        # 統合: チャンクトピックをLLMで意味的に統合
+        all_chunk_topics: list[Topic] = []
         for chunk_topics, _ in chunk_results:
-            for t in chunk_topics:
-                if t.name in merged_topics:
-                    existing = merged_topics[t.name]
-                    merged_ids = list(
-                        dict.fromkeys(existing.related_qa_ids + t.related_qa_ids)
-                    )
-                    merged_speakers = list(
-                        dict.fromkeys(existing.related_speakers + t.related_speakers)
-                    )
-                    merged_topics[t.name] = Topic(
-                        name=existing.name,
-                        description=existing.description or t.description,
-                        related_qa_ids=merged_ids,
-                        related_speakers=merged_speakers,
-                    )
-                else:
-                    merged_topics[t.name] = t
+            all_chunk_topics.extend(chunk_topics)
 
-        topics_list = list(merged_topics.values())
+        if len(all_chunk_topics) <= 15:
+            # チャンク数が既に適切なら LLM統合不要
+            topics_list = all_chunk_topics
+        else:
+            # LLM統合パス: チャンクトピックを適切な粒度に圧縮
+            topics_list = _consolidate_chunk_topics(all_chunk_topics, len(pairs), valid_qa_ids)
 
-        # key_topics: 各チャンクの key_topics をユニオンして上位5件
+        # key_topics: 統合トピックから上位5件
         all_raw_key_topics: list[str] = []
         for _, chunk_key_topics in chunk_results:
             for name in chunk_key_topics:
                 if name not in all_raw_key_topics:
                     all_raw_key_topics.append(name)
-        raw_key_topics = all_raw_key_topics[:5]
+        # 統合後のトピック名セットでフィルタ
+        valid_consolidated = {t.name for t in topics_list}
+        raw_key_topics = [n for n in all_raw_key_topics if n in valid_consolidated][:5]
+        if not raw_key_topics:
+            raw_key_topics = [t.name for t in topics_list[:3]]
 
     valid_topic_names = {t.name for t in topics_list}
     key_topics: list[str] = []
@@ -949,7 +1001,7 @@ def build_summary_related_laws(qa_pairs: QAPairsOutput) -> list[RelatedLawTag]:
     ]
 
 
-# V4評価プロンプトはDeepSeek V3.2（Gemma-4-31Bより評価タスク精度が高い）
+# V4評価プロンプトはDeepSeek V3.1を使用
 _METRICS_MODEL = "google/gemma-4-31b-it"
 
 
