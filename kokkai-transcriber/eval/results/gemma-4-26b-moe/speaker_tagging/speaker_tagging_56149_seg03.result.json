@@ -1,5 +1,5 @@
 {
-  "raw_content": "{\"splits\": [{\"start\": 0, \"speaker\": \"早稲田ゆき\", \"role\": \"質疑者\"}, {\"start\": 1, \"speaker\": \"内閣総理大臣\", \"role\": \"答弁者\"}, {\"start\": 2, \"speaker\": \"上野賢一郎\", \"role\": \"答弁者\"}]}",
+  "raw_content": "{\"splits\": [{\"start\": 0, \"speaker\": \"早稲田ゆき\", \"role\": \"質疑者\"}, {\"start\": 118, \"speaker\": \"高市早苗\", \"role\": \"答弁者\"}, {\"start\": 119, \"speaker\": \"上野賢一郎\", \"role\": \"答弁者\"}]}",
   "parsed": {
     "splits": [
       {
@@ -8,25 +8,25 @@
         "role": "質疑者"
       },
       {
-        "start": 1,
-        "speaker": "内閣総理大臣",
+        "start": 118,
+        "speaker": "高市早苗",
         "role": "答弁者"
       },
       {
-        "start": 2,
+        "start": 119,
         "speaker": "上野賢一郎",
         "role": "答弁者"
       }
     ]
   },
-  "latency_seconds": 1.07,
-  "input_tokens": 4130,
-  "output_tokens": 76,
-  "total_tokens": 4206,
+  "latency_seconds": 1.1,
+  "input_tokens": 4448,
+  "output_tokens": 79,
+  "total_tokens": 4527,
   "model": "gemma-4-26b-moe",
   "model_id": "google/gemma-4-26b-a4b-it",
   "task": "speaker_tagging",
   "case_id": "speaker_tagging_56149_seg03",
   "json_valid": true,
-  "cost_estimate": 0.0003456
+  "cost_estimate": 0.00037164000000000007
 }

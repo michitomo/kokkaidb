@@ -1,0 +1,32 @@
+{
+  "raw_content": "{\"splits\": [{\"start\": 0, \"speaker\": \"森英介\", \"role\": \"委員長\"}, {\"start\": 1, \"speaker\": \"中曽根康隆\", \"role\": \"質疑者\"}, {\"start\": 8, \"speaker\": \"高市早苗\", \"role\": \"答弁者\"}]}",
+  "parsed": {
+    "splits": [
+      {
+        "start": 0,
+        "speaker": "森英介",
+        "role": "委員長"
+      },
+      {
+        "start": 1,
+        "speaker": "中曽根康隆",
+        "role": "質疑者"
+      },
+      {
+        "start": 8,
+        "speaker": "高市早苗",
+        "role": "答弁者"
+      }
+    ]
+  },
+  "latency_seconds": 1.8,
+  "input_tokens": 1442,
+  "output_tokens": 73,
+  "total_tokens": 1515,
+  "model": "gemma-4-26b-moe",
+  "model_id": "google/gemma-4-26b-a4b-it",
+  "task": "speaker_tagging",
+  "case_id": "speaker_tagging_rand_56131_seg02",
+  "json_valid": true,
+  "cost_estimate": 0.00012996
+}
