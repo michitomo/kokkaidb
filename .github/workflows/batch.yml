@@ -232,63 +232,43 @@ jobs:
       committed: ${{ steps.commit.outputs.committed }}
 
   build:
-    needs: [discovery, finalize]
-    # finalize が成功したか、あるいは finalize がスキップされた（新規セッションなし）が build は常にチェックする
-    # ただし cancelled は避ける
-    if: always() && !cancelled() && needs.discovery.result == 'success'
+    needs: [finalize]
+    # finalize が今回の実行でコミットを作成した場合のみ build を実行する。
+    # finalize がスキップされた（新規セッションなし）場合は committed が空になるので build もスキップ。
+    if: always() && needs.finalize.outputs.committed == 'true'
     runs-on: ubuntu-latest
-    outputs:
-      built: ${{ steps.guard.outputs.built }}
     steps:
       - uses: actions/checkout@v4
         with:
           ref: main
-          fetch-depth: 5
-
-      - name: Skip build if no new data commit
-        id: guard
-        run: |
-          # 直近5コミット内に "data: ... batch" または "data: batch ingestion" の commit があれば build を実行
-          if git log -5 --format='%s' | grep -qE '(data: (shugiin|sangiin) batch|data: batch ingestion)'; then
-            echo "built=true" >> "$GITHUB_OUTPUT"
-            echo "New data detected — proceeding with build"
-          else
-            echo "built=false" >> "$GITHUB_OUTPUT"
-            echo "No new data commits — skipping build"
-          fi
 
       - uses: actions/setup-node@v4
-        if: steps.guard.outputs.built == 'true'
         with:
           node-version: 22
           cache: 'npm'
           cache-dependency-path: site/package-lock.json
 
       - name: Install dependencies
-        if: steps.guard.outputs.built == 'true'
         working-directory: site
         run: npm ci
 
       - name: Validate data referential integrity
-        if: steps.guard.outputs.built == 'true'
         working-directory: site
         continue-on-error: true
         run: npm run validate:data
 
       - name: Build Astro site
-        if: steps.guard.outputs.built == 'true'
         working-directory: site
         run: npm run build
 
       - name: Upload artifact
-        if: steps.guard.outputs.built == 'true'
         uses: actions/upload-pages-artifact@v3
         with:
           path: site/dist
 
   deploy:
     needs: build
-    if: needs.build.outputs.built == 'true'
+    if: always() && needs.build.result == 'success'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
