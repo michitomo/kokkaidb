@@ -11,15 +11,6 @@ const { pair, session } = Astro.props;
 const segmentDup = Astro.props.segmentFullTextDuplicate ?? false;
 const metrics = pair.metrics;
 
-// metricsがある場合のみ直接回答度を表示
-const directnessScore = metrics ? metrics.as1_directness.score : null;
-const directnessColor = directnessScore !== null
-  ? (directnessScore >= 0.7 ? '#16a34a' : directnessScore >= 0.4 ? '#d97706' : '#dc2626')
-  : null;
-const directnessLabel = directnessScore !== null
-  ? (directnessScore >= 0.7 ? '高' : directnessScore >= 0.4 ? '中' : '低')
-  : null;
-
 // コミットメントレベルのラベル
 const commitmentLevelLabels: Record<number, string> = {
   0: 'なし',
@@ -29,10 +20,16 @@ const commitmentLevelLabels: Record<number, string> = {
   4: '期限付き行動',
 };
 
-// 5段階ドット表示（0.0-1.0 → ●●●●○）
-function scoreToDots(score: number): string {
-  const filled = Math.round(score * 5);
-  return '●'.repeat(filled) + '○'.repeat(5 - filled);
+// スコアをパーセント文字列に変換
+function scoreToPercent(score: number): string {
+  return `${(score * 100).toFixed(0)}%`;
+}
+
+// スコアに応じた色を返す
+function scoreColor(score: number): string {
+  if (score >= 0.7) return '#16a34a';
+  if (score >= 0.4) return '#d97706';
+  return '#dc2626';
 }
 
 // 動画タイムスタンプを "M:SS〜" 形式に変換
@@ -73,6 +70,8 @@ const recordValueLabel: Record<string, string> = {
   medium: '中',
   low: '低',
 };
+
+const hasFullText = pair.question.full_text || pair.answer.full_text;
 ---
 <div
   class="qa-card"
@@ -80,14 +79,18 @@ const recordValueLabel: Record<string, string> = {
   data-pagefind-body
   data-pagefind-meta={`title:[Q&A] ${pair.question.speaker} → ${pair.answer.speaker}: ${pair.topic}`}
 >
+  {/* ── ヘッダー ── */}
   <div class="qa-header">
     <span class="topic">{pair.topic}</span>
     <div class="qa-header-right">
       {metrics && metrics.oc1_record_value && (
-        <span class={`record-value-badge record-value-${metrics.would_be_referenced}`}>
-          議事録価値: {recordValueLabel[metrics.would_be_referenced] ?? metrics.would_be_referenced}
-          <span class="llm-label" title="LLM自動評価">ⓘ</span>
-        </span>
+        <button
+          class={`record-value-btn record-value-${metrics.would_be_referenced}`}
+          onclick={`document.getElementById('metrics-modal-${pair.id}').showModal()`}
+          title="議事録価値（クリックで詳細）"
+        >
+          📋 {recordValueLabel[metrics.would_be_referenced] ?? metrics.would_be_referenced}
+        </button>
       )}
       {pair.video_url && (
         <a
@@ -103,10 +106,24 @@ const recordValueLabel: Record<string, string> = {
     </div>
   </div>
 
-  <div class="qa-columns">
-    <div class="question">
-      <div class="speaker-label">
-        質問 — <strong>{pair.question.speaker}</strong>
+  {/* ── 質問行 ── */}
+  <div class="qa-row">
+    <div class="qa-label qa-label--question">
+      <span class="qa-label-text">質問</span>
+      {metrics && (
+        <button
+          class="score-chip"
+          onclick={`document.getElementById('metrics-modal-${pair.id}').showModal()`}
+          title="評価詳細（クリックで表示）"
+        >
+          <span class="score-chip-key">QQ</span>
+          <span class="score-chip-val" style={`color:${scoreColor(metrics.qq2_groundedness.score)}`}>{scoreToPercent(metrics.qq2_groundedness.score)}</span>
+        </button>
+      )}
+    </div>
+    <div class="qa-content">
+      <div class="speaker-line">
+        <strong>{pair.question.speaker}</strong>
         {pair.question.party && <span class="party">（{pair.question.party}）</span>}
       </div>
       {qSummary.isList ? (
@@ -116,52 +133,33 @@ const recordValueLabel: Record<string, string> = {
       ) : (
         <p class="summary">{pair.question.summary}</p>
       )}
-      {pair.question.full_text && (
-        <details class="full-text-details">
-          <summary class="expand-toggle">{segmentDup ? 'セグメント全文を表示' : '全文を表示'}</summary>
-          <div class="full-text">
-            {pair.question.full_text.split(/(?<=。)/).filter((s: string) => s.trim()).map((para: string) => (
-              <p>{para}</p>
-            ))}
-          </div>
-        </details>
-      )}
+    </div>
+  </div>
+
+  {/* ── 答弁行 ── */}
+  <div class="qa-row">
+    <div class="qa-label qa-label--answer">
+      <span class="qa-label-text">答弁</span>
       {metrics && (
-        <details class="metrics-details">
-          <summary class="expand-toggle">質問の評価指標 <span class="llm-label">LLM自動評価</span></summary>
-          <div class="metrics-block">
-            <div class="metric-row">
-              <span class="metric-name">論点明確度</span>
-              <span class="metric-dots">{scoreToDots(metrics.qq1_clarity.score)}</span>
-              <span class="metric-hint" title={metrics.qq1_clarity.main_question_one_liner}>
-                {metrics.qq1_clarity.sub_asks.length < 2 ? '明確' : `${metrics.qq1_clarity.sub_asks.length}論点`}
-              </span>
-            </div>
-            <div class="metric-row">
-              <span class="metric-name">一次ソース密度</span>
-              <span class="metric-dots">{scoreToDots(metrics.qq2_groundedness.score)}</span>
-              <span class="metric-hint">{metrics.qq2_groundedness.cited_sources.length}件引用</span>
-            </div>
-            <div class="metric-row">
-              <span class="metric-name">当事者性</span>
-              <span class="metric-dots">{scoreToDots(metrics.qq4_stakeholder.score)}</span>
-              <span class="metric-hint">
-                {metrics.qq4_stakeholder.concreteness === 'concrete' ? '具体的' :
-                 metrics.qq4_stakeholder.concreteness === 'mid' ? '中程度' : '抽象的'}
-              </span>
-            </div>
-            <div class="metric-row">
-              <span class="metric-name">行動要求度</span>
-              <span class="metric-dots">{scoreToDots(metrics.qq5_actionability.score)}</span>
-            </div>
-          </div>
-        </details>
+        <button
+          class="score-chip"
+          onclick={`document.getElementById('metrics-modal-${pair.id}').showModal()`}
+          title="評価詳細（クリックで表示）"
+        >
+          <span class="score-chip-row">
+            <span class="score-chip-key">直答</span>
+            <span class="score-chip-val" style={`color:${scoreColor(metrics.as1_directness.score)}`}>{scoreToPercent(metrics.as1_directness.score)}</span>
+          </span>
+          <span class="score-chip-row">
+            <span class="score-chip-key">情報</span>
+            <span class="score-chip-val" style={`color:${scoreColor(metrics.as2_information_density.score)}`}>{scoreToPercent(metrics.as2_information_density.score)}</span>
+          </span>
+        </button>
       )}
     </div>
-
-    <div class="answer">
-      <div class="speaker-label">
-        答弁 — <strong>{pair.answer.speaker}</strong>
+    <div class="qa-content">
+      <div class="speaker-line">
+        <strong>{pair.answer.speaker}</strong>
         {pair.answer.role && <span class="role">（{pair.answer.role}）</span>}
       </div>
       {aSummary.isList ? (
@@ -171,67 +169,121 @@ const recordValueLabel: Record<string, string> = {
       ) : (
         <p class="summary">{pair.answer.summary}</p>
       )}
-      {pair.answer.full_text && (
-        <details class="full-text-details">
-          <summary class="expand-toggle">{segmentDup ? 'セグメント全文を表示' : '全文を表示'}</summary>
-          <div class="full-text">
-            {pair.answer.full_text.split(/(?<=。)/).filter((s: string) => s.trim()).map((para: string) => (
-              <p>{para}</p>
-            ))}
-          </div>
-        </details>
-      )}
-
-      {directnessScore !== null && (
-        <div class="directness" style={`color: ${directnessColor}`}>
-          直接回答度 {directnessLabel}（{(directnessScore * 100).toFixed(0)}%）
-        </div>
-      )}
-
-      {metrics ? (
-        <details class="metrics-details">
-          <summary class="expand-toggle">答弁の評価指標 <span class="llm-label">LLM自動評価</span></summary>
-          <div class="metrics-block">
-            <div class="metric-row">
-              <span class="metric-name">直接回答度</span>
-              <span class="metric-dots">{scoreToDots(metrics.as1_directness.score)}</span>
-              <span class="metric-hint">
-                {metrics.as1_directness.addresses_main_question === 'directly' ? '直接回答' :
-                 metrics.as1_directness.addresses_main_question === 'partially' ? '部分回答' :
-                 metrics.as1_directness.addresses_main_question === 'tangentially' ? '迂回回答' : '無回答'}
-              </span>
-            </div>
-            <div class="metric-row">
-              <span class="metric-name">具体情報量</span>
-              <span class="metric-dots">{scoreToDots(metrics.as2_information_density.score)}</span>
-              <span class="metric-hint">{metrics.as2_information_density.concrete_items_in_answer.length}件</span>
-            </div>
-            <div class="metric-row">
-              <span class="metric-name">コミットメント</span>
-              <span class={`commitment-lv commitment-lv-${metrics.as4_commitment.level}`}>
-                Lv{metrics.as4_commitment.level} {commitmentLevelLabels[metrics.as4_commitment.level]}
-              </span>
-            </div>
-          </div>
-          {metrics.as4_commitment.trigger_phrase && (
-            <div class="trigger-phrase">「{metrics.as4_commitment.trigger_phrase}」</div>
-          )}
-          {metrics.oc3_quotability.quote_candidate && (
-            <div class="quote-candidate">
-              <span class="quote-label">引用候補:</span> {metrics.oc3_quotability.quote_candidate}
-            </div>
-          )}
-          {metrics.evaluation_note && (
-            <div class="evaluation-note">{metrics.evaluation_note}</div>
-          )}
-          {metrics.scoring_confidence === 'low' && (
-            <div class="low-confidence">⚠️ この評価はAI自身が低い自信度を示しています</div>
-          )}
-        </details>
-      ) : null}
     </div>
   </div>
 
+  {/* ── 評価モーダル ── */}
+  {metrics && (
+    <dialog id={`metrics-modal-${pair.id}`} class="metrics-modal">
+      <div class="modal-header">
+        <h3 class="modal-title">{pair.topic}</h3>
+        <form method="dialog"><button class="modal-close" aria-label="閉じる">✕</button></form>
+      </div>
+      <div class="modal-body">
+        {/* バーチャート */}
+        <div class="metrics-grid">
+          <div class="metric-item"><span class="metric-icon">🎯</span><span class="metric-label">直接回答度</span><div class="metric-bar-wrap"><div class="metric-bar" style={`width:${scoreToPercent(metrics.as1_directness.score)};background:${scoreColor(metrics.as1_directness.score)}`}></div></div><span class="metric-value" style={`color:${scoreColor(metrics.as1_directness.score)}`}>{scoreToPercent(metrics.as1_directness.score)}</span></div>
+          <div class="metric-item"><span class="metric-icon">📊</span><span class="metric-label">具体情報量</span><div class="metric-bar-wrap"><div class="metric-bar" style={`width:${scoreToPercent(metrics.as2_information_density.score)};background:${scoreColor(metrics.as2_information_density.score)}`}></div></div><span class="metric-value" style={`color:${scoreColor(metrics.as2_information_density.score)}`}>{scoreToPercent(metrics.as2_information_density.score)}</span></div>
+          <div class="metric-item"><span class="metric-icon">💡</span><span class="metric-label">論点明確度</span><div class="metric-bar-wrap"><div class="metric-bar" style={`width:${scoreToPercent(metrics.qq1_clarity.score)};background:${scoreColor(metrics.qq1_clarity.score)}`}></div></div><span class="metric-value" style={`color:${scoreColor(metrics.qq1_clarity.score)}`}>{scoreToPercent(metrics.qq1_clarity.score)}</span></div>
+          <div class="metric-item"><span class="metric-icon">⚡</span><span class="metric-label">行動要求度</span><div class="metric-bar-wrap"><div class="metric-bar" style={`width:${scoreToPercent(metrics.qq5_actionability.score)};background:${scoreColor(metrics.qq5_actionability.score)}`}></div></div><span class="metric-value" style={`color:${scoreColor(metrics.qq5_actionability.score)}`}>{scoreToPercent(metrics.qq5_actionability.score)}</span></div>
+        </div>
+        {metrics.as4_commitment.level >= 1 && (
+          <div class="commitment-inline">
+            <span class={`commitment-lv commitment-lv-${metrics.as4_commitment.level}`}>🤝 Lv{metrics.as4_commitment.level} {commitmentLevelLabels[metrics.as4_commitment.level]}</span>
+            {metrics.as4_commitment.trigger_phrase && <span class="commitment-phrase">「{metrics.as4_commitment.trigger_phrase}」</span>}
+          </div>
+        )}
+        {metrics.oc3_quotability.quote_candidate && (
+          <div class="quote-candidate"><span class="quote-label">💬 引用候補:</span> {metrics.oc3_quotability.quote_candidate}</div>
+        )}
+        <div class="metrics-detail-grid">
+          <div class="detail-section">
+            <h4 class="detail-heading">質問の質 (QQ)</h4>
+            <div class="detail-row">
+              <div class="detail-meta"><span class="detail-name">一次ソース密度</span><div class="metric-bar-wrap metric-bar-wrap--sm"><div class="metric-bar" style={`width:${scoreToPercent(metrics.qq2_groundedness.score)};background:${scoreColor(metrics.qq2_groundedness.score)}`}></div></div></div>
+              {metrics.qq2_groundedness.cited_sources.length > 0 && (<ul class="detail-list">{metrics.qq2_groundedness.cited_sources.map((s: any) => (<li><span class="source-tag">{s.type}</span> {s.excerpt}</li>))}</ul>)}
+              {metrics.qq2_groundedness.translates_big_number_to_daily_life && <span class="detail-badge">生活感のある数値換算あり</span>}
+            </div>
+            <div class="detail-row">
+              <div class="detail-meta"><span class="detail-name">当事者・具体性</span><div class="metric-bar-wrap metric-bar-wrap--sm"><div class="metric-bar" style={`width:${scoreToPercent(metrics.qq4_stakeholder.score)};background:${scoreColor(metrics.qq4_stakeholder.score)}`}></div></div></div>
+              <div class="detail-text-info">対象者: <strong>{metrics.qq4_stakeholder.stakeholder_category || '未特定'}</strong><span class="detail-sep">/</span>具体性: {metrics.qq4_stakeholder.concreteness === 'concrete' ? '具体的' : metrics.qq4_stakeholder.concreteness === 'mid' ? '中程度' : '抽象的'}</div>
+            </div>
+            <div class="detail-flags">
+              {metrics.qq5_actionability.is_yes_no_form && <span class="detail-badge">Yes/No形式</span>}
+              {metrics.qq5_actionability.has_deadline && <span class="detail-badge">期限設定あり</span>}
+              {metrics.qq5_actionability.presents_options && <span class="detail-badge">選択肢提示あり</span>}
+              {metrics.qq5_actionability.shifts_burden_of_proof && <span class="detail-badge">立証責任の転換</span>}
+            </div>
+          </div>
+          <div class="detail-section">
+            <h4 class="detail-heading">答弁の質・価値 (AS/OC)</h4>
+            <div class="detail-row">
+              <div class="detail-meta"><span class="detail-name">記録的価値</span><div class="metric-bar-wrap metric-bar-wrap--sm"><div class="metric-bar" style={`width:${scoreToPercent(metrics.oc1_record_value.score)};background:${scoreColor(metrics.oc1_record_value.score)}`}></div></div></div>
+              <div class="detail-flags">
+                {metrics.oc1_record_value.pins_legal_interpretation && <span class="detail-badge detail-badge--gold">法解釈の確定</span>}
+                {metrics.oc1_record_value.fixes_official_number && <span class="detail-badge detail-badge--gold">公的数値の確定</span>}
+                {metrics.oc1_record_value.goes_beyond_precedent && <span class="detail-badge detail-badge--gold">前例超越</span>}
+                {metrics.oc1_record_value.surfaces_government_uncertainty && <span class="detail-badge">政府の課題露呈</span>}
+              </div>
+            </div>
+            <div class="detail-row">
+              <span class="detail-name">具体情報の内訳</span>
+              {metrics.as2_information_density.concrete_items_in_answer.length > 0 ? (<ul class="detail-list">{metrics.as2_information_density.concrete_items_in_answer.map((item: any) => (<li><span class="item-tag">{item.type}</span> {item.excerpt}</li>))}</ul>) : <span class="detail-hint">具体的な数値や固有名詞の提示なし</span>}
+            </div>
+            <div class="detail-row">
+              <span class="detail-name">答弁者の重み</span>
+              <span class="detail-text-info">{metrics.oc1_record_value.answerer_seniority === 'minister' ? '大臣' : metrics.oc1_record_value.answerer_seniority === 'vice_minister' ? '副大臣/政務官' : metrics.oc1_record_value.answerer_seniority === 'bureaucrat' ? '政府参考人（官僚）' : 'その他'}</span>
+            </div>
+          </div>
+        </div>
+        {metrics.evaluation_note && (
+          <div class="evaluation-note-section"><h4 class="detail-heading">AI評価メモ</h4><div class="evaluation-note">{metrics.evaluation_note}</div></div>
+        )}
+        <div class="metrics-footer">
+          {metrics.scoring_confidence === 'low' && <div class="low-confidence">⚠️ AIの評価自信度: 低</div>}
+          <div class="metrics-meta-info">Prompt v{metrics.prompt_version} / Schema v{metrics.schema_version}</div>
+        </div>
+      </div>
+    </dialog>
+  )}
+
+  {/* ── 全文表示（統合） ── */}
+  {hasFullText && (
+    <div class="qa-row qa-row--fulltext">
+      <div class="qa-label qa-label--fulltext">全文</div>
+      <div class="qa-content">
+        <details class="full-text-details">
+          <summary class="expand-toggle">
+            {segmentDup ? 'セグメント全文を表示' : '質問・答弁の全文を表示'}
+          </summary>
+          <div class="full-text-combined">
+            {pair.question.full_text && (
+              <div class="full-text-section">
+                <div class="full-text-section-label full-text-section-label--q">質問原文 — {pair.question.speaker}</div>
+                <div class="full-text">
+                  {pair.question.full_text.split(/(?<=。)/).filter((s: string) => s.trim()).map((para: string) => (
+                    <p>{para}</p>
+                  ))}
+                </div>
+              </div>
+            )}
+            {pair.answer.full_text && (
+              <div class="full-text-section">
+                <div class="full-text-section-label full-text-section-label--a">答弁原文 — {pair.answer.speaker}</div>
+                <div class="full-text">
+                  {pair.answer.full_text.split(/(?<=。)/).filter((s: string) => s.trim()).map((para: string) => (
+                    <p>{para}</p>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </details>
+      </div>
+    </div>
+  )}
+
+  {/* ── 出典フッター ── */}
   {session && chamberName && (
     <div class="qa-source">
       出典:{' '}
@@ -247,19 +299,30 @@ const recordValueLabel: Record<string, string> = {
   )}
 </div>
 
+<script>
+  document.querySelectorAll('.metrics-modal').forEach((dialog) => {
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) (dialog as HTMLDialogElement).close();
+    });
+  });
+</script>
+
 <style>
   .qa-card {
     border: 1px solid #e5e7eb;
-    border-radius: 8px;
+    border-radius: 10px;
     background: #fff;
     margin-bottom: 1rem;
     overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
   }
+
+  /* ── ヘッダー ── */
   .qa-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1rem;
     background: #f8fafc;
     border-bottom: 1px solid #e5e7eb;
     font-size: 0.85rem;
@@ -272,24 +335,6 @@ const recordValueLabel: Record<string, string> = {
     display: flex;
     align-items: center;
     gap: 0.6rem;
-  }
-  .record-value-badge {
-    font-size: 0.75rem;
-    font-weight: 600;
-    padding: 0.15rem 0.45rem;
-    border-radius: 4px;
-  }
-  .record-value-high {
-    background: #dbeafe;
-    color: #1e40af;
-  }
-  .record-value-medium {
-    background: #fef3c7;
-    color: #92400e;
-  }
-  .record-value-low {
-    background: #f3f4f6;
-    color: #6b7280;
   }
   .llm-label {
     font-size: 0.7rem;
@@ -304,40 +349,123 @@ const recordValueLabel: Record<string, string> = {
     font-size: 0.8rem;
   }
   .video-link:hover { text-decoration: underline; }
-  .qa-columns {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
+
+  /* ── 行ベース構造 ── */
+  .qa-row {
+    display: flex;
+    border-bottom: 1px solid #f1f5f9;
   }
-  @media (max-width: 640px) {
-    .qa-columns { grid-template-columns: 1fr; }
+  .qa-row:last-of-type {
+    border-bottom: none;
   }
-  .question, .answer {
-    padding: 1rem;
+
+  .qa-label {
+    flex-shrink: 0;
+    width: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.3rem;
+    padding: 0.6rem 0.35rem;
+    border-right: 3px solid transparent;
   }
-  .question {
-    border-right: 1px solid #e5e7eb;
+  .qa-label-text {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
   }
-  @media (max-width: 640px) {
-    .question {
-      border-right: none;
-      border-bottom: 1px solid #e5e7eb;
-    }
+  .qa-label--question { color: #1e40af; background: #eff6ff; border-right-color: #3b82f6; }
+  .qa-label--answer   { color: #065f46; background: #ecfdf5; border-right-color: #10b981; }
+  .qa-label--fulltext { color: #92400e; background: #fffbeb; border-right-color: #f59e0b; }
+
+  .score-chip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 5px;
+    padding: 0.2rem 0.25rem;
+    cursor: pointer;
+    gap: 1px;
+    transition: background 0.1s;
   }
-  .speaker-label {
+  .score-chip:hover { background: rgba(255,255,255,0.9); }
+  .score-chip-key { font-size: 0.6rem; opacity: 0.55; line-height: 1; }
+  .score-chip-val { font-size: 0.68rem; font-weight: 700; line-height: 1.2; }
+  .score-chip-row { display: flex; align-items: center; gap: 0.2rem; }
+
+  .record-value-btn {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.15rem 0.45rem;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.15s;
+  }
+  .record-value-btn:hover { opacity: 0.8; }
+  .record-value-high   { background: #dbeafe; color: #1e40af; }
+  .record-value-medium { background: #fef3c7; color: #92400e; }
+  .record-value-low    { background: #f3f4f6; color: #6b7280; }
+
+  /* ── モーダル ── */
+  .metrics-modal {
+    border: none;
+    border-radius: 12px;
+    padding: 0;
+    max-width: 700px;
+    width: calc(100vw - 2rem);
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  }
+  .metrics-modal::backdrop { background: rgba(0,0,0,0.4); }
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.9rem 1.25rem;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 1;
+  }
+  .modal-title { font-size: 0.95rem; font-weight: 600; color: #111; margin: 0; }
+  .modal-close {
+    background: none; border: none; font-size: 1.1rem; cursor: pointer;
+    color: #9ca3af; padding: 0.2rem 0.4rem; border-radius: 4px;
+  }
+  .modal-close:hover { background: #f3f4f6; color: #374151; }
+  .modal-body { padding: 1.25rem; }
+
+  .qa-content {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    min-width: 0;
+  }
+
+  /* ── スピーカー行 ── */
+  .speaker-line {
     font-size: 0.85rem;
-    color: #6b7280;
-    margin-bottom: 0.4rem;
+    color: #374151;
+    margin-bottom: 0.35rem;
   }
-  .speaker-label strong { color: #111; }
-  .party, .role { color: #6b7280; }
+  .speaker-line strong { color: #111827; }
+  .party, .role { color: #6b7280; font-size: 0.8rem; }
+
+  /* ── 要約 ── */
   .summary {
-    margin: 0 0 0.5rem;
+    margin: 0 0 0.25rem;
     font-size: 0.9rem;
-    line-height: 1.5;
+    line-height: 1.55;
+    color: #374151;
   }
   .summary-list {
-    margin: 0 0 0.5rem;
+    margin: 0 0 0.25rem;
     padding-left: 1.2rem;
     font-size: 0.9rem;
     line-height: 1.6;
@@ -345,122 +473,312 @@ const recordValueLabel: Record<string, string> = {
   .summary-list li {
     margin-bottom: 0.15rem;
   }
-  .directness {
+
+  /* ── 評価指標 ── */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem 1.5rem;
+  }
+  @media (max-width: 640px) {
+    .metrics-grid { grid-template-columns: 1fr; }
+  }
+
+  .metric-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
     font-size: 0.8rem;
-    font-weight: 600;
-    margin-bottom: 0.4rem;
   }
-  .commitment {
-    font-size: 0.8rem;
-    background: #f0fdf4;
-    border-left: 3px solid #16a34a;
-    padding: 0.4rem 0.6rem;
-    margin-top: 0.4rem;
-    color: #166534;
-    line-height: 1.4;
-  }
-  .commitment-label { font-weight: 600; }
-  .full-text-details {
-    margin-top: 0.5rem;
-  }
-  .metrics-details {
-    margin-top: 0.5rem;
-  }
-  .expand-toggle {
-    font-size: 0.8rem;
-    color: #2563eb;
-    cursor: pointer;
-    user-select: none;
-  }
-  .expand-toggle:hover {
-    text-decoration: underline;
-  }
-  .full-text {
-    margin: 0.5rem 0 0;
+  .metric-icon {
+    flex-shrink: 0;
     font-size: 0.85rem;
-    line-height: 1.7;
-    color: #374151;
-    background: #f9fafb;
-    padding: 0.75rem;
-    border-radius: 4px;
-    border: 1px solid #e5e7eb;
   }
-  .full-text p {
-    margin: 0 0 0.5rem;
-    text-indent: 1em;
+  .metric-label {
+    flex-shrink: 0;
+    color: #6b7280;
+    width: 5rem;
+    font-size: 0.78rem;
   }
-  .full-text p:last-child { margin-bottom: 0; }
-  .metrics-block {
-    margin-top: 0.5rem;
-    font-size: 0.8rem;
+  .metric-bar-wrap {
+    flex: 1;
+    height: 6px;
+    background: #f1f5f9;
+    border-radius: 3px;
+    overflow: hidden;
+    min-width: 3rem;
   }
-  .metric-row {
+  .metric-bar-wrap--sm {
+    max-width: 5rem;
+  }
+  .metric-bar {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+  }
+  .metric-value {
+    flex-shrink: 0;
+    font-weight: 700;
+    font-size: 0.78rem;
+    min-width: 2.5rem;
+    text-align: right;
+  }
+
+  /* コミットメント */
+  .commitment-inline {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    margin-bottom: 0.25rem;
-  }
-  .metric-name {
-    width: 7rem;
-    color: #6b7280;
-    flex-shrink: 0;
-  }
-  .metric-dots {
-    font-family: monospace;
-    color: #2563eb;
-    letter-spacing: 0.05em;
-  }
-  .metric-hint {
-    color: #9ca3af;
-    font-size: 0.75rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
   }
   .commitment-lv {
     font-size: 0.75rem;
     font-weight: 600;
-    padding: 0.1rem 0.4rem;
+    padding: 0.15rem 0.5rem;
     border-radius: 4px;
+    white-space: nowrap;
   }
   .commitment-lv-0 { background: #f3f4f6; color: #6b7280; }
   .commitment-lv-1 { background: #fef3c7; color: #92400e; }
   .commitment-lv-2 { background: #dbeafe; color: #1e40af; }
   .commitment-lv-3 { background: #d1fae5; color: #065f46; }
   .commitment-lv-4 { background: #a7f3d0; color: #064e3b; font-weight: 700; }
-  .trigger-phrase {
+  .commitment-phrase {
     font-size: 0.78rem;
     color: #374151;
-    background: #f9fafb;
-    border-left: 2px solid #d1d5db;
-    padding: 0.3rem 0.5rem;
-    margin-top: 0.35rem;
     font-style: italic;
   }
+
+  /* 引用候補 */
   .quote-candidate {
     font-size: 0.78rem;
     color: #374151;
     background: #eff6ff;
     border-left: 2px solid #2563eb;
     padding: 0.3rem 0.5rem;
-    margin-top: 0.35rem;
+    margin-top: 0.5rem;
+    border-radius: 0 4px 4px 0;
   }
   .quote-label {
     font-weight: 600;
     color: #1d4ed8;
   }
-  .evaluation-note {
-    font-size: 0.78rem;
+
+  /* 詳細指標（展開） */
+  .metrics-details-expand {
+    flex-shrink: 0;
+  }
+  .metrics-details-expand[open] {
+    flex-basis: 100%;
+  }
+  .metrics-inline-toggle {
+    display: inline-block;
+    font-size: 0.72rem;
     color: #6b7280;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid #e5e7eb;
+    border-radius: 3px;
+    padding: 0 0.35rem;
+    line-height: 1.6;
+    list-style: none;
+  }
+  .metrics-inline-toggle:hover { color: #374151; border-color: #9ca3af; }
+  .metrics-inline-toggle::-webkit-details-marker { display: none; }
+  .metrics-detail-content {
+    padding: 0.75rem 0;
+    border-top: 1px dashed #e5e7eb;
     margin-top: 0.4rem;
-    font-style: italic;
+  }
+  .metrics-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  @media (max-width: 640px) {
+    .metrics-detail-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  }
+
+  .detail-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .detail-heading {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #4b5563;
+    border-left: 3px solid #9ca3af;
+    padding-left: 0.5rem;
+    margin: 0;
+  }
+  .detail-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .detail-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .detail-name {
+    font-size: 0.8rem;
+    color: #6b7280;
+    min-width: 80px;
+  }
+  .detail-text-info {
+    font-size: 0.8rem;
+    color: #374151;
+  }
+  .detail-sep {
+    margin: 0 0.4rem;
+    color: #d1d5db;
+  }
+  .detail-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.75rem;
+    color: #4b5563;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .detail-list li {
+    background: #f9fafb;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    line-height: 1.4;
+  }
+  .source-tag, .item-tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    background: #e5e7eb;
+    color: #4b5563;
+    padding: 0 0.3rem;
+    border-radius: 3px;
+    margin-right: 0.3rem;
+    font-weight: 500;
+    vertical-align: middle;
+  }
+  .detail-flags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .detail-badge {
+    font-size: 0.7rem;
+    background: #eff6ff;
+    color: #1d4ed8;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    border: 1px solid #dbeafe;
+  }
+  .detail-badge--gold {
+    background: #fffbeb;
+    color: #b45309;
+    border-color: #fef3c7;
+    font-weight: 600;
+  }
+
+  .evaluation-note-section {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #f3f4f6;
+  }
+  .evaluation-note {
+    font-size: 0.8rem;
+    color: #4b5563;
+    line-height: 1.6;
+    background: #f9fafb;
+    padding: 0.75rem;
+    border-radius: 6px;
+    margin-top: 0.5rem;
+  }
+
+  .metrics-footer {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 0.7rem;
+    color: #9ca3af;
   }
   .low-confidence {
-    font-size: 0.75rem;
-    color: #b45309;
-    background: #fffbeb;
-    border: 1px solid #fde68a;
-    border-radius: 4px;
-    padding: 0.25rem 0.5rem;
-    margin-top: 0.4rem;
+    color: #dc2626;
+    background: #fef2f2;
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    font-weight: 500;
   }
+  .metrics-meta-info {
+    text-align: right;
+  }
+
+  /* ── 全文表示（統合） ── */
+  .qa-row--fulltext {
+    border-bottom: none;
+  }
+  .full-text-details {
+    /* no extra margin needed */
+  }
+  .expand-toggle {
+    font-size: 0.8rem;
+    color: #2563eb;
+    cursor: pointer;
+    user-select: none;
+    font-weight: 500;
+  }
+  .expand-toggle:hover {
+    text-decoration: underline;
+  }
+  .full-text-combined {
+    margin-top: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    align-items: start;
+  }
+  @media (max-width: 768px) {
+    .full-text-combined { grid-template-columns: 1fr; }
+  }
+  .full-text-section {
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .full-text-section-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.35rem 0.75rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  .full-text-section-label--q {
+    background: #eff6ff;
+    color: #1e40af;
+  }
+  .full-text-section-label--a {
+    background: #ecfdf5;
+    color: #065f46;
+  }
+  .full-text {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #374151;
+    background: #f9fafb;
+    padding: 0.75rem;
+  }
+  .full-text p {
+    margin: 0 0 0.5rem;
+    text-indent: 1em;
+  }
+  .full-text p:last-child { margin-bottom: 0; }
+
+  /* ── 出典 ── */
   .qa-source {
     padding: 0.4rem 1rem;
     background: #f8fafc;
