@@ -30,7 +30,7 @@ import logging
 import sys
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 try:
@@ -311,7 +311,8 @@ def main() -> None:
 
     chambers = args.chamber or ["shugiin"]
     since = date.fromisoformat(args.since)
-    until = date.fromisoformat(args.until) if args.until else date.today()
+    _JST = timezone(timedelta(hours=9))
+    until = date.fromisoformat(args.until) if args.until else datetime.now(_JST).date()
 
     if since > until:
         print(f"Error: --since ({since}) is after --until ({until})", file=sys.stderr)
