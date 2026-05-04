@@ -13,6 +13,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { glob } from 'glob';
+import MiniSearch from 'minisearch';
 
 // --- パス解決 ---
 const DATA_DIR = process.env.DATA_DIR
@@ -455,7 +456,33 @@ export function generateApi(dataDir: string, outDir: string): void {
     writeJson(path.join(outDir, 'calendar.json'), {});
     writeJson(path.join(outDir, 'evasion.json'), []);
     writeJson(path.join(outDir, 'laws.json'), []);
+    writeJson(path.join(outDir, 'search-index.json'), []);
     return;
+  }
+
+  // search-index.json: data/search-index/ から読み込み MiniSearch インデックスをシリアライズ
+  const searchIndexSrc = path.join(dataDir, 'search-index', 'search-index.json');
+  const searchIndexOut = path.join(outDir, 'search-index.json');
+  if (fs.existsSync(searchIndexSrc)) {
+    try {
+      const docs: Record<string, unknown>[] = JSON.parse(fs.readFileSync(searchIndexSrc, 'utf-8'));
+      const tokenizeOptions = {
+        fields: ['tokens', 'speaker', 'committee'],
+        storeFields: ['id', 'speaker', 'role', 'text', 'date', 'committee', 'chamber', 'url', 'segIdx', 'uttIdx'],
+        tokenize: (s: string) => s.split(/\s+/).filter(Boolean),
+      };
+      const miniSearch = new MiniSearch(tokenizeOptions);
+      miniSearch.addAll(docs as any);
+      fs.writeFileSync(searchIndexOut, JSON.stringify(miniSearch));
+      const sizeOut = (fs.statSync(searchIndexOut).size / 1024 / 1024).toFixed(1);
+      console.log(`[generate-api] Serialized MiniSearch index: ${docs.length} docs → search-index.json (${sizeOut} MB)`);
+    } catch (err) {
+      console.error('[generate-api] Failed to serialize MiniSearch index:', err);
+      writeJson(searchIndexOut, []);
+    }
+  } else {
+    writeJson(searchIndexOut, []);
+    console.warn('[generate-api] search-index.json not found, using empty array');
   }
 
   // 法案マスタを読み込み

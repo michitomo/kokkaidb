@@ -1,32 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-
-const base = import.meta.env.BASE_URL;
+import SearchUI from '../components/SearchUI';
 ---
+
 <BaseLayout title="検索 - 国会議事録リアルタイムDB">
   <h1>全文検索</h1>
   <p class="search-hint">
-    検索結果は <strong>[概要]</strong>（セッション全体の要約）、
-    <strong>[Q&amp;A]</strong>（質疑応答カード）、
-    <strong>[発言]</strong>（個別発言）の3種類に分類されます。クリックで該当箇所に直接ジャンプします。
+    <strong>スペース区切りでAND検索</strong>（例: <code>予算 委員会</code>）。話者名や委員会名も検索対象です。
+    検索結果をクリックすると該当発言に直接ジャンプします。
   </p>
-  <div id="search"></div>
-
-  <link href={base + '/pagefind/pagefind-ui.css'} rel="stylesheet" />
-  <script is:inline src={base + '/pagefind/pagefind-ui.js'}></script>
-  <script define:vars={{ base }}>
-    window.addEventListener('DOMContentLoaded', () => {
-      new window.PagefindUI({
-        element: '#search',
-        showSubResults: true,
-        excerptLength: 30,
-        translations: {
-          placeholder: '審議内容を検索...',
-          zero_results: '「[SEARCH_TERM]」に一致する結果はありません',
-        },
-      });
-    });
-  </script>
+  <SearchUI client:load />
 </BaseLayout>
 
 <style>
@@ -37,8 +20,10 @@ const base = import.meta.env.BASE_URL;
     margin-bottom: 1rem;
     line-height: 1.6;
   }
-  .search-hint strong {
-    color: #374151;
-    font-weight: 600;
+  .search-hint code {
+    background: #f1f5f9;
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
   }
 </style>

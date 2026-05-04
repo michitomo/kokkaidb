@@ -117,6 +117,9 @@ python -m src.state list
 # 法案リスト（laws.json）の更新
 python -m src.laws_builder --sessions 221
 
+# 検索インデックス生成（SudachiPy + sudachidict-core、データ更新後に実行）
+python -m src.build_search_index
+
 # テスト
 python -m pytest
 python -m pytest -m integration  # ネットワーク必須の統合テスト
@@ -136,10 +139,13 @@ npm ci
 # 開発サーバー
 npm run dev
 
-# ビルド
+# 検索インデックス生成（データ更新後に一度実行; SudachiPy + sudachidict-core が必要）
+npm run build:search-index
+
+# ビルド（prebuild で search-index.json を自動コピー）
 npm run build
 
-# Pagefindインデックス生成
+# Pagefindインデックス生成（当面は Q&A カード検索用に維持）
 npx pagefind --site dist --glob "**/*.html"
 
 # プレビュー

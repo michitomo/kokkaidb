@@ -24,6 +24,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+          cache-dependency-path: kokkai-transcriber/pyproject.toml
+
+      - name: Install search-index dependencies
+        run: pip install sudachipy sudachidict-core
+
+      - name: Build search index
+        working-directory: kokkai-transcriber
+        run: python -m src.build_search_index
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22
