@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       since:
-        description: '開始日 (YYYY-MM-DD)。省略時は7日前'
+        description: '開始日 (YYYY-MM-DD)。省略時は今日 (JST) のみ'
         required: false
         default: ''
       chamber:
@@ -38,30 +38,46 @@ jobs:
           python-version: '3.12'
           cache: 'pip'
           cache-dependency-path: kokkai-transcriber/pyproject.toml
-      
-      - name: Install discovery dependencies
-        run: |
-          cd kokkai-transcriber
-          pip install -e '.[browser]'
 
-      - name: Cache Playwright browsers
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/ms-playwright
-          key: playwright-chromium-${{ runner.os }}-${{ hashFiles('kokkai-transcriber/pyproject.toml') }}
-
-      - name: Install Playwright Chromium
-        run: python -m playwright install --with-deps chromium
-
+      # インストール前に日付を確定し、Playwright が必要か判定する。
+      # cron: JST 今日のみチェック → GET 軽量経路 → Playwright 不要。
+      # workflow_dispatch で過去日付を指定した場合のみ Playwright 経路。
       - name: Resolve dates
         id: dates
         run: |
           if [ -n "${{ github.event.inputs.since }}" ]; then
             SINCE="${{ github.event.inputs.since }}"
           else
-            SINCE=$(date -u -d '7 days ago' +%Y-%m-%d)
+            SINCE=$(TZ=Asia/Tokyo date +%Y-%m-%d)
+          fi
+          TODAY_JST=$(TZ=Asia/Tokyo date +%Y-%m-%d)
+          if [ "$SINCE" = "$TODAY_JST" ]; then
+            NEEDS_BROWSER=false
+          else
+            NEEDS_BROWSER=true
           fi
           echo "since=$SINCE" >> "$GITHUB_OUTPUT"
+          echo "needs_browser=$NEEDS_BROWSER" >> "$GITHUB_OUTPUT"
+
+      - name: Install discovery dependencies
+        run: |
+          cd kokkai-transcriber
+          if [ "${{ steps.dates.outputs.needs_browser }}" = "true" ]; then
+            pip install -e '.[browser]'
+          else
+            pip install -e .
+          fi
+
+      - name: Cache Playwright browsers
+        if: steps.dates.outputs.needs_browser == 'true'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-chromium-${{ runner.os }}-${{ hashFiles('kokkai-transcriber/pyproject.toml') }}
+
+      - name: Install Playwright Chromium
+        if: steps.dates.outputs.needs_browser == 'true'
+        run: python -m playwright install --with-deps chromium
 
       - name: Probe for new sessions
         id: probe
