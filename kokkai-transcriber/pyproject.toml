@@ -9,6 +9,8 @@ dependencies = [
     "openai>=1.30",
     "pydantic>=2.7",
     "python-dotenv>=1.0",
+    "sudachipy>=0.6",
+    "sudachidict-core>=2024",
 ]
 
 [project.optional-dependencies]
@@ -30,6 +32,7 @@ browser = [
 
 [project.scripts]
 kokkai-pipeline = "src.pipeline:main"
+kokkai-build-search-index = "src.build_search_index:main"
 
 [build-system]
 requires = ["setuptools>=68"]

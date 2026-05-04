@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "astro dev",
     "validate:data": "tsx scripts/validate-data.ts",
+    "build:search-index": "python3 ../kokkai-transcriber/src/build_search_index.py",
     "prebuild": "tsx scripts/generate-api.ts",
     "build": "astro build",
     "postbuild": "pagefind --site dist --glob '**/*.html'",
@@ -22,6 +23,7 @@
     "astro": "^6.1.6",
     "d3-force": "^3.0.0",
     "d3-selection": "^3.0.0",
+    "minisearch": "^7.2.0",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "recharts": "^3.8.1"

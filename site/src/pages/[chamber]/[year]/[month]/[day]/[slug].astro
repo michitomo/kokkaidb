@@ -272,8 +272,8 @@ const sessionType = hasQA ? 'debate' : 'procedural';
               )}
             </summary>
             <div class="utterance-list">
-              {(seg.utterances ?? []).map(u => (
-                <div class="utterance">
+              {(seg.utterances ?? []).map((u, uttIdx) => (
+                <div class="utterance" id={`utt-${metadata.chamber}_${metadata.session_id}_${segIdx}_${uttIdx}`}>
                   <div class="utt-header">
                     <span class={`role-badge role-${u.role === '委員長' ? 'chair' : u.role === '質疑者' ? 'questioner' : 'answerer'}`}>
                       {u.role}
@@ -315,8 +315,8 @@ const sessionType = hasQA ? 'debate' : 'procedural';
               )}
             </div>
             <div class="utterance-list">
-              {(seg.utterances ?? []).map(u => (
-                <div class="utterance">
+              {(seg.utterances ?? []).map((u, uttIdx) => (
+                <div class="utterance" id={`utt-${metadata.chamber}_${metadata.session_id}_${segIdx}_${uttIdx}`}>
                   {seg.utterances!.length > 1 && (
                     <div class="utt-header">
                       <span class="utt-speaker">{u.speaker}</span>
@@ -336,6 +336,24 @@ const sessionType = hasQA ? 'debate' : 'procedural';
     )}
 
   <script>
+    // --- 発言ハッシュナビゲーション ---
+    function navigateUtterance(hash: string) {
+      if (!hash.startsWith('#utt-')) return;
+      const el = document.getElementById(hash.slice(1));
+      if (!el) return;
+      const details = el.closest('details');
+      if (details) details.open = true;
+      setTimeout(function() {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        el.classList.add('utt-highlight');
+        setTimeout(function() { el.classList.remove('utt-highlight'); }, 2000);
+      }, 100);
+    }
+    navigateUtterance(location.hash);
+    window.addEventListener('hashchange', function() {
+      navigateUtterance(location.hash);
+    });
+
     // --- フィルタ状態 ---
     let activeSpeaker: string | null = null;
     let activeTopic: string | null = null;
@@ -720,6 +738,15 @@ const sessionType = hasQA ? 'debate' : 'procedural';
   .session-type-badge.debate {
     background: #dbeafe;
     color: #1e40af;
+  }
+
+  /* 発言ハイライト（検索結果からの遷移時） */
+  .utt-highlight {
+    animation: utt-fade 2s ease-out;
+  }
+  @keyframes utt-fade {
+    0% { background: #fef3c7; outline: 2px solid #f59e0b; outline-offset: 2px; border-radius: 4px; }
+    100% { background: transparent; outline: none; }
   }
 </style>
 <style is:global>
