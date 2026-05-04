@@ -1,0 +1,3833 @@
+{
+  "pairs": [
+    {
+      "id": "qa_001",
+      "segment_index": 1,
+      "topic": "ブロッキングの技術的回避策と有効性",
+      "question": {
+        "speaker": "鬼木誠",
+        "party": "立憲民主・無所属",
+        "summary": "- VPN等の技術的な回避策が容易に普及している状況で、ブロッキングの有効性と法益のバランスはどうなるのか",
+        "full_text": "今おっしゃっていただいた、若年層やカジュアルユーザーというところ、ただ、ブロッキングについて、よくよく見てみると、ブロッキングについては、技術的に回避をすることが可能だというふうに言われている。その情報っていうのはおそらくネット上にあふれてると思うんです。そうなるとですねヘビーユーザーだけではなくてカジュアルユーザーや若年層もブロッキングを技術的に回復する手法というのを容易に入手をすることが可能になっていく。そうなると貿易とのバランスどうなのさ。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "吉田電気通信事業部長",
+        "role": "",
+        "summary": "- 技術的回避策の存在と効果に限界があることは認識している\n- しかし、多くの利用者が国内接続事業者を利用しているため、接触機会を減らすことが若年層等の依存症予防に有効であるとの指摘がある",
+        "full_text": "委員御指摘のとおり、ブロッキングについては、VPNの利用といった技術的回避策が存在し、その効果に一定の限界があるとの指摘があることは認識しております。他方で、こうした回避策を前提としつつも、現在のインターネット利用環境においては、多くの利用者が国内のインターネット接続事業者を利用しており、ブロッキングがアクセスの抑止につながるといった指摘や、違法オンラインカジノに接触する機会を減らすことが、若年層やカジュアルユーザーに対するギャンブル等依存症の予防として有効であるといった指摘も検討会でなされているところでございます。こうした点も踏まえまして、3月の有識者検討会から提示された個市案では、現在のインターネット利用環境に照らせば、ブロッキングについて対策としての有効性は否定できないのではないかと示されたものと承知しております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#1905.89",
+      "metrics": null
+    },
+    {
+      "id": "qa_002",
+      "segment_index": 2,
+      "topic": "イラン情勢とホルムズ海峡の現状認識",
+      "question": {
+        "speaker": "杉尾秀哉",
+        "party": "立憲民主・無所属",
+        "summary": "- ホルムズ海峡の現状認識について\n- 戦闘再開の可能性があるか",
+        "full_text": "まず、イラン情勢から伺います。ホルムズ海峡の全面解放の情報が1回流れましたけれども、また1点再封鎖となるなど、ますます先が見通せない状況になっております。そこで、まず外務省に伺いますけれども、木下の状況をどういうふうに認識しているのか、また、停戦期限が間近に迫っている、日本時間のあすみめという話があります。戦闘再開もあり得るのか、この2つについて答えてください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "三宅審議官",
+        "role": "",
+        "summary": "- 事態の沈静化と米イラン間の早期合意を期待している\n- 戦闘再開の可能性を含め、予断を持って答えることは困難だが外交努力を継続する",
+        "full_text": "政府としましては、今最も重要なことは、今後、ホルムズ海峡の高校の安全確保を含む事態の沈静化が一刻も早く実際に図れることと考えております。米イラン間の協議が再開され、話し合いを通じて最終的な合意に早期に至ることを強く期待しております。戦闘再開の可能性を含め、今後の見通しについては、余談をもってお答えすることは困難でありますが、日本としては引き続き、米イランの協議や関係国の仲介努力を後押しするとともに、国際社会と緊密に連携しながら、必要な外交努力を粘り強く行っていきたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#3197.96",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "イラン情勢の認識と戦闘再開の可能性について",
+          "sub_asks": [
+            "現状の認識",
+            "戦闘再開の可能性"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "ホルムズ海峡の全面解放の情報"
+            },
+            {
+              "type": "other",
+              "excerpt": "停戦期限が間近に迫っている"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "外務省",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "必要な外交努力を粘り強く行っていきたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "日本としては引き続き、米イランの協議や関係国の仲介努力を後押しするとともに、国際社会と緊密に連携しながら、必要な外交努力を粘り強く行っていきたい",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "現状認識と可能性を問う質問に対し、外交的な一般論で回答しており、具体的な情報や確約は得られていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どう認識しているか」という抽象的な問いであるため、回答者が一般論で逃げやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_003",
+      "segment_index": 2,
+      "topic": "ペルシャ湾に滞留する日本関係船舶の状況",
+      "question": {
+        "speaker": "杉尾秀哉",
+        "party": "立憲民主・無所属",
+        "summary": "- 滞留している日本関係船舶の乗組員の脱出見通しについて",
+        "full_text": "それから42隻の日本関係船舶はペルシャ湾に滞留しております。乗組員の健康状態も含めて限界近いと思うんですけれども、脱出できる見通しはあるんですか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "河野次長",
+        "role": "",
+        "summary": "- 乗組員は無事で、物資補給も行われており特段の問題はない\n- 今後の見通しは困難だが、船員の安全確保を最優先に連携して対応する",
+        "full_text": "ペルシャ湾の日本関係船舶は42隻であり、その42隻の乗組員数は1000人以上。このうち日本人乗組員数は20人であると報告を受けております。国土交通省としては、日本関係船舶に対し、各運航会社を通じて毎日安否確認を実施しておりますが、各船員ともに無事であるほか、水、食料、燃料など必要物資については必要に応じ、現地において補給がなされるなど、現在までに特段の問題には至っていないとの報告を受けております。ホルムズ海峡をめぐる情勢につきましては、日々刻々と状況が変化しておりますので、今後の見通しについて予断をもってお答えすることは困難でありますけれども、いずれにしてよ、日本関係船舶、とりわけ船員の安全の確保は最重要であり、国土交通省として情報収集を徹底し、関係者への情報提供を丁寧に行うとともに、外務省をはじめとする関係省庁とも緊密に連携してまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#3197.96",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "ペルシャ湾滞留船舶の脱出見通しについて",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "42隻の日本関係船舶"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "日本関係船舶の乗組員",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "42隻"
+            },
+            {
+              "type": "number",
+              "excerpt": "1000人以上"
+            },
+            {
+              "type": "number",
+              "excerpt": "20人"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "緊密に連携してまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "ペルシャ湾の日本関係船舶は42隻であり、その42隻の乗組員数は1000人以上。このうち日本人乗組員数は20人であると報告を受けております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "脱出の見通しという核心的な問いには予断を避け回答を回避しているが、滞留船舶数や乗組員数という具体的な数字を記録として残した点に価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_004",
+      "segment_index": 2,
+      "topic": "日本船舶の通行に関するイラン側の意向",
+      "question": {
+        "speaker": "杉尾秀哉",
+        "party": "立憲民主・無所属",
+        "summary": "- イラン大使が「協議すれば日本船舶の通行は可能」と述べたことは事実か",
+        "full_text": "先日、私どもの立憲民主党の小西議員が在日イラン大使と会談しました。その席で、イラン大使より、先日のイラン荒口外務大臣と茂木外務大臣の電話会談で、協議をすれば日本船舶のホルムズ海峡の通行は可能だと、こういう考えがこの電話会談の中で、イラン側から日本側に伝えられていたと、こういう説明がありました。外務省、これ事実ですか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "三宅審議官",
+        "role": "",
+        "summary": "- 大使の発言については政府として把握しておらずコメントを差し控える\n- 全ての船舶の安全が担保されるよう強く求めている",
+        "full_text": "ご指摘のありました中日イラン大使が小西博之議員と面会した際の大使の発言につきましては、政府として把握しておらず、コメントは差し控えさせていただきます。その上で、これまでもイランとの間では、様々な機会を通じ、ホルムズ海峡における日本関係船舶を含む全ての船舶の安全が担保されるよう、強く求めてきているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#3197.96",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "イラン大使の発言内容は事実か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "立憲民主党の小西議員"
+            },
+            {
+              "type": "other",
+              "excerpt": "在日イラン大使"
+            },
+            {
+              "type": "other",
+              "excerpt": "イラン荒口外務大臣と茂木外務大臣の電話会談"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "在日イラン大使",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "大使の発言につきましては、政府として把握しておらず、コメントは差し控えさせていただきます。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "事実確認の問いに対し、政府が把握していないことを明確に回答しており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_005",
+      "segment_index": 2,
+      "topic": "日本政府によるイランへの外交交渉の実効性",
+      "question": {
+        "speaker": "杉尾秀哉",
+        "party": "立憲民主・無所属",
+        "summary": "- 日本政府は実際に日本船舶の通行交渉を行っているのか\n- 韓国タンカーが通過した報道がある中、政府は何を行っているのか",
+        "full_text": "官房長官に来ていただきましたので、一つ確認したいんですけれども、私の予算委員会の質疑で、本井外務大臣が、日本船舶の通行をですね、イラン側と交渉しているというふうにおっしゃったんですけれども、結果が見えておりません。本当にその日本政府はこういう交渉をしているのか、それから韓国向けのタンカーがですね、もうすでに通過をしたと、こういう報道もあります。一体全体日本政府は何をやっているのか、答えてください。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 首脳・外相レベルの電話会談を通じ、全ての国の船舶の自由で安全な航行を強く求めている\n- 引き続き外交努力を粘り強く行う",
+        "full_text": "ホルムズ海峡におけます、高校の安全確保を含む中東地域の平和と安定の維持というのは、エネルギー安定供給の観点を含め、日本を含む、これは国際社会にとって極めて重要であるという認識を持っております。こうした観点から、長年にわたる関係を有しているイランとは、攻撃の応集が始まって以降、4回の 外務大臣、電話会談に加えて、4月8日には、高市総理とペイゼシキアン大統領との間で、首脳電話会談を行いました。イラン側に対しては、これらの機会に、ホルムズ海峡において、日本やアジア諸国を含む全ての国の船舶の自由で安全な航行が1日も早く確保されるよう、強く求めてきております。我が国として、こうしたイランとの意思疎通を、 継続するとともに、国際社会とも緊密に連携しながら、ホルムズ会議員における航空の安全を早期に確保するために、外交努力は粘り強く行っていきたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#3197.96",
+      "metrics": null
+    },
+    {
+      "id": "qa_006",
+      "segment_index": 2,
+      "topic": "エネルギー供給不安への対策と節電要請",
+      "question": {
+        "speaker": "杉尾秀哉",
+        "party": "立憲民主・無所属",
+        "summary": "- 世論調査で国民の節約・節電容認が高い中、政府として節電・節約モードに入るタイミングではないか",
+        "full_text": "こうした状況の中で国民の不安が高まる一方、いろんな世論調査もありますけれども、 先日、中道立憲公明の3党で共同調査を行いまして、イラン危機が家計、それから法人に与える影響の深刻さというのが、改めて浮き彫りになりました。政府は目詰まりという言葉を使っておりますけれども、現場の感覚とずれているとしか言いようがない。本当に政府は何をやっているのかということなんですが、そこで伺いますけれども、 この世論調査を見ても、国民は節約・節電容認をしております6割から7割です。そろそろ節電、そして節約モードに入る日本もタイミングじゃないでしょうか。どうでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "山田副大臣",
+        "role": "",
+        "summary": "- 代替調達等により石油供給の目処がついており、自給に影響が生じている認識はない\n- エネルギー節約は中東情勢に関わらず中期的に継続することが重要である",
+        "full_text": "まず、今後のことについて予断を持ってお答えするということは困難でありますが、代替調達や備蓄石油の放出により、原油や石油製品については、日本全体として必要となる量は確保されているということを申し上げた上で、このような状態をできるだけ長く維持できるよう取り組んでおります。こちらにつきましても、代替調達の進展の結果、石油備蓄の放出量を抑えながら、年を超えて石油の供給を確保できる目処がついておりますので、日本全体として必要な量が確保されており、我が国の石油自給に影響が生じているとは認識をしておりません。ということにつきましては、現状把握と対処方針の検討を経て、個々のサプライチェーンごとに生じている事態に合わせてどのように対処をしていくか決定をすべきものであり、中長期の見通しについて予断をもってコメントをすることは差し控えますが、エネルギーの節約につきましては、資源に乏しい我が国においては、毎年夏と冬のエネルギー需要が増大する時期に行っているように、中東情勢にかかわらず、 この取組を中期的に継続することが重要と考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#3197.96",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "節電・節約モードに入るタイミングではないか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "中道立憲公明の3党で共同調査"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "この取組を中期的に継続することが重要と考えております",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "エネルギーの節約につきましては、中東情勢にかかわらず、この取組を中期的に継続することが重要と考えております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "節電のタイミングを問う質問に対し、現状の供給確保状況を説明した上で、節約の重要性に一般論で答えるに留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「タイミングではないか」という問い方が主観的な同意を求める形式になっており、具体的な政策決定を迫る問いになっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_007",
+      "segment_index": 2,
+      "topic": "旧姓の通称使用の法制化に関する政府方針",
+      "question": {
+        "speaker": "杉尾秀哉",
+        "party": "立憲民主・無所属",
+        "summary": "- 旧姓の通称使用の法制化を政府方針としないという従来の見解は維持されているか",
+        "full_text": "先週、道コミ院が第6次の男女共同参画基本計画、この不透明な戦いを質問しましたので、ここをちょっと飛ばしまして、この旧姓の通称仕様の法制化ですね。これまでの政府答弁では、通称仕様は、 選択的夫婦別姓制度導入までの暫定的な措置だと、こういう答弁が繰り返し行われております。そして、政府が現行の夫婦同姓制度に、これ今、民法で規定されております、夫婦同姓制度に変わり得る制度は、平成8年、1996年のあの例の 法制新闘審で示された選択的夫婦別姓だけで、旧姓の通商資本についての法制度を政府方針とはしないと、こういうふうに答弁されておりますけれども、この政府見解というのは今でも維持されているんでしょうか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "岡田局長",
+        "role": "",
+        "summary": "- 法制審議会答申の認識は変わっていないが、現在は法制化を含めた検討を行っているため、方針は変わっている",
+        "full_text": "今、委員お尋ねの令和4年2月の答弁につきましては、平成8年の法制審議会の答申におきまして、夫婦同氏制度に変わる制度として、選択的不別氏制度の導入が提言されたけれども、当該制度が導入されていない中で、夫婦同氏制度の下、婚姻に伴う氏の変更による不便、不利益を減らすため、給氏の通商使用の取組が行われていることについての認識を示したものと考えております。平成8年の法制審議会答申の効力が失われていないことについての政府の認識は現在も変わっておらず、また、休事使用の拡大や周知に取り組むという方向性についても変わりはございませんけれども、休事使用の法制化についての方針という意味におきましては、現在政府において検討を行っていることから、令和4年の答弁当時と現在ではその方針は変わっているものと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#3197.96",
+      "metrics": null
+    },
+    {
+      "id": "qa_008",
+      "segment_index": 2,
+      "topic": "旧姓通称使用の法制化検討の経緯",
+      "question": {
+        "speaker": "杉尾秀哉",
+        "party": "立憲民主・無所属",
+        "summary": "- いつ、どこで、どのような検討を経て方針を変えたのか",
+        "full_text": "方針が変わっているんだったら、いつ、どこで、どういう検討をして、方針を変えたんですか。答弁してください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "岡田局長",
+        "role": "",
+        "summary": "- 昨年10月の連立政権合意書への記載や、大臣への指示、総理の答弁を踏まえ検討している",
+        "full_text": "政府におきましては、夫婦同時制度をおかにおきまして、婚姻に伴ううじの変更による不便不利益を減らすため、給仕の通所使用の拡大や周知に取り組んでまいりました。給仕使用が社会の様々な場面において可能となるとともに、多くの国民に受け入れられている中、こうした取組をさらに進めていくことは重要であると考えておりまして、昨年10月の連立政権合意書に記載された内容を踏まえ、 市場の法制化を含めた検討を行っているところでございます。まず、連立合意書に 書かれているということと、昨年10月21日の訴告時において、大臣に対してご指示がございました。また、11月の衆議院本会議におきまして、総理からは、連立政権合意の記載を踏まえ、与党と連携しながら必要な検討を行う、旨の答弁をなさっておいでであります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#3197.96",
+      "metrics": null
+    },
+    {
+      "id": "qa_009",
+      "segment_index": 2,
+      "topic": "方針変更の根拠と議論のプロセス",
+      "question": {
+        "speaker": "杉尾秀哉",
+        "party": "立憲民主・無所属",
+        "summary": "- 連立合意書があるだけで、男女共同参画局での議論なく方針を180度変えたのか",
+        "full_text": "政権が変わった連立合意書に書かれている、だからこれまでの方針を180度変えたんですか。いろんな会議開いて何の議論をしてるんですか。答えてください。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "岡田局長",
+        "role": "",
+        "summary": "- 国民の意見や司法判断を注視しつつ検討を進めている\n- 従来の通称使用拡大をさらに進めるため、法制化を含めた基盤整備を計画に盛り込んだ",
+        "full_text": "今回の計画におきましては、2つ記載しておりまして、まず、 夫婦のうじにつきましては、 国民各層の意見や国会における議論動向を注視しながら、司法の判断も踏まえ、さらなる検討を進めるとしております。また、休児の短期、休児使用のさらなる拡大やその周知に取り組むということは、第5次の男女共同参画基本計画にも記載をしておりまして、今回の6次計画におきましては、休児の短期も可能とする法制化を含めた基盤整備の検討を含め、休児使用のさらなる拡大やその周知に取り組むということで、今まで行ってまいりましたものをさらに進めるということで、 今回計画に盛り込んだものでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#3197.96",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "方針変更の理由と会議での議論内容",
+          "sub_asks": [
+            "方針を180度変えたのか",
+            "会議で何の議論をしているのか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "連立合意書"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "第5次の男女共同参画基本計画"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "今回の6次計画"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "さらなる検討を進めるとしております",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "休児の短期も可能とする法制化を含めた基盤整備の検討を含め、休児使用のさらなる拡大やその周知に取り組む",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は感情的で抽象的だが、回答側は計画書に基づき具体的な検討事項（夫婦別姓・育児休業）を提示している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「180度変えたのか」という二択の問いではなく、具体的にどの方針のどの点が変更されたのかを特定して問うべきである。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_010",
+      "segment_index": 2,
+      "topic": "旧姓通称使用法案の提出時期",
+      "question": {
+        "speaker": "杉尾秀哉",
+        "party": "立憲民主・無所属",
+        "summary": "- 法案の検討はいつまでに終わるのか\n- 今国会中に提出することは可能か",
+        "full_text": "検討っていつまでに検討するんですか。どう考えても今国会の中でこの法制化、通称使用の法制化、無理だと思いますけれども提出できますか。大臣、答えてください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 現在政府で検討中であり、具体的な完了時期や提出予定時期について答えることは困難である",
+        "full_text": "法案については、現在政府において検討中でありまして、今後とも与党とも相談していくこととなりまして、具体的な検討、いつまで終わるかということについては、現時点でお答えすることは困難でございます。繰り返しとなりますが、法案については、現在、政府において検討中でございます。今後、与党とも相談していくこととしておりまして、具体的な提出予定時期については、現時点でお答えすることは困難でございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#3197.96",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "通称使用法制化の検討期限と提出可否",
+          "sub_asks": [
+            "検討はいつまでに完了するか",
+            "今国会中に法案提出が可能か"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "今後とも与党とも相談していくこととなりまして",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "minister",
+          "score": 0.5
+        },
+        "oc3_quotability": {
+          "quote_candidate": "具体的な提出予定時期については、現時点でお答えすることは困難でございます。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "期限と提出可否を問うているが、大臣は「困難」として回答を避けており、具体的な前進は確認できない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「無理だと思いますけれども」という主観的な断定が含まれており、純粋な問いかけになっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_011",
+      "segment_index": 2,
+      "topic": "提出未定法案の審議への影響",
+      "question": {
+        "speaker": "杉尾秀哉",
+        "party": "立憲民主・無所属",
+        "summary": "- 提出未定の法案ばかりでは内閣委員会で審議できないのではないか",
+        "full_text": "こんな提出未定の法案ばっかり、これ内閣委員会でどうやって議論するんですか。今まだ目処が立ってないなんで、こんな法案を出されても審議できません。大臣、答えてください。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "木川田大臣",
+        "role": "",
+        "summary": "- 現在政府において検討中であり、現時点で提出時期について答えることは困難である",
+        "full_text": "繰り返しとなりますが、法案については現在政府において検討中でございまして、現時点で提出時期についてお答えすることは困難であるということでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#3197.96",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "提出未定の法案をどう議論するのか",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "法案については現在政府において検討中でございまして、現時点で提出時期についてお答えすることは困難である",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "提出時期が未定であるという政府の現状が記録されたが、具体的な議論の手法についての回答は得られていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "感情的な批判が多く、具体的な手続きや期限を問う形式になっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_012",
+      "segment_index": 3,
+      "topic": "特別児童扶養手当の所得計算における控除の根拠",
+      "question": {
+        "speaker": "牛田茉友",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 特別児童扶養手当の所得計算において、一部の控除のみが採用され、他が除外されている根拠は何か",
+        "full_text": "この所得制限の所得の計算方法なんですけれども、基本的には地方税法上の総所得金額をベースにしつつ、各種所得、常用所得などを合算して、 給与、年金については一定の調整、10万円を控除して、そこから一律で社会保険料相当額控除として、8万円を控除した上で、さらに一部の控除を差し引いた額を所得として算出し、支給の可否を判断していると認識をしております。しかし、この計算は極めて複雑であるだけではなく、どの控除を引くか引かないかという制度が、 制度ごとに異なるという点に、大きな制度設計上の問題があるというふうに考えております。そこで伺いますが、この所得税や住民税の計算では、基礎控除、扶養控除、社会保険料控除など、さまざまな控除が認められています。しかし、この制度では、一部の控除のみが採用されています。どの控除を採用し、どの控除を除外するかの考え方、制度の根拠は何でしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "野村",
+        "role": "",
+        "summary": "- 福祉的な手当という性質を踏まえ、政令で具体的な計算方法を規定している\n- 個々の実情に配慮する観点から、障害者控除や医療費控除などの相当額を差し引いて計算している",
+        "full_text": "ご指摘の特別児童扶養手当でございますけれども、これは障害児の生活の安定に寄与するよう、必要な範囲で支給するということを趣旨とする福祉的な手当でございます。この所得制限である所得の計算に際しましても、こういった性質というものを踏まえまして、組み立てをさせていただいているところでありまして、具体的な計算方法などは、政令の方で規定をさせていただいております。この所得の計算方法でございますけれども、まず受給資格者の方の総所得金額などの合計額を基本として、そこからご指摘の社会保険料控除相当分ということでありますけれども、一律に8万円をまず差し引きます。その他に該当するものがある場合には各種控除も差し引くという形で所得を計算をさせていただくということになります。その他の該当するものがある場合というやつでございますけれども、この控除の考え方でございますけれども、同じ所得、収入の受給資格者の方でありましても、個々の実情を踏まえたものとなるように配慮をするという観点から、この所得制限に係る所得のケースにおきましては、例えば、障害者控除、あるいは特別障害者控除といったもの、過負控除、一人や控除、 医療費控除などの相当額を所得から差し引いて計算をしているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#4326.88",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "所得制限の計算における控除採用の根拠は何か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "地方税法上の総所得金額"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "特別児童扶養手当"
+            },
+            {
+              "type": "number",
+              "excerpt": "一律に8万円"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "障害者控除"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "特別障害者控除"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "寡婦控除"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ひとり親控除"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "医療費控除"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "個々の実情を踏まえたものとなるように配慮をするという観点から、障害者控除、あるいは特別障害者控除といったもの、寡婦控除、ひとり親控除、医療費控除などの相当額を所得から差し引いて計算している",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "所得制限の計算根拠を問う質問に対し、具体的な控除項目を列挙して回答している。根拠としての「福祉的な手当であること」という説明は抽象的だが、適用される控除の具体例が示された点で一定の記録価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_013",
+      "segment_index": 3,
+      "topic": "特別児童扶養手当における基礎控除の不採用理由",
+      "question": {
+        "speaker": "牛田茉友",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 特別児童扶養手当の所得計算において、基礎控除が差し引かれないのは、障害者控除を差し引いているからか",
+        "full_text": "一方でご指摘の所得税、住民税における各種控除に関しましては、基礎控除について申し上げれば、一部の高所得者を除いてほとんど全ての納税者の方が控除対象となる基礎的なものであって、 石田茉君。ちょっと今のご答弁でちょっと分かりにくかったところからお尋ねしたいんですけれども、特別児童扶養手当の所得の計算方法の中で、基礎控除は差し引かれていないということなんですけれども、障害者控除を差し引くから基礎控除は差し引かなくていいということなんでしょうか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "野村",
+        "role": "",
+        "summary": "- 税の基礎控除は「担税力」を判断する趣旨だが、本手当は「福祉的給付の対象範囲」を定めるものであり、役割が異なる\n- 障害者控除を勘案しているからではなく、税における基礎控除の役割を考慮し、本手当の控除対象に含めていない",
+        "full_text": "基礎向上でございますけれども、こちらの方は税の方での役割というのを考えてみますと、この所得税、住民税における基礎向上といいますのは、一定の額までの小額の所得については負担能力を生み出すに至らないと考えられる、つまり単税力というようなことを言われたりしますけれども、そういったことから税を課さない、一定間のときの税を課さないという趣旨の税、元に設けられているものでございます。一方で、この特別児童扶養手当の所得制限の限度額につきましては、福祉的な現金給付の対象とするかどうかの判断に当たって参照する所得の範囲を定めるものというふうになっています。つまり、方や税を負担していただける能力をどこまで見るのかということと、方や福祉的な手当をどの方に支給するのか、その支給対象となる方の所得をどう評価するのかということを範囲を定めていくものというふうに、双方ではそれぞれ範囲が異なるというふうに考えております。ですので、ご指摘に即して言いますならば、基礎控除は障害控除を勘案しているから控除しないというのではなくて、この税の中に占める基礎控除の役割というのも勘案すると、今回の手当の控除の中では対象に含まないということにしているものと承知をしております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#4326.88",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "特別児童扶養手当の所得計算で基礎控除を引かない理由は障害者控除があるからか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "所得税、住民税における各種控除"
+            },
+            {
+              "type": "other",
+              "excerpt": "特別児童扶養手当の所得の計算方法"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "特別児童扶養手当の受給希望者/納税者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "基礎控除は障害控除を勘案しているから控除しないというのではなくて、今回の手当の控除の中では対象に含まないということにしている",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "特別児童扶養手当の所得制限における基礎控除の不適用理由について、税制上の役割と福祉的給付の目的の違いという政府解釈が明確に示されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_014",
+      "segment_index": 3,
+      "topic": "所得制限の設計不整合による受給停止への認識",
+      "question": {
+        "speaker": "牛田茉友",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 税制の課税最低額引き上げ等がある中で、手当の所得制限設計が異なるため、急に受給打ち切りになる不具合についてどう評価しているか",
+        "full_text": "すみません。基礎控除について少しお伺いしたいんですけれども、この基礎控除、今回178万まで課税最低額が引き上げられましたけれども、この現在制度をよく利用しないまま働きすぎた受給者が急に手当打ち切りになる場合もあるのではないかと思うんですけれども、この制度間で今おっしゃったように設計がバラバラなことで起き得るこういった不具合についてですね、どのように認識し、どのように評価していらっしゃるんでしょうか。教えてください。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "野村",
+        "role": "",
+        "summary": "- 納税力の評価（税）と、現金給付の対象評価（福祉）では観点が異なるため、差が生じることは承知している\n- 所得制限の仕組みを維持する以上、どこかで支給が止まるという差は伴うと考えている",
+        "full_text": "税の方では税の方でやはり単税力の評価、世帯としてみたいな、納税される方の納税力に応じた税所得の評価ということを組み立てられているかと思います。一方、特別児童扶養手当というのは、やはり障害のあるお子さんを扶養しておられる家庭に対して、この福祉的な手当を支給するという観点から所得をどのように評価をしていくかということになります。そういう意味では、税をいかない、どのような方に負担をしていただくかという観点で組み立てるものと、それとこの手当をどういう方に現金給付としてご支給申し上げるかというところで、さご承知するということは、今までも発生しておりますし、やはりこの所得に応じての支給という所得制限の仕組みを維持する。以上、どこかで支給が止まるようなところになるわけでありますので、そういった差というのは伴ってくるものかなと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#4326.88",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "基礎控除引き上げに伴う手当打ち切りの不具合への認識",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "178万"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "受給者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "特別児童扶養手当"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "所得制限の仕組みを維持する以上、どこかで支給が止まるようなところになるわけでありますので、そういった差というのは伴ってくるものかなと考えております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "税制と福祉手当の所得評価基準の乖離による不整合は不可避であるという政府の現状認識が示された回答である。",
+        "would_be_referenced": "low",
+        "issue_in_design": "不具合の解消策を問うのではなく「認識・評価」を問う形式であるため、現状肯定の回答で完結してしまっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_015",
+      "segment_index": 3,
+      "topic": "社会保険料相当額控除（一律8万円）の根拠",
+      "question": {
+        "speaker": "牛田茉友",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 社会保険料相当額控除が一律8万円に固定されている根拠は何か。実負担とかけ離れているのではないか",
+        "full_text": "では次に社会保険料相当額控除についてお伺いいたします。これ所得税では社会保険料は実額控除となっておりますけれども、この制度では一律8万円の控除に固定されています。この8万円の根拠とは何か、実際の負担とはかけ離れているのではないかと思いますが、いかがでしょうか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "野村",
+        "role": "",
+        "summary": "- 政令で内訳を示さず一律8万円と規定しており、変動させていない",
+        "full_text": "御指摘の8万円の所得から控除する額でございますけれども、こちらの方では社会保険予想等の控除というふうに申し上げておりますけれども、政令の方では特に内訳などを示すことなく8万円というふうに一律で規定をしております。変動を行ってきていないということでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#4326.88",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "社会保険料相当額控除（8万円）の根拠について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "一律8万円の控除"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "8万円"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "政令の方では特に内訳などを示すことなく8万円というふうに一律で規定をしております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "控除額の根拠を問うたが、政府側は「政令で一律に規定されており、内訳はない」と回答し、実質的に根拠を提示できなかった。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「いかがでしょうか」という漠然とした問いかけではなく、根拠の再検討を求める形式にすれば、より具体的な回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_016",
+      "segment_index": 3,
+      "topic": "社会保険料相当額控除の趣旨と実額との関係",
+      "question": {
+        "speaker": "牛田茉友",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 社会保険料相当額控除は、社会保険料の実額すべてを控除するものではないのか",
+        "full_text": "社会保険料相当額控除というふうにご説明、レクでもご説明を伺って、いろんな資料も見た中で、相当額控除。というふうに書かれていたのですが、今の御説明ですと、社会保険料控除、これは全てを控除するものではないというような御答弁だったのですが、改めてそちらももう一度お伺いしたいのと、次の質問と併せてお答えください。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "野村",
+        "role": "",
+        "summary": "- 昭和46年に一律8万円に見直されており、実額すべてを控除する趣旨ではない\n- 社会保険に加入できていない方でも控除を受けられるようにし、障害児家庭の状況に配慮する機能を持たせている",
+        "full_text": "御指摘に、先ほど政令の内容などを示すことが8万円で規定しているというふうに申し上げましたけれども、これは以前は社会保険料の工事に相当するものを工事するとなっておったものを、昭和46年に一律8万円という見直しをしたところでございます。そういうことと、今のそういった仕組みから持ち合わせる機能からいたしますと、これは社会保険料の実額を全てを工事をするという種ではなくて、これは社会保険に… あの、加入できていない市長等の方でも、この一律の8万円の控除等に提供されるということになりますので、障害児のある家庭の条件に一定程度配慮するという観点から、設定をしているという指紙、機能になっているのかなというふうに考えております。ご指摘の8万円の控除額につきましては、ただいま参考人から答弁がありましたように、これは必ずしも社会保険料額をすべて控除する趣旨ではなく、障害児のいる家庭の状況に一定程度配慮する観点から設定されているものでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#4326.88",
+      "metrics": null
+    },
+    {
+      "id": "qa_017",
+      "segment_index": 3,
+      "topic": "所得制限限度額の引き上げ検討",
+      "question": {
+        "speaker": "牛田茉友",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 物価や賃金水準が上昇している中、平成11年から据え置かれている所得制限限度額を引き上げる考えはないか",
+        "full_text": "今、御答弁にありました増額改定ですけれども、これ、令和7年の物価上昇率に踏まえて引上げが行われたと承知しております。同時に、所得制限の限度額は平成11年から見直されておりません。結果として、1円超えたら全額不支給という、崖がより厳しくなっているという見方もあると思いますが、この所得制限限度額を今の物価、賃金水準に合わせて引き上げる考えはないんでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "長坂",
+        "role": "",
+        "summary": "- 支給停止となった割合に大きな変化がないため据え置いてきた\n- 財源の確保や、他の障害児福祉サービスの拡充、制度の持続可能性を踏まえ、適正な運営に努める",
+        "full_text": "特別児童扶養手当の所得制限の減長区につきましては、申請のうち所得制限に該当して支給停止となった割合がほぼ1割程度で変化がない状況が続いていることなどから据え置いてまいりました。制限限度額の引上げ等につきましては、自給者数の増加を伴うものであり、こうした物価上昇への対応に加えて、さらに安定的な財源が必要であります。いずれにいたしましても、こうした状況や近年、障害児に対する福祉サービスの給付額を大幅に拡充している状況、制度の持続可能性も踏まえて、制度の適正な運営に努めてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#4326.88",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "所得制限限度額を引き上げる考えはあるか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "令和7年"
+            },
+            {
+              "type": "date",
+              "excerpt": "平成11年"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "ほぼ1割程度"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "制度の適正な運営に努めてまいりたい",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "申請のうち所得制限に該当して支給停止となった割合がほぼ1割程度で変化がない状況が続いていることなどから据え置いてまいりました。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "所得制限の引き上げという具体的な提案に対し、現状の統計（1割程度）を根拠に据え置きの正当性を主張し、今後の意向を抽象的な努力目標に留めた回答である。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_018",
+      "segment_index": 3,
+      "topic": "所得制限の「崖」をなくす段階的減額方式への見直し",
+      "question": {
+        "speaker": "牛田茉友",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 1円でも超えると全額不支給となる「崖」の構造を、段階的に減額する滑らかな制度設計に見直すべきではないか",
+        "full_text": "この現行制度なんですけれども、1円超えれば支給がゼロになるということは、崖の構造となっています。1級だと今70万円が1円超えたら不支給になるという形になるんですけれども、本来はですね、これ段階的に減額するなど、より滑らかな制度設計にした方が、本当は合理的だと私は考えております。所得制限の撤廃ということが理想ではあるんですけれども、まず現実的な改善策としまして、この奈らかな減額。方式への見直しを検討すべきではないのか、それがなぜできないのか、副大臣の見解を求めます。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "長坂",
+        "role": "",
+        "summary": "- 児童手当や障害福祉サービスなどの現金・現物給付を総合的に講じており、支援全般を踏まえる必要がある\n- 近年、障害児に対する福祉サービスを充実させ、給付額を大幅に拡大している",
+        "full_text": "障害児に対しましては、障害児を含めた時代を担う全ての子どもたちの育ちを支える基礎的な経済支援としての児童手当に加えまして、ニーズに応じた現金… 現物給付である障害福祉サービスによる支援、世帯の所得状況に応じて支給される特別児童扶養手当等の現金給付など、個別のニーズや状況に応じた支援策を講じており、こうした支援全般を踏まえる必要がございます。近年、障害児に対する福祉サービスを充実することで、その給付額は大幅に拡大してきている。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#4326.88",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "所得制限の段階的減額への見直し検討",
+          "sub_asks": [
+            "段階的な減額方式への見直しを検討すべきではないか",
+            "なぜそれができないのか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "1円超えれば支給がゼロ"
+            },
+            {
+              "type": "number",
+              "excerpt": "1級だと今70万円"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.2
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "児童手当"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "障害福祉サービス"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "特別児童扶養手当"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "vice_minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "個別のニーズや状況に応じた支援策を講じており、こうした支援全般を踏まえる必要がございます。",
+          "score": 0.2
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "制度設計の具体的な改善案（段階的減額）への問いに対し、既存の支援策を列挙して回答を避けており、実質的な回答になっていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「なぜできないのか」という問いを併記しているが、回答者が一般論で逃げやすい形式になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_019",
+      "segment_index": 3,
+      "topic": "障害者施策における所得制限の横断的撤廃",
+      "question": {
+        "speaker": "牛田茉友",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 障害者を取り巻く制度全般で所得制限が設けられているが、省庁横断的に所得制限を取り払う旗振り役を担えないか",
+        "full_text": "吉田茉君。障害者基本政策、子ども政策を所管していらっしゃる木川田大臣にもお伺いしていますけれども、障害自社を取り巻く制度におきまして、所得制限が設けられている制度について、どのように考えておられるか、所長横断的に制度を横断して所得制限を取り払っていただく旗振り役を担っていただきたいと考えておりますが、現在の大臣の所管をお聞かせいただきたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "木川田",
+        "role": "",
+        "summary": "- 個別の支援策のあり方は各省庁で検討・運用されている\n- 障害者政策委員会等で当事者の視点から議論を行い、必要な支援を受けられないことがないよう配慮する視点を重要と考えている",
+        "full_text": "ただいま答弁があったとおり、障害のある方やそのご家族など支援を必要とする方々に向けた個別の支援策のあり方については、所管する各省庁において検討されて運用されております。障害者施策担当大臣としては、共生社会の実現に向けて、障害のある方やその家族が必要な支援を受けられないことがないよう配慮する視点は大変重要であると考えております。内閣府においては、障害のある方やその家族が 委員の半数以上を占める障害者政策委員会で、当事者の視点から充実した議論を行っていただいておりまして、様々な施策について率直なご意見をいただいているところであります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#4326.88",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "障害者制度の所得制限撤廃への考えと意向",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "障害者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "障害者政策委員会"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "障害のある方やその家族が必要な支援を受けられないことがないよう配慮する視点は大変重要であると考えております。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "所得制限の撤廃という具体的な要望に対し、大臣は一般論と委員会の存在に言及するにとどまり、具体的な回答を避けている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "所得制限の撤廃について、具体的にどの制度を指しているのかを明示すれば、より逃げにくい質問になった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_020",
+      "segment_index": 3,
+      "topic": "自転車の幼児用座席への障害児同乗の取り締まり",
+      "question": {
+        "speaker": "牛田茉友",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 障害のある子の通学等で保護者の同乗が不可欠な現実があるが、自転車の幼児用座席に学童期の障害児を同乗させていることのみで取り締まり対象となるのか",
+        "full_text": "障害のあるお子さんを育てるご家庭から不安の声が寄せられております。障害のあるお子さん、1人で通学ができなかったり、公共交通の利用が難しかったりするなど、保護者の葬儀が不可欠という現実がございます。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "赤間",
+        "role": "",
+        "summary": "- 交通事情や安全基準の見直しを踏まえる必要があると考えている\n- 基本的に指導・警告を実施し、単に幼児用座席に学童期の障害児を同乗させていることのみで取り締まり対象となることはない",
+        "full_text": "今、ご指摘の保護者の置かれている状況、またニーズというふうに申し上げたほうがいいのか、こうしたものについては、交通事情の推移だとか、また製品の安全基準に関わる部分も含めて、見直しの状況を踏まえる必要があるんだろうというふうには思っております。自転車の交通違反に対する取り締まりについてでございますけれども、これまでも基本的には指導・警告を実施する。これについては研究を行うこととしているところであり、基本的には、単に自転車の用事用座席に小学校・修学の式に達している障害のあるお子さんを同調させていることのみをもって取り締まりの対象となることはございません。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#4326.88",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "障害児の通学・移動支援への対応",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "障害のあるお子さんを育てるご家庭",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": true,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "研究を行うこととしているところであり",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "自転車の用事用座席に小学校・修学の式に達している障害のあるお子さんを同調させていることのみをもって取り締まりの対象となることはございません。",
+          "score": 0.6
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "質問が具体的な問いかけではなく現状の提示に留まっており、回答も自転車の取り締まりという限定的な範囲への言及に終始している。",
+        "would_be_referenced": "low",
+        "issue_in_design": "現状の説明で終わっており、政府に何を求めるかという具体的な質問形式になっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_021",
+      "segment_index": 3,
+      "topic": "ミニカーの在り方に関する検討状況",
+      "question": {
+        "speaker": "牛田茉友",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 警察庁で立ち上げたミニカーの在り方に関する検討会において、現在どのような検討を行っているか",
+        "full_text": "この自転車の代替となる移動手段が十分に整っていないのではということで、最後1枚を皆様にお配りしたんですけれども、超小型モビリティについてはこれまでも議論が行われてきたと承知しておりますけれども、ミニカーについて、この赤で囲ったところですけれども、2026年に入ってから警察庁でミニカーの在り方に関する検討会を立ち上げたと伺っております。ここについて一言ですね。警察庁として現在どのような検討を行っているのか、短くでよろしいのでお答えいただけたらと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "赤間",
+        "role": "",
+        "summary": "- 安全性を確保しつつ、車両の開発状況に対応した在り方について、関係機関と連携して検討を進めるよう警察庁を指導する",
+        "full_text": "今後においてでございますけれども、ミニカーの安全性、この確保、これをしつつ、車両の開発状況等に対応したミニカーの開き方について、関係機関と連携して検討を進めるよう、警察庁を指導してまいりたいというふうに思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#4326.88",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "警察庁によるミニカーの在り方の検討内容",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "警察庁"
+            },
+            {
+              "type": "date",
+              "excerpt": "2026年に入ってから"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "ミニカー",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "検討を進めるよう、警察庁を指導してまいりたい",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "ミニカーの安全性、この確保、これをしつつ、車両の開発状況等に対応したミニカーの開き方について、関係機関と連携して検討を進める",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な検討内容への回答は得られず、今後の検討方針を述べるにとどまっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「一言で」「短くでよい」という制約を設けたため、回答者が詳細を省きやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_022",
+      "segment_index": 4,
+      "topic": "原油高への対策と現状認識",
+      "question": {
+        "speaker": "司隆史",
+        "party": "公明党",
+        "summary": "- 物価高騰により現場が逼迫しており、政府の対策と現場の認識に温度差があることへの見解を問う",
+        "full_text": "近日、中道立憲民主党、公明党3党で実施をいたしました緊急聞き取り調査、3月27日から4月13日、結果をまともりました。個人、法人合わせて1万2千件を超える現場の逼迫した声、生活事業の両面で深刻な影響が顕在化をしております。迅速な対応が必要な状況ということであるんですけれども、 それを受けて98%の国民の皆さんが物価が上がったという実感、また法人の83.7%がすでに事業に影響がある、今後影響があるという答えた方は97.1%というような状況でございます。重ねて杉尾議員の質問にもありましたけれども、これまで政府はそういったことに対しまして、原油の供給量をしっかり確保している、また流通においての目詰まりを解消する、相談窓口を設置をしているというようなことを繰り返し答弁をいただいておりますけれども、やはり現場の皆様の思いとしては、かなり温度差。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "山田",
+        "role": "",
+        "summary": "- 激変緩和措置により燃料油への支援を行い、価格水準を維持している\n- 元売事業者への直接販売スキーム活用や、系列外への販売要請により供給不安を解消している",
+        "full_text": "類似にわたってお答えしているので、ずっと聞かれていると思うんですけど、まず原油高の影響につきましては、予断をもって回答することは差し控えますが、足元の原油価格の高騰を踏まえ、国民生活と経済活動を守るため、緊急的な激変緩和措置において、これは本党も含め、野党の皆さん方もご協力をいただき、ガソリン、軽油、重油、投油などの燃料油に対して支援を行い、ガソリンの全国平均小売価格は107万円。石油製品の供給の偏りや流通の目詰まりが生じていることから対策を強化しております。具体的には 元売事業者が重要施設に直接販売するスキームを活用し、信用処理施設や車製造に必要なA重要などについて供給不安を解消しているほか、普段の燃料販売店から必要量が確保できないという声に対応するため、大手石油元売事業者に対し、系列事業者かどうかにかかわらず、前年同月比、同量を基本として販売するよう要請をしております。引き続き、国民生活や経済活動への影響を 的確に把握の上、迅速に必要な対策を講じてまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#5578.05",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "物価高騰への政府対応と現場の温度差への見解",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "3月27日から4月13日"
+            },
+            {
+              "type": "number",
+              "excerpt": "1万2千件を超える現場の逼迫した声"
+            },
+            {
+              "type": "number",
+              "excerpt": "98%の国民の皆さんが物価が上がったという実感"
+            },
+            {
+              "type": "number",
+              "excerpt": "法人の83.7%がすでに事業に影響がある"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "元売事業者"
+            },
+            {
+              "type": "number",
+              "excerpt": "107万円"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "迅速に必要な対策を講じてまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "大手石油元売事業者に対し、系列事業者かどうかにかかわらず、前年同月比、同量を基本として販売するよう要請をしております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "質問者が具体的な問いを立てずに現状報告と不満の提示で終えており、回答者も定型的な対策の説明に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "現状の説明に終始しており、「どうすべきか」や「具体的に何を求めるか」という問いが欠落している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_023",
+      "segment_index": 4,
+      "topic": "原油調達の代替ルートとコストへの影響",
+      "question": {
+        "speaker": "司隆史",
+        "party": "公明党",
+        "summary": "- 中東情勢の不透明さから、代替ルートを確保しても原油高が長期化するのではないかという認識を問う",
+        "full_text": "繰り返しのご答弁だったかと思うんですけれども、もちろんご努力いただいている内容については、しっかりと私も発信をさせていただいているんですけれども、やはり現場の皆様がご心配をして、もちろん寮もそうですけれども、やはり現有だか。明確に金額が上がってきているという点に、しっかりと明確な支援をするべきだと思います。今、大体ルートということのお話もあったんですけれども、そこでちょっと1点お伺いしたいんですが、中東情勢自体が不透明であるとともに、油田施設の攻撃もあり、もしホルムズ海峡が開放されたとしても、今まで通り、量も 値段の安定した原油が入ってくるかということも不透明です。つまりどういった状況になったとしても、やはり長期化するということが想定をされます。代替ルートについても、例えばアメリカであれば、これまで中東からは 20日間だったのが60日間になったりということで、日数もかかる。またタンカー等の賃料、いわゆる船のお金も上がってしまう。さらに国際的に共通した問題ですので、国際的な争奪戦ということも考えられなくもないということでございまして、要は原油が入ってきても その現有高自体はですね、やはり長期化するんではないかということは、もうほぼ見通しが立つような不安の内容であると思っておりまして、こういった代替ルートを踏まえたとしても、現有高が続くんではないかという点においては、どのように認識されているんでしょうか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "山田",
+        "role": "",
+        "summary": "- 米国等からの代替調達に目処をつけており、特に米国からの調達を拡大している\n- 輸送日数の増加等により調達コストは増加するが、今後の見通しについて予断をもって回答することは差し控える",
+        "full_text": "まず、原因については、委員も御指摘いただいたように、ホルムズ海峡を通らないルートでの代替調達に最大限重力しております。中東や米国などからの調達で、現時点において4月に前年実績比で2割以上、5月には過半の代替調達にめどがついており、特に米国は5月に前年比、約4倍まで調達が拡大する見込みであります。他方で、調達費用については、原油の市場価格に加えて、要請費用や輸送日数、 川瀬等の影響を受け、一般論として輸送日数が長くなるということで、原油の調達コストは増加することとなります。原油の市場価格につきましては、中東の情勢のみならず、世界経済や エネルギーの需給動向など様々な要因を踏まえて市場で決まるため、今後の調達費用の見通しについて予断をもって回答することは差し控えますが、足元の原油価格の変動を注視しつつ、引き続き事態の長期化も見据え、国民の皆様の命、暮らしを守るため、全力を尽くしてまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#5578.05",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "代替ルート確保後も原油高が長期化するとの認識か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "アメリカであれば、これまで中東からは 20日間だったのが60日間になったり"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "現場の皆様",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "4月に前年実績比で2割以上"
+            },
+            {
+              "type": "number",
+              "excerpt": "5月には過半の代替調達にめどがついており"
+            },
+            {
+              "type": "number",
+              "excerpt": "米国は5月に前年比、約4倍まで調達が拡大する見込み"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "全力を尽くしてまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.6
+        },
+        "oc3_quotability": {
+          "quote_candidate": "米国は5月に前年比、約4倍まで調達が拡大する見込みであります。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "代替ルートの調達実績という具体的な数値が示された点に価値があるが、価格見通しについては予断を避け、精神論的な回答に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "現状認識を問う形式であるため、政府から具体的な対策や期限を切り出させる仕組みになっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_024",
+      "segment_index": 4,
+      "topic": "原油高に伴う財源と需要抑制策",
+      "question": {
+        "speaker": "司隆史",
+        "party": "公明党",
+        "summary": "- 代替ルート調達でもコストが上がり続ける中、限られた財源でどのように不安を払拭するのかを問う",
+        "full_text": "今御答弁いただいたように、丁寧に現状を把握をすると、やはり原油高のコスト。増につながる可能性があるということで明確に答弁をいただきました。ちょっと一問飛ばさせていただいて最終の質問をさせていただくんですけれどもやはり原油高が継続的に上がる代替ルートを調達してもコストが上がり続けるというような要素もあると。かなり噛み合っておりません。量はもちろんですけれども、原油の単価がやはり上がっておりますし、そこを補助金として対応しておりますけれども、そこも限られた財源であるということを申し上げているわけでございまして、その不安を 払拾していただく取組をしっかりやっていただきたいということですので、改めて引き続き質疑させていただきたいと思っております。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "山田",
+        "role": "",
+        "summary": "- 備蓄放出や代替調達により全体の必要量は確保しており、需給への影響はないと考えている\n- 需要抑制策はサプライチェーンごとの事態に合わせて決定すべきであり、現状の取組効果を注視する",
+        "full_text": "まずご理解をいただきたいのは、繰り返し政府が全体量、必要な量を確保しているというのは、パニックになってしまってないといったら、みんなが普段2ヶ月分の在庫を3ヶ月にしたり、4ヶ月になると。全体として必要な量を確保しておるので、我が国の全体の需給については影響が生じているとは考えておりません。こうした備蓄の放出や代替調達の取組を通じて、全体として必要となる量を確保して、一方で今申し上げたような目詰まり、こういったものを解消しており、一つ一つ確実に解消しております。その上で 将来の需要抑制策につきましては、個々のサプライチェーンごとに生じている事態に合わせて、どのように対処していくか決定すべきものであり、中長期の見通しについて予断をもってコメントすることが差し控えますが、いずれにせよ、まずは現在行っている各種の取組の効果を注視する必要があると認識しております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#5578.05",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "原油高によるコスト増への不安を払拭する取組の要望",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "2ヶ月分の在庫を3ヶ月にしたり、4ヶ月になると"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "各種の取組の効果を注視する必要があると認識しております",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "我が国の全体の需給については影響が生じているとは考えておりません。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者が具体的な問いを立てず要望に留まっており、回答者も現状維持の認識を述べるに留まっているため、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "要望ではなく、具体的にどのような対策を求めるのか、あるいは現状の補助金制度の不備はどこにあるのかを問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_025",
+      "segment_index": 4,
+      "topic": "特区民泊における自治体の権限",
+      "question": {
+        "speaker": "司隆史",
+        "party": "公明党",
+        "summary": "- 特区民泊において、自治体が事業者に対して業務停止命令などの措置を講じることが可能かを確認する",
+        "full_text": "続きまして、外国人との秩序ある共生社会についてお伺いをさせていただきます。具体的には特区民泊についてお伺いをさせていただきたいと思います。国家戦略特区区域法において位置づけられている民泊でありますけれども、その9割以上が大阪市でございまして、私の住む地域でありますけれども、 司会長。私が申し上げたいことは、しっかりと話し合いをして、価値的に地域と一緒に民泊を運営していくということが一番大事なんですけれども、一方でお話がどうしても通じない、積み上がっていかない事業者もおられました。自治体が事業者に行うことができるのかできないのか、明確にご答弁をお願いします。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "山田",
+        "role": "",
+        "summary": "- 令和2年の法改正により、都道府県等が認定事業者に対して業務停止命令を出すことが可能となっている",
+        "full_text": "特区民泊につきましては、大阪府、大阪市など自治自治体からの要望も踏まえまして、令和2年に法律改正を行い、認定事業者に対して国家戦略特別区域法第13条第13項に基づき、都道府県等が業務停止命令を出すことが可能となっております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#5578.05",
+      "metrics": null
+    },
+    {
+      "id": "qa_026",
+      "segment_index": 4,
+      "topic": "特区民泊の指導監督体制",
+      "question": {
+        "speaker": "司隆史",
+        "party": "公明党",
+        "summary": "- 規制緩和による事業者の意識の差がある中で、自治体による指導や運用の実効性をどう確保するかを問う",
+        "full_text": "えー、業務停止命令を出すことは可能と。やはり国家戦略特別区域法ということで、いわゆる規制緩和をして、民泊をしていただくという意味において、やはり事業者の 温度というのはやはり緩和をしてもらってやっているというような立場もあると思っておりましてこういった停止のやりとり、指導のやりとりをする中でやはり訴訟 小山審議員 はい、お答え申し上げます。通告していないんですけれども、自治体がそういった指導停止という流れのガイドライン、指導を作っていると。それの実行についてしっかりとフォローをしていただいているということなんですけれども、やはりその元となっている特報。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "山田",
+        "role": "",
+        "summary": "- 立入検査や業務改善命令などの指導監督権限を効果的に活用し、改善に取り組むよう考えている\n- 内閣府としても自治体に寄り添い、適切な運用確保に向けた取組を継続する",
+        "full_text": "まずは、実施自治体において、業務停止命令に加えまして、立入検査、業務改善命令など、国家戦略特別区域法で認められている指導監督権限を効果的に活用し、認定事業者の業務改善に取り組んでほしいというふうに考えておりますけれども、内閣府としても実施自治体に寄り添い、丁寧に相談に乗るとともに、 自治自治体の適切な運用確保に向けた取組を引き続き行ってまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#5578.05",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "特区民泊の指導停止等の運用について",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "国家戦略特別区域法"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "立入検査"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "業務改善命令"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国家戦略特別区域法"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "取組を引き続き行ってまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "実施自治体において、業務停止命令に加えまして、立入検査、業務改善命令など、国家戦略特別区域法で認められている指導監督権限を効果的に活用し、認定事業者の業務改善に取り組んでほしい",
+          "score": 0.4
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "質問文が途切れており不完全ですが、回答側は特区民泊における指導監督権限の活用という一般的方針を述べています。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問が完結しておらず、具体的な問い（何を確認したいのか）が不明確なまま終了している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_027",
+      "segment_index": 4,
+      "topic": "外国人への日本文化・制度の周知",
+      "question": {
+        "speaker": "司隆史",
+        "party": "公明党",
+        "summary": "- 民泊事業者とのコミュニケーションにおいて、日本の文化やルールの理解がハードルとなっている点への対策を問う",
+        "full_text": "すいません、ちょっと2問飛ばしまして、今回民泊の事業者さんといくつかお話をする中で、一番のハードルはやはりコミュニケーション。言語はもちろんですけれども、やはり日本の文化。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "福原",
+        "role": "",
+        "summary": "- 多言語のガイドブックや動画の公表、ポータルサイトによる情報提供を行っている\n- 対話型オリエンテーションの実施や、入国前からの学習プログラムの創設を検討している",
+        "full_text": "外国人との秩序ある共生社会を実現するためには、外国人の方々に日本の文化や制度等を正しく理解していただくことが重要であると考えております。これまでも出入国在留管理庁では、 外国人の方に我が国の制度やルール等を正しく理解してもらえるように、インターネット上で生活就労ガイドブックや生活オリエンテーション動画を多言語で作成公表し、その周知に努めてまいりました。また、ホームページに外国人生活支援ポータルサイトを設けて、 生活上のルール等の情報を100以上の言語に自動翻訳できる形で掲載をしております。さらに、令和6年度からは、民間団体等が主催する外国人を対象とした対話型オリエンテーションに法務省職員も参加をいたしまして、外国人の疑問等を聞いた上で、日本の制度やルール等の説明を行う双方向的な取り組みを思考的に実施してきたところでございます。今年度は国が主体となって、この対話型オリエンテーションを行う予定でございます。また、本年1月に新たに取りまとめられた外国人の受け入れ、秩序ある共生のための総合的対応策において、 法務省が関係省庁等と連携し、入国前の段階も含め、外国人に対し、日本語や我が国の制度、ルール等を学習するプログラムの創設を検討することとされていることを受けまして、現在、法務大臣政務官を長とする省内のプロジェクトチームにおいて、検討を進めているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#5578.05",
+      "metrics": null
+    },
+    {
+      "id": "qa_028",
+      "segment_index": 4,
+      "topic": "外国人共生社会に向けた総合的対応策の推進",
+      "question": {
+        "speaker": "司隆史",
+        "party": "公明党",
+        "summary": "- 現場の視点から見て総合的対応策から漏れている点がある中で、大臣としてどのように前向きに検討し推進するのか、その決意を問う",
+        "full_text": "最後に大臣にお伺いしたいと思います。このように現場に入ってみると、まだまだこの総合的対応策から漏れていること、現場を踏まえた、より前向きな検討というのは多々あると思うんですけれども、そういったことを旗振り役としてされる大臣の御決意をお伺いできますでしょうか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "小野田",
+        "role": "",
+        "summary": "- 民泊の制度的差異への対応を検討しており、国内入国後のルールだけでなく、国外にいる段階からのアプローチも検討する\n- マナー啓発だけでなく、必要であれば制度による制約も含め、各省庁と連携して対策を講じる",
+        "full_text": "答弁あったことは繰り返しませんけれども、総合的対策の中でも、民泊に関しての制度のところにも、やはりちゃんとしなきゃいけないというふうになっていて、民泊が住宅宿泊事業、特区民泊及び監修所に分かれていることにより生じる制度的差異について、対応方策を検討することとしておりますけれども、先ほどおっしゃったように、今のルールというのは、国内に入ってきた人にしか響いていないんじゃないかと。外のいる人に言っているところに関しては、マナーやルールやガイダンスだけで済む問題なのか、それで聞かないんだったらやっぱり制度変えなきゃダメでしょ、制度で縛られるようにしなきゃダメでしょ、というところも私は思っておりますので、そういった視点もしっかり考えた上で、各省庁と連携して対策を行っていきたいと考えます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#5578.05",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "総合的対応策の改善に向けた大臣の決意",
+          "sub_asks": [],
+          "score": 0.9
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "総合的対応策"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "住宅宿泊事業"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "特区民泊"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "監修所"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "対策を行っていきたいと考えます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "マナーやルールやガイダンスだけで済む問題なのか、それで聞かないんだったらやっぱり制度変えなきゃダメでしょ",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "大臣の決意を問う抽象的な質問に対し、民泊制度の差異への言及を含めて答弁している。具体的な期限や仕組みの提示はないため、コミットメントレベルは低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「決意」を問う形式のため、具体的アクションを約束させる拘束力が弱い。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_029",
+      "segment_index": 5,
+      "topic": "令和5年策定の警察組織運営指針の効果評価",
+      "question": {
+        "speaker": "柴田巧",
+        "party": "日本維新の会",
+        "summary": "- 令和5年に出された「警戒の空白を生じさせないための組織運営」指針の効果と目標達成度の評価を問う",
+        "full_text": "この新指針に先立って令和 5年に3年前に、警戒の空白を生じさせないための組織運営という指針通達が出ているわけですが、そこでまずお聞きをしますけれども、この令和5年に出された、これは5年から7年度を対象にしていたものだようですけれども、この通達がどのような効果をもたらしたのか、またどの程度目標が達成されたのか、評価をまずお聞きをしておきたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "森本",
+        "role": "",
+        "summary": "- リソースの再配分による警察組織全体の最適化と、治安課題への的確な対処体制の構築を目指した\n- 警察力最適化サイクル（不断の点検と再配分）が全国警察に定着しつつあると評価している",
+        "full_text": "令和5年7月に策定いたしました警戒の空白を生じさせないための組織運営の指針は、警察組織全体の最適化を図るためのリソースの再配分を行い、現下の治安課題に対して的確に対処するための体制を構築することを目指したものでございました。この指針に基づく令和5年度から7年度までの間の取組により、警察力最適化サイクル、すなわち体制を不断に点検して、警察の執行力が最も効果的に発揮されるよう、リソースを再配分していくという継続的な取組が、全国警察に定着しつつあると評価をしております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#6849.52",
+      "metrics": null
+    },
+    {
+      "id": "qa_030",
+      "segment_index": 5,
+      "topic": "警察組織の構造改革に関する新指針の目的と理由",
+      "question": {
+        "speaker": "柴田巧",
+        "party": "日本維新の会",
+        "summary": "- 今回の新指針が発出された理由と、この指針が目指す目的を問う",
+        "full_text": "新指針なるものが出されたわけですけれども、このタイミングで、この新指針が発出された理由は何なのか、また、この新しい指針が目指すものは何なのか、併せてお聞きをしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "森本",
+        "role": "",
+        "summary": "- 広域的運用による対処能力の強化（サイバー犯罪等への対応）と、組織構造の弾力化（少子高齢化・採用者減少への対応）という2つの課題に対処するため\n- 将来にわたって警察力を維持し、治安課題に的確に対処できる組織であり続けることを目指す",
+        "full_text": "近年、治安情勢及び社会情勢は目まぐるしく変化をしておりまして、警察を取り巻く環境は一層厳しいものとなっており、具体的には主に2つの課題に直面していると認識をしております。1つ目の課題は、広域的運用等による警察の対処能力の強化ということであります。広域化、国際化する現下の重要な治安課題に的確に対処するためには、都道府県警察の枠を超えて、人的・物的リソースを集約し、その広域的運用について、警察庁がより積極的な役割を果たすことが必要となっていると認識しております。2つ目の課題は、警察の組織構造の弾力化ということでございます。こうした社会の変化に柔軟に対応して、優秀な警察官の確保に注力するとともに、警察の組織構造の弾力化や 業務のさらなる高度化、効率化、合理化を推進することが必要となっております。これら2つの課題に対処するため、今般新指針を作成したところでございまして、この指針に基づき、将来にわたって警察力を維持し、治安課題に的確に対処することができる組織であり続けることを目指すこととしております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#6849.52",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "新指針の発出理由と目的について",
+          "sub_asks": [
+            "新指針が発出された理由",
+            "新しい指針が目指すもの"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "新指針"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.2
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "警察庁"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "都道府県警察"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "広域化、国際化する現下の重要な治安課題に的確に対処するためには、都道府県警察の枠を超えて、人的・物的リソースを集約し、その広域的運用について、警察庁がより積極的な役割を果たすことが必要となっている",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "新指針の目的と背景について明確に回答されており、政府の方向性が記録されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_031",
+      "segment_index": 5,
+      "topic": "新指針における業務の効率化・合理化の具体策",
+      "question": {
+        "speaker": "柴田巧",
+        "party": "日本維新の会",
+        "summary": "- 科学技術の進展を踏まえた業務の効率化、合理化および業務負担軽減を具体的にどのように進めるのかを問う",
+        "full_text": "そこで 今回の指針によれば、科学技術の進展や社会情勢等の変化を踏まえた業務の効率化、合理化と業務負担の軽減を図るということも書かれているわけですが、これは具体的にどのように進めていくのかお尋ねをしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "森本",
+        "role": "",
+        "summary": "- AIによる業務処理の高度化、組織横断的なデータ利活用、カメラ映像の活用などを推進する\n- 通達の廃止や内容修正など、業務ルールの必要性を絶えず吟味する\n- 技術・会計部門を含め、部門横断的かつ戦略的に推進する",
+        "full_text": "近年の科学技術の急速な進展を背景といたしまして、現下の治安課題は著しく専門家高度化、 公益化、国際化しておりまして、警察としても科学技術を活用して、例えば組織横断的な情報データの利活用、AI等による業務処理の高度化、効率化、地域警察活動や交通取締り活動等におけるカメラ映像の活用といった取り組みを推進する必要があると認識しております。また社会情勢などの変化を踏まえまして、業務やルールの必要性を絶えず吟味し、 通達の廃止や内容の修正などの措置も講じてまいりたいと考えております。こうした取組につきまして、事件捜査等の業務を主管する部門だけではなく、技術施策部門、あるいは会計部門も含めまして、部門横断的かつ戦略的に推進してまいる所存でございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#6849.52",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "指針にある業務効率化等の具体的推進方法",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "今回の指針"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "AI等による業務処理の高度化"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "カメラ映像の活用"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "通達の廃止や内容の修正"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "推進してまいる所存でございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "AI等による業務処理の高度化、効率化、地域警察活動や交通取締り活動等におけるカメラ映像の活用といった取り組みを推進する必要があると認識しております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "指針の具体化を問う質問に対し、AI活用や通達の見直しなど具体的な方向性が示されており、一定の情報量がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「具体的にどのように」という問いに対し、期限や数値目標を求める形式にすれば、より拘束力のある回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_032",
+      "segment_index": 5,
+      "topic": "新指針の実施担保と進捗管理の仕組み",
+      "question": {
+        "speaker": "柴田巧",
+        "party": "日本維新の会",
+        "summary": "- 指針が確実に推進されるよう、進捗状況の把握・管理・公表などの担保する仕組みを設けるべきではないかと問う",
+        "full_text": "そういう改革をぜひ進めていってもらいたいと思いますが、 今もお話がありましたけれども、この新しい指針に基づく取組が確実に実施されるように、先ほども申し上げましたが、ただ通達を、指針を出せばいいというものではなくて、定期的に進捗状況を把握、管理、公表をするなど、同指針が、新たな指針が推進されていることを担保する仕組みが必要なのではないかと、そう考えますが、 警察署長のお考えをお聞きをしたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "森本",
+        "role": "",
+        "summary": "- 新指針に取組時期を明記し、長官を本部長とする「将来を見据えた警察組織の構造改革推進本部」を設置した\n- 一定期間経過後、取組全体の進捗を国家公安委員会に報告し、公表する予定である",
+        "full_text": "委員御指摘のとおり、本指針を確実に実行に移していくためには、的確な進捗管理がポイントとなると考えておりまして、今般の新指針におきましては、多くの取組につきまして、どの時期までに何を行うべきかにつきましても、併せて明記をしております。その上で、これらの取組を確実に実行していくため、警察庁におきましては、長官を本部長とする、将来を見据えた警察組織の構造改革。また今般の新指針の策定から、一定の期間が経過した時期に、取組全体の進捗につきまして、国家公安委員会に報告した上で、公表もしてまいりたいと、このように考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#6849.52",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "新指針の推進を担保する仕組みの必要性への見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "警察庁"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国家公安委員会"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 3,
+          "trigger_phrase": "国家公安委員会に報告した上で、公表もしてまいりたい",
+          "matched_pattern": "future-tense verb describing a CONCRETE government action with a named mechanism"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "取組全体の進捗につきまして、国家公安委員会に報告した上で、公表もしてまいりたいと考えております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "新指針の実効性を担保する仕組みについて問い、回答者が「国家公安委員会への報告と公表」という具体的なアクションを提示したため、記録的価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_033",
+      "segment_index": 5,
+      "topic": "交番・駐在所の在り方の見直しと地域住民への配慮",
+      "question": {
+        "speaker": "柴田巧",
+        "party": "日本維新の会",
+        "summary": "- 交番や駐在所を機械的に削減せず、地域の事情や治安情勢を勘案し、関係者の理解を得て実施すべきではないかと問う",
+        "full_text": "したがって、いろんな業務の見直しはもちろん不可欠ですし、どんどんやってはいただきたいと思いますけれども、今申し上げた交番なり駐在所なり、そういったものを簡単に機械的にとかばっさりとなくしてしまうのが決していいことではないのではないかと。この地域の事情や治安情勢なども十分勘案をして、関係者の理解も得ながら実施をしていくべきものではないかと思いますが、国家公安委員会委員長のご見解をお聞きしたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "赤間",
+        "role": "",
+        "summary": "- リソース再配分において「ばっさり」という考え方は基づかない\n- 住民の意見を十分に聞き、不安要素を払拭した上で、地域ごとの治安情勢を踏まえて進めることが重要である\n- 幅広い関係者と丁寧な意思疎通を図るよう警察を指導する",
+        "full_text": "委員、今まさにご指摘のとおり、いわゆるこのリソースの再配分、ここをばっさりという考え方、これには基づかないというふうに理解をしております。とりわけ、各警察署等の管轄区域内にお住まいの住民の方々のご意見、これを十分に聞く必要があるというふうに考えております。これを図った上で、地域ごとの治安情勢等を踏まえて警察の取組を進めること、これは極めて重要であるというふうに認識をしております。こうした観点から、地域住民の方々 また関係機関団体、幅広い関係者と丁寧な意思疎通、これを図ることが重要であると思っております。そうしたことを通して警察組織の構想改革を取り組み、これを進めるよう警察を指導してまいりたいというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#6849.52",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "交番・駐在所廃止のあり方への見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "関係者",
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "進めるよう警察を指導してまいりたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "リソースの再配分、ここをばっさりという考え方、これには基づかないというふうに理解をしております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "交番等の機械的な廃止に反対する議員に対し、委員長が同意し、住民の意見を聴取することを強調したやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "具体的な運用基準や判断指標を問う形式にすれば、より実効性のある回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_034",
+      "segment_index": 5,
+      "topic": "警察組織の構造改革を通じた信頼回復と今後の取り組み",
+      "question": {
+        "speaker": "柴田巧",
+        "party": "日本維新の会",
+        "summary": "- 不祥事対策や人的基盤の問題をクリアし、国民の期待と信頼に応える組織を作るためにどのように取り組むのかを問う",
+        "full_text": "先般も 警察の不祥事対策、あるいは採用の問題等々、人的基盤の問題についても取り上げましたが、この構造改革を進めていくことによって、そういった問題もクリアできるように、クリアを目指していくことも必要だと思っていますが、いずれにしても、この改革を進めて、今申し上げた警察組織を目指していただきたいと思いますが、どのように取り組んでいかれるのか、委員長にお聞きをしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "赤間",
+        "role": "",
+        "summary": "- 目の前の治安課題への対応と、将来を見据えた構造改革のバランスを取りながら推進する\n- 若い世代を含め、改革の必要性について認識を共有することが大切である\n- 警察庁と都道府県警察が緊密に連携し、中長期的な視点で着実に進めるよう指導する",
+        "full_text": "警察においては、先ほど答弁あるとおり、まず目の前にある重要な治安課題への的確な対応、併せて将来を見据えた警察組織の構造改革、こういった異なる時間軸の対策を両者バランス取りながらだというふうに思っております。そうしたことを踏まえて、警察組織を将来にわたって運営していくことになる若い世代を含め、 将来を見据えた取組の必要性について、確実に認識、これを共有していくこと、これが大切だということを思っております。その上で、警察庁と都道府県警察、これが緊密に連携をして、今般の新指針に盛り込まれた取組が、中長期的な視点に立ちつつ、一つ一つ着実に進められるよう、警察を指導してまいりたいというふうに思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#6849.52",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "警察組織の構造改革への取り組み方",
+          "sub_asks": [],
+          "score": 0.9
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "警察組織",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "警察庁"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "都道府県警察"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "新指針"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "警察を指導してまいりたい",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "今般の新指針に盛り込まれた取組が、中長期的な視点に立ちつつ、一つ一つ着実に進められるよう、警察を指導してまいりたい",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "構造改革への取り組みを問う質問に対し、新指針に基づき指導するという一般的回答に留まっており、具体的なアクションプランは示されていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのように取り組むか」という抽象的な問い方であるため、回答も抽象的な方針表明に終始している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_035",
+      "segment_index": 5,
+      "topic": "警察施設の浸水対策と機能維持",
+      "question": {
+        "speaker": "柴田巧",
+        "party": "日本維新の会",
+        "summary": "- 多くの警察施設が浸水想定区域内にある現状をどう受け止めているか、また継続運用計画の整備にどう取り組むのかを問う",
+        "full_text": "そこで、今申し上げたこの浸水区域、想定区域に本部や 省など156施設があることが明らかになりましたが、どのように受け止めているのか。また、浸水対策の充実は、この災害時の継続運用計画の整備が急務だと考えますが、どのように取り組むのか、国家公安委員長にお聞きをします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "赤間",
+        "role": "",
+        "summary": "- 警察施設は災害時の司令塔であり、機能維持対策は重要であると認識している\n- 止水板の設置、電気設備のかさ上げ、代替施設の選定などの取組が進められている\n- 浸水対策が着実に実施されるよう警察庁を指導する",
+        "full_text": "これは災害発生時にはまさに対応の拠点であり、また司令塔機能がそこにあるべきであります。これを策定をして、これを踏まえて、全国の都道府県警察においては、個々の実情を踏まえて浸水対策に関する計画、これを策定した上で、具体的には、止水板であるとか土納の設置等により浸水を防止する。さらには、被災した場合の、いわゆる大体、大外施設、これを選定をする、などなどの様々な取組、これが進められているものというふうには承知をしております。引き続き、警察施設、先ほどの話のとおり、重要な拠点でありますので、浸水対策、これが着実に、確実に実施されるよう、警察庁を指導してまいりたい、そう考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#6849.52",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "浸水想定区域内の施設への対策と取り組み",
+          "sub_asks": [
+            "浸水想定区域に156施設あることへの受け止め",
+            "継続運用計画の整備と具体的な取り組み"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "156施設"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "本部や省",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "止水板"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "土納"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "大体、大外施設"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "浸水対策、これが着実に、確実に実施されるよう、警察庁を指導してまいりたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "止水板であるとか土納の設置等により浸水を防止する。さらには、被災した場合の、いわゆる大体、大外施設、これを選定をする",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "浸水対策の具体策（止水板等）に言及しているが、今後のコミットメントは指導するという精神論に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どのように受け止めているか」という主観的な問いが含まれているため、回答が抽象的になりやすい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_036",
+      "segment_index": 5,
+      "topic": "若年層の薬物乱用対策と啓発活動",
+      "question": {
+        "speaker": "柴田巧",
+        "party": "日本維新の会",
+        "summary": "- SNS等で薬物が容易に入手できる現状に対し、取り締まりの強化および関係機関と連携した啓発活動にどう取り組むのかを問う",
+        "full_text": "今、SNSなんかで、 容易にこのタイマーなど薬物が手に入る時代になっているということもあって、これが広がっていると思いますけれども、そこで警察としても、若者の薬物事犯の取り締いの強化をしっかりやっていくことが必要だと。同時に、啓発という非常に重要な局面に来ていると思いますので、学校や自治体や家庭も含めて、関係機関と連携した違法薬物対策を やっていくことが求められると思いますが、どのように取り組んでいくのか、最後に国家公安委員長にお聞きをして終わりたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "赤間",
+        "role": "",
+        "summary": "- 違法行為者の徹底した検挙と、薬物乱用を許さない社会機運の醸成に努める\n- 若年層向け広報啓発や、ネット上の有害情報の排除などの複合的な対策を推進する\n- 「第6次薬物乱用防止5カ年戦略」に基づき、水際対策や未然防止策を関係省庁と連携して講じる",
+        "full_text": "今、委員の方から、いわゆる若年層に対する対魔等の乱用に対する取り組みということでございますが、まず警察では、違法行為者に対する徹底した検挙。さらに、若年層が安易に対魔等の薬物、これに手を出さないように、若者をターゲットとした広報啓発活動。さらには、インターネット上における違法、有害情報、この排除等々、複合的な対策、これを推し進めております。これに基づいて、落物乱用の根絶を図るため、関係省庁等と緊密に連携をして、薬物の密輸入阻止に向けた水際対策、薬物乱用未然防止対策等を講じております。引き続き、これらの対策を適切に推進をして、薬物事犯の取り締まりの徹底、薬物乱用を許さない機運な情勢を図られるよう、警察をしっかり指導してまいりたいと思っています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#6849.52",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "若者の違法薬物対策への取り組みについて",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "若者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "インターネット上における違法、有害情報、この排除"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "水際対策"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "警察をしっかり指導してまいりたいと思っています",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "違法行為者に対する徹底した検挙、若者をターゲットとした広報啓発活動、インターネット上の有害情報排除など、複合的な対策を推し進めております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "若年層の薬物対策という一般的テーマに対する、概括的な政府方針の回答である。具体的な新施策や期限はなく、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのように取り組むか」という抽象的な問いであるため、回答も一般論に留まっている。具体的な連携手法や目標数値を問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_037",
+      "segment_index": 6,
+      "topic": "ギャンブル等依存症の現状と傾向",
+      "question": {
+        "speaker": "大津力",
+        "party": "参政党",
+        "summary": "- 近年のギャンブル等依存症が疑われる人数の推移について\n- 依存症の傾向について",
+        "full_text": "まず最初でございますけれども、まずは近年のギャンブル依存症、ギャンブル等依存症が疑われる人数の推移と、また傾向についてお尋ねいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "野村",
+        "role": "",
+        "summary": "- 令和5年度の調査では、過去1年で依存が疑われる割合は1.7%で、令和2年度の1.6%からほぼ横ばいである\n- 依存症が疑われる人のうち、コロナ前よりネットギャンブルの量が増えた人は19.9%と、非依存症者の3.6%に比べ高い傾向にある",
+        "full_text": "今お尋ねいただきました、ギャンブル等依存症の疑い人数、これを統計的には把握をしていないところではありますけれども、令和5年度に独立行政法人国立病院機構の栗浜医療センターが実態調査を行いました。その中では有効回答数のうち、過去1年におけるギャンブル等依存が疑われるものの割合は1.7%でございました。これはその前、令和2年度に調査した同様の調査では、 1.6%ということでございましたから、そういう意味ではほぼ横ばいではございます。そうした中で、ギャンブルと依存症が疑われる方のうち、新型コロナウイルス感染症の拡大前と比較をして、インターネットを利用したギャンブルの量が増えたという回答された方は19.9%となっておりまして、これはギャンブル依存症が疑われる方以外の方の方では3.6%であったということと比べると、そういう意味ではちょっと高い割合が出ていたという傾向がございました。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#8087.66",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "ギャンブル等依存症の疑い人数の推移と傾向",
+          "sub_asks": [
+            "疑われる人数の推移",
+            "傾向"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "ギャンブル等依存症が疑われる人",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "独立行政法人国立病院機構の栗浜医療センター"
+            },
+            {
+              "type": "number",
+              "excerpt": "1.7%"
+            },
+            {
+              "type": "number",
+              "excerpt": "1.6%"
+            },
+            {
+              "type": "number",
+              "excerpt": "19.9%"
+            },
+            {
+              "type": "number",
+              "excerpt": "3.6%"
+            }
+          ],
+          "score": 0.9
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.6
+        },
+        "oc3_quotability": {
+          "quote_candidate": "過去1年におけるギャンブル等依存が疑われるものの割合は1.7%でございました。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "政府が統計的に把握していないことを認めつつ、栗浜医療センターの調査結果を用いて具体的な数値で回答しており、記録としての価値が高い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_038",
+      "segment_index": 6,
+      "topic": "ギャンブル等依存症による自殺の現状",
+      "question": {
+        "speaker": "大津力",
+        "party": "参政党",
+        "summary": "- ギャンブル依存症を理由に命を絶つ若者の事例があるが、日本の現状はどうか",
+        "full_text": "内閣総理大臣。中でですね、それを理由に命を絶ってしまったという若者の本当に悲しい事例を耳にしております。今、日本の現状はどのような現状かお尋ねいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "伊沢",
+        "role": "",
+        "summary": "- 令和7年（※発言通り）のギャンブル等を自殺の原因動機とする件数は395件である\n- 年齢別では20代から50代が多く、特に20代（74件）、30代（91件）、40代（90件）、50代（88件）となっている",
+        "full_text": "令和7年における不採、ギャンブル等を自殺の原因動機とする件数は395件となっております。これを年齢階級別に見ますと、 20代から50代が多く、20代が74件、30代が91件、40代が90件、50代が88件となっております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#8087.66",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "若者の自殺の現状について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "若者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "395件"
+            },
+            {
+              "type": "number",
+              "excerpt": "20代が74件"
+            },
+            {
+              "type": "number",
+              "excerpt": "30代が91件"
+            },
+            {
+              "type": "number",
+              "excerpt": "40代が90件"
+            },
+            {
+              "type": "number",
+              "excerpt": "50代が88件"
+            }
+          ],
+          "score": 1.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "令和7年における不採、ギャンブル等を自殺の原因動機とする件数は395件となっております。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "現状を問う質問に対し、具体的な統計数値で回答しており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「現状」という問い方が抽象的なため、回答者がどの切り口の統計を出すか制御できていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_039",
+      "segment_index": 6,
+      "topic": "依存症本人および家族への支援策",
+      "question": {
+        "speaker": "大津力",
+        "party": "参政党",
+        "summary": "- 本人や家族に寄り添うどのような支援策を展開しているか",
+        "full_text": "自治を選ばないといけないとそれだけ追い詰められているということでございますけれどもやはり背景にはこういった状況を自分で抱えてしまって相談する人がいないとそういったことで追い込まれて最終的にそちらを選ぶしかなかったということでございますからやはりいくら追い込まれたとしましてもこれは 相談ができるそういう状況があるんだということをやはり知らしめる必要があるんだと思っております。そういった意味ではその本人やまた家族の方々にやはり心から寄り添うようなそういう支援策が必要だと思うんですね。じゃあ政府としましてはそうした本人や家族の方々にどういうように寄り添うような支援策を展開しているのかお尋ねをいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "野村",
+        "role": "",
+        "summary": "- 精神保健福祉センターや保健所での相談支援、自助グループ等の支援機関への接続体制を整備している\n- 民間団体の活動支援や、特設サイトを通じた普及啓発、相談窓口情報の周知を行っている\n- 依存症が病気であることを周知し、寄り添った支援体制づくりに取り組んでいる",
+        "full_text": "ギャンブルと依存症に悩まれるご本人であるとか、あるいはそのご家族、こういった方々が身近な場所で相談を行って、そして回復に向けて支援を受けられる、こういった体制を作っていくことが重要な課題だというふうに考えております。今、厚生労働省の方では、具体的に取組例といたしましては、青春保健福祉センターでございますとか、保健所で相談支援を行うといったこと、そしてそこから必要の維持で、自助グループであるとか、他の支援権をつなぐとか、といったような都道府県での相談支援体制の整備をするであるとか。あと依存症問題に取り組んでおられる民間団体の活動への支援を行うであるとか、あとはご指摘のように、確かにこういった支援があるということを知っていただくことも大事でございます。さらに依存症というのは病気であるということを知っていただくことも大事でございますので、特設サイトなどを通じて依存症に関する普及啓発でございますとか、全国の相談窓口事事業グループの情報の周知といった取り組みなどを行っているところでございます。こうした取り組みなどを通じまして、ギャンブル等依存症に苦しむご本人であるとか、 お家族に対して寄り添った支援を行えるような体制づくりに取り組んでいきたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#8087.66",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "本人や家族に寄り添う支援策の展開状況",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "本人や家族",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "精神保健福祉センター"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "保健所"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "自助グループ"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "特設サイト"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "寄り添った支援を行えるような体制づくりに取り組んでいきたいと考えております",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "精神保健福祉センターでございますとか、保健所で相談支援を行うといったこと、そしてそこから必要の維持で、自助グループであるとか、他の支援権をつなぐとか、といったような都道府県での相談支援体制の整備をする",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "依存症支援策に関する具体的な窓口（精神保健福祉センター等）が提示されており、回答の具体性は一定程度あるが、今後のコミットメントは精神論的なレベルに留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どういうように寄り添うか」という抽象的な問いであるため、回答も既存施策の列挙に留まりやすく、具体的な改善策を引き出す設計になっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_040",
+      "segment_index": 6,
+      "topic": "子どものゲーム障害の現状",
+      "question": {
+        "speaker": "大津力",
+        "party": "参政党",
+        "summary": "- 子どものゲーム障害の現状について、政府はどう認識しているか",
+        "full_text": "続きまして4点目、4点目と5点目はちょっとすいません、割愛させていただきまして、次の6点目、子どものゲーム障害についてお尋ねをさせていただきます。近年、子どものゲーム障害がかなり懸念と上がっておりまして、ゲームに夢中に なかなか時間を守れなくなってしまったり、中にはもう夜遅くまでこうやって、もう寝不足になって、学校ではもうぼーっとしちゃっているとか、悪い場合にはもう居眠りもしちゃっているとか、そこまで飲り込んでしまう、そういうような話も聞きますが、まずはこのゲーム障害の現状、政府はどのように認識をしているかお尋ねいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "野村",
+        "role": "",
+        "summary": "- 栗浜医療センターの調査（令和6年度）では、若年層（10-29歳）のゲーム行動症疑いの割合が、テストにより2.4%または10.3%という結果であった\n- 年齢が低いほど問題のあるゲーム利用のリスクが高まる傾向にあると受け止めている\n- 引き続き科学的知見の収集などによる実態把握を検討していく",
+        "full_text": "子どものゲーム障害でございますけれども、これも先ほどのギャンブル依存症のニーズとなりますが、このゲーム障害の子どものニーズそのものは把握はしておりませんが、先ほどご紹介しましたが、栗浜医療センターで令和6年度に調査を行いました。ネットゲーム仕様と生活習慣に関する実態調査という調査でございますが、この中で2種類のスクリーニングテストによってゲーム行動症疑いのものの割合という調査をしております。この実態調査によると、ゲーム行動症疑いの方は、IGD10というスクリーニングテストでは、調査対象者全体では0.7%。うち若年層、10代から29歳までの方では2.4%。ちょっと子供に絞った数字ではないのは恐縮ですけど、この若年層は2.4%。またゲームズテストという、もう一つ別のスクリーニングテストでは対象者全体で3.8%、若年層では10.3%といった結果でありまして、年齢が低いほど、病的なと言いましょうか、問題のあるゲーム医療のリスクが高まるという傾向を示されたもの等に受け止めております。厚生労働省といたしましては、引き続きこの実態の把握でございますが、科学的知見の集約、収集、こういったものを検討してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#8087.66",
+      "metrics": null
+    },
+    {
+      "id": "qa_041",
+      "segment_index": 6,
+      "topic": "義務教育機関における依存症予防教育",
+      "question": {
+        "speaker": "大津力",
+        "party": "参政党",
+        "summary": "- ギャンブル依存症などの知識を学校で教えるべきではないか（予防教育の現状について）",
+        "full_text": "続きまして義務教育機関の予防教育というテーマで質問させていただきますがこのギャンブル依存症に関しての知識がやはり私たちも 特に学校でこういったことを教わったこともありませんでしたから、実際私がギャンブル依存症の方に支援をする活動をしたときに、例えば借金を肩代わりするとか、そういった良かれと思ったことが実は全然無意味だったですとか、なぜ辞められないんだろうって理解ができなかったりとかあったんですが、やはりそういったことは国民みんながなり得るものだとなる可能性がある。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "上山",
+        "role": "",
+        "summary": "- 高校の保健体育では、物質依存症に加え、ギャンブル等の習慣化が日常生活に悪影響を及ぼすことを学習する\n- 中学校では一律ではないが、学習指導要領に基づき、ストレスへの適切な対処や専門家への相談の重要性について指導している",
+        "full_text": "学校教育におきましては、心の健康につきまして、学習指導に基づいて発達段階に応じた内容というものを系統的に指導するということにしてございます。現行の学習指導要領におきましては、高等学校の保健体育課において精神疾患の予防と回復について学習すると、その際にアルコールや薬物などの物質への依存症に加えてギャンブル等は習慣化すると、私域行動になる危険性があり、日常生活にも悪影響を及ぼすことなどを学ぶことになってございます。また、先ほどご指摘のあった中学校でございますけれども、ギャンブルと依存症につきまして、一律に扱うということにはなってございませんけれども、学習指導理に基づいて、欲求やストレスへの対処と心の健康に関しまして、心の健康を保つには、欲求やストレスに適切に対処する必要があるということなどについて、子どもたちが正しく理解し、適切に行動できるように指導がなされているというところでございます。ご指摘のありました相談ですとかについては前段で先生が相談できることの大切さもご指摘があったとおりでございますけれども中学校におけるこうしたストレスへの対処や心の不健康に関する指導に際しましてはストレスの対処には専門家などに相談したりすることも含むいろいろな方法があってその中から状況に応じた対処の仕方を選ぶことが大切であることなどを理解できるように指導するということになってございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#8087.66",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "義務教育機関でのギャンブル依存症予防教育について",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "学習指導要領"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "高等学校の保健体育課"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "高等学校の保健体育課において精神疾患の予防と回復について学習すると、その際にアルコールや薬物などの物質への依存症に加えてギャンブル等は習慣化すると、私域行動になる危険性があり、日常生活にも悪影響を及ぼすことなどを学ぶことになってございます。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者が具体的な問いを立てず、自身の体験談と一般論で終えているため、形式上は「問い」になっていない。回答側は現状の学習指導要領に基づいた教育内容を具体的に説明しており、情報の価値はある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "体験談で終わらず、「義務教育段階でギャンブル依存症の予防教育を導入すべきか」などの具体的な問いに変換すべきである。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_042",
+      "segment_index": 6,
+      "topic": "IR・カジノ設置と依存症対策",
+      "question": {
+        "speaker": "大津力",
+        "party": "参政党",
+        "summary": "- 依存症が増える懸念がある中で、カジノを設置することは経済優先ではないか\n- 依存症対策を含め、カジノ設置についてどのような見解か",
+        "full_text": "このIR、その中のカジノの設置についての依存症が今、なかなか減らない、そしてまた自治まで至ってしまう、こういうような状況の中で、新たな依存症を増やす可能性がある、新たなカジノを設置するということに関して、大変懸念を抱いております。ある意味、そうした依存症が増えるかもしれないのに、それを作るということは、 人の命よりも経済を優先してしまうんではないかというような、何かそういった国民に対してメッセージを発してしまうんではないかということで、私は大変懸念をしております。そういった状況の中、このギャンブル依存症への対策も含めて、このカジノについてどのような見解か赤間大臣にお尋ねいたします。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "赤間",
+        "role": "",
+        "summary": "- 入場回数の制限、入場料の負荷、マイナンバーによる本人確認、家族等の申出による利用制限など、重層的な依存防止対策を制度的に整備している\n- カジノ管理委員会による厳格な規制の実施を通じて、健全な運営を確保していく",
+        "full_text": "赤間国務大臣 IR整備法においてのいわゆる家事の行為に対する依存防止対策でございますけれども、日本人等を対象としたいわゆる入場等の回数の制限、また入場料の負荷、さらにはマイナンバーカウント等による厳格な本人確認、また本人家族等の申出による利用制限の措置など、重層的なまた段階的な取組が 制度的に整備はされております。その上で、カジノ事業の健全な運営、これが確保される、その必要性のためには、高い独立性を有するカジノ管理委員会が、カジノ事業免許の審査、ここを含めても厳格なカジノ規制の実施、これに取り組んでいく必要があると思っておりますので、しっかりと取り組みを進めてまいりたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#8087.66",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "カジノ設置と依存症対策に関する見解",
+          "sub_asks": [],
+          "score": 0.9
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "IR整備法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "マイナンバーカウント"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "カジノ管理委員会"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "しっかりと取り組みを進めてまいりたいと思います",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "入場等の回数の制限、また入場料の負荷、さらにはマイナンバーカウント等による厳格な本人確認など、重層的な取組が制度的に整備はされております。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "依存症対策という抽象的な懸念に対し、法制度上の具体的措置を列挙して回答している。コミットメントは精神論に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どのような見解か」という問い方が広すぎるため、具体的な対策の不備を突く形式にすればより踏み込んだ回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_043",
+      "segment_index": 7,
+      "topic": "女性活躍と男女共同参画の考え方",
+      "question": {
+        "speaker": "大門実紀史",
+        "party": "日本共産党",
+        "summary": "- 女性活躍や男女共同参画に関する大臣の考えを問う",
+        "full_text": "大臣のお考えいかがですか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "岩田",
+        "role": "",
+        "summary": "- 多様性が尊重される社会の実現は、個人の生きがいだけでなく経済社会のイノベーションや持続的発展に不可欠である\n- 関係省庁と連携し、しっかりと取り組む",
+        "full_text": "菅田内閣読明担当大臣 女性活躍、男女共同参画は、全ての人が個性と能力を十分に発揮し、生きがいを感じられる、多様性が尊重される社会を実現するとともに、我が国の経済社会にイノベーションをもたらし、持続的な発展を確保する上でも不可欠な要素であると考えております。担当大臣として、関係省庁と連携し、しっかりと取り組みたいと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#9075.94",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "大臣の考えを問う質問",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "しっかりと取り組みたいと思っております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "女性活躍、男女共同参画は、全ての人が個性と能力を十分に発揮し、生きがいを感じられる、多様性が尊重される社会を実現するとともに、我が国の経済社会にイノベーションをもたらし、持続的な発展を確保する上でも不可欠な要素であると考えております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問が極めて抽象的であり、回答も一般的・理念的な内容に留まっているため、記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "具体的にどの政策や課題についての考えを問いたいのかを明示させるべきである。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_044",
+      "segment_index": 7,
+      "topic": "選択的夫婦別姓制度の導入",
+      "question": {
+        "speaker": "大門実紀史",
+        "party": "日本共産党",
+        "summary": "- 経団連の要望や実業家の経験を踏まえ、経済的視点からも選択的夫婦別姓を直ちに実現すべきではないか",
+        "full_text": "まさにその点で急がれるのが選択的夫婦別姓でございます。この問題は自分の性を名乗り続けたいというアイデンティティの問題とか人権の問題、あるいは女性差別撤廃の問題という点からも一刻も早く実現しなければいけませんが、同時にこの問題は経済の問題でもあります。昨年衆議院の法務委員会の参考人に来られた、経団連のダイバーシティ推進委員長の杉原恵子さんですね。選択的夫婦別姓を一貫して要望されてきたわけですね。杉原さんは次のように法務委員会で述べておられまして、ダイバーシティはイノベーションの源泉だと。経団連が実施した調査によりますと、91%の企業が旧姓の通商指標を認めている一方で、税や社会保障の手続や、結婚や離婚などのプライバシーに関わる情報管理におきまして、企業としても大きな負担が生じていると。さらに、会社の女性役員の88%が通商使用が可能であっても、何かしらの不便や不利益があると、アンケートでは回答していると。何よりも、杉原さん自身がビジネス上使い続けてきた名称と名前と、戸籍名が違うということによって、不都合不利益を長年感じた経験を持つ。大門実紀史： 実は、先月の経団連の会長の記者会見でも、このことは強く述べられているわけでございます。本気で強い経済を目指すならば、選択的夫婦別的実現に、私はもう直ちに踏み出すべきだと思いますが、大臣、かがですか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "岩田",
+        "role": "",
+        "summary": "- 導入の是非については、国民各層の意見や国会での議論の動向を踏まえる必要がある\n- 現状では、社会生活で不便や不利益を感じる方を減らす取り組みを推進している",
+        "full_text": "選択的夫婦別人制度の導入の是非については、国民各層の意見や国会における議論の動向等を踏まえる必要があると考えております。一方で、夫婦別人を進めるにあたっては、社会生活で不便や不利益を感じる方をさらに減らすことができるよう、政府として中年取り組んできました。さらに、この取り組みを進めてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#9075.94",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "選択的夫婦別姓の導入に賛成か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "経団連"
+            },
+            {
+              "type": "other",
+              "excerpt": "ダイバーシティ推進委員長の杉原恵子さん"
+            },
+            {
+              "type": "number",
+              "excerpt": "91%の企業が旧姓の通商指標を認めている"
+            },
+            {
+              "type": "number",
+              "excerpt": "会社の女性役員の88%が通商使用が可能であっても、何かしらの不便や不利益があると"
+            },
+            {
+              "type": "past_answer",
+              "excerpt": "昨年衆議院の法務委員会の参考人に来られた"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.9
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "経団連",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "この取り組みを進めてまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "選択的夫婦別人制度の導入の是非については、国民各層の意見や国会における議論の動向等を踏まえる必要がある",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な根拠を提示して導入を迫る質問に対し、大臣は定型的な回答に留まり、具体的なコミットメントはなかった。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「大臣、いかがですか」というオープンな問いかけのため、回答者が逃げ道を作りやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_045",
+      "segment_index": 7,
+      "topic": "旧姓使用拡大案が過去に不採用となった理由",
+      "question": {
+        "speaker": "大門実紀史",
+        "party": "日本共産党",
+        "summary": "- 1996年の法制審議会において、旧姓使用の拡大（C案）が採用されなかった理由は何か",
+        "full_text": "それで同じ答弁が繰り返されると思うので、聞きたいのはですね、1996年の法制審議会。実はこの旧正使用の拡大というのが、A、B、C、3つの案のうちのC案として、一旦検討されましたけれども、採用されなかったんですね。法務省、なんで通商使用の拡大、採用されなかったんでしょうか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "竹林",
+        "role": "",
+        "summary": "- 個人の人格的利益を保護する理念が後退すること\n- 法的性質や氏との関係など理論的に困難な問題が生じること\n- 戸籍実務における通称名との混同を招き、理論を複雑にする恐れがあること",
+        "full_text": "平成8年までの法制審議会による調査審議におきましては、民法改正し、夫婦は同一の有事を称するものとする現行の制度を維持しつつ、民法に有事と異なる故障という概念を導入し、婚姻によって有事を改めた夫婦の一方が、婚姻前の有事を事故の故障として使用することを法律上承認する案も検討されました。平成7年9月に公表された婚姻制度等の見直し審議に関する中間報告の説明によりますと、この案につきましては、制度上は夫婦の一方が婚姻によって有事を改めることになるから、個人の有事に対する人格的利益を法律上保護するという理念が後退していること、有事とは異なる故障という概念を民法に導入することになると、その法的性質は何か。宇治との関係をどのように捉えるかなど、理論的に困難な新たな問題が生ずること。この民法上の故障は、現在戸籍実務において用いられている故障上の宇治との混同を生じさせ、宇治の理論を一層複雑難解なものにする恐れがあることなどの観点から採用されなかったものと承知しております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#9075.94",
+      "metrics": null
+    },
+    {
+      "id": "qa_046",
+      "segment_index": 7,
+      "topic": "旧姓使用拡大による根本的解決の可否",
+      "question": {
+        "speaker": "大門実紀史",
+        "party": "日本共産党",
+        "summary": "- 過去の法制審議会でも「解決にならない」として不採用となった旧姓使用の拡大を今になって進めることは、根本的な解決にならないのではないか",
+        "full_text": "当時の論文とか国会の調査室の資料とか、いろいろ探してやっと見つけたのが、総合社会科学研究、98年3月版なんですけど、当時の経過を書いてございまして、今おっしゃったようなことをまとめて、関係と言いますと、96年当初の前からですね、ABC案、A案は別姓、B案が同姓、C案が 通商市場の拡大。このC案が採用されなかった理由は簡単に言えば長期的な展望を絶ったうちの制度としては採用することは相当でないと今おっしゃったようなことをすると解決にならないということで通商市場の拡大は採用されなかったわけですね。そういうことを今になって拡大しようと。こういうことをおっしゃっているわけですけど、これでは何の解決にもならないんじゃないですか。大臣いかがですか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "岩田",
+        "role": "",
+        "summary": "- 旧姓使用の拡大により、社会生活で不便や不利益を感じる方をさらに減らすことができると考えており、その方向性を強めていきたい",
+        "full_text": "その上で、 9時使用の拡大、これについては先ほど述べたとおり、社会生活で不便や不利益を感じる方をさらに減らすことができるということで、さらにその方向性を強めていきたいというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#9075.94",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "通称使用拡大は解決にならないのではないか",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "総合社会科学研究、98年3月版"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "方向性を強めていきたいというふうに考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "社会生活で不便や不利益を感じる方をさらに減らすことができるということで、さらにその方向性を強めていきたい",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "過去の資料に基づいた批判的な問いに対し、大臣は抽象的な意向を述べるに留まっており、実質的な議論は進んでいない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "問いが「解決にならないのではないか」という反語的な形式であるため、大臣が肯定・否定を明確に答えにくい構造になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_047",
+      "segment_index": 7,
+      "topic": "選択的夫婦別姓への反対根拠",
+      "question": {
+        "speaker": "大門実紀史",
+        "party": "日本共産党",
+        "summary": "- 旧姓使用の拡大では根本解決にならず、合理的根拠もない中で、なぜ選択的夫婦別姓の導入に反対し続けるのか",
+        "full_text": "いえいえ、私が申し上げているのは、 不便を減らすとか不利益を減らすとかいう方向そのものが根本的な解決にならないということで、96年の法制審査も知りづけられているわけでございます。なんで選択的夫婦別姓に必要に反対するのかと。合理的根拠は全く見当たらないわけでございまして、一つ思うのは自民党の中の議連であります創生日本などが、 日本会議もバックにあると思うんですけれども、要するに戦前のようなですね、家制度、復興主義、そういう家族間を押し付けようとするところに、この問題の皆さんが抵抗するもとがあるんじゃないかと思うんですね。今そんなことを考えているときなのかと。政府が国民に特定の家族間を強制するとか、復興主義を押し付けるということそのものはですね、もちろん人権阻害して女性差別を温泉するんですけれども、経済の足そのものを引っ張っていると。なぜ反対するのか。なぜダメなのか。お答えいただけますか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "岩田",
+        "role": "",
+        "summary": "- 導入の是非については、国民各層の意見や国会における議論の動向を踏まえる必要がある",
+        "full_text": "繰り返しとなりますが、政府としては、選択的夫婦別次制度の導入の是非については、国民各層の意見や国会における議論の動向を踏まえる必要があるというふうに考えているということでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#9075.94",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "選択的夫婦別姓に反対する合理的根拠は何か",
+          "sub_asks": [],
+          "score": 0.9
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "96年の法制審査"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自民党の中の議連であります創生日本",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "政府としては、選択的夫婦別次制度の導入の是非については、国民各層の意見や国会における議論の動向を踏まえる必要がある",
+          "score": 0.2
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "反対の合理的根拠を問う質問に対し、政府は議論の動向を踏まえるという定型的な回答に終始しており、実質的な情報価値はない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "感情的な主張や推測が多く、具体的な根拠を求める問いが埋没している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_048",
+      "segment_index": 8,
+      "topic": "自衛官による海外での交通事故への対応",
+      "question": {
+        "speaker": "伊勢崎賢治",
+        "party": "れいわ新選組",
+        "summary": "- カンボジアPKOおよびハワイでの交通事故の発生原因\n- 該当自衛官への刑事責任の追及および処分の有無\n- 懲戒処分の累計水準",
+        "full_text": "伊勢崎議員 まず、1992年の10月、1993年の1月と7月、国連PKOのカンボジア派遣、これアンタックでございますね。これにおいて、自衛官が職務中に車両を運転していた際の交通事故が3件発生し、3件とも現地のカンボジア人が死亡いたしました。また、時間を経て、2024年、最近です。ハワイ、カウアイ島でリムパック参加のため、派遣中の自衛官が運転するレンタカーと、現地民間人運転のバイクが衝突し、バイクの運転手が死亡いたしました。この合計4件について、3つ質問したいと思います。事故の概要、これ時間があらないので、なぜ起きたかだけで結構であります。2、該当自衛官の刑事責任です。刑事責任です。が問われたかどうか、現地、日本側も含めて立憲もしくは処分の有無です。3つ目が懲戒処分がなされたなら、累計水準、可能な範囲でお願いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "宮崎防衛副大臣",
+        "role": "",
+        "summary": "- カンボジアPKO事故は隊員の過失が認められ、減給等の懲戒処分を実施\n- ハワイの事故は現在調査中\n- いずれの事件においても日本側での刑事処分は行われていない",
+        "full_text": "ご指摘の交通事故につきましては、いずれも自衛隊員が職務を従事する中で車両を運転している最中に発生した交通事故でございます。まず、カンボジアPKOの事故につきましては、それぞれ事故原因に自衛隊員の過失が認められるということで、関係者に対して言及等の 懲戒処分を行っております。また、ハワイにおけるものにつきましては、現在調査中でございます。そして、これら事件につきまして、日本側での刑事処分は行われていないということでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#9990.06",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "自衛官による海外での交通事故4件の概要と責任追及について",
+          "sub_asks": [
+            "事故の原因（なぜ起きたか）",
+            "現地および日本側での刑事責任・起訴・処分の有無",
+            "懲戒処分の累計水準"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "1992年の10月、1993年の1月と7月"
+            },
+            {
+              "type": "organization",
+              "excerpt": "国連PKOのカンボジア派遣"
+            },
+            {
+              "type": "other",
+              "excerpt": "ハワイ、カウアイ島でリムパック参加のため"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自衛官",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "カンボジアPKO"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ハワイ"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "これら事件につきまして、日本側での刑事処分は行われていないということでございます。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "過去の事故と直近の事故について具体的に質問しているが、回答は概括的であり、特に懲戒処分の水準などの詳細な回答が得られていない。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が3点に分かれているため、回答者が個別の詳細（特に処分の水準）を省略しやすい構成になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_049",
+      "segment_index": 8,
+      "topic": "護衛艦夕切による米軍機誤射事件への対応",
+      "question": {
+        "speaker": "伊勢崎賢治",
+        "party": "れいわ新選組",
+        "summary": "- 1996年の米軍機誤射事故が単なる捜査手順の誤りだったのか、指揮命令系統に問題があったのか\n- 刑事責任の追及および日本側での立憲・処分の有無\n- 懲戒処分の実施状況",
+        "full_text": "時間が前後しますけれども、同じ林泊、これも1996年、昔の話ですけれども、この訓練中に、 護衛官の遊戯が、米海軍の攻撃機を、米海軍の攻撃機を、機関砲で誤射し、搭乗員が負傷するという、同盟国、アメリカに対する、極めて重大な、これなんて言うんでしょう、遊軍誤爆事件、遊軍に対する誤爆事件が発生いたしました。改めて、この事故は、単なる捜査手順の誤りだったのか。これ、指揮命令系統、これ。指揮命令系統も含みます。に対して、1、刑事責任が問われたのか。日本側の立憲、処分の有無、そして懲戒処分が行われたか。これをお答えください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "宮崎防衛副大臣",
+        "role": "",
+        "summary": "- 攻撃指揮官が位置確認せず命令を出し、訓練全体指揮官が中止を命じなかったことが主因\n- 安全規定の厳格化やダブルチェック体制の制度化などの再発防止策を講じた\n- 関係者11名に停職等の懲戒処分を行ったが、刑事処分は行われていない",
+        "full_text": "先生ご指摘の平成8年6月4日のリンパックに参加中の護衛官、夕切が20ミリ機関砲を誤射して、訓練標的を抵抗していた米軍機を撃墜する事故がございました。事故調査をいたしました、攻撃指揮官である法来庁が米軍機の位置を確認しないまま攻撃開始命令を出したこと、また、訓練全体の指揮官である官庁が法来庁の命令が早すぎたことに気づかずに射撃中止を命じなかった点が事故の主たる原因であるというふうに認めているところでございます。その上で、ご指摘のように、 セーフティープロトコルの見直しなどについてでありますが、この件に受けまして、射撃に関する安全規定を厳格化しております。規定の遵守を徹底するとともに、ダブルチェック体制を明確化し、そしてこれを制度化するなどの措置を講じて、事故の再発防止を図っているところであります。また、関与した退院に関する処分でございますが、関係者11名に対して定職等の懲戒処分を行っております。刑事処分につきましては、これは行われていないところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#9990.06",
+      "metrics": null
+    },
+    {
+      "id": "qa_050",
+      "segment_index": 8,
+      "topic": "国外犯処罰規定の不在と海外任務の在り方",
+      "question": {
+        "speaker": "伊勢崎賢治",
+        "party": "れいわ新選組",
+        "summary": "- 国外犯処罰規定の不在により「法の空白」が生じている現状への認識\n- 法整備が完了するまで、新たな海外任務の開始を凍結し、現行任務の在り方を根本的に見直すべきではないか",
+        "full_text": "現地政権も裁けず、日本も裁けず、これは国会派処罰規定不在の問題ですよね。つまり、責任の所在が消えてしまう。これを法の空白と呼びます。これが生まれます。被害者の人権は苗頭にされ、任務を遂行した隊員は法的に宙づりの状態に置かれ、そして日本の国際的な信頼は地に落ちます。これこそが、6年前に防衛大臣が検討を表明したにもかかわらず、放置され続けている国外反処罰規定不在の問題であります。この法の空白を埋める法整備が完了するまでの間、少なくとも新たな海外任務の開始は凍結するべきではないでしょうか。そして、現在活動中の任務においても、 その在り方を根本的に見直すべきではありませんが、これは地縁基地の一時、封鎖、活動停止も視野に入れる、僕は入れております。この僕の提言、どうでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "宮崎防衛副大臣",
+        "role": "",
+        "summary": "- 海外活動の多様化・増加を踏まえ、国外犯処罰規定の必要性や在り方について検討を継続している\n- 隊員の服務規律の重要性を踏まえ、適切に検討していく",
+        "full_text": "伊勢崎議員 海外での活動が一層多様化、増加しているという状況を踏まえまして、隊員の過失行為に係る国外犯処罰規定の必要性やその在り方につきましては、我が国の法律が日本国民が国外で過失により人を支障させた場合に、国外犯処罰規定が設けられていないということを踏まえて、様々な検討を続けさせていただいているところでございます。ご指摘がありました点含めて海外派遣部隊の隊員の服務規律というのは非常に重要であります。そのあり方も含めてしっかり普段に検討してまいりたいと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#9990.06",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "国外犯処罰規定不在に伴う海外任務の凍結・見直しの是非",
+          "sub_asks": [
+            "新たな海外任務の開始を凍結すべきではないか",
+            "現在活動中の任務の在り方を根本的に見直すべきではないか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "past_answer",
+              "excerpt": "6年前に防衛大臣が検討を表明した"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "任務を遂行した隊員",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "しっかり普段に検討してまいりたいと思っております",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "隊員の過失行為に係る国外犯処罰規定の必要性やその在り方につきましては、様々な検討を続けさせていただいている",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な任務凍結の提言に対し、政府側は「検討を続けている」という一般論で回答しており、実質的な回答を避けている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「凍結すべきか」というYes/No形式の問いに、検討状況という異なるレイヤーで回答させる隙を与えている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_051",
+      "segment_index": 8,
+      "topic": "国外犯処罰規定に関する議員立法の提案",
+      "question": {
+        "speaker": "伊勢崎賢治",
+        "party": "れいわ新選組",
+        "summary": "- 国外犯処罰規定に関する議員立法を提案する場合、政府は協力するか",
+        "full_text": "宮崎大臣、今僕ね、議員立法でもう作っちゃおうかな、提案しようかなと思ってるんですけど、協力していただけますか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "宮崎防衛副大臣",
+        "role": "",
+        "summary": "- 提案がなされた場合には、内容をしっかりと確認したい",
+        "full_text": "政府としてもご提出いただいた場合には、これをしっかりまずは確認をさせていただきたいと思っているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8967#9990.06",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "議員立法の提案への協力可否",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "しっかりまずは確認をさせていただきたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "政府としてもご提出いただいた場合には、これをしっかりまずは確認をさせていただきたい",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "議員立法の提案に対する協力要請に対し、大臣は「確認する」という意向を示すに留まっており、具体的な協力の約束はなされていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "具体的な法案の内容や目的を提示せずに協力を求めているため、回答が抽象的にならざるを得ない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    }
+  ],
+  "score_schema_version": "2.0",
+  "prompt_version": "V4"
+}

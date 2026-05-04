@@ -1,0 +1,4862 @@
+{
+  "pairs": [
+    {
+      "id": "qa_001",
+      "segment_index": 1,
+      "topic": "航空機燃料への補償と供給確保",
+      "question": {
+        "speaker": "加田裕之",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 航空運賃高騰による路線維持の困難さやサーチャージ検討の現状を説明\n- 航空機燃料への対応および供給確保について問う",
+        "full_text": "本日はとりわけですね、航空機燃料についてお伺いしたいと思います。インバウンド、アウトバウンド、国内観光の需要が伸びている中で、円安に加えまして、大きな支出増につながるのが航空運賃であります。地方におきましては、地域経済にも大きく影響の与える重要な交通インフラでありますので、そういった路線維持自体が大変難しく、減便や撤退にもつながる恐れがあります。インバウンドにおいては、訪日客の減少、国民の海外への渡航機会も大変薄くなっております。あの現況ではですね、国政線については、年有サーチャージの大幅な値上げが行われますが、国内線につきましては、一部地方航空会社を除きまして、ほとんどの会社が自助努力により回避しておりますが、運賃の値上げも用意でないためにですね、数社においては、来年4月から国内線のサーチャージの検討が行われております。航空各社のですね、長期的な経営を考えております。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "枠田資源燃料部長",
+        "role": "",
+        "summary": "- 航空機燃料への補償はガソリン補助額の4割とし、残りは航空会社の自助努力で補う考えである\n- 国土交通省と連携し、価格動向を注視して必要な対応を行う\n- 石油精製業者へ前年同月比同量の供給確保を要請している",
+        "full_text": "まず中東情勢を踏まえました緊急的な激減緩和措置における航空機燃料への補償でございますけれども、ガソリンへの補助額の4割としているところでございます。これは航空機燃料高騰による費用増のうち6割程度はサーチャージによる収入などの 航空会社の取組により補うことができるという考え方に基づくものでございます。私どもといたしましては、引き続き航空業界を所管する国土交通省と連携をいたしまして、原油、それから航空機燃料の価格動向を注視をしながら、国民生活と経済活動を守るために必要な対応をしっかり行ってまいりたいと考えてございます。それから航空燃料の量の確保でございますけれども、これは石油生成業者に対しまして、前年同月比同量を基本として供給量を 確保するよう要請を行っているところでございまして、航空燃料の安定的な供給に向けて万全を期してまいりたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#1903.7",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "航空機燃料高騰への対応と路線維持について",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "来年4月から"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "地方航空会社",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "ガソリンへの補助額の4割"
+            },
+            {
+              "type": "number",
+              "excerpt": "6割程度はサーチャージによる収入などの 航空会社の取組により補うことができる"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "必要な対応をしっかり行ってまいりたい",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "航空機燃料高騰による費用増のうち6割程度はサーチャージによる収入などの航空会社の取組により補うことができるという考え方に基づく",
+          "score": 0.7
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "質問者が具体的な問いを立てずに現状説明で終えてしまったため、回答者は想定される課題（補助金と供給量）について一般論的に回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "現状の説明に終始しており、「～についてどう考えるか」「～を求める」といった具体的な問いかけが欠如している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_002",
+      "segment_index": 1,
+      "topic": "物流業者への関税・消費税立て替えの違法性",
+      "question": {
+        "speaker": "加田裕之",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 関税等の立て替えを不当な利益提供として違法とする認識がある一方で、運用基準に乖離がある点を指摘\n- 現場が混乱しないよう、明確なガイドラインの策定や公取委の見解を求める",
+        "full_text": "次ですね、厚生取引委員会が示す関税立て替えに関しまして、お伺いしたいんですけれども、過去の令和4年度、令和6年度の公取調査結果とかですね、令和6年3月の国会答弁で、財務大臣も厚生取引 議員会の答弁をお聞きになられた上で、是正されることが必要だと答弁されています。令和七年十月の パブリックコメントでの回答におきましては、輸入通貨業務において発生する関税、消費税の支払いを中小自宅業者に立て替えさせることは、不当な経済上の利益の提供要請として本法上問題となりますと、立て替え自体が違法。という認識を示しているにもかかわらず、運用基準の方においては、禁止行為という表現が一歩、一歩どころか何歩も後退していると思います。国会の審議でもたびたび取り上げられて問題となっておりますが、厚生取引委員会の認識と運用基準との開きがありますのが、実際の見解というのはいかがなものでしょうか。先日もこの国会におきまして官房審議官が最終的には個別事案ごとの判断となるとしましてあくまでの一般論ということで濁しておりますけれども荷主がその取引先である物流業者に対しまして本来荷主が納めるべき関税や消費税の支払いを立て替えさせあわせてこれらの手続にかかる手数料などを負担させることで中小 住宅事業者の利益を不当に害する場合には取り適法上の問題となる恐れがあると答弁をされております。正直あのゴールポストがですね定まっていないところに今回の私は混乱の原因があるんではないかと思っております。個別事案ごとの対応というのはもちろん理解できるんですがしっかりとしたですね ガイドラインというものがないのが、私は問題であると思っております。混乱しないようにですね、やるのが私は公取の責務であると考えますが、厚生取引委員会にその件について所見をお伺いしたいと思います。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "茶谷委員長",
+        "role": "",
+        "summary": "- 荷主に本来納めるべき関税等を物流事業者に立て替えさせ、利益を不当に害する場合は独占禁止法上の問題となる恐れがある\n- 個別の事案に応じて総合的に判断する必要があるため、一般論としては「恐れがある」という回答になる",
+        "full_text": "一般論として申し上げれば、荷主がその取引先である物流事業者に対して、本来、荷主が収まるべき関税や消費税の支払いを立て替えさせることによって、物流事業者の利益を不当に害する場合には、独占禁止法上、優越的地位の乱用として問題となる恐れがございます。独占禁止法は抽象的な規定ぶりとなっており、最終的な個々の事案に応じて、さまざまな要素を総合的に考慮して、個別に判断する必要があることから、一般論としてお答えする以上は恐れというお答え 加藤大臣 市長。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#1903.7",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "公取委の認識と運用基準の乖離およびガイドライン策定への所見",
+          "sub_asks": [
+            "認識と運用基準の開きがあることへの見解",
+            "ガイドラインがないことへの所見"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "令和4年度、令和6年度の公取調査結果"
+            },
+            {
+              "type": "date",
+              "excerpt": "令和6年3月の国会答弁"
+            },
+            {
+              "type": "date",
+              "excerpt": "令和七年十月の パブリックコメントでの回答"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "中小住宅業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "独占禁止法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "優越的地位の乱用"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "物流事業者の利益を不当に害する場合には、独占禁止法上、優越的地位の乱用として問題となる恐れがございます。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は運用基準の不備とガイドラインの必要性を訴えているが、回答者は一般論としての法解釈を繰り返すに留まっており、具体的な改善への言及がない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「所見を伺いたい」という抽象的な問い方であるため、回答者が一般論で逃げる余地を与えてしまっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_003",
+      "segment_index": 1,
+      "topic": "中堅・中小企業支援予算の維持と現場の声の反映",
+      "question": {
+        "speaker": "加田裕之",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 中堅中小企業支援予算の多くが補正予算に依存しており、当初予算化の際に削減される懸念を表明\n- 現行の予算規模を維持・拡充する方針か、および予算総額を維持するための措置を問う\n- 現場の声を聴くための「車座集会」のような取り組みについて提案する",
+        "full_text": "次ですね、中堅、中小企業支援予算についてお伺いします。現在、先ほど1問目でも申し上げました、イラン情勢も先行き不透明な中で、我が兵庫県の方におきましてはですね、 うちの県のある化学工業の方では、原材料の調達が難しくなって、取り合いみたいな要素を呈していると。今後、原材料が不足すると経営に影響が出るため、代替品がない中、そしてあるいは海外から調達が可能かを検討を始めている。それからまた、 京王府県内の輸送機械の製造業の方は、現時点では生産停止や減産など、直接的な生産の影響はないけれども、一部材料におけるばらつきが出てきていると。価格高騰と在庫の逼迫の情報が入りつつあるということで、大変不安を募らせているのが現状です。中堅 中小企業向けの予算というのは、当初予算では約1000億なんですけれども、総額1兆円の規模のうち、多くが補正予算に依存しているのが現状であります。政府は補正予算の当初予算化を公約に掲げておりますが、この中堅中小支援予算は補正であるがゆえに、 不要削減可能な性質なものでは断じてないと申し上げたいと思います。省エネの設備投資や賃上げ支援、事業承継、デジタル化促進など、いずれも中小企業の構造的課題に対応する向上的政策的必要性の高い施策で、地域の雇用を守る砦でもあります。補正から当初へという流れの中で、この1兆円規模の予算が実質的に削減や縮小がされることはあってはならないと思います。そこで、落ち政務官にお伺いしたいんですけれども、中小・小規模支援予算につきまして、当初予算化を進める際にも、現行の予算規模を維持・拡充する方針であるかどうか。それから、また、当初予算への移行プロセスにおきまして、予算総額がめべりしないよう、どのような措置を講じる考えであるか、御答弁いただきたいと思います。この予算の継続拡充は地域存続、私は国家的使命であると思いますので、御所見を併せてお伺いしたいと思います。それでもう一点、車座集会の提案も、党の方でもちょっとお渡ししたんですけれども、その点についてもいかがかどうかということについてお伺いしたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "大地経済産業大臣政務官",
+        "role": "",
+        "summary": "- 賃上げ環境の整備や設備投資支援など、重要な予算措置を継続的に実施している\n- 筋肉質な強い中堅中小企業を応援できるよう、引き続き全力を尽くす\n- 特別相談窓口等で意見を伺っており、現場に寄り添い施策につなげていく",
+        "full_text": "昨今の中東情勢、物価高をはじめ、中堅中小企業の経営環境は大きく変化しておりますが、その中であっても、稼ぐ力の強化と賃上げの好循環によって、強い経済を実現していくことが重要であると考えております。これまで経済産業省としましても、価格転換、取引適正化の徹底、成長投資や省力化、生産性向上支援、 事業承継、M&Aによる事業再編などの施策を着実に実行しているところでございます。委員御指摘のように、こういった取組を支える予算措置は非常に重要であり、例えば、令和8年度投資予算では、取引適正化や伴走支援体制の整備などの予算を措置し、令和7年度補正予算では、売上高100億円を目指す中小企業に対する成長投資支援や、 中堅中小企業の設備投資支援補助金など、特に賃上げ環境の整備に資する予算を措置し、現在執行しているところでございます。引き続き、予算措置を含めた施策が行き渡り、筋肉質な強い中堅中小企業を目指して経営を行っている中小企業を全力で応援できるよう、全力を尽くしてまいります。また、中東情勢につきましては、全国に設置した約1000カ所の特別相談窓口などで、 お声を伺っているところでございます。私も中小企業の経営者の一人であった目線を生かしながら、現場の皆様にしっかりと寄り添いながら、各地域や業界などの意見を伺い、施策につなげてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#1903.7",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中堅中小企業支援予算の当初予算化と規模維持について",
+          "sub_asks": [
+            "当初予算化の際、現行の予算規模を維持・拡充する方針か",
+            "予算総額が目減りしないようどのような措置を講じるか",
+            "車座集会の提案に対する考えはどうか"
+          ],
+          "score": 0.4
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "当初予算では約1000億"
+            },
+            {
+              "type": "number",
+              "excerpt": "総額1兆円の規模"
+            },
+            {
+              "type": "organization",
+              "excerpt": "兵庫県の方におきましてはですね、 うちの県のある化学工業の方"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "兵庫県の化学工業・輸送機械製造業",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "令和8年度投資予算"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "令和7年度補正予算"
+            },
+            {
+              "type": "number",
+              "excerpt": "売上高100億円を目指す中小企業"
+            },
+            {
+              "type": "number",
+              "excerpt": "約1000カ所の特別相談窓口"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "全力で応援できるよう、全力を尽くしてまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "筋肉質な強い中堅中小企業を目指して経営を行っている中小企業を全力で応援できるよう、全力を尽くしてまいります。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "予算規模の維持・拡充という核心的な問いと、車座集会の提案という具体的な要望に対し、明確な回答を避けて一般論と既存施策の列挙に終始している。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問が多岐にわたるため、回答者が都合の良い部分だけを抽出して答える余地を与えてしまっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_004",
+      "segment_index": 1,
+      "topic": "原子力発電所の定期検査サイクルの長期化",
+      "question": {
+        "speaker": "加田裕之",
+        "party": "自由民主党・無所属の会",
+        "summary": "- エネルギー安全保障の観点から、原発の定期検査サイクルを現行の13ヶ月より長い期間に見直すべきと提案し、見解を問う",
+        "full_text": "続きまして、次の質問に入りますけれども、GXの実現のためには、3Eといわれます、環境、経済性、供給安定性の観点から、原発の役割というのは大変大きいと考えております。現在、国内で15基の原発が再稼働しており、どの原子力発電所におきましても、営業運転後、 最長13か月以内に定期検査を実施する必要があります。定期検査実施時期というのは、原子炉等規制法におきまして、最長13か月以内、18か月以内。24ヶ月以内と3つの時期が示されておりますが、全ての発電所が13ヶ月となっております。点検サイクルが伸びましたら、稼働率が向上するだけではなく、エネルギー安全保障という観点から見ても、13ヶ月より長い期間へ見直す必要があると私は考えておりますが、赤澤大臣の御所見をお伺いしたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "赤澤経済産業大臣",
+        "role": "",
+        "summary": "- 安全性の確保を大前提に、定期検査の効率化や運転サイクルの長期化は重要であると認識している\n- 事業者が規制当局と13ヶ月から15ヶ月への長期化に向けた議論を進めていることを承知しており、経産省としても後押ししたい",
+        "full_text": "原子力はエネルギー安全保障に寄与する脱炭素効果の高い電源でございます。安全性の確保等地域のご理解を大前提に最大限活用してまいります。設備利用率の向上に向けては、安全性の確保を大前提に、定期検査の効率化や運転サイクルの長期化といった取組を進めることも重要と承知をしております。特に委員御指摘の運転サイクルの長期化については、事業者が規制当局と現行の13ヶ月から15ヶ月への長期化に向けた技術的課題などについての議論を進めているところであると承知をしております。経済産業省としても、安全性の確保を大前提に、こうした産業界の取組を 後押しをしてまいりたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5221"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#1903.7",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "原発の定期検査サイクルの長期化への見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "15基の原発が再稼働"
+            },
+            {
+              "type": "law",
+              "excerpt": "原子炉等規制法"
+            },
+            {
+              "type": "number",
+              "excerpt": "最長13か月以内、18か月以内。24ヶ月以内"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "13ヶ月から15ヶ月への長期化"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "こうした産業界の取組を 後押しをしてまいりたいと思います",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "事業者が規制当局と現行の13ヶ月から15ヶ月への長期化に向けた技術的課題などについての議論を進めているところであると承知をしております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "原発の運転サイクルの長期化という具体的な論点に対し、大臣が現状の議論（13ヶ月から15ヶ月へ）を認めた点で記録的価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_005",
+      "segment_index": 2,
+      "topic": "石油化学製品の供給目詰まりの実態調査",
+      "question": {
+        "speaker": "古賀之士",
+        "party": "立憲民主・無所属",
+        "summary": "- 石化製品（シンナー、断熱材、塩ビ等）の供給不安がある中、サプライチェーン全体の能動的な調査体制を構築しているか",
+        "full_text": "石化製品と建設業について、そのシンナーと断熱材、塩ビの供給に不安が生じているということは、今申し上げたとおりでございます。政府はこの間、目詰まりという単語を使っていらっしゃいますけれども、この目詰まりの実態について、サプライチェーン全体を、経産省さん、俯瞰した、能動的な調査体制を構築されているのか、参考人に伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "畑田審議官",
+        "role": "",
+        "summary": "- 日本全体で必要量は確保できているが、一部で供給の偏りや目詰まりがあることを認識している\n- 業界団体への積極的なアプローチやヒアリングを実施し、影響把握に努めている",
+        "full_text": "原油や石油製品については、日本全体として必要となる量を確保できているわけでございますが、一方で足元では、一部で供給の偏り、また供給の目詰まりが生じているものと認識をしております。ご指摘の調査に関するやり方ですけれども、経済産業省としては、企業業界団体に対して積極的にこちら側からアプローチをしてヒアリングを実施するということで、 影響の把握に努めるとともに、中等情勢を踏まえた石油化学製品の供給上 小川委員長。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#2980.36",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "サプライチェーンの能動的な調査体制の有無",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "シンナーと断熱材、塩ビの供給に不安"
+            },
+            {
+              "type": "other",
+              "excerpt": "目詰まりという単語"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "建設業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "経済産業省"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "企業業界団体"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "影響の把握に努める",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "経済産業省としては、企業業界団体に対して積極的にこちら側からアプローチをしてヒアリングを実施するということで、影響の把握に努める",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "サプライチェーンの目詰まりに対する調査体制について問うており、回答はヒアリングによる把握に努めるという一般的水準に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「能動的な調査体制」の定義を具体化（例：定期的な報告義務化やデータベース構築など）して問えば、より具体的な回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_006",
+      "segment_index": 2,
+      "topic": "石油化学製品の買い占め・中抜きの有無",
+      "question": {
+        "speaker": "古賀之士",
+        "party": "立憲民主・無所属",
+        "summary": "- 供給の「目詰まり」の実態として、中抜きや買い占めが行われている可能性はあるか",
+        "full_text": "じゃあ目詰まりという言葉をよく使われますけれども、じゃあこれよく言われます。中抜きされてるんじゃないだろうか。あるいはどっかで買い占めされてるんじゃないだろうかと。そういう実態があるのかないのか、まず経産省さんからお尋ねをいたします。そういった実態はございますでしょうか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "畑田審議官",
+        "role": "",
+        "summary": "- 川上企業からの供給未定情報を慎重に捉えた出荷量低減や、不安による一部事業者の過剰注文などの事例が見受けられる\n- タスクフォースにおいて重要物資の供給状況を総点検し、目詰まりを解消している",
+        "full_text": "先ほど申し上げたとおり、日本全体としては必要となる量を確保できていると認識しておりますが、他方で供給の偏りや流通の目詰まり、こういうことが生じていることは認識をしておりまして、例えで申し上げますと、一つは川上企業からの供給未定と。こういう情報を慎重に捉えて、新南メーカーの方で出荷の量を低減させると、こういったケースですとか、あるいは別の例で申し上げますと、供給の先行き、これに関する不安を抱く一部の事業者が、前年同月を上回る量の注文を行うと、こういうことの結果として、潤滑油の調達に困難をきたしたケース、こういうものが見受けられております。この事例を含めまして、赤澤大臣のもとに設置したタツクフォースにおいて、重要物資の供給状況を総点検をして、供給の偏り、また目詰まりを一つ一つ確実に解消しているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#2980.36",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "流通の目詰まりや中抜き・買い占めの実態はあるか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "赤澤大臣のもとに設置したタスクフォース"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "一つ一つ確実に解消しているところでございます",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "供給の先行きに関する不安を抱く一部の事業者が、前年同月を上回る量の注文を行うことで、潤滑油の調達に困難をきたしたケースが見受けられております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "流通の目詰まりという抽象的な問いに対し、潤滑油の具体例を挙げて実態を認めた点で価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「中抜き」という言葉が具体的に何を指すのか（手数料の搾取か、流通経路の遮断か）を定義して問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_007",
+      "segment_index": 2,
+      "topic": "独占禁止法に基づく買い占め・中抜きへの対応",
+      "question": {
+        "speaker": "古賀之士",
+        "party": "立憲民主・無所属",
+        "summary": "- 公正取引委員会として、現状で中抜きや買い占めは見受けられるか、またその対応はどうなっているか",
+        "full_text": "厚生取引委員会として、同様の質問でございます。中抜きや買い占めなどは、現在、現状見受けられるのでしょうか。また、その対応はどうなっているのでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "茶谷委員長",
+        "role": "",
+        "summary": "- 個別の経営判断による仕入れ・販売量設定は独禁法上の問題とはならないため、買い占め自体を焦点とした実態把握は所管省庁が行っている\n- 複数の事業者が連絡を取り合い価格を釣り上げる不当な取引制限があれば、厳正に対処する",
+        "full_text": "各事業者が現在の受給状況や将来の受給未として等を踏まえて、各々の経営判断で製品の仕入れ量、販売量や販売価格を設定している場合には、そのこと自体を独占禁止法上問題とすることはできないものですから、厚生取引委員会としては御指摘のような買い占めや売り惜しみ、それ自体を焦点とした実態把握等を行う立場ではなく、これらについては各業界の所管省庁において対応してきているものと承知しておりますが、 独占禁止法との関連で申し上げますと、一般論として、複数の事業者が相互に連絡を取り合って、価格を共同で釣り上げるような行為については、独占禁止法において不当な取引制限として禁止されており、このような違反行為がありますれば、厳正に対処することとしているところでございます。先ほど重なりますが、各々の経営判断で販売料や仕入れ料ある価格を設定すること、それ自体を独占禁止法上問題にすること。問題とすることはできませんが、複数の事業者が相互に連絡を取り合って、価格を釣り上げる等の行為がございますれば、厳選に対処してまいりたいと考えているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#2980.36",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中抜き・買い占めの現状と対応について",
+          "sub_asks": [
+            "中抜きや買い占めが現状見受けられるか",
+            "その対応はどうなっているか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "独占禁止法"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "厳選に対処してまいりたいと考えている",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "各々の経営判断で製品の仕入れ量、販売量や販売価格を設定している場合には、そのこと自体を独占禁止法上問題とすることはできない",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "独占禁止法上の解釈（個別の経営判断は問題ないが共同行為は禁止）を明確に述べており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「中抜き」という言葉の定義が曖昧なため、回答者が独禁法上の「不当な取引制限」に限定して回答せざるを得なくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_008",
+      "segment_index": 2,
+      "topic": "石油化学製品の供給不足の把握状況",
+      "question": {
+        "speaker": "古賀之士",
+        "party": "立憲民主・無所属",
+        "summary": "- 値上げや納期の遅延、出荷停止などの実態を、大臣はどの程度具体的に把握しているか",
+        "full_text": "こうした中で、 赤澤大臣に伺います。こういった値上げや納期の遅延、出荷提出についてですね、赤澤亮正大臣はどの程度、月大定期に把握をされていらっしゃいますでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "赤澤亮正",
+        "role": "",
+        "summary": "- 日本全体として必要量は確保されており、ナフサも国内需要4か月分を確保している\n- 一方で、足元では一部で供給の偏りがあることを認識している",
+        "full_text": "原油や石油製品は日本全体として必要な量を確保できているということでありますがその上で例えばナフサについても少なくとも化学品全体の国内需要4か月分を確保できており日本全体として必要となる量は確保できているといえますさらに中東以外からのナフサ輸入量の増加で川中製品の在庫使用期間半年以上を伸ばすことなどが可能です一方で委員がまさにご指摘のとおり足元では一部で供給の 教育委員長。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#2980.36",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "値上げや納期遅延等の把握状況について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "国内需要4か月分"
+            },
+            {
+              "type": "number",
+              "excerpt": "半年以上"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "ナフサについても少なくとも化学品全体の国内需要4か月分を確保できており日本全体として必要となる量は確保できている",
+          "score": 0.7
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "大臣が在庫状況という具体的な数値で回答しており、記録としての価値はあるが、個別の納期遅延への把握状況への直接的な回答は不十分である。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どの程度把握しているか」という問い方が曖昧なため、大臣が定量的な在庫状況の説明に逃げる余地を与えている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_009",
+      "segment_index": 2,
+      "topic": "建設業界における石油製品不足への対応",
+      "question": {
+        "speaker": "古賀之士",
+        "party": "立憲民主・無所属",
+        "summary": "- 建設現場で工事停止や住宅・マンション改修への影響が出ている現状について、どのような対応を行うか",
+        "full_text": "そうした今、逼迫した状況も一部に見られるということも、今、大臣おっしゃったとおりだと思いますし、中でも建設現場では、1つの工事が止まれば、その先が進まないという状況もあります。それから、住宅にも当然影響を及ぼしています。マンションの大規模改修においてもそうですよね。石井議員 長井国土交通大臣、政務官。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "長井政務官",
+        "role": "",
+        "summary": "- 改正建設業法に基づき、資材高騰を注文者に通知して契約変更協議を円滑に進める仕組みを周知した\n- 中小企業庁等による特別相談窓口の設置やセーフティネット貸付等の施策で事業継続を支援する",
+        "full_text": "建設業においては、アスファルトやシンナーなど、さまざまな石油製品等を使用することから、今般の中東情勢による 建設資材の価格高騰や供給不足に起因し、工事の代金や工期などに影響が生じる可能性があると考えており、業界からも懸念の声が寄せられております。このため、令和6年に改正した建設業法の規定に基づき、建設業者が資材価格の高騰などの恐れを事前に注文者に通知することで、契約変更の協議を円滑に進める仕組みを活用するなどにより、価格転嫁等を円滑に行うよう、 改めて受発注射双方に周知を行ったところです。また、影響が長期に及ぶ場合に備え、事業継続に懸念がある建設業者等の支援については、中小企業庁をはじめとする関係省庁において、特別相談窓口の設置や、 セーフティネット貸付等の施策を講じており、その周知や活用促進を通じて事業継続を支援してまいります。引き続き、建設工事で使用するさまざまな石油製品などの価格や供給の動向を注視し、業界や現場事業者の皆様の声も丁寧にお聞きしながら、経済産業省をはじめとした関係省庁ととも緊密に連携をして、建設現場の建設工事の円滑な施工を実現するよう、全力で取り組んでまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#2980.36",
+      "metrics": null
+    },
+    {
+      "id": "qa_010",
+      "segment_index": 2,
+      "topic": "事業者のリスクヘッジ（減産・出荷調整）への見解",
+      "question": {
+        "speaker": "古賀之士",
+        "party": "立憲民主・無所属",
+        "summary": "- 事業者がリスクヘッジとして減産や出荷調整を行うことについて、大臣はどう考えるか",
+        "full_text": "ですから赤澤大臣、そこをあえて伺います。責任者として大変だと思いますが、各事業者さん、これリスクヘッジとして、減産や出荷調整をすることに対して、赤澤大臣はどのように今お考えでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "赤澤亮正",
+        "role": "",
+        "summary": "- 原材料調達への不安やライン停止回避などのリスクヘッジ行動は企業として当然の側面がある\n- 経済産業省として正しい情報提供を行い、不安を解消することで目詰まりを解消し、前年同月比同量の確保に全力で取り組む",
+        "full_text": "石油化学製品のサプライチェーンの一部で生じている供給の偏りや流通の目詰まり、これについては、まさに原材料等の調達可能性に対する不安感ですね。ラインを止めたくないとか、あるいはサプライチェーン内の企業間の認識の疎後、そういったもので生じているものと考えられます。なので、私どもが目詰まりと申し上げていることについては、何かそれが良くないことだとか、そういうことは含んでおりませんで、実際、量は足りているのに、いろんなご不安があったり、企業としてまさに因果指摘のリスクヘッジとかでですね、そういう行動をとるのは、企業としてもこれ当然の部分があると思うので、私どもそこに情報提供をしっかりすること。大丈夫ですからと5月未定と言ってますけど量は足りてるんで我々努力して何としてでもその目隠りは解消し例えば前年同月費同量こういったものは確保できるように全力で手当てをしていきますということを今取り組んでいるところなわけです。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#2980.36",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "事業者の減産や出荷調整への考え",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "各事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "deadline",
+              "excerpt": "5月未定"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "全力で手当てをしていきますということを今取り組んでいるところなわけです",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "企業としてまさに因果指摘のリスクヘッジとかでですね、そういう行動をとるのは、企業としてもこれ当然の部分があると思う",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "事業者のリスクヘッジ行動を容認する大臣の認識が示されており、一定の記録価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_011",
+      "segment_index": 2,
+      "topic": "重要鉱物（レアアース・レアメタル）の不足調査体制",
+      "question": {
+        "speaker": "古賀之士",
+        "party": "立憲民主・無所属",
+        "summary": "- 中小企業を含む原材料不足の影響について、能動的・受動的な調査方法と体制はどうなっているか",
+        "full_text": "当然、中小企業がたくさん影響を受けているわけなんですけれども、その中小企業を含む原材料の不足の影響について、これ大臣に伺います。能動的・受動的な調査方法と体制がどうなっているのかというのを改めてお伺いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "赤澤亮正",
+        "role": "",
+        "summary": "- 産業界への聞き取りを随時実施しており、重要鉱物の価格高騰や入手困難な声も承知している\n- 情報提供窓口の設置や、全国約1000カ所の特別相談窓口を通じて中小企業等の影響把握に努めている",
+        "full_text": "近年の国際情勢の変化を踏まえ経済産業省としては従前より原材料不足が我が国経済に与える影響を把握すべく 企業や産業界に対する聞き取りを随時実施してきたところでございます。その中で、例えば特定国によるレアアースを含む重要鉱物の輸出管理について、原材料の価格高騰や入手困難が起きているといった声があることも承知をしております。また、今般の中東情勢の影響を受ける事業者からの情報収集体制として、情報提供窓口を通じて、石油化学製品のサプライチェーンに係る情報を集約するとともに、影響を受けた中小企業、小規模事業者を対象に、全国約1000カ所の特別相談窓口を設置したところでもあります。引き続き、関係省庁と連携しつつ、中小企業を含めた関係事業者の皆様への影響把握に積極的に努めてまいりたいと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#2980.36",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "原材料不足の影響に関する調査方法と体制について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "中小企業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "レアアースを含む重要鉱物"
+            },
+            {
+              "type": "number",
+              "excerpt": "全国約1000カ所の特別相談窓口"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "影響把握に積極的に努めてまいりたいと思っております",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "影響を受けた中小企業、小規模事業者を対象に、全国約1000カ所の特別相談窓口を設置したところでもあります。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "原材料不足への対応体制について具体的に回答されており、相談窓口の数などの事実関係が記録されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「能動的・受動的」という言葉の定義が曖昧なため、より具体的な調査手法を問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_012",
+      "segment_index": 2,
+      "topic": "重要鉱物の不足が基幹産業に与える影響",
+      "question": {
+        "speaker": "古賀之士",
+        "party": "立憲民主・無所属",
+        "summary": "- レアアース等の重要鉱物不足が、自動車産業などの我が国の基幹産業に与える影響をどう考えるか",
+        "full_text": "中でもですね、レアアースやそれからレアメタルを含む重要鉱物の問題が引き続きあるというのはですね、大きな部分で言えば、自動車産業全体にも影響しております。日本の我が国の基幹産業に与えている影響というのは、このレアアース重要鉱物の問題をどのように大臣は考えていらっしゃいますでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "赤澤亮正",
+        "role": "",
+        "summary": "- 非常に大きな問題であり、物資不足はサプライチェーンを通じて広範に影響する可能性がある",
+        "full_text": "非常に大きな問題だと思います。企業の生産活動に必要な物資不足はサプライチェーンに通じ広範に影響する可能性がございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#2980.36",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "重要鉱物問題が基幹産業に与える影響への考え",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "レアアースやそれからレアメタルを含む重要鉱物"
+            },
+            {
+              "type": "organization",
+              "excerpt": "自動車産業全体"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自動車産業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "企業の生産活動に必要な物資不足はサプライチェーンに通じ広範に影響する可能性がございます。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "大臣による抽象的な認識の表明に留まっており、具体的な対策や数値などの実質的な情報は含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのように考えているか」という主観的な問いであるため、回答が抽象的な感想に終始しやすい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_013",
+      "segment_index": 2,
+      "topic": "重要鉱物の備蓄放出相談窓口",
+      "question": {
+        "speaker": "古賀之士",
+        "party": "立憲民主・無所属",
+        "summary": "- 重要鉱物のリサイクルや確保に向けた相談窓口は、経産省およびJOGMECでよいか",
+        "full_text": "そして村田委員も指摘をされてますし、私もご指摘させていただいてきましたけれども、やはりこのレアアース、レアメタルなどの重要鉱物、やっぱりリサイクルが大変重要だと思います。今後もですね、そういった 窓口は経産省さん及びジョグメックということでよろしいんでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "畑田審議官",
+        "role": "",
+        "summary": "- JOGMECが重要鉱物の備蓄を行っており、ホームページに制度紹介と登録窓口を設けている\n- 事業者から相談があれば内容を精査し、適切に備蓄放出などの対応を行う",
+        "full_text": "ご指摘、ジョグメックにつきましては、これは円滑な産業活動の維持、それから経済安全保障の確保という観点から、 やっていることとしまして、重要個物の備蓄ということをしております。これからも事業者からの相談等があれば、これを踏まえて必要に応じて備蓄放出を行っていく、そういう体制になっております。備蓄に関する相談ということになりますけれども、この窓口につきましては、ジョーグメックのホームページに制度の紹介とともに、備蓄の放出を受けることを希望する事業者があれば、その登録を受け付けますよと、そういう情報提供、窓口。登録窓口を設けておりまして、今後も事業者から備蓄の放出に係る相談があれば、内容精査の上で適切に対応してまいるということになります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#2980.36",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "重要鉱物リサイクルの窓口は経産省とJOGMECか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "経産省、ジョグメック",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": true,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "ジョグメックのホームページ"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "適切に対応してまいる",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "ジョグメックのホームページに制度の紹介とともに、備蓄の放出を受けることを希望する事業者の登録窓口を設けております。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問はリサイクルの窓口について問うているが、回答は備蓄放出の窓口に関する説明に終始しており、論点がずれている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "リサイクルと備蓄放出という異なる制度を混同して質問している可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_014",
+      "segment_index": 2,
+      "topic": "供給要請に伴う事業者への保障措置",
+      "question": {
+        "speaker": "古賀之士",
+        "party": "立憲民主・無所属",
+        "summary": "- 大臣がタスクフォースとして供給要請を出しているが、ライン停止等のリスクに対する保障をセットで考える考えはあるか",
+        "full_text": "赤澤大臣がタスクフォースの長として、リーダーとして要請を出されました。その要請と、それとやはり何かもしあったら、ラインが止まったとき、本当はあるんだ、あるんだけれども止まっちゃったときに、そういった方々を助けるための保障というのは、やっぱりセットで考えていくべきだと思うんですね。赤澤大臣が出された要請、それに対して保障、セットにするお考えってございませんか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "赤澤亮正",
+        "role": "",
+        "summary": "- コロナ禍の強い休業要請時でも必ずしも保障という考え方を取らなかった過去がある\n- 現時点において、原油石油製品について同様の保障を行う認識はない",
+        "full_text": "はい、これは委員もご案内のとおり、コロナのときにもかなりあった議論です。で、コロナの場合はですね、これ、実際、例えば飲食店とかなどについて言えば、もうその 外出についてですね、いろいろお願いをしたりするようなことも含め、大変強めのといいますか、現状の中東情勢を踏まえての対応に比べても、強い、いろいろお願いを政府としてさせていただきましたが、それでもなかなか直結してですね、保障という考え方を取らなかったような過去も、私はあるように認識をしておりまして、少なくとも現時点において、原野石器製品については、日本全国 小川幸一君。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#2980.36",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "要請に伴う保障をセットで検討するか",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "赤澤大臣がタスクフォースの長として、リーダーとして要請を出されました"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "ラインが止まったときの方々",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "コロナ"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "飲食店"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "コロナの場合は...保障という考え方を取らなかったような過去も、私はあるように認識をしておりまして",
+          "score": 0.3
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "保障のセット検討という問いに対し、コロナ禍の事例を挙げて否定的なニュアンスで回答しているが、文末が途切れており不完全である。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問の口語的な重複が多く、論点が分散している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_015",
+      "segment_index": 2,
+      "topic": "雇用調整助成金の拡充",
+      "question": {
+        "speaker": "古賀之士",
+        "party": "立憲民主・無所属",
+        "summary": "- 原材料不足等で事業活動を縮小した事業者に対し、雇用調整助成金の拡充を検討しているか",
+        "full_text": "雇用調整助成金の拡充。これも提案させていただきたいんですが、厚労省さん、どのように考えていますでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "上谷政務官",
+        "role": "",
+        "summary": "- 通常制度においても支給要件を満たせば対象となり得る\n- コロナ禍の特例措置とは状況が異なるが、影響を適切に把握し、必要に応じて活用を促す",
+        "full_text": "雇用調整助成金については、通常制度においても、石油やレアアースなど、原材料の入手困難や、価格高騰等に伴い、事業活動を縮小し、休業等を余儀なくされた場合、支給要件を満たせば支給対象となり得ると考えられます。その上で、コロナ禍での雇用調整助成金の特例措置は、 国から事業者や国民に対し感染防止対策を図るための強い休業要請を行うなど特殊な状況の中で、助成率等について異例の対応を行ったものであり、必ずしも今般の状況と同一に論じられるものではないと考えております。まずは中等情勢に係る雇用への影響を適切に把握するとともに、事業主から雇用調整に係る相談があった場合には、全国の労働局やハローワークにおいて丁寧な相談対応を行い、必要に応じ、雇用調整助成金の活用を促してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#2980.36",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "雇用調整助成金の拡充に関する考え方",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "石油やレアアース"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "労働局やハローワーク"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "雇用調整助成金の活用を促してまいりたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "コロナ禍での雇用調整助成金の特例措置は、必ずしも今般の状況と同一に論じられるものではないと考えております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "拡充の提案に対し、現行制度で対応可能であることと、コロナ特例との違いを説明し、現状維持の姿勢を示した回答である。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「拡充」の具体的な内容（支給額の増額か、要件の緩和か等）を特定せずに質問しているため、回答が一般的になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_016",
+      "segment_index": 2,
+      "topic": "中小企業向け資金繰り支援（ゼロゼロ融資の再導入）",
+      "question": {
+        "speaker": "古賀之士",
+        "party": "立憲民主・無所属",
+        "summary": "- コロナ禍のような実質無利子無担保融資（ゼロゼロ融資）を、業種を絞って緊急的に実施する考えはあるか",
+        "full_text": "このコロナの時のゼロゼロ融資は、いろいろな問題もありましたので、業種や、それからさまざまな視点、絞ってやっていく。喫緊急さをしっかりとチェックした上でやっていく、そういう御提案をさせていただきますが、その辺については赤澤大臣いかがでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "赤澤亮正",
+        "role": "",
+        "summary": "- コロナ禍は需要が消失した特殊な事態であり、現時点ではゼロゼロ融資を実施する状況ではない\n- 特別相談窓口の設置や資金繰り支援の拡充、価格転嫁の要請などの支援措置を講じている",
+        "full_text": "コロナ禍という極めて得意な事態への支援であったというふうに理解をしておるところで、事業者の皆様への円滑な資金繰りを支援する役割を果たした一方で、借り入れが課題になって、 金融機関側からの経営支援に対する動機が弱くなるといった負の側面も指摘をされています。今般の中東情勢による中小企業も含めた日本経済の影響については、現時点でなかなか予断を持って判断すること困難でありますが、今申し上げたようなところも含めて、ご指摘のゼロゼロ融資を実施するような状況ではないというのが現時点での認識であります。経済産業省においては 今般の中等情勢の影響を受ける中小企業、小規模事業者の皆様を支援すべく、特別相談窓口の設置、それから資金繰り支援の拡充、原材料やエネルギーコストの上昇を考慮した価格転嫁の要請といった支援措置を現在講じているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#2980.36",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "ゼロゼロ融資のような支援の限定的実施への見解",
+          "sub_asks": [],
+          "score": 0.9
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "past_answer",
+              "excerpt": "コロナの時のゼロゼロ融資"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "特別相談窓口の設置"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "資金繰り支援の拡充"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "価格転嫁の要請"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "ご指摘のゼロゼロ融資を実施するような状況ではないというのが現時点での認識であります。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "ゼロゼロ融資のような大規模融資を現時点で行わないという政府の認識が明確に示されており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "提案形式の質問であるため、具体的な条件や基準を提示して回答を迫る形式にすれば、より拘束力のある回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_017",
+      "segment_index": 2,
+      "topic": "建設現場の供給目詰まり解消に向けたタスクフォースの活用",
+      "question": {
+        "speaker": "古賀之士",
+        "party": "立憲民主・無所属",
+        "summary": "- 建設現場の喫緊な状況に対し、国交省としてタスクフォースを構築し対応することを提案するが、いかがか",
+        "full_text": "時間もなくなってきましたが、国交省さんに伺います。こういった建設現場の喫緊な状況の中において、タスクフォースをしっかりと作っていく、こういうことも提案させていただきます。これは5つ目ぐらいの提案になるかと思いますが、国交省さん、いかがでございますか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "長井政務官",
+        "role": "",
+        "summary": "- 赤澤大臣の下に設置されたタスクフォースにおいて情報を共有し、安定供給に全力を尽くしている\n- 現場の声に耳を傾け、経産省等と連携して供給の偏りや目詰まりの解消にスピード感を持って取り組む",
+        "full_text": "原油や石油製品については、代替調達や備蓄石油の放出で、日本全体として必要となる量を確保できている一方で、シンナーなどの石油製品を使用する建設資材も含め、一部で供給の偏りや流通の目詰まりが見られるところ、需要家の皆様からいただいた情報を踏まえ、原料の供給見通しの確認や、関係事業者への安定供給の要請などに政府全… 国土交通省 関の赤澤大臣の下に設置した中東情勢に伴う重要物資の安定的な供給確保のためのタスクオースにおいて共有するとともに国土交通省としても建設資材を含む重要物資の安定供給に全力を尽くしているところです。引き続き業界や現場の事業者の生の声にしっかり耳を傾けながら経済産業省や関係団体とも緊密に連携して建設資材の供給の偏りや流通の目 つまりの解消等にスピード感を持って取り組んでまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#2980.36",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "建設現場対策のタスクフォース設置の提案",
+          "sub_asks": [],
+          "score": 0.9
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "建設現場",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "中東情勢に伴う重要物資の安定的な供給確保のためのタスクオース"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "赤澤大臣"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "スピード感を持って取り組んでまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "中東情勢に伴う重要物資の安定的な供給確保のためのタスクオースにおいて共有するとともに国土交通省としても建設資材を含む重要物資の安定供給に全力を尽くしている",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "タスクフォース設置の提案に対し、既に設置済みのタスクフォースで対応している旨を回答しており、事実関係が明確である。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "提案形式の問いかけであるため、具体的な要件や期限を盛り込めばより強いコミットメントを引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_018",
+      "segment_index": 3,
+      "topic": "むつ市中間貯蔵施設への燃料搬入拒否と再処理工場の人材支援",
+      "question": {
+        "speaker": "福士珠美",
+        "party": "立憲民主・無所属",
+        "summary": "- 青森県知事が2026年度分の燃料搬入を認めないとしたことへの政府見解を問う\n- 再処理工場の竣工に向けた人材支援の具体的な内容を求める",
+        "full_text": "そこで、そのむつ市の中間貯蔵施設について伺ってまいりたいと思います。青森県の宮下知事が、むつ市の使用済み核燃料中間貯蔵施設への2026年度分の燃料搬入を認めない。と表明いたしました。その理由としまして、貯蔵後に使用済み核燃料の受入先となる6カ所村の再処理工場の完成が今年度中は見通せないことを挙げていらっしゃいます。貯蔵後の行き先がないまま搬入されることはあり得ない。現時点で中間貯蔵事業を 実施できる環境にないとも話されています。これに対する赤澤大臣の御見解を伺います。また今月10日の閣議後の記者会見で、再処理工場の竣工に向けて、国としても産業界からさらなる人材支援を調整して、官民一体で総力を挙げて取り組むと御発言されていらっしゃいましたが、人材支援の具体的な内容をお示しください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "赤澤誠",
+        "role": "",
+        "summary": "- 知事の発言を承知しており、真摯に受け止めている\n- 電気事業者から日本原燃への派遣者が16名増加したことを示し、引き続き官民一体で取り組む",
+        "full_text": "赤澤経済産業大臣 青森県の宮下知事が、6カ所再処理工場の審査進捗へのご懸念から、来年度の中間貯蔵事業については、実施環境が確認できないと、ご発言をされたことは、これ、委員御指摘のとおりで承知をしております。国としても受け止めは、真摯に受け止めているところでございます。委員御指摘の人材支援に関しては、日本元年の審査対応体制を強化するべく、 国から電気事業者に働きかけを行い、その結果、3月1日から昨日、4月20日までに、電気事業者から同社への派遣者数が16名増加をしたというふうに承知をしております。引き続き、同社が審査対応を確実に行えるよう、さらなる人材支援の調整を行い、同工場の振興に向け、官民一体で総力を挙げて取り組んでまいりたいと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#5098.95",
+      "metrics": null
+    },
+    {
+      "id": "qa_019",
+      "segment_index": 3,
+      "topic": "中間貯蔵事業の搬入容認に向けた国の対応",
+      "question": {
+        "speaker": "福士珠美",
+        "party": "立憲民主・無所属",
+        "summary": "- 青森県が搬入可否を判断する仕組みの中で、容認されるための材料が揃えば容認の可能性があるが、国はどう対応するか",
+        "full_text": "青森県は、その使用済み核燃料の新規搬入につきまして、中間貯蔵事業を継続できる環境にあるかどうかを年度ごとに確認する、搬入の可否を判断する仕組みを構築しております。昨年3月の初めての判断では、2025年度分の犯人を容認しました。今回は、拒否ではないと強調したうえで、事業者がしっかり対応して報告する、そうした動きなしに判断を覆すことはないとも述べていまして、逆に言えば、容認するにたる材料がそろえば、容認の可能性もあるということだと思いますけれども、国としてはどう対応されますでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "久米",
+        "role": "",
+        "summary": "- 搬入の判断は青森県が行うものであり、国が今後の見通しを答えるのは適正ではない\n- 知事の懸念を真摯に受け止め、人材支援などの取組を通じて竣工に向け総力を挙げる",
+        "full_text": "中間駐造事業に関する実施環境につきまして、お尋ねをいただきましたけれども、この点につきましては、青森県がご確認されるものでありまして、その今後の見通しについて、国としてお答えすることは適正ではないというふうに考えてございます。その上で、宮下知事からの6カ所再剃り工場の審査の進捗状況が見通せなくなっているというご懸念につきましては、今、大臣からもご答弁申し上げましたとおり、国として真摯に受け止め、同工場の審査対応について、 日本元年の体制強化のため、産業界からのさらなる人材支援を調整するなど、取組を進めることによって、官民一体で総力を挙げて取り組んでまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#5098.95",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "核燃料搬入の容認に向けた国の対応",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "昨年3月"
+            },
+            {
+              "type": "date",
+              "excerpt": "2025年度分"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "青森県",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": true,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "宮下知事"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "6カ所再処理工場"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "官民一体で総力を挙げて取り組んでまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "青森県がご確認されるものでありまして、その今後の見通しについて、国としてお答えすることは適正ではない",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "搬入可否の判断は県にあるとして直接的な回答を避けており、体制強化という抽象的な努力目標に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "国の対応を問うているが、前提として県の権限であることに触れているため、回答者が逃げやすい構造になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_020",
+      "segment_index": 3,
+      "topic": "事業者と自治体への現状報告における国の役割",
+      "question": {
+        "speaker": "福士珠美",
+        "party": "立憲民主・無所属",
+        "summary": "- 事業者が県や市と協議することが基本だが、国が前面に立って現状報告や説明を行う必要があるのではないか",
+        "full_text": "福島増美君一義的には、事業次第であるRFSが 県や市としっかりと話をしたりということが求められると思うんですけれども、その国が前面に立ってですね、その事業者と一緒に県や市にしっかりと現状報告であるとか、それから説明をする必要があると考えるんですけれども、そのあたりいかがでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "久米",
+        "role": "",
+        "summary": "- 事業者の報告に加え、経済産業省からも青森県へ随時情報を伝えている\n- 引き続き必要な情報提供をしっかりと行う",
+        "full_text": "ただ申し上げましたような、6カ所再処理工事の竣工に向けた取組、これについては、事業者が報告することに加えまして、青森県との事務的なやり取りの中で、われわれ経済省からも随時お伝えをしてございます。引き続き、青森県には、必要な情報提供をしっかりと行ってまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#5098.95",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "国が事業者に寄り添い県市へ説明を行うべきか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "RFS"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "県や市",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "6カ所再処理工事"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "青森県"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "経済省"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "必要な情報提供をしっかりと行ってまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "引き続き、青森県には、必要な情報提供をしっかりと行ってまいります。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "国による情報提供の必要性について問われ、現状の対応と今後の継続的な取り組みを回答している。具体的な新策や期限はないため記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「いかがでしょうか」という抽象的な問いかけのため、政府から具体的な約束を引き出しにくい形式になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_021",
+      "segment_index": 3,
+      "topic": "使用済み核燃料の保管プール満杯問題の打開策",
+      "question": {
+        "speaker": "福士珠美",
+        "party": "立憲民主・無所属",
+        "summary": "- 柏崎刈羽原発などで保管プールの貯蔵率が高まっている現状をどう打開するのか",
+        "full_text": "この青森県が、使用済み核燃料の搬入を認めない この事態が長期化すれば、国の原子力政策は停滞しかねません。今年度搬入を予定しているのは、新潟県の東京電力柏崎刈羽原発5号機と6号機から出る計60トンです。6号機は16日に営業運転を再開いたしましたが、その保管プールの貯蔵率は90%を超えています。原発を動かすと、使用済み核燃料は必ず発生します。原発の保管プールが、使用済み核燃料で満杯になりつつある今、この状況をどう打開していくのか、赤澤大臣に伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "赤澤誠",
+        "role": "",
+        "summary": "- 6カ所再処理工場の竣工を確実に成し遂げる必要がある\n- 使用済み燃料対策推進計画の策定を事業者に求め、推進協議会を通じて実現を図る",
+        "full_text": "我が国では、核燃料サイクルの推進という基本的方針のもと、原子力発電所の使用済み燃料は、6カ所再処理工場へと搬出をし、再処理を行うこととしております。このために、まずは、同工場の振興を確実に成し遂げる必要がございます。宮下知事からの6カ所再処理工場の審査の進捗状況が見通せなくなっているとの御懸念について、国として真摯に受け止め、産業界からのさらなる人材支援を調整するといった取組を通じ、竣工に向け、官民一体で総力を挙げて取り組むこととしております。加えて、使用済み燃料を再処理するまでの間、貯蔵する能力の拡大も重要でございます。このため、電気事業者に対し、事業者全体での目標設定と 各事業者の計画を定める使用済み燃料対策推進計画の策定を求めるとともに、私と各事業者トップによる使用済み燃料対策推進協議会において、国事業者双方の取組を協議をし、同計画の実現を図っていくこととしております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#5098.95",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "使用済み核燃料の保管プール満杯状況の打開策",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "青森県"
+            },
+            {
+              "type": "organization",
+              "excerpt": "東京電力柏崎刈羽原発5号機と6号機"
+            },
+            {
+              "type": "number",
+              "excerpt": "計60トン"
+            },
+            {
+              "type": "number",
+              "excerpt": "貯蔵率は90%を超えています"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "青森県",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "6カ所再処理工場"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "使用済み燃料対策推進計画"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "使用済み燃料対策推進協議会"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "官民一体で総力を挙げて取り組むこととしております",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "電気事業者に対し、事業者全体での目標設定と各事業者の計画を定める使用済み燃料対策推進計画の策定を求める",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な数値を用いた質問に対し、大臣が既存の計画や協議会の枠組みを挙げて回答している。コミットメントレベルは精神論に留まっており低い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どう打開していくのか」という問いが広いため、回答が既存施策の列挙に終始しやすい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_022",
+      "segment_index": 3,
+      "topic": "再処理問題に対する政府の本気度",
+      "question": {
+        "speaker": "福士珠美",
+        "party": "立憲民主・無所属",
+        "summary": "- 知事の判断は国や事業者の本気度を問うものだと思われるが、どう考えるか",
+        "full_text": "宮下知事の今回の判断というのは、国とか事業者に対しての本気度を問うものだと思っておりますけれども、そのあたりも含めていかがでしょうか。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "赤澤誠",
+        "role": "",
+        "summary": "- 再処理問題は避けて通れないところであり、本気で取り組んでいる\n- 国が前面に立って責任を持って対応したい",
+        "full_text": "安定性の確保と、地域のご理解を前提として、最大限原子力を活用していくという、我々は方針でございますので、再処理の問題は避けては通れないところであります。ということで、もう改めて申し上げるまでもなく、私どもはもう、そこは本当に本気でございますので、そこについてはしっかり受け止めていただけるように、責任対応を国が前面に立って、今後ともやっていきたいというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#5098.95",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "宮下知事の判断に対する政府の本気度について",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "宮下知事の今回の判断"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "宮下知事",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "責任対応を国が前面に立って、今後ともやっていきたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "責任対応を国が前面に立って、今後ともやっていきたいというふうに考えております。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "抽象的な「本気度」を問う質問に対し、精神論的な回答に留まっており、具体的なアクションや期限が示されていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「本気度」という主観的な指標ではなく、具体的な工程表や予算措置などの客観的な指標を問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_023",
+      "segment_index": 3,
+      "topic": "再処理工場の竣工遅延の受け止め",
+      "question": {
+        "speaker": "福士珠美",
+        "party": "立憲民主・無所属",
+        "summary": "- 竣工延期が27回も繰り返されてきた現状をどう受け止めているか",
+        "full_text": "この再処理工場は、完成の延期27回も繰り返しております。国は使用済み核燃料を再利用する、その核燃料サイクルを原子力政策の根幹に位置づけてきました。その再処理工場で使用済み核燃料からウランとプルトニウムを抽出して、それをモックス燃料に加工して、核燃料として再利用する。その再処理工場の稼働はその大前提となります。竣工の遅延が続いてきた現状を、赤澤大臣、どのように受け止めていらっしゃいますでしょうか。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "赤澤誠",
+        "role": "",
+        "summary": "- 度重なる見直しを重く受け止め、審査の進捗管理や人材支援の調整を行ってきた",
+        "full_text": "6カ所再処理工場に関し、竣工目標の度重なる見直しが行われてきたことを、国として重く受け止め、審査の進捗管理や、産業界からの人材支援の機動的な調整を行ってきたところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#5098.95",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "再処理工場の竣工遅延をどう受け止めているか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "完成の延期27回"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "6カ所再処理工場"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": "重く受け止め",
+          "matched_pattern": "Lv0: no commitment phrase. Acknowledgment of the issue... with NO future-tense verb of action"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "竣工目標の度重なる見直しが行われてきたことを、国として重く受け止め",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "大臣による現状認識の表明に留まっており、具体的な今後の改善策や期限に関する言及はない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのように受け止めているか」という主観的な問いではなく、遅延の具体的理由や今後の完了予定日の確約を求める形式にすべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_024",
+      "segment_index": 3,
+      "topic": "2026年度中の竣工目標の根拠",
+      "question": {
+        "speaker": "福士珠美",
+        "party": "立憲民主・無所属",
+        "summary": "- 規制委の審査遅延等の指摘がある中で、2026年度中に竣工し、目標に変更が生じないとする根拠は何か",
+        "full_text": "2026年度中の竣工目標に変更が生じる状況にないというお話でしたけれども、その根拠はどういうところにあるんでしょうか。体制の意見では、原子力規制委員会の審査が遅れていて、今年度中の完成は困難だという、そういった意見が体制ですけれども、そういった中で、必ず2026年度中に竣工すると目標が変更される。変更が生じる状況にないというのは、どういう根拠によるものなんでしょうか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "久米",
+        "role": "",
+        "summary": "- 施設が特有の難しさを持つ一品物であり、過去に管理上の課題があった反省から、現在は経験者を多数受け入れ全体計画を共有している\n- 規制委の委員長が審査は最終盤であると発言しており、官民一体で取り組んでいる",
+        "full_text": "6カ所再処理工場の審査の長期化や、あるいじの竣工延期の理由につきまして、日本元年の分析では、再処理工場はいわゆる一品物でありまして、発電路と異なり参考となる審査前例がなく、また設備… 物量が原発の6、7倍と膨大であるという特有の難しさがある中で、原子力規制委員会の審査への対応において、課題の的確な把握や進捗の管理に課題があったということだと承知をしてございます。この反省の下で、日本元年は、電力メーカーの審査対応経験者を多数受け入れ、原子力規制委員会に審査対応の全体計画を示し、論点や進め方についての認識を共有しつつ、対応を進めております。現時点で審査が残る耐震や火災一水対策は、特に対象設備数が多く、日本原念が資料の取りまとめに時間を要すると聞いておりまして、国から電気業者に対し、緊急的な追加の人材支援というものも働きかけておるところでございます。電気事業者も同工場早期竣工最優先課題と認識しており、先ほど大臣からも申し上げましたとおり、3月1日から昨日までに16名増員があったというふうに承知をしてございます。この同工場については、4月1日に行われた原子力規制委員会の山中委員長の記者会見で、審査としては最終盤とのご発言があったとも承知しておりまして、同工場の竣工目標の実現に向けて、官密体で責任を持って取り組んでまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#5098.95",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "2026年度中の竣工目標を維持できる根拠は何か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "2026年度中"
+            },
+            {
+              "type": "organization",
+              "excerpt": "原子力規制委員会"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "原子力規制委員会",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "物量が原発の6、7倍"
+            },
+            {
+              "type": "number",
+              "excerpt": "16名増員"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "山中委員長"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "責任を持って取り組んでまいります",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "3月1日から昨日までに16名増員があったというふうに承知をしてございます。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "竣工目標の根拠を問う質問に対し、過去の遅延理由と現在の増員体制、委員長の記者会見内容を挙げて回答しているが、論理的な「根拠」としての提示は不十分である。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_025",
+      "segment_index": 3,
+      "topic": "第7次エネルギー基本計画への記載事項",
+      "question": {
+        "speaker": "福士珠美",
+        "party": "立憲民主・無所属",
+        "summary": "- エネルギー基本計画に、高レベル放射性廃棄物の管理機関や最終処分場の開始時期などが示されていない理由は何か",
+        "full_text": "国は第7次エネルギー基本計画というのを策定されました。この国のエネルギー政策 の方針を示す、そういった計画だと認識しておりますけれども、その中に6か所再処理工場が一時保管している、その高レベル放射性廃棄物の管理機関であるとか、搬出責任、最終処分場の開始時期などが示されておりません。これはどうしてでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "久米",
+        "role": "",
+        "summary": "- 基本計画は基本方針を示すものであり、個別事業者（日本原燃）と立地地域との約束事項は記載しない\n- 立地地域との信頼関係構築の重要性は記載しており、それに基づき事業者を指導している",
+        "full_text": "エネルギーの需給に関する施策の長期的、総合的、かつ計画的な推進を図るために、政府が定める、いわば我が国のエネルギー政策の基本方針を示すものでありまして、その目的において必要十分な内容を同計画に記載してきているところでございます。その上で、ご指摘の高レベル放射性廃棄物に関する管理機関などにつきましては、日本元年が 青森県及び六ヶ所村と結んだ約束でありまして、こうした個別事業者の約束はエネルギー基本計画では記載しておりませんけれども、すべての立地地域に移通定する考え方として、立地地域との信頼関係の進化に取り組むことの重要性ということはエネルギー基本計画に記載してございまして、これに基づいて事業者に対して約束の遵守ということを指導してきているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#5098.95",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "エネルギー基本計画に高レベル廃棄物の詳細がない理由",
+          "sub_asks": [
+            "管理機関が示されていない理由",
+            "搬出責任が示されていない理由",
+            "最終処分場の開始時期が示されていない理由"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "第7次エネルギー基本計画"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "高レベル放射性廃棄物の管理機関",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "青森県及び六ヶ所村"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "立地地域との信頼関係の進化に取り組むことの重要性",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "個別事業者の約束はエネルギー基本計画では記載しておりませんけれども、立地地域との信頼関係の進化に取り組むことの重要性は記載してございまして",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "基本計画の性質上、個別事業者の約束は記載しないという政府の論理が明確に示されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "複数の欠落項目を一度に問うているため、個別の項目に対する詳細な回答を得にくい構成になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_026",
+      "segment_index": 3,
+      "topic": "最終処分計画の内容と策定時期",
+      "question": {
+        "speaker": "福士珠美",
+        "party": "立憲民主・無所属",
+        "summary": "- 最終処分計画とはいつ、どのような内容を定めたものか",
+        "full_text": "エネルギー基本計画の中に、最終処分の実現に向け、特定放射性廃棄物の最終処分に関する基本方針に基づき、国が前面に立ち取り組むとあります。最終処分法という法律の基本方針というふうに理解しておりますけれども、その基本方針に最終処分計画という条項があります。最終処分を行う時期、およびその量などに関する事項とありますけれども、これはいつ、どのような内容を定めたものなんでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "久米",
+        "role": "",
+        "summary": "- 最終処分法に基づき、廃棄物の量、処分時期、施設規模、選定事項などを定めるものであり、平成20年3月に閣議決定した",
+        "full_text": "御指摘の最終処分計画は、 最終処分法第4条に基づき定めることとされておりまして、内容といたしましては、発電用原子炉の運転に伴って生じた使用済み燃料の再処理等を行った後に生じる特定放射性廃棄物の量及びその見込み、最終処分を行う時期及びその量、必要な最終処分施設の規模、 概要調査地区等の選定及び最終処分施設の設置に関する事項等に定めることとなって、ついて定めることとなってございます。この最終処分計画につきましては、平成20年3月に閣議決定したものでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#5098.95",
+      "metrics": null
+    },
+    {
+      "id": "qa_027",
+      "segment_index": 3,
+      "topic": "最終処分計画が長期間改定されていない理由",
+      "question": {
+        "speaker": "福士珠美",
+        "party": "立憲民主・無所属",
+        "summary": "- 基本方針では5年ごとの公表が必要とされているが、18年も改定されていない理由は何か",
+        "full_text": "平成20年 2008年ですね。閣議決定されてから改定されていないということなんですけれども、その基本方針に即しますと、5年ごとにこの最終処分計画を定めて公表しなければならないと書いてありますけれども、18年も改定してこなかったその理由は何でしょうか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "久米",
+        "role": "",
+        "summary": "- 東北地方太平洋沖地震および福島第一原発事故により、再稼働の見通しが立ちにくくなったことや、再処理工場の竣工が途上であったこと、政策の見直しを行っていたためである",
+        "full_text": "ご指摘の最終処分計画については、平成20年以降、改定してございません。これは平成23年に発生した 東北地方太平洋沖地震及びこれに伴う東京電力株式会社福島第一原子力発電所の事故の発生を受けまして、原子力発電所の再稼働の見通しが立ちにくかったことや、6カ所再処理工場の竣工に向けた取組が途上であったこと、また地層処分の技術的信頼性の再評価を含めた最終処分に関する政策の見直しなどを行ってきたためでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#5098.95",
+      "metrics": null
+    },
+    {
+      "id": "qa_028",
+      "segment_index": 4,
+      "topic": "充電・充填インフラの整備進捗",
+      "question": {
+        "speaker": "竹詰仁",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 2030年までの充電器30万口、水素ステーション1000口という目標に対する現在の進捗評価を問う",
+        "full_text": "導入促進補助金として510億円を計上しております。政府の充電・充填インフラの整備目標は、2030年までに充電器が30万口、水素ステーション1000口となっております。直近までの充電・充填インフラの整備に関して、目標に対する進捗について、大臣、どのように評価されているのか、お伺いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "赤澤経済産業大臣",
+        "role": "",
+        "summary": "- 充電設備は昨年度までに約10.6万口整備され、現状のスピードで目標達成は可能と考える\n- 水素ステーションは本年3月末時点で175基にとどまっており、今後は商用車向け大型ステーションの整備を重点的に支援する",
+        "full_text": "電気自動車及びプラグインハイブリッド車用の充電設備は、2030年までに、委員御指摘とおり30万口の整備を目指しております。一昨年度ですね、末時点では6.8万口が整備済みで、昨年度に新たに3.8万口の整備を支援をいたしました。今年度以降も同様のスピードで整備が進めば、目標達成 目標達成は可能であると考えております。また水素ステーションは、2030年度までに1000基程度の整備を目標としているということでありますが、本年3月末時点で175基にとどまっております。今後、特に燃料電池自動車の強みを生かせるトラックやバスといった商用車の導入普及を重点的に支援し、大型水素ステーションの整備を進めてまいりたいというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#6084.19",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "充電・充填インフラ整備目標の進捗評価",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "510億円"
+            },
+            {
+              "type": "number",
+              "excerpt": "2030年までに充電器が30万口"
+            },
+            {
+              "type": "number",
+              "excerpt": "水素ステーション1000口"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "6.8万口"
+            },
+            {
+              "type": "number",
+              "excerpt": "3.8万口"
+            },
+            {
+              "type": "number",
+              "excerpt": "175基"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "大型水素ステーションの整備を進めてまいりたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "水素ステーションは、2030年度までに1000基程度の整備を目標としているということでありますが、本年3月末時点で175基にとどまっております。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "インフラ整備の現状数値が具体的に示されており、特に水素ステーションの遅れが明確に記録された価値のあるやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_029",
+      "segment_index": 4,
+      "topic": "集合住宅等の充電インフラ整備課題への対応",
+      "question": {
+        "speaker": "竹詰仁",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 集合住宅での整備遅延や、老朽化した充電器の更新・メンテナンス不足という課題への具体的対応を問う",
+        "full_text": "これまでの充電、充電インフラ整備に関しまして、集合住宅の充電インフラが遅れていると承知しております。あるいは、老朽化した充電器の更新、メンテナンスが実施されていないと、そういった課題も指摘されております。こうした課題について、政府として具体的にどのように対応していくのか、経産省にお尋ねいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "田中審議官",
+        "role": "",
+        "summary": "- 既存集合住宅での設置について、管理組合の簡易手続きによる申請を認め、優先的に採択する\n- 老朽化した設備の更新についても、新設と同等の補助を実施している",
+        "full_text": "例えば、委員御指摘の集合住宅につきましては、管理組合において合意形成が難しい既存の集合住宅での充電設備の設置について、 管理組合が簡易な手続きで申請を行うことを認め当該申請については優先的に採択することとしております。また、充電設備のメンテナンスや老朽化への対応も重要でありその設備の更新につきましても新設の充電設備への補助と同等の補助を実施しております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#6084.19",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "充電インフラ整備の課題への対応策",
+          "sub_asks": [
+            "集合住宅の充電インフラ整備への対応",
+            "老朽化した充電器の更新・メンテへの対応"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "集合住宅",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "管理組合"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "管理組合が簡易な手続きで申請を行うことを認め当該申請については優先的に採択することとしております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "現状の補助金制度や採択基準についての説明であり、具体的だが新たなコミットメントは含まれていない。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「具体的にどのように対応していくのか」という問いに対し、現状の制度説明に留まっているため、今後の改善策を問う形式にすべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_030",
+      "segment_index": 4,
+      "topic": "超急速充電器の普及方針",
+      "question": {
+        "speaker": "竹詰仁",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 米国に比べ日本の急速充電器の出力が低い現状を踏まえ、超急速充電器の普及に向けた政府の方針を問う",
+        "full_text": "充電器に関しまして、日本と米国で比較しますと、急速充電器の出力に大きな違いがあると承知しております。米国は150キロワット以上が標準であり、テスラは最大250キロワットの出力の急速充電器を展開する、あるいは350キロワットの急速、超、超 急速充電器も普及していると聞いております。他方、日本は主流の充電器は50kWでありまして、高速道路については90kW以上ということになっておりますけれども、米国と比べますと、急速充電器の必要が小さいという状況です。こうした我が国においても、超急速充電器の普及、図る必要があると考えますけれども、政府の今後の方針について、大臣に見解をお伺いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "赤澤経済産業大臣",
+        "role": "",
+        "summary": "- 高出力充電器はコスト面から整備が遅れていたが、利便性向上のため設置は極めて重要と認識している\n- 今年度から高速道路に350kWの高出力充電器を設置予定であり、引き続き整備を支援する",
+        "full_text": "委員御指摘の高出力充電器は、設置費用や電気料金といったコストが高く、ユーザーの負担する充電料金に影響するため、これまで整備が進んでこなかったものと認識をしております。一方で、高出力充電器は、短時間で大容量の充電が可能であり、端的に言うと、350キロワット、50キロワットに比べば7倍早くですね、充電できるということでありまして、ユーザーの利便性向上の観点から、その設置を進めることは 極めて重要だと認識をいたします。近年の車両の充電性能の向上や短時間での充電ニーズの高まりにより、今年度初めて350キロワットの高出力充電器が高速道路に設置される予定となっています。政府としては、車両の充電性能や事業者の動向を踏まえながら、引き続き、高出力充電器の整備を支援してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#6084.19",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "超急速充電器の普及に向けた政府の方針",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "米国は150キロワット以上が標準"
+            },
+            {
+              "type": "number",
+              "excerpt": "テスラは最大250キロワット"
+            },
+            {
+              "type": "number",
+              "excerpt": "日本は主流の充電器は50kW"
+            },
+            {
+              "type": "number",
+              "excerpt": "高速道路については90kW以上"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "350キロワット"
+            },
+            {
+              "type": "number",
+              "excerpt": "50キロワット"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "今年度初めて350キロワットの高出力充電器が高速道路に設置される予定"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "引き続き、高出力充電器の整備を支援してまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "今年度初めて350キロワットの高出力充電器が高速道路に設置される予定となっています。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "日米の出力差を具体的に提示した質問に対し、大臣が現状の課題と今年度の設置予定について具体的に回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "政府にどのような具体的支援（補助金増額や設置目標数の設定など）を求めるかまで踏み込めば、より強いコミットメントを引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_031",
+      "segment_index": 4,
+      "topic": "ものづくり・電気機械人材の確保",
+      "question": {
+        "speaker": "竹詰仁",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 工業高校の数と生徒数が激減し、現場の人手不足が深刻化している状況に対する大臣の所見を問う",
+        "full_text": "続いて、ものづくりの人材、あるいは電気機械の人材の確保についてお伺いいたします。全国工業高校 高等学校校長会というデータによりますと、2000年と2025年、この20年間の比較すると、工業高校数は655校から582校と、マイナス73校、そして生徒数は37万人から22万人、マイナス15万人、工業高校の 数、そして今申し上げた生徒数が減少しているという状況です。こうした状況の中で、高校卒業後に、ものづくり現場あるいは電気機械の現場に就職する高校生は減少の一途をたどっております。双方の現場、深刻な人手不足の問題に直面しております。工業高校の高校数 あるいは生徒数が大きく減少していると、これは要因だと考えるんですけれども、ものづくりの現場について申しますと、工業、高校、人材が不足し、日本のものづくりの強みである現場力を維持、強化することが困難になっていると。企業の危機感が非常に高まっていると聞いております。あるいは電気機械の分野にも同様に、工業高校在学中に資格を取得して、卒業後に即戦力として現場で活躍する人材が減少していると、そのような現場から聞いております。この工業高校数、生徒数の減少によるものづくり人材、あるいは電気機械の人材の不足の状況、現場力の維持・強化に関して、大臣の所見をお伺いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "赤澤経済産業大臣",
+        "role": "",
+        "summary": "- 製造業を支える工業高校出身者は極めて貴重であり、2040年には大幅な人材不足が生じるとの推計がある\n- 現状を踏まえ、引き続き技術系人材の確保育成に努め、現場力の維持・強化につなげる必要がある",
+        "full_text": "我が国のGDPの約2割を占める基幹産業である製造業、将来にわたり支えていく工業高校出身の技術系人材は重要かつ極めて貴重な存在であります。製造業の足元における雇用環境は、本年2月時点の有効求人倍率が1.6倍、人手不足の状況でございます。さらに、2028年度には約32万人の人手不足が生じるとの試算も示されています。本年3月に公表した2040年の就業構造推計では、製造業を含む様々な産業で、現場人材が約260万人不足するほか、工業高校卒が約91万人、高専卒が約15万人不足することも示唆されています。こうした現状を踏まえつつ、引き続き技術系人材の確保育成に努め、現場力の維持・強化につなげていく必要があるというふうに認識をしております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#6084.19",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "工業高校減少に伴うものづくり・電気機械人材不足への所見",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "全国工業高校 高等学校校長会"
+            },
+            {
+              "type": "number",
+              "excerpt": "工業高校数は655校から582校と、マイナス73校"
+            },
+            {
+              "type": "number",
+              "excerpt": "生徒数は37万人から22万人、マイナス15万人"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "工業高校の生徒・卒業生",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "有効求人倍率が1.6倍"
+            },
+            {
+              "type": "number",
+              "excerpt": "2028年度には約32万人の人手不足"
+            },
+            {
+              "type": "number",
+              "excerpt": "工業高校卒が約91万人、高専卒が約15万人不足"
+            },
+            {
+              "type": "evidence_citation",
+              "excerpt": "2040年の就業構造推計"
+            }
+          ],
+          "score": 0.9
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "技術系人材の確保育成に努め",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.5
+        },
+        "oc3_quotability": {
+          "quote_candidate": "2040年の就業構造推計では、工業高校卒が約91万人、高専卒が約15万人不足することも示唆されています。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者が具体的な統計を提示し、大臣がそれに応える形で政府の推計数値を具体的に回答しており、記録としての価値が高い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "所見を求める形式であるため、具体的な対策案を提示させる問い方にすれば、より高いコミットメントを引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_032",
+      "segment_index": 4,
+      "topic": "工業高校の生徒数確保に向けた文科省の取り組み",
+      "question": {
+        "speaker": "竹詰仁",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 工業高校の数および生徒数を確保するための文部科学省の具体的な取り組みを問う",
+        "full_text": "文科省さんにお尋ねしますけれども、工業高校数の確保、あるいはその生徒数の確保について、文科省さんの取り組みについては、どのようになっているのか、お尋ねいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "今井審議官",
+        "role": "",
+        "summary": "- 高校教育改革促進基金を創設し、専門高校の機能強化や施設整備を支援する\n- SNSやホームページを開設し、中学生や保護者へ専門高校の魅力を積極的に発信している",
+        "full_text": "このため、昨年末の令和7年度補正予算では、約3000億の高校教育改革促進基金を創設し、工業高校をはじめとする専門高校等を対象に、各都道府県において、先導的な学びの在り方を構築するパイロットケースの創出に取り組むとともに、 今年度から地方債の一つとして新たに創設された高等学校教育改革等推進事業債について、工業高校など専門高校の機能強化・高度化に資する施設整備の整備等へ活用が期待されているところでございます。こうした取組に加え、進学する高校を選択する際、その検討に資するよう、工業高校など専門高校の魅力を中学生やその保護者、 中学校関係者等に広く発信するため、昨年度から専門高校専用のインスタグラムのアカウントや実習動画を集めたホームページを新たに開設し、積極的な情報提供に努めているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#6084.19",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "工業高校の数・生徒数確保の取り組み",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "工業高校",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "約3000億"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "高校教育改革促進基金"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "高等学校教育改革等推進事業債"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "積極的な情報提供に努めている",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "令和7年度補正予算では、約3000億の高校教育改革促進基金を創設し、工業高校をはじめとする専門高校等を対象に、先導的な学びの在り方を構築する。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "工業高校の確保策について、基金の創設や地方債の活用、広報活動という具体的な施策が回答されており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「数」の確保という問いに対し、具体的な数値目標を問う形式にすればより実効的な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_033",
+      "segment_index": 4,
+      "topic": "工業高校と民間企業の連携による人材育成",
+      "question": {
+        "speaker": "竹詰仁",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 民間企業による設備供与、講師派遣、インターン受け入れ、魅力発信など、産学連携による人材確保への見解を問う",
+        "full_text": "もう今、文科省さんから一部触れていただいたんですけども、ちょっと経産省さんにですね、ちょっと重複するところありますが、まさにはその民間企業との連携、あるいはその工業高校への、その旋盤等の工作機会だとか、設備を供与するっていう、その設備の充実ですね。あるいはそのものづくり教育の、民間企業から工業高校に、その教育現場に人を派遣する。とか、あるいはその工業高校生をインターンで受け入れるとかですね、いろんな工夫があると思います。あるいはその今就職を考えている若者世代に向けての技術や技能の職場の状況、働き方、あるいは魅力、そういったことを発信するとか、そういったことをいろんな工夫ができると思うんですけども、今、文科省さんからも後半そういったご答えをいただいたんですけども、改めて工業高校と民間企業との連携、あるいはその生徒や若者 世代の発信、アプローチ、そういったことについて、経産大臣、赤澤大臣についてご見解をお尋ねいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "赤澤経済産業大臣",
+        "role": "",
+        "summary": "- 産学官連携による教育カリキュラム提供や出前講座を、半導体・蓄電池等の重点分野で実施している\n- ものづくり日本大賞やジュニアマイスター検定などを通じ、若者の技術を称え魅力を発信している",
+        "full_text": "我が国が強みを持つものづくり産業の現場力の維持強化のために、産学間連携やものづくりの魅力向上発信を通じ、ものづくり人材の確保育成を着実に進めていくことが重要でございます。経済産業省では、ものづくり人材育成の一環として、2020年以降、 半導体、蓄電池、ロボット、素経済分野において、工業高校、高等専門学校に対し、産学官で連携し、地域の実情に合わせ、教育カリクラムの提供や出前講座の実施といった支援を行っております。また、今年3月に政府が主催したものづくり日本大賞では、ものづくりの将来を担う 高度な技術・技能を有する若者を表彰したり、全国工業高等学校・校長協会が主催するジュニアマイスター検証制度では、経済産業大臣賞を交付しており、優れた技術を持つ若者を称え、全国にものづくりの魅力発信を行っているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#6084.19",
+      "metrics": null
+    },
+    {
+      "id": "qa_034",
+      "segment_index": 4,
+      "topic": "原子力発電所の建設期間と2040年目標の実現性",
+      "question": {
+        "speaker": "竹詰仁",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 原子力発電所の建設に要する期間と、2040年度の電源構成目標（原子力2割）を実現するための取り組みを問う",
+        "full_text": "政府のエネルギー需給見通しでは、2040年度の電源構成費は、再エネが4割から5割程度と最も大きく、火力発電が2から3割程度、原子力発電が2割程度というふうになっております。この原子力発電所の建設機関 どの程度期間を要するとお考えなのか、経産省にお尋ねいたします。2040年ですから、今から14年後ということになりますけれども、まさに十数年から20年、これがバンドとして入っているのかということなんですね。原子力発電所の長期間、原子力発電所の建設長期間要するということなんですけれども、本当に今のおっしゃった 第7次エネルギー基本計画、それがしっかり間に合うのかということなんですが、では、経産省として、2040年に今の原子力発電の割合を実現するために、政府としてどのような方針、取り組みをされていくのか、赤田大臣にお尋ねいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "久米電力ガス事業部長",
+        "role": "",
+        "summary": "- 原子力発電所の建設には十数年から20年程度のリードタイムが必要である\n- 新規制基準適合炉の再稼働、定期検査の効率化による設備利用率向上、次世代革新炉の開発設置に取り組む",
+        "full_text": "第7次エネルギー基本計画でもお示ししておりますけれども、原子力発電所には十数年から二十年程度のリードタイムが必要だというふうに考えてございます。原子力はエネルギー安全保障に寄与する脱炭素効果の高い電源であり、安全性の確保と地域のご理解を大前提に、最大限活用していく方針でございます。具体的には、例えば、原子力規制委員会により新規制基準に適合すると認められた原子力発電所を再稼働する、加えて安全性確保を大前提とした定期検査の効率化や運転サイクルの長期化等により設備利用率を向上させる、また次世代革新路の 開発設置などに取り組んでまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#6084.19",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "2040年の原発比率実現に向けた方針と取り組み",
+          "sub_asks": [
+            "原子力発電所の建設に要する期間の認識",
+            "2040年の原発比率実現に向けた政府の方針・取り組み"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "政府のエネルギー需給見通し"
+            },
+            {
+              "type": "law",
+              "excerpt": "第7次エネルギー基本計画"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "十数年から二十年程度のリードタイム"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "原子力規制委員会"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "次世代革新路"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "取り組んでまいりたいと考えております",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.5
+        },
+        "oc3_quotability": {
+          "quote_candidate": "原子力発電所には十数年から二十年程度のリードタイムが必要だというふうに考えてございます。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "原発建設のリードタイムという具体的な数値認識と、実現に向けた具体的手段（再稼働、効率化、次世代炉）が示されており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "建設期間の確認と、実現に向けた方針という2つの問いが混在しているため、個別に問う方がより明確な回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_035",
+      "segment_index": 4,
+      "topic": "特定重大事故等対応施設（特従施設）の設置期限の実効性",
+      "question": {
+        "speaker": "竹詰仁",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 特従施設の設置期限（一律5年）を期限内に達成できた実績が極めて少ない現状について、委員長の認識を問う",
+        "full_text": "この特定重大事故等対応施設、いわゆる特従施設についてお伺いさせていただきたいと思います。新規制基準では特従施設の設置が義務づけられておりまして、この特従施設の設置期限については、まずは経過措置機関として、安全上の重要性、事業者が対応するために必要な機関等を総合的に判断して設置、設定すると。加えて、 本体施設の工事計画認可から、どの発電所であっても、一律5年以内に特住施設を完了させなければならない。この特従施設の設置期間が一律5年に決まっているんですけれども、新規制基準のもとで稼働した原子力発電所について、5年以内に特従施設を設置できたことがあるのか、山中委員長にお尋ねいたします。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "山中委員長",
+        "role": "",
+        "summary": "- 完成した12基のうち、経過措置期間内に完成できたのは大井発電所4号炉の1基のみである",
+        "full_text": "現在までに特定重大事故と対処施設等が完成しているプラントが計12基ございます。そのうち経過措置期間内に完成できたのは大井発電所4号炉のみとなっております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#6084.19",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "新規制基準下で特従施設を5年以内に設置できた例があるか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "新規制基準"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "原子力発電所",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "計12基"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "大井発電所4号炉"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "現在までに特定重大事故と対処施設等が完成しているプラントが計12基ございます。そのうち経過措置期間内に完成できたのは大井発電所4号炉のみとなっております。",
+          "score": 0.9
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "特従施設の設置期限遵守状況について、具体的な基数と施設名を挙げて明確に回答しており、記録としての価値が高い。",
+        "would_be_referenced": "high",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_036",
+      "segment_index": 4,
+      "topic": "特従施設設置期限の延長申請却下理由",
+      "question": {
+        "speaker": "竹詰仁",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 建設業界の労働時間上限規制という外部要因による期間延長提案を、原子力規制委員会が否定した理由を問う",
+        "full_text": "原子力委員会の議事録を見ますと、原子力事業者から建設業界の労働環境の変化、その1つが2019年の労働基準法改正によって、2024年4月より適用された建設業の時間外労働上限規制、 これを理由に、特住施設の経過措置期間を3年程度延長するという提案がなされたと伺っております。つまり、事業者自身の要因ではなく、多立的要因で期間を延長してほしいと、そういう意見だったと承知しております。この建設業界の労働環境の変化を、多立的要因ということではないという、この否定をした理由について、委員長に伺います。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "山中委員長",
+        "role": "",
+        "summary": "- 夜間工事の可能性が確認されており、上限規制と工事期間延長の直接的な定量的な根拠が確認できなかったため",
+        "full_text": "改正労働基準法の施行を踏まえた建設業界の労働環境の変化により、特住施設の工事に制約を受け、以前のように進めることが困難な状況が生じているという電力事業者の主張については理解をいたしましたが、作業員の確保の状況等によっては、夜間工事も可能であることが確認できました。このため、労働者個人に対する時間外労働の上限規制と特殊施設工事全体の工事期間の延長との直接的な関係を示す具体的な定量的な根拠が確認できなかったことが、全力事業者からの申し出を認めないこととした理由でございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#6084.19",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "建設業の時間外規制を多立的要因と否定した理由",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "原子力委員会の議事録"
+            },
+            {
+              "type": "law",
+              "excerpt": "2019年の労働基準法改正"
+            },
+            {
+              "type": "date",
+              "excerpt": "2024年4月"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "原子力事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "改正労働基準法"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "時間外労働の上限規制と特殊施設工事全体の工事期間の延長との直接的な関係を示す具体的な定量的な根拠が確認できなかった",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "事業者の提案を却下した具体的根拠（定量的な根拠の欠如）を明確に回答しており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_037",
+      "segment_index": 4,
+      "topic": "特従施設設置期限（一律5年）の適切性と見直し",
+      "question": {
+        "speaker": "竹詰仁",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 立地や地質により工事性質が異なる中で、一律5年という期限設定が適切か、見直すべきではないかという見解を問う",
+        "full_text": "ただ、私はですね、 この一律5年というのが本当に適切なのかということは解いていきたいと思います。原子力発電所は立地地域の場所、あるいは地形も違います、地質も違う、敷地の面積も違うと。ということでその工事することの性質も違うし規模も違うということで先ほど冒頭にですねあの経産省さんから十数年から20年程度っていうのはやっぱりそのぐらい幅があるっていうことだと思うんですよねそれが多分建設っていう幅だと思いますですのでそこに一律5年っていうのがそもそもそれが正しいのかと いうことが適切なのかということは問うていかなきゃいけないと思ってまして、改めて山中委員長、この一律5年ということについて見直すべきと考えますけど、委員長の見解をお伺いします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "山中委員長",
+        "role": "",
+        "summary": "- 経過措置は公平である必要があり、個別の事情を踏まえてプラントごとに設定する仕組みは適切ではないと考える",
+        "full_text": "バックフィット制度の経過措置といいますのは、公平なものとする必要がございます。また、電力事業者の個々の事情をあらかじめ見通すこともできませんので、電力事業者の個々の事情を踏まえたプラントごとに個別の経過措置を設定するような仕組みは適切でないと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#6084.19",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "一律5年の経過措置は見直すべきか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "経産省さんから十数年から20年程度っていうのはやっぱりそのぐらい幅がある"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "原子力発電所",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "電力事業者の個々の事情を踏まえたプラントごとに個別の経過措置を設定するような仕組みは適切でないと考えております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "一律5年の経過措置の妥当性について問い、政府側が個別設定は不適切であると明確に否定したやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_038",
+      "segment_index": 4,
+      "topic": "規制の実効性と今後の見直し方針",
+      "question": {
+        "speaker": "竹詰仁",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 現場の実態と乖離し達成不可能な規制は機能していないとの認識に基づき、今後も必要に応じて見直す考えがあるか問う",
+        "full_text": "今回の見直しは単なる延長ではなく、10年間の運用実績に基づく規制の実効性の適正化であると、というふうに私は拝聴いたしました。規制が、 現場の実態と乖離し、達成不可能なものとなっている場合、それは規制として十分に機能していないと、そういった認識を示されたと承知しております。いうことなのかどうかその経過措置であれば先ほど委員長が自らおっしゃった規制が現場の実態と乖離しているとそれであったら達成不可能ものになっているという規制としては十分に機能していないということを委員長自らおっしゃっているんですからこれが十分に機能していないということがこれからも分かったのであれば今後も必要に応じて見直していくとそういったお考えでよろしいのか 委員長の見解を伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "山中委員長",
+        "role": "",
+        "summary": "- 10年の実績に基づき起点を変更する適正化を行ったため、即座に再見直すことは考えていない\n- ただし、重大な外部的要因が発生した場合には、個別プラントについて考え直す必要があると認識している",
+        "full_text": "御指摘いただきましたように、今回の特定重大事故と対象施設の経過措置の考え方の変更の決定といいますのは、起点の見直しから10年の運用の実績、 12期中11期が期限を守れなかったという客観的事実に基づいた規制の実効性の適正化であると、私自身受け止めてございます。しかしながら、このような実績、10年間の実績を踏まえた見直しでございますので、今後、経験に 即座にまた見直すということは今のところ考えてございません。ただし重大な多立的要因が発生した場合にはこの経過措置期間というのは個別のプラントについて考え直さないといけない場合もあるというふうに認識してございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#6084.19",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "規制の実効性不足が判明した場合の今後の見直し方針",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "10年の運用の実績"
+            },
+            {
+              "type": "number",
+              "excerpt": "12期中11期が期限を守れなかった"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "12期中11期が期限を守れなかったという客観的事実に基づいた規制の実効性の適正化であると、私自身受け止めてございます。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "規制の形骸化という客観的事実（12期中11期が未達成）を認めた点に記録的価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問文が口語的で冗長であり、論点が整理されていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_039",
+      "segment_index": 5,
+      "topic": "影響調査結果への受け止め",
+      "question": {
+        "speaker": "竹内真二",
+        "party": "公明党",
+        "summary": "- 3党による個人・企業への緊急聞き取り調査の結果について\n- 現場の切迫した状況を踏まえ、調査結果をどう受け止めているか",
+        "full_text": "この調査は、今、資料1枚お配りさせていただきましたけれども、これは公明新聞の記事ですが、この報道にもありますように、3月27日から4月の13日にかけて、個人と企業に対して、それぞれの影響を把握するために、緊急の聞き取り調査を、議員が実施をしたものであります。その結果、個人と企業を合わせて1万2000件を超す回答を得ました。特に企業におきましては、今回の原油、あるいは原材料の高騰に対しまして、83.6%が既に影響を受け、しかも今後の影響見込みまで含めますと、実に97.1%に達しておりまして、ほぼ全ての企業がこの影響圏内にあると、このように回答をしておりました。企業の方々からは、自由記述欄への記述も、 行っていただきまして、全員ではありませんけれども、回答していただいたのは、2600件を超す回答も寄せられております。価格転嫁ができず、倒産の不安がある、資材が入らず、創業停止の恐れがある、など資金繰りの不安をもとより、価格転嫁が難しいことや、資材不足への懸念など、現場からは極めて切迫をした声が数多く寄せられております。しかしそうした政府の対応と比べてもですね、この現場を見ますと価格 供給、雇用のいずれにおきましても、今回の事態というのは、より深刻な危機として受け止められております。その意味では、迅速な対応の必要性が、ある意味では浮き彫りになったと考えております。そこでまず、これは赤澤大臣にお聞きしますけれども、3党によるこの影響調査の結果について、どのように受け止められているのか、率直な感想をお伺いしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "赤澤経済産業大臣",
+        "role": "",
+        "summary": "- 国民の声を聞き取ったことに感謝し、不安や不満を改めて認識した\n- 特別相談窓口等で具体的な声を集約し、タスクフォースによる供給状況の点検や中小企業支援を講じている",
+        "full_text": "直接国民の皆様の声を聞き取っていただいたことに心から感謝をいたします。拝読をし、政府の政策に対して様々なご期待もいただいているということでありますし、不安やご不満があるということも改めて認識させていただいたところでございます。経産省において全国約1000カ所の特別相談窓口を設置し 例えば、塗料などの建材の調達が遅れたことに伴い、当面の資金繰りに苦労しているとか、あるいはクリーニングで使用する溶剤が値上げしたが、価格転嫁できず利益が減少しているといった具体的な声も伺っているところであります。原油や石油製品については、我が国全体として必要となる量を確保できているものの、一部で供給の偏りや流通の目詰まりが生じており、担当大臣である私のもとにタスクフォースを設置して、供給状況の総点検、それから 一つ一つ確実に解消に努めるということをしております。また、中等情勢の影響を受ける中小企業、小規模事業者のために、特別相談窓口の設置、資金繰り支援の拡充、コストの上昇を考慮した価格展開要請といった支援も行っているところであり、引き続き国民の皆様の命と暮らし、そして経済活動に影響が生じないように、万全の対策を講じてまいりたいと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#7596.54",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "3党による影響調査結果への受け止め",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "公明新聞の記事"
+            },
+            {
+              "type": "number",
+              "excerpt": "1万2000件を超す回答"
+            },
+            {
+              "type": "number",
+              "excerpt": "83.6%が既に影響を受け"
+            },
+            {
+              "type": "number",
+              "excerpt": "97.1%に達しており"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "個人と企業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "全国約1000カ所の特別相談窓口"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "万全の対策を講じてまいりたいと思っております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "引き続き国民の皆様の命と暮らし、そして経済活動に影響が生じないように、万全の対策を講じてまいりたいと思っております。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "議員が提示した具体的な調査結果に対し、大臣が認識を示し、現行の対策を列挙して回答した標準的なやり取りである。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「率直な感想」を問う形式であるため、政府の具体的な約束や方針変更を引き出す設計になっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_040",
+      "segment_index": 5,
+      "topic": "原油高騰による賃上げへの影響と対策",
+      "question": {
+        "speaker": "竹内真二",
+        "party": "公明党",
+        "summary": "- 原油・原材料高が賃上げのブレーキとなっている実態がある\n- 政府は原油高が賃上げに与える影響をどう認識し、緩和策をどう強化するか",
+        "full_text": "まず、賃上げへの影響であります。調査では、今後の賃金について、法人に質問をいたしました。これに対しまして、現状維持が48.9%で最多となり、引き上げる予定があるとの回答は34.1%にとどまりました。物価上昇が続く中で、本来は賃上げの流れを確かなものにしなければならない。あるいは原材料高がその流れに明らかにブレーキをかけている実態が浮き彫りになっております。回答したある製造業者からはこんな声が上がっています。賃金アップをしたいが、原油高騰の先行き不安と業績の不安定、資金繰りの不安から容易にいかない。賃金を上げられる施策や環境整備を求めると。賃上げしたくても上げられない。そこでお聞きしますが、政府として今回の原油高が賃上げに与えている影響というものをどう認識をされているのか、またその影響というものを緩和するための対策というものを強化すべきと考えますけれども、見解を伺いたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "山田資源エネルギー政策統括調整官",
+        "role": "",
+        "summary": "- 物価上昇を上回る賃上げが不可欠であり、原油高の影響を注視している\n- サプライチェーンの目詰まり解消、価格転嫁の徹底、省力化投資支援、経済対策の迅速な執行に取り組む",
+        "full_text": "物価高を乗り越えて強い経済を実現するためには、物価上昇を上回る賃上げを実現することが不可欠だと考えております。原油価格の高騰が賃上げに与える影響を注視してまいりたいと考えております。足元では大臣からも申し上げたとおりでございますが、一部で供給の偏りや流通の目詰まりが生じているものと認識をしておりまして、関係省庁に設置された情報提供窓口を通じて、需要化の調達状況も 含めたサプライチェーンの情報を集約し、供給の偏りや目詰まりを一つ一つ確実に解消してまいりたいと考えております。加えてご指摘ございましたが、中小企業の稼ぐ力の強化に向けましては、価格転嫁、取引適正化の徹底や、AIトランスフォーメーション、いわゆるAXの推進を含む省力化生産性向上支援、 また、事業承継M&Aによる事業再編等に引き続き取り組んでまいりたいと考えております。また、物価高や賃上げ支援策を盛り込んだ経済対策や、令和7年度補正予算を着実かつ迅速に執行してまいります。国民の皆様の命と暮らし、そして経済活動に影響が生じないように、万全の対策を講じてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5179"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#7596.54",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "原油高の賃上げへの影響認識と対策への見解",
+          "sub_asks": [
+            "原油高が賃上げに与えている影響の認識",
+            "影響を緩和するための対策強化への見解"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "現状維持が48.9%で最多となり、引き上げる予定があるとの回答は34.1%にとどまりました"
+            },
+            {
+              "type": "field_case",
+              "excerpt": "回答したある製造業者からはこんな声が上がっています"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "製造業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "AIトランスフォーメーション、いわゆるAX"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "令和7年度補正予算"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "万全の対策を講じてまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "物価上昇を上回る賃上げを実現することが不可欠だと考えております。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は具体的な調査数値を提示して原油高の影響を問うているが、回答は一般的・包括的な経済対策の列挙に留まっており、具体的な「原油高」への直接的な緩和策への言及が薄い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「対策を強化すべきか」という抽象的な問いではなく、具体的にどのような支援策を求めるかを提示して回答を迫るべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_041",
+      "segment_index": 5,
+      "topic": "中小企業向け補助金・資金繰り支援の拡充と運用柔軟化",
+      "question": {
+        "speaker": "竹内真二",
+        "party": "公明党",
+        "summary": "- 現場では補助金拡充や資金繰り支援のニーズが非常に強い\n- 賃上げ要件が申請のハードルとなっているため、適用を柔軟化すべきではないか\n- 補助金や資金繰り支援を拡充すべきか政府の見解を問う",
+        "full_text": "次に、今回の影響調査では、法人に対して今後期待する支援策というものを聞いております。配付資料の左上のグラフのこの緑色の方ですけれども、これを見ていただくと一目瞭然なわけですが、やはり最も多かったのは、 各種補助金の拡充、75.1%でありました。さらにその下、資金繰り支援、セーフティーネット保障の拡充というものが41.3%に上っておりまして、現場ではやはり設備投資への支援、そして運転資金の確保、こうした両面からの支援ニーズが強いということが分かるわけであります。ものづくり補助金など、賃上げ要件があるために、やはり申請をためらうという方もいらっしゃいました。中小企業からしてみれば、賃上げ要件というものがクリアできないということであれば、やはり補助金返還のペナルティというものが生じるわけですから、それを受けるくらいであれば、今回はやめておこうというような形にもなりやすいと。その意味では、申請数が少し減少してきたというような現場の実態というのはあれば、賃上げに影響が出ているような一定期間というものは、補助金の賃上げ要件の適用を柔軟化したり、運用を見直したりするなどの、そうした措置というものも、私は検討すべきではないかと考えているところであります。その上で、 政府の方に聞きますけれども、現場ニーズの高い補助金や資金繰り支援というものをしっかりと拡充していくべきではないかと考えていますが、政府の見解を伺いたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "山崎経営支援部長",
+        "role": "",
+        "summary": "- 補助上限額や補助率を引き上げた新事業進出ものづくり補助金や、セーフティネット保証5号などの支援策がある\n- 賃上げ要件自体の弾力的運用は考えていないが、達成できない場合の返還については状況に応じ柔軟に対応する",
+        "full_text": "委員御指摘の中小企業に対する補助金による支援でございますけれども、例えば、今、委員御指摘もありました従来のものづくり補助金、さらには新事業進出補助金というのがございましたが、それを統合した新事業進出ものづくり補助金と 山本大臣 というものについての補助上限額及び補助率の引き上げなどを行ったところでございまして、こうしたところもまず影響を受ける中小企業の方々がご活用いただけるものと考えてございます。また資金繰り支援 につきましては、日本政策金融高校のセーフティネット貸付における金利引き下げに加えまして、このアンケート調査結果にもございますけれども、一定の要件を満たす場合には、債務を一般保証とは別枠で80%保証する、このセーフティネット保証5号というのがございまして、こちらも影響を受ける中小企業の方々がご活用いただけるところになってございます。また、委員からご指摘のですね、各所除菌における 賃上げ要件及び返還についてでございますけれども、厳しい状況だからこそ、こうした補助金を活用して賃上げと成長につなげていただきたいというところがまず基本方針でございますので、賃上げ要件自体の弾力的運用を図るべきものではないと。現時点では考えてございますが、採択事業者が厳しい状況下で賃上げ要件を達成できない場合における補助金の返還に関する取扱いにつきましては、採択事業者の置かれている状況に鑑みながら柔軟に対応していくと、こういう考えでございます。引き続き、中等情勢等が中小企業に与える影響を注視しまして、適切な対応に万全を期してまいりたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5179"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#7596.54",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "補助金・資金繰り支援の拡充に関する政府の見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "各種補助金の拡充、75.1%"
+            },
+            {
+              "type": "number",
+              "excerpt": "資金繰り支援、セーフティーネット保障の拡充というものが41.3%"
+            },
+            {
+              "type": "other",
+              "excerpt": "配付資料の左上のグラフ"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "中小企業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "新事業進出ものづくり補助金"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "日本政策金融高校のセーフティネット貸付"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "セーフティネット保証5号"
+            },
+            {
+              "type": "number",
+              "excerpt": "80%保証"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "適切な対応に万全を期してまいりたいと考えてございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "賃上げ要件自体の弾力的運用を図るべきものではない。現時点では考えてございます",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "補助金の賃上げ要件の柔軟化という提案に対し、要件自体の弾力的運用は否定しつつ、返還対応については柔軟に行うという政府のスタンスが明確に示された。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「拡充すべきではないか」という包括的な問いよりも、「賃上げ要件の適用柔軟化」に絞って問えば、より具体的なコミットメントを引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_042",
+      "segment_index": 5,
+      "topic": "雇用維持のための雇用調整助成金の拡充",
+      "question": {
+        "speaker": "竹内真二",
+        "party": "公明党",
+        "summary": "- 供給制約や価格転嫁不能により、今後休業を余儀なくされる懸念がある\n- コロナ禍の際と同様に、雇用調整助成金の拡充などの支援策を講じるべきではないか",
+        "full_text": "次にですね、雇用維持についても伺いたいと思います。これは私が言った千葉県南の調査の際ですけれども、建設業の関係の方がこう言われておりました。今は資材行動や品薄への対応は何とかできているが、日々悪化していく状況を踏まえると、1ヶ月後のゴールデンウィーク明けには、物が入ってこなくなる恐れがある。また、価格転嫁ができなくなる。また、受注を受けられなくなる。こういった事態が起きて、企業を取り巻く風景というものが一変しているのではないかとの不安があると。そのためにも、この方は、 コロナ禍の時のような雇用調整助成金の拡充をお願いしたいと。繰り返しになりますが、今回の影響調査でもですね、4番目に多かった回答というのは、この支援策としてですね、これ雇用助成金のですね、拡充なんですね。燃料高、原材料高、 供給制約により収益が圧迫をされて、創業調整や休業の懸念が出ていることが、やはりここからも伺えるわけでありまして、しっかりと雇用調整助成金の拡充というものを行っていく必要があると私は考えております。現時点で、広範な創業停止が起きているわけではないとしても、今後、石油化学製品や関連次第の高騰、供給制約が深刻化すれば、やはり建設、製造物流、福祉関係などで、休業よくな 余儀なくされる局面にも入る可能性というのは十分ありますので、当然、この雇用調整助成金の拡充というものを手当てする予算措置、補正予算というものも必要になってくると私は考えております。こうしたことを申し上げた上で、今日は厚生労働省の方にもお越しをいただいておりますので、お伺いいたしますが、毎日企業の 創業がですね、停止するなど、雇用維持の局面に至った場合には、コロナ禍の際と同様にですね、雇用助成金、雇用調整助成金などの支援策をしっかりと講じるべきだと考えますが、見解を伺いたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "森谷高齢障害者雇用開発審議官",
+        "role": "",
+        "summary": "- 通常の制度でも支給要件を満たせば対象となり得る\n- コロナ禍の特例は非常に特殊な状況によるものであり、今般の状況と同一に論じることはできない\n- 雇用の影響を把握し、必要に応じて活用を促す",
+        "full_text": "雇用調整助成金についてですけれども、通常の制度におきましても、原油や原材料の入手困難や価格行動等に伴い、事業活動を縮小し、休業等を余儀なくされた場合、支給要件を満たせば支給対象となり得ると考えてございます。一方でコロナ禍での雇用調整助成金の特例措置について言及ございましたけれどもコロナ禍の際の措置につきましては国から事業者や国民に対し感染防止対策を図るための 強い休業要請を行うという非常に特殊な状況の中で助成率等について異例の対応を行ったということでございまして今般の状況と必ずしも同一に論じられるものではないのではないかというふうに考えているところでございます。従いまして厚生労働省といたしましてはまずは 中等情勢に係ります雇用の影響を適切に把握するとともに、事業主から雇用調整に係る相談があった場合には、全国の労働局やハローワークにおきまして、丁寧な相談対応を行い、必要に応じて雇用調整助成金の活用を促してまいりたいというふうに考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#7596.54",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "雇用維持のための雇用調整助成金の拡充への見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "field_case",
+              "excerpt": "千葉県南の調査の際ですけれども、建設業の関係の方がこう言われておりました"
+            },
+            {
+              "type": "other",
+              "excerpt": "今回の影響調査でもですね、4番目に多かった回答というのは、この支援策としてですね、これ雇用助成金のですね、拡充なんですね"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "建設業の関係の方",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "全国の労働局やハローワーク"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "丁寧な相談対応を行い、必要に応じて雇用調整助成金の活用を促してまいりたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "コロナ禍の際の措置につきましては…非常に特殊な状況の中で助成率等について異例の対応を行ったということでございまして今般の状況と必ずしも同一に論じられるものではない",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "雇用調整助成金の拡充要求に対し、現行制度で対応可能であることと、コロナ禍の特例とは状況が異なることを明確に回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_043",
+      "segment_index": 5,
+      "topic": "石油化学製品の供給目詰まり対策と高値定着への対応",
+      "question": {
+        "speaker": "竹内真二",
+        "party": "公明党",
+        "summary": "- 石油化学由来原料の価格上昇と供給制約（目詰まり）が発生している\n- 流通段階での目詰まりが再発する恐れはないか\n- 高値が定着した場合の対策はどう考えているか\n- 他の石油化学製品における目詰まり対策の現状はどうか",
+        "full_text": "次に供給の目詰まりについて伺います。これも千葉県内の中小企業団体の方が、会員の企業の皆様からヒアリング調査を行っておりまして、実はその調査結果からも、石油化学由来原料の価格上昇と供給制約が発生していることが確認をできております。ヒアリングで判明した現場の状況について紹介いたしますと、石油化学由来原料の 価格改定通知が相次ぎ、一部では約30%の値上げが提示されている。流通量の絞り込みも進んでおり、単価アップを許容しても、必要数量の確保が困難になる可能性がある。具体的に不安の声があった資材例としては、発泡スチロール、ビニール、梱包用のフィルム類、塩ビ資材、梱包用のテープ、塗料、 フッ素樹脂関連資材などが挙げられておりました。在庫不足の資材というのは、今後仕入れ難や生産活動への影響が懸念されるとも言っておりまして、中小企業団体としても経営の先行きに非常に強い懸念を表明されておりました。これまでの審議の中でも何度か言及をされているわけでありますけれども、大変分かりやすい説明で、川上の石油価格メーカーや商社というものが、4月は今まで通り、5月から見てだよと言っただけでですね、川中のシンナーメーカーや、 総理大臣 また、目詰まりが起こるような恐れはないのかどうか。そして第2には、仮に供給量が戻っても高値が定着してしまえば、現場の負担というのは残ってしまいます。高値定着への対策というものはどう考えているのか。第3に、他の適用化学製品における目詰まり対策の現状というものはどうなっているのか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "赤澤経済産業大臣",
+        "role": "",
+        "summary": "- 日本全体として必要量は確保されており、個別の目詰まり事例は解消に向かっている\n- 中小企業向けに特別相談窓口の設置や価格転嫁の要請などの支援措置を講じている",
+        "full_text": "繰り返し申し上げるとおり原油や石油製品について日本全体として必要となる量を確保できている診断も同様であると思っておりますが 森英介議長 小泉議員 ただ、早いものでは、その日のうちに解消の見通しが立った事例もあります。真名の価格は、原料であるナフサの市場価格と同様に上昇傾向にあると認識をしております。そのため、特に中小企業、小規模事業者に対し、特別相談窓口を設置し、資金繰り支援を拡充し、コストの上昇を考慮した価格転換の要請といった支援措置を講じております。引き続き、国民の皆様の命と暮らし、そして経済活動への影響が最小限とどまるよう、万全の対策を講じています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5179"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#7596.54",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "石油化学製品の供給目詰まりと高値定着への対策",
+          "sub_asks": [
+            "供給目詰まりが起こる恐れはないか",
+            "高値定着への対策をどう考えているか",
+            "他の石油化学製品における目詰まり対策の現状"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "千葉県内の中小企業団体"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "千葉県内の中小企業団体",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "ナフサ"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "特別相談窓口"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "万全の対策を講じています",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "中小企業、小規模事業者に対し、特別相談窓口を設置し、資金繰り支援を拡充し、コストの上昇を考慮した価格転換の要請といった支援措置を講じております。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は具体的な資材例を挙げて3つの問いを立てているが、回答は一般的・抽象的な支援策の提示に留まっており、個別の問いへの直接的な回答が不足している。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問文の後半に「総理大臣」という単語が混入しており、文脈が乱れている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_044",
+      "segment_index": 5,
+      "topic": "行政サービスの燃料調達における入札不調への対応",
+      "question": {
+        "speaker": "竹内真二",
+        "party": "公明党",
+        "summary": "- 下水処理や公共バス等の燃料調達で入札不調が相次いでいる\n- 国民生活に直結する分野への優先供給や価格高騰支援などの制度的対応を講じるべきではないか",
+        "full_text": "もう一つですね、課題として、この行政サービスの燃料調達で、入札不調が相次いでいる問題についても伺いたいと思います。今回の現有高に伴ってですね、自治体の 例えばこの下水汚泥の焼却処理に必要な重油、または自治体のバス事業での燃料となる経由が入札不詳になるといった事態が起きております。こうした下水、公共交通など、国民生活に直結する分野については、やはり優先供給や価格高騰への支援といった制度的な対応を講じる必要があると考えておりますけれども、政府の見解を伺いたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "枠田部長",
+        "role": "",
+        "summary": "- 公共サービス等の重要施設については優先順位を判断し、元売事業者に直接販売するよう要請している\n- ガソリン等と同様に重油・軽油についても補助を実施しており、関係省庁と連携してきめ細かく対応する",
+        "full_text": "他方、石油製品の供給の方や理想が流通の目詰まりで生じていたことから対策強化をいたしまして、具体的にはまず委員御指摘のような公共サービスなどの需要施設につきましては、これは優先順位を判断の上、石油元売事業者に対しまして、これは直接販売を行うよう、これは政府から要請をいたしております。それから石油元売事業者に対しましては、これは系列事業者かどうかにかかわらず、 前年同月比同量を基本として販売するよう要請をしてございます。それから価格の高騰につきましては、これは3月19日から緊急的な下限間措置を実施をしておりますが、ガソリンについては、小売価格を全国平均で170円程度となるよう補助を行っておりますが、ご指摘の重油、それから経営につきましても、ガソリン等同額の補助を行っているところでございます。ご指摘の下水用で処理施設のような自治体の重要施設につきましては、これ平時のみならず、非常時においても燃料が安定的に供給されることは、 これ重要と認識しておりまして、引き続き国民の皆様の命と暮らしを守るべく、これは重要課の皆様から提供いただいた情報も踏まえまして、関係省庁と連携してきめ細かく対応してまいりたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#7596.54",
+      "metrics": null
+    },
+    {
+      "id": "qa_045",
+      "segment_index": 5,
+      "topic": "電気・ガス料金支援の発動基準",
+      "question": {
+        "speaker": "竹内真二",
+        "party": "公明党",
+        "summary": "- 家計にとって電気・ガス料金の補助継続は切実な願いである\n- 政府はどのような判断基準で料金支援を発動するのか",
+        "full_text": "最後になると思うんですけれども、これ、電気・ガス料金の支援についてなんですけれども、2日の本委員会で、 我が党の石川博貴議員が、電気・ガス料金についてどの程度、いつごろ上昇する可能性があると見ているのか、夏日に向けて要否を判断する時期については、どう考えるのかと質問をいたしました。先ほどから紹介しております、この3党の影響調査におきましても、これは個人の支援ニーズ、 となりますけれども、電気・ガス料金の引き下げ、補助の継続というものが75.1%と、これが最も高く、家計にとって切実な願いとなっております。そこで大臣にですね、伺いたいのは、電気・ガス料金支援について、政府はどのような判断基準で料金支援というものを発動するのか、最後にお答えいただきたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "赤澤経済産業大臣",
+        "role": "",
+        "summary": "- 物価、経済動向、使用者への影響を踏まえ総合的に判断してきた\n- 燃料輸入価格の反映にタイムラグがあるため直ちに上昇することはないが、引き続き動向を注視し、状況に応じて対応する",
+        "full_text": "電気・ガス料金支援については、物価や経済の動向、電気の使用者への影響を踏まえつつ、総合的に判断してきたものと承知をしております。その上で、電気・ガス料金、これまで申し上げたとおりでありまして、2から4か月前の燃料輸入価格を参照して、価格が決定されることが一般的であるため、中等情勢を受けて電気・ガス料金は直ちに上昇することはないという認識でございます。そのため、 現時点では、原油エネルギー価格の動向や、それらエネルギー価格の変動が電気・ガス料金に与える影響を引き続き注視をさせていただきたいと思っております。中東情勢が経済に与える影響をしっかり注視しながら、状況に応じて必要な対応を行ってまいりたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#7596.54",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "電気・ガス料金支援の発動判断基準について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "past_answer",
+              "excerpt": "2日の本委員会で、 我が党の石川博貴議員が"
+            },
+            {
+              "type": "number",
+              "excerpt": "3党の影響調査におきましても、これは個人の支援ニーズ、 となりますけれども、電気・ガス料金の引き下げ、補助の継続というものが75.1%"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "個人の支援ニーズ",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "2から4か月前の燃料輸入価格"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "状況に応じて必要な対応を行ってまいりたいと思います",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "2から4か月前の燃料輸入価格を参照して、価格が決定されることが一般的であるため、中東情勢を受けて電気・ガス料金は直ちに上昇することはないという認識でございます。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "判断基準という具体的な問いに対し、「総合的に判断」という抽象的な回答に留まっているが、価格決定のタイムラグに関する言及は具体的である。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのような判断基準で」という問いに対し、定量的な指標や閾値を求める形式にすれば、より逃げ道のない回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_046",
+      "segment_index": 6,
+      "topic": "政府の情報発信・広報方法の改善",
+      "question": {
+        "speaker": "上野ほたる",
+        "party": "日本維新の会",
+        "summary": "- 製造基盤強化レポート等のツールが現場や市民に届いていないため、広報方法を改善・促進すべきではないか",
+        "full_text": "上野ほたる： 知性学リスクを踏まえて検討されまして、製造基盤、強化レポートといったものも公表されている、いろいろツールとしては公表されているんですけれども、なかなかこういったところが現場の方にもですし、世間の皆様、一般市民の皆様にも届いていないのかなというところが、ちょっと散見されますので、この広報方法について、改めて改善されますとか、ちょっと促進をしていく必要性があるのではないかなと思いますが、政府策認の方でお答えいただけますか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "山田",
+        "role": "",
+        "summary": "- 報道関係者へのデイリーブリーフィングを毎日実施している\n- 地方経済産業局のHPに中東情勢関連対策ポータルを設置し、SNSも活用してきめ細かく発信していく",
+        "full_text": "こちらにつきまして申し上げますけれども、情報発信につきましては、日々刻々と移り変わる国内外の状況でございますとか、それを踏まえた対策の進捗につきましては、これ、報道関係者に適時適切にお伝えするべく、今、広報担当官からですね、毎日定刻に ジムブリーフィングを実施しているところでございます。また、経済産業省及び、また、富山という話もございましたが、地方経済産業局のホームページというところでも、中東情勢関連対策ポータルを設置いたしまして、SNSも活用しながら、地方の皆様も含めて、国民の皆様の不安を払拭すべく、きめ細かく、その情報発信につきましても対応してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#9107.8",
+      "metrics": null
+    },
+    {
+      "id": "qa_047",
+      "segment_index": 6,
+      "topic": "原油調達の多角化の進捗状況",
+      "question": {
+        "speaker": "上野ほたる",
+        "party": "日本維新の会",
+        "summary": "- 原油調達の進捗状況および多角化について改めて伺いたい",
+        "full_text": "ここでですが、ちょっと改めてなんですけれども、目詰まりも解消しているはずなんですけれども、どうしてもご不安の 気持ちも詰まっているということで、ちょっと元筋に戻りまして、この原油調達の進捗状況といいますか、多角化について、もう一度お聞かせいただけますか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "山田",
+        "role": "",
+        "summary": "- ホルムズ海峡を避けたルート（米国、中南米、中央アジア等）からの代替調達に注力している\n- 主要国や国際機関とハイレベルな協議を実施している\n- 5月には前年比で過半の代替調達に目途がつき、特に米国からは約4倍まで拡大する見込みである",
+        "full_text": "原油につきまして、その代替調達については、このホルムズ海峡を通らないルートからの調達に最大限注力しておりまして、供給余力に優れる米国や中東、過去調達実績がある中南米や中央アジア、カナダやシンガポールなど、石油製品の供給国も含めまして、経済産業省として民間事業者と連携しながら、代替調達先の確保に向けて対応を 大きな関係者と交渉を実施しているところでございます。特にサウジアラビアやUAE、米国をはじめとする供給余力が大きい国やIAといった主要な国際機関との間では、首相や大臣といったハイレベルでの協議も実施してきております。現時点におきましては、4月に前年実績比で2割以上、5月には過半の代替調達に目途がついておりまして、特にその米国からは5月に前年比 約4倍まで調達が拡大する見込みでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#9107.8",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "原油調達の進捗状況と多角化について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "米国や中東"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "中南米や中央アジア、カナダやシンガポール"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "サウジアラビアやUAE"
+            },
+            {
+              "type": "number",
+              "excerpt": "4月に前年実績比で2割以上"
+            },
+            {
+              "type": "number",
+              "excerpt": "5月には過半の代替調達に目途"
+            },
+            {
+              "type": "number",
+              "excerpt": "米国からは5月に前年比 約4倍まで調達が拡大"
+            }
+          ],
+          "score": 1.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "代替調達先の確保に向けて対応を 大きな関係者と交渉を実施している",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "4月に前年実績比で2割以上、5月には過半の代替調達に目途がついておりまして、特にその米国からは5月に前年比 約4倍まで調達が拡大する見込み",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "原油調達の多角化という抽象的な問いに対し、具体的な国名と月別の調達実績（数値）を挙げて回答しており、記録としての価値が高い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が「もう一度お聞かせいただけますか」という形式であり、具体的にどの点（期間や国など）を深掘りしたいのかが不明確である。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_048",
+      "segment_index": 6,
+      "topic": "エネルギー多角化と脱炭素の推進スピード",
+      "question": {
+        "speaker": "上野ほたる",
+        "party": "日本維新の会",
+        "summary": "- 中東リスクへの対応で石炭回帰が起きると気候変動対策に逆行するため、省エネ・非化石転換をよりスピード感を持って推進すべきではないか",
+        "full_text": "ちょっと視点を変えまして、日経新聞さんの4月20日付の記事なんですけれども、今回の中東情勢をめぐって、中達リスクが露呈した石油から、一部、石炭やバイオ燃料に転換するようなお国が出てきておられると。石炭利用などが長引くと、やはり気候変動対策に逆行するような恐れがあるといった記事が出てまして、日本国内においても、今もうすでにエネルギー庁さんが主体となっているとは思うんですけど、いろんな多角化がされ、エネルギーの多角化についてはされているとは思います。ただ、一方でやはり、生成AIですとか、データセンターの需要が高まって、電力供給については、まだまだ懸念すべきところがあるのではないかなというふうに考えております。こうしたエネルギーの多角化というのは大変重要性が増していると思いますし第7次エネルギー基本計画に先ほど言及されていましたが2040年に向けて経済産業省さんでも省エネ非化石転換というのは進められていると思います今年8年度予算についてもプロベース回答太陽電池等のサプライチェーン構築ですとか実際 研究開発など支援、実施されていくということになっていますが、さらにこれのスピード感を持って推進させる必要性があるのではないかなというふうに思います。このことについてご見解をお聞かせいただければと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "赤澤誠",
+        "role": "",
+        "summary": "- エネルギー安全保障の強化は極めて重要な課題であると認識している\n- 水素社会推進法に基づくサプライチェーン構築や、次世代型地熱の実用化、水力発電の更新支援に取り組む\n- 次世代エネルギーや再生可能エネルギーの導入施策を着実に進める",
+        "full_text": "我が国はエネルギーの海外依存度が高く、とりわけ原油について中東地域への依存度が高い構造にあり、エネルギー安全保障の強化、極めて重要な政策課題だと認識をしております。このため、具体的に委員御指摘のとおり、水素、アンモニア、需要喪失と価格低減に向けて、水素社会推進法に基づく大規模サプライチェーンの構築支援に取り組んでまいりますし、また、例えば地熱は、従来型地熱の開発を官民に挙げて加速するとともに、次世代型地熱について、2030年代の早期の実用化へ向けて、国内実証支援に取り組んでおります。水力発電は既存設備の更新支援、フィットフィップ制度による中小水力の導入に取り組んでまいります。今後とも、エネルギー安全保障の強化に向けて、次世代エネルギーや再生可能エネルギーの導入に向けた施策を着実に進めてまいりたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#9107.8",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "エネルギー多角化の推進スピードに関する見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "日経新聞さんの4月20日付の記事"
+            },
+            {
+              "type": "law",
+              "excerpt": "第7次エネルギー基本計画"
+            },
+            {
+              "type": "date",
+              "excerpt": "今年8年度予算"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "水素社会推進法"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "2030年代の早期の実用化"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "フィットフィップ制度"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "施策を着実に進めてまいりたいと思います",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "水素社会推進法に基づく大規模サプライチェーンの構築支援に取り組んでまいります",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "エネルギー多角化の必要性という抽象的な問いに対し、政府が現在取り組んでいる具体的な施策（水素、地熱、水力）を列挙して回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「スピード感を持って推進させる必要性」という問い方が抽象的なため、回答が現状の施策説明に留まり、具体的な加速策の提示に至らなかった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_049",
+      "segment_index": 6,
+      "topic": "2040年の就業構造推計の概要",
+      "question": {
+        "speaker": "上野ほたる",
+        "party": "日本維新の会",
+        "summary": "- 公表された2040年の就業構造推計の概要について伺いたい",
+        "full_text": "ただこれ実現するためにはやはりデジタル人材の確保だけではなくていかにスライドしていくかといいますかスキルをどのように移行していくかということが大変重要かと思いますが改めてこの公表されました構造推計についてその概要についてお聞かせください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "武田",
+        "role": "",
+        "summary": "- 2040年には全体的な人手不足はないが、職種・地域別に不均衡が生じると推計している\n- 事務職等が東京圏で大幅に余剰となる一方、地方の現場人材（約260万人）やAIロボット利活用人材（約340万人）などが不足する可能性がある",
+        "full_text": "経済産業省におきまして、国内投資の拡大や産業構造転換等を踏まえた2040年の産業構造の実現に向けまして、必要な就業構造を推計したところでございます。同推計によりますと、2040年にはAIロボットの利活用などによりまして、全体で大きな人手不足が生じないものの、職種、学歴、地域別では人材不足や余剰が生じることが示唆されてございます。具体的には、事務職や分系人材が東京圏を中心に大幅に余剰となる一方、現場人材が地方を中心に約260万人不足するほか、全国的にはAIロボット等、利活用人材が約340万人、利系人材が約120万人不足する可能性があるみてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#9107.8",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "構造推計の概要についての説明要求",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "公表されました構造推計"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "2040年"
+            },
+            {
+              "type": "number",
+              "excerpt": "約260万人不足"
+            },
+            {
+              "type": "number",
+              "excerpt": "約340万人"
+            },
+            {
+              "type": "number",
+              "excerpt": "約120万人不足"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "現場人材が地方を中心に約260万人不足するほか、全国的にはAIロボット等、利活用人材が約340万人、利系人材が約120万人不足する可能性がある",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "構造推計の具体的な数値（不足人数）が明示されており、記録としての価値が高い回答である。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "冒頭のスキル移行に関する問題提起が、単なる前置きとなっており、具体的な問いに結びついていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_050",
+      "segment_index": 6,
+      "topic": "デジタル人材スキルプラットフォームの概要",
+      "question": {
+        "speaker": "上野ほたる",
+        "party": "日本維新の会",
+        "summary": "- デジタル人材スキルプラットフォームの目的、機能、およびスケジュールについて伺いたい",
+        "full_text": "そこでですね、現在進めておられますデジタル人材スキルプラットフォームについて、目的ですとか機能ですとか、現在どういったスケジュール感で取り組まれているのかということをお聞かせいただけますか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "奥谷",
+        "role": "",
+        "summary": "- 目的はリスキリングの促進と、個人のデジタルスキル情報の蓄積・可視化・証明である\n- 機能は個人IDに基づき、試験合格情報や受講状況を紐づけ、最適な試験・講座を分析提供することを目指す\n- 令和8年度末のサービス提供開始を目標としている",
+        "full_text": "ご指摘のデジタル人材スキルプラットフォームは、令和6年度補正予算において措置された予算を活用して構築を進めているものであります。その目的としましては、デジタルに関するリスキリングを含めた学びを促進すること、個人のデジタルスキル情報の蓄積・可視化や証明を可能にすること、ということであります。その機能としては、 個人ごとにIDを発行し、個人の情報処理技術者試験の合比情報やキャリア目標、スキル情報、民間のデジタル関連講座の受講状況などを紐づけるとともに、受けるべき試験、講座情報などを分析して提供することを目指しています。スケジュールとしては、令和8年度末のサービス提供開始を目標として取り組んでいるところです。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#9107.8",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "デジタル人材スキルプラットフォームの概要と計画",
+          "sub_asks": [
+            "目的",
+            "機能",
+            "スケジュール感"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "デジタル人材スキルプラットフォーム"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.2
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "令和6年度補正予算"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "情報処理技術者試験"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "令和8年度末のサービス提供開始"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "スケジュールとしては、令和8年度末のサービス提供開始を目標として取り組んでいるところです。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問に対する回答が非常に具体的であり、特にサービス開始時期という明確な期限が示されているため、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "一度に複数の項目（目的・機能・予定）を尋ねているため、回答が分散しやすい構成になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_051",
+      "segment_index": 6,
+      "topic": "デジタル人材スキルプラットフォームへの登録促進",
+      "question": {
+        "speaker": "上野ほたる",
+        "party": "日本維新の会",
+        "summary": "- プラットフォームへの登録をいかに促すのか、ID作成の具体策について伺いたい",
+        "full_text": "ちょっと先ほどの質問でもう1点聞きたいんですけれども、これ、登録される際に、恐らく、まずさらな状態で始まると思うので、いかにIDを作っていただくかというのが必要だと思うんですけれども、そこの点についてお答えいただけますか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "奥谷",
+        "role": "",
+        "summary": "- まずは国家試験である情報処理技術者試験の応募者の登録を想定している\n- 昨年度の応募者数（約74万人）を踏まえ、早期に登録者100万人に到達することを目指す",
+        "full_text": "本プラットフォームに登録する方ということですけれども、まずは国家試験である情報処理技術者試験の応募者の登録というものを想定しています。こちらの試験の応募者数というのはかなり多くございまして、昨年度は約74万人ということであります。できるだけ早期に登録者100万人に到達することを目指していきたいというふうに考えています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#9107.8",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "ID作成・登録方法についての質問",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "情報処理技術者試験"
+            },
+            {
+              "type": "number",
+              "excerpt": "昨年度は約74万人"
+            },
+            {
+              "type": "number",
+              "excerpt": "登録者100万人"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "目指していきたいというふうに考えています",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "昨年度は約74万人ということであります。できるだけ早期に登録者100万人に到達することを目指していきたい",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "ID作成方法という具体的な問いに対し、回答者は想定ユーザー層と目標数という定量的な話にすり替えて回答している。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「そこの点について」という指示語が曖昧なため、回答者が都合よく解釈して論点をずらす余地を与えている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_052",
+      "segment_index": 6,
+      "topic": "デジタル庁（認証基盤）との連携検討",
+      "question": {
+        "speaker": "上野ほたる",
+        "party": "日本維新の会",
+        "summary": "- 将来的に、デジタル庁が進めるGVIZID等の認証基盤との連携についてどう考えているか",
+        "full_text": "ちょっとこれ、中長期的な視点にはなるかと思うんですけれども、今、デジタル庁さんと文科省のほうで、GVIZIDを利活用して、自治体とか学校ですとかの認証基盤構築が進められています。この教育現場では、もうすでにデジタルドリルなどを活用している学校もたくさんありまして、子どもたちの学習進路によって、こうしたきめ細やかな コードができるようになりつつあるんですね。将来的にこうした個人のスキルであったりとか分析をしていくということであればスキル向上であったりとかリスキリングだけではなくリカレント教育というところにもつなげていけるのかなと考えますので将来的にこのデジタル庁さんとの連携についてどのように考えておられるかお聞かせください。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "奥谷",
+        "role": "",
+        "summary": "- 現在は令和8年度末のサービス開始に向けたシステム構築を最優先しており、デジタル庁の施策との連携議論には着手していない\n- 今後、利用状況やニーズを勘案して必要な検討を進めたい",
+        "full_text": "デジタル人材スキルプラットフォームにつきましてはまずはですね 当該プラットフォームでの個人IDを基としたシステムの構築を進めています。令和8年度末のサービス開始を目指して、まずは構築を急いでいるということです。構築が最優先ということになりますので、現在はマイナポータルやマイナンバーカードなどのデジタル庁の施策との連携について、議論に着手はまだしておりません。ただ、今後、プラットフォームの利用状況やニーズなどを勘案して、必要な検討は進めてまいりたいというふうに考えています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#9107.8",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "デジタル庁との将来的な連携についての考え",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "デジタル庁さん"
+            },
+            {
+              "type": "organization",
+              "excerpt": "文科省"
+            },
+            {
+              "type": "other",
+              "excerpt": "GVIZID"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自治体とか学校",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "deadline",
+              "excerpt": "令和8年度末"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "デジタル人材スキルプラットフォーム"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "マイナポータル"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "マイナンバーカード"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "必要な検討は進めてまいりたい",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "現在はマイナポータルやマイナンバーカードなどのデジタル庁の施策との連携について、議論に着手はまだしておりません。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "デジタル庁との連携について、現時点では未着手であるという政府の現状認識が明確に記録されており、価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "将来的な考えを問うオープンクエスチョンであるため、具体的な期限や条件を盛り込んだ問い方にすれば、より強いコミットメントを引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_053",
+      "segment_index": 6,
+      "topic": "生成AI時代における必要スキルの把握方法",
+      "question": {
+        "speaker": "上野ほたる",
+        "party": "日本維新の会",
+        "summary": "- 生成AIの登場で必要スキルが急激に変化している中、新しい必要スキルをどのように把握しているのか",
+        "full_text": "最後になんですけれども、こうしたデジタル技術、特に生成AIなど人工知能の分野が革新的な速さで、日清月報で発展していっています。ちょっと懸念すべきは、現在必要な技能というところだけではなくて、10年後、20年後を見据えて、将来 にわたっての学習機会であるとか、現役世代のリスキリングを進めていく必要性があると思います。Society5.0時代の人材育成に関する検討会の報告書におきましても、こうしたスキルベースでの人材育成、先ほどのプラットフォームをつながるんですけれども、提言をされてて、この中でも、生成AIの登場でスキル自体は急激に変化をされていて、2030年 までに必要とされるスキルのうち、新しいスキルが73%を占めるというふうに明言をされております。これまでの就業構造との違いをしっかり認識をされまして、官民連携で取り組んでいかなければならないのではないかなというふうに考えております。そこで、すでに必要とされているスキルが 本当に乖離をしてしまう可能性があると思います。それで新しいスキル必要とされるというものをどのように把握されているのかということを大臣のほうをお聞かせいただければと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "赤澤誠",
+        "role": "",
+        "summary": "- 2040年推計の方向性は変わらないが、足元で必要なスキルが変化することは想定している\n- 令和7年度補正予算事業において、AIを用いて最新の職業・求人情報からスキル情報を抽出し、職種ごとの整理・把握を進めている",
+        "full_text": "2040年の就業構造推計でお示しした人材事業について今後、生成AIの活用が進む中で大きな方向性が変わるものではないと認識をしております。その上で技術革新が進む中、必要なスキルは足元で変化していくことが想定されます。このため、令和7年度補正予算事業において、最新の職業関連情報や求人情報をもとに、AIを用いてスキル情報を抽出し、職種ごとに必要となるスキルの整理・把握を進めているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#9107.8",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "必要とされる新スキルの把握方法について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "Society5.0時代の人材育成に関する検討会の報告書"
+            },
+            {
+              "type": "number",
+              "excerpt": "2030年までに必要とされるスキルのうち、新しいスキルが73%を占める"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "現役世代",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "2040年の就業構造推計"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "令和7年度補正予算事業"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 3,
+          "trigger_phrase": "AIを用いてスキル情報を抽出し、職種ごとに必要となるスキルの整理・把握を進めている",
+          "matched_pattern": "future-tense verb describing a CONCRETE government action with a named mechanism"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "令和7年度補正予算事業において、最新の職業関連情報や求人情報をもとに、AIを用いてスキル情報を抽出し、職種ごとに必要となるスキルの整理・把握を進めている",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "生成AIによるスキル変化への対応策について、具体的な予算事業と手法（AIによる抽出）を挙げて回答しており、記録価値が高い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_054",
+      "segment_index": 7,
+      "topic": "発電コスト試算の公平性と記載方法",
+      "question": {
+        "speaker": "櫻井祥子",
+        "party": "参政党",
+        "summary": "- 太陽光・風力のコストに蓄電池費用が含まれていない一方で、火力にCO2対策費やCCS費用が含まれているのは不公平ではないか\n- 蓄電池費用を別記載にするなら、CO2対策費等も同様に別記載すべきではないか",
+        "full_text": "私はこの記載の仕方に非常に疑問を覚えます。ここでお尋ねしますが、各発電方式単体のコストを比較して付随する項目については別記載にするというのであれば、蓄電池を別記載にしたように、CO2対策費やCCS費用も同様に別に記載するべきではありませんか。もしくは、CCSなどの費用を入れ込むのであれば、太陽光や風力も蓄電池込みのコストを併記しないと、現実的で公平な比較ではないように思うのですが、いかがでしょうか。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "山田統括調整官",
+        "role": "",
+        "summary": "- 提示したコストはモデルプラントを想定し、設備を新設運転した際のコストを機械的に試算したものである\n- 過去の検証との継続性や外在性を踏まえ、専門家による議論を経て示している",
+        "full_text": "委員の御指摘のこの資料3でありますとか、資料2もそうかもしれませんが、こちらのグラフにつきましては、 各電源における典型的な発電設備をモデルプラントとして想定し、設備を新設運転した際のキロワッターあたりのコストを機械的に試算したものでございます。この検証をしておりますけれども、この検証に際しましては、各費用について過去の検証等の継続性でありますとか、外然性の高い試算を示せるかという観点も踏まえまして、公開の場で専門家の方々に複数回御議論いただいているものでございまして、火力発電におけるCO2対策費用やCCS 櫻井祥子： 火力発電の方はCO2対策費やCCS費用が載っているんですが、これもですね、CCSなどはやるかどうかも決まっていないわけでして、それを必ずやるかのように火力のコストに上乗せするのは恣意的で誤解を生む表し方ではないかと考えます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5221"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#10180.14",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "発電コスト比較における記載方法の公平性について",
+          "sub_asks": [
+            "CO2対策費やCCS費用を別記載にすべきではないか",
+            "CCS費用を入れるなら再エネも蓄電池込みで併記すべきではないか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "この記載の仕方"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.2
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": true,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "資料3"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "資料2"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "各電源における典型的な発電設備をモデルプラントとして想定し、設備を新設運転した際のキロワッターあたりのコストを機械的に試算したものでございます。",
+          "score": 0.3
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "質問者はコスト比較の公平な基準を求めているが、回答者は試算の前提条件を説明するに留まり、具体的な改善や基準の変更への言及がない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "具体的な資料のどの項目が不適切かを明示した上で、代替案としての記載形式を具体的に提示させるとより効果的だった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_055",
+      "segment_index": 8,
+      "topic": "外国人労働者の受け入れ方針と人余り時代への対応",
+      "question": {
+        "speaker": "百田尚樹",
+        "party": "日本保守党",
+        "summary": "- 生産人口の減少やAI代替による事務職の余剰が予想される中、外国人労働者を受け入れ続けることは国策の誤りではないか\n- 分野別の不足ではなく、国民全体としての観点から回答を求める",
+        "full_text": "大臣の変容や治安の悪化という観点ではなく、経済的な観点、社会コストから赤澤経産大臣に質問いたします。終了構造推計によりますと、2040年には生産人口が700万人減少し、AIでの代替等により437万人もの事務職が余剰になると予想されています。既に一部、メガバンクや大手企業は新卒の採用止めなどによる事務職の人員削減計画を発表しています。こうした中、我が国は現在、毎年40万人程度の外国人を受け入れ、 今後も受け入れ続ける方針ですと。経産省でも外国人の経済活動を支援する補助金があります。しかし、これから人余り時代が来ると言われる中で、外国人労働者を受け入れ続けることは、国策の誤りではないでしょうか。人余り時代に向かう中で外国人をどんどん入れることは、国策の矛盾と私は考えますが、これをお答えください。ただ、分野によって人材不足がミスバッチがあるというような話ではなく、 あくまで国民の方全体としてお答えください。よろしくお願いします。赤澤経済産業大臣。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "赤澤経産大臣",
+        "role": "",
+        "summary": "- 外国人受入方針は法務省の出入国在留管理庁が取りまとめており、日本国民の就業率向上などを優先した上で、不足分野を積み上げて上限を決め受け入れている\n- 上限設定の妥当性について議論し、検討してほしい",
+        "full_text": "前回も申し上げたんですが、外国人の受入方針について、政府全体の取りまとめをしているのは、おそらく法務省の出入国管理庁だったかと思いますが、 そのもとにですね、ある制度でですね、いろんな分野について人手不足、これだから日本国民が最大限ですね。例えば、就業率、高齢者女性の方を上げたり、障害者の方にも働いていただいたり、そういうことをプラスしながらそれでも足りないという部分を分野ごとに計算して積み上げて、その上限を決めた上で、外国の方の労働者を受け入れていくという考え方を取っているというふうに理解をしております。そういう意味で、 委員の問題意識は理解をいたしますが、逆に言うとそこの上限設定のところがですね、おかしいと、もっと日本の労働者でカバーできるじゃないかとか、そういうご議論をしていただく中でですね、良いところを探っていただくというのがあるべきと言いますか、委員に私どもからするとお願いをしたいというようなことなんでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#11182.85",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "人余り時代に外国人を受け入れ続けるのは国策の誤りか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "2040年には生産人口が700万人減少"
+            },
+            {
+              "type": "number",
+              "excerpt": "437万人もの事務職が余剰になると予想"
+            },
+            {
+              "type": "number",
+              "excerpt": "毎年40万人程度の外国人を受け入れ"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "外国人労働者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "法務省の出入国管理庁"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "上限設定のところがですね、おかしいと、もっと日本の労働者でカバーできるじゃないかとか、そういうご議論をしていただく中でですね、良いところを探っていただく",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的数値を用いた鋭い問いに対し、大臣は管轄（法務省）への言及と一般論的な制度説明に留まり、国策の矛盾という核心への直接的な回答を避けた。",
+        "would_be_referenced": "low",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_056",
+      "segment_index": 8,
+      "topic": "出身国別の経済的コスト算出の必要性と経産省の役割",
+      "question": {
+        "speaker": "百田尚樹",
+        "party": "日本保守党",
+        "summary": "- オランダの事例を挙げ、移民の出身国によって国益へのプラス・マイナス（社会的コスト）が大きく異なることを指摘\n- 日本でも出身国別に国益への影響を算出・検討すべきであり、経産省が中心となって調査を行う考えがあるか",
+        "full_text": "全体として、もう既に人が余りつつある、さらに省略的に余る、それなのに外国に入れる必要はないと私は言うているんですが、そこで細かい、ここが足らん、ここが必要とか、そういう話をしても仕方ないと思うんですが、次の質問いきます。私たちはね、日本保守党は、移民は常に数と質が一番問題と考えています。つまりですね、どういう人なら 日本にとって国益なのか、そしてどういう人なら、むしろ国益マイナスになるのかと。これまで日本はですね、この質と数の問題が全く考慮されることなく、ノホーズ、あるいは私に言わせたら無計画に移民を受け入れていると、そんなふうに思います。移民は日本の国民の所得を上げない大きな要因の一つと思っています。国民の所得が上がらなければ少子化は増すを進み、一方、外国移民の 福祉や治安対策といった社会コストは増大しています。財界は安い労働力が欲しいの一点張りでしょうが、果たしてそれでいいのかと。経済産省は財界のイエスマンでは駄目だと思いますが、ここで皆さん配布した資料を目を通してください。これはオランダが、これ以前前にも示しましたが、オランダの資料です。移民体育を行った移民の研究を進めているヤンファンデベーク博士らのグループが2024年に発表した論文から抜粋したデータです。これはオランダにおける 移民の出身国別において、その移民指定がですね、生涯オランダにいた場合に、オランダにどれほどの国益が当たるか、どれほどの大きな社会的なコストにマイナスになるかということを示した表なんですが、これを見ますとですね、北欧諸国、それから北米、それから日本、それから英国、アイブランド。それからゴーシュ、ニュージーランドからですね、こういうとこから入ってきた移民はですね、生涯オランダにいる場合はだいたい計算上だいたい3000万円以上のプラスになると。逆にですね、アフリカのツロ、アフリカのツロといいますのはソマリア、エチオピア、エリトリア、ジプチという国なんですが、さらにスーダンを含めるとですね、この人たちが生涯オランダにいた場合は、オランダにマイナス 1億1321万円の社会的コストを与えると言いますかね、大きなマイナスに生じると。さらに西アジアの人々は約7800万円。中央アジアからの移民は約7100万円。中国でもですね、一人頭約900万円の赤字と言いますか、マイナスになる。これを見ますとですね、例えばアフリカの人とかスーダンからの人たちはですね、オランダにおいた場合は、 百万人来た場合は、それだけで約百十兆円の国益のマイナスに生じるということなんですね。これをですね、私たちが考えていると、日本の多くの学者が言う、高齢化が進む、高齢化が進むですね。移民社会でですね、移民が増えることは、一時的、これ、ごめんなさい、ちょっと、これは途中を返しました。日本でもですね、出身国別にどういう人なら日本は国益になるか、どういう人ならマイナスになるか、これはね、本当に計算すべき必要だと思っていますが、これをですね、 この予測、経産省が中心となり、他の省庁と連携して算出・検討すべき問題と思っていますが、経産省はこういう問題を将来的に、というか現在、調査する考えはありますでしょうか。赤澤経済産業大臣。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "赤澤経産大臣",
+        "role": "",
+        "summary": "- 政府として国全体で人が余っているという認識はなく、地方のエッセンシャルワーカー等は依然として不足している\n- 外国人受け入れは経済的観点だけで判断しているわけではなく、全体の取りまとめを行う出入国在留管理庁で議論すべき事項であり、経産省では手に余る",
+        "full_text": "先ほどから委員がおっしゃってることにちょっといくつか申し上げておきたいことがあってこれは委員もご案内と思いますけど人余りと言われる中でやっぱりこれAIとかの影響でホワイトカラーが余るかもしれないけど地方のエッセンシャルワーカーもむちゃくちゃに足りないとかですね国全体で必ずしも余ってるという認識を政府は持っていないということが一つあるのとあとその経済界 もうこれ言いたいことあるだろうと思うのは安からということじゃなくて今外国の方も日本と同じ雇用条件ということはこれやらなきゃいけないということになってたと思いますしあとこの資料についてもちょっと私前提が分かりづらいところがあってそのプラスっていうのは何かあれですかね税収を収めてくださったりよく働いてっていうようなことなんでしょうかでこれ逆にマイナスのなるほどマイナスについて指名されてから始めます マイナスについて言えばこれはあれですかねやっぱりこう何かしらその医療とかそういうものとかっていうことなんでしょうかちょっといろいろありますよ そういうちょっと前提条件を置かないと、この資料もなかなか見方がわからないところがあるのと、あとやはり申し上げると、先ほど私、出入国官庁と申し上げたかもしれませんが、出入国在留管理庁が全体を取りまとめた中で、いろんな判断をしていくということで、特に国ごとに来られる外国人労働者の方たちが経済的にどうプラスマイナスかというのもあると思いますけれども、必ずしも外国人の方を受け入れるというのが、労働力としてあるいは経済的にプラスという。そういう観点だけで受け入れているわけでもないので、なかなかそういう全体の議論はやはり経産省ではなくて、その取りまとめのですね、官庁でやっていただかないと、なかなか手に余るところがあると思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#11182.85",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "出身国別の国益への影響を算出・検討する考えはあるか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "ヤンファンデベーク博士らのグループが2024年に発表した論文"
+            },
+            {
+              "type": "organization",
+              "excerpt": "経済産省"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "移民",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "出入国在留管理庁"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "そういう全体の議論はやはり経産省ではなくて、その取りまとめのですね、官庁でやっていただかないと",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者はオランダの論文を根拠に、出身国別の国益算出を求めたが、大臣は前提条件への疑問を呈し、管轄は出入国在留管理庁であるとして回答を避けた。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問の導入部分（持論の展開）が非常に長く、核心となる問いが最後に配置されているため、回答者が論点を分散させやすい構造になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_057",
+      "segment_index": 8,
+      "topic": "移民による経済的コスト調査における経産省の主導権",
+      "question": {
+        "speaker": "百田尚樹",
+        "party": "日本保守党",
+        "summary": "- 福祉のただ乗りや犯罪による経済的損失など、経済的観点からのコスト調査は経産省の設置法（民間の経済活力向上）に基づき、経産省がリードすべきではないか",
+        "full_text": "百田尚樹君普通に考えましてですね、経済的なマイナスというのは、例えば福祉のただのり、あるいは年金、あるいは犯罪による経済的損失。あるいは例えば受刑者になったときの社会的コスト、いろいろあると思います。ですから本当にこういうマイナスを調べるためには厚労省、あるいは法務省、警察庁、こういう省庁と連携すべき問題だと思いますが、先ほど入管庁の問題だと言うんですが、私はあくまで今回聞いているのは経済産業省において、だから経済の観点からこれを調べるべきだと思っています。この経済産業省というのは戦前は 商工省、それから戦後は通産省、それからさらに経済産業省となったわけですが、この経産省の設置法の第3条にこう書いています。経済産業省は民間の経済活力の向上を図ることを任務とすると。ですからですね、この移民問題をあくまで経産省は その経済的なコストの観点から見ることは非常に大事なものでね。ですから、厚労省、先ほど言いましたように、厚労省あるいは法務省に働きかけてですね、どれぐらいのコストがかかるのかと。これね、現実にオランダはこれやってるわけです。おそらくね、他のヨーロッパ諸国もやってるんじゃない。こういう調査はしてるんじゃないかと思いますよ。つまりね、日本は外国人を入れないと、経済が回っていかないと。こういう理由でね、外国人入れてるわけですよ。そうすると。当然経済で果たして本当に日本に国益あるのかないのか、これは調べるのは私は当然のことだと思うんですよね。もちろんね、他にもありますよ。日本の社会が変容、あるいはもう治安の悪化、これはまた別の問題だと思ってます。これは非常に大きな問題ですが、これはね、私たちはさすがに経産省に聞く問題ではないと思います。しかしながらあくまで私は聞いてるのはですね、あくまで外国人移民による経済の問題、これはね、もう経産省がリードすべき問題だと私は思ってますが、いかがでしょう。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "赤澤経産大臣",
+        "role": "",
+        "summary": "- 提示されたオランダの事例が政府として公式に行われたものか不明であり、直ちに我が国政府が取り組むべきかは判断できない\n- 労働力としての価値判断には厚労省等の参加が必要であり、外国人政策の取りまとめ閣僚が各省庁の役割を判断して進めるべきである",
+        "full_text": "赤澤経済産業大臣委員が直接本当は総理に聞きたかったり厚生労働省に聞きたかったりいろいろする中で何とか私の所管に引きつけてご質問いただいていることについては本当にありがたいことだなというふうに思うんですがただ一点まず申し上げておきたいのはオランダではこれやっているとおっしゃるけどおそらくこの博士は 政府の機関として、政府としてやっているということではなかなかないと思い、本当に国としてですね、国ごとにこれだけ経済的にプラスマイナスというのは出したものがあるかどうかはちょっと私は存じ上げないところでありますし、なので我が国政府としてこういう取り組みをするのかというのもちょっとこれだけからは何も言えないところがあると思う上にですね、やっぱり経済ということをおっしゃったんですけど、労働力として例えばどれだけの価値があってとか、いろんなことを考えて これを考えていく上では、労働省も参加すべきだし、もっと申し上げれば、そういうことから、今、高市政権においては、外国人政策の取りまとめが、これは小野田紀美大臣だったかと思いますが、やっぱり経済のことだけ調べるということで、外国人政策についての結論が出ませんので、それはやっぱり取りまとめの閣僚が、どういった役所にどういった仕事をさせるか考えながら、やっていくべきものであろうと、私自身は考えるところであります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8974#11182.85",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "移民の経済的コストを経産省が主導して調査すべきか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "経済産業省の設置法の第3条"
+            },
+            {
+              "type": "other",
+              "excerpt": "現実にオランダはこれやってる"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "外国人移民",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "小野田紀美大臣"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "国ごとにこれだけ経済的にプラスマイナスというのは出したものがあるかどうかはちょっと私は存じ上げない",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "経産省が主導して移民の経済コストを調査すべきという提案に対し、大臣は他国事例への懐疑心と、他省庁を含めた包括的な政策取りまとめの必要性を述べるに留まった。",
+        "would_be_referenced": "low",
+        "issue_in_design": "具体的な調査手法や指標を提示せず、「経産省がリードすべき」という役割論に終始しているため、回答が抽象的になりやすい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    }
+  ],
+  "score_schema_version": "2.0",
+  "prompt_version": "V4"
+}

@@ -1,0 +1,1556 @@
+{
+  "pairs": [
+    {
+      "id": "qa_001",
+      "segment_index": 6,
+      "topic": "国内投資目標の達成に向けた意気込みと課題",
+      "question": {
+        "speaker": "永田磨梨奈",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 2040年度までに官民合わせて200兆円という国内投資目標を達成するための意気込みを伺いたい\n- 国内投資拡大に向けた大胆な投資促進税制の評価と、日本が世界から選ばれるための課題について伺いたい",
+        "full_text": "経団連、そして政府ともに2030年度に官民合わせて135兆円、2040年度には200兆円。という民間企業の国内投資目標を掲げられていると承知をしておりますが、この達成に向けた、まず意気込みをお聞かせいただきたいと思います。また、この国内投資の拡大に向けて、本法案で措置がされているのが、大胆な投資促進税制だと考えております。この措置の背景には、米国のOBB法など、各国の投資競争の激化、これに対抗していこうという思いがあるというふうに承知をしておるところですが、我が国を代表する 永田先生、御質問ありがとうございます。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "澤田純",
+        "role": "参考人 一般社団法人日本経済団体連合会副会長・産業競争力強化委員長",
+        "summary": "- データセンター等の需要への期待感は高いが、税制は必要条件の一つに過ぎない\n- 電力問題や投資環境など、サプライチェーンを国内に戻すための課題が依然として存在する\n- 産業基盤を構築するため、引き続き様々な政策による支援を求める",
+        "full_text": "今のご質問の中で、まず大胆な投資、これの意気込みということですが、かなり需要は世界的に大きくなっております。データセンターにとどまりませんが、データセンターを一つ作るにあたって、多方面な、いろんな産業が関係します。一方で、今回の税制は非常に、これは十分条件でいうと必要条件の一つだと思っております。ただ、まだまだ日本にサプライチェーンを戻すためには、例えば電力の問題、あるいは、 全体の投資を呼び込むための環境の問題、さまざまな課題がまだあるということも事実として考えておりますので、ぜひ引き続き、この法律を短所といたしまして、いろんな政策で日本国内に産業基盤を、特に需要をつくるというような形をお願いしたいと、こういうふうに産業界としては考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56212&time=3880.6449999999995",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "国内投資目標達成への意気込みと税制の背景について",
+          "sub_asks": [
+            "国内投資目標達成に向けた意気込み",
+            "投資促進税制の背景（各国との競争）への認識"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "経団連"
+            },
+            {
+              "type": "number",
+              "excerpt": "2030年度に官民合わせて135兆円"
+            },
+            {
+              "type": "number",
+              "excerpt": "2040年度には200兆円"
+            },
+            {
+              "type": "law",
+              "excerpt": "米国のOBB法"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "民間企業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "データセンター"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "今回の税制は非常に、これは十分条件でいうと必要条件の一つだと思っております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的だが、回答者は参考人（産業界代表）であり、意気込みや現状認識を述べるに留まり、具体的な政府のコミットメントや新事実は得られていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「意気込みを聞きたい」という主観的な問いであるため、客観的な記録価値のある回答が得られにくい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_002",
+      "segment_index": 6,
+      "topic": "国内投資目標の達成に向けた具体的方策と日本の競争力",
+      "question": {
+        "speaker": "永田磨梨奈",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 2040年度までの投資目標をどのように達成していくのか、具体的な意気込みを伺いたい\n- 日本が世界から選ばれる国になるための具体的な課題について伺いたい",
+        "full_text": "意気込みのところをもう一度お聞かせいただきたいなというふうに思います。どのようにしてこの2040年度までに200兆円という民間の企業の国内投資目標を達成されていくのかというところの意気込み。そしてですね、今やはり日本が世界から選ばれる、また国になるための様々な課題がございますといったご答弁をいただいたところでございますので、そのあたりについてもですね、しっかりと官民ともに課題意識を共有していきたいと思いますので、少し具体的に教えていただけますでしょうか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "澤田純",
+        "role": "参考人 一般社団法人日本経済団体連合会副会長・産業競争力強化委員長",
+        "summary": "- ロボット・AIと人間の共生に注力し、自ら需要を創出する基盤技術を開発する\n- 国土計画や地方活性化、コンパクトシティなどの計画を通じて需要を創出することが重要\n- 自国ファーストの世界的傾向の中で、日本の良さを組み合わせた対処や、外国人規制の最適化などの政策が必要",
+        "full_text": "まず135兆なり、次の200兆なり、これは実は簡単ではないわけでございまして、少子化の中で一般的な投資への需要は減っていく構造になります。ただ、これを逆に考えますと、 先ほどロボットAIプラスという言葉を出しましたが、かなりロボットを進められる環境が整うということでございまして、それはいろんな分野です。のために私はさっきロボットAIと人間の共生という、そのリンクをお話ししたんですが、日本はそこに入り注力して。その需要を自ら作っていくような基盤技術を開発していくと。ただもう一つはやはり先ほどちょっと申しましたけど、国側がどのようにして需要を10年20年の長い期間にあたって作るかというのが大事になります。このポイントはおそらく国土計画をどう作るか、地方の活性化をどうするか、いわゆるコンパクトシティを含めてですが、もう一度 分とも線とも対象に入れて、地域を活性化するための、そういう計画が必要になるのではないかと考えております。日本としての良さというのを組み合わせた形でそこを対処していくと。外国人の問題につきましてもきっちり規制をしながらきっちり緩めていくというような。AかBかではなくて、両方実現するような、そのような政策をお願いしたいと。そういう方策ではないかというふうに感じております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56212&time=3880.6449999999995",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "2040年度までの国内投資目標達成への意気込みと具体策",
+          "sub_asks": [
+            "200兆円の国内投資目標をどう達成するか",
+            "日本が世界から選ばれるための課題への具体的対応"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "2040年度までに200兆円"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "民間の企業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "135兆なり、次の200兆なり"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ロボットAI"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "コンパクトシティ"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "other",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "ロボットAIと人間の共生という、そのリンクをお話ししたんですが、日本はそこに入り注力して。その需要を自ら作っていくような基盤技術を開発していく",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的だが、回答は方向性の提示に留まっており、具体的な数値目標への道筋や政府としての確約（コミットメント）が含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「意気込み」という抽象的な表現を求めているため、回答者が主観的な展望を述べるだけで完結してしまっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_003",
+      "segment_index": 6,
+      "topic": "産業用地の確保と活用のあり方",
+      "question": {
+        "speaker": "永田磨梨奈",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 既存産業用地の最大限の活用と新規造成を両輪で進める措置について評価を伺いたい\n- 新規造成した用地が使われない事態を防ぐために、どのような留意が必要か伺いたい",
+        "full_text": "今回の法案では、新たな投資の受け皿となる産業用地の確保に向け、既存の産業用地の最大限の活用と、新たな産業用地の造成をそれぞれ支援する措置が講じられることとなっております。浜口参考人は、地域経済産業文化会の会長、また、工場立地法検討省委員会の委員長のお立場にあり、これらの措置に関して大変に専門的な 知見をお持ちであるというふうに考えておりますので今回既存の産業用地の最大限の活用と新たな産業用地の造船を両輪で行うということについての評価をお聞かせいただけますでしょうかまた新たな産業用地の造船については私はその方向性については大賛成ではあるんですがこれ作ったはいいが使われないということがあってはならないというふうに考えておりますこれを防ぐためにどういった留意が必要かお考えをお聞かせください 浜口参考人ご質問ありがとうございます。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "濱口伸明",
+        "role": "参考人 神戸大学経済経営研究所教授",
+        "summary": "- 緑地面積率規制の緩和など、意欲ある自治体の要望に応える両輪の取り組みは評価できるが、まだ第一歩である\n- 用地整備だけでなく、都市計画全体を再検証し、企業のニーズに合った土地を作り出す取り組みが必要\n- インフラ整備に対する国の支援が必要である",
+        "full_text": "まず今般の改正において新規造成と既存用地の活用を両輪で進めていくことについての評価についてのご質問でございますが、まず考えられやすいのはやはり新規造成ということに思いが行くわけですけれども これに、それだけではなく、既存用地の有効活用のための緑地面積率規制の緩和を地域未来投資促進法の枠組みで行えることにして両輪で進めることになったということは、この意欲ある自治体の要望に応えようというものであり、評価できるものだと思います。しかし、私は先ほどの意見陳述の中で申しましたように、できることは全てやるという、これからのもっと積極的な姿勢は依然として必要で、今回の緑地面積率規制の緩和に関しては、まだ第一歩だというふうに捉えております。今後も新規造成と既存用地の活用の両輪で、できることは全てやるつもりで、取組を拡充させていただきたいと考えております。またこの土地がですね せっかく新規造成されても、使われなくなっては困るということでありますが、これについては、自治体が、用地整備だけでなく、産業インフラの状況について、都市計画全体を再検証していただいて、企業にニーズの高い、使われる土地を作り出していくという、そういう取組が必要なのではないかと。また、そのために、インフラ整備に関しても、国の支援が必要かと考えます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5179"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56212&time=3880.6449999999995",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "産業用地確保策の評価と有効活用への留意点",
+          "sub_asks": [
+            "既存活用と新規造成を両輪で行うことへの評価",
+            "新規造成地が使われないことを防ぐための留意点"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "今回の法案"
+            },
+            {
+              "type": "organization",
+              "excerpt": "地域経済産業文化会の会長"
+            },
+            {
+              "type": "organization",
+              "excerpt": "工場立地法検討省委員会の委員長"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "浜口参考人",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "緑地面積率規制の緩和"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "地域未来投資促進法"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "取組を拡充させていただきたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "既存用地の有効活用のための緑地面積率規制の緩和を地域未来投資促進法の枠組みで行えることにして両輪で進めることになったということは、評価できるものだと思います。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "専門的な知見を持つ参考人に対し、法案の方向性の評価と実効性への留意点を問う標準的な質疑。回答には具体的な規制緩和策への言及が含まれている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "評価を問う形式であるため、具体的な制度設計の改善案を求める形式にすればより価値の高い記録になった可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_004",
+      "segment_index": 7,
+      "topic": "産業競争力強化法改正案の制度基盤としての位置付け",
+      "question": {
+        "speaker": "吉田宣弘",
+        "party": "中道改革連合・無所属",
+        "summary": "- 本改正案は企業の個別支援ではなく、投資・イノベーション・再編を同時に動かす制度基盤としての現れであると考えてよいか",
+        "full_text": "そこでこの本改正案は、企業の個別支援という側面ではないんだろうというふうに思っています。そういった観点からは、投資とイノベーション、また再編などを同時に動かす、制度基盤としての新規軸の一つの現れ、そういったことが考えられているんだろうというふうに思っております。かなり中長期的なことでもあろうかと。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "大橋弘",
+        "role": "参考人 東京大学副学長・経済学研究科教授",
+        "summary": "- 国際情勢の変化に対応し、上乗せで実施する仕切りであると認識している\n- GXやデジタル化への大規模・長期的な投資取り組みを継続しつつ、イノベーションや再編を進めるという方向性で一致している",
+        "full_text": "吉田宣弘議員 やり続ける形でありながら、国際情勢の変化に対応して、上乗せで今回の改正案をやっていくというふうな仕切りなのかなというふうに思っています。これは大規模で計画的で、なおかつ長期にわたって、しっかり越し越えてやっていくんだという形の 政策の取り組みというのは引き続き続いていくという中での対応ということなので、ご質問いただいたとおり、これまでのGXを含めた取り組みというのはしっかりやっていくという認識でおりますし、その中でイノベーションなり再編というものもしっかり進めていかなきゃいかんというのは思いを同じにしているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5179"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56212&time=4780.345",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "改正案の制度基盤としての目的の確認",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "企業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "GX"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "しっかり進めていかなきゃいかん",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "これまでのGXを含めた取り組みというのはしっかりやっていくという認識でおります",
+          "score": 0.3
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "質問が疑問文ではなく自身の見解を述べる形式であり、回答もそれに同意する抽象的な内容に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "疑問文形式で具体的に何を問いたいのかを明確にすべきである。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_005",
+      "segment_index": 7,
+      "topic": "日米政府戦略的投資イニシアチブにおけるリスク管理",
+      "question": {
+        "speaker": "吉田宣弘",
+        "party": "中道改革連合・無所属",
+        "summary": "- プロジェクトの失敗を避けるため、特に地域住民とのコミュニケーションや対話において、スキームの中でさらにケアすべき点はあるか",
+        "full_text": "その上で、このプロジェクトを今度はトランプ大統領に挙げて、そして選定をされてプロジェクト化され、そしていわゆる資金が支出されるというふうなことでございますけれども、このスキームそのものというよりも、私は今回のこの戦略的イニシアチブのプロジェクトというのは、 絶対に失敗させられないというふうに思っているんですね。でも過去の投資の失敗例を、私少し具体的に申し上げませんけれども、地域住民とのコミュニケーション。そういったところに関するケア、これ非常に重要だと私は思っておりまして、失敗させられないということからすると、本当にきめ細やかにやっていかなきゃいけないんだろうというふうに思っております。経済産業省もこれ、当然コミットしていくわけですけれども、どうしても現場、 そして住民との対話ということになると、これは民間事業者の皆様のご苦労のもとに成り立つところもありますので、そういった観点からも、このスキームの中でもっとケアしなければいけないこと、私は一つは地域住民の対話というようなことを申し上げましたが、何かお気づきの点がありませれば、ぜひご意見賜れればと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "澤田純",
+        "role": "参考人 一般社団法人日本経済団体連合会副会長・産業競争力強化委員長",
+        "summary": "- 入り口となる協議委員会でのスクリーニングが重要である\n- 地元との連携や、米国側推進者がどれだけ地元と連携できるかという外部条件を詰めることがプロジェクトスキームの肝である",
+        "full_text": "いわゆるどんな案件が出てくるかというのを、ここで集めて議論するわけなので、この時点でスクリーニングをうまくしないとですね。その後ずっと言ってトランプさんが、いやこれをやるんだみたいになってしまうと、そのリスクを実行者なり、バンカーが追う、投資をする人が追うという、こういう悪循環になりますので、入り口の協議委員会でどれぐらい、例えばおっしゃった通りです、地元との連携、あるいはアメリカ側でそれを推進している方が、どれぐらい地元と連携して我々とも連携できるか、そういう外部条件をここで詰めると。それがこのプロジェクトスキームの肝だというふうに理解しています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56212&time=4780.345",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "戦略的イニシアチブにおける地域住民対話等の留意点",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "トランプ大統領"
+            },
+            {
+              "type": "other",
+              "excerpt": "戦略的イニシアチブのプロジェクト"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "地域住民",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "協議委員会"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "入り口の協議委員会で地元との連携などの外部条件を詰めることが、このプロジェクトスキームの肝だというふうに理解しています。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "地域住民との対話という懸念に対し、協議委員会でのスクリーニングの重要性で回答している。具体的なコミットメントはないが、スキームの運用方針に関する認識が示されている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問が冗長であり、具体的な改善策を求めるのか、単に意見を求めるのかが曖昧である。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_006",
+      "segment_index": 7,
+      "topic": "中小企業向け投資促進税制の利用ハードル",
+      "question": {
+        "speaker": "吉田宣弘",
+        "party": "中道改革連合・無所属",
+        "summary": "- 投資利益率や投資規模以外に、中小企業が本改正案の投資促進税制を利用する上でのハードルとなる点はあるか",
+        "full_text": "今回の中小企業の設備投資に対しては、これまでも種々の税制がありました。そしてその支援ニーズというのも違うのかなというふうに思うわけですが、今改正案というのは、投資促進、減税のイメージですけれども、投資利益率15%、投資規模35億円、中小企業も5億円。そこで中小企業が実際にこの本改正案の投資促進税制を利用するにあたって、今申し上げた投資利益率や投資規模以外に何かハードルになるようなことというのは何かお感じになるところがありますれば、ぜひ。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "宮澤伸",
+        "role": "参考人 日本商工会議所産業政策第一部長",
+        "summary": "- 高付加価値中小企業においては、いかに付加価値を高めていくかという経営課題がある\n- 人手不足への対応として、省力化や自動化といった視点が必要である",
+        "full_text": "まさに御指摘のとおり、今般の税制、例えばROI15%以上ということであれば、高付加価値 中小企業においては付加価値をいかに高めていくかということが経営課題でもございますし、またその中で人手不足もございますので省力化、あるいは自動化といった よろしくお願いいたします。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5179"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56212&time=4780.345",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "改正案の投資促進税制における中小企業のハードル",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "投資利益率15%"
+            },
+            {
+              "type": "number",
+              "excerpt": "投資規模35億円"
+            },
+            {
+              "type": "number",
+              "excerpt": "中小企業も5億円"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "中小企業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "ROI15%以上"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": null,
+          "score": 0.0
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的だが、回答者がハードルの具体的内容に答えず、一般的な経営課題に話をすり替えており、価値が低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_007",
+      "segment_index": 7,
+      "topic": "産業の担い手確保と生活基盤維持のための追加施策",
+      "question": {
+        "speaker": "吉田宣弘",
+        "party": "中道改革連合・無所属",
+        "summary": "- 産業の担い手確保に資する生活基盤の維持等の施策について、さらに深めるべき点や追加すべき施策はあるか",
+        "full_text": "日本の産業共生力強化力を強化して、企業の事業活動を持続的に発展させることに、この本改正案の目的があると承知をしております。本改正案では、産業の担い手確保に資する生活基盤の維持、また実効性を高めるための施策が盛り込まれておりまして、 吉田宣弘議員 さらに深めたり、他に何か追加すべきものが仮にあるとすれば、ご所見いただければと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "宮澤伸",
+        "role": "参考人 日本商工会議所産業政策第一部長",
+        "summary": "- 事業継続に向けた支援の要は、いかに固定費を下げて損益分岐点を下げていくかにある\n- 本法案の支援策のみならず、地方創生や地域未来戦略など、地方自治体と連携した様々な支援策を組み合わせて固定費を削減する支援がありがたい",
+        "full_text": "このエッセンシャルサービス、私どもも維持にあたって各地域の取り組み、ヒアリングをさせていただいて、こちらにもいくつか事例をご紹介させていただいておりますが、やはりいかに固定費を下げて、損益分岐点を下げていくかというところが、この事業継続に向けた支援の要なのかなというふうに感じております。その意味で金融支援もそうですし、 地方創生ですとか地域未来戦略等々ですね、まさにその地方自治体と一緒に様々な支援策を今後講じられていくということでございますので、本法案に基づく支援策のみならずですね、様々な支援策を組み合わせて、そうした固定策を、固定費をいかに下げていくかという観点から、力強いご支援いただけるとありがたいのかなということでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5179"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56212&time=4780.345",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "改正案に追加すべき施策への所見",
+          "sub_asks": [],
+          "score": 0.9
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "本改正案"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "企業の事業活動",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "地方創生"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "地域未来戦略"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "様々な支援策を今後講じられていくということでございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "いかに固定費を下げて、損益分岐点を下げていくかというところが、この事業継続に向けた支援の要なのかなというふうに感じております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "追加施策についての所見を求める質問に対し、固定費削減の重要性と他施策との連携という一般論的な回答に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「他に何か追加すべきものがあるか」という問い方が広範すぎるため、回答者が具体策を提示せず抽象的な所見で逃げられる設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_008",
+      "segment_index": 8,
+      "topic": "国会による政策立案評価サイクルの監視・フォローアップの方法",
+      "question": {
+        "speaker": "阿部司",
+        "party": "日本維新の会",
+        "summary": "- 政策全般の監視やEBPMの取組を国会が横断的にフォローアップするための具体的なアイデアを求める",
+        "full_text": "もう時間も多分なくなっておりますので最後にですねまた大橋参考人にちょっとお聞きしたいんですけども参考人は先ほどのあのご意見を賜った中でいわゆるその 今後検討すべきと思われる課題ということの中で、政策立案評価サイクルを政策全般において監視フォローする必要性、EBPM、エビデンスに基づく政策立案の取組を、政策横断的に国会が監視、そしてフォローアップすることも有用ではないかと、非常に貴重なご意見を賜ったところでございます。この国会が監視するというふうなことというのもおそらく国会議員の一人一人がですねめちゃくちゃ意識して関心を持ってですねその都度質問をしたりとか政府と対話したりとかいうふうなことで実現するというふうなこともあるのかもしれませんがこれだとですね行き当たりばったりになってしまうんですね 何かそういったところで、国会の、こちらで考えることなのかもしれませんが、ちょっと何かいいアイデアがありましたら、ご指摘いただければと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "大橋弘",
+        "role": "参考人 東京大学副学長・経済学研究科教授",
+        "summary": "- 政策の執行結果がどうなったかまで関心を持つことで、次の立案に活かすサイクルを回すことが重要である",
+        "full_text": "そうしたものがどう執行されて、どういう結果を生み出したのかというところまで関心を持っていただければ、次の立案、こうした議論の場で生かせる。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56212&time=5779.045",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "国会による政策監視の具体的なアイデア",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "past_answer",
+              "excerpt": "政策立案評価サイクルを政策全般において監視フォローする必要性"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国会",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "そうしたものがどう執行されて、どういう結果を生み出したのかというところまで関心を持っていただければ、次の立案、こうした議論の場で生かせる。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "国会による監視の具体策を問うているが、回答は抽象的な意識付けの推奨に留まっており、記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「いいアイデアがあれば」という形式的な問いかけであるため、回答者が具体策を提示する義務を感じにくい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_009",
+      "segment_index": 8,
+      "topic": "改正案における政府関与と市場規律のバランス（評価点と懸念点）",
+      "question": {
+        "speaker": "阿部司",
+        "party": "日本維新の会",
+        "summary": "- 本改正案の諸措置について、政府の関与と市場規律のバランスの観点から、最も評価できる点と懸念すべき点を問う",
+        "full_text": "まず、この本改正案、大胆な投資促進税制ですとか、あとは、 事業適用計画の新類型、工場立地法の規制特例を含む産業用地整備ですとか、あとは日米戦略的投資イニシアチームの対応と、政府の関与は多岐にわたっております。国際的にも、米国の最高業化政策ですとか、EUのドラギーレポートに象徴されるように、産業政策の復権が進んでおります。一方で、 政府にどれだけ目利きの能力があるのか。過剰な介入が逆に競争力を削いでしまうのではないかといった懸念も繰り返し指摘をされております。本改正が示すこれらの措置について、政府の関与と市場の規律のバランスという観点から、最も評価できる点と、最も懸念すべき点、 こちらについてですね、それぞれのお立場から参考人の皆様から順番にご意見を頂戴したいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "大橋弘",
+        "role": "参考人 東京大学副学長・経済学研究科教授",
+        "summary": "- 評価点：アジャイル的で機動的な運営、企業自発的な提案による範囲の広さと使いやすさ、政府系金融機関を介した官民バランスの良さ、エッセンシャルサービス分野への施策\n- 懸念点：評価と立案のスピード感、キャッシュフロー上の不都合（税額控除の構造）、投資案件選定における目利き能力、自治体間でのゼロサムゲーム化のリスク、住民の理解",
+        "full_text": "大変鋭いご質問かなと思ってまして、ちょっと心の準備が必ずしもできてませんでしたが、思うところを申し上げますと、まず私の冒頭の陳述の中で、実験的取り組みと申し上げさせていただいて、確実に成功するかどうかというのは、やる中の関与される方々の意識であるとか、あるいはそうした実験的なものをどう 見極めて、次のサイクルへ回すかというこの 評価と立案のスピードをどう回していくのかっていうところにもかかってくるのかなと。一回決めたからこれやり抜くんだっていうとですね、なかなか先方のご事情も変わる可能性があるので、そういう意味で言うと、ある種のアジャイル的な、機動的な運営の仕方っていうのは大変重要だと思います。端的に評価できる点と懸念点ということで、評価できる点は今までの投資促進あるいは研究開発税制に関して、 比べまして、範囲が広いということです。非常に手続きも簡単になっているということで、目利きのお話がありましたけど、このポイントは企業自らが提案していくという自発的な行動にありますので、そういう意味でいうと非常に範囲が広くて使いやすくて、投資が進むだろうというのは評価のポイントです。逆に懸念点という意味でいうと、全額向上あるいは7% 全額消却促進か7%税額控除という構造なわけですが、キャッシュがいる時期が後になっちゃうんですよね。プラスの部分でいうと、やはりこれ、他国 EUとか韓国と違ってですね、これ完全にこの民間だけにこうやらせるというわけではなくて、うまくこの政府系金融機関をかませるというところで、この政府と民間のこのバランスが非常にいいというところでですね、いわゆるその産業の空洞化とかを防ぐという意味では、ここは私はプラスだというふうに受け止めております。ここは日本側もですね、各省庁の局長クラスの皆さんも入っていらっしゃいますというところでいうと、この目利きがまさに問われるところでございます。こういった分野に対して施策を講じることは、まさに先ほど大橋参考人からお話がありましたように、産業政策として競争を補完するものと、 というふうに考えますし、沢田参考人からお話があったように、今後の予見可能性を高めるものということにまさに合致するものと思われますので、この点を私は評価しております。これは結局どこかに立地するはずの企業を自治体の間で取り合っているに過ぎないゼロサムゲームであるからどこであっても結局立地するのであるから税制を補填してあげることはそれは何か無駄打ちのような効果しかないんじゃないかというそういう評価もあります。一方でですね懸念というところもややあるとすればやはり個々の自治体さんあるいは住民さんのご理解がやはり引き続き重要であるという点は引き続き懸念はしているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5179"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56212&time=5779.045",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "改正案の政府関与と市場規律のバランスへの評価と懸念",
+          "sub_asks": [
+            "最も評価できる点",
+            "最も懸念すべき点"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "工場立地法"
+            },
+            {
+              "type": "other",
+              "excerpt": "日米戦略的投資イニシアチーム"
+            },
+            {
+              "type": "other",
+              "excerpt": "米国の最高業化政策"
+            },
+            {
+              "type": "other",
+              "excerpt": "EUのドラギーレポート"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "7%税額控除"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "EU"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "韓国"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "企業自らが提案していくという自発的な行動にありますので、そういう意味でいうと非常に範囲が広くて使いやすくて、投資が進むだろうというのは評価のポイントです。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人による主観的な評価と懸念を問う質問であり、それに対して具体的根拠（税率や他国比較）を交えて回答している。政策的なコミットメントを求めるものではないため、記録価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "参考人への意見聴取であるため、政府の公式見解や具体的アクションを導き出す設計になっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_010",
+      "segment_index": 8,
+      "topic": "対米コミットメントへの偏りと日本の立ち位置",
+      "question": {
+        "speaker": "阿部司",
+        "party": "日本維新の会",
+        "summary": "- 米国への偏重に対する懸念がある中で、世界を俯瞰した際の日本の立ち位置や、対米以外に打つべき手について意見を求める",
+        "full_text": "Xのポストをいつも拝見しております。この対米コミットメント、他国もヨーロッパはじめですね、皆さんお約束されているわけなんですけれども、真面目にやっているのは日本、韓国、 具合なのかなという印象も受けておりましてこれは非常に安全保障の観点でも先ほど先生おっしゃられたようにいかに日米同盟を強化していくのか中国の経済の武器化に対抗していくのかという観点で非常に重要な取り組みだと思っておりますけれども一方でこんな声も聞こえてきております要は米国一変と偏りすぎで大丈夫なのかと この点ですね、今国際情勢も様々流動化しておりますけれども、全体的に世界を俯瞰して見たときにですね、日本の立ち位置を考えたときに、台北コミットメントだけでなくですね、我々日本として打っていく手ですね、ここについてですね、少しご意見をお伺いできればと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "峯村健司",
+        "role": "参考人 一般財団法人キヤノングローバル戦略研究所上席研究員 北海道大学公共政策大学院客員教授",
+        "summary": "- 対米一辺倒であるという指摘はおおむね妥当である",
+        "full_text": "阿部先生、私の拙いXをご覧いただいて恐縮でございますが、今日はまた切り離して真面目な話をさせていただきますが、まずご質問いただいた点で申し上げると、やはりこの辺り台北一辺倒であるかというところでいうと、ご指摘のとおりだと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56212&time=5779.045",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "日本の外交的な立ち位置と今後の戦略について",
+          "sub_asks": [],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "台北コミットメント"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "日本",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "台北一辺倒であるかというところでいうと、ご指摘のとおりだと思います。",
+          "score": 0.3
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "質問は抽象的な意見を求めるものであり、回答も現状の肯定に留まっており、記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "具体的な施策や判断基準を問うのではなく、「ご意見をお伺いしたい」という形式のため、回答が曖昧になりやすい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_011",
+      "segment_index": 9,
+      "topic": "AI時代の国民の雇用と生き残り方",
+      "question": {
+        "speaker": "鈴木義弘",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- AIの普及により知的財産に従事する人々の仕事が奪われる懸念がある\n- AIが社会に浸透した時代に、日本の国民がどのようにして生計を立てていくべきか見解を求める",
+        "full_text": "今はDXが終わったら今度はGX、今度は去年あたりからAXと言うんですね。フィジカルAIとかっていうのがどんどん押していこうっていう話なんですけどどれ一つ取ってもですね、計算省に紹介かけてもじゃあDXがどこまで進んでいるのかっていう数値的なものもよくわからないじゃあGXは私がじゃあ今生活をしている中でどれだけのCO2を出しているのか自分とこの会社でどのぐらいのCO2を出しているのか基本を出してくれって さまざまだからなかなか難しいんでしょうけれども、その中で今度はAXだと、こういう話になっていくわけですね。DXも進んでいるかどうかわからない。GXもどうかよくわからない。AX。AIをどんどん入れていかざるを得ない時代だというのはわかるんですけれども、本当にそれで、一握りの人はAIを使ってですね、商売にはなると思うんですけれども、でも実際に 例えば、AIを入れることによって、経済委員会でも過去に質問したときに、侍業に従事している方が仕事がなくなるんじゃないか、要するに知的財産でご飯を食べている方々ですね。そういう時代が、日清月報よりももっと早いスピードでAIが、私たちの社会っていうんですかね、生活。仕事でもそうですけども、どんどん入ってきて活用してるんですけども、それがどんどん進んでいった社会で、じゃあこの国の私たち国民が何をやって食べていけばいいのかっていうのが一番目の問題なんですけども、お立場お立場で結構ですから、簡単にこれがっていうのがあったらですね、教えていただければなと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "大橋弘",
+        "role": "参考人 東京大学副学長・経済学研究科教授",
+        "summary": "- 産業構造を変える（X）ことが根本であり、日本の強みである製造業をベースにすべき\n- 製造業とサービスを掛け合わせ、技術力を解き放つツールとしてAIやGXを活用することが勝ち筋である",
+        "full_text": "おっしゃる通り、Xってトラスフォーメーションですけれども、産業構造を変えていくツールとしてデジタルだと言っている時代があり、GX、Gというのはグリーンですけれども、今AIだというふうなお話がありますが、私根本にあるのはXなんだと思っています。つまり、 我が国の産業構造、これまでデフリカにおいてずっと化石のように固まってしまった産業構造をいかに変えていくのか。変えていくときの根っこにあるのは、私は一つは製造業というもの。我が国のものづくりというのはやっぱり今でもそれなりの力というか技術力がありますから、この技術力をしっかり解き放ってあげるためのツールとして、 我々Gと言って、今でもGXやっていますし、AI使って、いかに人がいない中でのノウハウを広げていくのか。やっぱり私は食い口としては、製造業とサービス、それをどう掛け合わせて、我が国の強みである製造業をうまく世界に羽ばたかせるのかと。私もそこが一番根っこにある我が国の。勝ち筋なのかなというふうに思っています。それをどう広げていくのかという技術的な手法として、さまざま我々議論しているところなのかなというふうに思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56212&time=6642.545",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "AI普及後の国民の雇用・生活手段について",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "other",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "食い口としては、製造業とサービス、それをどう掛け合わせて、我が国の強みである製造業をうまく世界に羽ばたかせるのかと。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "AI時代の国民の生存戦略という抽象的な問いに対し、回答者は産業構造の変革（X）と製造業の強みという自身の持論を展開しており、具体的な解決策や政府の方針は示されていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "問いが非常に抽象的で、回答者の主観的な意見を求める形式になっているため、具体的な政府答弁を引き出しにくい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_012",
+      "segment_index": 10,
+      "topic": "地方鉄道の上下分離と国有化について",
+      "question": {
+        "speaker": "牧野俊一",
+        "party": "参政党",
+        "summary": "- 単独で採算が合わない北海道や四国などの鉄道について、上下分離や線路の国有化を検討すべきではないか",
+        "full_text": "鉄道による貨物輸送、これによって大量の食料、物資をより少ない人手で動かすことができるといったメリットもございますし、地域の高校生とかがそこに鉄道があるから通えるけど、なくなっちゃったら通えなくなるみたいなこともございますので、そろそろですね、このJL北海道なんかは上下分離を検討してほしいと自治体に言ってるけど、自治体も体力がないから無理だと言ってて、なかなか進まないところがございますので、 浜口先生の目から見て、そろそろそういった北海道とか四国とかですね、どう見ても単独で採算が合わないであろうというところは、上下分離にして線路は国際国有化するぐらいなことを考えてもいいのかなと思ってますが、どのように見てらっしゃいますでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "濱口伸明",
+        "role": "参考人 神戸大学経済経営研究所教授",
+        "summary": "- 質疑者の考えに同意する",
+        "full_text": "私も牧野先生がおっしゃるように、まさに同じ思いを。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56212&time=7591.245",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "不採算路線の上下分離・国有化への見解",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "JL北海道"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "北海道とか四国",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.2
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "私も牧野先生がおっしゃるように、まさに同じ思いを。",
+          "score": 0.1
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的で明確な提案を含んでいるが、回答が同意のみで具体性に欠け、実質的な情報量がない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "具体的な制度設計や予算措置についての問いかけにせず、相手の見解を問う形式にしたため、抽象的な同意で終わってしまった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_013",
+      "segment_index": 11,
+      "topic": "次世代通信基盤（IOWN）普及における官民連携",
+      "question": {
+        "speaker": "河合道雄",
+        "party": "チームみらい",
+        "summary": "- IOWN等の次世代通信基盤を民間中心に敷設する際の官民連携のあり方について伺いたい",
+        "full_text": "今後のいわゆるワットビット連携ですとか、データセンターの付設を考えていきますと、アイオンのようなですね、次世代通信基盤の普及が非常に重要になってくると考えております。こういったインフラをですね、民間事業者を中心に付設していくという局面においた官民連携のあり方について、ご意見があればお伺いさせてください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "澤田純",
+        "role": "参考人 一般社団法人日本経済団体連合会副会長・産業競争力強化委員長",
+        "summary": "- 官（自治体含む）には需要創生を期待する\n- 行政サービスのデータベース設置場所の指定など、民が受けに行く形での連携が有効である",
+        "full_text": "それで、そういう投資を官民連携でとなりますと、官にお願いしたいのは、これは自治体を含めてですが、需要創生です。使われている行政サービスの、例えばデータベースをどこに置かれるか。それを置かれるデータセンター、ここに置いてほしいということを民が受けに行く。できればそれを全国をアイオンでつなぐ。こういうような形で官民連携が進みやすいのではないかと感じています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56212&time=8547.845000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "次世代通信基盤付設における官民連携のあり方",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "アイオン"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "民間事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "アイオン"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "官にお願いしたいのは、これは自治体を含めてですが、需要創生です。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "官民連携のあり方について、行政サービスの需要創生という具体的な方向性が示されているが、回答者が参考人であるため公的な拘束力はない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「ご意見があれば」という形式のため、具体的な政策回答ではなく個人の見解に留まりやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_014",
+      "segment_index": 11,
+      "topic": "フィジカルAI領域における日本の競争力と官民連携",
+      "question": {
+        "speaker": "河合道雄",
+        "party": "チームみらい",
+        "summary": "- 米中が激しく投資するフィジカルAI領域において、日本の競争力をどう確保すべきか",
+        "full_text": "続きまして、この質問にも若干関連があるんですけれども、先ほどのロボットAIというところで、暗黙値と形式値を組み合わせながら、それが日本の競争力の源泉だというお話をいただきました。加えて、日本の製造業で申し上げますと、データの部分も強みであるかなというふうに認識しております。一方で、このいわゆるフェジカルAIという領域は、特に本日も言及がありましたけれども、米中中心に自国で囲い込みながら、すごいスピードで投資が進んでいる領域だとも認識しております。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "澤田純",
+        "role": "参考人 一般社団法人日本経済団体連合会副会長・産業競争力強化委員長",
+        "summary": "- 全てをAI化せず、日本の強みである職人技（ハイブリッド）を活かすことが勝ち筋となる\n- 民間はAIと職人の共存を追求し、官はその需要を創出する連携が効果的である",
+        "full_text": "その状態をデータ化をして、より職人技をデータに置き換えて、全てAIでとなると、実は日本の勝ち筋はなくなってしまいます。そういう意味において官民連携というポイントは、民の側はどうそのハイブリッド、AIと職人を活かしていくか。官の側はそういう形の需要をどう作っていくかという、これもリンクするんですが、そういう連携が一番効果的ではないかと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5201"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56212&time=8547.845000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "質問なし（現状認識の提示のみ）",
+          "sub_asks": [],
+          "score": 0.1
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "日本の製造業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "other",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "職人技をデータに置き換えて、全てAIでとなると、実は日本の勝ち筋はなくなってしまいます。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者が現状認識を述べたのみで具体的な問いを立てておらず、回答者も抽象的な持論を展開したにとどまっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "現状認識の提示で終わっており、政府に何を求めるのかという具体的な問い（Ask）が欠落している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_015",
+      "segment_index": 11,
+      "topic": "日米投資イニシアチブによる日米関係の改善",
+      "question": {
+        "speaker": "河合道雄",
+        "party": "チームみらい",
+        "summary": "- 日米投資イニシアチブを、日米関係をより意味あるものに進めるためにどう活用すべきか",
+        "full_text": "先ほどですね、日米関係の観点で見たときにですね、米国側には変無的であるという認識があるのではないかという問題意識があり、その中でですね、今回の日米投資イニシアチブはその端緒に、打開の端緒になり得るのではないかというご指摘があったと認識しております。ここについてですね、今一歩、この日米投資イニシアチブ並びに日米関係がですね、より真に意味があるものに、一歩進めていくためにどういったことが必要とお考えかお聞かせください。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "峯村健司",
+        "role": "参考人 一般財団法人キヤノングローバル戦略研究所上席研究員 北海道大学公共政策大学院客員教授",
+        "summary": "- トランプ氏のようなビジネス視点を持つ相手には、投資協定や米製造業復活というロジックが響きやすい\n- 日本が米国を支えている姿勢を投資プロジェクトを通じて示すことが、同盟強化に有益である",
+        "full_text": "なのでこのあたり、なかなかどうしてもトランプ氏、ビジネスパーソンであるというバックグラウンドがあるので、ここを基地の供与の話とかしてもあまり頭に入りづらいではないかというところで言うと、トランプ氏にやはり一番 スッと入ってくるロジックでいうとこの投資協定というところ。しかもこの投資プロジェクトであると。さらにはトランプ氏が復活させたいこのアメリカの製造業の復活というところのロジックに当てはまりやすいというふうに私は認識しております。そういう意味でやはりその偏務性じゃないんだと。まさにこういうときこそ、日本からもアメリカを支えているんだという姿勢を出すことが、この同盟の強化につながるのではないかという観点から、私は今回のスキームというのは非常に有益だと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56212&time=8547.845000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "日米投資イニシアチブをより有意義にするための必要事項",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "日米投資イニシアチブ"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "米国",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "トランプ氏"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "投資協定"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "トランプ氏が復活させたいこのアメリカの製造業の復活というところのロジックに当てはまりやすい",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は明確だが、回答は個人の認識や分析に留まっており、具体的な政策的コミットメントや新たな事実は含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どういったことが必要か」という問いに対し、現状の肯定的な分析で終わっているため、具体的な提案を求める形式にすべきだった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_016",
+      "segment_index": 11,
+      "topic": "複数年度予算におけるEBPMの推進",
+      "question": {
+        "speaker": "河合道雄",
+        "party": "チームみらい",
+        "summary": "- 単年度主義から脱却し複数年度で取り組む際、効果的にEBPM（エビデンスに基づく政策立案）を進める手法や他国事例はあるか",
+        "full_text": "1点目はEBPMについてでございます。今回のご提言の中にも、しっかりとEBPMを進めていくことが大事というお話がありました。一方で、この単年度主義から抜けていく、これもまた非常に重要な観点だと認識した上で、ここを両立していくと、なかなか政策評価をどのように進めていくかというところに関して、考え方を変えていく必要も出てくるかなというふうに受け止めております。こういった複数年度などを踏まえながら、効果的にEBPMを進めていく上での 例えばどういった取り組みが有効であるとか、場合によっては他国の事例ですとか、もしございましたらお伺いできればと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "大橋弘",
+        "role": "参考人 東京大学副学長・経済学研究科教授",
+        "summary": "- エビデンスは定量的なものだけでなく、定性的調査やアンケートでも有効である\n- 複数年度ではKPI管理を導入し、適切に管理していくことが重要である",
+        "full_text": "EBPMというのはエビデンスに基づく政策立案ということでございまして、昔はエピソードベースとポリシーメイキングとかいろんな略語があるのでございますけれども、エビデンスが重要だということで、このエビデンスというのは別に定量的である必要はなくてですね、訂正的、あるいはアンケート調査を踏まえたものでも私いいんだと思っています。他方で、そのKPIをどういう風な 河合理大臣。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56212&time=8547.845000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "複数年度枠組みでの効果的なEBPMの進め方",
+          "sub_asks": [
+            "有効な取り組み",
+            "他国の事例"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "今回のご提言の中にも"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "other",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "エビデンスというのは別に定量的である必要はなくてですね、訂正的、あるいはアンケート調査を踏まえたものでも私いいんだと思っています。",
+          "score": 0.2
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "質問は具体的ですが、回答がEBPMの定義論に終始し、途中で途切れているため、実質的な回答になっていません。",
+        "would_be_referenced": "low",
+        "issue_in_design": "単年度主義からの脱却という前提条件をより具体的に提示し、どのような評価指標を求めているか絞り込むべきでした。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_017",
+      "segment_index": 11,
+      "topic": "地方中小企業のDX推進と人手不足・賃上げ対策",
+      "question": {
+        "speaker": "河合道雄",
+        "party": "チームみらい",
+        "summary": "- 地方の中小企業における深刻な人手不足に対し、DXによる省力化や賃上げをどう実現すべきか",
+        "full_text": "地方の中小企業支援の観点での質問でございます。経産省が今年3月で公表されました就業構造推計、人手不足の問題についてまとめた調査によると、2040年の時点では、特に地方での現場人材 この2つの課題に お考えをお聞かせいただければと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "大橋弘",
+        "role": "参考人 東京大学副学長・経済学研究科教授",
+        "summary": "- 経営者の高齢化等の課題に対し、DXに精通した大規模事業者との連携が重要である（大橋参考人）\n- 省力化による人手不足解消に加え、高付加価値化による「攻めの賃上げ」の原資を稼ぐ政策指針が必要である（宮澤参考人）",
+        "full_text": "非常にここで重要になりますのは、そういった分野に非常に精通している、より大規模な事業者と連携を組んでいくこと。人手不足、人材不足を克服するための一つの手段として今ご指摘のようなDXというところでまさに商工会議所としても経営支援の現場でセミナーですとか専門家派遣という形でDXを省力化あるいは自動化ということで進めさせていただいているというのが現状でございます。賃上げとの関係においては、一方で先ほど言った貿易的賃上げというところが非常に重要なキーワードでございまして、なかなか付加価値を得られないというところで、一つは賃上げの原資となる付加価値をどう稼いでいくのかというところが、今まさに中小企業政策において重要だというふうに考えております。今般の法案によって、まさに高付加価値な取り組みを 中堅中小に流すという政策指針もあるかと思っておりますので、まさにその中で賃上げ減少を稼ぎ、人手不足、AX、DXを進めていくということも視野に入れながら、本政策を進めていっていただければいいのかなということを期待しています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5179"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56212&time=8547.845000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "地方中小企業の人手不足と賃上げへの考え",
+          "sub_asks": [
+            "人手不足への考え",
+            "賃上げへの考え"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "経産省"
+            },
+            {
+              "type": "other",
+              "excerpt": "今年3月で公表されました就業構造推計"
+            },
+            {
+              "type": "date",
+              "excerpt": "2040年の時点"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "地方の中小企業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "商工会議所"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "DX"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "賃上げの原資となる付加価値をどう稼いでいくのかというところが、今まさに中小企業政策において重要だというふうに考えております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的だが、回答者が参考人（商工会議所関係者と思われる）であり、政府のコミットメントを引き出す形式になっていないため、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「お考えをお聞かせください」という抽象的な問い方であるため、具体的な施策や期限を伴う回答が得られにくい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    }
+  ],
+  "score_schema_version": "2.0",
+  "prompt_version": "V4"
+}

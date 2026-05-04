@@ -1,0 +1,4213 @@
+{
+  "pairs": [
+    {
+      "id": "qa_001",
+      "segment_index": 1,
+      "topic": "自衛隊演習場での砲弾暴発事故",
+      "question": {
+        "speaker": "小林一大",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 大分県の演習場での砲弾暴発による死傷者の発生を受け、早期の原因究明と徹底的な再発防止を求める\n- 現段階で答えられる状況について伺いたい",
+        "full_text": "本日朝、大分県の非重大演習場で、ひと丸式の戦車の砲弾が法内で、暴発、破裂をしたというニュースをお聞きをしました。そして残念ながら3名の方が。三名の隊員がお亡くなりになられて、一名の方が負傷中だということであります。お亡くなりになられた隊員の皆様のご冥福を心からお祈り申し上げるとともに、受賞された隊員の皆様の早い回復をお祈りをしたいというふうに思いますが、早期の原因の究明と、そして徹底的な再発の防止を求めたいというふうに思いますが、今の段階でお答えができることがあれば、教えていただきたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "宮崎防衛副大臣",
+        "role": "",
+        "summary": "- 射撃訓練中に砲弾が暴発し、3名が死亡、1名が負傷した事実を確認している\n- 現在、詳細な事実関係および原因を確認中である\n- 原因究明に努めるとともに、安全管理を徹底していく",
+        "full_text": "本日午前8時39分頃、大分県の非重大演習場におきまして、陸上自衛隊西部方面戦車隊が、一丸式戦車による射撃訓練を行っていたところ、戦車の砲弾が法内にて暴発いたしまして、戦車に乗車をしていた隊員の4名のうち、3名が死亡。一名が不詳となっております。事実関係の詳細及び原因について現在確認中でございます。防衛省自衛隊としまして、本事案の原因決めに努めるとともに、安全管理の徹底に努めてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#3097.46",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "戦車砲弾暴発事故の原因究明と再発防止策について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "大分県の非重大演習場"
+            },
+            {
+              "type": "other",
+              "excerpt": "ひと丸式の戦車"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "隊員",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "本日午前8時39分頃"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "陸上自衛隊西部方面戦車隊"
+            },
+            {
+              "type": "number",
+              "excerpt": "3名が死亡"
+            },
+            {
+              "type": "number",
+              "excerpt": "一名が不詳"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "安全管理の徹底に努めてまいりたい",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.5
+        },
+        "oc3_quotability": {
+          "quote_candidate": "戦車の砲弾が法内にて暴発いたしまして、戦車に乗車をしていた隊員の4名のうち、3名が死亡。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "事故直後の状況報告であり、被害人数などの事実関係を公式に記録した点に価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "具体的な再発防止策の期限や手法を問う形式にすれば、より高いコミットメントを引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_002",
+      "segment_index": 1,
+      "topic": "ウクライナ平和回復に向けた外交方針",
+      "question": {
+        "speaker": "小林一大",
+        "party": "自由民主党・無所属の会",
+        "summary": "- ロシアによる現状変更の試みを許容せず、ウクライナ支援を継続すべきである\n- ロシアへの圧力を維持し、平和回復に向けて日本としてどのような外交を展開するか伺いたい",
+        "full_text": "ウクライナの侵略開始から4年を迎えてしまいました。力による現状変更の試みは断じて許容されるべきではありません。一刻も早くウクライナに平和を取り戻すべく関係国は一丸となってウクライナ支援をしていくことが重要だというふうに思います。こうした中ですが、今後のウクライナ平和回復に向けて、ロシアに対する圧力を維持するため、日本としてどのような外交を展開していくつもりか、大臣のお話をお伺いしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- G7等の国際社会と連携し、対露制裁を継続する方針に変わりはない\n- 英国とも連携し、対応制裁の継続で一致している\n- ASEAN諸国との「パワーアジア」構想などを通じ、エネルギー・重要物資のサプライチェーン強靭化を進め、連携を深めていく",
+        "full_text": "この観点から我が国として、G7をはじめとする国際社会と連携をしながら、 対応制裁を行っていく、こういう方針に変わりはありません。イラン情勢によって、今、有価が値上がりをするということで、これがロシアの経営能力を支えるのではないか、こういう懸念もあるところでありまして、しっかりと対応制裁を続けていくということでは、昨晩も英国のクーパー外相、来日をしておりまして、外相戦略対話を行ったところでありますが、 その点でも日本と英国の間でも一致を見たところであります。アジアの国々多いわけでありますけれど、都の間ではエネルギーや重要物資のサプライチェーンの強靭化に向けて、深刻な懸念、共有をしておりまして、 高市総理は、4月15日のエネルギー強靭化に関するASECプラスオンライン首脳会合において、アジアエネルギー資源供給力強靭化パートナーシップ 通称パワーアジアと呼んでおりますが、もう発表し、これらの国々と協力を進めることとしております。引き続き、我が国の外交全体において、ウクライナの公正かつ永続的な平和を実現するために、何が効果 東南アジアの国々とも連携を深めていきたいと、こんなふうに考えています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#3097.46",
+      "metrics": null
+    },
+    {
+      "id": "qa_003",
+      "segment_index": 1,
+      "topic": "中東情勢とエネルギー安全保障",
+      "question": {
+        "speaker": "小林一大",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 米イラン交渉の不透明感やホルムズ海峡封鎖による「経済の武器化」の威力が実証された状況にある\n- 緊張の長期化を見据えた地域外交・エネルギー外交の在り方と情勢認識について伺いたい",
+        "full_text": "先週末パキスタンではアメリカとイランとの間で事態の収集に向けた交渉が行われましたが、その後も情勢は全くの不透明だというふうなのは御案内のとおりでありますが、大臣は先日の委員会でアメリカとイランとの交渉は決裂したわけではない。パキスタンと関係国の仲介を後しつつ、外交努力を粘り強く行っていきたいというふうに御答弁をされました。イランの核開発やホルムズ海峡の掌握は、両国ともに譲ることのできない問題であり、予断を許さない状況は今後も続くものというふうに推察をします。こうした状況において、我が国は中長動線の… 緊張が長期化することを見据えて、地域外交、エネルギー外交を検討する時期に来ているというふうに思いますが、情勢認識と今後の外交の在り方について見解をお伺いすると同時に、今回イランが行ったホルムズ海峡の事実上の封鎖は、強大な軍事力を行使せずとも、石油の供給不安を生じさせることで、世界や各国の経済に多大な影響を与え、抑止を期待することができるという、いわゆる経済の武器化の威力を実証した 小泉委員長。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 米イラン間の協議は決裂した状況ではないが、核開発等の課題で隔たりがあり、動向を注視している\n- 経済の武器化への懸念から、特定国への依存を避け、調達先の多角化やサプライチェーンの維持強化を推進する\n- 湾岸諸国（GCC加盟国）との協力・協議を重ね、安定的な供給に万全を期す",
+        "full_text": "前回の質疑の中でも、イランとアメリカの間の協議、まとまなかったわけでありますが、決して決裂した、こういう状況ではないと申し上げたところでありますが、その後、情勢につきましては、イランの核開発の問題、3人はホルムズ海峡。この問題等に関して、考えの隔たりもあるようでありまして、次回の米国とイランの間の協議については、いつ、どのような形で行われるのか、現時点では不透明な状況でありますが、我が国としても関連の動向につき、引き続き重大な関心を持って、中止をしているところであります。その上で、いわゆる経済の武器化と、こういう話がありましたが、これは日本としても、もうここ数年、極めて懸念をしている事項でありまして、特定国への依存等々によりまして、相手国との関係で非常に弱い立場になってしまう。エネルギー外交に関してですね、海外からのエネルギー確保の多角化であったりとか、サプライチェーンの維持強化、これは我が国のエネルギー安全保障上極めて重要であります。また、エネルギー安全保障の観点からも、湾岸諸国との関係、これは今、ホルムズは閉じておりますけれど、関係は日本にとって極めて重要でありまして、こういった観点も含めて、2月28日の事態発生以降、我が国として、湾岸諸国との協力、協議を重ねているところでありまして、私もGCC、加盟6カ国の首相、もしくは外相とは、全て 電話会談等を行って、一層継続をしているところであります。引き続き、調達先の多角化を含めて、国際社会と連携して、日本への安定的な供給に向け、万全を期してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#3097.46",
+      "metrics": null
+    },
+    {
+      "id": "qa_004",
+      "segment_index": 1,
+      "topic": "次期安保三文書と安全保障関連経費",
+      "question": {
+        "speaker": "小林一大",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 次期安保三文書における防衛力整備計画経費を、現実的なシミュレーションに基づき積み上げるのか伺いたい\n- 補完する経費の対象拡大に関する基準やメリットについて説明を求める\n- 安全保障関連経費がGDP比2%（11兆円程度）を超過する可能性についての見解を伺いたい",
+        "full_text": "三文書は今年中の改定、目指されていますけれども、次期安保三文書においても、防衛力の抜本的強化のための経費である防衛力整備計画対象経費は、国民の命を守り 抜けるかについての極めて現実的なシミュレーションを行って金額を積み上げていくのだというふうに思いますが、そうなのかお伺いします。また補完する経費についてですが、宇宙事業の経費などに対象が拡大するという報道もあります。政府は各経費が補完する経費に含まれるか否かについて何らかの基準を検討しているのか、また補完する経費に含まれた事業には何らかのメリットがあるのか、御説明いただきたいと思います。加えて今般の我が国を取り巻く安全保障環境や補完する経費の対象 市長拡大の報道を踏まえれば、次期安保三文書において、安全保障関連経費は、現在の三文書で目指されたGDP比2%の11兆円という、11兆円程度という規模は超過するのではないかという予想もあります。この点についての御見解を伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "宮崎防衛副大臣",
+        "role": "",
+        "summary": "- シミュレーションを含め、新しい戦い方や長期戦への対応など様々な観点から具体的かつ現実的に議論を積み上げる\n- 補完する取組については、外交・経済・技術力等の総合的な国力を最大限に活用する考えの下で議論する\n- 経費水準について現時点で特定の数字を念頭に置いているわけではなく、数字ありきではなく主体的な判断で積み上げる",
+        "full_text": "その中で、今御指摘の予算の前提となる、今後の防衛力の具体的な内容につきましては、 先生の御指摘がありましたシミュレーションも含めて、様々な観点から検討を行ってまいります。具体的には、我が国を取り巻く厳しさを増す安全保障環境や、無人機の大量運用を含む新しい戦い方、長期戦への対応の必要性、国際的な技術の動向などを総合的に検討して、具体的かつ現実的に議論を積み上げていくという考えでございます。新たな三部署の下での保管する取組のあり方につきましては、ご質問いただいた基準も含めまして、予断をすることは困難ではありますが、安全保障環境の急速な変化に対応していくために、防衛力に加えまして、外交力、経済力、技術力、 情報力、そして人材力を含めた総合的な国力を最大限に活用していくという考え方の下、議論を行ってまいりたいと思っております。こちらも3文書の具体的な内容という意味では、現時点では予断をすることは差し控えますが、防衛費を含む安全保障関連経費の水準については、現時点で特定の水準を念頭に置いているということではございません。その上で、一層厳しさを増している安全保障環境を踏まえて、我が国として主体的に 防衛力の一層の強化と変革を含めて、総合的な国力の強化を図っていくことが必要でありまして、繰り返し申し上げているところでありますが、我が国の主体的な判断のもとに、数字ありきではなく、具体的かつ現実的な議論によって、積み上げてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#3097.46",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "次期安保三文書における防衛経費の算定基準と規模について",
+          "sub_asks": [
+            "防衛力整備計画対象経費を現実的なシミュレーションで積み上げるのか",
+            "補完する経費の判定基準を検討しているか",
+            "補完する経費に含まれる事業にメリットがあるか",
+            "安全保障関連経費がGDP比2%（11兆円程度）を超過する見解はあるか"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "GDP比2%の11兆円"
+            },
+            {
+              "type": "law",
+              "excerpt": "次期安保三文書"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "無人機の大量運用"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "具体的かつ現実的に議論を積み上げていくという考えでございます",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "防衛費を含む安全保障関連経費の水準については、現時点で特定の水準を念頭に置いているということではございません。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的で多岐にわたるが、回答は「検討する」「予断を差し控える」という定型的な表現に留まっており、具体的な基準や数値への言及は避けられている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "複数の異なる論点（算定手法、補完経費の基準、予算規模）を一つの質問に盛り込みすぎているため、回答者が個別の問いを回避しやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_005",
+      "segment_index": 2,
+      "topic": "日本政府による台湾の認識",
+      "question": {
+        "speaker": "石平",
+        "party": "日本維新の会",
+        "summary": "- 台湾という国家が近隣に存在する客観的事実をどう認識しているか\n- 政府および外務大臣は台湾をどのような存在だと認識しているか",
+        "full_text": "国であって、国家であることが、それが厳然たる事実だろうと思います。もちろん日本と台湾の間には、国交関係のないことは承知しておりますが、しかし日本の近所には、例えば、ヨラ国からおそらく、履く数十キロしか離れていないところに、台湾という立派な国があるという客観的事実を じゃあ日本政府、あるいは茂木外務大臣は、どういうふうに認識していますか。あるいは政府と茂木大臣は、台湾のことをどのような存在だと認識していますか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 基本的価値を共有し、親密な経済関係と人的往来を有する極めて重要なパートナーであり、大切な友人である\n- 1972年の日中共同声明を踏まえ、非政府間の実務関係として維持する立場に変更はない",
+        "full_text": "石井議員の方から、台湾、日本にとってどういう存在かということでありますけれど、台湾は我が国にとって基本的な価値を共有し、親密な経済関係と人的往来を有する極めて重要なパートナーであって、大切な友人であると考えております。台湾との関係につきましては1972年の日中共同制限面を踏まえて非政府間の実務関係として維持していくとの日本政府の立場に変更はないところであります。日本政府としてはこのような従来の基本的考え方を踏まえて日体間の協力と交流のさらなる進化、これを図っていきたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#3950.33",
+      "metrics": null
+    },
+    {
+      "id": "qa_006",
+      "segment_index": 2,
+      "topic": "台湾国民の親日感情に対する認識",
+      "question": {
+        "speaker": "石平",
+        "party": "日本維新の会",
+        "summary": "- 震災時の義援金や水産物消費など、台湾国民が日本に寄せている熱い友情をどう受け止めているか",
+        "full_text": "最も好きな国は日本と答えたのは 76%に上っています。あるいは東日本大震災が発生した時に、皆様ご存知のように台湾から世界最大規模の約200億円の現金が寄贈されたという事実もあります。とにかく台湾国民がすごく新日的でございます。ということもありまして、ここで茂木大臣にぜひお聞きしたいのは、じゃあ台湾国民と台湾政府が日本に寄せている、このような熱い思い、あるいは熱い友情というものに対して、茂木大臣ご自身はどういうふうに受け止めていますか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 日台の市民感情は双方向であり、良好な状態にあると認識している\n- 日本台湾交流協会を通じて、人的交流や教育支援などの事業に積極的に取り組んでいる",
+        "full_text": "日台の市民感情といいますか、これは一方的なものではなくて双方向のものだと思っておりまして、今、委員の方から御指摘もありましたようにですね、東日本大震災の際にはですね、本当に 台湾を挙げて、義援金、これを集めていただいたり、また、水産物の輸入再開についても、非常に前向きな対応をとってもらっているところであります。これは良好な状態にあると認識をしております。このような関係を維持、発展させるべく、例えば、日本台湾交流協会では、人的交流事業、日本語教育支援事業、奨学金留学生事業、広報文化交流事業に積極的に取り組んでおります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#3950.33",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "台湾の親日感情への受け止め",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "76%"
+            },
+            {
+              "type": "number",
+              "excerpt": "約200億円"
+            },
+            {
+              "type": "field_case",
+              "excerpt": "東日本大震災"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "台湾国民",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "日本台湾交流協会"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "人的交流事業"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "日本語教育支援事業"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "奨学金留学生事業"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "広報文化交流事業"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "積極的に取り組んでおります",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "日台の市民感情といいますか、これは一方的なものではなくて双方向のものだと思っておりまして",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "大臣の個人的な受け止めを問う感情的な質問であり、回答も概論的な現状認識に留まっているため、記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "大臣の主観的な感想を問う形式になっており、具体的な政策変更や約束を引き出す設計になっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_007",
+      "segment_index": 2,
+      "topic": "台湾行政院長（首相）の訪日制限という現状への認識",
+      "question": {
+        "speaker": "石平",
+        "party": "日本維新の会",
+        "summary": "- 台湾の行政院長が私的に訪日しても公式な訪問が困難な現状は、日本の国益に反する異常な状況ではないか",
+        "full_text": "実はさっき申し上げました、森林の宴にはね、台湾の行政委員長、すなわち首相の田区英太さんが参加しておりました。ご存知でおりますけれどもね、この田区委員長が先番、東京で開かれたWBCの台湾代表選の観戦のために、 詩人として日本を訪問したことが一般的に報道されています。しかし、現役の台湾の首相が日本を訪問したわれ、これは1972年10月以来の反席ぶりの話でございまして、逆に言えば、要するに台湾が正確に近隣国であって、日本と人的交流、経済的交流が非常に緊密であるのに、 かかわらず、台湾の行政の庁が、もう半席分にね、あるいは半席に渡って日本を訪問することができない、あるいはしない、というような状況で、私は日本にとっても異常な状況であって、日本の国益にもならない、というような状況だと思いますが、じゃあ、本木大臣ご自身は、今、台湾と日本の間の、このような不正常な状況、あるいは異常状況を、どう考えていらっしゃるんですか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 日本と台湾は非常に友好的な関係にあり、非政府間の様々な取り組みや交流を進めている",
+        "full_text": "先ほどから申し上げておりますように、日本と台湾、非常に有効的な関係を持っており、そして非政府間の様々な取組、交流も進めているところであります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#3950.33",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "日台間の不正常な状況への認識",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "台湾の行政委員長"
+            },
+            {
+              "type": "date",
+              "excerpt": "1972年10月以来"
+            },
+            {
+              "type": "other",
+              "excerpt": "WBCの台湾代表選の観戦"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "田区英太（台湾行政委員長）",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "日本と台湾、非常に有効的な関係を持っており、そして非政府間の様々な取組、交流も進めているところであります。",
+          "score": 0.2
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な人物や歴史的背景を挙げた問いに対し、大臣は一般論的な回答に留まっており、実質的な議論が進んでいない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どう考えているか」という主観的な問いであるため、回答者が抽象的な表現で逃げることが容易な設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_008",
+      "segment_index": 3,
+      "topic": "非重大演習場での戦車事故への対応",
+      "question": {
+        "speaker": "広田一",
+        "party": "立憲民主・無所属",
+        "summary": "- 事故で亡くなった隊員への哀悼と、原因究明および再発防止策の策定を求める\n- 遺族への心のケアを含む万全な支援を求める",
+        "full_text": "退院の皆さんの亡くなったことに報いるためにも、ぜひ小泉大臣におかれましては、まずもって原因の究明、そして再発の防止、これを図ってもらいたいというふうに思いますし、併せまして、これも家族がとってどうなんでしょうか。ぜひとも家族の皆さんに対する心のケア含めて支援、万全を期してもらいたいというふうに思いますけれども、これらの点も含めて小泉大臣の御所見をお伺いできればと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小泉大臣",
+        "role": "",
+        "summary": "- 事故の概要を説明し、亡くなった隊員への哀悼と遺族へのお悔やみを述べる\n- 事故調査委員会を立ち上げて原因を確認中であり、原因究明と安全管理の徹底に努める\n- 家族へのフォローをしっかり行う",
+        "full_text": "小泉防衛大臣本日8時39分頃、大分県の非重大演習場におきまして、 陸上自衛隊、西部方面戦車隊が、一丸式戦車による射撃訓練を行っていたところ、戦車の砲弾が砲内にて破裂し、戦車に乗車していた隊員4名のうち、3名が死亡、1名が重傷となっております。ご家族のケア、こちらもしっかりとフォローしてまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#4523.78",
+      "metrics": null
+    },
+    {
+      "id": "qa_009",
+      "segment_index": 3,
+      "topic": "米イラン協議の見通しと中東情勢",
+      "question": {
+        "speaker": "広田一",
+        "party": "立憲民主・無所属",
+        "summary": "- 米国とイランの直接協議について、政府としてどのような見通しを持っているか伺いたい",
+        "full_text": "それではまずイラン中東情勢に関してお伺いをしたいというふうに思います。本日は中海国パキスタンの首都 米国とイランとの2度目の直接協議が行われるのかということが注目をされているわけでありますが昨日は茂木大臣も英国のクーパー外務大臣とも日英外相会談がございました中東情勢についても意見を交わしたんだろうというふうに思いますけれどもこの米国とのイランの協議について どのような見通しを持たれているのか、御所見をお伺いをしたいというふうに思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 1回目の協議はまとまらなかったが、決裂したわけではなく早期再開が重要と考えている\n- 複雑な要素が絡んでおり、現段階で確たる見通しやシナリオを持つことは困難である\n- ホルムズ海峡の安全確保と事態の早期沈静化を期待し、外交的取組を継続する",
+        "full_text": "先日、1回目の米依頼によります直接のハイレベルの協議。日本としては引き続き、米国とイランとの協議であったりとか、パキスタン、私も外務大臣とも電話会談等を行っておりますが、相当苦労してMOUをまとめるとか、こういう努力もしているところでありまして、こういった中海国の外交 これを後押しするとともに国際社会とも緊密に連携をしながら引き続き外交的取組日本としても進めてまいりたいとこんなふうに考えています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#4523.78",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "米国とイランの直接協議の見通しについて",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "米国とイラン"
+            },
+            {
+              "type": "organization",
+              "excerpt": "英国のクーパー外務大臣"
+            },
+            {
+              "type": "other",
+              "excerpt": "パキスタンの首都"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "米国、イラン",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "MOU"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "パキスタン"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "外交的取組日本としても進めてまいりたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "中海国の外交を後押しするとともに国際社会とも緊密に連携をしながら引き続き外交的取組日本としても進めてまいりたい",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な見通しについての問いに対し、一般的な外交努力の継続という抽象的な回答に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「見通し」という主観的な問いであるため、回答者が具体性を避ける余地を与えてしまっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_010",
+      "segment_index": 3,
+      "topic": "ホルムズ海峡の安全確保と日本の貢献",
+      "question": {
+        "speaker": "広田一",
+        "party": "立憲民主・無所属",
+        "summary": "- 英仏主導の有識国会合を踏まえ、戦闘終結後の状況や護衛任務に日本がどのように貢献していくか、英国側とやり取りがあったか伺いたい",
+        "full_text": "その上で、構わない範囲でお伺いをしたいんですけれども、 今月、ホルムズ海峡の安全確保を目的とした、イギリスとフランス主導の有識国会合、これが開かれて、日本の方もオンラインですかね、参加をしたというふうに聞き及んでいるところでございます。ということが問われてきているというふうに思いますけれども、この点について、クーパー、外務大臣等々とやりとりがあったのか、お構えない範囲で御所見をいただければと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 海峡の自由で安全な航行の確保について日英で認識が一致している\n- 日本はエネルギーや食料を海上輸送に依存しているため、多国間で航行の自由について声を上げていく必要がある",
+        "full_text": "海峡の自由な、また安全な航行、これは日本も英国もしっかり確保していかなきゃいけない、こういう関係、認識では一致をいたしておりまして、例えば英国はドーバー海峡を抱えております。もちろんこれは自国産を増やしたり多角化する、こういう取り組みが必要でありますけど、そういった状況にある中で、多国間で、できるだけ多くの国の間で、こういう高校の自由について、声を大きくしていくということは必要だと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#4523.78",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "英仏主導の有識国会合への参加と外相間のやり取りについて",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "イギリスとフランス主導の有識国会合"
+            },
+            {
+              "type": "other",
+              "excerpt": "ホルムズ海峡の安全確保"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "クーパー、外務大臣",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "ドーバー海峡"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "海峡の自由な、また安全な航行、これは日本も英国もしっかり確保していかなきゃいけない、こういう関係、認識では一致をいたしておりまして",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な会合への参加や外相間のやり取りという問いに対し、一般論的な認識の共有に終始しており、回答としての具体性に欠ける。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「構わない範囲で」という限定的な表現が、回答者に回避の余地を与えてしまっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_011",
+      "segment_index": 3,
+      "topic": "防衛装備移転三原則の見直しの意義とポイント",
+      "question": {
+        "speaker": "広田一",
+        "party": "立憲民主・無所属",
+        "summary": "- 防衛装備移転の見直しの具体的なポイントとその意義について説明を求める",
+        "full_text": "それでは続きまして、今度は小泉大臣を中心にお伺いをしたいというふうに思いますが 本日の閣議で防衛装備移転の見直しについて閣議決定がございました。まずこの度の防衛装備移転の見直しのポイントとその意義について小泉大臣から御説明をいただければと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小泉大臣",
+        "role": "",
+        "summary": "- 安全保障環境の悪化を踏まえ、同盟国・同志国と助け合うため運用指針を見直した\n- 完成品の移転を原則可能とし、武器とそれ以外に分類して厳格に審査する\n- 実績のない武器の移転は国家安全保障会議でより厳格に審査し、国会に通知する",
+        "full_text": "我が国を取り巻く安全保障環境が加速度的に厳しさを増していることを踏まえ、我が国として平和国家としての理念は堅持した上で、 日本の安全と地域及び国際社会への平和と安定の確保を図っていくため、今般、防衛装備移転三原則、そして運用指針の見直しを行うことといたしました。特に自衛隊法上の武器につきましては、 過去に移転を認め得るとの判断を行った実績がない場合は、個別案件を国家安全保障会議において、より一層厳格に審査するとともに、移転を認め得ると判断を公表したときは、国会に通知し、モニタリング体制の強化等により、移転後の適正な管理を確保するとしたことであります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#4523.78",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "防衛装備移転見直しのポイントと意義",
+          "sub_asks": [
+            "見直しのポイント",
+            "見直しの意義"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "本日の閣議"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "防衛装備移転三原則"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国家安全保障会議"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "自衛隊法上の武器"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "自衛隊法上の武器につきましては、過去に移転を認め得るとの判断を行った実績がない場合は、個別案件を国家安全保障会議において、より一層厳格に審査する",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "閣議決定の内容について大臣が具体的に説明しており、審査プロセスや国会通知などの運用方針が明確に記録されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「ポイント」と「意義」を同時に問うているため、回答が包括的になりやすく、個別の詳細な追求がしにくい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_012",
+      "segment_index": 3,
+      "topic": "武器移転解禁による平和国家理念の空文化への懸念",
+      "question": {
+        "speaker": "広田一",
+        "party": "立憲民主・無所属",
+        "summary": "- 殺傷力の高い武器の移転・輸出解禁により、平和国家としての基本理念が空文化することはないか",
+        "full_text": "1点目に確認をしたいんですけれども、これ先ほど小泉大臣の方からも御答弁がございました。及びこれまでの歩みというものは、引き続き堅持をするということでございますが、ただ、今回のこの見直しに伴いまして、先ほどルル御説明がございましたように、殺傷力の高い武器の移転、輸出の解禁によって、その理念といったものが空文化することはないのか、この点についての大臣の御所見をお伺いします。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "小泉大臣",
+        "role": "",
+        "summary": "- 国連憲章を遵守する平和国家の基本理念と歩みを堅持する姿勢は変わらない\n- 安全保障上、人道上の影響を踏まえ、一層厳格な審査とモニタリング体制を構築して進める",
+        "full_text": "今般の改正においても、日本国憲法の精神に立ち、 国連憲章を遵守するとの平和国家の基本理念と、これまでの平和国家としての歩みを堅持する。政府としては、防衛装備の流通について、国際社会への安全保障上、社会上、経済上、及び人道上の影響も踏まえ、一層厳格な審査を行うとともに、モニタリング体制を強化するなど、責任ある防衛装備店の管理体制を構築しつつ、防衛装備店を進めていく考えです。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#4523.78",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "武器輸出解禁で平和理念が空文化しないか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "責任ある防衛装備店の管理体制を構築しつつ、防衛装備店を進めていく考えです",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "日本国憲法の精神に立ち、国連憲章を遵守するとの平和国家の基本理念と、これまでの平和国家としての歩みを堅持する。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "理念の堅持を問う質問に対し、大臣が基本理念の維持と管理体制の構築を答弁した標準的なやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「空文化することはないか」という二択に近い問い方ではなく、具体的にどのような基準で空文化を防ぐのかを問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_013",
+      "segment_index": 3,
+      "topic": "国際紛争助長や国際法違反への対応",
+      "question": {
+        "speaker": "広田一",
+        "party": "立憲民主・無所属",
+        "summary": "- 国際紛争を助長したり、国際法に違反する侵略行為に使われる恐れがある場合に、殺傷力の高い武器を移転することはないという理解でよいか",
+        "full_text": "その御答弁の範囲内でのお話は理解をするところではございますが、より根本的なところについて伺うと確認ですけれども、今後とも我が国の判断として国際紛争を助長することになること、あるいは国際法に違反するような侵略などの行為に使われる恐れがある場合は、 殺傷力の高い武器を移転輸出することはないと、こういった理解でよろしいんでしょうか。を理解し踏まえた上で確認したいと思うんですけれどもまず1つ目のポイントは国際紛争を助長するということですそしてまた国連憲章の話はあったんですけれどもこれに合わせて国際法に違反する行為その恐れがある場合 小泉防衛大臣。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "小泉大臣",
+        "role": "",
+        "summary": "- 平和主義の精神に則り、防衛装備移転三原則に従って厳格な審査を行う\n- 従来の政府の立場（国際紛争を助長しない）と矛盾するものではない",
+        "full_text": "我が国が行う防衛装備の移転は、憲法全文において鮮明された平和主義の精神に則ったものでなければならないと考えています。今後、自衛隊法上の武器に該当する完成品の移転につきましても、防衛装備移転三原則に従って行うものであり、このような防衛装備移転三原則に従った防衛装備の移転は、憲法の平和主義の精神に則ったものであり、今、広田先生が国際紛争を助長することはないのかと、こういった旨の従来の政府の立場と矛盾するものではないと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#4523.78",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "殺傷力の高い武器の輸出制限の確認",
+          "sub_asks": [
+            "国際紛争を助長する場合の輸出禁止",
+            "国際法違反・侵略行為に使われる恐れがある場合の輸出禁止"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "国際法"
+            },
+            {
+              "type": "law",
+              "excerpt": "国連憲章"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "防衛装備移転三原則"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "自衛隊法"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "防衛装備移転三原則に従った防衛装備の移転は、憲法の平和主義の精神に則ったものであり、従来の政府の立場と矛盾するものではない",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "政府の基本的立場を再確認するやり取りであり、具体的な新方針やコミットメントは含まれていない。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問文が断片的であり、文末が不完全なため、論点が整理されていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_014",
+      "segment_index": 3,
+      "topic": "移転後の目的外使用に対する是正措置と運用指針への明記",
+      "question": {
+        "speaker": "広田一",
+        "party": "立憲民主・無所属",
+        "summary": "- 移転先国で国連憲章に反する使用が確認された場合、運用指針上どのように対応するのか\n- 是正要求や使用停止などの厳正な対処をなぜ運用指針に明記しないのか",
+        "full_text": "広田はじめ君その答弁を頂戴した上で確認したいと思うんですけれども毎日今回また具体的に書かれておりますいわゆるモニタリングなどの結果移転先国によってこれまで議論しております国連憲章の目的及び憲章などに反する方法での使用が確認された場合 これは運用指針上どのように対応されるんでしょうか。であれば、なぜ運用指針にこの大事なことを明記しないんでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "小泉大臣",
+        "role": "",
+        "summary": "- 相手国に国連憲章に適合した使用を義務付けており、目的外使用は想定していない\n- 万が一侵略に使用された場合は、使用停止の要求や部品差し止めなど厳正に対処する\n- 運用指針自体に明記はされていないが、厳格な審査と適正管理という基本方針に基づき対応する",
+        "full_text": "防衛装備の海外移転に際しては、我が国から移転された武器が他国への侵略など、国連憲章に反する行為に使用されることがないよう、これまでも国際約束により移転された防衛装備品及び技術について、国際連合憲章の目的及び原則等に適合した使用を相手国政府に義務づけるとともに、 および第三国移転について、我が国の事前同意を相手国政府に義務づけることとしています。こういったことはポイントでありますので、そこのことは明確であります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#4523.78",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "国連憲章違反の使用が確認された際の対応と明記の是非",
+          "sub_asks": [
+            "運用指針上どのように対応されるのか",
+            "なぜ運用指針にその旨を明記しないのか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "国連憲章の目的及び憲章"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国際連合憲章"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "国際連合憲章の目的及び原則等に適合した使用を相手国政府に義務づけるとともに、および第三国移転について、我が国の事前同意を相手国政府に義務づけることとしています。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "運用指針への明記という具体的な問いに対し、既存の国際約束という一般論で回答しており、実効的な回答になっていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのように対応するか」という具体的プロセスを問うているが、回答者が一般論に逃げやすいため、具体的な想定シナリオを提示して問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_015",
+      "segment_index": 3,
+      "topic": "約束違反時の制裁措置の考え方",
+      "question": {
+        "speaker": "広田一",
+        "party": "立憲民主・無所属",
+        "summary": "- 殺傷力の高い武器の移転で約束違反が起きた際、是正のみならず供給制限や制裁についてどのような考えで運用するのか",
+        "full_text": "その上でもう一点確認なんですけれども、繰り返しになりますが、今回殺傷力の高い武器が原則解禁になったわけです。これによって約束違反が起きたら、相手国への信頼信用というものは大きく失意をするわけでございまして、これは是正のみならず供給制限であるとか、そして非いては制裁のあり方、こういったことも十分に考えていかないといけないわけでありますが、これはどのような考え方で運用していくんでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "小泉大臣",
+        "role": "",
+        "summary": "- 相手国に適合した使用を義務付け、事前同意のない目的外使用は想定していない\n- 侵略に使用された場合は、使用停止の要求や維持整備部品の差し止めなど、事例に応じて厳正に対処する",
+        "full_text": "これは先ほど申し上げたところに重複するわけですが、我が国として、 国際約束により移転された防衛装備品及び技術について、国連憲章の目的及び原則等に適合した使用を相手国政府に義務付けるわけです。さらに、維持整備に必要な部品等の差し止め等を含め、ここの事例に応じて厳正に対処してまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#4523.78",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "殺傷力の高い武器解禁後の約束違反への運用考え方",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "相手国",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国連憲章"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "厳正に対処してまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "維持整備に必要な部品等の差し止め等を含め、ここの事例に応じて厳正に対処してまいります。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "武器輸出の約束違反に対する対処方針を問う質問に対し、部品差し止め等の具体的手段に言及して回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "制裁のあり方など具体的な選択肢を提示して回答を迫れば、より踏み込んだ回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_016",
+      "segment_index": 3,
+      "topic": "五類型撤廃の意義と認識",
+      "question": {
+        "speaker": "広田一",
+        "party": "立憲民主・無所属",
+        "summary": "- 海洋安全保障分野での移転は許容し得ると考えるが、これまでの「五類型」が果たしてきた意義をどう認識しているか",
+        "full_text": "その上で平和国家としてのこれまでの歩みを引き続き堅持するという御答弁がありましたので、五類型撤廃の論理的整合性についてお伺いをしたいと思います。そうした場合に、まず大臣にお伺いしたいのは、この五類型の果たしてきた意義というものを、小泉大臣自身、どのように認識をされているのか、お伺いをいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小泉大臣",
+        "role": "",
+        "summary": "- 五類型の枠組みによる海洋安全保障への寄与は非常に大きかった\n- 一方で、各国からの具体的なニーズに応えるため五類型を撤廃し、原則完成品の移転を可能としたことで、豪州やフィリピンからも歓迎されている",
+        "full_text": "今までこの五類型の枠組みでは、今、公明党の先生方もいらっしゃいますが、時効のこの連立の中で、海洋安全保障というのが極めて重要であるという中で、策定をされてきて、その中で果たしてきた意義は、非常に大きいというふうに思っております。このように一つ一つ丁寧に対応する中で、結果として地域の平和と安定に資する、そんな安全保障環境を構築するように努力していきたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#4523.78",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "五類型が果たしてきた意義の認識",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "五類型"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "公明党"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "海洋安全保障"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "努力していきたいと思います",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "五類型の枠組みでは、海洋安全保障というのが極めて重要であるという中で、策定をされてきて、その中で果たしてきた意義は、非常に大きい",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "大臣の主観的な認識を問う質問に対し、概括的な肯定で回答しており、具体的な事実関係の記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのように認識しているか」という主観的な問いではなく、具体的な成果や事例を問う形式にすべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_017",
+      "segment_index": 3,
+      "topic": "弾薬・ミサイルの移転可否",
+      "question": {
+        "speaker": "広田一",
+        "party": "立憲民主・無所属",
+        "summary": "- 五類型の撤廃により、弾薬やミサイルの移転・輸出は可能となるのか",
+        "full_text": "大臣、 一国のみで、もはやどの国も、自国の平和と安全を守ることができない、こういったことについても、ちょっと議論をしたいなと思ったんですけど、ちょっと時間がないので、これは次回に譲りたいというふうに思いますが、ちょっと五類型に関連して、一点確認したいんですけれども、今回の五類型の撤廃で、いわゆる弾薬ミサイルの移転、輸出、これは可能となるんでしょうか。大臣、 一国のみで、もはやどの国も、自国の平和と安全を守ることができない、こういったことについても、ちょっと議論をしたいなと思ったんですけど、ちょっと時間がないので、これは次回に譲りたいというふうに思いますが、ちょっと五類型に関連して、一点確認したいんですけれども、今回の五類型の撤廃で、いわゆる弾薬ミサイルの移転、輸出、これは可能となるんでしょうか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "小泉大臣",
+        "role": "",
+        "summary": "- 弾薬やミサイルの移転も排除されるものではない\n- ただし、個別の案件ごとに厳格に審査し、適正管理が確保されることを確認した上で判断する",
+        "full_text": "今般の改正は、安全保障面での協力関係がある国に対しては、自衛隊法上の武器も含め、全ての完成品、部品、技術、及び修理等の駅務の提供の移転を認め得ることとするものであり、ご指摘の弾薬やミサイルの移転も排除されるものではありません。その上で、実際の移転に際しては、具体的な移転案件が生じた際に、 防衛装備移転三原則及び運用指針を踏まえ、個別の案件ごとに厳格に審査を行い、適正管理が確保されることを確認をした上で、我が国として移転を認め得るかどうかの判断を行うこととなります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#4523.78",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "五類型撤廃で弾薬・ミサイルの移転・輸出が可能か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "五類型"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "防衛装備移転三原則"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "運用指針"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "ご指摘の弾薬やミサイルの移転も排除されるものではありません。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "五類型の撤廃に伴う弾薬・ミサイルの移転可能性について、大臣が明確に肯定的な解釈を示したため、記録としての価値が高い。",
+        "would_be_referenced": "high",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_018",
+      "segment_index": 3,
+      "topic": "平成27年5党合意による弾薬提供制限の維持",
+      "question": {
+        "speaker": "広田一",
+        "party": "立憲民主・無所属",
+        "summary": "- 平成27年の5党合意で、弾薬提供は生命身体保護などの極めて限定的な状況に限ると明記されたが、これは現在も維持されているか",
+        "full_text": "その御答弁の上で1点確認したいんですけれども、平成27年の9月16日、当時平和安全法制について議論をしている際、自由民主党の安倍内閣総理大臣を含めて5党で合意書が結ばれました。これ弾薬の提供は、 緊急の必要性が極めて高い状況下にのみ想定されるものであり、拳銃、小銃、機関銃などの他国部隊の要員などの生命身体を保護するために使用される弾薬の提供に限ると、こういうふうに明記をされておりますけれども、これは現在でも維持されているんでしょうか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "小泉大臣",
+        "role": "",
+        "summary": "- 平和安全法制成立時の5党合意の趣旨を尊重し、適切に対処することを閣議決定している\n- 今回の防衛装備移転三原則の見直しによって、この方針が変わるものではない",
+        "full_text": "先生、今御指摘いただきました平成27年9月16日に自民党、公明党、日本を元気にする会。このことは、今般の防衛装備移転三原則、及びその運用指針の見直しによって変わるものではありません。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#4523.78",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "平成27年の5党合意の維持確認",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "平成27年の9月16日"
+            },
+            {
+              "type": "organization",
+              "excerpt": "自由民主党の安倍内閣総理大臣を含めて5党"
+            },
+            {
+              "type": "other",
+              "excerpt": "弾薬の提供は、 緊急の必要性が極めて高い状況下にのみ想定されるものであり、拳銃、小銃、機関銃などの他国部隊の要員などの生命身体を保護するために使用される弾薬の提供に限る"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 1.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自由民主党の安倍内閣総理大臣を含めて5党",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.8
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "防衛装備移転三原則"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "運用指針"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "今般の防衛装備移転三原則、及びその運用指針の見直しによって変わるものではありません。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "過去の合意内容が現在の運用指針変更後も維持されているかを確認し、政府がそれを肯定したため、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_019",
+      "segment_index": 4,
+      "topic": "米国の封鎖措置に対する国際法上の評価",
+      "question": {
+        "speaker": "山田吉彦",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 米国の封鎖措置を国際法上どう受け止めるべきか",
+        "full_text": "そして、この米国の逆不算に関しまして、私も海洋問題をずっと携わってきた中で、 この状況を国際法上どう受け止めていいのか、ということをお答えしていただけたらと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "三宅審議官",
+        "role": "",
+        "summary": "- 個別具体的な状況について事実関係を十分に把握できていない\n- そのため、確定的な法的評価を行うことは困難である",
+        "full_text": "現在、ホルムズ海峡で行われておりますが、米国の行動に関しましては、ご指摘の措置も含めて、様々な情報や報道に接しておりますが、我が国として、個別具体的な状況について、事実関係を十分に把握しているわけではございません。そのため、確定的な法的評価を行うことは困難であるまで、ご理解いただければと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#6571.25",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "米国の逆不算の国際法上の解釈",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "米国の逆不算"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "米国",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "ホルムズ海峡"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "個別具体的な状況について、事実関係を十分に把握しているわけではございません。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "国際法上の解釈を問う質問に対し、政府が事実関係を把握しておらず法的評価が困難であると回答した記録として価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「逆不算」という専門用語の定義や具体的な事例を提示して問えば、より具体的な回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_020",
+      "segment_index": 4,
+      "topic": "米国の封鎖措置への政府の姿勢",
+      "question": {
+        "speaker": "山田吉彦",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 米国の現状（封鎖措置等）を受け入れるということか",
+        "full_text": "ではこの状況を受け入れるということでよろしいんでしょうか。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 決して受け入れるとは考えていない\n- あらゆる海域の航行の自由（通過通行権）は認められるべきであるという立場から働きかけを行っている",
+        "full_text": "茂木議会務大臣 決してそんなふうには思っておりません。ですからこれだけの働きかけというのを行ってきているわけでありまして、ホルムズ会見を含めて、あらゆる会場の高校の自由、いわゆる通過高校圏、これは認められるべきだと、こういう立場から働きかけを行っているところであります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#6571.25",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "現状を受け入れるつもりか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "ホルムズ会見"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "働きかけを行っているところであります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "通過航行権、これは認められるべきだと、こういう立場から働きかけを行っているところであります。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "現状を容認するかという問いに対し、大臣が否定し、航行の自由を求める立場を明確にしたやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が極めて短く、具体的にどの「状況」を指しているのかがこのペアだけでは不明確である。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_021",
+      "segment_index": 4,
+      "topic": "ホルムズ海峡の国際海峡としての位置付け",
+      "question": {
+        "speaker": "山田吉彦",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 国際海峡の定義の確認\n- ホルムズ海峡が国際海峡に該当するかどうかの確認",
+        "full_text": "そしてホルムズ海峡の国際海峡としての位置づけ、これがまず明確にしておかなければいけないことだと思います。国際海峡の定義の確認を含めまして、 ホルムズ海峡の国際海峡としての位置付けに関しまして、確認させてください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "中村国際法局長",
+        "role": "",
+        "summary": "- 国際海峡とは、公開海域またはEEZの間にある国際航行に使用される海峡を指し、原則として通過通行権が認められる\n- ホルムズ海峡がこれに該当するかは関係国の立場が一致しておらず、異なる評価がある\n- 日本政府として確定的な評価を出すにはさらなる精査を要する",
+        "full_text": "お尋ねのまず国際海峡についてでございますが、国連海洋法条約上、公開または排他的経済水域の一部分と、 公開また排他的経済水域のほかの部分。これらの間にある国際高校に使用されている海峡。これがいわゆる国際海峡でございますが。ここにおきましては、その海峡内に他に代替となる同様に便利な航路が存在する場合を除きまして、いわゆる通過通行が認められているということでございます。この通過通行制度と申しますのは、その制度が適用される今申し上げたような海峡におきましては、全ての船舶による航行の自由、そして全ての航空機による上空飛行の自由。これらが継続的かつ迅速的な通過のためにのみ保障されると、こういう制度でございます。以上申し上げました上で、ホルムズ海峡が今申し上げた国連海洋法条約上の通過通行制度が適用される国際海峡、これに当たるかどうかにつきましては、関係局の立場が一応でないこともございまして、様々な異なる評価があるという状況であると承知しております。以上申し上げたような事情も踏まえますと、 日本政府として確定的な評価を申し上げる。このためにはなお精査を要すると考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#6571.25",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "ホルムズ海峡の国際海峡としての位置付けの確認",
+          "sub_asks": [
+            "国際海峡の定義の確認",
+            "ホルムズ海峡の国際海峡としての位置付けの確認"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "ホルムズ海峡",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国連海洋法条約"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "通過通行制度"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "日本政府として確定的な評価を申し上げる。このためにはなお精査を要すると考えております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "定義については明確に回答したが、ホルムズ海峡の具体的評価については「精査を要する」として回答を避けている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「確認させてください」という形式のため、政府が確定的な見解を持っていない場合に逃げ道を与えやすい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_022",
+      "segment_index": 4,
+      "topic": "ホルムズ海峡の国際海峡認定に関する具体的見解",
+      "question": {
+        "speaker": "山田吉彦",
+        "party": "国民民主党・新緑風会",
+        "summary": "- オマーンが通過通行権を否定せず、分離通行帯を設置していることから、国際海峡と判断してよいのではないか",
+        "full_text": "私が認識するところ、ホルムズ海峡、ほとんどがオマーンの会期に属しています。そしてオマンは特段通過通行権を否定することはない。そして一般的にこれはもうVTIS分離通行帯を設置し、それを対外的に公表しているというところから考えますと、これは国際海峡であると判断してよろしいんじゃないかと思いますが、ご意見をお教えください。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "中村国際法局長",
+        "role": "",
+        "summary": "- オマーンは国連海洋法条約の締結時に、自国の安全上の利益保護のために必要な措置を取ることを妨げないという宣言を付している\n- イランやオマーンの立場を含め、関係国の評価が分かれているため、確定的な評価には精査が必要である",
+        "full_text": "今お話になりましたオマーンについてでございますが、オマーンは国連海洋法条約の定約国でございますが、国連海洋法条約を署名する際に宣言を行っておりまして、この中で国際海峡及び通過通行権に関する規定の適用については、 沿岸国が自国の平和及び安全上の利益の保護のために必要な適切な措置を取ることを妨げない。こういう宣言を付しておる。若干そういう事情がございます。そうしたオマーンの立場、あるいはもう一つの沿岸国であるイランの立場。こういったものも含めまして、先ほど御答弁申し上げたとおり、関係国の立場が一応でない、異なる評価がある状況であるということでございまして、それを踏まえますと、繰り返しで恐縮ですが、法的に国際海峡化ということであれば、通過通行制度が適用される国際海峡であるかということに関して申し上げれば、確定的な評価を申し上げるために、なお精査を要すると、御説明申し上げたものでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#6571.25",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "ホルムズ海峡は国際海峡と判断してよいか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "オマーン"
+            },
+            {
+              "type": "other",
+              "excerpt": "VTIS分離通行帯"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "オマーン",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国連海洋法条約"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "オマーン"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "イラン"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "確定的な評価を申し上げるために、なお精査を要すると、御説明申し上げたものでございます。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "ホルムズ海峡の法的性格について、政府が確定的な判断を避けている（精査が必要としている）ことが記録されたやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_023",
+      "segment_index": 4,
+      "topic": "沿岸国の国際海峡に関する見解",
+      "question": {
+        "speaker": "山田吉彦",
+        "party": "国民民主党・新緑風会",
+        "summary": "- これまでどのような立場で利用してきたか\n- イランやオマーンは具体的にどのような見解を発表しているのか",
+        "full_text": "今まではではどういう立場で使ってきたのか。国際海峡として分離通行帯を通過することを続けてきていると思うんですが、そしてでは今のお答えですと、イランあるいはオマンはどういう見解を発表しているのか。どのような説明を今されているのかお教えください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "中村国際法局長",
+        "role": "",
+        "summary": "- イランは国連海洋法条約を締結しておらず、国際海峡制度が一般国際法化していないという立場である\n- オマーンは条約を締結しているが、適用に一定の条件（自国の安全保護）を課し得るという宣言を付している",
+        "full_text": "まずイランについてでございますが、ホルムズ海峡の沿岸国でございますが、イランは国連海洋法条約を締結しておりません。またイラン自身ですね、国連海洋法条約に定めております制度であります国際海峡、これについては一般国際法化、監修国際法化していないという立場を表明していると承知しております。また対岸で同じくホルムズ海峡の沿岸国であるオマーンについてですが、繰り返して恐縮でございますが、国連海洋法条約は締結しております。しかしながら同時にその条約を署名する際に宣言を行っておりまして、そこで国際海峡及び通過通行権に関する規定の適用、これについては沿岸国が自国の平和及び安全上の利益の保護のために必要な適切な措置を取ることを妨げない。こういう趣旨の宣言を付しております。簡潔に申し上げますと、国際海峡通過通行制度の適用につきまして、一定の条件を課する、あるいは課し得るということを、オマーンは宣言しているということでございます。なので、それぞれイラン、オマーン、国際海峡通過通行制度の適用について、ニュアンスがある条件を付しているということが申し上げられるかと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#6571.25",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "イラン・オマーンの国際海峡に関する見解",
+          "sub_asks": [
+            "今まではどういう立場で使ってきたのか",
+            "イランの見解・説明",
+            "オマーンの見解・説明"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "国際海峡として分離通行帯を通過すること"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "イラン、オマーン",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国連海洋法条約"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ホルムズ海峡"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "イランは国連海洋法条約を締結しておりません。また国際海峡については一般国際法化していないという立場を表明していると承知しております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "イランとオマーンの国連海洋法条約に対する立場と、ホルムズ海峡における解釈について具体的に回答されており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問の冒頭が「今まではでは」と文法的に乱れており、問いが複数混在している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_024",
+      "segment_index": 4,
+      "topic": "ホルムズ海峡の通過通行権に関する政府見解",
+      "question": {
+        "speaker": "山田吉彦",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 外務省としては、ホルムズ海峡は通過通行権が認められない海峡だと認識しているのか",
+        "full_text": "では、外務省の見解としては、ホルムズ海峡は通過通行権を認められる海峡ではないと認識しているということになろうかと思いますが、それでよろしいでしょうか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 日本としては認められるべきであると考えている\n- しかし、沿岸国の加盟状況や条件付き加盟という現状があり、現状では自由かつ安全に航行できる状態にない\n- 早期に自由で安全な航行が可能な状態にすることが国際社会の役割である",
+        "full_text": "通過通行権を認める、認めないということについて、これは我が国としては認められるべきであるということでありますけれども、 沿岸国の立場、今中村国際法局長の方からも答弁させていただいたようにですね、イランはこの国際海洋法条約自体に加盟をしておりません。またオマンは流法条件をついて加盟をしている。そしてそこに挟まれた海峡ということでありますから、その評価がどうであるにしてもですね、 今の状態で必ずしも自由に安全に公開できるような状態ではない。これをどうやって1日も早く自由で安全に公開できる状態に持っていくか。これが国際社会の役割なんだ。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#6571.25",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "ホルムズ海峡の通過通行権の認識確認",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "ホルムズ海峡"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "外務省",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.8
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "イラン"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "オマン"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国際海洋法条約"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "通過通行権を認める、認めないということについて、これは我が国としては認められるべきであるということであります",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "ホルムズ海峡における通過通行権について、日本政府の立場（認められるべき）を明確に回答しており、記録価値が高い。",
+        "would_be_referenced": "high",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_025",
+      "segment_index": 4,
+      "topic": "航行の自由を確保するための具体的手段",
+      "question": {
+        "speaker": "山田吉彦",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 自由な航行を確保するための具体的な手法はどう考えるか",
+        "full_text": "どうするのかという具体的な手法というのが非常に重要だと考えております。山田吉彦： ということをお教えください。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 現状では、米国とイランの間の協議が最終的な合意に達することが必要であると考える",
+        "full_text": "実際にそういったことが可能になるということは現状で考えると今のアメリカ、そしてイランの間の協議というものが最終的な合意に達するという状況なんだと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#6571.25",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "具体的な手法についての教示",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.2
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "アメリカ"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "イラン"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "other",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "今のアメリカ、そしてイランの間の協議というものが最終的な合意に達するという状況なんだと思います。",
+          "score": 0.2
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "質問が極めて抽象的であり、回答も具体的な手法への言及がなく、他国の状況を例示したのみであるため価値が低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「具体的な手法」が何を指すのか、前提となる文脈や対象を明示して質問すべきである。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_026",
+      "segment_index": 4,
+      "topic": "原油の代替調達計画",
+      "question": {
+        "speaker": "山田吉彦",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 石油の代替輸入計画および期待値について具体的に教えたい",
+        "full_text": "そして今国民非常に注目しておりますのが、石油の代替。大臣、輸入、いろんな話が出ております。その計画、大体輸入の期待値について、具体的にお教えいただけたらと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "佐々木調整官",
+        "role": "",
+        "summary": "- 米国や中東非湾岸国、中央アジア、中南米など、ホルムズ海峡を通らないルートからの調達に注力\n- 4月には前年比2割以上、5月には過半の代替調達の目途がついた\n- 特に米国からの調達量を5月に前年比約4倍まで拡大する見込み",
+        "full_text": "原油の代替調達につきましては、民間事業者の方々があらゆる選択肢を排除せずに検討を進めているところであると承知をしてございます。具体的には、ホルムズ海峡を通らないルートからの調達に最大限注力いただいているところでありまして、供給余力に優れる米国ですとか、中東三位国からの調達。過去調達実績のある中央アジアや中南米といったところからの調達の取組を進めているというところでございます。現時点におきまして、4月には前年実績比で2割以上、5月には過半の 大体調達の目途がついたというふうに理解をしてございます。特に米国からは5月に前年比約4倍まで調達量を拡大する見込みであるというふうに理解をしてございます。現時点でも大体ルートによる調達拡大に最大限取り組んでいるところでございまして、引き続きエネルギーの安定供給確保に万全を期してまいりたいというふうに考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#6571.25",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "石油の代替輸入計画と期待値について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "ホルムズ海峡"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "米国"
+            },
+            {
+              "type": "number",
+              "excerpt": "4月には前年実績比で2割以上"
+            },
+            {
+              "type": "number",
+              "excerpt": "5月には過半"
+            },
+            {
+              "type": "number",
+              "excerpt": "5月に前年比約4倍"
+            }
+          ],
+          "score": 1.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "エネルギーの安定供給確保に万全を期してまいりたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "4月には前年実績比で2割以上、5月には過半の大体調達の目途がついたというふうに理解をしてございます。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は簡潔であり、大臣が具体的な月別の調達実績・見込み数値を回答しているため、記録としての価値が高い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「期待値」という曖昧な言葉ではなく、「調達量」や「目標値」と具体的に問えばより精緻な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_027",
+      "segment_index": 4,
+      "topic": "バブ・エル・マンデブ海峡経由のルート",
+      "question": {
+        "speaker": "山田吉彦",
+        "party": "国民民主党・新緑風会",
+        "summary": "- サウジアラビアの紅海側（バブ・エル・マンデブ海峡）を通過する航路も代替ルートに含まれているか",
+        "full_text": "サウジアラビアの航海側、紅の海ですね、航海側、バブエルマンデブ海峡を通過する航路も含まれていると認識してよろしいんでしょうか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "佐々木調整官",
+        "role": "",
+        "summary": "- 石油パイプラインを活用し、バブ・エル・マンデブ海峡を経由して輸送するルートは存在している",
+        "full_text": "ただいま、委員御指摘の、サウジアラビアの東、ペルシャ湾側から西のヤンブークを結ぶ石油パイプラインを活用し、バブエルマンデブ海峡を経由して原油を輸送するルート、これは存在していると。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#6571.25",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "バブエルマンデブ海峡通過航路の認識確認",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "バブエルマンデブ海峡"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "ペルシャ湾"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ヤンブーク"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "バブエルマンデブ海峡"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "ペルシャ湾側から西のヤンブークを結ぶ石油パイプラインを活用し、バブエルマンデブ海峡を経由して原油を輸送するルート、これは存在している",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "特定の輸送ルートの存在を確認するシンプルなやり取りであり、事実関係が明確に記録されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_028",
+      "segment_index": 4,
+      "topic": "日本の掃海能力の現状と活用",
+      "question": {
+        "speaker": "山田吉彦",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 日本の掃海能力について改めて教えたい",
+        "full_text": "この日本の総会能力について改めて教えていただけたらと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "上田総括官",
+        "role": "",
+        "summary": "- 自衛隊発足以来、周辺海域で数千個の機雷を除去し、1991年の湾岸危機後にはペルシャ湾で34個の機雷を除去した実績がある\n- 先月、掃海能力を一元的に管理する「水陸両用戦・機雷戦群」を編成し、能力強化に取り組んでいる",
+        "full_text": "海上交通の安全確保は極めて重要でございますが、この海上交通に大きな影響を及ぼすのが嫌い、その嫌いを相当するのが爽快能力でございますので、海上自衛隊におきましては、自衛隊発足以来、我が国周辺海域におきまして、 第二次大戦中に不設された嫌い、これを数千個もの嫌いを除去し、航路を警戒してまいりました。またそうした能力を生かしまして、1991年には湾岸危機後の、成立後のペルシャ湾に総会母艦や総会艇など6隻を派遣いたしまして、34個の遺棄された嫌いの除去を事故なく実施したところでございます。こうした総会能力につきましては、 先月も水陸両用戦、嫌い戦軍という新たな部隊、これに全ての総会官邸18席を集約し、一元的な連動管理を可能とする体制をしたところでありまして、引き続き様々な総会訓練を実施し、総会能力の強化を普段に取り組んでまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5181"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#6571.25",
+      "metrics": null
+    },
+    {
+      "id": "qa_029",
+      "segment_index": 4,
+      "topic": "掃海能力の派遣と法的根拠",
+      "question": {
+        "speaker": "山田吉彦",
+        "party": "国民民主党・新緑風会",
+        "summary": "- ホルムズ海峡に機雷が敷設されている可能性に対し、日本の掃海能力を役立てるための法的根拠や考えはどうなっているか",
+        "full_text": "ただ今、嫌いがまかれているのではないのかというような 山田吉彦� いいのではないのか。そのようなところで日本の法的根拠も含めまして、大臣はどのようにお考えでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "小泉大臣",
+        "role": "",
+        "summary": "- 状況が激しく動いており、現時点で機雷の有無や判断を行うことは現実的に困難である\n- 現時点で自衛隊派遣は決まっていないが、状況を注視しつつ、まずは外交努力による事態の鎮静化を優先すべきである",
+        "full_text": "山田先生が多分先に派遣をして、もう出しておいて、いざ例えば停戦とか、こういったことになればすぐ出れるようにという思いかもしれませんが、一方で先ほど茂木大臣からも答弁がありましたとおり、 日々時々刻々と状況がかなり激しく動いている中で、一体いつからが仮にまかれているとしたら、その嫌いが行き嫌いに当たるのかどうかというのは、現実的には相当判断は難しいと思います。現時点において自衛隊の派遣というのは決まっておりませんが、いずれにしましても状況を注視して、そして事態の鎮静化。このための外交努力がまずは優先される事態だと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#6571.25",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "派遣の法的根拠に関する大臣の考え",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "状況を注視して",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "現時点において自衛隊の派遣というのは決まっておりませんが、状況を注視して、外交努力がまずは優先される事態だと思っております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "質問文に文字化けや乱れがあり不明瞭ですが、派遣の判断の難しさと外交優先の姿勢が示されています。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問文の文脈が断片的であり、具体的な法的根拠のどの点について問いたいのかが不明確です。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_030",
+      "segment_index": 5,
+      "topic": "イランの濃縮ウランの現状と管理状況",
+      "question": {
+        "speaker": "平木大作",
+        "party": "公明党",
+        "summary": "- イラン国内にある60%濃縮ウラン（440.9kg）の現状についての政府認識\n- 地下で管理されているのか、あるいは爆撃等により散逸しているのかという認識",
+        "full_text": "そもそもこれ、ちょっと今、政府の認識をお伺いしておきたいんですが、これが今、 イラン国内で現状どうなっているのか。どこか地下深くでイラン政府によって管理をされているのか。はたまた、いろいろさまざまな爆撃等もありましたので、そうした中で実はどこに算出しているかわからないのか。そういったところも含めて、今の外務省の認識をお伺いしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "中村軍宿",
+        "role": "",
+        "summary": "- IAEAの報告書では昨年6月時点で440.9kgと推計されている\n- 昨年6月以降、IAEAが申告施設に査察に入ることができておらず、詳細な情報は提供されていない",
+        "full_text": "国際原子力機関IAEAは、今年2月に出しました事務局長の報告書におきまして、昨年の6月時点での状況として イランに貯蔵されていた60%の濃縮ウランの貯蔵量を、先ほど委員がおっしゃられたとおり、440.9kgであると推計しているわけでございます。IAEAは、さらに今年の2月の同じ報告書におきまして、イランによって申告された濃縮施設のいずれについても、昨年6月以降、左札に入ることができていないので、以後のイランの濃縮ウランの詳細について、いかなる情報も提供できていないと。したがって今これ以上の情報が国際的に利用可能な形で権限のある当局から出ているわけではないので、私どもとしてもこれが今ここでお答えできる情報であります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#8014.1",
+      "metrics": null
+    },
+    {
+      "id": "qa_031",
+      "segment_index": 5,
+      "topic": "濃縮ウランの環境流出および拡散のリスク",
+      "question": {
+        "speaker": "平木大作",
+        "party": "公明党",
+        "summary": "- 濃縮ウラン（六フッ化ウラン）が爆撃等で環境中に流出した場合の影響（厚労省へ）\n- 濃縮ウランが第三国やテロリストの手に渡った場合のリスク（厚労省・外務省へ）",
+        "full_text": "そこでですね、ちょっといろんな状況は設定しなければいけないんだろうと思うんですが、これ仮にですね、今言ったこの濃縮ウランというものが、例えば環境中に再移送してしまっている、爆撃によっていろいろ飛び散っていたりですね、そういう と言っていた場合、どういう影響があるのか。IAEAの札札によりますと、これ今濃縮されたウランというのは、いわゆる6復活ウランの形になっているというふうに報告がされておりますから、そういう意味でいくと、直ちに放射線の被害が何かできるということではないと思っているんですが、一方で、この6復活ウランの形で、もし土壌中に、環境中に採出しているとすると、どういったことが考えられるのか、これぜひ厚労省にお伺いしたいのと、ちょっと併せて聞いちゃいますが、これ別途ですね、例えば今管理されているとして、 イランもある意味今政権自体がどんどん不安定な状況にありますからこの濃縮されたウランが万万が一第三国ですとかあるいはテロリストの手に渡るようなことがあったときにどういったことが考えられるのか厚生労働省外務省の順でお答えをいただけたらと思います 厚生労働省大臣官房佐藤審議官。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "佐藤",
+        "role": "",
+        "summary": "- 六フッ化ウランは劇物に指定されており、摂取した場合に重金属中毒等の症状を引き起こす可能性がある（厚労省）\n- 核物質がテロリスト等の手に渡り拡散することは、国際の平和と安全を脅かす恐れがあり非常に懸念している（外務省）",
+        "full_text": "御指摘の6復活ウランは、昭和25年に毒物及び劇物取締法が制定された当初から、可用性ウラン化合物の一つとして、劇物に指定されています。数種類の可用性ウラン化合物について、既に指定されている劇物による人障害、 肝障害等と類似した中毒性を有すること、人が接種した場合、重金属中毒を示唆する症状を引き起こす可能性があることを最終的に勘案いたしまして、劇物に当時指定したものでございます。イランという個別の国に関する事案についてどうかという仮定の質問にはお答えをすることは差し控えたいと思うんですが、一般論といたしまして、核物質がテロリストなどの手に渡るといった形で拡散するということは、国際の平和と安全が脅かされる恐れがあるものということで、非常に懸念を持っています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#8014.1",
+      "metrics": null
+    },
+    {
+      "id": "qa_032",
+      "segment_index": 5,
+      "topic": "NPT運用検討会議の見通し",
+      "question": {
+        "speaker": "平木大作",
+        "party": "公明党",
+        "summary": "- 第11回NPT運用検討会議の見通しについて",
+        "full_text": "このNPT運用検討会議、見通しについて、まずお示しをいただけたらと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "中村軍宿",
+        "role": "",
+        "summary": "- 国際社会のパワーバランスの変化や紛争の激化などにより、NPT体制を取り巻く状況は大変厳しい",
+        "full_text": "今、平木委員からお話がございましたとおり、NPT体制を取り巻く状況、これは大変に厳しいものになってございます。その背景には、国際社会におけるパワーバランスの変化や、紛争、対立の激化、そして安全保障環境の激化といったことがあるかと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#8014.1",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "NPT運用検討会議の見通しについて",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "NPT運用検討会議"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "not_at_all",
+          "topic_shift_detected": true,
+          "score": 0.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "other",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": null,
+          "score": 0.0
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は明確だが、回答者が現状の一般論を述べるにとどまり、見通しという核心的な問いに全く答えていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_033",
+      "segment_index": 5,
+      "topic": "フランスのマクロン大統領による核抑止演説",
+      "question": {
+        "speaker": "平木大作",
+        "party": "公明党",
+        "summary": "- 3月2日のマクロン大統領の核抑止に関する演説の内容\n- 日本政府としての受け止め",
+        "full_text": "改めてこのマクロン大統領の3月2日のこの演説、これどういったものであったのかということ、それからもし日本政府としての受け止めがあればお伺いをしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "石川",
+        "role": "",
+        "summary": "- 演説内で議論を継続することが当然であること等に言及している\n- フランスと緊密に意思疎通を図るとともに、今後の動向を注視していく",
+        "full_text": "委員御指摘のとおり現地時間の3月2日、マクロン大統領は核抑止に関する演説を行っております。いったことなどにも言及しているというふうに承知しております。第三国の政策についてコメントすることは差し控えたいと思いますが、今回公表された方針の背景ですとか問題意識について、フランスと緊密に一措置を行っていくとともに、欧州の安全保障を含め、今後の動向を関心をもって注視していきたいというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#8014.1",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "マクロン大統領の演説内容と政府の受け止め",
+          "sub_asks": [
+            "演説の内容について",
+            "日本政府としての受け止めについて"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "3月2日"
+            },
+            {
+              "type": "other",
+              "excerpt": "マクロン大統領の3月2日のこの演説"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "マクロン大統領",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "核抑止"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "注視していきたいというふうに考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "フランスと緊密に一措置を行っていくとともに、欧州の安全保障を含め、今後の動向を関心をもって注視していきたい",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "外交上の定型的な回答に留まっており、具体的な政府見解や新たな事実の提示はない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どういったものであったか」という問いが漠然としているため、回答者が要約のみで済ませることが可能になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_034",
+      "segment_index": 5,
+      "topic": "北朝鮮の核・ミサイル問題および拉致問題への対応",
+      "question": {
+        "speaker": "平木大作",
+        "party": "公明党",
+        "summary": "- 北朝鮮の核開発がNPT体制を揺るがすリスクがある中、拉致問題を含め外務省としてどう向き合うか",
+        "full_text": "その観点からですね、茂木大臣これぜひお伺いしておきたいんですけれども、この日本にとっては 安全保障の問題であり、核の問題であり、そして最上課題であるこの拉致被害者のこの1日も早いご帰国、この課題も持っております。ここに外務省として、茂木大臣としてどう向き合っていかれるのか、御答弁をお願いしたいと思います。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 日朝平壌宣言に基づき、拉致・核・ミサイル等の諸懸案を包括的に解決し、国交正常化を実現する方針に変わりはない\n- 核・ミサイル開発は国連安保理決議違反であり容認できず、国際社会と協力して完全な廃棄を求めていく",
+        "full_text": "まず北朝鮮についての基本的な方針でありますが、これは日朝平安宣言に基づいて、拉致、核、ミサイルといった諸件案を包括的に解決し、不幸な核を生産し、 国交正常化を実現する、こういう方針に変わりはないわけであります。その上で、今御指摘いただいた北朝鮮の核ミサイル開発については、関連をします国連安保理決議の明白な違反でありまして、我が国の見られず地域、そして国際社会全体の平和と安定を奪い明かすものであり、 断じて容認できない、このように考えております。米国及び、韓国をはじめとする国際社会とも協力しながら、関連する国連安保理決議の完全な履行に向けた取組、これを進めて、北朝鮮の各弾道ミサイルの完全な廃棄、これを求めていきたいと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#8014.1",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "拉致・核問題への向き合い方",
+          "sub_asks": [],
+          "score": 0.9
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "拉致被害者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "日朝平安宣言"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国連安保理決議"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "取組、これを進めて",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "日朝平安宣言に基づいて、拉致、核、ミサイルといった諸懸案を包括的に解決し、国交正常化を実現する、こういう方針に変わりはない",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "抽象的な問いに対し、政府の基本方針を述べた定型的な回答である。大臣による回答であるため一定の記録価値はあるが、具体的な新策や期限はない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どう向き合うか」という問いが抽象的であるため、回答も原則論に終始している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_035",
+      "segment_index": 5,
+      "topic": "NPT運用検討会議における日本の役割と決意",
+      "question": {
+        "speaker": "平木大作",
+        "party": "公明党",
+        "summary": "- 核兵器のない世界を目指し、日本が先頭に立って合意形成に取り組む決意があるか",
+        "full_text": "核兵器のない世界を目指す、そしてその先頭に立ってきた日本政府として、しっかりとこの合意形成に。茂木大臣、先頭に立っていただきたいと思いますが、御決意をお伺いしたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 唯一の戦争被爆国として、核兵器国と非核兵器国の溝を埋めるなど、NPT運用検討会議でしっかりとした役割を果たしていきたい",
+        "full_text": "先ほど来、参考人の方からもお答えさせていただいておりますように、国際県人会議であったりとか、また核兵器廃絶決議、昨年は147カ国、これが賛同したわけでありますが、こういった取組であったり、会議が始まる前から、既に様々な提案文書も提出をして、 私の中でありますが、機運の醸成に努めているところであります。これは混乱のもとだと私は思っておりますけれど、そういった様々な意見がある中でまとめていくのは大変ですけれど、前回も全然 今回も共同文書が提出をされなかった、こういったことも教訓にしながら、唯一の戦争被曝国として、このNPT運用検討会議、日本としてもしっかりした役割を果たしていきたいと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#8014.1",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "核兵器のない世界への合意形成への決意",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "日本政府",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "147カ国"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "NPT運用検討会議"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "機運の醸成に努めているところであります",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "唯一の戦争被曝国として、このNPT運用検討会議、日本としてもしっかりした役割を果たしていきたいと思っております。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "大臣の決意を問う抽象的な質問に対し、現状の取り組みと意向を述べた標準的なやり取りである。",
+        "would_be_referenced": "low",
+        "issue_in_design": "決意を問う形式であるため、具体的な行動計画や期限を盛り込んだ質問にすることで、より実効性のある回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_036",
+      "segment_index": 6,
+      "topic": "防衛装備移転と安全保障の優先順位",
+      "question": {
+        "speaker": "山中泉",
+        "party": "参政党",
+        "summary": "- 防衛産業の維持は国家が全責任を負うべきではないか\n- 防衛装備移転は経済目的ではなく、我が国の安全保障に不可欠であるという大前提があるか",
+        "full_text": "ただ 今回、与党の提言では、輸出を含めて防衛産業の市場を確保し、とあるわけなんですが、国内需要だけで防衛産業は維持しきれないので、輸出によって市場を確保する、こういうことだと思うんですが、我々は参政党として、防衛産業は国家安全、国家安全保障の基盤、そしてその運用維持は国家が全責任を負うべきではないのか、こういうふうに考えるわけなんですね。つまり、まず輸出ありきということではなくて、 防衛装備移転は我が国の安全保障に不可欠であるという大前提ですね。この認識で間違いないか、大臣にお意見を伺いたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小泉防衛大臣",
+        "role": "",
+        "summary": "- 防衛装備移転は安全保障環境の変化に対応し、抑止力・対処力の強化や国際平和に資するものとして推進している\n- 経済目的のみで装備移転を実施することはない",
+        "full_text": "まず、この防衛装備移転の推進自体はですね、 我が国を取り巻く安全保障環境の変化が加速度的に生じる中、望ましい安全保障環境を創出する観点から推進するものであり、同盟国、同志国の抑止力、対処力の強化や、国際的な平和と安全の維持の一層積極的な推進に資するというふうに位置づけております。また、一方で、今輸出ということが山中先生からありましたが、 装備品の開発生産維持整備を担う防衛生産技術基盤は、いわば防衛力そのものであり、我が国を取り巻く安全保障環境が厳しさを増す中、力強い防衛産業の構築はこれまで以上に重要な課題であり、防衛装備移転はそれに資するものであります。ただ、これは経済目的のみで、装備移転を実施することはありません。先ほどから先生が申し上げている安全保障に資すると、こういった観点が前提であると申し上げておきたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#9338.79",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "防衛装備移転は安全保障に不可欠という認識か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "与党の提言"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "参政党",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "経済目的のみで、装備移転を実施することはありません。安全保障に資するという観点が前提である。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "防衛装備移転の前提条件（安全保障への寄与）について大臣が明確に肯定したやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_037",
+      "segment_index": 6,
+      "topic": "中小企業の防衛産業参入促進",
+      "question": {
+        "speaker": "山中泉",
+        "party": "参政党",
+        "summary": "- 中小企業にとって設備投資負担や取引の継続性への不安など参入ハードルが高い\n- 国が責任を持って予算をつけ、国内防衛産業を育成・維持する施策について政府の見解を伺いたい",
+        "full_text": "前回からずっと私がお話ししているわけなんですが、やはり日本に非常に優れた技術を持つ地方の会社が中小。これは非常に重要だと思っているんですが、まだまだ中小企業にとって、新規の設備投資の負担がやはり大きい。そして2つ目には、防衛分野の取引が中長期に継続するかが、これは分からない。なのでやはり私は国が責任を持って一定の予算をつけて国内の防衛産業を育成する、維持する、そういう姿勢が大事なんじゃないか。日本国内で産業が循環する、回っていく体制を構築する。こういう施策について政府の見解をお伺いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "小杉装備政策部長",
+        "role": "",
+        "summary": "- 中小企業の新規参入はサプライチェーン強化の観点から極めて重要であると認識している\n- 参入促進展の開催や、防衛装備庁への新規参入相談窓口の設置による伴走支援を実施している\n- 関係省庁と連携し、マッチング機会の創出や支援策をさらに検討していく",
+        "full_text": "優れた技術を有する中小企業やスタートアップ企業等の防衛産業への新規参入は、優れた民生技術の装備品への取組やサプライチェーンの強化につながるものでございまして、防衛生産技術基盤の強化の観点から極めて重要であると考えております。こうした認識の下、優れた技術を有する中小企業等との 新規参入を後押しするため、マッチングの機会を創出する観点から、平成28年度より防衛産業参入促進展を開催してきております。防衛調達の複雑さや予見可能性の不足等への御懸念といった点を乗り越えるためには、まず企業への伴奏支援をしっかりと行うことが重要であると考えておりまして、令和5年度から防衛装備庁、装備政策課に新規参入相談窓口を設置し、企業の懸念事項についての相談への対応を含め、新規参入を希望する企業への一元的なサポートを実施してきています。優れた技術を有する 企業の新規参入を今後さらに進めていくため、企業の声を聞きながら、経済産業省等の関係省庁と緊密に連携し、より効果的なマッチング機会の創出や伴走支援の強化を含めた新規参入の促進策をしっかりと検討してまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#9338.79",
+      "metrics": null
+    },
+    {
+      "id": "qa_038",
+      "segment_index": 6,
+      "topic": "OSA（政府安全保障能力強化支援）と防衛装備移転三原則の見直し",
+      "question": {
+        "speaker": "山中泉",
+        "party": "参政党",
+        "summary": "- 防衛装備移転三原則の運用指針見直しにより、OSAの活用の幅は広がるのか\n- 日本のプレゼンスを高める観点から、OSAをより戦略的・積極的に活用することへの見解を伺いたい",
+        "full_text": "そしてただこれと、今回防衛装備移転三原則の運用指針、これが見直しされるということで、活用の幅も大きく広がるのかというふうに考えています。防衛装備支援だけでなく、我が国の技術や装備を通じて同志国との関係を強化する。安全保障分野において、各国が影響力、今非常に競っている段階で、日本としても積極的に関与して、日本の存在感を高めていく。こういう観点で、このOSAをより戦略的かつ積極的に 見解していけばと考えますが、今回の防衛装備移転三原則の運用、紙品見直し、そしてOSAについて、どのような影響を与えるのか、御見解をお伺いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 三原則等の改正により、OSAの協力の幅は広がると考えている\n- インド太平洋地域を中心に、対象国の拡大や同志国連携の裾野を広げ、地域の自立性向上と望ましい安全保障環境の創出に貢献したい",
+        "full_text": "従いましては、今回の三原則等の改正によりまして、OSAの協力の幅は広がることになると、このように今考えております。その上で、OSAの今後の方向性としては、インド太平洋地域を中心として、対象国、これをさらに拡大して、同志国連携の裾野を広げていく考えであります。同時に防衛装備移転先との連携も含めて、より高度で、規模的に言っても、大きい案件、こういったものの実現を通じて、地域の国々の自立性を高める。また、我が国にとっても望ましい安全保障環境の創出に一層貢献していきたいと、こんなふうに考えています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#9338.79",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "三原則見直しがOSAに与える影響",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "防衛装備移転三原則の運用指針"
+            },
+            {
+              "type": "other",
+              "excerpt": "OSA"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "同志国",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "インド太平洋地域"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "貢献していきたいと、こんなふうに考えています",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "今回の三原則等の改正によりまして、OSAの協力の幅は広がることになると、このように今考えております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "三原則の見直しがOSAに正の影響を与えるという政府の方向性が明確に示されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "具体的にどのような「幅」が広がるのか、具体的な装備品や事例を問う形式にすればより実効的な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_039",
+      "segment_index": 6,
+      "topic": "自衛官への社会的敬意と感謝の醸成",
+      "question": {
+        "speaker": "山中泉",
+        "party": "参政党",
+        "summary": "- 米国のミリタリー割引のように、国民全体で自衛官への敬意と感謝を共有する文化が必要ではないか\n- 民間経営者が自衛官への割引等を行うことを政治的に後押しすることについて大臣の考えを伺いたい",
+        "full_text": "私はこの誇りと名誉を支える具体的な取組が何であるか、極めて重要であると考えています。以前もこの委員会でもお話しさせていただいたんですが、空港でのファーストクラスより前に乗れる優先登場、あるいはこれは大手の医療チェーンだとかファミリーレストラン、ファーストフードなどにおいてもいわゆるシニア割引と同じようなミリタリー割引制度が社会全般に広がっているんですね。こういう命を懸けて戦っている自衛隊の方々へね、敬意、こういうものね、そして感謝の意を国民全体で共有していく。なかなか国や防衛省として、こういうことを民間に要請するということは難しいかとは思うんですが、これは我々政治家としても、こういった心ある経営者の方々には、社会的に後押しをしていきたいと思いますが、小泉大臣のお考えをお伺いします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "小泉防衛大臣",
+        "role": "",
+        "summary": "- 社会全体で自衛官やその家族への温かな目線や支えが感じられる社会づくりを検討している\n- 地方自治体による感謝状贈呈や、米国での「軍人の子ども月間」のような取り組みを認識している\n- 自衛隊割りなどの環境が、基地のない地域にも広がっていくよう防衛省として後押ししたい",
+        "full_text": "こういった環境があることを我々としても、 防衛省だけでできることは限りありますので、いかに社会全体で危険な任務、そして大変負荷のかかる日々を送っている自衛官やその家族に対する温かな目線が、そして支えが感じることができるような社会をつくれるかという観点で、さまざま考えております。例えば、今も複数の地方自治体におきましては、災害派遣等に対応した部隊に感謝状を贈呈してくださったり、 地元の駐屯地や基地等の創立を記念するイベントを主催をするといった取組もやっていただいております。これ、大変素晴らしい取組で、この4月の軍人の子ども月間というのは、 月間中は軍人の子供に敬意や感謝を示す手段として紫色の服を着用するですとか、スポーツイベントにおけるアナウンスをするとか、学校を紫色の旗や風船等によって飾り付けをするですとか、こういったこともやられているそうであります。こういった環境というのが、仮に自衛隊の基地施設などが所在をしないような自治体、地域においても広がっていくように、これからも防衛省としてできることを後押しをしていきたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5181"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#9338.79",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "自衛官へのミリタリー割引等の社会的後押しへの考え",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "空港でのファーストクラスより前に乗れる優先登場"
+            },
+            {
+              "type": "other",
+              "excerpt": "大手の医療チェーンだとかファミリーレストラン、ファーストフードなどにおいてもいわゆるシニア割引と同じようなミリタリー割引制度"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自衛隊の方々",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "4月の軍人の子ども月間"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "紫色の服を着用"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "これからも防衛省としてできることを後押しをしていきたいと思います",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "いかに社会全体で危険な任務、そして大変負荷のかかる日々を送っている自衛官やその家族に対する温かな目線が、そして支えが感じることができるような社会をつくれるかという観点で、さまざま考えております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "自衛官への社会的敬意（ミリタリー割引等）を促す提案に対し、大臣は現状の自治体の取り組みを例示し、精神的な後押しを述べるに留まった。",
+        "would_be_referenced": "low",
+        "issue_in_design": "具体的な制度導入の是非を問う形式ではなく、「考えを伺う」という抽象的な問いであるため、回答が精神論に終始しやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_040",
+      "segment_index": 7,
+      "topic": "米国による逆封鎖と戦争終結への影響",
+      "question": {
+        "speaker": "山添拓",
+        "party": "日本共産党",
+        "summary": "- 米国による逆封鎖が戦争終結の障害となっているのではないか\n- 政府大臣の認識を問う",
+        "full_text": "米軍が行っていることは紛れもなく、定戦合意違反の武力行使です。外務大臣に伺いますが、この米国による逆封鎖が、戦争終結の障害となっています。大臣の認識を伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 米イラン間には長年の対立があり、交渉による和平を目指しているのが現実である\n- 米国の措置はイラン向け船舶を封鎖する一方、他国向けの航行の自由は妨げないとしている\n- 事態の鎮静化と協議再開を期待し、日本としても外交努力を後押しする",
+        "full_text": "米国とイランの間、これまでも47年間にわたりまして、さまざまな対立というのはあったわけでありまして、和平に持っていくためには、高難、療養といいますか、お互いにそういった形で交渉している。これが現実の姿であると思っております。どちらの方は方を持つとか、そういうことではなく、現実の姿としてはそうなんだと思っておりますし、また米国によります措置については、米国はイランへの公安への出入港を行う全ての船舶に対する封鎖措置、これを実行する一方で、ホルムズ海域を通過して、イラン以外の公安に向かう、あるいはそこから離れる、 船船の航行の自由を妨げない、このように発表しているところであります。次回のですね、米国とイランとの協議については、いつ、どのような形で行えるか、現時点ではですね、 率直に申し上げて不透明な状況でありますが、最も重要なことというのは、今後、ホルノ海峡の高校の安全確保を含む事態の鎮静化が一刻も早く、実際に図られるということでありまして、米イラン間の協議が再開され、話し合いを通じて、最終的な合意に至ることを強く期待をしておりますし、期待をするだけではなくて、日本としても、 引き続き米国とイランの間の協議であったりとか、パキスタンをはじめとする中海国の外交努力、本当にパキスタンなんかも頑張っていると思います。私もそっちを直接話したりして、そういった中海努力を後押ししたり、国際社会と様々な形で連携をしながら、必要な外交努力、これを進めていきたいと考えています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#10244.7",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "米国の逆封鎖が戦争終結の障害となっているか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "米国",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "47年間にわたりまして"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ホルムズ海域"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "パキスタン"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "必要な外交努力、これを進めていきたいと考えています",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "米イラン間の協議が再開され、話し合いを通じて、最終的な合意に至ることを強く期待をしております",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的だが、大臣の回答は現状説明と外交努力への意欲に留まり、核心的な認識（障害となっているか）への直接的な回答を避けている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「認識を伺います」という形式のため、大臣が主観的な見解や一般論で逃げることが容易な設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_041",
+      "segment_index": 7,
+      "topic": "米国への逆封鎖停止要請",
+      "question": {
+        "speaker": "山添拓",
+        "party": "日本共産党",
+        "summary": "- 米国の脅しや逆封鎖が協議の妨げになっているため、停止を求めるべきではないか",
+        "full_text": "大事なことだと思いますが、実際に鎮静化の求めに逆行することを行っている米国の態度があります。イランは米国との再協議を拒否していると報じられてきました。その理由として挙げているのが逆風さですね。一方トランプ氏はイランが合意に応じない場合には、イランのすべての発電所と橋を破壊すると行動しております。これでは協議にならない。私は大臣がおっしゃるように、話し合い、そして合意に至るということが、 重要だと思います。そうであるなら今米国に対して攻撃やまたその脅しということではなく戦争終結のための交渉のテーブルにつくようにそして話し合いによって合意に至るようにとその妨げになっているような逆封鎖はやめるようにと米国に対して求めるべきではありませんか茂木上大臣 山添委員からですね、そういったご意見いただくところでありますけれど、日本としても米国に対してもですね、早期の事態鎮静化に向けた働きかけ、これは先月の日米首脳会談、私も同席しましたが、 山添拓� その後の展開としての逆風差という行動に米側が出ているわけですから、それを踏まえた対応もぜひされる必要があるだろうと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 日本としても米国に対し、早期の事態鎮静化に向けた働きかけを行っている\n- 逆封鎖という行動を踏まえた対応が必要であると考えている",
+        "full_text": "そうであるなら今米国に対して攻撃やまたその脅しということではなく戦争終結のための交渉のテーブルにつくようにそして話し合いによって合意に至るようにとその妨げになっているような逆封鎖はやめるようにと米国に対して求めるべきではありませんか茂木上大臣 山添委員からですね、そういったご意見いただくところでありますけれど、日本としても米国に対してもですね、早期の事態鎮静化に向けた働きかけ、これは先月の日米首脳会談、私も同席しましたが、 山添拓� その後の展開としての逆風差という行動に米側が出ているわけですから、それを踏まえた対応もぜひされる必要があるだろうと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#10244.7",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "米国に脅しを止め交渉を求めるべきか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "米国"
+            },
+            {
+              "type": "organization",
+              "excerpt": "イラン"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "米国",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "日米首脳会談"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "踏まえた対応もぜひされる必要があるだろうと思います",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "日本としても米国に対してもですね、早期の事態鎮静化に向けた働きかけ、それを踏まえた対応もぜひされる必要があるだろうと思います。",
+          "score": 0.3
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "回答者が質問文の一部を繰り返しており、形式的に不備があるが、実質的には米国への働きかけの必要性を認める抽象的な回答に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "Yes/No形式の問いであるため、大臣が肯定的なニュアンスで逃げることが容易な設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_042",
+      "segment_index": 7,
+      "topic": "武器輸出の全面解禁と世論の乖離",
+      "question": {
+        "speaker": "山添拓",
+        "party": "日本共産党",
+        "summary": "- 武器輸出の全面解禁に対し、世論調査で反対が多数である中で強行するのか",
+        "full_text": "次に政府が今朝閣議決定で強行した武器輸出の全面解禁について伺います。殺傷兵器の輸出を制限する五類型を撤廃し、戦闘機や艦艇、政府が憲法上を持てないとしてきた長射程ミサイルまで輸出可能となります。戦後日本の平和国家としての歩みを根本的に覆すもので、断じて認められません。防衛大臣に伺います。朝日新聞の世論調査で、全面解禁に賛成は25%、反対が67%に上りました。この世論を無視して強行するのですか。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 世論調査は様々であり、現役世代では賛成が多い調査もある\n- 日本にとって望ましい安全保障環境を創出するための必要な施策として、五類型を撤廃し進めていく",
+        "full_text": "世論調査様々ありますので、読売新聞は40対48で、世代を見れば現役世代はむしろ賛成の方が多いという、こういった調査もあります。いずれにしても一つ一つの世論調査については、私からあまり深入りはしませんけれども、今回山添先生、ミサイルを例に出せますが、共産党さんミサイルが大好きなので、今までも、 ミサイル列島とかも言われてますけども、今回の、いや関係あります。ですので、ここは一つ一つ丁寧に今後も説明させていただきますが、日本にとって望ましい安全保障環境を創出をしていくと、そのための必要な施策として防衛装備店を、五類型を撤廃した上で進めていくと。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#10244.7",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "武器輸出全面解禁を世論無視で強行するのか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "朝日新聞の世論調査"
+            },
+            {
+              "type": "number",
+              "excerpt": "賛成は25%、反対が67%"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "読売新聞"
+            },
+            {
+              "type": "number",
+              "excerpt": "40対48"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "一つ一つ丁寧に今後も説明させていただきます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "日本にとって望ましい安全保障環境を創出をしていくと、そのための必要な施策として防衛装備店を、五類型を撤廃した上で進めていく",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "世論調査の結果を巡る政治的なやり取りであり、具体的な事実の確定や法的解釈の提示はなく、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「強行するのか」という感情的な二択形式のため、政府側が論点をずらしやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_043",
+      "segment_index": 7,
+      "topic": "武器輸出解禁の決定プロセスと整合性",
+      "question": {
+        "speaker": "山添拓",
+        "party": "日本共産党",
+        "summary": "- 政府内でどのような議論が行われたか\n- 国際紛争を助長しないという従来の政府見解との整合性をどう議論したか",
+        "full_text": "そして大臣が紹介された読売新聞の世論調査でも反対の方が多いんですよね。今回の改定に当たって政府内でどのような議論を行ってきたのか、特に国際紛争を助長する部給出は行わないとしてきた従来の政府見解との整合性について、どこでどのように議論されたか御答弁ください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 防衛装備移転三原則に基づき厳格審査と適正管理を行うことで、平和国家の理念を担保している\n- 三原則に従った移転は憲法の平和主義に則ったものであり、従来の政府立場と矛盾しない",
+        "full_text": "そして今回、我が国が行う防衛装備の移転は、憲法全文において鮮明された平和主義の精神に則ったものでなければならないと考えております。防衛装備移転三原則は、個別の案件ごとに厳格審査を行い、かつ移転後の適正管理を確保することで、 国連憲章を遵守するとの平和国家としての基本理念を担保しているものであり、憲法の平和主義の精神に則ったものであると考えておりまして、それは今回の改正後も変わりはありません。今後、自衛隊法上の武器に該当する完成品の移転につきましても、防衛装備点三原則に従って行うものであり、このような防衛装備点三原則に従った防衛装備点は、憲法の平和主義の精神に則ったものであり、 国際紛争を助長することはないという旨の従来の政府の立場と矛盾するものではないと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#10244.7",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "改定における政府内議論と従来見解との整合性",
+          "sub_asks": [
+            "政府内でどのような議論を行ってきたか",
+            "従来見解との整合性についてどこでどのように議論されたか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "読売新聞の世論調査"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "防衛装備移転三原則"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国連憲章"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "自衛隊法"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.55
+        },
+        "oc3_quotability": {
+          "quote_candidate": "防衛装備移転三原則に従った防衛装備点は、憲法の平和主義の精神に則ったものであり、国際紛争を助長することはないという旨の従来の政府の立場と矛盾するものではない",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "政府内での具体的な議論のプロセス（どこで誰が）への回答は回避されているが、従来見解との整合性については大臣として明確に否定（矛盾しない）と回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どこでどのように」というプロセスへの問いと、「整合性」という結論への問いが混在しているため、回答者が結論のみに逃げやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_044",
+      "segment_index": 7,
+      "topic": "武器輸出解禁の決定プロセスの詳細",
+      "question": {
+        "speaker": "山添拓",
+        "party": "日本共産党",
+        "summary": "- 具体的にどこでどのように議論されたかという決定プロセスを問う",
+        "full_text": "全然質問にお答えいただいていません。私は決定プロセスを聞いたんです。どこでどのようにそれを議論されたかということを聞いています。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 最終的なプロセスとしては、大臣会合を経て今朝の閣議決定に至った",
+        "full_text": "これは最終的にプロセスの中では旧大臣会合をもちまして、そして最終的に今朝の閣議決定ということになります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#10244.7",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "決定プロセスの詳細についての問い",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "旧大臣会合"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "閣議決定"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "最終的にプロセスの中では旧大臣会合をもちまして、そして最終的に今朝の閣議決定ということになります。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "決定プロセスという具体的な問いに対し、大臣会合と閣議決定という手続きを回答しており、直接的な回答となっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_045",
+      "segment_index": 7,
+      "topic": "武器輸出決定プロセスの資料提出",
+      "question": {
+        "speaker": "山添拓",
+        "party": "日本共産党",
+        "summary": "- 政府内における決定プロセスを記した資料を委員会に提出することを求める",
+        "full_text": "それは根拠の答えではありません。政府内における決定プロセスを記した資料、委員会に御提出いただきたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 5国理事会において協議する",
+        "full_text": "ただいまの件につきましては、5国理事会において協議をいたします。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#10244.7",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "決定プロセスの資料提出要求",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.2
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "5国理事会"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "協議をいたします",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "ただいまの件につきましては、5国理事会において協議をいたします。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "資料提出の要求に対し、具体的な提出可否に答えず、別の会議体での協議という回避的な回答に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "資料の特定（名称や作成時期など）を具体的に指定して要求すれば、より逃げにくい問いになった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_046",
+      "segment_index": 7,
+      "topic": "輸出品の目的外使用の調査と米軍運用",
+      "question": {
+        "speaker": "山添拓",
+        "party": "日本共産党",
+        "summary": "- 目的外使用の是正を掲げながら、米軍の運用については回答を差し控えるのは矛盾しており、歯止めがないのではないか",
+        "full_text": "先ほど廣田委員との質疑で、大臣は、 輸出品の目的外使用は想定されないけれども、万一侵略に用いているのを確認すれば是正する、使用の停止を求めたり差し止めもと答弁されました。これはどういうふうに使われているかの調査が前提かと思います。大臣は先週この委員会で、日本がライセンス生産でアメリカに輸出したパトリオットが米軍内でどう使われるか、例えばイラン攻撃に使われたかなども含めて、これは米軍の運用の問題であるとして答えを差し控えるとご答弁されました。目的外仕様がないのか、調査が必要だということですね。要するに目的外仕様があれば仕様の差し止めを求めるとか是正を図ると言いながら米軍の運用の問題だと言ってお答えにならないわけですよ。必要な調査を行うということを今度の運用指針に書いてますけどね。調査を行うと言うけれども米軍の運用の問題だと言って答えない。これで歯止めなんか何にもない。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 米軍の運用に関する詳細について回答を差し控えることは、今回の件に限らず政府の立場である",
+        "full_text": "いや、これは通告外ですけれども、山添先生が言うような米軍の運用に対して詳細をお答えすることは差し控えるというのは、それは今回のこの件に限らず、私は今までも申し上げておりますし、それが政府の立場であります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#10244.7",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "目的外使用の調査と米軍運用への回答拒否の矛盾点",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "past_answer",
+              "excerpt": "大臣は、 輸出品の目的外使用は想定されないけれども、万一侵略に用いているのを確認すれば是正する"
+            },
+            {
+              "type": "past_answer",
+              "excerpt": "日本がライセンス生産でアメリカに輸出したパトリオットが米軍内でどう使われるか...答えを差し控えるとご答弁されました"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "米軍",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "米軍の運用に対して詳細をお答えすることは差し控えるというのは、それが政府の立場であります。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は矛盾の指摘という形式の意見表明に近く、回答は政府の拒絶姿勢を再確認したのみであるため、実質的な価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "疑問符のない主張形式であるため、大臣に具体的な行動や判断を迫る問いかけに変換すべきである。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_047",
+      "segment_index": 7,
+      "topic": "自衛隊音楽隊の政治的活動制限の運用",
+      "question": {
+        "speaker": "山添拓",
+        "party": "日本共産党",
+        "summary": "- 第14音楽隊のサイトに「政党からの依頼は受けられない」とあるが、確認したか",
+        "full_text": "現役自衛官の自民党大会の出席について伺います。資料をお配りしています。陸上自衛隊第14音楽隊の公式サイトです。原則として政党からの依頼、または政治的活動に関与する恐れのある場合、依頼を受けることができない。こう書いています。選手大臣はこれ持っていないので確認したいという御答弁でした。確認されたでしょうか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 記載を確認した。公共性を有するイベントを優先する考えを示したものである\n- 政党からの依頼という点のみで判断せず、個別具体的に判断されるべきものと考えている",
+        "full_text": "あの質問を受けまして、先生がおっしゃる陸上自衛隊第14音楽隊、こちらの確認をさせていただきました。この陸上自衛隊第14音楽隊のホームページ内には、県、市町村等地方公共団体、全国的な連盟、これは野球やボーイスカウト等と書かれておりますが、報道機関、教育機関等から公共的事業を優先的に行っています。原則として、個人、企業、政党、宗教団体からの依頼。または政治的活動、宗教的活動、思想的活動、及び企業等の鋭利に関与する恐れのある場合は、依頼を受けることができませんと記載をされております。これはあくまでも陸上自衛隊第14音楽隊が舞台として演奏の依頼を受ける上での考え方を示したものでありますので、具体的には自衛隊音楽隊の演奏は人気が高く、多くの依頼が寄せられていることから、 公共性を有するイベントにおける演奏を優先するとの考え方を示したものだというふうに認識をしております。いずれにしましても、原則としてとあるように、政党からの依頼という点のみで対応の可否が判断されるものではなく、個別具体的に判断されるべきものと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#10244.7",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "自衛官の自民党大会出席と音楽隊の規定の整合性",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "陸上自衛隊第14音楽隊の公式サイト"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "陸上自衛隊第14音楽隊",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "陸上自衛隊第14音楽隊"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "野球やボーイスカウト"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "政党からの依頼という点のみで対応の可否が判断されるものではなく、個別具体的に判断されるべきものと考えております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "音楽隊の規定の存在を確認しつつ、運用上の「個別具体的判断」という解釈を提示したやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_048",
+      "segment_index": 7,
+      "topic": "中央音楽隊への原則適用",
+      "question": {
+        "speaker": "山添拓",
+        "party": "日本共産党",
+        "summary": "- この原則は中央音楽隊でも同様であるか",
+        "full_text": "この原則というのは中央音楽体も基本的には同じですね。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 中央音楽隊についても確認するが、いずれにせよ個別具体的に判断されるべきである",
+        "full_text": "これは第14音楽体のものですので、この原則としてというものが中央音楽体かというのは、これも確認をさせていただきますが、いずれにしても個別、具体的に判断されるべきものだと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5181"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#10244.7",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中央音楽体にも同様の原則が適用されるか",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "中央音楽体",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "第14音楽体"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "確認をさせていただきます",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "いずれにしても個別、具体的に判断されるべきものだと考えております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "質問は簡潔で具体的だが、回答は即答を避け、後日の確認と個別判断に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「この原則」が何を指すのか、文脈なしでは不明確な点がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_049",
+      "segment_index": 7,
+      "topic": "音楽隊の運用根拠資料の提出",
+      "question": {
+        "speaker": "山添拓",
+        "party": "日本共産党",
+        "summary": "- 音楽隊が原則を掲載する根拠となった内規や通達を委員会に提出することを求める",
+        "full_text": "14音楽体がこうした原則を掲載するにあたっては、根拠としたり参照したりした内記や通達があろうかと思います。それを確認の上で。党委員会に提出を求めたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 5国理事会において協議する",
+        "full_text": "ただいまの件につきましては、5国理事会において協議をいたします。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#10244.7",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "根拠とした内規や通達の提出要求",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "音楽体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "5国理事会"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "協議をいたします",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "other",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "ただいまの件につきましては、5国理事会において協議をいたします。",
+          "score": 0.2
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "資料提出の要求に対し、理事会で協議するという形式的な回答に留まっており、実質的な情報は得られていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "提出を求めるという宣言形式になっており、具体的な回答を迫る問いかけになっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_050",
+      "segment_index": 7,
+      "topic": "自衛隊法61条による政治的行為の制限理由",
+      "question": {
+        "speaker": "山添拓",
+        "party": "日本共産党",
+        "summary": "- 自衛隊法61条が政治的行為を制限している理由は何か",
+        "full_text": "小泉大臣、そもそも自衛隊法61条が政治的行為を制限しているのはなぜでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 自衛隊員は国家公務員であり、政治的に中立な立場で公正に職務を行うことが要請されているためである",
+        "full_text": "自衛隊員は全体の奉仕者として国家公務員に至る地位に当たり、政治的に中立な立場で公正に職務を行うことが要請されていることから、自衛隊法第61条第1項において、 隊員の政治的行為の制限が定められていると承知をしております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#10244.7",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "自衛隊法61条が政治的行為を制限する理由",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "自衛隊法61条"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自衛隊員",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "自衛隊法第61条第1項"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "自衛隊員は全体の奉仕者として国家公務員に至る地位に当たり、政治的に中立な立場で公正に職務を行うことが要請されている",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "自衛隊法61条の制限根拠について、大臣が政府としての解釈を明確に回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_051",
+      "segment_index": 8,
+      "topic": "防衛装備移転と目的外使用の防止策",
+      "question": {
+        "speaker": "福島みずほ",
+        "party": "社会民主党",
+        "summary": "- アメリカに殺傷能力のある武器を輸出し、それがイランへの武力攻撃に使用されることは可能か\n- 目的外使用の判断を日本政府が行わない場合、差し止めなどの措置は無力ではないか",
+        "full_text": "決定の中身についての説明はありませんでした。アメリカに殺傷能力の武器を輸出して、アメリカがそれをイランへの武力攻撃に使う、これは可能なんですか。質問に答えていません。目的外使用かどうかの判断をしないんです。だから目的外使用を相手がやれば、それに対して差し止めって言ったって、日本政府が判断しないんだから、無力じゃないですか。殺傷能力のある武器はイラン戦争、イランへの武力攻撃に使われるかもしれない。あのイラク戦争の時に日本が殺傷能力のある武器をアメリカに輸出していたら、使われることを当時妨げることできないじゃないですか。差し止めと言いますが、どうやって差し止めるんですか。アメリカに輸出した殺傷能力のある武器が、イランの武力攻撃に使われた時に、これは目的外しようかどうか。あのイラック戦争の時に、もし殺傷能力の武器を輸出していて、それが使われたら、それは目的外しようかどうか、すら答えないじゃないですか。日本から輸出した武器が、その後どう使われるか、実際止められないじゃないですか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 国際約束により、国連憲章に適合した仕様を相手国に義務付け、目的外使用や第三国移転には日本の事前同意を義務付けている\n- 万が一、他国への侵略に使用されたことが確認されれば、使用停止の要求や部品差し止めなど厳正に対処する\n- 日米相互防衛援助協定（MDA協定）に基づき、国連憲章と矛盾する形で使用されることはない認識である",
+        "full_text": "これも今日ご質問いただいているものと重なるかもしれませんが、我々は国際約束により移転された防衛装備品及び技術について、国連憲章の目的及び原則等に適合した仕様を相手国政府に義務付けるとともに、原則として目的外仕様及び第三国移転について、我が国の事前同意を相手国政府に義務付けることとしております。このため移転先国が我が国の事前同意を得ずに、移転した防衛装備品について目的外使用を行うような事態は想定されません。その上で万が一、例えば他国への侵略に使用していることが確認される場合には、我が国として当該防衛装備品の使用停止を含め、相手国に対し是正を強く要求しますし、維持整備に必要な部品等の差し止め等を含め、個々の事例に応じて厳正に対処してまいります。家庭の質問に対してお答えすることは差し控えますが、どのような状況が武力紛争の一環としての戦闘に該当するかについて、個別具体的に判断されることになるため、これも一概にお答えすることは困難であります。いずれにしましても、日米間では、 日米相互防衛援助協定、MDA協定を締結しており、同協定に基づき国連憲章と矛盾する形で使用されることはないものと認識をしております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#11205.98",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "武器輸出後の目的外使用の差し止め方法と実効性",
+          "sub_asks": [
+            "アメリカが輸出武器をイラン攻撃に使うことは可能か",
+            "目的外使用をどうやって差し止めるのか",
+            "過去のイラク戦争時に輸出していたら妨げられたか"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "イランへの武力攻撃"
+            },
+            {
+              "type": "other",
+              "excerpt": "イラク戦争"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "アメリカ",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国連憲章"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "日米相互防衛援助協定"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "MDA協定"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "厳正に対処してまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "日米相互防衛援助協定、MDA協定を締結しており、同協定に基づき国連憲章と矛盾する形で使用されることはないものと認識をしております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は実効性について具体的に問うているが、回答者は協定の枠組みと一般的方針を述べるに留まっている。ただし、根拠となる協定名が明示されており、政府の公式見解として記録価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "複数の仮定（イラン、イラク）が混在しており、回答者が個別のケースへの回答を避ける口実を与えている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_052",
+      "segment_index": 8,
+      "topic": "防衛装備移転円滑化基金の妥当性",
+      "question": {
+        "speaker": "福島みずほ",
+        "party": "社会民主党",
+        "summary": "- 儲かっている軍事産業（三菱重工・三菱電機等）に多額の公金を投入する理由は何であり、適切なのか",
+        "full_text": "福島県議員 儲かっている三菱重工や三菱電機に何百億円ってお金投入するんですか。何で大企業に儲かっている軍事産業にこれだけ投入するんですか。どうですか。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 基金は装備移転を安全保障上の観点から適切にするための取組を促進することが目的である\n- 秘密の保全やリバースエンジニアリング対策など、仕様・性能調整に必要な費用を助成しており、適切であると考えている",
+        "full_text": "今回、この装備店の進捗については、相手国政府等との調整状況に応じて流動的であるところ、防衛装備店円滑化基金は装備店の機会を逃さないように、企業に対して装備品等の使用、 性能の調整に必要な助成を迅速に行うため、防衛生産基盤強化法に基づき設置されているものです。企業は装備移転に当たって、その製造等に必要な費用について、相手国政府等から得た収益を当てているところですが、装備移転使用等調整のための助成金については、装備品等に係る秘密の保全、その他の我が国の安全保障上の観点から、適切なものとする必要があることから、 防衛大臣の求めに応じて企業が装備移転に係る仕様及び性能の調整を行うために必要な資金を交付しているものであり、例えばブラックボックス化やリバースエンジニアリング対策といった措置を講じるために必要な費用を助成しております。このように本基金はあくまで装備移転を我が国の安全保障上の観点から適切なものとするための取組を促進することを目的とし、政府として基金を造成し、企業に対し 必要な費用を助成することは適切であると考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#11205.98",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "大企業・軍事産業への多額の資金投入の理由",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "三菱重工や三菱電機"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "三菱重工や三菱電機",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "防衛装備店円滑化基金"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "防衛生産基盤強化法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ブラックボックス化やリバースエンジニアリング対策"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "本基金はあくまで装備移転を我が国の安全保障上の観点から適切なものとするための取組を促進することを目的とし、政府として基金を造成し、企業に対し必要な費用を助成することは適切であると考えております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "大企業への助成に対する疑問に対し、基金の目的と具体的用途（ブラックボックス化対策等）を挙げて正当性を説明している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「何百億円」という表現が曖昧なため、具体的な予算額に基づいた問い合わせにすれば、より精緻な回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_053",
+      "segment_index": 8,
+      "topic": "国家情報局への情報提供の範囲",
+      "question": {
+        "speaker": "福島みずほ",
+        "party": "社会民主党",
+        "summary": "- 能動的サイバー防御、マイナンバー、通信傍受法、特定秘密保護法等で得られた情報が、国家情報局に提供されるのか",
+        "full_text": "国家情報会議設置法案について前回質問いたしました。能動的サイバー防御法によって得られた情報をどう使えるか。マイナンバーで集められた情報、通信防止法、盗聴法によって得られた情報、特定秘密保護法、経済秘密保護法の、例えばセキュリティークリアナンス制度などによって得られた情報、 なども重要情報活動だとすれば、これは集められるということでよろしいんですよね。必要があればもらいますということでよろしいですね。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "蒲谷亮",
+        "role": "",
+        "summary": "- 能動的サイバー防御で得られた情報は、規定に基づき適時適切に提供される\n- マイナンバー（特定個人情報）の提供は法的に限定されており、実際の運用上は直ちには想定されない\n- 通信傍受法による情報は、テロ捜査等で共有の必要性が高い場合に提供されると考えている\n- 特定秘密・重要経済安保情報の保護目的以外で、適正評価で取得した個人情報が提供されることはない",
+        "full_text": "まず、農道的サイバー防御についてですけれども、 重要計算機に対する不正な行為による被害の防止に関する法律の38条1項におきまして、内閣府の主任大臣である内閣総理大臣は、重要電子計算機に対する特定不正行為による被害防止のために必要があるときは、国の行政機関に対し、情報整理または分析して得られた結果を提供する旨が規定をされてございます。例えば、特定国による我が国に対するサイバー攻撃の状況や新たな抗議書については、こうした規定に基づいて、国家情報局に対しても適時適切に 資料や情報の提供がなされると理解をしております。次、マイナンバーですけれども、行政手続における特定の個人を識別するための番号の理由等に関する法律第9条におきまして、個人番号を利用する行政機関と利用することができる事務というのは、これ限定列挙をされておりますので、国家情報局及び同局の事務はこれらに含まれないことから、国家情報局が個人番号を利用することはできません。法制上は、こうした例外的な場合に、国家情報局が特定個人情報の提供を受けることが排除されるものではありませんが、実際の運用上は、特定個人情報、すなわち個人番号をその内容に含む個人情報の提供を受けることは、直ちには想定はされないところでございます。次に通信防止法によって得られた情報でございますが、例えば国内の都市部において爆破テロ事件が発生した場合に警察がこれを捜査することになりますけれども、このテロ事件の捜査の過程で他のテロ計画が明らかになり、多数の国民の生命身体の安全が脅かされないような状況にある場合には、どのような捜査手法により得られたかに関係なく、捜査機関が捜査の過程で収集した共有評価に役立つ情報を国家情報局を含むインテージェス関係機関で共有する必要性が高い。と考えられ、関係する情報が適切に提供いただけるものと考えており、そこには通信防止により得られた情報も含まれます。最後に、特定秘密保護法及び重要経済安保情報保護活用法に基づいて、行政機関の庁が適正評価の実施に当たって取得する個人情報につきましては、 懲戒処分等に該当する疑いが生じた時という例外を除いて、特定秘密の保護、または重要経済安保情報の保護以外の目的のために第三者に提供してはならないとされております。したがいまして、本法案におきましても、特定秘密の保護、または重要経済安保情報の保護という目的のためでない限り、適正評価の実施にあたって取得される個人情報が国家情報局に提供されることはありません。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8970#11205.98",
+      "metrics": null
+    }
+  ],
+  "score_schema_version": "2.0",
+  "prompt_version": "V4"
+}

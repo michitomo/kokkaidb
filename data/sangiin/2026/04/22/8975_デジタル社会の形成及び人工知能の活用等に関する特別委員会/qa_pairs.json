@@ -1,0 +1,4861 @@
+{
+  "pairs": [
+    {
+      "id": "qa_001",
+      "segment_index": 1,
+      "topic": "世界および日本におけるロケット打ち上げの現状と遅れの理由",
+      "question": {
+        "speaker": "東野秀樹",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 世界および日本におけるロケット打ち上げの現状について\n- 日本が世界から遅れている場合、その理由について",
+        "full_text": "まず、人工衛星等の打ち上げ及び 人工衛星の管理に関する法律等の一部を体制する法律案についてお伺いいたします。本法律案の内容に入る前に、今、世界及び日本におけるロケットの打ち上げの現状と、仮に日本が世界から遅れを取っているのであれば、その理由についてお伺いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "内閣府和貴",
+        "role": "",
+        "summary": "- 米中が急増する一方、日本は横ばいであり、成功数でも大きく差がある\n- 技術的難易度による開発時間の要件や、打ち上げの失敗が相次いだことが背景にある\n- 車上整備や製造設備などのインフラ不足も課題である",
+        "full_text": "お答えいたします。世界のロケットの打ち上げ数は近年急速に増加しておりまして、米国及び中国が大きく伸びております。それに対して我が国は横ばいの状況がついております。具体的には2025年におけるロケット打ち上げによる軌道投入の成功数は世界全体で316回となっており、そのうち米国が192回、中国が91回となっている一方で、我が国は3回にとどまっております。こうした背景には、ロケットの開発は技術的難易度は高く、開発に時間を要するほか、ロケットの打ち上げにおいて失敗が相次いでおり、打ち上げ数が伸びていないものと理解しております。また、高頻度な打ち上げに向けたロケットの車上整備、それから製造設備等が不足していることも課題として認識しております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#1938.25",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "ロケット打ち上げの現状と遅れの理由",
+          "sub_asks": [
+            "世界及び日本におけるロケット打ち上げの現状",
+            "日本が世界から遅れている場合のその理由"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "世界全体で316回"
+            },
+            {
+              "type": "number",
+              "excerpt": "米国が192回"
+            },
+            {
+              "type": "number",
+              "excerpt": "中国が91回"
+            },
+            {
+              "type": "number",
+              "excerpt": "我が国は3回"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "2025年におけるロケット打ち上げによる軌道投入の成功数は世界全体で316回となっており、そのうち米国が192回、中国が91回となっている一方で、我が国は3回にとどまっております。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "現状把握のための質問に対し、具体的な数値を用いて明確に回答しており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_002",
+      "segment_index": 1,
+      "topic": "人工衛星等の打ち上げ及び管理に関する法律等の一部を改正する法律案の意義と効果",
+      "question": {
+        "speaker": "東野秀樹",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 拡大する宇宙産業の状況を踏まえた、本法律案の意義や効果について",
+        "full_text": "そういう条件というふうにお聞かせをいただきましたけれども、この 法律案は、我が国の宇宙開発利用の急速な多様化の状況に鑑みながら、公共の安全を確保しつつ、ロケットの打ち上げに関する多様な需要に対応するために、必要な制度整備を行おうとするもので、宇宙産業を後押しするためにも、速やかな成立が求められているものと考えております。そこで、拡大する宇宙産業の状況を踏まえながら、本法律案の意義や 効果について小野田大臣にお伺いをいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小野田誠",
+        "role": "",
+        "summary": "- ロケット打ち上げそのものに着眼した規制体系へ転換し、多様な需要に対応する\n- 衛星を伴わない試験打ち上げを規制対象とし、損害賠償担保措置を設けることで新規事業者を後押しする\n- 人工物体への認定制度を創設し、公共の安全確保と宇宙空間の汚染防止を図る",
+        "full_text": "先ほど御説明しましたように、世界的にロケットの打ち上げが急増していることに加えて、近年、技術革新の進展やロケット打ち上げビジネスへの新規参入事業者の急増等により、宇宙開発量が多様化しております。本法案は、公共の安全も確保しつつ、ロケットの打ち上げに関する多様な需要に対応するために、ロケットの打ち上げそのものに着眼した規制体系へと転換するものであります。具体的には、 開発段階の試験打ち上げとしての実施が想定される人工衛星の搭載または分離を伴わない打ち上げを規制対象とすることによって、これらの打ち上げにおける公共の安全を確保するとともに、政府保障を含む損害賠償担保措置の対象とすることで、新規事業者の開発を後押しすることが期待されます。また、人工衛星に該当しない人工の物体についても、その構造が基準に適合していることを打ち上げ前に認定する制度も創設することで、公共の安全を確保するとともに、 宇宇宙空間の有害な汚染等を防止することが可能となります。本改正により国際的責任を果たしつつ、我が国の宇宙活動の安全性を確保し、我が国の打ち上げ能力の強化、そして宇宙産業の発展をしっかり後押ししてまいりたいと考えます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#1938.25",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "本法律案の意義や効果について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "宇宙産業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "人工衛星の搭載または分離を伴わない打ち上げ"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "政府保障を含む損害賠償担保措置"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "人工の物体についても、その構造が基準に適合していることを打ち上げ前に認定する制度"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "宇宙産業の発展をしっかり後押ししてまいりたいと考えます",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.5
+        },
+        "oc3_quotability": {
+          "quote_candidate": "ロケットの打ち上げそのものに着眼した規制体系へと転換するものであります。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "法律案の意義について大臣が具体的に回答しており、規制体系の転換という重要な方針が記録されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が抽象的なため、より具体的な懸念点や想定される効果を問う形式にすれば、より踏み込んだ回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_003",
+      "segment_index": 1,
+      "topic": "宇宙技術活用産業（スマート農林水産業等）への投資と事業化支援",
+      "question": {
+        "speaker": "東野秀樹",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 衛星データを活用したスマート農林水産業等の分野における、官民投資拡大や事業化支援、海外展開の必要性と将来ビジョンについて",
+        "full_text": "さて、次に政府としても、 これまで10年間で総額1兆円規模の宇宙戦略基金による技術開発支援などに力を入れて取り組まれているものと承知をしてございます。他方で技術開発への支援だけではなく、開発した技術を政府も含めたユーザーの開拓、海外への展開、ビジネスにつなげていく部分に対する投資も必要ではないかといった指摘がございます。先ほども申し上げたような、 衛星データを活用したスマート農林水産業といった宇宙技術活用産業の分野について、今後一層の拡大が期待されておりますが、こうした分野に対する官民投資拡大や事業化支援、ユーザーの開拓、海外展開にさらに力を入れて取り組む必要性や将来ビジョンについて、小野田大臣にお伺いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "小野田誠",
+        "role": "",
+        "summary": "- 官民投資の拡大、事業化支援、顧客開拓に力を入れる必要があると認識している\n- 官民投資ロードマップにおいて、政府調達の強化策を検討している\n- 予見性を高めて投資を喚起し、宇宙ソリューション産業の国内確立と国内外の需要開拓を促進する",
+        "full_text": "衛生データを利活用したサービス産業は防災、国土強靭化、安全保障、そして委員いろいろ教えていただきました食料安全保障等に 貢献する重要な産業分野でございますけれども、いまだ実装拡大の途上にあることから、委員御指摘のとおり、官民投資の拡大、そして事業化の支援、顧客開拓等にさらに力を入れて取り組む必要があるというふうに認識しています。政府としては、現在、日本成長戦略において議論している官民投資ロードマップ、こちらにおいても、防災、インフラ点検、そして農林水産、安全保障分野等における衛生データ利活用サービスの政府調達の強化策について検討しているところです。予見性を高める ことで投資を喚起するとともに、社会実装と需要開拓の支援に取り組んでまいります。こうした取り組みを通じて、衛星データを活用した宇宙ソリューション産業の国内確立を加速させて、そして日本企業の国内外の需要を開拓、拡大して、将来に向けた成長を促進してまいりたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#1938.25",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "宇宙技術の事業化支援や海外展開の必要性とビジョン",
+          "sub_asks": [
+            "官民投資拡大や事業化支援、ユーザー開拓、海外展開に力を入れる必要性",
+            "将来ビジョン"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "10年間で総額1兆円規模の宇宙戦略基金"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "スマート農林水産業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "日本成長戦略"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "官民投資ロードマップ"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "政府調達の強化策について検討しているところです",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "官民投資ロードマップにおいても、衛生データ利活用サービスの政府調達の強化策について検討しているところです。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "宇宙技術の社会実装に向けた政府の方向性と、具体的に「官民投資ロードマップ」で検討中である点に言及しており、一定の記録価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「必要性」と「ビジョン」を同時に問うているため、回答が包括的・抽象的になりやすい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_004",
+      "segment_index": 1,
+      "topic": "衛星データを活用したスマート農業の普及拡大状況",
+      "question": {
+        "speaker": "東野秀樹",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 衛星データ等を活用したスマート農業の普及拡大の現状について",
+        "full_text": "衛生データ等を活用したスマート農業の普及拡大に向けた取組についてお伺いをいたします。衛生データ等を活用したスマート農業に限ったこれは課題ではございませんが、現在、基幹的農業従事者の平均年齢は67.6歳と、超高齢化が進んでいる我が国の生産現場に、最新の機器を活用するスマート農業を普及させるためには、 農業者のデジタル知識習得の底上げが必須だと考えます。とりわけ衛星データ等の活用等へ言われても、敷居が高いイメージがございまして、自分には使いこなせないのではないか、といった不安を持たれることもあろうかと存じます。衛星データ等を活用したスマート農業の普及拡大の状況について、農林水産省にお伺いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "佐藤",
+        "role": "",
+        "summary": "- 生産方式革新実施計画の認定を通じた税制・金融支援や、栽培体系への転換支援を行っている\n- ドローンによる農薬散布面積の拡大や、自動操舵システムの搭載率向上など、普及は着実に進展している",
+        "full_text": "農業者の減少、高齢化が進む中、生産性を向上させ、食料の安定供給を図っていくためには、スマート農業の推進が不可欠であります。政府としては、スマート農業技術 活用促進法における生産方式革新実施計画の認定を通じて、農業者等への税制、金融等の支援措置を講ずるとともに、予算事業などによりまして、ウネの幅やカジノ、木の形など、これをスマート農業機械、技術の導入と合わせて、その効果を高めるための栽培体系へ転換する取組、これに対して支援をしているところであります。このような取り組みなどを通じまして、例えばドローンによる農薬などの散布面積は延べ120万ヘクタールまで拡大するとともに、トラクターやコンバイン、田植機、これの年間出荷台数の1割強はハンドルを持つことなく正確に衛生情報を使いまして直進走行できる自動相談システムがあらかじめ整備されているなど、スマート農業の普及は着実に進展している、このように考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#1938.25",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "衛星データ活用スマート農業の普及拡大状況について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "基幹的農業従事者の平均年齢は67.6歳"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "農業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "スマート農業技術活用促進法"
+            },
+            {
+              "type": "number",
+              "excerpt": "延べ120万ヘクタール"
+            },
+            {
+              "type": "number",
+              "excerpt": "年間出荷台数の1割強"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "ドローンによる農薬などの散布面積は延べ120万ヘクタールまで拡大するとともに、トラクターやコンバイン、田植機の年間出荷台数の1割強は自動走行システムがあらかじめ整備されている",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "現状の普及状況について具体的な数値（120万ha、1割強）を挙げて回答しており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "普及状況を問うだけでなく、質問者が言及した「デジタル知識習得の底上げ」という課題への具体策を問う形式にすれば、より踏み込んだ回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_005",
+      "segment_index": 1,
+      "topic": "先端技術を活用できる農業者の育成",
+      "question": {
+        "speaker": "東野秀樹",
+        "party": "自由民主党・無所属の会",
+        "summary": "- スマート農業を推進するための、IT・AI知識を備えた農業者の育成についての方針",
+        "full_text": "スマート農業の推進に向けては、それを使う人、支える人の育成が急務だと思います。また、これから農業に携わろうとする若者には、従来からの農畜産業の基礎知識などに加え、このようなIT、AIの知識を事前に習得してもらうことが最も必要だと考えております。こうした背景のもと、 令和4年度から農業高校を対象に、スマート農業に関する内容を盛り込んだ新高等学校指導要領もスタートしていると伺ってございますが、一層の推進が必要であると考えます。先端技術を活用できる農業者の育成について、どのようにお考えかお伺いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "神田",
+        "role": "",
+        "summary": "- 農業教育機関へのスマート農業機械の導入や、経営者による出前授業・現地研修を支援している\n- 引き続き教育機関への支援を通じ、技術を活用できる新規就農者の育成確保に努める",
+        "full_text": "委員御指摘のとおり、農業者の減少化においても生産水準が維持できる生産性の高い食料供給体制を確立するためには、スマート農業技術を活用できる農業者の育成確保が必要であると考えております。農林水産省といたしましては、農業高校や農業大学校等の農業教育機関におけるICT対応トラクターやAI技術を活用した分娩検知システムの導入等のスマート農業機械機器の導入や、 地域の農業経営者等による出前授業や現地研修等の取組を支援をしているところでございます。引き続き、こうした農業高校等の農業教育機関における取組への支援等を通じまして、スマート農業技術を活用できる新規就農者の育成確保に努めてまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#1938.25",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "先端技術を活用できる農業者の育成に関する考え",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "令和4年度から"
+            },
+            {
+              "type": "other",
+              "excerpt": "新高等学校指導要領"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "農業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "ICT対応トラクター"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "AI技術を活用した分娩検知システム"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "農業高校や農業大学校"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "育成確保に努めてまいります",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "農業高校や農業大学校等の農業教育機関におけるICT対応トラクターやAI技術を活用した分娩検知システムの導入等のスマート農業機械機器の導入や、地域の農業経営者等による出前授業や現地研修等の取組を支援をしている",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "スマート農業の人材育成について、現状の支援策を具体的に挙げつつ回答しているが、今後の新たなコミットメントは抽象的な努力目標に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どのようにお考えか」という抽象的な問いであるため、政府から具体的な新施策や期限付きの目標を引き出しにくい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_006",
+      "segment_index": 1,
+      "topic": "スマート農業機械の導入コストとメンテナンス等の課題解決",
+      "question": {
+        "speaker": "東野秀樹",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 機械の導入費用高騰、メンテナンス費用の増加、修理体制の不備など、生産現場のコスト負担課題への対応について",
+        "full_text": "続きまして、スマート農業機械の導入に係る生産現場の課題の対応についての質問をさせていただきます。スマート農業用の最新機械は非常に高額であります。加えて、円安の影響もあり、現在、機械を導入するとなると、農家経営に与える影響はますます大きくなっているものがあります。生産現場からは、機械導入費用は増加している。ものの、従来の機械と比較して収量、肥料削減効果が、この導入費用を賄えてはいない、という声も耳にいたします。また、高額な機械を買っても、対応年数は変わらない。精密機械がゆえに、故障しても地元では修理ができない。導入時の初期投資だけではなく、その後のメンテナンスや修理などの継続的な費用、さらにはクラウド利用料などこれまでになかった費用も生じ、スマート農業機械を導入することで、経営規模や所条件によっては、かえって経営が厳しくなる。そんな現場の声も聞こえてまいります。そこで、農業分野へのスマート農業機械の導入は必要不可欠であり、 推進しなければならないのは事実でありますが、今述べさせていただいた生産現場のコスト負担等の課題解決について、どのようにお考えかお伺いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "佐藤",
+        "role": "",
+        "summary": "- 導入コストやメンテナンス、技能習得などの課題を認識している\n- 個人の所有ではなく、受託やレンタルなどの農業支援サービスを利用することでコストを分担し、負担を軽減できると考えている\n- 支援サービス事業者の立ち上げや人材育成を支援し、導入しやすい環境を整える",
+        "full_text": "スマート農業の導入に当たっては、委員御指摘のとおり、 一般的に導入コストが高いということもございますし機種によってはメンテナンスコストが増高する場合があることに加えましてその操作に当たっても技能の習得が必要など多くの課題があるというふうに認識をしております。このような課題に対しましては 個々の農業者が自分で機械を所有するのではなく、委員御指摘のように高齢の方も使いこなすというのがなかなか難しい面もございますので、農作業の受託や農業機械のレンタルなどを行う農業支援サービスを利用することによりまして、初期の導入費用、メンテナンスや技能習得などのコストを利用者の間で分担をして、個々の農業者の負担を軽減させることが可能になります。このように考えておるところであります。農林水産省では農業支援サービス事業者の立ち上げや事業拡大に向けた機会の導入。サービスのニーズ調査、人材育成などに対して支援を行っているところでありまして、このような取組により、スマート農業技術を経営に取り込みやすい環境を整え、農業者が減少する中であっても、生産性の維持・向上を図ることを通じて、農業の持続的な発展を実現してまいる考えであります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#1938.25",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "スマート農業機械のコスト負担等の課題解決への考え",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "農家",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "農業の持続的な発展を実現してまいる考えであります",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "農作業の受託や農業機械のレンタルなどを行う農業支援サービスを利用することによりまして、個々の農業者の負担を軽減させることが可能になります。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "現場のコスト負担という課題に対し、所有から利用（レンタル・受託）への転換という方向性で回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "具体的な補助金や予算措置などの解決策を問う形式にすれば、より具体的な回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_007",
+      "segment_index": 1,
+      "topic": "産業用ドローンの海外製品利用に伴うリスクと対策",
+      "question": {
+        "speaker": "東野秀樹",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 中国製ドローン等の海外製品利用におけるデータ流出リスク等の懸念に対する、政府の想定リスクと取組について",
+        "full_text": "続きまして産業用ドローンについての質問であります。現在利用されているドローンはかなりの割合を中国メーカーで占めているのが現状でございます。国産メーカーも他国メーカーに追いつこうと頑張ってはいるものの、 ユーザーにとっては、性能と価格、費用対効果を考えると、中国産を選ばざるを得ない状況となってございます。こうした中、海外製品はデータの流出リスクや国家間のトラブルがあると急に作動しなくなるとか、憶測も含めた懸念を耳にすることがありますが。政府としての想定されているリスク、さらにはそれに対する検討状況や取組等があればお聞かせをいただきたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "畑田",
+        "role": "",
+        "summary": "- 情報漏洩や第三者による機体乗っ取りなどのサイバーセキュリティ上の懸念を認識している\n- 政府機関の調達については、特定のセキュリティラベルを取得した製品に限定している\n- 国産機体の開発および量産体制の構築を支援し、信頼性の高い機体の安定供給を確保する",
+        "full_text": "ドローン、また無人航空機ですけれども、飛行に関する情報ですとか、また収集した情報、これの漏洩、それから第三者による機体そのものの乗っ取りといったようなサイバーセキュリティ上の懸念が存在しているというふうに思っております。この対策としましては、まず政府機関が無人航空機を調達する際に関しましては、関係省庁申し合わせ、 大臣。GCスターラベル、先ほど申し上げたラベルを取得した製品に限定をしております。こうしたサイバーセキュリティ対策に加えまして、信頼性の高い無人航空機の安定供給を我が国として確保するために、国産機体の開発ですとか、その量産体制の構築への支援も進めているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#1938.25",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "産業用ドローンのリスク想定と対策",
+          "sub_asks": [
+            "政府が想定しているリスク",
+            "それに対する検討状況や取組"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "ユーザー",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "関係省庁申し合わせ"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "GCスターラベル"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "支援も進めているところでございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "政府機関が無人航空機を調達する際に関しましては、関係省庁申し合わせ、GCスターラベルを取得した製品に限定しております。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "政府調達における具体的な基準（GCスターラベル）に言及しており、実務的な回答となっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "リスクの想定を具体的に問うているが、回答が一般的であるため、より具体的なシナリオを提示して問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_008",
+      "segment_index": 2,
+      "topic": "法改正の目的と長期的な考え方",
+      "question": {
+        "speaker": "郡山りょう",
+        "party": "立憲民主・無所属",
+        "summary": "- 本改正を多様な打ち上げ体制を包含する制度への転換と理解しているが、政府としての考えはどうか\n- 農業、防災、月面探査などの長期的なプランを含めた考え方を示してほしい",
+        "full_text": "それでは先ほど東の委員からもあったんですが、本改正の目的について小野田大臣にお伺いしたいと思います。今回の法改正は従来の地上車場単一形態を前提とした制度からエアロウンチ、気球打ち上げ、ダミーペイロード搭載など、多様な打ち上げ体制を包含する制度への転換と私自身も理解をしています。政府として本改正を先ほど回答があったように制度体系の再構築の第一歩だと先ほど大臣もお答えしましたが同時にスペーストランスフォーメーションにおいても日本が先頭に位置づけるための一歩となる 本改正になるかと思います。例えば先ほど導き11期体制から、先ほど言われた農業だったり防災、我々がよく車に乗って使うカーナビの充実化というのもありますし、米国との協調でアルテミス計画、月面を探査することで将来の資源の確保とか、そういったものにもつながると思っています。そういった長期的なプランも含めて、大臣から考え方をお伺いできればと思っております。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小野田紀美",
+        "role": "",
+        "summary": "- 新規参入の急増や技術革新により打ち上げ形態や物体が多様化している\n- 公共の安全を確保しつつ、多様なロケット打ち上げに対応するための法案である",
+        "full_text": "我が国の宇宙開発利用近年、新規参入事業者の急増、そして技術革新の進展等により急速に多様化しております。これに伴い、試験的な打ち上げを含め、さまざまな形態でのロケット打ち上げが出現しつつあり、また制御されないモニュメントや研究用の人工の物体が地球を回る軌道に投入されるなど打ち上げられる物体の多様化も進んでいるところです。本法案は、先ほども申し上げたんですけれども、根拠の安全を確保しつつ、ロケット打ち上げに関する 大臣。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#3339.22",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "法改正の目的と長期的な考え方について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "アルテミス計画"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "我が国の宇宙開発利用近年、新規参入事業者の急増、そして技術革新の進展等により急速に多様化しております。",
+          "score": 0.3
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "質問は明確ですが、回答が途中で切れている（または不完全な）ため、実質的な情報提供やコミットメントが得られていません。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問者が自身の理解や例示に多くの時間を割いており、大臣に求める具体的な回答範囲が広すぎる点。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_009",
+      "segment_index": 2,
+      "topic": "型式認証制度の導入について",
+      "question": {
+        "speaker": "郡山りょう",
+        "party": "立憲民主・無所属",
+        "summary": "- 米国のような包括認証（型式認証制度）が見当たらないが、1機ごとに許可が必要な現状は民間事業者の足枷にならないか\n- 制度が明記されていない理由と、今後の制度化への考え方を示してほしい",
+        "full_text": "航空法上の型式証明制度があって、一回その型式ですね、例えば787が認められたら、その次もですね、一期一期審査することなく量産することができるという、簡単に言うとそういった制度なんですが、米国でもですね、ビークルオペレーターライセンスとして包括認証が確立されているのに対し、今回の法改正にはそれに相当する。片式認証制度が見受けられないということでございます。ということは、ロケット1機ごとに国の許可を受ける必要があるということです。これは量産化と国際競争の両面で、民間宇宙事業者にとっては大きな 足枷になるのではないかと懸念をしております。本改正案において、型式認知症制度の導入が明記をされていない理由、および今後いつまでにどのような形で制度化を目指すのか、そういったお考えがあるのか、明確にお示しいただければと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "和木淳",
+        "role": "",
+        "summary": "- 同一設計のロケット等の審査を省略する形式認定は既に存在する\n- 包括許可制度については、産業界に標準的な組織体制の知見が十分ではなく、かえって事業活動を制限する可能性があるため本法案では制度化していない\n- 今後、事業者の能力や成熟度を踏まえて検討し、ガイドライン修正などで効率化を図る",
+        "full_text": "ロケットの打ち上げの許可の申請においては、同一設計のロケットについて通道の審査を省略する形式認定ですね。それから、その打ち上げ施設について通道の審査を省略する打ち上げ施設の適合認定、これは既にございまして、これを活用することにより、これらに関する書類提出の省略などの効率化や審査期間の短縮を図ってまいりました。一方で、ロケットの打ち上げに関する包括許可制度につきましては、現時点では打ち上げ時の安全 加工能力を担保する標準的な組織体制に係る知見の蓄積が産業界においてまだ十分ではないというのがありましてその体制の整備・維持を義務づけることでかえって事業者の自由な事業活動を制限しその発展を阻害するという可能性もあることから 本法案においては制度化をしておりません。他方で、今後衛星コンセレーションなど、 複数の人工衛星の管理を含めて反復継続的にこうした行為に対する規制の在り方については事業者による具体的な自由活動における安全確保に向けた能力それから手段の成熟度等を踏まえて検討してまいりたいと考えております。いずれにせよ我国の宇宙産業の発展のためにもこれらの審査の効率化 は重要な観点であると認識しております。十分な実績のある事業者への対応としては、過去の審査実績を踏まえた関連ガイドラインの修正や、運用のさらなる効率化を図るなど、公共の安全の確保を前提に、不断の見直しをしてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#3339.22",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "型式認証制度の未導入理由と今後の制度化の見通し",
+          "sub_asks": [
+            "本改正案において型式認証制度の導入が明記されていない理由",
+            "今後いつまでにどのような形で制度化を目指すのか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "航空法上の型式証明制度"
+            },
+            {
+              "type": "other",
+              "excerpt": "米国でもですね、ビークルオペレーターライセンスとして包括認証が確立されている"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "民間宇宙事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.6
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "形式認定"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "打ち上げ施設の適合認定"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "規制の在り方については事業者による具体的な自由活動における安全確保に向けた能力それから手段の成熟度等を踏まえて検討してまいりたい",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "包括許可制度につきましては、現時点では打ち上げ時の安全加工能力を担保する標準的な組織体制に係る知見の蓄積が産業界においてまだ十分ではない",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "型式認証の未導入理由については具体的に回答しているが、今後の制度化の時期や形態については「検討してまいりたい」という抽象的な回答に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「いつまでに」という期限を問うているが、回答者が逃げやすいオープンクエスチョンになっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_010",
+      "segment_index": 2,
+      "topic": "型式認証制度の導入検討時期",
+      "question": {
+        "speaker": "郡山りょう",
+        "party": "立憲民主・無所属",
+        "summary": "- 再使用ロケットなどで打ち上げ回数が加速度的に増える可能性があるが、いつ頃に導入検討を開始するのか、トリガーとなる指標はあるか",
+        "full_text": "一応、軟期という形なんですが、ただ反復、先ほど言った再使用ということも考えると、ある日突然、加速度的に まあ、その、まあ、あの、形、なんていうんですかね、打ち上げの回数が増えたりとか、再使用が増えたりということも起こりうるんじゃないかと思います。で、年間ですね、何期、まあ、何年をめどに、例えば、形式認証制度の導入検討を開始をするのか、もし指揮位置、まあ、トリガーとかがあったらですね、お考えあれば、お聞かせいただきたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "和木淳",
+        "role": "",
+        "summary": "- 現時点で具体的な数値（閾値）は決めていない\n- 2030年代に年間30機という目標の進捗や事業者の声を聴きながら進めたい",
+        "full_text": "現時点では具体的な敷地を決めているものでございません。ただ、私どもは政府としましては、ロケットにつきましては、例えば2030年代に年間30機を目指すという目標がございます。その進捗動向を見ながら、事業者の声も聞きながら進めてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#3339.22",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "形式認証制度導入検討の開始時期やトリガーの有無",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "2030年代に年間30機"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "進めてまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "現時点では具体的な敷地を決めているものでございません。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "形式認証制度の導入トリガーについて問われ、現時点では未定であることと、目標数値があることを回答している。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「形式認証制度」という専門的な制度導入の具体的条件を問うているが、回答を促すための前提根拠（他国事例など）の提示が不足している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_011",
+      "segment_index": 2,
+      "topic": "審査負担の軽減とワンストップ化",
+      "question": {
+        "speaker": "郡山りょう",
+        "party": "立憲民主・無所属",
+        "summary": "- 審査対象の拡大に伴う事業者の申請コスト増加をどう抑えるか\n- 標準処理期間の短縮や、関係省庁（文科省・経産省・内閣府等）のワンストップ化について具体的な策はあるか",
+        "full_text": "今回の改正で審査対象になる打ち上げ形態が大幅に 広がっていく結果、事業者1件当たりの審査負担、申請コストが増加するおそれがあります。そこで、政府は打ち上げの多様化に伴う審査項目増をどのような、抑えるような工夫は考えられているのか。また、申請から許可までの標準処理期間をどう短縮するのか。こちらは、連邦航空局のほうが180日を標準としているという例がございます。また、関係省庁、文科省、経産省、内閣府等の間のワンストップか、いろんな省庁をまたがると思いますので、そちらをどのように進めるのか、具体的な策があれば、お示しいただきたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "和木淳",
+        "role": "",
+        "summary": "- 審査基準やガイドラインを公表し、事前調整を推奨することで重複を避け、効率化を図っている\n- 標準処理期間については行政手続法に基づき対応し、事前相談を通じて調整する\n- ワンストップ化については、専門的知見を要するため各機関での実施が効率的な面もあるが、関係省庁と連携して効率的に実施し、不断の改善を図る",
+        "full_text": "現状、宇宙活動の許可に当たって、ロケットの打ち上げ施設周辺の住民、船舶、航空機等の公共の安全を確保するために、打ち上げ施設の周辺の陸上、海上、および上空に警戒区域を定めることとともに、水薬等の取扱いに係る安全対策を求めておりますが、こうしたことについて、内閣においては、 打ち上げ事業者取るべき事項を明確化いたしまして、審査基準やガイド例を定め、ホームページにも公表しております。その際、航空局でありますとか、海上保安庁、地方自治体、漁業行動組合等々、個別の調査についても関係法令に基づく手続きを適切に実施することを求めつつ、内閣府としてはこれらの重複を避けた審査基準を設けて、これを公表し、透明性の確保と効率化を図っております。それから加えて打ち上げ事業者には申請の検討段階から内閣府の事前調整を推奨しております。事業者から相談があれば必要に応じて関係省庁と一つを図るなど、手続きに係る事業負担の軽減に努めております。標準勝利期間についてございまして、行政哲学法について定めがございまして、6か月以内というような形態によって異なりますが、こうしたことも、例えば1号機でありますと時間がかかりますので、そういうことも事前相談の中でしっかり対応してまいりたい、参ってきた。同じ規制当局として承知しておりまして、我が国においてもワンストップ化を図るという議論がございましたが、関係法令の手続きは、専門的試験を要する各機関での実施が効率的だという面もございますので、そうしたところで関係省庁と連携の下で、効率的に実施してまいりたいと考えております。同時に、内閣府は政府全体の司令塔なので、ロケットの打ち上げの高頻度化を目指して、手継ぎの観測など、不断の改善を図ってまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5280"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#3339.22",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "打ち上げ審査の負担軽減と効率化の具体策",
+          "sub_asks": [
+            "審査項目の増加を抑える工夫",
+            "標準処理期間の短縮策",
+            "関係省庁間のワンストップ化の具体策"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "連邦航空局"
+            },
+            {
+              "type": "organization",
+              "excerpt": "文科省、経産省、内閣府"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.6
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "航空局"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "海上保安庁"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "地方自治体"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "漁業行動組合"
+            },
+            {
+              "type": "number",
+              "excerpt": "6か月以内"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "不断の改善を図ってまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "内閣府としてはこれらの重複を避けた審査基準を設けて、これを公表し、透明性の確保と効率化を図っております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "複数の具体的な問いに対し、現状の取り組み（ガイドライン公表や事前相談）を説明しているが、今後の具体的な改善策や期間短縮へのコミットメントは弱く、概ね精神論に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "問いが多岐にわたるため、回答者が個別の問いを切り分けて具体的に答えにくい構成になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_012",
+      "segment_index": 2,
+      "topic": "デジタル庁プラットフォームによる手続き簡素化",
+      "question": {
+        "speaker": "郡山りょう",
+        "party": "立憲民主・無所属",
+        "summary": "- デジタル庁のプラットフォームを利用して手続きの簡素化を図る考えはあるか、または導入済みか",
+        "full_text": "手続きのワンストップ化ということで今お答えがあったのですが、例えばですね、いろんな手続きっていろんな印象とか申請の中では少ない方だと思うんですが、例えばデジタル AIの特別委員会ということでデジタル庁のそういうプラットフォームを利用して手続きの簡素化っていうところのお考えがあるのかもしくはもう導入しているのかお聞かせいただければと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "和木淳",
+        "role": "",
+        "summary": "- 現時点では個別案件が多いため、今後の高頻度化に合わせてデジタル庁との連携を検討する\n- 政府全体のシステムは導入されており、省庁間連携における電子化で効率化を図っている",
+        "full_text": "現時点で、申請件数その他の個別個別1件ごとというケースがございますので、今後の高頻度化、その際にはそうした観点も含めて、デジタル庁との連携ということも出てくるかと思います。少なくも政府内におきましては、 すでにデジタル庁の政府全体のシステムは導入されておりますので、少なくとも関係省庁と連携においては、そうした電子化で円滑化、それが一層通の効率化を図っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5280"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#3339.22",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "デジタル庁プラットフォームによる手続き簡素化の考えや導入状況",
+          "sub_asks": [
+            "簡素化の考えがあるか",
+            "既に導入しているか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "デジタル庁"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "デジタル庁"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "デジタル庁との連携ということも出てくるかと思います",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "政府内におきましては、すでにデジタル庁の政府全体のシステムは導入されております",
+          "score": 0.3
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "デジタル庁のシステム導入状況については言及しているが、具体的な手続きの簡素化策についての回答は曖昧である。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「手続きの簡素化」という抽象的な表現ではなく、具体的にどの手続きを指しているかを明示すべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_013",
+      "segment_index": 2,
+      "topic": "申請書類の簡素化とスクリーニング機能",
+      "question": {
+        "speaker": "郡山りょう",
+        "party": "立憲民主・無所属",
+        "summary": "- 既提出書類の簡素化や、不備を知らせるスクリーニング機能などの導入を考えているか",
+        "full_text": "おそらく膨大な書類だと思うんですよね。なので、一定のもうすでに出されたものに関しては、簡素化するとか、あとは不備があったとき、スクリーニング機能であったり、そういったのをお知らせするような形があると、より 郡山りょう： 閣総理大臣 考えているのか、もしあればお示しいただければと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "和木淳",
+        "role": "",
+        "summary": "- 公共の安全確保のため、試験打ち上げを含め規制対象としている\n- 十分な周知期間を設け、施行時に混乱が生じないよう努める",
+        "full_text": "本法案の目的には公共の安全の確保が含まれておりまして、軌道に投入されるロケットの落下等による生じる危険性は、人工衛星の搭載または分離を伴うか伴わないかに関わらず同様であるということで、開発段階の試験打ちを含め、宇宙ロケットの打ち上げを規制対象としたということでございます。この際、宇宙ロケットの打ち上げの危険性に考えみれば、宇宙ロケットの打ち上げ許可については経過装置を設けず、施工後は改正後の基準に適応させると。作詞した上で、さらに十分な周知期間を設けるなど、施行時期において混乱が生じないように努めてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#3339.22",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "申請書類の簡素化や不備通知の検討状況",
+          "sub_asks": [
+            "書類の簡素化の検討",
+            "不備通知（スクリーニング機能）の検討"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.2
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "混乱が生じないように努めてまいりたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "十分な周知期間を設けるなど、施行時期において混乱が生じないように努めてまいりたいと考えております。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "申請手続きの簡素化という具体的な問いに対し、法案の目的や施行時期の周知という一般論で回答しており、直接的な回答になっていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問者が「簡素化」や「通知機能」という具体的な改善策を提示しているが、回答を強制する形式（Yes/Noや期限の設定）になっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_014",
+      "segment_index": 2,
+      "topic": "施行までの準備期間の柔軟な対応",
+      "question": {
+        "speaker": "郡山りょう",
+        "party": "立憲民主・無所属",
+        "summary": "- 施行後1年の準備期間では不十分な可能性があるが、柔軟に対応する考えはあるか",
+        "full_text": "ただ、施工後1年の準備期間というのが、果たしてそれは十分な準備期間かというところが、まだ判断がつかない状況だと思いますので、もし1年でも足りないということも想定されると思うんですが、そこらへんについては柔軟に対応するお考えはございますでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "和木淳",
+        "role": "",
+        "summary": "- 事業者と緊密に意見交換を行い、事業計画に支障がないよう調整済みである\n- 施行日までさらにコミュニケーションを深めていく",
+        "full_text": "この1年の今回、委員内に施行ということになっておりますが、この法案の提出の段階、それからその前の小委員会で、宇宙政策委員会で議論をしてまいりまして、事業者と緊密に意見交換をして、事業計画その他にしようがないような形を十分に卒をしてまいっております。今後も実際にこの法案の施行期間、施行日までの間に具体的にコミュニケーションをさらに深めてまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#3339.22",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "施行後1年の準備期間の柔軟な対応について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "施工後1年"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "宇宙政策委員会"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "コミュニケーションをさらに深めてまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "今後も実際にこの法案の施行期間、施行日までの間に具体的にコミュニケーションをさらに深めてまいります。",
+          "score": 0.2
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "準備期間の延長や柔軟な対応という具体的な問いに対し、過去の経緯と今後のコミュニケーション深化という抽象的な回答に留まっており、実質的な合意や記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「柔軟に対応するか」というYes/No形式ではなく、「どのような基準で延長を検討するか」と問えば、より具体的な回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_015",
+      "segment_index": 2,
+      "topic": "マヌーバ機構の有無による規制の差別化",
+      "question": {
+        "speaker": "郡山りょう",
+        "party": "立憲民主・無所属",
+        "summary": "- マヌーバ機構を持たない飛翔体に対し、機構を持つものと同一の運用要求を課すのか\n- 規制の段階化・差別化を制度設計に反映し、国際基準と整合させる考えはあるか",
+        "full_text": "そこで、個体ロケットなど、マヌーバ機構を構造的に持たない飛翔体に対し、機構を持つ飛翔体と同一の運用要求を課すお考えがあるのか。または政府としてマヌーバ機構の有無に応じた規制の段階化、差別化を制度設計に明確に反映するのか、そしてその線引き基準は国際基準と整合的に設定されるのか、お考えがあればお示しいただきたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "和木淳",
+        "role": "",
+        "summary": "- 本法案は軌道投入等の行為を規制するものであり、機構の有無や燃料で区別はしない\n- ただし、軌道投入を行わない観測ロケット（サブオービタル飛行）などは、今回の規制対象外となっている",
+        "full_text": "これについて、本法案では、ロケットを軌道等へ投入、配置する行為を規制するものであるので、マヌバ機構の運務や燃料の種類で規制対象か否かを区別するものでは、 ございません。一方で、御懸念、御指摘かと思いますが、マヌバ機構を持たないロケットとして従来から大学や研究機関が 打ち上げている観測ロケットというカテゴリーでございます。これらのロケットは軌道投入物がございません。あるいはサブボイルタル飛行ということで、これは一定の高度以上に上昇するロケットでありますけれども、地球を回る軌道へ人工衛星等を投入することなく落下する飛行形態でございまして、こうした形態しか行えないというものについては、本法規制の対象外と今回はなっておりますので、そのあたりがお答えになるかと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#3339.22",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "マヌーバ機構の有無による規制の差別化について",
+          "sub_asks": [
+            "機構を持たない飛翔体に同一の運用要求を課すか",
+            "規制の段階化・差別化を制度設計に反映するか",
+            "線引き基準を国際基準と整合させるか"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "個体ロケットなど、マヌーバ機構を構造的に持たない飛翔体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": true,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "観測ロケット"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "サブボイルタル飛行"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "マヌーバ機構を持たないロケットとして従来から大学や研究機関が打ち上げている観測ロケットというカテゴリーでございます。これらは本法規制の対象外となっております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "マヌーバ機構の有無ではなく、軌道投入の有無で規制対象を区別しているという政府の解釈が明確に示された回答である。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が3つの要素に分かれているため、回答者が個別の問い（国際基準との整合性など）への言及を漏らしやすい構造になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_016",
+      "segment_index": 2,
+      "topic": "将来的な低コスト軌道投入機の扱い",
+      "question": {
+        "speaker": "郡山りょう",
+        "party": "立憲民主・無所属",
+        "summary": "- 将来、マヌーバ機構を持たない低コスト軌道投入機が登場した場合の扱いについて、予見可能性のため明確な基準を示すべきではないか",
+        "full_text": "これはあくまでも仮説なんですが、例えば将来、マヌーバ機構を持たない低コスト軌道投入機が登場して、軌道投入した場合、どう今後扱っていくのか、事業者もそういった開発もするかもしれないので、予見可能性のため、今から明確な基準もそこも示しておくべきじゃないかと思うのですが、お考えあればお願いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "和木淳",
+        "role": "",
+        "summary": "- 現時点では想定しにくいが、技術革新の動向を注視し、安全確保を踏まえて今後対応したい",
+        "full_text": "軌道投入をするようなロケットでマニューバー機構を持たないというのはなかなか現時点で想定されるかというのは技術革新の動向をしっかり見ていかなきゃいけないかと思っておりまして本法の目的がやはり安全の確保ということがございますのでその辺りをしっかり踏まえて今後対応していくことかなと考えておりますなお今先ほどサブオービタル飛行の話申し上げましたがマニューバー機構を持たない場合について具体的には軌道に少し 郡山りょう： 郡山本一議長。し、委員がご指摘にあったような、間庭機構を持たず、軌道投入するようなケースについても、ちょっとこれから、いろんな技術革新の動向を見てからということになりますので、今後、そうしたことを踏まえて、対応していきたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#3339.22",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "マヌーバ機構なき投入機の基準策定について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "対応していきたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "技術革新の動向を見てからということになりますので、今後、そうしたことを踏まえて、対応していきたいと考えております。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "将来的な技術革新への対応を問う質問に対し、政府側は現状では想定しきれないとして、今後の動向次第で対応するという抽象的な回答に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "仮説に基づいたオープンエンドな問いであるため、回答者が「検討する」という逃げ道を作りやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_017",
+      "segment_index": 2,
+      "topic": "審査体制の人員確保と専門性",
+      "question": {
+        "speaker": "郡山りょう",
+        "party": "立憲民主・無所属",
+        "summary": "- 2030年代の目標達成に向け、審査官の人員数と専門性をどう拡充するのか。今後5年間の具体的計画を示してほしい",
+        "full_text": "そして三つ目は審査監督を担う政府の執行体制、人員や専門性の整備が不可欠だと思います。特に三の審査官の人員数と専門性については、例えば米国FAASTとの国際比較を踏まえて、政府で今後5年間どの程度で体制拡充を計画しているのか、具体的にお示しいただければと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小野田紀美",
+        "role": "",
+        "summary": "- 令和8年度の事務局定員数を令和6年度の3倍強に増員している\n- 予算確保と人員体制強化を通じて、打ち上げ目標の達成に向けた取組を推進する",
+        "full_text": "また、お指摘のとおり、人員体制は非常に大事なので、この人員体制の面では、今後打ち上げが一層増加する情勢に備えるために、宇宙活動法所管する内閣府宇宙開発戦略推進事務局、この体制強化が極めて重要であると私も認識しております。令和7年度より、同法を執行する審査体制を含めた体制を順次強化しておりまして、例えば、令和8年度の同事務局の定員数、これが令和6年度の3倍強に増員しております。政府としては、今回の法律改正に加えて、必要な予算の確保、そして人員体制の強化を通じて、打ち上げに関する目標を達成すべく必要な取組を推進してまいりたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#3339.22",
+      "metrics": null
+    },
+    {
+      "id": "qa_018",
+      "segment_index": 2,
+      "topic": "審査人員の専門性内訳",
+      "question": {
+        "speaker": "郡山りょう",
+        "party": "立憲民主・無所属",
+        "summary": "- 増員された人員のうち、技術系や設計・運用の専門知識を持つ者の比率はどの程度か",
+        "full_text": "郡山りょうくん増員の その内訳なんですが、そのうちに、例えば技術系だったり、専門的ですね、ロケット、衛星の設計、運用の専門知識を持つ者がどれぐらいいるのか、事務の方たちとの比率、どれぐらいなのか、もし分かればお答えいただければなと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "和木淳",
+        "role": "",
+        "summary": "- 多様なバックグラウンド（技術系、国際取組、省庁・事業・JAXA経験者）を持つ人材を集めており、一概にカテゴリー分けはできないが、専門性を有した者が審査に当たっている",
+        "full_text": "今申し上げた62名の定員の内訳につきましては実際に採用してそれから常駐兵人でさらに実員として来ている方もおられましてそれぞれの背景が技術的なバックグラウンドを持っている方それから国際的な取組がお得意な方やさまざまなバックグラウンドがございますので一概に技術系、文系と分けることもできないというふうに考えておりましてさまざまな多様なバックグラウンドの方を 集めまして関係省庁、それから事業の経験のある方、それからJAXAの経験のある方を集めておりますので、具体的なカテゴリーは申し上げられませんけれども、具体的な専門性を有した方々が審査に当たっていると、御理解いただければと存じます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#3339.22",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "増員の内訳（技術系と事務系の比率）の確認",
+          "sub_asks": [
+            "技術系・専門知識を持つ者の人数",
+            "事務職との比率"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "62名"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "JAXA"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "具体的なカテゴリーは申し上げられませんけれども、具体的な専門性を有した方々が審査に当たっている",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "内訳の比率という具体的な問いに対し、カテゴリー分けが困難であるとして回答を避けており、記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「分かればお答えいただければ」という控えめな表現が、回答者に曖昧な回答を許す余地を与えている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_019",
+      "segment_index": 2,
+      "topic": "宇宙専門人材の育成方針",
+      "question": {
+        "speaker": "郡山りょう",
+        "party": "立憲民主・無所属",
+        "summary": "- ロケット設計・運用・安全審査を担う人材育成が不可欠だが、大学教育や産学官連携など、どのような育成目標や採用・育成方針を設計しているか",
+        "full_text": "宇宙戦略において、技術戦略において、どのような 人材育成目標ですね。大学院教育、産学館連携、国際交流が設定をされているのか、また今回の法改正でですね、担う、先ほど言った政府職員の採用、育成は先ほど伺ったとは思うんですが、採用育成方針をどう設計するのかということをお示しいただければと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "和木淳",
+        "role": "",
+        "summary": "- 宇宙技術のスキル標準を提示し、企業の採用に活用してもらっている\n- 審査案件の増加に応じ、内部での教育プログラム検討や米国当局との情報共有を行う\n- 外部専門家（弁護士等）の採用も可能となり、体制を強化する",
+        "full_text": "宇宙の銀材につきまして、JAXAがこれまで蓄積した人材、それから大学研究機関、非常に多様な人材がございまして、そこに最近は民間の活動が増えているということで、宇宙技術のスキル標準というのを我々も内閣府として提示しておりまして、いろんな企業が採用するときに活用いただいているというふうに そうした中で今委員御指摘は審査の専門性ということかと思いまして我々大臣から御説明がありましたとおり3倍増してきてこれ審査以外も含んでおりますが今後審査の進展に応じて専門人材を我々の中でもしっかり例えば教育プログラムを設けるとかいう形で検討していきたいというふうに考えておりますのでさらに米国の例もございました米国当局とも一卒をしておりま そうした内容も踏まえながら、我が国としての審査体制、いかに許可できるか、人材をどう確保するかを考えてまいりたいと思います。ちなみに、今回3倍増いただきましたので、関係省庁からの出向のみならず、外部からの専門家、これは弁護士等ですが、こうしたものを採用できる形になりましたので、こうした形で強化してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#3339.22",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "宇宙戦略の人材育成目標と採用育成方針について",
+          "sub_asks": [
+            "大学院教育、産学官連携、国際交流等の人材育成目標",
+            "政府職員の採用・育成方針の設計"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "政府職員",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "JAXA"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "内閣府"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "宇宙技術のスキル標準"
+            },
+            {
+              "type": "number",
+              "excerpt": "3倍増"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "教育プログラムを設けるとかいう形で検討していきたい",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "関係省庁からの出向のみならず、外部からの専門家、これは弁護士等ですが、こうしたものを採用できる形になりました",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は人材育成目標と採用方針の2点であったが、回答は審査体制の強化と外部専門家の採用に偏っており、包括的な育成目標への回答が不十分である。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「人材育成目標」という広範な問いと「採用育成方針」という具体的な問いが混在しているため、回答が分散しやすい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_020",
+      "segment_index": 2,
+      "topic": "デブリ発生防止と回収への対応",
+      "question": {
+        "speaker": "郡山りょう",
+        "party": "立憲民主・無所属",
+        "summary": "- ダミーペイロード等の投入によりデブリが増加し、ケスラーシンドロームのリスクが高まる懸念があるが、どう対応するか",
+        "full_text": "国連のスペースデブリガイドライン等々があって、運用終了後の軌道離脱を推奨する等々の取組というものがあるんですが、 今回の改正で認められるダミーペイロードや試験機体は本来の運用機能を持たないにも関わらず軌道に投入されるということでございます。そのまま放置されば既存デブリと衝突というか今後打ち上がっていくと思うんですよね。各国などデブリの数も増加するということになるとデブリ同士が衝突し連鎖的なデブリ発生、ケスラーシンドロームのリスクがこれまで以上に高まるんじゃないかと思っております。政府はダミーペイロード お願いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "和木淳",
+        "role": "",
+        "summary": "- 国際的なガイドラインに沿い、再突入や高度低下による燃焼などの低減措置を講じている\n- JAXAによるデブリ除去技術の開発や、軌道上サービスのルール作りを推進している\n- 今回の改正で、打ち上げ前に構造が基準に適合していることを認定する制度を創設し、部品飛散を防止する",
+        "full_text": "デブリの回収や再突入、その他いろいろな動きがあるわけですが、御指摘の点、我が国ではスペースデブリを出さないための取組としまして、宇宙活動法の解釈運用指針を示した各種のガイドラインに沿いまして、国際的な進んだ取組を進めております。具体的には再突入それからいわゆる高度を下げて空中で燃焼させるという措置がございましてこれは人工衛星の管理に係る許可に関するガイドラインにおいて示しています。それから今あるデブリの提言についてはJAXAが商業デブリ状況実証CRD2というプロジェクトがあるんですが、これで民間とのパートナーシップによるデブリ状況技術の獲得を進めています。また今回の改正の中に試験機等に搭載されたダミーペイロードはもとより制御されない人工の物体に関しても 打ち上げ前にその構造が基準に適合していることを認定する制度を創設しております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#3339.22",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "ダミーペイロードによるデブリ増加リスクへの対応",
+          "sub_asks": [],
+          "score": 0.5
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "国連のスペースデブリガイドライン"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "宇宙活動法の解釈運用指針"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "JAXA"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "商業デブリ除去実証CRD2"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "試験機等に搭載されたダミーペイロードはもとより制御されない人工の物体に関しても打ち上げ前にその構造が基準に適合していることを認定する制度を創設しております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "質問文が途切れていますが、回答側でダミーペイロードへの認定制度創設という具体的な制度的対応を提示しており、一定の情報価値があります。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問の末尾が「お願いいたします」で終わっており、具体的な問い（どう考えるか、どう対策するか等）が欠落している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_021",
+      "segment_index": 2,
+      "topic": "新規車場・宇宙港の整備構想",
+      "question": {
+        "speaker": "郡山りょう",
+        "party": "立憲民主・無所属",
+        "summary": "- 年間30機の体制実現には既存車場だけでは不十分だが、新規車場や宇宙港（スペースポート）を設置する構想はあるか\n- 米国の民間主導型宇宙港のような制度的位置づけをどう法令に反映させるか",
+        "full_text": "宇宇宇宙基本計画が掲げる2030年代前半の年間30期打ち上げ体制を実現するためには既存の車上の拡充だけでは打ち上げ形態の多様化だけ も増えてくると思いますので、不十分だと思います。政府として、現存する車場の具体的な数と運用主体、年間処理能力を把握した上で、今後、宇宙港、スペースポートを含めた新規車場を設置する構想を今後進めていくのか。また、米国のライセンス、コマーシャル、スペースポートのような民間主導型宇宙港の制度的位置づけをどう法令に反映するのか。今回の改正及び今後の関連法令整備での お取り扱いをお示しいただけたらと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "和木淳",
+        "role": "",
+        "summary": "- 新たな車場や宇宙港の構想が存在することは認識しており、設備不足の認識も持っている\n- 官民投資ロードマップの中で、車場整備の推進を含め検討しており、自治体の状況や政策評価を踏まえて今後検討を進める",
+        "full_text": "ただ、そのほかにも新たな車場の構想でありますとか、 宇宇宙輸送機の着陸を想定した宇宙航構想が具体的に存在するということは認識しております。そのために車上等の設備が不足しているという認識は承知しております。進めるという意味での官民投資ロードマップの中で検討しております。それから車上整備の推進も含めておりまして、こうした多角的な観点からの支援を行うということで、車上有する自治体等の状況を踏まえながら、現時点でここというよりは、この官民ロードマップの中で具体的に進んでいる進捗状況、それからこれまでの政策の評価をしっかりした上で、今後検討を進めてまいりたいと思いますので、いずれにせい我が国の打ち上げ能力の強化に向けた取組は、邁進してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#3339.22",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "新規宇宙港の設置構想と民間主導型制度の法令反映について",
+          "sub_asks": [
+            "新規車場（スペースポート）を設置する構想を進めるか",
+            "民間主導型宇宙港の制度的位置づけをどう法令に反映するか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "宇宙基本計画"
+            },
+            {
+              "type": "other",
+              "excerpt": "米国のライセンス、コマーシャル、スペースポート"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "民間主導型宇宙港",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "官民投資ロードマップ"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "今後検討を進めてまいりたいと思います",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "官民ロードマップの中で具体的に進んでいる進捗状況、それからこれまでの政策の評価をしっかりした上で、今後検討を進めてまいりたい",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な法令反映の手法や新規設置の是非について明確な回答を避け、「検討する」という抽象的な回答に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「制度的位置づけをどう法令に反映するか」という問いに対し、具体的な法案名や条文への言及を求める形式にすれば、より逃げにくい質問になった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_022",
+      "segment_index": 3,
+      "topic": "日本のロケット打ち上げ数の現状と目標の乖離",
+      "question": {
+        "speaker": "平戸航太",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 日本のロケット打ち上げ成功数が目標に対し低空飛行である現状について\n- 政府としてこの乖離をどのように認識しているか",
+        "full_text": "八兆円に倍増させ、2030年代前半までに官民合わせてロケットの打ち上げを年間30件程度とする目標を抱えておりますが、2025年の世界の打ち上げ数が過去最高を記録する中、日本からのロケット打ち上げ成功数は2024年が5件、2025年。2024年が5件、25年が3件にとどまっており、低空飛行が続いております。この現状と目標の乖離について、どのように認識しているでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "和関宇",
+        "role": "",
+        "summary": "- 日本の打ち上げ数が他国に比べ少ない現状を認識している\n- 理由として技術的難易度の高さ、開発時間の要件、打ち上げ失敗の頻発がある\n- 課題としてロケットの車上設備および製造設備の不足を認識している",
+        "full_text": "我が国の打ち上げの現状についてこれは年度で計算するか年によって計算するか多少の違いがございますが例えば24年度についてはアメリカが159、中国が69で日本が4期そして25年度では日本が2期ということでありますし年単位でありますとアメリカ192、中国92、日本3期ということで依然にしましてもまだ日本が少ないということで これ、理由としましては、ロケットの開発、技術的難易度が高い、それから開発に時間を要する打ち上げ失敗が相次ぐということで、伸びていないということですが、具体的に高頻度な打ち上げに向けては、ロケットの車上設備、 それから製造設備が不足しているということは課題と認識しております。国際競争が激化する中でこうした課題を解決し我が国の打ち上げ能力を強化することは我が国が他国に依存しない形で宇宙へのアクセスを確保し技術力や産業基盤を強化する観点から極めて重要であると認識しております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#5529.19",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "現状の打ち上げ数と目標の乖離への認識",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "八兆円"
+            },
+            {
+              "type": "date",
+              "excerpt": "2030年代前半"
+            },
+            {
+              "type": "number",
+              "excerpt": "年間30件程度"
+            },
+            {
+              "type": "number",
+              "excerpt": "2024年が5件"
+            },
+            {
+              "type": "number",
+              "excerpt": "25年が3件"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "アメリカが159"
+            },
+            {
+              "type": "number",
+              "excerpt": "中国が69"
+            },
+            {
+              "type": "number",
+              "excerpt": "日本が4期"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ロケットの車上設備"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "製造設備"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "具体的に高頻度な打ち上げに向けては、ロケットの車上設備、それから製造設備が不足しているということは課題と認識しております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "現状の打ち上げ数に関する具体的数値の提示と、設備不足という課題認識が明確に述べられている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "認識を問う形式であるため、具体的な改善策や期限を盛り込んだ問いにすれば、より高いコミットメントを引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_023",
+      "segment_index": 3,
+      "topic": "基幹ロケットの打ち上げ再開と能力強化の両立",
+      "question": {
+        "speaker": "平戸航太",
+        "party": "国民民主党・新緑風会",
+        "summary": "- H3およびイプシロンロケットが十分に打ち上げられない危機的状況への認識\n- 原因究明・再発防止を徹底しつつ、早期再開と能力強化をどう両立させるか",
+        "full_text": "我が国の機関ロケットにおける打ち上げの失敗や試験地のトラブルがあり、現在、小型、大型ともに機関ロケットを十分に打ち上げられない危機的状況とも言われております。原因究明と再発防止を徹底しつつ、早期再開と打ち上げ能力の強化をどのように両立させていくのか、お考えをお伺いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "古田",
+        "role": "",
+        "summary": "- H3ロケットの失敗原因（衛星投査アダプターの破損）を究明し、対策を徹底して信頼性向上を図る\n- イプシロンロケットは飛行実績のある第2弾機体を適用し、早期打ち上げ再開を目指す\n- 新たに開発中のロケットについても燃焼以上の原因調査と対策を進め、開発を推進する",
+        "full_text": "委員の御指摘のとおり、国の基幹ロケットであります大型のH3ロケット、小型のイプチロンロケットがともに打ちられていないことについては、大変重く受け止めております。H3ロケット8号機の打ち上げ失敗に係る原因究明につきましては、これまで文部科学省の有識者会議において、JAXAから衛星投査アダプターの破損が主原因である。主要因である可能性が極めて高いとの評価をと、打ち上げ再開に向けた対策案が報告され、昨日、中間報告書を取りまとめたところです。今後、H3ロケットの打ち上げ再開に向けては、さらなる検証試験や対策の徹底、種ヶ島への輸送等を含めた準備に万全を期すこと、さらには今後の打ち上げに向けて着実に信頼性向上を図ることが重要であると考えております。一方、イプシロンロケットにつきましては、近年高まりを見せる小型衛星の打ち上げ順位を応え、早期の打ち上げ災害につなげるための方策として、飛行実績のあるロケットの第2弾機体を適用した開発を行うこととし、本年2月の宇宙開発領部会において、計画の見直しが妥当であると確認されたところでございます。また打ち上げ能力の強化を目的として、新たに開発中のロケットの第二弾機体については、地上燃焼試験における燃焼以上の原因調査及び対策の検討が進められておりまして、引き続きしっかりと開発を進めてまいります。文部科学省としましては、機関ロケットの開発と打ち上げを着実に進められるよう、必要な支援を行ってまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#5529.19",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "ロケット打ち上げ再開と能力強化の両立策",
+          "sub_asks": [
+            "原因究明と再発防止を徹底しつつ早期再開させる方法",
+            "打ち上げ能力の強化をどのように両立させるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "H3ロケット"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "イプシロンロケット"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "衛星投査アダプターの破損"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "宇宙開発領部会"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "引き続きしっかりと開発を進めてまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "H3ロケット8号機の打ち上げ失敗に係る原因究明につきましては、衛星投査アダプターの破損が主原因である可能性が極めて高いとの評価をと、打ち上げ再開に向けた対策案が報告され、昨日、中間報告書を取りまとめたところです。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "H3およびイプシロンロケットの現状と対策について具体的に回答しているが、今後のアクションは抽象的な努力目標に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どのように両立させるか」という問いが広いため、回答が現状報告に終始しやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_024",
+      "segment_index": 3,
+      "topic": "宇宙戦略基金による事業化・資金調達支援",
+      "question": {
+        "speaker": "平戸航太",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 宇宙戦略基金による支援があるが、補助金頼みからの脱却や事業化への課題について",
+        "full_text": "政府は宇宙戦略基金として10年間で1兆円規模の支援を行っておりますが、補助金頼みの 大臣。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "和関宇",
+        "role": "",
+        "summary": "- 技術開発後の事業化および資金調達が課題であると認識している\n- 官民投資ロードマップにおいて、政府によるアンカーテナントの強化などを通じ投資需要を喚起する方策を検討している\n- スタートアップが早期に資金調達し社会実装を加速できるよう支援に取り組む",
+        "full_text": "宇宙戦略基金では10年間で1兆円規模の支援を目指して我が国の宇宙開発に関する市場拡大 課題解決、技術基盤の強化等に向け、スタートアップを含む民間企業及び大学等を対象として、先端技術開発、技術実証及び消費化を支援しているところであります。委員御指摘の篠谷でございますが、宇宙戦略基金等による技術開発実証後の事業化及び資金調達に係る課題であると認識しております。技術開発が成功した後に、実際に技術や機器が社会実装され、宇宙を利用した地球規模課題や社会課題解決に貢献するとともに、宇宙関連市場の 拡大を推進し、世界に誤する宇宙企業を育てていくためにも重要な論点だと考えております。そこで現在、日本成長戦略会議において検討している官民投資ロードマップにおいても、例えば政府による安価手なしの強化を通じて、予見可能性を高める、そして投資需要を喚起する方策などを検討しているところでございます。政府としても、スタートアップが早期に資金を集められるよう、需要面を含めた社会実装を加速するための支援に取り組んでまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#5529.19",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "宇宙戦略基金の補助金依存への懸念",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "10年間で1兆円規模"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "日本成長戦略会議"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "官民投資ロードマップ"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "方策などを検討しているところでございます",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "官民投資ロードマップにおいても、政府による安価手なしの強化を通じて、予見可能性を高める、そして投資需要を喚起する方策などを検討している",
+          "score": 0.5
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "質問が途切れており不完全ですが、回答側で補助金依存から事業化・資金調達への移行という論点を補完し、検討状況を述べています。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問文が途中で切れており、具体的な問い（ask）が形式的に存在していません。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_025",
+      "segment_index": 3,
+      "topic": "有人宇宙飛行・サブオービタル飛行の法整備",
+      "question": {
+        "speaker": "平戸航太",
+        "party": "国民民主党・新緑風会",
+        "summary": "- サブオービタル飛行等が今回の法制化に含まれていないことによる機会損失の懸念\n- 有人宇宙飛行およびサブオービタル飛行に向けた具体的な法整備スケジュール",
+        "full_text": "しかしながら、高速日転換輸送や宇宙旅行等が見込まれるサブオービタル飛行等については、さらなる論点整理が必要な事項とされ、今回の法制化には含まれておりません。新たな飛行形態に対応した法的環境整備が遅れれば、民間企業が未来へ 未来の正規を逃がし、ひいては、我が国のユニコーン企業創出の機会を失うという懸念がありますが、政府はどのようにお考えでしょうか。併せて、有人宇宙飛行やサブオービタル飛行に向けた、今後の具体的な法整備のスケジュールをお伺いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "和関宇",
+        "role": "",
+        "summary": "- 有人宇宙輸送については、2030年代の実用化に向け、リスク承知の訓練者が搭乗することを想定し審査基準やガイドラインの検討を行う\n- サブオービタル飛行は、現時点では規制対象とせず、今後適切な法制度の在り方を検討する\n- 施行後3年を目途に検討を行い、産業発展を阻害しないよう制度見直しを行う",
+        "full_text": "これらについての実現を目指す事業者の存在を認識しておりまして、これらの計画を実現できるよう、環境整備を進める必要があると認識しております。本法案においては、宇宙ロケットを定義いたしまして、ロケット単体での打ち上げに係る規制体系を整備することにより、将来、人が搭乗するロケットの打ち上げや、サボオビタル飛行に向けた法的基盤が一定程度整うと。その上で我が国における有人宇宙輸送は2030年代に実用化を計画する事業者が存在しているということでありますがまずは打ち上げを行う者の関係者としてリスクを承知し特別に訓練された者の搭乗が想定されるところであります。このため地上の安全確保を目的とする宇宙活動体系の下でこれらの関係者が搭乗するロケットが許可対象となることを想定いたしまして必要に応じて 審査基準、そしてガイドラインの反映を検討していきたいと考えております。それからサブウォリダル飛行についてもご指摘ございました。さらなる法的な論点整理が必要であると考えております。したがって現時点では規制対象とせず、今後適切な法制度の在り方について検討を進めてまいります。補足におきましては、施行後3年を目途として検討加え、必要に応じて所要の措置を講ずることとしているところです。法的環境整備が遅れることによる産業発展の阻害を生じないよう、事業者における開発状況等を注視しながら、制度の見直しを行ってまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#5529.19",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "サブオービタル飛行等の法整備の考えと予定",
+          "sub_asks": [
+            "法的環境整備の遅れによる懸念への政府の見解",
+            "有人宇宙飛行・サブオービタル飛行の具体的な法整備スケジュール"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "民間企業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "deadline",
+              "excerpt": "2030年代に実用化を計画する事業者が存在"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "施行後3年を目途として検討加え"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 3,
+          "trigger_phrase": "施行後3年を目途として検討加え、必要に応じて所要の措置を講ずることとしている",
+          "matched_pattern": "Lv3: future-tense verb describing a CONCRETE government action with a named mechanism"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "施行後3年を目途として検討加え、必要に応じて所要の措置を講ずることとしているところです。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "サブオービタル飛行等の法整備について、施行後3年という具体的な検討期限を明示した回答であり、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_026",
+      "segment_index": 3,
+      "topic": "宇宙産業の伴走支援体制の構築",
+      "question": {
+        "speaker": "平戸航太",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 米国の事例のように、審査機関にとどまらず事業者の技術開発や競争力強化に直接つながる伴走支援体制を推進すべきではないか",
+        "full_text": "続きまして、国際競争力強化に向けた政府の支援体制と国際協力についてお聞きします。米国では打ち上げ企業に対して政府の専門機関が技術的な助言を行う制度などにより宇宙産業の成長を支えてきました。我が国でも2026年から内閣府の宇宙組織の体制を約60人に倍増するとのことは承知しておりますがこの組織は単なる審査機関にとどまらず米国のように事業者の技術開発や競争力強化に直接つながる伴走支援体制を 推進するべきと考えますが、政府の考えをお伺いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "和関宇",
+        "role": "",
+        "summary": "- 宇宙戦略基金やJAXAの知見を活用し、目標達成に向けた伴走支援を実施している\n- 具体例として、アストロスケーレ社（デブリ除去）やスペースワン社（ソフトウェア開発）への支援を挙げている\n- 内閣府が司令塔となり、各省と連携して体制構築に取り組む",
+        "full_text": "このため、今回の改正で制度整備に取り組むとともに、宇宙政策の推進体制については、総理を本部長とする宇宙開発戦略本部の下、内閣府宇宙開発戦略推進事務局が司令塔として、関係省庁と連携し、政府一体で取り組んでいくことが重要と 政府の体制強化を推進しております。その中で、事業者の技術開発競争力強化については、例えば、先ほど出てまいりました宇宙戦略基金を通じた先端技術開発技術支障、商業化に向けた支援を実施しておりますが、さらに、予算による支援措置のみならず、宇宙戦略基金の基金接種管理法人である宇宙分野の産学学校の中学機関であるJAXA による技術開発マネジメントを通じまして、外部有識者やJAXAの知見を活用した目標達成、成果最大化に向けた運営など、御指摘の伴走支援を実施しております。JAXAによる伴走支援の例ですが、デブリ除去、CRD2に関するアソロスケール社の支援、あるいは地上燃焼試験、ロケットにおけるソフトウェア開発に関するスペースワン社への支援などが例として挙げられます。これらの推進をはじめ、宇宙分野における我が国の技術開発力の強化 及び産業競争力の強化に向けて、内閣府としても司令塔機能の強化など必要な体制を構築し、各省と密接に連携し、協力して取り組んでまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#5529.19",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "宇宙組織による事業者の伴走支援体制を推進すべきか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "米国では打ち上げ企業に対して政府の専門機関が技術的な助言を行う制度"
+            },
+            {
+              "type": "date",
+              "excerpt": "2026年から"
+            },
+            {
+              "type": "number",
+              "excerpt": "内閣府の宇宙組織の体制を約60人に倍増"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "宇宙戦略基金"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "JAXA"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "アストロスケール社"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "スペースワン社"
+            }
+          ],
+          "score": 0.9
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "協力して取り組んでまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "JAXAによる伴走支援の例ですが、デブリ除去に関するアストロスケール社の支援、あるいはソフトウェア開発に関するスペースワン社への支援などが例として挙げられます。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "政府が具体的にどの企業に対してどのような伴走支援を行っているかという実例が示されており、記録としての価値が高い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_027",
+      "segment_index": 3,
+      "topic": "国内打ち上げ能力の強化と海外流出への対応",
+      "question": {
+        "speaker": "平戸航太",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 国内の法整備や打ち上げ能力不足により、スタートアップが海外のロケットを利用せざるを得ない現状への対応",
+        "full_text": "急速に宇宙活動が多様化している中、国内においては法整備や打ち上げ能力が追いついておらず、国内のスタートアップ企業などが海外の制度やロケットを使って実証や打ち上げを行わざるを得ない、つまり国内需要が海外に流出しているという現状がございます。この課題に対する政府の対応をお伺いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "和関宇",
+        "role": "",
+        "summary": "- 2030年代前半までに年間30件程度の打ち上げ能力確保を目指している\n- SBIRフェーズ3や宇宙戦略基金による支援、政府調達の活用、宇宙活動法改正による制度整備など多角的に取り組む\n- 官民投資ロードマップの策定を含め、戦略的な投資を推進する",
+        "full_text": "2015年から2024年度の10年間で日本における開発された衛生の半分が海外で打ち上げられるという状況になっておりまして宇宙分野における自立性確保や産業基盤の強化の観点から我が国の打ち上げ能力の強化に取り組むことが 重要であると考えております。このような考えの下、政府としては、昨年12月に宇宙開発戦略本部で決定した宇宙基本計画工程表、これにおいて2030年代前半までに打ち上げ能力を年間30件程度確保することを目指しております。その実現に向きましては、中小企業イノベーション創出推進事業、SBIRフェーズ3や、宇宙戦略基金による技術開発、社会実装の支援に加え、政府衛星の民間ロケットによる打ち上げ等の政府調達、 それから車上整備の推進そして今公開に提出させていただきました宇宙活動法改正案によるロケット打ち上げに関する制度整備など多角的な観点から支援を行うとともに日本成長戦略会議における官民投資ロードマップの策定を含め進め戦略的な投資を推進し我が国の打ち上げ能力の強化に取り組んでまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#5529.19",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "国内需要の海外流出への政府対応",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "スタートアップ企業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "2015年から2024年度の10年間"
+            },
+            {
+              "type": "number",
+              "excerpt": "半分が海外で打ち上げられる"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "宇宙基本計画工程表"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "2030年代前半まで"
+            },
+            {
+              "type": "number",
+              "excerpt": "年間30件程度"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "中小企業イノベーション創出推進事業"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "SBIRフェーズ3"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "宇宙戦略基金"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "宇宙活動法改正案"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "日本成長戦略会議"
+            }
+          ],
+          "score": 1.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "我が国の打ち上げ能力の強化に取り組んでまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "2030年代前半までに打ち上げ能力を年間30件程度確保することを目指しております。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は簡潔で、回答は具体的な数値目標（年間30件）や複数の支援策（SBIR、宇宙戦略基金、法改正）を挙げており、情報密度が非常に高い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_028",
+      "segment_index": 3,
+      "topic": "有志国との宇宙協力の推進",
+      "question": {
+        "speaker": "平戸航太",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 米国、フランス、インド、EUなどの有志国との宇宙協力をどのように進めていくか",
+        "full_text": "宇宙開発の主導権争いが激化しております。米国のみならず、フランス、インド、EUなどの有志国との宇宙協力をどのように進めていくのか、お伺いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "三宅",
+        "role": "",
+        "summary": "- 同盟国・同志国と連携し、宇宙空間の安全かつ安定的な利用を確保するための規範・ルール作りに取り組む\n- フランス、インド、EUとは二国間宇宙対話を実施し、安全保障や関係機関間の協力など多岐にわたる調整を行っている",
+        "full_text": "こうした中、同盟国、それから同志国とともに、宇宙空間、宇宙システムの安全かつ安定的な利用、これを確保する重要性が一層増してきております。そのため、我が国にといたしましては、同盟国である米国のみならず、欧州、これをはじめといたしました、同志国等との政府間、それから企業間の連携のもとに、国際的な規範、ルール作りの環境整備。また宇宙分野における我が国の強み、これを生かした役割分担や国際協力も進めてきております。ご指摘のフランス、インド、EUとの間では、二国間の定期的な宇宙対話、これを実施しておりまして、宇宙政策に関する情報共有のほか、安全保障分野での協力、それから関係機関間の協力など、多岐にわたる分野において調整連携を行ってきております。引き続き二国間、それから他国間での様々な機会、これを捉えまして、政策ニーズに合わせて、同盟国、同志国等との戦略的に連携しまして、宇宙空間の持続的かつ安定的、安全な利用の確保に向けて取り組んでまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#5529.19",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "有志国との宇宙協力の進め方について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "米国"
+            },
+            {
+              "type": "organization",
+              "excerpt": "フランス"
+            },
+            {
+              "type": "organization",
+              "excerpt": "インド"
+            },
+            {
+              "type": "organization",
+              "excerpt": "EU"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "フランス、インド、EU",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "二国間の定期的な宇宙対話"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "取り組んでまいりたいと考えております",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "フランス、インド、EUとの間では、二国間の定期的な宇宙対話を実施しておりまして、多岐にわたる分野において調整連携を行ってきております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な国名を挙げた質問に対し、現状の「宇宙対話」などの枠組みを回答しているが、今後の具体的な新施策への言及はなく、抽象的な意向表明に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのように進めていくのか」という問いが広範であるため、回答が一般論になりやすい。具体的な協力分野や目標を限定して問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_029",
+      "segment_index": 3,
+      "topic": "宇宙活動全般に対する包括的な規制法への展望",
+      "question": {
+        "speaker": "平戸航太",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 今回の法改正にとどまらず、宇宙活動全般に対する包括的な規制法へと継続的にアップデートしていく必要性と今後の展望",
+        "full_text": "はい、ありがとうございます。国際協力を進め産業を発展させる上で、今回の法改正にとどまらず、宇宙活動全般に対する包括的な規制法へと継続的にアップデートしていく必要があると考えておりますが、今後の法制的な展望についてお伺いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "和関宇",
+        "role": "",
+        "summary": "- 技術革新や国際動向を注視し、継続的に法整備に向けた検討を行う必要があると認識している\n- 施行後3年を目途に検討を加え、必要に応じて措置を講じるとしている",
+        "full_text": "このため、委員御指摘のとおり、今回の法改正にとどまらず、事業者の事業計画や技術開発の進捗、国際動向等を注視しながら、継続的に法整備に向けた検討を行う必要があると認識しております。本法案においても、施行後3年を目途として検討を加え、必要に応じて所要の措置を講ずるということとしております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#5529.19",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "今後の法制的な展望について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "deadline",
+              "excerpt": "施行後3年を目途として"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "継続的に法整備に向けた検討を行う必要があると認識しております",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "施行後3年を目途として検討を加え、必要に応じて所要の措置を講ずるということとしております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "包括的な規制法への展望を問う質問に対し、施行後3年を目途に検討を行うという具体的な時間軸を伴う回答が得られている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「法制的な展望」という問い方が抽象的なため、より具体的な規制内容や方向性を問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_030",
+      "segment_index": 3,
+      "topic": "宇宙開発プロジェクトの優先順位決定とリソース管理",
+      "question": {
+        "speaker": "平戸航太",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 現場ではプロジェクト間の連携不足やリソース逼迫、スケジュール調整不全が起きている\n- 国が司令塔となり、プロジェクトの明確な優先順位を決定すべきではないか",
+        "full_text": "その電気産業の中の宇宙開発の職場からの声をまずお伝えしたいと思います。複数プロジェクトが並行する職場において、先行するプロジェクトが失敗した場合、保険により費用は支払われますが、工数は戻らない。先行プロジェクトの失敗による遅れを取り戻す作業が発生する中で、並行する後続プロジェクトも当初の計画通りに推進する必要があり、メーカー側の負担が大きくなっている。JAXAなどの体制がプロジェクトごとの縦割りであるため、プロジェクト間の連携、横の連携が不足しており、現場ではリソースが逼迫している。また、プロジェクト間でのスケジュールの調整が機能していない。このような切実な声をいただいております。国が指令党となって、宇宙開発全体を俯瞰し、どのプロジェクトを優先すべきかという明確な優先順位を決定すべきと考えますが、この点について、課題について、政府はどのようにお考えでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "和関宇",
+        "role": "",
+        "summary": "- 宇宙基本計画、工程表、宇宙技術戦略により、取り組むべき政策・技術課題の優先順位を戦略的に定めている\n- 司令塔として関係省庁やJAXAだけでなく、協力企業とも意見交換を行い、現場の声を反映させながら推進する",
+        "full_text": "国際競争が激化する中我が国の自立性を確保し世界をリードしていくために我が国が目指すべき宇宙空間の開発利用の将来像を描きそれを実現するために必要な対応を取っていくためにこの優先順位という意味では宇宙基本法に基づく宇宙開発利用の総合的かつ計画的な推進を図る宇宙基本計画がまずございますそしてその工程表 さらに宇宙技術戦略を定めておりまして、こうしたことで、まず政府としては宇宙政策を戦略的に評価しているところでありますが、その中の工程表、そして宇宙技術戦略につきましては、具体的なプロジェクトでありますとか、具体的な技術につきまして、我が国として取り組むべき政策課題、そして技術開発課題の優先順位を 具体的な工程表につきましては年限も書いております。そうしたところで、委員御指摘のとおり、政府とかJAXA、宇宙航空研究開発機構ですが、宇宙政策を推進するに当たっては設計 製造、運用等を担っていただくご指摘の協力企業の存在、これは不可欠であります。我々司令塔としましても、事務局として関係省庁、それからJAXAだけでなく、協力企業の方々とも日頃より意見交換 させていただいております。そうしたことで、国の全体的な優先順位も、そうした工程表や技術戦略で示すず、同時に現場の声をしっかりお聞きさせていただきまして、開発現場を含めた職員の方々、従業員の方々の声をお聞かせいただきながら、継続的な宇宙開発をがっすむよう、宇宙政策の推進に進めてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#5529.19",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "宇宙開発の優先順位決定と司令塔機能への考え",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "JAXA"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "メーカー",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "宇宙基本計画"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "宇宙技術戦略"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "JAXA"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "宇宙政策の推進に進めてまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "宇宙政策を推進するに当たっては設計 製造、運用等を担っていただくご指摘の協力企業の存在、これは不可欠であります。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "現場のリソース逼迫という具体的な課題に対し、既存の計画（宇宙基本計画等）があるという一般論的な回答に留まっており、実効的な解決策への言及はない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「政府はどう考えるか」という抽象的な問いではなく、具体的にどのような調整メカニズムを導入すべきかという提案形式にすれば、より踏み込んだ回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_031",
+      "segment_index": 3,
+      "topic": "持続可能な宇宙産業構築に向けた決意",
+      "question": {
+        "speaker": "平戸航太",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 日本が主導権を発揮し、持続可能な宇宙産業を構築するために、今後の宇宙政策をどのように推進していくか",
+        "full_text": "米国のアルテミス計画をはじめ、世界では宇宙への挑戦が加速し、新たな産業機会が広がりつつあります。その中で、我が国が埋没することなく、主導権を発揮し、持続可能な宇宙産業を構築していくために、今後の宇宙政策の推進に向けて、どのように取り組んでいく決意でしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小野田",
+        "role": "",
+        "summary": "- 宇宙基本計画、工程表、宇宙技術戦略を着実に実行する\n- 宇宙戦略基金による投資促進、政府調達、法整備など多角的な観点から産業基盤を強化する\n- 日本の高い技術力を活かし、国際的な存在感をさらに発揮できるよう全力で取り組む",
+        "full_text": "我が国は、宇宙開発利用を総合的かつ計画的に推進するよう宇宙基本計画及び工程表を策定するとともに、宇宙技術戦略を取りまとめており、まずはこれらを着実に実行してまいります。さらに、我が国の宇宙開発の基盤となる技術力、そして産業基盤を強化することが重要と考えております。宇宙は日本成長戦略の戦略分野の一つでありまして、宇宙戦略基金による予見可能性の高い投資促進に加えて、政府調達や本法案による制度整備など、多角的な観点から総合的 議長。このをしっかりと活かしていけるように我が国が宇宙分野において国際的な存在感をさらに発揮できるように全力で取り組んでまいりたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#5529.19",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "今後の宇宙政策の推進への取り組みと決意",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "米国のアルテミス計画"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "我が国",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "宇宙基本計画"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "工程表"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "宇宙技術戦略"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "宇宙戦略基金"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "全力で取り組んでまいりたいと思います",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "宇宙戦略基金による予見可能性の高い投資促進に加えて、政府調達や本法案による制度整備など、多角的な観点から総合的に取り組んでまいりたい。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "抽象的な決意を問う質問に対し、既存の計画や基金を挙げて回答している。具体的な新アクションの提示はないため、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのように取り組むか」という問いが広すぎるため、具体的施策の提示を求める形式にすべきである。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_032",
+      "segment_index": 4,
+      "topic": "日本の宇宙戦略のビジョン",
+      "question": {
+        "speaker": "和木",
+        "party": "公明党",
+        "summary": "- 国としてどのような宇宙戦略を描いているか",
+        "full_text": "ロケットを打ち上げるそういう基盤を整えるという一つの一律塚であると思うんですけれどもそもそも今日も大臣の方がおっしゃったように様々な展開が今後想定されるということもおっしゃっていただいております今後国としてどのような宇宙戦略夢も含めてどのように描いていらっしゃるのかというのをまずお聞かせいただけませんでしょうか内閣府和貴 宇宙開発戦略推進事務局長。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "和木",
+        "role": "",
+        "summary": "- 宇宙基本計画に基づき、自立性の確保と世界リードを目指し戦略的に強化している\n- 2030年代前半までに年間30件程度の打ち上げ能力確保を目標とし、制度整備や基金による支援を強化する\n- アルテミス計画への参画や月面探査、宇宙ステーション移行を通じた国際貢献と市場獲得を目指す",
+        "full_text": "宇宙戦略全体のビジョンということでございます。国際競争が激化する中で、我が国の自立性を確保して世界をリードしていくために、我が国として目指すべき宇宙空間の開発利用の将来像。それを実現するために必要な対応を行っていくため宇宙基本法に基づき宇宙開発利用の総合的かつ計画的な推進を図る宇宙基本計画を策定しその工程表や宇宙技術戦略などを通じて政府を挙げて宇宙政策を戦略的に強化していますまた宇宙は日本成長戦略における17の戦略分野の一つであり我が国の宇宙開発が間中心から 官民の連携に移行していく中で、宇宙分野での我が国の勝ち筋に対して戦略的な投資が進むよう、官民投資ロードマップの策定に向けて議論を行っております。その中でロケットと車上につきましては、2030年代前半までに打ち上げ能力を年間30件程度確保する。これを目標に今国会に提出させていただきました宇宙活動法改正案によるロケット打ち上げに関する制度整備に加え中小企業イノベーション創出推進事業SBRフェーズ3宇宙戦略基金による技術開発社会実装の支援政府衛星の民間ロケットによる打ち上げ等の政府調達や車上整備の推進など多角的な観点から支援を強化し我が国の打ち上げ能力を強化に取り組んでまいりたいと考えております。さらに月面探査地球定期度につきましては、米中間の競争が激化する中、米国主導の国際宇宙探査計画であるアルティミス計画の進展や、官民共同の宇宙ステーションへの移行といった変革により新たな市場が創出され、民間企業も参入する中で、月面探査者のユージン・ワーツローバーや宇宙ステーションへの物資補給機、HTBX 司会の開発等、我が国の強みとなる技術を生かし、国際貢献と市場獲得を目指してまいりたいということでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#6745.16",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "今後の国の宇宙戦略の描き方について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国",
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "宇宙基本法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "宇宙基本計画"
+            },
+            {
+              "type": "number",
+              "excerpt": "17の戦略分野"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "2030年代前半までに"
+            },
+            {
+              "type": "number",
+              "excerpt": "年間30件程度"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "宇宙活動法改正案"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "SBRフェーズ3"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "アルティミス計画"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ユージン・ワーツローバー"
+            }
+          ],
+          "score": 1.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "我が国の打ち上げ能力を強化に取り組んでまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "2030年代前半までに打ち上げ能力を年間30件程度確保することを目標に、多角的な観点から支援を強化し、我が国の打ち上げ能力を強化に取り組んでまいりたい。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "抽象的な問いに対し、具体的な数値目標（年間30件）や計画名、技術名を挙げて詳細に回答しており、記録としての価値が高い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "問いが非常に抽象的であるため、回答者が自由に範囲を決められる設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_033",
+      "segment_index": 4,
+      "topic": "宇宙分野における経済安全保障への取り組み",
+      "question": {
+        "speaker": "殿木",
+        "party": "公明党",
+        "summary": "- 経済安全保障の観点から宇宙分野でどのような取り組みを行っているか",
+        "full_text": "一方で、今回経済安全保障 司会の方の分野でも人工衛星ロケットの部品ということで位置づけているわけですけれどもこの経済安全保障の角度ではどのように取り組みをされているんでしょうか内閣大臣官房 殿木審議官 経済安全保障の対象分野である宇宙分野に係る取組についてのお尋ねでございますが、宇宙政策に関しましては、例えば委員御指摘の人工衛星が提供する衛星通信や観測測位データについて申し上げますと、航空機、船舶の運航システム、 気象観測、災害時の対応等に活用されているところでございまして、我が国の国民生活、経済活動の維持、ひいては経済安全保守を確保する上で重要と考えているところでございます。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "殿木",
+        "role": "",
+        "summary": "- 衛星通信や観測データが国民生活や経済活動の維持に重要であると認識している\n- 人工衛星およびロケット部品を特定重要物資に指定し、サプライチェーンの強靭化に取り組んでいる",
+        "full_text": "一方で、今回経済安全保障 司会の方の分野でも人工衛星ロケットの部品ということで位置づけているわけですけれどもこの経済安全保障の角度ではどのように取り組みをされているんでしょうか内閣大臣官房 殿木審議官 経済安全保障の対象分野である宇宙分野に係る取組についてのお尋ねでございますが、宇宙政策に関しましては、例えば委員御指摘の人工衛星が提供する衛星通信や観測測位データについて申し上げますと、航空機、船舶の運航システム、 気象観測、災害時の対応等に活用されているところでございまして、我が国の国民生活、経済活動の維持、ひいては経済安全保守を確保する上で重要と考えているところでございます。この点、いわゆる経済安全保守推進法におきましては、国民の生存に必要不可欠、または国民生活、経済活動が異挙するなどの所要の要件に該当する物資を特定重要物資として政令で指定しているところでございまして、その安定供給確保を図るなどの取組を進めているところでございます。このような中で、我が国の経済安全法上の重要性等を踏まえ、昨年12月には先ほどご指摘がありましたとおり、人工衛星及びその軌道投入に必要なロケットの部品を新たに特定重要物資として指定したところでございまして、サプライチェーンの強靭化に取り組んでいるところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5209"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#6745.16",
+      "metrics": null
+    },
+    {
+      "id": "qa_034",
+      "segment_index": 4,
+      "topic": "宇宙戦略基金による民間支援の具体策",
+      "question": {
+        "speaker": "司隆史",
+        "party": "公明党",
+        "summary": "- 民間の取り組みを底上げするための具体的な支援内容と事例を伺いたい",
+        "full_text": "そこに安全保障という角度も入ってくるということだったと思うんですけれども、具体的にですね。民間の取組をどう底上げして応援をしていくか、きょうのいくつかの質疑でもありましたけれども、宇宙戦略基金の活用をされて、いくつか私も見させていただいて、かなり余命のある取組が多数並んでおるんですけれども、具体的に紹介していただきながら、どのように支援されているか、お伺いできますでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "和木",
+        "role": "",
+        "summary": "- 10年間で1兆円規模の支援を目指し、スタートアップや大学等の先端技術開発・社会実装を支援している\n- 具体例として、民間衛星コンステレーションの構築、月面用再生型燃料電池の開発、民間ロケットの実証加速化などを挙げている",
+        "full_text": "宇宇宇宙関連産業の発展について政府として予算措置など各種取組を通じて民間企業等の取組を支援しております委員御指摘の宇宙戦略基金でございますが宇宙分野のR&Dを支援するということで10年間で1兆円規模の支援を目指しましてスタートアップを含む民間事業者 大学等に対し先端技術開発、技術実証、消費化に向けた支援を実施中です。具体例についてということでございまして、例えば通信、観測衛星等の民間衛星のコンステレーションの構築の加速化、そして月面環境を念頭に置きました再生型燃料電池システムの技術開発、並びに民間ロケットの複数回の実証、加速化、こうしたことを技術開発のテーマとして設定しているところで。民間企業等が複数年度にわたって大胆に宇宙分野の研究開発に取り組めるよう、宇宙戦略基金を通じて民間企業等のさまざまな技術開発等を支援してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#6745.16",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "宇宙戦略基金による民間支援の具体例と手法",
+          "sub_asks": [
+            "具体的な支援事例の紹介",
+            "どのように支援しているかの手法"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "宇宙戦略基金"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "民間",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "10年間で1兆円規模"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "宇宙戦略基金"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "通信、観測衛星等の民間衛星のコンステレーション"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "再生型燃料電池システム"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "支援してまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "宇宙戦略基金でございますが宇宙分野のR&Dを支援するということで10年間で1兆円規模の支援を目指しまして",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "宇宙戦略基金の規模と具体的な支援テーマ（コンステレーションや燃料電池等）が明確に回答されており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どのように支援されているか」という手法への問いに対し、具体例の提示に終始しており、制度的な仕組みへの言及が薄い。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_035",
+      "segment_index": 4,
+      "topic": "宇宙戦略基金の執行状況と活用状況",
+      "question": {
+        "speaker": "司隆史",
+        "party": "公明党",
+        "summary": "- 予算の残金状況から見て、基金が十分に活用されていないのではないかという懸念について伺いたい",
+        "full_text": "今回この宇宙戦略基金よりいいものにしていただきたいということで少し懸念点を確認をさせていただいて前向きに進めていっていただきたいなと思うんですが今回のこの 宇宇宙戦略基金は1期2期3期、1期で3000億、2期で3000億、3期で2000億という合計8000億の基金かと思います。一方で年度の残金の状況を見ると2024年には5800億、2025年度は7000 2026年には5400億ということで、パッと見たときに、この基金があまりしっかりと活用できていないのではないか。民間の活用にもっと巻き込むような基金活用になっていないのではないかという懸念を若干抱くわけですけれども、その点は実際のところいかがでしょうか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "和木",
+        "role": "",
+        "summary": "- 累計8000億円を予算化し、第1期（22テーマ・55機関）および第2期（24テーマ・112機関）の採択・支援を順次進めている\n- 第3期についても公募準備を進めており、採択後の契約や交付手続きに伴うタイムラグがあるため残金が生じている",
+        "full_text": "令和5年から7年度の過去補正予算をいただきまして、累計8000億円が予算化されているところでございます。具体的には、第1期の令和5年度補正予算3000億円、そして全22テーマ、委員御指摘の月面でありますとか、人工衛星関係、地球定期移動、様々なプロジェクトが採択されていまして、22テーマでございます。すでにそのテーマの中で55機関を代表機関として採択し、現在支援中でございます。そして第2期、令和6年度補正予算につきましては、3000億円。これも同様に、人工衛星、宇宙輸送、探査等を含めて、全24テーマについて、すべてのテーマの採択が、もう結果、公表されておりまして、現在、112期間、 代表機関として順次実施や手続きを進めているところでございます。それから最新の第3期でございますが、令和7年度補正予算2000億円、これについても全19テーマ、これもまた様々な委員御指摘の通信の分野も入っております。今月下旬よりテーマ順次公募を開始していくという予定としております。このように宇宙戦略基金では各機それぞれ採択を得て 支援を既に行っていたり、あるいは採択後に事業者との契約及び交付手続きを進めたり、あるいはこれから公募を開始する準備を進めたりと、段階的に手続きを進めているところでございます。しちゃいまして、透明性高く、かつ効率的、効果的な支援を行うということで、支援すべき維持テーマの設定、公募審査のプロセス、採択後の事業者との手続き等に、これからも一定の期間を有するものがございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#6745.16",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "宇宙戦略基金の活用状況と民間巻き込みへの懸念",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "1期で3000億、2期で3000億、3期で2000億という合計8000億"
+            },
+            {
+              "type": "number",
+              "excerpt": "2024年には5800億、2025年度は7000 2026年には5400億"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "民間",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "第1期の令和5年度補正予算3000億円"
+            },
+            {
+              "type": "number",
+              "excerpt": "全22テーマ"
+            },
+            {
+              "type": "number",
+              "excerpt": "55機関を代表機関として採択"
+            },
+            {
+              "type": "number",
+              "excerpt": "第2期、令和6年度補正予算につきましては、3000億円"
+            },
+            {
+              "type": "number",
+              "excerpt": "全24テーマ"
+            },
+            {
+              "type": "number",
+              "excerpt": "112期間、 代表機関として"
+            },
+            {
+              "type": "number",
+              "excerpt": "第3期でございますが、令和7年度補正予算2000億円"
+            },
+            {
+              "type": "number",
+              "excerpt": "全19テーマ"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "今月下旬よりテーマ順次公募を開始していく"
+            }
+          ],
+          "score": 1.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "第1期で22テーマ55機関、第2期で24テーマ112機関を採択し、第3期は今月下旬より公募を開始する予定である。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "基金の予算規模と採択数、今後のスケジュールについて具体的な数値を用いて回答しており、事実関係の記録として価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「実際のところいかがでしょうか」という漠然とした問いかけであるため、具体的な改善策や期限を切り出す構成にすればより実効的な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_036",
+      "segment_index": 4,
+      "topic": "宇宙開発の広報および体制強化",
+      "question": {
+        "speaker": "司隆史",
+        "party": "公明党",
+        "summary": "- 国民が夢を持って後押しできるよう、アピールや広報を強化してほしい\n- 内閣府やJAXAなどの実施体制をしっかりと強化してほしい",
+        "full_text": "NASAについては1万人程度の体制をしっかりと強化していただきたいという点。そして一番申し上げたいことは、アピール、候補、冒頭申し上げたように、やはりこの取組というのは夢が ありますし、民間国民の皆さんが前向きに後押ししていただける取組だと思っておりますので、そういった観点で大臣の御所見を伺えていきますでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "小野田",
+        "role": "",
+        "summary": "- 宇宙開発利用展などの各種広報に注力し、子供たちが夢を持てるような発信を行う\n- 内閣府宇宙開発戦略推進事務局の体制強化およびJAXA等の関係機関の実施体制の充実に努める",
+        "full_text": "アルテミス計画をはじめとする宇宙分野の取り組みが注目される中で、我が国の宇宙分野の取り組みを積極的にアピール、広報することは非常に重要であると考えております。委員より今、宇宙戦略基金の技術開発のテーマとかもご紹介いただきましたけど、私自身もこれを見るとやはりワクワクするので、そういう夢を持って子どもたちはこういうところに行きたいな、やってみたいなって思えるような広報、本当に大事だと思っています。例えば、我が国の宇宙開発利用のさらなる発展や世の中への認識と理解 司会の向上を目的とした宇宙開発利用対象というのもありまして、こういったものをはじめとする各種広報についても引き続き注力してまいりたいと思います。最後に簡単に体制強化についてですけれども、宇宙政策の司令塔の内閣府宇宙開発戦略推進事務局、先ほど申し上げた体制強化、そしてJAXAをはじめとする関係機関の広報を含めた実施体制の充実に取り組んでおります。引き続き宇宙関連産業の発展に向けて対外発信、そして体制強化、しっかり取り組んでまいりたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#6745.16",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "宇宙開発の体制強化と広報への所見",
+          "sub_asks": [
+            "NASA（JAXAの誤記と思われる）の体制強化について",
+            "宇宙開発の夢や広報に関する大臣の所見"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "1万人程度の体制"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "アルテミス計画"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "宇宙戦略基金"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "内閣府宇宙開発戦略推進事務局"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "JAXA"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "しっかり取り組んでまいりたいと思います",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "我が国の宇宙分野の取り組みを積極的にアピール、広報することは非常に重要であると考えております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "体制強化と広報という2点について大臣が答弁しているが、具体的な数値目標や期限などのコミットメントはなく、精神論的な回答に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「NASAについては1万人程度の体制を」という問いが、文脈的にJAXA等の国内体制を指しているのか、NASAとの連携を指しているのかが曖昧である。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_037",
+      "segment_index": 5,
+      "topic": "立地自治体の負担軽減",
+      "question": {
+        "speaker": "新実彰平",
+        "party": "日本維新の会",
+        "summary": "- 安全確保や交通対策などで自治体職員の人的・財政的負担が大きい\n- 民間の打ち上げを軌道に乗せるまでの初動において、立地自治体の負担状況を確認し整理してほしい",
+        "full_text": "最後の質問になりますけれども、今の流れとも関連するんですが、やっぱり周辺の安全確保とか、見学者による違法駐車対策とか、雑踏事故対策とか、結構自治体の職員さんも多く借り出されているところがあるそうでございます。人的な負担に財政的な負担も伴う。さらに串本で言いますと、デジタル田園都市国家構想交付金、これかつての名称ですけれども、今名前が変わっていますが、5年間の交付が 昨年度いっぱいで終了して財政負担の面においてもちょっとフェーズが変わったという中でこれからどうしていこうというちょっと第二段階に入られているようでございます。定常的に成功率に打ち上げられる状況が整えば雰囲気も変わってくるんだと思うので今海の苦しみだとは思うんですけれども民間の打ち上げを軌道に乗せるまでのこの初動においては社上立地自治体の有形無形の負担状況についてももう一回確認と整理をお願いできないでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "小野田",
+        "role": "",
+        "summary": "- （答弁者が小野田大臣である旨の確認のみで、具体的な回答内容は含まれていないため、ルールに基づき除外すべきだが、文脈上は大臣が指名された状態で終了している）",
+        "full_text": "小野田大臣。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#7691.33",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "射場立地自治体の負担状況の確認と整理の要望",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "デジタル田園都市国家構想交付金"
+            },
+            {
+              "type": "other",
+              "excerpt": "串本"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "串本",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "not_at_all",
+          "topic_shift_detected": false,
+          "score": 0.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": null,
+          "score": 0.0
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的で明確な要望を含んでいるが、回答が大臣の名前を呼んだのみ（または回答が欠落している）ため、実質的なやり取りが成立していない。",
+        "would_be_referenced": "low",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_038",
+      "segment_index": 5,
+      "topic": "日本の宇宙利用における重点分野と方向性",
+      "question": {
+        "speaker": "岩本麻奈",
+        "party": "参政党",
+        "summary": "- 日本が宇宙利用のどの分野に重点を置くのか\n- 国としての計画や方向性、および日本が果たすべき役割について",
+        "full_text": "そこで第二に伺います。日本は宇宙利用のどの分野に重点をこれから置いていくのか、そのために国としてどのような計画や方向性を持っているのか、日本が宇宙でどのような役割になるのか、お示し願います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小野田",
+        "role": "",
+        "summary": "- 宇宙基本計画や宇宙技術戦略に基づき、政府を挙げて戦略的に強化している\n- 官民投資ロードマップの策定に向けた議論を行い、戦略的投資を推進する\n- 有人与圧ローバーや物資補給機HTVXの開発など、強みを生かした国際貢献と市場獲得を目指す",
+        "full_text": "国際競争を激化する中で、我が国の自立性を確保し、世界をリードしていくため、我が国では宇宙基本法に基づく宇宙基本計画、そしてその工程表、宇宙技術戦略等を策定し、政府を挙げて宇宙戦略を、宇宙政策を戦略的に強化しています。また、宇宙は日本政策戦略における17の戦略分野の一つであり、宇宙分野での我が国の勝ち筋に対して戦略的な投資が進むよう、官民投資ロードマップの策定に向けて議論を行っております。中、月面探査車の有人油圧ローバーや、宇宙ステーションへの物資補給機HTVXの開発と、我が国の強みとなる技術を生かし、国際貢献と市場獲得を目指してまいりたいと考えています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#7691.33",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "日本の宇宙利用の重点分野と計画・役割",
+          "sub_asks": [
+            "重点を置く分野",
+            "国の計画や方向性",
+            "日本が果たす役割"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "日本",
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "宇宙基本法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "宇宙基本計画"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "宇宙技術戦略"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "有人油圧ローバー"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "物資補給機HTVX"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "官民投資ロードマップの策定に向けて議論を行っております",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "有人油圧ローバーや、宇宙ステーションへの物資補給機HTVXの開発と、我が国の強みとなる技術を生かし、国際貢献と市場獲得を目指してまいりたい",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は包括的で複数の要素を含んでいるが、回答側は具体的な計画名や開発機材（HTVX等）を挙げて具体的に答えている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が「重点分野」「計画」「役割」と盛り込みすぎているため、回答が分散しやすい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_039",
+      "segment_index": 5,
+      "topic": "宇宙産業の自立性と政府保障の構造",
+      "question": {
+        "speaker": "岩本麻奈",
+        "party": "参政党",
+        "summary": "- 政府保障の対象拡大により、コストやリスクを国が担い利益が民間に帰属する構造が固定化され、産業の自立性を損なう懸念について考えを伺いたい",
+        "full_text": "今回の改正ですけれども、ダミーペイロードを用いた試験打ち上げなど、人工衛星の搭載分離を行わない打ち上げについても、政府保障の対象に追加しておりますね。これは開発初期のリスクを国がいある一定度引き受けることで民間の挑戦を後押しする仕組みであると理解しております。また宇宙分野は安全保障や基幹インフラ、国家戦略にも関わる領域であることから国として一定のコストやリスクを引き受けるのも理解できるんですけれどもその一方で利益は民間に帰属するもののコストやリスクは国が受け持つという構造が固定化されれば宇宙産業の自立性を損なうという記念もあります。そこで お考えを伺いたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "和之幸",
+        "role": "",
+        "summary": "- 損害賠償責任保険の金額をロケットごとに適切に定め、政府保障の上限（1契約3500億円等）を設けている\n- SBIRフェーズ3や宇宙戦略基金を通じて、民間企業のロケット開発や実証を支援している\n- 官民投資ロードマップの策定等を通じ、民間企業の自立事業化を後押しする",
+        "full_text": "打ち上げ事業者の負担での締結を求める損害賠償責任保険契約の保険金額につきましては、ロケットと打ち上げ場所の組み合わせごとに、ロケットの設計等を勘案しまして、ロケット落下等損害の被害者の保護を図る観点から、適切なものとして、内閣総理大臣が財務大臣と協議して定めております。また、打ち上げ事業者のこれらの責任保険で埋められないという場合にございましては、政府保障について、1契約の契約金額の上限を3500億円とし、1会計年度内における契約金額の合計額が、毎年度の予算書で国会の議決を経た金額を超えない範囲で締結するものとされています。ロケット開発は難易度が高く、リスクが高いということで、SBIRフェーズ3において、民間企業のロケット開発を支援してきています。宇宙戦略基金においても、初期の段階における複数回の打ち上げ実証を支援するテーマを新たに設定したというところでございます。したがって、我が国の宇宙輸送の自立性確保、産業基盤の強化という目標がありまして、先ほど大臣からございました官民 投資ロードマップの策定などを通じまして、引き続き、民間企業のロケット開発や実証の取組を支援し、民間企業の自立事業化を後押ししてまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#7691.33",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "政府保障による宇宙産業の自立性低下への懸念と見解",
+          "sub_asks": [],
+          "score": 0.9
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "宇宙産業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "1契約の契約金額の上限を3500億円"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "SBIRフェーズ3"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "宇宙戦略基金"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "民間企業の自立事業化を後押ししてまいります",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "政府保障について、1契約の契約金額の上限を3500億円とし、1会計年度内における契約金額の合計額が、毎年度の予算書で国会の議決を経た金額を超えない範囲で締結するものとされています。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は自立性低下への懸念という抽象的な見解を求めているが、回答は制度の説明と支援策の列挙に留まっており、論理的な回答とは言い難い。ただし、政府保障の上限額などの具体的数値が記録されている点に価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「お考えを伺いたい」というオープンな問い方であるため、政府側が制度説明で逃げやすい構造になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_040",
+      "segment_index": 5,
+      "topic": "特定民間ロケット企業への公的支援の公平性と成果",
+      "question": {
+        "speaker": "和之幸",
+        "party": "日本維新の会",
+        "summary": "- インターステラテクノロジーズへの援助総額と成果を具体的に示してほしい\n- 特定企業への集中を避け、競争環境を確保するための配分基準について伺いたい",
+        "full_text": "現在日本には6社ほどの民間ロケット企業が存在していると認識しておりますが、その中で特定の企業に対しては累計で100億円を超える規模、最大で150億円規模の公的資金が見込まれていることを承知しています。公平性の観点からは、企業間にあまりに大きな 高さがあるとすれば問題であると思います。インターステラテクノロジーズに対する援助総額と成果について具体的にお示しください。併せて民間ロケット企業の支援について特定企業への集中ではなく競争環境を確保する観点からどのような基準で配分しているかについてもお示しいただきたいです。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "和之幸",
+        "role": "",
+        "summary": "- インターステラテクノロジーズに対し、SBIRフェーズ3で2025年度までに80.7億円を交付した\n- ステージゲート審査を通じて段階的に補助対象者を絞り込む制度を採用しており、現在は2社に絞り込まれている\n- 段階的に民間負担を求めることで、事業の自立を促している",
+        "full_text": "和木事務局長 インターステラテクノロジー社でございますが、ロケットの開発、製造、打ち上げを行うスタートアップ企業でありまして、例えば中小企業イノベーション創出推進事業SBRフェーズ3においては、同社のロケット開発実証に対しまして、2025年度までに80.7億円を交付しております。また同事業では宇宙装置場で勝ち残る意思と技術力を有する事業者を選抜し集中的に支援するということでありましてステージゲート審査を通じまして段階的に補助対象者を絞り込む制度を採用しております。現在同事業の開始当初の4社から インターステラテクノロジー社を含む2社に絞り込まれているという状況であります。また、事業の補助率は開発当初は最大100%補助としておりますが、その後、段階的に民間負担を求めております。民間企業における自己負担を求め、事業の自立を促すことを目的としております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#7691.33",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "特定ロケット企業への支援額と配分基準の提示",
+          "sub_asks": [
+            "インターステラテクノロジーズへの援助総額と成果",
+            "民間ロケット企業支援の配分基準"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "累計で100億円を超える規模、最大で150億円規模"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "インターステラテクノロジーズ",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "中小企業イノベーション創出推進事業SBRフェーズ3"
+            },
+            {
+              "type": "number",
+              "excerpt": "2025年度までに80.7億円"
+            },
+            {
+              "type": "number",
+              "excerpt": "開始当初の4社から インターステラテクノロジー社を含む2社に絞り込まれている"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "SBRフェーズ3においては、同社のロケット開発実証に対しまして、2025年度までに80.7億円を交付しております。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "特定の企業への公的資金投入額という具体的な数字が示されており、記録としての価値が高い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_041",
+      "segment_index": 5,
+      "topic": "国内打ち上げ能力の向上と射場の整備",
+      "question": {
+        "speaker": "岩本麻奈",
+        "party": "参政党",
+        "summary": "- 年間の打ち上げ回数や国内ロケットによる打ち上げ割合について、政府が目指すべき方向性や水準感を伺いたい\n- 現在の射場数や運用体制の十分性、および民間の射場整備への支援について伺いたい",
+        "full_text": "日本は自国の衛星のうち、自国のロケットで打ち上げている割合が約50%にとどまっております。宇宙は通信や安全保障にも関わる重要な分野であり、打ち上げを他国に依存する状況には一定のリスクがあると考えます。また現在、世界では年間300回以上の打ち上げが行われている一方で、日本は年間数回にとどまっており、その少なさゆえに国の車上については現在、種がします。年間の打ち上げ回数や時刻ロケットによる打ち上げの割合について、政府として目指すべき方向性や水準感をどのように認識していらっしゃいますでしょうか。そして現在の車上の数や運用体制で十分だと考えていらっしゃるのか、また民間の車上整備に対する支援があるのか、伺いたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小野田",
+        "role": "",
+        "summary": "- 2030年前半までに年間30機の打ち上げ能力を確保することを目指している\n- 官民投資ロードマップの策定を通じ、国内衛星の国内打ち上げ目標を含めた戦略的投資を促進する\n- 射場数を増やすことが直ちに競争力強化につながるかについては、慎重に検討する必要がある",
+        "full_text": "具体的には、たびたび申し上げておりますが、2030年前半までに年間30機の打ち上げ能力を確保することとしており、一方でロケットの開発は技術的難易度が高く開発に時間を要するほか、我が国では打ち上げの失敗もありまして、打ち上げ数が伸びていない現状 市長。交換できればの提供など、多角的な観点から支援を行うとともに、日本成長戦略会議において、国内衛星の国内打ち上げの目標を含めて、官民投資ロードマップの策定を進めて、戦略的な投資を促進し、わが国の打ち上げ能力の向上、強化に努めていきたいと思います。一方で、世界に比べ日本の打ち上げ回数の少なさというのがちょっと際立っておりまして、この現状を踏まえれば、車上の数を増やすこと自体が、直ちに競争力の強化につながるのかについては、慎重に検討する必要があると思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#7691.33",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "打ち上げ回数・割合の目標と体制の十分性、民間支援について",
+          "sub_asks": [
+            "目指すべき方向性や水準感の認識",
+            "現在の射上の数や運用体制の十分性",
+            "民間の射上整備に対する支援の有無"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "自国のロケットで打ち上げている割合が約50%"
+            },
+            {
+              "type": "number",
+              "excerpt": "世界では年間300回以上の打ち上げ"
+            },
+            {
+              "type": "number",
+              "excerpt": "日本は年間数回"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "政府",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "deadline",
+              "excerpt": "2030年前半まで"
+            },
+            {
+              "type": "number",
+              "excerpt": "年間30機の打ち上げ能力"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "日本成長戦略会議"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "官民投資ロードマップの策定を進めて、戦略的な投資を促進し、わが国の打ち上げ能力の向上、強化に努めていきたいと思います",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.6
+        },
+        "oc3_quotability": {
+          "quote_candidate": "2030年前半までに年間30機の打ち上げ能力を確保することとしており",
+          "score": 0.8
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "質問は複数の問いを含んでいるが、回答側は具体的な数値目標（2030年前半まで年間30機）を提示しており、記録としての価値が高い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問文に「国の車上については現在、種がします」などの誤字・脱字があり、意図の解釈に時間を要する。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_042",
+      "segment_index": 5,
+      "topic": "宇宙分野におけるデータ活用（宇宙DX）",
+      "question": {
+        "speaker": "岩本麻奈",
+        "party": "参政党",
+        "summary": "- 政府的なフィードバックシステムがどのように整備されているか、または整備しようとしているか伺いたい",
+        "full_text": "次に宇宙分野におけるデータ活用、いわゆる 宇宇宙DXについて伺います。政府的フィールドバックのシステムはどのように整備されているのか、またはしようとしているのか、お聞かせください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "和之幸",
+        "role": "",
+        "summary": "- 各開発主体においてデータの蓄積・分析・フィードバックに取り組んでいる\n- 打ち上げ失敗時には、JAXAや関係企業でデータを体系的に蓄積・分析し、専門委員会で原因究明や対策検討を実施している",
+        "full_text": "委員御指摘のとおり、ロケットの失敗を含むデータの蓄積、分析、技術的フィードバック等重要だと考えております。ロケットの各開発主体において取り組んでいるということでございます。政府との関係、JAXAとの関係なんですが、先般打ち上げに失敗した愛知ロケットにおきましては、JAXAや関係企業において打ち上げ失敗時のデータを体系的に蓄積分析し、文部科学省の専門委員会に内閣も参加して、原因究明や対策検討を実施している。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#7691.33",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "宇宙DXにおける政府的フィードバックシステムの整備状況",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "愛知ロケット"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "JAXA"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "文部科学省の専門委員会"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "愛知ロケットにおきましては、JAXAや関係企業において打ち上げ失敗時のデータを体系的に蓄積分析し、文部科学省の専門委員会に内閣も参加して、原因究明や対策検討を実施している。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "宇宙DXという広範な問いに対し、特定のロケット失敗事例への対応という個別具体例で回答しており、システム全体の整備状況への直接的な回答には至っていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「政府的フィードバックシステム」という定義が曖昧なため、回答者が事例ベースの回答に逃げやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_043",
+      "segment_index": 5,
+      "topic": "宇宙空間の所有権と基本的考え方",
+      "question": {
+        "speaker": "大門実紀史",
+        "party": "日本共産党",
+        "summary": "- 宇宙や月が誰のものかという点について、政府の見解を問う",
+        "full_text": "同時にですね、この宇宙の議論というのは平気でみんなでやってますけれど、そもそも宇宙にしても月にしてもね、誰のものなのかということをよく考えなきゃいけないと思うんですけれど、大臣はいかがお考えでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小野田",
+        "role": "",
+        "summary": "- 宇宙条約に基づき、宇宙はみんなのものであり、みんなの利益に資するものであると考えている",
+        "full_text": "先生、これからご指摘あるのかなと思いましたけれども、宇宙条約ともございますし、やはり宇宙はみんなのものと、みんなの利益に資するものであるというものだと思っています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#7691.33",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "宇宙や月の所有権に関する考え方",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "宇宙条約"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "宇宙条約ともございますし、やはり宇宙はみんなのものと、みんなの利益に資するものであるというものだと思っています。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "宇宙の所有権という抽象的な問いに対し、大臣が宇宙条約に基づいた一般的見解を回答した形式的なやり取りである。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「いかがお考えでしょうか」というオープンクエスチョンであるため、具体的・拘束力のある回答を引き出しにくい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_044",
+      "segment_index": 5,
+      "topic": "宇宙開発における平和利用の原則",
+      "question": {
+        "speaker": "大門実紀史",
+        "party": "日本共産党",
+        "summary": "- 国連の宇宙条約や月協定を踏まえ、日本が宇宙開発を平和利用に限定して考えるべきではないか",
+        "full_text": "そのみんなが人類とは限らないという面もあると思うんですよね。人類というのは、大自然に対して、 謙虚でなきゃいけないというのは最近みんなが気がつき始めて、同じようにですね、宇宙に対しても謙虚にですね、謙虚であるべきだし、人類のおごりが出てはならないというふうに思うわけであります。したがって宇宙開発もやっぱり謙虚に、本当に人類にとって大事な資源だけを平和利用で使わせてもらうというような、そういう節度のあるスタンスがですね、基本的に必要かなと思っております。そういう点で、現在、月や宇宙空間の利用に関する国際的なルールがどうなっているかということなんですが、ご存じだと思うんですけど、簡単に言いますと、国連の宇宙条約というのがございますよね。宇宙というものを国家の取得の対象にしてはならないと。ある国が独占したり、そういうことをしてはならないということですよね。もう一つは国連月協定というのがありまして、1979年ですかね。これは月のいったり、このいろんな利用というのは、平和のみに利用するというのがあります。いずれにせよ、日本 日本にとっても宇宙開発というのは平和利用に本当は限定すべきだと。デュアルユースって難しいところがあるんですけども、平和利用を念頭において考えるべきだと思うんですが、大臣いかがでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "小野田",
+        "role": "",
+        "summary": "- 宇宙条約に則り、平和的目的での利用が大前提であると認識している\n- 一方で、それを破ろうとする勢力に対し、いかに平和を守るかが課題である",
+        "full_text": "宇宙条約の中でもこの月その他の天体もっぱら平和的目的のために利用されるものとするというふうにありますし、もちろん平和的に利用をするのが大前提だと思っております。ただそれを破ろうとする人たちもいるので、その中でどうやってみんなでこの平和を守っていくのかというのも難しい課題なんだろうなというふうに思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#7691.33",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "宇宙開発の平和利用の徹底について",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "国連の宇宙条約"
+            },
+            {
+              "type": "law",
+              "excerpt": "国連月協定"
+            },
+            {
+              "type": "date",
+              "excerpt": "1979年"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "人類",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "宇宙条約"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "宇宙条約の中でもこの月その他の天体もっぱら平和的目的のために利用されるものとするというふうにありますし、もちろん平和的に利用をするのが大前提だと思っております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "平和利用という大前提への同意に留まり、具体的な政策的コミットメントや新たな解釈は示されなかった。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「いかがでしょうか」という抽象的な問いかけであるため、大臣が同意するだけで完結してしまい、具体的な行動を導き出せていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_045",
+      "segment_index": 5,
+      "topic": "アルテミス計画と米国の軍事利用への傾斜",
+      "question": {
+        "speaker": "大門実紀史",
+        "party": "日本共産党",
+        "summary": "- トランプ大統領の大統領令により、アルテミス計画が「アメリカ第一主義」や軍事利用（核兵器配備への対処等）に傾いている懸念がある\n- このまま計画に参加してよいのか、米国の真意を確認する必要があるのではないか",
+        "full_text": "資料をお配りいたしましたけれど、朝日新聞の社説ですが、 アルテミス計画ご存じだと思いますが、月の裏側までですね、友人の宇宙船オリオンが行って、地球に帰還したと。で、このアルテミス計画の元になっている基本原則が、アルテミス合意といいます。その合意の内容は、平和利用を理念に掲げる国連の宇宙条約の内容を確認しつつ、資源開発の ルールに関する国際的な合意形成を目指しながらということになっておりまして、署名した国は60カ国を超えて、日本はこの原則のもとに、これに参加して、国際探査に参加しているわけでございます。ところが、去年の12月、トランプ大統領は、この当初のアルテミス合意を勝手に変更するような大統領令を打ち出しました。これどんな大統領令かご存知ですか。ホワイトハウスのホームページに公表されておりまして、去年12月なんですけどね、一つはですね、アメリカの優位性を確保すると、アメリカ第一主義を強調しています。2つ目には、ちょっと大臣おっしゃったような、中国との対抗戦略を念頭に置いていると思うんですけど、中国が月にですね、国際月科学研究ステーションというんですか、要するに月に基地を建設するというのが出てきたんで、本来このアルテミスの方はですね、月の近くにゲートウェイの ゲートウェイ基地を作るというのをやめて月面に基地を作るべきだというふうにアメリカが言い始めております。地球の周囲や月に核兵器が配備された場合の 脅威に対処できる能力の確保と。要するにどっかの国が宇宙空間や月に核兵器を配備した場合に備えるということを言っているんです。そもそも宇宙条約はですね、月を含めた宇宙空間での核兵器や大量破壊兵器を配備しちゃいけないということになって禁止しているわけでございます。日本も参加してきたアルテミス計画なんですけれど、去年の12月のこのトランプさんの大統領令で、中身がぐーっと変わってきているわけなんですね。平和利用、主権開発のはずが軍事利用を持ちさないというような方向になってきているわけですけれども、日本としてこのままこのアルテミス計画に参加していいのか、あるいはこのアメリカの真意がですね、どこにあるのかということは、やっぱりこれから一緒にやっていく上で確認しておく必要があると思うんですが、いかがでしょうか。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "小野田",
+        "role": "",
+        "summary": "- アルテミス計画は持続的な月面探査を目指す国際計画であり、月面経済圏への発展に期待している\n- 日米間の覚書等を通じて米国側と緊密に連携し、意思疎通を図りながら進めていく",
+        "full_text": "ご指摘のアルテミス計画、将来の火星探査を見据え、持続的な月面探査を目指す米国首都の国際宇宙探査計画であると承知しております。いろいろ委員よりご指摘ありましたけれども、月は地球以外で最初に人類の活動領域となる可能性を持つ天体でありまして、将来的には新たな経済社会活動が生み出されることが期待され、月面経済圏に発展していく可能性があると認識しておりまして、我々はその月面探査を支える有人ワーツオーバーの開発をはじめ、協力を進めています。昨年10月に日米間で署名した技術繁栄ディールに関する協力を覚書、これにおいてもアルテミス計画について強力なパートナーシップの継続を確認するなど、米国側とも常に意思疎通を行い、緊密に連携をしてきております。引き続き、米国側と常に意思疎通を行いながら、緊密に連携をして進めてまいりたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#7691.33",
+      "metrics": null
+    },
+    {
+      "id": "qa_046",
+      "segment_index": 5,
+      "topic": "宇宙開発の軍事利用化への懸念と国連ベースの平和利用",
+      "question": {
+        "speaker": "大門実紀史",
+        "party": "日本共産党",
+        "summary": "- 宇宙開発が軍拡競争と一体化し、日本も防衛目的の利用を進める方向にきている\n- 米国に従うだけでなく、国連をベースとした平和利用の枠組み構築に努力すべきではないか",
+        "full_text": "トランプ大統領のやり方がですね、いつまでも映るわけではないというふうに思いますけれど、流れとしてやっぱりこの宇宙開発は軍事利用、軍事利用になってくると、ちょっと違うんではないかという点でございます。もともと戦後の宇宙開発というのは、アメリカとソ連という2つの軍事、2つの大国の軍事的技術的優位性を争うということがあったわけで、 冷戦後もアメリカと中国というようなことでまたやり始めているわけでございます。いわば宇宙技術の開発競争というのは軍閣競争と一体化してなんだかんだ言っても進んできたわけでございますし残念ながら日本の政府もずっと平和利用と平和目的利用と言ってきたんですけれども宇宙開発を2008年の宇宙基本法で 防衛軍事目的と結びつける方向に道を開きました。さらに安保三文書とか第5次宇宙基本計画などなどでですね、民間企業を取り込みながらというのはありますが、軍事目的、防衛目的の宇宙開発を進める方向にずっと来ているというふうに思います。やっぱり立ち止まってですね、この方向がいいのかということを改めて考えるべきだし、平和憲法を持っている日本ですから、独自の展開、中国にも言うことは言ってですね、アメリカにも何でも従うんじゃなくてですね、特に国連がずっとこの宇宙開発も平和の枠組み、作ろう作ろうとしておりますよね。そういう点で、そういう国連を通じてといいますか、国連をベースにして宇宙利用の 宇宙開発の平和利用についてですね、努力していくべきじゃないかと思いますね。日本はですね。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "小野田",
+        "role": "",
+        "summary": "- 宇宙基本法において、宇宙条約の規約に従い、日本国憲法の平和主義の理念に則り行われるものと位置づけている",
+        "full_text": "我が国では、宇宙基本法において、宇宙開発利用が宇宙条約との規約に従い、日本国憲法の平和主義の理念に則り行われるものと位置づけられております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#7691.33",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "宇宙開発の平和利用に向けた努力をすべきではないか",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "2008年の宇宙基本法"
+            },
+            {
+              "type": "other",
+              "excerpt": "安保三文書"
+            },
+            {
+              "type": "other",
+              "excerpt": "第5次宇宙基本計画"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "日本",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "宇宙基本法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "宇宙条約"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "日本国憲法"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "宇宙開発利用が宇宙条約との規約に従い、日本国憲法の平和主義の理念に則り行われるものと位置づけられております。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は宇宙開発の軍事化への懸念と平和利用への転換を求めているが、回答者は現行法の規定を述べるに留まり、具体的な方針やコミットメントは示されていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "疑問符のない提案形式の記述が多く、政府に何を具体的に求めるのか（例：国連での主導的役割の是非など）を明確にする必要がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_047",
+      "segment_index": 5,
+      "topic": "宇宙の平和利用原則と軍事利用のグレーゾーン",
+      "question": {
+        "speaker": "伊波洋一",
+        "party": "沖縄の風",
+        "summary": "- 民間衛星の軍事利用など、宇宙の平和利用原則を脅かすグレーゾーンが広がっている現状がある\n- 政府として、平和利用原則と軍事利用の境界的な事例（グレーゾーン）をどう考えているか",
+        "full_text": "2020年以降のロケット打ち上げ数の増加に見られるように、米国スペースXなど民間宇宙ビジネスの参入が活発化しています。同時に、こうした民間の高解像度地球観測衛星が、情報収集目的に軍事利用され、 現代の世界戦争の不解決なインフラとして機能しています。こうした宇宙の平和利用原則を脅かすようなグレーゾーンが広がっている現状があります。政府として平和利用原則とこのような軍事利用との境界的な事例、グレーゾーンについてどのようにお考えでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "和之幸",
+        "role": "",
+        "summary": "- 宇宙基本法に基づき、安全保障目的の宇宙開発利用は憲法の平和主義や専守防衛の範囲内であり、平和利用原則に反しない\n- 地球観測衛星の安全保障分野での利用は世界的な傾向であり、我が国も例外ではないと認識している",
+        "full_text": "先ほど申し上げましたが、我が国では宇宙基本法において宇宙開発利用を我が国の安全保障にするように行うと。ということで位置づけておりまして憲法の平和主義の理念に則り専守防衛の範囲内で我が国の防衛のために宇宙開発利用を行うことは平和利用原則の趣旨に反するものではないと考えております地球観測衛星の安全保障分野での利用については全世界で進んできているところ我が国においてもこの点例外ではないものと認識しております伊波洋一君 グレーゾーンをグレーのまま放置していくことは、日本のようなミドルパワーにとっては望ましいこととは言えないと私は思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#7691.33",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "宇宙の平和利用と軍事利用の境界線に関する考え方",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "2020年以降"
+            },
+            {
+              "type": "organization",
+              "excerpt": "米国スペースX"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "民間宇宙ビジネス",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "宇宙基本法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "専守防衛"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "専守防衛の範囲内で我が国の防衛のために宇宙開発利用を行うことは平和利用原則の趣旨に反するものではないと考えております",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "宇宙基本法と専守防衛に基づき、安全保障目的の利用が平和利用原則に反しないという政府の解釈を明確に述べている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「グレーゾーンについてどう考えるか」という抽象的な問いであるため、具体的な事例を提示して回答を迫る構成にすればより実効的な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_048",
+      "segment_index": 5,
+      "topic": "スペースデブリ対策と国際ルールの策定",
+      "question": {
+        "speaker": "伊波洋一",
+        "party": "沖縄の風",
+        "summary": "- 民間参入によるデブリ増加は、ケスラーシンドロームを招く深刻なリスクがある\n- 日本はデブリ除去技術のフロントランナーであるため、発生者責任や費用負担などの国際的なルール策定が重要であると考えるが、政府はどう取り組んでいるか",
+        "full_text": "宇宙条約には、宇宙の平和利用のほかにも、宇宙活動自由の原則や、宇宙空間領有禁止の原則、国家への責任集中の原則という4つの基本原則が含まれています。1967年に宇宙条約が締結されて60年がたち、 宇宙の軍事利用のグレーゾーンだけでなく、さまざまな新たな課題が浮上しています。民間宇宙ビジネスの参入により、ロケット打ち上げ数が増加する中、宇宙ごみ、スペースデブリの増加も新たな課題となっています。デブリを放置すれば、周回軌道上でデブリ同士が連鎖的に衝突してデブリが増加し、軌道の利用ができなくなるという。ケスラーシンドロームに発展しかねない、極めて深刻な事態に発展しかねません。地球気候変動原則と同様、スペルデブリ問題も負の外部性を有しています。衛星を打ち上げる側は短期的な利益を得ますが、長期的にデブリとなった際の社会的経済的損失は人類が 人類全体が負担することになります。だからこそ早期に国際的な合意が形成されて、デブリ除去に取り組まなければなりません。また、デブリ除去技術について、JAXAは日本の宇宙スタートアップ企業、アストロスケール社と商業デブリ除去実証、CRD津の に取り組んでいます。このCRD2において、アストロスケールの人工衛星は、高度約600kmの軌道を周回するデブリに15mまで接近するという、世界初の成果を挙げました。デブリ除去技術において、日本はフロントランナーであり、日本が宇宙分野で世界に大きく貢献できるだけでなく、将来有望なビジネス分野でもあります。スペースデブリに関して安全なデブリ除去技術の基準づくりだけではなく、発生者責任や費用負担の原則などについて国際的なルールを策定することが極めて重要だと考えますが、日本政府はどのように取り組んでいますか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "和之幸",
+        "role": "",
+        "summary": "- 宇宙活動法のガイドラインに沿ったデブリ抑制策や、先進的な除去技術開発とルール作りの両面で取り組んでいる\n- 国連の宇宙空間平和利用委員会（COPUOS）等の枠組みを通じ、国際的なルール作りで主導的な役割を果たすべく取り組む",
+        "full_text": "宇宙空間は今作の度合いを急速に高めつつありまして、スペースデブリ対策を含め、宇宙空間の長期的かつ安定的な利用のための取組が必要であると認識しております。我が国では、スペースデブリを出さないための取組として、宇宙活動法の解釈運用指針を示した各種のガイドラインに沿って、国際的にも進んだ取組を進めているということでありますし、今あるデブリの提言についても、先進的な技術開発とルール作りの両面で 取り組んでおります。スペースデブリの対策については、国際的な取り組みが重要でありまして、国連を中心に国際的な対応策について議論がなされております。具体的には、各国を参加する宇宙空間平和利用委員会コピウスにおいて、2007年に人工衛星などの設計や製造、運用の段階においてデブリを低減するための推奨行動などを規定するスペースデブリ低減ガイドライン。ということを通じまして、国際的なルールづくりの議論で、主導的な役割を果たすべく引き続き取り組んでまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#7691.33",
+      "metrics": null
+    },
+    {
+      "id": "qa_049",
+      "segment_index": 5,
+      "topic": "人工衛星増加に伴う光害等の課題と国際的なルール作り",
+      "question": {
+        "speaker": "伊波洋一",
+        "party": "沖縄の風",
+        "summary": "- 民間企業の宇宙ビジネス参入による人工衛星増加に伴う光害等の問題への対応\n- 日本が宇宙分野の国際的ルールづくりにイニシアチブを発揮することへの見解",
+        "full_text": "天文観測に関連して、光害、光の害の問題が 論議されるなど、民間企業の宇宙ビジネス参入による人工衛星の増加は、様々な新たな問題を生み出しています。日本が宇宙分野の国際的ルールづくりにイニシアチブを発揮していくことは長期的に宇宙の平和利用やビジネス環境に改善にもつながり我が国はもちろん世界全体の公平公正な宇宙利用につながっていくと考えますが小野田大臣の御見解を伺います小野田大臣 ご指摘のとおり、大規模な衛星コンセレーションの構築が本格化するのに伴い、超突リスクの増大のみならず、まさにおっしゃっていただいた天文観測における光害などの課題も出てきているものと承知をしております。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小野田",
+        "role": "",
+        "summary": "- 大規模衛星コンステレーションによる衝突リスクや光害などの課題を認識している\n- 宇宙交通管理に関する関係府省等タスクフォースにおいて、関係府省庁が連携して取組を推進している\n- 軌道利用のルール作りに関する中長期的な取組方針を改定し、国際的なルール作りに関与し、主体的に貢献していく",
+        "full_text": "日本が宇宙分野の国際的ルールづくりにイニシアチブを発揮していくことは長期的に宇宙の平和利用やビジネス環境に改善にもつながり我が国はもちろん世界全体の公平公正な宇宙利用につながっていくと考えますが小野田大臣の御見解を伺います小野田大臣 ご指摘のとおり、大規模な衛星コンセレーションの構築が本格化するのに伴い、超突リスクの増大のみならず、まさにおっしゃっていただいた天文観測における光害などの課題も出てきているものと承知をしております。こうした様々な課題に対して、私が議長を務め、関係府省等で構成される宇宙交通管理に関する関係府省等タスクフォース、こちらにおいて関係府省庁が一丸となった取組を推進しています。具体的には、本年3月に開催した第4回会合で、例えば、軌道利用の ルール作りに関する中長期的な取組方針、これを改定し、大規模な衛星コンステレーションの規制に係る方針を検討し、国際的なルール作りにも関与していくという旨を盛り込み、必要な取組を推進することとしました。我が国においても、今後さらなる宇宙利用の拡大が見込まれる中で、宇宙の安定的な利用の確保に向け、国際的なルール作りに主体的に貢献することも含め、国際社会での拡張活動に積極的に参加してまいりたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#7691.33",
+      "metrics": null
+    },
+    {
+      "id": "qa_050",
+      "segment_index": 5,
+      "topic": "打ち上げ関係者調整のワンストップ窓口整備",
+      "question": {
+        "speaker": "安野貴博",
+        "party": "チームみらい・無所属の会",
+        "summary": "- 打ち上げ時の関係省庁や地方自治体、漁協等との個別調整に多大な負担があり、遅延が生じている\n- 米国FAAのような一元的な支援を行うワンストップ窓口の整備を検討すべきではないか",
+        "full_text": "打ち上げには宇宙活動法上の許可に加えて航空局、海上保安庁、地方自治体、漁業共同組合等とのさまざまなステークホルダーとの個別の調整が必要だと聞いております。事業者からはやはりこの個別調整非常に大変だという話をいただいておりまして例えば最近ですとある事業者さんが言っていたのが漁協との個別の交渉があって最初はいいよと言われていたんだけどちょっと最近になってやはりいろいろ交渉したいということでこれによって実験が数ヶ月遅延してしまったという例も聞いております一方で例えば米国においては米国連邦航空局いわゆるFAA Aが打ち上げ関連の許認可を中心的に所管をしておりまして、関係者調整を一元的に支援するというワンストップ窓口の整備、これは米国と同様に検討していくべきではないかなと思いますが、政府としての検討状況を伺いたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "小野田",
+        "role": "",
+        "summary": "- 審査基準やガイドラインの公表により透明性と効率化を図っている\n- 事前調整の推奨や関係省庁との意思疎通により事業者負担の軽減に努めている\n- 各機関での手続きが最も効率的であるため、連携の下で効率的に実施し、手続きの簡素化等の改善を図りたい",
+        "full_text": "内閣府において、午前中も議論があったところですが、こうした内容を含め、打ち上げ事業者が取るべき事項を明確化にするために、審査基準やガイドラインを定め、内閣府の 委員御指摘の航空局、海上保安庁、地方自治体、漁業共同組合等との個別調整についても、関係法理に基づく手続きを適切に実施することを求めつつ、内閣府としては、これらとの重複を避けた審査基準を設け、これを公表し、透明性の確保と効率化を図っています。加えて、打ち上げ事業者には、申請の検討段階から内閣府との事前調整を推奨しておりまして、その事業者から相談があれば、必要に応じて関係省庁と意思疎通を図るなど、手続に係る事業者負担の 努めております。我が国としてもワンストップ化を図るというところではないんですが、関係法令の手続きは専門的知見を有する各機関での実施が最も効率的であることから、関係省庁との連携の下で効率的に実施してまいりたいと。それ同時に内閣府としては政府全体の司令塔としてロケット打ち上げの高頻度化を目指し手続きの簡素化など普段の改善を図ってまいりたいと考えています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#7691.33",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "打ち上げ調整のワンストップ窓口整備の検討状況",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "航空局、海上保安庁、地方自治体、漁業共同組合"
+            },
+            {
+              "type": "organization",
+              "excerpt": "米国連邦航空局いわゆるFAA"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "審査基準やガイドライン"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "効率的に実施してまいりたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "我が国としてもワンストップ化を図るというところではないんですが、関係法令の手続きは専門的知見を有する各機関での実施が最も効率的である",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "ワンストップ窓口の導入については否定し、現状の連携体制での効率化を目指すという政府の方針が明確に示された回答である。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_051",
+      "segment_index": 5,
+      "topic": "打ち上げ許可の標準処理期間と実績の乖離",
+      "question": {
+        "speaker": "安野貴博",
+        "party": "チームみらい・無所属の会",
+        "summary": "- 標準処理期間は6ヶ月だが、実際には12ヶ月かかった事例がある\n- 標準処理期間と実績の間に乖離が生じている要因をどう分析しているか",
+        "full_text": "次に許可の所要期間とそのボトルネックについてお伺いしたいと思います。宇宙活動法に基づく打ち上げ許可につきまして、事業者からは準備開始から打ち上げまでに12ヶ月くらいかかった例もあるという声があります。日本の標準審査期間は6ヶ月というふうに規定されておりまして、12ヶ月だとすると倍くらいの時間がかかっている。この標準処理期間とこの実績の間に乖離が生じているその要因ってどういうふうに分析されているかお伺いしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "和之幸",
+        "role": "",
+        "summary": "- 初めてロケットを打ち上げるケースでは、設計の初期段階から事前相談が行われるため時間を要する場合がある\n- 2号機以降については、すべて標準処理期間内で終了している",
+        "full_text": "そういう中で、委員御指摘の標準処理期間の6ヶ月よりも時間を要しているケース、これはロケットを初めて打ち上げるケースでございまして、設計が語る前の段階 初期の段階から内閣府に事前相談が来ていると、そういう事情もございます。また、各種ロケットの2号機構につきましては、すべて6か月という標準処理期間内で終了しております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#7691.33",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "打ち上げ許可期間の乖離要因の分析について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "12ヶ月くらいかかった例"
+            },
+            {
+              "type": "number",
+              "excerpt": "標準審査期間は6ヶ月"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "6か月"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "ロケットを初めて打ち上げるケースでございまして、設計が語る前の段階 初期の段階から内閣府に事前相談が来ている",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "標準処理期間と実績の乖離理由について、初回の打ち上げにおける事前相談の期間が含まれているという具体的な要因が回答されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_052",
+      "segment_index": 5,
+      "topic": "初号機と2号機以降での標準処理期間の区分設定",
+      "question": {
+        "speaker": "安野貴博",
+        "party": "チームみらい・無所属の会",
+        "summary": "- 初号機と2号機以降で所要期間が大きく異なるため、標準処理期間を分けて設定すべきではないか",
+        "full_text": "初号機で時間がかかっていて2号機以降ではもう全て6か月以内で終わっているというそういった状況だと認識いたしましたこの初号機と2号機で所要期間これ やはりかなり異なると思います。その上での一つ提案としては、やはり初号機と2号機以降で標準処理期間を分けて設定した方が、事業者にとって予見可能性がある運用になると思っております。これ、目標が6ヶ月である意味合いの意義というものが、やはり失われていって しまうと思いますので初号機であればこれくらい二号機以降であればこれくらいというような形で設定するのが一案かと思いますがいかがでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "和之幸",
+        "role": "",
+        "summary": "- 形式を固定してしまうとかえって柔軟性を失う懸念がある\n- 相談を含めて柔軟に対応し、少なくとも6か月以内に収まるよう運用したい",
+        "full_text": "人工衛星等の打ち上げに係る強化について、現状の標準処理期間6か月、ないしは物によって4か月とか形式があるわけですけれども、今、我々としては乖離はないと理解しておりまして、というのも、1号機、2号機というふうに段階的に進むものがあれば、今後、増強していくようなケースもございまして、監視もそこで形式を決めてしまうことが、かえって柔軟性を失うということもございます。事業でありますとか開発段階での相談を含めて柔軟に対応していくということで趣旨は少なくともこの6か月以内にしっかり収まっていくということを目指して運用してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#7691.33",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "初号機と2号機以降で標準処理期間を分けて設定すべきか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": true,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "標準処理期間6か月"
+            },
+            {
+              "type": "number",
+              "excerpt": "4か月"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "6か月以内にしっかり収まっていくということを目指して運用してまいりたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "形式を決めてしまうことが、かえって柔軟性を失うということもございます。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "標準処理期間の区分設定という具体的な提案に対し、柔軟性の観点から現状維持とする政府の判断が明確に示されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_053",
+      "segment_index": 5,
+      "topic": "飛行安全解析の事業者依存構造の解消",
+      "question": {
+        "speaker": "安野貴博",
+        "party": "チームみらい・無所属の会",
+        "summary": "- 飛行安全解析が国内1社に限定されており、民間事業者の解析が後回しになるなどのボトルネックとなっている\n- 1社依存構造を解消し、事業者を増やす考えはあるか",
+        "full_text": "続けて所要期間に関わるもう一つの論点として飛行安全解析についてお伺いしたいと思います。宇宙活動法の見直しに関する省委員会におきまして飛行安全解析の実施期間 これ申請の中でも一つ時間がかかっているプロセスであると言われていますが、その実施期間が国内一社に限定されてしまっているという指摘がございました。国内で一社しかできない工程があって、それが審査プロセスにおいて時間がかかる原因の一つであると。さらにその一社も機関ロケットが優先されておりまして、民間の事業者の解析というのはどうしても後回しになりがちなのであるという、こういった御指摘もあります。一社依存構造ではなくて業者もっと増やしていくべきではないかと思いますが、このボトルネックどういうふうに解消していくお考えでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "和之幸",
+        "role": "",
+        "summary": "- 実績とノウハウを持つ事業者が限られている現状を認識している\n- 宇宙戦略基金において技術開発をテーマに設定したほか、既存技術の円滑な活用について関係機関と調整を進めている",
+        "full_text": "ロケットの打ち上げに関する飛行安全解析の実績と、ノウハウを有する事業者が現状で限られているというのは御指摘のとおりです。従いまして宇宙活動の見直しに関する省委員会を通じて要望もいただいておりまして宇宙戦略基金において飛行安全解析に係る技術開発をテーマに設定したほか既存の飛行安全解析技術の円滑な活用についても関係機関と調整を進めているところでございますのでご指摘を踏まえて対応してまいります引き続き関係省庁や関係機関と連携しながらこうした取り組みを進めて我が国の打ち上げ能力の強化に取り組んでまいりたいと考えております 安野貴寛君。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#7691.33",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "飛行安全解析のボトルネック解消策について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "宇宙活動法の見直しに関する省委員会"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "飛行安全解析を行う国内事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "宇宙戦略基金"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 3,
+          "trigger_phrase": "宇宙戦略基金において飛行安全解析に係る技術開発をテーマに設定した",
+          "matched_pattern": "future-tense verb describing a CONCRETE government action with a named mechanism"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "宇宙戦略基金において飛行安全解析に係る技術開発をテーマに設定したほか既存の飛行安全解析技術の円滑な活用についても関係機関と調整を進めている",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "飛行安全解析の事業者不足という具体的なボトルネックに対し、宇宙戦略基金による技術開発という具体的手段を提示して回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_054",
+      "segment_index": 5,
+      "topic": "反復的な打ち上げにおける包括的ライセンス制度の導入",
+      "question": {
+        "speaker": "小野田",
+        "party": "日本維新の会",
+        "summary": "- 同一設計の衛星を大量に打ち上げる際、1機ごとの申請・審査が必要であり負担となっている\n- 審査結果の共通化や、米国スペースXのような包括的なライセンス制度を導入する考えはあるか",
+        "full_text": "反復的な打ち上げの審査について大臣にお伺いしたいと思います。近年衛星コンステレーションと呼ばれる事業形態急速に拡大しておりまして、同一設計の衛星を数十機から数千機程度で低軌道に打ち上げる、そういったようなビジネスモデルがございます。事業者からはほぼ同一設計の衛星であるにもかかわらず、一期ごとの許可申請と構造審査必要との指摘がございます。こうした類似する案件 審査結果の共通化であるとか再利用を求める事業者の要望を対応する方針はあるかということとあともう一方踏み込んでご質問すると例えばアメリカのスペースX社が利用しているような包括的なライセンス制度これを反復案件に適したやり方になるかなと思いますがこれを進めるお考えございますでしょうか小野田大臣 ロケット打ち上げ許可の申請については、同一設計のロケットについて都度審査を省略する形式認定であるとか、その打ち上げ施設について都度の審査を省略する打ち上げ施設の適合認定を活用することにより、これらに関する書類の提出の省略などの効率化、審査機関の短縮を図ってきたところです。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "小野田",
+        "role": "",
+        "summary": "- 形式認定や適合認定の活用により、書類提出の省略などの効率化を図っている\n- 包括許可制については、産業界における標準的な組織体制の知見蓄積が必要であると考えている",
+        "full_text": "こうした類似する案件 審査結果の共通化であるとか再利用を求める事業者の要望を対応する方針はあるかということとあともう一方踏み込んでご質問すると例えばアメリカのスペースX社が利用しているような包括的なライセンス制度これを反復案件に適したやり方になるかなと思いますがこれを進めるお考えございますでしょうか小野田大臣 ロケット打ち上げ許可の申請については、同一設計のロケットについて都度審査を省略する形式認定であるとか、その打ち上げ施設について都度の審査を省略する打ち上げ施設の適合認定を活用することにより、これらに関する書類の提出の省略などの効率化、審査機関の短縮を図ってきたところです。一方で、ロケット打ち上げに関する包括許可制については、現時点では打ち上げ時の安全確保能力を担保する標準的な組織体制に係る知見の蓄積が産業界においても 大臣。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#7691.33",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "反復的な衛星打ち上げ審査の効率化と包括ライセンス導入について",
+          "sub_asks": [
+            "審査結果の共通化・再利用を求める要望への対応方針",
+            "包括的なライセンス制度を進める考えがあるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "アメリカのスペースX社"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "形式認定"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "打ち上げ施設の適合認定"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "minister",
+          "score": 0.5
+        },
+        "oc3_quotability": {
+          "quote_candidate": "ロケット打ち上げに関する包括許可制については、現時点では打ち上げ時の安全確保能力を担保する標準的な組織体制に係る知見の蓄積が産業界においても",
+          "score": 0.4
+        },
+        "scoring_confidence": "low",
+        "evaluation_note": "回答が途中で切れており、包括許可制に対する最終的な結論や方針が不明確であるため、評価に制約がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_055",
+      "segment_index": 5,
+      "topic": "再利用型ロケット・ロックン方式への法的対応",
+      "question": {
+        "speaker": "安野貴博",
+        "party": "チームみらい・無所属の会",
+        "summary": "- 今回の法改正で見送られた再利用型ロケットやロックン方式への対応について、今後の見通しを伺いたい",
+        "full_text": "今回の法改正で見送られた事項についてお伺いいたします。今回の改正では再利用型ロケットやロック運方式への対応は対象となっておりません。これらは施行規則等で今後対応するとされております。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小野田",
+        "role": "",
+        "summary": "- 施行規則や審査基準の改正により実現を図る方向で整理されている\n- 産業発展を阻害しないよう、事業者の開発状況を伺いながら、適切なスケジュールで環境整備を進めたい",
+        "full_text": "これらの打ち上げについては、昨年12月にまとめられました宇宙政策委員会における宇宙活動法の見直しの基本的方向性の最終取りまとめにおいても施工規則 それから審査基準の改正等により実現を図るというふうに事項として整理されているというところでございます。御指摘のとおり具体的なスケジュールや時期をこの時点でこの日というふうに申し上げられませんけれども御指摘のような法的環境整備を遅れることにより産業発展を阻害することはあてはならないというふうに考えておりまして引き続き事業者の開発状況をあまり拙速で作って足枷になってもいけないと十分お話を伺ってその期限にしっかり間に合うような形でかつ予見可能性を 安野貴弘君。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8975#7691.33",
+      "metrics": null
+    }
+  ],
+  "score_schema_version": "2.0",
+  "prompt_version": "V4"
+}

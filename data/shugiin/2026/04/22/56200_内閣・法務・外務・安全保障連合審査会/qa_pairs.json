@@ -1,0 +1,5154 @@
+{
+  "pairs": [
+    {
+      "id": "qa_001",
+      "segment_index": 1,
+      "topic": "内閣情報会議の概要と活動状況",
+      "question": {
+        "speaker": "星野剛士",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 内閣情報会議の概要について\n- 会議の活動状況について",
+        "full_text": "本法案で設置されている国家情報会議は、現行の内閣情報会議を格上げするものとされておりますが、そもそも内閣情報会議ではどのような議論を行っているのか、会議の概要及び活動状況についてお伺いをしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "町田内閣審議官",
+        "role": "",
+        "summary": "- 内閣の重要政策に関する国内外の情報を総合的に把握し、基本方針等を検討する会議体である\n- 内閣官房長官を議長とし、政策部門幹部や情報コミュニティ関係省庁の次官級が出席し、年2回定例会議を開催している",
+        "full_text": "内閣情報会議は、我が国または国民の安全に関する国内外の情報のうち、内閣の重要政策に関するものについて、関係強制機関が緊密な連絡を行うことにより、総合的な把握をするとともに、そのための基本方針等を総合的に検討するため、内閣に設置された会議体でございます。この会議におきましては、 内閣官房長官が議長を務め、内閣官房副長官や、内閣危機管理官、国家安全保障局長、内閣官房副長官補等の政策部門の幹部のほか、内閣情報官をはじめ、情報コミュニティ関係省庁の次官級が出席して、年2回定例会議を開催しているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5197"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=503.88300000000004",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "内閣情報会議の概要と活動状況について",
+          "sub_asks": [
+            "会議の概要",
+            "活動状況"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "本法案で設置されている国家情報会議"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "内閣情報会議",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "内閣官房長官"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "内閣官房副長官"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "内閣危機管理官"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国家安全保障局長"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "内閣官房副長官補"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "内閣情報官"
+            },
+            {
+              "type": "number",
+              "excerpt": "年2回"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "内閣情報会議におきましては、内閣官房長官が議長を務め、情報コミュニティ関係省庁の次官級が出席して、年2回定例会議を開催している。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "内閣情報会議の構成員と開催頻度という具体的な事実が回答されており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_002",
+      "segment_index": 1,
+      "topic": "内閣情報会議における基本方針の内容",
+      "question": {
+        "speaker": "星野剛士",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 内閣情報会議で具体的にどのような基本方針等を示しているのか",
+        "full_text": "次に内閣情報会議の設置を定めた閣議決定におきましては、基本方針等を総合的に検討するとされておりますが、具体的にいかなる基本方針等を示しておるのでしょうか。お伺いをいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "町田内閣審議官",
+        "role": "",
+        "summary": "- 定例会議にて、国内外の情勢認識・評価について情報コミュニティ全体で集約・分析した内容を示す\n- 政策部門の情報関心を踏まえ、今後重点的に収集・分析・評価すべき事項を整理し決定している",
+        "full_text": "具体的には年2回開催される定例会議におきまして、 内閣の重要政策に関する国内外の情勢認識、評価について、情報コミュニティ全体で集約、分析しました内容を示すとともに、政策部門の情報関心を踏まえ、情報コミュニティが今後、重点的に収集、分析、評価すべき事項を整理して決定しているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5197"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=503.88300000000004",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "内閣情報会議の具体的な基本方針の内容",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "内閣情報会議の設置を定めた閣議決定"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "内閣情報会議",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "年2回"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "定例会議におきまして、内閣の重要政策に関する国内外の情勢認識、評価について、情報コミュニティ全体で集約、分析しました内容を示す",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "内閣情報会議の運用実態に関する具体的な回答が得られており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_003",
+      "segment_index": 1,
+      "topic": "国家情報会議への格上げによる効果",
+      "question": {
+        "speaker": "星野剛士",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 内閣情報会議が国家情報会議に格上げされることで、情報部門と政策部門の連接にどのような効果が期待できるか",
+        "full_text": "次に本法案で内閣情報会議が国家情報会議に発展開通されることによりまして、情報部門と政策部門との連接という観点から、どのような効果が期待できるのでしょうか。これは官房長官にお伺いをしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 政策部門（国家安全保障会議）と同格のランクとなることで、意思決定メカニズムが独立し、政策前提の偏った情報評価を防ぐことができる\n- 閣僚級での方針提示と相互分析が結実し、重要な政策判断に活用されるとともに、事務局レベルでもインテリジェンスサイクルが活発化することが期待される",
+        "full_text": "ただいまの御質問は、情報部門と政策部門との連接といった御所持だったと存じますが、制度上または運用上の課題とされるものの一つは、両者の分離とそれによる情報評価及び政策判断の客観性、また中立性の確保であると存じます。その点、分離という観点で申し上げるとこれまで内閣における推進部隊が政策部門である国家安全保障会議は閣僚級であったのに対し 事務次官級の内閣情報会議であり、ランクの差がございました。また、支える事務局組織についても、国家安全保障局は、規格立案件や総合調整権が付与されているのに対し、内庁は、そうした機能が付与されていない、そういう差もございました。これが、同格のものとして、 今、法案によって整備されることで、国安全保障政策を司る政府全体の各部局と、重要な情報活動等を推進する政府全体の各部局が、それぞれの同様の仕組みをもって、まとまりのあるものとして形成をされ、両者の意思決定メカニズムが別個のものとして、議長たる総理の下で機能することになるため、 過度に配慮した情報部門が進めたい政策を前提とした情報評価を行うといった事態は生じにくくなるものというふうに期待をされているところであります。一方で緊密な連携の確保という観点から申し上げると閣僚級の高い見地から示される政策部門の要求が閣僚級の高い見地から示される情報活動の方針とその結果に基づく 相互分析、相互評価に結実をし重要な政策判断に生かされることになりまた事務局レベルでも同格の両局長とその参加組織同士が一定のインテリジェンスサイクルをより活発に動かしていくということが期待されるものとそのように考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5197"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=503.88300000000004",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "国家情報会議への展開による情報・政策部門連接の効果",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "本法案"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "内閣情報会議",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国家安全保障会議"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "内閣情報会議"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国家安全保障局"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "閣僚級の高い見地から示される政策部門の要求が閣僚級の高い見地から示される情報活動の方針とその結果に基づく相互分析、相互評価に結実し重要な政策判断に生かされる",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "法案による組織変更がもたらす機能的なメリット（客観性の確保と連携の強化）について、官房長官が具体的に論理立てて回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_004",
+      "segment_index": 1,
+      "topic": "国家情報会議への格上げによる機能向上",
+      "question": {
+        "speaker": "星野剛士",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 同格になることで機能が飛躍的にアップするという認識でよいか",
+        "full_text": "今の官房長官の御説明ですと、まさに同格になると、そこをしっかりとつないでいくと。そのことによって機能が飛躍的にアップをするというふうに捉えたんですが、そうした捉え方でよろしいでしょうか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 同格の関係になることで、プロバイダー（情報提供側）からカスタマー（政策部門）へ適切な情報が提供され、政策に活かされることになる",
+        "full_text": "今、委員の御指摘のとおり、これまでレベルの下がったものが同格となることで、プロバイダーとして、あるいはカスタマーとして、同格の関係によって適切な情報が提供され、それが政策部門にしっかりと活かされているということになります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5197"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=503.88300000000004",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "官房長官の説明の解釈の確認",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "past_answer",
+              "excerpt": "今の官房長官の御説明"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "これまでレベルの下がったものが同格となることで、適切な情報が提供され、それが政策部門にしっかりと活かされているということになります。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "政府側の説明内容についての確認と同意のみであり、新たな事実や具体的なコミットメントは含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "単なる解釈の確認に留まっており、具体的な改善策や期限を問う形式になっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_005",
+      "segment_index": 1,
+      "topic": "内閣情報調査室の分析体制",
+      "question": {
+        "speaker": "星野剛士",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 内閣情報調査室の具体的な分析体制はどうなっているか",
+        "full_text": "現在、内閣情報調査室の分析体制は、具体的にどのようになっておるのでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "町田内閣審議官",
+        "role": "",
+        "summary": "- 8名の内閣情報分析官が、公開情報や人的情報を組み合わせた総合分析（オールソースアナリシス）を用いて中長期的な国際展望等の高度な分析を行っている\n- そのほか、内閣衛星情報センターなどの各部門が、目的に応じてより短期的な分析等を行っている",
+        "full_text": "内閣情報調査室の分析体制でございますけれども、まず当室には8名の内閣情報分析官というものが置かれております。これは重要な分野とか地域についての分析をしておりますけれども、この内閣情報分析官は官邸の首脳とか国家情報局をはじめとする政策部門の情報監視に応えるべく、中長期的な国際展望。といったもの、国際情勢の展望、あるいは評価、そういったものについてですね、公開情報であったり、人的情報であったり、さまざまな情報源を組み合わせる、いわゆるその総合分析、あるいはオールソースアナリシスと呼ばれる手法がございますけれども、こうしたものも活用して高度な分析を行っているというのがまず一つございます。それに加えまして、国際部門 はじめとする各部門、それから内閣情報調査室には内閣衛生情報センターと。というものが置かれておりますけれども、こうしたところもそれぞれの目的に応じて、それぞれの所掌に関わる分析をしている。先ほど申し上げた内閣情報分析機関がオールソンドスアナリシスと中長期的というところに重点があるのに対して、こうしたそのほかの部門については、より短期的なものであったりとか、その機能に応じた分析をしている。そういうような体制をとっているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5197",
+        "shugiin-221-shuhou-3"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=503.88300000000004",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "内閣情報調査室の分析体制について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "内閣情報調査室",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "8名の内閣情報分析官"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "内閣衛生情報センター"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "オールソースアナリシス"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "当室には8名の内閣情報分析官というものが置かれております。これは重要な分野とか地域についての分析をしております",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "内閣情報調査室の分析体制について、分析官の人数や手法（オールソースアナリシス）などの具体的構成が回答されており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_006",
+      "segment_index": 1,
+      "topic": "国家情報局の分析能力強化策",
+      "question": {
+        "speaker": "星野剛士",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 国家情報局に企画立案・総合調整機能が付与されることで、分析能力はどう強化されるか",
+        "full_text": "それぞれが役割分担をしながら情報分析を行っているというふうに考えますが、国家情報局に新たに企画立案、総合調整機能が付与されることによりまして、国家情報局の分析能力は、 どのように強化されることになるのでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 各省庁への要請や役割分担を的確に行うことで、集約される情報の質・量ともに向上が期待される\n- 省庁横断的な研修・訓練の実施やAIを用いた分析手法の高度化、情報共有の仕組み構築を企画立案することで、各情報機関の分析能力を強化し、相乗効果を得る",
+        "full_text": "本案によりまして、内庁の後継組織の国家情報局に、情報活動の企画立案に関する事務と、総合調整に関する事務が新しく加わることになりますけれども、 取組を推進するためのものであります。まず各省庁に対する情報収集の要請や、その特性に応じた役割分担を的確に行うことで、内閣官房に集約されるその情報の水準が、質的、量的、この両面で向上することが期待をされます。また例えば、情報分析能力を高めるための省庁横断的な研修、 また訓練の実施、それからAI等を用いた分析手法の高度化のための調査研究、情報共有を効果的に行うための仕組みの構築等を企画立案することによって、国家情報局を含めた各情報機関の分析能力が強化をされ、これらの相乗効果によって高度な情報の分析及び評価が達成されるものとそのように考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5197",
+        "shugiin-221-shuhou-3"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=503.88300000000004",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "国家情報局の分析能力はどう強化されるか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "国家情報局"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国家情報局",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "省庁横断的な研修"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "AI等を用いた分析手法の高度化のための調査研究"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "情報共有を効果的に行うための仕組みの構築"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "AI等を用いた分析手法の高度化のための調査研究、情報共有を効果的に行うための仕組みの構築等を企画立案することによって、国家情報局を含めた各情報機関の分析能力が強化をされ",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "国家情報局の機能強化策について具体的に回答されており、情報の質的・量的向上やAI活用などの方向性が示されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_007",
+      "segment_index": 2,
+      "topic": "内閣情報調査室の国内部門の人員数",
+      "question": {
+        "speaker": "有田芳生",
+        "party": "中道改革連合・無所属",
+        "summary": "- 内閣情報調査室の全人員730人のうち、国内部門に何人が配属されているか",
+        "full_text": "内閣情報調査室、いわゆる内調について、4月10日の内閣委員会では、去年の人員が730人と答弁されました。最初にお聞きをしたいんですけれども、この内調は総務部門、国内部門、国際部門、経済部門などなどの組織を持っておりますけれども、 この特に国内部門はこの730人のうち何人今配属されているんでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "岡本彦",
+        "role": "",
+        "summary": "- 部門ごとの人員を明らかにすると情報監視の重点等が判明し、業務に支障を来す恐れがあるため、公表は適当ではない",
+        "full_text": "委員の御指摘のとおり、今年4月1日現在の内庁の実員数は730名。部門ごとの人員につきましては、これを明らかにすることで、内政の情報監視の重点等を明らかにすることとなりまして、業務に支障を来す恐れがあるため、公明にすることは適当ではないと考えておりまして、この点ご理解いただきたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5197",
+        "shugiin-221-shuhou-3",
+        "shugiin-221-sanhou-5"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=1372.9830000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "内調の国内部門の配属人数",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "4月10日の内閣委員会"
+            },
+            {
+              "type": "number",
+              "excerpt": "去年の人員が730人"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "内閣情報調査室（国内部門）",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "730名"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "今年4月1日現在"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "部門ごとの人員につきましては、これを明らかにすることで、内政の情報監視の重点等を明らかにすることとなりまして、業務に支障を来す恐れがあるため、公明にすることは適当ではない",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な人数を問う質問に対し、機密保持を理由に回答を拒否したやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_008",
+      "segment_index": 2,
+      "topic": "内閣情報調査室における特定担当の有無",
+      "question": {
+        "speaker": "有田芳生",
+        "party": "中道改革連合・無所属",
+        "summary": "- マスコミ担当や野党担当といった具体的な担当区分があるか",
+        "full_text": "具体的にマスコミ担当あるいは野党担当というのはありますか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "岡本彦",
+        "role": "",
+        "summary": "- 内部構成である担当割については回答を差し控える\n- 情報収集にあたっては、テーマに適した様々な有識者（マスコミ関係者含む）から幅広く話を聞くのが一般的である",
+        "full_text": "国内部門に限らない話でございますけれども、 各部門の業務がどのような担当割に基づいて行われているかということについては、組織の内部構成ということで、従前よりお答えを差し控えているところでございますけれども、情報収集のあり方という点で申し上げますと、内庁の職員は、平素より我が国を含む各国の政策や、その他国内外の諸情勢に関する見方や論点などにつきまして、 様々な有識者の方々からお話を伺う機会を設けております。そこにはマスコミ関係者も含まれるところですけれども、特定の属性の方ばかりにお話を伺るわけではなくて、その時々の情報のテーマに適した様々な方のお話を伺うことが一般的でございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=1372.9830000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "マスコミ・野党担当の有無",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "マスコミ担当あるいは野党担当",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": true,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "組織の内部構成ということで、従前よりお答えを差し控えているところでございます",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "担当の有無という具体的な問いに対し、内部構成であるとして回答を拒否し、一般的な情報収集のあり方に論点をずらしている。",
+        "would_be_referenced": "low",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_009",
+      "segment_index": 2,
+      "topic": "国会議員の行動監視に関する過去の答弁の確認",
+      "question": {
+        "speaker": "有田芳生",
+        "party": "中道改革連合・無所属",
+        "summary": "- 過去に国会議員の行動監視等の活動をしたことがあるかという問いに対し、現在はどう答弁しているか",
+        "full_text": "そこで次にお聞きをしたいんですけれども、4月10日の内閣委員会で長妻昭委員が質問をされました。2009年ではなくて今はどうかということに対して官房長官にさらに質問されたんですけれども、そのときの御答弁をもう一度お願いします。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- （過去の）「お答えを差し控えたい」という答弁の内容は、今も変わっていない",
+        "full_text": "その御質問に対しては今も変わっておりませんというふうに答弁をしたと記憶しております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=1372.9830000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "過去の答弁内容の再確認",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "4月10日"
+            },
+            {
+              "type": "organization",
+              "excerpt": "内閣委員会"
+            },
+            {
+              "type": "other",
+              "excerpt": "長妻昭委員"
+            },
+            {
+              "type": "other",
+              "excerpt": "官房長官"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "官房長官",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "その御質問に対しては今も変わっておりませんというふうに答弁をしたと記憶しております。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "過去の答弁内容を確認する形式的なやり取りであり、新たな事実や具体的コミットメントは含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "答弁内容を具体的に提示させた上で、現在の見解との整合性を問う形式にすればより価値が高まった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_010",
+      "segment_index": 2,
+      "topic": "公安調査庁の内部文書の存在",
+      "question": {
+        "speaker": "有田芳生",
+        "party": "中道改革連合・無所属",
+        "summary": "- 「工作基礎調査事項」という文書は内調（内閣情報調査室）の内部文書ではないか",
+        "full_text": "これは事実ですから、そのことだけをお伝えをしておきたいと思いますけれども、きょうは法務委員会から来ておりますので、法務大臣あるいは公安調査庁にもお聞きをしたいんですけれども、公安調査庁、工作基礎調査事項という機密文書、お分かりですよね。私は思っているんですけれども、内庁の内部文書ですよ。認められませんか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "岡本彦",
+        "role": "",
+        "summary": "- 知る限り、内調にそのような文書は存在しない",
+        "full_text": "私の知る限りは内聴にそのような文書はございません。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=1372.9830000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "工作基礎調査事項という内部文書の存在確認",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "工作基礎調査事項という機密文書"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "公安調査庁",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "私の知る限りは内聴にそのような文書はございません。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "特定の機密文書の存在について問い、政府側が否定したやり取りであり、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_011",
+      "segment_index": 2,
+      "topic": "公安調査庁と警察（捜査機関）の調査方法の違い",
+      "question": {
+        "speaker": "有田芳生",
+        "party": "中道改革連合・無所属",
+        "summary": "- 捜査機関（警視庁公安部等）と公安調査庁の調査方法にはどのような違いがあるか",
+        "full_text": "大臣せっかく来ていただいたんで、捜査機関、警備 例えば警視庁公安部などと違って内庁の調査の方法というのは、どこが違うんでしょうか。捜査機関と違って公安調査庁の調査の違いというのを教えていただけますか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "平口法務大臣",
+        "role": "",
+        "summary": "- 公安調査庁は破壊活動防止法等に基づき破壊的団体の規制に関する調査を行い、警察は警察法に基づき公共の安全と治安の維持のために情報収集を行う\n- 主に調査を行うのが公安調査庁の任務である",
+        "full_text": "公安調査庁は、派望法及び団体規制法に基づいて、 破壊的団体の規制に関する調査を行い、もって公共の安全の確保を図ることを任務としており、他方、警察は警察法第2条に規定する公共の安全と知事の維持という警察の職務を果たすために、必要な範囲内で情報収集活動を行っているものと承知しております。主な調査を行うのが、公安調査庁の任務であるということです。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=1372.9830000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "公安調査庁と捜査機関の調査方法の違い",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "警視庁公安部"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "公安調査庁・警視庁公安部",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "破壊的団体規制法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "警察法第2条"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "公安調査庁は、破壊的団体規制法に基づいて、破壊的団体の規制に関する調査を行い、もって公共の安全の確保を図ることを任務としており",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "調査方法の具体的な「違い」への回答は不十分だが、根拠法に基づく役割分担を明確に述べている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どこが違うのか」という問いに対し、具体的な手法（強制捜査の有無等）を問う形式にすればより明確な回答が得られた。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_012",
+      "segment_index": 2,
+      "topic": "公安調査庁の強制捜査権の有無",
+      "question": {
+        "speaker": "有田芳生",
+        "party": "中道改革連合・無所属",
+        "summary": "- 公安調査庁には強制捜査権はなく、任意調査しかできないという理解で正しいか",
+        "full_text": "つまり一言で言えば、強制捜査権はないけれども、任意調査しかできないという、そういう理解でよろしいわけですね。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "平口法務大臣",
+        "role": "",
+        "summary": "- 指摘の通りである",
+        "full_text": "御指摘のとおりでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=1372.9830000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "強制捜査権がなく任意調査のみか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "強制捜査権はないけれども、任意調査しかできないという、そういう理解でよろしいわけですね。御指摘のとおりでございます。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "権限の有無という法的解釈について、政府側が明確に肯定したため、記録としての価値が高い。",
+        "would_be_referenced": "high",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_013",
+      "segment_index": 2,
+      "topic": "公安調査庁による協力者獲得の手法とプライバシー侵害",
+      "question": {
+        "speaker": "有田芳生",
+        "party": "中道改革連合・無所属",
+        "summary": "- 内部文書にあるような、個人の詳細な身辺調査（経済状況や人間関係等）を行う手法で現在も協力者を獲得しているのではないか",
+        "full_text": "公安調査庁さんは、そんな文書は存在しないとおっしゃっているけれども、 実際に工作基礎、調査事項という内部文書、私も持っている。だからこの文書の有無についてはもう知らないとおっしゃったから聞きませんけれども、今でもこういう手法で協力者はつくっていらっしゃるんじゃないですか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "下田次郎",
+        "role": "",
+        "summary": "- 破壊活動防止法等の法律に基づき、公共の安全確保のために必要最小限度で調査を行っている\n- 国民の自由や権利を不当に制限することなく、法律の趣旨に従い適正に調査を行っている",
+        "full_text": "その上でお答え申し上げますと、私どもは破壊活動防止法及びいわゆる団体規制法に基づきまして、破壊的団体等の規制に関して必要な調査を行っている機関でございます。これら法律に基づきます調査に当たりましては、破壊活動防止法第3条等におきまして、公共の安全の確保に寄与するという目的を達成するために必要最小限度においてのみ行うべきであって、国民の自由や権利を不当に制限するようなことがあってはならない旨、規定されております。従いまして私どもとしましては、こうした法律の趣旨に従って適正に調査を行っているものと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=1372.9830000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "現在も同様の手法で協力者を作っているか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "工作基礎、調査事項という内部文書"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "協力者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.2
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "破壊活動防止法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "団体規制法"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "法律の趣旨に従って適正に調査を行っているものと考えております。",
+          "score": 0.2
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な手法の有無という問いに対し、法律の一般論で回答を回避しており、実質的な情報は得られていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「こういう手法」が具体的に何を指すのかを明示した上で問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_014",
+      "segment_index": 4,
+      "topic": "公安調査庁の文書の存在確認",
+      "question": {
+        "speaker": "有田芳生",
+        "party": "中道改革連合・無所属",
+        "summary": "- 1998年3月25日付の「取扱い注意」と記載された情報提報（活用）に関する文書が公安調査庁にあるか",
+        "full_text": "もう時間ありませんのでやめますけれども前回長妻議員が その文書の内容については指摘をしておりませんけれども、1998年3月25日付の取扱い注意と書かれた情報提報、これは誤字なんですけれども、情報提報と活用のあり方についてという、これは公安調査庁の文書ありますよね。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "下田知事長",
+        "role": "",
+        "summary": "- 現時点で手元に確認できるものはなく、改めて報告したい",
+        "full_text": "現在、今この時点で 手元に確認できるものはございませんので、また改めてご報告いただきたい。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=2549.083",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "特定文書の存在確認",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "1998年3月25日付"
+            },
+            {
+              "type": "organization",
+              "excerpt": "公安調査庁"
+            },
+            {
+              "type": "other",
+              "excerpt": "取扱い注意と書かれた情報提報、これは誤字なんですけれども、情報提報と活用のあり方について"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 1.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "公安調査庁",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "改めてご報告いただきたい",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "現在、今この時点で 手元に確認できるものはございませんので、また改めてご報告いただきたい。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "特定の内部文書の存在を問う質問に対し、現時点では確認できないとして後日報告することを約束したやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_015",
+      "segment_index": 4,
+      "topic": "日本のインテリジェンス能力向上と対米関係",
+      "question": {
+        "speaker": "長妻昭",
+        "party": "中道改革連合・無所属",
+        "summary": "- 日本がインテリジェンス能力向上に消極的だったのは、米国との意思決定のズレを避けるためではないか\n- 米国と異なる情報が入った際に、政治側が独自の政策判断を下す覚悟を示さない限り、インテル部門は機能しないのではないか",
+        "full_text": "まず茂木大臣と質疑をしていきたいと思うんですが、 10ページ目配付資料を見ていただくと国会図書館に作っていただいた最新はこの資料しかないということで各国とのインテリジェンスコミュニティの比較なんですが日本は人予算が大変脆弱であるこれは私議員になる前から思っていた疑問はなぜ日本はインテリジェンス能力向上に予算を使わないんだろうかと なぜこんなに弱いのかという疑問がありました。これについて今回日本の我が国のインテリジェンス能力を強化するということを本気でやるとすると。そしてインテリジェンス部門、インテル部門の皆さんが本気でこの職務に 意気を感じてさらに邁進をしていただくためには日本がアメリカと違う情報が入手されたときにアメリカと違う政策判断もきちっとするんだとこういう覚悟を政治の側が示さないとインテル部門が本当に機能しないと思うんですが茂木大臣いかがでしょう。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "",
+        "summary": "- 米国との関係があるからあえて強化してこなかったということはない\n- 国際情勢の変化に伴い、インテリジェンス機能は強化する必要があると考えている",
+        "full_text": "茂木外務大臣 これまで日本としてインテリジェンス機能とアメリカとの関係があるからあえてそれを強化してこなかったということはなかったと考えておりますが今国際情勢も刻々と変化をするとそしてそういった情勢が日本の 平和であったりとか、また国民生活の安定、さらには経済的な反映にもつながる。さまざまなことを考えたときに、インテリジェンス機能というものは強化する必要がある。このように考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "shugiin-221-shuhou-3"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=2549.083",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "日本のインテリジェンス能力強化への覚悟はあるか",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "10ページ目配付資料"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "インテル部門",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "インテリジェンス機能というものは強化する必要がある",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "インテリジェンス機能というものは強化する必要がある。このように考えております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "大臣がインテリジェンス機能強化の必要性を認めた点は記録として価値があるが、具体的な手段や期限への言及はなく、抽象的な回答に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "政治的な「覚悟」という主観的な問いであるため、回答が抽象的な同意に終始しやすい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_016",
+      "segment_index": 4,
+      "topic": "インテリジェンス部門の独立性と政治的覚悟",
+      "question": {
+        "speaker": "長妻昭",
+        "party": "中道改革連合・無所属",
+        "summary": "- 米国と異なる情報（例：イラク大量破壊兵器の不在等）が上がった際、米国に物を申せる政治的覚悟があるか\n- 政治が応える姿勢を示さないとインテル部門が萎縮するのではないか",
+        "full_text": "茂木大臣、認識というか現状を把握してほしいんですね。仮にそのときに日本のインテリジェンス部門がイラクに大量破壊兵器がないという情報を上に上げたときにおそらく私は日本政府ときの政権はアメリカと違う判断ができなかったんじゃないか。ここでお伺いしてもいやそれは情報がないので答えられないとこういうことになっておりますがもしインテリジェンス部門が我が国の情報を詳細に分析をしてやはりこれは予防的先制攻撃ではないと国際法に違反しているとこういうような情報を挙げたときに果たして日本が我が国がきちっとアメリカに対して物を申せるかどうか もちろん政治的な判断というのは途中で入るのは私はあると否定はしておりませんけれどもですからこういう覚悟なんですよつまりアメリカと違う情報が上がってきてもきちっとそれに政治が応えていくとこういう覚悟を政治の側が示さないと私はインテル部門は機能しないと思うんですが官房長官、ぜひその覚悟、姿勢についてここで明確に答弁していただきたいんです 木原内閣官房長官。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 本法案は司令塔機能を強化する組織法であり、対外関係の基本在り方を変更する趣旨ではない\n- 日米同盟が基軸であることに変わりはないが、司令塔機能の強化により米国との関係もより強化されると考えている",
+        "full_text": "まず本法案ですが、これはあくまで政府におけるインテリジェンスの司令塔機能を強化しようとするものであり、いわゆる組織法であります。そういった対外関係の基本的な在り方を変更するような趣旨のものではないということをまず冒頭に申し上げておきながら、そのインテリジェンスの分野においては各国それぞれの能力を踏まえ、 国際的に協力していくことが一般的でございます。いずれにしても、我が国の安全保障において日米同盟が基軸である点には何らかありませんが、日本のインテリジェンスの司令塔機能が強化することで、米国との関係、インテリジェンス部門の関係もより強化されるものとそのように考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "shugiin-221-shuhou-3"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=2549.083",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "米国の判断と異なる情報が出た際に物を申せる覚悟があるか",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "field_case",
+              "excerpt": "イラクに大量破壊兵器がないという情報"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "インテリジェンス部門",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "vice_minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "日本のインテリジェンスの司令塔機能が強化することで、米国との関係、インテリジェンス部門の関係もより強化される",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "政治的な覚悟を問う質問に対し、法案の趣旨と日米同盟の重要性を述べるにとどまり、直接的な回答を避けている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「覚悟」という主観的な問いであるため、政府側が具体的に回答しにくい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_017",
+      "segment_index": 4,
+      "topic": "武器輸出三原則の緩和と国際法遵守",
+      "question": {
+        "speaker": "長妻昭",
+        "party": "中道改革連合・無所属",
+        "summary": "- 輸出三原則の緩和により、違法な戦争（国際法違反）に我が国の武器が使われることは想定していないか",
+        "full_text": "そしてインテリジェンス部門が重要極めて重要なのが武器輸出についても重要だと思います。昨日閣議決定があって 輸出三原則大幅に緩和したということになりましたけれども、これは官房長官にお伺いしますが、これは違法な戦争に我が国の武器が使われると、これは想定していませんね。明確に御答弁いただきたいんですが、違法な戦争、つまり国際法に反する戦争に我が国の武器が使われると。ということは想定していない。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 個別ケースに応じて厳格に審査し、移転の可否を判断する\n- 違法な戦争には移転されないことを明言する",
+        "full_text": "防衛装備移転の可否については、これは個別のケースに応じて審査することになるために、一概にお答えすることは、 困難でありますが、その上で、例えば同盟国であり、対日防衛義務を負う米国がですね、米国の先つながりで申し上げますと、武力紛争の一環として現に戦闘が行われていると判断される国になったものの、インド太平洋地域における米軍の体制を維持するために、我が国の装備品を必要としているようなケース。いずれにしても具体的な装備品の性質なども踏まえて、個別のケースに応じて移転の必要性について、これは厳格に審査し、移転の可否を判断するということになります。違法な戦争にはそれは移転されないということは申し上げておきます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=2549.083",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "武器が違法な戦争に使用される想定の有無",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "past_answer",
+              "excerpt": "昨日閣議決定があって 輸出三原則大幅に緩和した"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "米国"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "インド太平洋地域"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "違法な戦争にはそれは移転されないということは申し上げておきます。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "違法な戦争への武器移転を否定するという明確な答弁が得られており、記録としての価値が高い。",
+        "would_be_referenced": "high",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_018",
+      "segment_index": 4,
+      "topic": "武器輸出のモニタリングと国会報告",
+      "question": {
+        "speaker": "長妻昭",
+        "party": "中道改革連合・無所属",
+        "summary": "- 輸出先の管理状況モニタリング（違法な戦争への使用懸念等）について、国会に適切に報告できるか",
+        "full_text": "そして昨日の閣議決定では、管理状況モニタリングというのも盛り込まれました。つまり輸出先適正に管理運用されているか、違法な戦争に使われていないかどうか、使われる懸念があれば、それは警告を出すんでしょう。このモニタリングは国会にきちっと報告いただけますね。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 詳細は今後検討するが、相手国と緊密な関係を築き情報を円滑に得るよう努める\n- 国会から説明を求められた場合には、丁寧に説明を行う",
+        "full_text": "小泉防衛大臣 モニタリングにつきましては、詳細は今後検討を進めることになりますが、自衛隊法上の武器の管理状況、そして保全の措置、紛失した場合の対応要領等を相手国に確認することとしており、こういった情報が円滑に得られるように閉鎖から、相手国との関係を緊密にしてまいります。いずれにしましても、国会の質疑と、またこうやってやりとりをさせていただいておりますけれども、しっかりと説明を求められた場合に、丁寧に御説明をさせていただきます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=2549.083",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "モニタリング結果の国会報告の可否",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "昨日の閣議決定"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "自衛隊法"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "詳細は今後検討を進めることになりますが",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "しっかりと説明を求められた場合に、丁寧に御説明をさせていただきます。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "国会報告の可否という明確な問いに対し、大臣は「求められた場合に説明する」という一般的回答に留まっており、具体的な報告メカニズムへの言及はない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「報告いただけますね」という同意を求める形式のため、政府が「はい」か「いいえ」で答えやすくなっているが、報告の頻度や形式を具体的に問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_019",
+      "segment_index": 4,
+      "topic": "武力紛争の一環としての戦闘の定義（米国）",
+      "question": {
+        "speaker": "木原稔",
+        "party": "中道改革連合・無所属",
+        "summary": "- 米国がイランと行っている戦闘は、「武力紛争の一環として現に戦闘が行われている国」に該当するのか",
+        "full_text": "官房長官にお尋ねしますけれどもこの例の特段の事情ですね武力紛争の一環として現に戦闘が行われていると判断される国これ今アメリカはイランと戦争しておりますけれどもこれはアメリカは現に戦闘が行われていると判断される国に入るんでしょうか入らないんでしょうか木原内閣官房長官 米国に関してですが、どのような状況が武力紛争の一環としての戦闘に該当するかというのは、これも個別具体的な判断されることになるため、一概にはお答えすることは困難ですが、その上で政府としては、現在米国政府において、武力紛争の一環として現に戦闘が行われているとは認識しておりません。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 個別具体的な判断となるため一概には答えられないが、政府としては現在、米国政府において武力紛争の一環として現に戦闘が行われているとは認識していない",
+        "full_text": "官房長官にお尋ねしますけれどもこの例の特段の事情ですね武力紛争の一環として現に戦闘が行われていると判断される国これ今アメリカはイランと戦争しておりますけれどもこれはアメリカは現に戦闘が行われていると判断される国に入るんでしょうか入らないんでしょうか木原内閣官房長官 米国に関してですが、どのような状況が武力紛争の一環としての戦闘に該当するかというのは、これも個別具体的な判断されることになるため、一概にはお答えすることは困難ですが、その上で政府としては、現在米国政府において、武力紛争の一環として現に戦闘が行われているとは認識しておりません。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=2549.083",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "米国が武力紛争の一環として現に戦闘が行われている国に該当するか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "特段の事情"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "アメリカ",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "政府としては、現在米国政府において、武力紛争の一環として現に戦闘が行われているとは認識しておりません。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "米国が特定の法的定義（武力紛争の一環としての戦闘）に該当するかという問いに対し、政府としての認識を明確に回答しており、記録的価値が高い。",
+        "would_be_referenced": "high",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_020",
+      "segment_index": 4,
+      "topic": "自衛隊員の自民党大会参加と政治的中立性",
+      "question": {
+        "speaker": "長妻昭",
+        "party": "中道改革連合・無所属",
+        "summary": "- 自衛隊員の党大会参加が組織的に承認されていた点について、政治との距離の観点から問題があるのではないか\n- 事実関係を精査し、報告書をまとめて後日報告する検証チームを設置できないか",
+        "full_text": "これは私、一番初めの説明は自衛隊の方が個人的に参加をして 制服を着るのは別にプライベートでもOKだと、こんなような説明を聞いておりましたが、今、ルル御説明いただいたのを聞くと、これも組織的にきちっと10段階、10人の方の目が通って、了解が出ているということでありまして、これ組織上、私は相当改善が必要なんではないかと。これちょっとした問題じゃないんですよ。非常に大きな象徴的な問題なので、調査チームをつくって、そこで報告書をまとめて後日報告すると。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 幹部まで報告が上がっていなかった点など、組織としての報告のあり方を見直す必要があるという認識は同じである\n- 政治的中立を疑われることのないよう、何が適切か検討したい",
+        "full_text": "小泉防衛大臣これは今先生の依頼に応じて作らせていただいた一覧表を見てもですねやはり私を含む防衛省の方の幹部まで上がってこなかったことこれが上がっていれば別の判断もあり得たという官房長官もるる答弁されておりますけれどもそういった思いの中でやはり組織としてこの報告のあり方など見直さなければいけないことがあるという思いは 私は長妻先生と同じです。そして政治的中立を疑われることのない、そういった形にしていくように、何が適切か、よく考えたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=2549.083",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "自衛隊員の制服着用等の組織的管理の改善と調査報告の要求",
+          "sub_asks": [
+            "組織上の改善の必要性への言及",
+            "調査チームの設置と報告書の作成・報告"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自衛隊",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "何が適切か、よく考えたいと思います",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "組織としてこの報告のあり方など見直さなければいけないことがあるという思いは私は長妻先生と同じです。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "調査チームの設置という具体的な要求に対し、大臣は精神的な同意に留まり、具体的なアクションを約束しなかった。",
+        "would_be_referenced": "low",
+        "issue_in_design": "調査チームの設置を「～すると」という断定形式で述べており、明確な問いかけ（～してください、等）になっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_021",
+      "segment_index": 4,
+      "topic": "公安調査庁による国会議員への情報提供",
+      "question": {
+        "speaker": "長妻昭",
+        "party": "中道改革連合・無所属",
+        "summary": "- 公安調査庁が国会議員の地元選挙情勢を調査し、情報提供を行うという内部文書があるが、実態はどうなっているか",
+        "full_text": "政治とインテル部門の距離という意味では、公安調査庁も同様でございまして、公安調査庁の内部文書と言われる文書がございまして、こういうふうに書いてあるんですね。そこで共産党など、党庁特異分野に焦点を当てた地元選挙情報を作成し、説明に赴くことが、議員との関係を深めるのに効果的と考えられる。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "平口結衣",
+        "role": "",
+        "summary": "- 特定の国会議員に対し地元選挙情勢を調査し情報提供することは行っていないし、今後の方針もない",
+        "full_text": "公安調査庁は特定の国会議員に対しまして、地元選挙情勢を調査し、情報を提供することは行っておらず、今後についてもそのような方針はないと承知しております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=2549.083",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "公安調査庁による議員への選挙情報提供の有無",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "公安調査庁の内部文書と言われる文書"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "公安調査庁",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "公安調査庁は特定の国会議員に対しまして、地元選挙情勢を調査し、情報を提供することは行っておらず",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "内部文書の存在を提示して事実確認を求めた問いに対し、政府側が明確に否定したやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "疑問符がなく断定的な形式で提示されているが、実質的な問いとして機能している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_022",
+      "segment_index": 4,
+      "topic": "情報保全体によるプライバシー侵害と記録削除",
+      "question": {
+        "speaker": "長妻昭",
+        "party": "中道改革連合・無所属",
+        "summary": "- 過去に裁判所でプライバシー侵害と認められた自衛隊反対派への調査記録は、削除されたのか",
+        "full_text": "情報保全体についてでありますけれども、これはかつてイラクに自衛隊を派遣されたことがあるわけですが、それに反対するデモに参加したAさんの 本名、職業、職場訪問もして調査をしたということで、裁判所が、これは問題ありということで、10万円の賠償を命じて、その方に10万円をお支払いしたという案件がありました。プライバシー侵害と認められたわけですけれども、この方の記録というのは削除されましたですか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 文書の認否はできないため、事実を前提とした質問には答えられない\n- 行政文書開示請求の都度探索したが、該当する文書は存在しないことを確認している",
+        "full_text": "本件訴訟で提示された文書については、防衛省として対外的に明らかにしたものではないことから、情報保全体が本件文書を作成したか否かも含め、国として認否できないという立場に変わりはなく、当該文書に記載されていた内容が事実であることを前提とした質問にお答えすることは、差し控えさせていただきたいと思います。さらにその上で申し上げれば、これまでにイラク自衛隊派遣に対する反対動向等の行政文書開示請求の都度、該当文書の探索を行いましたが、そのような文書は存在しないことを確認しております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=2549.083",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "特定個人の調査記録の削除状況について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "field_case",
+              "excerpt": "裁判所が、これは問題ありということで、10万円の賠償を命じて、その方に10万円をお支払いしたという案件"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "Aさん",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "情報保全体が本件文書を作成したか否かも含め、国として認否できないという立場に変わりはなく",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な裁判事例に基づいた質問に対し、政府側は文書の存在自体を認否せず、回答を拒否した。記録としての価値はあるが、実質的な回答は得られていない。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_023",
+      "segment_index": 4,
+      "topic": "内閣情報調査室（国家情報局）のプロパー職員採用",
+      "question": {
+        "speaker": "長妻昭",
+        "party": "中道改革連合・無所属",
+        "summary": "- 内調のプロパー職員が少ない（約3分の1）現状があるが、プロパー職員を増強してほしい",
+        "full_text": "今、内庁が私はちょっと脆弱な組織になってしまっているという危機感を持っているんですが、今、内庁のプロパー職員というのは、全職員の何分の1おられるんですか。だからやっぱり内庁、今後、今度ですね、調査局、国家情報局ですね、失礼、国家情報局になるわけでありますので、 これプロパーを増やしていただきたい。今年は一定の数プロパー採用されますけど、来年の夏さらに増強してプロパーを増やしていただきたい。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 専門人材としてプロパーや中途採用を拡大する方針である\n- 来年度の募集数を約30名程度に引き上げる予定である",
+        "full_text": "現在国際情勢とかAIに代表されるような情報技術の進展というものがインテリジェンス業務の専門性を急激に高めておりますので、これに対応できる専門人材としてプロパー職員。来年度、すなわち来週の募集数は約30名程度と引き上げることを予定しております。現在はプロパー職員、全職員の3分の1、3分の1程度ということになります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5197"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=2549.083",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "内庁のプロパー職員の割合と増員要望",
+          "sub_asks": [
+            "プロパー職員は全職員の何分の1か",
+            "来年夏にプロパー職員をさらに増やしてほしい"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "内庁"
+            },
+            {
+              "type": "organization",
+              "excerpt": "国家情報局"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "内庁のプロパー職員",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "約30名程度"
+            },
+            {
+              "type": "number",
+              "excerpt": "3分の1程度"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 3,
+          "trigger_phrase": "来年度、すなわち来週の募集数は約30名程度と引き上げることを予定しております",
+          "matched_pattern": "future-tense verb describing a CONCRETE government action with a named mechanism"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "現在はプロパー職員、全職員の3分の1、3分の1程度ということになります。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "プロパー職員の割合という具体的な数値回答と、次年度の採用数引き上げという具体的なアクションが示されており、記録価値が高い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "要望と質問が混在しているため、質問を分けて提示すればより明確な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_024",
+      "segment_index": 4,
+      "topic": "内閣情報調査室の幹部ポストとキャリア採用",
+      "question": {
+        "speaker": "長妻昭",
+        "party": "中道改革連合・無所属",
+        "summary": "- 内調の指定職（幹部）が他省庁からの出向者に偏っている。プロパーでのキャリア採用（総合職採用）を検討できないか",
+        "full_text": "11ページの資料でありますが、今指定職は 審議官局長級以上は内長は何人おられて、出向元は何人ぐらいですか。内調のプロパーというのはキャリア採用というのはあるんですか。そしてもう一つお願いはですね、プロパーは今キャリアは採用してないんですが、プロパーの方、内庁のプロパー採用に国家公民、上級職、総合職、このキャリアの採用というのもですね、ぜひ考えていただきたいと、進めると。今年の夏は間に合わないんでしょうから、来年の夏からキャリア採用もプロパー、内庁、考える検討するというご答弁いただきたいと思うんですが。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 総合職採用による高度な専門人材の確保は積極的に検討してよいと考えている\n- 来年度分は時期的に難しいが、再来年度の採用分から開始できるか事務方に検討を命じる",
+        "full_text": "木原内閣官房長官いずれもこの進歩をお認めいただいた後になりますけれども国家情報局は内閣の立場から行う企画立案の事務やまた総合調整事務を担当することになるため私も総合職採用のニーズはこれから高くなるんじゃないかなと私は思っております また情報業務の高度化とか専門化とかというそういうトレンドに鑑みても総合職採用による高度な専門人材の確保を図ってもよいと私は今の時点考えています。どちらを施行するかによって必要な人材のタイプというのは異なってくると思いますが私としては総合職の採用は積極的に検討してよいと考えており今委員は 来年度採用分のことは難しいとおっしゃいましたが、確かに既に総合職の一部試験が終わっているので、そのもう時期を逸してしまったんですが、再来年の採用分からは開始できる、できないかということを、今、事務方に検討を命じたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=2549.083",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "内調の職員構成の確認と総合職採用の検討要望",
+          "sub_asks": [
+            "指定職（審議官局長級以上）の内調職員数と出向元人数",
+            "内調のプロパー（キャリア）採用の有無",
+            "来年夏からのプロパー総合職採用の検討"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "11ページの資料"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.2
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "内閣情報調査室",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": true,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 3,
+          "trigger_phrase": "再来年の採用分からは開始できる、できないかということを、今、事務方に検討を命じたいと思います",
+          "matched_pattern": "future-tense verb describing a CONCRETE government action with a named mechanism"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "再来年の採用分からは開始できる、できないかということを、今、事務方に検討を命じたいと思います。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "職員数の具体的な回答は欠落しているが、再来年度からの総合職採用について事務方に検討を命じるという具体的なコミットメントが得られた。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が多岐にわたるため、回答者が前半の数値確認を省略して後半の要望への回答に集中してしまった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_025",
+      "segment_index": 4,
+      "topic": "インテリジェンス・アカデミーの設置",
+      "question": {
+        "speaker": "長妻昭",
+        "party": "中道改革連合・無所属",
+        "summary": "- インテリジェンス・リテラシー向上のためのアカデミー設置に法律改正は必要か",
+        "full_text": "そして最後に、インテリジェンスアカデミーについて質問をいたします。私もこの必要性は痛感をしておりまして、 やはりインテリジェンス・リテラシーを高める、そして省庁横断的な教育、研修などなど必要だと思いますけれども、このいわゆるインテリジェンス・アカデミー、インテル部門の増強ということ、スキルのアップということでありますが、これは法律が必要になるんですか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 省庁横断的な機能の強化は図りたいが、新たに整備するか、また法律改正が必要かは今後の検討結果を待ちたい",
+        "full_text": "現在各省庁に教育訓練のための組織あるいは施設がある、現時点である中で新たに整備するかどうかはまだこれから議論をしたいと思います。これからまだ結論が得られている状況ではありませんが、その省庁をまたがるような委員のおっしゃるインテリジェンスアカデミー的な機能については これは着実に強化を図っていきたいと思っています。そのことが法律改正を必要になるかどうかというのは、これもまた組織のありようによって今後の検討の結果を待ちたいと、そのように思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "shugiin-221-shuhou-3"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=2549.083",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "インテリジェンスアカデミー設置に法律は必要か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.6
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "今後の検討の結果を待ちたい",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "法律改正を必要になるかどうかというのは、これもまた組織のありようによって今後の検討の結果を待ちたい",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "法律の必要性という具体的な問いに対し、検討段階であるとして回答を保留している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_026",
+      "segment_index": 6,
+      "topic": "インテリジェンス教育を行う大学の設置について",
+      "question": {
+        "speaker": "横田光弘",
+        "party": "日本維新の会",
+        "summary": "- 副作用がなく能力を発揮できるインテリジェンス教育を行う大学を設置することについてどう考えるか",
+        "full_text": "大臣に副作用がないように、そして力が発揮できる、そういうインテリジェンスの教育をするような大学、これはどう思われますか、つくるという。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- インテリジェンスへの関心が高まっており、同様の講座を提供する大学が出始めていることを承知している\n- 国家情報局の立ち上げにより学生の関心が高まることを期待している\n- 大学等と連携して情報活動への理解を深め、優秀な人材確保につなげたい",
+        "full_text": "今、特に日本国内でインテリジェンスという言葉に大変関心が寄せられているように思います。昨今の国際情勢であったり、あるいは行政機構に関する研究に基づき、 インテリジェンスに関する内容の講座を提供しているそういった大学も最近でき始めたということも承知をしております。今回国家情報局という組織が立ち上がった暁にはおそらく大きくメディア等でも報道されその結果として今の学生の間にでもインテリジェンスに対する関心が高まるのではないかなと予想を と期待をしております。従いまして、大学等とも今後連携をして、情報活動への理解が深まるような機会を設けるとともに、結果として優秀な人材の確保にもつながっていくのではないかなと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5197",
+        "shugiin-221-shuhou-3"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=4940.983",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "インテリジェンス教育を行う大学設立への見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "大学",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国家情報局"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "大学等とも今後連携をして、情報活動への理解が深まるような機会を設ける",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "大学等とも今後連携をして、情報活動への理解が深まるような機会を設けるとともに、結果として優秀な人材の確保にもつながっていくのではないかなと思っております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "大学設立という具体的な提案に対し、現状の認識と今後の連携という抽象的な回答に留まっており、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どう思われますか」という主観的な問いであるため、政府としての明確な方針や回答を引き出しにくい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_027",
+      "segment_index": 6,
+      "topic": "自衛官の配偶者の国籍把握について",
+      "question": {
+        "speaker": "横田光弘",
+        "party": "日本維新の会",
+        "summary": "- 外国勢力による情報漏洩リスクがある中で、特に中国人と結婚している自衛官に関する情報を防衛大臣は把握しているか",
+        "full_text": "こういうことでスパイを防止することも重要だけれども、その法律もないし、情報戦は過激になっていて、しかも巧妙になっていて、心理戦とか認知戦で形には見えてこない。例えば外国人、特に中国人と結婚している自衛官に関する情報というのは防衛大臣、把握されているんでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 自衛官の人事管理において届出書類の作成を義務付けている\n- 戸籍謄本等の証明書類を添付させており、配偶者の国籍についても把握している",
+        "full_text": "防衛省では、自衛官の人事管理を適正に行うため、所要の届出書類の作成等を義務づけております。その際、今、先生がお尋ねの件でありますが、戸籍等本等の証明書類を添付させることとしており、 配偶者の国籍につきましても把握をしております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=4940.983",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中国人と結婚している自衛官の情報を把握しているか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "中国人と結婚している自衛官",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "戸籍等本等の証明書類"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "戸籍等本等の証明書類を添付させることとしており、配偶者の国籍につきましても把握をしております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "自衛官の配偶者の国籍を把握しているかという問いに対し、具体的手段（戸籍謄本等）を挙げて肯定的に回答しており、事実関係が明確である。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_028",
+      "segment_index": 6,
+      "topic": "サイバー空間における影響工作への対策について",
+      "question": {
+        "speaker": "横田光弘",
+        "party": "日本維新の会",
+        "summary": "- BOTを用いた世論操作などのサイバー空間における影響工作に対し、国家情報局として積極的に情報把握を行う意思があるか",
+        "full_text": "最近の情報戦というのは、サイバー空間におけるプログラム、私も実はシステムエンジニアの橋くれで一人なんですけれども、サイバー空間におけるプログラムとか、AIを使っていろいろやるんですよね。そしてこれ読売新聞にも出ておりましたけれども、SNS分析会社の調査では、この前の総選挙で、しばらく総選挙のしばらく前ですけれども、BOT、BOTですね、ロボットのBOT、BOTを用いたシステムを用いて、高市政権の批判を大量に送信する。こういう状況の中でせっかくこのできる国家情報局ですから積極的にこのサイバー空間の情報把握を行おうとする意思が終わりなのかどうかを官房長官に聞きます。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 外国による影響工作は民主主義の根幹を脅かす安全保障上の脅威であり、対策は急務である\n- 関係省庁が協力し、情報収集分析の充実やリテラシー向上などの対策に取り組んでいる\n- 国家情報局の設置により、政府全体の情報活動を俯瞰し、サイバー空間における収集・分析・対策をさらに強化したい",
+        "full_text": "御指摘の外国によるサイバー空間における影響工作でありますが、これは我が国にとっても安全保障上の脅威であり、先ほどお触れになったように、選挙の構成とか、あるいは自由な報道と、そういった民主主義の根幹を脅かすもので、その対策は急務であると考えています。これに対応するために現在内閣官房副長官の調整の下で関係省庁が協力し、情報収集分析の充実、情報流通プラットフォーム対処法の運用の徹底、正確な情報発信の強化、各種リテラシー施策の向上などの対策に一体となって取り組んでいるところです。それから先の衆議院議員総選挙がございましたが、その際にはさらに その体制を強化いたしまして、分析との取組を行いました。その結果、外国の者と疑われる不審アカウントが、選挙に関する不審な内容を投稿している動向を一定数把握できましたので、プラットフォーム事業者に情報提供を行いました。今後、国家情報局の設置によって、政府全体の情報活動を俯瞰するという立場から、総合調整を行うことが可能となりますので、 サイバー空間における影響工作についても情報の収集、集約、分析が強化をされ効果的な対策がさらに講じられるように努めてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5197"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=4940.983",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "国家情報局によるサイバー空間の情報把握の意思確認",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "読売新聞"
+            },
+            {
+              "type": "other",
+              "excerpt": "SNS分析会社の調査"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国家情報局",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "内閣官房副長官"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "情報流通プラットフォーム対処法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国家情報局"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "効果的な対策がさらに講じられるように努めてまいりたい",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "外国の者と疑われる不審アカウントが、選挙に関する不審な内容を投稿している動向を一定数把握できましたので、プラットフォーム事業者に情報提供を行いました。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "サイバー空間の影響工作への対応状況と、国家情報局設置後の方向性について具体的に回答している。特に不審アカウントの把握と事業者への提供という実績に言及している点が価値が高い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_029",
+      "segment_index": 6,
+      "topic": "中国系決済サービスや地下銀行による資金流出の把握について",
+      "question": {
+        "speaker": "横田光弘",
+        "party": "日本維新の会",
+        "summary": "- 中国系スマホ決済や地下銀行を通じて、日本の金融インフラを介さない資金移動や不動産購入が行われている現状を政府は認識し、把握しようとしているか",
+        "full_text": "これは3月11日に我が党の安倍塚佐議員が予算委員会で質問したことなんですけれどもアリペイとかWeChatペイなんかの中国系スマートフォン決済この問題なんですね。適切な行為ですけれども少なくとも この問題は何かというと日本円を返さないで決済が状態化している。オリンピック村これが終わった後にマンションとして売ったこういうようなものこれを中国人の方々が大量に多くの部屋を購入されているそこで違法民泊が行われているこれで白宅の問題や今度は利用者のごみ捨ての問題とかというものが出てくるわけですこういう流れの中でやはり じゃあそんだけのこれ多分億単位の価格すると思うんですがどうやってこれを購入したのかこういう問題も前から出ているわけです。政府はやはりこれらの問題に対してちゃんと認識しているのかどうかそこら辺を把握しようとしているのかをちょっと官房長官にお伺いしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 海外系スマホ決済で資金移動が国外で完結する場合、資金決済法に基づく登録義務や監督権限を及ぼすことは困難である\n- 地下銀行による違法送金の実態についても、金融当局として把握することが難しい実情にある",
+        "full_text": "まず海外系のスマートフォン決済についてこれはもう一般論として申し上げなければいけませんが取引の当事者がともに国外の金融機関に口座を有するなど国外において 資金移動が全て完結する場合があると考えられますので、そのような場合には、資金決済法における登録義務であったり、監督権限を実際に及ぼすことは困難であります。またいわゆる地下銀行が行う違法な送金の実態について、こちらも金融当局として把握することが難しい実情となっていると。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=4940.983",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中国系決済や不動産購入等の問題把握状況",
+          "sub_asks": [
+            "中国系決済等の問題への認識",
+            "問題の把握状況"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "3月11日"
+            },
+            {
+              "type": "organization",
+              "excerpt": "我が党の安倍塚佐議員"
+            },
+            {
+              "type": "other",
+              "excerpt": "アリペイとかWeChatペイ"
+            },
+            {
+              "type": "other",
+              "excerpt": "オリンピック村"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "中国人",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "資金決済法"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "資金決済法における登録義務であったり、監督権限を実際に及ぼすことは困難であります。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は多岐にわたるが、回答は決済法の限界と地下銀行の把握困難性に絞られており、政府の限界を認める記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "決済手段、不動産購入、違法民泊という複数の異なる問題が混在しており、焦点がぼやけている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_030",
+      "segment_index": 7,
+      "topic": "国家情報局の役割と英国MI5との類似性",
+      "question": {
+        "speaker": "橋本幹彦",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 国家情報局の役割について、英国のMI5（実行機関）に近い方向性であるか官房長官の見解を問う",
+        "full_text": "形成する中でやはり国家情報局の役割というのは国家安全保障局と並んで非常に重要なわけですがその言ってみれば類似性をMI5と比べたときにいろいろ見てみました。そしたらイギリスには合同情報委員会というのがあって各省庁の情報を集約して分析するこういうものがあるんですけれどもMI5はむしろ実行 機関であるということから考えればこっちの方に似ているんじゃないかというふうに思いますけれどもぜひともこの方向で合っているのかどうなるか官房長官にお伺いしたいというふうに思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 英国のMI5は国内関連情報の収集を担当する情報機関であると認識している",
+        "full_text": "木原内閣官房長官御指摘の英国の機関は通称MI5セキュリティサービスというのが正式名称だと思いますが国内関連情報の収集を担当する情報機関であり 橋本幹事長。というふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5197",
+        "shugiin-221-shuhou-3"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=5845.782999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "国家情報局の役割は英国MI5に近いか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "MI5"
+            },
+            {
+              "type": "organization",
+              "excerpt": "合同情報委員会"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国家情報局",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "MI5セキュリティサービス"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "MI5セキュリティサービスというのが正式名称だと思いますが国内関連情報の収集を担当する情報機関であり",
+          "score": 0.3
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "英国の機関についての定義は述べているが、質問の核心である「国家情報局との類似性」への明確な肯定・否定が不足している。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「この方向で合っているのか」という問い方のため、回答者が定義の説明に終始しやすく、明確な結論を引き出しにくい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_031",
+      "segment_index": 7,
+      "topic": "国家情報会議設置法案の立法事実と北村茂氏の提言",
+      "question": {
+        "speaker": "橋本幹彦",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 北村茂氏が著作で提言した内閣情報調査室の格上げやアクセス権付与などの内容が本法案の立法事実に参考となっているか、官房長官の認識を問う",
+        "full_text": "まず立法事実の点を確認させていただきたいと思います。もう経験された北村氏の指摘というのは大変参考になるとお知りをしますが、官房長官、御認識いかがでしょうか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 北村氏の著作を拝読しており、現状の政府全体としての情報集約や総合分析が不十分であるとの指摘を認識している\n- 各省庁を総合調整し、情報活動の優先順位付けや整合性を確保する制度的担保が必要と考えた",
+        "full_text": "木原内閣官房長官。また、今後、内外の諸情勢がより厳しく複雑なものとなっていく中で、国家にとってインテリジェンスの役割も重要となっていくため、より一層質の高い情報を中枢組織に集中して、総合分析を行っていく必要があると。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5197"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=5845.782999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "北村氏の指摘に対する認識の確認",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "北村氏の指摘"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "北村氏",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "vice_minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "国家にとってインテリジェンスの役割も重要となっていくため、より一層質の高い情報を中枢組織に集中して、総合分析を行っていく必要がある",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的だが、回答は一般論に終始しており、北村氏の指摘に対する直接的な賛否や認識が示されていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「認識はいかがか」という抽象的な問い方であるため、回答者が一般論で逃げる余地を与えている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_032",
+      "segment_index": 7,
+      "topic": "各省庁から官邸への直接的な情報提供の現状と理由",
+      "question": {
+        "speaker": "橋本幹彦",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 各省庁が内閣情報調査室を通さず直接官邸に情報を提供してきた理由と、どのような情報を扱ってきたのか、防衛・外務・法務大臣に問う",
+        "full_text": "ここでインテリジェンスコミュニティを形成する各省庁にお尋ねしたいんですが、各大臣にお尋ねしたいんですが、従前、従前といいますか、現在の内閣情報調査室に対しを通さずして、情報を提供していることがあるのではないかというところが、今、官房長官が御説明いただいた立法事実を伺っても思うところでありますが、 各省庁がなぜ内閣情報調査室を通さずして官邸に情報を提供してきたのか。防衛大臣、外務大臣、そして法務大臣からお答えいただきたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 防衛省：緊急性の高い情報（ミサイル発射第一報等）や自衛隊運用に関する情報は直接報告する場合がある\n- 外務省：外交政策上の判断や決定に関する情報は、限定的な人間で共有するため内閣情報調査室を経由せず協議している\n- 法務省（公安調査庁）：官邸が個別分野について直接説明を希望する場合があるが、適切に内閣情報調査室に共有している",
+        "full_text": "小泉防衛大臣。情報に関しましては、適切に内閣情報調査室に共有しているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5197",
+        "shugiin-221-shuhou-3"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=5845.782999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "内閣情報調査室を通さず官邸に情報提供した理由",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "内閣情報調査室"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "各省庁（防衛大臣、外務大臣、法務大臣）",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "情報に関しましては、適切に内閣情報調査室に共有しているところでございます。",
+          "score": 0.2
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "内閣情報調査室を迂回した情報提供の理由を問うているが、大臣は「適切に共有している」と否定するのみで、具体的な運用実態への回答を避けている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「～ことがあるのではないか」という推測形式のため、政府側が単純な否定で回答を終えやすい構成になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_033",
+      "segment_index": 7,
+      "topic": "国家情報局設置後の緊急情報の扱いとインテリジェンスサイクル",
+      "question": {
+        "speaker": "橋本幹彦",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 緊急性の高い情報を直接官邸に提供する運用は、国家情報局が設置されても変わらないのか、官房長官の見解を問う",
+        "full_text": "橋本幹彦君。ご説明の中で政策立案の前提となる情報という話がありましたけれどもこれはどちらかというとインテリジェンスに直接関わるものかどうかというところはいろいろ混じっているところだと思いますが例えば緊急性の高い情報こういったものは直接官邸に内閣情報調査室を通さずして提供されるものだと理解しましたこれは 今回の国家情報会議設置されて、国家情報局が設置されても、変わらないのではないかと思いますけれども、木原官房長官いかがでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 現時点でもインテリジェンスサイクルは一定程度確立している\n- 本法案により、より高い権限から基本方針を示し総合調整することで、政府全体のパフォーマンスが最大化され、より質の高いインテリジェンスが提供されるようになる",
+        "full_text": "木原内閣官房長官。結果としてその政策部門、私たちにとってより多く、より質の高いインテリジェンスが提供されることからこのインテリジェンスサイクルというのは そのサイクルがより多く回っていくということになると考えています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5197",
+        "shugiin-221-shuhou-3"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=5845.782999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "緊急情報の官邸への直接提供ルートは維持されるか",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "内閣情報調査室"
+            },
+            {
+              "type": "organization",
+              "excerpt": "国家情報会議"
+            },
+            {
+              "type": "organization",
+              "excerpt": "国家情報局"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "官邸",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.2
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "考えています",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "vice_minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "より多く、より質の高いインテリジェンスが提供されることからこのインテリジェンスサイクルというのは そのサイクルがより多く回っていくということになると考えています。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "緊急情報の提供ルートに関する具体的な確認に対し、回答者が抽象的なインテリジェンスサイクルの向上について述べるにとどまり、直接的な回答になっていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問の末尾を「いかがでしょうか」というオープンな形式にしたため、回答者がYes/Noの明確な回答を回避しやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_034",
+      "segment_index": 7,
+      "topic": "情報要求側のリテラシー向上と政策への盛り込み",
+      "question": {
+        "speaker": "橋本幹彦",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- インテリジェンスサイクルを回すには要求側（政治家）のリテラシー向上が重要であるため、これを今後の政策に盛り込んでほしいと官房長官に求める",
+        "full_text": "また、実際の運用上も国家情報局は国家安全保障局をはじめとする政策部門と緊密に連携をし、例えば提供したインテリジェンスが政策部門のニーズに即した時期にかなったものであったかどうか、判断材料として客観的な正確なものであったか、これらをそうじて 政策判断に貢献するものであったかというそういう観点で常にフィードバックを今までにないようなフィードバックを受けながら次なる情報活動をより良きものとしていきたいそういう良いサイクルを私は期待しております橋本美希彦君その良いサイクルをつくるその第一弾として国家情報会議国家情報局をつくるというところはそのとおりなんだと思います その国家情報会議、国家情報局だけではですね、それは片手落ちの政策なのだと思います。このインテリジェンスサイクルに対する現場との信頼関係といいますか、いいサイクルを回していこうという信頼情勢がなされないと思いますので、ぜひとも情報要求側のリテラシーを向上していくというところについて、これはもう法律でどうこうするという話では必ずしもないかもしれないですけれども、ぜひとも今後政策として盛り込んでいただきたいと思いますが、官房長官いかがでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 本法案による総合調整の的確化により、現在に比べて情報部門に対する情報要求をより的確に行うことが可能になると考えている",
+        "full_text": "木原内閣官房長官この法案によりまして政府における情報活動の方向づけであったり各省庁への総合調整が的確に行われるということは我が国のインテリジェンスサイクルが充実するということにもつながるものでありますので政策部門にはより多くより質の高いインテリジェンスの提供がなされると 橋本幹部長。従前、つまり現在に比べて、情報部門に対する情報関心、情報要求というのを、より的確に行うことが可能になってくるのではないかと考えています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "shugiin-221-shuhou-3"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=5845.782999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "情報要求側のリテラシー向上を政策に盛り込むか",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "国家情報局"
+            },
+            {
+              "type": "organization",
+              "excerpt": "国家安全保障局"
+            },
+            {
+              "type": "organization",
+              "excerpt": "国家情報会議"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "情報要求側",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "政策部門にはより多くより質の高いインテリジェンスの提供がなされると...情報要求というのを、より的確に行うことが可能になってくるのではないかと考えています。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "情報要求側のリテラシー向上という具体的な提案に対し、法案による全体的な改善という一般論で回答しており、具体的なコミットメントは得られていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「政策として盛り込んでいただきたい」という要望形式であるため、回答者が「考えている」という主観的な見解で逃げやすい構造になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_035",
+      "segment_index": 7,
+      "topic": "民主的統制の枠組みと国会の関与",
+      "question": {
+        "speaker": "橋本幹彦",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 北村氏が提言した「国会議員資格を持つ責任者の設置」や「国会への報告」といった民主的統制の枠組みを、なぜ本法案に盛り込まなかったのか官房長官に問う",
+        "full_text": "この情報要求が的確になされるためには、情報要求を受ける側の機能、すなわち国家情報局が、政策部門から情報要求を受け付けて、そして整理し、優先づけをする機能、 これをしっかりと果たすことが重要であると考えており国家情報局を所管することに私がなると思いますけれどもその期待される役割というその運用というのをしっかりと監督していきたいと考えています橋本美希彦君バランスが悪いと申し上げているのはまさに今御説明いただいたようなところで国家情報局さえつくればサイクルうまく回るのではないかとそれ自体が ある意味インテリジェンスという改革については不十分だと思います。なぜこういったものを本法案に盛り込まなかったのか、御説明いただけないでしょうか。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 今回の法案は組織法であり、国家情報会議の運営と国家情報局による適切な事務運営がなされると考えている",
+        "full_text": "木原内閣官房長官。橋本大臣 が国家情報会議を運営し、そして国家情報局によってより適切な事務運営がなされるものと、現時点ではそのように私は考えているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5197"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=5845.782999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "本法案に情報要求の整理・優先付け機能を盛り込まなかった理由",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "本法案"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.2
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国家情報局",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.2
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国家情報会議"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国家情報局"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "国家情報局によってより適切な事務運営がなされるものと、現時点ではそのように私は考えている",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "法案に盛り込まなかった理由という具体的な問いに対し、現状の体制で適切に運営されると考えているという主観的な回答に留まっており、不十分である。",
+        "would_be_referenced": "low",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_036",
+      "segment_index": 8,
+      "topic": "国家情報会議設置における政治的中立性の確保",
+      "question": {
+        "speaker": "深作ヘスス",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 国家情報会議の設置にあたり、政治的中立性を確保する施策を盛り込むべきではないか",
+        "full_text": "知らせるためにも、こういった政治的中立の施策も、国家情報会議設置に当たって盛り込んでいただければと思いますが、いかがでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 政治的中立性確保の重要性は認識している\n- 本法案は行政機関相互の関係を定めるものであり、国民の権利義務に直接関わる権限規定を設けるものではないため、現状の形で進めたい",
+        "full_text": "国民の基本的人権の保護であったり、あるいは政治的中立性の確保の重要性は、当然認識をしているところであります。この法案は行政機関相互の関係を立するものでありまして、国家情報会議にも国家情報局にも国民の権利義務に直接関わるような権限規定を設けるものではありませんので、現時点ではこの法案によってインテリジェンスの司令塔式の強化という形で進めさせていただきたいと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5197"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=7061.782999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "国家情報会議に政治的中立の施策を盛り込めるか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国家情報会議"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国家情報局"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "進めさせていただきたいと思っております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "国家情報会議にも国家情報局にも国民の権利義務に直接関わるような権限規定を設けるものではありません",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "政治的中立性の確保という提案に対し、法案の性質（行政機関相互の関係）を理由に現状の方向性で進めるという、事実上の拒絶に近い回答である。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「盛り込んでいただければ」という提案形式のため、Yes/No以外の曖昧な回答を許容する設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_037",
+      "segment_index": 8,
+      "topic": "インテリジェンスの政治的歪曲の防止策",
+      "question": {
+        "speaker": "深作ヘスス",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- インテリジェンスの政治的歪曲を確実に防ぐため、服務規定だけでなく刑事罰などの実効的な方策を設けるべきではないか\n- 服務規定のみで十分と考える場合の根拠を問う",
+        "full_text": "4月10日の答弁で、インテリジェンスの政治家、恣意的な歪曲を防いでいく。その上で、国家公務員法の服務規定が有効に機能するというような答弁がありました。重要な国政の運営に資する情報の収集調査に係る活動に関する重要事項を 調査審議する機関というこの設置という本法案の目的に鑑みてインテリジェンスの政治家そして恣意的な売却を確実に防ぐためにこの服務規定だけによるいわゆる正前説的な立ち位置からより一歩踏み込んだこういった虚偽の報告などができないような制度設計が必要なのではないかという問題意識を持っています。今回のこの趣旨に則り、その健全な運営を担保すること、そしてインテリジェンスの政治家、恣意的な歪曲を確実に防ぐ、その制度設計について、含む規定だけではなく、刑事罰の規定などを設けること、こういったことを行うことで、より実効的な方策をとるべきだというふうに考えますが、 現時点での政府の見解、そしてこれまでの答弁の中で、含む規定があるというような御答弁がありましたが、これだけで十分であるというふうにお考えになる場合は、その根拠についてもお示しをいただきたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 国家公務員法の服務規定（公共のための勤務、政治的行為の禁止等）により、特定の政治目的での活動や恣意的な歪曲を防止する制度的担保がなされている",
+        "full_text": "御指摘のインテリジェンスの政治家でありますけれども、 一般に何らかの政治的意図に基づいて、インテリジェンス機関が収集した情報の評価が客観性であったり中立性を欠くような事態を指すものとして、これは諸外国でも論じられているというふうに承知しています。したがってその本法案はインテリジェンスの司令塔機能を強化し、 政府内のインテリジェンスサイクルをより充実させることを狙いとしておりますが他方で情報部門と政策部門は相互に干渉しすぎないように活動することも重要であり例えば政策部門への配慮により報告すべき情報が報告されないであるとかあるいは逆に情報部門の意向で政策が歪められたりといったことがあってはならないということは 深井議員 政府の情報機関が行う基本方針と定める機関であって、情報を政治的に利用したり、これまでも指摘があったように、例えば特定の党派的利益の実現を図ったりするものではないことは明らかなものと私は考えています。また、国家情報会議を支える事務局である国庫情報局で働く職員について申し上げれば、 国家情報局長には国民全体の奉仕者として公共のために勤務しなければならない旨の規定した国家公務員法第96条1項が順用されます。それ以外の職員については政治的行為をしてはならない旨を規定した同法第102条の規定をはじめとする各種服務規定が適用されます。こういったことから 国家情報局が特定の政治目的で活動を行ったり、恣意的に歪めたインテリジェンスを提供して、国民の安全や国益を損なうようなことを防止する。これは制度的担保がなされていると考えているところです。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "shugiin-221-shuhou-3"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=7061.782999999999",
+      "metrics": null
+    },
+    {
+      "id": "qa_038",
+      "segment_index": 8,
+      "topic": "虚偽報告に対する刑事罰の検討",
+      "question": {
+        "speaker": "深作ヘスス",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 米国や豪州のように、国家の政策判断を誤らせる虚偽情報の提供に刑事罰を設けている事例がある\n- 将来的にどのような状況下でも失敗しにくい環境（フェイルセーフ）を作るため、刑事罰の導入を検討する考えはないか",
+        "full_text": "その上でも、さまざま例として挙げられているアメリカのインテリジェンスコミュニティのあり方であったり、いろいろと挙げられていますが、アメリカやオーストラリアなどにおいても、こういった虚偽の情報を挙げたりすること、これは刑事罰が問われることになっています。それは嘘を挙げたから、これが刑事罰に問われるのではなく、 国家の政策判断を誤らせたことに対して、そのような刑事罰というものが定められています。どういった人がついても、どういった状況になっても、できる限り失敗がしにくい、できにくい状況を作っていくことが大変重要であると思っています。今の政府がここで失敗をするのではないかというようなことを問うているのではなく、どういった状況下でも失敗が しにくい、しないということはなかなか言いにくいと思いますが、しにくい環境をつくっていく上で、よりここに防御線を引いていく、いわゆるフェイルセーフをどうかけていくかという視点で、この刑事罰などについて検討することは今後もないでしょうか。改めてお伺いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 恣意的な歪曲はあってはならないが、発生した場合は国家公務員法上の懲戒処分のほか、内容により刑法（虚偽公文書作成罪等）による刑事責任も問われ得る",
+        "full_text": "インテリジェンスの恣意的な歪曲を 行うという事態、これはそもそもあってはならないし、なかなか想定はしがたいというふうに認識していますが、あえて申し上げれば、そのようなことがあれば、先ほど申し上げたような国家公務員法上の懲戒処分であったり、また内容によってはこれは刑事責任も問われる、問われ得ることとなると思います。懲戒処分に関しては、国家公務員法第82条第1項は、 この法律もしくは国家、公務員、倫理法、またはこれらの法律に基づく命令に違反した場合、職務上の義務に違反し、または職務を行った場合、国民全体の保守者たちにふさわしくない非公のあった場合のいずれかに該当する場合に懲戒出分をすることができる旨規定しておりますし、また刑事責任については、例えば刑法第156条、または、 虚偽誘引公文書作成に関し、公務員がその職務に関し、公私の目的で公務省もしくは公務員が署名し、また応援した虚偽の文書等を作成したときには、1年以上10年以下の公勤刑に処するなど、厳しい規定がございますので、私は公務員はこういった規定に基づいて、的確に行動するものと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=7061.782999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "虚偽情報による政策判断誤認への刑事罰導入の検討有無",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "アメリカのインテリジェンスコミュニティ"
+            },
+            {
+              "type": "other",
+              "excerpt": "アメリカやオーストラリアなどにおいても"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.6
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "evidence_citation",
+              "excerpt": "国家公務員法第82条第1項"
+            },
+            {
+              "type": "evidence_citation",
+              "excerpt": "刑法第156条"
+            },
+            {
+              "type": "number",
+              "excerpt": "1年以上10年以下の公勤刑"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "刑事責任については、例えば刑法第156条、または、虚偽誘引公文書作成に関し、公務員がその職務に関し、公私の目的で虚偽の文書等を作成したときには、1年以上10年以下の公勤刑に処するなど、厳しい規定がございます",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "刑事罰の新規導入検討については明確に答えていないが、現行法（国家公務員法、刑法）での対処可能性を具体的に提示している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「検討することはないか」というYes/No形式の問いであるため、政府が「現状の法制度で十分である」と判断して新規検討を否定する場合、回答が消極的になりやすい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_039",
+      "segment_index": 8,
+      "topic": "国会による民主的統制と秘密会の活用",
+      "question": {
+        "speaker": "深作ヘスス",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 本法案には国会への報告に関する新規定がないが、国会法に基づく秘密会を開会することで、情報開示や民主的統制を推進する可能性はあるか",
+        "full_text": "続きまして、今回の法案、インテリジェンスの特性上、非特性、そしてこれまでも他の委員からも質疑がありましたが、民主的統制、これをどう両立をしていくのか、これが寛容であると考えます。これらは秘密会と同様の非公式形態で行われていますが、本法案において新設をされる国家情報会議において、公開できる範囲で政府の中長期的な情報活動の推進、方策を取りまとめた文書を作成し、 公表することが検討されているというようなことは承知をしていますが、政府が行う情報活動の状況やその成果、脅威の評価などについて、国会から尋ねがあったときには、適時適切対応するということがありましたが、他方で、本法案自体には、この監視、国会への報告に対する新たな規定は設けられていないと承知をしています。もちろん、ことの性質に鑑みて、 国会法52条第2項に基づく秘密会が開会をされるという前提になった場合、これらの報告、情報開示、これを進めていく可能性、これを推進する、促進をする可能性があるというふうに政府は考えておられるでしょうか。このことの精神鑑み、どうやってこの情報漏洩を防ぎながら、そして時に そこに入っていく人間のセキュリティ・クリアナスをどうするのか、こういった協力の中で、この民主的統制を担保していくべきだと考えますが、この秘密会が開会をされた場合に、こういったことを推進をしていく可能性、これについては官房長官、どのようにお考えでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 本法案は組織法であり、各省の権限は変更せず、閣僚級の国家情報会議設置により民主的統制は強化される\n- 国会による監視を検討する際は、協力者の秘匿性など情報活動の実効性を損なわないバランスへの配慮が必要である",
+        "full_text": "この法案ですが、基本的には組織法であります。そして国家情報局による総合調整の対象となる各省庁の事務は、これはそれぞれの就任の大臣により分担管理されており、各大臣の監督の下、これまでと全く同じ所掌事務や権限に基づいて、情報活動を適切に行うものでありますので、本法案はこのことには何ら変更を加えるものではまずないということです。加えて本法案は従来の役人を中心とした会議体から閣僚級の国家情報会議を設置しこの会議が各省庁の情報活動の基本方針を定めることなどを内容とするものでありますので民主的統制の強化に私は資するものだと考えていますその上で今委員が おっしゃったように国家による関心のあるようによって政府として私が御意見を申し上げる立場にはもとよりありませんけれどもお尋ねですからあえて申し上げれば政府の情報活動に対する国家による関心の仕組みを検討していただく際には特に情報活動の実効性というのが損なわれないよう配慮した仕組みが求められるのではないかなと考えています。協力者から情報をいただくことがあります。その協力者から情報を入手する場合について申し上げると、政府外に情報が行き渡ってしまうということを恐れて、政府の情報活動にご協力いただけなくなる。そのことで、情報活動の質とか量が低下をし、ひいては必要な情報を政策部門に提供できなくなるといった 影響が生じるという可能性もあるんじゃないかなと思っています。このため、政府の情報活動に対する国会による関心を検討する際には、我が国の行政書式や制度、情報活動に必要となる権限や手法に係る整合性に加えて、今私が一つ事例申し上げたような、情報活動の実効性を損なわないかといった、そのバランスですね。こういったことを丁寧に検討する必要があると考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5197"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=7061.782999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "秘密会開会時の情報開示・民主的統制の推進可能性",
+          "sub_asks": [
+            "秘密会が開会された場合に報告や情報開示を推進する可能性があるか"
+          ],
+          "score": 0.9
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "国会法52条第2項"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国家情報会議"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国家情報局"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "vice_minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "政府の情報活動に対する国会による関心を検討する際には、情報活動の実効性を損なわないかといった、そのバランスを丁寧に検討する必要がある",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "秘密会での情報開示の可能性という具体的な問いに対し、官房長官は「実効性を損なわないバランスが必要」という一般論に留まり、明確な回答を避けている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問の導入部が長く、核心となる問い（秘密会での推進可能性）が文中に埋もれている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_040",
+      "segment_index": 8,
+      "topic": "司令塔機能強化による対外信頼性と情報共有の高度化",
+      "question": {
+        "speaker": "深作ヘスス",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 司令塔機能の強化により、同盟国・同志国との情報共有枠組みが具体的にどう高度化・改善されるか\n- 人的セキュリティクリアランス等を含め、情報保全体制をどう強化し信頼性を向上させるか\n- インテリジェンスコミュニティ全体の対外信頼性にどのようなインパクトがあるか",
+        "full_text": "今回、この法案、司令塔強化。がされることで、同盟国、同志国との間における情報共有の枠組み、運用、これが具体的にどのように高度化をされるのか、従来の二国間、多国間の情報共有の仕組みと比較をして、どのような改善が見込まれるのか、外交、防衛、それぞれの観点から、もう一点についてお伺いしたいと思います。特に、機微の情報の共有については、情報の管理、保全体制の信頼性が決定的に重要でありますが、 本法案の下で、我が国の情報保全体制をどのように強化をし、同盟国等からの信頼性をどのように向上させていくのか、人的セキュリティクリアランス、情報の取扱い、基準、監査、統制の仕組み、こういったことも含めて、具体的な制度的運用措置などについて教えております。併せて、本法案が、我が国のインテリジェンスコミュニティ全体の対外信頼性、これにどのようなインパクトを与えると、両大臣がお考えなのか、その点についてもお答えをいただきたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "",
+        "summary": "- 【外務省】司令塔強化は同盟国等に好意的に受け止められ、質の高い情報提供を通じたギブ・アンド・テイクの関係深化が期待できる。サイバー空間も含め情報保全を徹底する\n- 【防衛省】諸外国と情報保護協定を締結し、情報保全およびサイバーセキュリティの強化を不断に行うことで、円滑な情報協力を進める",
+        "full_text": "これは委員御指摘のように同盟国、同志国からは好意的に受け止められる取組でありまして、外国との情報協力をより進化させる制度改革であると考えております。同盟国、同志国が期待するのは、質量ともに事実した情報プロダクトの提供を受けることでありまして、協力関係が深まるか否か。このため、優れた情報をこちらから提供すれば、同時に、もしくは結果的に優れた、もしくは日本が持っていない情報というものが提供を受けられる、このような関係にあると、こう考えているところであります。こういうことが十分懸念されるところでありまして、外務省においても、保有する秘密の保護。ここからの様々なアクセスであったりとか、こういう危険、これもあるわけでありまして、そういったものも含めて一層徹底をしていきたいと、こんなふうに考えております。こうした情報協力を円滑に進めるに当たっては、相互の厳格な情報保全体制の下で、情報管理を行うことが必要です。そのため、政府としては、諸外国と情報保護協定の締結を行うとともに、防衛省においても、情報協力の基盤となる情報保全、サイバーセキュリティの強化を不断に行っています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5197",
+        "shugiin-221-shuhou-3"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=7061.782999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "司令塔強化による情報共有の高度化と保全体制の具体策",
+          "sub_asks": [
+            "従来と比較した情報共有枠組みの高度化・改善点",
+            "情報保全体制の強化と信頼性向上の具体的措置",
+            "インテリジェンスコミュニティ全体の対外信頼性への影響"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "この法案、司令塔強化"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.2
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "同盟国、同志国",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "外務省"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "防衛省"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "情報保護協定"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "一層徹底をしていきたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "相互の厳格な情報保全体制の下で、情報管理を行うことが必要です。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的で多岐にわたるが、回答は原則論に終始しており、具体的な制度的運用措置への言及が不足している。",
+        "would_be_referenced": "low",
+        "issue_in_design": "複数の重要な問いを一つの発言に盛り込みすぎているため、回答者が個別の問いを切り捨てやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_041",
+      "segment_index": 10,
+      "topic": "情報主権と対外依存の現状",
+      "question": {
+        "speaker": "川裕一郎",
+        "party": "参政党",
+        "summary": "- 日本の情報主権が確立されているか、大臣の認識を問う\n- 情報主権の定義と、自立した状態の基準を問う\n- 現状の対外依存を踏まえ、日本の情報主権がどの段階にあるか問う",
+        "full_text": "まず、情報保守権についてお伺いします。暗号技術に至るまで、私たちの社会の基盤は海外企業、とりわけ同盟国企業に大きく依存をしております。その上に成り立っている自衛隊の指揮、通信、情報システムも、少なからず海外製品や海外のクラウドに依存をしております。この状況で本当に日本として情報試験は確立をされているのか。まず大臣の率直な認識を伺いたいと思います。今回の国家情報会議設置法案は、各省庁に分散している情報を集約をし、分析・強化を行い、政府全体として的確な意思決定を行うための仕組みだと説明をされています。しかし、その前提となる元データ、基盤技術、クラウド環境自体が、 海外のプラットフォームに大きく依存している限り、最終的な判断も相手の都合に左右されかねません。そこでお聞きをします。防衛省として情報試験とは何か。どの状態をもって自立した情報試験が確立されたと言えるのか。加えて現状の対外依存の程度を踏まえた上で、日本の情報保険は 現在どの段階にあると認識をしているのか、防衛大臣の所見をお聞きします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小泉防衛大臣",
+        "role": "",
+        "summary": "- 情報の質を向上させ、適切かつ迅速な政策決定を行うことが重要である\n- 諸外国との協力は重要だが、国産衛星コンステレーションの活用など、我が国自身の情報能力向上にも取り組んでいる",
+        "full_text": "防衛省としては、各種手段により入手した情報の分析結果に基づき、適切かつ迅速に政策決定や自衛隊の部隊運用を行うこととしているところ。何より重要なことは、このような意思決定を支える情報の質を向上させることであると考えています。その上で、アメリカ等の諸外国との協力は、情報分析の質を向上させるためには重要でありますが、防衛省としては、我が国としての情報能力を向上させることも非常に重要であると考えており、例えば、スタンドオフ防衛能力の運用に必要となる目標情報等を収集するために、 国産衛星で構成される衛星コンステレーションを活用した画像情報等の取得を行うなどの取組を行っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=8259.383",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "情報主権の定義と現状の認識について",
+          "sub_asks": [
+            "防衛省として情報主権とは何か",
+            "どの状態をもって自立した情報主権が確立されたと言えるか",
+            "現状の対外依存を踏まえ、日本の情報主権はどの段階にあるか"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "国家情報会議設置法案"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "同盟国企業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国産衛星で構成される衛星コンステレーション"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "国産衛星で構成される衛星コンステレーションを活用した画像情報等の取得を行うなどの取組を行っております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "情報主権の定義や現状の段階という具体的な問いに対し、大臣は一般論と個別の取り組み（衛星）への回答に終始しており、直接的な回答を避けている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "問いが抽象的な「認識」を求める形式であるため、大臣が定義を避け、具体的な施策の列挙で逃げることが可能になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_042",
+      "segment_index": 10,
+      "topic": "国家情報会議の設計思想と自立へのビジョン",
+      "question": {
+        "speaker": "川裕一郎",
+        "party": "参政党",
+        "summary": "- 本法案による国家情報会議が、単なる受け皿の強化か、自立への第一歩か、その性格を問う\n- 日本が情報面で同盟国と対等な関係を目指す具体的なビジョンや達成目標があるか問う",
+        "full_text": "どの段階にあるかというのは具体的にはまだわからない状況ではありましたが、その上でもう一歩踏み込んでお伺いしたいのは、こうした問題意識を踏まえて、この法案が日本をどの方向へと導こうとしているかという。設計思想の部分であります。単なる現状の追認なのか、それとも対外移動を減らし、自立へと舵を切る第一歩なのか、その点を確認するために、木原官房長官と小泉防衛大臣、それぞれにお伺いをしたいと思います。本法案に基づく国家情報会議は、対外情報について、受け身の受け皿強化なのか、 第一歩なのか、どちらの性格が強いと考えているかを官房長官にお聞きをし、さらに日本が情報面で同盟国と対等な関係を目指す具体的なビジョンや達成目標があるのか、こちらは防衛大臣にお伺いします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 単純な二分法で捉えるのは難しいが、インテリジェンス改革・機能強化のための第一歩である\n- 日米同盟の強化は重要だが、日本自身が主体的に判断するための能力を整備し、情報収集分析能力を引き上げる努力が必要である",
+        "full_text": "閣僚級の国家情報会議を設置し、政府のインテリジェンスの司令塔機能を強化するものでありますが、今、委員の御質問にあったような、受け皿、受け身の受け皿強化なのか、自立に向けた第一歩なのかという、そのような二分法のような、単純化して捉えるというのは、なかなか答えるのは難しい問題だなというふうに思います。この法案ですが、現在の複雑で、そして厳しい国際環境の下、我が国が直面する困難な課題に対処していくために進めなければいけない重要な基盤整備というべきものだと考えておりまして、いわばインテリジェンス改革、その機能強化のための第一歩、そのようなお答えをさせていただきたいと思います。我が国周辺の安全保障環境が厳しさと不確実性を増す中で、日米同盟の抑止力、対処力の一層の強化を図るべく、アメリカとの間で緊密に連携していくことは重要だと考えています。その上で、同盟関係にあるからこそ、日本自身が主体的に判断を行うための能力を着実に整備することが重要であり、そのためにも、 我が国自身の情報収集分析能力を引き上げる努力を、普段に行っていく必要があります。防衛省としては、こうした問題意識のもと、各種情報の能力強化を推進してまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5197"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=8259.383",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "法案の設計思想と情報面での自立ビジョンについて",
+          "sub_asks": [
+            "国家情報会議は受け皿強化か自立への第一歩か",
+            "同盟国と対等な関係を目指す具体的ビジョンや目標はあるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "この法案"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.2
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": true,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "各種情報の能力強化を推進してまいります",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "インテリジェンス改革、その機能強化のための第一歩、そのようなお答えをさせていただきたいと思います。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "設計思想という抽象的な問いに対し、政府側は「第一歩」という表現で答えたが、具体的なビジョンや目標については言及を避けている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "二択の提示（受け皿か自立か）が政府に逃げ道を与えており、具体的な指標を問う形式にすべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_043",
+      "segment_index": 10,
+      "topic": "情報インフラの国産化と中長期戦略",
+      "question": {
+        "speaker": "川裕一郎",
+        "party": "参政党",
+        "summary": "- 安全保障上の重要データ・システムについて、国内クラウドや国産AI基盤への移行をどの程度目指すか問う\n- 情報インフラの国産化・国内完結に向けた中長期の投資育成戦略を政府に提供・指導する考えがあるか問う",
+        "full_text": "これは私も異論はありませんし、強化をしっかりとやっていくべきだと考えますが、ただ通信インフラの部分に関しては、ちょっと考え方が少し違ってくるのかなというふうに思います。いくら立派な国家情報会議をつくっても、その土台となる通信インフラ、クラウド、半導体、AIの基盤などコアの技術が海外依存のままであれば、日本の情報主権は、 根本から脆弱なままだと考えます。とりわけ安全保障や機微情報を扱うシステムについては日本の法律が及び日本の責任で守りきれる国内のインフラを整備することが不可欠だと考えています。データは第二の資源とも言われますがその資源が常に海外のサーバーを経由し海外企業の技術に依存しているようでは 本当の意味での試験国家とは言えません。また、生成AIや大規模言語モデル、衛星、コンステレーションなど、新しい技術基盤も急速に立ち上がりつつあります。これらがすべて海外プラットフォームに握られてしまえば、日本の安全保障判断そのものが将来的にアルゴリズムとプラットフォームを握る他国に左右されるリスクがあります。防衛省としても単に利用者として海外サービスを使うだけではなく、プレイヤーとして日本の基盤技術を育てる側に守らなければならないのではないでしょうか。さらに申し上げれば、情報インフラの国産化、国内完結は安全保障の課題であると同時に、日本の産業と地方経済を再生させる絶好のチャンスでもあります。国内クラウドセンター。半導体工場、漁師AI研究拠点、光ファイバー、海底ケーブル網などへの投資は、地域に雇用と技術コミュニティを生み、地方から日本の安全保障を支える産業基盤にもなり得ます。私は、こうした長期ビジョンを持ってこそ、情報試験の確立と国づくりが一体となると考えます。そこでお伺いします。安全保障上重要なデータやシステムについて、将来的にどの程度まで国内クラウド、国内半導体、国産AI基盤への移行を目指すのか。国家情報会議の設置と併せて、こうした情報インフラの国産化、国内完結に向けた中長期の投資育成戦略を防衛省として政府全体に積極的に提供し、 指導していくお考えがあるのかお聞きをします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "小泉防衛大臣",
+        "role": "",
+        "summary": "- 国産化を高める方針であり、AIチームによる活用やデータ基盤の整備に取り組んでいる\n- 機微データのクラウド取り扱いについて政府として検討しており、AI半導体分野でも開発・活用を積極的に進める\n- 防衛装備庁でのスタートアップ等への門戸開放を通じ、国産化の一助となるコミュニティ拡大を図る",
+        "full_text": "小泉防衛大臣先生と思いは全く同じです。いかに国産のものを高めていけるか、その思いと方針でやっていきたいと思いますし、今、私のもとで防衛省はAIチームがありまして、AIチーム長を筆頭に、今後の防衛省の中での活用、そしてまた今、さまざまな軍事的な あの状況世界で見ていましても統合運用というものがいかにAIが活用されて迅速な意思決定につながっているかこれは抜きには今後の安全保障の確立というものは考えられない時代に入っていると思っています。その点でお答えさせていただくとデータとAIを駆使した戦い方に対応していくためには高端性の高い通信ネットワークや大量の情報を蓄積処理可能なデータ基盤が不可欠だと考えています。そしてここで取り扱う我が国の機微なデータの取り扱いについては、セキュリティ安全性のみならず、我が国のコントロールの下で運用を管理するという主権性をいかに確保していくことができるかというのが不可欠であります。こうした考え方を前提に、高市政権で進めている日本成長戦略の検討の一環として、我が国の機微なデータのクラウドにおける取り扱いについて、内閣官房を中心に政府として検討を進めています。また、戦略17分野の1つであるAI半導体分野においては、防衛は、幹事主導での開発、活用を積極的に進めるべき分野の1つとして、検討が行われているところです。防衛省としても、防衛力の強化に取り組みつつ、防衛と経済の好循環を実現するため、引き続き政府全体の議論に積極的に貢献してまいりますし、AI関連のスタートアップや国内の企業に対しても、 我々の明確な意思、コミットメントがしっかり伝わるような機会をこれからも創出したいと思っています。防衛装備庁で先日はスタートアップとベンチャーキャピタル、合計で約100社集まっていただいて、我々のファストパス調達も含めた防衛面で門戸を開いていく、そういった思いや政策も説明させていただいて、こういったコミュニティの拡大も引いては このAI分野においても防衛省の活用というものが国産として進んでいく一助になればと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=8259.383",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "情報インフラ国産化の目標と戦略提供の意思",
+          "sub_asks": [
+            "国内クラウド・半導体・AI基盤への移行目標",
+            "中長期の投資育成戦略を政府に提供・指導する考え"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "AIチーム"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "日本成長戦略"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "戦略17分野"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "防衛装備庁"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "引き続き政府全体の議論に積極的に貢献してまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "我が国の機微なデータの取り扱いについては、セキュリティ安全性のみならず、我が国のコントロールの下で運用を管理するという主権性をいかに確保していくことができるかというのが不可欠であります。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的だが、回答は「検討している」「貢献する」といった抽象的な表現に留まっており、具体的な移行目標や戦略の提示という核心部分への回答は不十分である。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どの程度まで移行を目指すのか」という定量的な問いを混ぜることで、より具体的な回答を迫ることができた。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_044",
+      "segment_index": 10,
+      "topic": "情報戦への対応と機関間連携",
+      "question": {
+        "speaker": "川裕一郎",
+        "party": "参政党",
+        "summary": "- サイバー・宇宙・電磁波領域において、縦割りを防ぎ、政治レベルにワンボイスで情報提供するための具体的な連携あり方を問う\n- SNSを通じたフェイクニュースや世論操作への対応について、防衛省の関与範囲と表現の自由との線引きを問う",
+        "full_text": "関連して、サイバー、宇宙、電磁波領域にまたがる情報性についてお尋ねをします。現代の戦いは、 サイバー攻撃、衛生妨害、電磁波妨害、SNSを通じた民主党が組み合わされた総合戦であります。平時と有事の境目が見えなくなり、気づいたときにはすでに情報戦で決着がついていたということすら起こり得ます。そこで伺います。国家情報会議の下で、防衛省、警察、内閣・サイバー関連組織、外務省などの 役割分担を整理することは必要ですが、それだけでは縦やりやセクシュナリズムを固定化をしかねません。そうならないよう、各機関がそれぞれの権限を維持しつつも、サイバー、宇宙、電磁波、人生に関する情報をどのように共有をし、総合的に分析をして、総理をはじめ、政治レベルにワンボイスで情報提供していくのか。具体的な連携のあり方をお示しいただきたいと思います。併せて、特にSNSを通じたフェイクニュースや世論操作への対応について、防衛省はどこまで関与をし、どこからは関与をしないのか、表現の自由との関係で線引きをどのように考えているのか、所見をお聞きをします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小泉防衛大臣",
+        "role": "",
+        "summary": "- 国家情報会議の設置により、ハイレベルな情報共有を含む機関間連携の強化が期待される\n- 防衛省では偽情報の事例紹介や情報戦訓練を実施しており、関係省庁と連携して外国による偽情報等へ対応する",
+        "full_text": "現在、内閣情報調査室をはじめとするインテリジェンス関係省庁と緊密に連携し、日々各種情報の共有を行っていますが、本法案により国家情報会議が設置されれば、よりハイレベルな情報共有も含め、機関間の連携強化が進むことが期待されます。その上でお尋ねの情報戦に関して申し上げると、国際社会においては、御指摘のSNSを通じたフェイクニュースや、世論捜査なども通じ、 他国の世論や意思決定に影響を及ぼすとともに、自らに好都合な政治社会状況を作り出すことを、起とする情報戦に重点が置かれています。こうした問題意識のもと、防衛省においては、インターネット上で拡散されている防衛省、自衛隊に関する偽情報の具体的な事例の紹介や、情報戦に関する訓練を実施するなど、各種取組を進めているところです。これらの取組に加えて、 関係省庁とも連携して、外国による偽情報等への対応に取り組むこととしており、国家情報会議発足後においても、引き続き緊密な連携を行う所存です。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5197"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=8259.383",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "情報戦における省庁間連携とSNS偽情報への対応",
+          "sub_asks": [
+            "サイバー・宇宙・電磁波等の情報を共有・分析し政治レベルへ提供する具体的な連携のあり方",
+            "SNSを通じたフェイクニュース・世論操作への防衛省の関与範囲と表現の自由との線引き"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "国家情報会議"
+            },
+            {
+              "type": "organization",
+              "excerpt": "防衛省、警察、内閣・サイバー関連組織、外務省"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "防衛省、警察、内閣・サイバー関連組織、外務省",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "内閣情報調査室"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国家情報会議"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "引き続き緊密な連携を行う所存です",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "関係省庁とも連携して、外国による偽情報等への対応に取り組むこととしており、国家情報会議発足後においても、引き続き緊密な連携を行う所存です。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な連携スキームや表現の自由との線引きという核心的な問いに対し、抽象的な連携の意向を述べるに留まっており、実質的な回答が得られていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「具体的な連携のあり方」と「表現の自由との線引き」という二つの重い問いを同時に投げているため、回答者が個別の論点を回避しやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_045",
+      "segment_index": 10,
+      "topic": "情報分野の人材育成と人事制度",
+      "question": {
+        "speaker": "川裕一郎",
+        "party": "参政党",
+        "summary": "- 地域研究などを体系的に強化する具体的な計画があるか問う\n- 情報専門家が長期的にキャリア形成できる人事制度や処遇の見直しを並行して進める考えがあるか問う",
+        "full_text": "対問されているということですけれども、さらに強く求めていきたいと思いますし、次の質問に移りたいと思うんですけれども、次は人材育成の観点からお聞きをしたいと思います。地域研究などを体系的に強化する具体的な計画はあるのか。併せて、情報分野の専門家が長期にわたりキャリアを形成できるような人事制度処遇の見直し、本法案を並行して進めるおつもりはあるのか、所見をお聞きします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "小泉防衛大臣",
+        "role": "",
+        "summary": "- 情報本部での専門職員の独自採用や、各種研修・教育を実施している\n- 専門性を考慮した人事配置を行い、長期的なキャリア形成が可能な人事体制の構築に努めている",
+        "full_text": "厳しい安全保障環境の下で、これまで以上に個々の自衛隊員に知識、技能、経験が求められている中で、情報収集、分析等に係る人材の確保育成は極めて重要であると認識しています。こうした認識に基づき、防衛省としては、情報本部において、語学や数学、通信工学などの専門性を持った職員を独自に採用しているほか、陸海空自衛隊と情報本部における教育、 情報分析に関する各種研修、語学や専門分野に関する教育などを行っております。また専門性を考慮した人事配置や、責任ある立場に専門性を有する職員を配置するなど、情報要員が長期にわたってキャリアを形成できるような人事体制の構築に努めております。防衛省として、本法案で設置される国家情報会議にもしっかりと貢献するためにも、防衛力の中核は 自衛隊員であるとの認識のもと、一人一人の隊員の適性や意向を踏まえた人事管理を行い、組織全体の効果的な業務運営に引き続き尽力してまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=8259.383",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "地域研究の強化計画と情報専門家の処遇見直しについて",
+          "sub_asks": [
+            "地域研究などを体系的に強化する具体的な計画はあるのか",
+            "情報分野の専門家が長期にわたりキャリアを形成できるような人事制度処遇の見直しを並行して進めるつもりはあるのか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "情報分野の専門家",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "情報本部"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国家情報会議"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "人事体制の構築に努めております",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "情報要員が長期にわたってキャリアを形成できるような人事体制の構築に努めております。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "地域研究の具体計画への回答が欠落しており、人事制度についても現状の説明と努力目標に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "2つの異なる問い（地域研究と人事制度）を併せて問うているため、回答者が一方を省略しやすい構成になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_046",
+      "segment_index": 11,
+      "topic": "外務省におけるAI活用と技術的リーダーシップの確保",
+      "question": {
+        "speaker": "高山聡史",
+        "party": "チームみらい",
+        "summary": "- 同志国との情報協力における分析成果の技術的な対等性を確保するための能力強化活動について\n- 国際情報統括官組織におけるAIを活用した分析基盤の状況について\n- 国家情報会議の設置を踏まえた、技術的責任者の組織的な位置づけについて",
+        "full_text": "まず第一に、同志国との情報協力において、日本側が提供する分析成果の技術的な対等性を確保するための能力強化活動について、第二に、国際情報統括官組織における分析支援ツール、とりわけAIを活用した分析基盤の状況、そして本法案による国家情報会議設置も踏まえた、 技術的に者の組織的な位置づけについて、外務大臣の御認識をお伺いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "本木外務大臣",
+        "role": "",
+        "summary": "- 同盟国・同志国との情報共有と保有情報のアップデートを重要視し、最新技術の活用が必要であると認識している\n- 国際統括官組織において、公開情報の収集・分析におけるAI活用の重要性を踏まえ、人材獲得・育成を含む能力構築に取り組む",
+        "full_text": "国際情勢、大きく変化をする中で、また様々な情報が世の中で流通をする、こういう中におきまして、同盟国、同志国との間で常に情報を共有しながら、 自らの保有する情報をアップデートする取組を進めていくことが重要だと考えております。その際、委員御指摘のように、日清原報で進化をしております振興技術の動向であったりとか、その活用を踏まえたものが、 でなければならないと、これよりも考えております。トップの国際統括官もいるわけでありますが、公開情報の収集であったりとか分析において、AIの活用が極めて重要である。こういう考えの下、人材獲得、育成も含めて必要な能力構築、そして運用に取り組んでいきたい。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5197"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=9532.583",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "同志国との情報協力能力とAI分析基盤の現状について",
+          "sub_asks": [
+            "分析成果の技術的な対等性を確保するための能力強化活動",
+            "AIを活用した分析基盤の状況と組織的な位置づけ"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "本法案による国家情報会議設置"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "同志国",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "運用に取り組んでいきたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "公開情報の収集であったりとか分析において、AIの活用が極めて重要である。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的だが、大臣の回答は抽象的な意向表明に留まっており、具体的な能力強化策やAI基盤の現状についての言及がない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "複数の問いを一度に投げているため、回答者が個別の問いを切り捨てて包括的な回答で逃げやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_047",
+      "segment_index": 11,
+      "topic": "防衛省におけるAI活用と技術的リーダーシップの確保",
+      "question": {
+        "speaker": "高山聡史",
+        "party": "チームみらい",
+        "summary": "- 米国防情報局等の米軍情報機関との技術的なギャップに関する認識について\n- 防衛省における信号・画像・公開情報等の処理業務へのAI活用の進捗評価について\n- 情報本部における技術責任者の組織的な位置づけについて",
+        "full_text": "そこで米国防情報局をはじめとする米軍の情報機関との技術的なギャップこれを防衛大臣としてどう認識をされているかそして防衛省における信号情報、画像情報、公開情報などさまざま処理業務あると思いますがAI活用はどの程度進んでいると評価をされているかそして同じくですね 情報本部における技術責任者の組織的な位置づけについて、防衛大臣の御認識をお伺いします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小泉防衛大臣",
+        "role": "",
+        "summary": "- 諸外国との詳細な能力比較は答えられないが、最先端技術の導入は待ったなしの課題であると認識している\n- 情報本部において、SNS情報の自動収集・分析などにAIを活用している\n- 専門性を有する職員の採用・育成を行い、責任ある立場に配置することで知見を蓄積・活用できる体制構築に努めている",
+        "full_text": "諸外国の情報機関、今、高山先生からはアメリカとの比較という話がありましたけれども、 諸外国の情報機関との能力比較や詳細な評価につきましては、その性質上お答えを差し控えさせていただきますが、我が国の情報収集手段の多くがテクノロジーに大きく依存する中、周辺国の軍事技術の向上に対応するためにも、AIを含めた最先端の技術を情報収集の分野に積極的に取り入れていくことは待ったなしの課題です。こうした問題意識から、情報本部においても取組を進めており、例えば、情報戦対応に必要となる公開情報や、SNS情報の自動収集・分析に、AIを活用するなどしているところです。また、こうした取組を人的側面から支えるため、情報本部においては、数学、通信工学、情報工学などの専門性を有する職員を継続して採用・育成し、 また責任ある立場に配置するなど、情報技術に係る知見を組織として蓄積、活用できる体制の構築に努めています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=9532.583",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "米軍との技術格差、AI活用状況、技術責任者の位置づけについて",
+          "sub_asks": [
+            "米軍情報機関との技術的ギャップの認識",
+            "防衛省におけるAI活用の進捗評価",
+            "情報本部における技術責任者の組織的位置づけ"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "米国防情報局をはじめとする米軍の情報機関"
+            },
+            {
+              "type": "organization",
+              "excerpt": "情報本部"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "米国防情報局",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "公開情報や、SNS情報の自動収集・分析"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "数学、通信工学、情報工学などの専門性を有する職員"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "体制の構築に努めています",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "公開情報や、SNS情報の自動収集・分析に、AIを活用するなどしているところです。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "3つの質問に対し、1つ目は回答拒否、2つ目は具体例を挙げて回答、3つ目は体制構築の努力という抽象的な回答に留まっており、網羅性に欠ける。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "複数の異なる論点（格差、AI、組織論）を一つの質問に盛り込んでいるため、回答者が一部を省略しやすい構成になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_048",
+      "segment_index": 11,
+      "topic": "国家情報局における分析基盤整備と技術責任者の制度化",
+      "question": {
+        "speaker": "高山聡史",
+        "party": "チームみらい",
+        "summary": "- 省庁横断でのインテリジェンス機能強化に向けた分析基盤整備についてのお考え\n- 海外事例を踏まえ、国家情報局に技術分野の責任者を明確化し制度として組み込む必要性について",
+        "full_text": "省庁横断でインテリジェンス機能強化のための分析基盤整備について、官房長官のお考えをぜひお聞かせいただきたいというところと併せて 今申し上げたような海外の事例も踏まえて、国家情報局にも技術分野の責任者を明確化して、制度として組み込む必要性についても、官房長官の御認識をお聞かせください。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 多量な情報を分析に生かすためのシステム基盤のあり方がポイントであり、AI等のツール活用による効率的な手法の確立が求められている\n- 幹部クラスを含む技術系職員を中心としたチームを国家情報局に編成し、省庁や民間と連携して取り組むことを検討する",
+        "full_text": "このたびの制度改正の趣旨や目的を鑑みると、各機関が収集した情報を集約することと併せまして、 各省長官で必要とされる情報を共有するという視点が重要であり、またインターネット上の公開情報に見られるような多様で、大量の情報をですね、分析業務に生かしやすい形で共有するためには、関連のデータを適切に整理できる、委員御指摘のようなシステム基盤のあり方がポイントであると考えています。また同じような考え方から、 分析業務を全ての人の目、あるいは全ての人の手により行うのではなくて、AI等のツールを活用した効率的で効果的な手法を確立すること。こうしたシステムやツールを導入しようと思えば、 それを推進するための一定の体制が必要であることは事実でありますので、幹部クラスを含む技術系職員を中心としたチームを国家情報局に編成し、各省庁や優れた技術を有する民間事業者とも連携しながら、関連の取組を進めていくことを検討したいと考えます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5197",
+        "shugiin-221-shuhou-3"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=9532.583",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "インテリジェンス分析基盤整備と技術責任者の制度化について",
+          "sub_asks": [
+            "省庁横断の分析基盤整備に関する考え",
+            "国家情報局への技術分野責任者の制度的組み込みの必要性"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "海外の事例"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.2
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国家情報局",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "AI等のツール"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国家情報局"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "関連の取組を進めていくことを検討したいと考えます",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "vice_minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "幹部クラスを含む技術系職員を中心としたチームを国家情報局に編成し、各省庁や優れた技術を有する民間事業者とも連携しながら、関連の取組を進めていくことを検討したい",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "分析基盤の必要性と、国家情報局への技術チーム編成の検討について明確に回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_049",
+      "segment_index": 11,
+      "topic": "外務省における情勢判断の事後検証体制",
+      "question": {
+        "speaker": "高山聡史",
+        "party": "チームみらい",
+        "summary": "- 外務省における過去の情勢判断・情報分析の事後検証の実施状況について\n- 国家情報会議設置後、外務省と国家情報局の間で検証をどう連携させるべきか",
+        "full_text": "外務省における過去の情勢判断、情報分析の事後検証の実施状況であるとか、国家情報会議設置後、外務省、国家情報局、それぞれで行われる検証をどう連携させていくべきかについて、外務大臣の御認識を伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "本木外務大臣",
+        "role": "",
+        "summary": "- 現在の外交推進状況から見て、適切な情報の収集分析が行われていると考えている\n- 国際情勢の変化に合わせ、政府全体として情報活動の在り方を検証し見直していくことは極めて重要であると認識している",
+        "full_text": "そういった外交を推進できているということを考えれば適切な情報の収集分析が行われている。その上で国際情勢が大きく変化をする中、我が国の国益を守り、国民の安全を確保するためには、適切なインテリジェンスサイクルと、この下で、情報活動の在り方を政府全体として検証して、負担に見直していく、こういうことは極めて重要になってくると、このように考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5197"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=9532.583",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "情勢判断の検証状況と国家情報会議後の連携策",
+          "sub_asks": [
+            "外務省における過去の情勢判断・情報分析の事後検証の実施状況",
+            "外務省と国家情報局の検証の連携方法"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "国家情報会議"
+            },
+            {
+              "type": "organization",
+              "excerpt": "国家情報局"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "外務省、国家情報局",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "検証して、負担に見直していく、こういうことは極めて重要になってくると、このように考えております",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "情報活動の在り方を政府全体として検証して、負担に見直していく、こういうことは極めて重要になってくると考えております。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な検証状況や連携策への回答を避け、重要性という一般論に留まった回答である。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「実施状況」と「連携策」を一つの問いに含めているため、回答者が個別の詳細を回避しやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_050",
+      "segment_index": 11,
+      "topic": "防衛省における検証困難な情報の事後検証体制",
+      "question": {
+        "speaker": "高山聡史",
+        "party": "チームみらい",
+        "summary": "- 抑止が機能した場合など、妥当性の検証が構造的に困難な情報に対する認識について\n- レッドチーム等の手法を含め、検証機能をどのように制度設計に組み込むべきか",
+        "full_text": "こういったものに対して海外でも、例えばレッドチームと言われるような取組を含めて、さまざま検証の仕組みがあるかと思いますが、こうした検証困難性に対する御認識と、今後検証機能をどう制度設計に組み込んでいくべきか、防衛大臣の御認識を伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "小泉防衛大臣",
+        "role": "",
+        "summary": "- 情報本部を中心に、周辺国の軍事動向など防衛に必要な情報の収集分析を実施しており、実際に起こっている事象も含まれている",
+        "full_text": "さまざま御答弁させていただいておりますけれども、防衛省自衛隊においては、 中央情報機関である情報本部を中心に、日本周辺の軍事動向を含め、我が国の防衛に必要な情報の収集分析を実施しています。この分析の中には、高山委員が御指摘のように、生じ得る可能性がある事象も含まれますが、北朝鮮によるミサイル発射、中国軍の軍事活動、ロシアによるウクライナ侵略など、今まさに起こっている事象も当然のことながら含まれます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=9532.583",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "検証困難性への認識と制度設計への組み込み方",
+          "sub_asks": [
+            "検証困難性に対する認識",
+            "検証機能をどう制度設計に組み込むべきか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "レッドチームと言われるような取組"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.2
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "情報本部"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "北朝鮮"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "中国軍"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ロシア"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "情報本部を中心に、日本周辺の軍事動向を含め、我が国の防衛に必要な情報の収集分析を実施しています。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "検証機能の制度設計という具体的な問いに対し、現状の情報収集体制の説明に終始しており、回答が噛み合っていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「認識を伺う」という形式のため、大臣が現状説明に逃げる余地を与えてしまっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_051",
+      "segment_index": 12,
+      "topic": "超射程ミサイル運用に必要な情報の収集手段",
+      "question": {
+        "speaker": "田村智子",
+        "party": "日本共産党",
+        "summary": "- 超射程ミサイルの運用に不可欠な情報をどのような手段で収集・集中させるのか",
+        "full_text": "防衛大臣、そのための情報は、どのような手段で集中するのでしょうか。小泉防衛大臣。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 衛星コンステレーションによる画像情報取得や無人機の整備などを実施する\n- 具体的な対応を明らかにすることは国の安全を害する恐れがあるため差し控える",
+        "full_text": "国家防衛戦略におきましては、スタンドオフ防衛能力の運用に必要となる目標情報等を一層効果的に収集するといった観点から、例えば、衛星コンステレーションを活用した画像情報等の取得や、無人機の整備等を行うこととされています。他方で、具体的な情報収集の対応を含め、我が国が安全保障上取るべき対応について、いかなるケースでいかなる対応を取るかを具体的に明らかにすることは、 対抗的な措置をとられることなどにより、国の安全を害する恐れがあることから、お答えを差し控えるのは当然のことだということも、御理解いただければと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=10547.583",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "情報の集中手段についての質問",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国家防衛戦略"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "衛星コンステレーション"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "無人機"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "衛星コンステレーションを活用した画像情報等の取得や、無人機の整備等を行うこととされています。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な手段について一部例示しつつ、機密保持を理由に詳細な回答を拒否している標準的なやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「そのための情報」という指示代名詞が含まれており、単体では文脈が不足している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_052",
+      "segment_index": 12,
+      "topic": "超射程ミサイル運用における人的情報等の必要性",
+      "question": {
+        "speaker": "田村智子",
+        "party": "日本共産党",
+        "summary": "- 相手国の装備・目的・運用の把握や、首脳・司令官の意思把握のために、通信傍受や情報提供者の確保などの手段が不可欠ではないか",
+        "full_text": "今、衛星と無人機ということを挙げられたんですが、相手国がどういう装備を配備しているのか、それをどのような目的で、どのように運用しようとしているのかまではわかりません。通信防御、情報提供者の確保などを通じて、 実際の配備や運用の状況、さらには相手国政府首脳や司令官の意思を把握すること、これが長射程ミサイルの運用には不可欠ではないかと考えますが、いかがですか。小泉防衛大臣。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 電波・画像・公開・人的情報などの収集分析を実施している\n- 安保三文書に基づき、情報本部を中心に機能別能力を強化し、統合的な分析能力を抜本的に強化していく",
+        "full_text": "もちろん防衛省としては、兵装より電波情報、画像情報、公開情報、人的情報などの各種情報の収集分析を実施していますが、 どのような情報がいかなる場面において必要になるかというのは一概にお答えすることは困難であります田村君不可欠ではないかという質問にそれが必要だというお答えでした実際安保三文書ではこれまで以上に我が国主権国等の意思と能力を常時継続的かつ正確に把握する必要がある 情報本部を中心とした電波情報、画像情報、人的情報、交換情報等の機能別能力を強化するとともに、地理空間情報の活用を含め、統合的な分析能力を抜本的に強化していくと述べています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "shugiin-221-shuhou-3",
+        "shugiin-221-sanhou-5"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=10547.583",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "長射程ミサイル運用に情報把握は不可欠か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "相手国政府首脳や司令官",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "安保三文書"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "情報本部"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "安保三文書ではこれまで以上に我が国主権国等の意思と能力を常時継続的かつ正確に把握する必要がある",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "長射程ミサイル運用における情報把握の重要性について、大臣が肯定し、安保三文書の方向性を引用して回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_053",
+      "segment_index": 12,
+      "topic": "重要情報活動の定義と超射程ミサイル運用の関係",
+      "question": {
+        "speaker": "田村智子",
+        "party": "日本共産党",
+        "summary": "- 超射程ミサイルの運用に関わる相手国の意思や軍事動向の把握は、法案に規定する「重要情報活動」に該当するか",
+        "full_text": "官房長官にお聞きします。こうした超射程ミサイルの運用に関わる相手国の意思や軍事動向は法案に規定する重要情報活動に当たるという理解でよろしいですか。木原官房長官。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 重要情報活動とは、安全保障の確保やテロ防止など重要な国政運営に資する情報収集活動を指す\n- 相手国の意思や軍事動向の把握は安全保障に直結するため、重要情報活動に該当する",
+        "full_text": "まず本法案における重要情報活動の定義について簡単に御説明させていただくと 本法案における重要情報活動とは、重要な国政の運営に資する情報の収集調査に係る活動のことを 国政という言葉ですがこれは一般には対外政策とか安全保障政策とか行政全般や財政政策などを指し示す言葉でありますがその中でも重要なものすなわち一般に外部からの侵略等の脅威に対して外交防衛などといった様々な政策を駆使して国民の安全を確保することを意味する安全保障の確保そして無効の国民の生命を直接脅かすテロリズムの発生の防止 ひとたび発生すれば多くの国民の生命、身体、財産に重大な被害を生じさせる災害などの緊急の事態への対処。そういった3つの事柄を例示として指し示すものが重要国政運営に当たります。このような国政のうちでも重要なものに係る情報収集活動が本法案における情報 重要情報活動であります。委員のお尋ねですけれども、我が国の安全保障や国民の安全にとって脅威となる相手国の意思や軍事動向について情報収集する活動が重要情報活動に該当するかという趣旨でしたが、我が国としてはそのような脅威となる相手国の意思や軍事動向を把握することは これはまさに我が国の安全保障や国民の安全の確保に直結するものでありますからこれらの事項について情報収集を行うことは本法案における重要情報活動に該当すると考えております田村君。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5197",
+        "shugiin-221-shuhou-3"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=10547.583",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "超射程ミサイル運用に関わる相手国の動向は重要情報活動に当たるか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "法案に規定する重要情報活動"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "相手国",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "対外政策"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "安全保障政策"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "行政全般"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "財政政策"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "相手国の意思や軍事動向を把握することは、本法案における重要情報活動に該当すると考えております",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "法案における「重要情報活動」の定義に、特定の軍事動向の把握が含まれるかという点について、官房長官が明確に肯定したため、記録としての価値が高い。",
+        "would_be_referenced": "high",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_054",
+      "segment_index": 12,
+      "topic": "国家情報局の役割と情報収集の最適化",
+      "question": {
+        "speaker": "田村智子",
+        "party": "日本共産党",
+        "summary": "- 内閣情報調査室は長射程ミサイルの運用においてどのような役割を担い、国家情報局に格上げされた場合にどう変わるのか",
+        "full_text": "内閣情報調査室はそうすると長射程ミサイルの運用に関わってどのような役割を担うのでしょうか国際国家情報局に格上げした場合にはそれはどのように変わるのか官房長官お願いしますはい、木原官房長官 内聴ですけれども、現在、内閣の重要政策に関する情報の収集調査に関する事務を司っております。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 個別の活動内容は今後の活動に支障を及ぼすため回答を差し控える\n- 国家情報局となることで政府全体の情報を俯瞰的に総合調整し、分析能力の強化とパフォーマンスの最適化・最大化を図る",
+        "full_text": "国内外の軍事情勢等を含めた情報収集活動を行っているところでありますけれども、個別の活動内容については、これを明らかにすることによって、情報関心等を明らかにすることになりますから、今後の情報収集活動に支障を及ぼすおそれがあることから、 お答えは差し控えさせていただきます。本法案が成立すれば国家情報局は政府の情報活動について政府全体の情報を俯瞰するという立場から総合調整を行うということが可能となり各省庁の保有する情報をより積極的にまとめ多種多様な情報を集約することで総合的な分析がさらに強化 されることになると考えております。これによって政府全体の情報活動のパフォーマンスの最適化、最大化が図られ、より質の高い、そして時期にかなった情報を収集、集約、分析し、そして政策部門に提供することが可能になるものと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5197",
+        "shugiin-221-shuhou-3"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=10547.583",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "内調の役割と国家情報局格上げ後の変化",
+          "sub_asks": [
+            "長射程ミサイル運用に関わる内調の役割",
+            "国家情報局に格上げした場合の変化"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "内閣情報調査室"
+            },
+            {
+              "type": "other",
+              "excerpt": "長射程ミサイルの運用"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "内閣情報調査室",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "国家情報局は政府の情報活動について政府全体の情報を俯瞰するという立場から総合調整を行うということが可能となり",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な役割については機密を理由に回答を拒否しているが、組織改編後の機能的方向性については言及している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "ミサイル運用という具体的事案と、組織論という抽象的な問いを同時に投げているため、回答が分散した。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_055",
+      "segment_index": 12,
+      "topic": "国家情報局とCIAとの連携",
+      "question": {
+        "speaker": "田村智子",
+        "party": "日本共産党",
+        "summary": "- 国家情報局は長射程ミサイルの運用に関して、CIAとどのような連携を図るのか",
+        "full_text": "これまでの答弁で、長射程ミサイルでことを構えるというか、対決する相手国のさまざまな意思の 情報収集集する、そういう役割を負うことになるということが確認されているんですけれども、これね、内閣は、もともとアメリカ中央情報局、CIAと密接な関係のもとに発足したとされています。吉田茂首相の秘書官だった、公安警察出身の村井淳氏が、独立するからには、日本にもCIAのような情報機関がぜひ必要であると、 意見を愚信しそれではお前がやれと首相に言われ内閣が発足したとこれは村井氏自身が語っていることです。1959年には内閣のメンバーがCIAの招待で50日間にわたる研修旅行をしたという日誌も残っています。国家情報局は長射程ミサイルの運用に関してCIAとどのような連携を図っていくことになるんでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 具体的な連携のあり方は相手国のあることなので差し控えるが、米国を含む関係国と平素より緊密に連携し情報交換を行っている",
+        "full_text": "木原官房長官 情報分野に関する関係国との具体的な連携のあり方というふうに問われると、これは事柄の性質上、相手国のあることですから、お答えを差し控えるべきですが、内調を含めた各インテリジェンス省庁は、米国をはじめとする関係国と、平素より緊密に連携をし、さまざまな情報交換等を行っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5197",
+        "shugiin-221-shuhou-3"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=10547.583",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "国家情報局とCIAの連携策について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "アメリカ中央情報局、CIA"
+            },
+            {
+              "type": "other",
+              "excerpt": "村井淳氏"
+            },
+            {
+              "type": "date",
+              "excerpt": "1959年"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "CIA",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "内調"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "米国"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "内調を含めた各インテリジェンス省庁は、米国をはじめとする関係国と、平素より緊密に連携をし、さまざまな情報交換等を行っております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な連携策を問う質問に対し、機密性を理由に回答を差し控え、一般論に留まったやり取りである。",
+        "would_be_referenced": "low",
+        "issue_in_design": "歴史的背景の説明が長く、核心となる質問が最後に配置されているため、回答者が一般論で逃げやすい構成になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_056",
+      "segment_index": 12,
+      "topic": "米国による要人殺害・拉致等の諜報活動への関与と連携の是非",
+      "question": {
+        "speaker": "田村智子",
+        "party": "日本共産党",
+        "summary": "- CIAが過去に行った要人殺害や指導者の拉致のような、他国の主権を侵害する諜報活動との連携はしないと明言すべきではないか",
+        "full_text": "諸外国の政府機関と良好かつ緊密な協力関係を構築しそれによってタイムリーな重要情報を得ていくということはこれは我が国の安全保障上必要不可欠な取組でもありその水準を向上させることもこの法案の効果として期待されるところであると考えます田村君今の答弁ですとやはり 米国との連携ということが強調されたわけですけれどもこれイラン攻撃ではCIAとイスラエルの情報機関モサドが連携してイランの最高指導者ハメネイ氏の居場所を特定し空からの爆撃で殺害をしました。その後も多数の要人を空爆によって殺害したことをトランプ大統領は誇らしげに語っています。1月のベネズエラ攻撃と指導者の拉致も ベネズエラ国内での諜報活動によって、詳細に動向を把握して行ったものです。こういうことをできるようにする体制を、日米同盟強化で、アメリカとともにつくるということになるんじゃないでしょうか。それが何を意味するかなんですね。歴史的に見れば、イランのモサデク政権や、チリのアジェンデ政権など、他国の主権を侵害し、数々の暴略、政権転覆に関与してきたのがCIAです。当時の機密文書も公開され、2009年オバマ大統領は、エジプトカイロでの演説で、冷戦の最中、 米国は民主的に選出されたイランの政権の転覆に関わったということを認めています。このようなアメリカの諜報活動は許されないと。こうした組織とのこのような連携ですね。イランで行ったような要人の殺害。ベネゼーラでやったような指導者の拉致。こういうこと許されないと。こうした組織との連携はしないということを明言すべきだと私は思うんですが。官房長官いかがですか。じゃあ、木原官房長官。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 個別具体的な事柄への回答は差し控えるが、国民を守るための安全保障上必要不可欠な取り組みであれば、その水準を向上させる必要がある",
+        "full_text": "繰り返しになりますが、個別具体的な事柄についてはお答えは差し控えますが、いずれにしましても、我が国の安全保障上、必要不可欠な取組、それが国民を守るということであれば、それはこの水準をさらに向上させる必要はあるというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5197",
+        "shugiin-221-shuhou-3",
+        "shugiin-221-sanhou-5"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=10547.583",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "米国の諜報機関との連携において、暴略等の不適切活動はしないと明言できるか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "CIA"
+            },
+            {
+              "type": "organization",
+              "excerpt": "イスラエルの情報機関モサド"
+            },
+            {
+              "type": "other",
+              "excerpt": "イランの最高指導者ハメネイ氏"
+            },
+            {
+              "type": "other",
+              "excerpt": "1月のベネズエラ攻撃"
+            },
+            {
+              "type": "other",
+              "excerpt": "イランのモサデク政権"
+            },
+            {
+              "type": "other",
+              "excerpt": "チリのアジェンデ政権"
+            },
+            {
+              "type": "past_answer",
+              "excerpt": "2009年オバマ大統領は、エジプトカイロでの演説で...認めています"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.9
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "CIA",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "vice_minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "我が国の安全保障上、必要不可欠な取組、それが国民を守るということであれば、それはこの水準をさらに向上させる必要はある",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は具体的な歴史的事例を挙げ、不適切活動への関与をしないという明言を求めたが、回答者は個別具体的事項への回答を拒否し、一般論に終始した。",
+        "would_be_referenced": "low",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_057",
+      "segment_index": 12,
+      "topic": "対外情報庁および情報要員養成機関の創設目的",
+      "question": {
+        "speaker": "田村智子",
+        "party": "日本共産党",
+        "summary": "- 連立政権合意にある対外情報庁および情報要員養成機関を創設する目的は何か",
+        "full_text": "さらにお聞きしたいんですが、自民維新の例立政権合意では、2027年度末までに対外情報庁、また情報要員の要請機関を創設するとしていますが、その目的は何でしょうか。はい、木原官房長官。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 政権合意へのコメントは控えるが、厳しい安全保障環境において危機を未然に防ぐため、対外情報機能の充実と人材育成が重要であると考えている",
+        "full_text": "連立政権合意文書の内容について、これは政府の立場からコメントすることは控えておきますが、戦後最も厳しく複雑な安全保障環境において、危機を未然に防ぎ、国民の安全や国益を守るためには、政府の対外情報機能についても充実させていくとともに、 情報要員の組織的な要請を着実に進めていくことが重要であると考えます。そのための体制の検討や情報収集の手段、あるいは研修や訓練といった人材の育成など重要な課題が多くまだ残っておりますので、法案が成立した後、様々な方々の御意見を賜りながら、丁寧に検討を進めていきたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5197",
+        "shugiin-221-shuhou-3"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56200&time=10547.583",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "対外情報庁等の創設目的は何か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "自民維新の例立政権合意"
+            },
+            {
+              "type": "date",
+              "excerpt": "2027年度末まで"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "丁寧に検討を進めていきたいと考えております",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "政府の対外情報機能についても充実させていくとともに、情報要員の組織的な要請を着実に進めていくことが重要であると考えます。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "政権合意への言及は避けたものの、対外情報機能の充実という方向性は示した。具体的な目的への回答は抽象的である。",
+        "would_be_referenced": "low",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    }
+  ],
+  "score_schema_version": "2.0",
+  "prompt_version": "V4"
+}
