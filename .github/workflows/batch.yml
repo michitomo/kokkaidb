@@ -42,9 +42,16 @@ jobs:
       - name: Install discovery dependencies
         run: |
           cd kokkai-transcriber
-          # 参議院の探索には playwright が必要
           pip install -e '.[browser]'
-          python -m playwright install --with-deps chromium
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-chromium-${{ runner.os }}-${{ hashFiles('kokkai-transcriber/pyproject.toml') }}
+
+      - name: Install Playwright Chromium
+        run: python -m playwright install --with-deps chromium
 
       - name: Resolve dates
         id: dates
@@ -122,15 +129,27 @@ jobs:
           cd kokkai-transcriber
           if [ "${{ matrix.session.chamber }}" = "sangiin" ]; then
             pip install -e '.[browser]'
-            python -m playwright install --with-deps chromium
           else
             pip install -e .
           fi
-      
+
+      - name: Cache Playwright browsers
+        if: matrix.session.chamber == 'sangiin'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-chromium-${{ runner.os }}-${{ hashFiles('kokkai-transcriber/pyproject.toml') }}
+
+      - name: Install Playwright Chromium
+        if: matrix.session.chamber == 'sangiin'
+        run: python -m playwright install --with-deps chromium
+
       - name: Install ffmpeg
         run: |
-          sudo apt-get update
-          sudo apt-get install -y ffmpeg
+          if ! command -v ffmpeg &>/dev/null; then
+            sudo apt-get update -qq
+            sudo apt-get install -y ffmpeg
+          fi
 
       - name: Run pipeline
         env:
