@@ -52,6 +52,7 @@ interface IndexQAPair {
   commitment_text: string;
   video_url: string;
   related_laws: string[];
+  metrics?: QAMetrics;
 }
 
 // index.json のセッションエントリ
@@ -577,6 +578,7 @@ export function generateApi(dataDir: string, outDir: string): void {
         commitment_text: p.answer.commitment_text,
         video_url: p.video_url,
         related_laws: [...new Set(merged)],
+        metrics: p.metrics,
       };
     });
 

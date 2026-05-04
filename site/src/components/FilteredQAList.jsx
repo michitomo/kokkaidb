@@ -15,8 +15,9 @@ const PAGE_SIZE = 300;
  * @param {(page: number) => void} props.onPageChange
  */
 export default function FilteredQAList({ filteredEntries, totalCount, page, onPageChange, baseUrl = '' }) {
-  const [copyState, setCopyState] = useState('idle'); // idle | success | error
+  const [copyState, setCopyState] = useState('idle');
   const [expandedIds, setExpandedIds] = useState(new Set());
+  const [metricsModalQa, setMetricsModalQa] = useState(null);
 
   // 全フィルタ済みQ&Aペアをフラットに展開（セッション情報付き）
   const allPairs = filteredEntries.flatMap((entry) =>
@@ -42,16 +43,14 @@ export default function FilteredQAList({ filteredEntries, totalCount, page, onPa
     }
   }, [filteredEntries]);
 
-  function directnessColor(score) {
+  function scoreColor(score) {
     if (score >= 0.7) return '#16a34a';
     if (score >= 0.4) return '#d97706';
     return '#dc2626';
   }
 
-  function directnessLabel(score) {
-    if (score >= 0.7) return '高';
-    if (score >= 0.4) return '中';
-    return '低';
+  function scorePercent(score) {
+    return `${(score * 100).toFixed(0)}%`;
   }
 
   function toggleExpand(qaId) {
@@ -149,8 +148,11 @@ export default function FilteredQAList({ filteredEntries, totalCount, page, onPa
           <div className="qa-cards">
             {pagePairs.map(({ qa, entry }) => {
               const videoTime = formatVideoTime(qa.video_url);
+              const hasFullText = qa.question_full_text || qa.answer_full_text;
+              const fullTextExpanded = expandedIds.has(`${qa.id}-full`);
               return (
                 <div key={qa.id} className="qa-card">
+                  {/* ヘッダー */}
                   <div className="qa-header">
                     <div className="qa-meta">
                       <span className={`chamber-badge ${entry.chamber}`}>
@@ -177,77 +179,102 @@ export default function FilteredQAList({ filteredEntries, totalCount, page, onPa
                     </div>
                   </div>
 
-                  <div className="qa-columns">
-                    <div className="question">
-                      <div className="speaker-label">
-                        質問 — <strong>{qa.question_speaker}</strong>
-                        {qa.question_party && (
-                          <span className="party">（{qa.question_party}）</span>
-                        )}
-                      </div>
-                      {renderSummary(qa.question_summary)}
-                      {qa.question_full_text && (
-                        <>
-                          <button
-                            type="button"
-                            className="expand-toggle"
-                            onClick={() => toggleExpand(`${qa.id}-q`)}
-                          >
-                            {expandedIds.has(`${qa.id}-q`) ? '全文を閉じる' : '全文を表示'}
-                          </button>
-                          {expandedIds.has(`${qa.id}-q`) && (
-                            <div className="full-text">
-                              {qa.question_full_text.split(/(?<=。)/).filter(s => s.trim()).map((para, i) => (
-                                <p key={i}>{para}</p>
-                              ))}
-                            </div>
-                          )}
-                        </>
+                  {/* 質問行 */}
+                  <div className="qa-row">
+                    <div className="qa-label qa-label--question">
+                      <span className="qa-label-text">質問</span>
+                      {qa.metrics?.qq2_groundedness?.score != null && (
+                        <button className="score-chip" onClick={() => setMetricsModalQa(qa)} title="評価詳細">
+                          <span className="score-chip-key">QQ</span>
+                          <span className="score-chip-val" style={{ color: scoreColor(qa.metrics.qq2_groundedness.score) }}>{scorePercent(qa.metrics.qq2_groundedness.score)}</span>
+                        </button>
                       )}
                     </div>
-
-                    <div className="answer">
-                      <div className="speaker-label">
-                        答弁 — <strong>{qa.answer_speaker}</strong>
-                        {qa.answer_role && (
-                          <span className="role">（{qa.answer_role}）</span>
-                        )}
+                    <div className="qa-content">
+                      <div className="speaker-line">
+                        <strong>{qa.question_speaker}</strong>
+                        {qa.question_party && <span className="party">（{qa.question_party}）</span>}
                       </div>
-                      {renderSummary(qa.answer_summary)}
-                      {qa.answer_full_text && (
-                        <>
-                          <button
-                            type="button"
-                            className="expand-toggle"
-                            onClick={() => toggleExpand(`${qa.id}-a`)}
-                          >
-                            {expandedIds.has(`${qa.id}-a`) ? '全文を閉じる' : '全文を表示'}
-                          </button>
-                          {expandedIds.has(`${qa.id}-a`) && (
-                            <div className="full-text">
-                              {qa.answer_full_text.split(/(?<=。)/).filter(s => s.trim()).map((para, i) => (
-                                <p key={i}>{para}</p>
-                              ))}
-                            </div>
-                          )}
-                        </>
-                      )}
-                      {qa.metrics?.as1_directness?.score != null && (
-                        <div
-                          className="directness"
-                          style={{ color: directnessColor(qa.metrics.as1_directness.score) }}
-                        >
-                          直接回答度 {directnessLabel(qa.metrics.as1_directness.score)}（{(qa.metrics.as1_directness.score * 100).toFixed(0)}%）
-                        </div>
-                      )}
-                      {qa.metrics?.as4_commitment?.level >= 1 && qa.metrics?.as4_commitment?.trigger_phrase && (
-                        <div className="commitment">
-                          <span className="commitment-label">約束:</span> {qa.metrics.as4_commitment.trigger_phrase}
-                        </div>
-                      )}
+                      {renderSummary(qa.question_summary)}
                     </div>
                   </div>
 
+                  {/* 答弁行 */}
+                  <div className="qa-row">
+                    <div className="qa-label qa-label--answer">
+                      <span className="qa-label-text">答弁</span>
+                      {qa.metrics?.as1_directness?.score != null && (
+                        <button className="score-chip" onClick={() => setMetricsModalQa(qa)} title="評価詳細">
+                          <span className="score-chip-row">
+                            <span className="score-chip-key">直答</span>
+                            <span className="score-chip-val" style={{ color: scoreColor(qa.metrics.as1_directness.score) }}>{scorePercent(qa.metrics.as1_directness.score)}</span>
+                          </span>
+                          {qa.metrics?.as2_information_density?.score != null && (
+                            <span className="score-chip-row">
+                              <span className="score-chip-key">情報</span>
+                              <span className="score-chip-val" style={{ color: scoreColor(qa.metrics.as2_information_density.score) }}>{scorePercent(qa.metrics.as2_information_density.score)}</span>
+                            </span>
+                          )}
+                        </button>
+                      )}
+                    </div>
+                    <div className="qa-content">
+                      <div className="speaker-line">
+                        <strong>{qa.answer_speaker}</strong>
+                        {qa.answer_role && <span className="role">（{qa.answer_role}）</span>}
+                      </div>
+                      {renderSummary(qa.answer_summary)}
+                    </div>
+                  </div>
+
+
+                  {/* 全文表示（統合） */}
+                  {hasFullText && (
+                    <div className="qa-row qa-row--fulltext">
+                      <div className="qa-label qa-label--fulltext">全文</div>
+                      <div className="qa-content">
+                        <button
+                          type="button"
+                          className="expand-toggle"
+                          onClick={() => toggleExpand(`${qa.id}-full`)}
+                        >
+                          {fullTextExpanded ? '全文を閉じる' : '質問・答弁の全文を表示'}
+                        </button>
+                        {fullTextExpanded && (
+                          <div className="full-text-combined">
+                            {qa.question_full_text && (
+                              <div className="full-text-section">
+                                <div className="full-text-section-label full-text-section-label--q">
+                                  質問原文 — {qa.question_speaker}
+                                  {qa.question_party && <span className="fts-party">（{qa.question_party}）</span>}
+                                </div>
+                                <div className="full-text">
+                                  {qa.question_full_text.split(/(?<=。)/).filter(s => s.trim()).map((para, i) => (
+                                    <p key={i}>{para}</p>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+                            {qa.answer_full_text && (
+                              <div className="full-text-section">
+                                <div className="full-text-section-label full-text-section-label--a">
+                                  答弁原文 — {qa.answer_speaker}
+                                  {qa.answer_role && <span className="fts-party">（{qa.answer_role}）</span>}
+                                </div>
+                                <div className="full-text">
+                                  {qa.answer_full_text.split(/(?<=。)/).filter(s => s.trim()).map((para, i) => (
+                                    <p key={i}>{para}</p>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* 出典 */}
                   <div className="qa-footer">
                     出典:{' '}
                     <a
@@ -300,6 +327,51 @@ export default function FilteredQAList({ filteredEntries, totalCount, page, onPa
             </nav>
           )}
         </>
+      )}
+
+      {/* 評価詳細モーダル */}
+      {metricsModalQa && (
+        <div className="modal-overlay" onClick={() => setMetricsModalQa(null)}>
+          <div className="modal-box" onClick={e => e.stopPropagation()}>
+            <div className="modal-header">
+              <h3 className="modal-title">{metricsModalQa.topic}</h3>
+              <button className="modal-close" onClick={() => setMetricsModalQa(null)}>✕</button>
+            </div>
+            <div className="modal-body">
+              <div className="metrics-grid">
+                <div className="metric-item"><span className="metric-icon">🎯</span><span className="metric-label-text">直接回答度</span><div className="metric-bar-wrap"><div className="metric-bar" style={{ width: scorePercent(metricsModalQa.metrics.as1_directness.score), background: scoreColor(metricsModalQa.metrics.as1_directness.score) }} /></div><span className="metric-value" style={{ color: scoreColor(metricsModalQa.metrics.as1_directness.score) }}>{scorePercent(metricsModalQa.metrics.as1_directness.score)}</span></div>
+                {metricsModalQa.metrics.as2_information_density && <div className="metric-item"><span className="metric-icon">📊</span><span className="metric-label-text">具体情報量</span><div className="metric-bar-wrap"><div className="metric-bar" style={{ width: scorePercent(metricsModalQa.metrics.as2_information_density.score), background: scoreColor(metricsModalQa.metrics.as2_information_density.score) }} /></div><span className="metric-value" style={{ color: scoreColor(metricsModalQa.metrics.as2_information_density.score) }}>{scorePercent(metricsModalQa.metrics.as2_information_density.score)}</span></div>}
+                {metricsModalQa.metrics.qq1_clarity && <div className="metric-item"><span className="metric-icon">💡</span><span className="metric-label-text">論点明確度</span><div className="metric-bar-wrap"><div className="metric-bar" style={{ width: scorePercent(metricsModalQa.metrics.qq1_clarity.score), background: scoreColor(metricsModalQa.metrics.qq1_clarity.score) }} /></div><span className="metric-value" style={{ color: scoreColor(metricsModalQa.metrics.qq1_clarity.score) }}>{scorePercent(metricsModalQa.metrics.qq1_clarity.score)}</span></div>}
+                {metricsModalQa.metrics.qq5_actionability && <div className="metric-item"><span className="metric-icon">⚡</span><span className="metric-label-text">行動要求度</span><div className="metric-bar-wrap"><div className="metric-bar" style={{ width: scorePercent(metricsModalQa.metrics.qq5_actionability.score), background: scoreColor(metricsModalQa.metrics.qq5_actionability.score) }} /></div><span className="metric-value" style={{ color: scoreColor(metricsModalQa.metrics.qq5_actionability.score) }}>{scorePercent(metricsModalQa.metrics.qq5_actionability.score)}</span></div>}
+              </div>
+              {metricsModalQa.metrics.as4_commitment?.level >= 1 && (
+                <div className="commitment-inline">
+                  <span className={`commitment-lv commitment-lv-${metricsModalQa.metrics.as4_commitment.level}`}>🤝 lv{metricsModalQa.metrics.as4_commitment.level}</span>
+                  {metricsModalQa.metrics.as4_commitment.trigger_phrase && <span className="commitment-phrase">「{metricsModalQa.metrics.as4_commitment.trigger_phrase}」</span>}
+                </div>
+              )}
+              {metricsModalQa.metrics.oc3_quotability?.quote_candidate && (
+                <div className="quote-candidate"><span className="quote-label">💬 引用候補:</span> {metricsModalQa.metrics.oc3_quotability.quote_candidate}</div>
+              )}
+              <div className="metrics-detail-grid">
+                <div className="detail-section">
+                  <h4 className="detail-heading">質問の質 (QQ)</h4>
+                  {metricsModalQa.metrics.qq2_groundedness && (<div className="detail-row"><div className="detail-meta"><span className="detail-name">一次ソース密度</span><div className="metric-bar-wrap metric-bar-wrap--sm"><div className="metric-bar" style={{ width: scorePercent(metricsModalQa.metrics.qq2_groundedness.score), background: scoreColor(metricsModalQa.metrics.qq2_groundedness.score) }} /></div></div>{metricsModalQa.metrics.qq2_groundedness.cited_sources?.length > 0 && <ul className="detail-list">{metricsModalQa.metrics.qq2_groundedness.cited_sources.map((s, i) => <li key={i}><span className="source-tag">{s.type}</span> {s.excerpt}</li>)}</ul>}</div>)}
+                  {metricsModalQa.metrics.qq4_stakeholder && (<div className="detail-row"><div className="detail-meta"><span className="detail-name">当事者・具体性</span><div className="metric-bar-wrap metric-bar-wrap--sm"><div className="metric-bar" style={{ width: scorePercent(metricsModalQa.metrics.qq4_stakeholder.score), background: scoreColor(metricsModalQa.metrics.qq4_stakeholder.score) }} /></div></div><div className="detail-text-info">対象者: <strong>{metricsModalQa.metrics.qq4_stakeholder.stakeholder_category || '未特定'}</strong> / 具体性: {metricsModalQa.metrics.qq4_stakeholder.concreteness === 'concrete' ? '具体的' : metricsModalQa.metrics.qq4_stakeholder.concreteness === 'mid' ? '中程度' : '抽象的'}</div></div>)}
+                  {metricsModalQa.metrics.qq5_actionability && (<div className="detail-flags">{metricsModalQa.metrics.qq5_actionability.is_yes_no_form && <span className="detail-badge">Yes/No形式</span>}{metricsModalQa.metrics.qq5_actionability.has_deadline && <span className="detail-badge">期限設定あり</span>}{metricsModalQa.metrics.qq5_actionability.presents_options && <span className="detail-badge">選択肢提示あり</span>}</div>)}
+                </div>
+                <div className="detail-section">
+                  <h4 className="detail-heading">答弁の質・価値 (AS/OC)</h4>
+                  {metricsModalQa.metrics.oc1_record_value && (<div className="detail-row"><div className="detail-meta"><span className="detail-name">記録的価値</span><div className="metric-bar-wrap metric-bar-wrap--sm"><div className="metric-bar" style={{ width: scorePercent(metricsModalQa.metrics.oc1_record_value.score), background: scoreColor(metricsModalQa.metrics.oc1_record_value.score) }} /></div></div><div className="detail-flags">{metricsModalQa.metrics.oc1_record_value.pins_legal_interpretation && <span className="detail-badge detail-badge--gold">法解釈の確定</span>}{metricsModalQa.metrics.oc1_record_value.fixes_official_number && <span className="detail-badge detail-badge--gold">公的数値の確定</span>}{metricsModalQa.metrics.oc1_record_value.goes_beyond_precedent && <span className="detail-badge detail-badge--gold">前例超越</span>}</div></div>)}
+                  {metricsModalQa.metrics.as2_information_density && (<div className="detail-row"><span className="detail-name">具体情報の内訳</span>{metricsModalQa.metrics.as2_information_density.concrete_items_in_answer?.length > 0 ? <ul className="detail-list">{metricsModalQa.metrics.as2_information_density.concrete_items_in_answer.map((item, i) => <li key={i}><span className="item-tag">{item.type}</span> {item.excerpt}</li>)}</ul> : <span className="detail-hint">具体的な提示なし</span>}</div>)}
+                </div>
+              </div>
+              {metricsModalQa.metrics.evaluation_note && (
+                <div className="evaluation-note-section"><h4 className="detail-heading">AI評価メモ</h4><div className="evaluation-note">{metricsModalQa.metrics.evaluation_note}</div></div>
+              )}
+            </div>
+          </div>
+        </div>
       )}
 
       <style>{`
@@ -365,10 +437,13 @@ export default function FilteredQAList({ filteredEntries, totalCount, page, onPa
 
         .qa-card {
           border: 1px solid #e5e7eb;
-          border-radius: 8px;
+          border-radius: 10px;
           background: #fff;
           overflow: hidden;
+          box-shadow: 0 1px 3px rgba(0,0,0,0.04);
         }
+
+        /* ── ヘッダー ── */
         .qa-header {
           display: flex;
           justify-content: space-between;
@@ -420,30 +495,177 @@ export default function FilteredQAList({ filteredEntries, totalCount, page, onPa
         }
         .video-link:hover { text-decoration: underline; }
 
-        .qa-columns {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 0;
+        /* ── 行ベース構造 ── */
+        .qa-row {
+          display: flex;
+          border-bottom: 1px solid #f1f5f9;
         }
-        @media (max-width: 640px) {
-          .qa-columns { grid-template-columns: 1fr; }
+        .qa-row:last-of-type {
+          border-bottom: none;
         }
-        .question, .answer { padding: 1rem; }
-        .question { border-right: 1px solid #e5e7eb; }
-        @media (max-width: 640px) {
-          .question { border-right: none; border-bottom: 1px solid #e5e7eb; }
+
+        .qa-label {
+          flex-shrink: 0;
+          width: 4.5rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 0.3rem;
+          padding: 0.6rem 0.35rem;
+          border-right: 3px solid transparent;
         }
-        .speaker-label { font-size: 0.85rem; color: #6b7280; margin-bottom: 0.4rem; }
-        .speaker-label strong { color: #111; }
-        .party, .role { color: #6b7280; }
-        .summary { margin: 0 0 0.5rem; font-size: 0.9rem; line-height: 1.5; }
+        .qa-label-text {
+          font-size: 0.75rem;
+          font-weight: 700;
+          letter-spacing: 0.08em;
+        }
+        .qa-label--question { color: #1e40af; background: #eff6ff; border-right-color: #3b82f6; }
+        .qa-label--answer   { color: #065f46; background: #ecfdf5; border-right-color: #10b981; }
+        .qa-label--fulltext { color: #92400e; background: #fffbeb; border-right-color: #f59e0b; }
+
+        .score-chip {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+          background: rgba(255,255,255,0.55);
+          border: 1px solid rgba(0,0,0,0.1);
+          border-radius: 5px;
+          padding: 0.2rem 0.25rem;
+          cursor: pointer;
+          gap: 1px;
+          transition: background 0.1s;
+        }
+        .score-chip:hover { background: rgba(255,255,255,0.9); }
+        .score-chip-key { font-size: 0.6rem; opacity: 0.55; line-height: 1; }
+        .score-chip-val { font-size: 0.68rem; font-weight: 700; line-height: 1.2; }
+        .score-chip-row { display: flex; align-items: center; gap: 0.2rem; }
+
+        /* ── モーダル ── */
+        .modal-overlay {
+          position: fixed; inset: 0; background: rgba(0,0,0,0.4);
+          display: flex; align-items: center; justify-content: center;
+          z-index: 1000; padding: 1rem;
+        }
+        .modal-box {
+          background: #fff; border-radius: 12px; max-width: 700px; width: 100%;
+          max-height: 85vh; overflow-y: auto;
+          box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+        }
+        .modal-header {
+          display: flex; justify-content: space-between; align-items: center;
+          padding: 0.9rem 1.25rem; border-bottom: 1px solid #e5e7eb;
+          position: sticky; top: 0; background: #fff; z-index: 1;
+        }
+        .modal-title { font-size: 0.95rem; font-weight: 600; color: #111; margin: 0; }
+        .modal-close {
+          background: none; border: none; font-size: 1.1rem; cursor: pointer;
+          color: #9ca3af; padding: 0.2rem 0.4rem; border-radius: 4px;
+        }
+        .modal-close:hover { background: #f3f4f6; color: #374151; }
+        .modal-body { padding: 1.25rem; }
+
+        .qa-content {
+          flex: 1;
+          padding: 0.75rem 1rem;
+          min-width: 0;
+        }
+
+        /* ── スピーカー ── */
+        .speaker-line {
+          font-size: 0.85rem;
+          color: #374151;
+          margin-bottom: 0.3rem;
+        }
+        .speaker-line strong { color: #111827; }
+        .party, .role { color: #6b7280; font-size: 0.8rem; }
+
+        /* ── 要約 ── */
+        .summary { margin: 0; font-size: 0.9rem; line-height: 1.5; }
         .summary-list {
-          margin: 0 0 0.5rem;
+          margin: 0;
           padding-left: 1.2rem;
           font-size: 0.9rem;
           line-height: 1.6;
         }
         .summary-list li { margin-bottom: 0.15rem; }
+
+        /* ── 評価指標 ── */
+        .metrics-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 0.4rem 1.5rem;
+          margin-top: 0.5rem;
+        }
+        @media (max-width: 640px) {
+          .metrics-grid { grid-template-columns: 1fr; }
+        }
+        .metric-item {
+          display: flex;
+          align-items: center;
+          gap: 0.35rem;
+          font-size: 0.8rem;
+        }
+        .metric-icon {
+          flex-shrink: 0;
+          font-size: 0.85rem;
+        }
+        .metric-label-text {
+          flex-shrink: 0;
+          color: #6b7280;
+          width: 5rem;
+          font-size: 0.78rem;
+        }
+        .metric-bar-wrap {
+          flex: 1;
+          height: 6px;
+          background: #f1f5f9;
+          border-radius: 3px;
+          overflow: hidden;
+          min-width: 3rem;
+        }
+        .metric-bar {
+          height: 100%;
+          border-radius: 3px;
+          transition: width 0.3s ease;
+        }
+        .metric-value {
+          flex-shrink: 0;
+          font-weight: 700;
+          font-size: 0.78rem;
+          min-width: 2.5rem;
+          text-align: right;
+        }
+        .commitment-inline {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          margin-top: 0.4rem;
+          flex-wrap: wrap;
+        }
+        .commitment-lv {
+          font-size: 0.75rem;
+          font-weight: 600;
+          padding: 0.1rem 0.4rem;
+          border-radius: 4px;
+          white-space: nowrap;
+        }
+        .commitment-lv-0 { background: #f3f4f6; color: #6b7280; }
+        .commitment-lv-1 { background: #fef3c7; color: #92400e; }
+        .commitment-lv-2 { background: #dbeafe; color: #1e40af; }
+        .commitment-lv-3 { background: #d1fae5; color: #065f46; }
+        .commitment-lv-4 { background: #a7f3d0; color: #064e3b; font-weight: 700; }
+        .commitment-phrase {
+          font-size: 0.78rem;
+          color: #374151;
+          font-style: italic;
+        }
+
+        /* ── 全文表示（統合） ── */
+        .qa-row--fulltext {
+          border-bottom: none;
+        }
         .expand-toggle {
           background: none;
           border: none;
@@ -451,36 +673,103 @@ export default function FilteredQAList({ filteredEntries, totalCount, page, onPa
           font-size: 0.8rem;
           color: #2563eb;
           cursor: pointer;
-          margin-bottom: 0.4rem;
+          font-weight: 500;
         }
         .expand-toggle:hover { text-decoration: underline; }
+        .full-text-combined {
+          margin-top: 0.5rem;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 0.75rem;
+          align-items: start;
+        }
+        @media (max-width: 768px) {
+          .full-text-combined { grid-template-columns: 1fr; }
+        }
+        .full-text-section {
+          border: 1px solid #e5e7eb;
+          border-radius: 6px;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+        }
+        .full-text-section-label {
+          font-size: 0.78rem;
+          font-weight: 600;
+          padding: 0.35rem 0.75rem;
+          border-bottom: 1px solid #e5e7eb;
+          display: flex;
+          align-items: center;
+          gap: 0.4rem;
+          flex-wrap: wrap;
+        }
+        .full-text-section-label--q {
+          background: #eff6ff;
+          color: #1e40af;
+        }
+        .full-text-section-label--a {
+          background: #ecfdf5;
+          color: #065f46;
+        }
+        .fts-party {
+          font-weight: 400;
+          font-size: 0.72rem;
+          opacity: 0.8;
+        }
         .full-text {
-          margin: 0.5rem 0 0;
+          flex: 1;
+          margin: 0;
           font-size: 0.85rem;
           line-height: 1.7;
           color: #374151;
           background: #f9fafb;
           padding: 0.75rem;
-          border-radius: 4px;
-          border: 1px solid #e5e7eb;
         }
         .full-text p {
           margin: 0 0 0.5rem;
           text-indent: 1em;
         }
         .full-text p:last-child { margin-bottom: 0; }
-        .directness { font-size: 0.8rem; font-weight: 600; margin-bottom: 0.4rem; }
-        .commitment {
-          font-size: 0.8rem;
-          background: #f0fdf4;
-          border-left: 3px solid #16a34a;
-          padding: 0.4rem 0.6rem;
-          margin-top: 0.4rem;
-          color: #166534;
-          line-height: 1.4;
-        }
-        .commitment-label { font-weight: 600; }
 
+        .quote-label { font-weight: 600; color: #1d4ed8; }
+
+        .metrics-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        @media (max-width: 640px) { .metrics-detail-grid { grid-template-columns: 1fr; gap: 1.5rem; } }
+
+        .detail-section { display: flex; flex-direction: column; gap: 1rem; }
+        .detail-heading {
+          font-size: 0.85rem; font-weight: 600; color: #4b5563;
+          border-left: 3px solid #9ca3af; padding-left: 0.5rem; margin: 0;
+        }
+        .detail-row { display: flex; flex-direction: column; gap: 0.4rem; }
+        .detail-meta { display: flex; align-items: center; gap: 0.75rem; }
+        .detail-name { font-size: 0.8rem; color: #6b7280; min-width: 80px; }
+        .detail-text-info { font-size: 0.8rem; color: #374151; }
+        .detail-list {
+          margin: 0; padding: 0; list-style: none; font-size: 0.75rem; color: #4b5563;
+          display: flex; flex-direction: column; gap: 0.25rem;
+        }
+        .detail-list li { background: #f9fafb; padding: 0.2rem 0.4rem; border-radius: 4px; line-height: 1.4; }
+        .source-tag, .item-tag {
+          display: inline-block; font-size: 0.65rem; background: #e5e7eb; color: #4b5563;
+          padding: 0 0.3rem; border-radius: 3px; margin-right: 0.3rem; font-weight: 500;
+        }
+        .detail-flags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+        .detail-badge {
+          font-size: 0.7rem; background: #eff6ff; color: #1d4ed8; padding: 0.1rem 0.4rem;
+          border-radius: 4px; border: 1px solid #dbeafe;
+        }
+        .detail-badge--gold { background: #fffbeb; color: #b45309; border-color: #fef3c7; font-weight: 600; }
+
+        .evaluation-note-section { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #f3f4f6; }
+        .evaluation-note {
+          font-size: 0.8rem; color: #4b5563; line-height: 1.6;
+          background: #f9fafb; padding: 0.75rem; border-radius: 6px; margin-top: 0.5rem;
+        }
+
+        .qa-row--fulltext { border-bottom: none; }
+
+        /* ── フッター ── */
         .qa-footer {
           padding: 0.4rem 1rem;
           background: #f8fafc;
@@ -491,6 +780,7 @@ export default function FilteredQAList({ filteredEntries, totalCount, page, onPa
         .source-link { color: #9ca3af; text-decoration: none; }
         .source-link:hover { text-decoration: underline; color: #6b7280; }
 
+        /* ── ページネーション ── */
         .pagination {
           display: flex;
           align-items: center;
