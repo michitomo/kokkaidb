@@ -1,0 +1,5094 @@
+{
+  "pairs": [
+    {
+      "id": "qa_001",
+      "segment_index": 1,
+      "topic": "岩手県大洲町の林野火災への対応",
+      "question": {
+        "speaker": "横沢高徳",
+        "party": "立憲民主・無所属",
+        "summary": "- 岩手県大洲町で発生した林野火災の早期鎮圧、避難者支援、復旧への対応について\n- 林野火災防止の徹底に関する大臣の見解を求める",
+        "full_text": "まずは昨日、4月22日午後ですね、岩手県大洲町で林野火災が発生しました。住宅や牛舎を含む109ヘクタールが焼失し、現在も延焼が続いております。県は自衛隊に災害派遣要請をし、本日も未明から懸命な消火活動が続いております。先日の本委員会でも田中委員から林野火災や災害復旧についての質問があったばかりではありますが、まずは早期鎮圧と避難者支援、今後の復旧、そしてまた1月から5月は林野火災が起こりやすい時期でもありますので、改めて林野火災防止の徹底が重要と考えますが、まず大臣の御見解をお伺いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "鈴木農林水産大臣",
+        "role": "",
+        "summary": "- 岩手県大津町の林野火災により建物7棟の被害が発生し、避難指示が出されている現状を報告",
+        "full_text": "岩手県大津町の林野火災につきましては、昨日、小槌地区及び霧霧地区の2地区において発生をして、現在も延焼中でありまして、県からの報告によりますと、建物7棟の被害が発生し、地域住民への避難指示も出されているところであります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#1967.35",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "岩手県大洲町の林野火災への対応と防止策への見解",
+          "sub_asks": [
+            "早期鎮圧と避難者支援、今後の復旧への対応",
+            "林野火災防止の徹底"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "昨日、4月22日午後"
+            },
+            {
+              "type": "organization",
+              "excerpt": "岩手県大洲町"
+            },
+            {
+              "type": "number",
+              "excerpt": "109ヘクタール"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "岩手県大洲町",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "小槌地区及び霧霧地区"
+            },
+            {
+              "type": "number",
+              "excerpt": "建物7棟"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "建物7棟の被害が発生し、地域住民への避難指示も出されているところであります。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は復旧支援や防止策への見解を求めたが、大臣の回答は現状の被害状況の報告に留まっており、実質的な回答になっていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「見解を伺いたい」という包括的な問い方であるため、現状報告のみで回答を終えられてしまっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_002",
+      "segment_index": 1,
+      "topic": "鳥獣被害対策の予算確保とニーズ把握",
+      "question": {
+        "speaker": "横沢高徳",
+        "party": "立憲民主・無所属",
+        "summary": "- 熊などの鳥獣被害対策の増加に歯止めがかかっていない現状への懸念\n- 政府全体で現場ニーズを積み上げ、予算確保をより進めるべきか大臣の考えを問う",
+        "full_text": "次に鳥獣被害対策についてちょっと触れます。これも岩手なんですが、一昨日、私が住んでいる隣の町の芝町にて、行方不明者を捜索していた警察官が熊に襲われて、顔や腕にけがをし、近くの沢で成人女性の損傷した遺体が見つかりました。環境省によりますと、死亡した女性が熊被害と断定されれば、2026年度初の犠牲者と見られるそうでございます。先日これも田中委員の質問でもありましたが、熊、鹿、イノシシ、猿などによる鳥獣被害対策の増加に歯止めがかかっておりません。鳥獣被害対策の予算、先日大臣も、現場のニーズの積み上げが重要とおっしゃっておりましたが、改めて農林水産省をはじめ政府全体の現場ニーズの積み上げ、予算の確保をより進めるべきと考えますが、改めて大臣のお考えをお伺いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "鈴木農林水産大臣",
+        "role": "",
+        "summary": "- ICT・データ活用や侵入防止策、人材育成を鳥獣対策交付金で支援している\n- 今後、事業要望に至る前の段階も含め幅広くニーズを把握し、適切に予算要求を行いたい",
+        "full_text": "農林水産省では、市町村を中心とした農地周辺での対策といたしまして、ICT及びデータを活用した捕獲対策、そして省力的管理が可能な侵入防止策の整備、人材育成確保などの取組を鳥獣対策交付金により支援をしているところであります。さらに、今後の予算を把握するにあたっては、現場のニーズをしっかり把握するために、現時点において地域の維持管理計画が固まっているなど、防止策の事業として挙げられてきた要望に加えまして、現時点では地域で必要性の声が上がっているだけの段階にあるなど、今後、事業の要望になる可能性があるものも含めて、しっかりとニーズを幅広に把握させていただきたいと思っております。これにより、幅広にしっかりとニーズを把握した上で、これに基づきまして、来年度の事業の要望を正確に見込んで、適切に予算要求を行ってまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#1967.35",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "鳥獣被害対策の現場ニーズ把握と予算確保への考え",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "芝町にて、行方不明者を捜索していた警察官が熊に襲われて"
+            },
+            {
+              "type": "organization",
+              "excerpt": "環境省によりますと"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "芝町",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "鳥獣対策交付金"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "ニーズを幅広に把握させていただきたいと思っております",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "ニーズを幅広に把握した上で、これに基づきまして、来年度の事業の要望を正確に見込んで、適切に予算要求を行ってまいりたい",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な被害事例を挙げた質問に対し、大臣が来年度予算要求に向けたニーズ把握の姿勢を示した標準的なやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "予算確保の具体策や数値目標を問う形式にすれば、より拘束力のある回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_003",
+      "segment_index": 1,
+      "topic": "農業倒産件数の増加要因と対策",
+      "question": {
+        "speaker": "横沢高徳",
+        "party": "立憲民主・無所属",
+        "summary": "- 農業の倒産件数が4年連続で増加し、過去30年で最多となっている現状について大臣の見解を問う",
+        "full_text": "ちょっと農業のまずは倒産件数の推移について伺います。東京商工リサーチの調べによりますと、2025年度の農業の倒産は105件で4年連続で増加しております。倒産が100件を超えたのはここ30年で初めてで過去最多とのことです。負債総額は421億5700万円で、大きいところですと負債約158億円など、負債1億円以上が41件と増加し、負債総額は2.4倍と膨らんでいるそうです。政府は効率化合理化のもと大規模化を推進してきましたが、大きくなるにつれてリスクも増えてきます。もちろん経営ですから、良い時もあれば、悪い厳しい時もあるとは思いますが、倒産件数が増えている現状について、まず大臣の御見解をお伺いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "鈴木農林水産大臣",
+        "role": "",
+        "summary": "- 施設園芸や畜産において、大規模設備投資後の販売不振や技術力不足による収益悪化が主な要因である\n- コスト高騰が追加借入を困難にし、資金繰り悪化を加速させている側面がある\n- セーフティーネット資金や価格形成の適正化などで経営を下支えしたい",
+        "full_text": "これ、個別の農業事業者の倒産要因はさまざまであるんですが、この報道を見て、私たちもちょっと細かく聞き取りをして、どういう状況で結果としてこういうことになったのかということを調査をさせていただいたところ、近年の倒産事例では、施設園芸などの野菜作りや、野菜作や、酪農の肉用牛生産などの畜産が多くなっておりまして、その背景として、大規模な設備投資などを行ったものの、当初の事業計画に対して、受注減少などによる販売の不振もしくは技術力不足などによる生産の減少、要するに思ったより生産が上がらなかったなどにより収益が上がらず、資金繰りに行き詰まり倒産に至った場合が多いというふうに承知をしております。一方で、この販売不振に加えて設備投資などで多額の負債がある場合は、結局その外部からの短期の借り入れがですね、コストが上がっちゃったときにいっぱい借金があるものですから、短期で借り入れるということの追加が、追加借り入れが難しく、結果として資金繰りが困難となって倒産に至ってしまったというケースがですね、基本的には多いんだろうというふうに考えております。なので、これ結局そのコストの高騰が最後、要するに借入れをもうこれ以上できないっていうことでですね、ダメ押しをしてしまっているっていうことはあるんだろうと思いますので、我々もこの施設園芸なんかにはですね、セーフティーネット資金やったりとか、年有の価格高騰対策とか、あとこれから食料システム法による合理的な費用を考慮した価格形成などですね、農業経営を下支えはしっかりやっていきたいというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#1967.35",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "農業の倒産件数増加に対する大臣の見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "東京商工リサーチの調べ"
+            },
+            {
+              "type": "number",
+              "excerpt": "2025年度の農業の倒産は105件"
+            },
+            {
+              "type": "number",
+              "excerpt": "負債総額は421億5700万円"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "農業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "施設園芸"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "酪農の肉用牛生産"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "セーフティーネット資金"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "食料システム法"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "農業経営を下支えはしっかりやっていきたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "近年の倒産事例では、施設園芸などの野菜作りや、酪農の肉用牛生産などの畜産が多くなっておりまして",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "農業倒産の現状分析について大臣が具体的に回答しており、情報価値がある。ただし、今後の対策は意向表明に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "見解を問う形式であるため、具体的な再発防止策や数値目標を求める問いにすればより実効的な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_004",
+      "segment_index": 1,
+      "topic": "農業近代化資金の貸付上限額引き上げに伴うリスク対策",
+      "question": {
+        "speaker": "横沢高徳",
+        "party": "立憲民主・無所属",
+        "summary": "- 貸付上限額の引き上げによる大規模化のリスク（負債増）への懸念\n- 生産者が負債で追い詰められないためのリスク対策について大臣の考えを問う",
+        "full_text": "そこでですね、農業近代化資金融通法案の方に入っていきたいと思います。今回の改正案では、貸付上限額は個人は2億円、法人は7億円とされています。借入額が大きくなればなるほど、経営者のリスクも大きくなっていきます。天候ややはり気候に左右されやすい一次産業でありますので、万が一経営がうまくいかなくなっても、負債を抱え、また補助金などの返還も重くのしかかるなど、大規模化のリスク対策も十分考慮する必要があると考えます。生産者が万が一のときに負債欲に命を絶つようなことにならないように、農林水産省としても、大規模化へのリスク対策もこれから必要と考えますが、まずは大臣のお考えをお伺いしたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "鈴木農林水産大臣",
+        "role": "",
+        "summary": "- 過剰投資や返済不能な負債が生じないよう、民間金融機関による経営規模や返済可能性の適正な審査が必要であると認識している",
+        "full_text": "今回の法案で言いますと、農業近代化資金の融資を、限度額を増やすということなんですけれども、やはり大事なことは、過剰な投資が行われたり、返済不能な負債を借入れ者に生じさせるということは、決してないように、民間金融機関において、融資により導入しようとする施設、農機具などが、この借入れをする方の経営規模や経営内容等に見合ったものであるのかどうか、そして借入れをする方の事業内容から見て、借り入れをする方の返済可能性に問題はないのかどうかなどの審査をですね、適正に実施した上で、必要な額が貸し付けされるようにする必要がありますというふうに認識をしております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5207"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#1967.35",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "大規模化に伴うリスク対策への大臣の考え",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "農業近代化資金融通法案"
+            },
+            {
+              "type": "number",
+              "excerpt": "個人は2億円、法人は7億円"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "生産者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "過剰な投資が行われたり、返済不能な負債を借入れ者に生じさせるということは、決してないように、審査を適正に実施した上で、必要な額が貸し付けされるようにする必要があります",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "大規模化のリスク対策について大臣の認識を問う質問に対し、民間金融機関による適正な審査の必要性を回答している。具体的な新施策への言及はなく、現状の認識に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「大臣のお考え」を問う形式であるため、具体的な行動計画や制度設計を約束させる問い方になっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_005",
+      "segment_index": 1,
+      "topic": "農機具価格の上昇と貸付上限額の関係",
+      "question": {
+        "speaker": "横沢高徳",
+        "party": "立憲民主・無所属",
+        "summary": "- 高額な機械代が担い手参入のハードルになっている現状\n- 融資上限額の引き上げに伴い、業者がさらに価格を吊り上げる可能性について注視すべきか問う",
+        "full_text": "それでですね、まずは農機具代、次伺いますが、生産現場を回りますと、最近やっぱり機械代がどんどん上がっていくんだよと。大規模化に伴って、機械に求められる性能も上がっていますし、スマート化によって高性能化も進んでいます。ただ、高額な機械代が担い手参入のハードルになっているという現状もあります。融資額が上がることで、それに伴って、今、大臣もおっしゃったように、さらに機械代も、それに伴ってちょっと業者の方が上げていくとかですね、そのようにならないようにやはり注視していく必要があると考えますが、この点、大臣いかがでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "鈴木農林水産大臣",
+        "role": "",
+        "summary": "- 農機具物価指数は上昇傾向にあるが、上限額の引き上げによって借入での対応は可能となる\n- 過去の例では、上限額の引き上げと物価指数の上昇に直接的な関連性は確認されていない",
+        "full_text": "これ農業機械の価格については、この農業物価統計調査における農機具の物価指数がですね、令和2年平均を100とすると、直近の令和8年2月は116.5と、上昇となっております。今回の法改正によって、この貸付上限額を従来の上限額を大幅に超える、個人2億円、法人7億円まで引き上げるなどの資金内容の拡充を行いますから、まず農機具が高くなった分はそれで借り入れっていうのは対応ができるということになりますが、ただ今ちょっと先生ご心配のですね、過去の例、これちょっと調べてみますと、この上限額を、この借り入れのですね、上限額を引き上げた際に、農機具の物価指数が上昇するといったですね、関連性は確認はされておりません。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5207"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#1967.35",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "融資上限額引き上げによる農機具価格上昇への懸念",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "担い手",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "令和8年2月は116.5"
+            },
+            {
+              "type": "number",
+              "excerpt": "個人2億円、法人7億円"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "農業物価統計調査"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "上限額を引き上げた際に、農機具の物価指数が上昇するといったですね、関連性は確認はされておりません。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "融資上限額の引き上げと農機具価格上昇の相関性について、過去のデータに基づき否定した回答であり、記録的価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が「注視していく必要があると考えますが、いかがでしょうか」という同意を求める形式になっており、具体的な対策を問う形にすればより建設的な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_006",
+      "segment_index": 1,
+      "topic": "農機具のメンテナンスコストと体制への対応",
+      "question": {
+        "speaker": "横沢高徳",
+        "party": "立憲民主・無所属",
+        "summary": "- 機械代だけでなくメンテナンス代・整備代の上昇や、ランニングコストへの対応策が必要であるとの見解について大臣の考えを問う",
+        "full_text": "ぜひ注視をしていただきたいと思いますし、機械代が高額になってきているのとともに、メンテナンス代、整備代も最近上がっているんだよと。やはり大規模化の流れで1つの機械にかかる負荷も増えていますし。やはりそこの辺のランニングコストへの対応策も、これから考えていかなきゃいけないと考えています。やはり最初の初期投資とともに、先ほど大臣がおっしゃった短期借入の部分ですね。メンテナンスしてどうやって継続していくか、そこも注視していく必要があると思いますが、大臣の見解をお伺いします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "鈴木農林水産大臣",
+        "role": "",
+        "summary": "- 地域によってメンテナンス待ちの長期化や営業所の減少という問題が生じていることに問題意識を持っている\n- ランニングコストが標準的な経営に与える影響を定点的に観測し、しっかり対応したい",
+        "full_text": "これ、私の地元も先生の地元も一緒の東北地方で、この農機具のメンテナンスも含めて、特に要するにもうメンテナンスに出してもすごい待たされるとか、もしくは部品が届くまでにすごい時間がかかるとか、場合によっては営業所がだんだんなくなっていって、地域によっては本当に必要なときに機械のメンテナンスができないという事態も、少しずつですけど生じているというふうに私も思っております。ですので、本当にこれ、農業機械全体で、この前も三菱農機ですかね、島根の方で撤退するという話がありましたけど、この状況ですね、やはり我々もちょっと問題意識を持たなければならないと思っています。同時に、やっぱり経営に、このメンテナンスも含めて、ランニングコストがどのような影響を与えるかっていうのはですね、本当にちゃんと定点的に観測をして、その標準的な経営がそれで成り立っていくのかってことは、よく見ていく必要があると思いますので、そこはしっかりやらせていただきたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#1967.35",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "農機のランニングコスト対応策への見解",
+          "sub_asks": [],
+          "score": 0.9
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "三菱農機"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "島根"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "そこはしっかりやらせていただきたいと思います",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "ランニングコストがどのような影響を与えるかっていうのは、本当にちゃんと定点的に観測をして、よく見ていく必要があると思います",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "農機の維持費増大という課題に対し、大臣は現状の認識（部品待ちや営業所減少）を示したが、具体的な対応策の提示はなく、精神的な意欲表明に留まった。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「見解をお伺いします」という形式的な問いかけのため、政府に具体的なアクションを約束させる拘束力が弱い。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_007",
+      "segment_index": 1,
+      "topic": "農業近代化資金の貸付額減少の要因",
+      "question": {
+        "speaker": "横沢高徳",
+        "party": "立憲民主・無所属",
+        "summary": "- 平成6年以降の貸付額減少の要因について\n- 日本政策金融公庫のスーパーL資金に比べ融資残高が低い点について政府の見解を問う",
+        "full_text": "それでは農業近代化資金について伺います。平成6年以降、貸付額の減少の要因をまず伺いたいのと、特に日本政策金融公庫のスーパーL資金と比べると、1割程度の融資残高となっている点があったり、今後の対応が必要な部分があると考えます。この点、政府のご見解を伺いたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小林経営局長",
+        "role": "",
+        "summary": "- 1経営体あたりの資金需要が拡大する中、近代化資金は借入限度額が低かったため低迷し、その需要の多くがスーパーL資金でカバーされたためである",
+        "full_text": "先ほど紹介しましたスーパーL資金は融資実績を見ますと、平成7年は999億円であったものが令和6年には2365億円ということで、30年ほどでこれだけ伸びている一方で、近代化資金の方は平成7年は1775億円であったものが、逆に令和6年度には581億円にまで減って逆転していると、こういう状況になっています。この原因はやはり農業経営の規模拡大などによりまして、特に1経営体あたりの資金需要が拡大する中で、借入限度額が低いことなどの理由で、農業近代化資金が低迷したと。一方で、こうした資金需要の多くが、スーパーL資金によってカバーされたということが原因ではないかと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5207"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#1967.35",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "農業近代化資金の減少要因と今後の対応",
+          "sub_asks": [
+            "貸付額の減少の要因",
+            "スーパーL資金との残高差に対する政府見解"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "平成6年以降"
+            },
+            {
+              "type": "organization",
+              "excerpt": "日本政策金融公庫のスーパーL資金"
+            },
+            {
+              "type": "number",
+              "excerpt": "1割程度の融資残高"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.6
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "平成7年は999億円"
+            },
+            {
+              "type": "number",
+              "excerpt": "令和6年には2365億円"
+            },
+            {
+              "type": "number",
+              "excerpt": "平成7年は1775億円"
+            },
+            {
+              "type": "number",
+              "excerpt": "令和6年度には581億円"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "借入限度額が低いことなどの理由で、農業近代化資金が低迷した。一方で、こうした資金需要の多くが、スーパーL資金によってカバーされた",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "近代化資金の減少要因について、具体的な数値を用いてスーパーL資金への移行という構造的要因を説明しており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「今後の対応」についての問いが含まれているが、回答が現状分析に留まっているため、具体的な改善策を問う形式にすべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_008",
+      "segment_index": 1,
+      "topic": "農業近代化資金の見直しにおける都道府県の意見",
+      "question": {
+        "speaker": "横沢高徳",
+        "party": "立憲民主・無所属",
+        "summary": "- 本法律案の検討段階で、都道府県からどのような意見や要望があったか伺う",
+        "full_text": "それでは次に、検討段階での都道府県との意見交換の点について伺います。農業近代化資金は都道府県の利子補給を受けた貸し出しがほとんど占めています。本法律案の検討段階で都道府県からの意見、要望はどのようなものがあったのかお伺いをいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小林経営局長",
+        "role": "",
+        "summary": "- 全ての都道府県に課題を聴取した結果、借入限度額の低さや償還期限の短さなど、資金内容に関する意見が多く寄せられた",
+        "full_text": "今回の農業近代化資金の見直しの検討にあたりまして、全ての都道府県に課題等を聞いたわけなんですけれども、その際、都道府県からは、やはり借入限度額が低いだとか、償還期限が短いなどといった、この資金内容についての意見などが多く寄せられたという状況でございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5207"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#1967.35",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "法案検討時の都道府県からの意見・要望の内容",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "農業近代化資金は都道府県の利子補給を受けた貸し出しがほとんど占めています"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "都道府県",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "借入限度額が低い"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "償還期限が短い"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "都道府県からは、やはり借入限度額が低いだとか、償還期限が短いなどといった、この資金内容についての意見などが多く寄せられた",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "都道府県からの具体的な要望内容（限度額や期限）が明確に回答されており、事実関係の記録として一定の価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_009",
+      "segment_index": 1,
+      "topic": "農林中央金庫の巨額赤字に対する監督責任",
+      "question": {
+        "speaker": "横沢高徳",
+        "party": "立憲民主・無所属",
+        "summary": "- 農林中金が多額の赤字を計上した事態について、監督官庁である農林水産省がなぜ未然に防げなかったのか問う",
+        "full_text": "次に農林中金法について伺いたいと思います。まずは農林水産業のメインバンクであります農林中金が多額の赤字を計上した事態に対しての、まず監督官庁の農林水産省としての、なぜ未然に防げなかったのか、この点について伺います。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "山本農林水産大臣政務官",
+        "role": "",
+        "summary": "- モニタリングやリスク管理の指導は行っていたが、赤字発生を重く受け止め検証会を開催した\n- 原因として、組織体制の不備、理事の構成（内部昇進のみ）、外部視点の欠如などが指摘された\n- 今後は検証会の提言に基づき、ガバナンス強化を指導しモニタリングを続ける",
+        "full_text": "農林水産省としては、金融庁と連携しながら農林中金に対し、ヒアリング、検査などの通年のモニタリングを実施してきたところであり、米国金利上昇に伴う影響などについても、適時把握・確認するとともに、適切なリスク管理体制の整備や、その高度化に向けた対応を求めてまいりました。しかしながら、農林中金が巨額な赤字を発生させる事態となったことについては、農林水産省といたしましても、これを重く受け止め、令和6年9月から有識者検証会を開催し、赤字発生の原因等を検証しました。その検証会においては、こうした今回の運用損失の発生要因として、各部門の組織体制、権限と責任が不明確、農林中金の理事がいずれも職員を経て理事となっていること、理事会に外部の視点がなく、多様な視点が確保できていなかったことなどが指摘をされております。今後、農林水産省といたしましては、農林中金のガバナンスの強化等について、検証会の提言を尊重し、農林中金の対応を確認指導するという方針の下、農林中金の取組が着実に実施されるよう、引き続き金融庁と連携し、モニタリング指導を続けてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5205"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#1967.35",
+      "metrics": null
+    },
+    {
+      "id": "qa_010",
+      "segment_index": 1,
+      "topic": "農林中金外部理事の選任と利害関係の管理",
+      "question": {
+        "speaker": "横沢高徳",
+        "party": "立憲民主・無所属",
+        "summary": "- 外部理事を選出する際、出身母体との取引や利害関係が生じる懸念があるが、業務に万全を期すための考えを問う",
+        "full_text": "そこでお聞きいたします。今回、外部理事を選ぶということになりますが、そこで外部理事を選ぶ際に、出身母体との間に取引関係や利害関係などが出るということで、農林中央金庫の業務にまず万全を期す必要と考えますが、この点についてのお考えをお伺いします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "小林経営局長",
+        "role": "",
+        "summary": "- 農林中央金庫法に定められた利益相反取引の開示・承認ルールを活用し、自律的に適正な業務運営を管理していただきたいと考えている",
+        "full_text": "まず外部理事でございますけれども、外部理事に限らず農林中央金庫の理事につきましては、例えば利益相反取引、いわゆる利益相反取引を行う場合には、経営管理委員会に事前にその内容を開示して承認を得るなどのルールが農林中央金庫法に定められております。こういったルールも活用しながら、外部理事の方々の適正な業務運営というのは、しっかり農林中金の中でも自律的に管理していただきたいというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5205"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#1967.35",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "外部理事選任時の利害関係への対応について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "農林中央金庫"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "外部理事",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "経営管理委員会"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "農林中央金庫法"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "自律的に管理していただきたいというふうに考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "利益相反取引を行う場合には、経営管理委員会に事前にその内容を開示して承認を得るなどのルールが農林中央金庫法に定められております。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "外部理事の利害関係という懸念に対し、農林中央金庫法に基づく既存の利益相反防止ルールを提示して回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「お考えをお伺いします」という抽象的な問い方であるため、具体的な新ルールの策定などの踏み込んだ回答を引き出しにくい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_011",
+      "segment_index": 2,
+      "topic": "重油流出事故に伴う廃棄物処理の支援",
+      "question": {
+        "speaker": "石垣のりこ",
+        "party": "立憲民主・無所属",
+        "summary": "- 重油流出によるわかめ等の廃棄処理が追いついていない現状がある\n- 水産庁が処理会社の斡旋など積極的に協力すべきではないか",
+        "full_text": "県から重油が流出した件について質問いたします。3月25日未明に通報されまして、最大で1万5000リットルの重油が海に流出し、周辺で養殖していたのり、わかめ、昆布などが廃棄処分をせざるを得ない状況になったということで、大きな被害が生じております。まもなく1か月ということで、すでに衆参の農林水産委員会ほかで質疑がなされておりますので、私からはさらに直近の状況を踏まえて、何点か伺います。おとといの21日から塩釜市ではわかめなどの処分が始まりました。わかめ類で1000トン以上、1500トン以上とも言われております。廃棄をしなければならない状況になっております。この初日となりました21日、県漁協で7トン処分したというニュースがあったんですけれども、これは塩釜市の方の漁協で契約した処理会社は、1週間で20トン程度は処分できるということで、1日に大体20トンぐらいずつ上がっているという話もありましたので、処理が追いついていかない状況なんですね。で、ようやく契約はできたということなんですが、これから気温も上がってまいりますし、できるだけ処理を早めた方がいいと考えます。これ、収穫の部分というのか、処分のために引き上げる部分というのか、これは漁業者の皆さんにご協力いただくしかないんですが、処分に関しては、この代金を出すというのは当然なんですけれども、漁業者任せにするのではなくて、海上保安庁もですけれども、水産庁も、例えば処理会社を探して、きちんとやっていただけるようなところを斡旋すると、紹介すると、積極的に協力すべきだと思いますが、水産庁いかがでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "藤田",
+        "role": "",
+        "summary": "- 宮城県で処理業者の斡旋が行われ、搬出が開始されている\n- 引き続き状況を注視し、円滑な処理に向けて協力していく",
+        "full_text": "お答えいたします。今、委員御指摘のとおり、既に陸揚げが進んでおりますわかめ、これにつきましては、宮城県の方でしっかり処理業者の斡旋が行われまして、それで21日には焼却に向けて搬出が開始されていると。順次、処理が今のところ進められているという状況でございます。私どもも、しっかりその状況を注視して、今後、円滑に処理が行われるように、しっかり協力をしてまいりたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#3158.16",
+      "metrics": null
+    },
+    {
+      "id": "qa_012",
+      "segment_index": 2,
+      "topic": "重油流出事故の賠償金支払い手続きの迅速化",
+      "question": {
+        "speaker": "石垣のりこ",
+        "party": "立憲民主・無所属",
+        "summary": "- 廃棄物処理費用など金額が確定しているものについて、サーベイヤーの査定を待たずに先行して支払えないか\n- 海上保安庁が直接処理業者と契約し、漁業者を介さずに支払うことを検討できないか",
+        "full_text": "石垣のりこ（立憲民主・無所属）残念ながら、何か手伝ってもらっているという認識はあまり、ちょっと場所にもよるのかもしれないですけれども、認識はなくて、「もう事件が起きました、事故が起きました、被害が出ました、お金は出すから処理はよろしくね」というような状況で、もう既に現場任せにされているという認識があるという状況になっておりますので、きちんと連絡も含めて取っていただきたいと思います。迅速に処理をお願いいたします。今回の事故で被害額、のりだけでは3億円を超えるということで、総額どのくらいになるかちょっとわからないんですけれども、この申請をして、査定して、決定して支払われるまでに、一定の時間を要すると思います。賠償されるものの中でも、例えば今ご紹介したような廃棄物の処理費用のように、金額が確定して、もう請求書が送られてくるようなものに関しては、もう先にこのサーベイヤーの査定待たずに、漁業者に支払う、これは組合になるかもしれませんけれども、支払うことができないか。また、もう原因者、海上保安庁にあるということはほぼ明らかなわけですから、海上保安庁が直接処理業者と契約して、漁業者通さずに支払うというようなことも、これ金額大きくなってきて、なかなか待たされると肩代わりするのも大変だと思いますので、こうしたことを検討してはいかがでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "高橋光男",
+        "role": "公明党",
+        "summary": "- 早期賠償のため対策チームを設置し、サーベイヤーを増員して調査を効率化している\n- 可能なものから順次金額を確定させ、早期支払いに努める\n- 直接契約については、漁業者の要望を踏まえ負担軽減に努める",
+        "full_text": "まずはこの度、海上保安庁の巡視船が油を流出させ、漁業関係者をはじめとします地域の皆様に多大なるご迷惑とご心配をおかけしていることについて、改めて深くお詫びを申し上げます。海上保安庁としましては、今回の油の流出によって、海苔やわかめなどの海産物に被害が生じたことにより、収入を絶たれた漁業者の皆様の生活を守るため、一刻も早く賠償金をお支払いすることが重要だと考えております。このため、現在、賠償に向けて早期に被害状況を確認するため、海上保安庁の本庁、官区本部、海上保安部に対策チームを設けるとともに、損害査定の専門家であるサーベイヤーの人数を増やして、その支援を得ながら、被害のあった海産物等の調査を実施するとともに、できるだけ効率的かつ効果的に調査を行えるよう、漁業者の皆様にも、補償に関する説明会を実施したところです。引き続き漁業者の皆様から誠意を持ってお話を伺い、海産物の廃棄処理に関する費用、それから海産物を販売できないことによる逸失利益、また汚染等によって使用できなくなった漁具の交換費用など、油の流出によって生じた様々な損害について、可能なものから順次、金額の確定を進めるなど工夫をして、可能な限り早期に賠償の支払いができるよう努めてまいります。また今後の海産物の廃棄処理を海上保安庁が直接処理業者と契約を行って進めるということについては、海上保安庁としても漁業者の皆様からよくお話を伺って、そのご要望を踏まえながら工夫をして被害に遭われた漁業者の皆様のご負担を少しでも軽くすることに努めてまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#3158.16",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "被害賠償の早期支払いと直接契約の検討",
+          "sub_asks": [
+            "サーベイヤーの査定を待たずに一部費用を先に支払えないか",
+            "海上保安庁が処理業者と直接契約して支払えないか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "のりだけでは3億円を超える"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "漁業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": true,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.6
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "対策チーム"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "サーベイヤー"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "可能な限り早期に賠償の支払いができるよう努めてまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "可能な限り早期に賠償の支払いができるよう努めてまいります。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な支払いスキームの変更（前払い・直接契約）への提案に対し、精神的な努力目標に留まる回答であり、実効的な合意は得られていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "提案が具体的であるため、可否を明確に問う形式にすればより拘束力のある回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_013",
+      "segment_index": 2,
+      "topic": "重油流出事故における関連事業者の損害補償",
+      "question": {
+        "speaker": "石垣のりこ",
+        "party": "立憲民主・無所属",
+        "summary": "- 加工販売会社などが、原材料の調達不能による差額や人件費、販路喪失などの損害を被った場合、補償の対象となるか",
+        "full_text": "工夫をしていただきたいと思います。今申し上げたように、あとお答えいただきましたように、査定が必要で、いろいろ検証が必要なものは、ある程度仕方がない、時間がかかっても仕方がないと思うんですけれども、ごみ処理とかっていうのは、そんなにね、いろんな査定が必要というか、もう決定したものに関しては払えるものであると思いますので、そこの区別を早くして、できるだけ早く支払いをお願いを申し上げます。今お答えにも多少ありましたけれども、保証についてこのサーベイヤーが査定を行っているということは承知しているんですが、今回のこの油の流出事故によって生じた損害について、賠償しますと、広く賠償します。丁寧に個別に対応して検討していきますというお答えはいただいているんですけれども、漁業者からするとね、いつ確定して、いつ支払われるのかというのが非常に不安です。また漁業者が、加工販売の会社などを経営している場合、これはもう漁業組合から離れて個別に対応しなければならない事案になっているということで、自分のところで本来だったら原材料を取って加工して販売卸しをしていたというような会社の場合は、この仕入れが自分のところでできなくなったから、ほかから買わなきゃいけない、その分の差額、あるいは工場を停止していた間の、雇っていた人件費をどうするかとか、販路がすぐに見つからない、いったんまた再開はしたけど、販路がすぐに見つからないような場合の損害も想定されるということで、こうした加工販売などをしている会社などが関連する事業が行っている損害も、保証の対象になりますでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "高橋光男",
+        "role": "公明党",
+        "summary": "- 個別の事例ごとに状況を確認して判断する必要があるが、地元の皆様に寄り添って対応する",
+        "full_text": "加工・販売などの関連事業者の皆様への影響が、今回の油の流出による損害に当たるものとして、保証の対象になるかどうかは、個別の事例ごとに一つ一つ状況を確認して判断する必要がありますが、海上保安庁としては、できる限りご迷惑をおかけした地元の皆様に寄り添って対応してまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#3158.16",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "加工販売業者の損害が保証対象になるか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "加工販売の会社",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "寄り添って対応してまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "個別の事例ごとに一つ一つ状況を確認して判断する必要があります",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "加工販売業者の保証対象可否という具体的な問いに対し、個別判断であるとして明確な回答を避けている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "前半に要望や状況説明が多く含まれているため、問いの部分を切り分けて質問すべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_014",
+      "segment_index": 2,
+      "topic": "重油流出事故による種苗への影響と今後の対応",
+      "question": {
+        "speaker": "石垣のりこ",
+        "party": "立憲民主・無所属",
+        "summary": "- 申請締め切り後であっても、後から種苗への影響が判明した場合に補償対象とするか明確に答弁してほしい",
+        "full_text": "きちんと保証していただかないと、この事故がなかったら、そういうこと生じないわけですから、誠実に対応してください。また、ここの塩釜港は、ワカメなどの種苗も栽培しているんですね。今後、その水質の問題もあって、取引業者から大丈夫なのかというお電話とか、大変問い合わせも出ているということで、一旦もう被害額の申請が、一旦締め切られた後でも、万が一ですね、影響が出ているというようなことが分かった場合は、きちんとここも、対象にしていただくということを、これは御解約というか、きちんと御答弁いただけませんでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "高橋光男",
+        "role": "公明党",
+        "summary": "- 時間が経ってから被害が判明した場合でも、その時点で誠意を持って丁寧に対応する",
+        "full_text": "はい。種苗などの生育に油の影響が出た場合など、時間が経ってから油の流出による被害が発生したということが分かった場合には、私どもその時点でよくお話を伺って、誠意を持って丁寧に対応してまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#3158.16",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "被害申請締切後の追加救済の可否",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "塩釜港"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "塩釜港のワカメ種苗栽培業者",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "誠意を持って丁寧に対応してまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "時間が経ってから油の流出による被害が発生したということが分かった場合には、私どもその時点でよくお話を伺って、誠意を持って丁寧に対応してまいります。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "締切後の被害認定について政府の姿勢を問う質問に対し、誠実に対応する旨の回答を得ているが、具体的な救済メカニズムへの言及はない。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「誠実に対応してほしい」という要望が混在しており、Yes/Noの確約を求める形式に絞ればより強い拘束力を持たせられた。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_015",
+      "segment_index": 2,
+      "topic": "農林中央金庫法改正による企業出資の手続き緩和",
+      "question": {
+        "speaker": "石垣のりこ",
+        "party": "立憲民主・無所属",
+        "summary": "- 企業への出資について許可不要、届出のみとする見直しの理由と政策的必要性は何か",
+        "full_text": "続きまして農林中央金庫法、農業近代化資金融通法の改正案について質問いたします。まず農林中央金庫法について伺います。今回の法改正なんですが、農林中央金庫が一定条件下で、企業への出資について許可不要、届出のみとする見直しが行われます。この理由及び政策的必要性についてお答えください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "鈴木",
+        "role": "",
+        "summary": "- 育成段階だけでなく発展段階にある法人への出資を積極的に強化し、農林水産業の発展に貢献することを期待しているため",
+        "full_text": "はい、お答え申し上げます。農林中金はこれまでもグループ会社であるアグリビジネス投資育成株式会社を通じて、主に育成段階にある比較的小規模な農業法人などに出資をしてきたところであります。今後農林中金には、こうした実績により蓄積されている法人育成のノウハウに加え、加工流通交流を含む食品産業分野へのネットワークも生かしまして、さらなる事業拡大を目指す農林水産業、食品産業分野の法人への出資によって、農林水産業への発展に貢献をすることが期待をされております。このため、今般の法改正で、地域の農林水産業の発展に資する会社に対して、農林中金が直接出資する際の手続きを緩和し、農林中金には育成段階にある法人への出資にとどまらず、さらなる事業拡大など発展段階にある法人への出資についても積極的に強化していくことを期待をしております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5205"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#3158.16",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "農林中央金庫法の改正による出資手続き緩和の理由と必要性",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "農林中央金庫法"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "農林中央金庫",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "アグリビジネス投資育成株式会社"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "地域の農林水産業の発展に資する会社に対して、農林中金が直接出資する際の手続きを緩和し、発展段階にある法人への出資についても積極的に強化していくことを期待をしております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "法改正の趣旨について政府の公式な見解が明確に述べられており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_016",
+      "segment_index": 2,
+      "topic": "農林中央金庫法改正における出資対象企業の要件",
+      "question": {
+        "speaker": "石垣のりこ",
+        "party": "立憲民主・無所属",
+        "summary": "- 出資対象となる企業の具体的な要件（業種や規模など）は何か",
+        "full_text": "今回の法改正で当該出資の対象となる企業の具体的要件、業種であるとか規模であるとか、こちらの御紹介をお願いします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小林",
+        "role": "",
+        "summary": "- 地域の農林水産業の持続的な発展に寄与する国内会社を想定\n- 農林水産業を営む法人のほか、食品の製造・流通・販売・輸出などの業務を営む会社も広く対象となる",
+        "full_text": "お答え申し上げます。今回の法改正におきましては、地域における農林水産業の持続的な発展に資する業務をもっぱら営む国内の会社として主務省令で定めるもの。これに対する出資につきまして、出資手続きを緩和するということにしておりますけれども、これは地域の活性化でありますとか、生産性向上などの地域の農林水産業の持続的な発展に寄与する会社ということを想定しています。具体的な業種につきましては、地域の農林水産業の持続的な発展に貢献する限りにおいては、まず農林水産業を営む法人、これはもちろんのことですね。農林水産物や食品の製造、流通、販売、輸出などの業務を営む会社についても、広く対象となるというふうに考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5205"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#3158.16",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "出資対象企業の具体的要件の提示",
+          "sub_asks": [
+            "具体的要件（業種）",
+            "具体的要件（規模）"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "今回の法改正"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "出資の対象となる企業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.6
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "農林水産業を営む法人"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "農林水産物や食品の製造、流通、販売、輸出などの業務を営む会社"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "農林水産業を営む法人、農林水産物や食品の製造、流通、販売、輸出などの業務を営む会社についても、広く対象となるというふうに考えてございます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "法改正に伴う出資対象企業の範囲について、政府側の解釈が具体的に示されており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「規模」に関する問いが含まれているが、回答で触れられていないため、個別に深掘りする必要があった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_017",
+      "segment_index": 2,
+      "topic": "農林中央金庫法改正における出資要件の具体例と実績の有無",
+      "question": {
+        "speaker": "石垣のりこ",
+        "party": "立憲民主・無所属",
+        "summary": "- 「資すると見込まれる」という条件について、出資段階で具体的な実績がなくてもよいのか",
+        "full_text": "はい、広くということなんですが、農林中金法案の第72条第1項第12号の「農林中央金庫の利用者の利便の向上に資する業務、もしくは地域の活性化、産業の生産性の向上、地域における農林水産業の持続的な発展、そのほかの持続的な社会の構築に資する業務、またはこれらに資すると見込まれる業務を営む会社」。また同じく72条1項第17号の「12号に挙げる会社であって、農業生産の増大そのほかの地域における農林水産業の持続的な発展に資する業務をもっぱら営む国内の会社として、主務省令で定めるもの」の具体的な業種、事業類型など実例を挙げてお答えいただけますか。食に関する、農林水産業に関するサプライチェーンということで幅が広いんですね。確認ですけれども、第72条第12号の「資すると見込まれる」という条件に関しては、これ出資を受ける段階で具体的な実績がなくても、資すると見込まれるということであればよいんでしょうか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "小林",
+        "role": "",
+        "summary": "- 新設会社への出資などのケースがあるため、出資段階で必ずしも事業実績があることを要件とはしない",
+        "full_text": "御指摘のとおり、例えば新たに会社を設立してそこに出資するという場合がございます。そういう場合はもちろん出資を受ける段階では、その会社には事業の実績がないわけでございまして、こういった場合もございますので、出資を受ける段階で必ず事業の実績がなければいけないという、こういう要件は課さないということで考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5205"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#3158.16",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "農林中金法案72条の出資対象会社の具体例と要件の確認",
+          "sub_asks": [
+            "72条1項12号および17号に該当する具体的な業種・事業類型の実例",
+            "「資すると見込まれる」場合、出資段階で実績がなくてもよいか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "農林中金法案の第72条第1項第12号"
+            },
+            {
+              "type": "law",
+              "excerpt": "72条1項第17号"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "農林中央金庫の利用者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "出資を受ける段階で必ず事業の実績がなければいけないという、こういう要件は課さないということで考えてございます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体例の提示という問いには答えていないが、実績不要という法解釈を明確に回答しているため記録価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "2つの異なる問い（具体例の提示と要件の確認）を同時に投げているため、回答者が後者にのみ集中してしまった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_018",
+      "segment_index": 2,
+      "topic": "農林中央金庫法改正における外国資本企業の出資制限",
+      "question": {
+        "speaker": "石垣のりこ",
+        "party": "立憲民主・無所属",
+        "summary": "- 筆頭株主が外国企業や外国人の場合でも、国内会社であれば出資に問題はないか。制限がある場合はその内容を伺いたい",
+        "full_text": "はい。ということで、新たにスタートアップの企業なども対象になっているということですが、農林中金が出資する企業は国内の会社であれば、その筆頭株主が外国企業や外国人の場合であっても、出資はこれ問題ないですよね。もし制限がある場合は、その内容も示してください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小林",
+        "role": "",
+        "summary": "- 筆頭株主が外国企業・外国人であることのみをもって対象外とはならない\n- ただし、外国企業のために事業を行う会社は対象外となる",
+        "full_text": "お答え申し上げます。ここの出資の規制の緩和のところはですね、繰り返しになりますけれども、この地域における農林水産業の持続的な発展に資する業務をもっぱら営む、それから国内の会社であるということでございます。従いまして、例えばこの筆頭株主が外国企業であるとか外国人であるということのみをもって対象から外れるということではございません。ただ、やっている事業の中身はあくまでも地域の農林水産業の持続的な発展ということでございますので、例えばこの外国企業や、例えば外国企業のために事業を行う会社については対象にはならないということでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5205"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#3158.16",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "筆頭株主が外国人の国内企業への出資可否",
+          "sub_asks": [
+            "制限がある場合のその内容の提示"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "農林中金"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "筆頭株主が外国企業や外国人の国内会社",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "筆頭株主が外国企業であるとか外国人であるということのみをもって対象から外れるということではございません。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "筆頭株主が外国人であっても国内会社であり目的が合致すれば出資可能という解釈を明確に示したため、記録的価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_019",
+      "segment_index": 2,
+      "topic": "農林中央金庫の外部理事の想定人材",
+      "question": {
+        "speaker": "石垣のりこ",
+        "party": "立憲民主・無所属",
+        "summary": "- 外部理事として想定されているのはどのような人材か",
+        "full_text": "さらに今回の農林中金法改正では、外部の専門人材の理事への登用が可能になるという、外部理事を兼職兼業規制の対象から外す理事の兼職兼業制限の緩和が盛り込まれておりますが、この農林中金の外部理事に想定されている人材というのは、どのような人材ですか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "長野",
+        "role": "",
+        "summary": "- 経済、金融、ガバナンス分野の専門性を持つ方を複数名招聘し、多様な視点を確保したい",
+        "full_text": "まずはじめに、会員をはじめとするステークホルダーの皆様方に、多大なるご心配とご迷惑をおかけしましたことを、深くお詫びを申し上げたいと思います。外部理事に想定される人材ということでございます。有識者検証会からのご提言のとおり、組織全体で専門性の高い外部の見識を取り入れるために、外部の理事を任用する必要性があるというふうに認識してございます。これを踏まえまして、外部理事には経済、金融、それとガバナンス、こういった分野に専門性をお持ちの方を、複数名招聘させていただくことを想定してございますが、農林水産業協同組合など、協同組織中央機関としての特色も十分ご理解していただきつつ、農林中金の経営判断に当たりまして、多様な視点を確保したいというふうに考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5205"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#3158.16",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "農林中金の外部理事に想定される人材像",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "農林中金法改正"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "外部理事",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "有識者検証会"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "経済、金融、それとガバナンス"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "複数名招聘させていただくことを想定してございます",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "外部理事には経済、金融、それとガバナンス、こういった分野に専門性をお持ちの方を、複数名招聘させていただくことを想定してございます",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "外部理事の要件について具体的に回答されており、実務的な方向性が示されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_020",
+      "segment_index": 2,
+      "topic": "外部理事による利益相反の防止策",
+      "question": {
+        "speaker": "石垣のりこ",
+        "party": "立憲民主・無所属",
+        "summary": "- 理事が関与する企業への出資など、利益相反を防止するための具体的な法令上の規制やチェック体制はあるか",
+        "full_text": "多様な視点を確保ということですけれども、投資会社であるとか、例えばコンサルタント会社などの人が理事になる可能性もあると思うんですね。こういう場合、当該理事が関与した企業へ出資すること、また当該企業からの紹介案件への出資ということが、制度上可能かどうか、またその制限があるかどうかお答えください。そのような利益相反というのはあってはならないわけですから、当然チェック機能が働かないといけないということなんですけど、具体的にこの防止措置として、法令上の規制、内部規定、第三者的なチェック体制というのはあるんでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小林",
+        "role": "",
+        "summary": "- 理事には忠実義務が課されており、利益相反取引を行う場合は経営管理委員会への開示と事前承認が必要である\n- 役員推薦委員会による推薦と経営管理委員会での選任、総大会での承認という枠組みで会員の意思を反映している",
+        "full_text": "小林局長、お答え申し上げます。この外部理事に限らず、外部理事を含めた農林中央金庫の理事につきましては、農林中央金庫法に基づきまして、まずは農林中金のために忠実に職務を遂行する、こういった義務が課せられております。また、いわゆる利益相反取引をする場合には、経営管理委員会に対する事実を開示していただきまして、経営管理委員会から事前の承認を得なければいけない。こういう二つの義務が課されているところでございます。はい、お答えいたします。まず外部理事の選定方法につきまして申し上げさせていただきますと、主に会員の代表で構成される役員推薦委員会で推薦された候補者を、経営管理委員会で選任をいたしまして、総大会におきまして承認する。これによって、会員の意思を反映する枠組みということになってございます。また、理事就任後におきましては、農林中央金庫法で、理事の忠実義務等が定められておりまして、理事が自己または第三者のために農林中金と取引をしようとする際には、経営管理委員会において、当該取引につき重要な事実を開示し、その承認を受けなければならないとされてございます。以上から、改正農林中金法の趣旨、会員の皆様の意思に反しまして、共同組織ではなく、特定の企業等のために行動する者が、外部理事に就任して、農林中金の資金を流出させるようなことは、事実上、ございません。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5205"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#3158.16",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "外部理事の利益相反防止策について",
+          "sub_asks": [
+            "関与企業や紹介案件への出資が制度上可能か、制限があるか",
+            "法令・内部規定・第三者チェック等の具体的な防止措置はあるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "投資会社、コンサルタント会社",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "農林中央金庫法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "経営管理委員会"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "役員推薦委員会"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "理事が自己または第三者のために農林中金と取引をしようとする際には、経営管理委員会において、当該取引につき重要な事実を開示し、その承認を受けなければならない",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "外部理事の利益相反に関する制度上の制限（忠実義務と事前承認制）について、根拠法と手続きを具体的に回答しており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_021",
+      "segment_index": 2,
+      "topic": "農業近代化資金融通法改正による融資対象の拡大",
+      "question": {
+        "speaker": "石垣のりこ",
+        "party": "立憲民主・無所属",
+        "summary": "- 実績がないAI・システム会社などが、農林中金から出資を受けて新会社を設立した場合、融資の対象となるか",
+        "full_text": "続いて農業近代化資金融通法について伺います。近代化資金融通法の改正で、農林中金が出資した農林水産業の持続可能な発展に資する業務をもっぱら営む国内の会社への融資も可能になっております。例えば、これまで農業と無縁のAIとかシステム会社が農業分野に進出を計画して、農林中金から出資を受けて新たな会社を設立するなど、実績がない企業も融資の対象になりますか。簡潔にお答えください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小林",
+        "role": "",
+        "summary": "- 農林中金を含めて総議決権の過半数を占めていれば、近代化資金の貸付対象に含まれる",
+        "full_text": "お答え申し上げます。現在、農業近代化資金法におきましては、農業振興事業を主たる事業として営む株式会社であって、農業者、農協、農協連合会が、総議決権の過半数を有しているもの、こういったものについても農業近代化資金の貸付対象にしているところでございます。なお、この場合の農業振興事業というのは、農産物を原材料として使用する製造加工の事業、流通の事業、生産資材の製造の事業、農作業の自動化事業などとされているところでございます。今回、この農業近代化資金法を改正いたしまして、こうした会社に農林中金が出資したとしても、引き続き農業近代化資金を借り受けることができるように、これまでの農業者、農協、農協連合会のほか、農林中金も含めて、総議決権の過半数を占めていれば、近代化資金の貸付対象に含めるということになります。したがって、この要件に当てはまれば、農業近代化資金の対象になるということでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5207"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#3158.16",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "実績のないAI・システム会社も近代化資金の融資対象か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "農業近代化資金融通法"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "AIとかシステム会社",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "農業振興事業"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "農林中金"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "農林中金も含めて、総議決権の過半数を占めていれば、近代化資金の貸付対象に含めるということになります。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "法改正後の融資対象要件について、議決権の過半数という具体的な基準を提示して回答しており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_022",
+      "segment_index": 2,
+      "topic": "農業近代化資金によるシステム購入経費の融資",
+      "question": {
+        "speaker": "石垣のりこ",
+        "party": "立憲民主・無所属",
+        "summary": "- 農業者が、農林中金から融資を受けた企業が開発したシステム等を購入する場合、その経費は融資対象となるか",
+        "full_text": "農林中金から農業近代化融資を受けた企業が、農林水産業に関するシステム、製品を開発したとしますよ。その製品を購入する農業者は、これ近代化資金の融資対象、いろんな条件あるかもしれません。なるかならないか、ちょっと簡潔にイエスかノーかでお答えいただいていいですか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小林",
+        "role": "",
+        "summary": "- 農業経営の改善に必要となる資金として、システム等の購入経費も融資対象となる",
+        "full_text": "農業近代化資金は資金使途といたしまして、農業経営の改善に必要となる資金というのを広く対象としております。ご指摘のありました農業に関係するこのシステム等の購入経費につきましても、融資対象にはなるということでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5207"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#3158.16",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "近代化資金の融資対象になるか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "農林中金"
+            },
+            {
+              "type": "other",
+              "excerpt": "農業近代化融資"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "農業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "農業に関係するこのシステム等の購入経費につきましても、融資対象にはなるということでございます。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "融資対象になるかという具体的な問いに対し、明確に肯定的な回答が得られており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_023",
+      "segment_index": 2,
+      "topic": "融資制度を利用した営業活動と価格吊り上げの懸念",
+      "question": {
+        "speaker": "石垣のりこ",
+        "party": "立憲民主・無所属",
+        "summary": "- 融資が受けられることを前提に営業することが可能になると、融資限度額に合わせて価格が設定される（便乗値上げ）恐れがあるが、防止策はあるか",
+        "full_text": "では製品を購入する農業者が農業近代化融資の対象となる場合、その融資を活用できるという前提で、農業者にその会社が営業することをこれ制度上可能ですよね、小林局長。この融資を前提に営業することが可能だということになりますと、この融資限度額の上限に張り付くように価格が設定される恐れがあります。この物価高もありますし、融資額が引き上げられることによって、それに伴ってこの便乗値上げが生じることを防止しなければならないと思うんですが、そのような措置は講じられているんでしょうか、小林局長。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "小林",
+        "role": "",
+        "summary": "- 民間金融機関の融資審査において、導入製品の価格が市場価格と照らして適正な水準かという視点も含めて判断されると承知している",
+        "full_text": "お答え申し上げます。これは農業近代化資金に限られるわけではございませんけれども、一般に民間金融機関が行う融資審査、この場面では融資によって導入しようとする製品でありますとか施設、こういったものの価格が市場価格と照らして適正な水準かといったような視点も含めて融資の可否を判断するというふうに承知しているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5207"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#3158.16",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "融資前提の営業による便乗値上げ防止策の有無",
+          "sub_asks": [
+            "制度上、融資を前提に営業することが可能か",
+            "便乗値上げを防止する措置は講じられているか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "農業近代化融資"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "農業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "民間金融機関"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "民間金融機関が行う融資審査、価格が市場価格と照らして適正な水準かといったような視点も含めて融資の可否を判断するというふうに承知している",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "便乗値上げ防止策という問いに対し、民間金融機関の審査基準に委ねられているという現状説明に留まっており、政府としての具体的措置は示されていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "制度上の可否と防止策の有無という2つの問いを混ぜているため、回答が分散しやすい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_024",
+      "segment_index": 2,
+      "topic": "農林中央金庫の協同組合としての性格の維持",
+      "question": {
+        "speaker": "石垣のりこ",
+        "party": "立憲民主・無所属",
+        "summary": "- 非農業者である企業への支援が拡大する中で、協同組合としての設立趣旨や性格が損なわれることをどのように防止し、担保するのか",
+        "full_text": "ここまでの質疑を総合して考えていきますと、農林中央金庫が農業者ではない企業に対して、出資及び融資を行ってその事業拡大を金融面から支援することが可能になる。つまり今回の2法案の改正は、農業者に対する直接的な金融支援に加えて、企業への出資及び当該企業を通じた事業展開を支援する仕組みを導入するということだと思います。このことは、農業者への直接金融を中心とした従来の支援から、企業を通じた間接的支援へというふうに比重を移行させるというふうにも考えることができると思うんですが。今回の2法案の改正によって、農林中央金庫が農業者ではない企業に対する出資及び融資を通じてその事業展開を支援することが可能になります。農林中央金庫は農業者等を構成員とする協同組合金融機関として、相互扶助を基本原理とするものであるということに鑑みますと、この業務運営が協同組合として設立された趣旨を踏み外すことがあっては基本的にならないと思うんですね。この改正後に農業者ではない企業への支援が拡大する中で、協同組合としての性格、趣旨が損なわれることを防止するために、どのような考え方及び具体的措置によってこれを担保するのかということ、この2点、大臣に伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "鈴木",
+        "role": "",
+        "summary": "- 大規模な資金需要を伴う案件への対応を期待しているが、基本的な性格に変更はない\n- 法改正により、会員である農林水産業者のための金融円滑化が目的規定に明記され、金融機能の強化を通じて会員に貢献する",
+        "full_text": "はい。まず最初の点ですね。今回の法改正を契機といたしまして、農林中金にはその豊富な資金力や幅広いネットワークなどを生かして、農業者の経営拡大に伴う大型農機やスマート農機の導入、大規模なハウスなどの農業用施設の設置、物流加工輸出などの取り組みの進展に伴う加工流通施設の整備、さらにはフードテックの進展に伴う植物工場や陸上養殖などの整備など、農協や信連では対応が難しい大規模な資金需要を伴う案件に対する融資出資に、これまで以上に積極的に取り組んでいただくことを期待をしているところであります。そして後半の点でありますが、農林中金は協同組織金融機関でありまして、今回の法改正によっても、農林中金のこうした基本的な性格に変更を加えることでは全くありません。むしろ、今回の法改正により、農林中金法の目的規定に、会員の構成員たる農林水産業者のために金融の円滑化を図ることが明記されますので、農林中金においては、融資出資を含めたその金融機能の強化を通じて、その会員の構成員たる農林漁業者の。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5205"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#3158.16",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "農林中金の協同組合としての趣旨をどう担保するか",
+          "sub_asks": [
+            "どのような考え方で担保するか",
+            "どのような具体的措置で担保するか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "今回の2法案の改正"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "農林中央金庫",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "大型農機やスマート農機の導入"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "植物工場や陸上養殖"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "農林中金法"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "今回の法改正によっても、農林中金のこうした基本的な性格に変更を加えることでは全くありません。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的措置についての問いに対し、期待される融資対象の例示に留まり、具体的な担保策（措置）への回答が欠落している。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「考え方」と「具体的措置」を分けて問うているが、回答者が後者を無視しやすいため、より具体的な制度的制約を問う形式が望ましい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_025",
+      "segment_index": 3,
+      "topic": "法改正による出資融資の拡大策",
+      "question": {
+        "speaker": "かごしま彰宏",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 法改正（業務規定・出資規制・外部理事制限の緩和）により、具体的にどうやって出資融資を増やすのか",
+        "full_text": "今回、昨年の2月に公表された農林資料の中ではですね、農林中金による農業及び食品産業の出資融資を増やすと明確に書いてございます。そして今回の改正内容は、柱は大きく3つで、中金の業務規定の見直し、出資規制の緩和と、外部理事の制限緩和の3つであると理解をしております。こうした改正内容で、農林中金として出資融資を増やすことができるのかどうか、できるとしたらどうやってやっていくのかについてお伺いをしてもいいですか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "長野",
+        "role": "",
+        "summary": "- JA等で対応困難な大規模案件や県域をまたぐ案件への体制を強化し、積極的に対応する\n- アグリビジネス投資育成株式会社を通じた出資を強化し、困難な大規模案件は農林中金が直接出資に取り組む",
+        "full_text": "今回の法改正における目的規定の改正の趣旨を踏まえまして、農林中金として農林水産事業者の生産基盤の維持強化あるいは担い手確保、経営力向上に資するような農業金融をこれまで以上に取り組んでまいりたいと考えてございます。まず農林水産業者や食品事業者向けの融資につきましては、JA等と役割分担の上、JAなどで対応できない大規模案件、県域をまたぐような案件、こういった農林中金が取り組むべき領域に対しまして、体制面を強化いたしまして、積極的に対応をしてまいりたいと考えております。また出資につきましては、主にアグリビジネス投資育成株式会社を通じまして、20年以上にわたり行ってございまして、現在、出資件数、金額ともに増加基調でございます。今後は、今回の法改正の趣旨も踏まえまして、アグリ社を通じた出資を強化するとともに、アグリ社で対応困難な大規模な案件などにつきましては、農林中央金庫が直接的な出資、こういったものも取り組んでまいりたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5205"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#4953.59",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "改正内容で出資融資を増やせるか及びその手法",
+          "sub_asks": [
+            "出資融資を増やすことができるのか",
+            "できるとしたらどうやってやっていくのか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "昨年の2月に公表された"
+            },
+            {
+              "type": "other",
+              "excerpt": "農林資料"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "農林中金",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "アグリビジネス投資育成株式会社"
+            },
+            {
+              "type": "number",
+              "excerpt": "20年以上にわたり"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "積極的に対応をしてまいりたいと考えております",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "アグリ社を通じた出資を強化するとともに、アグリ社で対応困難な大規模な案件などにつきましては、農林中央金庫が直接的な出資、こういったものも取り組んでまいりたい",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "法改正後の農林中金の出資・融資の方針について具体的に回答されており、実務的な方向性が示されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_026",
+      "segment_index": 3,
+      "topic": "運用体制の強化と外部理事制限の緩和",
+      "question": {
+        "speaker": "かごしま彰宏",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 巨額損失の反省に立ち、外部理事の制限緩和というツールを用いてどのように運用体制を改善するのか",
+        "full_text": "まず運用について、今回、外部理事の制限の見直し、これが運用に関しては大きな論点であると思っています。ただ、なぜこの制限緩和に至ったかといえば、やはりこの令和6年度、1.8兆円の損失を計上したということで、その反省に立脚をしているというものだと思います。つまり重要なのは、外部理事の制限を緩和するというのはあくまでツールであり、運用を失敗したその反省をどう。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "長野",
+        "role": "",
+        "summary": "- 組織運営の同調性が判断を遅らせたことを認識し、専門性の高い外部理事を複数名招聘する\n- CFOを議長とする財務戦略委員会を設置し、多様な視点を確保した柔軟な意思決定体制を構築する",
+        "full_text": "有識者検証会では、委員御指摘のとおり、理事が同質的であって、専門性の高い外部の意見を聞く体制が必要であることなどを御指摘いただきましたが、農林中金といたしましても、組織運営における同調性が適切な判断を遅らせてしまったことが、今回の原因だというふうに認識してございます。具体的には外部理事には農林水産業、協同組合など協同組織中央機関としての特色も十分ご理解いただきながら、経済、金融やガバナンスなどの分野に専門性をお持ちの方を複数名招聘することを想定してございます。また、昨年度におきましては、役員体制の方を見直させていただきまして、経営管理体制を強化したほか、理事会の傘下にCFOを議長とする財務戦略委員会を設置いたしまして、知識者を招請するなど多様性を高めることで組織運営体制の強化を図ってきたところでございます。今後同様の事象が発生しないよう、こうした多様な視点を確保した柔軟な意思決定ができるような体制を引き続き敷いてまいりたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5205"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#4953.59",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "外部理事制限緩和の運用と反省の反映について",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "1.8兆円の損失"
+            },
+            {
+              "type": "date",
+              "excerpt": "令和6年度"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "有識者検証会"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "農林中金"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "財務戦略委員会"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "CFO"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "体制を引き続き敷いてまいりたいと考えてございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "組織運営における同調性が適切な判断を遅らせてしまったことが、今回の原因だというふうに認識してございます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "質問が途切れており不完全ですが、回答側は損失の原因が組織の同調性にあることを認めており、一定の記録価値があります。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問文が途中で切れており、具体的な問い（ask）が完結していない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_027",
+      "segment_index": 3,
+      "topic": "JAグループ全体での農業融資のあり方",
+      "question": {
+        "speaker": "かごしま彰宏",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 預金規模に比して融資額が少ない現状があるが、JAグループ全体として今後どのように取り組むのか",
+        "full_text": "農林中金さんの資料によればですね、組合員等から農協へは107兆円の預金がございます。一方で農業者から農業関連団体の融資としては、農協から1.1兆円、新連から0.9兆円、農林中金から0.4兆円と、合わせても1.7兆円の預金に比べて2.4兆円の融資というような状況であると。一方でですね、ただこの107兆円預けていて、2.4兆円だというのはですね、やっぱりちょっとこの農業の発展に資するという農林中金の目的に照らしても少ないのではないかというふうに思っています。最初の問いではですね、農林中金さんとしてどのように取り組んでいくのかということをお伺いをしましたけれども、やはり一体としてこのJAグループ、JAも新連も中金も縦でつながっているわけでありますから、このグループ全体としてですね、どのようにこれから取り組んでいくのかという点について、農林中金さんの御意見と、そしてこちらについては大臣の御意見もお伺いできれば幸いです。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "長野",
+        "role": "",
+        "summary": "- JAバンクは民間農業融資の約70%のシェアを占める重要な役割を果たしている\n- 貯金規模から見て、拡大が見込まれる資金需要に対し十分な資金力を備えていると認識している\n- 法改正を契機に、豊富な資金力を生かして担い手の経営拡大や大規模投資を支援する",
+        "full_text": "農業形態向けのJAバンクにおける融資につきましては、農業法人の大規模化でありましたり、新型コロナや激甚災害などを受けた政策金融の役割発揮もございまして、JAバンクのシェアにつきましては約50%、民間農業融資に限りますと約70%のシェアを確保してございます。この農業融資に限らず金融機関による融資は資金需要に応じてなされるものであるため、この貯金の規模に融資の規模が直ちに連動するものではないと考えていますが、その上で我が国の農業融資の実態について見ますと、令和6年度農業融資新規貸付額に占める国内銀行などのシェアが1割程度であるのに対して、農協系統のシェアは約5割程度を占めており、農林中金や農協をはじめとするJAバンクは、我が国の農業融資において重要な役割を果たしていただいているものと認識をしております。ただ、他方で、このJAグループにおいては、現在調達している貯金などの規模からすると、今後もですね、拡大が見込まれる農業分野の資金需要に対しては、まだまだ融資ができる資金力を備えているものと認識をしております。このため、農林中金において、今回の法改正を契機として、その豊富な資金力や幅広いネットワークを生かして、担い手の経営拡大や事業の多角化に加えて、フードテックの進展に伴う大規模投資。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5205",
+        "clb-5207"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#4953.59",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "JAグループ全体の今後の農業融資への取り組み",
+          "sub_asks": [
+            "農林中金の意見",
+            "大臣の意見"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "107兆円の預金"
+            },
+            {
+              "type": "number",
+              "excerpt": "1.1兆円"
+            },
+            {
+              "type": "number",
+              "excerpt": "0.9兆円"
+            },
+            {
+              "type": "number",
+              "excerpt": "0.4兆円"
+            },
+            {
+              "type": "number",
+              "excerpt": "2.4兆円の融資"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "JAグループ",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "約50%"
+            },
+            {
+              "type": "number",
+              "excerpt": "約70%"
+            },
+            {
+              "type": "number",
+              "excerpt": "令和6年度農業融資新規貸付額"
+            },
+            {
+              "type": "number",
+              "excerpt": "1割程度"
+            },
+            {
+              "type": "number",
+              "excerpt": "約5割程度"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "JAバンクのシェアにつきましては約50%、民間農業融資に限りますと約70%のシェアを確保してございます。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "JAグループの融資シェアに関する具体的な数値が示されており記録価値はあるが、今後の取り組みに関する具体的なコミットメント（Lv1以上）は回答に含まれていない。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どのように取り組むか」という抽象的な問いであるため、回答側が現状説明に終始しやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_028",
+      "segment_index": 3,
+      "topic": "農業近代化資金の事業フォロー体制",
+      "question": {
+        "speaker": "かごしま彰宏",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 近代化資金を利用した事業者の実施状況を、国としてどのようにフォローしているか",
+        "full_text": "そんな中であえてお伺いをするのですが、近代化資金制度、これを利用して貸付を受けた事業者の事業実施状況、これを国としてはどのようにフォローしているでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小林",
+        "role": "",
+        "summary": "- 事業実施状況のフォローは国が直接行わず、民間金融機関が担っている\n- 国は金融機関に対し、経営改善資金計画書の提出や状況報告を求めるよう指導している",
+        "full_text": "御指摘のとおりですね、農業近代化資金のこの融資機関がですね、借受者がこの融資によって、まず何を行おうとしているのか、こういった事業の内容でありますとか、それから融資後のですね、借受者の事業が計画通りいっているのかという、こういう実施状況、こういったものにつきましてですね、この融資機関の方で適切に把握して、フォローしていくということはですね、この融資機関が審査を適切に実施して、借入れ者の経営発展を伴走支援していくと、こういう観点からも非常に重要であるというふうに考えてございます。従いまして、こういった事業の実施状況のフォローなどにつきましては、国としては直接やっておりませんで、ここの部分は民間金融機関、有志機関の方で担っていただいているというのが実態でございます。その上で、農林水産省といたしましては、これは近代化資金は、この制度資金でもございますので、この近代化資金を取り扱うこの民間金融機関に対しましてですね、例えばこの融資の際にですね、借入れ者からはですね、将来の経営の姿などを記載した経営改善資金計画書こういったものの提出を求めるでありますとか、融資後も借入れ者から必要に応じて経営状況の報告を求めるこういったことを融資機関の方に求めておりまして、この融資機関に対してこの事業者の事業実施状況の適時の把握に努めるように国としては指導をしているこういう状況でございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5207"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#4953.59",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "近代化資金貸付事業者の実施状況のフォロー方法",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "近代化資金制度"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "貸付を受けた事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "経営改善資金計画書"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "民間金融機関"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "適時の把握に努めるように国としては指導をしている",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "事業の実施状況のフォローなどにつきましては、国としては直接やっておりませんで、ここの部分は民間金融機関、有志機関の方で担っていただいている",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "国は直接フォローせず、民間金融機関に指導を行うという役割分担が明確に回答されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_029",
+      "segment_index": 3,
+      "topic": "農業近代化資金の拡充による想定対象者",
+      "question": {
+        "speaker": "かごしま彰宏",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 今回の近代化資金の拡充（貸付限度額引上げ等）により、どのような者の貸付を想定しているか",
+        "full_text": "併せてもう一点お伺いを確認させていただきたいのが、今回の近代化資金の拡充を利用して貸付を受ける者は、どのような者を想定されておりますか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小林",
+        "role": "",
+        "summary": "- 地域計画に位置づけられた方等を対象に「農業経営高度化資金」を追加した\n- 規模拡大に伴う大型農機具の導入やハウス増設、加工施設の整備など、従来の限度額では対応できなかった大きな資金需要への対応を想定している",
+        "full_text": "今回この農業近代化資金につきましては、地域計画に位置づけられた方々等を対象といたしまして、新たなメニューとして農業経営高度化資金というものを追加いたしまして、この貸付限度額の引上げでありますとか、資金使途の拡充、こういったことを行うこととしてございます。こうした資金内容の拡充によりまして、例えば、この地域の農地を引き受けて規模拡大をしようとする農業者の方がですね、農業機械を追加取得しようとする場合でありますとか、もしくはこの大型の農業機械を導入しようとする場合、またハウスなどのこの農業施設の増設をしようとする場合、こういった場合でありますとかですね。またこの農産物の付加価値向上に取り組んでいる農業者の方がですね、加工施設の整備をしたいと、こういった場合などのうちですね、これまでの貸付限度額では対応できなかったような比較的大きな資金需要に対しましても、今後の農業近代化資金では対応ができるようになるというふうに考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5207"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#4953.59",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "近代化資金の貸付対象者の想定",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "貸付を受ける者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "農業経営高度化資金"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "地域計画に位置づけられた方々"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "地域計画に位置づけられた方々等を対象といたしまして、新たなメニューとして農業経営高度化資金というものを追加いたしまして",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "貸付対象者についての具体的な想定（地域計画への位置づけや規模拡大を目指す農業者など）が明確に回答されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_030",
+      "segment_index": 3,
+      "topic": "近代化資金における国の責任とリスクフォロー",
+      "question": {
+        "speaker": "かごしま彰宏",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 制度の方向性を国が決めている以上、事業拡大に挑戦して失敗した事業者へのリスクを国もフォローすべきではないか",
+        "full_text": "ただ、この大規模化であったりですとか、効率化、高付加価値化、こういった政策の誘導の方向性は制度として国が決めているわけであります。そうした中、この方向性がですね、例えば合っているのか間違っているのか、あるいは合っているけどもっと拡充しないといけないのか、こういったところをどうやって改善をしていくかというところは、やはり国において判断をしていくべきことであると。そんな中でお伺いしたいのが、果たして政府としてはこの農業近代化資金制度において国の責任というのはどこにあると思われますか。融資主体が民間だからというのは分かるんですが、この制度の方向性を国が決めている以上、こうしたうまくいかなさそうな事業者に対するこのリスクを国もしっかりフォローしていくべきだと思っておりますが、大臣のご所感、お伺いしてもよろしいですか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "山下",
+        "role": "",
+        "summary": "- 役割分担として、一義的には融資機関の責任で実施しているが、国は都道府県を通じて適切に運営されるよう指導する\n- 民間金融機関の審査は厳格であり、過剰投資は起きにくいと考えている\n- 返済困難となった場合は、金融機関に早期再生と経営再建支援に取り組んでもらうとともに、国も寄り添った融資を行うよう指導する",
+        "full_text": "この近代化資金におきまして、例えば対象者であったりとか、また限度額などの資金内容でありますとか、借入れされる方の状況の把握など、融資機関が実施すべき内容について、まず国が定めまして、そして利子補給契約をされる都道府県などを通じて、制度の趣旨に沿った対応を融資機関にしていただくという役割分担をしております。ご指摘の借入れされる方のフォローに関しましては、債権管理はもちろんのこと、この融資機関がですね、支援していただくという観点からも重要であることから、一義的にはおっしゃるように融資機関の責任において実施しているところでありますけれども、国としてもこの近代化資金が経営の高度化に資するような制度の趣旨に沿った運営をされるように、都道府県などを通じて融資機関をしっかりと指導していきたいというふうに考えております。で、その上で申し上げると、この農業近代化資金の融資にあたっては、過剰な投資が行われたり、返済不能な負債を借り入れ者に生じさせることのないよう、これ多分、民間金融機関は本当に厳しいので、こういうことはまずほぼほぼ起きないというふうに私は思いますが、民間金融機関において融資により導入しようとする施設、農機具などが借り入れ者の経営規模、経営内容などに見合ったものであるか、そして借入者の事業内容などから見て、借入者の返済可能性に問題はないかなどの審査を適正に実施した上で、必要な額が貸し付けられるようにするとともに、融資後においても、借入者の事業や経営の状況把握などを適切に行っていただく必要があると認識をしております。その上で、融資後の様々な事情によって、この融資の返済が困難となった場合には、民間金融機関においては、再生可能性があるうちの早期再生と、再生後の持続的な経営再建に向けた支援についても取り組んでいただきたいと考えております。今般、この貸付上限額を引き上げることになりますが、農林水産省としても、改めて近代化資金を取り扱う民間金融機関に対して、農業者の財務状況や借入状況などを十分に踏まえた融資を行うとともに、融資後も債務者の状況把握や経営支援について、農業者に寄り添って取り組むようにしっかり指導してまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5207"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#4953.59",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "農業近代化資金制度における国の責任の所在",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "農業近代化資金制度"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "うまくいかなさそうな事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "利子補給契約"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "都道府県"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "しっかり指導してまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "国としてもこの近代化資金が経営の高度化に資するような制度の趣旨に沿った運営をされるように、都道府県などを通じて融資機関をしっかりと指導していきたい",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "制度の責任分担について大臣が明確に回答しており、融資機関への指導という方向性を示した。具体的期限や新制度の策定はないためコミットメントレベルは低い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「国の責任」という抽象的な問いであるため、回答も「指導する」という包括的な表現に留まっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_031",
+      "segment_index": 3,
+      "topic": "近代化資金の貸付対象への農林中金出資法人の追加",
+      "question": {
+        "speaker": "かごしま彰宏",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 貸付対象者に「農林中金が主体出資者等となっている法人」を追加した趣旨は何か",
+        "full_text": "先ほど、この規模拡大をしていく、高付加価値化をしていく、そういった方々が新たに引き上げられた貸付額を借りていく見込みであるということのご説明はいただきましたけれども、そうしたことに加えて、今回の改正では、貸付対象者に農林中金が主体出資者等となっている法人等を追加をするというふうにもあるわけですけれども、その趣旨はお伺いしてもよろしいでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小林",
+        "role": "",
+        "summary": "- 農林中金が出資したことで、農協等の出資比率が5割を切り、従来の規定では貸付対象から外れてしまうケースを防ぐため\n- 農林中金を含めて過半の出資者となっている法人についても、引き続き貸付対象とするため",
+        "full_text": "農業近代化資金は基本的にはこの農業者が貸付対象になっているということでありますけれども、一方でこの生産現場のみならずですね、農産物の流通や加工の段階などにおける取組も重要でございますので、農業近代化資金の貸付対象者としてですね、農業者や農協等がその過半を出資しているような法人、こういう法人でありまして、農産物の国民民主党・新緑風会。今般の改正につきましてはですね、今般まず農林中金法の改正でですね、農林中金の出資手続きを行うわけでございますけれども、近代化資金につきましても先ほど申しましたような農業者や農協等が過半を出資しているような法人、こういったものも現在貸付対象になってございますが、そこにさらに農林中金が追加を出資するということも想定されるわけでございます。こうした場合に農林中金が出資したことによって、これまでの規定のままですと、例えば農協とか農業者の出資比率が5割を切るというようなことになりますと、農業近代化資金の貸付対象から外れてしまうということになってしまいますので、今回はこういった農業者や農協等に加えて農林中金も含めて、こうした方々が過半の出資者となっているような法人については、引き続き農業近代化資金の貸付対象にするというような改正をしたということでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5207"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#4953.59",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "貸付対象者に農林中金主体出資法人を追加する趣旨",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "今回の改正"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "農林中金が主体出資者等となっている法人等",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "農業近代化資金"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "農林中金法"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "農林中金も含めて、こうした方々が過半の出資者となっているような法人については、引き続き農業近代化資金の貸付対象にするというような改正をした",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "改正の趣旨について、出資比率の低下による貸付対象外となるリスクを回避するためであるという明確な説明がなされている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_032",
+      "segment_index": 3,
+      "topic": "近代化資金による農業者間の格差拡大の懸念",
+      "question": {
+        "speaker": "かごしま彰宏",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 審査に通る大規模事業者へ資金が集まり、経営状況が厳しい中小規模の事業者との格差が広がるのではないか",
+        "full_text": "そうした中で最後お伺いをしたいことが、近代化資金の融資主体は何度も繰り返しておりますとおり民間の金融機関であります。そうした際にですね、規模をレイヤーで見たときにですね、このトップを走っている人たちとか、審査に合格するような人たちというのは、融資を受けられるようになる。けれども、その下のレイヤーにいて、なかなか経営状況もしんどいんです、みたいな方々についてはですね、民間金融機関の審査を通らないと思いますし、こうしたところとの格差、資金の集まりやすさ。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "山本",
+        "role": "",
+        "summary": "- 借受者の約75%が個人農業者であり、これまでも中小規模の農業者が活用している\n- 限度額引上げ後も小規模な資金需要に対応できる点は変わらず、格差拡大にはつながらないと考えている\n- 引き続き中小規模の農業者にも活用されるよう周知を徹底する",
+        "full_text": "令和6年度の実績を見ましても、借受者の約75%が個人農業者であります。これまでも中小規模の農業者を含めてご活用いただいているところであります。今回の貸付限度額の引上げ等により、大きな資金需要にも対応できるようになりますが、他方、これまで同様、比較的小規模な資金需要にも対応できる資金であることは変わりなく、中小規模の農業者の資金ニーズに対しても引き続き応えていけるものと考えております。したがって、今回の農業近代化資金の見直しが、農業者間の格差の拡大につながるものではないと考えておりますが、委員御指摘のとおり、農林水産省といたしましては、農業近代化資金が引き続き、中小規模の農業者も含めて、現場で頑張っておられる方々に活用していただけるよう、しっかりと周知をしてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5207"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#4953.59",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "近代化資金の融資による農業者間の格差拡大への懸念",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "経営状況もしんどい方々",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "借受者の約75%が個人農業者"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "令和6年度の実績"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "しっかりと周知をしてまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "借受者の約75%が個人農業者であります。これまでも中小規模の農業者を含めてご活用いただいているところであります。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は疑問符のない懸念表明に留まっているが、回答側は具体的な実績数値（75%）を提示して格差拡大を否定しており、一定の記録価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "疑問文の形式で具体的に何を問いたいのか（格差をどう是正すべきか等）を明確にすべきである。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_033",
+      "segment_index": 4,
+      "topic": "農林中金の農業・食料システムへの融資の位置づけ",
+      "question": {
+        "speaker": "高橋光男",
+        "party": "公明党",
+        "summary": "- 農林中金が農業・食料システム全体の資金需要に対し果たすべき役割と位置づけについて伺いたい",
+        "full_text": "最初に、この食料、農業システム、農業食料システムへの融資の位置づけについてお伺いいたします。今回の法改正では、農林中金の目的やこの業務の中に、農林水産業者のための金融をこれまで以上にはっきり位置づける方向が示されております。有識者報告書でも、農業、食料、食品産業向けの融資を強めていく必要があると指摘されております。加えまして、昨今の農業の規模拡大や加工物流まで含めた食料システム全体の変化を見ますと、県をまたぐ大型案件や農協組合員以外の利用も多い物流加工施設などへの資金需要に対しましては、全国機関であるこの農林中金が果たす役割が大きい。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "鈴木憲和",
+        "role": "",
+        "summary": "- 大規模な資金需要を伴う案件（スマート農機、植物工場、陸上養殖等）への融資に積極的に取り組む\n- 生産から加工・流通・販売まで、食料システム関連分野の民間投資円滑化と供給力向上に貢献する\n- JA信連と役割分担し、大型案件や県域をまたぐ案件を農林中金の領域として体制を強化する",
+        "full_text": "農林水産省といたしましては、今回の法改正を契機として農林中金には、その豊富な資金力や幅広いネットワークを生かしまして、農業者の経営拡大に伴う大型農機やスマート農機の導入、大規模なハウスなどの農業用施設の設置、そして物流加工輸出などの取り組みの進展に伴う加工流通施設の整備、さらにはフードテックの進展に伴う植物工場や陸上養殖などの整備など、農協やJA信連では対応が難しい大規模な資金需要を伴う案件に対する融資に、これまで以上に積極的に取り組んでいただきたいと考えております。特にこのフードテックなんかは植物工場でいうと一案件で数百億円規模の投資が必要になりますし、陸上養殖も、今大規模なもので数百億円の投資が必要になってきていて、なかなかそこにやはり、これ正直リスクも当然伴いますから、リスクを一緒にとって食料の供給力を増していくということに、一緒になってやっていけると、大変ありがたいなというふうに考えております。その上で農林中金においては、こうした取組を通じまして、生産分野のみならず、加工流通販売なども含めた、食料システム関連分野における民間投資の円滑化に寄与していただき、農林水産業の生産基盤と食料システムの強化を通じた食料供給力の向上に貢献していただくことを期待しております。まず農林水産業者や事業者向けへの融資につきましては、JA信連と役割分担の上、JAなどで対応できない大型案件ですとか、県域をまたぐような案件、こういったものに対しまして、農林中金が取り組むべき領域と位置づけた上で、体制面を強化し、積極的に対応をしてまいりたいと考えてございます。また、融資につきましても、主にこれまでアグリビジネス投資育成株式会社を通じまして、実践の方を行ってきておりまして、現在出資件数、金額ともに、着実に増加をしておるところでございますが、大規模案件につきましては、我々の資金量、あるいはネットワーク、こういったものを生かして、農林中金による直接的な取り組み、こういったものも進めてまいりたいと考えてございます。このように、農林中金におきましては、川上と川中川下、全ての領域に接点を持つ強み、この中には資金量でありましたり、独自のネットワークも含まれますけれども、こういったものを生かしながら、林業、漁業も含む第一次産業の持続性確保のために、強靭で持続的な食料システム構築へ貢献していくことを目指し、これまで以上に取り組みを進めてまいる所存でございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5205"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#6775.89",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "農林中金の融資の位置づけについて",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "今回の法改正"
+            },
+            {
+              "type": "other",
+              "excerpt": "有識者報告書"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "農林水産業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "アグリビジネス投資育成株式会社"
+            },
+            {
+              "type": "number",
+              "excerpt": "数百億円規模"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "これまで以上に取り組みを進めてまいる所存でございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "JAなどで対応できない大型案件ですとか、県域をまたぐような案件、こういったものに対しまして、農林中金が取り組むべき領域と位置づけた",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "農林中金の役割について政府の方向性を明確に述べており、実務的な位置づけが記録されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が現状の説明に終始しており、具体的なアクションや期限を求める形式になっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_034",
+      "segment_index": 4,
+      "topic": "融資実行体制と人材の確保・育成",
+      "question": {
+        "speaker": "高橋光男",
+        "party": "公明党",
+        "summary": "- 融資を担う専門人材の不足という課題に対し、どのような分野でどう人材を確保し育成するのか\n- JA・信連との連携や人員配置、審査・案件形成の仕組みをどう見直して実行体制を強めるのか",
+        "full_text": "続きまして、人材確保と育成、そして融資の実行体制についてお伺いしたいと思います。有識者報告書におきましては、農林中金は有価証券中心に運用構造がありまして、融資を担う職員は2割程度にとどまるとされております。また案件を組み立っていくには相応の時間も手間もかかるわけですが、人の体制が課題だというような説明もなされております。現場でも資金需要があってもそれをしっかりと見立てて事業性を見て案件の形にしていく人が足りなければ実行にはなかなか結びつかない現実があると思います。そこで伺いますが、食料農業農業、食料システムへの出融資を担う人材を、どの分野でどう確保して育てていくのかと。農林中金は本店と支店、支店も17支店ほどで限られているということですので、その中でこのJAや信連との連携、また人員配置、審査や案件形成の仕組みなどをどう見直して、融資の実行体制を強めていくのかにつきまして、農林中金の方針を伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "長野参考人",
+        "role": "",
+        "summary": "- 昨年度に農業融資担当者を1割増強し、専門性を醸成する人事制度を開始した\n- 経験・知見に応じた研修、現場実践、および知見を有する人材のキャリア採用を推進する\n- 中長期的にプロフェッショナルな職員の育成と確保に不断に取り組む",
+        "full_text": "委員ご指摘のとおり、ここから農林水産業向けの融資を強化していくにあたりまして、それを支える人材育成、ここをいかに担保していくかといったところは、非常に重要な課題だというふうに受け止めてございます。その上で、私ども農林中央金庫では、農林水産業向け出融資を強化するために、昨年度に農業融資担当者を1割増強したということでございます。併せまして人材マネジメントポリシーを定めまして、第一次産業と地域への貢献意識を持った職員一人一人が金融の専門性を醸成する人事制度、こういったものを開始してございます。具体的には、農業融資機能を強化し、貸出業務等における経験、知見、こういったものに応じた研修、それと現場実践を通じた人材育成、こういったものを進めるとともに、農林水産業に知見を有する人材のキャリア採用、こういったものも進めております。引き続き、中長期的にプロフェッショナルとなる職員の育成と確保、こういったものに不断に取り組んでまいりたいというふうに考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5205",
+        "clb-5207"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#6775.89",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "農林中金の融資実行体制の強化方針について",
+          "sub_asks": [
+            "出融資を担う人材をどの分野でどう確保し育成するか",
+            "JA・信連との連携や人員配置、審査・案件形成の仕組みをどう見直すか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "有識者報告書"
+            },
+            {
+              "type": "number",
+              "excerpt": "融資を担う職員は2割程度"
+            },
+            {
+              "type": "number",
+              "excerpt": "支店も17支店ほど"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "農林中央金庫",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "昨年度に農業融資担当者を1割増強"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "人材マネジメントポリシー"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "不断に取り組んでまいりたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "昨年度に農業融資担当者を1割増強したということでございます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "人材確保の具体策（1割増強やキャリア採用）については言及があるが、JA・信連との連携や審査仕組みの見直しという問いには答えていない。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "人材育成と組織体制（連携・審査）という2つの異なる軸を一つの問いに盛り込んでいるため、回答が一方に偏りやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_035",
+      "segment_index": 4,
+      "topic": "外部理事の登用と組織体制の改善",
+      "question": {
+        "speaker": "高橋光男",
+        "party": "公明党",
+        "summary": "- 外部理事の登用を実効的にするため、理事会と下部組織の情報共有や報告の流れ、リスク情報の上げ方をどう改善するのか\n- 理事会が適切に方針決定できるための環境整備や組織体制の見直しについて伺いたい",
+        "full_text": "続きまして、今日もいくつか議論がございましたが、外部理事の登用についてお伺いしたいと思います。今回の法改正で外部理事の登用が可能となると。有識者報告書でも多様な視点を確保するためには、理事を含め組織全体で外部の謙虚な提案が上がってくる、そうした風通しの良い組織体制といいますか、そうしたものはなければ十分に機能しないというふうに考えるからでございます。そこでお伺いいたしますが、この外部理事の登用を実効的にするためにも、この理事会と下部組織との情報共有、また報告の流れ、議題の立て方、リスク情報の上げ方などをどのようにして改善していくのか。併せて、理事会が適切に方針決定できるように、どのような環境整備や組織体制の見直しを進めていくお考えなのか、農林中金のお考えを伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "長野参考人",
+        "role": "",
+        "summary": "- 経済・金融・ガバナンスの専門家を複数名任用し、多様な視点による柔軟な意思決定を図る\n- 理事会傘下に「財務戦略委員会」を設置し、外部有識者を招聘して環境整備を行う\n- 事前レクチャーや事後フォローアップを通じて、適切な議決権行使と情報連携を確保する",
+        "full_text": "まず外部理事の任用におきましては、経済、金融やガバナンスなどの分野に専門性を持ちの方を複数名任用することを想定してございまして、これによって多様な視点を確保し、柔軟な意思決定を行ってまいりたいと考えてございます。また、その会議体のあり方、これにつきましてもしっかりとその会議体、会議体ごとの役割と責任、こういったものを明確化するという一つの取り組みといたしまして、理事会の傘下に、新たに財務戦略委員会というものを設置してございます。昨年度からこの中に外部有識者2名を招聘するなど、理事会が適切に方針決定を行える環境の整備、こういったものに取り組んでおるところでございます。なお、外部理事へご就任いただいた際には、理事会当日、ただご出席をしていただくということだけではなくて、理事会で適切に議決権を行使いただけるように、事前のレクチャーでございましたり、あるいは事後のフォローアップでありましたり、こういったものにもお時間を設けていただきたい。加えまして、こういったことを通じて、しっかりと、委員ご指摘のとおり、適切な意思決定に資する情報の連携、こういったものを図っています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5205"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#6775.89",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "外部理事登用の実効性を高める組織体制の改善策",
+          "sub_asks": [
+            "理事会と下部組織との情報共有・報告・議題・リスク情報の上げ方の改善策",
+            "方針決定のための環境整備や組織体制の見直しの考え方"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "有識者報告書"
+            },
+            {
+              "type": "law",
+              "excerpt": "今回の法改正"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "農林中金",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "財務戦略委員会"
+            },
+            {
+              "type": "number",
+              "excerpt": "外部有識者2名"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "柔軟な意思決定を行ってまいりたいと考えてございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "理事会の傘下に、新たに財務戦略委員会というものを設置してございます。昨年度からこの中に外部有識者2名を招聘するなど、理事会が適切に方針決定を行える環境の整備、こういったものに取り組んでおるところでございます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "外部理事登用に伴う組織体制の改善について具体的に質問し、回答側も「財務戦略委員会」の設置という具体的な実績を挙げて回答している。ただし、今後の具体的な改善策へのコミットメントは弱く、現状報告に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "改善策を問うているが、回答者が現状の取り組みを述べるだけで終わるよう、質問が包括的すぎる。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_036",
+      "segment_index": 4,
+      "topic": "金利上昇局面におけるJAの財務健全性と地域金融機能",
+      "question": {
+        "speaker": "高橋光男",
+        "party": "公明党",
+        "summary": "- 金利上昇による有価証券の評価損がJAの収益や自己資本、ひいては地域金融機能に与える影響をどう見ているか\n- JAバンク全体の実態をどう把握し、地域金融機能に影響が出ないようどう対応するか",
+        "full_text": "続きまして、この金利上昇局面におけるJAの財務健全性と地域金融機能についてお伺いしたいと思います。今回の検証は、主として農林中金が対象となっておりますけれども、現場のJAからは、金利上昇が長引けば、低金利の時期に保有した長期債なので、評価損が生じて、収益や自己資本に影響が出るのではないかといったお声をいただいております。そうなりますと、農業者向けの融資や共同利用施設などの整備、組合員向けのサービスなどにも影響を及ぼしかねません。地域の農業投資を支える金融機能が弱まれば、担い手の育成や設備更新にも響いてくるかと思います。政府として、最近の金利上昇がJAの保有資産。収益、自己資本などにどのように影響を与えているというふうに見ていらっしゃるか。またその影響が地域金融機能に及ばないよう、JAバンク全体の実態をどのように把握をし、どう対応していくお考えかについて御答弁をお願いします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小林局長",
+        "role": "",
+        "summary": "- 国内金利上昇に伴い、農協で国債等の有価証券の評価損が発生していることを把握している\n- 都道府県や農林中金と連携し、経済金融市場の動向が農協経営に与える影響を把握する\n- 有価証券運用の状況や財務健全性、リスク管理体制についてモニタリングと指導を行う",
+        "full_text": "個別の農協の財務の健全性に関することにつきましては、コメントを差し控えさせていただきたいと考えておるわけでございますけれども、御指摘のとおり、農協において国内の金利上昇に伴いまして、国債などの有価証券の評価損が発生しているということは、私どもも把握しているところでございます。農水省といたしましては各農協が健全性を維持して農業機関を含めたこの地域金融機能、こういったものをしっかり発揮していただけるように、農協の監督官庁であります都道府県、それからJAバンク法に基づきまして、農協信用事業を指導する農林中金、こういったところとも緊密に連携をいたしまして、まずはこの金利上昇といった経済金融市場の動向が農協経営に与える影響。これがどうなのかというのをしっかり把握するとともに、各農協の有価証券運用の状況を含めて、この財務の健全性でありますとか、リスク管理の体制等につきまして、しっかりモニタリング指導をしていきたいというふうに考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5205"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#6775.89",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "金利上昇がJAの財務と地域金融機能に与える影響と対応",
+          "sub_asks": [
+            "金利上昇がJAの保有資産・収益・自己資本にどう影響しているか",
+            "地域金融機能への影響を防ぐため、実態把握と対応をどう行うか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "農林中金"
+            },
+            {
+              "type": "organization",
+              "excerpt": "JA"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "JA",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.6
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "都道府県"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "JAバンク法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "農林中金"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "しっかりモニタリング指導をしていきたいというふうに考えてございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "農協において国内の金利上昇に伴いまして、国債などの有価証券の評価損が発生しているということは、私どもも把握しているところでございます。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "金利上昇によるJAの評価損発生という現状は認めたが、今後の対応についてはモニタリングを行うという抽象的な回答に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どう対応していくか」という問いが広いため、回答者が「モニタリング」という包括的な表現で逃げやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_037",
+      "segment_index": 4,
+      "topic": "農業投資における金利負担の軽減策",
+      "question": {
+        "speaker": "高橋光男",
+        "party": "公明党",
+        "summary": "- 金利上昇による投資先送りへの懸念に対し、政府は地域金融機関と連携してどう金利負担を軽減させるのか",
+        "full_text": "JAなどの現場からは、施設更新や機械の更新、暑さや水不足への対応など、これからの農業に必要な投資は増えていく。一方で、金利が上がると資金調達の負担が重くなって、投資が先送りされやすいといったようなお声もいただいております。特に若手や、これから規模拡大に挑む経営体ほど、返済額が将来変わらないような固定金利のような融資メニューや利子負担の軽減、また、あるいはですね、この保証制度の強化、こうした仕組みが重要だといったご指摘もいただいております。そこでお伺いいたしますが、政府としてですね、JAを含む地域金融機関とどのようにして連携してですね、この農業投資の金利負担を。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "山本政務官",
+        "role": "",
+        "summary": "- 農業近代化資金などの制度資金による低利・固定金利の長期借入を可能にしている\n- 農業信用保証保険制度や、認定農業者への金利負担軽減・保証料助成措置を講じている\n- これらの措置を継続し、地域金融機関と連携して前向きな投資を後押しする",
+        "full_text": "農業者の資金ニーズに対して地域金融機関から円滑に資金が供給されるよう、低利かつ固定金利で長期の借り入れも可能とする農業近代化資金などの民間の地域金融機関が取り扱う制度資金や、農業者が担保や保証人を提供しなくても資金を借りやすくするため、農業者の信用力を補完する農業信用保証保険制度のほか、地域計画に位置づけられた認定農業者への貸付当初5年間の金利負担軽減措置や保証普及当初5年間の保証料助成措置などの様々な施策を講じることにより、チャレンジする農業者の農業投資に係る負担を軽減しているところであります。今後とも農林水産省としては、これらの措置を継続し、農協をはじめとする地域金融機関と連携して、チャレンジする農業者の経営改善や規模拡大に向けた前向きな投資をしっかり後押しをしてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5207"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#6775.89",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "農業投資の金利負担軽減に向けた地域金融機関との連携策",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "JAなどの現場"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "若手や、これから規模拡大に挑む経営体",
+          "concreteness": "mid",
+          "score": 0.6
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "農業近代化資金"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "農業信用保証保険制度"
+            },
+            {
+              "type": "number",
+              "excerpt": "貸付当初5年間"
+            },
+            {
+              "type": "number",
+              "excerpt": "保証普及当初5年間"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "前向きな投資をしっかり後押しをしてまいりたい",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "低利かつ固定金利で長期の借り入れも可能とする農業近代化資金などの民間の地域金融機関が取り扱う制度資金や、農業信用保証保険制度のほか、様々な施策を講じている。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "既存の制度（農業近代化資金等）を列挙して回答しており、情報の密度は高いが、新たなコミットメントは含まれていない。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が途切れている（「金利負担を。」で終わっている）が、文脈から意図は明確である。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_038",
+      "segment_index": 4,
+      "topic": "融資手続きの簡素化・迅速化",
+      "question": {
+        "speaker": "高橋光男",
+        "party": "公明党",
+        "summary": "- 農業近代化資金等の申請書類、審査、利子補給決定などの各段階をどのように簡素化・迅速化し、使いやすい制度にするのか",
+        "full_text": "その関連でありますけれども、融資手続の簡素化、また迅速化についてもお伺いしたいと思います。有識者報告書におきましては、農業近代化資金につきましては、借入限度額が少ない、農地取得に使えない、償還期間が短いといったような課題に加えまして、都道府県の利子補給手続きに時間がかかるために、貸付決定や融資実行が遅れて、営農に影響するおそれがあるとも指摘されております。最近のように、この金利の動きが大きい局面においては、手続きの遅れそのものがですね、利用者の資金計画を不安定にしてしまいかねないかというふうに思います。そこでお尋ねいたしますが、今回の法改正を機にですね、借入限度額、これ引き上げられますけれども、この申請書類とか審査、また利子補給の決定などですね、この融資実行に至るまでのですね、この各段階、これをどのようにして簡素化し、迅速化していくのか、利用者にとってもこの分かりやすく使いやすい制度にしていくための取組の方針についてお伺いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "小林局長",
+        "role": "",
+        "summary": "- 都道府県等の関係機関と連携し、提出書類の内容を検証して簡素化を図る\n- 申込から融資決定までの期間短縮に向け、民間金融機関、農業信用基金協会、都道府県との連携を徹底する",
+        "full_text": "御指摘のありましたこの融資実行のタイミング、こういったものも含めましてですね、農業者のニーズに応じた融資実行がしっかりなされるということは極めて重要だというふうに考えてございます。このためですね、都道府県等の関係機関と連携いたしまして、まずこの農業近代化資金に係るですね、都道府県の利子補給手続き、これにつきましてですね、各県がですね、農業者からどういった農政書類を提出していただいているのか、こういったものを国としても1回検証いたしまして、簡素化を図るということが1点でございます。それからもう1点は、この借入れの申込から融資決定までの期間を短縮するという観点でございますけれども、この間、融資を実際に行う民間金融機関、それから保証をつけるということでありますと、農業信用基金協会、それから利子助成をするのは都道府県。大臣、徹底されるように進めてまいりたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5207"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#6775.89",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "融資手続の簡素化・迅速化に向けた取組方針",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "有識者報告書"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "利用者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "農業信用基金協会"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "国としても1回検証いたしまして、簡素化を図る",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "都道府県の利子補給手続きにつきまして、各県がどういった書類を提出していただいているのか、国としても1回検証いたしまして、簡素化を図る",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "融資手続きの簡素化という具体的な要望に対し、国が現状を検証するという具体的な方向性が示されており、一定の記録価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_039",
+      "segment_index": 4,
+      "topic": "農業経営高度化資金の活用と対象範囲",
+      "question": {
+        "speaker": "高橋光男",
+        "party": "公明党",
+        "summary": "- 地域計画に位置づけられる前の段階にある経営体などが、どのようにして農業経営高度化資金を利用できるのか",
+        "full_text": "今回の近代化資金、どのようにして利用を促していくのかといった取組の一つとして、これまで農地取得等に使えなかったというような課題に対して、新たな今回対応として、今年度から導入された農業経営高度化資金。農民主党そういうふうに限られてきたわけですけれども、新たにですね、この地域計画に位置づけられたものというものが、対象というふうな形で対象が変わります。この地域計画自体、今も進められているわけでありますけれども、ただですね、現場ではですね、まだ手続上間に合わないといいますか、今後位置づけられる見込みはあっても、まだ。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "鈴木憲和",
+        "role": "",
+        "summary": "- 地域計画に位置づけられたものであれば、規模の大小にかかわらず貸付対象となる\n- 地域計画が策定途中の場合でも、市町村から位置づけられることが確実である証明を受けたものを対象とする",
+        "full_text": "農業近代化資金の貸付限度額の引上げによって、例えば農業経営の規模を拡大しようとする場合に行う大型の農業機械の導入や、ハウスなどの農業用施設の増設、そして農産物の付加価値向上に取り組む場合に行う加工施設の整備などのうち、これまででできなかった比較的大きな資金需要に対しても、農業近代化資金でまずは対応できるようになると考えております。そしてご指摘のですね、この新たに設けます農業経営高度化資金につきましてはその規模の大小にかかわらず地域計画に位置づけられたものである限りにおいて、これは貸付対象となります。そして地域計画も今まだその新興途上のものもたくさんありますので、新興途上なんだけれども借りたいということが当然あり得ますので、そういう場合は今後、地域計画に位置づけられることが確実であることの証明を市町村から受けたものなども対象とする考えであります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5207"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#6775.89",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "近代化資金の利用促進と地域計画の位置づけについて",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "今年度から導入された農業経営高度化資金"
+            },
+            {
+              "type": "other",
+              "excerpt": "地域計画"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "農業近代化資金"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "農業経営高度化資金"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "地域計画"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "地域計画に位置づけられることが確実であることの証明を市町村から受けたものなども対象とする考えであります",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "地域計画に位置づけられることが確実であることの証明を市町村から受けたものなども対象とする考えであります。",
+          "score": 0.7
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "質問文が途切れており不完全ですが、回答側で「地域計画への位置づけが未完了な場合の救済策」という具体的な運用方針を提示しており、記録的価値があります。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が途中で終わっており、明確な問い（疑問符）の形になっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_040",
+      "segment_index": 4,
+      "topic": "運転資金の確保と支援策",
+      "question": {
+        "speaker": "高橋光男",
+        "party": "公明党",
+        "summary": "- 設備資金に比べ借りにくい運転資金（人件費、資材購入等）について、信用保障や利子負担軽減をどう組み合わせて借りやすくするのか",
+        "full_text": "続きまして、この現場からは機械や施設のための資金は借りやすい一方で、雇用とか人件費、資材購入、出荷までなどのつなぎなど、必要な運転資金は借りにくいといったお声をいただいております。特に規模拡大の時期ほど、先に資金が必要になりますけれども、十分な支援が受けにくく、経営拡大の壁になっているというお声をいただいております。こうした実情を踏まえますと、設備資金のみならず、運転資金も含めて農業経営全体を支える視点が必要ではないかというふうに思います。政府として、政府経営金融、信用保障、利子負担の軽減など、どのように組み合わせて、農業者が実際に借りやすい仕組みにしていくのかについて、見解を伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "山下副大臣",
+        "role": "",
+        "summary": "- 近代化資金において、資材購入などの費用を広く長期運転資金の対象としてきた\n- 新設の経営高度化資金では「借り替え」も対象に追加し、多様なニーズに応える\n- 制度全体の利用しやすさを向上させ、農業経営を支える",
+        "full_text": "高橋委員が御指摘のように、この設備投資だけではなく、運転資金のニーズなど、多様なニーズに応えていくことが大変重要だということは認識しております。このため、近代化資金におきましても、これまでも設備資金だけではなく、資材購入などの農業経営に必要な費用を広く長期運転資金の対象としてきたところであります。さらに今回この近代化資金の中に設けます経営高度化資金につきましては、借り替えなども対象に追加することにより、より一層様々なニーズに応えていきたいというふうに考えております。鈴木憲和（農林水産大臣）より一層利用しやすくなる制度としていきたいというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5207"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#6775.89",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "農業者の運転資金を借りやすくする仕組みへの見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "農業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "近代化資金"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "経営高度化資金"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "より一層利用しやすくなる制度としていきたいというふうに考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "近代化資金の中に設けます経営高度化資金につきましては、借り替えなども対象に追加することにより、より一層様々なニーズに応えていきたい",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "運転資金の必要性という現場の課題に対し、既存の近代化資金および新設の経営高度化資金での対応策を具体的に回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "具体的な金融スキームの組み合わせ（信用保障や利子軽減など）についての踏み込んだ回答を求める形式にすれば、より実効的な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_041",
+      "segment_index": 4,
+      "topic": "一般金融機関による農業向け貸出の拡大",
+      "question": {
+        "speaker": "高橋光男",
+        "party": "公明党",
+        "summary": "- 農協系統だけでなく、地銀等の地域金融機関による農業向け新規貸出を促すための環境整備をどう進めるのか",
+        "full_text": "最後にですね、この一般金融機関も含めた農業向け新規貸し出しの拡大についてお伺いしたいと思います。有識者報告書では、この制度を所管する農水省と、実際の貸出を行う農林中金をはじめとする農協系統において、制度資金の在り方を検討し、農業系統による農業向け貸出を促進するというふうにされております。一方で現場からは、この農協系統だけで全ての資金需要を支えるのではなくて、地方銀行など地域金融機関も含めて農業向け新規貸し出しの裾野を広げる必要があるということが指摘されております。一方で地銀などからは、農業法人の経営情報とか、現場の実態はつかみくいんだとか、またリスクを見極めにくいと。さらには、農地の評価や生産販売の不確実性から審査に手間がかかること、制度資金に加えて民間資金を借りようとした際に、相談先や審査が分かれていて、農業者にとって提案しにくい。高橋光男君、どのように進めて、農業向け新規貸し出しを促す環境整備につなげていくお考えなのかについて、最後お尋ねいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "小林局長",
+        "role": "",
+        "summary": "- 日本政策金融公庫による情報サービス（アクリス）の提供や、協調融資による審査ノウハウの横展開、経営アドバイザー制度を推進する\n- 民間金融機関が取り扱う制度資金の内容を充実させる\n- 拡充された農業近代化資金を地銀等に周知し、民間金融機関による融資を促進する",
+        "full_text": "この農業融資を拡大していく上では、農協等に頑張っていただくというのはもちろんなんですけれども、併せて、ご指摘のありましたこの地方銀行などにも、しっかり農業融資頑張っていただく、こういうことが大事でございます。こういった地方銀行などが、農業融資に取り組みやすくするような環境整備につきましては、現在この日本政策金融公庫におきましてやっていただいておりまして、例えばこの融資判断をやる上での参考とするための、この農業経営の実力を数値化した情報サービス、こういうアクリスというものがございますけど、こういったものの提供でありますとか、日本政策金融公庫と地方銀行等が協調融資などしまして、審査ノウハウを横展開するでありますとか、それから農業経営のアドバイスを行うこの農業経営アドバイザー制度、こういったものを日本政策金融公庫の方で取り組んでいただいているところであります。併せて、この民間金融機関が取り扱う農業者向けの制度資金についてもしっかり内容を充実させていくということも重要であるというふうに考えてございます。農水省といたしましては、引き続きこの地銀等による農業融資の環境整備に取り組んでおります。この日本政策金融公庫とも連携しながら、今回の改正によりまして資金内容が拡充されたこの農業近代化資金につきまして、地方銀行も含めてしっかりと周知いたしまして、こうした地銀も含めたこの民間金融機関による農業融資がしっかり促進されるように努めてまいりたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5207"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#6775.89",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "農業向け新規貸出を促す環境整備の考え方",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "有識者報告書"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "地方銀行など地域金融機関",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "日本政策金融公庫"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "アクリス"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "農業経営アドバイザー制度"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "農業近代化資金"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "農業融資がしっかり促進されるように努めてまいりたい",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "日本政策金融公庫と地方銀行等が協調融資などしまして、審査ノウハウを横展開するでありますとか、農業経営アドバイザー制度、こういったものを日本政策金融公庫の方で取り組んでいただいている",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "地銀による農業融資拡大という課題に対し、公庫の既存施策（アクリス等）を具体的に挙げて回答している。ただし、今後の新たなコミットメントは「努める」という抽象的なレベルに留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_042",
+      "segment_index": 5,
+      "topic": "外部理事の任用と選定プロセス",
+      "question": {
+        "speaker": "杉本純子",
+        "party": "参政党",
+        "summary": "- 外部理事を任用する必要性の説明\n- 任用までのプロセスと適格性の確認方法\n- 今後の経営意思決定への影響",
+        "full_text": "予定されている外部理事を任用するにあたり、外部からお願いする必要性を改めてご説明いただきたいのと、本改正案が成立した後、外部理事を実際に任用するまでのプロセスについて、またその選定において、適格性の確認をいかに行っていくおつもりなのか、加えて今後の経営の意思決定の影響についても、改めて国民の不安の声に対して、丁寧に説明するという意味も込めまして、この4点、併せて御説明のほどよろしくお願いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "長野参考人",
+        "role": "",
+        "summary": "- 専門性の高い外部見識を取り入れ、大規模損失を防止し柔軟な意思決定を行うため\n- 役員推薦委員会で推薦し、経営管理委員会で選任、総大会で承認する枠組み\n- 忠実義務の課付や、共同組織中央機関としての特色の理解を求めることで、会員の意思に反する運営を防止する",
+        "full_text": "有識者検証会から御提言いただいたとおり、組織全体で専門性の高い外部の見識を取り入れるために、今時、外部理事を任用する必要性があるというふうに認識してございます。具体的には、経済、金融、ガバナンスなどの分野に専門性をお持ちの方を複数名任用することによりまして、今回と同様の大規模な損失事象、こういったものを発生させないよう、多様な視点を確保して、柔軟な意思決定を可能とする体制をつくってまいりたいと考えてございます。また、理事任用のプロセスについてでございますが、17名の構成員のうち15名を会員の代表が占める役員推薦委員会、こちらの方で推薦された候補者を経営管理委員会で選任いたしまして、総大会において承認することによって、会員の意思を反映する枠組み、こういったものになってございます。従いまして、改正農林中金法の趣旨や会員の意思に反しまして、外部企業のために行動する者が外部理事に就任することですとか、外部理事が理事の過半数を占めて理事会の意思決定を支配するこういったことはございません。また、理事就任後につきましても、理事は農林中金法で定められた忠実義務等を負いまして、自己または第三者のために農林中金と取引をしようとする場合には、経営管理委員会におきまして、当該取引につき重要な事実を開示して、承認を受ける必要があるということでございます。加えまして、外部理事には農林水産業協同組合など共同組織中央機関としての特色も十分にご理解していただきながら意思決定に参画いただくことになりますので、組合員から離れた運営がなされるような状況になることはないようにしたいというふうに考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5205"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#8621.81",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "外部理事の任用必要性とプロセス等の説明",
+          "sub_asks": [
+            "外部理事を任用する必要性",
+            "任用までのプロセス",
+            "適格性の確認方法",
+            "今後の経営意思決定への影響"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "有識者検証会"
+            },
+            {
+              "type": "number",
+              "excerpt": "17名の構成員のうち15名を会員の代表が占める役員推薦委員会"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "経営管理委員会"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "改正農林中金法"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "柔軟な意思決定を可能とする体制をつくってまいりたいと考えてございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "17名の構成員のうち15名を会員の代表が占める役員推薦委員会、こちらの方で推薦された候補者を経営管理委員会で選任いたしまして、総大会において承認することによって、会員の意思を反映する枠組み、こういったものになってございます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は4つの要素を含んでおり複雑だが、回答者はそれぞれの点（必要性、プロセス、適格性/忠実義務、意思決定への影響）について具体的に回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "一度に4つの異なる問いを投げかけているため、個別の回答に対する追及がしにくい構成になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_043",
+      "segment_index": 5,
+      "topic": "農林中金への監督機能強化と外部理事の人選",
+      "question": {
+        "speaker": "杉本純子",
+        "party": "参政党",
+        "summary": "- 監督強化において具体的に何がどのように強化されるのか\n- 外部理事の人選に農林水産省が関与する考えはあるか",
+        "full_text": "具体的には、この監督強化において何がどのように強化されるのでしょうか。よって、強い権限を持つのではという外部理事の選任が非常に重要で、慎重かつ厳選に選ばれるべきだと思いますが、こうした人選も農林水産省の監督する内容には含んでいくというお考えなのでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小林局長",
+        "role": "",
+        "summary": "- 外部理事の人選は農林中金内部の適切プロセスで行われ、農水省は関与しない\n- 任期付き職員制度による専門人材の登用や、職員の指導育成を通じて金融分野の専門性を確保し、監督機能を強化する",
+        "full_text": "その理事につきましては、先ほども御説明ありましたように、農林中金の中で法令等に従いまして適切なプロセスを経て選任されるべきものでございまして、個別具体的なこの理事の人選、こういったものに監督官庁である農林水産省が関与するということはございません。これは監督官庁としては、農林中金に対し適切なリスク管理体制の整備でありますとか、その高度化に向けた対応、こういったものを求めていくという、こういう基本的な姿勢は、今回の法律の改正前後で変化はございませんけれども、先般、大臣からも答弁がありましたとおり、農水省におけるこうした監督機能のさらなる強化、こういうことは重要でございまして、具体的には、例えば、この任期付き職員制度などを活用いたしまして、外部からの専門人材のさらなる登用、こういったことを検討するでありますとか、モニタリング指導業務におきまして、その専門性を発揮するために、職員への指導育成を通じて、この金融分野に精通した人材のさらなる確保、育成、こういったものに取り組んでいきたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5205"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#8621.81",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "監督強化の具体的内容と外部理事選任への関与について",
+          "sub_asks": [
+            "監督強化において何がどのように強化されるのか",
+            "外部理事の人選を農水省の監督内容に含める考えか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "外部理事",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "農林中金"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "任期付き職員制度"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "外部からの専門人材のさらなる登用、こういったことを検討する",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "個別具体的なこの理事の人選、こういったものに監督官庁である農林水産省が関与するということはございません。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "外部理事の人選に関与しないという明確な否定回答と、監督強化の具体策（人材確保）が示されており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「何がどのように」という問いが広範であるため、回答が人材育成という限定的な範囲に留まっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_044",
+      "segment_index": 5,
+      "topic": "農業近代化資金の貸付上限額引上げと需要",
+      "question": {
+        "speaker": "杉本純子",
+        "party": "参政党",
+        "summary": "- 実際に資金需要は拡大しているのか\n- 1993年から上限額が引き上げられてこなかった理由と現状の認識",
+        "full_text": "しかし、農業近代化資金という制度資金として見たときに、実際に資金需要は拡大しているのでしょうか。というのも、1993年4月に個人への貸付上限額が設定されてから現在に至るまで、上限額が引き上げられてこなかった理由は何だったのか、資金需要の現状に合わせて、認識と合わせてお聞かせください。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "小林局長",
+        "role": "",
+        "summary": "- 担い手の規模拡大等により、1経営体あたりの借入額はおおむね10倍に増加している\n- 都道府県知事等の承認で上限を超える融資が可能であったため、法令上の引上げを行わなかった\n- これまでは日本政策金融公庫の資金で対応してきたが、限界があるため改正を行う",
+        "full_text": "まず、資金需要に関してでございますけれども、私どもの認識としましても、この30年間の農業分野の資金需要の変化について見てみますと、例えばこの担い手の規模拡大に伴う農業機械の追加取得でありますとか、大型の機械の導入、またハウスなどの増設、こういったことを背景に、1経営体あたりの借入額もおおむね10倍になっているというふうに認識しています。農水省としましても、特にこうした1経営体あたりの資金需要の拡大ということは認識してきたところではございますけれども、農業近代化資金につきましては、個別の融資案件ごとに都道府県知事等の承認を受けることで法令の貸付限度額を超える融資も可能であったという事情もございまして、これまでは法令に規定する貸付上限額の引上げは行ってこなかったところでございます。また、これまでどうだったかということなんですけれども、こうした拡大する農業運営の資金需要については、主に日本政策金融公庫の資金が拡大してきたことで対応してきたというところでございます。ただ今後を考えますと、今後さらにこの資金需要が拡大するという局面になってきますと、やはりこの全額政府出資の日本政策金融公庫の貸出の拡大ということのみに期待するというのも限界。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5207"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#8621.81",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "農業近代化資金の需要拡大と上限額未引上げの理由",
+          "sub_asks": [
+            "資金需要は実際に拡大しているか",
+            "貸付上限額が引き上げられてこなかった理由は何か"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "1993年4月"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "1経営体あたりの借入額もおおむね10倍"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "日本政策金融公庫"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "個別の融資案件ごとに都道府県知事等の承認を受けることで法令の貸付限度額を超える融資も可能であったという事情もございまして",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "上限額が引き上げられなかった理由として、知事承認による例外的な融資が可能であったという運用の実態が明確に回答されており、記録的価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_045",
+      "segment_index": 5,
+      "topic": "農業近代化資金の融資実績低迷と今後の見通し",
+      "question": {
+        "speaker": "杉本純子",
+        "party": "参政党",
+        "summary": "- 貸出実績が減少している中で、資金需要が十分にあると言えるのか\n- 融資を必須業務とすることで、実際の融資額増加をどう見込んでいるか",
+        "full_text": "農林中央金庫に対する資金需要は十分にあると本当に言えるのでしょうか。農林水産業者への融資等を必須業務とありますが、それによる実際の融資額の増加をどう見込んでいるのか、農林水産省の見解をぜひお聞かせください。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "小林局長",
+        "role": "",
+        "summary": "- 実績低迷は需要不足ではなく、借入限度額などの貸付条件による影響が大きい\n- 担い手の規模拡大、施設整備、フードテック等の大規模な資金需要案件の増加を想定している",
+        "full_text": "まず、この農業近代化資金の融資実績が近年低迷していましたのは、先ほども申し上げましたように、この農業分野の資金需要がなかったからということではなくて、やはりその近代化資金の方で借入限度額が低いなど、貸付条件による面が大きかったというふうに認識してございます。農水省としては、資金需要の面ではこれからも、例えばこの地域の農地の受け皿となる担い手の規模拡大に伴います、この農業機械の追加取得でありますとか、ハウスなどの農業施設の増設、それから物流加工輸出の取り組みの進展に伴う流通加工施設の整備、さらにはフードテックの進展に伴う植物工場の整備といったですね、大規模な資金需要を取り扱う案件も増えていくということが想定されるというふうに考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5207"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#8621.81",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "農林中央金庫への資金需要の見通しと融資額増加の見込み",
+          "sub_asks": [
+            "資金需要が十分にあると言えるか",
+            "実際の融資額の増加をどう見込んでいるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "農林中央金庫"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.2
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "農林水産業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "農業近代化資金"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "植物工場"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "農業分野の資金需要がなかったからということではなくて、やはりその近代化資金の方で借入限度額が低いなど、貸付条件による面が大きかったというふうに認識してございます。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "資金需要の現状認識と今後の想定について具体的に回答しているが、具体的な数値目標や制度改善のコミットメントは含まれていない。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "融資額の増加見込みについて、具体的な数値や指標を提示させる問い方であればより価値が高まった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_046",
+      "segment_index": 5,
+      "topic": "農林中金による今後の融資のあり方",
+      "question": {
+        "speaker": "杉本純子",
+        "party": "参政党",
+        "summary": "- 融資が必須業務となることで、どの程度の融資額増加を見込んでいるか\n- 今後の融資のあり方と意気込み",
+        "full_text": "農林水産業者の方々への融資が必須業務となることで、どのくらいの融資額の増加を見込んでいらっしゃるのか、今後の融資のあり方についても意気込みと併せてお聞かせください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "長野参考人",
+        "role": "",
+        "summary": "- 具体的な規模感の提示は差し控えるが、JAで対応できない大規模案件や県域をまたぐ案件への取り組みを拡大する\n- 農業者の成長ステージに応じた資金メニューを提供し、生産基盤の維持・強化にこれまで以上に取り組む",
+        "full_text": "なお、農業法人等への資金需要に積極的に対応していくわけなんですけれども、案件ごとにまちまちであるということもございますので、具体的な規模感、これにつきまして、ご示しすることは差し控えさせていただければと思います。他方、農林水産省の方からもございましたとおり、今後農業の大規模化、集約化、これが進展していく中、JAなどで対応できない大規模案件、県域をまたぐようなケース、こういったものにつきまして、我々農林中金が取り組むべき領域、こういったところが拡大していくものと認識してございます。農林中央金庫といたしましては、今回の法改正における目的規定の改正の趣旨、こういったところも踏まえまして、農業者の資金調達ニーズに寄り添い、農業者の成長ステージに応じた融資趣旨、こういったものを含めた必要な資金メニューを提供していくなど、農業者の生産基盤の維持、強化、それと担い手の確保、経営力向上に資するよう、農業金融にこれまで以上に取り組んでまいりたいというふうに考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5205"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#8621.81",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "融資額の増加見込みと今後の融資のあり方",
+          "sub_asks": [
+            "融資額の増加見込み",
+            "今後の融資のあり方と意気込み"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "農林水産業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "農林中央金庫"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "JA"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "農業金融にこれまで以上に取り組んでまいりたい",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "JAなどで対応できない大規模案件、県域をまたぐようなケース、こういったものにつきまして、我々農林中金が取り組むべき領域、こういったところが拡大していくものと認識してございます。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な融資額の提示は拒否されたが、農林中金が担うべき領域（大規模・広域案件）についての認識が示された。",
+        "would_be_referenced": "low",
+        "issue_in_design": "融資額の増加見込みという定量的な問いに対し、回答者が答えにくい形式になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_047",
+      "segment_index": 5,
+      "topic": "国内一次産業発展のための政府主導プロジェクト",
+      "question": {
+        "speaker": "杉本純子",
+        "party": "参政党",
+        "summary": "- 国内事業者の資金需要が低い場合、結局海外投資に向かう懸念がある\n- 政府主導で大きな道筋やプロジェクトを提示すべきではないか",
+        "full_text": "この改正を十分意義のあるものにするためにも、日本の国内一次産業を発展させるためにも、もっと政府主導で大きな道筋やプロジェクトを提示する必要があるのではないでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "鈴木憲和",
+        "role": "",
+        "summary": "- 農業構造転換集中対策により設備投資が進むと考えている\n- 成長戦略の中で方向性を打ち出す議論を行っている",
+        "full_text": "まず政府といたしましては、令和7年度からの5年間のですね、農業構造転換集中対策、この中で規模拡大などに伴う設備投資がですね、進んでいくものだというふうに考えております。また同時に今、成長戦略の中で議論をして方向性を打ち出す方向。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5171"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#8621.81",
+      "metrics": null
+    },
+    {
+      "id": "qa_048",
+      "segment_index": 5,
+      "topic": "農林中央金庫の役割と目的",
+      "question": {
+        "speaker": "岩渕友",
+        "party": "日本共産党",
+        "summary": "- 一般の金融機関と異なる農林中金の役割と目的について確認したい",
+        "full_text": "はじめに、一般の金融機関と異なる農林中金の役割、目的について確認をいたします。小林局長。小林局長",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小林局長",
+        "role": "",
+        "summary": "- 農林中央金庫法第1条に基づき、共同組織を基盤とする金融機関として農林水産業の発展に寄与することを目的とする\n- 農協から資金を預かり運用し、その収益を農協等に還元する役割を担っている",
+        "full_text": "農林中金につきましては、この農林中央金庫法第1条に目的が規定されてございます。目的につきましては、農業協同組合、森林組合、漁業協同組合、その他の農林水産業者の共同組織を基盤とする金融機関として、これらの共同組織のために金融の円滑を図ることにより、農林水産業の発展に寄与し、もって国民経済の発展に資することを目的とするということが規定されてございまして、農林中金におきましては、この目的に沿って農協から資金を預かってそれを運用し、その収益をまた農協等に還元すると、こういった役割を担っているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5205"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#8621.81",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "農林中金の役割と目的の確認",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "農林中金",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "農林中央金庫法第1条"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "農林中央金庫法第1条に目的が規定されてございまして、農林水産業の発展に寄与し、もって国民経済の発展に資することを目的とする",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "農林中金の法的目的と役割について、根拠法を明示した上で端的に回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_049",
+      "segment_index": 5,
+      "topic": "農林中金の預貯金積立の経緯",
+      "question": {
+        "speaker": "岩渕友",
+        "party": "日本共産党",
+        "summary": "- 組合員の貯金が107.2兆円という巨額になっているが、どのようにして積み上がったのか",
+        "full_text": "25年4月1日現在の農林中金の運用資産は83.5兆円です。その原資となっている組合員の貯金は107.2兆円と巨額になっているわけですよね。これだけの額がどのようにして積み上がったのでしょうか。小林局長。小林局長",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小林局長",
+        "role": "",
+        "summary": "- 農産物の販売代金など、さまざまな形で農協の組合員から預けられた資金が中心となって積み上がった",
+        "full_text": "この農協への貯金につきましては、例えば農産物の販売代金をはじめとしまして、さまざまな形で農協の組合員の方々から預けられた資金、こういったものが中心となって積み上がったものと認識してございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5205"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#8621.81",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "農林中金の貯金積み上がり理由",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "83.5兆円"
+            },
+            {
+              "type": "number",
+              "excerpt": "107.2兆円"
+            },
+            {
+              "type": "date",
+              "excerpt": "25年4月1日"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "組合員",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "農産物の販売代金"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "農産物の販売代金をはじめとしまして、さまざまな形で農協の組合員の方々から預けられた資金、こういったものが中心となって積み上がったものと認識してございます。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な数字を用いた質問に対し、一般的・抽象的な回答に留まっており、記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのようにして」という問いに対し、内訳や推移などの具体的データを求める形式にすれば、より価値のある回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_050",
+      "segment_index": 5,
+      "topic": "農協・信連の貯貸率と農林中金への預け金状況",
+      "question": {
+        "speaker": "岩渕友",
+        "party": "日本共産党",
+        "summary": "- 農協、信連それぞれの貯金に対する貸出金比率（貯貸率）と、農林中金に預けた金額の直近状況を確認したい",
+        "full_text": "これだけ積み上がっている預貯金が、どのように使われているのでしょうか。農協、信連、それぞれの貯金に対する貸出金の比率と貯金総額のうち、農林中金に預けた金額がどのようになっているか、直近の状況について確認をします。小林局長。小林局長",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小林局長",
+        "role": "",
+        "summary": "- 令和7年3月末時点で、貯貸率は農協が22.8%、信連が10.1%である\n- 農協・信連から農林中金への預け金は、同時点で48.2兆円である",
+        "full_text": "貯金に対する貸し出しの割合であります貯貸率につきましては、令和7年の3月末時点でですね、農協ではこの22.8%、信連では10.1%となってございます。また農協、信連からですね、農林中央金庫への預け金につきましては、令和7年3月末現在で48.2兆円となってございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5205"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#8621.81",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "預貯金の運用状況と農林中金への預け金について",
+          "sub_asks": [
+            "農協・信連それぞれの貯金に対する貸出金比率",
+            "貯金総額のうち農林中金に預けた金額"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "農協、信連、農林中金",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "22.8%"
+            },
+            {
+              "type": "number",
+              "excerpt": "10.1%"
+            },
+            {
+              "type": "number",
+              "excerpt": "48.2兆円"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "令和7年の3月末時点"
+            }
+          ],
+          "score": 1.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "農協、信連から農林中央金庫への預け金につきましては、令和7年3月末現在で48.2兆円となってございます。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な数値（貯貸率および預け金総額）が明確に回答されており、記録としての価値が高い。",
+        "would_be_referenced": "high",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_051",
+      "segment_index": 5,
+      "topic": "会員構成員向け融資の必須業務化の意味",
+      "question": {
+        "speaker": "岩渕友",
+        "party": "日本共産党",
+        "summary": "- 今回の法改正で会員構成員向け融資を必須業務に追加することは、必ず貸し出しなければならない義務的な業務になるということか",
+        "full_text": "今回の法改正で、現在は任意業務とされている会員の構成員向けの融資を必須業務に追加するというふうになっています。これはやらないといけない義務的な業務にするということなのかと。何でね、こんなことを聞いているのかっていうと、これ絶対に貸し出ししなくちゃいけないのかとかね、例えばどこにも融資しないというようなことが許されないのかとかね、捉えられていて、でもどこに融資をするかっていうことは、これ農林中金が決めることだというふうに思うんですよ。そういう問題意識があるから聞いてるんですけれども、これはいかがでしょうか。小林局長。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小林局長",
+        "role": "",
+        "summary": "- 融資業務を営むことを義務付けるものである\n- ただし、個別の融資案件を実施するか否かの判断は農林中金が行うものであり、国が特定の事業への融資を強制することにはならない",
+        "full_text": "今回の法改正では、会員の構成員である農林水産業者向けの融資につきまして、農林中金の必須業務として位置づけるということでございます。これは何を意味するかということなんですけれども、農林中金が農林水産業者向けの融資を業務として営む、こういうことを義務づけるということを意味しております。これは一方で、個別の融資案件につきましては、この融資を実施するか否か、こういった判断はあくまでも農林中金が行うものでありまして、今回の法改正によって、例えば特定の事業にここに融資することを義務づけるとか、こういったことを国が農林中金に強制できると、こういうことにはならないというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5205"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#8621.81",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "構成員向け融資の必須業務化の具体的意味",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "今回の法改正"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "農林中金",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "農林中金"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "農林水産業者"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "個別の融資案件につきましては、この融資を実施するか否か、こういった判断はあくまでも農林中金が行うものでありまして",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "法改正による「必須業務化」が、個別の融資判断まで強制するものではないという法的解釈を明確に回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_052",
+      "segment_index": 5,
+      "topic": "農林中金の赤字への公的資金投入の有無",
+      "question": {
+        "speaker": "岩渕友",
+        "party": "日本共産党",
+        "summary": "- 24年度決算で約1.8兆円の赤字を計上したが、国費の投入などはせず自前で解決しているのではないか",
+        "full_text": "今回の法改正の直接の発端は、農林中金が24年度決算で約1.8兆円の赤字を計上したということから、農水省が有識者検証会を開催をして、結論を法改正に反映をしたというものです。これだけ巨額の赤字を形成したということは問題なんですけれども、国費の投入などせずに、自分たちで解決しているんじゃないでしょうか。小林局長。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "小林局長",
+        "role": "",
+        "summary": "- 1.8兆円の純損失を計上したが、公的資金の投入は一切行われていない",
+        "full_text": "御指摘のとおり、農林中央金庫は、令和6年度決算におきまして、1.8兆円の純損失を計上したということでございますが、これに関して、公的資金の投入といったものは、一切行われているわけではありません。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5205"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#8621.81",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "農林中金の赤字解決に国費投入は行われたか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "約1.8兆円の赤字"
+            },
+            {
+              "type": "organization",
+              "excerpt": "農林中金"
+            },
+            {
+              "type": "organization",
+              "excerpt": "農水省"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "農林中央金庫",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "1.8兆円の純損失"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "農林中央金庫は、令和6年度決算におきまして、1.8兆円の純損失を計上したということでございますが、これに関して、公的資金の投入といったものは、一切行われているわけではありません。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "農林中金の巨額赤字に対する公的資金投入の有無について、政府側が明確に否定した事実を記録する価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_053",
+      "segment_index": 5,
+      "topic": "共同組合金融の自治と政府の方向性",
+      "question": {
+        "speaker": "岩渕友",
+        "party": "日本共産党",
+        "summary": "- 大臣がフードテック等への投資を強調しているが、これは共同組合金融の自治に踏み込むことになり、本来は農林中金や農協が決めるべきことではないか",
+        "full_text": "次はちょっと大臣にお伺いをしたいと思うんですけれども、この法案の衆議院の質疑で大臣が、今回の改正を通じて日本の農業のどの分野をどういうふうに強化していきたいのかというふうに質問をされて、こんなふうに答えているんですね。「気候変動や温暖化の中で災害が増えていく。そういう中でも食料供給をしっかり担うために、フードテック、ここへの投資が欠かせない。植物工場や陸上養殖、外食含め、国内外に大きく展開していく。これをいかに金融面で支えていくかというのが、今回の法改正の一番の趣旨かと思う。金融を通じて、食の分野が日本の成長を支える。そういう柱になれるように、未来を作れるように努力する」。これ大臣の答弁は、共同組合金融の自治に踏み込むことになるんじゃないかというふうに思うんですね。最初に農林中金の目的を確認しましたけれども、この共同組合の理念から言って、農林中金、農協が決めることなんじゃないでしょうか。いかがですか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "鈴木憲和",
+        "role": "",
+        "summary": "- 人口減少下で食料供給力を上げるため、担い手への設備投資やフードテック等の発展に寄与する分野への融資・出資に取り組んでほしいと考えている\n- 個別の案件については民間金融機関である農林中金が判断するものであり、大臣が介入することはない",
+        "full_text": "これ要するに日本は人口が減る中においても食料供給力を上げていく、このことに尽きていくんだと思っていますと。特に農業の分野では人が減るわけですから、その中で担い手にどんどん生産が集中をしていく。そうすると規模拡大もしなければならないし、設備投資も必要になるので、そういうところにまずはしっかりと資金的な手当てがされていくということがですね、基本中の基本だというふうに思っています。そしてそれと同時に、この農林中央金庫法の第1条の目的に、農林水産業の発展に寄与し、もって国民経済の発展に資するというふうに書いてあるわけですから、そこのですね、フードテックも含めて、この要するに農林水産業の発展に寄与する分野に、しっかりと大規模な資金需要が必要になってまいりますので、それに対するですね、これまで以上の融資出資にですね、取り組んでいただきたいというふうに考えております。ちなみに、特定の何か、個別の企業の何かとかそういうことについて私の方から農林中金側に何か介入をするということはあり得ませんし、それ自体は個別の案件については当然これは民間金融機関である農林中金が判断していくものだというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5205"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#8621.81",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "法改正の趣旨が農林中金の自治に干渉しないか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "past_answer",
+              "excerpt": "衆議院の質疑で大臣が...こんなふうに答えているんですね"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "農林中金",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "evidence_citation",
+              "excerpt": "農林中央金庫法の第1条の目的"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "取り組んでいただきたいというふうに考えております",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "個別の案件については当然これは民間金融機関である農林中金が判断していくものだというふうに考えております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "大臣が農林中金の個別案件への不介入を明言しており、組織の自治に関する政府のスタンスが記録された点に価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_054",
+      "segment_index": 5,
+      "topic": "海外ファンドへの出資と現場実態の乖離",
+      "question": {
+        "speaker": "岩渕友",
+        "party": "日本共産党",
+        "summary": "- 米国アグファウンダーへの出資などは、高額な農機具の維持に苦しむ現場の農林漁業者の実態とかけ離れており、地域の生産者と競合する事業ではないか",
+        "full_text": "それで農林中金の現在の農林水産業向けの貸出額、農林水産業者や食農分野を支える企業などへの出資額が総資産に占める割合が非常に低い。例えば農作業の自動化などの事業への投資を進める米国のアグファンダー。というところがあるんですけれども、このアグファウンダーに日本の金融機関で初の出資契約を締結しているんですね。こうした投融資は何千万円もする農機具の維持や更新に苦しむ現場の農林漁業者の実態とあまりにかけ離れているんじゃないのかなというふうに思うんですね。国内外の農外資本が進める大規模事業への投融資は、農協の組合員、地域の生産者、事業者から集脱し、競合するような事業ではないでしょうか。大臣いかがですか。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "鈴木憲和",
+        "role": "",
+        "summary": "- 個別の融資・出資判断は農林中金が行うものであり、農水省は介入しない\n- 当該出資は海外の最先端動向の把握や事業連携を狙ったものであり、結果として日本の農林水産業の発展に寄与するものと考えている",
+        "full_text": "その上で個別の、先ほども先生からもご指摘いただいて申し上げておりますが、個別の融資出資の判断はですね、民間金融機関である農林中金が行うものであり、農林水産省が介入するものでは全くありません。なお、農林中金によるこのファンドへの出資については、海外のフードテック領域における最先端の動向を把握するとともに、ファンド投資先企業と農林中金の取引先の生産者や食品関連企業との事業連携を進めることを狙いとして行われたものというふうに承知をしておりますので、結果として日本の農林水産業の発展に寄与するものとなっているというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5205"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#8621.81",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "農林中金の投融資方針が現場の実態と乖離していないか",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "米国のアグファンダー"
+            },
+            {
+              "type": "organization",
+              "excerpt": "農林中金"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "農林漁業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "フードテック領域"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "個別の融資出資の判断は、民間金融機関である農林中金が行うものであり、農林水産省が介入するものでは全くありません。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "農林中金の独立性を主張し、介入を否定する定型的な回答であり、具体的な改善策やコミットメントは含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「いかがですか」という抽象的な問いかけであるため、大臣が「介入しない」という形式的な回答で逃げる余地を与えている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_055",
+      "segment_index": 5,
+      "topic": "外部理事登用の目的とガバナンス",
+      "question": {
+        "speaker": "岩渕友",
+        "party": "日本共産党",
+        "summary": "- 外部理事の登用は、現場のニーズではなく、実態と乖離した投融資を加速させることにならないか",
+        "full_text": "それで、外部理事の登用についてもですね、農林漁業者のニーズではなくて、農業分野の資金ニーズに応えるもので、現場の実態とは乖離した投融資を加速させるということになるんじゃないでしょうか。小林局長。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "小林局長",
+        "role": "",
+        "summary": "- 巨額の損失が発生したことを受け、職員出身のみの同質的な体制から、専門性の高い外部理事を登用して多様な視点を確保し、ガバナンスおよび市場運用の組織体制を強化することが狙いである",
+        "full_text": "まず、今回の農林中央金庫の外部理事の登用でございますけれども、何度か出ておりますように、令和6年度に1.8兆円という大きな損失を発生させたということが発端でございます。この有識者検討会においてはですね、農林中央金庫はこの理事全員が職員出身となっているために、同質的でですね、専門性の高い外部の理事の意見を聞く体制が必要ではないかとかですね、農林中金においても専門的な知見を有する者を非常勤の外部理事として登用することができればですね、多様な視点が確保されることによって、ガバナンスが強化され、市場運用の組織体制の強化につながるのではないかと。こういった指摘があったことを踏まえてですね、ガバナンスを強化することを狙いとして行われるものであるというふうには理解してございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5205"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#8621.81",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "外部理事登用による現場乖離の懸念",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "農林漁業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "令和6年度に1.8兆円という大きな損失"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "農林中央金庫"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "有識者検討会"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "令和6年度に1.8兆円という大きな損失を発生させたということが発端でございます。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "外部理事登用の目的について、損失額という具体的な数字を挙げて説明しているが、質問者の「現場乖離」への懸念に対する直接的な回答は避けている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "懸念を述べる形式の質問であるため、回答者が現状の説明に終始しやすく、具体的な防止策を引き出しにくい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_056",
+      "segment_index": 5,
+      "topic": "食品産業の海外展開支援と現場の乖離",
+      "question": {
+        "speaker": "岩渕友",
+        "party": "日本共産党",
+        "summary": "- 政府が食品産業の海外展開や外食チェーンの国際展開を目指すことで、農林中金の資金が政府の描く大規模ニーズに活用され、現場の機械更新などの実態と乖離するのではないか",
+        "full_text": "衆議院の質疑で、大臣が、新たに設置した財務戦略委員会に、外部有識者も招聘し、経営判断にあたって、多様な視点を確保することなど、すでにスタートを切られていると認識しているというふうに答弁されているんですね。今回の法改正によって、外部人材の登用を進めるということは、農林漁業者の資金ニーズではないところを強化する趣旨に他ならないというふうに思うんですね。衆議院の質疑では、農林中金が融資先を増やすようなプロジェクトを政府として取り組んでいく考えはないかというふうに問われて、大臣がですね、国内は人口が減るので、農林水産業、食品産業の持続的な発展を図るためには、成長する海外からの稼ぎを増やしていくことが不可欠。輸出だけでなく、食品産業の海外展開に取り組むことにしたところ、食文化産業振興ワーキンググループをつくって、食品産業の海外展開支援策を現在検討していると答弁しているんですね。4月10日に開催をされた日本の食文化輸出1万社支援プログラムのキックオフ会合で、大臣が将来的にはマクドナルドやスターバックスのように国際的に展開される外食チェーンを目指して必要な支援策を考えたいと。というふうに挨拶をされているんです。これでは農林中金の豊富な資金を食品産業の海外展開など、政府が思い描く大規模な資金ニーズに活用するということになるんじゃないかと。現場で機械の更新できないと、離農が進んでいるような状況で、これやっぱり現場の実態と乖離しているんじゃないかと思うんですけど、大臣いかがですか。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "鈴木憲和",
+        "role": "",
+        "summary": "- 国内マーケットが限定的な中で採算を合わせるには、海外展開も見据えて食料供給力を上げることが不可欠であり、それが結果として日本の食料供給力のアップにつながるため、方向性は乖離していない",
+        "full_text": "岩渕先生から先ほどから現場の感覚と、この今回の法改正の方向がちょっと乖離しているというご指摘なんですけど、これもうちょっと大きい視点で見ると、決して私は乖離しているとは思っておりません。やっぱり先ほど、要するに辞めざるを得ないというふうな判断をされている方々もですね、やっぱりそもそもの根本的な問題は何かといえば、日本が要するにこの人口減少も含めて国内マーケットがなかなか胃袋は限られているんで大きくならない中で、ただ実際は酪農にしてもですよ、牛乳にしても生産力はもっと作ろうと思ったら作れるじゃないですか。だけどもやっぱり国内マーケットは十分にないもんだから、国内マーケットだけ見てるとやっぱり価格も上がりづらいし、なかなかその結果採算ベースに乗らなくてやめざるを得ないっていう方々が出てくるっていう、これが一番根本的な私は問題だと思うんですね。米についてはまさにそういうことだと思ってますし、ですからやっぱり私たちはこれから要するに日本は日本人が食べたいものを何でもかんでも全部ですね、小麦も含めて、すべて100%どこまで作れるかといったら、それは得て不得てが当然ありますから、作れるものはもっと頑張って作って稼いでいくし、作れないものはしょうがないから輸入するということにならざるを得ないというようなことで、全体として食料供給力をちゃんと上げていくということがですね、海外展開も見据えると大事だというふうに思っておりますので、それが結果として日本の食料供給力のアップに私はつながるんだというふうに思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5205"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8982#8621.81",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "法改正による外部人材登用と海外展開重視は現場の実態と乖離していないか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "past_answer",
+              "excerpt": "衆議院の質疑で、大臣が、新たに設置した財務戦略委員会に、外部有識者も招聘し"
+            },
+            {
+              "type": "date",
+              "excerpt": "4月10日に開催をされた日本の食文化輸出1万社支援プログラムのキックオフ会合"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "農林漁業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "国内マーケットだけ見てるとやっぱり価格も上がりづらいし、なかなかその結果採算ベースに乗らなくてやめざるを得ないっていう方々が出てくる",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "大臣は現場の実態との乖離を否定し、国内市場の限界から海外展開が必要であるという持論を展開している。具体的な数値や新たな約束はなく、政治的な見解の表明に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "現状の乖離を問う形式であるため、大臣が「乖離していない」と回答すれば議論が止まってしまう。具体的にどのような支援策を維持・強化すべきかを問う形式にすべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    }
+  ],
+  "score_schema_version": "2.0",
+  "prompt_version": "V4"
+}

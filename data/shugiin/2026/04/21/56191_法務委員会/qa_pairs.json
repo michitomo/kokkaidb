@@ -1,0 +1,1644 @@
+{
+  "pairs": [
+    {
+      "id": "qa_001",
+      "segment_index": 4,
+      "topic": "地方における外国人材との共生（群馬モデル）",
+      "question": {
+        "speaker": "福原淳嗣",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 地方のポテンシャルを生かすための外国人材との共生について\n- 「群馬モデル」の進捗状況や詳細について",
+        "full_text": "ぜひこのことに関して、群馬モデルの進捗状況等、詳しくお聞かせ願えないでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "結城恵",
+        "role": "参考人 群馬大学  特別教授・名誉教授",
+        "summary": "- 大泉町などの事例を通じ、教育・保健・ウェルビーイングなど学部横断的な地域支援の重要性を認識している\n- 高度外国人材に対し、ライフステージに合わせたキャリアビジョン策定やインターンシップ等の支援を行い、地方定着が可能であることを示した\n- 在留資格の変更等の局面で、国が重要な人材として応援する姿勢を示すことが地方活性化につながる",
+        "full_text": "そこに私は週2回ずっと通い詰め、フィールドワーカーですので、そういったところで外国人材、子どもたち、そして親、そして学校、行政、いろんな方々がネットワークを広げていかないと、子どもの教育事情は良くならないということを感じました。そうだとすると、本学、いろいろな学部がありますので、学部横断的に、例えば学校保健安全法等の適用が課題になっている外国人学校をどういうふうに健康診断をしていくかとか。ところで、今回のいろいろな在留資格の変更という点におきましても、今担当しておりますのが、高度外国人材。それは何をしたかというと、ちょうどライフステージに合わせて日本でどんな夢を描くのか、そういったキャリアビジョンを磨くことと、それからコミュニケーションスキルをしっかりと伸ばしてあげること、さらには地元の人たちや企業へ行って、暮らす、働くということがどういうことなのか、中長期のインターンシップに行ってもらって接触をするということです。そのときに、受益者負担になるかもしれませんが、お金を払っていただくと同時に、その支援をしっかり国として、重要な人材、宝としてどう応援していくのか、それを示すチャンスになるというふうに考えています。それが地方においても活性化につながると考えています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56191&time=3308.892",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "群馬モデルの進捗状況について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "群馬モデル"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.2
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "学校保健安全法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "高度外国人材"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "外国人材、子どもたち、そして親、そして学校、行政、いろんな方々がネットワークを広げていかないと、子どもの教育事情は良くならない",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は明確だが、回答者が自身の経験や考えを述べるに留まり、「群馬モデルの進捗」という具体的な問いに直接答えていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「詳しくお聞かせ願えないでしょうか」というオープンクエスチョンであるため、回答者が主観的なエピソードに逃げる余地を与えている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_002",
+      "segment_index": 4,
+      "topic": "外国人材受け入れにおける事業者の責任と意識改革",
+      "question": {
+        "speaker": "福原淳嗣",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 不法就労させる側や不適切な仕組みを作る事業者側の問題について\n- 事業者への義務やアプローチをどのように捉えているか",
+        "full_text": "そうすると今回の改正の中ではちょっと違うんですが、運送業者等の義務という目端なんですが、私はむしろ不法労働者じゃなくて、そういうふうな仕組みをつくっている側、事業者の側ではないかなと思うんですが、そのことに関して結城参考人はどのように捉えていらっしゃいますか。見解をお聞かせいただければと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "結城恵",
+        "role": "参考人 群馬大学  特別教授・名誉教授",
+        "summary": "- 外国人本人だけでなく、雇用主や現場環境に関わる人々への意識啓発が非常に重要である\n- 多文化共生において最も論じられていない「日本人の意識改革」が必要である\n- 幼児期からの対話や価値観の構築、および雇用業界への啓発が求められる",
+        "full_text": "外国人住民そのものにいろいろと課すというのではなく、その人たちを雇っていたり、暮らしている現場の環境に関わる人たちにも、しっかりと意識啓発をするということは非常に大事なことだと思います。つまり、多文化共生あるいは外国人の活用といったときに、一番論じられていないのは、日本人の意識改革です。日本人に対して、これから覚悟を持って、隣人として暮らすところ、働くところで外国人材がいると。それは幼児期から少しずつ少しずつどのように対話をしていくのか、どういう価値観を大切にしていくのかということを積み上げていく必要があり、それが最終的にはそういった外国人材を雇っているいろいろな業界の方々の啓発ということもこれから求められてくるということで、同じ意を持っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5189"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56191&time=3308.892",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "不法就労の仕組みを作る事業者への責任に関する見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "運送業者等の事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": true,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "多文化共生あるいは外国人の活用といったときに、一番論じられていないのは、日本人の意識改革です。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "事業者の責任という問いに対し、回答者は日本人の意識改革という広範な概念に論点をずらしており、具体的な制度的回答は得られていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのように捉えているか」という抽象的な問いであるため、回答者が主観的な見解に終始しやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_003",
+      "segment_index": 5,
+      "topic": "手数料の減免措置の要件",
+      "question": {
+        "speaker": "國重徹",
+        "party": "中道改革連合・無所属",
+        "summary": "- 手数料の減免について、具体的にどのような要件に該当するものを対象とすべきか\n- その理由について",
+        "full_text": "その上で、まずは結城参考人と鈴木参考人にお伺いいたします。今回の法案では、現行制度にはなかった手数料の減免措置が新たに定められています。条文言いますと、67条の3項でですね、「法務大臣は、経済的困難、その他特別の理由により、手数料を減額し、または免除することが相当であるものとして、政令で定めるものであるときは、政令で定めるところによって、第1項の手数料を減額し、または免除することができる」と定めております。私もですね、この内容について、17日の大臣政府質疑で問うたんですけれども、まだこの内容、明らかになっておりません。その時の政府答弁はですね、この内容を具体的に政令で定めるにあたっては、この国会審議、ここで今やりとりしている内容であるとかですね、パブコメを踏まえて検討するというように言っております。先ほど生田参考人の方から書面の中でお願い事項としてですね、この点については具体的に意見をいただきましたので、次に結城参考人と鈴木参考人に、この手数料の減免について具体的にどのような要件に該当するものを対象すべきとお考えなのか、その理由も併せてお伺いしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "結城恵",
+        "role": "参考人 群馬大学  特別教授・名誉教授",
+        "summary": "- 人道的配慮が必要な方への支援体制整備とセットでの減免\n- 難民申請者、難民認定者、補完的保護対象者の原則免除（送還禁止原則への抵触回避）\n- 子ども、高齢者を含む家族、および住民税非課税世帯の対象化",
+        "full_text": "結城参考人、人道的配慮がどうしても必要な方々、お二人の参考人がお話になられましたが、聞いていても胸が痛くなる、そういう状況の人たちに、先が見えない状況の中で、このまま続けていっていいのかどうかというところでございます。ところが一方で、こういったご苦労されている方々に道筋がつけば、きちんと日本で暮らし働くという先が見えるような方策ができるということは非常に大事になってくるかと思います。ですので、減免措置をするということは、その事情に合わせてその方たちの猶予の時間を考えるというだけではなく、同時にその間にそのままの状態でいさせるというのではなく、そういった状況からどうやって抜け出せるのか、そこの支援体制も必要になるというふうに考えてまいります。ですが、その減免と、それだけその減免したところから、自力で抜け出せるような、そういった環境整備のための投資ということが一方で必要になってきます。まず最初に難民申請者、それから永住許可以外は定められていませんので、難民認定者、補完的保護対象者です。難民申請者については、働けない在留資格の場合もあり、働ける場合も6ヶ月の更新で非常に不安定なので、良い仕事が見つけにくいというのが実情です。そのような中で、高額な手数料を課すようなことがあれば、実際には日本の滞在を断念せざるを得ないということが生じるようなことになりまして、この場合は難民条約等が禁じるノンルフルマン原則、送還禁止原則に事実上、帰国を強制するという結果になって、この原則に抵触しかねないということを強く懸念します。そのために難民申請者等については原則として免除対象とすべきであり、また資格の確認に現場の負担を増やすというようなことは避けるべきで、その分迅速正確な認定にリソースを割いていただきたいと考えます。それから子どもと高齢者を含む家族も対象にしていただくべきであると考えます。それから住民税の非課税世帯。こうした者たちについては、在留資格の該当性・相当性が認められる場合に、費用が払えないという理由で在留の継続を断念させたり、またより貧困に陥らせるというような事態は避けるべきではないかと考えます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5189"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56191&time=4224.792",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "手数料減免の具体的要件と理由について",
+          "sub_asks": [
+            "具体的にどのような要件に該当するものを対象すべきか",
+            "その理由は何か"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "67条の3項"
+            },
+            {
+              "type": "past_answer",
+              "excerpt": "17日の大臣政府質疑で問うた"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "結城参考人、鈴木参考人",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "ノンルフルマン原則"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "難民申請者"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "補完的保護対象者"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "住民税の非課税世帯"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "難民申請者等については原則として免除対象とすべきであり、また資格の確認に現場の負担を増やすというようなことは避けるべき",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人に対し、法案の減免措置の具体的要件を問うたものであり、参考人は難民申請者や非課税世帯などの具体的な対象を挙げて回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_004",
+      "segment_index": 5,
+      "topic": "手数料引上げの影響緩和策",
+      "question": {
+        "speaker": "國重徹",
+        "party": "中道改革連合・無所属",
+        "summary": "- 手数料の減免以外に、急激な上限額引上げによる影響を和らげるための配慮や工夫として考えられることはあるか",
+        "full_text": "國重徹幾多参考人にお伺いしたいと思います。今やりとりをした手数料の減免、これはあくまでも例外的な取扱いでありまして、原則は手数料を納付しなければ、在留資格の変更の許可等を与えることはできない。これが政府の立場になります。しかし今回の手数料の、これはあくまでも上限の引上げですけれども、一気に10倍あるいは30倍ということになりまして、多くの対象者の皆さんには大きなインパクトを与えるものになります。そこでこの手数料の減免以外に、この影響を和らげるための配慮、工夫としてどのようなことが考えられるのか、ご意見ありましたらお伺いしたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "鈴木雅子",
+        "role": "参考人 弁護士 特定非営利活動法人移住者と連帯する全国ネットワーク（移住連）理事",
+        "summary": "- 上限額自体の設定に課題があるため、前提とした緩和は困難\n- 本人が支払える金額の範囲に収めるなどの金額面での工夫が必要\n- 難民申請者の更新頻度（6ヶ月ごと）などの制度自体の見直し",
+        "full_text": "鈴木雅子そもそもこの上限額自体が非常に課題ですので、なかなかそれ自体を前提とした緩和というのは申し上げるのが難しいというのが率直な感想ではありますが、その上で意見を申し上げさせていただくとすれば、まずこれは施行が今のところ来年の3月31日を予定するというふうになっているというふうに思います。私も鈴木さんと同じように、手数料の金額の方での工夫というのが本来必要だというふうに思っています。本人たちが払えない額の手数料を求めるのではなく、実際払える金額の範囲に収めていただくというところが重要かなと思っています。もう一点、難民申請者に限って言えば、先ほどもお伝えしたとおり、在留資格の更新頻度が高いというのは、そもそも制度上の部分ですので、6ヶ月ごとの更新が必要なのか、より長い。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5189"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56191&time=4224.792",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "手数料減免以外の影響緩和策についての意見",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "対象者の皆さん",
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "deadline",
+              "excerpt": "来年の3月31日"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "本人たちが払えない額の手数料を求めるのではなく、実際払える金額の範囲に収めていただくというところが重要",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人による個人的な意見を求める質問であり、回答もそれに応える形となっているが、政府としての拘束力のある回答ではない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "具体的な代替案を提示させた上で、その実現可能性を問う形式にすれば、より実効性のある回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_005",
+      "segment_index": 5,
+      "topic": "手数料増収分の使途",
+      "question": {
+        "speaker": "國重徹",
+        "party": "中道改革連合・無所属",
+        "summary": "- 手数料引上げによる増収分を、どのような施策に充てることが望ましいか",
+        "full_text": "次に結城参考人と鈴木参考人にお伺いいたします。今回の手数料の上限額の引上げについては、外国人の出入国及び在留の公正な管理に要する費用の額等、いわゆる受益的な要素、これも勘案して引上げるとということとされています。手数料額の引上げによる増収額分は外国人施策に充てるというふうにもされています。ただ具体的にはどういうものを挙げているかというと、先ほど鈴木参考人の方も言われていましたけれども、例えばデジタル技術の活用による出入国在留管理行政のDXの推進であるとか、あるいは難民等の適切かつ迅速な保護支援、国民の安全安心のための不法滞在者ゼロプランの強力な推進、こういった施策が挙げられています。これに対し、先ほど鈴木参考人からですね、合法的に日本に滞在する外国籍者には無関係な施策が少なくないんじゃないかと。ましてや長年日本に居住する者や、日本生まれの外国籍者に至っては、ほぼ無関係なものばかりと、こういう御指摘もあったところであります。また結城参考人の方からは、受益と負担の関係が実感として理解できる制度設計にすべきだと、このような御意見もいただきました。そこで両参考人にお伺いいたします。どのような施策に充てることが望ましいとお考えかお伺いします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "結城恵",
+        "role": "参考人 群馬大学  特別教授・名誉教授",
+        "summary": "- 市町村の負荷を軽減し、生活保障や支援、実態把握を効率化するためのDX推進と基盤整備\n- 外国人材の自己実現を補完する仕組みへの活用",
+        "full_text": "これはどういう社会をつくっていくかというときに、いろいろな対象者、いろいろな状況に置かれていることを考え、あらゆる外国人材にとって必要かつ日本人の皆さんも受け入れというところで安心していただけるものは何か。その方策として広くということではDXの推進というのは非常に大きな効果があるというふうに思います。つまり外国人材の人たちがどういった生活の安定を望むかというところで、こういったいろいろなさまざまな手続きが、今、市町村に大きく負荷が与えられています。そういったところをDXの推進というところで、もちろんデータガバナンスも必要ですし、個人情報の保護も非常に重要になってきますが、データ連携のセキュリティをしっかりとしたものを持っていけば、いわゆる生活で必要になってくる、いろいろな保障だとか支援、あるいは実態把握というところが非常に効率的にできるというふうに考えます。デジタル庁の時もそうでございましたけれども、ここのところはやはり投資が必要になってくるところなので、基盤整備というところでは必要になってくるかと思います。在留資格の書き換えというところは、言い換えれば、その外国人材の自己実現を自分でどういうふうに描いていくかというものになろうかと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56191&time=4224.792",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "手数料増収分をどのような施策に充てるべきか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "不法滞在者ゼロプラン"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "日本生まれの外国籍者",
+          "concreteness": "mid",
+          "score": 0.6
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "DXの推進"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "デジタル庁"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "DXの推進というところで、生活で必要になってくる、いろいろな保障だとか支援、あるいは実態把握というところが非常に効率的にできる",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人への意見聴取であり、具体的な政府のコミットメントを導き出すものではないが、DX推進による効率化という方向性が示された。",
+        "would_be_referenced": "low",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_006",
+      "segment_index": 6,
+      "topic": "今後の外国人に関する取組の進め方",
+      "question": {
+        "speaker": "金村龍那",
+        "party": "日本維新の会",
+        "summary": "- 外国人との秩序ある共生社会の実現に向け、今後の取組をどのように進めていくべきか",
+        "full_text": "その上でまず私からは結城参考人にお伺いいたします。我が国の在留外国人数は令和7年末に過去最多の413万人となりました。こうした中でいわゆる本年1月に策定いたしました外国人の受け入れ、秩序ある共生のための総合的対応策。この総合的対応策では、改めて秩序という視点に基づく取組と、これまでどおりの総合的対応策に基づき進められてきた外国人の受け入れ環境整備に向けた取組の両者を着実に進めていくことで、秩序ある共生社会の実現を目指していくとされています。この新しい総合的対応策の取りまとめに先立ち、結城参考人が委員を務められている外国人との秩序ある共生社会の実現のための有識者会議。この意見書が取りまとめられ、その中に秩序は社会の土台、多様性は社会の力であり、この両者を両立させることが真の共生社会への道であるとの記載があります。新たな総合的対応策は、この考えを受け継いだものと思いますが、改めて今後の外国人に関する取組について、どのように進められていくべきか、結城参考人の御見解を伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "結城恵",
+        "role": "参考人 群馬大学  特別教授・名誉教授",
+        "summary": "- 秩序と多様性の両立を目指し、対話を通じて相互理解と相互尊重を図ることが重要である\n- 古来の秩序に固執せず、日本人も納得できる活力ある社会の秩序を問い直し、作り直していくべきである",
+        "full_text": "結城参考人、ご質問ありがとうございます。秩序は社会の土台で、多様性は社会の活力になる。まず最初に私は今回、秩序という問題が大きく取り上げられた、非常に大事なことであったと思います。私たちの生活のルールが」というふうにみんな心の中で思っていても、声に出さなかったところをしっかりと明示し、しっかりと話し合おうというところに持ってこれたということは、今までのずっと多文化共生30年取り組んでましたけど、すっごい大きな一歩であるというふうに考えました。同時に秩序については、新たに私たちの視点をしっかりと練り直さないといけないということも感じています。いわゆる秩序と言われた時に、日本社会になる、長く長く、もう幼稚園の時から学校やいろんな場で教えてもらっている、いわゆる日本流の秩序というのがあります。しかしながら、今の現在の社会では、その多様性がどんどんと複雑化し、拡大しています。その時に、ずっと古来の秩序に固執するのか、という問題も出てこようかと思います。しかしながら大切だったのは、それを表明し、そこからスタートすることでした。対話を重ねることです。相手はなぜそう考えるのかには必ず理由があります。相互理解、相互尊重を図る、対話を進めることが多文化共生の横糸になる。そういったことは改めて気づかされたのが、この有識者会議であり、最終的な意見書であったと思います。秩序は作り直せるのか、これを常に私は問い直しております。そして日本人の長くからいる人たちも納得できる活力のある社会の秩序は何か。それをぜひ積み重ねていければというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56191&time=5154.092",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "今後の外国人に関する取組の進め方についての見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "令和7年末に過去最多の413万人"
+            },
+            {
+              "type": "other",
+              "excerpt": "外国人の受け入れ、秩序ある共生のための総合的対応策"
+            },
+            {
+              "type": "organization",
+              "excerpt": "外国人との秩序ある共生社会の実現のための有識者会議"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "外国人",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "相互理解、相互尊重を図る、対話を進めることが多文化共生の横糸になる。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人としての抽象的な見解を問う質問であり、回答も理念的な内容に留まっているため、記録としての実務的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのように進められていくべきか」という問いが抽象的なため、具体的な施策や期限を伴う回答を引き出しにくい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_007",
+      "segment_index": 6,
+      "topic": "総合的対応策において期待する具体的施策",
+      "question": {
+        "speaker": "金村龍那",
+        "party": "日本維新の会",
+        "summary": "- 秩序ある共生社会の実現に向け、今後どのような具体的施策がより一層進められることを期待するか",
+        "full_text": "その上で、お三人にお伺いしたいと思います。新たな総合的対応策では、秩序ある共生社会の実現に向け、政府全体で非常に様々な取り組みを進めていくとされていますが、各参考人において、具体的にどのような施策が今後一層進められていくことを期待しているのかお聞かせください。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "生田志織",
+        "role": "参考人 難民支援協会 渉外チーム 政策提言担当",
+        "summary": "- 難民申請中の方への日本語教育や就労・住居確保などの生活支援プログラムの拡充\n- 外国人に負担を強いるだけでなく、日本社会側で何ができるかを考え、排外的な空気を排除した施策の策定\n- 日本人の子どもへの多文化尊重教育の導入、および現場の声を政策に反映させる仕組みづくり",
+        "full_text": "難民申請中の方と接している立場から申し上げますと、難民申請をされる方というのは、日本に予定してきていたというよりは、突然結果として日本に来ることになって、一から全てをスタートさせるという状況で、かなりいろいろな困難に立ち向かっているんですね。もちろん日本語ができない状態でほぼ全ての方いらっしゃっているので、日本語の教育も必要ですし、そもそも就労先を探すとか、おうちを探すとか、そういった位置から組み立てているというところになっていきます。今回の総合的対応策の中で、私が着目したのが、難民認定を受けた後には、そういった定住に向けたプログラムというのが現行あります。その内容を踏まえて、いろいろと拡充させていくといったところが、最近の政府の方針で見えてきているなと思っているので、その部分は注目しているのと同時に、難民認定を得るまでにやはりすごく時間がかかっているので、その間に皆さんなんだかんだ日本での生活を築いていっているんですよね。ただそういった中で、より政府の何らかプログラムですとか、それこそ日本語の教育の機会ですとか、より多くの機会が。鈴木参考人、外国人の受入れ秩序ある共生のための総合的対応策を拝見をしますと、やはり今回の出されたものに関しては、とても秩序というところが前面に出ているというところが特徴ではないかと思います。また、これまでは日本人外国人双方の努力で共生社会を実現するというようなことが言われてきたと思いますが、かなり外国人の方に負担をむしろ負わせるというようなことが主体となっているのではないかと思います。他方で、やはり今の世の中の状況を見ますと、やはり排外的な状況が以前に比べて強まっているのではないかというのが非常に懸念をされているところです。何度も言われていますとおり、本当に外国籍者が増える中で、やはり本当に日本でみんなが安心して暮らしていけるという国をつくるということを考えるときに、やはりそこは排外的な空気で、外国人に何かを押し付けるということでは、やはりうまくいかないのではないかというふうに思います。やはり日本社会にとって何が必要で、自分たちは何ができるのか、外国籍者の方たちとどういうふうな取り組みができるのかということを、やはり全体的に考えて施策を考えるということが非常に重要ではないかというふうに思います。まず1点目は、日本人もしっかりと巻き込むという施策です。幼児期から外国籍の子どもたちがいるのは当たり前の環境の中に子どもは育っていきます。その中で外国人の子どもたちだけではなく、日本人の子どもたちにも生まれ育った文化や社会が異なるということに対して尊重し、そして自分たちの中でどういうふうに一緒に生きていくか、違いはあまり感じていないかもしれませんが、そういったところから眼差しを育てていくということは必要になろうかと思います。それは幼児期から各段階別にです。例えば私はキャリアの支援もしていますけれども、これは文部科学省におきまして、幼児期から大学まで全てゴールとされているものが段階的にちゃんとカリキュラムの中に入れられています。これからは総合的な学習の中にも組み込まれていくんだろうと思いますが、より明示的にこういったことをやっていかないと、いわゆる圧力というのが回避できなくなるというふうに考えます。第2点は、今日、鈴木参考人様、生田参考人様が私たちに伝えてくれた声にならなかった声、たくさん集まっているということ。そういった声がなぜ形にならない。なぜ施策としてきちんと生きないのか。私たちはひょっとしたらそこについて真剣に考えて仕組みを作っていく。集めて単に聞くんじゃなくて、聞いたものを後にちゃんと残していくような、そういった仕組みづくりが必要かと考えました。そこは私たちアカデミックスがしっかりと頑張らないといけないところでもあろうかと思いますが、それを政策につなげるというための流れがまだできていないように思います。そこをしっかりできたらいいなというふうに考えました。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5189"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56191&time=5154.092",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "総合的対応策で期待する具体的施策は何か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "新たな総合的対応策"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "文部科学省"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "日本人もしっかりと巻き込むという施策です。幼児期から外国籍の子どもたちがいるのは当たり前の環境の中に子どもは育っていきます。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人による個人的な期待や提言であり、政府の公式な回答や具体的コミットメントを含むものではないため、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「お三人にお伺いしたい」と複数の参考人に一括して質問しているため、個別の責任ある回答を得にくい形式である。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_008",
+      "segment_index": 6,
+      "topic": "難民申請中の外国人の定着・活躍事例",
+      "question": {
+        "speaker": "金村龍那",
+        "party": "日本維新の会",
+        "summary": "- 制度が変化する中で、難民申請中の期間に日本社会で定着し活躍した具体的な事例があるか",
+        "full_text": "ここで生田参考人に少し伺いたいんですけど、先ほど難民申請中に定着してご活躍というお話ありました。例えば制度が変化していく中でその期間の間に活躍した事例とかもしあればですね、披露いただきたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "生田志織",
+        "role": "参考人 難民支援協会 渉外チーム 政策提言担当",
+        "summary": "- 日本の就職習慣（服装や面接作法）への伴走支援により、企業で就労し、段階的に希望の職種へ転職している事例がある\n- 子どもが学校の日本語教育プログラムを通じて日本社会に馴染み、親以上に習得して適応している事例がある",
+        "full_text": "まず私たちの団体で就労支援をやっているというふうに申し上げました。実際に日本の企業で働いていらっしゃる方というのは多くいらっしゃいます。ただそれを実際にやっていくためにはですね、そもそも日本の就職がどういうものなのかというところですよね。かなり独特なものというふうに他国から来た方感じられると思いますので、スーツを着ますとか、面接ではこういうふうにフレーズを使っていきますとか、そういった部分を私たちが伴走で、いろいろお伝えすることによって日本の企業に入っていく。中にはまだ日本語ができない状態ですので、工場で言葉を使わない仕事をされている方もいらっしゃいます。ただそういった中でもですね、次の転職をしていく中で自分がやりたいと思うことに少しずつ近づいていこうと思われる方もいらっしゃいます。あともう1点、大人のお話をしたので子どものお話もしたいなと思うんですけれども、家族で日本にいらっしゃるという方もいるんですね。そうすると日本の学校に入っていくわけです。日本語ができない状態で子どもたちが学校に通い始めて、それこそ地域とか学校での日本語の教育の状況、教育のプログラムに入っていくことになります。それを通じて、すっかり日本に馴染んでいくといいますか、親の方はまだ日本語できないのに、子どもの方が日本語がすごくしゃべれるようになっているとか、そういった部分を見ていくと、やはりゼロからスタートしていく中で、どんどんいろんなものを勝ち取っていくというところを感じながら、日々支援をさせていただきます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5189"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56191&time=5154.092",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "難民申請中の定着・活躍事例の提示",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "難民申請中の方",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "ゼロからスタートしていく中で、どんどんいろんなものを勝ち取っていくというところを感じながら、日々支援をさせていただきます。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人による支援現場の概況説明であり、具体的な個別の成功事例（固有名詞や数値）までは提示されていないため、記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「事例があれば披露してほしい」という緩い依頼形式のため、回答者が抽象的な説明に留まる余地を与えてしまっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_009",
+      "segment_index": 7,
+      "topic": "手数料支援の現状",
+      "question": {
+        "speaker": "小竹凱",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 移住連において、難民申請の手数料支払いの直接的な支援を行っているか",
+        "full_text": "その上で質問に入りたいと思いますが、鈴木参考人にお伺いします。先ほど、生田参考人は、現陳述の中で、難民支援協会として、月数万円から20万円ほどの支援、手数料支払いの支援をしているとおっしゃられておりましたが、移住連の方でも、こういった支援というのは、毎月、ケースにもよりますけれども、行われていたりすることはあるのでしょうか。鈴木参考人。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "鈴木雅子",
+        "role": "参考人 弁護士 特定非営利活動法人移住者と連帯する全国ネットワーク（移住連）理事",
+        "summary": "- 手数料の直接的な支援は行っていない\n- 生活支援という形での間接的な支援があると考えている",
+        "full_text": "お答えいたします。移住連としては、手数料自体の直接的な支援ということは行っておりませんが、生活支援という形で支援を行っておりますので、その中から手数料の支援に間接的に回っているということはあるかというふうに思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5189"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56191&time=6127.492",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "移住連による手数料支払いの支援の有無",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "難民支援協会"
+            },
+            {
+              "type": "past_answer",
+              "excerpt": "生田参考人は、現陳述の中で、難民支援協会として、月数万円から20万円ほどの支援、手数料支払いの支援をしているとおっしゃられておりましたが"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "移住連",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "移住連"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "移住連としては、手数料自体の直接的な支援ということは行っておりませんが、生活支援という形で支援を行っております",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "移住連による手数料支援の有無について明確に回答されており、事実関係の記録として価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_010",
+      "segment_index": 7,
+      "topic": "手数料引き上げによる支援団体への影響",
+      "question": {
+        "speaker": "小竹凱",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 手数料が大幅に引き上げられた場合、支援団体の財源や枠にどのような影響が出るか\n- 財源が枯渇した場合、具体的にどのような支援状況になると想定されるか",
+        "full_text": "直接的にはないということでありましたが、今回の手数料が引き上がると、そういった大きく言うと生活費の中にも組み込まれるお金が負担が増えるということになると思います。その上で、鈴木参考人、生田参考人にお伺いしたいと思いますが、今回実際に引き上がった場合、そして報道で言われているような大幅な引き上げとなった場合に、団体として支援する財源というか枠も上限があると思いますので、こういった金額が引き上がった場合にできる限度といいますか、実際のところですね、どういった支援になってしまうのか。例えば具体的に財源が枯渇してしまうみたいなことになった場合、どういったことが考えられるのか。大変言いづらいこともあるかと思いますが、想像の中でお答えいただけると幸いでございます。生田参考人。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "生田志織",
+        "role": "参考人 難民支援協会 渉外チーム 政策提言担当",
+        "summary": "- 支援を継続できるか団体で議論が必要な状況になる\n- 相談件数の増加が予想され、支援対象を一部に絞るか、食料・住居支援を削減して手数料に充てる可能性がある\n- 寄付金頼みの運営であるため限界があり、非正規滞在者が増えるリスクがある\n- 生活困窮者への緊急支援は既に需要過多であり、手数料負担が加わると非常に厳しい状況になる",
+        "full_text": "ご質問いただきましてありがとうございます。私たちも実際に手数料の支援を代わりというか、手数料の支援をしている中で、これもし引き上げられた場合、この支援を続けられるのかというのは、まさにもし起きる場合は団体でしっかり議論しなければいけない点かなと思っています。まず想定されるのは、今の時点でも手数料払えませんという相談はあるんですけれども、値段が上がるとこの相談の件数がさらに増えるだろうなと思っています。この方たち全てにお支払いが、しかも引き上げ後の値段を支払えるのかと言われると、やはり団体には限度があるので、もしかしたら一部の方になるかもしれないですし、手数料の支払いをしっかりしていく分、他の食料支援とか住居支援とか、そういった支援を絞るといった方策になるような可能性もあるように思います。私たちの団体、寄付金でほとんど賄っている、8割、9割は寄付金で賄っている団体ですので、やれることにも。一般の方からいただいたお金をそういった形で手数料の支払いに回していくというのも、いろいろな考え方もあるかなと思いますので、そういった部分もいろいろと考えながら、手数料の支払いをどうやって支援を続けていくのかというのは考えなきゃいけないと思いつつなんですけれども、ただやはり難民申請中の方で「難民申請します。でも在留資格はないです」という状況を作るというのは、本当に避けたいと思っています。一応、仮滞在という、非正規滞在の方に在留資格ではないんですけれども一時的に在留を認めるような、法的地位を与えるような制度があるんですけれども、これ認められる場合がすごく少ないので、実質的には難民申請中の間、帰国することができないですし、国の制度としても保障はされないですけれども、それでも非正規滞在のままになってしまう、そういった不安定な方が生まれてしまうかなと思っています。なので、団体としてどうするのかというのもありますし、やはりこういった手数料の支払いができない、どうしようという場面が生まれないような制度にしていただくことが大事かなと思っております。移住連の方では緊急支援という形で生活困窮の方などへの支援を行っております。これは寄付金や助成金などから賄っているものですけれども、非常に需要が高くて、今でも需要に応えきれないという状況にありますので、ここに手数料の負担が乗るというのは非常に厳しく、結果としてご本人たちが本当に困窮する事態になるのではないかと。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5189"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56191&time=6127.492",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "手数料引き上げ時の団体支援の限界と具体策",
+          "sub_asks": [
+            "引き上げ時にどのような支援になるのか",
+            "財源が枯渇した場合にどうなるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "鈴木参考人、生田参考人",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "8割、9割は寄付金で賄っている"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "移住連"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "団体でしっかり議論しなければいけない点かなと思っています",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "手数料の支払いをしっかりしていく分、他の食料支援とか、住居支援とか、そういった支援を絞るといった方策になるような可能性もある",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "手数料引き上げが支援団体の財源を圧迫し、他の生活支援を削らざるを得なくなるという具体的リスクが提示されており、記録としての価値が高い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_011",
+      "segment_index": 7,
+      "topic": "手数料免除措置の具体的な線引き",
+      "question": {
+        "speaker": "小竹凱",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 免除措置の対象とする具体的な線引きをどうあるべきか\n- 単身か家族帯同かによって費用が異なるが、家族帯同の場合に異なる線引きが必要か",
+        "full_text": "小竹凱君具体的な線引きについてですね、この免除措置の対象をどういうふうにあるべきかということを結城参考人、そしてまた結城参考人にですね、先ほどの意見陳述の中でも、単身の場合と家族帯同の場合と、また公認のかかる費用も大きく違うというふうに思いますが、具体例を挙げると最低生活費というワードがありますが、家族が帯同の場合でもですね、こういった考え方でいいのか、また家族帯同の場合は違うような線引き、具体的な線引きが必要と考えるのか、ちょっと細かく教えていただけますでしょうか。結城参考人",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "結城恵",
+        "role": "参考人 群馬大学  特別教授・名誉教授",
+        "summary": "- 全国から集まる声を解析し、合理的な基準を作り出す装置が必要である\n- 未成年者への配慮や、就労が認められていない期間（申請後約8ヶ月間）にある者への免除・減額という考え方があり得る",
+        "full_text": "小竹君がお伝えくださったいろいろな声、状況、そこの解析から始まるというふうに思います。私たちはもう全国各地でこういった声がいろんなところから生まれています。それを総合的にこういった問題の基準づくりに使っていったのではないかと思います。個別対応的にある団体から話を聞いてというふうなことではなく、これからこういった問題は全国に広がっていくわけなので、そういった声をうまく吸収し、解析しながら、その基準を合理的に作り出していく、そういう何か装置が必要になるのではないかと考えます。家族の場合はどういった配慮が考えられるかというところなんですけれども、先ほど意見陳述で述べたエチオピアの家族、4人家族で認定されるまでに28万円というのは、私もちょっと計算してびっくりしてしまった額だったんですね。なので、鈴木さんの公認のお話にもありましたが、未成年者に関しては配慮とか、そういった考え方はあり得るかなと思います。もう一つですね、何度かお伝えしているんですけれども、難民申請をしてしばらく、多くの場合8ヶ月間、就労が認められていない期間ですね。これはもちろん大人についてです。子どもについては特に就労の必要性がなければ就労許可は出ないので、こういった形で就労ができない状態の方は、手数料免除を減額していくというのも、一つの考え方なんじゃないかなとは思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5189"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56191&time=6127.492",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "免除措置の具体的な線引きの考え方について",
+          "sub_asks": [
+            "単身と家族帯同で最低生活費の考え方は同じでよいか",
+            "家族帯同の場合に別の具体的な線引きが必要か"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "最低生活費"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.2
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "家族帯同（の申請者）",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "エチオピアの家族"
+            },
+            {
+              "type": "number",
+              "excerpt": "4人家族で認定されるまでに28万円"
+            },
+            {
+              "type": "number",
+              "excerpt": "多くの場合8ヶ月間"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "未成年者に関しては配慮とか、そういった考え方はあり得るかなと思います。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人による個人的な見解と具体例の提示に留まっており、政府としての公式な基準やコミットメントは含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "参考人に対し、個人の意見ではなく制度設計上の具体的基準を問う形式にすれば、より記録価値が高まった可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_012",
+      "segment_index": 7,
+      "topic": "JESTAによる安全保障・治安対策への期待",
+      "question": {
+        "speaker": "小竹凱",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- JESTAが観光利便性に重点を置いているように見えるが、安全保障や治安対策の面で期待する効果は何か",
+        "full_text": "結城参考人にお聞きしたいと思いますが、先ほどこのJESTAに対してのお考え方、そして結論の中で、私の受け止めとしては、今回のJESTAというのが観光利便性に重点を置かれたような考え方であったというふうに感じました。アメリカのESTAとか、特にテロ対策であったりとか、データ連携基盤整備などが大きな目的となっているように感じますけれども、この観光のことは私としても受け止めましたので、JESTAにおいて安全保障であったりとか、治安対策などで期待するようなことはどういったことがあるか、お考えをお願いいたします。結城参考人",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "結城恵",
+        "role": "参考人 群馬大学  特別教授・名誉教授",
+        "summary": "- 顔認証などのデータ連携を推進し、出国前にリスクを回避することで、より迅速かつ的確な対応を期待している",
+        "full_text": "ご質問ありがとうございます。JESTAで期待するのは、やはりデータ連携というところで、顔認証とかいろいろ進めるというところで、私の説明の中でも、米国、英国、欧州でどのような取組が進んでいるかということを申し上げました。つまり、日本へ来てそこでいろいろと議論するのではなく、出国前。大臣からそういった情報をもらいながら、より迅速に、的確に、そういったいろいろなリスクを回避していくということはもちろんでございます。その点は変わりなくでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5189"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56191&time=6127.492",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "JESTAにおける安全保障・治安対策への期待",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "アメリカのESTA"
+            },
+            {
+              "type": "other",
+              "excerpt": "JESTA"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "米国、英国、欧州"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "顔認証"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "JESTAで期待するのは、やはりデータ連携というところで、顔認証とかいろいろ進めるというところで",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "JESTAの治安対策上の目的について問われ、データ連携や出国前リスク回避という方向性で回答しているが、具体的な制度設計への言及はなく抽象的である。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どういったことがあるか」というオープンクエスチョンであるため、回答者が抽象的な概念論に終始しやすい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_013",
+      "segment_index": 8,
+      "topic": "手数料額の決定方法（法律主義の適用）",
+      "question": {
+        "speaker": "小竹凱",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 手数料額を政令ではなく法律で定めるべきではないか\n- 技能実習生等が弱い立場にならないための収入確保のあり方について",
+        "full_text": "法律主義に基づいて、ここは国会で毎回定めていくべきだというふうに考えております。しかも私、実は前職が建設業に携わっておりまして、技能実習生、特定技能の方と多く接する機会がありましたので、彼らが無意味にそういった弱い立場にならないように、しっかりとこの国のためにいろいろなところで働いていただいている仲間という感覚の上で、先ほどの様々な具体的な御意見のところで挙げられていた声というのは非常に重く受け止めながらも、これからの収入の金額のあり方、そしてそもそもそれを政令で定めるのではなくて法律で定めていくという考え方、非常に大事だと思いますが、改めてその部分について御意見いただけますでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "鈴木雅子",
+        "role": "参考人 弁護士 特定非営利活動法人移住者と連帯する全国ネットワーク（移住連）理事",
+        "summary": "- 租税法律主義との適合性について、弁護士の間で問題視する意見が多く出ている\n- 手数料額の考え方を根本的に変える改定であるため、国会で議論すべきである",
+        "full_text": "先ほど申し上げた、租税法律主義との適合性ということについては、この法案が出されてから、弁護士の中ではかなり広く、強く問題なのではないかという意見が出ているところです。先ほど申し上げましたとおり、これまでの手数料額と考え方は全く根本に基本的に変えるというのが本改定法案ですので、ぜひこの定職というところについては、きちんとこの国会で御議論をいただきたいということを改めて申し上げたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56191&time=6997.592",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "収入額を政令ではなく法律で定めるべきか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "法律主義"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "技能実習生、特定技能の方",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "租税法律主義との適合性ということについては、弁護士の中ではかなり広く、強く問題なのではないかという意見が出ている",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "法律で定めるべきという提案に対し、専門家（弁護士）の間で問題視されている点に触れ、国会での議論を促す回答となっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が前置きに時間を割いており、核心となる問いが最後の一文に集約されている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_014",
+      "segment_index": 8,
+      "topic": "JASTA導入における費用負担の妥当性と見直し",
+      "question": {
+        "speaker": "和田政宗",
+        "party": "参政党",
+        "summary": "- JASTAの費用における受益と負担の関係について\n- 状況の変化に応じた値上げや値下げなどの柔軟な対応をすべきか",
+        "full_text": "まずジェスターの導入についてお聞きをいたします。結城参考人がお話になる中で、このジェスターの費用でありますけれども、受益と負担の関係、こういったものをしっかり見なくてはならないということをおっしゃっておりました。これは受益と負担の関係ですとか、諸外国の状況などをこれを見て政府においては決めていくんだというふうに思いますけれども、この受益と負担の関係というのは時の状況によって変化するというふうに思っております。こういったときに値上げですとか値下げも含めてそういうような対応をすべきであるか、こういったことをお聞きできればと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "結城恵",
+        "role": "参考人 群馬大学  特別教授・名誉教授",
+        "summary": "- 空港の混雑状況やインフラ整備の必要性を考慮し、機材の充実は急務である\n- 定期的に現状を見直し、金額の妥当性を柔軟に検討することが必要である",
+        "full_text": "受益と負担を考える場合には、現状をしっかり見ないといけないということになります。まず現状、先ほども申し上げましたが、空港内で3000人の人たちがダッと押し寄せると、これはもう本当に大変な光景だと考えましたし、その当時、またすぐに大阪の万博でもやはり同じようなことが起こるということが、政策本段階にも出ていましたので、顔認証の装置をどんどん重点的に回すということを聞きました。そういったところを見ますと、やはり空港は玄関口ですので、そういった機材の充実ということは早急に必要になってこようかと思います。そのように考えますと、非常に柔軟に情報収集をしながら、今どういう現状であるか、それが今なぜどのようにジェスターに反映されるのかというところは、定期的に見直しのしながら、その金額の妥当性を考えていくということが必要になろうかと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5189"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56191&time=6997.592",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "ジェスター導入後の費用見直しの必要性について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "past_answer",
+              "excerpt": "結城参考人がお話になる中で"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "3000人の人たち"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "大阪の万博"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "定期的に見直しのしながら、その金額の妥当性を考えていくということが必要になろうかと思います",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "定期的に見直しのしながら、その金額の妥当性を考えていくということが必要になろうかと思います。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "費用の変動的な見直しについて問い、回答者がその必要性に同意したやり取りである。具体的な見直し時期や手法への言及はなく、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「対応をすべきであるか」という抽象的な問いであるため、回答者が「必要である」と答えるだけで完結してしまい、具体的な制度設計まで踏み込めていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_015",
+      "segment_index": 8,
+      "topic": "JASTA導入における多言語対応のあり方",
+      "question": {
+        "speaker": "和田政宗",
+        "party": "参政党",
+        "summary": "- JASTA導入にあたり、政府が多くの言語に対応したいと考えている点について\n- 入国時の滞留解消や多言語案内のあり方として、政府はどうあるべきか",
+        "full_text": "和田政宗君、続いて結城参考人にこのジェスターさらにお聞きをいたしますけれども、この現場の課題ということを今もおっしゃられましたけれども、この多言語対応というのが極めて大変になっているということの中でですね、このJASTA導入に当たっては政府はなるべく多くの言語に対応できるようにしたいというふうに言っています。これJASTAの導入でどういうふうにこういった多言語案内ですとか、今その入国に当たっての滞留であるとか、そういったようなものがあるというふうに思うんですけれども、このいわゆる多くの言語で対応したいというふうに考えている政府の在り方、どうあるべきかということをお聞きできればと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "結城恵",
+        "role": "参考人 群馬大学  特別教授・名誉教授",
+        "summary": "- 空港は玄関口であり、自国語での対応は大きな歓迎（ウェルカミング）になる\n- DXの活用で安価かつ高精度な多言語対応が可能であり、多くの言語に対応する方針は必要である",
+        "full_text": "その中で自分の言語でそれが対応されるということは大きなウェルカミングになるのではないかと思われます。今こういったDXの世界で多言語対応をするということは非常に精度が上がってきています。そういった仕組みをうまくDXの中で取り込むことで、その対応は可能になってくると思います。昔と違ってかなり安価にそういった仕組みが組み込めるようになってきているというふうに思っておりますので、より多くの言語に対応するという方針は私は必要なことだと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5189"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56191&time=6997.592",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "JASTA導入における多言語対応の在り方について",
+          "sub_asks": [],
+          "score": 0.9
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "JASTA導入"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "より多くの言語に対応するという方針は私は必要なことだと考えております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "多言語対応の必要性という抽象的な方向性についてのやり取りであり、具体的な数値や制度的拘束力のある回答は含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どうあるべきか」という抽象的な問いであるため、回答も概念的な意見に留まっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_016",
+      "segment_index": 8,
+      "topic": "JASTA導入による難民保護への影響",
+      "question": {
+        "speaker": "和田政宗",
+        "party": "参政党",
+        "summary": "- JASTAの導入についてどう考えるか",
+        "full_text": "このJASTAの導入について、鈴木参考人、生田参考人にもお聞きをしたいというふうに思っております。主に今日は在留資格、また難民認定のことでありましたので、もしJASTA導入についてどう考えるかということをお答えいただけるようでありましたら、まず鈴木参考人からお願いをしたいというふうに思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "鈴木雅子",
+        "role": "参考人 弁護士 特定非営利活動法人移住者と連帯する全国ネットワーク（移住連）理事",
+        "summary": "- 難民条約締約国として、本来の庇護を求める人々が不当に排除されない仕組みを確実に確保すべきである（鈴木参考人）\n- 制度の透明性が必要であり、査証免除国からの庇護希望者やトランジット客への悪影響を注視したい（生田参考人）",
+        "full_text": "そこで懸念をいたしますのが、このJASTAの導入というところに伴って、やはり空港で、本来の庇護を求めるという人たちが不当に排除される結果というふうにつながらないということを確実に、やはり日本は難民条約の締約国でありますので、そこについてはしっかり確保をいただきたいというふうに考えております。ただ、もちろん査証が免除されている国から、庇護を求めてくる方もいらっしゃるので、そういった方たちに、悪影響が出ないのかというところは気になっているところですし、あとはトランジットで日本にいらっしゃる方についても対象になっていくというふうに理解しているので、この辺りどういうふうに適用されていくのかというのは見ていきたいと思っています。結局はJASTAでどういった情報を収集するのか、そしてどういった場合に認証が受けられないのかという部分ですね、そういった制度の透明性という部分も必要になってくる部分ではないかなと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5189"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56191&time=6997.592",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "JASTA導入についてどう考えるか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "JASTAの導入"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "難民条約"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "JASTAの導入に伴って、本来の庇護を求める人たちが不当に排除される結果につながらないことを確実に確保していただきたい。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人による個人的な見解と懸念の表明であり、政府の公式な回答や具体的コミットメントを含むものではない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問が非常にオープンエンドであるため、具体的な制度上の懸念点や法的整合性を問う形式にすればより価値のある回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_017",
+      "segment_index": 8,
+      "topic": "ミャンマー等の難民認定の現状と保護のあり方",
+      "question": {
+        "speaker": "和田政宗",
+        "party": "参政党",
+        "summary": "- ミャンマー出身者に対し、現在どのような難民認定が行われ、真の保護につながっていると考えているか\n- ウイグルやチベットの方々の難民認定や保護のあり方についての知見を問う",
+        "full_text": "今のことに関連して生田さんにお聞きをしたいというふうに思うんですけれども、これは日本も難民条約批准をして難民の保護ということはやらなくてはならないということが当然のごとくあります。これはJASTAを導入することによって、効果としては経済的に困窮をして難民ではないけれども、日本にたどり着けば何とかなるというような方もこれまでいらっしゃるわけですね。そういった方々は、ただ正規の在留資格がなければやはり不法滞在であって、法令でしっかりとやはりこれはご帰国をいただくということが、これも当然なるというふうに思います。和田政宗君。難民保護の観点の中で、これはニュートラルにお聞きしますけれども、ミャンマー出身者に対して、生田さんは、現在どういう難民認定が行われ、真の保護につながっているということを思っているのかどうかということと、あと、これは知見がありましたらですけれども、ウイグルですとかチベットの方々、こういった方々の難民認定や保護のあり方、こういったことについて、もし知見がありましたらお聞きをしたいというふうに思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "生田志織",
+        "role": "参考人 難民支援協会 渉外チーム 政策提言担当",
+        "summary": "- ミャンマーの方は2021年のクーデター以降多くが申請しているが、認定人数は非常に少ないと感じている",
+        "full_text": "まずミャンマーの方についてなんですけれども、2021年の軍事クーデター以降ですね、多くの方が難民申請をされている中で、認定の人数としてはとても少ないなというふうに思っているところです。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5189"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56191&time=6997.592",
+      "metrics": null
+    },
+    {
+      "id": "qa_018",
+      "segment_index": 8,
+      "topic": "在留資格変更手数料の上限と実費相当額の妥当性",
+      "question": {
+        "speaker": "和田政宗",
+        "party": "参政党",
+        "summary": "- 在留資格の変更手数料について、実費相当分であれば適正範囲であると考えるか",
+        "full_text": "鈴木参考人にお聞きをしたいというふうに思います。在留資格の変更手数料のこの上限ですけれども、適正範囲、こういったことの観点の中で、これ、実費相当分であれば適正範囲だというふうに、鈴木参考人はお考えになるのか、その点確認できればと思います。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "鈴木雅子",
+        "role": "参考人 弁護士 特定非営利活動法人移住者と連帯する全国ネットワーク（移住連）理事",
+        "summary": "- 短期間で実費相当額の試算が変動している点に疑問があり、適切な試算か再検討が必要である\n- ただし、インフレ等に伴う実費相当額の範囲内での値上げであればあり得ると考える",
+        "full_text": "ただ、わずか1年前のときにも、実費がいくらであるのかというのは精査されたと思いますが、そのときは、変更更新は6000円、永住は1万円というのが実費相当であるということで、挙げられたばかりです。ですので、その試算というのが本当に適切なものであるのかということは、きちんとぜひ見ていただきたいというふうに思いますが、実費相当額ということであれば、1年前に挙げたものをまたすぐに6000円から。1万円ですので倍近く上げるのが適切なのか、それはやはりタイミングとしてどうなのかということは、またご検討いただく必要があるかというふうに思いますけれども、実費相当額というところにとどまるということであれば、今般この間のインフレ等に伴っての値上げということは、あり得ることなのではないかというふうには考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5189"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56191&time=6997.592",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "在留資格変更手数料の実費相当分は適正範囲か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "6000円"
+            },
+            {
+              "type": "number",
+              "excerpt": "1万円"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "実費相当額というところにとどまるということであれば、今般この間のインフレ等に伴っての値上げということは、あり得ることなのではないか",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "手数料の適正範囲に関する参考人の見解を問うシンプルなやり取りであり、回答も具体的数値に触れつつ直接的に答えられている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_019",
+      "segment_index": 8,
+      "topic": "将来的な労働力不足予測と外国人労働力活用のあり方",
+      "question": {
+        "speaker": "和田政宗",
+        "party": "参政党",
+        "summary": "- 2040年に労働力の大きな不足は生じないという推計がある中で、外国人労働力の数のあり方をどう見るべきか\n- 将来的に日本人の労働力で充足する可能性を踏まえた活用のあり方についての知見を問う",
+        "full_text": "外国人政策、外国人労働力の数についてお聞きをしたいというふうに思っております。経済産業省が今年の3月に2040年の就業構造推計改定版というものを発表しております。こちらには2040年に労働力の大きな不足は生じないというふうに結論づけています。そうしますと外国人労働力の数のあり方というのも日本全体の労働力を見る中で重要になってくるわけでありますけれども、現状、今、外国人労働力を活用しているわけですね。そういった中で将来的に労働力が不足しないというふうになりますと、この日本人の労働力によって、その労働力、ほとんどを占めることができると、こういう時代もやってくるんだというふうに思います。そういったことを考えたときに、外国人労働力の活用のあり方、その数ということで、どういうふうに見ていけばいいか、知見をいただきたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "結城恵",
+        "role": "参考人 群馬大学  特別教授・名誉教授",
+        "summary": "- 人権を尊重し、本人の意思で自己実現が図れる社会であるべきである\n- 単なる定着ではなく、日本で学んだ人材が海外で活躍する「循環する人材」への支援が重要である\n- 日本で生まれ育つ子どもたちの思いを受け止め、未来人材を責任持って育てる視点が必要である",
+        "full_text": "人道的に人権というものをきちんと尊重し、その方たちが自らの意思で日本で生きるという覚悟をされるのであれば、しっかりといろいろな制度の下で自己実現が図れるような社会でなければならないと思います。つまり定着ということではなく循環する人材というのがこれからますます増えてくるだろうと考えています。それは日本にとっても非常にメリットの大きいことで、経営者たちがそこを見て経済活動を活性化したいというふうに考えていて、そこのところを日本側の都合ではなくて、外国人材の方が自分たちの次のステージとして選択できるような環境を作っておく。そういった子どもたちの思いもしっかり受け止めながら、未来人材を責任を持って育てていくという視点も必要になろうかと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56191&time=6997.592",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "外国人労働力の活用のあり方と数の考え方について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "経済産業省"
+            },
+            {
+              "type": "other",
+              "excerpt": "今年の3月に2040年の就業構造推計改定版"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "外国人労働力",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "未来人材を責任を持って育てていくという視点も必要になろうかと思います",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "other",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "日本側の都合ではなくて、外国人材の方が自分たちの次のステージとして選択できるような環境を作っておく。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な数値や方針を問う質問に対し、回答は抽象的な理念論に終始しており、記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「知見をいただきたい」という漠然とした問い方であるため、回答者が抽象的な回答で逃げられる構成になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    }
+  ],
+  "score_schema_version": "2.0",
+  "prompt_version": "V4"
+}

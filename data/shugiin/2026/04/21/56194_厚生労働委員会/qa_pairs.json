@@ -1,0 +1,2491 @@
+{
+  "pairs": [
+    {
+      "id": "qa_001",
+      "segment_index": 7,
+      "topic": "出産支援強化の意義と所感",
+      "question": {
+        "speaker": "草間剛",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 医療保険制度における出産支援強化の意義について\n- 社会保障審議会でのヒアリングを通じた所感について",
+        "full_text": "健康保険法の一部改正につきましては、今先生方からお話しいただいたように様々な論点がございますけれども、私からはですね、私も自身も実は2歳と7歳の子育て中でございまして、2年前には妻の出産に立ち会い、産前産後の通院にも立ち会わせていただきまして、支払いも私がさせていただいたということでございますので、今回の議論になっております負担軽減ですね。負担軽減と、それから分娩体制の維持というのは大変重要な課題だと思っておりまして、医療保険制度における出産に対する支援の強化について、今日は関係の参考人の先生方にお伺いをさせていただきます。今回の医療保険制度における出産に対する支援の強化なんですが、先生長年取り組まれておりまして、改めて先ほどもお話しいただきましたけれども、その意義をお伺いするとともに、社会保障審議会の中では、さまざまな立場の皆さんからヒアリングも行われております。多くの課題も御認識されていると思いますので、その所感をまずは伺いたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "菊池馨実",
+        "role": "参考人 早稲田大学法学学術院教授 早稲田大学理事",
+        "summary": "- 現金給付では実費を賄いきれない実態があり、現物給付化により自己負担を抑えるべきである\n- 基本的な方向性は待ち望んでいたものであるが、都市部やリスク妊婦への対応は別途加算等で検討が必要",
+        "full_text": "全体を通じての評価というのは難しいのですが、まず現在の現金給付のやり方ですと、つい42万円から50万円に支給金を引き上げましたけれども、データを見ますと、既に医療機関にかかる費用は50万円を上回っているという実態があるということが伺えます。やはりこれは負担の均衡を図るためにも、今の一時金のやり方ではない、現物給付化するという、極力自己負担を抑えるという、療養の給付は3割負担ですけれども、そうではなくて、基本的には負担が発生しないようにすると、通常分娩の場合ですね。それはやはりやらなければいけないことであると思っております。その上で、都市部ですとか、あるいはリスクのある妊婦さんを見ていらっしゃる医療機関をどう見るか、それはまた加算その他で見ていかなければいけないと思いますけれども、基本的な方向性としては、私は今回待ち望んでいたといいますか、そういった方向だと思ってございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5199"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56194&time=3658.597",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "出産支援強化の意義と課題への所感",
+          "sub_asks": [
+            "出産に対する支援強化の意義",
+            "社会保障審議会でのヒアリング等を踏まえた所感"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "健康保険法の一部改正"
+            },
+            {
+              "type": "organization",
+              "excerpt": "社会保障審議会"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "妊婦",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "42万円から50万円"
+            },
+            {
+              "type": "number",
+              "excerpt": "3割負担"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "今の一時金のやり方ではない、現物給付化するという、極力自己負担を抑えるという、療養の給付は3割負担ですけれども、そうではなくて、基本的には負担が発生しないようにすると、通常分娩の場合ですね。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人による現状分析と方向性への賛同であり、具体的な政府のコミットメントは含まれていない。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が「意義」や「所感」を問う抽象的な形式であるため、具体的な政策回答を引き出しにくい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_002",
+      "segment_index": 7,
+      "topic": "産科医療機関の不安解消策",
+      "question": {
+        "speaker": "草間剛",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 保険適用により分娩取り扱いを止める医療機関があるという不安をどう解消すべきか",
+        "full_text": "先生がおっしゃるとおり、出産費用というのはかなり地域によって差がありまして、私は川崎市の宮前区と横浜市の都筑区という横浜の北部と川崎の北部なんですけれども、大体横浜でも川崎でもやはり55万円から80万円、90万円、さっきおっしゃった100万円程度の病院もあります。一方で、例えば私の神奈川県では、昨年4月の時点で、分娩施設数は129施設。減少していて、1年で2000件以上減少しているということで、診療所での出産が特に1317件減少していて、今でも減少傾向、要は都市部においても減少傾向にあるということでございまして、医療機関の先生方も大変ご苦労をされているところでございます。皆さんの審議会の中でも先生がおっしゃったように、正常分娩の出産費用は、都道府県によって平均額で20万円以上の差が、地域差も先生、ご指摘いただいたようにあるんですね。特にですね、産科の皆さんからは、このまま正常分娩が保険適用になった場合ですね、安便の取扱いをやめると答えた医療機関が、産科の皆様の、これはアンケート調査でございますけれども、785施設中60施設あるというですね。こういった資料も提出をされたと思うんですけれども、産科の先生、私の息子を取り上げていただいた先生も大変不安を感じておりまして、先生のお立場の中で、産科の先生方の今のご不安、先生も知事から感じられたと思うんですけれども、これを解消していくためにはどうしていいのかということを、御示唆をいただきたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "菊池馨実",
+        "role": "参考人 早稲田大学法学学術院教授 早稲田大学理事",
+        "summary": "- 移行しても良いと思える適切な報酬設定を考慮すべきである\n- 医療保険の枠組みだけでなく、医療提供体制や医師配置などトータルで議論する必要がある",
+        "full_text": "そのあたりはやはりこれから、厚生労働省さん、それから専門家の皆様で、まさに当事者の先生方も入った中で議論が行われていくと認識していますが、先ほども私の述べさせていただきましたが、やはり現物給付と現金給付、併用の時期が長く続くと、やはり望ましくない。その場合、例えば、このぐらいだったら移行してもいいなと思っていただけるような報酬の設定も一つの考慮要素になるのではないかと思います。それからこの問題を医療保険の制度の枠組みの中で議論するというのは、やはり十分ではないと思っています。やはりそもそも医療提供体制、それから医師の配置、その他ですね、トータルで考えていく必要がありますので、今回も大変重要な議論ですけれども、ぜひ医療体制とかですね、そちらの方もご議論いただきたいなと思ってございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5199"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56194&time=3658.597",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "産科医の不安を解消するための示唆を求める",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "55万円から80万円、90万円、さっきおっしゃった100万円程度"
+            },
+            {
+              "type": "number",
+              "excerpt": "分娩施設数は129施設"
+            },
+            {
+              "type": "number",
+              "excerpt": "1年で2000件以上減少"
+            },
+            {
+              "type": "number",
+              "excerpt": "診療所での出産が特に1317件減少"
+            },
+            {
+              "type": "number",
+              "excerpt": "都道府県によって平均額で20万円以上の差"
+            },
+            {
+              "type": "number",
+              "excerpt": "785施設中60施設ある"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.9
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "産科の先生方",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "医療保険の制度の枠組みの中で議論するというのは、やはり十分ではないと思っています。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は具体的な統計を用いて産科医の不安を提示したが、回答者は一般論的な方向性（報酬設定や体制議論の必要性）を述べるに留まり、具体的な解決策やコミットメントは示されなかった。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どうしていいのか」という抽象的な問いであるため、回答者が一般論で逃げやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_003",
+      "segment_index": 7,
+      "topic": "出産費用の見える化と課題",
+      "question": {
+        "speaker": "草間剛",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 出産支援強化の意義と課題認識について\n- サービス内容と費用の「見える化」において、現状足りないものは何か",
+        "full_text": "佐野参考人は、妊娠・出産・産後における妊産婦等の支援策等に関する検討会委員として、1年今日ですかね、審議会で議論をいただきまして、その検討会の議事録も私読ませていただきまして、いつも的確な御意見をいただいているんだと思いますけれども、今回の支援強化の意義と課題認識、これは菊池参考人と同じ質問なんですけれども、この課題認識についてをお聞きするとともに、特に今日の資料にもいただきましたけれども、サービス内容と費用の見える化については大前提だというお話がありました。検討会の中では厚労省やまさに医師会の皆様から様々な資料も提供されたと思うんですけれども、それでもなおこの足りなかったものは何かということもお聞きをさせていただきます。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "佐野雅宏",
+        "role": "参考人 健康保険組合連合会顧問",
+        "summary": "- 妊産婦が事前に費用を把握できていない、またはサービスが自動セットされている等の実態がある\n- まずは費用の見える化をスタートラインとし、データを集めて分析し標準化を行うことが重要である",
+        "full_text": "足りなかったものってなかなかお示しするのは難しい部分がございますけれども、検討法会の方にですね、参加させていただきまして、まず感じたのはですね、特にその場で出産を経験された方からですね、要は出産にいくらかかるのか事前にわからなかったと、もしくは、出産後に初めて知ったという方もいらっしゃいました。で、またですね、この、いわゆるお祝い前のようなですね、サービスがですね、自動的にセットされてしまっていたというような声も。ありまして、先ほどおっしゃったように、確かに出産分娩費用というのは、地域によっても医療機関によっても大きな差があるんですけれども、要は、実際に妊娠散婦の方から見ても、よく分かっていない部分がたくさんあると。こういった声は、私ども健保組合の加入者からも上がっている部分でございまして、今後、保険的な検討に当たっては、まずは一体どういうことに、どういうお金がかかっているのかという、費用の見える化。これを進めていくことが、まずは第一位といいますか、スタートラインではないかというふうに強く感じております。その上で、いわゆる保険的な検討に当たっては、どういう標準化ということを、やはりこれをやっていかないといけないと思いますので、この部分が非常に重要であって、見える化をしてデータを集めた上で、この分析をきちんとやっていくということが、一番大事なんではないかというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5199"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56194&time=3658.597",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "支援強化の意義・課題と費用見える化で不足していた点",
+          "sub_asks": [
+            "支援強化の意義と課題認識",
+            "サービス内容と費用の見える化において足りなかったものは何か"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "妊娠・出産・産後における妊産婦等の支援策等に関する検討会"
+            },
+            {
+              "type": "other",
+              "excerpt": "検討会の議事録"
+            },
+            {
+              "type": "other",
+              "excerpt": "今日の資料"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "妊産婦等",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "健保組合"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "一体どういうことに、どういうお金がかかっているのかという、費用の見える化。これを進めていくことが、まずは第一位といいますか、スタートラインではないか",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人としての個人的な見解と経験に基づく回答であり、政府としての公式な決定や具体的なコミットメントは含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問が複数の要素（意義、課題、不足点）を含んでおり、回答者が特定の点（不足点）にのみ集中して回答する傾向がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_004",
+      "segment_index": 7,
+      "topic": "費用検証の難しさ",
+      "question": {
+        "speaker": "草間剛",
+        "party": "自由民主党・無所属の会",
+        "summary": "- サービス部分などの検証を行う上での難しさをどう考えるか",
+        "full_text": "佐野顧問、今の御議論にちょっと深掘りさせていただくんですけれども、この一連の議論の中でも、厚労省なり、それから医師の立場から、この費用についてはさまざまな資料が出されておりまして、私も拝見をさせていただきまして、それでも保険者の立場として、ちょっとまだ見えないなというところはまさに、サービス部分のところかもしれないんですけれども、これからのやはり、これは菊池先生にもお聞きしたんですが、これからの議論の中で、それをやはり皆様としては、しっかり検証していかなければいけない。この検証をやって上での、この難しさというのは、どのようにお考えでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "佐野雅宏",
+        "role": "参考人 健康保険組合連合会顧問",
+        "summary": "- 出産分娩は個別のケースによって状況が大きく異なり、医師の負担も大きい特殊な医療であること\n- 一時金を増額しても賄いきれない部分が出ているという実態がある",
+        "full_text": "そういう点において言いますと、私自身全く経験ないんですけれども、やはり出産分娩というのは、いわゆるお医者さんの立場で見ても、大変難しいお仕事なんだなと痛感した部分でございます。ある意味で言うと当たり前ですけれども、二つの医療者を扱っておられて、しかも、いわゆる出産分娩というと一括りにしますけれども、個別のケースにおいて相当に違いがあるというのは、十分認識をした部分です。ただ一方でやはり全体としての費用というか、先ほど申し上げたようにどんどん出産育児一時金をいくらアップしても、これでは賄いきれない部分ができているのも事実でございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5199"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56194&time=3658.597",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "サービス部分の費用検証の難しさについて",
+          "sub_asks": [],
+          "score": 0.9
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "厚労省"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "保険者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "出産育児一時金"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "出産育児一時金をいくらアップしても、これでは賄いきれない部分ができているのも事実でございます。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "費用検証の難しさという問いに対し、分娩の個別性の高さと一時金制度の限界という一般論で回答しており、具体的な検証手法への言及はない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「難しさはどのようにお考えか」という抽象的な問いであるため、回答者が主観的な感想に終始しやすい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_005",
+      "segment_index": 8,
+      "topic": "高額療養費制度の見直し法案（議員立法）への評価",
+      "question": {
+        "speaker": "早稲田ゆき",
+        "party": "中道改革連合・無所属",
+        "summary": "- 提出した「国民が安心して利用できる高額療養費制度の見直し法案」に対する受け止めと評価を問う",
+        "full_text": "昨日、私ども中道改革連合、そしてチームみらい、そして共産党の3党で議員立法、通称で申しますと、国民が安心して利用できる高額療養費制度の見直し法案、これを衆議院に提出させていただきまして、先ほど趣旨説明を行わせていただきました。この議員立法につきまして、大黒参考人の受け止め、評価を伺いたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "大黒宏司",
+        "role": "参考人 一般社団法人日本難病・疾病団体協議会代表理事",
+        "summary": "- 生活破綻を防ぐ抑制策や、患者の意見を尊重する内容となっており評価する\n- 制度に真剣に向き合ったことに感謝し、議論を求める",
+        "full_text": "私たちの要望でもある生活破綻につながることがないよう、さらなる抑制を検討することにつながるものであり、また、高額療養費等の支給要件、支給額、そのほか支給に関する事項を定めるにあたり、私たちの意見を尊重する内容となっております。これについても評価したいと思います。何より、高額療養費制度に正面から真剣に向き合っていただいていることに感謝申し上げます。ぜひ、この法案について、皆さんに議論していただけるようによろしくお願いいたします。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56194&time=4621.396999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "提出された議員立法への評価",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "国民が安心して利用できる高額療養費制度の見直し法案"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "生活破綻につながることがないよう、さらなる抑制を検討することにつながるものであり、これについても評価したいと思います。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "議員立法に対する参考人の主観的な評価を問う形式であり、具体的な事実認定や政府の拘束力のある約束は含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "評価を問うのみで、具体的な修正案や懸念点などの詳細な回答を求める構成になっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_006",
+      "segment_index": 8,
+      "topic": "専門委員会での議論と政府見直し案の相違",
+      "question": {
+        "speaker": "早稲田ゆき",
+        "party": "中道改革連合・無所属",
+        "summary": "- 専門委員会での議論の取りまとめと、政府の制度見直し案との間に、患者負担や制度趣旨の視点からどのような相違や齟齬があるか問う",
+        "full_text": "その上で、参考人は、この高額療養費制度のあり方の専門委員会に委員として参加をされてこられました。その9回にわたる議論の取りまとめと、今回政府から示されました制度の見直し案との間に、患者の負担と、それから制度の趣旨という視点から、どのような相違点があるとお考えになりますか。それからまた特に議論の中で、この共有をされてきた認識と最終的な制度の間に齟齬があるとしたら、どのようなものかということを率直にお聞かせいただきたいと思います。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "大黒宏司",
+        "role": "参考人 一般社団法人日本難病・疾病団体協議会代表理事",
+        "summary": "- 専門委員会では制度改革の必要性は理解しつつも、具体的な金額の方向性まで議論する段階には至っていなかった\n- 具体的な金額は議論の結果ではなく提示された形であり、十分な議論がなされなかったため共同声明を出すに至った",
+        "full_text": "その中では、現役世代の保険料負担に配慮する必要がある中で、制度改革の必要性は理解するけれども、その際には高額療養費制度だけではなく、他の改革項目も含め、医療保険制度改革全体の中で全体感をもって議論していくことが必要であるというふうにされました。さらに、この考え方の中では、医療保険部会において、医療保険制度改革全体の議論が行われている現状であって、具体的な金額の方向性を含む形で、本専門委員会で議論する段階には至っていないというふうにあります。8回ありましたけれども、この段階では金額が示しておらず、その話は私たちはしていないというような形になっています。その考え方では、残念ながら、保険制度全体の改革の中で、高額療養費制度のこの金額が決まったと、私自体は認識しておりません。この8回が終わった後に、金額が示されたわけですけれども、私としましては、この具体的な金額について議論したというよりは、提示されたという形で思っていまして、残念ながら私たちは基本的にきちんと議論したわけではなくて、そのために先ほどもありました共同声明というものを出させていただいたというような経緯になっております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5199"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56194&time=4621.396999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "専門委員会の議論と政府見直し案の相違点",
+          "sub_asks": [
+            "患者負担と制度趣旨の視点からの相違点",
+            "共有認識と最終制度の間の齟齬"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "高額療養費制度のあり方の専門委員会"
+            },
+            {
+              "type": "other",
+              "excerpt": "政府から示されました制度の見直し案"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "患者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "8回ありました"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "医療保険部会"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "共同声明"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "reference",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "具体的な金額について議論したというよりは、提示されたという形で思っていまして、残念ながら私たちは基本的にきちんと議論したわけではなくて",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "専門委員会の委員であった参考人が、政府案が十分な議論を経ずに提示されたことを率直に認めており、記録としての価値が高い。",
+        "would_be_referenced": "high",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_007",
+      "segment_index": 8,
+      "topic": "高額療養費制度見直しの適切性と難病患者への影響",
+      "question": {
+        "speaker": "早稲田ゆき",
+        "party": "中道改革連合・無所属",
+        "summary": "- 財政効果が限定的である一方、患者リスクが大きいという非対称性について、難病患者にどのような具体的影響が懸念され、制度見直しは適切か問う",
+        "full_text": "参考人の先ほどの陳述の中で、この高額療養費が医療費全体の約6.8%にとどまり、見直しによる財政効果が限定的である一方で、非常に患者さんにとってはリスクが大きいということの御指摘があり、この効果の小ささと、それから患者リスクの大きさの非対称性について、難病患者にどのような影響が具体的に懸念をされるのか、そしてまたそのような制度見直しというものは本当に適切なのかどうか、大黒参考人に伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "大黒宏司",
+        "role": "参考人 一般社団法人日本難病・疾病団体協議会代表理事",
+        "summary": "- 治療機会を一度逃すと不可逆的な身体的影響が出るリスクがあり、結果的に社会保障費の増大を招く\n- 負担引き上げにより、同様の事例がさらに増加することが明らかである",
+        "full_text": "大黒参考人先ほど意見一致させていただいたとおりですけれども、やはり難病患者にとって、一度の高額療養費の使用の機会であったとしても、その医療については非常に危険性が高いという部分があります。その1回を逃したがために、実は不可逆的な体の影響が出て、元に戻すことができないという状況になります。そういった場合に、一度、体が悪くなったときに、障害などが出た場合には、より多くの社会保障費がかかるという状況も、私たちも経験しています。今の現状であっても、そのようなことですから、さらに高額療養費の引き上げということが起これば、さらに多くの事例が発生するということは明らかであります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5199"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56194&time=4621.396999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "高額療養費見直しの適切性と難病患者への影響",
+          "sub_asks": [
+            "難病患者にどのような影響が具体的に懸念されるか",
+            "制度見直しは本当に適切なのか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "医療費全体の約6.8%にとどまり"
+            },
+            {
+              "type": "past_answer",
+              "excerpt": "参考人の先ほどの陳述の中で"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "難病患者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "その1回を逃したがために、実は不可逆的な体の影響が出て、元に戻すことができないという状況になります。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人による制度見直しのリスクに関する主観的な見解を問うやり取りであり、具体的な数値や政府の約束は含まれていない。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「適切かどうか」という抽象的な問いではなく、代替案や具体的な基準を問う形式にすればより実効的な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_008",
+      "segment_index": 8,
+      "topic": "医療保険制度における負担のあり方と見直しの問題点",
+      "question": {
+        "speaker": "早稲田ゆき",
+        "party": "中道改革連合・無所属",
+        "summary": "- 負担のあり方と社会的合意形成の観点から、今回の見直しがどのような問題をはらんでいるか問う",
+        "full_text": "その上でありますが、医療保険制度における負担のあり方と、それからまた社会的合意形成のという観点から、今回の見直しがどのような問題をはらんでいるかということを大黒参考人に最後に伺いたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "大黒宏司",
+        "role": "参考人 一般社団法人日本難病・疾病団体協議会代表理事",
+        "summary": "- 給付に関しては応分の負担よりも、必要な医療の提供を第一に考えた制度設計が基本であるべき\n- 今回の改革は命に関わる危険性を伴っており、より慎重な検討が必要である",
+        "full_text": "基本的にでは負担については応分の負担というのはあり得るということだと思うんですけれども、この給付ということに関しましては、必ずしも応分の負担ではないはずであって、できる限り必要な医療を提供していただくということをまず第一に考えていただいて、制度設計をしていただくというのが基本であるというふうに思っています。今回の高額療養費制度の改革につきましては、やはり私たちは危険性を伴っているというふうに感じておりますので、そういう意味ではぜひ命に関わる事例ですので、より慎重にさらにもう一歩検討していただければありがたいというふうな形で、今回の法案が提出されたことには非常に感謝申し上げております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5199"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56194&time=4621.396999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "見直しの問題点についての見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "高額療養費制度"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "できる限り必要な医療を提供していただくということをまず第一に考えていただいて、制度設計をしていただくというのが基本である",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人による一般的・理念的な見解の提示に留まっており、具体的な制度上の問題点や数値的な根拠は示されていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのような問題をはらんでいるか」という問いが抽象的なため、回答も理念的な内容に終始している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_009",
+      "segment_index": 8,
+      "topic": "出産給付体系の移行期間および後期高齢者への公費投入",
+      "question": {
+        "speaker": "早稲田ゆき",
+        "party": "中道改革連合・無所属",
+        "summary": "- 出産育児一時金から新給付体系への移行期間のあり方について意見を求める\n- 後期高齢者の現役並み所得者への給付費に公費が入っていない点について意見を求める",
+        "full_text": "2点まとめてお伺いいたしますが、まず出産に関わる給付体系についてです。サービス内容の見える化、それから、周産期医療整備体制への支援、これは社会インフラでありますから、ここは大変重要だと思っておりますし、また現在の出産育児一時金から新たな給付体系にこれが移行するわけですけれども、移行期間のあり方について御意見を伺いたいと思います。それからもう一つは、今後の制度改革の課題としておっしゃっておりましたけれども、後期高齢者のうち現役並み所得者への給付費に公費が入っていないこと。この点の2点についてご意見を賜りたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "佐野雅宏",
+        "role": "参考人 健康保険組合連合会顧問",
+        "summary": "- 施設の状況により新旧制度が一定期間並存することはやむを得ないが、地域により選択できない可能性がある",
+        "full_text": "まず出産の方の移行時期の問題でございますけれども、やはり施設の状況によって、従来の制度と新しい制度が並存するというのは一定期間やむを得ないと思うんですけれども、例えば地域によっては旧制度を提供する医療機関しかないといった場合には選択できない。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5199"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56194&time=4621.396999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "出産給付体系の移行と後期高齢者給付の課題について",
+          "sub_asks": [
+            "出産育児一時金から新給付体系への移行期間のあり方",
+            "後期高齢者の現役並み所得者への給付費に公費が入っていない点への意見"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "出産育児一時金"
+            },
+            {
+              "type": "other",
+              "excerpt": "後期高齢者のうち現役並み所得者への給付費"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "後期高齢者のうち現役並み所得者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "other",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "施設の状況によって、従来の制度と新しい制度が並存するというのは一定期間やむを得ないと思う",
+          "score": 0.3
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "質問は2点あり明確だが、回答は1点目の移行期間についてのみ触れており、かつ具体的な方針ではなく現状認識に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "2つの異なるテーマを一度に質問しているため、回答が不十分になりやすい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_010",
+      "segment_index": 9,
+      "topic": "現役世代の負担軽減に向けた公費投入の妥当性",
+      "question": {
+        "speaker": "梅村聡",
+        "party": "日本維新の会",
+        "summary": "- 現役世代の保険料負担を抑制するため、一定の公費投入を行うべきではないか\n- この点について学術的または審議会等でどのような議論や整理がなされてきたか",
+        "full_text": "それではまず最初に菊池参考人にお伺いをしたいと思いますが、今回の法改正の目的は、持続可能な医療保険制度の実現に向けて、必要な保険給付等の適切な実施と世代間や世代内での負担の公平性の確保を図るためと、こういう目的のためにこういう法改正が目指されているという今の状況です。一方で我々維新の会はこの皆保険を守りながら、一方で現役世代の方の、特に保険料の負担、これをどのようにやはり持続可能なレベルにしっかりコントロールしていくかと。このことが私たちの問題意識としてはあります。今回の様々な改正案の中は、いわゆる医療費全体の一つは自然増を抑えると。負担をやはり目に見える形で負担を落としていこうと思えば、考え方としてはいろいろありますけれども、やはり一定公費の負担を入れていかないと、自然増を抑えるだけで本当に現役世代の方の負担は軽くなるのかという問題意識があると思います。でも一方でこの医療保険制度というのは社会保険ですから、安易に公費を入れていくのはどうなんだという議論も当然あるかと思いますが、現役世代の負担を中心に考えれば、やはり一定の公費を入れていくということも私は議論としているんじゃないかなと思いますが、こういったことは学術的に、あるいは今までのこの審議会等の議論の中で何か議論されてきたのか、あるいはどういう整理として考えていけばいいのか教えていただきたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "菊池馨実",
+        "role": "参考人 早稲田大学法学学術院教授 早稲田大学理事",
+        "summary": "- 全世代型社会保障への移行の中で、負担能力に応じた負担という考え方が徹底されている\n- 医療・介護保険部会でも公費財源の活用について多くの意見が出ており、方向性としては十分あり得るが、財源の確保が課題となる",
+        "full_text": "社会保障全体の大きな流れとしては高齢者中心型から全世代型社会保障。その中にはやはり現役世代も拠出する一方ではなく、やはり受益を受けながら負担もしていくという。ただそれはあくまで負担能力別負担という、これは年代を通じてですね、その考え方は徹底していきましょうという、そういう流れで一連の制度改革が動いていると思います。その中で、これは医療保険部会の中でも、あるいは私、介護保険に所属していましたが、介護保険部会でも、よく皆様から、委員から出ていましたが、保険料だけでどこまで賄うのかと。やはり公費を、公費財源をもっと入れられないのかというご意見は非常に多くいただいていたところです。私ももちろん社会保険という枠組みでやっている上は、保険料で賄う分と公費で賄う分の限界はもちろんあると思いますが、やはり公費財源を活用しながら給付に当てていくという方向性は十分あり得ると思います。ただそのためには財源が必要であるという、そういう話にはなってくるんだと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5199"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56194&time=5440.097",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "現役世代の負担軽減に向けた公費投入の議論状況",
+          "sub_asks": [
+            "学術的または審議会等で公費投入が議論されてきたか",
+            "どのような整理として考えるべきか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "現役世代",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "医療保険部会"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "介護保険部会"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "公費財源を活用しながら給付に当てていくという方向性は十分あり得ると思います。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "現役世代の負担軽減のための公費投入という論点に対し、参考人が方向性の可能性を認める回答をした。具体的な制度設計や数値への言及はなく、記録としての価値は限定的。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問が前置きに時間を割いており、具体的な「整理」のあり方についての問いが抽象的である。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_011",
+      "segment_index": 9,
+      "topic": "希少疾患における治験と薬剤上市の現状と課題",
+      "question": {
+        "speaker": "梅村聡",
+        "party": "日本維新の会",
+        "summary": "- 日本が新薬の治験の場に選ばれにくく、上市が利益につながらない状況にあることへの危機感や問題意識を問う",
+        "full_text": "高額療養費の見直しによるさまざまなご心配、あるいは命の危険が出てくるということにつきましては、我々もしっかり重く受け止めさせていただいて、しっかり検討していきたいと思っておりますので、その点は今日は質問から外させていただいて、一方でご説明がありましたけれども、いわゆる希少疾患に対する薬剤の問題ですよね。これは高額療養費の問題だけではなくて、今日本が特に高額な新しいお薬の治験の場にも選んでもらえない、あるいは日本で薬を上市することがもはや利益につながらない、こういう状況が広がってきているわけです。これは政府のサポートがもっと必要だということもあれば、薬価のつけ方にも当然課題があるわけですけれども、これは当事者の皆さんから見て、この問題に関する今の危機感や問題意識があれば教えていただきたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "大黒宏司",
+        "role": "参考人 一般社団法人日本難病・疾病団体協議会代表理事",
+        "summary": "- 難病患者の間では治験への認識が希薄であり、海外で認められている薬が日本で認められていないことを知らないケースもある\n- 希少難病患者への周知に加え、一般市民に治験の重要性や希少疾患の現状を公表し、理解を得ることが重要である",
+        "full_text": "難病患者さん、治験ってなかなか行われたことがほとんどないんですね。そういう意味では、治験に対する認識もかなり希薄なんです。ですから、その希少疾患の方について、そのような世界では認められているのに日本では認められていないということ自体も知らない方がおられる。治験に対しても今までなかなか求めていないという状況もあります。ただ、本当に希少な難病でも治験が行われてきているという状況が私たちにもわかるようになってきた段階ですので、このことにつきましては希少難病の方にも知っていただくこともありますけれども、このためにはやはり一般市民の方にも治験の大事さであるとか、希少疾患の今置かれている状況を私たちも公表して皆さんに知っていただくということが大事なのではないかというふうに思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56194&time=5440.097",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "希少疾患の薬剤開発・上市の現状への危機感",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "当事者の皆さん",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "公表して皆さんに知っていただくということが大事なのではないかというふうに思っております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "希少疾患の方について、そのような世界では認められているのに日本では認められていないということ自体も知らない方がおられる。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "希少疾患の治験に関する当事者の認識不足という現状を述べているが、具体的な制度改善への言及はなく、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "危機感や問題意識を問うオープンクエスチョンであるため、具体的な回答や政府のコミットメントを引き出しにくい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_012",
+      "segment_index": 9,
+      "topic": "後期高齢者医療制度における3割負担者の公費投入なき構造の妥当性",
+      "question": {
+        "speaker": "梅村聡",
+        "party": "日本維新の会",
+        "summary": "- 3割負担者が増えることで現役世代の負担が増える構造のまま、24年間見直しがなされていない現状について、納得できる説明があるか",
+        "full_text": "先ほどから御答弁あるいは最初の説明に対しても、特に後期高齢者の方の3割負担の方への公費投入、これ5800億円という話がありました。先ほどから申し上げておりますように、現役世代の保険料を下げるという観点からすれば、このまま3割負担の方が増えてくれば現役世代の方の負担は増えてくるわけですから、それは当然若い世代は困るわけなんですね。それで実は先週、このことについて党委員会で質問をしました。どういう経緯で3割負担の方には公費が入らないんですかと聞いたら、これは平成14年に遡ると。だから今から24年前に初めて2割負担の方ができたと。この2割負担の方には一定の所得以上だから公費はいらないだろうということでそれがスタートして、3割負担ができたのでそこにスライドをしたと。後期高齢者医療制度が平成20年に始まったのでそれをそのまま引き継いだんだけども、後期高齢者医療制度というのは拠出金を現役世代からの高齢者支援金、そして公費と明確に分けたものだから、理屈としては3割負担の方が増えれば現役世代の方の負担が増えるという構造になりました。そこは一切途中で見直しはしていないです。数がどんどん増えて142万人になりましたというこの24年間の歴史を私は勉強したんですけれども、その説明で納得できるのかどうか、ちょっとお伺いをしたいと思います。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "佐野雅宏",
+        "role": "参考人 健康保険組合連合会顧問",
+        "summary": "- （回答なし。お答えしにくいとの反応のみ）",
+        "full_text": "なかなかお答えしにくい。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5199"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56194&time=5440.097",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "3割負担者への公費未投入の経緯に納得できるか",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "5800億円"
+            },
+            {
+              "type": "date",
+              "excerpt": "平成14年"
+            },
+            {
+              "type": "date",
+              "excerpt": "平成20年"
+            },
+            {
+              "type": "number",
+              "excerpt": "142万人"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "後期高齢者の方の3割負担の方",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "not_at_all",
+          "topic_shift_detected": false,
+          "score": 0.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "other",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "なかなかお答えしにくい。",
+          "score": 0.0
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は制度の歴史的経緯を詳細に提示して納得性を問うているが、回答者は事実上の回答を拒否しており、記録としての価値は極めて低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「納得できるか」という主観的な問いであるため、政府側が回答を回避しやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_013",
+      "segment_index": 10,
+      "topic": "医療費適正化策について",
+      "question": {
+        "speaker": "日野紗里亜",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 高額療養費制度の自己負担見直しに先立ち、優先的に取り組むべき医療費適正化策は何か",
+        "full_text": "高額療養費制度の議論が進んでおりますが、私は本会議登壇の場でも申し述べさせていただきましたが、まずはやはり患者さんの自己負担を上げる前に、制度の外側で優先的に取り組むべき医療費の適正化があるのではないかというふうに考えております。そういったことで、高額療養費制度の自己負担の見直しに先立って、優先して取り組むべき医療費適正化策は何かということについて、全ての参考人の皆様にお伺いできればと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "菊池馨実",
+        "role": "参考人 早稲田大学法学学術院教授 早稲田大学理事",
+        "summary": "- 保険給付の範囲設定や保険適用のあり方についての議論が必要\n- 今後登場する高額な治療法・薬の保険適用に関する考え方の整理が必要\n- かかりつけ薬剤師の推進による医薬品の効率的な提供と無駄の排除\n- 負担能力に応じた負担の推進\n- 金融所得課税の強化など税負担を含めた検討\n- 適正な薬価の検討および医療従事者の処遇改善に向けた財源確保",
+        "full_text": "いろいろあり得るとは思うんですけれども、例えば先生おっしゃったような方策ももちろんあると思いますし、そもそも保険給付の給付範囲をどういう考え方の下で、どこからどこまでに設定するかという議論について、きちんとした議論を行って。どこまで、諸外国でそういった議論し、制度に反映している国もあると聞いていますが、どこまでのそういった今後出てくる高額のものも含めたものを保険適用していくのかという、そこの考え方を整理をしていくという、もう日本もそろそろそういう時期になってきているのではないかというのは、私個人的に思っております。私自身も理学療法士でして、医療の過程はある程度わかっているんですけれども、無駄ではなくて、効率化できるという部分はやはりあると思いますので、医療の範囲の中で効率化できることがあれば、ぜひやっていければいいと思います。無駄な医薬品を飲むというようなことは生じないような形でしていただければ、かなりの効果は実はあるんじゃないかというふうに思いますので、その細かいところから多くのことが出てくるような気がしますので、お願いできればと思っています。また負担の方について申し上げるならば、いずれにしても負担は公費と保険料と自己負担のこの3つしかないわけでございまして、この3つのバランスをどうとるのかということにつけると思いますし、その点ではよく言われている部分でございますけれども、やはり負担能力に応じた負担というものを進めていくしかないのではないかというふうに考えております。ただそれがまだそうなっていない、不安があるからこそ、例えば若者が結婚を躊躇する、そんなこともあるんだろうというふうに思っていまして、お尋ねの点につきましても、医療保険の中だけで考えるのではなくて、例えば金融所得の課税強化とか所得補足の強化など、税の負担も含めて考えていくべきだというふうに考えてございます。そういったところで適正な薬価というのがやっぱり検討していかなくてはいけないんじゃないかというふうに思っております。そのための財源としてはですね、金融所得の多い人については、やはり税を強化すべきだろうと思いますし、大規模なんかの内部留保が600兆円以上あるということを言われておりますので、そこら辺の課税強化としてもいいんではないかというふうに考えます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5199"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56194&time=6323.2970000000005",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "優先的に取り組むべき医療費適正化策は何か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "高額療養費制度"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "患者さん",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "600兆円以上"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "医療保険の中だけで考えるのではなくて、例えば金融所得の課税強化とか所得補足の強化など、税の負担も含めて考えていくべきだ",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人による個人的な見解の提示に留まっており、政府としての公式な見解や具体的なコミットメントは含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_014",
+      "segment_index": 10,
+      "topic": "協会けんぽ運営委員会における特例減額措置への意見",
+      "question": {
+        "speaker": "日野紗里亜",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 協会けんぽ運営委員会において、特例減額の時限的措置や国庫補助についてどのような意見があったか",
+        "full_text": "協会けんぽにおきましては、事業主や被保険者の意見を反映させ、協会の業務の適正な運営を図るため、運営委員会を設置しており、将来の見通しを踏まえて、毎年保険料率に係る議論を行っていると聞いております。林参考人は協会けんぽ運営委員会の委員も務めているということなので、運営委員会において今回の特例減額の時限的措置、国庫補助についてどのような意見があったのかという点も含めて、お考えを補足いただけましたらと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "林鉄兵",
+        "role": "参考人 日本労働組合総連合会副事務局長",
+        "summary": "- 今回の措置には唐突感があり、納得感がないという意見があった\n- 時限的措置終了後の保険財政運営の在り方について不安がある\n- 将来的な収支赤字の懸念から、保険料率の維持と慎重な検討を求める意見が多かった",
+        "full_text": "特例減額の時限的措置というのは、協会けんぽに大変大きな影響を与えるものでございまして、私も唐突感が否めないというふうに思っています。この運営委員会でもそうでしたけれども、各都道府県にあります支部教育会においても、今回の措置に唐突感が否めない、納得感がないという意見がございました。加えて、この時限的措置が終了した後に、国庫補助の見直しと併せて、医療保険料率等も含めた保険財政運営の在り方を検討するということが言われていまして、非常にこの点についての不安を感じる。将来を見据えて、保険料率を維持してほしいという意見も多くございました。協会けんぽの試算でも将来的には、単年度で収支が赤字になるというふうに示されておりまして、決して今の準備金の水準が高いわけではございませんので、見直しに当たっては、慎重な検討をお願いしたいというふうに考えているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5199"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56194&time=6323.2970000000005",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "運営委員会での特例減額・国庫補助への意見と見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "協会けんぽ"
+            },
+            {
+              "type": "organization",
+              "excerpt": "運営委員会"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "林参考人",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "支部教育会"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "今回の措置に唐突感が否めない、納得感がないという意見がございました。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人が運営委員会や支部教育会での否定的な意見を具体的に伝えており、実態を記録する価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_015",
+      "segment_index": 10,
+      "topic": "健康づくり・予防による医療ニーズ削減策",
+      "question": {
+        "speaker": "日野紗里亜",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 健康づくりや予防によって医療ニーズを減らすため、具体的にどのような施策が有効か",
+        "full_text": "健康づくりに資する取組についてでございます。こういった観点におきまして、具体的に健康づくりに資するものとして、どのような施策だったりと。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "佐野雅宏",
+        "role": "参考人 健康保険組合連合会顧問",
+        "summary": "- 定期的な検診による健康状態のチェックの徹底\n- 問題や予兆がある場合の改善取組の実施と、健保組合による促し\n- 事業主と連携した加入者の行動変革の推進\n- 長時間労働の抑止やワークライフバランス確保など、職場環境の整備",
+        "full_text": "今、聞かれまして、改めて考えてみますと、そんなに秘策があるわけではないと思っておりまして、まず1点目は、毎年の検診をきちんと受けて、加入者の皆さんの健康状態をチェックしていただくというのは、まず1番だと思います。ということで、申し上げるまでもない基本的な事項でございますけれども、これをきちんとやって、加入者の方の行動変革につなげていただくと。そういった中で、憲法組合はまさに、加入者に近い存在として、事業主と連携をして、この取組をより強力に進めていくというふうに考えております。林参考人働く者にとって健康の維持増進については1日の3分の1以上を職場で過ごすわけでありましてそこの環境がとても大事だというふうに思っています長時間労働の抑止や夜間勤務の負担の軽減ワークライフバランスの確保できるようなそうした勤務体制の確保が"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56194&time=6323.2970000000005",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "健康づくりに資する具体的な施策は何か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "毎年の検診"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "長時間労働の抑止"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "夜間勤務の負担の軽減"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ワークライフバランスの確保"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "この取組をより強力に進めていくというふうに考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "毎年の検診をきちんと受けて、加入者の皆さんの健康状態をチェックしていただくというのは、まず1番だと思います。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "健康づくりの施策について問われ、検診の受診や労働環境の整備といった一般的・基本的な回答がなされた。特筆すべき新たな方針や具体的数値はない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのような施策か」という問い方が非常に漠然としているため、回答者が一般的・抽象的な論評に終始しやすい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_016",
+      "segment_index": 11,
+      "topic": "利害調整と当事者の巻き込み方",
+      "question": {
+        "speaker": "豊田真由子",
+        "party": "参政党",
+        "summary": "- 命に関わる問題など、多様な立場や利害を調整してまとめる際に大切にしていたことは何か\n- 当事者だけでなく一般の方も含めて、どのように共助の議論に巻き込んでいくべきか",
+        "full_text": "社保の部会長代理としていろいろなご苦労があったとお伺いをしておりまして、一つは様々なお立場、お考え、利害、特に命に関わる話でございますので、これをどうやって調整をしながらまとめていくかというのは、私も役所に厚労省に長くおりましたので、大変難しいと思っておりまして、こうやって普遍的な問題だと思うんですけれども、そのときに大切にしておられたことは何かということを一つ。そしてまた当事者ではなくて、すべての人が共助者であるべきという話、また人対人ではなくて客観的なこと対ことで捉えるべきだという議論をすべきだということも本当にそうだなと思っておりまして、ただここで難しいのが、それをどのように当事者の方、いわゆる当事者とされている方だけではなくて、一般の方も含めて巻き込んでいくかというところが、非常に私も関心しております。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "菊池馨実",
+        "role": "参考人 早稲田大学法学学術院教授 早稲田大学理事",
+        "summary": "- 納得できなくても「言いたいことは言った」と思える場を設けることが取りまとめに不可欠である\n- 対立するのではなく同じ方向を向いて歩むイメージで取り組み、地域づくりから一つずつ積み上げることが社会変革につながる\n- 医療保険の枠組みに地域づくりまで踏み込めるツールを設けることが必要である",
+        "full_text": "私は医療保険部会では部会長代理で、部会長の隣に座っていただけるので、取りまとめという立場ではありませんが、他、介護保険ですとか福祉ですとか、関わらせていただきまして、やはり様々な当事者の方、利害関係者の方がいらっしゃいますので、とにかくお話ししていただく、語っていただく。とにかく納得はできないけれども、しっかり言いたいことは言ったっていう、そういった場でなければ、最後まとめることが難しいなということを痛感に感じてまいりました。それから後半部分ですが、先生が多分やってらっしゃるように、私も基本的には向き合うのではなく、同じ方向を向いて歩んでいくというそういうイメージで取り組んでいます。そして、なかなか広まらないということもあるんですが、やはり私は地域共生社会もそうですし、連帯もそうなんですが、やはり地域から、地域づくり、地域から一つ一つ積み上げていくことで、それがこの社会を変えていくことにつながればいいなと思って取り組んでおります。その意味で医療保険、先ほどの健康づくりの話がありましたが、医療保険の中に地域づくりまで踏み込めるあと一歩のツールがちょっとなかなかないので、個人の健康のところで法律上終わってしまいがちなので、そこを何か架け橋をつけていただけるとありがたいなと思っているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56194&time=7247.2970000000005",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "調整の心得と当事者・一般層の巻き込み方について",
+          "sub_asks": [
+            "調整において大切にしていたことは何か",
+            "当事者や一般の方をどのように巻き込んでいくか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "厚労省"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.2
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "当事者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "医療保険部会"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "地域共生社会"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "取り組んでおります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "納得はできないけれども、しっかり言いたいことは言ったっていう、そういった場でなければ、最後まとめることが難しい",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "個人の経験や哲学を問う形式のやり取りであり、具体的な政策決定や法的解釈を含むものではないため、記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問がエッセイ的な記述になっており、具体的な回答を導き出すための問いかけが弱いため、より具体的な手法を問う形式にすべき。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_017",
+      "segment_index": 11,
+      "topic": "難病患者の就労支援とアプローチ",
+      "question": {
+        "speaker": "豊田真由子",
+        "party": "参政党",
+        "summary": "- 難病患者が「働けない」と見なされる現状や、周囲への気遣いから無理をして悪化する状況がある\n- 就労の選択肢を広げ、実現させるために国や現場はどうアプローチすべきか",
+        "full_text": "また、働けないと見られる現実が非常に嫌なんだという話でございまして。やはり今も、がんになっても仕事をし続けて共に生きていくんだという時代でございますが、まだまだやはりいろんな職場ですとか介護や医療の現場ですらも、また広く社会全体においてはまだまだ理解が足りないと思います。選択肢が狭められていってしまって、また参考人がおっしゃる通りですね、十分に働けなくて迷惑をかけるんじゃないかっていうご不安の中で頑張りすぎて悪化するっていうこともございまして。そういった周りは気を使うんだけれども、そこがまだ考えが至らない、あるいは急がすぎて考えられないといったいろんな状況の中で、どういうふうなアプローチをして、そのためにそれを実現してもらうためにはどういうふうに私どもであったり国であったり現場はどうしたらいいかということにアドバイスをいただければと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "大黒宏司",
+        "role": "参考人 一般社団法人日本難病・疾病団体協議会代表理事",
+        "summary": "- 「合理的配慮」を一方的な受け身の権利とするのではなく、お互い様の配慮として捉えるべきである\n- できることは自分でする、できないことは誰かに頼るという役割の住み分けを明確にする\n- お互い様の配慮の中で取り組むことで、同僚と共に成長できる状況が醸成される",
+        "full_text": "合理的配慮ということはよく言われるんですけれども、やはり職場の中でも配慮はいると思うんですけれども、ただ合理的配慮と言われてしまうと私たちは受け身になってしまうという状況であると思うんですけれども、実際はお互い様の配慮ではないかというふうに思っています。私たちもできることはありますし、基本的には私たちはできることをする、できないことをどなたかにやっていただけるという役割の住み分けであって、私たちが全てを頼りにするというのではなくて、私たちはできることはします。そこら辺は合理的配慮と言われますけれども、実際はお互い様の配慮の中でやっていけば、同僚たちも一緒に育んでいけるという状況が醸成することができるのではないかというふうに思っていますので、今後皆さんも就労に関しても難病患者さんもとても大事な課題になっていますので、ぜひ考えていただければよいかというふうに思っています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56194&time=7247.2970000000005",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "がん患者等の就労継続に向けた具体的アプローチへの助言",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "がん患者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "合理的配慮と言われてしまうと私たちは受け身になってしまうが、実際はお互い様の配慮ではないかと思う。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的アプローチを求めているが、回答は「お互い様の配慮」という精神論に留まっており、実効性のある記録価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どうしたらいいか」という問い方が抽象的なため、回答者が精神論で逃げられる設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_018",
+      "segment_index": 11,
+      "topic": "現役世代の負担軽減と行動変容",
+      "question": {
+        "speaker": "豊田真由子",
+        "party": "参政党",
+        "summary": "- 現役世代の負担が過酷な現状において、適正・公正なバランスを取るために具体的に何をすべきか\n- 過剰な医療や薬のもらえすぎを是正するため、組織においてどのように行動変容を促しているか",
+        "full_text": "お二方は、それぞれ現役世代を代表する方たちでいらっしゃると思いまして、やはり現役世代の負担が非常に重いという問題がございます。私は、いたずらに世代間の対立を煽るような風潮は良くないと思っているのですが、しかしそこで、適正・公正なものにバランスをとっていくのは非常に大事だと思っていまして。今、いろいろ高齢者の拠出金が多すぎじゃないかとか、あるいは前期高齢者の分担金、報酬数字をもっと加減するべきじゃないかとか、いろんなやり方はあると思うんですけれども、本当に現役世代の方の過酷さを一番わかっていらっしゃる方として、「これをやるんだ」ということがあったらお知らせいただきたいということと、お二方とも、一方で患者と国民の行動変容も大事だとおっしゃっていると思います。その参考には、薬局フォーミュラリーなどのローバリューケアについては是正していくべきだ、あるいは林さんにも、残薬問題をはじめとする薬のもらえすぎを是正すべきだということで、その他にもいろいろな、本当に命や健康に関わらない過剰な医療って非常に多い。それをそれぞれの組織の方に対して、どのように行動変容を促す方策をやっていらっしゃって実行されていらっしゃるか、この2点を簡潔にお願いしたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "佐野雅宏",
+        "role": "参考人 健康保険組合連合会顧問",
+        "summary": "- 社会構造の変化（ピラミッド型の崩壊）を前提としたパラダイムシフトが必要である\n- 行動変容には地道な取り組みに加え、子供の頃からの教育によるリテラシー醸成が重要である\n- 現役と高齢者の対立ではなく、誰もがいつかはシニアになるという視点を共有し、負担すべきところは負担することを組織内で訴えている\n- 薬の過剰処方が保険財政を圧迫することをセミナー等を通じて組合員に伝えている",
+        "full_text": "まず1点目の方の世代間については、おっしゃるとおり対立あるものであってはいけないと思うんですけれども、一方でやはり社会構造が大きく変わっているということは、全てにおいて大前提で考える必要があると思っています。従来の以前のようなピラミッド型の、多くの現役世代が少数の高齢者を支えるということが、今やピラミッド構造が変わっているわけでして、大変高齢者化が進む中で現役世代がどんどん減っているという、この現実の中でどのような方向を持っていくのかという、やはりここはパラダイムシフトを変えないといけないという、ここは一番大事なのではないかなというふうに思います。それから2つ目の方の行動変容はおっしゃるとおり、これほど難しいことはないと思います。やっていてもなかなかにうまくいっていないのはここの部分だと思いますけれども、1つ目はもう地道にやっていくしかないと思いますし、もう1つはやはり子どものときから含めた教育といいますか、リテラシーをいかに醸成するかということがやはり一番重要なのではないかなということで、両方とも意識をいかに変えていくかというのが大事なんではないかなというふうに考えております。林参考人、私ども現役の労働組合員さんを組織する立場でありますけれども、現役世代と高齢者世代の対立ということではなくて、今は現役時代だけれども我々もいつかはシニア時代になるわけで、そこはもう対立軸じゃないんじゃないんですかというようなことをしっかり共有するということなんだろうというふうに思っています。社会保障制度全体の大きい制度、なかなか理解は難しいかもしれませんが、負担は負担でしっかり負担すべきところは負担すべきだというようなことを組織の中でもしっかり訴えているところでございます。高額療養費ともつながりますけれども、例えば薬局や病院でたくさん薬をもらった、あるいは処方してもらったみたいなお話が現場からあったりしますけれども、それは自分たちが入っている協会けんぽや健康保険組合の財政を傷める、そういうことは駄目なんですよというようなことをしっかり、これは医療保険の世界かもしれませんけれども、そのこともですね、セミナーなんかで、それぞれの構成組織であったり、組合員さんに伝わるような形で取り組みを進めているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5199"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56194&time=7247.2970000000005",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "現役世代の負担軽減策と行動変容の具体策について",
+          "sub_asks": [
+            "現役世代の負担を適正化するために「これをやる」という具体策",
+            "過剰医療是正に向けた組織内での行動変容の促し方"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "薬局フォーミュラリー"
+            },
+            {
+              "type": "other",
+              "excerpt": "残薬問題"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "現役世代",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "協会けんぽ"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "健康保険組合"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "取り組みを進めているところでございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "パラダイムシフトを変えないといけないという、ここは一番大事なのではないかなというふうに思います。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的だが、回答は「パラダイムシフトが必要」「地道にやる」といった抽象的な精神論に終始しており、具体的な政策や仕組みの提示がないため価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「これをやるんだということがあったら」という問い方が緩いため、回答者が具体策ではなく持論を述べることで逃げられる設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_019",
+      "segment_index": 12,
+      "topic": "高額療養費見直しにおけるデータ分析の十分性",
+      "question": {
+        "speaker": "古川あおい",
+        "party": "チームみらい",
+        "summary": "- 昨年の高額療養費見直し検討会での反省を踏まえ、専門委員会において必要なデータ分析は十分に行われたか\n- 不足していたデータや、できればよかった分析があれば教えたい",
+        "full_text": "その中で菊地参考人が、昨年の高額療養費の見直しの検討会におきまして、振り返りの一言として、長期療養者への自己負担の重さなどをデータ分析する必要などにもっと言及すればよかったというような振り返りがございました。そこで、昨年、これは昨年の振り返りのお話ですけれども、そこから1年経って、高額料費の委員会もございましたけれども、この高額料費の専門委員会を振り返って、こちらで昨年ちょっと反省というか、されていたような必要なデータ分析というのは十分に行われたとお考えでしょうか。また、もっとこういうデータがあったらよかったのにとか、こういう分析ができたらよかったのにというようなことがありましたら、ぜひ教えていただければと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "菊池馨実",
+        "role": "参考人 早稲田大学法学学術院教授 早稲田大学理事",
+        "summary": "- 当事者の意見聴取や裏付けのあるデータに基づく議論が不足していた面があり、十分だったかは評価が分かれる\n- 経済的負担の中に教育費を含めて考えることには違和感があり、そうした分析はなされていなかった",
+        "full_text": "先ほど申しましたが、私はデータを使う学者ではないので、どこまでが適切で、どこからが足りないのかという適切な判断ができないのですが、一旦まとめに向かいでは、やはり振り返って不十分だったなと。これは委員の皆さんを皆さん、後付けでは後付けですけれどもおっしゃっていましたがやはり当事者の皆さんのお話を伺わずに進めた面がありましたのでそこは反省すると同時にやはりしっかりした裏付けのあるデータに基づく議論も足りなかったなというところでございましてそれは昨年の委員会の方で一定程度なされたかなと思っておりますただそれ十分だったかどうかというのは評価は分かれるかもしれません。例えば、私、教育費を経済的負担の中に含めて考えるということは、違和感を感じています。確かにそういった部分までの分析はなされていませんでしたけれども、医療保険制度の中で、もちろん医療費が払えないという、そのための経済的な負担に対応するのが医療保険制度ですが、その中で、教育と異なる教育という部分は、異なるニーズではないかと。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5199"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56194&time=8170.097",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "高額療養費のデータ分析は十分だったか",
+          "sub_asks": [
+            "必要なデータ分析は十分に行われたか",
+            "不足していたデータや分析があれば教えたい"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "past_answer",
+              "excerpt": "昨年の高額療養費の見直しの検討会におきまして、振り返りの一言として"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "長期療養者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "教育費"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "reference",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "当事者の皆さんのお話を伺わずに進めた面がありましたのでそこは反省すると同時にやはりしっかりした裏付けのあるデータに基づく議論も足りなかった",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人が過去の検討プロセスの不十分さ（当事者不在、データ不足）を認めた点に記録的価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が「十分だったか」というYes/No形式であるため、回答者が主観的な感想に終始しやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_020",
+      "segment_index": 12,
+      "topic": "審議会の委員構成への専門家導入",
+      "question": {
+        "speaker": "古川あおい",
+        "party": "チームみらい",
+        "summary": "- 金額的な影響を判断するためには数字の議論が不可欠である\n- 委員構成にデータ分析の専門家や医療経済学者を導入すべきではないか",
+        "full_text": "確かに医療、生活全般に関わってくる話ですので、必ずしもどこまでを保険で考慮しなければいけないのかという点など、さまざまな論点があると思います。先ほど菊池さんにデータはあまり得意ではないというようなことをおっしゃられておりましたけれども、ただこの委員会全体の在り方として考えると、やはりこう、まさに金額をどう動かすと、どのような影響が出て、それは本当に大丈夫なのだろうか、というかなり数字の話になってくるなと思いまして、審議会の委員におきましても、もっとデータ分析の専門家ですとか、例えば医療においても医療経済の方ですとか、そういった方を委員の構成として入れていくべきなのではないかなと考えているんですけれども、こういった委員の構成についてどうお考えでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "菊池馨実",
+        "role": "参考人 早稲田大学法学学術院教授 早稲田大学理事",
+        "summary": "- 政府全般にEBPMが求められており、定性的な議論ではなくデータに基づく議論がなされるべきである\n- 公益的な立場から第三者的視点でデータを読める学者が参画しても良い時代状況である",
+        "full_text": "はい、ますます私の居場所がなくなってしまいそうですけれども、医療保険部会に関してはお一方、医療経済学者の方が入っておられますが、やはり今、政府全般にEBPMが求められているわけでございますので、費用対効果も含めて、そういう中では、定性的な議論ではなく、もっとしっかりデータに基づく議論がなされてもいいと思います。そのために、これは本当にお願いの部分ですけれども、データを読める学者さんが、さらに公益的な立場から第三者的視点で見てくださる方がいてくださってもいいのかなという、そういう時代状況かなというふうに思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56194&time=8170.097",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "審議会の委員構成にデータ分析専門家を入れるべきか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "データ分析の専門家、医療経済の方",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "医療保険部会"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "EBPM"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "定性的な議論ではなく、もっとしっかりデータに基づく議論がなされてもいいと思います。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "委員構成への提案に対し、方向性への同意は示しているが、具体的な追加策や期限などのコミットメントはない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どうお考えでしょうか」という抽象的な問いであるため、回答者が同意を示すだけで完結してしまい、具体的なアクションを引き出せていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_021",
+      "segment_index": 12,
+      "topic": "健保連におけるデータ提供の課題と現状",
+      "question": {
+        "speaker": "古川あおい",
+        "party": "チームみらい",
+        "summary": "- 検討会においてデータに基づく議論を行う上でどのような課題があったか\n- 健保連が保有するデータを厚労省や研究者に提供する際の壁や課題はあるか",
+        "full_text": "佐野参考人のお話の中で、これまでのご発信などを見ていると、健保連としてデータに基づくDXの推進ですとか、データに基づく議論というのは、かなり重視されているのかなと考えておりました。佐野参考人におかれましても、これまでの検討会の中で、委員として参加いただいたと思いますけれども、佐野参考人の目から見て、データに基づく議論という点について、どのような課題があったかという点ですとか、健保連さんの方は多分独自に持っていらっしゃるデータとかもいろいろあると思います。そういったものについて、本当であればもっとデータに基づいて議論をしたいんだけれども、自分たちはデータあるんだけれども、それを出していいのかとか、そういったところでデータを厚労省だったりとか、研究者だったりとかに提供する際の課題、壁みたいなものがありましたら教えていただければと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "佐野雅宏",
+        "role": "参考人 健康保険組合連合会顧問",
+        "summary": "- 検討会におけるデータ上の大きな課題はなかったが、国が持つデータに整理されていない部分があり、取りにくいデータがある\n- 保有データは個人情報を除き、行政当局含め可能な限りオープンに提供している",
+        "full_text": "正直にお答えとしては、検討会において、データ等において、大きな課題はなかったと思います。正直に申し上げましては、じゃあどういうデータを持ってきてやるのかというときに、今の国が持っているデータの中でも、なかなかきれいにまとまっていない部分があるのではないかなというふうに思っていまして、これは、まあ、前からずっと課題というふうに言えるかもしれませんけれども、なかなかにその取りにくいデータがあるのも事実だと思いますので、じゃあどこまでデータを見ればいいのかというあたりのところは、もう少し検討要請があるんじゃないかなと思っています。それと、私ども健保連が持っているデータについては、可能な限り対外的な公表もしておりますし、これは行政当局も含めて提示をさせていただいております。相当いろんな局面で、市議会等においても使っていただいている部分がございますので、特に持っているデータについては出させていただいております。もちろん、例えば個別データの中で個人情報にかかる分ですとか、こういうものについては当然、隠さなきゃいけないのは当然でございますけれども、基本的にはオープンにさせていただいているというふうに思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56194&time=8170.097",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "データに基づく議論における課題と提供の壁について",
+          "sub_asks": [
+            "データに基づく議論における課題",
+            "厚労省や研究者へデータ提供する際の課題・壁"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "健保連"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "健保連",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "私ども健保連が持っているデータについては、可能な限り対外的な公表もしておりますし、これは行政当局も含めて提示をさせていただいております。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人による現状説明に留まっており、具体的な制度改善や今後のアクションへのコミットメントは含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「課題があれば教えてほしい」というオープンエンドな問いであるため、回答が主観的な感想に留まりやすい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_022",
+      "segment_index": 12,
+      "topic": "治療・出産と仕事の両立支援",
+      "question": {
+        "speaker": "古川あおい",
+        "party": "チームみらい",
+        "summary": "- 出産費用の不透明さから無理に働き続けるケースがあるなど、治療や出産と仕事の両立が困難な現状がある\n- 保険制度や環境面でどのような対応が必要か",
+        "full_text": "林参考人にお伺いしたいのは、治療と仕事の両立についてのお話です。今回の法改正の内容の中で、出産にかかる話ですとか、高額療養費の話ですとかありますけれども、私がいろいろ話を聞いている中でも伺う声として、出産、やはり費用がどれぐらいかかるかわからないとかというところから、結局その出産ギリギリまで無理して働いてしまうみたいな方とかもあります。そういうお話も伺っております。また高額療養費に関しては、やはり治療が、教えていただければと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "林鉄兵",
+        "role": "参考人 日本労働組合総連合会副事務局長",
+        "summary": "- 収入途絶や静養のために離職せざるを得ないケースがある\n- 使用者側の工夫や職場での支え合いが必要であり、保険制度でできることがないか労使ともに知恵を絞るべきである",
+        "full_text": "働いてきた中で確かに職場の仲間が大変な病気をされる、もちろん出産なんかもありますけれども、その中で最終的にやめざるを得なかったというケースがいくつもあります。ただ、それはどうしても最後、どこかで収入が途絶えてしまうというようなこともありますし、ご自身がもうちょっと静養するためには、仕事やめざるを得ないみたいなことがあるんだろうというふうに思っています。なかなかその保険の世界でやっていくというところに病気の予防とか、そんなことになってしまうのかもしれませんけれども、職場の中でいかにその治療と、軽い負担にしながらみたいなことが求められていますが、そこはやはり雇用の側も、使用者側のところでも、さまざまな工夫が求められていると思いますし、職務の中での支え合いも必要だろうというふうに思っています。お尋ねのとおり、非常に難しい、なかなかこれをやったら両立できますみたいなことがあるわけではありませんけれども、ぜひ労使ともに知恵を絞って、あるいは保険制度の中でも何かできることがないかみたいなことは、ぜひ委員会でも御議論賜れたらと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5199"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56194&time=8170.097",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "治療と仕事の両立および出産・高額療養費について",
+          "sub_asks": [
+            "出産費用の不透明さと就業継続への影響について",
+            "高額療養費制度について"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "出産する方",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "職場の中でいかにその治療と、軽い負担にしながらみたいなことが求められていますが、そこはやはり雇用の側も、使用者側のところでも、さまざまな工夫が求められている",
+          "score": 0.2
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問が不完全な状態で終わっており、回答も一般論と感想に留まっているため、記録としての価値は極めて低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問の末尾が「教えていただければと思います」で途切れており、具体的に何を問いたいのかが不明確である。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_023",
+      "segment_index": 12,
+      "topic": "難病患者の就労支援と保険制度のあり方",
+      "question": {
+        "speaker": "古川あおい",
+        "party": "チームみらい",
+        "summary": "- 治療や出産と働き続けることの両立の難しさについて、課題や望ましい保険制度についての見解を伺いたい",
+        "full_text": "今、林参考人にお伺いしたのと同じことをお伺いさせていただければと思います。治療だったり、出産だったりと、働き続けることの両立の難しさというところをご承知かと思いますので、その点について課題でありますとか、どのような保険制度が望ましいかという点についてコメントいただければと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "大黒宏司",
+        "role": "参考人 一般社団法人日本難病・疾病団体協議会代表理事",
+        "summary": "- 難病患者の雇用を障害者雇用率制度に含めるなど、就労の社会化と理解を広める必要がある\n- 病気休暇制度やショートタイム勤務の推進により、病気を開示して働きやすい環境を整備すべきである",
+        "full_text": "現在、難病患者、手帳制度を持っていない難病患者の雇用というのを考えられていまして、障害者の雇用率制度に入れるかどうかということもあります。そういう意味では、こういうことを通じて、難病患者の働くということが社会化されるということで、皆さんの理解が広まっていければいいかと思います。それと同時に、病気の休暇制度であるとか、ショートタイムの働き方を推進するとかいうのが一般的になっていければ、難病患者も働きやすくなるのではないかというふうに思います。残念ながら、こういうことが一般化されていない状況では、難病ということを開示しないという働き方というのもまだまだあります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5199"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56194&time=8170.097",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "治療・出産と仕事の両立の課題と望ましい保険制度",
+          "sub_asks": [
+            "両立の難しさに関する課題",
+            "望ましい保険制度についてのコメント"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "障害者の雇用率制度"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "病気の休暇制度"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "病気の休暇制度であるとか、ショートタイムの働き方を推進するとかいうのが一般的になっていければ、難病患者も働きやすくなるのではないか",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は抽象的であり、回答も個人の見解や一般論に留まっているため、記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「望ましい保険制度」という具体的な制度設計を問うているが、質問の構成が「コメントを求める」形式のため、回答者が一般論で逃げられる設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_024",
+      "segment_index": 13,
+      "topic": "高額療養費に係る委員会の当事者参加枠組みへの評価",
+      "question": {
+        "speaker": "古川あおい",
+        "party": "チームみらい",
+        "summary": "- 高額療養費の見直しにおける当事者参加の説明に納得できない声がある\n- 今回設けられた当事者を参加させる枠組みについてどう評価するか",
+        "full_text": "今回の高額療養費の見直し、昨年の話があって今年の話があるわけですけれども、政府としては当事者の参加も、当事者の方にも参加していただいて話を聞いたというふうに説明がなされていますけれども、やはりそういった説明に対して納得ができないという声も上がっているかと思います。そこで中村参考人にお伺いしたいと考えているのが、今回高額療養費に係る委員会ができたというところで、一定当事者を参加させるという枠組みというのができたわけですけれども、こちらの枠組みに対する評価をお答えいただければと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "中村洋一",
+        "role": "参考人 全国保険医団体連合会理事・政策部部長 東京保険医協会副会長",
+        "summary": "- 当事者を参加させる枠組みを大変評価している\n- 経済的に苦しい状況にある患者の苦悩を直接知ることが重要である",
+        "full_text": "中村参考人、当事者を参加させるということは当然だと思って大変評価しております。特にがん患者等々は命の危険にもあいながら就労も十分できない中で収入が減ってしまう。そういう中で非常に苦しい経済状況の中で子育てだとか家計の維持だとかやっているわけですから、その高額療養費を払っている人たちの苦悩をしっかり知ることが大事だろうというふうに思って大変評価しております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5199"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56194&time=9025.796999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "高額療養費委員会の当事者参加枠組みへの評価",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "今回の高額療養費の見直し"
+            },
+            {
+              "type": "organization",
+              "excerpt": "高額療養費に係る委員会"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "当事者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "がん患者"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "当事者を参加させるということは当然だと思って大変評価しております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人による主観的な評価を問う質問であり、回答もそれに沿った肯定的な意見に留まっているため、記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "評価を問うだけでなく、具体的にどのような改善が必要か、あるいは現状の枠組みの何が不十分かを問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_025",
+      "segment_index": 13,
+      "topic": "OTC類似薬の保険適用除外拡大による臨床現場への影響",
+      "question": {
+        "speaker": "辰巳孝太郎",
+        "party": "日本共産党",
+        "summary": "- 健康保険法改正により、OTC類似薬以外にも保険適用除外を広げることが可能になる点について\n- 保険適用除外がさらに拡大した場合、臨床の医師や医療現場にどのような影響が出ると想定されるか",
+        "full_text": "私も先日の党委員会で、今回の法案の中で、OTC類似薬の一部保険適用除外ということがやられようとしているんですけれども、ただ、この健康保険法改正の中で、条文を読めば、法文を読めば、一部保険適用除外というのは、この薬以外も対象にすることができるんだと。政策的にはやらない、今はやりませんよ、現行は考えていませんよと言うんですけれども、法文上はできるようになる。つまり診療とか診断とか処置とか手術とか在宅入院ですね。この健康保険法第63条第1項で定められているこの療養の給付で掲げる範囲も給付制限することができるんだと。OTC類似薬の保険適用除外、今回一部多大な影響が出るということなんですが、今のようなそれ以外にも広げると、保険適用除外というのをさらに広げていくということで、今後診療という話もありますけれども、どのような影響が、もちろん患者としては負担が増えるんですけれども、臨床の医師の医療の現場として、どんどん保険適用除外になっていくことで、どのような臨床の現場での影響が出てくると想定されるのかと。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "中村洋一",
+        "role": "参考人 全国保険医団体連合会理事・政策部部長 東京保険医協会副会長",
+        "summary": "- 患者の自己負担増により、経済状況による治療の格差が生じる\n- 医療機関の経営が厳しくなり、収入を確保するために不適切な治療が流行する懸念がある\n- 国民皆保険制度を維持し、適切な医療提供体制を保つべきである",
+        "full_text": "まず自己負担が増えるというのはそれは大問題でして、同じ病気等々で同じ状態であっても治療の差が出てくるということになって、やはりお金を持っている方は自費部分として出せる。そのために彼らの収入は一定の制限がかかってしまって、現在の歯科医療機関の平均での、個人のですね、歯科医療機関の平均での収入は中央値で1000万割っております。つまりそういう非常に経営が厳しくなってしまうということになってしまいますので、そうすると医者の方もですね、欲が出てきて、これを稼ぐためにはこうやってやろうというふうな、いかがわしい、インチキな治療もですね、流行ってきてしまうということが想定されます。ですから、やはり国民皆保険制度を守ってきちっと医療は提供するという体制を保ってほしいと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5199"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56194&time=9025.796999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "保険適用除外の拡大による臨床現場への影響は",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "健康保険法第63条第1項"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "臨床の医師",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "中央値で1000万割っております"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "お金を持っている方は自費部分として出せる。そのために彼らの収入は一定の制限がかかってしまって",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人による主観的な懸念（不適切治療の増加など）が中心であり、政府としての公式見解や具体的措置を含む回答ではないため、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_026",
+      "segment_index": 13,
+      "topic": "若年層における市販薬乱用の現状と背景",
+      "question": {
+        "speaker": "辰巳孝太郎",
+        "party": "日本共産党",
+        "summary": "- 資料にある若年層（10代）への市販薬乱用の広がりに驚いた点について",
+        "full_text": "続けて中村参考人にお聞きしたいんですけれども、今日の資料の中で3ページ、4ページ目ですかね。乱用市販薬ということでお示しをいただいているんですけれども、私このグラフといいますか、見て本当に驚きました。その乱用市販、要するに市販薬ですから、買えるお薬ということですよね。とりわけ若年層10代にこういった乱用が広がっているということだ。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "中村洋一",
+        "role": "参考人 全国保険医団体連合会理事・政策部部長 東京保険医協会副会長",
+        "summary": "- コデイン類を含む咳止め薬などが、覚醒剤のような効果を求めて若者の間で乱用されている\n- 薬剤師の管理緩和などの規制緩和により、薬局で買いやすくなったことが乱用増加の一因である\n- 市販薬によるオーバードーズが深刻な社会問題となっており、自殺などのリスクに繋がっている",
+        "full_text": "この中にコデイン類って入っております。これを買う彼女、彼らはですね、このコデインがですね、覚醒剤のような雰囲気になるってことをよく知ってるんです。これが依存して、自殺に進んでしまったり、重度依存症なんですが、この2016年の前に、2015年、薬剤師が、薬局における薬剤師の管理が緩和されたんです。したがって、この緩和されたために買いやすくなっちゃったんですね。したがって、そういう買いやすくなった状況が、このような社会現象を起こしていて、これがさらに増えていくだろうというふうに思います。右のグラフを見ていただきますと、70%が市販薬によるオーバードーズです。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56194&time=9025.796999999999",
+      "metrics": null
+    },
+    {
+      "id": "qa_027",
+      "segment_index": 13,
+      "topic": "高額療養費の上限引き上げによる難病当事者への影響",
+      "question": {
+        "speaker": "辰巳孝太郎",
+        "party": "日本共産党",
+        "summary": "- 今回の高額療養費の見直しによって、難病の当事者がどのような思いや懸念を抱いているか",
+        "full_text": "続きまして大黒宏司、日本難病・疾病団体協議会参考人からお話をお伺いしたいというふうに思っております。先ほどのやりとりの中で、専門委員会、8回における専門委員会の中で議論をしてきたんだけれども、9回目に示された、結論的にはこれは提示されたという認識で、これは共同声明でもその旨、声明を出したという話がありました。私、昨年の衆議院での議論を思い出すんですけれども、それこそ当事者の皆さんが国会に来ていただいて、衆議院あるいは参議院で、当事者の皆さんの声を聞かせていただき、そして衆議院でも修正、参議院でも修正ということで、昨年はこの高額療養費の見直しというのは、凍結ということになったわけなんですよね。今日も冒頭でお話あったと思うんですけれども、やはり改めてですね、今回の見直しによってどういうことが起こってしまうのか、いわゆる難病の当事者の皆さんがどういう思いを持っておられるのか、抱いておられるのか、懸念をされているのかということを今一度示していただければと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "大黒宏司",
+        "role": "参考人 一般社団法人日本難病・疾病団体協議会代表理事",
+        "summary": "- 上限引き上げが常態化し、第2段階以降も負担が増え続けることへの強い不安がある\n- 医療支出が破滅的な状況となり、生活プランが成り立たなくなる恐れがある\n- 患者の納得が得られていない現状があり、共同声明を出すに至った",
+        "full_text": "今回高額療養費の上限ということが引き上げという問題があったんですけれども、これが常態化する可能性があるという部分も含めて今後のことも考えると、これが今回の第1段階だけでは終わらないで第2段階もあります。その後どうなるのかという状況の中で、じゃあどういうふうに推移していくのかということも考えると、やはり不安が募るわけです。私たちの費用というのがどこまで上がってしまうのかということも含めて、そうなりますと、実際生活のプランが成り立たないという状況になります。本当に破滅的な医療支出という部分も出てきています。ですからやはり私たちの意見をきっちりと聞いてもらうという状況は、本当にきっちりと聞くんだという、私たち最初も言ったんですけれども患者の納得というの中で決めていただきたいというところがあります。今の現状では納得というまでは行かないという状況で共同声明を出したという状況になります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5199"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56194&time=9025.796999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "難病当事者の懸念事項の提示",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "past_answer",
+              "excerpt": "専門委員会、8回における専門委員会の中で議論をしてきたんだけれども、9回目に示された"
+            },
+            {
+              "type": "date",
+              "excerpt": "昨年の衆議院での議論"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "難病の当事者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "実際生活のプランが成り立たないという状況になります。本当に破滅的な医療支出という部分も出てきています。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人に対し、当事者の心情や懸念を述べるよう求める形式的なやり取りであり、具体的な制度変更や合意事項は含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "具体的な懸念点（どの費用がいくら上がるか等）を問う形式にすれば、より記録価値の高い回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_028",
+      "segment_index": 13,
+      "topic": "協会けんぽにおける国庫補助の重要性",
+      "question": {
+        "speaker": "辰巳孝太郎",
+        "party": "日本共産党",
+        "summary": "- 国庫補助の特例措置終了後、見直しが行われる可能性がある点について\n- 協会けんぽにおいて、国庫補助が財政安定化にどのように寄与しているか",
+        "full_text": "最後に林参考人にお聞きをしたいというふうに思います。国庫補助についてです。今回特例で3年にわたって減額されるという話でございます。ただ、これ3年で終わるのかということについては、大臣答弁で措置終了後、医療保険料率含めた保険財政運営のあり方については、令和10年度までの間において国庫補助率の見直しと合わせ、持続的な財政運営の観点から必要な検討を行いということで、3年終わった後もどうするかという話が出てきかねないと思っています。中小企業の方々、労働者が加入する協会けんぽにおいて、改めてこの国庫補助が財政安定化に寄与しているんだというお話をいただけたらと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "林鉄兵",
+        "role": "参考人 日本労働組合総連合会副事務局長",
+        "summary": "- 1人当たりの準備金で見れば協会けんぽは他より低く、加入者の負担増への不安が強い\n- 保険料率を維持し、財政を安定させるためには、現在の国庫補助率（16.4%）を何としても維持してほしい",
+        "full_text": "他の保険者さんと比べるのが適切かどうかはわかりませんけれども、1人当たり、今ですね、協会けんぽの準備金がたくさんあるんじゃないかというのを御指摘いただいているということを聞いておりますけれども、1人当たり直せば協会けんぽは12万円、健保組合は23万円、共済組合でいけば12万6千円ということで、受益者とある厚生年金の中小企業さんもそうですし、そこで働いている者たちも非常に不安に思う、負担が増していくのではない、現実に負担も増してきたわけですから、そうしたことを考えますと、最低限今の保険料率を保つためには16.4%、これは何が何でも維持していただきたいというのが私どものお願いでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5199"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56194&time=9025.796999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "協会けんぽへの国庫補助の財政安定化への寄与について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "令和10年度まで"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "協会けんぽ",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "12万円"
+            },
+            {
+              "type": "number",
+              "excerpt": "23万円"
+            },
+            {
+              "type": "number",
+              "excerpt": "12万6千円"
+            },
+            {
+              "type": "number",
+              "excerpt": "16.4%"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "1人当たり直せば協会けんぽは12万円、健保組合は23万円、共済組合でいけば12万6千円ということで",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は国庫補助の必要性を問うものだが、回答者は準備金の比較数値と補助率維持の要望を述べるに留まっており、直接的な回答になっていない。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「お話をいただけたらと思います」という形式的な依頼であるため、回答者が自身の要望を述べるだけで完結してしまっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    }
+  ],
+  "score_schema_version": "2.0",
+  "prompt_version": "V4"
+}

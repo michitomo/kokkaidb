@@ -1,0 +1,3779 @@
+{
+  "pairs": [
+    {
+      "id": "qa_001",
+      "segment_index": 1,
+      "topic": "刑事訴訟法改正の背景と袴田事件",
+      "question": {
+        "speaker": "鈴木宗男",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 刑事訴訟法改正の背景として挙げられている「再審無罪の確定」とは、袴田岩雄さんの事件を指しているか",
+        "full_text": "この刑事訴訟法の一部を改正する法律案の、法務省側の説明の中に、なぜ改正するかについて、手続に関する規定が乏しいのが一つ、戦後、一度も改正されていないのが一つ。そして3つ目に近時、社会の注目を集める事件について、再審無罪が確定した。この3つを改正の背景に挙げています。この再審無罪の確定というのは、これ、袴田岩雄さんの事件だと考えますが、大臣、それでよろしいですね。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "平口洋",
+        "role": "法務大臣",
+        "summary": "- 指摘の事件を含む再審無罪事件が契機となり、様々な指摘がなされていると承知している\n- 再審制度が非常救済手続きとして適切に機能するよう、所要の改正を行う必要があると考えている",
+        "full_text": "再審制度に関しましては、近時、ご指摘の事件を含む再審無罪事件も契機として、様々な指摘がなされているものと承知しております。こうしたことを踏まえて、法務省としては、再審制度が、非常救済手続きとして、より適切に機能するようにするため、再審制度について、所要の改正を行う必要があると考えたものでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#1898.85",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "改正背景の再審無罪事件は袴田事件か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "刑事訴訟法の一部を改正する法律案"
+            },
+            {
+              "type": "field_case",
+              "excerpt": "袴田岩雄さんの事件"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "袴田岩雄",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "所要の改正を行う必要があると考えたものでございます",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "再審制度が、非常救済手続きとして、より適切に機能するようにするため、再審制度について、所要の改正を行う必要があると考えた",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "特定の事件（袴田事件）を指しているかという単純な確認に対し、大臣は肯定も否定もせず、一般論的な必要性にすり替えて回答している。",
+        "would_be_referenced": "low",
+        "issue_in_design": "Yes/Noで答えられる形式であるため、回答者が回避したことが明確に記録される設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_002",
+      "segment_index": 1,
+      "topic": "検事総長談話における「控訴の要否」の意味",
+      "question": {
+        "speaker": "鈴木宗男",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 袴田事件の検事総長談話にある「控訴の要否」とはどういう意味か",
+        "full_text": "大臣ですね、袴田事件の無罪が出まして、この時、検事総長談話というのがありますが、ここに「控訴の要否」と検事総長が述べているんですけれども、そもそも控訴の要否とはどういう意味でしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "平口洋",
+        "role": "法務大臣",
+        "summary": "- 控訴するかどうかの適否の判断であると考える",
+        "full_text": "控訴の要否とは、控訴するかどうかの適否の判断であると思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#1898.85",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "「控訴の要否」の意味についての質問",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "field_case",
+              "excerpt": "袴田事件"
+            },
+            {
+              "type": "other",
+              "excerpt": "検事総長談話"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "袴田事件の元被告",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "控訴の要否とは、控訴するかどうかの適否の判断であると思います。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "用語の定義を問う単純なやり取りであり、実質的な新事実や具体的コミットメントは含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "用語の意味を問うのみに留まっており、その判断基準や具体的運用についての追及に繋がっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_003",
+      "segment_index": 1,
+      "topic": "検事総長による控訴断念の理由の適切性",
+      "question": {
+        "speaker": "鈴木宗男",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 袴田さんが長期間不安定な法的地位に置かれたことを理由に控訴を断念したことは、理由として適切か",
+        "full_text": "この控訴の要否の中で、検事総長は、袴田さんが長期間、法的地位が不安定な状況に置かれたことに思いを致し、控訴を断念するとあります。これは控訴を断念する理由として適切でしょうか。大臣の考えを求めます。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "平口洋",
+        "role": "法務大臣",
+        "summary": "- 個別の判断への言及は差し控える\n- 社会的注目度や手続きの長期化を踏まえ、判断理由や過程を説明するために談話を発表したものと承知している",
+        "full_text": "差し控えたいと思います。その上で、検察当局においては、本件が社会的に多くの注目を集めている事件であるのみならず、再審に係る手続きが相当長期間に及んだことなどから、不控訴という判断を行った理由や過程を一定程度説明するために、ご指摘の検事総長談話を発表したものと承知をしております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#1898.85",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "控訴断念の理由の適切性への見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "検事総長は、袴田さんが長期間、法的地位が不安定な状況に置かれたことに思いを致し、控訴を断念するとあります"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "袴田さん",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "検事総長談話"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "不控訴という判断を行った理由や過程を一定程度説明するために、ご指摘の検事総長談話を発表したものと承知をしております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "大臣は適切性の判断について回答を差し控えており、実質的な回答は得られていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "大臣の個人的な「考え」を問う形式であるため、回答者が回避しやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_004",
+      "segment_index": 1,
+      "topic": "個別案件への答弁拒否の根拠",
+      "question": {
+        "speaker": "鈴木宗男",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 既に終了した事件であるにもかかわらず、個別案件であることを理由に答えられないのはなぜか",
+        "full_text": "大臣ですね、これ個別案件と言いますけれども、終わっている話であります。それをなぜ、これ個別案件だから答えられないというのか、ちょっと教えてください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "平口洋",
+        "role": "法務大臣",
+        "summary": "- 確定判決後であっても、大臣が検察当局の活動を擁護・批判すれば、同種事案への影響や司法権の独立の観点から問題が生じ得るため、慎重な対応が必要である",
+        "full_text": "仮に刑事事件の判決が確定していたとしても、個別事件における裁判所の判断や、検察当局の活動に関わる事柄につきまして、検察当局が明らかにしている事柄を超えて、法務大臣が擁護したり批判をしたりすることになれば、同種の事案への影響があるなど、裁判所の判断そのもの、あるいは司法権と密接な関係にある検察権の行使に影響を及ぼそうとしており、司法権の独立の観点からも問題があるとあり得るとの指摘につながりかねないことから、そうした事柄についての言動については、慎重な対応が必要であるものと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#1898.85",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "個別案件を理由に回答を拒否する理由の問い",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "司法権の独立の観点からも問題があるとあり得るとの指摘につながりかねないことから、そうした事柄についての言動については、慎重な対応が必要である",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "個別案件への回答拒否という政府の基本スタンス（司法権の独立）を大臣が明確に説明したやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "具体的な案件名が提示されていないため、一般論としての回答に留まっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_005",
+      "segment_index": 1,
+      "topic": "検事総長談話の性質と大臣の責任",
+      "question": {
+        "speaker": "鈴木宗男",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 個別案件ではなく検事総長談話という公表文書の内容（情状酌量による不控訴）について問うているが、指揮監督権を持つ大臣として答弁義務があるのではないか",
+        "full_text": "大臣、私は袴田さんのことについて聞いてんじゃないんですよ。検事総長談話なんです。この談話から見ると、委員の皆様方もお分かりのとおりですね、資料を配っていますけれども、これは情状酌量だと。法的地位が不安定な状況に長期間置かれてきたから、情状酌量で今回、検察官は控訴しませんでしたと。こう受け止めるのが普通の表現ではないでしょうか。検察が正しければ控訴すればよかったんじゃないでしょうか。そこを私、大臣に聞いているんですよ。控訴の要否、これ、袴田さんが言った話じゃないですからね。だから、検事総長が言った話だから、検事総長が大臣の指揮下にあるわけですから。それは答える義務があるということを言いますけれども、ここ委員長、しっかり取り付けてください。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "平口洋",
+        "role": "法務大臣",
+        "summary": "- 個別事件の検察活動に関わる事柄であり、かつ国家賠償請求訴訟が継続中であるため、所感を述べることは差し控える",
+        "full_text": "お尋ねは、個別事件における検察当局の活動に関わる事柄でありまして、またご指摘の検事総長談話をめぐっては、現在国家賠償請求訴訟が継続中でもあることから、法務大臣としての所感を述べることは差し控えたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#1898.85",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "検事総長談話の解釈と控訴しなかった理由について",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "検事総長談話"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "検事総長",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "not_at_all",
+          "topic_shift_detected": false,
+          "score": 0.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国家賠償請求訴訟"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "個別事件における検察当局の活動に関わる事柄であり…法務大臣としての所感を述べることは差し控えたいと思います。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "検事総長談話の解釈を問う質問に対し、大臣は訴訟継続を理由に回答を拒否しており、実質的な情報提供はない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "感情的な言辞が多く、具体的な法的解釈の提示を求める形式に整理すれば回答を引き出しやすかった可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_006",
+      "segment_index": 1,
+      "topic": "個別案件への答弁拒否の法律的根拠",
+      "question": {
+        "speaker": "鈴木宗男",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 個別案件に答えられないとする法律的な根拠は何か",
+        "full_text": "じゃあ大臣、個別案件に答えられないとするその、大臣に言うけれども、じゃあそれの法律的な根拠は何です。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "平口洋",
+        "role": "法務大臣",
+        "summary": "- 大臣が検察権の行使に影響を及ぼす言動をすれば、司法権独立の観点から問題があり得ると指摘されるためである",
+        "full_text": "仮に刑事事件の判決が確定していたとしてもですね、個別事件における裁判所の判断や検察当局の活動に関わる事柄につきまして、検察統計を明らかにしている事項を超えて、法務大臣が擁護したり、弁護したり、批判したりすることになれば、同種の事案への影響があるなど、裁判所の判断そのもの、あるいは、証拠と密接不可分な関係にある検察権の行使に影響を及ぼすとしており、司法権独立の観点からも問題があり得るとの指摘につながりかねないということでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#1898.85",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "個別案件に答えられない法律的根拠は何か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "司法権独立"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "司法権独立の観点からも問題があり得るとの指摘につながりかねないということでございます。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "個別案件への回答拒否の根拠として「司法権の独立」を挙げた大臣の答弁であり、政府の解釈を記録する価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_007",
+      "segment_index": 1,
+      "topic": "検事総長による判決評価の公表の是非",
+      "question": {
+        "speaker": "鈴木宗男",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 検事総長が個別の判決に対して評価を行い、それを公表することは適切か",
+        "full_text": "検事総長が裁判所の判決、個別の判決に対して評価をし、かつ公表することはいかがなんでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "平口洋",
+        "role": "法務大臣",
+        "summary": "- それも差し控えるべきであると考える",
+        "full_text": "やはりそれも差し控えるべきだと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#1898.85",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "検事総長による判決評価の公表の是非",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "検事総長",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "other",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "検事総長が裁判所の判決、個別の判決に対して評価をし、かつ公表することは、やはりそれも差し控えるべきだと考えております。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "検事総長による判決評価の公表について、否定的な見解を明確に示したやり取りである。",
+        "would_be_referenced": "low",
+        "issue_in_design": "是非を問う形式であるため、回答が単純な肯定・否定に留まりやすく、具体的な基準や理由を引き出せていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_008",
+      "segment_index": 1,
+      "topic": "検事総長による判決評価の適切性",
+      "question": {
+        "speaker": "鈴木宗男",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 検事総長が静岡地裁判決に対し「不可ざるを得ない」と評価した談話の内容は、人権無視であり不適切ではないか",
+        "full_text": "検事総長は、静岡地裁判決に対する評価をされておりますが、この中身を大臣はご存じでしょうか。不可ざるを得ませんと書いてますよ。私はこの談話は極めてですね、失礼な、あるいは人権無視したですね、言いぶりだと思うんですが、大臣はそう思いませんか。現に大臣はですね、いわゆる評価を下げたい、あるいはその個別案件だと言うけれども、現にこの検事総長談話は触れているわけですよ。これ大臣、適切だと思いますか。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "平口洋",
+        "role": "法務大臣",
+        "summary": "- 個別事件における検察官の行為について、答えを差し控える",
+        "full_text": "それを含めて個別の事件について、検察官の行った行為については、答えを差し控えたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#1898.85",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "検事総長の談話の内容と適切性について",
+          "sub_asks": [
+            "談話の内容を把握しているか",
+            "人権無視な言いぶりだと思わないか",
+            "談話の内容は適切か"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "field_case",
+              "excerpt": "静岡地裁判決"
+            },
+            {
+              "type": "other",
+              "excerpt": "検事総長談話"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "検事総長",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "not_at_all",
+          "topic_shift_detected": true,
+          "score": 0.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "個別の事件について、検察官の行った行為については、答えを差し控えたいと思います。",
+          "score": 0.2
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "大臣は個別事件への言及を避ける定型的な回答に終始しており、実質的な回答は得られていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "感情的な問いかけが多く、大臣が「答えを差し控える」という逃げ道を作りやすい構成になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_009",
+      "segment_index": 3,
+      "topic": "法テラス常勤弁護士の配置目標",
+      "question": {
+        "speaker": "泉房穂",
+        "party": "立憲民主・無所属",
+        "summary": "- 法テラスの常勤弁護士が未配置の地域が依然として存在することを問題視している\n- いつまでに配置を完了させるか、具体的な目標設定を行うことを提案する",
+        "full_text": "キーマンとなるべき、いわゆる法テラスの常勤弁護士、いまだ全国に配置は終えておりません。20年たってまだ法テラスの弁護士がいないところがいる状況、考えがたいです。いつまでにしっかり配置をするか、目標設定をすることを提案したいと思いますが、いかがでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "内野司法法制部長",
+        "role": "",
+        "summary": "- 8つの地域および一部の地方事務所で常勤弁護士が未配置である現状を認める\n- 弁護士会等と協議し配置を進めているが、現段階で具体的な期限を設けることは困難である\n- 全都道府県への配置を含め、適切な体制について検討を進めたい",
+        "full_text": "しかし、ご指摘をいただいておりますけれども、現状におきましては、いまだ8つの地域、具体的には札幌、宮城、山形、神奈川、山梨、石川、岡山、大分の各地域に常勤弁護士を配置することができておらず、新潟及び富山の2県につきましては、地域事務所に常勤弁護士が配置されているものの、両県の県庁所在地に一つずつ設けられております地方事務所、これに併設されました法律事務所には、常勤弁護士の配置ができていない状況にございます。もとかく、各地の弁護士会等との協議、これを続けながら、常勤弁護士の配置を進めているところでございます。具体的にこの時期までにというところは現段階では申し上げることが困難な状況でございますが、委員御指摘のとおりですね、引き続きこのような常勤弁護士を全ての都道府県に配置することを含めまして、適切な体制のあり方について検討を進めてまいりたいと考えているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#3696.88",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "法テラス常勤弁護士の配置目標設定の提案",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "20年たって"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "法テラスの常勤弁護士",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "8つの地域"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "札幌、宮城、山形、神奈川、山梨、石川、岡山、大分"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "新潟及び富山"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "適切な体制のあり方について検討を進めてまいりたい",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "現状におきましては、いまだ8つの地域、具体的には札幌、宮城、山形、神奈川、山梨、石川、岡山、大分の各地域に常勤弁護士を配置することができておらず",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "未配置地域の具体的な地名を列挙しており、現状把握の記録として価値が高い。一方で、目標設定の提案に対しては「検討」に留まる回答であった。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_010",
+      "segment_index": 3,
+      "topic": "犯罪被害者支援の資産要件撤廃と無料相談の導入",
+      "question": {
+        "speaker": "泉房穂",
+        "party": "立憲民主・無所属",
+        "summary": "- 犯罪被害者支援は法テラスのメインテーマであり、実効性のある支援が必要である\n- 資産要件により支援を受けられない現状を問題視し、少なくとも初回相談については、資産に関わらず無料とすることを提案する",
+        "full_text": "1つは犯罪被害者支援は、これ資料1見ても分かりますけど、法テラスの5本柱の1つの柱です。法テラスがやるべきメインテーマですよ、犯罪被害者。せめてメインテーマの犯罪被害者について、この度も法改正がなされこの1月から新しい制度がスタートしたけど、いまだに300万以下の人しか支援しないなんて一体どういうことですか。せめて犯罪になった被害者の最初の1回目の相談ぐらい、お金があろうがなかろうが、その方に対して無料の相談ぐらい運用上可能だと思いますが、いかがでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "内野司法法制部長",
+        "role": "",
+        "summary": "- 資産要件の撤廃については、財源の限りや他の法律相談との均衡の観点から慎重な検討が必要である\n- 資産要件に関する指摘に真摯に向き合い、運用状況やニーズを注視しながら支援の充実に適切に取り組みたい",
+        "full_text": "民事法律扶助とは異なりまして、一定の資産要件のみを要求するという状況になっておるわけでございますが、これを撤廃することにつきましては、財源に限りがある中で、法テラスの他の法律相談の支援を含めまして、弁護士による法的サービスを求めている他の国民との均衡等に照らしまして、合理的と言えるかなどの観点から、慎重な検討が必要であるものと考えております。ただ、法務省及び法テラスといたしましては、この主力要件、具体的な資産要件でございますが、この点につきましては、様々なご指摘をいただいているところでございます。こういったご指摘にも真摯に向き合いながら、まずは本制度の円滑な運用を務めまして、その運用状況やニーズを注視しながら、引き続き犯罪被害者に対する支援の充実、こういったことに適切に取り組んでまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#3696.88",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "犯罪被害者の初回相談の無料化への見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "資料1"
+            },
+            {
+              "type": "number",
+              "excerpt": "300万以下"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "犯罪被害者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "適切に取り組んでまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "財源に限りがある中で、他の国民との均衡等に照らしまして、合理的と言えるかなどの観点から、慎重な検討が必要である",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "資産要件の撤廃について、他制度との均衡を理由に慎重な姿勢を示した回答。具体的な改善策や期限はなく、定型的な回答に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「運用上可能だと思いますが」という問い方であるため、政府が「可能か不可能か」という形式的な回答で逃げられる余地がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_011",
+      "segment_index": 3,
+      "topic": "自治体窓口と法テラスの連携強化",
+      "question": {
+        "speaker": "泉房穂",
+        "party": "立憲民主・無所属",
+        "summary": "- 市役所などの自治体窓口に法テラス職員を配置（常設または巡回）し、スムーズに相談へ繋げる体制を構築すべきである\n- 赤城市の事例のような、市民目線に立った連携の取り組みについて政府の方向性を問う",
+        "full_text": "法テラスのポイントは、身近な、まさに相談、身近な仕様なんですよ。一番いいのは、やっぱり市役所などと連携をして、市役所に来られた方がスムーズにつながることです。自治体の窓口としっかり連携をし、場合によっては常設型でなくてもいい。巡回型でもいいから法テラスの職員が週に1回、月に1回でもいい。そういう形で本当に市民目線、国民目線のまさに法テラスは実現可能だと思いますが、こういったことについて取り組み、どういった方向かお答えください。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "内野司法法制部長",
+        "role": "",
+        "summary": "- 巡回相談やオンラインアクセスポイントの設置など、自治体と連携した支援体制の構築事例がある\n- 赤城市の事例は好事例であると考えている\n- 社会状況の変化に合わせ、地方公共団体等との連携構築・強化を重要な課題とし、取り組みを具体化したい",
+        "full_text": "法テラスにおきましては現状、犯罪被害者や一人親家庭等への支援のためのワンストップ相談会の開催、地方自治体の役所などでの巡回相談の実施、地方自治体の役所等をオンラインアクセスポイントといたしまして、弁護士とのオンラインでの法律相談の実施など、地方自治体等と連携しながら、地域全体での支援体制を構築している、こういった実例、こういうことがございます。赤城市の事例、ご紹介賜りましたが、こういった取組、地方テラスと自治体との連携の一つの好事例であるというふうに考えているところでございます。現在、我が国社会が少子高齢化の進行や人口等の地域偏在など、人口動態や社会状況が変化する中におきまして、持続可能な総合法律支援体制の整備、こういった観点からは、地方公共団体を中心といたしました関係機関との連携構築、この強化、これを図っていくことは非常に重要な課題であると考えておるところでございます。引き続き、地方自治体を中心といたしました関係機関と適切にコミュニケーションをとるなどをいたしまして、連携の構築、強化に向けたさらなる取組を具体化していきたいと考えているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#3696.88",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "法テラスと自治体窓口の連携強化への方向性",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "法テラス",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "赤城市の事例"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "連携の構築、強化に向けたさらなる取組を具体化していきたいと考えている",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "地方公共団体を中心といたしました関係機関との連携構築、この強化、これを図っていくことは非常に重要な課題であると考えておるところでございます。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "自治体との連携という提案に対し、現状の取り組みと重要性を認める回答だが、具体的な新施策の約束までには至っていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どういった方向か」という問い方が抽象的なため、回答者が精神論や現状説明に終始しやすい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_012",
+      "segment_index": 4,
+      "topic": "特定技能の受入れ枠の充足状況と見通し",
+      "question": {
+        "speaker": "川合孝典",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 各業種別の特定技能受入れ枠の現在の充足状況について\n- 今後の受入れ見通しについて",
+        "full_text": "そこで質問ですけど、各業種別の特定技能の受入れ枠の現在の充足状況ですね。それと今後の見通しについて、入管庁ご説明ください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "内藤次長",
+        "role": "",
+        "summary": "- 飲食料品製造業・建設分野は6割超、介護・農業分野は5割超の充足率である\n- 今後の見通しは経済情勢等の要因により正確な回答は困難だが、引き続き注視する",
+        "full_text": "お尋ねの分野ごとの充足状況につきまして、充足率が比較的高いところで申し上げますと、昨年12月末時点の在留者数が、飲食料品製造業分野及び建設分野では受入見込み数の6割を超えているほか、介護分野及び農業分野では5割を超えている状況にございます。今般設定したのは、令和6年度から令和10年度までの5年間の受入れ見込み数でございますが、当該期間中に受入れ見込み数の上限に達する分野があるかなど、先生ご指摘の今後の見通しにつきましては、経済情勢等の様々な要因が影響することから、正確にお答えすることは困難でございますが、状況につきましては、引き続き注視してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#4359.66",
+      "metrics": null
+    },
+    {
+      "id": "qa_013",
+      "segment_index": 4,
+      "topic": "分野別受入れ枠の設定基準",
+      "question": {
+        "speaker": "川合孝典",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 分野別の受入れ枠がどのような基準で設定されているか",
+        "full_text": "受入れ分野ごとに受入れの充足状況のばらつきがあるということなんですが、全体としてこの分野別の受入れ枠はどういった基準で設定されているのかということであります。お手元に1枚資料、入管庁と厚生労働省から出された資料を出させていただいておりますが、そこに少し考え方の説明が書かれておりますけど、この資料も踏まえて、どういった基準でこの分野別の受入枠が設定されているのかということについて、ご説明を改めてお願いできますか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "内藤次長",
+        "role": "",
+        "summary": "- 令和10年度末までの産業需要を踏まえた人手不足数から、生産性向上や国内人材確保による確保数を除いて算出している\n- 各分野所管省庁が算出し、有識者の意見を聴取した上で適切に設定している",
+        "full_text": "特定技能制度における現在の受入れ見込み数の設定につきましては、各分野ごとに令和10年度末までの産業需要等を踏まえた人手不足数から、生産性向上や国内人材確保の取組による人材確保数、これを除いて算出しております。これらは各分野の産業政策等、各分野の事情を踏まえて、各分野所管省庁において算出されまして、有識者から意見を十分聴取した上で適切に設定されているものと認識しております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5189"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#4359.66",
+      "metrics": null
+    },
+    {
+      "id": "qa_014",
+      "segment_index": 4,
+      "topic": "外食分野の受入れ枠設定の根拠",
+      "question": {
+        "speaker": "川合孝典",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 外食分野の受入れ枠を5万人とした具体的な根拠について",
+        "full_text": "その上で、所管省庁である、この場合、特に外食産業にスポットを当ててご質問したいと思いますが、外食分野については、既にもう受付を止めているという、こういう状況になっておりますけど、外食産業における受入枠を5万人とした根拠について、農水省からご説明をお願いします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "高橋食品産業部長",
+        "role": "",
+        "summary": "- 生産性向上や国内人材確保の取組後も不足する人材数を算出したものである\n- 令和10年度の市場規模から必要就業者数を推計し、生産性向上（年0.6%）と国内人材確保（年0.2%）を前提に算出している",
+        "full_text": "外食分野における受入れ見込み数につきましては、今、法務省からも御答弁ありましたけれども、各分野共通の考え方として、生産性向上や国内人材確保のための取組をしっかり行った上でも、依然不足する人材数を算出したものでございます。具体的には、令和10年度における外食業の市場規模の見込みから、必要となる就業者数を推計した上で、まず生産性向上につきましては、これまでの外食業における生産性向上のベース、これ年0.6%でございますが維持されること。それから国内人材確保につきましては、全産業平均の就業者の増加率、こちら年0.2%になっておりますけど、これを確保すること。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#4359.66",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "外食分野の受入枠5万人の根拠",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "受入枠を5万人"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "外食産業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "令和10年度"
+            },
+            {
+              "type": "number",
+              "excerpt": "年0.6%"
+            },
+            {
+              "type": "number",
+              "excerpt": "年0.2%"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "令和10年度における外食業の市場規模の見込みから、必要となる就業者数を推計した上で、生産性向上のベース年0.6%を維持することとして算出した。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "受入枠の根拠という具体的な問いに対し、推計の前提条件（生産性向上率や国内人材確保率）を数値で回答しており、記録的価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_015",
+      "segment_index": 4,
+      "topic": "外食分野の早期上限到達に対する認識",
+      "question": {
+        "speaker": "川合孝典",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 令和11年3月末まで枠がない現状について、どのような課題認識を持っているか",
+        "full_text": "令和11年3月末まではこの状態が続くということ、この状況早くも上限に達してしまっているという、この現状についてどのような課題認識をお持ちなのかをお聞かせください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "高橋食品産業部長",
+        "role": "",
+        "summary": "- 他分野より積極的に活用した結果、上限に早く到達したと認識している\n- 国内人材の確保支援や、業務効率化・省力化のための機器導入支援を推進したい",
+        "full_text": "特定技能外国人につきましては、外食業分野におきましては、令和5年から令和7年の2年間で、13,312人から43,869人と3.3倍に増加をしたという状況にございます。全分野の平均が1.8倍の増加であることを鑑みますと、他分野よりも積極的に特定技能外国人を活用した結果として、受入れ見込み上限数に早く到達する見込みになったと認識しております。一方、外食業におきまして、また他産業と比較をいたしまして、人手不足感があるということでございますので、農林水産省といたしましては、既に受け入れている人材をしっかり定着させるという取組を推進するとともに、女性高齢者を含む多様な国内人材の確保をしっかり取り組んでいただくということで支援をしていきたいと思います。加えまして、やはり生産性向上ですとか、雇用条件の改善、重要でございますので、業務効率化や省力化のための機器の導入購入支援もしっかりと支援をしていきたいというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#4359.66",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "受入れ上限への早期到達に関する課題認識",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "令和11年3月末まで"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "13,312人から43,869人と3.3倍に増加"
+            },
+            {
+              "type": "number",
+              "excerpt": "全分野の平均が1.8倍"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "支援をしていきたいというふうに考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "外食業分野におきましては、令和5年から令和7年の2年間で、13,312人から43,869人と3.3倍に増加をしたという状況にございます。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "外食業における特定技能外国人の増加数という具体的な数値が示されており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "課題認識を問うオープンクエスチョンであるため、具体的な改善策や期限を求める形式にすればより実効的な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_016",
+      "segment_index": 4,
+      "topic": "外食分野の潜在的ニーズへの対応",
+      "question": {
+        "speaker": "川合孝典",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 早期に枠が埋まったことは潜在的ニーズが大きいことを示しており、農水省はどう捉えているか",
+        "full_text": "これ、ご説明の内容で本当にそれをきちんと取り組んでいただければ、それなりに状況はもちろん改善に向かって動くだろうと思いますし、そのことを期待したいと思うんですけれど、現実問題として、すでに募集を始めてあっという間にいっぱいになってしまっているということは、潜在的なニーズは見えないところでもっと大きいということにほかならないわけです。今回、この外食産業が、外食の分野が要は枠いっぱいになったということで、これをあえてテーマにしておりますけど、そもそも外食分野は、就業者数が400万人ほどいらっしゃる分野だと言われておりますけど、そのうち8割はパートアルバイトの方々で労働者が占められているということなんですね。このパートアルバイトでこの事業を回しているというこの状況を、今回いわゆる育成就労、特定技能1号のフルタイム労働者を受け入れるという形になることから、結果的に外食産業としても安定したいわゆる就業者というものを確保できると見越したからこそ、特定技能労働者の受け入れということに対して舵を切ったということにならないわけです。このことについては、農水省としてはどのように捉えていらっしゃるのかを教えてください。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "高橋食品産業部長",
+        "role": "",
+        "summary": "- 事業者の不安に対し、相談窓口を設置して声を伺いながらきめ細かく対応したい",
+        "full_text": "今回上限に達するということで、様々なご不安が事業者様にあると思いますので、農林水産省といたしまして相談窓口を設置しておりますので、事業者様の声をしっかり伺いながら、どういった対応ができるか、きめ細かに対応していきたいというふうに思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#4359.66",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "外食産業の特定技能労働者受け入れの現状認識",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "就業者数が400万人ほど"
+            },
+            {
+              "type": "number",
+              "excerpt": "そのうち8割はパートアルバイトの方々"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "外食産業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "相談窓口"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "きめ細かに対応していきたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "事業者様の声をしっかり伺いながら、どういった対応ができるか、きめ細かに対応していきたい",
+          "score": 0.2
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は外食産業の構造的課題と特定技能への期待について認識を問うているが、回答者は相談窓口の設置という形式的な対応に終始しており、実質的な回答になっていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問の導入部が長く、核心となる問いが最後の一文に集約されているため、回答者が論点をすり抜けやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_017",
+      "segment_index": 4,
+      "topic": "受入れ枠充足に伴う企業の費用負担への対処",
+      "question": {
+        "speaker": "川合孝典",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 積極的に受け入れようとした企業が費用回収できず損害を被っている実態を踏まえ、必要な対処を求める",
+        "full_text": "改めて、委員の皆様とも、この課題認識を共有をさせていただきたいと思うんですが、私は当然のこととして、外国人労働力の受入枠の設定に当たっては、産業ごとの労働の受給のバランスですとか、制度上の受入枠の充足状況を踏まえて、丁寧に調整しないといけないということは、重々承知しておりますし、闇雲に受け入れるということについても、私はどちらかと。これまで例えば企業が現地で面接のために渡航する、それから人材派遣をする会社に対してのいわゆる紹介手数料を支払う、さらにはビザの申請の手続費用、こういったことも含めて、おおむね1人当たり数十万円、一人受け入れるにあたって費用が発生しているというふうに言われております。この費用回収が結局止まってしまって何らフォローしないということになりますと、全部企業の持ち出しということで、相当額の、当然積極的に受け入れようとした企業ほど損害が大きくなっているというのが今の状況なんです。取り消されてしまっているような状況の方々も含めて、企業の事情、実態を踏まえた必要な対処をお願いしたいと思うんですが、いかがでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "内藤次長",
+        "role": "",
+        "summary": "- 所管省庁と連携し、実情を踏まえながら適切に対応を検討することが重要と考えている",
+        "full_text": "今、農水省さんの方から御答弁もありましたけれども、やはりしっかり連携して、実情を踏まえながら適切に対応を検討していく。これは重要なことだと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#4359.66",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "外国人労働者受入企業の費用負担への対処",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "おおむね1人当たり数十万円"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "積極的に受け入れようとした企業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "適切に対応を検討していく",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "しっかり連携して、実情を踏まえながら適切に対応を検討していく。",
+          "score": 0.2
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "企業の費用負担という具体的な課題提示に対し、回答は抽象的な検討表明に留まっており、記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「必要な対処をお願いしたい」という包括的な要望であるため、回答者が具体策を避けやすい形式になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_018",
+      "segment_index": 4,
+      "topic": "採用の中断が人材育成に与える影響",
+      "question": {
+        "speaker": "川合孝典",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 特定技能2号への移行を見据えた際、数年間にわたり採用が途切れる状況は適切ではないのではないか",
+        "full_text": "外国人労働者のうち、一部特定技能2号に切り替わっていただくことで、要は良質な、そして日本の経済の戦力になっていただく労働者を育成しようと考えたときに、この採用が数年間にわたって途切れてしまう状況ということが適切だとは思えないんですけど、この点について、入管庁はどう思われますか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "内藤次長",
+        "role": "",
+        "summary": "- 業界ごとに実態が異なるため、まずは所管省庁で検討し、入管庁は相談の上で対応を決めたい",
+        "full_text": "業界ごとに採用実態様々と思われますので、まずは業所管省庁の方でいろいろご検討いただきまして、入管庁としましては、しっかりその分野所管省庁とご相談させていただいて、対応を決めていきたい、こういうふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5189"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#4359.66",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "特定技能2号への移行に伴う採用中断の是非",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "特定技能2号"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "外国人労働者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "対応を決めていきたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "しっかりその分野所管省庁とご相談させていただいて、対応を決めていきたい",
+          "score": 0.2
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的だが、回答は所管省庁との連携を述べるにとどまり、実質的な見解や具体的対策が示されていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どう思われますか」という抽象的な問い方であるため、政府側が曖昧な回答で逃げられる設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_019",
+      "segment_index": 4,
+      "topic": "中長期的な人材受給計画と年次枠の設定",
+      "question": {
+        "speaker": "川合孝典",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 単なる総枠管理ではなく、毎年どの程度の人数を受け入れ、移行させるかというフロー管理（計画的な受入れ）を検討できないか",
+        "full_text": "時間の関係もありますので、今の一連の流れを、議論のやり取りを踏まえて、平口法務大臣にお伺いをしたいと思いますが、毎年一定数の外国人というか労働者を受け入れて、その労働者を毎年いわゆる研修等、日本語教育や研修等を積み重ねることでスキルアップ、人材育成を行って、そうした方々のうち一定の方々が特定技能2号労働者として日本の国内で仕事を継続していただくというような形をおそらく想定はしていると思うんです。しかしながら、今やっていることは、枠いっぱいになるまでとりあえず採用、受け入れを行って、いっぱいになったらそこで止めて、今度、その受け入れた人たちが特定技能2号になれなければ、5年経ったらご帰国されるわけでありますので、そうするとそこの枠が開いたら、開いたところに新たに採用するという、非常に手前勝手な形で物事が回っているんですよね。これで本当に実際に労働者としての人材育成にできると思うのかということなんですよ。三年なり五年なりという中長期的な人材の受給の見通しを立てて今回この分野の受入枠を決めたというふうにご説明はされていますけれど、その枠と同時に毎年どういった形で計画的に人を受け入れていくのかということを継続して行っていかないと、本当の意味で外国人労働者が日本の国内でしっかりと定着して働いて、採用せずに、では3年後に外国人労働者が実際に特定技能1号でご帰国をされてしまって、ほぼ8割から9割多分ご帰国されることになるんだろうと思うんです。そうした方々の枠が空いたから3年後、5年後、日本の都合でまた採用しますといったときに、本当に日本が求める労働者が今後送り出し国から入ってくるのかという、このことが問題なんです。これの議論だけを行って、継続的に外国人労働者、技能実習生の戦力化といったようなことも含めて取り組んでこなかったから、足りなくなったら急に大勢入れるという話になるんですよ。そうではなくて、平口法務大臣はどのようにご認識されているかお答えください。大臣、単年度で受入れ枠をコロコロ変えることになると、要は受入れに支障をきたすことになるということをおっしゃいましたけど、むしろ私、逆の理由でこの問題の指摘をさせていただいておりまして、中長期的な受入れ枠と同時に、毎年受入れる人数というものをどう設定していくのかということが、トータルとしての受入れ人数につながってくるわけなんですよ。安定してどう人材の確保を行っていくのかということにつながってくるわけで、そういう意味で5年なら5年、3年なら3年という経済動向を見据えた受入枠と同時に、毎年どのぐらいの人数の人が受け入れて、そしてどのぐらいの人が今度変えられるのかということも含めたこのフローの中でどう人材の枠を管理していくのかということが求められているわけでありまして、そのことについて検討していただけませんかと申し上げています。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "平口洋",
+        "role": "法務大臣",
+        "summary": "- 雇用情勢等を予測し中長期的に上限を運用することで計画的な受入れを図っている\n- 短期間での設定は安定的な在留活動に支障をきたす可能性があるため配慮している\n- 指摘の点も含め、所管官庁と相談し適切に運用したい",
+        "full_text": "特定技能制度の運用に関する基本方針においては、見込み額を5年ごとに設定し、大きな経済変動の変化が生じない限りは、これを受入れ上限として運用することとされております。これは有効求人倍率や雇用動向等の客観的な指標等により、我が国の雇用情勢をその他経済社会情勢に与える影響等を予測しながら、中長期的に上限の運用を図ることで、より計画的に外国人の受入れを進めようとしたことによるものと認識しております。また、受入れ数を1年単位などの短期間に設定した場合、これが縮小すれば、外国人の安定的な在留活動や、受入れ期間による計画的な外国人の受入れに支障をきたす可能性があることから、これらの点についても配慮する必要があるものと考えております。今後とも分野ごとに特有の事情を踏まえつつ、分野各省庁とも連携しながら、適切に制度を運用してまいりたいと考えております。御指摘の点も含めて、今後とも分野ごとに特有の事情を踏まえながら、分野所管官庁とも相談して、適切に運用してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5189"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#4359.66",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "外国人労働者の計画的な受入枠管理の検討要望",
+          "sub_asks": [
+            "中長期的な受入枠と同時に、毎年どの程度の人数を受け入れるかというフロー管理を検討してほしい"
+          ],
+          "score": 0.7
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "特定技能2号労働者"
+            },
+            {
+              "type": "law",
+              "excerpt": "特定技能1号"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "外国人労働者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "5年ごとに設定"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "適切に制度を運用してまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "見込み額を5年ごとに設定し、大きな経済変動の変化が生じない限りは、これを受入れ上限として運用することとされております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は単なる上限設定ではなく、年次の流入・流出を管理するフロー管理の導入を求めたが、大臣は現行の5年単位の運用方針を説明し、適切に運用するという抽象的な回答に留まった。",
+        "would_be_referenced": "low",
+        "issue_in_design": "現状の不満点（手前勝手な運用）の記述が長く、具体的な改善策の要求（年次計画の策定など）が後半にまとめられているため、論点が分散している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_020",
+      "segment_index": 5,
+      "topic": "取調べの録音録画の対象範囲",
+      "question": {
+        "speaker": "横山信一",
+        "party": "公明党",
+        "summary": "- 義務対象事件以外の取調べで録音録画が必要と考えられるのはどのような場合か",
+        "full_text": "そこで、事案の内容や証拠関係等に照らし、被疑者の取調べを録音録画することが必要と考えられる事件。この必要と考えられる事件というのは、どういう場合か、これを伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "佐藤啓司",
+        "role": "",
+        "summary": "- 検察当局では身柄事件の被疑者取調べの約99%で録音録画を実施している\n- 一部の在宅事件についても施行を開始している",
+        "full_text": "検察当局におきまして、義務対象事件以外の事件も含めて、身柄事件の被疑者の取調べのうち約99%を録音録画を実施しているという状況にございます。それ以外の一定の在宅事件についても、被疑者の取調べの録音録画の施行を開始しているところでありまして、今、ご指摘の被疑者の取調べを録音録画すること。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#5639.96",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "録音録画が必要とされる事件の定義",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "被疑者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "約99%"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "身柄事件の被疑者の取調べのうち約99%を録音録画を実施しているという状況にございます。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "録音録画が必要な事件の定義を問う質問に対し、実施率という実績値で回答しており、直接的な回答になっていない。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どういう場合か」という定義を問う形式であるため、回答者が実績値に逃げやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_021",
+      "segment_index": 5,
+      "topic": "取調べの録音録画の対象拡大",
+      "question": {
+        "speaker": "横山信一",
+        "party": "公明党",
+        "summary": "- 冤罪防止や確認可能性の観点から、可視化（録音録画）をより積極的に拡大すべきではないか",
+        "full_text": "事実、冤罪が起きているということは間違いが事実起きているということでありますから、そういう意味ではですね、録音録画をしておけば、後で繰り返し確認ができるわけですよね。ですから、もちろん本人が望まないという場合があるので、そういう場合はその本人の意向を尊重しなければいけませんが、そういう場合を除けばですね、これはもうもっと積極的に可視化を拡大すべきだというふうに考えますけれども、大臣に伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "平口洋",
+        "role": "法務大臣",
+        "summary": "- 現行制度の対象外事件は任意性が争われることが少なく、負担も大きいため拡大すべき状況にない\n- 拘留されていない者についても必要性や合理性が乏しいとの指摘があり、現時点では慎重な検討を要する",
+        "full_text": "もっとも、現行制度の対象事件以外の事件については、ほとんど被疑者の任意性等が争われておらず、捜査への影響や人的物的負担を踏まえると、対象事件を拡大すべき状況にはないと考えております。逮捕拘留されていない拘留者については、取調べ受任義務を負わず、取調べの適性をめぐる争いが生じにくい上、取調べの件数が膨大であることから、制度の対象とする必要性、合理性が乏しいといった指摘がなされて、法制度を行う方向性は示されなかったものと承知しております。従いまして、現時点において、取調べの録音録画制度の対象拡大については、慎重な検討を要するものと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#5639.96",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "取調べの可視化を拡大すべきか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "慎重な検討を要するものと考えております",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "現時点において、取調べの録音録画制度の対象拡大については、慎重な検討を要するものと考えております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "可視化拡大の是非に対し、大臣が現状の制度維持と慎重な検討が必要であるとの政府見解を明確に回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "具体的な対象事件の範囲や、どのような基準で「拡大すべき状況にない」と判断したかの根拠を問う形式にすれば、より実効的な回答が得られた。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_022",
+      "segment_index": 5,
+      "topic": "難民認定審査の救済実績",
+      "question": {
+        "speaker": "横山信一",
+        "party": "公明党",
+        "summary": "- 送還停止法の例外規定設け以降、一次審査で不認定となった者が審査請求を経て難民や補完的保護対象者として認定された例はどれほどあるか",
+        "full_text": "次に難民認定について伺いますが、難民認定審査の迅速化が求められる一方で、迅速化を求めるあまり難民として認定されるべき人が不認定となってしまうことがないよう、確実な審査体制が求められます。そこで、送還停止法の例外規定が設けられて以降、難民認定申請の一時審査で不認定としたもののうち、審査請求を行い、その後難民として認定されたり、補完的保護対象者として認定されたりするなど在留資格を得た例はどれぐらいあるのか伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "内藤次長",
+        "role": "",
+        "summary": "- 令和7年の審査請求において、難民および補完的保護対象者として認定され在留が認められた者は計8名である\n- 別途、人道上の配慮で在留が認められた者が3名いる",
+        "full_text": "その上で、送還停止法の問題の立法をなされた後の令和7年からの審査請求の数字をご紹介しますと、令和7年に審査請求において難民と認定された者及び補完的保護対象者と認定された者はいずれも4人、合計8名でございまして、これらの者は全員在留が認められております。また、これとは別に、令和7年に審査請求において、難民や補完的保護対象者とは認められなかったものの、人道上の配慮によって在留が認められた者は3人いらっしゃいます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5189"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#5639.96",
+      "metrics": null
+    },
+    {
+      "id": "qa_023",
+      "segment_index": 5,
+      "topic": "難民認定申請におけるD案件の処理迅速化",
+      "question": {
+        "speaker": "横山信一",
+        "party": "公明党",
+        "summary": "- 申請の多くを占め、処理時間も長い「D案件」の迅速な処理をどう進めるのか",
+        "full_text": "ということで、せっかく振り分けをしているんだけども、ほとんどD案件になっているということであります。一方で、令和6年の振り分け別平均処理時間、これはD案件がA案件の倍近くなっているということでありまして、D案件が大半である現状を踏まえると、このD案件の迅速な処理が必要です。どうするのか伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "法務副大臣",
+        "role": "",
+        "summary": "- 出身国情報に基づきB案件への振り分けを拡大することで、D案件の割合を減少させスピードアップを図っている\n- 2030年までに全ての申請を平均6ヶ月で処理するという目標に向け、強力に推進する",
+        "full_text": "そのため、不法滞在者ゼロプランにおきましては、出身国情報等を踏まえてB案件を累計化することで、従前の運用を抜本的に改善し、スピードアップを図ることとした次第です。その結果、令和7年の難民認定申請については、B案件への振り分けが前年の0.6%から14.3%にまで増加し、それに伴い、D案件への振り分けが62.2%にまで減少したところでございます。御指摘のとおり、この処理の迅速化というのは重要な課題というふうに承知をしておりまして、法務省といたしましては、振り分けも含めて、様々な角度から検討を加え、不法滞在者ゼロプランにおいて掲げた、2030年までに全ての申請を平均6ヶ月で処理するという目標の確実な達成に向けて、必要な取組を強力に推進してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5189"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#5639.96",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "D案件の処理を迅速化させる具体策",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "令和6年の振り分け別平均処理時間"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "D案件（の申請者）",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "不法滞在者ゼロプラン"
+            },
+            {
+              "type": "number",
+              "excerpt": "0.6%から14.3%にまで増加"
+            },
+            {
+              "type": "number",
+              "excerpt": "62.2%にまで減少"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "2030年までに全ての申請を平均6ヶ月で処理するという目標"
+            }
+          ],
+          "score": 1.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "必要な取組を強力に推進してまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "2030年までに全ての申請を平均6ヶ月で処理するという目標の確実な達成に向けて、必要な取組を強力に推進してまいりたい",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "D案件の処理遅延という課題に対し、B案件への振り分け変更という具体的施策と数値目標（2030年まで）を提示しており、記録的価値が高い。",
+        "would_be_referenced": "high",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_024",
+      "segment_index": 5,
+      "topic": "任意後見制度の利用促進",
+      "question": {
+        "speaker": "横山信一",
+        "party": "公明党",
+        "summary": "- 本人の意思を尊重する任意後見制度の利用をどのように促進していくのか",
+        "full_text": "任意後見制度の、そういう意味で、本人の意思を非常に尊重しているという意味では、この任意後見制度の利用促進を図っていくべきというふうに考えます。法制審議会では、法定後見制度の議論に比べると、この任意後見の利用促進に関する議論はあまり進まなかったという評価があるというふうに聞いております。そこで、この任意後見制度の利用促進をどのように図っていくのか、大臣に伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "平口洋",
+        "role": "法務大臣",
+        "summary": "- 監督人の選任を不要とするなど、制度の柔軟性と利便性を高める要綱を取りまとめた\n- 改正法案の成立後、周知広報を行い利用促進に努める",
+        "full_text": "その結果、現行法上は任意後見契約の発効に任意後見監督人の選任を要するが、明らかに任意後見監督人による監督の必要がないときは、その選任を不要とするということなど、制度の柔軟性、利便性を高める要綱が取りまとめられたと承知をしております。今国会にこの要綱を踏まえた改正法案を提出しておりまして、その成立の際には、制度改正内容の十分な周知広報を行い、任意後見制度の利用促進に努めてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5261"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#5639.96",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "任意後見制度の利用促進をどう図るか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "法制審議会"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "任意後見監督人"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "改正法案"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "任意後見制度の利用促進に努めてまいりたい",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "制度改正内容の十分な周知広報を行い、任意後見制度の利用促進に努めてまいりたいと考えております。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "任意後見制度の利用促進策について、法案提出という具体的状況を提示しつつ回答しているが、今後のアクションは努力目標に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "利用促進の「具体的な手法」を問うているため、周知広報以外の具体的施策を求める聞き方にすればより実効的な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_025",
+      "segment_index": 5,
+      "topic": "家族信託の利用促進",
+      "question": {
+        "speaker": "横山信一",
+        "party": "公明党",
+        "summary": "- 認知度が低く契約書作成が困難という課題がある家族信託の利用をどう進めるのか",
+        "full_text": "しかし、この家族信託は制度の認知度が低いと。その上、家族だけで信託契約書をまとめるのが難しいという課題もありまして、十分に活用されていないという現状があります。そこでこの家族信託の利用をどう進めるのか伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "松井民事局長",
+        "role": "",
+        "summary": "- 親族間の信託利用について国民に十分知られていない現状がある",
+        "full_text": "ご指摘のとおり、信託法が施行されてから20年近くが経過しておりますが、親族間の信託の利用について国民の方々に十分知られておらず、"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5261"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#5639.96",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "家族信託の利用をどう進めるか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.2
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "20年近く"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "other",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": null,
+          "score": 0.0
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "回答が途中で切れており、具体的な施策やコミットメントが示されていないため、記録としての価値は極めて低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "現状の課題提示に時間を割いており、具体的な改善策の提示を求める形式にすればより実効的な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_026",
+      "segment_index": 5,
+      "topic": "高齢者の人権相談体制の強化",
+      "question": {
+        "speaker": "横山信一",
+        "party": "公明党",
+        "summary": "- 認知機能の低下などで人権相談が困難な社会福祉施設入所者等に対し、相談体制をどのように強化しているか",
+        "full_text": "認知症の方であっても、当然ですけれども基本的人権があって社会の中で日常生活を営んでいくことができるということを基本理念としています。こういう状況の中で社会福祉施設の入所者の皆さんであっても認知機能の低下などによって人権相談が困難な高齢者もいるということが予想されるわけですが、この相談体制の取り組みの強化状況について伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "平口洋",
+        "role": "法務大臣",
+        "summary": "- 法務局等での相談対応に加え、施設内に特設の人権相談所を開設し体制を強化している\n- 社会福祉事業従事者と連携し、人権侵害事案の情報提供を呼びかけている",
+        "full_text": "また、これにとどまらず、老人福祉施設等の社会福祉施設の入所者の方々が、施設内で気軽に相談することができるよう、これらの施設において、特設の人権相談所を開設するなどして、相談体制の一層の強化を図っているところです。そのほか、高齢者と身近に接する機会の多い社会福祉事業従事者等に対して、人権相談活動について周知説明し、人権侵害事案を認知した場合の情報提供を呼びかけるなど、連携を図っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#5639.96",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "社会福祉施設入所者の人権相談体制の強化状況",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "社会福祉施設の入所者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "特設の人権相談所"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "社会福祉事業従事者"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "相談体制の一層の強化を図っているところです",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "特設の人権相談所を開設するなどして、相談体制の一層の強化を図っているところです。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "社会福祉施設における人権相談体制の現状について問われ、特設相談所の設置や従事者との連携という具体的施策で回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "現状の「強化状況」を問う形式であるため、具体的な数値目標や達成率を求める問いにすればより実効的な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_027",
+      "segment_index": 6,
+      "topic": "片親疎外への対処",
+      "question": {
+        "speaker": "嘉田由紀子",
+        "party": "日本維新の会",
+        "summary": "- 片親疎外（別居親への非難等により子が心を離らす現象）への対処について、法務省としての考えを問う",
+        "full_text": "今日はまず1問目として、片親疎外について。実は今回の民法改正でも、家裁が親子交流をできるだけ早めに続けられるようにということを命じられるようになっているんですが、なかなか現場ではそうなっておりません。私のところには本当に連綿と子どもの連れ去りにあって、それで子どもに会えなくなった。自分は連れ去りの後、子どもに何も悪いことしていない、接触していないのに、だんだん同居親のいわば思いや、あるいは子どもさんは同居親の顔を見ますから、そこで別居親の非難をしてたりすると、どんどん心が離れてしまう。これを片親疎外と心理学では言うんですけれども、私自身、『子どもは誰のものか』という書物の中で、アメリカのウィリアム・バーネット教授と対談をしながら、片親疎外のこともいろいろ学ばせていただきました。そして、まず最初に、大臣に片親疎外の対処について、法務省としてどう考えておられるかお願いできますか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "平口洋",
+        "role": "法務大臣",
+        "summary": "- 片親疎外の問題が指摘されていることを承知している\n- 親子交流の継続は子どもの利益確保の観点から極めて重要である\n- 民法改正法の趣旨が理解され、親子交流が継続されるよう関係府省庁と連携し周知広報に取り組む",
+        "full_text": "その上で、このお尋ねのような、いわゆる片親疎外の問題が指摘されているということは承知をしております。適切な形で、親子交流の継続が図られることは、子どもの健やかな成長と幸せにつながるものでございまして、子どもの利益を確保する観点から、極めて重要なことです。父母双方の人格尊重、協力義務を含め、民法改正法の趣旨及び内容が広く理解され、その趣旨に沿った親子交流の継続が図られるよう、引き続き法務省といたしましても、関係府省庁等とも連携して、周知広報に取り組んでまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5261"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#6869.96",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "片親疎外への対処に関する法務省の考え",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "今回の民法改正"
+            },
+            {
+              "type": "other",
+              "excerpt": "『子どもは誰のものか』という書物"
+            },
+            {
+              "type": "other",
+              "excerpt": "アメリカのウィリアム・バーネット教授"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "別居親",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "民法改正法"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "周知広報に取り組んでまいりたいと考えております",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "適切な形で、親子交流の継続が図られることは、子どもの健やかな成長と幸せにつながるものでございまして、子どもの利益を確保する観点から、極めて重要なことです。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は明確ですが、回答は原則論と周知広報という抽象的な取り組みに留まっており、具体的な対処策は示されていません。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どう考えているか」というオープンクエスチョンであるため、大臣が抽象的な回答で逃げる余地を与えてしまっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_028",
+      "segment_index": 6,
+      "topic": "法務行政の実効性を高めるための自治体連携",
+      "question": {
+        "speaker": "嘉田由紀子",
+        "party": "日本維新の会",
+        "summary": "- 民法改正の実効性を高めるため、自治体（市町村等）との連携を具体的にどう考えているか問う",
+        "full_text": "嘉田由紀子、はい、ありがとうございます。父母双方の尊重義務817条の12と、これが今回の民法改正の一つの肝でもあります。ただ、それがなかなか現場に伝わらない。その一つの仕組みというのは、私、最近改めて理解をしたんですけど、今日も健坂さんおられますけど、私自身、知事時代に、例えば法務の変化というのは受けるところがないんですね。もちろん家庭裁判所あるいは地方裁判所ありますけど、知事2期8年の間に家庭裁判所さんとやり取りしたという経験がほとんどないんですね。ですからそれが実態です。ということで、今回の法律改正をいかに地域自治体とつなぐかということで、一つ今日資料1として、埼玉県本庄市役所の吉田信介市長が4月1日に市長コラムを出していただいておりますので、ちょっと長くなります。2分ほどかかりますけれども、読ませていただきます。吉田市長は全国市長会の副会長もしておられます。まず、引用させていただきます。「親の離婚後も子が両親とつながる社会へ」ということで4月1日の市長ブログです。「令和8年4月1日から離婚後の親権制度に共同親権という新しい選択肢が開かれました。これまで日本では、離婚後は父母のどちらか一方が親権を持つ単独親権でした。今回の制度改正は、父母両方が責任を分かち合いながら、こう育てていく道を開くものです。世界に目を向ければ、離婚後も父母が共にこの養育に関わる仕組みは、多くの国で整えられています。日本では長く議論が続きながらも、制度として形になるまでに時間がかかりました。その間、離婚後契機に親子の関係が突然断たれてしまうことへの課題も指摘されてきました。この制度は、親の権利を広げるためのものではありません。中心に置かれるべきなのは、あくまでも子です。子は父母どちらかの所有物ではなく、一人のかけがえのない存在です。子にとって父母はいずれも大切な存在であり、可能な限り両方の親とつながりながら成長していくことが望ましいという考え方に私も強く共感しております。離婚によって夫婦の関係が終わっても、親子の関係まで断絶することが本当にこのためになるのか、社会として向き合うべき問い」全文公開させていただきましたけれども、本当にこういうふうに考えてくださる市町村長さん、1741自治体が、皆さんがそう考えてくれたら、父母の分離の悲劇というのはなくなるものと思います。すでに、例えば大阪府大東市や東京都目黒区でも、離婚後の父母の人格尊重と協力義務を具体的に運用に落とし込む仕組みを先駆けて取り入れております。これはそれぞれのところで当事者やあるいは市議会議員たちが何年も何年も働きかけてようやく進み始めている先駆的な事例です。また神奈川県の寒川町では本年4月より、この住民票の住所変更時には父母双方の同意確認を保育園の入退園の手続きには、両親の署名を義務化するなど、法改正に合わせた実効性のある運用を導入しております。最後に法務大臣に伺います。家族の問題、民法の問題を家族問題につなげるには、まずは自治体とつながる必要があります。法務大臣、このような法務行政、その実効性を高めるために、自治体とのつながり、具体的にどう考えていただけるでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "平口洋",
+        "role": "法務大臣",
+        "summary": "- 昨年度の調査研究で自治体の協力を得た地域連携ネットワークによる支援の実証的検討を行った\n- 得られた支援モデルを関係府省庁と連携して横展開したい\n- 引き続き関係省庁等との連携に努める",
+        "full_text": "平口法務大臣、法務省では改正法の趣旨内容を広く周知し、改正法が円滑に施行されるよう関係機関等に、法務省が昨年度委託して実施した調査研究では、自治体の協力を得て地域連携のネットワークを通じた支援について、実証的な検討を行ったところでございます。その結果として得られた支援モデルは、支援を所管する関係府省庁とも連携し、横展開を図りたいと考えております。委員の問題意識も踏まえて、引き続き関係省庁等との連携を努めてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5261"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#6869.96",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "法務行政の実効性を高めるための自治体との連携策",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "父母双方の尊重義務817条の12"
+            },
+            {
+              "type": "organization",
+              "excerpt": "埼玉県本庄市役所の吉田信介市長"
+            },
+            {
+              "type": "organization",
+              "excerpt": "大阪府大東市"
+            },
+            {
+              "type": "organization",
+              "excerpt": "東京都目黒区"
+            },
+            {
+              "type": "organization",
+              "excerpt": "神奈川県の寒川町"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.9
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自治体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "evidence_citation",
+              "excerpt": "昨年度委託して実施した調査研究"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "引き続き関係省庁等との連携を努めてまいりたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "支援モデルは、支援を所管する関係府省庁とも連携し、横展開を図りたいと考えております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は具体的な自治体の先駆的事例を挙げて実効性のある連携を求めたが、大臣の回答は過去の調査研究の横展開という抽象的な表現に留まっており、具体性に欠ける。",
+        "would_be_referenced": "low",
+        "issue_in_design": "具体例を提示した上で「どう考えるか」というオープンクエスチョンで締めているため、大臣が定型的な回答で逃げやすい構成になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_029",
+      "segment_index": 6,
+      "topic": "ウクライナの汚職対策への取り組み",
+      "question": {
+        "speaker": "安達悠司",
+        "party": "参政党",
+        "summary": "- 日本の法務省がウクライナの汚職対策を行う必要性について\n- 人員の派遣状況を含む具体的な取り組み内容について",
+        "full_text": "日本の法務省がなぜウクライナの汚職対策を行う必要があるのでしょうか。また、法務省がウクライナに人を派遣しているかどうかも含め、どんな取組を行っているかの説明を求めます。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "堤審議官",
+        "role": "",
+        "summary": "- 司法外交の一環として、法の支配や基本的人権の尊重を世界に浸透させる取り組みを推進している\n- 広島サミットでの法制度改革支援宣言や、復興における資源の公正な活用、EU加盟への重要課題であることを踏まえ、G7司法大臣会合でタスクフォースを設置した",
+        "full_text": "法務省は、法の支配や基本的人権の尊重といった価値を世界各国に浸透させていく取組である司法外交を展開しております。令和5年5月の広島サミットにおきまして、ウクライナの法制度改革の支援が宣言されたこと、ウクライナにおける汚職対策は、同国の復興に際して資源を公平、公正、透明に活用する上で不可欠であり、また、ウクライナのEU加盟に向けた重要課題であるとされていること等を踏まえまして、法務省は、司法外交を推進するため、令和5年7月、G7司法大臣会合において、ウクライナの汚職対策の取組を支援するためのウクライナ汚職タスクフォースの設置。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#6869.96",
+      "metrics": null
+    },
+    {
+      "id": "qa_030",
+      "segment_index": 7,
+      "topic": "ウクライナにおける汚職の実情と原因の分析",
+      "question": {
+        "speaker": "安達悠司",
+        "party": "参政党",
+        "summary": "- ウクライナにおける汚職の実情と原因をどのように分析しているか\n- 具体的な事例を挙げて説明してほしい",
+        "full_text": "取組の中で、昨年12月、ウクライナの裁判官や検察官、捜査官を複数名招いて研修もしたと伺っておりますが、その前提として、法務省は、ウクライナにおける汚職の実情と原因、これをどのように分析していますか。具体的な事例を挙げて説明してください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "堤審議官",
+        "role": "",
+        "summary": "- 外国の機関等の権限や組織の在り方に関わる事柄であり、答弁する立場にない",
+        "full_text": "お尋ねは、外国の公私の様々な機関、団体等の権限や組織の在り方等に関わる事柄であり、法務省はお答えする立場にございません。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#7560.55",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "ウクライナの汚職の実情と原因の分析",
+          "sub_asks": [
+            "汚職の実情と原因の分析内容",
+            "具体的な事例による説明"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "昨年12月"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "ウクライナの裁判官や検察官、捜査官",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "not_at_all",
+          "topic_shift_detected": false,
+          "score": 0.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": null,
+          "score": 0.0
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な分析と事例を求めた質問に対し、他国の権限に関わる事項であるとして回答を拒否しており、記録としての価値は極めて低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "法務省が実施した研修の「前提」としての分析を問うているため、回答拒否を避けるには研修内容に即した問い方にすべきだった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_031",
+      "segment_index": 7,
+      "topic": "ウクライナの汚職対策専門機関への外国・国際機関の関与",
+      "question": {
+        "speaker": "安達悠司",
+        "party": "参政党",
+        "summary": "- SAPOやNABUの人員選考に、なぜ外国や国際機関が関与しているのか\n- 関与している外国や国際機関はどこか、日本も含まれているか",
+        "full_text": "いわば外国機関に管理されているような印象も受けるわけですが、このSAPOやNABUの人員の選考に、なぜ外国や国際機関が関与しているのでしょうか。また、この関与している外国や国際機関は一体どこなのでしょうか。日本も含まれているかどうか。この辺りについて法務省の説明を求めます。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "堤審議官",
+        "role": "",
+        "summary": "- 外国政府の機関に関わる事柄であり、答弁する立場にない",
+        "full_text": "お尋ねは外国政府の機関に関わる事柄であり、法務省はお答えする立場にございません。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#7560.55",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "SAPO・NABUの人員選考への外国関与の理由と主体",
+          "sub_asks": [
+            "なぜ外国や国際機関が関与しているのか",
+            "関与している外国や国際機関はどこか",
+            "日本も含まれているか"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "SAPO"
+            },
+            {
+              "type": "organization",
+              "excerpt": "NABU"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "SAPO, NABU",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "not_at_all",
+          "topic_shift_detected": false,
+          "score": 0.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": null,
+          "score": 0.0
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な組織名を挙げた質問に対し、政府側が管轄外として回答を拒否しており、記録としての価値は極めて低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問対象の組織が法務省の所管外である可能性が高く、質問先の省庁選定に誤りがある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_032",
+      "segment_index": 7,
+      "topic": "ウクライナの国家財政における軍事費と外国支援の割合",
+      "question": {
+        "speaker": "安達悠司",
+        "party": "参政党",
+        "summary": "- ウクライナの国家財政の歳出に占める軍事費の割合はどれほどか\n- 歳入に占める外国からの支援の割合はどれほどか",
+        "full_text": "つまりウクライナの政府の保証人になるようなものだといった評価もできると思いますが、これほどまでウクライナがなぜ財政支援を必要とするのかと言いますと、それはウクライナの財政の構造にあると思うんですが、まず1つの質問は、現在ウクライナの国家財政の歳出にどれほど軍事費が占めているのか。またウクライナの歳入には、どれほど外国からの支援が占めているのか、その割合をそれぞれお答えください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "石川審議官",
+        "role": "",
+        "summary": "- 2026年予算案では、歳出額の約58%（約10.2兆円）を軍事安全保障に関する歳出が占めている\n- 歳入と外国への支援要請額の合計に対する支援要請額の比率は約42%である",
+        "full_text": "2025年12月にウクライナ最高会議の採択を経て公表された2026年予算によれば、歳出額は約4.8兆フリブニャ、日本円に直しますと約17.4兆円のうち、軍事安全保障に関する歳出は2.8兆フリブニャ、約10.2兆円であり、歳出額の約6割、58%を占めております。また、ウクライナ財務省は、2026年の歳入を2.9兆フリブニャ、約10.5兆円と見積もっておりますが、この歳入とは別途、諸外国に対して2.1兆フリブニャ、約7.6兆円になりますけれども、の財政支援を求めたいというふうに表明しております。この歳入と外国からの支援、歳入の中に外国からの支援というのは含まれておりませんが、歳入と外国への支援要請額の合計に対する外国に対する支援要請額の比率は約42%に上ると承知しております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#7560.55",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "ウクライナの軍事費割合と外国支援の割合",
+          "sub_asks": [
+            "国家財政の歳出に占める軍事費の割合",
+            "歳入に占める外国からの支援の割合"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "ウクライナ政府",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "歳出額は約4.8兆フリブニャ"
+            },
+            {
+              "type": "number",
+              "excerpt": "軍事安全保障に関する歳出は2.8兆フリブニャ"
+            },
+            {
+              "type": "number",
+              "excerpt": "歳出額の約6割、58%"
+            },
+            {
+              "type": "number",
+              "excerpt": "歳入を2.9兆フリブニャ"
+            },
+            {
+              "type": "number",
+              "excerpt": "財政支援を求めたいというふうに表明しております。この歳入と外国への支援要請額の合計に対する外国に対する支援要請額の比率は約42%"
+            }
+          ],
+          "score": 1.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "軍事安全保障に関する歳出は2.8兆フリブニャ、約10.2兆円であり、歳出額の約6割、58%を占めております。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "ウクライナの財政状況に関する具体的な数値回答が得られており、記録としての価値が高い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_033",
+      "segment_index": 7,
+      "topic": "ウクライナに対する財政支援の継続期間と判断基準",
+      "question": {
+        "speaker": "安達悠司",
+        "party": "参政党",
+        "summary": "- ウクライナに対する財政支援をいつまで続けるのか\n- 支援継続の判断基準があれば示してほしい",
+        "full_text": "また政府はですね、次外務省と財務省それぞれお尋ねしますが、ウクライナに対する財政支援をいつまで続けるのか、その判断基準があれば示してください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "三田園政務官",
+        "role": "",
+        "summary": "- IMFプログラムの下で2030年2月まで継続しており、今後もG7等の同志国と連携して支援を検討する\n- 情勢推移を予断できないため、引き続きG7等と連携し、ウクライナ側のニーズを踏まえ検討する",
+        "full_text": "この支援はIMFプログラムの下で国際支援の一環として実施しておりまして、現在も2030年2月までのプログラムの下で継続しております。日本といたしましては、今後の情勢推移も踏まえまして、引き続きG7をはじめとする同志国とともに、国際支援の一環としてのウクライナへの支援を検討してまいります。その上で、今後の情勢の推移を予断できないため、財政支援についても予断することは困難ではございますが、引き続きG7等と連携しつつ、ウクライナ側のニーズを踏まえながら検討してまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#7560.55",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "ウクライナ財政支援の期間と判断基準",
+          "sub_asks": [
+            "いつまで続けるのか",
+            "判断基準はあるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "ウクライナ",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "deadline",
+              "excerpt": "2030年2月まで"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "IMFプログラム"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "G7"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "ウクライナ側のニーズを踏まえながら検討してまいります",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "現在も2030年2月までのプログラムの下で継続しております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "IMFプログラムの期限という具体的な数字が出た点は価値があるが、判断基準については「検討する」という曖昧な回答に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「いつまで」と「判断基準」を同時に問うているため、回答者が後者を曖昧に逃げやすい構造になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_034",
+      "segment_index": 7,
+      "topic": "法務省によるウクライナ支援のリーガルチェックと汚職対策の強化",
+      "question": {
+        "speaker": "安達悠司",
+        "party": "参政党",
+        "summary": "- 汚職対策の成果が出ない場合に財政支援を打ち切る、あるいは法務省から人を派遣して強力な対策を実施し、財政支援に歯止めをかけるべきではないか\n- 上記について法務大臣の見解を問う",
+        "full_text": "汚職対策の成果が出なければ財政支援を打ち切る。あるいは少人数であっても法務省から人を派遣するなどですね、より強力な汚職対策を実施すること。それによって外務省や財務省の行う、いわばですね、再現のないような財政支援に対して歯止めをかける。こういったことについて法務大臣はどのようにお考えでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "平口洋",
+        "role": "法務大臣",
+        "summary": "- 日本政府の今後の支援のあり方は外交方針に関わる事柄であり、法務省として答弁は差し控える\n- ウクライナ汚職対策タスクフォースの事務局として、今後も関係国・機関との情報共有に努める",
+        "full_text": "ご指摘は、日本政府のウクライナに対する今後の支援のあり方など、我が国の外交の方針に関わること柄でありまして、法務省としてはお答えすることは差し控えたいと思います。いずれにせよ、法務省としては、ウクライナ汚職対策タスクフォースの事務局として、今後も関係国、機関との間で情報共有に努めてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#7560.55",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "汚職対策の強化と財政支援の制限について",
+          "sub_asks": [
+            "汚職対策の成果が出ない場合の財政支援打ち切り",
+            "法務省からの人員派遣による対策強化"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "外務省や財務省",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.2
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "ウクライナ汚職対策タスクフォース"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "情報共有に努めてまいりたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "法務省としては、ウクライナ汚職対策タスクフォースの事務局として、今後も関係国、機関との間で情報共有に努めてまいりたい",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な政策提案に対し、大臣は外交方針に関わるとして回答を拒否しており、実質的な成果は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "複数の提案（支援打ち切りと人員派遣）を一つの問いに含めているため、個別の回答を得にくい構成になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_035",
+      "segment_index": 8,
+      "topic": "在留資格「経営管理」の資本金要件の根拠",
+      "question": {
+        "speaker": "仁比聡平",
+        "party": "日本共産党",
+        "summary": "- 資本金要件が500万円とされていた経緯と根拠について伺いたい",
+        "full_text": "この2015年に年収要件を大きく300万円まで引き下げたんですね。学術研究に関わる人はもう年収要件を撤廃するというので、当時谷垣法務大臣でしたけれども、その大臣お座りになっている席で、むしろ年収よりも研究実績などによって評価すべきだというふうに答弁をされたわけですね。そうした中で高度人材はそうやって経営者でしょう。この経営管理に関しては500万円という資本金要件が当時からされてきたわけですけれども、これは大臣でも入管庁で見るんですが、いかがですか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "内藤次長",
+        "role": "",
+        "summary": "- 平成26年の改正時に、平成12年のガイドラインで示されていた500万円をそのまま基準としたものである",
+        "full_text": "昨年10月15日以前の在留資格経営管理の許可基準の一つである資本金の額500万円につきましては、平成26年の入管法改正に伴い、上陸基準法省令において規定したものでございますが、同金額については、もともと平成12年に策定した在留資格、投資経営のガイドラインにおいて示していたものでございます。当時は500万円の金額に変更が必要な状況にあるとは認識していなかったことから、この金額をそのまま経営管理の基準としたものでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5189"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#8490.38",
+      "metrics": null
+    },
+    {
+      "id": "qa_036",
+      "segment_index": 8,
+      "topic": "在留資格「経営管理」の許可者の実態把握",
+      "question": {
+        "speaker": "仁比聡平",
+        "party": "日本共産党",
+        "summary": "- 許可を得て事業を営む外国人の業種、資本金、従業員数などの実態把握をどのように行ったか",
+        "full_text": "ということで、つまり従業員1人当たり250万円ぐらいでしょうということなんですよね。ですから、昨年10月の厳格化に向けた出入国在留管理政策懇談会の議論の中でも、賃上げは必要でしょうと。だけど、例えば1人300万円で600万円というのだっていいんじゃないですかというような意見が出されているとおりなわけですね。その500万円という資本金をはじめとした要件で、先ほど見ていただいたように、46,781人の外国籍の方々が、この在留資格を得て、事業を営んでいるということなんですが、私、おおむねですね、零細事業者の方々が大方なんじゃないかなっていう実感を持っています。家族経営の、例えばカレー屋さん、先だって話題になりました多国籍なエスニックの料理屋さんとか雑貨屋さんとかいう形で、ご家族が手伝いながら一緒にやっているというお店が多いのではないかと思うんですが、この46,781人の在留資格の実態について、例えば業種、それから資本金や従業員の数については、昨年10月の見直しに当たってどのような実態把握が行われたんでしょうか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "内藤次長",
+        "role": "",
+        "summary": "- 約4.1万人の申請書に基づき調査し、卸売・小売・飲食業が多く、資本金500万円付近で常勤職員を雇用していない者が多数であることを把握した",
+        "full_text": "出入国在留管理庁におきましては、在留資格経営管理の許可基準の改正を検討する中で、令和6年末時点で当該在留資格により在留中の方41,615人を対象に調査を行いましたが、当該調査は、対象者の直近の申請書に記載された内容を基に把握できる範囲において実施したものでございまして、詳細な数値をお答えすることは困難であることをご理解いただきたいと思います。これを前提といたしまして、委員のお尋ねに関して可能な範囲でお答えしますと、当該調査の結果、業種としては卸売業、小売業、飲食サービス業等が多数を占めること、資本金の額等について当時の許可基準である500万円付近の在留者が多数を占めること、多数の者が常勤職員を雇用していない状況であったことを把握しております。お尋ねの資本金額等につきましては、多数のものが500万円から600万円くらいの水準だったことも把握しておりまして、その上で改正前から在留資格、経営管理で在留中の方については、今回の改正におきまして、改正後の許可基準を直ちに適用することなく、一定の配慮を行うことという措置を取ったわけでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5189"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#8490.38",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "経営管理在留資格者の実態把握の内容について",
+          "sub_asks": [
+            "業種の実態把握内容",
+            "資本金の実態把握内容",
+            "従業員数の実態把握内容"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "昨年10月の厳格化に向けた出入国在留管理政策懇談会"
+            },
+            {
+              "type": "number",
+              "excerpt": "46,781人の外国籍の方々"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "在留資格（経営管理）を持つ外国籍の事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "41,615人を対象に調査"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "卸売業、小売業、飲食サービス業"
+            },
+            {
+              "type": "number",
+              "excerpt": "500万円から600万円くらいの水準"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.6
+        },
+        "oc3_quotability": {
+          "quote_candidate": "業種としては卸売業、小売業、飲食サービス業等が多数を占めること、資本金の額等について当時の許可基準である500万円付近の在留者が多数を占めること",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "経営管理在留資格者の実態調査の結果について、具体的な業種や資本金水準が回答されており、記録としての価値が高い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_037",
+      "segment_index": 8,
+      "topic": "在留資格「経営管理」の資本金分布",
+      "question": {
+        "speaker": "仁比聡平",
+        "party": "日本共産党",
+        "summary": "- 資本金3000万円を超える事業者は10%に満たないのではないか（9割が500万円程度ではないか）",
+        "full_text": "多数というふうに今おっしゃいましたけど、資本金3000万円を超える、そういう事業者というか、10%に満たなかったのではありませんか。だから9割は500万円だったんじゃないですか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "内藤次長",
+        "role": "",
+        "summary": "- 詳細な数字は困難だが、3000万円の者はそれほど多くなく、概ね指摘の通りである",
+        "full_text": "今申し上げたように、詳細の数字の詰めは、今申し上げたような調査状況なんで、なかなか難しいんですけれども、多数のものはやっぱり、その500万円等で、3000万円というのはそれほど多くないというふうにご理解いただいて、結構多いと思います。はい、おおむねご指摘のとおりの認識で間違いない。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5189"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#8490.38",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "資本金3000万円超の事業者は10%未満か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "資本金3000万円"
+            },
+            {
+              "type": "number",
+              "excerpt": "10%に満たなかった"
+            },
+            {
+              "type": "number",
+              "excerpt": "9割は500万円"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "500万円"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "3000万円"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "多数のものはやっぱり、その500万円等で、3000万円というのはそれほど多くないというふうにご理解いただいて",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "事業者の資本金構成に関する質問に対し、概ね肯定的に回答している。詳細な数字は出せていないが、傾向としての認識を一致させている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_038",
+      "segment_index": 8,
+      "topic": "実態調査の精度と申請書の抽出件数",
+      "question": {
+        "speaker": "仁比聡平",
+        "party": "日本共産党",
+        "summary": "- 全数調査としているが、実際に申請書から実態を把握できたのは何件なのか",
+        "full_text": "かつ、全数をね、実態を調査して、把握できた数字でもないわけですよ。担当課の方からは、把握できる範囲の全数調査を行ったものです。一体どういう意味なのかというような数字なんですね。先ほどちょっとお話ありましたけども、申請書から拾えたのが、今言ってる議論なんですけど、申請書から拾えたのは何件だったんですか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "内藤次長",
+        "role": "",
+        "summary": "- 手元に数字がなく、詳細を確認して改めて報告する",
+        "full_text": "今ちょっと手元に数字がございません。詳細ちょっと確認しまして、また改めてご報告させていただきたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#8490.38",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "申請書から把握できた件数の確認",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 3,
+          "trigger_phrase": "改めてご報告させていただきたいと思います",
+          "matched_pattern": "future-tense verb describing a CONCRETE government action with a named mechanism"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "詳細ちょっと確認しまして、また改めてご報告させていただきたいと思います。",
+          "score": 0.2
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な数字を問う質問に対し、回答者が現状把握していないことを認め、後日報告することを約束したやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_039",
+      "segment_index": 8,
+      "topic": "長期在留者の数と把握状況",
+      "question": {
+        "speaker": "仁比聡平",
+        "party": "日本共産党",
+        "summary": "- 経営管理の資格で通算10年、あるいは30年といった長期在留者がどの程度いるか",
+        "full_text": "私は併せてですね、2015年の施行から更新を重ねて通算の在留期間が10年以上というふうになっている方々いっぱいいらっしゃるんじゃないですかと。人気のお店と。あるいはその前、例えば技能とかの在留資格でいらっしゃって、経営管理に資格変更して、だからもう子どもさんは高校生になっているとか、下の子が小学校に今度上がるんですと、日本語で楽しい会話をできる、そういう方々がたくさんいらっしゃるんじゃないですかと。もう在留、通算で言えば30年もいるという長期在留者がかなりの数いらっしゃるんじゃないかとお尋ねをしましたが、わかりますか。何人いらっしゃるか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "内藤次長",
+        "role": "",
+        "summary": "- 通算在留期間については調査しておらず、回答は困難である",
+        "full_text": "対象者の在留資格、経営管理での通算在留期間については調査をしておらず、お答えすることは困難でございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5189"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#8490.38",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "経営管理資格者の通算在留期間の人数",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "2015年の施行から"
+            },
+            {
+              "type": "number",
+              "excerpt": "通算の在留期間が10年以上"
+            },
+            {
+              "type": "number",
+              "excerpt": "通算で言えば30年もいる"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "経営管理の在留資格を持つ長期在留者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "経営管理での通算在留期間については調査をしておらず、お答えすることは困難でございます。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "政府が特定の在留資格者の通算在留期間を把握していないことを明確に認めた記録として価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問の導入部分に情緒的な例示が多く、核心である人数への問いが最後にあるため、構造が冗長である。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_040",
+      "segment_index": 8,
+      "topic": "資本金要件を3000万円に引き上げた根拠",
+      "question": {
+        "speaker": "仁比聡平",
+        "party": "日本共産党",
+        "summary": "- 資本金要件を500万円から3000万円に大幅に引き上げた根拠は何か",
+        "full_text": "ですから、2014年の改正法でね、在留資格を定めたわけですよ、国会が。で、それを入管庁がね、それは懇談会ぐらいはやったかもしれないけども、その入管庁の裁量だけで、500万円を3000万円に引き上げるなんてようなことをやっていいはずがない。その根拠が今私が問うてるんだけども、それは調べてませんというわけでしょ。ところが、2014年改正時の説明も、それから10年余りにわたる運用もですね、全部ひっくり返すのが3000万円ですよ。大臣、これ3000万円と。600万円でもなく、1000万円でもなく、何で3000万円なんですか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "平口洋",
+        "role": "法務大臣",
+        "summary": "- 法人企業の経営実態統計で利益法人が多くなる資本金2000万円超の階級であることや、諸外国の制度を参考に3000万円が適当と判断した",
+        "full_text": "お尋ねの資本金等の額については、事業経営の安定性や日本経済に資する事業の規模という観点から、法人企業の実態、法人の法人企業の経営実態に関する統計におきまして、欠損法人よりも利益法人等が多くなるのは、資本金2000万円超の階級であること、また諸外国の同様の制度における要件などを参考として検討し、3000万円以上とすることが適当と判断したものでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#8490.38",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "資本金要件を3000万円とした根拠は何か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "2014年の改正法"
+            },
+            {
+              "type": "number",
+              "excerpt": "500万円を3000万円に引き上げる"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "入管庁",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "資本金2000万円超の階級"
+            },
+            {
+              "type": "number",
+              "excerpt": "3000万円以上"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "法人企業の経営実態に関する統計におきまして、欠損法人よりも利益法人等が多くなるのは、資本金2000万円超の階級であること",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "資本金要件の具体的な数値根拠（統計上の2000万円超という基準）を大臣が明示したため、記録としての価値が高い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_041",
+      "segment_index": 8,
+      "topic": "要件厳格化による既存事業への影響と経過措置",
+      "question": {
+        "speaker": "仁比聡平",
+        "party": "日本共産党",
+        "summary": "- 3000万円への引き上げにより、真面目に運営している零細店が潰されるのではないか",
+        "full_text": "在留資格というのは、特にこの経営管理事案について言いますと、事業と生活の基盤ですよね。政府自民党が2014年の改正以来こういう運用をしてきた。で、その下で適正に在留資格を得て、税金や社会保険料も真面目に納めながらですね、この間にはコロナ危機がありました。あるいは今の果てしない物価高騰というのがあります。その下でも一生懸命真面目に頑張っている。そのお店を大臣潰すというのが3000万円ということでしょう。この入管庁の省令によって9割方の今一生懸命頑張っているお店を潰すという判断を大臣されたんですか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "平口洋",
+        "role": "法務大臣",
+        "summary": "- 経過措置を設けて運用する",
+        "full_text": "この点については経過措置も設けておりますので、それによって運用したいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#8490.38",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "入管庁省令による事業停止判断の是非",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "2014年の改正"
+            },
+            {
+              "type": "number",
+              "excerpt": "3000万円"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "経営管理の在留資格を持つ事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "運用したいと思います",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "この点については経過措置も設けておりますので、それによって運用したいと思います。",
+          "score": 0.2
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "感情的な問いかけに対し、大臣は具体的な判断基準への回答を避け、経過措置による運用という抽象的な回答に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "問いかけが情緒的であり、具体的な制度上の矛盾点や改善案を問う形式にすれば、より実効的な回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_042",
+      "segment_index": 8,
+      "topic": "更新申請における不許可の回避と具体的措置",
+      "question": {
+        "speaker": "仁比聡平",
+        "party": "日本共産党",
+        "summary": "- 更新時期を迎えている者が、3000万円の要件を満たさないことで不許可となり、生活基盤を失う事態を防ぐ確約を求める",
+        "full_text": "もう一つ、昨年の10月からもう更新の時期が来ている在留者については、資格の審査が始まっているんですよ。その中でもう子どもたちが小学校にはいけないのかと泣かせてしまうような事態が現場では起こっているんですよ。そんな酷なことを絶対にしてはならない。3000万円にあげるというような無理無体なことは強制をしないということを大臣、今の時点ではっきりさせるべきじゃありませんか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "平口洋",
+        "role": "法務大臣",
+        "summary": "- 令和10年までの間は、改正後の基準に適合しないことのみをもって更新を不許可とはせず、個別事情を踏まえて対応する",
+        "full_text": "具体的には、施行日から3年を経過する日、令和10年ですけれども、までの間は改正後の許可基準に適応しないことのみをもって、在留期間の更新の許可申請を不許可とはしないと。を行うなどですね、個別の事情を踏まえて対応する予定でございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5189"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#8490.38",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "3000万円の基準を強制しないか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "昨年の10月"
+            },
+            {
+              "type": "number",
+              "excerpt": "3000万円"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "在留者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "deadline",
+              "excerpt": "施行日から3年を経過する日、令和10年"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 3,
+          "trigger_phrase": "改正後の許可基準に適応しないことのみをもって、在留期間の更新の許可申請を不許可とはしない",
+          "matched_pattern": "future-tense verb describing a CONCRETE government action with a named mechanism"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "令和10年までの間は改正後の許可基準に適応しないことのみをもって、在留期間の更新の許可申請を不許可とはしない",
+          "score": 0.9
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "大臣が令和10年までの経過措置について具体的に言及しており、記録としての価値が高い。",
+        "would_be_referenced": "high",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_043",
+      "segment_index": 9,
+      "topic": "重要インフラ損壊に対する適用罪名",
+      "question": {
+        "speaker": "北村晴男",
+        "party": "日本保守党",
+        "summary": "- 重要インフラ（電気工作物等）が損壊された場合、具体的にどのような罪に該当するか",
+        "full_text": "器物損壊罪の法定刑は3年以下の懲役刑、また30万円以下の罰金であるというところでございます。その上で検察当局におきましては、個別の事案ごとに法と証拠に基づいて、犯行に至る経緯や犯行の態様の悪質、被害結果の重大性等、量刑に影響を及ぼす各種の事情を総合的に考慮して刑を決定しているところでありまして、ご指摘のような発電設備の導線ケーブルの窃盗や損壊事案につきましても、発電事業に与えた影響等も踏まえまして刑を行うような、先ほどの栃木県の市営グラウンドの件ですと復旧費用が数千万円に上り、また太陽光発電所からの窃盗を行ったベトナム人犯行グループによる計26件の被害総額は1億4000万円、復旧費用もこれをはるかに上回るものと思われます。窃盗罪または器物損壊罪での量刑判断に当たり、こうした被害額もおっしゃるとおり、情状として考慮されますが、いわば間接的評価にとどまるものです。加えて、忘れてはならないのは、多くの場合、インフラに使用されているケーブルなどが盗まれることで、重要なインフラが破壊され、国民生活に大きな被害が及ぶということです。この被害は導線の価値や復旧費用などの経済的損害では到底評価しきれない極めて大きなものですから、窃盗罪などでは評価として全く不十分と考えます。現行法上、水道、電気、ガス、海底ケーブルなどの重要インフラが損壊された場合、窃盗罪や器物損壊罪以外にも個別法に規定された罪等に該当し得る場合があると思いますが、典型的な例である電気事業に使用される電気工作物の損壊の場合、どのような罪に該当するか、御説明をお願いします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 証拠に基づき個別に判断されるため一概に回答は困難である",
+        "full_text": "お答え申し上げます。犯罪の認定は、捜査機関により収集された証拠に基づいて個別に判断されるべき事柄でありまして、一概にお答えすることは困難でございます。その上で一般論として申し上げれば、北村晴男（日本保守党）"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#9460.91",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "電気工作物損壊時の適用罪名の説明",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "復旧費用が数千万円"
+            },
+            {
+              "type": "number",
+              "excerpt": "被害総額は1億4000万円"
+            },
+            {
+              "type": "field_case",
+              "excerpt": "栃木県の市営グラウンドの件"
+            },
+            {
+              "type": "law",
+              "excerpt": "器物損壊罪の法定刑は3年以下の懲役刑、また30万円以下の罰金"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "ベトナム人犯行グループ",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "not_at_all",
+          "topic_shift_detected": false,
+          "score": 0.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "other",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": null,
+          "score": 0.0
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的で根拠に基づいているが、回答が途中で切れているか、あるいは極めて不十分な一般論の導入で終わっており、実質的な回答が得られていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_044",
+      "segment_index": 9,
+      "topic": "インフラ損壊罪の創設",
+      "question": {
+        "speaker": "北村晴男",
+        "party": "日本保守党",
+        "summary": "- 現行の窃盗罪や電気工作物損壊罪では法定刑が不十分であるため、「インフラ損壊罪」を創設し重い法定刑を設けるべきではないか",
+        "full_text": "ありがとうございます。同様のものが、浄水道損壊罪、これは刑法147条、これは1年以上10年以下の懲役刑、水道施設損壊罪、これは水道法によるものですが、5年以下の懲役刑または100万円以下の罰金、ガス工作物損壊罪、これは5年以下の懲役刑または100万円以下の罰金などと承知しています。今挙げていただいた電気工作物損壊罪の場合も、法定刑で見ると、窃盗罪よりも軽く、懲役刑の上限は半分、窃盗罪の半分にすぎません。社会に大打撃を与えるという被害の実態、重大性から考えると、これでは全く不十分と考えます。犯行が財産取得目的によるものであったとしてもなかったとしても、その結果が重要なインフラの破壊を伴うものに関しては、現行法上、該当し得る窃盗罪、器物損壊罪、電気工作物損壊罪などとは別に、あるいはこれらに変えて、インフラ損壊罪という犯罪類型を創設し、法定刑は、例えば、無期または5年以上の懲役刑などとして、原則として実刑を伴う重い法定刑とする必要があると考えますが、法務省の見解をお聞かせください。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "佐藤刑事局長",
+        "role": "",
+        "summary": "- 現行法でも各種罰則があるが、処罰対象とするインフラの範囲や適切な法定刑など課題が多く、慎重な検討を要する",
+        "full_text": "一般論としてお答えいたしますと、現行法の下では、委員の御指摘のとおり、インフラの一部を損壊したものについた器物損壊罪、その損壊により人の業務を妨害したものについた威力業務妨害罪などがそれぞれ成立し得るところでございまして、また、これまた委員から御指摘がありましたように、特別法違反の罪として、先ほどご紹介のあった電気事業法違反、ガス事業法違反、水道法違反などの罪があるわけでございます。その上でご指摘のようなインフラを損壊する行為を特に重く処罰する罪を創設することにつきましては、先ほど申し上げたように刑法や特別法において各種の罰則が定められている中で、また様々なインフラに対する様々な損壊行為等が想定される中で、具体的にどのようなインフラに対するどのような行為を処罰の対象とするかであったり、法定刑をどの程度重いものとすることが適切かなどといった課題が多いところでございまして、慎重な検討を要するものと考えているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#9460.91",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "インフラ損壊罪の創設に関する法務省の見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "刑法147条"
+            },
+            {
+              "type": "law",
+              "excerpt": "水道法"
+            },
+            {
+              "type": "law",
+              "excerpt": "電気工作物損壊罪"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "器物損壊罪"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "威力業務妨害罪"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "電気事業法違反"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ガス事業法違反"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "水道法違反"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "慎重な検討を要するものと考えている",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "インフラを損壊する行為を特に重く処罰する罪を創設することにつきましては、慎重な検討を要するものと考えている",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "新罪創設という具体的な政策提案に対し、現行法の整理と課題を挙げた上で「慎重な検討を要する」と回答しており、標準的なやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_045",
+      "segment_index": 9,
+      "topic": "銅線窃盗犯の国籍割合",
+      "question": {
+        "speaker": "北村晴男",
+        "party": "日本保守党",
+        "summary": "- 導線ケーブル窃盗犯の多くが外国人であるという認識について、データがあるか",
+        "full_text": "ありがとうございます。もう1点ですが、導線ケーブルなどの銅線犯の犯人、これは大半が外国人であるというふうに国民から認識されています。これについて、何らかのデータがあればお示しください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "遠藤審議官",
+        "role": "",
+        "summary": "- 令和5年からの3年間で、検挙人員287人のうち外国人が202人で、割合は70.4%である",
+        "full_text": "お答えいたします。お尋ねに関しましては、警察庁では、太陽光発電施設における金属ケーブル窃盗についての統計を、令和5年から取りまとめておりまして、令和7年までの3年間においては、検挙人員の合計は287人、うち外国人は202人。検挙人員に占める外国人の割合は70.4%となっております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#9460.91",
+      "metrics": null
+    },
+    {
+      "id": "qa_046",
+      "segment_index": 9,
+      "topic": "外国人犯罪情報の入管行政への活用",
+      "question": {
+        "speaker": "北村晴男",
+        "party": "日本保守党",
+        "summary": "- 外国人窃盗グループに関する捜査情報を入管庁は入手しているか。また、入手している場合、入管行政にどう影響しているか",
+        "full_text": "ありがとうございます。外国人によるこの種の犯罪が多いということであれば、これは入管当局もしっかり情報連携を図っていただいて、問題のある外国人の強制退去、あるいは入国拒否の判断につなげてほしいと考えています。さて、外国人窃盗グループによる窃盗は導線ケーブルに限られません。近年、例えばアルファードなどの高級車を狙った窃盗グループ、これ資料3です。こちらは計80件で被害総額3億7000万円と言われているものですが、そのメンバーであるパキスタン国籍の男が逮捕されたとの報道や、一般住宅、空き家を狙ったベトナム人を中心とした窃盗グループ、これ資料4です。こちらは盗難者で広範囲に移動しながら100件を超え、被害総額3500万円以上の犯行を重ねたものでありますが、そのメンバーであるベトナム人が逮捕されたとの報道などが相次いでいます。こうした外国人犯罪に対して、入管庁は捜査機関から捜査情報などを入手しているのでしょうか。入手しているのであれば、こうした情報が入管行政にどのように影響しているのか、御説明をお願いします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "内藤次長",
+        "role": "",
+        "summary": "- 法に基づき通報を受けており、内容を精査して退去強制手続きや在留審査（消極的評価など）に活用している",
+        "full_text": "質疑応答に関わらず、同法第62条第2項の規定に基づき通報されることとなっております。出入国在留管理庁におきましては、入手した情報の内容を精査し、退去強制事由に該当すると判断する場合には、法令の規定に基づき退去強制手続きをとっているところでございます。加えてでございますが、退去強制事由に該当しないと判断した場合であっても、当該情報を在留審査に活用するなど、適切に対応しておりまして、例えば当該情報も踏まえて在留状況が不良であると判断される場合には、在留審査において消極的に評価することが考えられるとこのように考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5189"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#9460.91",
+      "metrics": null
+    },
+    {
+      "id": "qa_047",
+      "segment_index": 9,
+      "topic": "北朝鮮への資金持ち込みと再入国拒否",
+      "question": {
+        "speaker": "北村晴男",
+        "party": "日本保守党",
+        "summary": "- 再入国許可を得て出国した外国人が、北朝鮮に巨額の資金を持ち込んだことが判明した場合、現行法で再入国を拒むことは可能か",
+        "full_text": "ありがとうございます。その点の続きは最後に時間があればご質問するとして、4月14日の産経新聞の記事によりますと、朝鮮総連傘下の商工会に所属する自営業者らが、100人規模で北朝鮮を訪問し、日本国内で集めた資金を北朝鮮に持ち込むとの話があるとのことです。資料5です。現在、日本政府は、外為法による北朝鮮に対する経済制裁措置として、原則として北朝鮮関係者への支払いなどを禁止しているものと承知していますが、商工会の北朝鮮訪問は、この制裁措置の抜け穴になっているとも言われています。まずは、こうした事態にならないよう、最善を尽くしていただきたいと思いますが、仮に再入国許可を受けた上で出国した外国人が、北朝鮮に巨額の資金を持ち込んだことが、再入国前に判明した場合、再入国を拒むことは現行法上、可能なのでしょうか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "内藤次長",
+        "role": "",
+        "summary": "- 再入国許可がある場合は通常の上陸審査（入国目的・在留期間の審査）は行わず、有効な旅券の所持と上陸拒否事由に該当しないかを確認する",
+        "full_text": "個別のご質問についてはお答えを差し控えさせていただきたいと思いますが、その上で一般論として申し上げれば、再入国許可制度は我が国に在留する外国人が一時出国した後、再び入国する場合に上陸手続を簡略化するための制度でございます。再入国許可を受け出国した外国人から上陸申請があった場合は、通常の上陸審査で行っている入国目的、在留期間の審査を行うことなく、有効な旅券等を所持していること、7条1項1号と定められておりますが、及び上陸拒否事由に該当しないこと、これは同法第4号に定められます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5189"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8969#9460.91",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "北朝鮮への資金持ち込み判明時に再入国を拒否できるか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "4月14日"
+            },
+            {
+              "type": "organization",
+              "excerpt": "産経新聞"
+            },
+            {
+              "type": "organization",
+              "excerpt": "朝鮮総連傘下の商工会"
+            },
+            {
+              "type": "law",
+              "excerpt": "外為法"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "朝鮮総連傘下の商工会に所属する自営業者",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "evidence_citation",
+              "excerpt": "7条1項1号"
+            },
+            {
+              "type": "evidence_citation",
+              "excerpt": "同法第4号"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "再入国許可制度は我が国に在留する外国人が一時出国した後、再び入国する場合に上陸手続を簡略化するための制度でございます。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な法的可否についての問いに対し、制度の一般論と条文の提示に留まり、直接的な回答を避けている。",
+        "would_be_referenced": "low",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    }
+  ],
+  "score_schema_version": "2.0",
+  "prompt_version": "V4"
+}

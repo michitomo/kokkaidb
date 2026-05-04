@@ -1,0 +1,3539 @@
+{
+  "pairs": [
+    {
+      "id": "qa_001",
+      "segment_index": 1,
+      "topic": "最終処分場の延命効果",
+      "question": {
+        "speaker": "大岡敏孝",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 太陽電池の廃棄による最終処分場の圧迫が懸念される中、本法律により日本の最終処分場がどの程度延命されるのか",
+        "full_text": "まず今回の法律に至る背景が、このまま放っておけば、2030年代後半には年間50万トンもの太陽電池が廃棄される。これを埋め立てられると最終処分所を圧迫するということが第一に挙げられております。それではこの法律によりまして、日本の最終処分所をどの程度延命されるのか教えていただきたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "中尾",
+        "role": "",
+        "summary": "- 最終処分場の残余年数は約20年であり、他の産廃量や新設の有無で変動するため具体的な延命年数を申し上げることは難しい\n- ただし、最大年間50万トンの排出量は産廃全体の約5%に相当するため、リサイクルによる延命に一定の効果はあると考える",
+        "full_text": "環境省の調査では2023年度の産業廃棄物の最終処分量は約875万トンであり、2024年4月現在、最終処分場の残余年数を約20年となっているところでございます。太陽光パネルの排出量は2030年代後半以降に顕著に増加し、委員御指摘のとおり最大年間50万トン程度に達する見込みでございます。太陽光パネル以外の産業廃棄物の排出量の増減及び最終処分場の新設の有無などによりまして、残余年数は変動することから、本法律案の施行によって、日本全体の最終処分場の残余年数が具体的にどの程度伸びるかを申し上げることは難しいところでございますけれども、約50万トンが全て埋め立て処分された場合、2023年度の産業廃棄物の最終処分量の約5%に相当することから、リサイクルによる処分量削減、そして最終処分場の延命に一定の効果はあると考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=499.259",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "本法による最終処分場の延命効果について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "2030年代後半には年間50万トンもの太陽電池が廃棄される"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.6
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "2023年度の産業廃棄物の最終処分量は約875万トン"
+            },
+            {
+              "type": "number",
+              "excerpt": "最終処分場の残余年数を約20年"
+            },
+            {
+              "type": "number",
+              "excerpt": "最大年間50万トン程度"
+            },
+            {
+              "type": "number",
+              "excerpt": "2023年度の産業廃棄物の最終処分量の約5%に相当"
+            }
+          ],
+          "score": 0.9
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.5
+        },
+        "oc3_quotability": {
+          "quote_candidate": "約50万トンが全て埋め立て処分された場合、2023年度の産業廃棄物の最終処分量の約5%に相当することから、リサイクルによる処分量削減、そして最終処分場の延命に一定の効果はあると考えております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な延命年数の回答は避けられたが、現状の処分量とパネル廃棄量の比率（約5%）という定量的な根拠が示されており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_002",
+      "segment_index": 1,
+      "topic": "再資源化義務の対象基準（多量廃棄者）",
+      "question": {
+        "speaker": "大岡敏孝",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 多量の事業用太陽電池廃棄者に再資源化を義務付ける際の「多量」とする基準をどのように考えているか",
+        "full_text": "次にこの法律案では、多量の事業用太陽電池の廃棄者には再資源化を義務づけるということなんですが、この多量とする基準をどのように考えているのか教えていただきたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "友野",
+        "role": "",
+        "summary": "- 政令で定める要件として、排出総量に占める割合や届出対象者数などを勘案して検討する\n- メガソーラー規模のパネルが一度に廃棄される場合は対象に含めることを視野に、法案成立後に審議会や関係者の意見を伺い検討する",
+        "full_text": "本法律案では、多量事業用太陽電池廃棄者は、事業用太陽電池廃棄者であって、廃棄をしようとする事業用の太陽電池の重量が、政令で定める要件に該当するものと規定しております。政令で定める裾切りの要件につきましては、太陽電池の排出総量に占める対象者の排出量の割合や、届出対象者数の見込み等も勘案して検討することを想定しております。具体的にはメガソーラーに相当する規模の太陽光パネルが事業終了に伴い一度に廃棄される場合については、対象に含めることを視野に、法案成立後に審議会での議論や関係者の意見を伺いながら検討していくことと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=499.259",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "多量廃棄者の基準の考え方",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "この法律案"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "多量の事業用太陽電池の廃棄者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "メガソーラー"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "検討していくことと考えております",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "メガソーラーに相当する規模の太陽光パネルが事業終了に伴い一度に廃棄される場合については、対象に含めることを視野に、検討していくことと考えております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "多量廃棄者の基準について、メガソーラー規模を視野に入れるという方向性が示された。具体的な数値は政令に委ねられており、現時点では検討段階である。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_003",
+      "segment_index": 1,
+      "topic": "メガソーラーの義務化の明言",
+      "question": {
+        "speaker": "大岡敏孝",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 事業者が準備できるよう、最低でも1000kW以上のメガソーラーを義務化することを明言できないか",
+        "full_text": "極めてちょっと答弁が曖昧なので、わかりにくいんですけれども、もうメガソーラーは義務づけるのかということについてはどうですか。メガソーラー、つまり1000キロワット以上はもう義務づける。これを言わないとですね、事業者だって準備はできないし、結局このリサイクル法が意味がないと思われてしまったら、何の意味もないわけですよね。順次拡大するけれども、最低でもメガソーラーを入れるということは答弁できないんでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "中尾",
+        "role": "",
+        "summary": "- 政令の裾切り要件は法案成立後に検討するが、その際、メガソーラー規模のパネルが一度に廃棄される場合を対象に含めることを視野に検討したい",
+        "full_text": "先ほど、政務官から御答弁させていただいたところでございますけれども、政令で定める裾切りの要件、これにつきましては、法案の成立後に審議会での議論や関係者の意見を伺いながら検討していくこととしてございます。その際、メガソーラーに相当する規模の太陽光パネルが事業終了に伴い一度に廃棄される場合については、対象に含めることを視野に検討してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=499.259",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "メガソーラーのリサイクル義務化の可否",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "1000キロワット以上"
+            },
+            {
+              "type": "law",
+              "excerpt": "リサイクル法"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.6
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "審議会"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "視野に検討してまいりたいと考えております",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "メガソーラーに相当する規模の太陽光パネルが事業終了に伴い一度に廃棄される場合については、対象に含めることを視野に検討してまいりたい",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "メガソーラーの義務化という具体的な問いに対し、検討することを回答しており、一定の方向性は示されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_004",
+      "segment_index": 1,
+      "topic": "FIT制度におけるリサイクル費用の積立",
+      "question": {
+        "speaker": "大岡敏孝",
+        "party": "自由民主党・無所属の会",
+        "summary": "- FIT事業者には埋め立て前提の費用を積み立てさせているが、本法でリサイクルが義務付けられる以上、リサイクル費用との差額を積立させるべきではないか",
+        "full_text": "フィット制度ですでにこのリサイクル費用を組み込んでおりますけれども、フィット事業者にはリサイクル費用分を積み立てるということを義務づけておりますが、これ埋め立てを前提とした費用を積み立てさせているはずですね。当然この法律はFIT事業者などは、大規模事業者に先ほどの基準で相当すれば、今後はリサイクルすることになる。つまり、差額をしっかりちゃんと積立させるのが筋だと思いますが、経産省としてどのように考えているのか教えていただきたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "友野",
+        "role": "",
+        "summary": "- 現行の積立制度は適正な埋立処分を許容しており、高額なリサイクル費用までは含まれていない\n- 事後的にリサイクル費用まで積立を求めることは事業者の予見可能性に影響するため、慎重な検討を要する",
+        "full_text": "廃棄等の費用積立制度でございますが、こちらは太陽光発電設備の適切な廃棄等の確保に向け、FIT・FIP制度による支援額に含まれる廃棄等に通常要する費用の水準について、事業実施期間中に積立を求めるものでございます。この廃棄等に通常要する費用についてですが、廃棄物となった太陽光パネルを適正に埋立処分をすることも許容されている中で、埋立処分費用に比べて高額となるリサイクル費用までは含まれておりません。この現状の中で、事後的にリサイクル費用まで含めて積立を求めることについては、事業者の予見可能性に大きな影響を生じる恐れがあるため、リサイクルを実施することの必要性や、事業者に与える制約の程度を踏まえた、慎重な検討を要するものであると考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=499.259",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "リサイクル費用の積立義務への変更について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "フィット制度"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "フィット事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "FIT・FIP制度"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "慎重な検討を要するものであると考えております",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "埋立処分費用に比べて高額となるリサイクル費用までは含まれておりません。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "現状の積立金にリサイクル費用が含まれていないことを政府が明言しており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問者が前提として述べている「基準」が具体的に何を指すのか不明確である。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_005",
+      "segment_index": 1,
+      "topic": "FIT制度の見直しと国民負担",
+      "question": {
+        "speaker": "大岡敏孝",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 埋め立て費用しか積み立てないのでは不十分であり、リサイクル法を形にしたのであればFIT制度にも反映させるべきではないか",
+        "full_text": "ここに来て、当然このソーラーパネルのリサイクルが大きく問題となって、環境省だって苦労して、2年越し、3年越しでようやくこのリサイクル法を形にしたわけじゃないですか。これを形にしたのに、結局FIT制度には跳ね返せないということになってしまったら、私これは何の意味もなくなっちゃうと思うんですよね。そこでようやくここに来たのに、肝心のFITは、埋め立て費用しか積み立てないということであれば、これはやはり不十分なことになってしまわないですか。もう一度答弁をお願いします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "小林博一",
+        "role": "",
+        "summary": "- 今後のFIT・FIP事業でリサイクル費用を積立に含める場合は、支援額の決定時にも含める検討が必要となる\n- ただし、国民負担の増大につながる恐れがあるため、必要性の議論を踏まえた総合的な検討が必要である",
+        "full_text": "今後認定されるFIT・FIP事業について、どの程度までリサイクル費用の積立を求めていくかということでございますけれども、もしご指摘のように、リサイクル費用を通常要する費用に含めて支援額を決定するということを、失礼しました。もしリサイクル費用を積み立てるという場合は、支援額を決定する際にもリサイクル費用を通常要する費用に含めて入れるかということを併せて検討することとなると考えます。もしそうした場合には国民負担の増大にもつながる恐れがあることから、リサイクルをどの程度まで実施するかというような必要性の議論を踏まえた総合的な検討を要するものと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=499.259",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "FIT制度でのリサイクル費用積立の十分性について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "リサイクル法"
+            },
+            {
+              "type": "other",
+              "excerpt": "FIT制度"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "FIT・FIP事業"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "総合的な検討を要するものと考えてございます",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "リサイクル費用を積み立てるという場合は、支援額を決定する際にもリサイクル費用を通常要する費用に含めて入れるかということを併せて検討することとなると考えます。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "FIT制度におけるリサイクル費用積立の不十分さを指摘し、再答弁を求めたやり取り。回答は検討の必要性に留まっており、具体的なコミットメントは低い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「不十分ではないか」という問いかけに留まっているため、具体的にどのような積立基準を求めるかという提案形式にすれば、より踏み込んだ答弁を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_006",
+      "segment_index": 1,
+      "topic": "老朽パネルの廃棄認定と災害廃棄物のリサイクル",
+      "question": {
+        "speaker": "大岡敏孝",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 性能が落ちたパネルを「ゴミ」として処分認定する仕組みを作るべきではないか\n- 災害時に発生する大量のソーラーパネルを全量リサイクルに回すべきではないか",
+        "full_text": "当然、太陽電池、ソーラーパネルというのはボロボロになっても、一定程度発電し続けるわけですね。朽ち果てた太陽電池ほど危ないものはなくて、当然ショートの危険がある。そうすると山火事や住宅火災のリスクになります。従って、これはまだ生きてますと言われてしまうと処分にならないので、一定程度性能が落ちた場合には、もうこれはゴミです。処分してくださいと認定する仕組みを作らないといけないと思いますが、その点についてどう考えるのかというのと、それと現在、災害のときに大量の災害廃棄物としてのソーラーパネルが出てきています。これは当然市町村あるいは県が処分するものである以上、全量をリサイクルに回すべきだと思いますが、この点について、この2問、どのように考えているのか教えていただきたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "中尾",
+        "role": "",
+        "summary": "- 廃棄物該当性の判断は地方公共団体が行うが、国としても判断に資する実例の整理などの検討を進める\n- 災害廃棄物についても、ガイドラインの見直しを通じて可能な限りリサイクルを推進するが、汚損が激しく処理困難な場合は全てをリサイクルに回すことはできない",
+        "full_text": "まず最初の御質問、古い太陽光パネルの取扱いについてということでございますけれども、使用中の太陽光発電設備、これにつきましては、電気事業法の電気工作物に当たるということで、人体に危害を及ぼさないように措置することなどの技術基準に適合することを義務づけているところでございます。なお、使用後に太陽光パネルが廃棄物に該当するかの判断についてでございますけれども、使用後に太陽光パネルが廃棄物に該当するかを判断する際には、廃棄物処理行政を担う地方公共団体において判断することになりまして、その基準といいますか、その時に勘案すべき事項といたしましては、物の形状、排出の状況、通常の取扱形態、取引価値の有無、占有者の意思などを総合的に勘案することになっているところでございますけれども、国としても地方公共団体と連携としまして、廃棄物該当性の判断に資するよう、実例等を整理するための検討を進めてまいりたいと考えてございます。環境省が定めた災害廃棄物対策指針では、災害廃棄物を再資源化することは、最終処分量を減少させ、その結果として最終処分場の延命化につながり、処理期間の短縮などに有効であると。こちらにおきましても、被災太陽光発電設備の解体撤去の留意点などを定めてございますけれども、こちらにおいても、有価物の可否判断を実施すること、可能な限り分別することなどを定めているところでございます。この法律案の施行に向けて、リサイクルガイドラインについても必要な見直しを検討いたしまして、災害廃棄物となった太陽光パネルにつきまして、可能な限りリサイクルを推進してまいりたいと思います。なお、全て原則リサイクルに回すことはできないかということについてもお尋ねがございましたけれども、災害時には例えば汚泥などで汚損が激しい場合ということもございますので、リサイクル業者において処理が困難な場合も考えられます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273",
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=499.259",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "太陽光パネルの廃棄認定基準と災害廃棄物のリサイクルについて",
+          "sub_asks": [
+            "性能低下したパネルをゴミと認定する仕組みの必要性",
+            "災害廃棄物としてのパネルを全量リサイクルすべき点"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "電気事業法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "災害廃棄物対策指針"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "リサイクルガイドライン"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "廃棄物該当性の判断に資するよう、実例等を整理するための検討を進めてまいりたい",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "廃棄物該当性の判断に資するよう、実例等を整理するための検討を進めてまいりたいと考えてございます。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "太陽光パネルの廃棄認定基準という実務的な課題に対し、現行法（電気事業法）と地方公共団体の判断基準を提示し、今後の検討に言及した標準的な回答である。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「仕組みを作らないといけない」という提案に対し、具体的にどのような認定基準（数値等）を求めるのかを明示した方が、より具体的な回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_007",
+      "segment_index": 2,
+      "topic": "太陽光パネルのガラスリサイクルの実現可能性",
+      "question": {
+        "speaker": "大岡敏孝",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 外国製パネルに含まれるヒ素などの毒素を含むガラスのリサイクル可否について\n- 現行の国内リサイクルラインへの適合性と政府の対応について",
+        "full_text": "このリサイクルに当たって、ガラスのリサイクルが一番の問題だとされています。我が国は現在、特定の国名は言いませんけれども外国製のソーラーパネルがたくさんある。その中には、ヒ素などの毒素が含まれているガラスが多量にあります。これ本当にリサイクルできるんでしょうか。現在の我が国のリサイクルのライン、ガラス瓶、あるいは家庭用のガラスに再生させているこのリサイクルラインにしっかりと乗せられるのかどうか、この対応をどのように考えているのか、教えていただきたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "中尾",
+        "role": "",
+        "summary": "- ガラスにヒ素やアンチモンが含まれる場合があり、濃度により用途が限られることを認識している\n- アンチモンによる発色課題に対し、大手メーカーが板ガラスへのリサイクル技術を研究開発中である\n- 環境省が当該研究開発の支援を開始しており、適切にリサイクルを進めたい",
+        "full_text": "太陽光パネルのガラスには、御指摘のように、ヒ素、そのほかアンチモンが含まれる場合があると認識してございます。ヒ素については、一部のガラスに含まれているということで、こうしたものにつきましては、含まれる濃度にもよりますけれども、用途が限られるということも認識しているところでございます。他方で、アンチモンにつきましては、再生ガラスに色がつく課題もあると認識してございます。この課題の解決に向けましては、大手ガラスメーカーでは、太陽光パネルのガラスから板ガラスへリサイクルするために、アンチモンの発色防止技術の研究開発を行っているところでございます。こうした技術につきまして、環境省でも研究開発の支援を開始したところでございます。こうした取組を引き続き進めまして、太陽光パネルのガラスのリサイクルを適切に進めてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=1434.6589999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "毒素を含む太陽光パネルガラスのリサイクル可否と対応",
+          "sub_asks": [
+            "現在のリサイクルラインに乗せられるのか",
+            "今後の対応をどのように考えているのか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "ヒ素などの毒素が含まれているガラス"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "ヒ素"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "アンチモン"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "環境省"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "太陽光パネルのガラスのリサイクルを適切に進めてまいりたいと考えております",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "太陽光パネルのガラスから板ガラスへリサイクルするために、アンチモンの発色防止技術の研究開発を行っている",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "有害物質を含むパネルガラスのリサイクルという具体的課題に対し、技術的課題（発色等）と省の支援状況を具体的に回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「リサイクルできるのか」というYes/No形式の問いに留まらず、具体的にどのような技術的ハードルがあるのかを問う形式にすればより深い回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_008",
+      "segment_index": 2,
+      "topic": "リサイクル費用と埋立費用の比較",
+      "question": {
+        "speaker": "輿水恵一",
+        "party": "中道改革連合・無所属",
+        "summary": "- 2トントラック1台分（想定）の運搬・保管・中間手数料を含めた、再生処理費用と埋立処理費用の想定額について伺いたい",
+        "full_text": "ここで、この際、現場で最大の壁になるのは、やはりリサイクルの費用であると思います。環境省の事前評価書によりますと、全国的に見て、現時点ではリサイクル費用が1キロワットあたり、8千円から1万2千円程度にあるのに対して、埋立処分の費用は1キロワットあたり、2千円程度からとされております。ここに大きな差があると整理をされているわけでございます。他方で、再資源化施設が近距離に立地する地域や、中間処理事業者等が、埋め立てとリサイクルをうまく組み合わせることで、ほぼ同額で設定している、そういった事例もあるわけでございますが、制度設計と処理体制整備次第で、この差が縮小し得ることも示されている。そういった中で、まず伺います。目安として、実際、例えば2トントラック1杯という、そういうイメージで、太陽光パネル2トン、すなわちトラック1台分の運搬保管、中間手数料を含めた場合の、再生処理と埋立処理の費用について、どのようになるのか、想定されるのか、環境省に伺います。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "中尾",
+        "role": "",
+        "summary": "- 収集運搬費用は共通だが、距離や車両により変動するため一概に答えられない\n- 処分費用は、1kWあたり埋立2,000円程度に対し、リサイクルは8,000〜12,000円程度である\n- 2トントラック1台分（100枚想定）の場合、埋立費用は5万円程度から、リサイクル費用は20〜30万円程度と見込まれる",
+        "full_text": "解体撤去後におきまして、太陽光パネルを廃棄する際に必要な費用につきましては、収集運搬費用と処分費用に分かれるということでございます。このうち、収集運搬の費用につきましては、埋立処分とリサイクルのいずれを選ぶかに関わらず生じるものでございますけれども、運搬距離ですとか、運搬する車両の種類に応じて、かなり費用が変わってくるということでございますので、一概にお答えすることが難しいところでございます。処分費用につきましては、埋立処分を行う場合は1kWあたり2000円程度からとされまして、リサイクルを行う場合は1kWあたり8000円から1万2000円程度とされてございます。2トントラック1台分の太陽光パネルの処理費用は、仮に1枚あたり250W、20kgのパネルが100枚であると仮定した場合、埋立処分費用は5万円程度からとなりまして、リサイクル費用は20万円から30万円程度と見込まれるところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=1434.6589999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "太陽光パネル2トン分の再生処理と埋立処理の費用想定",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "環境省の事前評価書"
+            },
+            {
+              "type": "number",
+              "excerpt": "1キロワットあたり、8千円から1万2千円程度"
+            },
+            {
+              "type": "number",
+              "excerpt": "1キロワットあたり、2千円程度"
+            }
+          ],
+          "translates_big_number_to_daily_life": true,
+          "score": 1.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "1kWあたり2000円程度"
+            },
+            {
+              "type": "number",
+              "excerpt": "1kWあたり8000円から1万2000円程度"
+            },
+            {
+              "type": "number",
+              "excerpt": "1枚あたり250W、20kgのパネルが100枚"
+            },
+            {
+              "type": "number",
+              "excerpt": "埋立処分費用は5万円程度から"
+            },
+            {
+              "type": "number",
+              "excerpt": "リサイクル費用は20万円から30万円程度"
+            }
+          ],
+          "score": 1.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "2トントラック1台分の太陽光パネルの処理費用は、埋立処分費用は5万円程度からとなりまして、リサイクル費用は20万円から30万円程度と見込まれる",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者が提示した具体的な量（2トントラック1台分）に対し、政府側が具体的な仮定条件を置いて試算回答を示しており、非常に実用的で記録価値が高い。",
+        "would_be_referenced": "high",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_009",
+      "segment_index": 3,
+      "topic": "太陽光パネルリサイクルの経済的インセンティブ",
+      "question": {
+        "speaker": "西園勝秀",
+        "party": "中道改革連合・無所属",
+        "summary": "- リサイクル促進に向けた世界的なインセンティブ等の必要性についての政府見解",
+        "full_text": "世界的インセンティブ等も必要なのかと考えますが、環境省の見解を伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "中尾",
+        "role": "",
+        "summary": "- 事業者によるリサイクル検討の現状と、国による収集・運搬・リサイクルの支援状況\n- 法案に基づく認定制度の導入による低コストリサイクルの後押し\n- 稼働率向上による費用低減およびNEDOによる低コストリサイクル技術開発の成果\n- これらの取組を通じて経済的なインセンティブに応え、費用低減を目指す方針",
+        "full_text": "現状大手発電事業者におきましては、将来の廃棄に備え、できるだけ費用のかからないリサイクルの実現に向けて、すでに収集運搬事業者やリサイクル事業者、ガラスメーカーなどと組んで検討を始めているところもあるところでございます。国としても収集運搬、保管、リサイクルの各段階で必要な支援を行い、取組を加速化させているところでございます。こうした中で、本法律案に基づきまして、リサイクル事業の認定制度を設け、できるだけ費用のかからないリサイクルを後押ししていきたいと考えてございます。大量に廃棄をする事業者に対しましては、経済合理性を踏まえたリサイクルの実施に向けた取組を促すことと本法案ではしてございます。また、太陽光発電事業者の約6割以上がリサイクルを検討していない状況におきまして、本法案によりましてリサイクルされる量を増やし、施設の稼働率を上げることで費用を低減できると考えております。また、費用低減のための技術開発も重要でございまして、NEDOの事業におきまして、一定の稼働率などの仮定の下であれば、1キロワットあたり3000円以下となるリサイクル技術の開発も完了しているところでございます。このようにリサイクル費用の低減余地は大きいと考えてございますので、これらの取組を引き続き行いまして、リサイクル費用の低減に向けて取り組むことで、経済的なインセンティブに応える形にしていきたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=2664.8590000000004",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "世界的インセンティブの必要性に関する環境省の見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "NEDO"
+            },
+            {
+              "type": "number",
+              "excerpt": "太陽光発電事業者の約6割以上"
+            },
+            {
+              "type": "number",
+              "excerpt": "1キロワットあたり3000円以下"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "リサイクル費用の低減に向けて取り組むことで、経済的なインセンティブに応える形にしていきたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "NEDOの事業におきまして、1キロワットあたり3000円以下となるリサイクル技術の開発も完了しているところでございます。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は簡潔であり、回答ではNEDOによる具体的なコスト目標値などの事実が提示されており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「世界的インセンティブ」という言葉が曖昧なため、回答が国内施策の記述に終始している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_010",
+      "segment_index": 3,
+      "topic": "分割廃棄による規制回避への対応",
+      "question": {
+        "speaker": "西園勝秀",
+        "party": "中道改革連合・無所属",
+        "summary": "- 事業者が規制や費用負担を回避するために小規模に分割して廃棄を行う「分割廃棄」により、多量排出の規制対象から外れる恐れがあるのではないか\n- このような抜け道に対し、政府としてどのように対応するのか",
+        "full_text": "この法案はメガソーラーなど大量の事業用パネルを扱う事業者に対してのみ厳格な計画提出義務が課されていますが、その基準は一度に大量に廃棄をすることに置かれております。このような制度設計の下では、事業者が規制や費用負担を回避するため、効率の低下したパネルから順次廃棄していく、いわゆる分割廃棄を行った場合、多量排出の規制対象から外れてしまう恐れがあるのではないでしょうか。このような明白な抜け道に対して、政府としてどのように対応していくのか、御見解をお聞かせください。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "中尾",
+        "role": "",
+        "summary": "- 小規模に分割して事前届出義務を免れることはあってはならない\n- 排出実態を調査し、総体として一度の廃棄と評価できる場合は届出義務の対象とするよう具体的な制度設計を検討する",
+        "full_text": "本法案の運用に当たっては、公平かつ適正な運用を図ることが重要であると考えてございます。ご指摘のような、小規模に分割して廃棄をすることで、事前届出の義務を免れることはあってはならないと考えてございます。多量に太陽電池を廃棄しようとする社の太陽光パネルの排出の実態を、これからしっかりと調査した上で、例えば、総体として一度の廃棄と評価できる場合には、届出義務の対象とするように、具体的な制度設計を検討してまいりたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=2664.8590000000004",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "分割廃棄による規制回避への対応策",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "この法案"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "事業用パネルを扱う事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "具体的な制度設計を検討してまいりたい",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "小規模に分割して廃棄をすることで、事前届出の義務を免れることはあってはならないと考えてございます。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "分割廃棄という制度の抜け穴を具体的に指摘し、政府がそれを認め、検討することを約束させた有意義なやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_011",
+      "segment_index": 3,
+      "topic": "太陽光パネルの経年劣化と発電効率",
+      "question": {
+        "speaker": "西園勝秀",
+        "party": "中道改革連合・無所属",
+        "summary": "- 太陽光パネルの寿命に伴い、発電効率は時間の経過とともにどの程度低下するのか\n- 設置当初を100とした場合、20年後の劣化想定について技術的な見地から伺いたい",
+        "full_text": "次に、発電事業を長く続ける前提として、パネルそのものの需要について伺います。太陽光パネルは一般的に20年から30年が寿命と言われていますが、時間の経過に伴い、発電効率がどのくらい落ちていくのでしょうか。例えば、設置した当初の発電効率を100とした場合、20年後にはどの程度まで劣化すると想定されていますか。技術的な見地からお答えいただければと存じます。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小林",
+        "role": "",
+        "summary": "- 設置環境等により一概には言えないが、太陽光発電協会によれば耐用年数は20〜30年程度とされる\n- 年間0.5%程度の劣化が蓄積し、25〜30年後には出力が80%以下になることもあるとされる",
+        "full_text": "お答えいたします。太陽光パネルの経年劣化は、一般的にはパネルの設置環境やメンテナンス状況等にも左右されますことから、ご質問に一概にお答えすることは少し難しい点がございますが、事業者の団体であります太陽光発電協会によりますと、一般的には太陽光パネルの耐用年数は20から30年程度とされており、また年間0.5%程度の劣化が蓄積し、25から30年程度後には出力が80%以下になることもあるというふうに事業者側からはされているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=2664.8590000000004",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "太陽光パネルの経年劣化による発電効率の低下率",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "20年から30年が寿命"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "太陽光発電協会"
+            },
+            {
+              "type": "number",
+              "excerpt": "年間0.5%程度の劣化"
+            },
+            {
+              "type": "number",
+              "excerpt": "25から30年程度後には出力が80%以下"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "年間0.5%程度の劣化が蓄積し、25から30年程度後には出力が80%以下になることもあるというふうに事業者側からはされている",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "太陽光パネルの劣化率について、業界団体の見解を引用して具体的に回答しており、事実確認としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_012",
+      "segment_index": 3,
+      "topic": "廃棄の平準化とリユースの促進",
+      "question": {
+        "speaker": "西園勝秀",
+        "party": "中道改革連合・無所属",
+        "summary": "- 20年経過後も出力が8割程度残るのであれば、一律に廃棄せず修繕やリユースを行うことで、廃棄ピークの後ろ倒しと排出量の平準化が可能ではないか\n- 廃棄タイミングを適切に調整し平準化を図るべきという点について政府の見解を伺いたい",
+        "full_text": "今のお話ですと、この20年を経過しても、出力は大体8割は残るということでございますよね。これらを一律に、もし廃棄して、粉砕してしまうというのは、資源の観点からも極めて非効率だと思います。劣化の程度に応じて修繕しながら継続利用をする、あるいは他の場所で再使用、リユースするといった対応は可能なのではないかというふうに思います。このように使用可能なものを長く活用し、再使用を促進することで、将来的に集中が見込まれる廃棄のピークを後ろ倒しし、排出量の平準化を図ることもできます。この平準化は、リサイクル施設の安定稼働の観点からも重要です。廃棄のタイミングを適切に調整し、排出の平準化を図るべきと考えますが、政府の御見解をお聞かせ願います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "中尾",
+        "role": "",
+        "summary": "- 2030年代後半以降の大量廃棄に向け、リサイクル施設の処理体制を維持するために廃棄の平準化は非常に重要である\n- 本法案の基本方針や責務規定において、量の抑制のための措置として長期間の使用およびリユースの促進を位置づけている",
+        "full_text": "我が国では、2012年の固定価格買取制度の開始直後の3年間で、太陽光発電の導入が急激に進んだことから、これらの太陽光発電で用いられていた太陽光パネルが寿命を迎えることで、排出のピークが発生することが見込まれるところでございます。2030年代後半以降に見込まれる大量廃棄に向けましては、過不足なくリサイクル施設の処理体制を構築し、それを維持するためには廃棄の平準化が非常に重要であると考えてございます。委員御指摘の長期間の使用、リユースなどにつきましては、いずれも廃棄の平準化に資するものであると考えてございます。このため、本法律案では、基本方針及び責務規定におきまして、太陽電池廃棄物とする太陽電池の量の抑制のための措置として、長期間の使用及びリユースの促進を位置づけ、事業用太陽電池廃棄者に対する判断基準におきましても、長期間の使用やリユースを行うことを定めると、また販売業者に対しましても、これらの取組に関する情報提供の努力義務を課しているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=2664.8590000000004",
+      "metrics": null
+    },
+    {
+      "id": "qa_013",
+      "segment_index": 3,
+      "topic": "リユース市場形成のための基準策定",
+      "question": {
+        "speaker": "西園勝秀",
+        "party": "中道改革連合・無所属",
+        "summary": "- リユースを推進するには、劣化状態に応じた中古パネルの性能評価や安全性の基準を国が明確に定める仕組みづくりが必要ではないか",
+        "full_text": "それでですね、この民間投資を引き出すためのこの環境整備としましては、もう一つやはりリユースの市場づくりというのも重要かと思います。排出量を抑制するためには、まだ十分に使えるパネルを安易に廃棄や埋め立てに回させてはなりません。しかし現状では、どれがリユースできて、どれが廃棄すべきという明確な基準がないため、使えるものまで捨てられてしまっております。劣化状態に応じた中古パネルの性能評価や安全性の基準を国が明確に定め、リユースを積極的に推進する新たな仕組みづくりが必要ではないかと思いますが、政府の見解を伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "中尾",
+        "role": "",
+        "summary": "- リユース促進のため、発電事業者等に向けたガイドラインの策定や、性能診断機器の開発、評価手法の確立に向けた実証事業を実施してきた\n- 本法案の基本方針・判断基準の策定に加え、ガイドラインの改定を通じてリユースの取組を促したい",
+        "full_text": "先ほどもご回答させていただいたとおり、再利用可能な太陽光パネルをリユースすることは、排出量の抑制の観点からも重要でございます。本法律案におきましても、リユースについては、廃棄の抑制に係る措置といたしまして、基本方針、責務規定、事業用太陽電池廃棄者に対する判断基準、販売業者による措置などにおきまして、リユースを促進するための規定を置いているところでございます。環境省ではこれまで適正なリユースを促進するため、発電事業者、解体撤去事業者などに向けたガイドラインを策定いたしまして、関係者への周知を図るとともに、使用済み太陽光パネルの性能診断機器の開発ですとか、残存使用可能年数の評価手法の確立に向けた実証事業を実施してきたところでございます。本法律案の基本方針及び判断基準を定めることに加えまして、このガイドラインの改定作業も進めまして、太陽光パネルを使用している者に対して、リユースの取組を促してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=2664.8590000000004",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中古パネルのリユース基準策定と仕組みづくりの必要性",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "本法律案"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "環境省"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ガイドライン"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "リユースの取組を促してまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "本法律案の基本方針及び判断基準を定めることに加えまして、このガイドラインの改定作業も進めまして、太陽光パネルを使用している者に対して、リユースの取組を促してまいりたいと考えております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "リユース基準の策定という提案に対し、法律案の内容と既存のガイドライン改定で対応する旨を具体的に回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_014",
+      "segment_index": 3,
+      "topic": "FIT制度外設備の廃棄費用負担",
+      "question": {
+        "speaker": "西園勝秀",
+        "party": "中道改革連合・無所属",
+        "summary": "- FIT制度終了後の期間や、制度を利用していない設備について、廃棄費用を誰がどのように確保するのかが不明確である\n- 所有者が変わり支払い能力がない場合の不法投棄リスクに対し、どのような具体策を講じているか",
+        "full_text": "太陽光パネルは、いかに長期間使用したとしても、最終的には必ず廃棄の時期を迎えます。その際の費用をどのように確保するかが重要な課題です。政府は、現行のフィット制度の下で、廃棄費用の積立が行われていると説明していますが、フィット制度終了後の期間や、そもそもフィット制度を利用していない新しい設備については、廃棄費用を誰がどのように確保するのかが不明確です。また、設備が転売され、所有者が変わる中で、最終的な保有事業者に支払い能力がない場合には、不法投棄につながる恐れもあります。こうした制度の適用外となるケースにおける費用負担のあり方について、どのような具体策を講じておられるのか、政府の御見解をお聞かせ願います。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "小林",
+        "role": "",
+        "summary": "- FIT/FIP制度の対象か否かにかかわらず、排出事業者に廃棄物処理法に基づき適正処理が義務付けられている\n- 非FIT/FIP設備については政策的支援を行っておらず、規制的措置については事業制約の度合いなどを鑑み慎重な検討を要する",
+        "full_text": "お答えいたします。まず、廃棄物となった太陽光発電設備については、今、御指摘のFIT、FIP制度の対象か否かにかかわらず、排出事業者に対して廃棄物処理法に基づき、適正処理が義務付けられており、厳格に対応されることとなると承知をしてございます。その上で、FIT、FIP制度においては、積立を認めることとしているわけでございます。これは支援制度の要件として、適切な廃棄等に係る地域の懸念への対応と、事業者に与える事業制約の度合いとのバランスを踏まえ、措置しているものでございます。一方で、御指摘の非フィット、非フィップの太陽光発電設備については、廃棄等の費用を含める形での政策的支援は行ってはいないわけでございまして、そうした中で、太陽光発電設備特有の放置の実態や、それが公益に与える影響、規制的措置を実施する場合に、事業者に与える事業制約の度合い等に鑑みながら、慎重な検討を要するものと、"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=2664.8590000000004",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "FIT制度外設備の廃棄費用確保の具体策",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "フィット制度"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "保有事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "廃棄物処理法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "FIP制度"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "慎重な検討を要するものと",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "非フィット、非フィップの太陽光発電設備については、廃棄等の費用を含める形での政策的支援は行ってはいない",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "FIT制度外の設備に対する費用確保策という具体的な問いに対し、現状の法義務（廃棄物処理法）を述べたのみで、今後の具体策については「慎重な検討を要する」という留保に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_015",
+      "segment_index": 3,
+      "topic": "構造物撤去費用の負担責任",
+      "question": {
+        "speaker": "西園勝秀",
+        "party": "中道改革連合・無所属",
+        "summary": "- パネル単体だけでなく、地中のコンクリート基礎などの構造物撤去には莫大な費用がかかるが、事業者はどこまで負担責任があるのか\n- 土地所有者と事業者が異なる場合、最終的に誰が負担することになるのか",
+        "full_text": "西園勝秀君、課題や地中深くに埋まったコンクリートの基礎なども全て撤去し、土地を元の状態に戻す必要がございます。これら周辺の構造物の撤去費用は、パネル単体のリサイクル費用以上に莫大な金額になる可能性がございます。では、事業者はどこまで費用を負担する責任があるのでしょうか。土地の所有者と事業者が異なる場合、この莫大な撤去費用は最終的に誰が負担することになるのか、お伺いいただければと存じます。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "宮路拓馬",
+        "role": "環境委員長",
+        "summary": "- 廃棄物処理法に基づき、その排出者が適正処理の義務を負う\n- 事業者が構造物の撤去費用も含め、必要な廃棄等費用を確保することが必要であると考えている",
+        "full_text": "誰がその義務を負うのかというご質問については、廃棄物処理法に基づいて、その排出者が適正処理の義務を負うこととなってございます。この事業者において、構造物の撤去費用も含めて、当然に必要な廃棄等費用を確保することが必要であると考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=2664.8590000000004",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "構造物撤去費用の負担責任と最終的な負担者",
+          "sub_asks": [
+            "事業者はどこまで費用を負担する責任があるか",
+            "土地所有者と事業者が異なる場合、最終的に誰が負担するか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "廃棄物処理法"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "廃棄物処理法に基づいて、その排出者が適正処理の義務を負うこととなってございます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "廃棄物処理法に基づく排出者責任という法的解釈を明確に回答しており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "土地所有者と事業者が異なる場合の具体的ケースへの言及をより強く求める構成にできた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_016",
+      "segment_index": 3,
+      "topic": "不法投棄防止のための費用負担仕組みとセーフティーネット",
+      "question": {
+        "speaker": "西園勝秀",
+        "party": "中道改革連合・無所属",
+        "summary": "- 現行案の枠組みでは課題が多く、資金力のない事業者が放置して逃げる恐れがある\n- 不法投棄の負担を国民や自治体に回さないため、公的基金を用いたセーフティーネットを含む抜本的な費用負担の仕組みを構築すべきではないか",
+        "full_text": "このリサイクルと埋め立て処分の圧倒的なコスト差、分別廃棄による抜け穴、適正対象外の処分費用の不足、課題の莫大な撤去費用など、現行案の枠組みだけでは、あまりにも多くの課題が残されていると思います。これらを放置すれば、最終的に資金力のない事業者がパネルや基礎をそのまま放置して逃げてしまう恐れがあります。その不法投棄のつけを国民や自治体に回さないために、例えば公的な基金を用いた最後のセーフティーネットを含めた抜本的な費用負担の仕組みを検討し、構築すべきではないでしょうか。政府の御見解をお聞かせください。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "中尾",
+        "role": "",
+        "summary": "- 本法案によりリサイクル費用と埋立処分費用の差額を低減させ、放置されづらい環境を整備する\n- 資金不足で支障除去が講じられない場合は行政代執行を行い、その費用は国と産業界からの拠出による基金から支援している",
+        "full_text": "太陽光パネルのリサイクルにつきまして、費用と処理体制の課題がある中で、本法律案によりまして、太陽光廃棄時までにリサイクル費用と埋立処分費用との差額を可能な限り低減させ、放置されづらい環境を整備していきたいと考えてございます。その上で、廃棄物となった太陽光パネルにつきましては、先ほど政府委員からも答弁ございましたように、廃棄物処理法に基づき、排出事業者に適正処理が義務付けられているところでございます。都道府県と緊密に連携し、適正処理が徹底されるよう、不法投棄対策に取り組んでまいりたいと考えてございます。なお、不法投棄による生活環境保全上の支障の除去につきましては、廃棄物処理法に基づき、原因者や排出事業者などに対して求めることとなりますけれども、資金不足によりまして、支障除去の措置を講じないなどの場合は、やむを得ず都道府県等において行政代執行を行うこととなります。その費用につきましては、国と産業界からの拠出による基金から支援を行っているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=2664.8590000000004",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "公的基金等による抜本的な費用負担仕組みの構築",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "資金力のない事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "廃棄物処理法"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "不法投棄対策に取り組んでまいりたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "資金不足によりまして、支障除去の措置を講じないなどの場合は、やむを得ず都道府県等において行政代執行を行うこととなります。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "抜本的な仕組み構築への問いに対し、既存の廃棄物処理法と代執行基金の説明に留まっており、前向きな検討回答は得られていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「抜本的な仕組み」という抽象的な提案であるため、政府が「検討する」という形式的な回答で逃げやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_017",
+      "segment_index": 3,
+      "topic": "メーカーの環境配慮設計と責任",
+      "question": {
+        "speaker": "西園勝秀",
+        "party": "中道改革連合・無所属",
+        "summary": "- メーカーへの環境配慮設計の要請が努力義務にとどまっているが、リサイクルしやすい製品開発を促すため、廃棄段階での物理的・経済的責任を課すべきではないか",
+        "full_text": "メーカーの責任についてお伺いいたします。今回の法案では、メーカーに対し、解体しやすいパネルの製造など、いわゆる環境配慮設計を求めておりますが、その位置づけは努力義務にとどまっております。しかしながら、メーカーが真にコストを投じてリサイクルしやすい製品の開発に取り組むためには、将来的に廃棄段階における物理的・経済的責任の一部を",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "中尾",
+        "role": "",
+        "summary": "- 本法案では直接的な廃棄責任や費用負担は求めないが、環境配慮設計等の努力義務を課している\n- 資源有効利用促進法において太陽光パネルを対象製品に指定し、取組が著しく不十分な場合に勧告・命令ができる仕組みを検討している",
+        "full_text": "お答えいたします。まず本法律案では御指摘のとおり製造業者等に対して直接的に廃棄の責任や費用負担を求めることはしてございませんけれども、小資源化やリサイクルしやすい設計の実施、含有物質情報の提供について努力義務を課すこととしてございます。その上で、資源有効利用促進法において、太陽光パネルを対象製品に新たに指定をし、製造業者等に対して、国が定める判断基準に基づく環境配慮設計等の取組を求めることも新たに検討しているところでございます。この法律では判断基準に照らして取組が著しく不十分な場合には、国が製造業者等に対して勧告命令ができることとされております。こうした一連の措置を通じて製造業者等に対し一層の取組を促していきたいというふうに考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=2664.8590000000004",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "メーカーの廃棄責任のあり方について",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "今回の法案"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "メーカー",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "資源有効利用促進法"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "環境配慮設計等の取組を求めることも新たに検討しているところでございます",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "資源有効利用促進法において、太陽光パネルを対象製品に新たに指定し、環境配慮設計等の取組を求めることも新たに検討している",
+          "score": 0.6
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "質問文が途切れているため、明確な問いとして成立していないが、回答側で資源有効利用促進法を用いた今後の検討方針を具体的に示している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が途中で切れており、具体的な要望や問いが完結していない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_018",
+      "segment_index": 3,
+      "topic": "法案の目的達成に向けた抜本的対策の意思表明",
+      "question": {
+        "speaker": "西園勝秀",
+        "party": "中道改革連合・無所属",
+        "summary": "- 現行法案の枠組みでは不法投棄リスクを抑止できず、民間投資環境も不十分である\n- 長期間使用・再使用の促進、費用負担の見直し、持続可能な再資源化体制の確立について、国として速やかに検討し対策を講じる強い意思を明確に示すべきではないか",
+        "full_text": "今、ただいまこのやりとりを聞いていただいてお分かりになると思いますが、まさにこの現行の法案の枠組みだけでは、将来の不法投棄のリスクを十分に抑止できず、また民間企業が安心してリサイクルに投資できる環境が整っているとは言い難いと考えます。政府が目指す本法案の目的を確実に達成するためには、長期間の使用と再使用の促進、費用負担のあり方の見直し、持続可能な再資源化体制の確立という、これまで議論してまいりました抜本的な課題について、国として速やかに検討を進め、必要な対策を講じていくという強い意思を、法案等において明確に示すことが不可欠かと思いますが、大臣の御見解をお聞かせ願います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "石原陽一",
+        "role": "",
+        "summary": "- 長期間の使用やリユースの促進、持続可能な再資源化実施体制の確立は、資源循環体制の構築に必要な要素である\n- 本法案では、基本方針および判断基準に基づき、使用者に長期間の使用、リユースおよびリサイクルの推進に関する取組を促すこととしている",
+        "full_text": "委員の御指摘のとおり、3つのポイントがありますけれども、2つについて、まず説明させていただきたいと思います。長期間の使用やリユースの促進、そして太陽電池廃棄物の持続可能な再資源化実施体制の確立はいずれも、太陽光パネルの資源循環体制の構築に必要な要素であると思います。このため、この法律案では、国が定める基本方針及び判断基準に基づき、太陽光パネルを使用している者に対して、長期間の使用、リユース及びリサイクルの推進に関する取組を促すこととしております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=2664.8590000000004",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "抜本的課題への対策を法案等で明確に示す意思があるか",
+          "sub_asks": [
+            "長期間の使用と再使用の促進",
+            "費用負担のあり方の見直し",
+            "持続可能な再資源化体制の確立"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "民間企業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "基本方針及び判断基準"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "この法律案では、国が定める基本方針及び判断基準に基づき、太陽光パネルを使用している者に対して、長期間の使用、リユース及びリサイクルの推進に関する取組を促すこととしております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者が提示した3つの課題に対し、大臣は2点についてのみ言及し、具体的な今後の検討や対策の約束（コミットメント）を避けて現行案の説明に留めた。",
+        "would_be_referenced": "low",
+        "issue_in_design": "複数の課題を一つの文章に盛り込んでいるため、個別の回答を得にくい構成になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_019",
+      "segment_index": 4,
+      "topic": "太陽光発電の位置づけと導入拡大",
+      "question": {
+        "speaker": "鍋島勢理",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 太陽光発電の今後の位置づけについて伺いたい",
+        "full_text": "本法案の制定の背景にありますのは、これまで設置をされてきました太陽光パネルが2030年以降に廃棄量が増加し、廃棄物処理に影響を及ぼす可能性がある。そこで廃棄量の抑制、再資源化による減量のために所要の措置を講じるものであると理解をしております。こちら、太陽光発電を引き続き、日本としては推進をされるということではありますけれども、太陽光発電の位置づけについてお伺いをいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "高市早苗",
+        "role": "",
+        "summary": "- 2050年ネットゼロに向け、環境配慮と地域共生を前提に導入拡大が必要\n- 2040年度のエネルギー需給見通しで総発電量の23%から29%程度となる見通し\n- 地域共生型や自家消費型の導入促進、ペロブスカイト太陽電池の社会実装を支援する",
+        "full_text": "2050年のネットゼロの実現に向けて、環境への適切な配慮や地域との共生を大前提として、太陽光発電をはじめとする再生エネルギーの導入拡大が必要であります。こうした前提の下、太陽光発電は、2040年度のエネルギー需給の見通しにおいて、総発電電力量の23%から29%程度となる見通しを示しています。2024年においては総発電量の約10%となっており、引き続き経済産業省をはじめとする関係省庁と連携して導入拡大に取り組んでまいりたいというふうに考えております。環境省では特に地域共生や環境配慮に優れた地方自治体が主導する地域共生型や、住宅建築物等に配置する自家消費型の導入を促進してまいりたいと考えております。また、日本初の技術であるペロブスカイト太陽電池についても、早期の社会実装に向け、自治体や民間企業の導入を支援してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=3898.3590000000004",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "太陽光発電の位置づけについて",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "2030年以降"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "2040年度のエネルギー需給の見通しにおいて、総発電電力量の23%から29%程度"
+            },
+            {
+              "type": "number",
+              "excerpt": "2024年においては総発電量の約10%"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ペロブスカイト太陽電池"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "導入拡大に取り組んでまいりたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "2040年度のエネルギー需給の見通しにおいて、総発電電力量の23%から29%程度となる見通しを示しています。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "太陽光発電の今後の導入目標数値（2040年度見通し）が具体的に示されており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が抽象的なため、回答者が自発的に数値を提示した形になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_020",
+      "segment_index": 4,
+      "topic": "太陽電池の廃棄抑制とリユースの効果検証",
+      "question": {
+        "speaker": "鍋島勢理",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 太陽電池の廃棄抑制やリユースの取り組みについて、どれほどの抑制効果があるか伺いたい",
+        "full_text": "まず第1条の目的規定に太陽電池の廃棄の抑制というふうに記載がございます。こちら本法律案におきましては、太陽電池の廃棄の抑制を推進するため、基本方針や事業用太陽電池廃棄者の判断基準におきまして、太陽電池の長期使用やリユースに関する事項について規定することとしてございます。また、太陽電池の製造輸入業者及び販売業者に対しましては、長期使用可能な太陽電池の製造及び販売、長期使用やリユースに関する情報提供の努力義務を課すこととしてございます。どれだけの抑制効果があるかということでございますけれども、リユースの現状につきまして、環境省が太陽電池の適正処理、リユース・リサイクルに取り組んでいると確認された事業所に対しまして実施したアンケートでは、2024年度の実績は、回収量5046トンのうち、1015トンであったと。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "石原良司",
+        "role": "",
+        "summary": "- 基本方針において関係審議会での議論を踏まえて定めていく\n- 法律の施行に向けて検討していく",
+        "full_text": "本法律案に基づく基本方針で定めるということにしてございまして、関係審議会での議論も踏まえて定めていきたいと考えてございます。本法律案の施行に向けて検討してまいりたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=3898.3590000000004",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "太陽電池廃棄抑制の具体的効果について",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "回収量5046トンのうち、1015トン"
+            },
+            {
+              "type": "organization",
+              "excerpt": "環境省"
+            },
+            {
+              "type": "date",
+              "excerpt": "2024年度"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "太陽電池の製造輸入業者及び販売業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "本法律案の施行に向けて検討してまいりたいと思います",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "本法律案の施行に向けて検討してまいりたいと思います。",
+          "score": 0.2
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は具体的な抑制効果について問うているが、回答者は基本方針の策定や検討という形式的な回答に留まっており、実質的な情報提供がない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問の末尾が「ということでございますけれども」と提示に留まっており、明確な問いかけ（例：どう考えるか、どう評価するか）が欠けている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_021",
+      "segment_index": 4,
+      "topic": "廃棄実施計画の審査体制と判断基準",
+      "question": {
+        "speaker": "鍋島勢理",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 廃棄実施計画が「著しく不十分」と判断される際の審査機関はどこか\n- どのような基準で判断し、公正性をどう確保するのか伺いたい",
+        "full_text": "法案の第9条、ここでは事業用太陽電池を多量に廃棄をしようとする者に対して、事前に省令を定めるところにより、実施計画を届け出ることとされております。この多量の中身を定める政省令は今後固まってくるというふうに考えておりますけれども、この第5項が、環境大臣が定める判断の基準となるべき事項に照らし、著しく不十分であると認める場合に、事業者に対して勧告権を認める内容というふうになっております。この著しく不十分という表現なんですけれども、こちら単に不十分とするよりも狭くなっているように思えますが、この計画の審査は実際どの機関が行い、どのような基準を持って著しく不十分であると判断をされるのでしょうか。公正な判断をされるためにも何か実施されることがあればお伺いをいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "中尾和也",
+        "role": "",
+        "summary": "- 審査は環境省および経済産業省が担い、具体的な体制は法案成立後に検討する\n- 埋立費用とリサイクル費用の調査不足や、合理的理由のない埋立選択などが不十分な例として考えられる",
+        "full_text": "多量事業用太陽電池廃棄者から届けのあった廃棄実施計画に対する勧告、命令などは、主務大臣の権限としてございまして、審査などは環境省及び経済産業省が担うことになります。当該権限については、地方支部部局に委任することができる旨の規定を設けているところでございまして、具体的な審査の体制につきましては、法案の成立後検討していくということになります。届出のあった計画の内容がどのような場合に判断基準に照らして不十分と認めるかにつきましては、判断基準の内容及び具体的な制度の運用を今後検討していくこととなります。現時点では、例えば埋立処分とリサイクル、それぞれに要する費用の調査が行われていない場合ですとか、埋立処分を選択する合理的理由が何ら見出せないにもかかわらず、埋立処分が選択されている場合、このような場合には判断基準に照らして不十分と認められるのではないかと考えておりますけれども、今後、検討を進めてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=3898.3590000000004",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "廃棄計画の審査機関と「著しく不十分」の判断基準",
+          "sub_asks": [
+            "計画の審査をどの機関が行うか",
+            "どのような基準で著しく不十分と判断するか",
+            "公正な判断のために実施することがあるか"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "法案の第9条"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "事業用太陽電池を多量に廃棄をしようとする者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "環境省及び経済産業省"
+            },
+            {
+              "type": "evidence_citation",
+              "excerpt": "埋立処分とリサイクル、それぞれに要する費用の調査が行われていない場合"
+            },
+            {
+              "type": "evidence_citation",
+              "excerpt": "埋立処分を選択する合理的理由が何ら見出せないにもかかわらず、埋立処分が選択されている場合"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "具体的な審査の体制につきましては、法案の成立後検討していくということになります",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "審査などは環境省及び経済産業省が担うことになります。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "審査機関を明示した点と、不十分と判断される具体例（費用調査の欠如等）を挙げた点で、実務的な情報が含まれている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「公正な判断のために実施すること」という問いが抽象的なため、回答が「検討していく」という形式的なものに留まっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_022",
+      "segment_index": 4,
+      "topic": "処理状況確認の措置の実効性確保",
+      "question": {
+        "speaker": "鍋島勢理",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 第6条の処理状況確認に関する措置が努力義務となっているが、その実効性をどのように確保するのか伺いたい",
+        "full_text": "続きましては、第6条に関しまして、処理状況の確認を行い、処理が適正に行われるよう、必要な措置を講ずることと努めるとされておりますけれども、こちらは努力義務でございます。この措置の実効性というものを、どのように確保されていくのかを伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "石原良司",
+        "role": "",
+        "summary": "- 多量廃棄事業者にリサイクル取組を義務付け、規制を段階的に強化して処理体制を構築する\n- 規模のメリットで費用を低減させ、小規模事業者もリサイクル可能な環境を整備する\n- 今後、多量廃棄事業者の要件見直しを検討し、幅広い廃棄者への義務化を目指す",
+        "full_text": "本法律案において、まずは、リサイクルのスケールメリットが働く多量の廃棄を行う事業者に対して、国が定める判断基準に基づくリサイクルの実施に向けた取組を義務付け、規制を段階的に強化するとともに、全国的な処理体制の構築を進めてまいります。これにより、リサイクルされる量を増やして、施設の稼働率を上げることで、費用の低減ができると考えております。その結果として、多量の廃棄を行う事業者に該当しない事業者についても、適正な費用負担でリサイクルが可能な環境整備がなされるものと考えております。また、本法律案の附則でお示ししているように、今後、最終処分場の残余年数、リサイクル費用の推移等を勘案しつつ、多量の廃棄を行う事業者の要件について、見直しを行うことを検討してまいります。こうしたことを通じて幅広い廃棄者に対するリサイクル義務を目指してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=3898.3590000000004",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "第6条の措置の実効性確保策について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "第6条"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "多量の廃棄を行う事業者"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "本法律案の附則"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "多量の廃棄を行う事業者の要件について、見直しを行うことを検討してまいります",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "多量の廃棄を行う事業者の要件について、見直しを行うことを検討してまいります。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "努力義務の実効性について、段階的な規制強化と要件見直しの検討という具体的な方向性が示されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_023",
+      "segment_index": 4,
+      "topic": "地方公共団体の責務と国の役割",
+      "question": {
+        "speaker": "鍋島勢理",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 本法案により地方公共団体の責務に変化はあるか\n- 自治体任せにならないか懸念しているが、見解を伺いたい",
+        "full_text": "第5条におきましては、この地方公共団体の責務について、地域の実情に応じ、太陽電池の廃棄の抑制及び廃棄物の再資源化等の推進のために必要な措置を講ずることを努力義務と定めております。確認ではございますが、本法案により、地方公共団体が現状を負っている責務から、何か変化があるということでしょうか。条文上では、地方公共団体が地域の実情に応じた施策の実施をするということになりますけれども、こちらは自治体任せにならないのかというふうに懸念をしておりますけれども、こちらお伺いをいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "石原良司",
+        "role": "",
+        "summary": "- 国が判断基準の設定、実施計画の受理、リサイクル事業者の認定など主体的に仕組みを創設する\n- 地方公共団体には、地域ごとの導入量や処理体制の差に応じた施策の実施を求めている",
+        "full_text": "法律では国が事業用太陽光パネルの廃棄者向けの廃棄の抑制とリサイクルに関する判断基準を設定いたします。国が事業用太陽光パネルの廃棄者からその実施計画の事前届を受理いたします。国がリサイクル事業者による事業計画を認定するなど、国が主体となる仕組みを創設することとしているものであります。その上で、この地方公共団体には、地域の実情に応じた施策の実施に努める旨の責務規定を置いているところであります。これは地域ごとに太陽光発電の導入量や規模、リサイクル業者の数等に差があり、地域レベルの収集・運搬・処理体制の構築が重要となるためであります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=3898.3590000000004",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "地方公共団体の責務に変化があるか",
+          "sub_asks": [
+            "現状の責務からの変化の有無",
+            "自治体任せにならないかという懸念への回答"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "第5条"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "地方公共団体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "事業用太陽光パネル"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "実施計画の事前届"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "国が主体となる仕組みを創設することとしているものであります。その上で、この地方公共団体には、地域の実情に応じた施策の実施に努める旨の責務規定を置いている",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "地方公共団体の役割と国の役割の分担について、法案の趣旨を明確に説明している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「変化があるか」というYes/No形式の問いに、直接的な肯定・否定から入らずに説明を始めている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_024",
+      "segment_index": 4,
+      "topic": "製造業者への規制拡大の可能性",
+      "question": {
+        "speaker": "鍋島勢理",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 将来的に、再資源化しやすい設計などを製造業者に義務付けるなど、規制を拡大する考えはあるか伺いたい",
+        "full_text": "続きましては、本法案の行く先についてなんですけれども、今回主軸といたしましては、この廃棄業者、それからリサイクル業者があるかと思います。こちら第18条、19条におきましては、製造業者に対して、それぞれの製造段階で廃棄抑制、そして再資源化のための取り組み、そして必要な情報提供を努力義務で求めていると理解をしております。しかしながら、この廃棄、再資源化のしやすいものがあって、その上でしっかりとリサイクルなどを進めていくことが重要だと考えておりますけれども、現時点でその条文で具体的に言及することは難しいとは認識をしておりますが、将来的にこの製造業者に対して規制を拡大していくようなお考えがあるのかをお聞かせください。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "石原良司",
+        "role": "",
+        "summary": "- 本法案では努力義務としているが、資源有効利用促進法との連携を検討している\n- 太陽光パネルを同法の対象製品に指定し、リサイクルしやすい設計や情報提供を義務化し、不十分な場合は勧告・命令を行う方向で検討している",
+        "full_text": "本法律案では、製造業者等に対して、小資源化やリサイクルしやすい設計の実施と、含有物質情報の提供について、努力義務を課すこととしています。その上で、本法律案に加えて、経済産業省と連携し、資源有効利用促進法における対策を考えています。具体的には、太陽光パネルを同法の対象製品に新たに指定し、製造業者に対して、国が定める判断基準に基づいて、リサイクルしやすい設計及び、含有物質情報の提供を求めることを検討しています。これは、ある意味義務という形になります。同法では、国が定める判断基準に照らして取り組みが不十分な場合には、国が製造業者等に対して、勧告、命令ができることとされているところであります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=3898.3590000000004",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "製造業者への規制拡大の意向について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "第18条、19条"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "製造業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "経済産業省"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "資源有効利用促進法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "太陽光パネル"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "リサイクルしやすい設計及び、含有物質情報の提供を求めることを検討しています",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "太陽光パネルを同法の対象製品に新たに指定し、製造業者に対して、リサイクルしやすい設計及び、含有物質情報の提供を求めることを検討しています。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "製造業者への規制拡大という問いに対し、資源有効利用促進法を用いた具体的なアプローチ（太陽光パネルの指定）を提示しており、有益な回答である。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_025",
+      "segment_index": 5,
+      "topic": "太陽光パネル廃棄のリサイクル義務化対象範囲の拡大",
+      "question": {
+        "speaker": "鍋島勢理",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 将来的にリサイクル義務化の対象範囲を広げる考えがあるか\n- 拡大する場合の時期の目処について",
+        "full_text": "続きましては、この大量廃棄をする者に対しての罰則付きの義務に関して、廃棄に際しての届出等が求められることになるかと思います。こちらリサイクルにかかる費用でありますとか、技術的な課題も含めてこの範囲への規制になっていると思います。今後対象範囲を広げるお考えがあるのかを伺います。もし時期の目処もありましたらお示しをお願いします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "石原良純",
+        "role": "",
+        "summary": "- 2030年代後半以降の大量廃棄に向け、将来的に幅広い廃棄者への義務化を目指す\n- 具体的な時期は未定だが、対象範囲の見直しや規制強化、費用低減などの環境整備を進める",
+        "full_text": "2030年代後半以降は太陽光パネルの大量廃棄が想定されているところであります。これに対応するため、小規模自家消費用も含めて将来的に幅広い廃棄者に対するリサイクルの義務化を目指していく旨を本法律案の趣旨でお示ししているところであります。現時点では具体的な時期を申し上げる段階にはありませんが、法律案による勧告命令措置の対象となる事業者の範囲の見直しや規制の内容の段階的な強化に加え、予算措置等を活用したリサイクル費用の低減を提言と、処理体制の整備を図ることで、必要な環境整備を進めてまいりたいと思います。このことによって、大量廃棄時までに、幅広い廃棄者に対するリサイクルの義務化を目指してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=4815.159000000001",
+      "metrics": null
+    },
+    {
+      "id": "qa_026",
+      "segment_index": 5,
+      "topic": "太陽光パネル処理量の平準化と制度設計",
+      "question": {
+        "speaker": "向山好一",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 排出量予測で2040年をピークに減少する場合、事業者の設備投資が困難になるのではないか\n- 処理量の平準化に向けた制度設計や取り組みはどうなっているか",
+        "full_text": "それと関連して、私は心配していることが一つありまして、これは環境省さんが予測しているんですね、排出量予測。ここに明確に示しているのが、2040年ぐらいに50万トンの排出量が出てくると。しかしですね、そのピークを過ぎると、2050年ぐらいには半分の25万トンぐらいになるという。それでしたらですね、その事業者一体どういう設備投資を想定していいのかというのが非常に困難なんですね。ですから50万トンに対応した設備投資してくださいと国が言って、じゃあ残念ながらその後減りますからねと、過剰の設備も覚悟してくださいとおっしゃってるんですかっていうことなんですね。ですから環境省さんとしては、おそらく平準化しないとこの事業というのは継続できないという認識がおありだと思いますが、それだったらそれを視野に入れたような平準化に対する制度設計がなされているのかどうかということを私は心配しているんですけれども、そのあたりの制度の内容、平準化に向けての取り組みはどうなっているか、環境大臣お答えください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "石原良純",
+        "role": "",
+        "summary": "- 長期間の使用やリユースの促進を基本方針・判断基準に基づき促す\n- 産業廃棄物の保管基準に特例措置を講じ、処理量の平準化を図る\n- 排出予測の精度を高め、リサイクル目標を設定することで投資の予見可能性を高める",
+        "full_text": "処理量の平準化を進めるためには先般から議論されておりますけれども、まずは排出量を平準化するために長期間の使用やリユースの取組が重要であると考えているところであります。このため本法律案では、国が定める基本方針及び判断基準に基づいて太陽光パネルを使用しているものに対して、長期間の使用やリユースの促進に関する取組を促しているところであります。また、リサイクル施設における処理量の平準化を図られるよう、廃棄物処理法で定められている産業廃棄物の保管基準について、太陽光パネルの特性に応じた特例措置を講ずることとしております。1週間とか14日間とか、そういう基準があるんですが、こういうものをもう少し長く太陽光パネルについては考えたいと考えております。その上で必要な処理体制の構築と維持が図られるように、太陽光パネルの排出予測の精度を高めていく予定であります。この排出予測を踏まえて国が定める基本方針において、リサイクル目標を設定すること等により、投資の予見可能性を高めてまいりたいと思います。また、国としても、リサイクル設備の導入など、必要な支援も努めてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=4815.159000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "太陽光パネル排出量の平準化に向けた制度設計の内容",
+          "sub_asks": [
+            "平準化に対する制度設計がなされているか",
+            "平準化に向けての取り組みはどうなっているか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "環境省さん"
+            },
+            {
+              "type": "number",
+              "excerpt": "2040年ぐらいに50万トンの排出量"
+            },
+            {
+              "type": "number",
+              "excerpt": "2050年ぐらいには半分の25万トン"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "廃棄物処理法"
+            },
+            {
+              "type": "number",
+              "excerpt": "1週間とか14日間"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 3,
+          "trigger_phrase": "産業廃棄物の保管基準について、太陽光パネルの特性に応じた特例措置を講ずることとしております",
+          "matched_pattern": "future-tense verb describing a CONCRETE government action with a named mechanism"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "産業廃棄物の保管基準について、太陽光パネルの特性に応じた特例措置を講ずることとしております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "排出量予測の変動による設備投資リスクという具体的な懸念に対し、保管基準の特例措置という具体的な解決策を提示しており、価値の高いやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_027",
+      "segment_index": 5,
+      "topic": "投資予見性のためのロードマップ策定",
+      "question": {
+        "speaker": "向山好一",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 新規参入事業者を促すため、投資の予見可能性を高めるロードマップを提示してはどうか",
+        "full_text": "投資予見性という話、非常に重要でございます。ですけれども、これ今13万トンしかないという話は聞いていますからね。当然環境省さんとしては多くの新規参入の事業者を期待されていらっしゃると思うんですけれども、そういうときにはやはりこの投資の予見可能性、これなければなかなかそういうふうにいかないんで、可能ならばですね、やっぱり今おっしゃったようなことを、しっかりロードマップのような形にして、事業者さんに提示して、「実はこういうことを考えているんですから、ぜひとも皆さんの参入をお願いします」ということが必要じゃないかと思いますが、そんなことも考えていらっしゃるのでしょうかね。ロードマップをしっかり作るということもいかがでしょうかね。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "中尾",
+        "role": "",
+        "summary": "- 排出予測の精度を高めるため、発電事業者の意向収集などを行う\n- 基本方針においてリサイクル目標を設定することが、実質的なロードマップとなり、投資の予見可能性を高めることにつながる",
+        "full_text": "ご指摘のように太陽光パネルの排出予測の精度というものを高めていくことが必要であると考えてございます。そのために発電事業者の方々がどの期間太陽光パネルを使用していくのかといったことにつきましても、事業者のご意向などもよく集める必要があると考えてございます。そういった排出予測を踏まえまして、先ほど申し上げていますように、国が定める基本方針においてリサイクル目標を設定すると、これがまさに今後どのような形でリサイクルを進めていくのかという、ロードマップのような形になってまいるかと思います。こうしたことによりまして、投資の予見可能性を高めてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=4815.159000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "投資予見性向上のためのロードマップ策定の検討",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "13万トン"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "基本方針"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "投資の予見可能性を高めてまいりたいと考えております",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "国が定める基本方針においてリサイクル目標を設定すると、これがまさに今後どのような形でリサイクルを進めていくのかという、ロードマップのような形になってまいるかと思います。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "ロードマップ策定の提案に対し、基本方針での目標設定がそれに相当するという回答。具体的な期限や新制度の策定約束はなく、意向表明に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「いかがでしょうかね」という問いかけが弱いため、より明確な策定の是非を問う形式にすべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_028",
+      "segment_index": 5,
+      "topic": "リサイクル費用の差額補填と低減策",
+      "question": {
+        "speaker": "向山好一",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 埋立処分とリサイクルの費用差額が大きく、放置される懸念がある\n- 差額を埋めるための具体的な見通しや考え方はあるか",
+        "full_text": "もう一つ、今までも指摘の中でたくさん指摘があるのが、その費用を誰が持つかということなんですね。今までありましたように、埋立処分費用が1キロ当たり2000円。リサイクルということになれば、8000円から12000円。その差額というのが大体6000円から1万円程度ということになって、1メガワットならば800万、10メガワットならば8000万、余分にかかるということなんですね。ですからそれを、どういうかな、その費用がプラスになるということならば、事業もやめちゃうかとか、あるいは、放置されるということにもつながりかねないので、やはり差額を埋めるということが必要だというふうに思います。それは今までも答弁がございましたけれどもしっかりそういった、ある程度のですね、このぐらいまでできるんじゃないかとか、見通しとかですね、あるいはこのぐらいまでしたいという目標とかですね、もう少し具体的なものがなければいけないんじゃないかと思いますけれども、そのあたり見通しですね、差額を埋める、そのあたりの今のお考えというのをお聞きしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "石原良純",
+        "role": "",
+        "summary": "- 需要経過認定制度を設け、低コストなリサイクルを後押しする\n- 多量廃棄事業者にリサイクルを義務付け、稼働率向上による費用低減を図る\n- NEDO事業で3000円以下となる技術開発実績があり、低減に努める\n- 収集運搬・保管・リサイクルの各段階で支援を行い、取組を加速させる",
+        "full_text": "本法律案では、リサイクル事業者に対して、需要経過認定制度を設けて、できるだけ費用のかからないリサイクルを後押ししてまいりたいというふうに思っています。また、多量に廃棄する事業者に対して、経済合理性も踏まえたリサイクルの実施に向けた取組を義務づけるところであります。これにより、リサイクルされる量を増やして施設の稼働率を上げることで、費用の低減を図ってまいりたいというふうに考えています。現に、NEDOの事業において、一定の稼働率等の仮定のもとであれば、1キロワットあたり3000円以下となるリサイクル技術の開発が完了している実績もあるところであります。具体的には自らリサイクルに取り組んで、収集運搬事業者やリサイクル事業者、ガラスメーカー等と組んで、本法律案の認定制度を活用して、他の発電事業者が排出するパネルも含めて、リサイクル事業の実施を検討している大手の発電事業者もおられるというふうに承知をしております。国としても収集運搬保管リサイクルの各段階で支援を行うことで取組を加速して、リサイクルの低減に努めてまいりたいというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=4815.159000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "リサイクル費用差額を埋めるための具体的見通し",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "埋立処分費用が1キロ当たり2000円"
+            },
+            {
+              "type": "number",
+              "excerpt": "リサイクルということになれば、8000円から12000円"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "NEDO"
+            },
+            {
+              "type": "number",
+              "excerpt": "1キロワットあたり3000円以下"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "リサイクルの低減に努めてまいりたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "NEDOの事業において、一定の稼働率等の仮定のもとであれば、1キロワットあたり3000円以下となるリサイクル技術の開発が完了している",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "費用差額をどう埋めるかという問いに対し、認定制度や稼働率向上によるコスト低減という方向性は示したが、具体的な財政支援や目標数値への言及はなく、Lv1の努力目標に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「見通し」や「目標」という抽象的な言葉ではなく、補助金の有無や具体的な目標単価の提示を求める形式にすれば、より拘束力のある答弁を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_029",
+      "segment_index": 5,
+      "topic": "FIT・FIP制度の積立金による費用負担",
+      "question": {
+        "speaker": "向山好一",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- リサイクル費用を賄うため、FIT・FIP制度の積立金額を増やすなどの踏み込んだ対応はできないか",
+        "full_text": "次には、これも冒頭の大岡委員の出席があった理事からもあったとおりなんですけれども、このFIT・FIP制度の中には廃棄物費用の積立金という制度がありまして、今まであったり埋め立て処分までの費用はそこで賄えるという制度になっています。しかしそれがこのリサイクルだったらそうはいかないということになりまして、先ほど答弁はですね、慎重な議論が必要だという話ばっかりなんですよね。ですけどね、環境省さんはこの太陽光パネルの設置の大原則っていうのが地域社会との共生でしょ。ですから住民の皆さんが不安を持ちながらリサイクル事業をやるっていうのは本意じゃないというふうに思いますが。ですからね、経産省さんたちはそうかもしれへんけれども、環境省としては、そう許してええかという思いがございますよ。ですからもう一つですね、そういうことを前提にして踏み込んだ御答弁をお聞きしたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "石原良純",
+        "role": "",
+        "summary": "- 既定の契約や金額があるため、負担増は電気事業者の収益減少や電気料金上昇につながり、困難である\n- 技術開発によりリサイクル費用自体を低減させている最中であり、現時点で積立額を判断することは難しい",
+        "full_text": "おそらく委員が言われているのは、FIT・FIP制度の積み立ての金額を増やすとか、そういうことを言われていると思うんですけれども、なかなか既に決まった契約というのもありますし、FIT・FIPの金額も決まっていますから、その費用負担を増やすということは、電気事業者の収益が減ってしまうということになってしまいますので、やめるとすると、またFIT・FIPで買う値段を、発電電気会社が、電力会社が上げなければいけないみたいなことになってしまうので、なかなかそれは難しいんじゃないかなというような思いがあります。先ほどまた環境省的にも、今8000円から1万2000円のリサイクルの費用を、なるべく2000円下げてくると。NEDOの案件で3000円以下にしている例もあるということで、そもそもリサイクルの費用を努力をして下げていこうとしている中で、今すぐにリサイクルの積立の金額がいくらだというふうに判断することもなかなか難しいというところで、ぜひ御理解をいただければというふうに思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=4815.159000000001",
+      "metrics": null
+    },
+    {
+      "id": "qa_030",
+      "segment_index": 5,
+      "topic": "FIT・FIP制度終了後の廃棄物対策",
+      "question": {
+        "speaker": "向山好一",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 2027年にFIT・FIP制度が終了した後、積立金制度に代わるどのような対策を考えているか",
+        "full_text": "それと併せて、このFIT・FIP制度というのが、2027年から野立方は終了いたしますけれども、そうなると、この積立金制度に変わるものとして、何らかの対策が必要になってくるというふうに思いますけれども、そのあたり何か考えていらっしゃるんでしょうかね。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小林",
+        "role": "",
+        "summary": "- 制度の対象か否かにかかわらず、排出事業者には廃棄物処理法に基づき適正処理が義務付けられており、それに基づき厳格に対応することが基本である",
+        "full_text": "このご指摘のFIT・FIP制度の対象か否かにかかわらず、廃棄物となった太陽光発電設備については、排出事業者に対して廃棄物処理法に基づき、適正処理が義務付けられておりますので、それに基づいて厳格に対応されるということが、まず基本だというふうに考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=4815.159000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "FIT/FIP終了後の積立金制度に代わる対策の有無",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "FIT・FIP制度"
+            },
+            {
+              "type": "date",
+              "excerpt": "2027年"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "廃棄物処理法"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "廃棄物となった太陽光発電設備については、排出事業者に対して廃棄物処理法に基づき、適正処理が義務付けられております",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "FIT/FIP終了後の具体的対策を問う質問に対し、既存の廃棄物処理法による義務付けを回答しており、実質的な回答を避けている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「何か考えていらっしゃるんでしょうか」という漠然とした問い方であるため、政府が一般論で逃げやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_031",
+      "segment_index": 6,
+      "topic": "太陽光パネル大量廃棄問題の構造的認識",
+      "question": {
+        "speaker": "島村かおる",
+        "party": "参政党",
+        "summary": "- 太陽光パネルの大量廃棄問題を、個別の廃棄物処理ではなく政策全体の構造的課題として認識しているか\n- 導入から廃棄までを通じた制度横断的な対応が必要との認識か",
+        "full_text": "しかし太陽光パネルの大量廃棄問題は、単なる個別の廃棄物処理の問題にとどまるものではなく、これまで導入、立地、廃棄及び再資源化の各段階の制度が必ずしも十分に連携してこなかったことに伴う全体の構造的課題でもあるのではないでしょうか。政府は、太陽光パネルの大量廃棄問題を、単なる個別の廃棄物処理の問題ではなく、太陽光発電の政策全体に関わる構造的課題として認識しているのでしょうか。また、導入から廃棄までを通じた、制度横断的な対応が必要であるとの認識に立っているのか、お答えください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "石原陽一",
+        "role": "",
+        "summary": "- 計画から廃棄、リサイクルまでの一連のプロセスについて、関連法令による必要な見直しを行ってきた\n- 関係省庁が連携し、一連のプロセスに対して必要な施策を講じていく",
+        "full_text": "計画から廃棄、リサイクルまでの一連のプロセスについて、その時々の状況を踏まえ、関連法令による対応を含め、必要な見直し等が行われてきたものというふうに承知をしているところであります。引き続き関係省庁が連携して、計画から廃棄、リサイクルまでの一連のプロセスに対して必要な施策を講じてまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=5776.159000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "太陽光パネル廃棄を構造的課題と認識しているか",
+          "sub_asks": [
+            "個別の廃棄物処理ではなく政策全体の構造的課題として認識しているか",
+            "導入から廃棄まで制度横断的な対応が必要との認識か"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "必要な施策を講じてまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "引き続き関係省庁が連携して、計画から廃棄、リサイクルまでの一連のプロセスに対して必要な施策を講じてまいります。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "構造的課題であるかという認識を問う質問に対し、抽象的な現状説明と今後の意向に留まっており、実質的な回答になっていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「認識しているか」というYes/No形式の問いであるため、政府が肯定も否定もしない曖昧な回答を許容する設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_032",
+      "segment_index": 6,
+      "topic": "リサイクル支援策に伴う国民負担の有無",
+      "question": {
+        "speaker": "島村かおる",
+        "party": "参政党",
+        "summary": "- 廃棄費用積立制度がある中で、なぜ追加的な技術開発や設備導入への支援が必要なのか\n- 追加的な支援や体制整備の費用は誰が負担し、新たな国民負担（税金や電気料金等）が生じる構造か\n- 導入時の賦課金に加え、廃棄時にも公的負担が生じることで国民負担が二重化しないか",
+        "full_text": "第1に、すでに原則として10キロワット以上の事業用太陽光発電のFIT・FIP認定事業については、すでに廃棄費用積立制度が設けられているにもかかわらず、なぜさらに太陽光パネルリサイクルに関する技術開発、設備導入、保管施設、収集運搬効率化などへの支援を講ずる必要があるのでしょうか。それは現行の積立制度だけでは、廃棄・再資源化に以上な費用や処理体制の整備を十分に賄えないという認識に立つものなのか、明確にお答えください。その追加的な支援や体制整備に要する費用は、最終的に誰が負担するのでしょうか。事業者負担が原則なのか、それとも税金あるいは再エネ付加金のように、電気料金を通じた形で国民負担が生じる構造なのか、ここは国民にとって極めて重要な点ですので、明確にお答えいただきたい。第3に、導入時には付加金などを通じて国民負担を求め、さらに廃棄時にも追加的な支援や公的負担が仮に生じるのであれば、それは国民負担がさらに増えることにつながるのではないか、政府の認識を伺います。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "中尾",
+        "role": "",
+        "summary": "- 廃棄・リサイクル費用は一般的に事業者が負担する\n- リサイクル施設等への支援費用は令和8年度予算で措置済みであり、新たな国民負担は生じない\n- 処理体制構築への支援であり、支援の重複（国民負担の二重化）はないと考えている",
+        "full_text": "太陽光パネルの廃棄・リサイクルに要する費用は、一般的に太陽光発電事業者等が負担することになると承知してございます。お尋ねのこれらの支援に要する費用、これはリサイクル側の施設に対するリサイクルその他廃棄物の処理業者側に対する費用ということでございますけれども、こちらにつきましては循環型社会の実現等にも資するものでございまして、令和8年度予算において措置したところでございまして、これによりまして新たな国民負担が生じるものではないと考えてございます。リサイクル事業者等の処理体制の構築に取り組む事業者に対しまして、制度的な措置や技術開発等を支援することとしているものでございまして、支援の重複はないと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=5776.159000000001",
+      "metrics": null
+    },
+    {
+      "id": "qa_033",
+      "segment_index": 6,
+      "topic": "リサイクル支援策による国民負担の再確認",
+      "question": {
+        "speaker": "島村かおる",
+        "party": "参政党",
+        "summary": "- 本法案および関連支援策に関して、税金、電気料金、再エネ付加金など、いかなる形であっても新たな国民負担が生じる可能性はないか",
+        "full_text": "その上で、費用負担の所在は国民にとって極めて重要な点ですので、確認のため、もう一度伺います。本法案及びこれに関連する支援策、体制整備に関して、今後、税金、電気料金、再エネ付加金、その他いかなる形であり、新たな国民負担が生じる可能性があるのかないのか、もう一度明確にお答えいただけますでしょうか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "石原陽一",
+        "role": "",
+        "summary": "- リサイクル費用低減のための技術開発等を通じて推進し、新たな国民負担を求めることは考えていない",
+        "full_text": "先ほど参考人が答弁したとおり、太陽光パネルのリサイクル推進については、さまざまな規制上の措置やリサイクル費用を低減するための技術開発等を通じて行います。新たな国民負担を求めることは考えておりません。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=5776.159000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "新たな国民負担が生じる可能性の有無",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "新たな国民負担を求めることは考えておりません。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "新たな国民負担の有無について明確に否定しており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_034",
+      "segment_index": 6,
+      "topic": "多量事業用太陽電池廃棄者の定義と責任主体",
+      "question": {
+        "speaker": "島村かおる",
+        "party": "参政党",
+        "summary": "- 本法案における「多量事業用太陽電池廃棄者」の具体的な定義は何か\n- 発電事業者、所有者、撤去工事発注者が異なる場合、誰が届出主体となり、責任分担はどう整理されるか",
+        "full_text": "本法案第9条第1項に言う多量事業用太陽電池廃棄者とは具体的にどのようなものを指すのでしょうか。実務上、発電事業者、設備所有者、撤去工事等を発注するものがそれぞれ異なる場合には、誰が第9条の届出を行う主体となるのでしょうか。またその場合、工事または作業を行う者や処分の受託者との責任分担をどのように整理しているのか、明確にお答えください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "中尾",
+        "role": "",
+        "summary": "- 重量等が政令で定める要件に該当する事業用太陽電池廃棄者を指す\n- 一般的には発電設備を所有する者が届出主体に該当すると考えている",
+        "full_text": "御指摘の計画の策定かつ届出義務の主体となります多量事業用太陽電池廃棄者につきましては、本法律案第9条第1項におきまして、事業用太陽電池廃棄者であって、その事業用太陽電池の廃棄をしようとする事業用太陽電池の重量が政令で定める要件に該当するものと規定しているところでございます。その廃棄をし、または廃棄をしようとする者がいかなる属性に属するものかということでお尋ねがございましたが、これは一般的にということになりますけれども、発電設備を所有する者が該当するということで考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=5776.159000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "多量事業用太陽電池廃棄者の定義と届出主体",
+          "sub_asks": [
+            "多量事業用太陽電池廃棄者の具体的定義",
+            "実務上の届出主体（所有者・事業者等の区別）",
+            "受託者等との責任分担の整理"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "本法案第9条第1項"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "多量事業用太陽電池廃棄者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "本法律案第9条第1項"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "発電設備を所有する者が該当するということで考えてございます。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "3つの問いに対し、定義と主体については回答しているが、責任分担についての回答が欠落している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "問いが多岐にわたるため、回答者が一部の問い（責任分担）を切り捨てやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_035",
+      "segment_index": 6,
+      "topic": "規制逃れ（分割廃棄）への対応",
+      "question": {
+        "speaker": "島村かおる",
+        "party": "参政党",
+        "summary": "- 廃棄物を小分けにして「多量事業用太陽電池廃棄者」に該当しないようにする規制逃れを防ぐ考えはあるか\n- 運用においてどのように抜け道を塞ぐのか",
+        "full_text": "そのため、仮に事業者が廃棄を小分けにし、形式上、多量事業用太陽電池廃棄者に該当しない形をとった場合、届出義務や命令等の対象から外れてしまう余地があるのではないかと懸念します。政府として、そのような規制逃れを防ぐため、同じ設備や同じ事業から出る廃棄物を、時期や回数を分けて出した場合でも、全体として一つの廃棄として扱う考えはあるのでしょうか。またそうした抜け道を残さないよう、運用の中でどのように対応する考えなのかお答えください。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "中尾",
+        "role": "",
+        "summary": "- 分割廃棄による届出義務の免脱はあってはならないと考えている\n- 実態を把握した上で、相対的に一度の廃棄と評価できる場合は届出対象とするよう、施行令や運用で検討する",
+        "full_text": "御指摘のような小規模に分割して廃棄をすることで、事前届出の義務を免れることはあってはならないと考えております。その具体的な制度設計につきましては、これから検討することになりますけれども、例えば、相対として一度の廃棄と評価できる場合には、届出の義務の対象とするよう、これはよく実態も把握した上で、さまざまなケースも想定いたしまして、施行令や運用も含めて検討してまいりたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=5776.159000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "太陽電池廃棄の分割届出による規制逃れの防止策",
+          "sub_asks": [
+            "全体として一つの廃棄として扱う考えがあるか",
+            "運用の中でどのように対応する考えか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "施行令や運用も含めて検討してまいりたいと考えてございます",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "小規模に分割して廃棄をすることで、事前届出の義務を免れることはあってはならないと考えております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "規制逃れを許さないという政府の基本的姿勢が明確に示されており、今後の制度設計に向けた検討への言及がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_036",
+      "segment_index": 7,
+      "topic": "事業用太陽電池廃棄物の周知と運用",
+      "question": {
+        "speaker": "渡辺真太朗",
+        "party": "無所属",
+        "summary": "- 施行前の周知および運用上の監督について\n- 必要な対応を講ずる考えがあるか",
+        "full_text": "小泉洋議員、施行前の周知、運用上の監督、必要な対応を講ずる考えはあるのかお答えください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "中尾",
+        "role": "",
+        "summary": "- 一律に追加的な費用や負担を求めるものではないため、施行直前の駆け込み廃棄は想定しがたい\n- 制度の内容についてしっかりと周知を行いたい",
+        "full_text": "当初の事業用太陽電池廃棄物の廃棄の抑制とリサイクルに関する判断基準におきましては、リサイクルの必要性及び経済合理性を踏まえつつ、リサイクルを選択することを定めることを想定していることから、事業用太陽電池廃棄物に対して一律に追加的な費用、負担を求めるものではございません。このため、多量事業用太陽電池廃棄実施計画の届出を避けるため、施行日直前に設備を廃止して廃棄をする事案は想定しがたいと考えてございますが、制度の内容を周知することにつきまして、しっかり行ってまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=6968.859",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "施行前の周知や監督、対応を講じる考えはあるか",
+          "sub_asks": [
+            "施行前の周知",
+            "運用上の監督",
+            "必要な対応を講ずる考え"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "事業用太陽電池廃棄物の廃棄の抑制とリサイクルに関する判断基準"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "多量事業用太陽電池廃棄実施計画の届出"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "周知することにつきまして、しっかり行ってまいりたいと考えております",
+          "matched_pattern": "aspirational verb only — \"努めてまいります\", \"取り組んでまいります\", \"しっかり進めてまいります\""
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "事業用太陽電池廃棄物に対して一律に追加的な費用、負担を求めるものではございません。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "周知への意欲は示しているが、具体的な監督体制や対応策についての言及はなく、抽象的な回答に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "周知・監督・対応という複数の要素を一度に問うているため、回答が分散しやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_037",
+      "segment_index": 7,
+      "topic": "リサイクルの目標数値の設定",
+      "question": {
+        "speaker": "渡辺真太朗",
+        "party": "無所属",
+        "summary": "- 政府として具体的なリサイクルの目標数値を定める予定はあるか\n- 設定の期限と見込まれる目標値について伺いたい",
+        "full_text": "今後政府として具体的なリサイクルの目標数値とか、こういったものを定めていくのでしょうか。施行から1年6ヶ月でいろいろ定めるということで、2027年末までが期限となると思います。今後いつまでに設定をされて、どれくらいの目標値になるか、なることが見込まれるかお伺いをしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "中尾",
+        "role": "",
+        "summary": "- 基本方針において国内全体のリサイクル目標等の設定を想定している\n- 施行後1年6ヶ月以内に、審議会での議論を踏まえて決定する予定である\n- 2030年代後半の大量廃棄時に向けた長期的な視点を含めて定める",
+        "full_text": "本法律案の基本方針では、使用済み太陽光パネルの国内全体におけるリサイクルの目標等を設定することを想定してございます。委員からもご指摘ございましたけれども、本法律案の成立後、施行期日であります交付の日から1年6ヶ月以内で政令で定める日ということになってございますので、これまでの間に審議会での議論などを踏まえて決めていく予定としてございます。この基本方針で定める目標は、リサイクル事業による投資の予見性確保にも資するものとなることが重要でございます。その上で、2030年代後半以降に想定される大量廃棄時において、住宅用の太陽光パネルも含めてリサイクルが実施される環境整備を図ると、こういう長期的な視点も含めまして、定めることを定めていきたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=6968.859",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "リサイクル目標数値の設定時期と目標値について",
+          "sub_asks": [
+            "いつまでに設定するか",
+            "どれくらいの目標値になるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "2027年末までが期限"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "使用済み太陽光パネル"
+            },
+            {
+              "type": "number",
+              "excerpt": "2030年代後半以降"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "審議会での議論などを踏まえて決めていく予定としてございます",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "本法律案の基本方針では、使用済み太陽光パネルの国内全体におけるリサイクルの目標等を設定することを想定してございます。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "目標数値の具体的な提示はなく、審議会での議論を経て決定するという標準的な回答に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "目標値の「範囲」や「算出根拠」について問うことで、より具体的な回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_038",
+      "segment_index": 7,
+      "topic": "廃棄実施計画の判断基準の厳格化",
+      "question": {
+        "speaker": "渡辺真太朗",
+        "party": "無所属",
+        "summary": "- 廃棄計画の判断基準を段階的に厳しくしていくと考えているか\n- 厳格化の目安となる時期と、最終的なゴールの判断基準について伺いたい",
+        "full_text": "次に、大量事業用太陽電池廃棄実施計画についてお伺いをしたいと思います。太陽電池廃棄者、メガソーラーの廃棄者に対して、判断基準を踏まえた処分方法等の検討をもとに、計画の作成、届出、受理、計画の審査、通れば計画に沿った廃棄の実施ということでございます。基準を定めて段階的に厳しくしていくのかなというふうにも思います。法律が浸透し、リサイクルを促進していくためには、まずはある程度の判断基準を大まかにしたものから段階的に厳しくするのかなというふうに思いますが、どれくらいの時期を目安に厳しくされていくのでしょうか。また最終的なゴールは、どの程度の判断基準になることが予想されるでしょうか。お伺いをしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "中尾",
+        "role": "",
+        "summary": "- 施行後、基本方針で定めた目標の達成状況を定期的に点検し、その結果を踏まえて検討する\n- 現時点で具体的な時期や内容について回答することは困難である\n- 2030年代後半の大量廃棄時までにリサイクルを義務付ける環境整備を念頭に検討する",
+        "full_text": "ご質問は、当初の判断基準をさらに段階的に評価する、その内容についてということだったかと考えてございます。これにつきましては、本法律案の施行後、定期的に基本方針で定めた目標の達成状況を点検いたしまして、その結果なども踏まえて検討していくということになるものでございますので、現時点でその時期や内容について、余談をもってお答えすることは困難でございます。2030年代後半以降に見込まれる大量廃棄時までに、住宅を含む幅広い太陽光パネルの廃棄者にリサイクルを義務づけるための環境整備を図っていくということを念頭に置きながら、適切に検討してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=6968.859",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "太陽電池廃棄計画の基準厳格化の時期と最終ゴール",
+          "sub_asks": [
+            "基準を厳しくしていく目安の時期",
+            "最終的なゴールの判断基準の予想"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "メガソーラーの廃棄者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "deadline",
+              "excerpt": "2030年代後半以降"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "適切に検討してまいりたい",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "2030年代後半以降に見込まれる大量廃棄時までに、住宅を含む幅広い太陽光パネルの廃棄者にリサイクルを義務づけるための環境整備を図っていく",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な時期や基準についての回答は回避されたが、2030年代後半という時間軸とリサイクル義務化への方向性が示された。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どの程度の判断基準」という問いが抽象的なため、回答者が「困難」と逃げやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_039",
+      "segment_index": 7,
+      "topic": "リサイクル施設の新規参入と処理能力不足",
+      "question": {
+        "speaker": "渡辺真太朗",
+        "party": "無所属",
+        "summary": "- リサイクル施設の不足や立地の偏在による運搬コスト増が課題となっている\n- 処理施設の新規参入を促すための具体的な施策はあるか",
+        "full_text": "次に処理施設の新規参入についてお伺いをしたいというふうに思っております。太陽光発電事業者は60%以上が実質的にリサイクルを検討していない。第一にリサイクルが選択肢としてまず上がるように認知をしてもらわなければならないのかなというふうにも思っております。認知をされてもコストが高いから選択肢にならないパターンもあります。これは施設が近くになければ、やはり当然運搬のコストが高くなるからということだと思います。大臣、具体的にお伺いしたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "中尾",
+        "role": "",
+        "summary": "- 処理能力の段階的な増強が重要であり、引き続き設備導入支援を行う\n- 廃棄物処理法の特例措置により、地方公共団体をまたぐ事業者が国のワンストップ認定で開始できる環境を整備する\n- 産業資源循環連合会などの関係団体へ協力を呼びかける",
+        "full_text": "委員ご指摘のとおり、現状では今後の排出見込み量に対しまして、リサイクル施設の処理能力が不足しているということでございます。また、収集運搬費用も重要なコスト要因でございまして、立地の偏在ということが一つの課題となっているところでございます。これらのことから、排出状況に応じた処理能力の段階的な増強ということが重要であると考えてございます。現状、全国に87件の専用リサイクル施設がございまして、全国的な処理体制の構築を順次進められているところでございまして、引き続きリサイクル設備の導入支援を行ってまいりたいと考えてございます。本法律案では、地方公共団体をまたいだリサイクル事業に取り組もうとする事業者が、国のワンストップの認定で事業を開始できるよう、廃棄物処理法の特例を措置するということで、効率的なリサイクル事業に取り組みやすい環境整備を図っているところでございます。各都道府県の産業資源循環協会についてのお尋ねがございましたけれども、こうした団体、さらに全国産業資源循環連合会という全国規模の団体もございます。そうした関係団体の協力というものも重要でございますので、リサイクルの取組への協力を呼びかけていきたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=6968.859",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "処理施設の新規参入を促す具体策について",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "60%以上が実質的にリサイクルを検討していない"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "太陽光発電事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "全国に87件の専用リサイクル施設"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "廃棄物処理法の特例"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "全国産業資源循環連合会"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "リサイクル設備の導入支援を行ってまいりたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.5
+        },
+        "oc3_quotability": {
+          "quote_candidate": "現状、全国に87件の専用リサイクル施設がございまして、全国的な処理体制の構築を順次進められているところでございまして",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "リサイクル施設の現状数（87件）という具体的な数字が示されており、法案による特例措置についても言及されているため、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「具体的にお伺いしたい」という問い方が抽象的なため、より具体的な施策（補助金や規制緩和など）を限定して問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_040",
+      "segment_index": 7,
+      "topic": "処理施設未設置の府県の特定",
+      "question": {
+        "speaker": "渡辺真太朗",
+        "party": "無所属",
+        "summary": "- 現状で処理施設がないとされる8府県が具体的にどこなのか伺いたい",
+        "full_text": "すみません、ちょっとこれも具体的に聞けばよかったと思うんですけれども、今現状で処理施設がない8府県、どこの都道府県になるのか、お答えいただいてもよろしいでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "長谷川",
+        "role": "",
+        "summary": "- 8府県に施設がないことは事実である\n- 全ての府県に必須ではなく、排出量に応じた立地により収集運搬費用を効率的に下げることが重要である",
+        "full_text": "現状8府県で対応する処理施設がないというのは、ご指摘のとおりでございます。これは事業者の方で立地を進めるということになります。その際に重要なのは、どこで太陽光パネルが出てくるのか、それに応じて立地の偏在が解消されるような場所にリサイクル施設があって収集運搬費用が下がっていくのかということが重要になってまいるかと考えてございます。ですので、全ての府県について必ず必要だということはございませんけれども、立地の偏在を踏まえまして、収集運搬費用も含めて、費用効率的にできる処理体制ということが重要になってくると考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=6968.859",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "処理施設がない8府県の具体名",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "8府県"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "not_at_all",
+          "topic_shift_detected": true,
+          "score": 0.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": null,
+          "score": 0.0
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な都道府県名の回答を求めた問いに対し、回答者は一般論に終始し、一切答えていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_041",
+      "segment_index": 7,
+      "topic": "排出量ピーク時の施設過剰リスクへの対処",
+      "question": {
+        "speaker": "渡辺真太朗",
+        "party": "無所属",
+        "summary": "- 2041〜42年頃の排出量ピークに合わせて整備すると、ピーク後に設備が過剰になるリスクがある\n- このリスクをどのように捉え、具体的にどう対処するのか",
+        "full_text": "最後の質問になりますが、他の委員の方の質問と被ってしまうところもあるんですけれども、やはり排出量のピークですね、こちらのこれが将来的に年間50万トンの量になるということであり、現状の処理能力が13万トンというところであります。リサイクルがその頃、きちんと将来的に浸透し、処理が追いつくのか、これも心配なところではありますが、排出量のピークが2041年とか2042年に来てしまうというところでございます。そのピークに照準を合わせ、併せて対応するというのはもちろん理解はできるんですけれども、他の委員からご指摘があったように、設備投資、施設とか業者が飽和状態になったり、設備が多すぎたり、機械が遊んでしまうリスクもあるかなというふうにも思っております。また改めてお伺いしますが、そのリスクをどのように捉え対処を考えていくのか、また先ほども予測精度を高めていくということでございましたけれども、具体的にお伺いしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "中尾",
+        "role": "",
+        "summary": "- 長期間の使用やリユースを促進し、排出量のピークを平準化する\n- 認定事業者に対し、廃棄物処理法の保管量規制の特例を措置し、処理量の平準化を図る\n- 排出予測の精度を高め、リサイクル目標を設定することで投資の予見可能性を高める",
+        "full_text": "太陽光パネルの排出状況に応じた処理能力を確保する必要がございますけれども、ご指摘のとおり、ピーク時の排出量に合わせて施設の整備を進めると、ピーク後には施設が過剰になる恐れがあります。このため、まずは排出量のピークの平準化が必要でございまして、本法律案では具体的に基本方針及び責務規定におきまして、太陽電池廃棄物とする太陽電池の量の抑制のための措置として、長期間の使用及びリユースの促進を位置づけ、事業用太陽電池廃棄者に対する廃棄の抑制とリサイクルに関する判断基準におきまして、可能な限りの長期間の使用やリユースを行うことを定めることとしてございます。また、処理量の平準化も必要でございまして、リサイクル施設や積み替え保管施設における保管基準につきまして、産業廃棄物については、廃棄物処理法に基づく保管する量の上限の規制があるところ、本法律案の認定事業者に対しまして、保管する量の規制の特例を措置することとしてございます。その上で、必要な処理体制の構築と維持が図れるよう、太陽光パネルの排出予測の精度を高め、基本方針においてリサイクル目標を設定することなどによりまして、投資の予見可能性を高めるとともに、必要な支援に努めてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5273"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56192&time=6968.859",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "排出量ピーク時の設備過剰リスクへの対処と予測精度の向上策",
+          "sub_asks": [
+            "設備過剰リスクをどう捉え対処するか",
+            "予測精度を高めるための具体的な方策"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "年間50万トン"
+            },
+            {
+              "type": "number",
+              "excerpt": "現状の処理能力が13万トン"
+            },
+            {
+              "type": "date",
+              "excerpt": "2041年とか2042年"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "基本方針及び責務規定"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "廃棄物処理法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "認定事業者"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "必要な支援に努めてまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "認定事業者に対しまして、保管する量の規制の特例を措置することとしてございます。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "排出量ピークに伴う設備過剰リスクに対し、リユース促進による平準化と保管規制の特例措置という具体的な法案上の対応策が示されており、記録的価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "予測精度の向上策について「具体的にお伺いしたい」とあるが、回答は「精度を高め」という一般論に留まっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    }
+  ],
+  "score_schema_version": "2.0",
+  "prompt_version": "V4"
+}

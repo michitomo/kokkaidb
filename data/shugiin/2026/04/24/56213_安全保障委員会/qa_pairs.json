@@ -1,0 +1,3678 @@
+{
+  "pairs": [
+    {
+      "id": "qa_001",
+      "segment_index": 1,
+      "topic": "殉職自衛官への褒賞金支給対象について",
+      "question": {
+        "speaker": "細田健一",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 訓練中の事故で亡くなった隊員が褒賞金の支給対象になるか",
+        "full_text": "前回、この委員会が開かれた21日に、陸上自衛隊の非10台演習場で、実弾射撃訓練中の戦車内で砲弾が破裂し、乗っていた隊員の方3人が死亡、1人が重傷を負うという大変痛ましい事故がありました。まず徹底した原因究明を行っていただいた上で、それに基づいて、再発防止のために万全の措置をとっていただくようお願いをいたします。この観点から、本日はまず、殉職された自衛官のご家族に対する保障についてお伺いしたいと思います。今回事故で亡くなられた隊員の方々は、この褒賞金の支給対象になるのでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "広瀬",
+        "role": "",
+        "summary": "- 褒賞金は高度の危険が予測される職務等に授与されるものである\n- 訓練中の事故であっても、規定に基づき授与してきた実績がある\n- 事故調査等の事実関係に基づき、個別に検討して授与している",
+        "full_text": "褒賞金は褒賞金に関する訓令第2条の規定により、一身の危険を顧みることなく、その職務を遂行し、そのため殉職し、または障害の状態となったときなどに授与することができるものです。訓令の規定上、訓練という文言は使われてはおりませんが、先ほど答弁したような高度の危険等が予測される職務については、その職務を行うための訓練中に発生した事故についても、訓令の規定に基づき、褒賞金を授与してきております。また、訓令第2条第6項においては、これらのほか、特に防衛大臣が定める場合において、授与することができることも定められており、事故調査等で確認された事実関係に基づき、個別に検討の上、褒賞金を授与してきたところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=499.1779999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "殉職した自衛官への褒賞金支給対象か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "21日"
+            },
+            {
+              "type": "organization",
+              "excerpt": "陸上自衛隊の非10台演習場"
+            },
+            {
+              "type": "number",
+              "excerpt": "隊員の方3人が死亡、1人が重傷"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "殉職された自衛官のご家族",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "evidence_citation",
+              "excerpt": "褒賞金に関する訓令第2条"
+            },
+            {
+              "type": "evidence_citation",
+              "excerpt": "訓令第2条第6項"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "高度の危険等が予測される職務については、その職務を行うための訓練中に発生した事故についても、訓令の規定に基づき、褒賞金を授与してきております。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な事故に基づき、褒賞金支給の根拠となる訓令の解釈を明確に回答しているため、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_002",
+      "segment_index": 1,
+      "topic": "褒賞金に関する訓令の改定について",
+      "question": {
+        "speaker": "細田健一",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 訓練中の事故も褒賞金の対象となることを訓令に明記すべきではないか",
+        "full_text": "この訓令の第2条に、今お話があったとおり、褒賞金授与の対象が記載されておりますけれども、訓練中の事故というのは、これは明記をされていないんですね。私はこの際、訓令を改定して、訓練中の事故も褒賞金の対象となることを明記すべきではないかと考えております。これは、先ほど申していたように、さまざまなほかの制度との比較、その他様々な経緯があると思いますけれども、これについてぜひ前向きに検討いただくよう、大臣にお願いしたいと思いますが、大臣いかがでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 制度趣旨を踏まえ、適切に判断してまいりたい",
+        "full_text": "褒賞金は、殉職し、または障害の状態となった場合に、その勇敢な行為を称え、懲意、または見舞いの意を表するとともに、自衛隊員が普段から安心して職務に専念できるよう設けている制度であります。こうした制度趣旨を踏まえ、適切に判断してまいりたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=499.1779999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "訓練中の事故を褒賞金対象に明記する訓令改定の是非",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "この訓令の第2条"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自衛隊員",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "適切に判断してまいりたいと思います",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "こうした制度趣旨を踏まえ、適切に判断してまいりたいと思います。",
+          "score": 0.2
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "訓令改定という具体的な提案に対し、大臣は制度趣旨を述べるに留まり、改定の是非や検討への言及を避けた形式的な回答である。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「前向きに検討してほしい」というお願い形式のため、大臣が「適切に判断する」という曖昧な回答で逃げられる構成になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_003",
+      "segment_index": 1,
+      "topic": "経済安全保障担当部局の実員確保について",
+      "question": {
+        "speaker": "細田健一",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 経済安全保障部局において、定員に対し実員が不足している状況を改善するため、人員確保の工夫を行うべきではないか",
+        "full_text": "それでは次に、防衛省や経済安全保障部局に十分な人員が配置されているか、あるいは組織体制がしっかりと構築されているかという点について、お伺いをしたいと思います。この分野は全く新しい分野でありまして、皆様ご存知のとおり、政府の業務に全く新しいものが追加されました。内閣人事局も近年ご配をいただいて、それなりに定数をつけていただいているということですが、それでは実際に実員ですね、人がいるのかという点をお伺いしますと、なかなか苦しいということのようです。これは役所の方は、人が足らないから苦しいと、公約の場では決しておっしゃらないですけれども、これに対応するためには、例えば人気付き職員の方の積極的投与や、あるいは新規採用の、新規採用ですね、幅広に行うといったような、実員の重則を図るべきではないかというふうに考えております。これ経済安全保障部局の重要性というのは、ますます大きくなると思いますので、ぜひ実員の確保のために工夫をしていただきたいと思いますが、御担当の方の御答弁をお願いします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "米山英一",
+        "role": "",
+        "summary": "- 定員に対し実員が必ずしも充足されていない状況にある\n- 職員の再配置や新規採用の活用等を含め、必要な実員の確保と体制強化に取り組む",
+        "full_text": "委員御指摘のとおり、定員の増加に比べまして、実員については必ずしも充足されていない状況というのはございます。足元の経済安全保障をめぐる環境を踏まえますれば、実員の確保を含めまして、経済安全保障担当部局の体制を強化することは非常に重要だと考えてございます。人材確保、これ行政全体としても喫緊の課題だと承知しておりますけれども、経済安全保障分野におきましても、引き続きに職員や新規採用の活用等も含めまして、必要な実員の確保を含む体制の強化、充実に取り組んでまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=499.1779999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "経済安全保障部局の実員確保と体制強化について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "防衛省や経済安全保障部局"
+            },
+            {
+              "type": "organization",
+              "excerpt": "内閣人事局"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "経済安全保障部局",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": true,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "必要な実員の確保を含む体制の強化、充実に取り組んでまいります",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "定員の増加に比べまして、実員については必ずしも充足されていない状況というのはございます。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "実員不足という現状を政府が認めた点に価値があるが、今後の対策は抽象的な努力目標に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "具体的な増員数や期限を問う形式にすれば、より拘束力のある答弁を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_004",
+      "segment_index": 1,
+      "topic": "基幹インフラ審査の体制について",
+      "question": {
+        "speaker": "細田健一",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 基幹インフラの審査を各省庁に任せるのではなく、専門機関を立ち上げて一括審査すべきではないか",
+        "full_text": "この点に関連しまして、経済安全保障法にはいくつかの分野がありますけれども、特に基幹インフラの審査については、現在各業所管官庁が分担して行うという形になっていると思います。これについては私、試験ではありますけれども、それぞれの業所管官庁に任せるのではなく、専門性のある機関を立ち上げて、そこで一括して審査。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "米山英一",
+        "role": "",
+        "summary": "- 事業所管大臣が審査し、必要に応じて内閣総理大臣と協議する制度となっている\n- 内閣府が情報収集・分析体制を構築し、関係省庁間で知見を共有することで実効性を確保している",
+        "full_text": "経済安全保障推進法における基幹インフラの制度でございますけれども、特定重要設備が我が国の外部から行われる妨害行為の手段として使用される恐れが大きいかどうか、こちらを事業所管大臣が審査するという制度でございます。この点、まさに内閣府におきましては、こうした協議に対応いたしまして、事業所管省庁が的確な意思決定を行うために、情報収集分析を行うに当たっての必要な体制というのは構築しているところでございます。さらに申し上げると、この内閣府の経済安全保障担当部局を中心にいたしまして、事業所管省庁を含む関係省庁間で情報あるいは知見の共有といった協力、これは行っております。このように、内閣府の経済安全保障担当部局関係省庁と連携をいたしまして、基幹インフラ制度の審査の実効性確保のまさに役割、これになっているものと我々に考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=499.1779999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "基幹インフラ審査の一括機関設置の提案",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "経済安全保障法"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "業所管官庁",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "内閣府の経済安全保障担当部局"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "内閣府の経済安全保障担当部局を中心にいたしまして、事業所管省庁を含む関係省庁間で情報あるいは知見の共有といった協力、これは行っております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問が提案形式で完結しておらず、回答も現状の説明に留まっており、新たな合意や具体的コミットメントは得られていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問が「～一括して審査（すべきではないか）」という形で途切れており、明確な問いになっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_005",
+      "segment_index": 1,
+      "topic": "防衛省本省の組織体制強化について",
+      "question": {
+        "speaker": "細田健一",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 防衛省の定員が過去に減少していた状況や、現在の四局体制の脆弱性を踏まえ、特例的に局の増設など組織体制を強化すべきではないか",
+        "full_text": "今申し上げたように、安全保障部局も人員という点で大変だと思いますけれども、防衛省本省の内部部局も大変苦労しているというふうに拝察をしております。防衛省の方のお話を伺って、私が驚いたのは、本省地方支分部局を含む省全体の定員が、最近まで減少していたということで、これいただいた資料によりますと、防衛省の本省地方支分部局を含む定員の合計というのは、2003年には約2万4千人だったものが、2019年には4千人減って2万人を割り込む水準まで落ち込んだということでございます。この内部局を見ますと、一官房四局体制で運営されてきたところでございますけれども、予算の増加、あるいは業務の増加が進む中で、この四局体制というのは、正直申し上げまして、あまりにも貧弱ではないかというふうに思います。今後、政府が防衛三文書の改定をされると受けたまっておりますけれども、これに合わせて、局の増設など、霞が関のルールに縛られることがない形で、特例的に組織体制の強化を図るべきだと考えておりますけれども、大臣のご見解を伺いたい。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 予算や業務の増大、役割の変化を踏まえ、ふさわしい組織へと変革させることが必要である\n- 与党からの後押しを得ながら、組織強化に努めてまいりたい",
+        "full_text": "防衛省は、経産省と比べると素直に削減に応してきたという、かなり言葉を選んで細田先生言っていただいただろうなと思いますし、その裏側にはきっと、我々通商省、経産省みたいにしたたかにやらなきゃだめだよという、そういうメッセージを込めていただいたのかなというふうにも思いますが、今、防衛産業のためにも赤澤大臣と経産省と一緒に連携をしているように、そういった知恵も含めてタッグを組んで、必要な人員、そして組織体制の強化につなげていきたいと思います。「防衛省自衛隊の組織の在り方も含め、あらゆる選択肢を排除せずに検討し、防衛力の抜本的な強化に取り組んでいく」と。こういう総理の言葉も含めて、この自衛隊の任務、防衛省の任務、役割が急速に拡大、変化する中で、これにふさわしい組織へと変革をさせていくことが必要であると思いますので、細田先生のように、党側からも、また与党からも、防衛省をしっかり組織を強化せよと、こういった後押しをいただけるように努めてまいりたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5181"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=499.1779999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "防衛省の組織体制強化（局の増設等）への見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "2003年には約2万4千人だったものが、2019年には4千人減って2万人を割り込む水準まで落ち込んだ"
+            },
+            {
+              "type": "other",
+              "excerpt": "いただいた資料"
+            },
+            {
+              "type": "law",
+              "excerpt": "防衛三文書の改定"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "防衛省本省の内部部局",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "赤澤大臣"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "経産省"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "組織を強化せよと、こういった後押しをいただけるように努めてまいりたいと思います",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "あらゆる選択肢を排除せずに検討し、防衛力の抜本的な強化に取り組んでいく",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "定員減少という具体的なデータに基づいた組織強化の提案に対し、大臣は総理の言葉を引用しつつ、抽象的な意欲を示すにとどまった。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「局の増設」という具体的な手段を提示しているため、Yes/Noで答えさせる形式にすればより拘束力のある回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_006",
+      "segment_index": 1,
+      "topic": "防衛装備品サプライチェーン調査の結果について",
+      "question": {
+        "speaker": "細田健一",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 防衛生産基盤強化法に基づくサプライチェーン調査の結果、把握しているサプライヤー数および職員が直接訪問した社数はいくつか",
+        "full_text": "これに関連して、防衛生産基盤強化法の施行状況について質問をいたします。同法では防衛装備品のサプライチェーンを把握するためにサプライチェーン調査の実施が定められていますけれども、この結果はどのようなものか。例えば、防衛省が把握しておられるサプライヤーの数はどれくらいなのか。また、防衛省の職員の方が直接訪問した数はどれくらいかという点についてお答えください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小杉",
+        "role": "",
+        "summary": "- これまで延べ約1万3千社に対して調査を実施した\n- 令和6年度から開始した工場等への直接訪問は、これまで約130社に行っている",
+        "full_text": "委員ご指摘のサプライチェーン調査につきましては、安定的な製造等を脅かすリスク状況を把握する観点から実施しておりまして、令和5年度に策定いたしました防衛生産基盤強化法に基づく調査を、これまで延べ約1万3千社に対し行ってまいりました。このほか、企業とのやり取りの中での情報収集に加えまして、令和6年度からは、職員が工場等を直接訪問して、製造工程も含めたリスク状況についての確認を開始しておりまして、これまで約130社を訪問してまいりました。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=499.1779999999999",
+      "metrics": null
+    },
+    {
+      "id": "qa_007",
+      "segment_index": 2,
+      "topic": "防衛装備品サプライヤーへの訪問と組織体制の整備",
+      "question": {
+        "speaker": "前原誠司",
+        "party": "日本維新の会",
+        "summary": "- サプライヤー1100社すべてを訪問し、意見交換を行うこと\n- 現場訪問を重視した組織体制の構築および職員の育成を行うこと",
+        "full_text": "防衛装備品の産業の育成のためには、サプライヤーの皆さんとのコミュニケーション、素直なやり取りが必要だと思いますので、ぜひこの1100社すべて訪問していただいて、意見交換していただく。それによっていろいろとまた見えてくるものがあるんじゃないかと思っております。防衛産業は首都圏に集中立地しているわけでもなく、なかなか大変だと思いますが、ぜひ頑張っていただきたいと思いますし、またこういうことができるような組織体制や職員の育成を行っていただきたいと思いますが、今後の対応をよろしくお願いします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "小杉",
+        "role": "",
+        "summary": "- 企業訪問を通じて直接声を聴き、施策の検討や改善を行う重要性を認識している\n- コミュニケーション強化の観点から、防衛生産技術基盤の強化に向けた体制のあり方を不断に検討する",
+        "full_text": "委員御指摘のとおり、企業訪問をして直接お話を伺うということも含め、企業の声をしっかりとお聞きしながら、新しい施策の検討や既存の施策の改善を進めていくことが非常に重要であると考えてございます。企業とのコミュニケーションを強化する観点も踏まえながら、防衛生産技術基盤の強化を進める体制のあり方に関しても、不断に検討を進めてまいりたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=2000.1779999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "防衛産業サプライヤーへの訪問と体制整備の要望",
+          "sub_asks": [
+            "1100社のサプライヤーすべてへの訪問と意見交換",
+            "訪問を可能にする組織体制の整備と職員の育成"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "1100社"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "サプライヤー",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "体制のあり方に関しても、不断に検討を進めてまいりたいと思います",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "企業の声をしっかりとお聞きしながら、新しい施策の検討や既存の施策の改善を進めていくことが非常に重要であると考えてございます。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な訪問計画への言及はなく、抽象的な検討に留まっているため、記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「よろしくお願いします」という形式の要望であり、具体的な回答を迫る問いかけになっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_008",
+      "segment_index": 2,
+      "topic": "宇宙領域における攻撃能力の保有と日米安保",
+      "question": {
+        "speaker": "前原誠司",
+        "party": "日本維新の会",
+        "summary": "- 他国が保有する衛星攻撃能力（キラー衛星等）に対し、日本自らも能力を持つべきか\n- 衛星攻撃を受けた場合、日米安保条約の適用範囲に含まれるのか",
+        "full_text": "前原誠司君今、御答弁いただきましたように、自らも衛星を打ち上げる、そして宇宙で作戦を行っていくということであります。ただ、世界各国が宇宙での軍事的な活動をしているということの中で、例えばアメリカ、ロシア、中国、インドなどは、衛星を攻撃、無力化する能力も保持、あるいは開発していると言われています。例えば直接上昇型対衛星ミサイル、あるいは軌道上から接近して妨害破壊するキラー衛星、強力な電磁波を出してジャミング装置、レーザーなどによるセンサーの無力化、こういった衛星を攻撃するものを持っているということでありますが、日本はそういうものまで持とうとしているのか、あるいは、この日本の領域の中でおけば、例えば核も含めて、日本でカバーできないことについては、日米安保条約というもので、アメリカの協力を得るということになるわけでありますが、衛星攻撃をされる、それを受ける可能性がある場合において、自らその能力を持つのか、持つべきと考えるか、あるいは日米安保条約の範囲に入るのか、この2点についてお答えをいただきたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 多層的で堅牢な衛星通信ネットワークの構築や、脅威の早期探知・対応体制の構築が必要である\n- 衛星を防護する能力の構築が必要と考えており、具体的な取組は3文書の改定に向け議論を積み上げる",
+        "full_text": "こうした点を踏まえると、防衛省としては、多層的で堅牢性の高い衛星通信ネットワークを構築していくことが必要であると考えており、次期防衛通信衛星の整備や多国間の衛星通信帯域共有枠組み、この活用等の取り組みを進めてまいります。また、宇宙領域における通信遮断や衛星の機能妨害といった脅威の兆候を早期に探知し、対応が可能な体制を構築することも、先生御指摘のとおり必要だと考えています。さらに、一部の国家による衛星の妨害に対し、防衛省として衛星を防護する能力を構築していくことも必要であると考えています。日本の優れた技術を活用しつつ、宇宙における防衛能力を強化する具体的な取組についても、3文書の改定に向け、しっかりと議論を積み上げていきたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5181"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=2000.1779999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "衛星攻撃能力の保有か日米安保での対応か",
+          "sub_asks": [
+            "自ら衛星攻撃能力を持つか、持つべきと考えるか",
+            "衛星攻撃への対応は日米安保条約の範囲に入るのか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "アメリカ、ロシア、中国、インド"
+            },
+            {
+              "type": "other",
+              "excerpt": "直接上昇型対衛星ミサイル"
+            },
+            {
+              "type": "other",
+              "excerpt": "キラー衛星"
+            },
+            {
+              "type": "law",
+              "excerpt": "日米安保条約"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": true,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "次期防衛通信衛星"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "3文書"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "しっかりと議論を積み上げていきたいと思います",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "防衛省として衛星を防護する能力を構築していくことも必要であると考えています。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "攻撃能力の保有か安保条約での対応かという二択の問いに対し、防護能力の構築や議論の継続という回避的な回答に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「持つべきか」という主観的な問いと「安保の範囲か」という法的な問いが混在しているため、回答者が逃げ道を作りやすい構成になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_009",
+      "segment_index": 2,
+      "topic": "宇宙領域における攻撃能力の保有と日米安保（追及）",
+      "question": {
+        "speaker": "前原誠司",
+        "party": "日本維新の会",
+        "summary": "- 他国を無力化させる能力を抑止力として持つべきか、また日米安保条約の適用範囲に入るか、端的に回答を求める",
+        "full_text": "前原誠司君端的にお答えいただきたいんですけれども、他国に対してその無力化をさせる能力というものを抑止力として持つべきと考えるか、また日米安保条約の適用範囲に入るか、この2点についてお答えください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 日本の防衛政策として何が必要か、あらゆる選択肢を排除せず3文書の改定議論を積み上げる\n- 宇宙領域における日米同盟の協力強化・進化を進めることは当然である",
+        "full_text": "小泉防衛大臣まず日本の主権、そして領土、領海、領空、国民の命と平和を守るために、あらゆる選択肢を排除せず、今後日本の防衛政策として何が必要か、こういった観点で三文書の改定の議論を積み上げていきたいと思います。そして今、宇宙面についても日米の同盟関係の中では極めて重要な分野となっておりますので、日米同盟の関係の中でも、この宇宙領域での協力強化、進化を進めていくのは当然のことだと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5181"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=2000.1779999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "他国への無力化能力の必要性と日米安保の適用範囲",
+          "sub_asks": [
+            "他国を無力化させる能力を抑止力として持つべきか",
+            "それが日米安保条約の適用範囲に入るか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "日米安保条約"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "他国",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.2
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "三文書"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "三文書の改定の議論を積み上げていきたいと思います",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "あらゆる選択肢を排除せず、今後日本の防衛政策として何が必要か、こういった観点で三文書の改定の議論を積み上げていきたい",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な2つの問いに対し、大臣は抽象的な方針論と日米協力の重要性に終始しており、直接的な回答を避けている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「端的にお答えいただきたい」と添えているが、問いが広範であるため、逃げ道を許す構成になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_010",
+      "segment_index": 2,
+      "topic": "米軍核巡航ミサイル（SLCM-N）の寄港と非核三原則",
+      "question": {
+        "speaker": "前原誠司",
+        "party": "日本維新の会",
+        "summary": "- 2032年頃に配備予定の米軍SLCM-Nが日本に寄港する可能性があるが、非核三原則の下でどう対応するか",
+        "full_text": "時間があればまたこの防衛省設置に戻りますが、非核三原則について質問させていただきたいと思います。アメリカで開発予算がついているSLCM-N、海洋発射型核巡航ミサイル、これにつきましては、2032年9月までの限定運用配備、2034年までの初期運用能力の獲得を目標とすると、アメリカは公表しています。主にインド太平洋地域における繊維規格抑止を補完する目的で開発されているということでありまして、日本に寄港する可能性は極めて大きくなるわけであります。2032年ということでありますけれども、配備されれば日本に寄港する可能性がある。その場合、非核三原則の持ち込ませずに、停泊する可能性があると思いますが、これはどのように対応されますか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 政府として非核三原則を政策上の方針として堅持する\n- 持ち込みに関しては、2010年の岡田外務大臣による答弁を引き継ぐ考えである",
+        "full_text": "これに関連する非核三原則との関係ですけれども、これはもう従来から申し上げているとおり、政府としては非核三原則を政策上の方針として堅持しております。その上で持ち込ませずにつきましても、2010年当時の岡田外務大臣による答弁を引き継いでいく考えであります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=2000.1779999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "SLCM-Nの寄港可能性への対応",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "2032年9月まで"
+            },
+            {
+              "type": "date",
+              "excerpt": "2034年まで"
+            },
+            {
+              "type": "other",
+              "excerpt": "SLCM-N、海洋発射型核巡航ミサイル"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "アメリカ",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "2010年当時の岡田外務大臣"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "政府としては非核三原則を政策上の方針として堅持しております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な兵器体系を挙げた質問に対し、過去の答弁を継承するという定型的な回答に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どのように対応されますか」という問い方が広いため、政府が過去の答弁を引用して逃げる余地を与えている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_011",
+      "segment_index": 2,
+      "topic": "米軍核巡航ミサイル（SLCM-N）の寄港と非核三原則（追及）",
+      "question": {
+        "speaker": "前原誠司",
+        "party": "日本維新の会",
+        "summary": "- 米軍がNCND（肯定も否定もしない）の立場を貫く中で、寄港時に「その時考える」という対応で十分か\n- 2032年に向けて今から具体的に検討すべきではないか",
+        "full_text": "岡田答弁というのは、核持ち込みが明らかになった場合に、その時に考えるということでありますけれども、2032年に早ければSLCM-Nが配備をされるということであります。新安保条約の締結交渉中、日本側は核持ち込みを事前協議の対象とすることを追求しましたが、個別艦船の搭載の有無を明かさないという、NCND、Neither Confirm Nor Deny、肯定も否定もしないという政策を主張し、陸上配備のみを事前協議の対象として、艦船の寄港については黙認するという姿勢を取りました。今後ですね、こういうアメリカがNCNDの立場を貫くときに、具体的にこの核を搭載する、言ってみればSLCM-Nのようなものが配備をされて、寄港する可能性があるということになれば、これはしっかりと持ち込ませずということについてそのとき考えますというのでいいのか、あるいは今から準備した方がいいのか。日本の抑止力を高めるためには、このことについては従来の御答弁は存じ上げていますけれども、2032年に向けて、しっかりと検討することぐらいは必要ではないかと思いますが、その点について答弁をいただきたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 現状において、核兵器を搭載する米艦船・航空機の寄港等は想定されていない\n- 米国の拡大抑止は不可欠であり、日米安保体制の下で信頼性を強化するための方策を不断に検討する",
+        "full_text": "誰よりもその経緯、内側の議論というものを踏まえた上でお話されていると思いますが、冷戦終結後、これまで公にされたアメリカの核政策に加え、アメリカは我が国の非核三原則に係る立場をよく理解をしていることから、核兵器を搭載するアメリカ艦船及び航空機の我が国への寄港、飛来、通過は現状において想定されません。我が国が戦後最も厳しく複雑な安全保障環境に直面し、現実に核兵器などの日本に対する安全保障上の脅威が存在する中で、我が国の独立と平和を守り抜くためには、我が国自身による防衛努力に加え、アメリカが提供する核を含む拡大抑止が不可欠であり、今後とも日米安保体制の下、アメリカ政府と緊密に意思疎通を図り、核抑止力を含むアメリカの拡大抑止の信頼性をこれまで以上に強化していくための方策を不断に検討していきたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=2000.1779999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "SLCM-N配備に向けた核持ち込みの事前検討の必要性",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "2032年"
+            },
+            {
+              "type": "other",
+              "excerpt": "SLCM-N"
+            },
+            {
+              "type": "other",
+              "excerpt": "NCND、Neither Confirm Nor Deny"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "アメリカ",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": true,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "方策を不断に検討していきたいと思います",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "核兵器を搭載するアメリカ艦船及び航空機の我が国への寄港、飛来、通過は現状において想定されません。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な兵器体系（SLCM-N）と年次を挙げた問いに対し、政府は現状想定していないという定型回答と、不断に検討するという抽象的な表現で逃げており、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「今から準備すべきか」という二択に近い問い方をしているが、政府が「検討する」と答える余地を十分に与えてしまっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_012",
+      "segment_index": 3,
+      "topic": "次世代潜水艦の動力としての原子力導入の検討",
+      "question": {
+        "speaker": "橋本幹彦",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 戦略環境の急速な変化に対応するため、原潜導入が現実的な選択肢となり得るか",
+        "full_text": "これは原潜自体の能力、あるいは配備する際のさまざまなメリット・デメリットというものを比較考慮して検討するということも大事なことなんですけれども、仮に導入すると決めたときに、えらい先になりますと、戦略環境が大きく変化をしている。先になるかもしれないというような状況であれば、本当に急速に変化をする戦略環境に対応できなくなる可能性というものはあるわけでありまして、こういう現実の選択肢として、現実に今作られている能力、そしてオーストラリア、韓国も手を挙げているということを踏まえて、果たして日本として現実の選択肢となり得るかどうか、この点についての御答弁をいただきたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 原子力という選択肢を排除せずに議論する方針である\n- 米英豪の枠組み（AUKUS）におけるオーストラリアの原潜取得事例を認識している\n- 長時間潜航や高速性能などのメリットを考慮しつつ、三文書の中で議論を積み上げて判断したい",
+        "full_text": "まさにこの点は、自民党と日本維新の会の連立合意書の中にも、具体的な項目として、次世代の動力ということで取り上げられていて、私もたびたび原子力というものは、選択肢から排除せずに議論すると申し上げております。その観点からオーストラリアや韓国などの話もありましたが、オーカスのもとで、米英豪の3カ国は2021年にオーストラリアの原潜取得を発表していますが、オーストラリアは2030年代初頭よりアメリカのバージニア級潜水艦を取得し、その後2040年代にオーストラリアで建造される原潜がオーストラリア海軍に引き渡されるとされております。加えて、例えばこのメリットや、また様々なことをどう考慮するかという話ですが、例えばオーカスの報告書の中でも原潜は長時間の潜航や長期間の行動が可能であり、速い水中速力を持つとされています。これらの特徴で重要なことは、乗組員の安全をより高いレベルで確保しつつ、所要の活動に従事することを可能にするということであります。いずれにしても、現時点で決め打ちをしているわけではなく、次世代の動力に何を我々は一つの方向性を見出し、それを現実の課題も踏まえて判断をしていくのかということも三文書の中で、しっかりと積み上げて議論してまいりたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=3328.978",
+      "metrics": null
+    },
+    {
+      "id": "qa_013",
+      "segment_index": 3,
+      "topic": "防衛省設置法と自衛隊法の役割分担",
+      "question": {
+        "speaker": "橋本幹彦",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 防衛省設置法と自衛隊法の役割分担およびその背景にある思想について伺いたい",
+        "full_text": "防衛省設置法改正ということでありますけれども、まず、基礎的なところを確認させていただきたいと思います。自衛隊に係る基本的な法律として、防衛省設置法と自衛隊法があります。この役割分担、そしてその役割分担の背景にある思想はどのように整理されているでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小野寺五典",
+        "role": "",
+        "summary": "- 防衛省設置法は行政組織としての任務や所掌事務を規定している\n- 自衛隊法は実力組織としての任務や組織権限を規定している\n- 両者が相まって防衛省自衛隊の骨格を成している",
+        "full_text": "まず委員御案内のように、防衛省自衛隊、これは基本的に同一の組織でございます。その上で一般に防衛省という場合には、陸海空自衛隊の管理運営などを任務とする行政組織の面を捉えたものでありまして、これは防衛省設置法はこうした国家行政組織法上の行政組織たる防衛省の任務や所掌事務、これについて定めております。これに対しまして自衛隊という場合、これは我が国の防衛を任務とする実力組織の面を捉えておりますので、こうした一般の行政官庁と異なる性格を有する自衛隊の任務、組織権限について、これは防衛省設置法の規定によりまして、自衛隊法に定めるということでございます。このように設置法と自衛隊法、これは防衛省自衛隊という組織の行政的側面、それから軍事的側面、これをそれぞれ規定しておりますけれども、これ両者が相まって防衛省自衛隊の骨格を成しているということでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5181"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=3328.978",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "防衛省設置法と自衛隊法の役割分担と背景思想",
+          "sub_asks": [
+            "役割分担の整理",
+            "背景にある思想の整理"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "防衛省設置法"
+            },
+            {
+              "type": "law",
+              "excerpt": "自衛隊法"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国家行政組織法"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "設置法と自衛隊法、これは防衛省自衛隊という組織の行政的側面、それから軍事的側面、これをそれぞれ規定しております",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "防衛省設置法と自衛隊法の役割分担について、行政的側面と軍事的側面という明確な整理がなされており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_014",
+      "segment_index": 3,
+      "topic": "安全保障の基礎的理解と内閣の姿勢",
+      "question": {
+        "speaker": "橋本幹彦",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 自衛隊法による軍事的性質やネガティブリスト的な規定などの基礎的理解について、大臣はどう整理しているか",
+        "full_text": "行政的な側面と軍事的な側面があるということであります。そしてその軍事的な側面を規定している自衛隊法においては、例えば76条、88条、これはお読みになればですね、自衛隊がいわゆるネガティブリストで動けるような規定になっているわけであります。今、安保三文書の改定、そして憲法改正というところ、高市総理としても内閣としても大変関心あるところだと思いますけれども、小泉大臣、こういった基礎的な日本の安全保障の根底を変えていこうと。見直していこうとされるこの内閣の姿勢。ただ、例えば防衛省設置法と自衛隊法の関係、あるいは自衛隊法で自衛隊がどのように位置づけられているか、この基礎的な理解が進めないと思いますが、大臣としてはいかに整理されているでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 役割分担については参考人の答弁通りである\n- 俸給表の独自化など抜本的な発想で改革を進めている\n- 国民に防衛省自衛隊をより理解してもらうことは安全保障政策強化の前提として不可欠であり、丁寧に説明したい",
+        "full_text": "今、防衛省、自衛隊、それぞれの自衛隊法と防衛省設置法の役割分担など、そういったことは、今参考人から答えたとおりでありますけれども、おそらく先生の問題意識は、このポジティブリスト、ネガティブリスト、どっちがあるべきかとか、また憲法改正についてどうあるべきかという、かなり根本論をお話をされていると思います。私の立場では申し上げられることは限りがありますけれども、例えば、今後、給与面で言えばですね、今までだったら、公務員などに準拠する形で決められていた自衛官の俸給表を、自衛官独自のものにこれから変えていくと、こういったことについてもかなり抜本的な発想を持ってやろうとしているわけです。そして防衛省自衛隊が今後基本的にどのような組織であるかということについても、先生がおっしゃるとおり、国民の皆様に防衛省自衛隊のことをより理解をしていただくことは、我々の今の安全保障政策の抜本強化の前提として不可欠なことだと思っておりますので、丁寧に説明をして、御理解を得られるようにしていきたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=3328.978",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "自衛隊法等の基礎的理解と整理について",
+          "sub_asks": [],
+          "score": 0.9
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "自衛隊法においては、例えば76条、88条"
+            },
+            {
+              "type": "law",
+              "excerpt": "防衛省設置法"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "自衛官の俸給表"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "丁寧に説明をして、御理解を得られるようにしていきたいと思います",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "国民の皆様に防衛省自衛隊のことをより理解をしていただくことは、我々の今の安全保障政策の抜本強化の前提として不可欠なことだと思っております",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は自衛隊法の解釈や整理について問うているが、大臣は給与体系の話に話題を逸らしており、実質的な回答になっていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「いかに整理されているか」という問い方が抽象的なため、大臣に逃げ道を与えてしまっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_015",
+      "segment_index": 3,
+      "topic": "防衛大学校の教育と人材育成",
+      "question": {
+        "speaker": "橋本幹彦",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 防衛大学校の教育において、各自衛隊からの人材育成の要求がどのように反映される仕組みになっているか",
+        "full_text": "そこで伺いますけれども、防衛大学校の教育における各自衛隊による人材育成の要求のサイクル、どのような人材を育成してほしいのかということを、各自衛隊からどのように要望して、それがどのように防衛大学校の教育に反映されているのか、お答えいただければと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 事務次官や校長、各幕僚長らによる検討委員会等の会議を通じてニーズを共有・議論している\n- それらを教育的観点から整理し、カリキュラムや演習、研究テーマに反映している\n- 具体例として、リーダーシップ発揮機会の充実のため令和8年4月に第5学生隊を新設した",
+        "full_text": "そして、防大の教育については、将来幹部自衛官となる者を育成する施設等機関として、陸海空各自衛隊のニーズを踏まえ、必要な見直しを行っております。具体的には、事務次官、防大校長、各幕僚長等を構成員とする防衛大学校の充実強化に関する検討委員会をはじめとした各種会議と、あらゆる機会において、各自衛隊からのニーズ等に関する情報共有や議論が行われ、防大はこれらを踏まえ、教育的観点から検討整理した上で、カリキュラムや演習、研究テーマ等に反映をしています。例えば各自衛隊からの要望に応じ、学生のリーダーシップを発揮する機会の充実を図るため、令和8年4月から第5学生隊を新設しました。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5181"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=3328.978",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "防大教育への各自衛隊の要望反映サイクル",
+          "sub_asks": [
+            "どのような人材を育成してほしいのかという要望方法",
+            "それがどのように教育に反映されているか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "防衛大学校",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "防衛大学校の充実強化に関する検討委員会"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "令和8年4月"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "第5学生隊"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "防衛大学校の充実強化に関する検討委員会をはじめとした各種会議と、あらゆる機会において、各自衛隊からのニーズ等に関する情報共有や議論が行われ",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "防衛大学校の教育へのニーズ反映プロセスについて、具体的な検討委員会の名称や新設部隊の例を挙げて明確に回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_016",
+      "segment_index": 3,
+      "topic": "自民党党大会への現役自衛官の関与と政治的中立",
+      "question": {
+        "speaker": "橋本幹彦",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 自民党党大会に現役自衛官が関与した件について、要求した政治側の責任についてどう考えるか",
+        "full_text": "続いて法案審議から外れますけれども、自民党党大会に現役自衛官が国家政省した件について伺いたいと思います。この問題は政治の側が自衛隊に対して働きかけをした。文民統制とか報告体制とかそういったことを大臣もあるいは別の議員の方もいろいろ言いますけれども、この政治的中立、これは決して自衛隊防衛省の側、要求を受ける側だけでなくて、要求をした側の問題も以上に大きいと思います。その点、大臣いかがお考えでしょうか。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 要求した側の責任については、大臣が答える立場になく、然るべきところで議論してほしい\n- 幹部を含め、報告が上がっていなかったと認識している",
+        "full_text": "要求した側の責任ということで言えば、それは私が今答える立場にはありませんので、そこは然るべきところで議論をいただきたいというふうに思っています。今回私としては、今までも申し上げていますとおり、報告が私も含め幹部まで上がっていなかったと。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=3328.978",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "自衛官の党大会参加への政治的働きかけへの見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "自民党党大会に現役自衛官が国家政省した件"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自民党",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "要求した側の責任ということで言えば、それは私が今答える立場にはありません",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "政治的働きかけという核心的な問いに対し、大臣は答える立場にないとして回答を回避した。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「いかがお考えでしょうか」というオープンクエスチョンであるため、回答者が回避しやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_017",
+      "segment_index": 4,
+      "topic": "航空宇宙自衛隊への改称と戦略文書の必要性",
+      "question": {
+        "speaker": "福田徹",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 航空宇宙自衛隊への改称は重い決定であり、精神性が重要である\n- Xや記者会見での発表に留まらず、ドクトリンや戦略文書を用いて国民や隊員に説明すべきではないか",
+        "full_text": "最後にですね、航空宇宙自衛隊への改称の問題。なかなか名称について、先ほど前原委員の質問に対している大臣のお答えを伺っていても苦しいと思います。領域が拡大している。それはもう航空自衛隊という名前だけでは耐え切れないんだと。もし航空宇宙自衛隊にする、その名称を72年ぶりに変えていく。これは大変重い話ですから。だからこそ精神性が大事であって、その精神性とは何か。それはドクトリンとか戦略文書であるだとか、こういったもので国民の皆さん、現場の隊員の皆さんにしっかりと説明をしていく。決してXや記者会見で発表して、それで終わりということではないんだというところをご理解いただきたいと思いますが、大臣いかがでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 宇宙戦略や宇宙ドクトリンのあり方について、今後検討していきたい\n- 宇宙領域防衛指針などの既存施策を踏まえつつ、航空宇宙自衛隊の発展に必要な施策に取り組む",
+        "full_text": "小泉防衛大臣がこの宇宙戦略や宇宙ドクトリンと、こういったことについて思いを持たれているのは、以前の質問からも私も受け止めております。決してそれ自身を否定しているものではなくて、今後宇宙における防衛能力の強化や隊員の養成を進めていく中で、宇宙戦略や宇宙ドクトリンに当たるものについても、そのあり方も含めて検討していきたいというふうに思っております。今、宇宙領域防衛指針というものはありますし、こういった中で必要な施策を明らかにしていますが、先生の御指摘も受け止めながら、より航空宇宙自衛隊が発展していくために、必要な施策に取り組んでまいりたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5181"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=4503.778",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "航空宇宙自衛隊への改称に伴う精神性・説明の必要性への認識",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "72年ぶりに"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民、現場の隊員",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "宇宙領域防衛指針"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "宇宙戦略や宇宙ドクトリンに当たるものについても、そのあり方も含めて検討していきたい",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "宇宙戦略や宇宙ドクトリンに当たるものについても、そのあり方も含めて検討していきたいと思っております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "改称に伴うドクトリン策定の必要性という提案に対し、検討する旨の回答を得ているが、具体的な期限や手法は示されていない。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「大臣いかがでしょうか」という形式的な問いかけになっており、具体的な回答を迫る条件（期限や形式）が欠けている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_018",
+      "segment_index": 4,
+      "topic": "自衛官の定数比率と根拠",
+      "question": {
+        "speaker": "福田徹",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 陸海空の自衛官定数の割合について、外国の軍隊と比較してどうなっているか\n- 現在の自衛官定数の根拠、特に陸上自衛隊の定数が多い理由について",
+        "full_text": "陸海空の割合の外国の軍隊との比較を教えてください。また、現在の自衛官定数の根拠、特に陸上自衛隊の定数が多い理由、これを教えてください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "伊藤整備計画局長",
+        "role": "",
+        "summary": "- 陸海空の比率は陸上約6割、海上約2割、航空約2割である\n- 各国で環境が異なるため単純比較は困難だが、同様の島国であるイギリスの陸軍人員割合もおおむね6割である",
+        "full_text": "陸海空の自衛官の定数の比率でございますが、陸上自衛隊が6割程度、海上自衛隊が2割程度、航空自衛隊は2割程度。福田徹各国の軍隊との比較について申し上げますれば、地理的な特性や安全保障環境等が異なるため、単純に比較することは困難ではありますが、一例として我が国と同様の島国であり、海洋国家であるイギリスにおける陸軍の人員割合は、おおむね6割であるというふうに承知をしておるところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5181"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=4503.778",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "自衛隊の定数比率の根拠と他国比較",
+          "sub_asks": [
+            "外国軍隊との陸海空割合の比較",
+            "自衛官定数の根拠",
+            "陸上自衛隊の定数が多い理由"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自衛官",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "陸上自衛隊が6割程度"
+            },
+            {
+              "type": "number",
+              "excerpt": "海上自衛隊が2割程度"
+            },
+            {
+              "type": "number",
+              "excerpt": "航空自衛隊は2割程度"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "イギリス"
+            },
+            {
+              "type": "number",
+              "excerpt": "おおむね6割"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "陸上自衛隊が6割程度、海上自衛隊が2割程度、航空自衛隊は2割程度。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "自衛隊の定数比率という具体的な数値は得られたが、定数の根拠や陸自が多い理由への回答が欠落している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "複数の問いを一度に投げているため、回答者が一部の問い（根拠と理由）を読み飛ばして回答した可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_019",
+      "segment_index": 4,
+      "topic": "サイバー人材の確保と育成計画",
+      "question": {
+        "speaker": "福田徹",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 今後、サイバー人材をどのようなペースで増やしていく予定か\n- 不足している専門性の高いサイバー人材をどのように獲得・育成する計画か",
+        "full_text": "今後、サイバー人材をどのようなペースで増やしていく予定でしょうか。そして、これほど不足しているという専門性の高いサイバー人材をどのように獲得、育成していく計画でしょうか。教えてください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 令和7年度末までに約2,620人、令和9年度を目途に約4,000人の体制に拡充する計画である\n- システム通信サイバー学校への改編や自衛隊高等学校での専修コース設置、企業研修、諸外国との演習などを通じて育成を図る",
+        "full_text": "今、先生からお尋ねがありました自衛隊のサイバー専門部隊については、令和4年度末時点で約890人であったところ、令和7年度末までに約2,620人まで拡充しております。令和8年度予算においては約3,310人まで拡充することとしており、令和9年度を目途に約4,000人の体制に拡充する計画としています。さまざまな教育を行うことのできる基盤を自衛隊防衛省は有しており、専門教育の強化や教育内容の充実向上を進めているところです。例えば令和6年3月、これは私の地元横須賀にあります陸上自衛隊の通信学校をシステム通信サイバー学校に改編しており、こうした陸海空自衛隊の学校における教育などを活用し、サイバー専門部隊の隊員の育成を行っています。また、これも私の地元の話で恐縮ですけど、日本で唯一の自衛隊の高校が横須賀にありますが、そこの陸上自衛隊高等学校においては、高校3年生はサイバー専修コースで、この専門人材の育成の観点で、集中的な勉学訓練に励んでいます。そして、部隊の実務を通じた研鑽、企業研修、国内外の教育機関への留学も行っているほか、アメリカをはじめとする諸外国とのサイバー演習などにより、変化の早いサイバー分野における他国の取組を吸収し、実践的な経験を積んでいるところです。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5181"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=4503.778",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "サイバー人材の増員ペースと獲得・育成計画",
+          "sub_asks": [
+            "どのようなペースで増やしていく予定か",
+            "どのように獲得、育成していく計画か"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "サイバー人材",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "令和4年度末時点で約890人"
+            },
+            {
+              "type": "number",
+              "excerpt": "令和7年度末までに約2,620人"
+            },
+            {
+              "type": "number",
+              "excerpt": "令和8年度予算においては約3,310人"
+            },
+            {
+              "type": "number",
+              "excerpt": "令和9年度を目途に約4,000人"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "システム通信サイバー学校"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "陸上自衛隊高等学校"
+            }
+          ],
+          "score": 1.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "専門教育の強化や教育内容の充実向上を進めているところです",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "令和9年度を目途に約4,000人の体制に拡充する計画としています。",
+          "score": 0.9
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な数値目標（令和9年度に4,000人）と育成手段（学校改編や高校コース）が明確に示されており、記録としての価値が高い。",
+        "would_be_referenced": "high",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_020",
+      "segment_index": 4,
+      "topic": "SDA衛星による監視能力の強化",
+      "question": {
+        "speaker": "福田徹",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- SDA衛星の導入により、我が国の監視能力はどの程度強化されるか\n- これまでできなかったどのようなことが可能になるか",
+        "full_text": "SDA衛星によって我が国の監視能力はどの程度強化されますでしょうか。これまでできなかったどのようなことができるようになるのか教えてください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 地上レーダーでは位置や軌道の把握にとどまっていたが、光学望遠鏡により衛星の形状を観測・分析できるようになる\n- これにより、衛星の意図や能力を含めて把握することが可能となり、宇宙領域把握能力が強化される",
+        "full_text": "SDA衛星を導入する効果について言えば、既に運用開始している地上のレーダーからでは、我が国の衛星の周辺を移動する不審な衛星等の位置や軌道等の把握にとどまりましたが、SDA衛星の光学望遠鏡により、当該衛星の形状を観測・分析できるようになり、衛星の意図や能力を含めて把握することが可能となります。これにより、防衛省自衛隊の宇宙領域把握能力がより強化されることになると考えています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5181"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=4503.778",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "SDA衛星導入による監視能力の強化内容",
+          "sub_asks": [
+            "監視能力がどの程度強化されるか",
+            "具体的に何ができるようになるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "地上のレーダー"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "SDA衛星の光学望遠鏡"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "SDA衛星の光学望遠鏡により、当該衛星の形状を観測・分析できるようになり、衛星の意図や能力を含めて把握することが可能となります。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "SDA衛星導入による具体的機能（形状観測・分析）が明確に回答されており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_021",
+      "segment_index": 4,
+      "topic": "若年定年退職者給付金の支給要件変更の影響",
+      "question": {
+        "speaker": "福田徹",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 支給要件を「継続20年以上」から「通算20年以上」に見直したことで、支給対象者はどの程度増えるか",
+        "full_text": "この改正で支給対象者というのはどの程度増えるのでしょうか。教えてください。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "広瀬人事教育局長",
+        "role": "",
+        "summary": "- 令和8年度から令和12年度までの5年間で、支給対象者が12人増加する見込みである",
+        "full_text": "本改正でこの引き続いての要件を廃止することにより、令和8年度から令和12年度までの5年間で、若年定年退職者給付金の支給対象者が12人増加する見込みでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5181"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=4503.778",
+      "metrics": null
+    },
+    {
+      "id": "qa_022",
+      "segment_index": 4,
+      "topic": "自衛官の再就職支援の具体的内容",
+      "question": {
+        "speaker": "福田徹",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 自衛官の再就職支援として、具体的にどのような取り組みが行われているか",
+        "full_text": "この自衛官の再就職支援というのは具体的にどのようなことが行われているのでしょうか。良い転職に向けて取り組んでいらっしゃることを教えてください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "広瀬人事教育局長",
+        "role": "",
+        "summary": "- 退職管理教育、資格取得のための職業訓練、専門相談員による進路相談を実施している\n- 就職援護隊員による企業への広報や求人開拓を行っている\n- 政府一体となり、関係省庁や経済団体へ退職自衛官の活用を働きかけている",
+        "full_text": "具体的には、退職後の生活の安定や職業選択に必要な知識を付与するための退職管理教育、再就職に有用な資格取得に必要となる能力や技能を習得させるための職業訓練、部外の専門相談員による進路相談などの様々な支援を行っております。また、全国50カ所の地方協力本部及び幕僚監部等に配置されている約1400名の就職援護隊員が、日頃より企業等に対して自衛官の有用性の広報や求人を開拓するなど、円滑な再就職支援に努めております。さらに、関係閣僚会議の自衛官の処遇、勤務環境の改善及び新たな生涯設計の確立に関する基本方針に基づき、政府一体となって退職する自衛官が自衛隊で培った知識、技能、経験を生かすことができる環境を整えるため、再就職支援の拡充を図るとともに、関係省庁と連携し、幅広い業界や経済団体に対する退職自衛官の活用等の働きかけなどの取組を進めております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5181"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=4503.778",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "自衛官の再就職支援の具体的内容",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自衛官",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "全国50カ所"
+            },
+            {
+              "type": "number",
+              "excerpt": "約1400名"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "地方協力本部"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "幕僚監部"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "就職援護隊員"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "自衛官の処遇、勤務環境の改善及び新たな生涯設計の確立に関する基本方針"
+            }
+          ],
+          "score": 0.9
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "円滑な再就職支援に努めております",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "全国50カ所の地方協力本部及び幕僚監部等に配置されている約1400名の就職援護隊員が、日頃より企業等に対して自衛官の有用性の広報や求人を開拓するなど、円滑な再就職支援に努めております。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "自衛官の再就職支援策について、具体的な制度名や人員数などの定量的な情報が含まれており、記録としての価値が高い回答である。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_023",
+      "segment_index": 5,
+      "topic": "任期制自衛官の待遇改善とキャリアパス",
+      "question": {
+        "speaker": "谷浩一郎",
+        "party": "参政党",
+        "summary": "- 本改正案において、任期制自衛官への待遇改善はあるか\n- 任期制から正規の自衛官へ切り替えるインセンティブを高める考えはあるか",
+        "full_text": "任期制自衛官の方がもっともっと残っていただいて、正規の自衛官になっていただくこと、これは大きな効果があると思うのですが、まず本改正案で、任期制自衛官への待遇改善というものはありますでしょうか。任期制自衛官を終えた後、正規の自衛官に切り替えるインセンティブを高め、それを実現すること、このことについてどのようにお考えでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "広瀬人事教育局長",
+        "role": "",
+        "summary": "- 本予算関連法案に直接的な処遇改善事項はないが、若年定年退職者給付金見直し等がキャリアパスを後押しすると期待している\n- 令和8年度予算で給与増額や生活場所指定調整金の計上、施設整備予算を計上している\n- 令和9年度中に自衛官給与体系の独自改定を実施するため議論を本格化させている",
+        "full_text": "今回ご審議いただいている予算関連法案の中に、任期制自衛官の処遇改善に直接関係のある事項はありません。他方、今般の若年定年退職者給付金の見直しや再就職支援の拡充は、自衛官としての魅力ある職歴設計の確立の一環として行っており、議員から御指摘のあった任期制自衛官から非任期制自衛官となるキャリアパスを後押しする良い影響が期待できる施策だと考えております。また、今般の予算関連法案とは別に、令和8年度予算においては、任期制の処遇改善等に資する予算として、例えば、任期制は年収で23万円以上の増加した昨年の改定を踏まえた給与を計上、昨年度に新設した生活場所指定調整金を計上、営内居室の個室化のための経費や、駐屯地・基地内の厚生棟や隊舎の共用区画に無線LAN環境を整備するための予算を計上しております。加えて、自衛隊創設以来初となる自衛官の給与体系の独自の改定を1年前倒し、令和9年度中に実施するため、その議論を本格化させております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5181"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=5503.477999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "任期制自衛官の待遇改善と正規への移行促進について",
+          "sub_asks": [
+            "本改正案に任期制自衛官への待遇改善はあるか",
+            "正規自衛官への切り替えインセンティブ向上をどう考えるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "本改正案"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "任期制自衛官",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "年収で23万円以上の増加"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "生活場所指定調整金"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "令和8年度予算"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "令和9年度中に実施"
+            }
+          ],
+          "score": 0.9
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "その議論を本格化させております",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "自衛隊創設以来初となる自衛官の給与体系の独自の改定を1年前倒し、令和9年度中に実施するため、その議論を本格化させております。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "改正案への直接的な影響は否定しつつも、次年度予算や給与体系の改定スケジュールという具体的な情報を提示しており、記録価値が高い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_024",
+      "segment_index": 5,
+      "topic": "航空開発実験集団の再編による研究開発機能への影響",
+      "question": {
+        "speaker": "谷浩一郎",
+        "party": "参政党",
+        "summary": "- 航空開発実験集団の廃止と航空宇宙開発実験団の新編により、航空分野の研究開発機能が実質的に縮小することにならないか",
+        "full_text": "まず、航空開発実験集団の廃止について伺います。本法案では、航空開発実験集団を廃止し、調査研究機能を幹部学校に集約するとともに、開発実験機能に特化した航空宇宙開発実験団を新編するとされています。今回の再編は、従来の航空分野における研究開発機能に加え、新たに宇宙分野を上乗せし、能力を拡充するものなのか、それとも組織再編の結果として、航空分野の研究開発機能が人員や予算の面で実質的に縮小することになるのか、この点について、防衛省の見解を伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "伊藤整備計画局長",
+        "role": "",
+        "summary": "- 調査研究機能を幹部学校に集約し、開発実験機能に特化した組織を新編することで、知見を将来構想に早期に取り入れ、効率的かつ円滑に試験を実施できる体制を整えるものである",
+        "full_text": "航空自衛隊におきましては、今般、これまで航空開発実験集団と幹部学校でそれぞれ独立して実施されている調査研究機能を幹部学校に集約をし、これに伴い航空開発実験集団を廃止をし、開発実験機能に特化した航空宇宙開発実験団を新編いたします。この組織改編は、航空自衛隊における調査研究を一体的かつ迅速に行うことにより、得られた知見を将来構想により早期に取り入れることを可能にすることを目的としております。また、航空宇宙領域に係る装備品の試験等を行う開発実験機能について、航空宇宙開発実験団において、効率かつ円滑に実施できる体制を整えるというものでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5181"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=5503.477999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "航空開発実験集団廃止に伴う機能の拡充か縮小か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "本法案"
+            },
+            {
+              "type": "organization",
+              "excerpt": "航空開発実験集団"
+            },
+            {
+              "type": "organization",
+              "excerpt": "幹部学校"
+            },
+            {
+              "type": "organization",
+              "excerpt": "航空宇宙開発実験団"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "航空開発実験集団",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": true,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "航空開発実験集団"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "幹部学校"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "航空宇宙開発実験団"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "調査研究機能を幹部学校に集約をし、これに伴い航空開発実験集団を廃止をし、開発実験機能に特化した航空宇宙開発実験団を新編いたします。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は「能力拡充か実質的縮小か」という二者択一的な見解を求めたが、回答者は組織改編の目的を述べるに留まり、予算や人員の増減という核心に答えていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_025",
+      "segment_index": 5,
+      "topic": "防衛産業および中小企業への研究開発支援",
+      "question": {
+        "speaker": "谷浩一郎",
+        "party": "参政党",
+        "summary": "- 組織再編が国内中小企業の研究開発機会の縮小につながらないか\n- 防衛産業および製造業の技術基盤強化のため、どのような支援策や投資を講じるか",
+        "full_text": "次に、防衛装備品の技術開発について伺います。防衛分野の開発実験機能は、自衛隊の能力向上にとどまらず、防衛装備品の生産、供給基盤の強化や、技術力の向上を通じて国内製造業全体の発展にも寄与する重要な役割を担っています。その観点から航空開発実験集団の廃止及び新たな組織の設置が国内企業、とりわけ中小企業にとって研究開発機会の縮小につながることがあってはならないと考えています。我が国の防衛産業及び製造業の技術基盤を強化するため、政府としてどのような支援策や研究開発投資を講じていくのか、防衛省の見解をお伺いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "峰技術戦略部長",
+        "role": "",
+        "summary": "- 安全保障技術研究推進制度や先端技術の橋渡し研究などの取り組みを推進している\n- SBIR制度の活用を含むファーストパス調達の取組を整備し、中小企業やスタートアップが参画できる環境を整備している",
+        "full_text": "この認識の下で防衛省といたしましては、防衛産業を含む防衛技術基盤をより一層強化していくため、これまでも企業等の先進的な研究を支援する安全保障技術研究推進制度や、そこで得られました成果等を将来の装備品等の創生につなげていく先端技術の橋渡し研究といった取り組みを進めてまいりました。さらに民生分野を含む先進的な技術をより一層活用するため、中小企業やスタートアップを含む幅広い主体が参画できる環境の整備が重要であると考えておりまして、本年2月、優れた技術を有するスタートアップ企業の研究開発への参入等を後押しするという観点から、SBIR制度の活用を含むファーストパス調達の取組を整備したところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5181"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=5503.477999999999",
+      "metrics": null
+    },
+    {
+      "id": "qa_026",
+      "segment_index": 5,
+      "topic": "宇宙領域における抑止力および対処力",
+      "question": {
+        "speaker": "谷浩一郎",
+        "party": "参政党",
+        "summary": "- 我が国の人工衛星に対する妨害や攻撃を未然に防ぐため、どのような措置を講じるか\n- 万が一攻撃を受けた場合、攻撃主体に対してどのように対応するか",
+        "full_text": "次に、宇宙領域における抑止力及び対処力について伺います。本法案では、航空宇宙自衛隊への改編に合わせ、宇宙作戦集団を新編するとされています。近年、衛星通信、衛星情報収集など、人工衛星を中心とする宇宙アセットは、国防のみならず国民生活の基盤となっています。その安定的かつ平和的な利用は、国家安全保障上の重要課題です。一方で、人工衛星を標的とする兵器の開発や実験を行う国も存在しています。我が国の人工衛星に対する妨害や攻撃を未然に防ぐため、政府としてどのような措置を講じていくのでしょうか。また、万が一我が国の人工衛星が攻撃を受けた場合、攻撃主体に対する対処を含め、どのように対応するのか、大臣の見解をお伺いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 脅威の兆候を早期に察知し対応可能な体制を構築するため、宇宙作戦集団を新編する\n- 衛星を防護する能力の構築が必要と考えており、3文書の改定に向けた議論を積み上げる",
+        "full_text": "これは先ほどご質問いただいたこともありますけれども、今、宇宙領域における通信遮断、そして衛星の機能妨害といった脅威の兆候を早期に察知をして、対応が可能な体制を構築することが必要だと考えています。新編を予定している宇宙作戦集団は、まさにそのための部隊であります。さらに一部の国家による衛星の妨害に対し、防衛省として衛星を防護する能力を構築していくことも必要だと考えています。日本の優れた技術を活用しつつ、宇宙における防衛能力を強化する具体的な取組について、3文書の改定に向け、議論をしっかりと積み上げてまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5181"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=5503.477999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "宇宙アセットへの攻撃防止策と攻撃時の対処について",
+          "sub_asks": [
+            "攻撃を未然に防ぐための措置",
+            "攻撃を受けた場合の対処および攻撃主体への対応"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "本法案"
+            },
+            {
+              "type": "organization",
+              "excerpt": "航空宇宙自衛隊"
+            },
+            {
+              "type": "organization",
+              "excerpt": "宇宙作戦集団"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "我が国の人工衛星",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "宇宙作戦集団"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "3文書"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "議論をしっかりと積み上げてまいります",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "宇宙における防衛能力を強化する具体的な取組について、3文書の改定に向け、議論をしっかりと積み上げてまいります。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "宇宙作戦集団の新編という具体策には触れているが、攻撃を受けた際の具体的な対処（反撃等）については明言を避けており、抽象的な議論への言及に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どのように対応するのか」という問いに対し、具体的なシナリオや法的根拠を問う形式にすれば、より踏み込んだ回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_027",
+      "segment_index": 5,
+      "topic": "第15旅団の師団化に伴う備蓄および補給基盤の整備",
+      "question": {
+        "speaker": "谷浩一郎",
+        "party": "参政党",
+        "summary": "- 師団化に伴い、弾薬・装備品・食料・燃料などの備蓄をどのように増強し、水準を引き上げるか\n- 保管施設を増設する方針はあるか",
+        "full_text": "次に第15旅団の師団化と、継戦能力について伺います。第15旅団を第15師団へ改編し、沖縄県及び鹿児島の離島を中心とした南西地域の防衛体制を強化する方針には賛成いたします。しかしながら、旅団を師団へと改編するにあたっては、単なる人員増強だけでは不十分です。弾薬、装備品、食料、燃料など、継続的に作戦行動を遂行するための物資が一体的に整備されて初めて実効性を持つものと考えます。今回の改編に伴い、これらの備蓄をどのように増強し、師団規模に見合う水準へと引き上げていくのでしょうか。また、保管施設についても今後増設する方針があるのでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "伊藤整備計画局長",
+        "role": "",
+        "summary": "- 沖縄訓練場敷地内に補給所支所（倉庫、コンテナヤード、火薬庫、燃料施設等）を新設することを計画している\n- 奄美大島の瀬戸内分屯地において火薬庫の整備を進めている",
+        "full_text": "南西地域においては、所在部隊等が使用する弾薬や燃料を保管する火薬庫や燃料備蓄施設等がすでに設置をされているところですが、南西地域の防衛体制を強化するため、さらに補給基盤を整備をしていく考えでございます。具体的には、沖縄市に所在する沖縄訓練場の敷地内に補給所支所を新設し、倉庫、コンテナヤード、火薬庫、燃料施設等を整備することを計画をしているほか、奄美大島の瀬戸内分屯地において火薬庫の整備を進めておるところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5181"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=5503.477999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "第15旅団師団化に伴う備蓄・施設増強策",
+          "sub_asks": [
+            "物資備蓄をどのように増強し水準を引き上げるか",
+            "保管施設を増設する方針があるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "第15旅団"
+            },
+            {
+              "type": "other",
+              "excerpt": "沖縄県及び鹿児島の離島を中心とした南西地域"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "第15旅団",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "沖縄市に所在する沖縄訓練場"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "奄美大島の瀬戸内分屯地"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 3,
+          "trigger_phrase": "沖縄訓練場の敷地内に補給所支所を新設し、倉庫、コンテナヤード、火薬庫、燃料施設等を整備することを計画をしている",
+          "matched_pattern": "future-tense verb describing a CONCRETE government action with a named mechanism"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "沖縄訓練場の敷地内に補給所支所を新設し、倉庫、コンテナヤード、火薬庫、燃料施設等を整備することを計画をしている",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な整備計画地（沖縄訓練場、瀬戸内分屯地）が明示されており、実効性のある回答となっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_028",
+      "segment_index": 5,
+      "topic": "南西地域における整備・修理機能の増強",
+      "question": {
+        "speaker": "谷浩一郎",
+        "party": "参政党",
+        "summary": "- 15師団への改編に伴い、南西地域において装備品の整備・修理機能を担う施設を増強する方針はあるか",
+        "full_text": "次に、整備施設について伺います。継戦能力を確保するためには、物資の備蓄に加え、故障した装備品を迅速に整備、修理する体制が不可欠です。15師団への改編に伴い、南西地域において、こうした設備整備・修理機能を担う施設についても、今後増強を図る方針があるのでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "伊藤整備計画局長",
+        "role": "",
+        "summary": "- 那覇駐屯地において、車両等のメンテナンスや修理を行う整備工場や倉庫等の新設工事を実施している",
+        "full_text": "自衛隊が各種事態に際し、継続的かつ粘り強く活動できるようにするためには、装備品を迅速に整備・修理を行う体制を整えることが極めて重要であると認識をしております。このため、第15旅団の師団化に伴いまして、那覇駐屯地において車両等のメンテナンスや修理を行う整備工場や倉庫等の新設工事を実施をしているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5181"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=5503.477999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "南西地域の整備・修理施設の増強方針について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "15師団"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "15師団",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "第15旅団"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "那覇駐屯地"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "整備工場や倉庫等の新設工事"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 3,
+          "trigger_phrase": "那覇駐屯地において車両等のメンテナンスや修理を行う整備工場や倉庫等の新設工事を実施をしている",
+          "matched_pattern": "future-tense verb describing a CONCRETE government action with a named mechanism"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "那覇駐屯地において車両等のメンテナンスや修理を行う整備工場や倉庫等の新設工事を実施をしているところでございます。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "南西地域の整備機能増強という問いに対し、那覇駐屯地での具体的な新設工事という事実で回答しており、有用性が高い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_029",
+      "segment_index": 6,
+      "topic": "不発弾処理体制の安全性",
+      "question": {
+        "speaker": "山田瑛理",
+        "party": "チームみらい",
+        "summary": "- 第15旅団の師団化に伴う不発弾処理体制（20名体制）で、住民の安全・安心を確保できるか\n- 現状の体制に問題がないのであれば、住民に安心感を与える力強い言葉を求めたい",
+        "full_text": "まず、第15旅団の師団化と不発弾処理体制について伺います。その上で、今回の改編が、住民の安全・安心につながるか、というところをお聞きいたします。この20名という体制につきまして、住民の皆さんに安全と安心をお届けすることができますでしょうか。もし現状のこの20名体制が問題がないということであれば、沖縄の住人の皆様に安全安心を感じてもらえるような力強いお言葉をぜひ大臣からいただければと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小泉",
+        "role": "",
+        "summary": "- 沖縄には戦後の不発弾が多数残存しており、第101不発弾処理隊が専門的に処理を行っている\n- 現時点で部隊を増員する計画はないが、訓練等により隊員の処理能力向上に努めている\n- 引き続き不発弾処理に万全を期し、国民の安全を守る",
+        "full_text": "沖縄においては、第二次世界大戦の不発弾が今なお多数残存しており、その処理には今後も多くの年月を要するものと承知しています。陸上自衛隊那覇中屯地に所在する第101不発弾処理隊は、主に沖縄県内で発見された不発弾を処理することを任務とする専門部隊です。現時点で部隊を増員する計画はありませんが、不発弾処理隊は不発弾処理に資する情報の収集、整理や訓練等により、常に隊員の処理能力の向上に努めています。不発弾の確実な処理は、沖縄県の皆様を含む国民の皆様の安全を守るため、大変重要です。引き続き、不発弾の処理に万全を期してまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5181"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=6643.678",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "第15旅団師団化に伴う不発弾処理体制の妥当性",
+          "sub_asks": [
+            "第15旅団の師団化と不発弾処理体制について",
+            "20名という体制で住民の安全・安心を確保できるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "この20名という体制"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "沖縄の住人の皆様",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "第101不発弾処理隊"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "陸上自衛隊那覇中屯地"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "不発弾の処理に万全を期してまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "現時点で部隊を増員する計画はありませんが、不発弾処理隊は常に隊員の処理能力の向上に努めています。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "20名という体制の妥当性への直接的な回答を避け、現状の体制維持と努力目標に留まった回答である。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「力強いお言葉を」という情緒的な要求が含まれており、具体的な数値目標や期限を問う形式にすればより拘束力のある回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_030",
+      "segment_index": 6,
+      "topic": "自衛官の業務効率化とDX推進",
+      "question": {
+        "speaker": "山田瑛理",
+        "party": "チームみらい",
+        "summary": "- 編成装備充足率の低さを踏まえ、受付や警備などの民間委託を積極的に活用すべきではないか\n- AIやドローンの活用による業務の自動化・省力化を推進し、自衛官が本来の任務に専念できる体制を整えるべきか政府の見解を問う",
+        "full_text": "次に自衛官の定数とサイバー防衛について伺わせていただきます。採用について日々尽力していることは承知しておりますけれども、現時点における編成装備の充足率は89.1%。まず人員不足を補う観点から、例えばクリアランスを必要としない業務について、受付ですとか、警備につきまして、民間委託を積極的に活用し、自衛官が本来任務に専念できる環境を整えることは重要と考えます。また、AIやドローンを活用した業務の自動化、省力化は、充足率の底上げにもつながります。防衛省全体のDX化、今までも促進をしていると思いますけれども、隅々までより一層の推進をしていただきまして、テクノロジーと民間活用によって、自衛官が本来任務に集中できる体制を整えるべきと考えますが、政府の見解を大臣にお伺いさせてください。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "小泉",
+        "role": "",
+        "summary": "- AIや無人アセットの導入による自動化・省人化、アウトソーシングの活用を推進し、本来の任務に専念できる環境を整えることは重要である\n- 陸上自衛隊ではAIカメラやUAV/UGVによるリモート監視システムの検証を進めており、導入により1日約1000人の省人化が見込まれる",
+        "full_text": "私は積極的に後押しをしていきたいと思いますし、先生が御指摘のとおり、AIや無人アセットの導入等による徹底した無人化、自動化、省人化やアウトソーシングの一層の活用等を推進して、業務の効率化を通じ、自衛官が自衛官にしかできない任務に専念できる環境を整えることは重要であると思いますし、自衛官に限らず、事務官は事務官で、防衛省の事務官にしかできないことに集中をさせると、こういった取組を進めていきたいと思います。一例挙げますと、陸上自衛隊では、AIカメラによる画像識別技術を活用した監視や、UAV、UGVによる駐屯地内の巡視など、リモート監視システムの導入に向けた検証を今進めています。仮に、全国の駐屯地等で導入した場合は、1日当たり約1000人程度の省人化を実現できる可能性があると見込んでいます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5181"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=6643.678",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "自衛官の本来任務専念に向けた民間活用・DX推進への見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "編成装備の充足率は89.1%"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自衛官",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": true,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "陸上自衛隊"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "AIカメラによる画像識別技術"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "UAV、UGV"
+            },
+            {
+              "type": "number",
+              "excerpt": "1日当たり約1000人程度の省人化"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "こういった取組を進めていきたいと思います",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "全国の駐屯地等で導入した場合は、1日当たり約1000人程度の省人化を実現できる可能性があると見込んでいます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "民間活用とDXによる省人化という提案に対し、大臣が具体的に陸上自衛隊の検証事例と期待される省人化人数を挙げて回答しており、実効性のあるやり取りとなっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_031",
+      "segment_index": 6,
+      "topic": "高度AIによるサイバー攻撃への脅威と対応",
+      "question": {
+        "speaker": "山田瑛理",
+        "party": "チームみらい",
+        "summary": "- 高度なAI（Claude 3.5等）の登場により、サイバー防衛は「AI×AI」の対応力が重要になる\n- 高度AIによるサイバー攻撃能力に対する現在の脅威認識と、防衛省の対応の方向性を問う",
+        "full_text": "続きまして、AIの進化につきまして、少し伺わせていただきます。そんな中、今回の改正法案において、共同の部隊である自衛隊サイバー防衛隊の体制強化を実施するとのことですが、現在の日本のサイバー防衛の構造は、人が主で対応し、AIは補完的位置づけにあると聞き及んでおります。サイバー領域では、人では対応が難しく、AI×AIが重要になります。サイバー防衛の観点から、高度AIによるサイバー攻撃能力に対する現在の脅威認識と、また防衛省の対応の方向性について大臣にお伺いします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小泉",
+        "role": "",
+        "summary": "- AIの進化スピードに対する問題意識を共有しており、遅れることのないよう取り組む\n- サイバー専門部隊の体制拡充に加え、令和7年度から情報収集・分析等の業務にAIを活用する実証を行う\n- 米国ペンタゴンの事例などを参考に、失敗を恐れず積極的にAI活用を後押しする",
+        "full_text": "非常にスピードが速く進化をしていますので、その対応に防衛省自衛隊、しっかりと遅れることのないような取り組みを、しっかり認識した上でやっていきたいと思います。今、防衛省自衛隊としては、自衛隊のサイバー専門部隊の体制や教育基盤の拡充のほか、能動的サイバー防御関連法に基づくアクセス無害化措置任務が新たに付与されることを踏まえて、サイバー防衛能力の強化に取り組んでいます。また、AIを活用したサイバー攻撃への対処も念頭に、我が国の意思決定の迅速化を図るため、令和7年度から、サイバー専門部隊の情報収集、分析、評価等の各種業務にAIを活用する実証を行っております。この方針は、以前、チームみらいの高山さんに私、答弁したと思いますけど、アメリカのペンタゴンに行けば、ペンタゴンの中にヘクセス長官のポスターで、とにかくAI使えと、大号令が出てるんですね。失敗を早く繰り返して、早くいいものにたどり着いてもらいたいと、そういった前向きな思いで後押しを進めてまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=6643.678",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "高度AIによるサイバー攻撃への脅威認識と対応方向性",
+          "sub_asks": [
+            "高度AIによるサイバー攻撃能力に対する現在の脅威認識",
+            "防衛省の対応の方向性"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "自衛隊サイバー防衛隊"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "deadline",
+              "excerpt": "令和7年度から"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "能動的サイバー防御関連法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ペンタゴン"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 3,
+          "trigger_phrase": "令和7年度から、サイバー専門部隊の情報収集、分析、評価等の各種業務にAIを活用する実証を行っております",
+          "matched_pattern": "future-tense verb describing a CONCRETE government action with a named mechanism"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "令和7年度から、サイバー専門部隊の情報収集、分析、評価等の各種業務にAIを活用する実証を行っております。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "AIによるサイバー攻撃への対応として、令和7年度からの実証実験という具体的なアクションが示されており、記録価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "脅威認識についての問いに対し、具体的な脅威の内容ではなく「スピードが速い」という抽象的な回答に留まっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_032",
+      "segment_index": 6,
+      "topic": "サイバー防衛隊の技術水準の担保",
+      "question": {
+        "speaker": "山田瑛理",
+        "party": "チームみらい",
+        "summary": "- サイバー防衛隊を2027年末までに4000名に拡充する目標があるが、民間との人材獲得競争が激しい\n- 数の目標達成だけでなく、技術水準（質）をどのように担保していくのか具体的な取組を問う",
+        "full_text": "そのように、サイバー防衛隊につきましては、2022年度時点の約890名から、2027年末に4000名にという目標を掲げています。しかし、民間IT企業との人材獲得競争が激化する中、数が増えても、技術水準が伴わないと、空洞化のリスクが懸念されるところです。数の目標達成と並行して、質、すなわち技術水準の担保をどのように図っていくのか、具体的な取組と考え方についてお伺いします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "伊藤",
+        "role": "",
+        "summary": "- 国内外の教育機関への留学や、米国等の諸外国とのサイバー演習を通じて実践的な経験を積んでいる\n- 事務官や自衛官の中途採用も行っている",
+        "full_text": "防衛省としましては、自衛隊、サイバー防衛隊を含むサイバー専門部隊の要員について、2027年度をめどに約4000人まで拡充をするなど、サイバー防衛能力の抜本強化につつ、国内外の教育機関への留学も行っているほか、アメリカをはじめとする諸外国とのサイバー演習などにより、変化の早いサイバー分野における他国の取り組みを吸収し、実践的な経験を積んでいるところでございます。加えまして、事務官等や自衛官への中途採用。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5181"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=6643.678",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "サイバー防衛隊の技術水準担保の具体策",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "2022年度時点の約890名"
+            },
+            {
+              "type": "number",
+              "excerpt": "2027年末に4000名"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "サイバー防衛隊",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "2027年度をめどに約4000人"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "アメリカ"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "国内外の教育機関への留学も行っているほか、アメリカをはじめとする諸外国とのサイバー演習などにより、実践的な経験を積んでいる",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質的担保に関する具体的な取り組み（留学や演習）が回答されているが、今後のコミットメントや新たな施策への言及はなく、現状報告に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_033",
+      "segment_index": 6,
+      "topic": "宇宙領域における国際規範と日本の優位性",
+      "question": {
+        "speaker": "山田瑛理",
+        "party": "チームみらい",
+        "summary": "- 宇宙作戦集団を新編するにあたり、軍事利用に関する国際規範の形成にどのような立場で臨むか\n- ASAT（衛星破壊実験）によるデブリ問題に対し、どのような姿勢を示し、どのような優位性を確立し得るか",
+        "full_text": "次に、航空宇宙自衛隊への改編、宇宙作戦集団の新編について伺ってまいります。宇宙作戦集団を新編する以上、日本は宇宙の平和利用と安全保障利用の双方について、国際社会に対して明確な立場を示すことが求められます。日本は宇宙の軍事利用に関する国際規範の形成には、どのような立場で臨むのか。また、ASAT実験後に発生するデブリ問題について、軌道の持続的利用という観点から、日本はいかなる姿勢を示すのか、宇宙空間において、日本がどんな優位性を確立し得るのか、認識を伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "中村",
+        "role": "",
+        "summary": "- 破壊的な直接上昇衛星破壊実験（ASAT）は無責任な行動であると考えており、行わない意図を世界に表明している\n- 国際的なデブリ低減ガイドラインの形成に積極的に関与し、技術や知見を生かして国際規範形成に注力する\n- 宇宙領域把握（SDA）能力の強化や、国内の優れたデブリ対策技術の活用を進める",
+        "full_text": "その後も類似の事案は起きておりますが、このような破壊的な直接上昇衛星破壊実験、通称ASATと呼んでおりますが、これは無差別に軌道上の宇宙物体の衝突リスクを高めるものであり、持続的かつ安定的な宇宙空間の利用を損なう無責任な行動である。2022年の9月に我が国は、このような破壊的な直接上昇衛星破壊実験を行うことはないという意図表明を世界に対して行っています。こういったものを含むスペースデブリ問題については、我が国は2002年のIADC（宇宙機関間スペースデブリ調整委員会）や2009年の国連宇宙空間平和利用委員会のデブリ低減ガイドラインをはじめとする、国際的なデブリ低減ガイドラインの形成に積極的に関与してまいりました。宇宙空間の持続的な利用のために、多数国間の今申し上げたような国際規範の形成に、我が国の技術や規範作りの知見を生かしながら、注力し続けていきたいと考えております。外務省からの説明に続きまして、防衛省自衛隊の能力の関係で申し上げますと、宇宙領域把握（SDA）でございますけれど、我々防衛省自衛隊もこの能力を強化してございます。スペースデブリ対策という意味では国内に優れたデブリ対策技術がございますので、そういったところも活用してまいりたいと考えているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5181"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=6643.678",
+      "metrics": null
+    },
+    {
+      "id": "qa_034",
+      "segment_index": 6,
+      "topic": "米軍宇宙軍との連携における組織規模の非対称性",
+      "question": {
+        "speaker": "山田瑛理",
+        "party": "チームみらい",
+        "summary": "- 独立した大規模な組織を持つ米宇宙軍に対し、日本の宇宙作戦集団は航空宇宙自衛隊内の一組織であり規模も小さい\n- この組織規模や権限の非対称性が、情報共有の深度や意思決定速度に悪影響を与える可能性はないか",
+        "full_text": "次にアメリカ軍との連携について伺わせてください。アメリカ宇宙軍は2019年の創設以来、約1万5千人規模の独立軍種として、独自の作戦体系、指揮系統を構築しています。一方、今回新編される宇宙作戦集団は、航空宇宙自衛隊の一組織として約880人規模です。その規模、権限、戦術体制においては、大きな非対称性があると感じておりますが、この非対称性が、情報共有の深度や共同作戦における意思決定の速度に影響を与えるそのような可能性はないのか、政府の見解を伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "伊藤",
+        "role": "",
+        "summary": "- イギリスやフランスも空軍内に宇宙コマンドを置くなどの体制をとっており、日本の部隊規模もこれらの国々と遜色ない\n- 米国との連携をしっかりと行える体制になっていると考えている",
+        "full_text": "宇宙空間の安定的利用の確保には、同盟国、同志国との連携、特に米軍と連携を強化をしているイギリス、フランスも独立した宇宙軍ではなく空軍内に宇宙コマンドを置いているほか、空軍を改編して航空宇宙軍としていると承知をしております。今般の宇宙作戦集団の約880名という部隊規模も、これらの国との宇宙関連部隊と遜色ないものでございます。このように、特に懸念なく米国との連携をしっかりと行える体制になっているものと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5181"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=6643.678",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "日米宇宙部隊の規模の非対称性が連携に影響するか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "約1万5千人規模"
+            },
+            {
+              "type": "number",
+              "excerpt": "約880人規模"
+            },
+            {
+              "type": "date",
+              "excerpt": "2019年の創設"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "アメリカ宇宙軍",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "イギリス"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "フランス"
+            },
+            {
+              "type": "number",
+              "excerpt": "約880名"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "今般の宇宙作戦集団の約880名という部隊規模も、これらの国との宇宙関連部隊と遜色ないものでございます。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "日米の組織規模の差が連携に影響するかという問いに対し、他国の事例を挙げて問題ないとする政府見解が明確に示されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_035",
+      "segment_index": 6,
+      "topic": "衛星ジャミングへの対処能力",
+      "question": {
+        "speaker": "山田瑛理",
+        "party": "チームみらい",
+        "summary": "- 有事において衛星通信の可用性をどう担保するのか\n- 相手国による衛星ジャミングや電波妨害への対処能力は十分に整備されているか",
+        "full_text": "次に衛星ジャミングへの対処能力について伺わせていただきます。そういった有事において、衛星通信の可用性をどう担保するのでしょうか。また、相手国による衛星のジャミングや電波妨害への対処能力は十分に整備されている状況なのか、現状を伺わせていただければと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "万波",
+        "role": "",
+        "summary": "- 衛星通信は作戦基盤として重要であり、SDAを含めて妨害を早期に感知するなどの対策を講じている（※答弁途中で遮られたが、肯定的な方向で回答）",
+        "full_text": "自衛隊におきまして、さまざまなレーダー等も含めて、センサーで収集した情報のリアルタイムな伝達、あるいは遠距離の部隊間の通信や衛星通信というのは、自衛隊の作戦基盤として大変重要なところでございます。そうした場合に、ご指摘のジャミング、あるいは妨害対策でございますけれど、これは先ほどのSDAを含めて早期に感知するというところもございますけれど、実際にそういった妨害能力が、"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5181"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=6643.678",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "衛星ジャミングへの対処能力と可用性の担保策",
+          "sub_asks": [
+            "衛星通信の可用性をどう担保するか",
+            "ジャミング・電波妨害への対処能力の整備状況"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "相手国",
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "SDA"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": null,
+          "score": 0.0
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "回答が途中で切れており、具体的な対処策や整備状況についての結論に至っていないため、記録的価値は極めて低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "現状の整備状況について「十分か否か」という二択に近い形式で問うことで、より明確な回答を誘導できた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_036",
+      "segment_index": 7,
+      "topic": "沖縄の陸上自衛隊第15旅団の師団化に伴う訓練場の再検討",
+      "question": {
+        "speaker": "田村智子",
+        "party": "日本共産党",
+        "summary": "- 師団化に伴う訓練等のあり方について、幅広い視点から再検討を行うという約束の結論は出ているか",
+        "full_text": "本公により、沖縄の陸上自衛隊第15旅団が、師団に格上げされます。1個普通科連隊を2個に増やし、沖縄県内では初めて機動戦闘車を配備するという説明も受けました。沖縄は1972年の本土復帰に際して自衛隊が配備されましたが、初めて師団が置かれることになります。これは、この間の経緯を踏まえているのかどうかをお聞きします。2023年12月、防衛省は、この沖縄の部隊の師団化を行えば、既存の訓練場だけでは十分な訓練ができないということで、うるま市のゴルフ場跡地に、新たな訓練場を整備する計画を明らかにしました。周辺は閑静な住宅街、しかも青少年の家が隣接をしている。県内各地の子どもたちが利用する教育施設のすぐ隣に自衛隊の訓練所を建設し、夜間も含め軍事訓練を行うのかと、この計画に地域ぐるみの反対運動が起きました。立場の違いを超えて全県的な運動にもなり、県知事も県議会も自民党沖縄県連も計画の白紙撤回を求めました。国会でも衆参の沖縄県選出議員の皆さんが、党派を超えて繰り返し撤回を求めたという経緯です。こうした動きを受けて、当時の木原防衛大臣は、お詫びとともに計画の取りやめを表明しました。その上で、師団化に伴う訓練等の在り方については、幅広い視点から再検討を行うと明言された。これは沖縄の皆さんとの約束です。防衛大臣、この再検討の結論というのは出ているんでしょうか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 南西地域の防衛体制強化のため第15師団への改編は必要である\n- 訓練等のあり方については引き続き幅広い視点から再検討しており、地元の状況を把握・分析した上で適切な結論を得る考えである",
+        "full_text": "戦後を最も厳しく複雑な安全保障環境に直面する中、我が国の防衛の最前線ともいえる南西地域の防衛体制の強化は喫緊の課題であり、広大な海域に多数の島嶼が点在するという特性を持つ沖縄県の守りに、万全を期すためには第15師団への改編が必要です。第15旅団の師団化に伴う訓練等のあり方につきましては、現在も引き続き幅広い視点から再検討を行っているところであり、あらゆる選択肢を検討した上で適切な結論を得る考えです。その際、省内でしっかり連携を図り、周囲の生活環境を含めた地元の状況をしっかりときめ細かく把握、分析した上で検討を進めてまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5181"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=8385.978",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "師団化に伴う訓練の在り方の再検討の結論は出たか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "陸上自衛隊第15旅団"
+            },
+            {
+              "type": "date",
+              "excerpt": "1972年の本土復帰"
+            },
+            {
+              "type": "date",
+              "excerpt": "2023年12月"
+            },
+            {
+              "type": "organization",
+              "excerpt": "防衛省"
+            },
+            {
+              "type": "other",
+              "excerpt": "うるま市のゴルフ場跡地"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.9
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "沖縄の皆さん",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "第15師団"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "あらゆる選択肢を検討した上で適切な結論を得る考えです",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "第15旅団の師団化に伴う訓練等のあり方につきましては、現在も引き続き幅広い視点から再検討を行っているところであり",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "過去の経緯を詳細に提示した上で、再検討の結論を問う明確な質問である。回答は「検討中」という定型的な内容に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_037",
+      "segment_index": 7,
+      "topic": "師団化に伴う訓練再検討の視点とプロセス",
+      "question": {
+        "speaker": "田村智子",
+        "party": "日本共産党",
+        "summary": "- 訓練等のあり方の再検討において、どのような視点で検討しているのか\n- 沖縄県との協議は行われているのか",
+        "full_text": "県内を揺るがす大問題になって、防衛大臣がお詫び追い込まれる。こういう問題なんですね。沖縄の皆さんとの約束を守らずに、部隊の改編だけは計画通り進めますと言うんでしょうか。この部隊改編の前提を、書き換えているのではないかと、私は指摘せざるを得ないんです。この師団化に伴う訓練等のあり方を、幅広い視点から再検討する。では、どういう視点で検討しているんでしょうか。沖縄県との協議は行われているんでしょうか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 幅広い視点から再検討を行っている（具体的な視点や協議の有無への明確な回答はなし）",
+        "full_text": "現在、その幅広い視点から再検討ということで。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5181"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=8385.978",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "部隊改編の再検討の視点と沖縄県との協議状況",
+          "sub_asks": [
+            "どういう視点で検討しているのか",
+            "沖縄県との協議は行われているのか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "沖縄県",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.2
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "other",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": null,
+          "score": 0.0
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的だが、回答は質問の内容を繰り返しただけであり、実質的な回答になっていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問者が感情的な前置きを長く述べているため、核心となる問いが後半に集中している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_038",
+      "segment_index": 7,
+      "topic": "沖縄戦の歴史的認識",
+      "question": {
+        "speaker": "田村智子",
+        "party": "日本共産党",
+        "summary": "- 大本営が沖縄を本土防衛のための「捨て石」として凄惨な地上戦を敷いたことについて、大臣はどう認識しているか",
+        "full_text": "田村智子沖縄の部隊増強という問題は、沖縄と基地の歴史的な経緯を踏まえて検討されるべきです。沖縄は先の大戦で、住民を巻き込んだ、凄惨な地上戦の場となりました。日本の敗戦が避けられない状況でも、国体護持を至上命題とする大本営の方針によって、沖縄は本土決戦を遅らせるためのステージとされ、県民の4人に1人が亡くなりました。本委員会では、我が党の赤嶺政権前議員が繰り返し、この原点をおろそかにしてはならないという立場で、質問を重ねてきました。その下で、防衛省は昨年、沖縄戦に関する自衛隊の学習資料の見直しを行いました。陸上自衛隊幹部候補生学校の資料では、旧日本軍第32軍の自衛戦を本土決戦準備のために、偉大な貢献を出したと評価をしていましたが、改定後はこの記述は削除されました。そして大本営が1945年1月に決定した帝国陸海軍作戦計画太綱で、沖縄を本土防衛のための前線と位置づけ、極力敵の出血損耗を図るとしていたことを明記しています。先の大戦で当時の大本営が沖縄を本土防衛のための捨て石として、凄惨な地上戦を敷いた。このことを、小泉大臣はどのように認識されていますか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 沖縄で県民を巻き込んだ凄惨な地上戦が行われ、軍民合わせて20万人もの尊い命が失われたことを認識している",
+        "full_text": "小泉進次郎沖縄では、先の大戦の末期において、県民を巻き込んだ凄惨な地上戦が行われ、軍民合わせて20万人もの尊い命が失われました。特に、本島南部の一帯においては、"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=8385.978",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "沖縄戦における大本営の認識について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "陸上自衛隊幹部候補生学校の資料"
+            },
+            {
+              "type": "other",
+              "excerpt": "帝国陸海軍作戦計画太綱"
+            },
+            {
+              "type": "number",
+              "excerpt": "県民の4人に1人が亡くなりました"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "沖縄県民",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "20万人"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "沖縄では、先の大戦の末期において、県民を巻き込んだ凄惨な地上戦が行われ、軍民合わせて20万人もの尊い命が失われました。",
+          "score": 0.4
+        },
+        "scoring_confidence": "low",
+        "evaluation_note": "回答が途中で切れており、大臣の認識という核心部分への回答がなされていないため、評価が困難です。",
+        "would_be_referenced": "low",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_039",
+      "segment_index": 7,
+      "topic": "沖縄の基地負担軽減と歴史的経緯",
+      "question": {
+        "speaker": "田村智子",
+        "party": "日本共産党",
+        "summary": "- 沖縄が戦後、米軍に土地を強制接収され、基地負担に苦しんできた経緯に照らして、政府はどう対応すべきか",
+        "full_text": "田村智子沖縄を捨て石にするようなことを二度と繰り返してはならないというふうに思うんです。沖縄戦で上陸した米軍、住民を収容所に押し込めている間に、公有地も畑や民家もお墓もお構いなしに強制的に土地を接収し、広大な米軍基地を建設しました。1952年のサンフランシスコ講和条約第3条によって、沖縄は本土から切り離され、米軍の直接統治下に置き去りにされて、その下で米軍はいわゆる重機とブルドーザーで、強権的に住民の土地を奪い、基地をさらに拡張しました。沖縄県民は、憲法が適用されない無権利状態におかれ、米軍人、軍属による凶悪犯罪、米軍機の墜落、環境汚染など、基地あるがゆえの事件事故に苦しめられてきました。72年に本土復帰を果たしましたが、広大な基地は今なお、沖縄社会に重大な影響を及ぼし続けています。こうした経緯に照らせば、日本政府は、",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 沖縄県民に大きな基地負担を担っていただいていることを重く受け止めており、基地負担軽減は政府の最重要課題の一つである\n- 歴史を心に刻み、基地負担軽減に全力で取り組む",
+        "full_text": "小泉進次郎沖縄におけるアメリカ軍の施設、区域の形成過程につきましては、様々な議論があると承知をしています。その上で、沖縄が戦後も長らく、我が国の政権の外に置かれ、戦後80年を経た今もなお、沖縄県民の皆様に大きな基地負担を担っていただいていることを重く受け止めており、沖縄の基地負担軽減は、政府の最重要課題の一つです。防衛大臣として、このような沖縄の歴史をしっかりと心に刻みながら、引き続き、我が国の防衛を全うするとともに、沖縄の基地負担軽減に全力で取り組んでまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=8385.978",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "質問が完結していない（途切れている）",
+          "sub_asks": [],
+          "score": 0.1
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "1952年"
+            },
+            {
+              "type": "law",
+              "excerpt": "サンフランシスコ講和条約第3条"
+            },
+            {
+              "type": "date",
+              "excerpt": "72年"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "沖縄県民",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "not_at_all",
+          "topic_shift_detected": false,
+          "score": 0.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "戦後80年"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "沖縄の基地負担軽減に全力で取り組んでまいります",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "沖縄の基地負担軽減は、政府の最重要課題の一つです。",
+          "score": 0.3
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "質問文が途中で切れており、具体的な問いが提示されていないため、回答は精神論的な一般論に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問が「日本政府は、」で終わっており、何を問いたいのかが不明確である。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_040",
+      "segment_index": 7,
+      "topic": "南西地域における日米共同プレゼンスの拡大",
+      "question": {
+        "speaker": "田村智子",
+        "party": "日本共産党",
+        "summary": "- 南西地域における日米の共同プレゼンスの拡大とは具体的に何を指すのか\n- 沖縄の基地負担軽減に逆行するものではないか",
+        "full_text": "田村智子全力で取り組むと言われますが、普天間基地は96年の返還合意から、今月12日で30年、那覇軍港の返還は74年の合意から50年以上、いずれも移設条件があるために返還されていません。北部訓練場の一部返還は実現しましたが、それと引き換えに、東村高井の静かで自然豊かな集落を取り囲むように、米軍ヘリの着陸帯が建設をされ、住民の生活は一変してしまいました。嘉手納基地では米軍の無人機の新規配備が相次ぎ、覚書合意に反してパラシュート降下訓練が常態化しています。与那国島、宮古島、石垣島には自衛隊が配備され、さらに沖縄本島の部隊も増強して、訓練場がどうなるのかさえ説明がされない。基地負担の軽減どころか、日米一体で沖縄の基地負担を増大させているのが実態です。こうしたもとで小泉大臣は今年1月の日米防衛省会談で、南西地域における日米の共同プレゼンスの拡大、これを日米同盟の最優先事項の1つに位置づけ、より高度かつ実践的な共同訓練に一層取り組むということを確認しています。南西地域における日米の共同プレゼンスの拡大というのは、具体的に何をやるということなんでしょうか。沖縄の基地負担の軽減に逆行するものではないんでしょうか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 抑止力・対処力強化のため、より高度かつ実践的な共同訓練を拡充することを確認した\n- 具体的な内容は日米間で個別に調整するが、あらゆる事態に対応できるよう共同訓練を充実させる考えである",
+        "full_text": "小泉進次郎我が国を取り巻く安全保障環境が一層厳しさを増す中、日米同盟の抑止力、対処力を強化するため、これまでより高度かつ実践的な共同訓練を増加させるなど、不断の取組を行ってきました。本年1月に私とヘグセス長官で日米防衛大臣会談を行いましたが、そこで、ヘグセス長官との間で、南西地域における日米の共同プレゼンスの拡大について、同盟の最優先事項の一つとして、より高度かつ実践的な共同訓練の実施、特に南西地域での拡充を含め、一層取り組むことを確認しました。その上で、今後の具体的な共同訓練の内容につきましては、日米間で個別に調整することとなりますが、引き続き、あらゆる事態に対応できるよう、共同訓練を充実させていく考えであります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=8385.978",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "南西地域での日米共同プレゼンス拡大の具体的内容",
+          "sub_asks": [
+            "具体的に何をやるということなのか",
+            "沖縄の基地負担の軽減に逆行するものではないか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "96年の返還合意"
+            },
+            {
+              "type": "date",
+              "excerpt": "74年の合意"
+            },
+            {
+              "type": "other",
+              "excerpt": "東村高井の静かで自然豊かな集落"
+            },
+            {
+              "type": "past_answer",
+              "excerpt": "今年1月の日米防衛省会談"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "東村高井の住民",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "ヘグセス長官"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "共同訓練を充実させていく考えであります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "今後の具体的な共同訓練の内容につきましては、日米間で個別に調整することとなります",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的で根拠に基づいているが、回答は「個別に調整する」という定型的な表現に留まり、具体性に欠ける。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「逆行するものではないか」という問いが、大臣に「いいえ」と言わせる誘導的な形式になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_041",
+      "segment_index": 7,
+      "topic": "那覇空港・石垣空港の米軍機使用状況",
+      "question": {
+        "speaker": "田村智子",
+        "party": "日本共産党",
+        "summary": "- 直近5年間の那覇空港および石垣空港における米軍機の使用状況を明らかにされたい",
+        "full_text": "日米間で合意した内容さえ説明をされないわけですよね。そういうことは私は本当に許されるものではないというふうに思うんですよ。私は沖縄を戦場にしてはならないと、その反省を踏まえて。沖縄には対応していかなければならないと防衛大臣言われたんですけれども、改めて安全保障環境が厳しさを増しているという、その一言で新たな沖縄を戦場化するような、ステージにするような事態が進められていると言わざるを得ないと思っているんです。この米軍機による空港使用、これも拡大していますよね。直近5年間の那覇空港、石垣空港の米軍機の使用状況を明らかにしてください。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "森田地方協力局長",
+        "role": "",
+        "summary": "- 那覇空港：令和3年3回、4年0回、5年5回、6年8回、7年9回\n- 石垣空港：令和3年0回、4年6回、5年3回、6年12回、7年23回（国土交通省資料による）",
+        "full_text": "お答え申し上げます。直近5年間の那覇空港及び石垣空港におけるアメリカ軍の航空機の着陸回数につきましては、国土交通省の資料によりますと、那覇空港につきましては、令和3年が3回、令和4年が0回、令和5年が5回、令和6年が8回、令和7年が9回。石垣空港につきましては、令和3年が0回、令和4年が6回、令和5年が3回、令和6年が12回、令和7年が23回となっていると承知しております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=8385.978",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "那覇・石垣空港の米軍機使用状況の開示",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "直近5年間"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "米軍",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "那覇空港につきましては、令和3年が3回、令和4年が0回、令和5年が5回、令和6年が8回、令和7年が9回"
+            },
+            {
+              "type": "number",
+              "excerpt": "石垣空港につきましては、令和3年が0回、令和4年が6回、令和5年が3回、令和6年が12回、令和7年が23回"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国土交通省の資料"
+            }
+          ],
+          "score": 1.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "那覇空港につきましては、令和3年が3回、令和4年が0回、令和5年が5回、令和6年が8回、令和7年が9回。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "感情的な前置きはあるが、質問の核心は具体的であり、回答側も具体的な数値（着陸回数）を提示して直接的に答えている。",
+        "would_be_referenced": "high",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_042",
+      "segment_index": 7,
+      "topic": "宇宙空間の軍事利用と航空宇宙自衛隊への改称",
+      "question": {
+        "speaker": "田村智子",
+        "party": "日本共産党",
+        "summary": "- 宇宙を主要な戦闘領域とみなして軍事作戦に利用することは、日本が提案した「宇宙空間における責任ある行動に関する決議」に反するのではないか\n- 宇宙への軍事利用拡大についてどう考えるか",
+        "full_text": "最後に航空自衛隊の、航空宇宙自衛隊への改称についてお聞きします。防衛省が昨年7月に公表した沖縄領域防衛指針では、相手の指揮統制、情報通信を妨げる能力の本格的な運用ということまで掲げています。通信や偵察にとどまらず、宇宙を主要な戦闘領域とみなして、本格的に軍事作戦に利用していくということですね。これは先ほどの質問でもありました、2020年12月の国連総会、日本やイギリスなどが共同で提案した、宇宙空間における責任ある行動に関する決議、これ採択されています。すべての加盟国に対し、軍拡競争や紛争のない平和的な宇宙空間を維持するための行動や、意思疎通の枠組みを構築することを求める決議で、164カ国の支持を得て採択をされています。日本政府自身が提案した決議に、これ反することになっていくんじゃないでしょうか。宇宙にまで軍事利用ということを広げていくことはいかがですか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "小泉進次郎",
+        "role": "",
+        "summary": "- 防衛力強化を「軍拡」と呼び不安を煽る議論は不適切であり、他国も防衛力強化を行っているのが現実である\n- 海外では宇宙領域を「新たな戦場」と表現する国もあり、その現実を踏まえ航空宇宙自衛隊へ改編する",
+        "full_text": "まず、そもそも厳しい安全保障の現実を無視して、必要な防衛力強化の取組について、ことさら軍拡といった言葉で不安を煽るような議論は適切ではないと考えていますし、まるで他国は防衛力強化をしていないのに、日本だけがしているかのような前提でお話をされることは、全く事実と違います。そして、この宇宙領域については、我々以上に海外ではすでに宇宙領域のことを新たな戦場とすら表現をするような国も出てきていることも現実であります。その中で今回我々は航空自衛隊を航空宇宙自衛隊という形で改編をし、令和8年度にはSD"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5181"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56213&time=8385.978",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "航空宇宙自衛隊への改称と宇宙の軍事利用の是非",
+          "sub_asks": [
+            "宇宙を主要な戦闘領域として軍事作戦に利用することへの見解",
+            "国連総会の宇宙空間における責任ある行動に関する決議との整合性"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "防衛省が昨年7月に公表した沖縄領域防衛指針"
+            },
+            {
+              "type": "date",
+              "excerpt": "2020年12月の国連総会"
+            },
+            {
+              "type": "other",
+              "excerpt": "宇宙空間における責任ある行動に関する決議"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "航空自衛隊",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "deadline",
+              "excerpt": "令和8年度"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "海外ではすでに宇宙領域のことを新たな戦場とすら表現をするような国も出てきていることも現実であります。",
+          "score": 0.4
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "質問は具体的で根拠に基づいているが、回答は相手の前提を否定する反論に終始しており、国連決議との整合性という核心に答えていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「いかがですか」という抽象的な問いかけのため、政府側が価値判断や現状説明で逃げる余地を与えている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    }
+  ],
+  "score_schema_version": "2.0",
+  "prompt_version": "V4"
+}

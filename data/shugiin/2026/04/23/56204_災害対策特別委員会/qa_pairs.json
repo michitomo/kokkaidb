@@ -1,0 +1,4807 @@
+{
+  "pairs": [
+    {
+      "id": "qa_001",
+      "segment_index": 1,
+      "topic": "地域ごとのリスク評価と弱点分析の対策結びつき",
+      "question": {
+        "speaker": "中川宏昌",
+        "party": "中道改革連合・無所属",
+        "summary": "- 地域特性（地理的制約、高齢化、豪雪地帯など）に応じた弱点を把握し、具体的な対策に結びつけることが防災庁の実効性の核心ではないか\n- 平時から制度・運用の隙間を洗い出し、柔軟に対処するための政府の見解を問う",
+        "full_text": "次に大臣にお考えを伺いたいと思います。それはリスク評価の実装と弱点分析の対策の結びつきについてでありますけれども、法案ではリスク評価を実装し、地域ごとの弱点を把握した上で、それを具体的な対策に結びつけていくことが重要な課題とされております。私はここが防災庁の実効性を左右する核心の一つであるというふうに考えております。能登半島地震では、半島特有の地理的制約に加えまして、高齢化、また減灯、道路寸断、通信途絶などが重なりまして、支援の遅れや災害関連死の増加にもつながりました。地域の弱点は一定程度を想定し得たにもかかわらず、それが事前の備えですとか対策に。また、豪雪地帯でありますと、除雪や搬送体制。都市部であれば、在宅避難者の把握や支援体制など、地域特性に応じた対策を改めて整理をして、計画的に講じていくべきと考えます。また、平時から制度上、運用上の隙間を洗い出して、必要な見直しを進めるとともに、現場で支障が生じる場合は、さまざまな事態に柔軟に対処すべきだと考えますが、大臣の見解をお伺いさせていただきます。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "大臣",
+        "role": "",
+        "summary": "- 地域ごとに定量的に把握し、抜け漏れのない対策を検討することが重要である\n- 地方公共団体への伴走支援を通じて、対策を防災計画に適切に反映させるとともに、災害発生時は政府の災害対策本部を通じて迅速かつ効率的に対応する",
+        "full_text": "はい。中川委員が今御指摘になったように、それぞれの地域、十分耐えているかとか、そういうことを定量的に把握して、その上で抜け落ちだったり、漏れがないように、それぞれの地域ごとに必要な対策を検討していくことが重要だと思っております。防災庁では、これらのプロセスが円滑に行われ、必要な対策が地域が定める防災に関する各種の計画に適切に反映されるよう、地方公共団体への伴走支援も含めて、最大限支援をしていくこととしております。また、災害発生時には、政府の災害対策本部の運営などを通じて、関係府省庁の施策の実施に関する総合調整に取り組み、さまざまな事態に対して、迅速かつ効率的に対応していくようにいたします。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5175",
+        "clb-5177"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=522.683",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "リスク評価と具体的対策の結びつきに関する見解",
+          "sub_asks": [
+            "地域特性に応じた対策を計画的に講じるべきか",
+            "制度・運用の隙間の見直しと柔軟な対処を行うべきか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "field_case",
+              "excerpt": "能登半島地震"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "能登半島地震の被災地",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "防災庁"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "政府の災害対策本部"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "最大限支援をしていくこととしております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "必要な対策が地域が定める防災に関する各種の計画に適切に反映されるよう、地方公共団体への伴走支援も含めて、最大限支援をしていく",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "リスク評価を具体策に結びつける重要性について大臣が同意したが、具体的な手法や期限はなく、抽象的な支援表明に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「見解を伺いたい」という形式のため、大臣が「重要だと思う」と答えるだけで完結してしまい、具体的なアクションを約束させる仕組みになっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_002",
+      "segment_index": 1,
+      "topic": "防災計画・避難所運営への女性の視点の反映",
+      "question": {
+        "speaker": "中川宏昌",
+        "party": "中道改革連合・無所属",
+        "summary": "- 避難所でのプライバシー確保や女性特有のニーズへの配慮が不十分であった課題に対し、女性の視点をどのように着実に反映させるか\n- 自治体や関係機関への働きかけ、改善促進をどのように進めるか",
+        "full_text": "次に、これまでの災害対応におきまして、避難所での着替えや受入スペースの不足、トイレのプライバシー確保の不備、生理用品や女性用下着の女性による配付体制の欠如など、女性特有のニーズへの配慮が不十分であったことが、幾度も課題として浮き彫りになりました。女性や要配慮者などの様々な視点からの検討を組むことの重要性が重ねて指摘をされているところであります。内閣府男女共同参画局がこれまで示してきた災害対応力を強化する女性の視点等の優れたガイドラインがありますけれども、残念ながら現場の避難所運営において必ずしも。また衛生用品の備蓄、健康管理、性暴力、DV対策など、女性や要配慮者の視点が十分に反映されているかどうかが、被災者の生活環境、また尊厳の確保に直結すると思います。そこで、防災庁としまして、各府省庁や自治体に対しまして、女性の参画を進めるとともに、防災計画、避難所運営、また備蓄復旧復興の各段階において、女性の視点をどのように着実に反映させていくお考えでしょうか。また、そのためには、自治体や関係機関への働きかけ、また改善促進をどのように進めていくのか。政府の見解をお伺いさせていただきます。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "横山次長",
+        "role": "",
+        "summary": "- 防災基本計画に女性の参画を位置づけ、地方防災会議の女性委員比率を2030年度までに30%とする目標を掲げている\n- 避難所運営責任者への女性配置や女性特有の備品備蓄などを自治体に周知し、リーダー育成研修への女性参加を促している",
+        "full_text": "お答えいたします。自治体や関係機関の防災計画の基本となる国の防災基本計画におきましては、防災に関する意思決定や現場における女性の参画、復旧復興における女性の意見の反映など、あらゆる面での女性の参画を位置づけて、取組を促しているところでございます。また、第6次男女共同参画基本計画においても、自治体の防災計画を作成する地方防災会議の委員に占める女性の割合を、2030年度までに30%とする成果目標を掲げるとともに、内閣府の男女共同参画局と防災担当が連携で通知を発出し、連携して自治体への働きかけを行っているところでございます。さらに、避難所運営・備蓄に関しましては、避難生活における良好な生活環境の確保に向けた取組指針において、具体的に避難所の運営責任者への女性の配置とか、トイレ等を男女別に設けるとか、女性特有の備品を備蓄するといったようなことなどについて自治体に周知をしてきているところでございます。このような取組の中で、避難所運営等のリーダーを育成するために行っている研修に女性の積極的な参加を促してきてございますけれども、令和6年度の受講者の半数が女性となっているというような成果も上がってきてございます。防災庁におきましては、このような取組を継承いたしまして、自治体や関係機関と連携して充実した人材を活用しながら、しっかり自治体を支援して、防災分野における女性の参画の推進をさらに進めてまいりたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=522.683",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "防災計画等への女性視点の反映と改善促進策について",
+          "sub_asks": [
+            "防災計画、避難所運営、備蓄復旧復興の各段階で女性の視点をどう反映させるか",
+            "自治体や関係機関への働きかけや改善促進をどう進めるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "内閣府男女共同参画局"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "女性や要配慮者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国の防災基本計画"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "第6次男女共同参画基本計画"
+            },
+            {
+              "type": "number",
+              "excerpt": "2030年度までに30%"
+            },
+            {
+              "type": "number",
+              "excerpt": "令和6年度の受講者の半数が女性"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "防災分野における女性の参画の推進をさらに進めてまいりたいと考えてございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "地方防災会議の委員に占める女性の割合を、2030年度までに30%とする成果目標を掲げている",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "既存の計画や数値目標（30%）を具体的に提示しており、情報密度は高い。ただし、今後の具体的な新施策へのコミットメントは抽象的な表現に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どのように」という問いに対し、現状の取り組みの列挙で回答される傾向があるため、具体的に不足している点への改善策を問う形式にするとより効果的。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_003",
+      "segment_index": 1,
+      "topic": "災害対応車両（トイレトレーラー等）の広域派遣体制と司令塔機能",
+      "question": {
+        "speaker": "中川宏昌",
+        "party": "中道改革連合・無所属",
+        "summary": "- トイレトレーラー等の特殊車両を平時から道の駅や公園等で活用し、広域災害対応拠点として機能させる視点が有効ではないか\n- 防災庁が司令塔となり、省庁間の縦割りを排して、人員・物資の投入判断から運用までを一体的に担う仕組みをどう構築するか",
+        "full_text": "次に、能登半島地震では、玄関の中で水や電気、これが途絶をしました。全国の自治体や民間団体から派遣されたトイレカー、またトイレトレーラー、キッチンカーなどが、この劣悪な環境を改善するために非常に大きな役割を果たしましたけれども、一つの自治体が所有できる高価な特殊車両の数には限界があるというふうに思っております。この点につきまして、内閣府がトイレトレーラーやキッチンカーなどの災害対応車両登録制度、これを創設して、車両の所在をデータベース化して、国が派遣費用の最大9割を補助するという、この仕組みを整備し始めたことは、私は高く評価をさせていただきたいと思います。全国各地にある道の駅、また公園などで、これらの車両を日常的に配備、使用することで、災害への備えの重要性、これを啓発するとともに、災害時の素早い広域派遣拠点とする視点が、私は極めて有効だというふうに思っております。これには国土交通省、また総務省など、複数省庁にまたがる調整が不可欠であるというふうに思っております。能登半島地震では、道路寸断によりまして、33地区、最大3345名の方が孤立をしまして、断水も最大13万6440戸に及ぶ中で、トイレトレーラー、またトイレカー、キッチンカー、また可搬式浄水の装置ですとか、衛星通信など、分散している車両機材が、誰が束ねて、どの順番で投入していくかという、この司令塔機能の不足が問われたところであります。災害時における広域支援の実効性を高めるには、防災庁が司令塔となって、国土交通省などとの縦割りを廃しまして、道の駅に加えて、公園や公安、また空港などの公共空間を平時から、広域災害対応拠点、また、防災拠点としてしっかりと位置づけて、その機能強化と日常的な活用促進、これを図っていくことが重要であると考えます。あわせて、車両や資機材の所在把握にとどまらず、必要な人員、物資の投入判断、広域層の調整、現地での運用、さらには、平時からの訓練や受援計画、備蓄の在り方までを一体的に担う仕組み、これをどう構築し、全国どこでも機能する共通モデルとして整備していく必要があると考えますけれども、政府としてこの仕組みをどのように構築していくのか、また、その中で防災庁が果たすべき具体的な役割、これをどのように考えていらっしゃるのか、お伺いをさせていただきます。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "横山次長",
+        "role": "",
+        "summary": "- 公共空間を活用した防災拠点の確保は重要な視点である\n- 防災庁が人員を拡充し、交付金を活用して地域レベルのリスク評価を行い、関係機関と連携した実践的な訓練を通じて機能的な体制を構築し、事前防災を支援する",
+        "full_text": "お答えいたします。能登半島地震でも道の駅等が防災拠点として重要な役割を果たしたところでございます。公共空間を活用して防災拠点の確保などを行って、災害対策の強化を行っていくことは重要な視点だと考えてございます。防災庁におきましては、人員を拡充し、地域に伴走する体制を整えながら、新たに創設された交付金なども活用いたしまして、平時には自治体と連携して地域レベルでの災害リスク評価を行い、その結果に基づき、関係機関と連携し、必要な人員体制や資機材、防災拠点などを確保した上で、官民の関係機関の連携による応援・受援を含めた実践的な災害対応訓練を実施するなどいたしまして、実際に機能する災害対応体制を構築し、地域における事前防災対策の充実を支援してまいりたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5175",
+        "clb-5177"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=522.683",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "広域災害対応拠点の構築手法と防災庁の役割について",
+          "sub_asks": [
+            "全国共通モデルとしての仕組みをどう構築するか",
+            "その中で防災庁が果たすべき具体的な役割をどう考えるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "33地区、最大3345名の方が孤立"
+            },
+            {
+              "type": "number",
+              "excerpt": "断水も最大13万6440戸"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "防災庁",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "支援してまいりたいと考えてございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "公共空間を活用して防災拠点の確保などを行って、災害対策の強化を行っていくことは重要な視点だと考えてございます。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は具体的な仕組みの構築方法と防災庁の役割を問うているが、回答は「支援したい」という意向に留まり、具体的なメカニズムへの言及がない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問が非常に長く、複数の提案と現状分析が含まれているため、回答者が個別の論点（共通モデルの構築手法など）を回避しやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_004",
+      "segment_index": 1,
+      "topic": "災害対応車両の日常的運用モデルと費用負担ルール",
+      "question": {
+        "speaker": "中川宏昌",
+        "party": "中道改革連合・無所属",
+        "summary": "- トイレトレーラー等の維持管理コストや派遣時の費用負担、手続きの煩雑さが広域応援の課題となっている\n- 平時から稼働率を高める運用モデルの構築や、自治体が安心して機材を提供できる費用負担ルールをどう整備するか",
+        "full_text": "はい。その上で、トイレトレーラーやキッチンカーなどの災害対応車両、資機材については、導入を広げるだけでなく、平時から稼働率を高めて、訓練を通じての運用の習熟、これを進めて、広域応援の際にも、自治体が安心して機材を出せる環境、これを整えていくことが重要であります。とりわけ、維持管理や更新に伴う負担感、また、派遣時の費用負担や手続きの煩雑さ、さらに所有自治体にとってのインセンティブの弱さ、これが広域応援の実効性を高める上での課題ではないかと思っております。そこで、防災庁は、事前防災を進化させる観点から、トイレトレーラー等を平時から生かし続ける運用モデルの構築、広域応援を前提とした実機訓練や、避難所開設訓練への支援、また自治体が安心して機材を提供できる費用負担ルール、また運用上の仕組みの充実について、今後どのように取り組んでいくのか、お考えをお示ししていただきたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "横山次長",
+        "role": "",
+        "summary": "- 日常生活の中で利用されているものを備えとしておくことが効果的であると認識している\n- 防災力強化総合交付金を活用し、広域展開可能な資機材の整備や運用の推進、体制整備を支援し、共同運用や相互派遣の成功事例を増やしていく",
+        "full_text": "お答えいたします。災害時に避難所において利用可能なトイレトレーラー等は、道の駅への設置や自治体資産へのイベントなど、できるだけ日常生活の中で利用されているものを備えとしてしておくことが、効果的であるというふうに認識してございます。このため、委員からご指摘もございましたけれども、災害対応車両の登録制度の運用なども開始しているところでございますけれども、自治体が保有するトイレトレーラーの支援につきましては、防災庁設置を見据え、今年度予算で創出いたしました防災力強化総合交付金を活用して、他の自治体を支援するために必要な資機材や人材等を派遣する体制の整備を目的として、広域的な展開が可能な防災・減災に資する資機材の整備や、整備した資機材の広域的な運用の推進に向けた方策の検討、体制整備を支援するというふうに考えてございます。これに加えまして、 spheres基準等に沿った避難所の質の向上に配慮した避難所の解消・運営に係る訓練等を行うなど、自治体の取組を支援することとしてございます。防災庁においては、このような取組を進めまして、ご指摘のトイレトレーラーのような資機材の自治体間の共同運用や、相互派遣の成功事例を増やしていきまして、ノウハウを広げていくことで、全ての避難者に迅速に快適な生活環境を提供できる体制を構築してまいりたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=522.683",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "トイレトレーラー等の運用モデル構築と支援策への考え",
+          "sub_asks": [
+            "平時から生かし続ける運用モデルの構築",
+            "実機訓練や避難所開設訓練への支援",
+            "費用負担ルールや運用上の仕組みの充実"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自治体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "防災力強化総合交付金"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "spheres基準"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "広域的な運用の推進に向けた方策の検討、体制整備を支援するというふうに考えてございます",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "防災力強化総合交付金を活用して、広域的な運用の推進に向けた方策の検討、体制整備を支援するというふうに考えてございます。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な交付金名を用いて回答しており、一定の情報量がある。ただし、費用負担ルール等の具体的な仕組みについては「検討」に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "複数の要望を一つの問いに盛り込んでいるため、個別の回答（特に費用負担ルール）が曖昧になりやすい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_005",
+      "segment_index": 1,
+      "topic": "災害福祉支援（DWAT等）の制度的・財政的基盤の整備",
+      "question": {
+        "speaker": "中川宏昌",
+        "party": "中道改革連合・無所属",
+        "summary": "- 災害救助法に福祉サービスが明記されたことを踏まえ、DWAT等の専門職団体が円滑に活動できるよう、厚労省と連携して法的・財政的基盤をどう整備するか",
+        "full_text": "同志社大学の辰木茂雄教授は、災害救助法上、医療は救助として明記されており、対応が迅速である一方、福祉は初動が遅れると、このように指摘をされまして、その背景といたしまして、災害法制に福祉が公的に位置づけられていないという構造的な問題を挙げておられます。私も本会議でも申し上げさせていただきましたけれども、昨年の法改正で初めて災害対策基本法等に福祉サービスの提供、これが明記されたことは、私は歴史的な前進ではないかというふうに思っております。この法改正を踏まえまして、厚労省所管の医療・福祉人材と防災庁所管の災害対応をいかに融合していくことか。防災庁が司令塔として、日本災害リハビリテーション支援協会（JRAT）や災害派遣福祉チーム（DWAT）等の専門職団体が広域で安心して円滑に活動できるように、厚労省と連携して法的、また財政的な制度的基盤を平時からどのように整備していくのか、この点につきましてお伺いをさせていただきます。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "横山次長",
+        "role": "",
+        "summary": "- 社会福祉法改正案の提出により福祉支援の重要性を法制度上明確にしている\n- 厚生労働省による平時の体制整備予算と、内閣府による災害救助法に基づく財政支援を組み合わせ、円滑な活動環境を整備する",
+        "full_text": "お答えいたします。委員御指摘の昨年の災害救助法の改正もございました。これに加えまして、政府としては、DWATとして活動する人材を登録する仕組みを含む、社会福祉法改正案を別途今国会に提出してございます。これらを通じまして災害時の福祉支援の重要性が法制度上も明確にされてきているものと考えてございます。予算面では厚生労働省においてJRAT、DWATの平時の体制整備に係る予算措置が行われるとともに、内閣府において災害時には災害救助法に基づき必要な財政支援を行えるようにしてございます。防災庁ではこのような取組をしっかり継承いたしまして、今後とも厚生労働省と密に連携して、関係団体が円滑に活動できる環境の整備に取り組んでまいりたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5265"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=522.683",
+      "metrics": null
+    },
+    {
+      "id": "qa_006",
+      "segment_index": 1,
+      "topic": "DWATの活動経費および損害保障の国庫負担",
+      "question": {
+        "speaker": "中川宏昌",
+        "party": "中道改革連合・無所属",
+        "summary": "- DWATの活動経費、人件費、損害保障を国が確実に担保する制度を検討し、災害救助法上の位置づけと国庫負担の考え方をどう整理するか",
+        "full_text": "医療分野のDMATに比べまして、福祉分野のDWATでは、財政基盤ですとか、また活動保障が、これはなお脆弱でありまして、派遣のためにこの活動経費、人件費ですとか、また損害保障、受入れ調整を現場任せにしない仕組み、これが私は現地を見てきて非常に必要ではないかというふうに思っております。そこで改めてお伺いをさせていただきますけれども、防災庁としてDWATの活動経費を災害救助法の国庫負担対象として、より明確に位置づけるとともに、派遣に伴う人件費、損害保障まで国が確実に担保する制度を検討しまして、災害救助法上の位置づけと国庫負担の考え方をどのように整理していくお考えなのか、端的にお考えを伺いたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "横山次長",
+        "role": "",
+        "summary": "- 災害救助法の救助項目に福祉サービスが規定されたことを受け、DWAT等が実施した場合はDMATと同様に人件費や実費が国庫負担の対象となることを事務取扱要領に明確に規定した",
+        "full_text": "お答えいたします。昨年の法改正を踏まえまして、災害救助法の救助項目に福祉サービスの提供が規定されたことを受け、その業務をDWATや関係団体が実施した場合には、医療のDMATと同様に、福祉サービスの提供に係る人件費、その他活動に係る実費については、国庫負担のある災害救助法の対象となることを、事務取扱要領に明確に規定したところでございます。この内容について、しっかりと自治体関係団体と共有しながら、滞りのない活動ができるように取り組んでまいりたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=522.683",
+      "metrics": null
+    },
+    {
+      "id": "qa_007",
+      "segment_index": 1,
+      "topic": "復旧・復興期における保健・医療・福祉の連携体制",
+      "question": {
+        "speaker": "中川宏昌",
+        "party": "中道改革連合・無所属",
+        "summary": "- 災害関連死を防ぐため、都道府県に保健福祉分野を統括する法定の本部機能を設けるべきではないか\n- 国・都道府県・市町村の役割分担を整理し、厚労省内の縦割りや都道府県内の部局横断的な連携をどう実務的に進めるか",
+        "full_text": "今回の法案では、復旧・復興局面においても、国の司令塔機能を切れ目なく維持するため、復旧・復興本部の位置づけが盛り込まれておりまして、この点は重要であると考えております。被災地に最も近い都道府県、また市町村において、保健・医療・福祉・介護・住まいの確保といった生活再建に直結する支援、これが現場で一体的に機能することが不可欠であります。能登半島地震では、災害関連死が多数に上りまして、とりわけご高齢者の割合が高く、循環器系や呼吸器系の疾患が大きな比重を占めたと承知をしております。避難生活の長期化や医療・介護・福祉・住まいの確保の遅れが助かった命を守れない事態につながるという教訓を、私たちは重く受け止めなければなりません。私としては、法案で被災者の良好な生活環境を掲げるなら、都道府県に保健福祉分野を統括する法定の本部機能、これも必要であり、そうでないと復旧が、どうしてもこの土木インフラ中心にどうしても目が行きがちになってしまって、災害関連死を防ぐ対策、これが不十分になる恐れがあると考えております。政府として、復旧・復興の各局面におきまして、国・都道府県・市町村の役割分担をどう整理しながら、被災地における保健・福祉・医療の連携体制、これをどのように構築していくお考えでしょうか。併せて、厚労省内の縦割りや都道府県内での部局横断の連携を、どう実務的に進めまして、医療・介護・福祉・心のケア・要配慮支援者などが、一体的に機能する体制づくりにつなげていくのか、政府の見解をお伺いさせていただきます。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "横山次長",
+        "role": "",
+        "summary": "- 都道府県が保健・医療・福祉調整本部を設置して総合調整を行うこととなっている\n- 厚生労働省に支援チームを設置し、被災県の調整本部を支援することで、省内縦割りを排して一体的な現場支援を行う仕組みを、防災庁が主導する政府本部等と一体的に運用する",
+        "full_text": "お答えいたします。委員御指摘のとおり、被災自治体において、生活再建に関連する支援が一体的に機能する必要がございまして、災害対策基本法に基づき策定される防災基本計画において、大規模災害時においては、都道府県が保健・医療・福祉調整本部を設置して、こうした支援活動の総合調整を行うこととなってございます。能登半島地震への対応では、初期対応時において、国・自治体・被災現場等の情報の伝達の遅れ等が懸念されたことから、その改善を図るため、厚生労働省本省に、厚生労働省保健医療福祉調整本部支援チームを設置し、都道府県の調整本部を支援することとしたものと承知してございます。同チームは、平時にはDMAT等の各種活動チーム等との定期的な会議、訓練、自治体の訓練支援、災害時には被災県や他省庁からの情報の一元的な受付集約、活動チーム等の派遣に関する時期の目安や、配分の提案などによる被災現場の意思決定の迅速化を行うことを目指してございまして、厚生労働省所管の保健・医療・福祉分野が縦割りの弊害を廃して、一体となって現場支援を行うこととしているものでございます。この仕組みは、防災庁が主導となって運営される法定の政府の災害対策本部、あるいは現地対策本部、復旧・復興本部、今回法定化しましたけれども、あるいは都道府県の災害対策本部と一体で運用されることで、政府一丸となった関係機関が連携した効率的効果的な災害対応につながるものでございます。防災庁と厚生労働省で連携して、安定的な体制の構築にしっかり取り組んでまいりたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5175",
+        "clb-5177"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=522.683",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "被災地での保健・福祉・医療の連携体制構築について",
+          "sub_asks": [
+            "国・都道府県・市町村の役割分担と連携体制の構築方法",
+            "厚労省内および都道府県内の縦割り打破と実務的な連携策"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "field_case",
+              "excerpt": "能登半島地震"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "ご高齢者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "防災基本計画"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "厚生労働省保健医療福祉調整本部支援チーム"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "DMAT"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "安定的な体制の構築にしっかり取り組んでまいりたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "厚生労働省所管の保健・医療・福祉分野が縦割りの弊害を廃して、一体となって現場支援を行うこととしている",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的で多角的な視点を持っているが、回答は既存の仕組み（支援チーム等）の説明に留まり、具体的な役割分担の整理や実務的な連携策への踏み込みが不十分である。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が盛りだくさんであるため、回答者が個別の論点（特に都道府県内の部局横断連携）を切り捨てやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_008",
+      "segment_index": 1,
+      "topic": "NPO・ボランティア団体との官民共同実動体制の強化",
+      "question": {
+        "speaker": "中川宏昌",
+        "party": "中道改革連合・無所属",
+        "summary": "- 被災者援護協力団体の事前登録制度を実効的にするため、NPO等を正式なパートナーとして位置づけ、活動資金の助成や拠点確保、現地調整までを一体的に支える体制をどう強化するか",
+        "full_text": "次に、発災直後の初動から復旧復興期に至るまで、行政の力だけでは被災者の多様なニーズにお答えができないというふうに思っております。専門的な知見と経験を持つNPOやボランティア団体、そしてそれらをつなぐ災害中間支援組織が行政の隙間を埋める重要な役割を果たしていただいております。防災庁の組織体制案には、産学官民連携体制の構築、またNPO・ボランティア連携を担う地域防災部門が設置されると承知しております。専門的な民間団体が被災現場での最大限の力が発揮できるように、平時から顔の見える関係をしっかりと築いて財政的なバックアップを行っていくことが、私は防災庁の重要な使命であるというふうに思っております。そこで今回の法改正で創設された被災者援護協力団体の事前登録制度を実効性あるものとするために、能登半島地震でも自主避難所、在宅避難者、要配慮支援などで重要な役割を果たしましたNPOや災害中間支援組織を、単なる協力者ではなく、正式な災害対応のパートナーとしてしっかりと位置づけて、防災庁が中心となって、事前登録に加えまして、活動資金の助成ですとか、また宿泊拠点や活動拠点の確保、また情報共有や現地調整までを一体的に支える官民共同の実動体制、これをどのように強化をしていくおつもりか、お伺いをさせていただきたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "横山次長",
+        "role": "",
+        "summary": "- 登録制度により情報を共有し連携を後押ししているほか、各都道府県の災害中間支援組織の機能強化を支援している\n- ボランティア団体の自主性に留意しつつ、行政と連携して行われる活動に対してしっかり支援を行う",
+        "full_text": "災害時に行政と被災者支援を行うNPO等との円滑な連携を確保するためには、平時から顔の見える関係を構築することが重要でございます。内閣府では、昨年に創設した被災者援護協力団体の登録制度により、登録団体の情報を自治体等と共有し、NPO等との連携体制づくりを後押しし始めているところでございます。また、NPO・ボランティア等の活動支援や調整を行う災害中間支援組織につきましては、各都道府県に設置し、機能強化等を図るための支援を行ってございます。都道府県域の災害中間支援組織の位置づけについては、国が定める防災基本計画におきまして、都道府県地域防災計画等において、災害中間支援組織や災害ボランティアセンターとの役割分担をあらかじめ定めるよう努めること等を明記してございます。一方で、ボランティア活動に対する財政的な支援の御指摘でございますけれども、あるいは行政とのパートナーという位置づけについても御指摘ございました。ボランティア団体の自主性は損なわないように留意しながら、行政と連携して行われる災害対応の活動に対して、しっかり支援をすると。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=522.683",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "防災庁による官民共同の実動体制の強化策について",
+          "sub_asks": [
+            "事前登録制度の実効性向上策",
+            "活動資金の助成",
+            "宿泊・活動拠点の確保",
+            "情報共有や現地調整の一体的な支援"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "今回の法改正で創設された被災者援護協力団体の事前登録制度"
+            },
+            {
+              "type": "field_case",
+              "excerpt": "能登半島地震でも自主避難所、在宅避難者、要配慮支援などで重要な役割を果たしましたNPOや災害中間支援組織"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "NPOや災害中間支援組織",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "被災者援護協力団体の登録制度"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "防災基本計画"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "しっかり支援をすると",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "ボランティア団体の自主性は損なわないように留意しながら、行政と連携して行われる災害対応の活動に対して、しっかり支援をすると。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的で多岐にわたる支援策を求めているが、回答は既存制度の紹介と抽象的な支援意欲に留まっており、実効性のある具体策が示されていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "複数の具体的な要望（資金、拠点、調整）を一つの文章に盛り込んでいるため、回答者が個別の項目を回避しやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_009",
+      "segment_index": 1,
+      "topic": "ペット同行避難の推進と省庁間連携",
+      "question": {
+        "speaker": "中川宏昌",
+        "party": "中道改革連合・無所属",
+        "summary": "- 環境省のガイドラインと内閣府の財政支援の間に縦割りの壁がある。防災庁が司令塔となり、避難スペースの確保や民間団体との連携をどう強化するか",
+        "full_text": "災害時におきまして、ペットはかけがえのない家族の一員でございますけれども、ペットを連れて避難所へ行くことがためらわれるために、倒壊の危険がある自宅にとどまったり、また車中泊を余儀なくされまして、エコノミークラス症候群等の健康被害を被るケース、これが後を絶ちません。ペット同行避難の推進は、環境省がガイドライン等を示しておりますけれども、実際の避難所運営の枠組み、また財政支援は、これは内閣府防災担当が所管をしておりまして、ここにも縦割りの壁が存在をしております。また、被災後の孤立を防ぐためのケアにおきましては、アニマルセラピー等が果たす役割、これも極めて重要だと思っております。新設される防災庁が司令塔となりまして、環境省に対しまして必要な勧告や調整を行いながら、全国の自治体におけるペット同行避難が可能な避難スペースの確実な確保、また飼い主への平時からの啓発、さらには獣医師会や動物愛護団体等の民間専門団体との官民連携、これをどのように強化していくのか、お考えをお伺いしたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "横山次長",
+        "role": "",
+        "summary": "- 環境省がガイドラインを作成し、内閣府防災が防災基本計画に適切な受入れを盛り込んでいる\n- 現在環境省でガイドラインを改定中であり、防災庁は自治体への周知などを通じて環境省や民間団体と緊密に連携して取り組む",
+        "full_text": "災害時のペット対応でございますけれども、専門性がございます環境省が、「人とペットの災害対策ガイドライン」の作成をし、ペット同行避難の留意点や避難所における受入等の必要事項などを取りまとめているところでございます。一方で、内閣府防災では、令和6年の能登半島地震等の教訓を踏まえまして、防災基本計画にペット同行避難の適切な受入れを盛り込み、自治体向けの指針等において、平時から受入れ体制の構築等を求めているところでございます。現在、環境省におきまして、ガイドラインの改定作業中でございます。飼い主への啓発、避難所でのペットの飼育環境の整備や、獣医師会等の民間団体との連携などに関して、より詳細な内容が盛り込まれるものと承知してございます。今後防災庁におきましては、自治体向けの説明会の機会などを捉えて、当該ガイドラインを周知するなど、環境省や自治体、民間団体とも緊密に連携して、災害発生時のペットの同行、同伴避難について取り組んでまいりたいというふうに考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5175",
+        "clb-5177"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=522.683",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "防災庁によるペット同行避難の推進・連携強化策",
+          "sub_asks": [
+            "避難スペースの確実な確保",
+            "飼い主への平時からの啓発",
+            "民間専門団体との官民連携の強化"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "環境省"
+            },
+            {
+              "type": "organization",
+              "excerpt": "内閣府防災担当"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "獣医師会や動物愛護団体",
+          "concreteness": "mid",
+          "score": 0.6
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "人とペットの災害対策ガイドライン"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "令和6年の能登半島地震"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "防災基本計画"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "緊密に連携して、災害発生時のペットの同行、同伴避難について取り組んでまいりたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "防災庁におきましては、自治体向けの説明会の機会などを捉えて、当該ガイドラインを周知するなど、環境省や自治体、民間団体とも緊密に連携して取り組んでまいりたい",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的だが、回答は既存のガイドラインや計画の紹介に留まり、防災庁としての具体的な新施策や強化策への言及は抽象的な意向表明に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "複数の要望（スペース確保、啓発、連携）を一つの問いに盛り込んでいるため、回答が包括的で抽象的になりやすい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_010",
+      "segment_index": 1,
+      "topic": "災害時の情報発信体制とデマ対策",
+      "question": {
+        "speaker": "中川宏昌",
+        "party": "中道改革連合・無所属",
+        "summary": "- SNS等の悪質なデマへの対応とともに、被災者・自治体・支援団体などの多様なニーズに応じ、必要な情報を適時に届ける体制をどう構築するか\n- 各省庁の災害関連通知を現場で混乱なく活用できるよう、共有・発信をどう改善するか",
+        "full_text": "次に、SNS等で偽情報や悪質デマの拡散、これは救助活動を妨げまして不安を抱える被災者の皆様、また地域社会にさらなる混乱を生じさせる極めて深刻な問題であるというふうに思っております。また災害時に本当に必要とされる情報は、被災者、また被災自治体、避難所、自主避難所、在宅避難者、支援団体など、それぞれの立場によって異なりまして、必要なタイミングも一様ではありません。そのために防災庁には、正確な被害情報、また避難情報、支援制度、各省庁からの被害関連通知などについて、単に集約するだけでなく、多様な情報ニーズに応じて、必要な相手に必要な情報を適時、的確に届ける機能、これが求められると考えております。とりわけ大規模災害時には、国が発出する重要な通知ですとか支援情報が現場の自治体や支援関係者に迅速かつ確実に共有されることが重要であります。そこで防災庁として、SNS等による悪質なデマ情報への対応を進めつつ、被災者、自治体、支援団体など、それぞれ異なる情報ニーズに応じて、必要な情報を、必要なタイミングで届ける体制を、どのように構築していくのか。また、併せまして、各省庁が発出する災害関連通知、支援情報について、現場で混乱なく活用ができるように、どのように共有発信の改善を進めていくのか、この点につきまして、見解をお伺いさせていただきます。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "横山次長",
+        "role": "",
+        "summary": "- 平時からホームページで情報を公開し、発災時には報道発表やSNSで適切なタイミングで発信するよう努めている\n- 個々のニーズへの対応として、総務省の特別行政相談窓口による生活支援情報の提供などを行っている",
+        "full_text": "必要な情報が適時に発信、共有されることが重要でございます。内閣府防災では、平時よりホームページ等を通じて災害に関する様々な情報を公開してございます。また、発災時には報道発表やSNS等を通じて被害情報や支援制度等を適切なタイミングで発信するように努めているところでございます。その上で、支援情報については、個々の被災者のニーズに応じた対応が重要でございますので、例えば、総務省においては特別行政相談窓口を設置し、被災された方へ生活支援情報の提供や相談窓口を"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=522.683",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "防災庁における情報提供体制の構築と共有改善策",
+          "sub_asks": [
+            "ニーズに応じた情報を適時届ける体制の構築方法",
+            "各省庁の災害関連通知・支援情報の共有発信の改善策"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "被災者、自治体、支援団体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "内閣府防災"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "総務省"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "特別行政相談窓口"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "適切なタイミングで発信するように努めているところでございます",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "総務省においては特別行政相談窓口を設置し、被災された方へ生活支援情報の提供や相談窓口を",
+          "score": 0.2
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "質問は具体的で2つの明確な問いがあるが、回答は現状の説明に留まり、今後の体制構築や改善策という核心部分への言及が不十分である。また、回答が途切れている。",
+        "would_be_referenced": "low",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_011",
+      "segment_index": 2,
+      "topic": "岩手県大津市町の山火事の現状",
+      "question": {
+        "speaker": "田中健",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 岩手県大津市町で発生した山火事の現時点での状況および被害状況について",
+        "full_text": "昨日、岩手県の大津市町で山火事が発生をいたしました。冒頭、まだ現状火事が続いているということではございますが、今現時点でどのような状況にあるのか。被害状況等々含めお伝えいただければと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "門前浩二",
+        "role": "",
+        "summary": "- 2地区で林野火災が発生し、本日午前3時時点で小槌約15ha、霧霧約140haの被害を確認\n- 建物被害は7棟あるが、人的被害は確認されていない\n- 緊急消防援助隊、ヘリ8機、消防庁職員2名を派遣し、消火・情報収集活動を継続中",
+        "full_text": "昨日、岩手県大津市町において、2地区中心部の北西約8キロの小槌というところと、中心部から東側約2キロの霧霧というこの2地区で林野火災が発生をいたしました。現在把握をしている被害状況でございますけれども、林野被害といたしまして、本日午前3時時点で小槌で約15ヘクタール、霧霧で約140ヘクタール。建物被害は小槌で7棟が確認されておりますけれども、人的被害は確認されておりません。緊急消防援助隊として仙台市消防局が現地に向かっております。また、消防防災ヘリ3機、自衛隊ヘリ5機の合計8機による上空からの消火活動、情報収集活動等を行っております。消防庁職員2名も現地に派遣をいたしました。引き続き、地元消防機関等と緊密に連携し、状況をよく確認しつつ、住民の安全確保と、延焼の拡大防止に万全の対策を行ってまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=3494.0830000000005",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "岩手県大津市町の山火事の現状と被害状況",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "昨日、岩手県の大津市町で山火事が発生"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "岩手県大津市町",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "小槌"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "霧霧"
+            },
+            {
+              "type": "number",
+              "excerpt": "小槌で約15ヘクタール"
+            },
+            {
+              "type": "number",
+              "excerpt": "霧霧で約140ヘクタール"
+            },
+            {
+              "type": "number",
+              "excerpt": "建物被害は小槌で7棟"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "仙台市消防局"
+            },
+            {
+              "type": "number",
+              "excerpt": "消防防災ヘリ3機、自衛隊ヘリ5機の合計8機"
+            }
+          ],
+          "score": 1.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "延焼の拡大防止に万全の対策を行ってまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "林野被害といたしまして、本日午前3時時点で小槌で約15ヘクタール、霧霧で約140ヘクタール。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "災害の現状報告に関する質疑であり、回答者が具体的な被害面積や出動機材数などの数値を詳細に提示しているため、記録としての価値が高い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_012",
+      "segment_index": 2,
+      "topic": "岩手県大津市町の山火事の原因",
+      "question": {
+        "speaker": "田中健",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 今回の山火事の原因について、判明しているか、または分析中であるか",
+        "full_text": "もしもわかればなんですけれども、この山火事というのは、いろいろな理由があるということで、人為的な理由や自然発火的なものもありますけれども、今回は何か原因というのがもうわかっていらっしゃるのか、また今分析中なのか、わかる範囲でお答えいただければと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "門前浩二",
+        "role": "",
+        "summary": "- 出火原因については現在調査中である",
+        "full_text": "出火の原因ということだと思いますけれども、現在調査中というようにお伺いをしております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=3494.0830000000005",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "山火事の原因が判明しているか",
+          "sub_asks": [
+            "原因が判明しているか",
+            "現在分析中であるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "出火の原因ということだと思いますけれども、現在調査中というようにお伺いをしております。",
+          "score": 0.2
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "山火事の原因について問われ、政府側が「調査中」であると回答した定型的なやり取りである。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「わかる範囲で」という限定的な聞き方であるため、回答者が曖昧な回答をしやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_013",
+      "segment_index": 2,
+      "topic": "東京湾臨海部基幹的防災拠点の活用実績",
+      "question": {
+        "speaker": "田中健",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 東京湾臨海部基幹的防災拠点が、直近の地震（三陸沖地震等）や過去の災害において具体的にどのように機能し、活用された実績があるか",
+        "full_text": "その中で政府の広報対策拠点ともなる極めて重要な施設であるわけでありますが、例えば直近の地震においても実際にどのような機能をこれまで果たしてきたのか、また情報収集というのはどこまでこの施設で集約ができたのか、また物資の拠点としても稼働したのかというところまでは、今回視察のみでしたので見えてきませんでしたので伺いたいと思います。この拠点は実際に動く拠点として機能をしているのか。これについては後ほど地元であります同僚の佐々木議員から質疑をさせていただきますが、今回の地震において、さらにこれまでの災害での具体的な活用実績があれば、まずお示しをいただきたいと思います。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "横山次長",
+        "role": "",
+        "summary": "- 首都直下地震発生時の現地対策本部候補地等として位置づけられているが、現時点で実際に活用された実績はない\n- 三陸沖地震においても具体的に活用はしていないが、平時の訓練や研修には活用している",
+        "full_text": "内閣官房横山次長：視察いただいた東京湾臨海部基幹的広域防災拠点でございますけれども、首都直下地震における具体的な応急対策活動に関する計画において、首都直下地震が発生した場合に、緊急災害現地対策本部の候補地の一つとされているほか、自衛隊の救助活動拠点や医療機関への搬送拠点として位置づけられているところでございます。国の現地対策本部や防災拠点は、被災地、ないしは被災地に近い場所で、自治体の災害対策本部と密接に連携して対応することを想定していることから、有明の施設を活用するのは、基本的には首都周辺で大規模な災害が発生するケースでございます。現地対策本部を、様々な大災害で、その災害が起こった県庁などに設置してきた例はございますけれども、この拠点がそのような形で使われたことは幸い、今の時点ではございません。4月20日に発生した岩手県三陸沖を震源とする地震におきましても、本拠点を具体的に活用したということではございません。平時より訓練や研修には活用してございまして、緊急災害現地対策本部が設置された場合には、円滑に利用できるように引き続き取り組んでまいりたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=3494.0830000000005",
+      "metrics": null
+    },
+    {
+      "id": "qa_014",
+      "segment_index": 2,
+      "topic": "防災庁設置後の拠点管理体制と指揮命令系統",
+      "question": {
+        "speaker": "田中健",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 防災庁設置後、内閣府と国交省の共管である当該施設の管理体制や指揮命令系統に、縦割り弊害を解消するような変更があるか",
+        "full_text": "ちょっと資料では添付できなかったんですけれども、行かれた方はわかるかと思うんですけれども、最初は本部棟に入りまして、国交省の方が説明していただきましたが、同じ本部棟でも、このラインを越えると「こちらからは内閣府です」ということで、同じ中でも区分けがしっかりされているというか、縦割れの行政を感じたわけでございます。その中で、防災庁が設置をされるということでありますから、防災庁が設置された場合、縦割れの弊害や、さまざまな司令塔機能ということを今回訴えていますが、この管理体制とか、指揮命令系統とか、何かこの施設や本部施設が変わるというようなことがあるのかどうかも併せてお伺いします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "横山次長",
+        "role": "",
+        "summary": "- 平時は公園施設（国交省）と防災拠点（内閣府）で分担管理し、発災時は防災担当が仕切る柔軟な運用を行っている\n- 防災庁設置後も、引き続き防災庁と国土交通省が緊密に連携し、効率的な管理運営を行う",
+        "full_text": "少し役割分担が過ぎたという御指摘をいただきまして、少し反省している部分もございますけれども、施設整備に当たっては、フェーズフリー、デュアルユースの観点から、平常時における有効利用について十分に配慮することとされたことから、防災拠点に加えて、平常時において人々が防災に関する体験学習等を行うことができる機能を備えた公園施設としての整備を行っております。整備後の施設管理は、防災拠点としては内閣府、公園施設としては国土交通省で分担、連携して行うこととしてございまして、平常時と発災時で利用方法を変更するような柔軟な対応もしてきているところでございます。知見を有する各主体が適時適切な役割分担のもと、具体的には防災で使わなきゃいけないときにはしっかり防災担当が仕切ると。防災庁設置後も引き続き防災庁と国土交通省で緊密な連携を図りながら、効率的な管理運営を行ってまいりたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5175",
+        "clb-5177"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=3494.0830000000005",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "防災庁設置後の施設管理体制や指揮命令系統の変化",
+          "sub_asks": [
+            "縦割りの弊害を解消する管理体制や指揮命令系統の変化があるか",
+            "施設や本部施設自体が変わることがあるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "本部棟に入りまして、国交省の方が説明していただきましたが"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "防災庁",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "内閣府"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国土交通省"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "防災庁"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "効率的な管理運営を行ってまいりたいと考えてございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "防災庁設置後も引き続き防災庁と国土交通省で緊密な連携を図りながら、効率的な管理運営を行ってまいりたい",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "施設管理の現状（内閣府と国交省の分担）については具体的に回答しているが、指揮命令系統の変化という核心的な問いへの回答は抽象的な連携の強調に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「管理体制」と「指揮命令系統」という異なる次元の問いを同時に投げているため、回答が施設管理の話に偏ってしまった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_015",
+      "segment_index": 2,
+      "topic": "緊急災害現地対策本部と政府対策本部の役割分担",
+      "question": {
+        "speaker": "田中健",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 首都直下地震発生時の現地対策本部（副大臣・政務官が本部長）と、官邸の政府対策本部（防災大臣等が詰める）の役割分担および防災庁設置後の変更点について",
+        "full_text": "その中で冒頭、役割についてお話をいただきましたが、現地対策本部と政府の対策本部との関係ですけれども、首都直下型地震の発生時には、この場所が緊急災害現地対策本部になるとのことでありますが、その中で、この本部においては、少し聞いた中では副大臣、大臣政務官が本部長を務め、そして防災庁の担当大臣は、官邸の政府対策本部に詰めるような話を聞いていましたが、現地が官邸が指導するということになると思いますが、この役割分担、また防災庁ができてからも、この役割が変わらずにいくのかということについてもお聞きさせていただければと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "横山次長",
+        "role": "",
+        "summary": "- 総理を本部長とする緊急災害対策本部を設置し、被災地側には副大臣等を本部長とする緊急災害現地対策本部を設置して連携する\n- 防災庁は本部の運営を担い、情報を迅速に収集・統合して総理や防災大臣の的確な判断を支援し、自治体と情報を共有して連携する",
+        "full_text": "大河官房横山次長「重なる部分ございますけれども、政府においては首都直下地震が発生した場合には、速やかに内閣総理大臣を本部長として、防災大臣、並びに内閣官房長官を副本部長とする緊急災害対策本部の設置を決定することを想定しているところでございます。また、被災都県災害対策本部と密接な連携を図るため、被害状況に応じて、原則として防災庁の副大臣、または大臣政務官を想定してございますけれども、これを本部長とする緊急災害現地対策本部を速やかに設置することとしてございます。防災庁においては、こうした政府の災害対策本部の運営等を担うとともに、情報システムを用いて被災地の情報を迅速かつ効率的に収集・統合する体制を強化いたしまして、その情報に基づいて、本部長である総理や防災大臣が的確な判断を行うとともに、都道府県や市町村、この場合は都県でございますが、都県や市町村の災害対策本部、首長とも同じ情報を共有して、緊密に連携しながら災害対策に当たることになるというふうに考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5175",
+        "clb-5177"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=3494.0830000000005",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "現地対策本部と政府対策本部の役割分担と防災庁設置後の変更点",
+          "sub_asks": [
+            "現地対策本部と政府対策本部の役割分担について",
+            "防災庁設置後もこの役割分担が変わらないか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "首都直下型地震の発生時には、この場所が緊急災害現地対策本部になるとのこと"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "防災庁",
+          "concreteness": "concrete",
+          "score": 0.8
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "内閣総理大臣を本部長として、防災大臣、並びに内閣官房長官を副本部長とする緊急災害対策本部"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "防災庁の副大臣、または大臣政務官を想定してございますけれども、これを本部長とする緊急災害現地対策本部"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "防災庁の副大臣、または大臣政務官を想定してございますけれども、これを本部長とする緊急災害現地対策本部を速やかに設置することとしてございます。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "防災庁設置後の災害対策本部の体制（本部長・副本部長の構成）について具体的に回答しており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_016",
+      "segment_index": 2,
+      "topic": "防災体験施設の避難所展示内容の適切性",
+      "question": {
+        "speaker": "田中健",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 防災体験施設の避難所展示が「体育館での雑魚寝」という昭和初期から変わらない状況を示しており、日本の防災状況として不適切ではないかという認識について",
+        "full_text": "ご案内のとおり、いわゆる体育館の雑魚寝ということであります。さまざまな取り組みをしていることは存じておりますし、またその議論も進めていきたいと思うんですけれども、まずパッと見たときに、説明の中では子どもさんの修学旅行の後やディズニーランドの後も多いですし、さらに海外の人もこの視察に訪れることを世界中から来ているということなんですが、この状況を見てしまうと、日本の防災、被災地は大丈夫なのかと思ってしまわないかと大変に心配をしておりましたが、まず大臣、これを被災地のパッと見たときにどのような認識であろうかと。これを感じましたでしょうか。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "牧野国務大臣",
+        "role": "",
+        "summary": "- 大臣自身も視察時に違和感を覚えたため、内閣府から国土交通省へ展示内容の見直しを依頼した",
+        "full_text": "議員ご指摘の防災体験像の展示についても拝見をいたしました。私も全く同じ感想というか、それを見て違和感を覚えましたので、展示内容として、現在、内閣府の防災の方でも、国交省の方に展示内容の見直しをお願いいたしました。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=3494.0830000000005",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "被災地の雑魚寝展示に対する認識",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "体育館の雑魚寝"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "海外の人",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "内閣府の防災"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国交省"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 3,
+          "trigger_phrase": "国交省の方に展示内容の見直しをお願いいたしました",
+          "matched_pattern": "future-tense verb describing a CONCRETE government action with a named mechanism"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "私も全く同じ感想というか、それを見て違和感を覚えましたので、展示内容の見直しをお願いいたしました。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "展示内容への違和感という大臣の認識と、国交省への見直し依頼という具体的なアクションが明確に示されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が感情的な認識を問う形式であるため、具体的な改善策や期限を求める構成にすればより実効性が高まった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_017",
+      "segment_index": 2,
+      "topic": "避難所の環境改善と標準化のスケジュール",
+      "question": {
+        "speaker": "田中健",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 避難所の最低基準や標準化をどのように設定し、今後のスケジュールをどう考えているか",
+        "full_text": "そして今まさに進めている48時間以内に、さまざまな資材が来たり、また一人ずつの個別のパーテーションが組まれたり、いろいろな段ボールのベッドやパーテーションの展示も見させていただきましたが、そういうものが来ると思いますので、この展示とは、例えばもう一つ奥でもいいですが、国としては、今、鋭意進めているかと思いますが、この最低基準、標準化というのはどのように設定していくのか、またその設定していく中のスケジュールですね、今後のについても併せて伺いたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "牧野国務大臣",
+        "role": "",
+        "summary": "- 防災庁設置に合わせて災害対策基本法を改正し、トイレの設置数（50人に1基）やレイアウトなどの定量的な標準を示した\n- 防災庁において人員・予算を拡充し、どこで大規模災害が起きても良好な避難環境を迅速に確保できる支援体制を実現する",
+        "full_text": "そこで防災庁設置の意義の一つは避難環境の抜本的な改善にあると考えまして、防災庁の設置に合わせて災害対策基本法を改正し、どこで災害が起こったとしても地理的条件や自治体の財政状況等にかかわらず、被災者が良好な避難生活を、快適なトイレ、暖かい食事の提供や、プライバシーを守れる避難生活環境などについて標準を示しました。例えば、トイレに関しては、発災直後には50人にトイレ1基を設置するといった定量的な基準を示したほか、具体的な避難所のレイアウト等も示しました。防災庁では、この取組を引き継ぎまして、さらに充実する人員予算を生かして、どこで大規模災害が発生しても、良好な避難環境を迅速に確保できるように、きめ細やかな支援体制を実現していくことにしております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5175",
+        "clb-5177"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=3494.0830000000005",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "避難所の最低基準・標準化の設定方法と今後の予定",
+          "sub_asks": [
+            "最低基準・標準化をどのように設定していくのか",
+            "設定していく中の今後のスケジュール"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "50人にトイレ1基"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "防災庁"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "災害対策基本法"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "きめ細やかな支援体制を実現していくことにしております",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "トイレに関しては、発災直後には50人にトイレ1基を設置するといった定量的な基準を示した",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "避難所の標準化に関する質問に対し、具体的な数値基準（トイレ1基/50人）を提示した点は価値があるが、スケジュールへの回答は欠落している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "スケジュールについて具体的にいつまでに、という期限を設けて問えば、より拘束力のある回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_018",
+      "segment_index": 2,
+      "topic": "避難所の医療・福祉・通信の統合拠点化",
+      "question": {
+        "speaker": "田中健",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 避難所を単なる避難場所ではなく、医療・福祉・通信が一体となった生活拠点として位置づける考えについて",
+        "full_text": "さらに避難所というのは、単なる過ごせればいい、また避難できればいいというわけではなく、医療や介護や福祉、また通信というのが一体となった生活の拠点といった意味もあります。現実には、先ほど大臣からもありました、避難所での体調悪化とか災害関連死というのが後を絶たない中でありますが、この避難所を医療や福祉、また通信の統合の拠点として位置づけていく中で、どのような考えをお持ちなのか、また伺いたいと思っています。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "牧野国務大臣",
+        "role": "",
+        "summary": "- 高齢化社会において災害関連死を減らすため、DMATによる医療提供やDWATによる福祉支援などの提供が重要であると考えている",
+        "full_text": "高齢化が社会の中で進む中、災害関連死を減らしていくためには、被災者に対する医療また福祉の支援というのは大変重要だと思っております。避難所におきまして、被災者の状況に応じて、DMATによる医療の提供、またDWATによる福祉支援、そうしたものを。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5175",
+        "clb-5177"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=3494.0830000000005",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "避難所を医療・福祉・通信の統合拠点とする考え",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "DMAT"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "DWAT"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "災害関連死を減らしていくためには、被災者に対する医療また福祉の支援というのは大変重要だと思っております。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "避難所の機能統合に関する問いに対し、重要性の認識と既存の支援体制（DMAT/DWAT）を挙げるに留まっており、具体的な方針への言及が不十分である。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのような考えか」という抽象的な問いであるため、回答者が一般論で逃げやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_019",
+      "segment_index": 2,
+      "topic": "避難所物資のユニット化・規格化の取り組み",
+      "question": {
+        "speaker": "田中健",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 避難所への支援物資をパッケージ化・ユニット化して送る手法（イタリアの例など）について、現在の取り組み状況はどうか",
+        "full_text": "先ほどその地域によって、それぞれまだまだ不十分だということ、また格差が出てくるということにおいて、やはりこの避難所には、移設住まい大切ですけれども、これをパッケージで送る必要ということを必要性が言われています。そのための標準化、またユニット化、規格化が必要と言われています。どうしても避難所にはたくさんの支援がきますが、支援物資が積まれてしまう、もしくはもっと言えばトラックが入れないで何時間も待ってしまうというようなことがありますので、最低限のプッシュ型でパッケージ製のもの、またユニット型規格化というのが専門家からも指摘がされていますが、これらの取り組みについても現在のことを伺いたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "横山次長",
+        "role": "",
+        "summary": "- 段ボールベッドや簡易トイレ等の規格をそろえて分散備蓄する取り組みを開始しており、ユニット化による効率化も想定している\n- 日本の屋内避難の実情に合わせたユニット化の在り方や供給手法を検討中であり、あわせて交付金を活用した自治体の備蓄支援も行う",
+        "full_text": "我が国においては、大規模災害時に国が行うプッシュ型支援用の物資のうち、段ボールベッドや簡易トイレ、キッチン資材、入浴資材などを規格をそろえた上で、分散して備蓄する取組も始めてございます。イタリアの方式も参考にですね、これらの物資をユニット化して運用することも、発災時のオペレーションの効率性を高める観点から想定されるものと考えてございます。一方で、我が国においては、雨が少なく多くの建物に耐震性に関して課題があるイタリアと異なりまして、通常、屋内を避難所として活用しているという実情を踏まえ、ユニット化の在り方や、迅速かつ確実に被災地に供給するための手法については、検討を進めてまいらないといけないということで、今、取り組んでいるところでございます。防災庁では、新たに創設された交付金も活用して各地域における自治体の備蓄をしっかり支援するとともに、先に述べたような国の備蓄拠点の整備を進めることなどによって、被災者の支援が迅速に行えるよう取り組んでまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=3494.0830000000005",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "支援物資のユニット化・規格化の取り組み状況",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "専門家からも指摘がされています"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "段ボールベッド"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "簡易トイレ"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "キッチン資材"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "入浴資材"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "イタリアの方式"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "防災庁"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "ユニット化の在り方や、迅速かつ確実に被災地に供給するための手法については、検討を進めてまいらないといけない",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "段ボールベッドや簡易トイレ、キッチン資材、入浴資材などを規格をそろえた上で、分散して備蓄する取組も始めてございます。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "物資のユニット化という具体的な提案に対し、現状の備蓄品目と今後の検討方向を具体的に回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "現状の取り組みを伺うだけでなく、具体的にどのような規格化を求めるのかを提示すれば、より踏み込んだ回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_020",
+      "segment_index": 2,
+      "topic": "避難所整備に関する財政支援の一元化",
+      "question": {
+        "speaker": "田中健",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 各省庁に分かれている避難所整備の財政支援やバックアップを、防災庁の下で一元化する考えはあるか",
+        "full_text": "そこで、この避難所整備ですね。バックアップというのは防災庁の下で一元化していくような考えはないかということで伺いたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "牧野国務大臣",
+        "role": "",
+        "summary": "- 平時の機能を踏まえ、関係省庁が引き続き担当することが効率的であると考える\n- ただし、防災庁が政府全体の司令塔として、防災大臣の勧告権を活用し、関係省庁と連携して望ましい水準の確保を推進する",
+        "full_text": "財政支援の枠組みを一本化したらどうかというようなご指摘も含まれてのご質問だと思いますけれども、指定避難所に指定される施設の整備につきましては、日ごろから現場で行われる事業に携わっている関係省庁が、平時の機能のあり方を踏まえた上で、いかなるときでも一貫して担当することが、効率的な対応につながるものと考えております。法案が成立して防災庁が設置された暁には、望ましい水準が確保されるよう、防災大臣の勧告権も生かして、防災庁が政府全体の司令塔として、それぞれの専門性を持った関係省庁と連携して取組を進めてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5175",
+        "clb-5177"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=3494.0830000000005",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "避難所整備のバックアップの一元化の検討",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "防災庁"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "防災大臣の勧告権"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "取組を進めてまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "防災庁が政府全体の司令塔として、それぞれの専門性を持った関係省庁と連携して取組を進めてまいりたい",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "避難所整備の一元化という提案に対し、現状の省庁分担の効率性を理由に否定しつつ、防災庁による調整機能を強調する回答となっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「バックアップ」という言葉の定義が曖昧であり、財政支援なのか管理体制なのかを明確に問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_021",
+      "segment_index": 2,
+      "topic": "防災庁の司令塔機能と意思決定権限",
+      "question": {
+        "speaker": "田中健",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 災害時の最終的な意思決定者は誰か。また、その決定は関係省庁や自治体に対して法的な拘束力を持つのか、指示はどのように伝達されるのか",
+        "full_text": "この司令塔機能については、災害時の最終的な意思決定というのは誰が行うのか。またその決定というのは、現場にいます関係省庁や自治体に対して法的な拘束力を持つのかということです。また、指示が大事だと思いますが、現場への指示というのは、どのように伝達されるのか。また、自治体がそれぞれ判断をされると思いますけれども、自治体が判断された場合と、防災庁の指示とどちらが優先をされるのか等々、これらを指導体系として一体として整理しておくことが必要かなと思っておりますが、大臣にお考えを伺いたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "牧野国務大臣",
+        "role": "",
+        "summary": "- 防災大臣は各府省庁への指示権を有しており、関係府省庁は災害対策本部長の指示に従う\n- 市町村の能力を超える災害については、国が各府省庁の専門性を生かして支援し、緊急を要する応急措置に関しては国から自治体へ指示を行うことも可能である",
+        "full_text": "その上でお答えをさせてもらいますと、各府省庁への指示権を有しております。そして関係府省庁は災害対策本部長の指示に当然従うことになります。その上で災害対応につきましては、一時的には住民に近くて地域の実情をよく知る市町村が担う一方、市町村の対応能力を超える大きな災害につきましては、必要に応じて都道府県、また国が各府省庁の専門性や即応性を生かしつつ、市町村を支援することが適切であると考えております。最終的に、国と自治体が判断が異なるということは起こらないと思いますけれども、緊急を要する応急措置に関しましては、国の機関から自治体に指示等を行うことも可能とされております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5175",
+        "clb-5177"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=3494.0830000000005",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "防災庁の司令塔機能と指示体系について",
+          "sub_asks": [
+            "最終的な意思決定者は誰か",
+            "決定に法的な拘束力はあるか",
+            "現場への指示伝達方法はどうなるか",
+            "自治体の判断と防災庁の指示の優先順位はどうなるか"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自治体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "災害対策本部長"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "関係府省庁は災害対策本部長の指示に当然従うことになります。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "複数の問いに対し、指示権の所在などの法的解釈を述べているが、伝達手段などの具体的運用への回答は不十分である。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "一度に4つの異なる側面を質問しているため、回答が分散し、個々の問いへの具体性が欠けている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_022",
+      "segment_index": 2,
+      "topic": "防災庁の勧告権の実効性担保",
+      "question": {
+        "speaker": "田中健",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 勧告権の実効性を確保するため、発動基準の策定、内容の公表、回答期限の設定、従わない場合の措置など、制度的な担保をどう考えるか",
+        "full_text": "しかし、これ問われているのはやはり関係性も大事なんですけれども、制度だと思っていますので、災害対応というのは想定外のことでありますから、平時に築いた関係性だけで動くのではなく、むしろ利害が衝突する中でだからこそ制度としてしっかりと担保しておくということが問われているかと思いますので、ぜひ論点をちょっと分解してお話をしたいと思いますけれども、例えば勧告権の発動基準というのがあるかどうかですね。勧告内容は公表されるのかと、またその勧告というのはやはりしっかり出したら答えというのが普通あるものですから、その回答期限まで設定をされるのかと、またその勧告に従わない場合の措置というのは何かということで、誰が勧告権を出しても、しっかりと制度として担保できるような仕組みをつくるべきだと思いますが、考えを伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "牧野国務大臣",
+        "role": "",
+        "summary": "- 勧告権の詳細な運用については今後検討する。事前防災を例に挙げると、各府省庁の施策進捗が防災庁の求めるスピードに合っていない等の個別具体的な状況に基づき判断することになる",
+        "full_text": "勧告権の詳細の運用につきましては、今後検討していくことになります。事前防災を例に出して言いますと、勧告を行うか否かの判断につきましては、各府省庁の個別具体の施策の進捗状況、要は、こちらが防災庁が求めたスピードに合っていないというような、そういう個別具体的な状況におきまして行うことになると思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5175",
+        "clb-5177"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=3494.0830000000005",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "勧告権の制度的担保に関する考え方",
+          "sub_asks": [
+            "勧告権の発動基準の有無",
+            "勧告内容の公表の有無",
+            "回答期限の設定の有無",
+            "勧告に従わない場合の措置"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "防災庁"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "今後検討していくことになります",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "勧告権の詳細の運用につきましては、今後検討していくことになります。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者が制度的な詳細（基準・公表・期限・措置）を具体的に問うたが、回答は「今後検討する」という抽象的な回答に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "複数の具体的な制度設計に関する問いを一つの質問に盛り込んでいるため、回答者が個別の点への回答を回避しやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_023",
+      "segment_index": 3,
+      "topic": "防災庁設置による地震発生時の対応の変化",
+      "question": {
+        "speaker": "佐々木真琴",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 三陸沖地震のような規模の地震が発生した際、防災庁の設置により政府の対応が具体的にどう変わるのか\n- 津波警報発令や国民への注意喚起、公共交通機関への対応など多岐にわたる対応において、どのような改善が見込まれるのか",
+        "full_text": "そこで伺いますけれども、今回発生した三陸沖を震源とする地震のように、高発地震注意情報の発表に至るような規模の地震が発生した際に、防災庁の設置により、政府の対応が具体的にどのように変わっていくのかという点を伺ってまいりたいと思います。今回を例にとりますと、地震の発生時、津波警報であるとか注意報の発令、そして高発地震注意情報の発表、防災対応をとるべき地域における国や自治体の実施、すべきことや連携、国民に対する注意の呼びかけの周知や徹底、公共交通機関への影響を踏まえた対応など、本当に多岐にわたる対応が求められるところでございますけれども、今回、我々が今議論している防災庁ができることによって、今よりも良い取組に変わっていくんだろうという期待を寄せるところでございます。より国民の生命と財産、安心安全を確実に守ることができる体制へと変わっていくことが求められておりますけれども、設置によって改善される具体的な取組について大臣のお考えをお聞かせください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "武野国務大臣",
+        "role": "",
+        "summary": "- 徹底した事前防災の推進と、発災から復旧・復興までの一貫した指令機能を有する組織とする\n- 地域に伴走する体制を整え、迅速な職員派遣とデジタル技術による被災状況の一元把握を行う\n- 関係省庁と連携し、救助や物資提供をワンストップ窓口として効率的・迅速に実施する体制を強化する",
+        "full_text": "今年中に設置を目指す防災庁は、徹底した事前防災への推進や発災時の対応から復旧復興までの一貫した災害対応の指令等機能を有する組織でございます。具体的にはこうした地震に対して防災庁はどのように対応していくかということでありますが、まず、ふるさと防災職員、現在内閣府防災の方で作っておりますけれども、地域に伴走する体制を整えながら、そうした災害時には迅速に職員を被災地に送り込みまして、そしてデジタル技術なども活用して、被災状況を一元的に把握をいたします。その上で関係省庁と連携をいたしまして、被災された方々の救助、また必要な物資の提供を進めます。そしてさらにワンストップ窓口として、効果的、能率的に、今よりもさらに早く送り込めるような、そういう体制を強化していくということになります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5175",
+        "clb-5177"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=6482.483",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "防災庁設置による具体的対応の改善点",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "field_case",
+              "excerpt": "今回発生した三陸沖を震源とする地震"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "deadline",
+              "excerpt": "今年中に設置を目指す"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ふるさと防災職員"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "体制を強化していくということになります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "今年中に設置を目指す防災庁は、徹底した事前防災への推進や発災時の対応から復旧復興までの一貫した災害対応の指令等機能を有する組織でございます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "防災庁設置による具体的改善策を問う質問に対し、大臣が組織の機能と具体的アプローチ（ふるさと防災職員の活用等）を回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "具体的に「どのように変わるか」を問うているが、回答が概念的な機能説明に留まっているため、現状の体制との対比を求める聞き方にするべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_024",
+      "segment_index": 3,
+      "topic": "防災庁による判断の迅速化と省庁間調整の解消",
+      "question": {
+        "speaker": "佐々木真琴",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 現場で課題となっている「最終判断の所在」や「省庁間調整による時間のロス」を、防災庁の設置でどう解消するのか\n- 現行体制と比べて、判断の曖昧さや調整の遅れがどのように改善されるのか",
+        "full_text": "では続いて、先日の本会議においても防災庁について質問させていただきましたが、一段高い司令塔として機能させるという答弁をいただきました。現場でいまだに言われる点としては、結局どこが最終判断をするんだという点ですとか、省庁間の調整に時間がかかってしまうんじゃないかというような課題が繰り返し指摘をされているところでございます。実際に物資の供給であるとか、避難所の対応においても、判断の遅れや連携不足が今までも課題となってきた部分です。こうした現場の実態を踏まえたときに、判断の曖昧さであるとか、調整の遅れというこの部分が防災庁をつくることによって、どのように解消されていくのか、現行の体制とどのように変わっていくのかという点についてもお願いをいたしたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "武野国務大臣",
+        "role": "",
+        "summary": "- 平時から関係省庁、自治体、産業界等と「顔の見える関係」を構築し、地域リスクを踏まえた対策を検討する\n- 災害時の役割分担に基づき、各自が取るべき行動を明確化する\n- デジタル技術を活用し、被災状況や物資提供、避難所状況を一元的に情報共有する",
+        "full_text": "防災庁では平時から関係省庁、自治体、産業界、民間団体との関係者の間で顔の見える関係を構築した上で、地域レベルでの災害リスク評価を踏まえた対策を検討することにしております。その際には災害時の役割分担に基づいておのおのがとるべき行動について、明確化をしていきたいと思っております。また、災害時には、デジタル技術を活用して、被災状況だけではなくて、物資の提供、また避難所の状況についても、関係者が一元的に情報共有した上で、"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5175",
+        "clb-5177"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=6482.483",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "防災庁設置による判断・調整の迅速化の方法",
+          "sub_asks": [
+            "判断の曖昧さや調整の遅れをどう解消するか",
+            "現行体制とどう変わるのか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "明確化をしていきたいと思っております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "災害時の役割分担に基づいておのおのがとるべき行動について、明確化をしていきたいと思っております。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "防災庁による課題解消策を問うているが、回答は「明確化したい」という意向に留まり、具体的メカニズムへの言及がない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのように解消されるか」という問いに対し、具体的な権限移譲や組織図の変更などの切り口を提示して問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_025",
+      "segment_index": 3,
+      "topic": "防災庁の司令塔機能と現場判断の整合性",
+      "question": {
+        "speaker": "佐々木真琴",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 防災庁の司令塔機能が、過度な統制となって現場の迅速な判断や自治体間の連携を阻害しないか\n- 統制を強めるものなのか、現場の判断を活かす総合的な仕組みなのか",
+        "full_text": "併せて今、体制を整えていきますというところに関連するんですけれども、先ほども管轄圏の話がありましたけれども、過度な統制は逆に現場の動きを阻害してしまうんじゃないかという懸念もございまして、実際にこれまで各自治体の皆様は、自治体間同士の協定ですとか、現場の判断で迅速に連携をしてきた経緯もあると存じております。ですので、この防災庁の司令塔機能というものが、統制を強めていくというものなのか、それともやはり現場の判断を生かす総合的な仕組みとして機能していくものなのか、基本的に。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "横山次長",
+        "role": "",
+        "summary": "- 司令塔機能は、政府一体となって地域での体制構築や被災自治体への応援、ワンストップ窓口を実現するためのものである\n- 平時は標準的な助言で自治体の主体的な取組を支援し、災害時は現場で情報を共有し一体となって対応することを想定している",
+        "full_text": "内閣官房横山次長防災庁が担う司令塔機能は各フェーズにおきまして、各地域で災害対応に必要な体制の構築、被災自治体への応援体制の迅速な構築、被災自治体とのワンストップ窓口などを政府一体となって実現するためのものでございます。平時には標準や技術的な助言を行いながら自治体の主体的な事前防災の取組を支援し、災害時には迅速に現場に駆けつけ、自治体と同じ情報を共有することで一体となった対応を行うことを想定してございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5175",
+        "clb-5177"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=6482.483",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "防災庁の司令塔機能の性質について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自治体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": true,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "被災自治体とのワンストップ窓口"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "vice_minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "平時には標準や技術的な助言を行いながら自治体の主体的な事前防災の取組を支援し、災害時には迅速に現場に駆けつけ、自治体と同じ情報を共有することで一体となった対応を行うことを想定してございます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "防災庁の役割について、統制ではなく支援と連携を重視する方針が明確に述べられており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_026",
+      "segment_index": 3,
+      "topic": "災害リスクに基づく地域間連携の制度設計",
+      "question": {
+        "speaker": "佐々木真琴",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 災害種別のリスク評価に基づき、地域間の連携の在り方を含めた事前の制度設計を行う考えがあるか",
+        "full_text": "では続いて、地域間の広域連携や協定などについて聞いていきたいと思うんですけれども、東日本大震災のとき、私は岩手県宮古市におりましたけれども、岩手沿岸の場合は特に遠野物語とかで有名な岩手県の遠野市が中核拠点という形になっていて、ひとまず物資は遠野に集めてそこから沿岸各地に運んでいくというような仕組みをとっておりました。ですので、この異なる災害リスクが、遠野は内陸ですので海がないので津波の被害が受けないというところから、そういった連携だったんだろうというふうに承知をしているところなんですけれども、やっぱり災害のリスクごとにどこと協定を結んでおくとその町はより迅速な対応ができるのかという観点を踏まえて協定を結んでいくことであるとか、広域な連携を体制組んでいくということが非常に大切であるということを身をもって感じております。仕組みとしてさせていくのかという観点が、この司令塔でもあるさまざまな自治体と協力をしていく、連携をしていく防災庁にとっては、とても大切な観点かなというふうに感じております。まさに防災庁がシミュレーションの推進と謳っておりますとおり、災害種別のリスクの評価に基づいて、地域間の連携の在り方まで含めた事前の制度設計を行っていく考えがあるのか、お答えをいただきたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "高市早苗",
+        "role": "",
+        "summary": "- 大規模災害では単独自治体のリソースに限りがあるため、広域的な連携は非常に重要であると認識している\n- 広域的な分析・対策を立案し、地域間連携を含めた事前防災対策を着実に講じる必要がある",
+        "full_text": "委員御指摘のとおり、大規模災害を想定した場合は、単独の自治体では、ちょっと失礼な言い方かもしれませんけれども、人的とか物的な資源、リソースには限りがあるために、広域的な連携というのは非常に重要になってくると考えております。広域的な分析や対策を立案し、地域間の連携を含めた事前防災対策を着実に講じていく必要があるかと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5175",
+        "clb-5177"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=6482.483",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "災害リスク評価に基づく地域間連携の制度設計の考え",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "field_case",
+              "excerpt": "東日本大震災のとき、私は岩手県宮古市におりましたけれども、岩手沿岸の場合は特に遠野物語とかで有名な岩手県の遠野市が中核拠点という形になっていて"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "岩手県遠野市",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "事前防災対策を着実に講じていく必要があるかと思います",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "広域的な分析や対策を立案し、地域間の連携を含めた事前防災対策を着実に講じていく必要があるかと思います。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は具体的な過去の事例を挙げて制度設計の考えを問うているが、回答は一般論に留まっており、具体的な仕組みや方針への言及がない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「考えがあるのか」というオープンクエスチョンであるため、回答者が抽象的な同意で逃げられる構成になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_027",
+      "segment_index": 3,
+      "topic": "災害物資・資機材の広域共同保有と供給体制",
+      "question": {
+        "speaker": "佐々木真琴",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 自治体単独での物資保有は非効率であるため、広域での共同保有や段階的な供給体制をどのように制度設計していくのか\n- 自治体間で物資を融通しやすくするための具体的な仕組みを国としてどう構築するのか",
+        "full_text": "今申し上げた広域連携ですけれども、物資とか資機材とのつながりも大きく関わってくるものだなというふうに考えております。先ほど来話に上がっておりますけれども、例えばトイレカーであるとかパーテーションなどについてもですね、一つの町で全部を抱えるというのは現実的に不可能であるし、非効率的だなというところも感じています。トイレカーを一つの自治体で10台持ちますなんていうのは財政的にも非常に難しいですし、そうではなくてみんなで持っていくことの方が本質的なんじゃないかなというところを感じております。ですので近隣自治体であるとか、協定を結びながら、発災直後は私の地元で言うならば、まずは岩手県沿岸であれば盛岡から来る、遠野から来るというところと連携をし、2日目、3日目ぐらいには、例えば青森市であるとか、群馬県桐生市であるとか、岩手県宮古市が姉妹都市で協定を結んでいるところだと、そういった位置関係なんですけれども、近いところと中距離的なところとの連携を進めながら、段階的に体制を整えていくというところも非常に各自治体で独自で進められている皆さんもいらっしゃいますので、そうした現場の実態を踏まえて、防災庁として、どういった体制を各市町村、各県に対して連携を取っていくのかというところも必要だなというふうに思っております。事前防災の指揮の取り方に関わってくると思うんですけれども、単に自治体間で物資、融通してくださいというだけではやっぱり十分ではないなというふうに考えておりますので、自治体間で融通しやすくなるような仕組みをどう国で作っていくのかであるとか、融通が実際に機能する仕組みを構築していくことが重要だと思います。ですので、防災庁として、こうした災害用の物資であるとか、資機材について、広域での共同保有であるとか、段階的な供給体制を前提とした仕組みを、どのように制度として設計していくのかというところについて、見解を伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "横山次長",
+        "role": "",
+        "summary": "- 自治体備蓄に関するガイドライン（今年度策定予定）において、民間協力や広域連携の在り方を示す\n- 災害対応車両をデータベース化し、ニーズに応じて迅速に提供する「災害対応車両登録制度」を運用する\n- プッシュ型支援物資のうち調達に時間を要するものを全国に分散備蓄する",
+        "full_text": "こうした課題の解消に向けて、今年度中に策定することを予定してございます自治体備蓄に関するガイドラインにおきましては、民間事業者との協力や自治体間の広域連携のあり方などについてもお示しをできればというふうに考えてございます。また、トイレカーなどの災害対応車両をデータベース化し、発災後、自治体のニーズに応じ迅速に提供できるようにする災害対応車両登録制度の運用も始めてございまして、こういうものの活用も促してまいりたいというふうに考えてございます。保管的な役割としましては、国が行うプッシュ型支援用の物資のうち、パーテーションなどの調達に一定の時間を要するものを全国に分散して備蓄して、自治体の保管のための"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=6482.483",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "広域的な物資・資機材の共同保有・供給体制の制度設計",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "青森市であるとか、群馬県桐生市であるとか、岩手県宮古市"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自治体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "deadline",
+              "excerpt": "今年度中に"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "自治体備蓄に関するガイドライン"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "災害対応車両登録制度"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 4,
+          "trigger_phrase": "今年度中に策定することを予定してございます自治体備蓄に関するガイドライン",
+          "matched_pattern": "Lv3 + an explicit time anchor"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "今年度中に策定することを予定してございます自治体備蓄に関するガイドラインにおきましては、民間事業者との協力や自治体間の広域連携のあり方などについてもお示しをできれば",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "広域連携による物資供給体制の制度設計について問い、政府側が今年度策定のガイドラインや既存の登録制度という具体的な回答を提示した有益なやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_028",
+      "segment_index": 3,
+      "topic": "広域連携による物資購入の補助率向上",
+      "question": {
+        "speaker": "佐々木真琴",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 物資購入において、広域で連携する自治体数が多い場合に補助率を上げるなどのインセンティブ設計は考えられているか",
+        "full_text": "もう一点、そこに紐づいてなんですけれども、レクのときには伺ったんですけれども、例えば、観光庁がやっている事業だと、自治体の連携数が多くなると補助率が上がりますみたいなメニューがあったりとかするんですけれども、例えばこの物資購入についても、今説明いただいたような仕組みの中で、広域で連携する自治体の連携数が多くなればなるほど補助率が上がりますみたいな設計などというのも考えられているのかという点も、併せてお答えいただければと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "横山次長",
+        "role": "",
+        "summary": "- 「防災力強化総合交付金」の広域連携推進事業において、複数自治体が連携する場合の交付上限額の上乗せ等を検討している\n- これにより広域的な共同保有や応援受援の強化を継続的に支援する",
+        "full_text": "備蓄を充実させる支援を過年度にも行ってきてございますけれども、御指摘いただいた今年度予算において作りました防災力強化総合交付金でございますけれども、そのメニューの一つであります広域連携推進事業においては、複数自治体が連携する場合の交付上限額の上乗せ等を考えてございます。広域での共同保有等もこれによって促しながら、広域的な応援受援の強化に向けた防災資機材の備蓄等を継続的に支援することとしていきたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=6482.483",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "広域連携による補助率引き上げの検討状況",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "観光庁がやっている事業"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自治体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "防災力強化総合交付金"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "広域連携推進事業"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "交付上限額の上乗せ等を考えてございます",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "広域連携推進事業においては、複数自治体が連携する場合の交付上限額の上乗せ等を考えてございます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な交付金名称を挙げて、広域連携による上乗せを検討していることが明確に回答されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_029",
+      "segment_index": 3,
+      "topic": "自治体間の備蓄格差の是正",
+      "question": {
+        "speaker": "佐々木真琴",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 財政力や意識の差による「備蓄格差」の現状をどう認識しているか\n- 格差是正に向けて、防災庁はどのように関与していくのか",
+        "full_text": "では、併せて、資機材の備蓄の格差という問題も指摘されておりますので、そこについても一点質問させていただきたいと思います。災害を経験した現場の自治体は、なんとか市民・住民の命を守るために整えていかないといけないんだという使命感を持ちながら、国の制度も使いながら、どんどん資器材を、備品を用意しているところもありますけれども、やはり自治体ごとに意識の差もございますし、財政余力にも大きく差があるところですので、その構造の中で、やはり備蓄の状況に大きな差が生じてしまっているというところで、備蓄格差と言います。特に小規模な自治体、町村であるとかは整備を進めたくてもなかなか自分のところの手出しの財源がなくて進められないというような構造的な課題もあるんじゃないかという声も現場の皆様からもいただいているところです。こうした状況を踏まえますと備蓄が進まないというのは、自治体の意識や努力の問題だけではやはりなくて、制度の構造そのものに課題があるんじゃないかというふうにも考えております。政府としてはこの災害用の物資であるとか、資機材の備蓄の格差の現状をどのように認識をいたしておるのかというところと、今後こうした格差の是正にどのように関与していくのか、そこに防災庁はどういうふうに関与していくのかというところの見解を伺いたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "横山次長",
+        "role": "",
+        "summary": "- 財政面の制約等により備蓄が十分でない自治体があることを課題として認識している\n- 非常用備蓄物資の購入経費への普通交付税措置の対象品目・量を拡充している\n- 車両・資機材について、緊急防災・減災事業債の延長や補正予算での交付金用意により整備を後押ししている\n- 防災力強化総合交付金を活用し、広域連携を視野に入れたさらなる支援を行う",
+        "full_text": "委員から御指摘ございましたように、災害用物資や資機材の備蓄が格差というか、十分でないということですね、各自治体の実情としてですね、ということが課題であるかというふうに考えてございます。災害対策基本法第49条の規定によりまして、各地方自治体には防災基本計画等に基づき必要な物資を備蓄することが義務付けられているところでございますけれども、各地方自治体におきましては、先ほども申し上げたように財政面の制約など、課題を抱えていることは十分に意識してございます。まず避難所における食料など、非常用備蓄物資の購入経費につきましては、普通交付税措置を講じてきているところでございますけれども、今年度よりその対象品目及び量を拡充して対応しているところでございます。また地方自治体から強い要望をいただきました、車両や資機材については、緊急防災・減災事業債に加え、事業債を延長して措置したことに加えまして、令和6年度補正予算事業、あるいは令和7年度補正予算事業において、交付金を用意いたしまして、自治体の備蓄整備を後押ししてまいりまして、かなりの自治体に手を挙げていただいて、備蓄の充実につながったかなというふうに考えてございます。先ほどご質問でお答えいたしましたように、防災庁においては、今年度予算の防災力強化総合交付金を活用して、広域連携を強めることも視野にさらなる支援を。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5175"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=6482.483",
+      "metrics": null
+    },
+    {
+      "id": "qa_030",
+      "segment_index": 3,
+      "topic": "分散型水確保（井戸水等）の制度的位置づけ",
+      "question": {
+        "speaker": "佐々木真琴",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 備蓄だけでなく、井戸水などの地域資源を活用した「分散型の水確保」について、どのように制度として位置づけ、実効性を持たせるのか",
+        "full_text": "今まで総合的な備蓄という観点を伺ってまいったんですけれども、その中でも特に重要な水の確保についても伺いたいと思います。しかしながら、実際にどこに井戸があるのかとか、どの程度使えるのか、生活用水では使えるけど飲めないとか、様々な条件もありますので、災害時に確実に使える状態を維持できているのかという点なども含めて、地域ごとにばらつきもあるというところが実情だと思っております。こうした状況を踏まえて、水の確保というところで、備蓄をするということだけではやはりなくて、地域にある資源を、水資源をどのように活用するのかという視点も、併せてとても大切だと思っております。防災庁としては、井戸水などの地域資源の把握であるとか、維持管理、災害時の活用も含めた分散型の水確保という観点においたときに、どのように制度として位置づけて、実効性ある形で進めていくのか、見解を伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "横山次長",
+        "role": "",
+        "summary": "- 取組指針において、平時からタンクや防災井戸等の整備に努めるよう自治体に示している\n- 「災害時地下水利用ガイドライン」を作成し、普及啓発に努めている\n- 防災庁として、地域のニーズに応じた事前の取組をきめ細かく支援していく",
+        "full_text": "生活用水の確保につきまして、内閣府が作成している避難生活における良好な生活環境の確保に向けた取組指針において、自治体に対し分散型の生活用水の確保として平時からタンク、貯水槽、防災井戸等の整備に努めるなど衛生的な水の継続的な確保等を通じて入浴機会や洗濯機会が確保されるよう平時から準備する旨を示しているところでございます。また災害用井戸等の活用促進については内閣官房水循環政策本部事務局におきまして、令和7年3月に災害時地下水利用ガイドラインが作成されてございまして、内閣府としても広く実際にこの内容を周知することなどによりまして、連携して普及啓発に努めてきているところでございます。防災庁といたしましては、引き続きこれらの周知等の取組に努めるとともに、地域において実情やニーズは異なると考えられますので、充実される体制も活用いたしまして、地域における発災時の生活用水確保に向けた事前の取組をきめ細かく支援してまいりたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5175",
+        "clb-5177"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=6482.483",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "分散型水確保の制度的位置づけと実効的な進め方",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "避難生活における良好な生活環境の確保に向けた取組指針"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "内閣官房水循環政策本部事務局"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "令和7年3月に災害時地下水利用ガイドラインが作成"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "きめ細かく支援してまいりたいと考えてございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "令和7年3月に災害時地下水利用ガイドラインが作成されてございまして、内閣府としても広く実際にこの内容を周知することなどによりまして、連携して普及啓発に努めてきている",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "分散型水確保の制度的位置づけという問いに対し、既存の指針やガイドラインの提示に留まり、具体的な新制度や実効的な進め方への言及は不十分である。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「制度としてどのように位置づけるか」という問いを、「具体的にどのような新制度を導入するか」と具体化すれば、より踏み込んだ回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_031",
+      "segment_index": 3,
+      "topic": "道路の避難機能としての位置づけと省庁連携",
+      "question": {
+        "speaker": "佐々木真琴",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 道路を単なるインフラではなく「避難機能」としてどのように位置づけ、国土交通省等と連携していくのか",
+        "full_text": "まず1点、道路についてなんですけれども津波浸水エリア、津波被害に限って言った場合は、津波浸水エリアにおいて必ずしも近くに十分な高台や避難所があるということではなくて、実際に私の町では高規格道路を使って別のエリアに避難するという避難訓練をしたりですとか、運用を行っていたりもします。そういった現場では、避難所だけではなくて、やっぱり道路というものは道路そのものが避難機能を背負っているようになっているという実情も、暮らす中では非常に感じていたところです。こうした実態を踏まえると、道路というものは単なるインフラではなくて、防災減災につながる命を守るものでもあるというふうに考えております。防災庁としては、こうした道路の役割というものを避難機能としてどのように位置づけて、国土交通省等とどのように連携をしていくのか、見解を伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "菅原室長",
+        "role": "",
+        "summary": "- 避難路の整備やアクセス度の向上、無電柱化などを推進する基本計画を策定している\n- 防災庁は、国土交通省等の施策が着実に実施されるよう、管轄権を背景に働きかけを行い、実効性のある対策に取り組む",
+        "full_text": "避難に当たりましては、議員ご指摘のとおり、避難先の確保のみならず、当該避難先に至るまでの経路が安全かつ速やかに利用できることが大変重要だと考えてございます。この点につきまして、例えば、令和4年に策定をされました日本海溝、島海溝周辺、海溝型地震防災対策推進基本計画では、早期避難が可能となるよう避難路の整備、またそれに加えまして避難所へのアクセス度、避難路の無電柱化などを推進するといったようなこと、またさらには市町村は地域特性などを踏まえて避難場所、避難路の指定を含めて津波避難計画を策定して住民に周知するというようなことが盛り込まれてございます。防災庁におきましては、このような各種計画などにおける国土交通省をはじめとする各省庁の施策が着実に実施されますように、管轄権も背景に働きかけを行うなど、実効性のある防災減災対策に取り組んでまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5175",
+        "clb-5177"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=6482.483",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "道路の避難機能の位置づけと国交省等との連携について",
+          "sub_asks": [
+            "道路の役割を避難機能としてどのように位置づけるか",
+            "国土交通省等とどのように連携していくか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "日本海溝、島海溝周辺、海溝型地震防災対策推進基本計画"
+            },
+            {
+              "type": "number",
+              "excerpt": "令和4年"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "実効性のある防災減災対策に取り組んでまいりたいと考えております",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "避難先の確保のみならず、当該避難先に至るまでの経路が安全かつ速やかに利用できることが大変重要だと考えてございます。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "道路の避難機能という視点に対し、既存の基本計画を引用して回答しているが、具体的な連携手法や新たな位置づけについての言及は乏しく、抽象的な決意表明に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのように連携するか」という問いに対し、具体的な連携スキーム（会議体や権限移譲など）を提示させる形式にすれば、より実効性のある回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_032",
+      "segment_index": 3,
+      "topic": "インフラ整備における防災観点からの優先順位付け",
+      "question": {
+        "speaker": "佐々木真琴",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 道路整備等が交通政策として議論されがちな中、防災庁が司令塔として「防災の観点からの必要性」を整理し、横断的に働きかける役割を担うのか",
+        "full_text": "ですので、高規格道路の整備であるとかフルインターチェンジ化というところも、防災の観点からも必要であるという声も非常に多く上がっております。しかし一方で、こうした整備は交通政策や個別の事業として議論されることが多いので、防災の観点から優先順位付けであるとか評価が十分にされているのかという点では、多少疑問が残るかなと思っています。そこで今回、防災庁が先ほども管轄権なども背景に大臣に連携していくということはありましたけれども、防災庁が司令塔として機能するということであると、こうした道路などのインフラ整備についても、防災庁としてはやっぱり防災の観点からここは必要なんですというような必要性を整理をしていくこと。やっぱり横断的に働きかけていく役割が今後の防災庁に特に求められていくんだというふうに。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "関芳弘",
+        "role": "災害対策特別委員長",
+        "summary": "- インフラ整備は引き続き関係省庁が専門性を生かして取り組むが、政府一体となった事前防災を推進する体制を構築し、管轄権を背景に対策実施を働きかけていく",
+        "full_text": "道路などのインフラ整備につきましては、引き続き国土交通省などの関係省庁において、防災を含めた様々な観点から、それぞれが有する専門性を生かしつつ取り組んでいくことを想定しております。管轄権を背景にして対策の実施を働きかけていくということで、政府一体となった地域における事前防災を推進する体制を構築していきたいというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5175",
+        "clb-5177"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=6482.483",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "防災庁によるインフラ整備の必要性整理と横断的働きかけの是非",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国土交通省"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "体制を構築していきたいというふうに考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "道路などのインフラ整備につきましては、引き続き国土交通省などの関係省庁において、防災を含めた様々な観点から取り組んでいくことを想定しております。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "防災庁の役割についての提案に対し、既存の省庁（国交省）の権限を維持しつつ連携するという一般的回答に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問が提案形式で終わっており、明確な「Yes/No」や具体的な役割分担を問う形になっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_033",
+      "segment_index": 3,
+      "topic": "防災体験施設の活用と事前防災の連動",
+      "question": {
+        "speaker": "佐々木真琴",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 全国にある防災体験施設を、事前防災の推進においてどのように位置づけ、防災教育や防災力の向上に連動させていくのか",
+        "full_text": "では続いて、先ほど田中委員の方からも少々触れられておりましたけれども、防災体験施設の役割についても伺いたいと思います。全国各地、人と防災未来センターをはじめ、さまざまな、我々がこの間行ったアソナエリアもありますし、横浜市民防災センターですとか、堺市総合防災センター、さまざま各地に防災センターというか体験施設がございます。こういった施設をですね、子どもたちの学習の機会だけではなくて、地域住民の防災意識向上や、災害を自分ごととして捉えるきっかけづくりとしても、一定の役割を持っていると思っております。防災庁が掲げるこの事前防災を推進していく中で、こうした防災体験施設をどのように位置づけ、防災教育や防災力の向上に連動させていくお考えなのかというところ、見解を伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "武野国務大臣",
+        "role": "",
+        "summary": "- 体験施設は、地震の怖さを実感し備えの必要性を認識させる上で大きなウエイトを占める\n- デジタル技術を活用した事例集を作成し、周知を図る\n- 防災庁に防災教育担当組織を置き、体験施設の活用を意識した事前防災の取組を強化する",
+        "full_text": "そうした防災体験施設という防災教育の中では大きなウエイトを占めると思います。また、今年度の早い時期にデジタル技術を活用した体験型防災施設における防災教育の実践活動を含む事例集というのを作成をして、今後、広く周知を図ると聞いております。防災庁では、防災教育担当の組織をおきまして、そうしたこれまでの内閣府防災の取組をさらに強化することにしておりまして、災害を我がこととして捉えるイメージを抱きやすい防災体験施設の活用も意識した事前防災の取組を進めていきたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5175",
+        "clb-5177"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=6482.483",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "防災体験施設の位置づけと活用策について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "人と防災未来センター"
+            },
+            {
+              "type": "organization",
+              "excerpt": "横浜市民防災センター"
+            },
+            {
+              "type": "organization",
+              "excerpt": "堺市総合防災センター"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "地域住民",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "デジタル技術を活用した体験型防災施設における防災教育の実践活動を含む事例集"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "事前防災の取組を進めていきたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "デジタル技術を活用した体験型防災施設における防災教育の実践活動を含む事例集というのを作成をして、今後、広く周知を図る",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "防災体験施設の活用に関する質問に対し、事例集の作成という具体的な成果物を挙げつつ、今後の方向性を回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "具体的にどのような「連動」を期待するか（予算措置や制度化など）を問うことで、より踏み込んだ回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_034",
+      "segment_index": 4,
+      "topic": "民間医療機関の防災視点",
+      "question": {
+        "speaker": "工藤聖子",
+        "party": "参政党",
+        "summary": "- 避難所だけでなく医療を止めない観点から、防災庁が民間の医療機関に対しどのような視点を持って接していくのか",
+        "full_text": "災害当日も地域の皆さんが冗談まじりで、「委員長が、もし地震があったら俺のところの病院に来ればいいから」というのも言っていて、200人ほど地域の方たちが避難をしてきたという素晴らしい病院なんですけれども、ここ透析もしていたので災害発電もしっかりとして、透析患者もたくさん受け入れて、本当に多くの命を救ってきた場所に、映画にもなっておりますので、ぜひ皆さんと一緒に見れたらなと思うんですけれども、命を守るという観点に立ったときにですね、避難所だけではなくて、医療を止めないという観点で、事前の民間の皆さんに対しても、どういった視点を持って防災庁が接していくのかという視点、大切だと思っております。医療の継続という観点は防災庁だけで、",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "茂木外務大臣",
+        "role": "",
+        "summary": "- 厚労省が災害拠点病院への耐震補強や備蓄倉庫などの支援を実施している\n- 地域の医療体制の弱点やハード・ソフト両面の課題を把握する\n- 抽出された課題を関係省庁と共有し、必要に応じて対策を促し体制構築を強化する",
+        "full_text": "現状におきましては、厚生労働省が地域の防災力の充実に重要な役割を果たしている災害拠点病院に対して耐震補強工事、備蓄倉庫、そうしたものに関する支援を実施しているというふうに承知しております。地域の医療体制の弱い部分も把握をして、ハードソフトそれぞれの課題を明らかにしてまいります。そして浮かび上がった課題につきましては、厚労省をはじめとして、関係省庁と共有するだけではなくて、必要に応じて対策を各省庁に促していくことによって、体制の構築を強化していきたいと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5175"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=9529.283",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "防災庁が民間医療の継続にどう接するか",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "民間の皆さん",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "厚生労働省"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "災害拠点病院"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "体制の構築を強化していきたいと思っております",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "地域の医療体制の弱い部分も把握をして、ハードソフトそれぞれの課題を明らかにしてまいります。",
+          "score": 0.3
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "質問は具体的エピソードを交えているが、核心的な問いは抽象的であり、回答も今後の方向性を示すにとどまっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "具体的な施策や制度の改善を求める形式ではなく、「どういう視点を持つか」という精神論的な問いになっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_035",
+      "segment_index": 4,
+      "topic": "防災庁と自治体の指揮命令関係",
+      "question": {
+        "speaker": "工藤聖子",
+        "party": "参政党",
+        "summary": "- 防災庁の設置後も、国と自治体との現在の指揮関係や命令関係は変わらないのか",
+        "full_text": "まずはじめに防災庁と自治体との関係について確認いたします。防災庁は平時から発災時、復旧復興までの一貫した司令塔機能を担うとされています。これは防災庁が政府や省庁間の取りまとめを行うという意味では、防災大臣の勧告権なども規定されており、理解しやすいところです。他方で防災庁と自治体との関係ではどうなるのでしょうか。司令塔という言葉からは、国が自治体を指揮命令するような印象も受けますが、災害対策基本法上、災害対応の一義的な実施主体は市町村と。現在の国と自治体との指揮関係、命令関係は変わらないのか、という点についてお伺いしたいと思います。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "横山次長",
+        "role": "",
+        "summary": "- 有事の仕組みや、市町村が一次的に担い国・都道府県が支えるという根幹的な役割分担は変更しない\n- 大規模災害時には防災庁が中心となる政府災害対策本部を設置し、本部長の指示権に基づき関係府庁が一体となって自治体を支える\n- 迅速な情報共有体制を強化し、首長と緊密に連携して災害対応を充実させる",
+        "full_text": "内閣官房横山次長、結論から申し上げれば有事の仕組みは変えてございませんけれども、ご案内のとおり災害対応については一時的には住民に近く地域のことをよく知る市町村が担い、大きな災害では都道府県や国が市町村を支え、必要に応じて直接対応することが適切と考えてございまして、災害対策基本法や災害救助法等による制度や施策もそうした考え方に立っておりまして、今回そこの根幹を変更しているわけではございません。防災庁設置後も、この役割分担と連携の基本を維持した上で、大規模な災害が発生した際には、防災庁が中心になって運営する政府の災害対策本部を設置し、従来からございます本部長の指示権等に基づいて、防災庁が司令塔になって、関係府庁が一体となって、自治体の災害対応を支える体制を迅速に構築することとしてございます。自治体とともに、迅速効果的に災害対応に当たるには、迅速な情報共有と意思疎通が肝要と考えてございますので、防災庁では、そのような被災地の情報を迅速かつ効率的に収集統合する体制の強化とか、その情報に基づいて、本部長である総理や防災大臣が的確な判断を行う、そして都道府県や市町村の災害対策本部、首長とも同じ情報を共有し、緊密に連携することで、災害対応を充実してまいりたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5175",
+        "clb-5177"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=9529.283",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "防災庁設置後も国と自治体の指揮命令関係は不変か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "災害対策基本法上"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "市町村",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "災害対策基本法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "災害救助法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "政府の災害対策本部"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "災害対応を充実してまいりたいと考えてございます",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "結論から申し上げれば有事の仕組みは変えてございませんけれども、今回そこの根幹を変更しているわけではございません。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "防災庁設置に伴う自治体との指揮命令関係の変更有無について、政府側が「変更しない」と明確に回答しており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_036",
+      "segment_index": 4,
+      "topic": "市町村の防災専任職員の確保支援",
+      "question": {
+        "speaker": "工藤聖子",
+        "party": "参政党",
+        "summary": "- 市町村の最低限必要な防災専任職員の数について目安を示し、財政措置を含めた踏み込んだ支援を行う考えはあるか",
+        "full_text": "そうであれば、今御答弁いただいた防災庁の機能などによって、自治体の災害対応機能をいかに支えていくかが重要になるかと考えます。能登半島地震の検証資料によりますと、被災自治体の防災専任職員の数は、最も多い七尾市でも6名。少ない珠洲市、鹿町、穴水町ではそれぞれ3名のみであり、防災専任職員が少ない中での対応を強いられたとされています。また、昨年11月の日本学術会議の資料によれば、全国1718市町村のうち、458市町村が専任の防災職員を当てられていない状況であると、また一時的な災害対応の主体を市町村として平時の備えや発災後の対応を一任することには限界があるという憂慮すべき指摘がされております。防災専任職員は災害対応における中核的リーダーというべき存在であり、こうしたリーダーが少ない、あるいは不在という状況は早期に回避する必要があると考えます。そこで伺いたいのですが、市町村の最低限必要な防災専任職員の数について、防災庁が一定の考え方や目安を示し、その人材確保に向けて、財政措置を含めた、踏み込んだ支援を行っていく、お考えはあるでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "茂木外務大臣",
+        "role": "",
+        "summary": "- 専任でなくとも防災に携わる職員は各市町村に存在している\n- 現在、地方自治体職員へのOJT研修や、専門職採用時の人件費に対する特別交付税措置を講じている\n- 防災庁では、国からの迅速な応援職員派遣、自治体間の応援仕組み、民間連携などの支援施策を推進する",
+        "full_text": "防災専任職員の確保ということでございますけれども、現在の市町村の防災専任職員の方たち、割合でいうとほとんどが消防署の職員ではないかと思いますが、小さな自治体ですと、総務系統の職員の方が、そういう普段は総務の仕事をしながら、いざというときの防災の仕事をされる、活動をされるという方は多いと思います。ですので、前のときにも委員会で、専任職員がいらっしゃらない自治体という数を指摘されましたけれども、決して専任ではないけれども、防災に携わる職員は各市町村にいらっしゃるかと思います。その上でお答えをしたいと思いますけれども、現在の内閣府防災では、そうした専任、非専任問わず、地方自治体の職員を派遣していただいて、実務を経験するオンザジョブトレーニング研修というのを行ったりしております。また、直接的に現場の職員には当たらないかと思いますけれども、災害対応をする各自治体のトップは首長さんになりますので、そうした首長さんのマネジメント、防災のマネジメントを支える地域防災マネージャーだとか、防災官とか危機管理官として、そういう専門職の方を採用する場合には、そうした人件費の経費に関して特別交付税措置を講じております。これからつくる防災庁では、特に大規模災害時には、十分と言えない小さな地方自治体の体制を補完するために、国から迅速に応援職員を派遣する準備、また自治体間で総合的に応援するための仕組み、また民間団体との連携強化等、そうした自治体を支援する施策を推進してまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5175",
+        "clb-5177"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=9529.283",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "防災専任職員の目安提示と財政支援を行う考えはあるか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "field_case",
+              "excerpt": "能登半島地震の検証資料"
+            },
+            {
+              "type": "organization",
+              "excerpt": "昨年11月の日本学術会議の資料"
+            },
+            {
+              "type": "number",
+              "excerpt": "全国1718市町村のうち、458市町村が専任の防災職員を当てられていない"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "市町村の防災専任職員",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "オンザジョブトレーニング研修"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "特別交付税措置"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "そうした自治体を支援する施策を推進してまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "これからつくる防災庁では、特に大規模災害時には、十分と言えない小さな地方自治体の体制を補完するために、国から迅速に応援職員を派遣する準備、また自治体間で総合的に応援するための仕組み、また民間団体との連携強化等、そうした自治体を支援する施策を推進してまいります。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は具体的な数値目標の提示と財政支援を求めたが、回答者は現状の制度説明と抽象的な支援方針に留まっており、直接的な回答を避けている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「考え方や目安の提示」と「財政措置を含む支援」という2つの要求を1つのYes/No形式で問うているため、回答者が一部のみに答えて逃げることが可能になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_037",
+      "segment_index": 4,
+      "topic": "受援計画の実効性確保",
+      "question": {
+        "speaker": "工藤聖子",
+        "party": "参政党",
+        "summary": "- 受援計画の策定から定期的な訓練までを、自治体が負担なく確実に実行できるようどのような施策を講じるか",
+        "full_text": "災害時の応援の受入れに関する計画、いわゆる受援計画について伺います。大規模災害では応援を送る側の準備だけでなく、受け入れる側が誰をどこにどの任務で配置するのかを事前に整理しておくことが不可欠です。能登半島地震では事前に受援計画は策定されていたものの、受援自治体内で十分な共通認識を持てず、計画に基づく対応が十分に機能しなかった例が指摘されています。さらに総務省のデータによれば、昨年4月時点で受援計画を策定していない市町村は17.7%、数にして308団体に上っています。内閣府は従来から受援計画策定の手引きを示していますが、計画を作ることはもちろんのこと、それを実際に動かせるようになっていることが重要です。防災庁が設置された場合、受援計画の策定と、それに対する定期的な訓練までを含めて、自治体が過度なく、負担なく、確実に実行していけるという状態に持っていくために、どのような施策を講じていくお考えでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "茂木外務大臣",
+        "role": "",
+        "summary": "- 受援計画作成の手引きを改定し、雛形提示や研修会を通じて整備を促進している\n- 人的・財政的負担を抑えて訓練を実施できるよう、今年度中に訓練の標準モデルを作成し普及させる\n- 防災力強化総合交付金を活用し、広域的な資機材整備や合同訓練などの取組を支援する",
+        "full_text": "そのため、内閣府防災担当では、能登半島地震の災害対応の検証も踏まえまして、受援計画作成の手引きを昨年の7月にも改定を行っております。そこでは、受援計画の雛形や訓練の取組事例を示すとともに、消防庁と連携した研修会の開催などを通じて、受援体制の整備を現在促進をしてきたところでございます。このため、市町村において、受援計画に基づいた訓練を過度な人的財政負担を伴わずに容易に実施できるよう、今年度、受援計画に係る訓練の標準モデルを作成することを検討してございます。防災庁におきましては、地方自治体への伴走支援を強化することとしておりまして、この標準モデルの普及を通じて、地方自治体において、受援計画に基づく訓練を継続して実施できるよう取り組んでまいりたいと考えております。また、本年度予算で創設をいたしました防災力強化総合交付金では、発災時の地方自治体間の広域的な応援、受援体制の強化を目的としまして、広域的な展開が可能な資機材の整備ですとか、整備した資機材の広域的な運用の推進に向けた合同訓練の実施などの取組を支援することとしてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5175",
+        "clb-5177"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=9529.283",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "防災庁設置後の受援計画策定・訓練の具体策",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "総務省のデータ"
+            },
+            {
+              "type": "number",
+              "excerpt": "17.7%"
+            },
+            {
+              "type": "number",
+              "excerpt": "308団体"
+            },
+            {
+              "type": "field_case",
+              "excerpt": "能登半島地震"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自治体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "受援計画作成の手引き"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "今年度"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "受援計画に係る訓練の標準モデル"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "防災力強化総合交付金"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "今年度、受援計画に係る訓練の標準モデルを作成することを検討してございます",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "今年度、受援計画に係る訓練の標準モデルを作成することを検討してございます。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "受援計画の実効性向上という具体的な課題に対し、標準モデルの検討や交付金の活用という具体的な回答がなされている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_038",
+      "segment_index": 4,
+      "topic": "防災大学校における人材育成像",
+      "question": {
+        "speaker": "工藤聖子",
+        "party": "参政党",
+        "summary": "- 防災大学校を通じて排出すべき人材像や、その育成内容についての現時点の構想はどのようなものか",
+        "full_text": "次に人材育成について伺います。令和7年12月に政府が公表した防災立国の推進に向けた基本方針では、いわゆる防災大学校について、防災庁職員だけでなく、地方自治体職員や民間人材も対象とした、体系的な人材育成機関であると位置づけています。ただ重要なのは、単に育成機関をつくることではなく、横断的に災害現場を回すことのできる人材を育成していくという考えで、そうではないでしょうか。防災大学を通じて、排出すべき人材像やその育成内容について、現時点の構想を伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "横山次長",
+        "role": "",
+        "summary": "- 防災業務全般の知識・技能を体系的に学ぶ研修機関として位置づける\n- 専門的知見を備え、産官学民の多様な関係者の間で高度なコーディネートを行える実務能力を持つ人材を育成する",
+        "full_text": "ご指摘いただきました点ではございますけれども、今後設置の検討を進める防災大学校でございますけれども、防災業務全般の知識や技能を体系的に学ぶ研修を行う機関と位置づけてございます。防災に関する専門的知見を備えた人材を育成することや、これらの知見に基づき多角的な観点から防災全体を捉え、産官学民の多様な関係者の間で高度なコーディネートを行える実務能力を備えた人材を育成することを考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5175",
+        "clb-5177"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=9529.283",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "防災大学校で排出すべき人材像と育成内容の構想",
+          "sub_asks": [
+            "排出すべき人材像",
+            "その育成内容"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "令和7年12月"
+            },
+            {
+              "type": "other",
+              "excerpt": "防災立国の推進に向けた基本方針"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "防災大学校の対象者（防災庁職員、地方自治体職員、民間人材）",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "防災大学校"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "今後設置の検討を進める",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "産官学民の多様な関係者の間で高度なコーディネートを行える実務能力を備えた人材を育成することを考えてございます。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "防災大学校が目指す人材像（コーディネート能力を持つ人材）について具体的に回答されており、一定の記録価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_039",
+      "segment_index": 4,
+      "topic": "防災庁設置法における自治体支援の明記",
+      "question": {
+        "speaker": "工藤聖子",
+        "party": "参政党",
+        "summary": "- 地方自治体の防災力強化支援という中核的機能を、防災庁設置法案第4条のどの規定で読み込むことができるか。また、同条に明記する考えはないか",
+        "full_text": "次に、これまでの質問と関連しますが、防災庁設置法案における所掌事務の規定について伺います。先ほどの政府の基本方針では、地方自治体の防災力強化の取組を支援することが、防災庁の重要な機能、役割として明確に位置づけられています。地方自治体の防災力の水準は災害対応が円滑に進むかどうかを左右するものであり、その防災力強化を支援することは防災庁の数ある業務の一つというよりも、その根幹をなす中核的な機能であると考えます。一方で、今回の防災庁設置法案第4条に規定されている所掌事務を確認しますと、こうした地方自治体の防災力強化への支援について、その趣旨を直接に明示した規定は見当たらないように思います。地方自治体の防災力強化への支援という防災庁の中核的機能、役割について、防災庁設置法案第4条のどの規定をもって読み込むことができると、政府はお考えでしょうか。こうした観点から、防災庁設置法案第4条に、地方自治体の防災力強化の支援を明記するお考えはないか、もう一度改めて伺いたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "茂木外務大臣",
+        "role": "",
+        "summary": "- 災害対策基本法の基本理念（国・地方の連携）に基づき、第4条の「基本的な方針の企画立案」「施策の実施推進」などの規定に地方自治体への支援が含まれる\n- 組織法としての包括的な規定とする必要があるため、個別の詳細な規定を入れずとも基本法に基づき十分担保されている",
+        "full_text": "国の災害対策はですね、災害対策基本法に基づいて行うものでございまして、その法律の中に、国・地方公共団体の適切な役割分担及び相互の連携協力を確保するという基本理念や、国は地方公共団体が処理する防災に関する事務の実施の推進を行うという国の責務について規定をされております。その上で防災庁設置法案におきまして、防災庁の所掌事務は災害対策基本法の基本理念に則るものとされているために、委員の御指摘の内容、すなわち必要な市町村の防災体制の整備を推進することも、防災庁の所掌事務に含まれるということになります。具体的な所掌事務の規定としては、防災庁設置法の第4条第1項第1号の防災のための施策に関する基本的な方針及び計画に関する企画及び立案並びに総合調整。第1項第3号の関係行政機関が講ずる防災のための施策の実施の推進。第2項第17号の防災に関する施策に関することなどの規定に基づいて地方自治体への支援を進めてまいります。委員が多分4条を見てもはっきり明文化していないんじゃないかということだと思いますけれども、実は防災庁設置法の所掌事務の規定というのは、他の法律であります内閣府設置法だったり他の組織法における規定などに合わせて、防災に関して幅広く事務を行うため規定する必要があることから、原案の規定としているところでございます。ですので、その災害対策基本法に基づいて行う災害対策の一つの組織として防災庁を設置するということで、防災庁設置法という法律を提出しているわけでございます。ですので、この災害対策基本法に書いてある基本理念、また国の責務、これに沿って防災庁は災害防災を行っていくということでございますので、その所掌の規定として第4条に書いてございますので、十分地方自治体における防災力強化に努めるということが、そこで担保されていると思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5175"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=9529.283",
+      "metrics": null
+    },
+    {
+      "id": "qa_040",
+      "segment_index": 4,
+      "topic": "避難所における外国人対応支援",
+      "question": {
+        "speaker": "工藤聖子",
+        "party": "参政党",
+        "summary": "- 外国人避難者への対応負担が自治体に過度に集中しないよう、防災庁設置後にどのような具体的支援を行うか",
+        "full_text": "次にですね、避難所における外国人対応について伺います。在留外国人の数は、令和7年末時点で412万人を超え、前年比約36万人増、約9.5%増と過去最高を更新しています。外国人避難者への対応はもはや一部の地域だけの課題ではなく、全国の自治体が直面する共通の課題となっています。さらに必要なのは、多言語化だけではありません。食事や生活習慣、宗教、文化的背景への配慮など、避難所の現場ではきめ細やかな対応が求められます。誰がどの言語で説明するのか、ルールをどう伝えるのか、食事をどう調整するのか、宗教上の配慮をどう行うのか、こうした実務を、ただでさえ人手不足の自治体職員で担うのは容易ではありません。政府は、こうした状況においても、外国人避難者への対応を自治体で十分に対応可能と考えているでしょうか。対応に関わる負担が自治体に過度に集中しないよう、防災庁が設置された場合には、どのような具体的な支援を行っていくのか、大臣に伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "茂木外務大臣",
+        "role": "",
+        "summary": "- 尊厳ある避難所環境の整備を至上命題とし、内閣府で指針を示している\n- 総務省の仕組みにより、他自治体からマンパワーを投入できる体制を構築している\n- 防災庁ではリエゾン（連絡役）を現地に派遣し、被災状況の把握や自治体支援に従事する人材を確保し、支援を強化する",
+        "full_text": "避難所に避難される方というのは、日本人も外国人も同じように尊厳ある生活、また避難所環境の整備をストレスがたまらないような、そういう環境にしなきゃいけないというのは至上命題であり、どういうふうにしていただくかということを、今も内閣府ではそういうのを示しているということだというふうに伺っております。また総務省では大規模災害発生時には他の自治体から職員を派遣することだったりして、必要に応じて被災地の避難所にマンパワーを投入できる仕組みを構築しているというところを伺っております。これから防災庁をつくるにあたっては、当然のことながらそうした点を考慮して、自治体の負担を少しでも軽くできるように努めていきたいと思っております。また防災職員がそういう避難所の運営にあたっては、リエゾンという連絡役として現地に赴いて、外国人の被災者を含めた被災状況の把握に努めて、さらに被災自治体への支援にも従事する。至上命題にそれをちゃんと伝えられる、そうした人材も確保できていくのではないかと思っておりますので、そういうことを考えて、自治体に対する支援を強化していきたいと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5175",
+        "clb-5177"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=9529.283",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "防災庁設置後の外国人避難者対応への具体的支援策",
+          "sub_asks": [
+            "自治体で外国人避難者への対応が十分可能と考えているか",
+            "防災庁設置時にどのような具体的支援を行うか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "令和7年末時点で412万人を超え"
+            },
+            {
+              "type": "number",
+              "excerpt": "前年比約36万人増、約9.5%増"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "外国人避難者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "内閣府"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "総務省"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "リエゾン"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "自治体の負担を少しでも軽くできるように努めていきたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "防災庁をつくるにあたっては、自治体の負担を少しでも軽くできるように努めていきたいと思っております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的支援策を問う質問に対し、既存の仕組み（総務省の派遣等）の紹介と精神論的な回答に留まっており、実効的なコミットメントは低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「十分に対応可能と考えているか」というYes/No形式の問いを混ぜたため、大臣が一般論で逃げる余地を与えてしまった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_041",
+      "segment_index": 4,
+      "topic": "国土強靭化計画の事業規模の妥当性",
+      "question": {
+        "speaker": "工藤聖子",
+        "party": "参政党",
+        "summary": "- 地域防災力強化への予算が限定的である点を含め、計画の全体規模が実質的な工事量や整備量として十分であるという見解か",
+        "full_text": "それではですね、国土強靭化について伺います。防災庁が防災の司令塔として十分に機能するためには、その土台となる国土強靭化の取組自体が、実質的に十分なものである必要があると考えております。政府は、第一次国土強靭化実施中期計画において、令和8年度から令和12年度までの5年間の施策の事業規模を、おおむね20兆円強程度としています。とりわけ同計画の5つの分野のうち、地域防災力の強化に充てられているのは、全体の20兆円強のうち1.8兆円にとどまっています。自治体の人員確保、受援体制、訓練、避難所環境の整備などに照らして十分な水準と言えるのか、丁寧な検証が必要ではないでしょうか。今後想定される巨大災害に備えるという観点から、この計画の全体規模が実質的な工事量や整備量として十分なのか、この点について政府の見解を伺います。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "山本次長",
+        "role": "",
+        "summary": "- 前計画を上回る20兆円強の規模を確保しており、資材・人件費高騰や能登半島地震の教訓を踏まえて必要水準が確保されている\n- 地域防災力強化は新たな柱として位置づけており、人材育成や受援計画などのソフト面支援が中心であるため、ハード整備分野と単純に比較できるものではない",
+        "full_text": "第1次国土強靭化実施中期計画の事業規模につきましては、おおむね20兆円強程度を目処としております。前計画であります5か年加速化対策の事業規模であります15兆円を大きく上回る水準となってございます。この事業規模につきましては、前計画策定後の資材価格、人件費の上昇を勘案するとともに、能登半島地震の教訓などを踏まえたものでございまして、国土強靭化の取組を加速化していく上で、必要となる水準が確保されているものと認識をしております。地域防災力の強化につきましては、近年の災害において様々な課題が明らかになったことを踏まえまして、この実施中期計画においても、新たな柱として位置づけをいたしまして、積極的に取り組むこととしております。地域防災力の強化の分野では、例えば人材育成に向けた研修でありますとか、あるいは受援計画の作成の手引きの提供、そういったソフト面での自治体に対する支援の取り組みが中心となります。従いまして、ハード整備を伴います他の分野、例えば防災インフラの整備管理といった分野もございますけれども、こうした分野とその事業の規模の大小で、一概に比較できるものではないというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=9529.283",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "国土強靭化計画の全体規模は十分か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "第一次国土強靭化実施中期計画"
+            },
+            {
+              "type": "number",
+              "excerpt": "おおむね20兆円強程度"
+            },
+            {
+              "type": "number",
+              "excerpt": "1.8兆円"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自治体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "20兆円強程度"
+            },
+            {
+              "type": "number",
+              "excerpt": "15兆円"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "能登半島地震"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "積極的に取り組むこととしております",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "前計画策定後の資材価格、人件費の上昇を勘案するとともに、能登半島地震の教訓などを踏まえたものでございまして、必要となる水準が確保されているものと認識をしております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "予算規模の妥当性について問われ、政府は前計画との比較や物価上昇、能登半島地震の教訓を根拠に十分であると回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「十分な水準と言えるのか」という問いに対し、定量的根拠ではなく「認識」で回答させる形式になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_042",
+      "segment_index": 4,
+      "topic": "財政健全化目標と国土強靭化投資の関係",
+      "question": {
+        "speaker": "工藤聖子",
+        "party": "参政党",
+        "summary": "- 財政健全化目標がブレーキとなり、国土強靭化への投資規模が抑制されている側面はないか（CO2対策予算との比較など）",
+        "full_text": "15兆円から20兆円に増やしましたよと、それからソフト面とハード面と比べれば、当然ソフト面の金額が少なくなりますよという御回答だったかと思いますが、また改めて別の角度からもお聞きしたいと思います。国土強靭化は、単なる歳出ではなく、国民の命と国土を守るための戦略的な投資です。従いまして、これを抑制の対象とすべきではないと考えます。政府が掲げる財政健全化目標が、国土強靭化への投資規模に実質的なブレーキをかけ、必要な投資を抑えているといった側面はないでしょうか。例えば、CO2削減対策、これは民の投資も含まれますが、10年間で150兆円を投入するとされています。その一方で、国民の命と国土を守るための投資が、5年間で20兆円強という規模でございます。CO2対策を5年で単純に割れば、5年で75兆円。国土強靭化の方は5年で20兆円。本当にこれが十分なのか改めて伺います。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "山本次長",
+        "role": "",
+        "summary": "- 事業規模は予算制約で設定したものではなく、施策ごとの目標達成に必要な規模を積み上げた結果である\n- この投資規模は通常の予算に上乗せして実施されるものであるため、ベースとなる各省庁の予算が別途存在する",
+        "full_text": "第1次国土強靭化実施計画の事業規模でございますけれども、この事業規模につきましては、その予算の制約から設定をしたものではございませんでして、この5年間で、この実施計画の中で位置づけられた施策ごとに、達成すべき目標、これを設定をいたしまして、それぞれの施策について必要となる事業規模、これを積み上げた結果でございます。さらに申し上げますと、この実施計画のこの投資の事業規模というものはですね、通常の予算に加えて追加的に、特に推進をしていくということで、通常の予算に上乗せをして実施をされるというものでございますので、ベースの部分の根っこの部分で、もともとそれぞれの省庁で実施をしていただいている予算がございます。それにさらに上乗せをしていくというものでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=9529.283",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "財政健全化目標が国土強靭化投資を抑制していないか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "15兆円から20兆円"
+            },
+            {
+              "type": "number",
+              "excerpt": "10年間で150兆円"
+            },
+            {
+              "type": "number",
+              "excerpt": "5年間で20兆円強"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "第1次国土強靭化実施計画"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "この事業規模につきましては、その予算の制約から設定をしたものではございません",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "財政健全化目標による投資抑制の有無という問いに対し、予算制約ではなく施策の積み上げで決定したと明確に否定している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_043",
+      "segment_index": 4,
+      "topic": "被災者の生活再建支援制度の見える化",
+      "question": {
+        "speaker": "工藤聖子",
+        "party": "参政党",
+        "summary": "- 支援制度が分散しており被災者に分かりにくいため、防災庁が標準的な世帯を想定した再建パッケージを提示すべきではないか\n- 防災庁設置後、このような再建パッケージの見える化を進める考えがあるか",
+        "full_text": "被災者の生活再建の支援制度、その見える化について伺います。復興において何より大事なのは、被災者が地元で生活再建できるかどうかだと考えます。しかし現実には住宅再建、生活資金、減免措置などの支援制度が分散しており、どの制度をどう組み合わせれば生活再建できるのかが被災者には分かりにくい状況にあると思います。政府の基本方針では、防災庁は被災地のワンストップ窓口になるとされています。であれば、防災庁は標準的な世帯を想定し、生活再建に必要な費用総額、利用できる支援、最終的な自己負担や借入額を一体で示した再建パッケージを被災者目線でわかりやすく提示するべきではないでしょうか。防災庁設置後、このような再建パッケージの見える化を進めるお考えはあるのか、お伺いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "横山次長",
+        "role": "",
+        "summary": "- 支援策を分かりやすく示すことは重要であり、関係機関による支援制度をまとめた資料作成などの取り組みを進めている\n- 個別の状況に応じた相談会や情報発信、特別行政相談窓口によるフィットした情報提供を実施している\n- 防災庁においても自治体と連携し、関係省庁が一体となって支援する体制を構築したい",
+        "full_text": "ご指摘のとおり、被災された方の生活再建が着実に進むには、まず様々な支援策について、被災者に分かりやすくお示しするということは大変重要かと考えてございます。政府としても、住まい、医療、福祉、教育などの分野について、関係機関による幅広い支援制度をまとめた資料を作成し、被災者が必要となる支援を網羅的に確認できるように取り組みは進めてきてございます。被災者の方の状況は様々に異なっておりますので、お一人お一人のご事情やご意向を踏まえて、丁寧な支援が必要になってくると考えてございます。例えば、能登半島地震の被災地におきましては、復興基金も活用して、住民に身近な自治体において、専門家や住宅会社等も参加する生活再建の個別の相談会とか、広域避難者も含めた生活再建に関する情報発信など、被災された方の個別の状況に応じた生活再建を支援する取組が実施されているところでございます。また、総務省では災害発生時に特別行政相談窓口を設置して、被災された方への生活支援情報の提供、これをお一人お一人にフィットした形でお示しして、相談対応等を行っているという取り組みを進めてございます。防災庁では、被災された方の生活再建に向けて、このような取り組みを引き続き、自治体とも連携して、被災地の実情を丁寧に伺いながら、様々な支援策をご活用いただけるように、関係省庁が一体となって支援する体制を構築してまいりたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5175",
+        "clb-5177"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=9529.283",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "防災庁による生活再建パッケージの見える化を行うか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "政府の基本方針では、防災庁は被災地のワンストップ窓口になるとされています"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "被災者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "能登半島地震"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "復興基金"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "総務省"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "関係省庁が一体となって支援する体制を構築してまいりたいと考えてございます",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "関係省庁が一体となって支援する体制を構築してまいりたいと考えてございます。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な「再建パッケージの見える化」という提案に対し、既存の取り組みの紹介と抽象的な体制構築の意向に留まっており、明確な回答は得られていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_044",
+      "segment_index": 4,
+      "topic": "住まいの再建支援金の拡充と人口流出対策",
+      "question": {
+        "speaker": "工藤聖子",
+        "party": "参政党",
+        "summary": "- 被災者生活再建支援金（最大300万円）と実際の住宅建設費との乖離が大きく、人口流出の一因となっている\n- 国の負担額を厚くするなど、支援額の引き上げを含めた制度全体の見直しや再構築を行う考えはないか\n- 輪島市などの被災地へ人を呼び戻すためにどう考えているか",
+        "full_text": "質問に続くのですが、住まいの再建支援について伺いたいと思います。能登半島地震で被災した輪島市では、地震前1年間の人口減少が374人でした。地震後1年間で1198人減少し、次の1年間でさらに951人減少しています。地震後のたった2年間で人口の約2割が減少する事態となっています。能登半島地震の後に発生した豪雨の影響もあることと思いますが、災害が地域の人口動態に極めて大きな影響を与えたことがわかります。一方で石川県が実施した住まいの再建意向調査では、被災前と同じ住所で再建したいが42.6%、同じ市町の中で別の住所に再建したいが39.6%、合わせて約8割の世帯が地元で住み続けたいという結果になっております。つまり、多くの被災者は地元を離れたいのではなく、本当は地元に残りたいという気持ちが強いということです。しかし現実にはその思いが十分に制度で賄いきれておりません。去年10月に輪島市から出された住まいの再建費用についての参考資料によれば、共働き40代の夫婦と子どもがいる世帯の住宅建設費は2900万円と試算されています。一方で、住まいの再建に係る被災者生活再建支援金は、最大で300万円にとどまります。自治体独自の支援融資があるとはいえ、住宅建設費との金額的な隔たりは、なお大きいと言わざるを得ません。またそこにお金がかかってしまうので、手前の地域で家を建てるよりも高くついてしまうと、そうなるとやっぱり高齢化も進んでおりますので、大きな金額を出してまた輪島市に家を建てるというよりは、本州の方に出ている息子さんのところに暮らすことを選択すると、そういう方も多くいらっしゃると聞いております。そういうわけで、現行の被災者再建制度は国が自治体と支給額を2分の1ずつ負担する仕組みでありますので、単純に支給額を引き上げれば自治体の不安も増えるという構図にはありますが、なんとか皆様が、輪島市の方に戻れるように、なんとか国の負担額をより厚くする方向で支援額を引き上げるなど、改めて同制度全体の見直し、再構築を行う考えはないでしょうか。どうやって輪島市の人を呼び戻すのかということをどのように考えていらっしゃるでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "茂木外務大臣",
+        "role": "",
+        "summary": "- 被災者生活再建支援金は見舞金的な性格であり、他との公平性の観点から拡充については慎重に検討せざるを得ない\n- 他の支援策や自治体独自の制度を総合的に活用することが重要である\n- 人口流出を食い止めることは非常に重要であり、単なる復元ではなく「より良い復興」を実現するため地域の取り組みを支えていく",
+        "full_text": "住まいの再建という意味で言えば、おそらく被災者生活再建支援金のことを取り上げていらっしゃると思いますけれども、この被災者生活再建支援金というものは財産の損失を補填するというものではなくて、いわゆる自然災害による見舞金的な性格なものだというふうに承知しております。と比べての公平性という観点もございますので、被災者生活再建支援金の拡充というのは、今のところ慎重に検討せざるを得ないと考えております。住まいの再建につきましては、他の支援策だったり、自治体独自の支援制度などもございますので、総合的に活用していただくことが重要ではないかと思います。その上で被災地域の人口の流出というのは、これは東日本大震災でも同じ現象が起きており、私も復興大臣として非常に心痛めているところでございます。そうした人口流出を食い止めるということが非常に大事だと思います。以前の状態に単なる、以前の状態に戻る復元というよりも、より良い復興を実現する、そういうことを考えて、地域の取り組みをしっかり支えていくことが大事だと思い、そのように取り組んでまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=9529.283",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "被災者生活再建支援制度の見直しと人口流出対策について",
+          "sub_asks": [
+            "支援額引き上げを含む制度全体の再構築を行う考えはあるか",
+            "輪島市の人を呼び戻すためにどう考えているか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "地震前1年間の人口減少が374人"
+            },
+            {
+              "type": "number",
+              "excerpt": "地震後1年間で1198人減少"
+            },
+            {
+              "type": "number",
+              "excerpt": "被災前と同じ住所で再建したいが42.6%"
+            },
+            {
+              "type": "organization",
+              "excerpt": "輪島市から出された住まいの再建費用についての参考資料"
+            },
+            {
+              "type": "number",
+              "excerpt": "住宅建設費は2900万円と試算"
+            },
+            {
+              "type": "number",
+              "excerpt": "被災者生活再建支援金は、最大で300万円"
+            }
+          ],
+          "translates_big_number_to_daily_life": true,
+          "score": 1.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "輪島市",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "東日本大震災"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "そのように取り組んでまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.55
+        },
+        "oc3_quotability": {
+          "quote_candidate": "被災者生活再建支援金というものは財産の損失を補填するというものではなくて、いわゆる自然災害による見舞金的な性格なものだ",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は具体的な統計と試算を用いて制度の不備を鋭く指摘したが、回答者は支援金の性格（見舞金であること）を理由に拡充に慎重な姿勢を示し、精神論的な回答に留まった。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_045",
+      "segment_index": 4,
+      "topic": "防災と減災の定義および法案における整理",
+      "question": {
+        "speaker": "山田瑛理",
+        "party": "チームみらい",
+        "summary": "- 本法案に「減災」という用語が使われていない点について\n- 防災の概念の中に減災が含まれるという整理になっているか",
+        "full_text": "まずはじめになんですけれども、防災と減災の定義について、というところを伺わせていただければと思います。従前の立法、例えば国土強靭化法などにおきまして、防災及び減災というように防災と減災を併記する用法が見られます。一方で今回の本法案では減災という用語が使われておりません。本法案においては、防災の概念の中に減災が含まれるという整理がなされているのかという部分、伺わせてください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "横山次長",
+        "role": "",
+        "summary": "- 災害対策基本法の基本理念に被害の最小化（減災）の考え方が規定されている\n- 法律体系の中では防災という言葉に減災の概念が包含されている整理である",
+        "full_text": "防災庁設置法案や災害対策基本法において、減災という文言は、ご指摘のとおり用いられてございませんが、一方で災害対策基本法に定める災害対策の基本理念では、災害が発生した場合における被害の最小化及びその迅速な回復を図ることという減災の考え方が規定されてございます。その意味では、この法律体系の中では防災という言葉に減災の概念が包含されているという整理になろうかと思ってございます。防災庁は災害対策基本法の基本理念に則り、事務を行うものとされていることから、減災の考え方もしっかり踏まえながら、防災に関する事務を行ってまいる所存でございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5175",
+        "clb-5177"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=9529.283",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "本法案における防災と減災の定義・関係性について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "国土強靭化法"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "防災庁設置法案"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "災害対策基本法"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "減災の考え方もしっかり踏まえながら、防災に関する事務を行ってまいる所存でございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "この法律体系の中では防災という言葉に減災の概念が包含されているという整理になろうかと思ってございます。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "法案における用語の定義（包含関係）について明確な回答が得られており、記録としての価値が高い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_046",
+      "segment_index": 4,
+      "topic": "防災庁における減災の概念の周知",
+      "question": {
+        "speaker": "山田瑛理",
+        "party": "チームみらい",
+        "summary": "- 国土強靭化法では防災と減災を併記し区別しているが、本法案で文言が見えないと国民に伝わりづらいのではないか",
+        "full_text": "つまり、当然ですけれど、防災庁は減災もしっかりと担う組織であるということです。国土強靭化基本法は、法律の名称そのものに減災という言葉を使っています。法文の中でも防災または減災と併記をしてまいりました。これは両者を意図的に区別してきたということであるとも私は考えております。それにもかかわらずですが、本法案では減災の文言が見当たらず、政府の整理としてはそこに防災に含まれているということですが、言葉が見えないと国民には伝わりづらいというところも。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "茂木外務大臣",
+        "role": "",
+        "summary": "- 国土強靭化法は議員立法であり、本法案は政府案であるため用語に差がある\n- 防災の中には当然減災の意味が含まれており、関係機関と連携し被災地支援や復旧復興を図る",
+        "full_text": "私、もう一つ掛け持ちをしておりまして国土強靱化も担当大臣でございまして、この国土強靱化法というのは議員立法でできた法律でございます。その時に、議員立法として、その法案を作る時に、減災という言葉を使われたということだと思っております。この防災庁設置法等は、全て政府の案でございますので、そこで減災という言葉が使われずに、防災という言葉を使っているんだと思います。ただ、先ほど岡本次長が答弁したように、この防災の中には当然のことながら、減災という意味がございます。そして減災というのは、防災をした上で災害が発生して、結果として減災になると。災害の最小化を図ってまいります。被災地のニーズを丁寧に組み取りまして、防災庁が中心中核となって、関係省庁、自治体、関係機関などと緊密に連携しながら、政府一丸となった伴走型の被災地支援を行うことで、迅速な被災者の生活や成り割りの再建、復旧復興を図ってまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5175",
+        "clb-5177"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=9529.283",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "防災庁設置法に「減災」の文言を盛り込むべきではないか",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "国土強靭化基本法"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国土強靱化法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "防災庁設置法"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "災害の最小化を図ってまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "この防災の中には当然のことながら、減災という意味がございます。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は形式的に疑問符がなく、主張に近い形となっている。回答は「防災」に「減災」が含まれるという解釈を述べるに留まり、法文修正への言及はない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "疑問文の形式で具体的に何を求めるか（文言の追加など）を明示すれば、より明確な回答が得られた。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_047",
+      "segment_index": 4,
+      "topic": "プッシュ型支援備蓄拠点の運営費用",
+      "question": {
+        "speaker": "山田瑛理",
+        "party": "チームみらい",
+        "summary": "- 民間法人との連携協定に基づく備蓄拠点の運営において、国費は支出されていないか",
+        "full_text": "続きましては、プッシュ型支援のための備蓄拠点の運営について質問をさせていただきます。内閣府はこれらプッシュ型支援物資の備蓄拠点の運営について、この民間法人と連携協定を結んでおりますけれども、同法人は民間企業が設立し、実務の部分は、そのグループ会社が担っているとのことです。そこでまずお伺いをいたしますが、これは連携協定に基づいた協力関係でありますので、例えば国費といったところは支出はされていないという理解でよろしいでしょうか。確認をさせてください。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "横山次長",
+        "role": "",
+        "summary": "- 倉庫の一部を無償提供いただいているため、保管に関して国費は支出していない\n- ただし、発災後の物資輸送に係る実費は国が支払う仕組みである",
+        "full_text": "分散備蓄の保管につきましては、SGH防災サポート財団が保有する倉庫の一部を無償で提供いただくこととなってございまして、この部分に関して国費は支出されてございません。なお、災害が発生し、国によるプッシュ型支援が発動した際には、備蓄物資の輸送に係る実費を国が支払うことになります。輸送については、国は協定に基づき、SGH防災サポート財団に要請できることになっておりますが、仕組みになってございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=9529.283",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "備蓄拠点の運営に国費が支出されていないか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "民間法人"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "民間法人",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "SGH防災サポート財団"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "SGH防災サポート財団が保有する倉庫の一部を無償で提供いただくこととなってございまして、この部分に関して国費は支出されてございません。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "備蓄拠点の運営費用に関する国費支出の有無について、明確な回答が得られている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_048",
+      "segment_index": 4,
+      "topic": "備蓄拠点運営法人の選定プロセスと透明性",
+      "question": {
+        "speaker": "山田瑛理",
+        "party": "チームみらい",
+        "summary": "- 法人設立から協定締結までが極めて短期間であり、選定の透明性や公平性に欠けるのではないか\n- どのような経緯で当該法人と締結し、他社への公募は行ったか",
+        "full_text": "ただですね、私が今回このように少し提起をさせていただきますのは、無償であるから大変に本当にありがたいことではあるのですけれども、その国民の命を守る最重要インフラの担い手としまして、どのようなプロセスで選ばれたのか、やはりそこは選定の透明性ですとか、公平性は問われなくてもよいということにはならないのではないかと考えておりまして、少しその経緯のところも続きましてお聞きさせていただければと思っております。この民間法人は令和7年3月7日に設立をされ、その約1ヶ月後に4月14日、内閣府と本協定を締結しております。38日という非常に短い期間でございます。この経緯からいたしますと、幅広い公募プロセスを想定せず、本協定の締結については、密かに協議が行われていたのではないかなということも想像されます。この内閣府では、どのような経緯や理由に基づいて、この民間法人と本協定を締結するに至ったのか、確認をさせていただきたいと思います。また、併せて他の物流事業者などに声かけですとか、公募を行ったのかどうかもお答えいただければと思います。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "横山次長",
+        "role": "",
+        "summary": "- 自治体等から無償提供の申し出があることを前提に調整し、同財団からも申し出があったため、条件が適していたことから協定を締結した\n- 他の提案先も探したが、結果的に無償提供の申し出があったのは同財団であった",
+        "full_text": "国のプッシュ型支援用物資の分散備蓄拠点の整備を検討する過程において、国の施設である東京都立川市の防災備蓄倉庫以外については、プッシュ型支援物資の送付先である各自治体と協議を行う中で、一部自治体より保管場所について無償での提供が可能との申し出をいただいたため、整備方針として、無償での保管場所の提供にご協力いただけることを前提に、調整を始めてまいったという経緯になってございます。そのような中で、設立予定のSGH防災サポート財団からも、無償での保管場所の提供の申し出をいただいたことから、検討した結果、倉庫の条件等も物資の保管搬出入に適したものとなっていたことから、発災時のスムーズな物資搬送が可能であると判断し、自治体に加えて、同財団にも協力をいただくということになった経緯でございます。当該財団は災害対応を支援するため、非営利目的で設立される団体との説明を受けてございました。協力先としても適切であると考えられたことから、協定を締結させていただいたところでございます。他のところも探したのかということに関しては、他のところも含めて、そういうご提案いただけるところを探したのは探しましたけれども、結果的に無償での提供をお申し出いただいたのは、同財団であったという経緯でございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=9529.283",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "民間法人との協定締結の経緯と公募の有無",
+          "sub_asks": [
+            "民間法人と本協定を締結するに至った経緯や理由",
+            "他の物流事業者への声かけや公募を行ったか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "令和7年3月7日に設立"
+            },
+            {
+              "type": "date",
+              "excerpt": "4月14日、内閣府と本協定を締結"
+            },
+            {
+              "type": "number",
+              "excerpt": "38日という非常に短い期間"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "内閣府",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "東京都立川市の防災備蓄倉庫"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "SGH防災サポート財団"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "無償での提供をお申し出いただいたのは、同財団であったという経緯でございます。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "選定プロセスの透明性に関する問いに対し、無償提供の申し出があったことによる選定であると具体的に回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_049",
+      "segment_index": 4,
+      "topic": "重要インフラにおける無償協力と公共調達の原則",
+      "question": {
+        "speaker": "山田瑛理",
+        "party": "チームみらい",
+        "summary": "- 無償だから入札不要という論理は公共調達の原則から逸脱しており、特定団体への機能集中はレジリエンスを損なうのではないか",
+        "full_text": "改めて整理をさせていただきますと、この民間法人は、物資の回収メンテナンス、保管入出庫、輸送物資の調達なども、グループで完結をしておりまして、先ほどご説明いただきましたように、保管業務は無償で受け負ってくださっていますが、実費部分は依頼費等を支払うということで、先ほど確認をさせていただきました。連携協定に基づいて、このような重要インフラの保管を無償で担ってもらっている現状は望ましい形なのかなというのは少し疑問を思っております。やはりこの無償だから入札が不要だったという論理は、公共調達の原則から逸脱しているのではないかというのが私の認識です。無償であれば公平性を問わなくてよいというのは行政の公平性を揺るがす危うい論理です。特定の民間団体が設立直後にこれほどの大規模事業を事実上特選的な形になっているとなれば、結果として災害時のレジリエンスを損なうことにならないでしょうか。仮に無償であったとしても特定のグループに機能が集中する形態というもの、これは事前の、もしかしたら発災時には先ほどご答弁いただいたように柔軟にというお考えはあるかもしれませんが、まずこの予防防災という観点でいうと、現状はそういったふうに機能が集中している形態でございますので、公平性とか透明性の面においても問題があるのではないかと考えております。この点について、併せて政府のご認識をお聞かせいただきたく、大臣にお答えいただければと思います。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "茂木外務大臣",
+        "role": "",
+        "summary": "- 物品やサービスの購買行為ではないため、公共調達には当たらないと考えている\n- 今後の取組においては、多様な主体と調整し、透明性に十分対応してまいりたい",
+        "full_text": "今、ご指摘の点ですが、現在の事業者との連携協定は、そうした調整の中、保管場所を無償で提供いただけるとの申出を踏まえて進めてきたものであり、物品やサービスを購買する行為でないことから、公共調達には当たらないと考えているというふうに、内閣府の防災担当からは伺っております。工藤聖子：何か弊害が生じているとは承知はしておりませんけれども、今後の取組におきましては、様々、いろいろな主体と、要するに団体ですが、調整を進めて、ご指摘のとおり、やはり透明性等に十分対応してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=9529.283",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "特定法人への機能集中と調達の公平性に関する政府認識",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "連携協定に基づいて、このような重要インフラの保管を無償で担ってもらっている現状"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "民間法人",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "内閣府の防災担当"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "透明性等に十分対応してまいりたいと考えております",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "物品やサービスを購買する行為でないことから、公共調達には当たらないと考えている",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "無償提供であるため公共調達に当たらないという政府の法的解釈が明確に記録されており、記録的価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_050",
+      "segment_index": 4,
+      "topic": "分散備蓄数量の決定根拠",
+      "question": {
+        "speaker": "山田瑛理",
+        "party": "チームみらい",
+        "summary": "- 拠点ごとの備蓄数量（簡易トイレ等）が不十分に感じられるが、数量決定の根拠は何か",
+        "full_text": "最後にその備蓄数量の妥当性についてというところをお伺いをさせていただければと思っております。ダンボールベッドが合計で5,500、簡易ベッドは合計で5,000個、パーティションは合計1万500個となっております。これは関東地域を所管しているところでございますけれども、例えば簡易ベッドの方は500個と、簡易トイレは30個程度ということになっております。この右側の立川除く地域、これ1地域あたり、例えば北海道、東北、中部ブロックで今、分散備蓄していらっしゃいますけれども、そういった大きいブロックの中で、簡易トイレが例えば15個とか、そのような数量になっておりまして、いささかちょっと数量としては不十分ではないかというふうに感じました。この備蓄数量につきまして、どのような根拠の下で設定をしているのか、数量決定の根拠の部分を教えてください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "横山次長",
+        "role": "",
+        "summary": "- 能登半島地震の経験を踏まえ、当面の目標として各ブロックにベッド・パーティション各1,000セット等を配置する体制を整えた\n- 今後、訓練や検証を通じて数量や拠点数の妥当性をさらに検討する",
+        "full_text": "これにより、全国各ブロックに分散備蓄拠点が設けられている形になりますけれども、これは能登半島地震の経験を踏まえて、まず数を決めていったものでございます。立川にあった備蓄を時間をかけて、どうしても距離がありましたので、そういう形で送り込んだ時の経験を踏まえまして、まず各ブロック単位でベッド1,000、パーティション1,000等のセットを置ければ、各拠点から迅速に送り出せる体制を整えたと考えられるのではないかということで、当面の目標として取り組んだものでございます。今後防災庁設置も見据え、訓練も行いながら、実際の物資搬出を想定し、物資が被災地へ到着するまでの所要時間を検証することなどによりまして、どこで大規模災害が発災した場合でも迅速かつ確実に物資が届けられるよう、備蓄数量や拠点数等の妥当性については、さらに検討を続けまして、必要な対応を進めてまいりたいというふうに考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=9529.283",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "備蓄数量決定の根拠について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "ダンボールベッドが合計で5,500"
+            },
+            {
+              "type": "number",
+              "excerpt": "簡易ベッドは合計で5,000個"
+            },
+            {
+              "type": "number",
+              "excerpt": "パーティションは合計1万500個"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "能登半島地震"
+            },
+            {
+              "type": "number",
+              "excerpt": "ベッド1,000、パーティション1,000等のセット"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "備蓄数量や拠点数等の妥当性については、さらに検討を続けまして",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "能登半島地震の経験を踏まえ、各ブロック単位でベッド1,000、パーティション1,000等のセットを置ければ、迅速に送り出せる体制を整えたと考えられる",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "備蓄数量の根拠について具体的に能登半島地震の経験に基づいた目標設定であることを回答しており、一定の記録価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_051",
+      "segment_index": 4,
+      "topic": "自治体間応援協定の知見共有と標準化",
+      "question": {
+        "speaker": "山田瑛理",
+        "party": "チームみらい",
+        "summary": "- データベースにある好事例などの有益な知見を国が精査・標準化し、自治体にフィードバックすべきではないか",
+        "full_text": "さて、協定を結ぶことと同様に、重要なのが、その内容の質を高めることです。国は応援協定のデータベースを構築し、約10万件のデータを保有しているとのことです。その中には、被災した児童・生徒の教育機関への受け入れ、仮想場の相互利用、自治体ホームページの代理掲載など、各地が積み上げてきた好事例が数多く存在しているものと思われます。こうした有益な知見を国として精査標準化して、自治体にフィードバックしていくことが必要ではないでしょうか。これこそ防災庁が担うべき横断的な知見、集約の役割であると考えますが、いかがでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "神原室長",
+        "role": "",
+        "summary": "- 消防庁と連携してデータベースを整備しており、他自治体の締結状況や内容を把握できるようにすることで締結を促している\n- 知見を地方自治体に示していくことは大変有効だと考えている",
+        "full_text": "そのため、内閣府防災担当では、消防庁と連携をしまして、地方自治体が締結する災害時応援協定のデータベースを整備をしております。地方自治体が他の自治体における協定の締結状況ですとか、内容を把握できるようにすることで、各地方自治体における災害時応援協定の締結を促しているところでございます。地方自治体に示していくことも大変有効だと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=9529.283",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "応援協定の好事例を精査・標準化し自治体へ還元すべきか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "約10万件のデータ"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自治体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "内閣府防災担当"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "消防庁"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "地方自治体に示していくことも大変有効だと考えております。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "好事例の精査・標準化という具体的な提案に対し、現状のデータベース整備の説明に留まり、今後の具体的なアクションへの言及がない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「いかがでしょうか」という抽象的な問いかけのため、政府が「有効である」と答えるだけで完結してしまっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_052",
+      "segment_index": 4,
+      "topic": "応援協定の形骸化防止とアップデート",
+      "question": {
+        "speaker": "山田瑛理",
+        "party": "チームみらい",
+        "summary": "- 協定が実態と合わず形骸化している懸念があるため、防災庁として点検や見直しを積極的に促すべきではないか",
+        "full_text": "工藤聖子：使えなくなっているにもかかわらず、協定がそのままになっているとか、そういった形骸化が全国的に起きているのではないかと懸念をしております。防災庁として、協定の点検や見直し、アップデートについて、自治体に積極的に促していく必要があると考えますが、ご見解を伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 平時からの連絡先・手順の確認や協定内容の更新が重要であると認識している\n- 令和7年4月に点検を呼びかけたほか、防災庁設置後は伴走支援を強化し、これまで以上に点検・見直しを促したい",
+        "full_text": "委員御指摘のとおり、災害時応援協定が発災時に円滑に機能するためには、地方自治体が平時から発災時における連絡先、要請手順、対応手順などを確認するとともに、協定内容の見直しや更新を行い、関係機関との顔を見える関係を構築していくことが重要であると考えております。このため、内閣府防災担当では、消防庁と共同しまして、令和7年4月に地方自治体に対し、災害時応援協定の実効性の確保に向けて、連絡体制や実施手順などについて点検を実施するよう呼びかけたところでございます。防災庁におきまして、防災庁では地方自治体への伴走支援を強化することとしており、消防庁と連携しまして、地方自治体に対し、協定の締結促進のみならず、締結された協定について、平時から点検を行い、必要に応じて見直しを行うよう、これまで以上に促してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5175",
+        "clb-5177"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=9529.283",
+      "metrics": null
+    },
+    {
+      "id": "qa_053",
+      "segment_index": 4,
+      "topic": "災害時のネットインフラ強靭化",
+      "question": {
+        "speaker": "山田瑛理",
+        "party": "チームみらい",
+        "summary": "- 防災DXの実装にはネットインフラの強靭化が不可欠であり、国として実態把握を行い、自治体の強化を導くべきではないか",
+        "full_text": "続きましては災害時でも機能するネットインフラの強化についてお聞きします。防災DXを進めるにあたり、自治体の災害対策本部、すなわち本庁と避難所などの運営にあたる職員、出先機関と結ぶネットインフラの整備が大変重要だと考えます。どれだけ優れたシステムを構築しても、それを支えるネットインフラが機能しなければ意味をなしません。例えば衛星通信による補完など、備えを進めている自治体と、そうでない自治体があると思われます。防災庁が設置された暁には、国としてそういった実態の把握を行っていただき、各自治体が必要なネットインフラの強化を進めるように導いていただきたいなと考えておりまして、このように防災DXの整備、実装、災害時のネットインフラの強靭化とやはり一体として進める必要があると私は考えておりまして、大臣のご見解を伺えればと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "茂木外務大臣",
+        "role": "",
+        "summary": "- ネットインフラの強靭化は重要であり、中央防災無線網の利用や地方財政措置などの支援がある\n- 総務省とも連携し、防災拠点の通信サービス維持・早期復旧体制の強化を推進する",
+        "full_text": "委員御指摘のとおり防災DXの推進に当たってはシステムの強靭化だけではなくて、システムを利活用する防災関係機関の間のネットインフラについても強靭化を行って、発災時にオペレーションに支障がないように、中央防災無線網で利用可能です。また特別交付税措置といった地方財政措置の対象となっております。加えまして総務省におきましては、自治体や電気通信事業者に対する支援を通じて、災害時における都道府県庁や市町村役場、災害拠点病院といった防災拠点の通信サービスの維持、早期復旧のための体制強化を行っているというふうに承知しております。機能の維持を含む事前防災の推進に向けて、関係府省庁とともに、自治体や通信事業者を支援し、必要な政策を推進してまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=9529.283",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "災害時のネットインフラ強靭化への見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自治体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "中央防災無線網"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "特別交付税措置"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "総務省"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "必要な政策を推進してまいります",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "防災DXの推進に当たってはシステムの強靭化だけではなくて、システムを利活用する防災関係機関の間のネットインフラについても強靭化を行って",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "ネットインフラ強靭化の必要性について大臣が同意し、既存の財政措置や総務省の取り組みを提示した回答である。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「防災庁が設置された暁には」という仮定の話が含まれているため、現状の責任体制への問いかけに絞るとより具体的回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_054",
+      "segment_index": 4,
+      "topic": "防災システムのベンダーロックイン対策",
+      "question": {
+        "speaker": "山田瑛理",
+        "party": "チームみらい",
+        "summary": "- 防災関連システムにおいて業者の固定化（ベンダーロックイン）が生じ、自治体間の連携に支障が出る懸念はないか",
+        "full_text": "最後に防災DXの推進について、促進についてお聞きいたします。まず防災関連システムの整備運用保守については、業者の固定化が進んでおり、いわゆるベンダーロックインが生じているのではないかと懸念をいたしております。システムが乱立し、自治体間でのベンダー違いによる連携が取れないまま、最も必要な瞬間に機能しないという事態は絶対に避けなければなりませんが、現状についてお聞かせください。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "横山次長",
+        "role": "",
+        "summary": "- 新総合防災情報システムは一般競争入札で調達しており、設計・構築・運用保守の会社を分けているため、ロックインの状態にはない\n- 今後も特定事業者への固定化を招かないよう適切な調達に努める",
+        "full_text": "防災関連システムには様々なものがございまして、各災害対応機関で個別に運用されているものも多くございますけれども、防災庁ではこれらのうち、災害対応機関の間で災害情報を迅速に集約共有する防災デジタルプラットフォームの中核を担う新総合防災情報システムを運用することとなってございます。この総合ウェブについては、構築及び運用保守のいずれも一般競争入札により調達してございまして、設計を行う会社、構築及び運用保守を実施している会社は、現時点では異なってございます。さらに、総合ウェブの機能強化に係るシステム構築についても、一般競争入札により、複数社によるコンソーシアムなど、さまざまな事業者が受注し、業務を担当しているところでございまして、いわゆるベンダーロックインが生じているという状況にはないというふうに認識してございます。その上で、委員ご指摘のとおり、ベンダーロックインは回避すべきものと考えてございますので、今後とも特定事業者への固定化を招かないように、適切な調達に努めてまいりたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5175",
+        "clb-5177"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=9529.283",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "防災関連システムのベンダーロックインの現状について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自治体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "新総合防災情報システム"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "一般競争入札"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "適切な調達に努めてまいりたい",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "新総合防災情報システムは一般競争入札により調達しており、ベンダーロックインが生じている状況にはないというふうに認識してございます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "ベンダーロックインの懸念に対し、新総合防災情報システムの調達実績を挙げて否定する明確な回答が得られている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「現状について」という漠然とした問い方であるため、回答者が都合の良い特定システムの例示に終始するリスクがある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_055",
+      "segment_index": 4,
+      "topic": "被災者へのプッシュ型情報提供（アウトリーチ）",
+      "question": {
+        "speaker": "山田瑛理",
+        "party": "チームみらい",
+        "summary": "- 被災者が支援に気づかないケースを防ぐため、DXを用いてプッシュ型で情報を届ける仕組みが必要ではないか",
+        "full_text": "最後に被災者は自分が支援の対象になっているということに気づかないケースも少なくないと聞いております。例えば、行政書士が災害時協定に基づいて被災者と行政の間に入ることで支援制度の利用率が上がった事例もございます。防災DXでは、プッシュ型で情報を届けるという観点も欠かせないと考えますが、ご認識を伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "横山次長",
+        "role": "",
+        "summary": "- アウトリーチ型の支援は重要であり、専門家と連携して情報を集約する仕組みを検討する\n- 被災者情報データベースの検討や、アプリ・HP等を通じた積極的な情報提供など、プッシュ型で届けられる環境整備に力を入れる",
+        "full_text": "委員ご指摘のとおり、被災者からの要請を待たず、一人一人の状況に応じた漏れもらのない被災者支援をアウトリーチ型で届けることは重要だと考えてございます。被災者一人一人のニーズを把握し、的確な被災者支援を行うためには、言及もございました行政書士、あるいは福祉などの専門家とも連携いたしまして、ある支援の担当者が得た情報を共有できるよう、支援を担う自治体等において必要な情報を集約することが求められます。そのため防災庁においては、まずは被災者支援に必要な情報項目の標準化などを進めながら、被災者情報データベースとして集約する仕組みについて検討を進めて、普及を図ってまいりたいと考えてございます。加えて、災害時には支援情報を整理したリーフレットの配布とか、自治体ホームページや普及している情報アプリへの掲載などにより、被災者に支援情報が積極的に届けられるよう、必要な取組を講じることで、防災庁設置後も引き続き、情報をプッシュ型で届けられるような環境整備に力を入れてまいりたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5175",
+        "clb-5177"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56204&time=9529.283",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "防災DXにおけるプッシュ型情報提供の認識",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "行政書士"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "被災者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "防災庁"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "被災者情報データベース"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "被災者情報データベースとして集約する仕組みについて検討を進めて",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "被災者情報データベースとして集約する仕組みについて検討を進めて、普及を図ってまいりたいと考えてございます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "プッシュ型支援の重要性に同意し、防災庁におけるデータベース構築の検討という具体的な方向性が示されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "認識を問う形式であるため、具体的な期限や数値目標を求める問い方にすればより拘束力のある回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    }
+  ],
+  "score_schema_version": "2.0",
+  "prompt_version": "V4"
+}
