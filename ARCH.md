@@ -2,7 +2,7 @@
 
 > **プロジェクト名**: 国会議事録リアルタイムDB（仮）
 > **ステータス**: 設計完了・Phase 1 着手可能
-> **最終更新**: 2026-04-14
+> **最終更新**: 2026-05-06
 > **作成者**: 中原道智
 
 ---
@@ -214,7 +214,8 @@ http://hlsvod.shugiintv.go.jp/vod/_definst_/amlst:YYYY/YYYY-MMDD-HHMM-SS/playlis
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│  Docker Container（Mac上でcron実行）                       │
+│  GitHub Actions（cron: 毎時 batch.yml）                   │
+│  実行環境: ubuntu-latest + Python venv                    │
 │                                                           │
 │  ┌─ ShugiinScraper ─┐  ┌─ SangiinScraper ─┐              │
 │  │  shugiintv.go.jp  │  │  webtv.sangiin   │              │
@@ -228,7 +229,8 @@ http://hlsvod.shugiintv.go.jp/vod/_definst_/amlst:YYYY/YYYY-MMDD-HHMM-SS/playlis
 └────────────────────────┬────────────────────────────────┘
                          ↓
 ┌─────────────────────────────────────────────────────────┐
-│  GitHub Actions（on push to data/）                       │
+│  GitHub Actions（batch.yml 末尾で ingest→build→deploy）   │
+│  ※ site/ コード変更時は build-deploy.yml が別途起動       │
 │                                                           │
 │  Astro Build → Pagefind Index → Deploy to GitHub Pages   │
 └────────────────────────┬────────────────────────────────┘
@@ -283,17 +285,19 @@ http://hlsvod.shugiintv.go.jp/vod/_definst_/amlst:YYYY/YYYY-MMDD-HHMM-SS/playlis
 
 ### 4.3 コンポーネント構成
 
-#### Dockerコンテナ（データ収集・処理）
+#### パイプライン（データ収集・処理）
+
+実行環境: Python venv（本番は GitHub Actions `batch.yml`、ローカルは手動実行）。
 
 ```
 kokkai-transcriber/
-├── Dockerfile
-├── docker-compose.yml
+├── pyproject.toml
 ├── src/
 │   ├── scrapers/
 │   │   ├── base.py             # BaseScraper ABC（共通インターフェース）
 │   │   ├── shugiin.py          # 衆議院TV Scraper（GET中心、EUC-JP）
-│   │   └── sangiin.py          # 参議院TV Scraper（セッション管理、UTF-8）
+│   │   ├── sangiin.py          # 参議院TV Scraper（UTF-8、AJAX依存）
+│   │   └── _sangiin_search.py  # 過去日付検索（Playwright、F5 ASM bypass）
 │   ├── audio/
 │   │   ├── extractor.py        # ffmpeg HLS/MP4→WAVセグメント
 │   │   └── sangiin_resolver.py # mediasp.jp hash→ストリームURL解決
@@ -302,8 +306,7 @@ kokkai-transcriber/
 │   ├── structurer.py           # LLM清書・Q&Aペア・要約・トピック
 │   ├── publisher.py            # git commit + push
 │   └── state.py                # SQLite状態管理
-├── data/                       # ローカル作業用（gitignore）
-└── state.db                    # 処理済みセッション管理（両院統合）
+└── state.db                    # 処理済みセッション管理（gitignore、両院統合）
 ```
 
 **Scraper抽象化:**
@@ -714,52 +717,54 @@ BYOK側のLLMコストはユーザー負担（OpenRouterの従量課金）。
 
 ## 9. 実装フェーズ
 
-### Phase 1: 衆議院パイプラインPoC（2日）
+### Phase 1: 衆議院パイプラインPoC ✅ 完了
 
 目標: 1つのdeli_idで全パイプラインを手動実行し、出力JSONの構造を確定。
 
-- [ ] `deli_id=56149`（2026-04-09本会議）の詳細ページをスクレイピング
-- [ ] HLSストリームからffmpegで音声抽出
-- [ ] 発言者タイムスタンプでWAVセグメント分割
-- [ ] DeepInfra Whisperで文字起こし（promptに答弁者名含む）
-- [ ] DeepSeek V3.2で話者タグ付け
-- [ ] DeepSeek V3.2でQ&Aペア生成・要約・トピック抽出
-- [ ] 全出力JSONの構造レビュー・確定
+- [x] `deli_id=56149`（2026-04-09本会議）の詳細ページをスクレイピング
+- [x] HLSストリームからffmpegで音声抽出
+- [x] 発言者タイムスタンプでWAVセグメント分割
+- [x] DeepInfra Whisperで文字起こし（promptに答弁者名含む）
+- [x] DeepSeek V3.2で話者タグ付け
+- [x] DeepSeek V3.2でQ&Aペア生成・要約・トピック抽出
+- [x] 全出力JSONの構造レビュー・確定
 
-### Phase 2: Docker化 + サイト基盤 + Scraper抽象化（2-3日）
+### Phase 2: サイト基盤 + Scraper抽象化 + CI/CD ✅ 完了
 
-- [ ] BaseScraper ABC定義、ShugiinScraper実装
-- [ ] Dockerfile + docker-compose.yml
-- [ ] cron/launchd設定（1日2回実行）
-- [ ] SQLite状態管理（chamber + session_id複合キー）
-- [ ] git auto-push
-- [ ] Astroプロジェクトセットアップ（`/shugiin/`, `/sangiin/` ルーティング）
-- [ ] 基本ページ（セッション一覧、個別セッション、Q&Aカード）
-- [ ] Pagefind統合
-- [ ] GitHub Actions CI/CD
+※ 当初のDocker化方針を変更し、venv + GitHub Actions（`batch.yml`）に移行。
 
-### Phase 3: 参議院対応（1-2日）
+- [x] BaseScraper ABC定義、ShugiinScraper実装
+- [x] GitHub Actions `batch.yml`（cron 毎時）による自動バッチ
+- [x] SQLite状態管理（chamber + session_id複合キー）
+- [x] git auto-push
+- [x] Astroプロジェクトセットアップ（`/shugiin/`, `/sangiin/` ルーティング）
+- [x] 基本ページ（セッション一覧、個別セッション、Q&Aカード）
+- [x] Pagefind統合
+- [x] GitHub Actions CI/CD（`build-deploy.yml`）
 
-- [ ] 参議院TV動画URL解決方法の確定（mediasp.jp解析 or Playwright）
-- [ ] SangiinScraper実装（detail.php?sid パース、発言者タイムスタンプ抽出）
-- [ ] 参議院音声取得パイプラインの結合テスト
-- [ ] 両院統合での表示・検索確認
+### Phase 3: 参議院対応 ✅ 完了
 
-### Phase 4: フィルタ + エクスポート（1日）
+- [x] 参議院TV動画URL解決（mediasp.jp hash → regex抽出、Playwright不要）
+- [x] SangiinScraper実装（detail.php?sid パース、発言者タイムスタンプ抽出）
+- [x] 過去日付検索（Playwright + stealth、F5 ASM bypass）
+- [x] 参議院音声取得パイプラインの結合テスト
+- [x] 両院統合での表示・検索確認
 
-- [ ] クライアントサイド多軸フィルタリング（院フィルタ含む）
-- [ ] Google Sheets TSVエクスポート
-- [ ] 動画タイムスタンプリンク完備（両院）
+### Phase 4: フィルタ + エクスポート ✅ 完了
 
-### Phase 5: ダッシュボード（2-3日）
+- [x] クライアントサイド多軸フィルタリング（院・委員会・政党・発言者・トピック）
+- [x] Google Sheets TSVエクスポート（`tsv-export.ts`）
+- [x] 動画タイムスタンプリンク完備（両院）
 
-- [ ] セッションタイムラインビュー
-- [ ] トピックヒートマップ（両院横断）
-- [ ] 答弁回避度トラッカー
-- [ ] 約束トラッカー
-- [ ] セッションカレンダー
+### Phase 5: ダッシュボード ✅ 完了
 
-### Phase 6: BYOK + 高度機能（継続的）
+- [x] セッションタイムラインビュー（`TimelineView.jsx`）
+- [x] トピックヒートマップ（`TopicHeatmap.jsx`、両院横断）
+- [x] 答弁回避度トラッカー（`EvasionTracker.jsx`）
+- [x] 約束トラッカー（`CommitmentTracker.jsx`）
+- [x] セッションカレンダー（`SessionCalendar.jsx`）
+
+### Phase 6: BYOK + 高度機能（継続中）
 
 - [ ] OpenRouterキー入力UI + sessionStorage管理
 - [ ] 答弁比較（SSEストリーミング）
