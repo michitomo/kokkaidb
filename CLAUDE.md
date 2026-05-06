@@ -183,34 +183,7 @@ npm run check
 
 ## データモデル
 
-### `data/{chamber}/YYYY/MM/DD/{id}_{委員会名}/` の各ファイル
-
-**metadata.json** — セッション基本情報（chamber, session_id, date, committee, hls_url, source_url, speakers配列）
-
-**utterances.json** — 発言者セグメント + 話者タグ済み発言配列（speaker, role, text）
-
-**qa_pairs.json** — Q&Aペア（id, topic, question/answer各フィールド、evasion_score, has_commitment, video_url）
-
-**summary.json** — セッション要約、key_topics配列、key_commitments配列
-
-**topics.json** — トピック一覧（Pagefind・フィルタ用）
-
-### SQLiteスキーマ（`kokkai-transcriber/state.db`）
-
-```sql
-CREATE TABLE processed_sessions (
-    chamber      TEXT NOT NULL,
-    session_id   TEXT NOT NULL,
-    date         TEXT NOT NULL,
-    committee    TEXT NOT NULL,
-    status       TEXT DEFAULT 'pending',  -- pending/processing/done/error
-    audio_url    TEXT,
-    speaker_count INTEGER,
-    processed_at TEXT,
-    error_msg    TEXT,
-    PRIMARY KEY (chamber, session_id)
-);
-```
+`data/{chamber}/YYYY/MM/DD/{id}_{委員会名}/` 以下の各JSONファイルの詳細スキーマは `ARCH.md` §4.4 を参照。
 
 ---
 
@@ -236,14 +209,14 @@ CREATE TABLE processed_sessions (
 
 | フェーズ | 内容 | ステータス |
 |---------|------|-----------|
-| Phase 1 | 衆議院パイプラインPoC（deli_id=56149） | 未着手 |
-| Phase 2 | Docker化 + Astroサイト基盤 + ShugiinScraper | 未着手 |
-| Phase 3 | 参議院対応（mediasp.jp解決含む） | 未着手 |
-| Phase 4 | フィルタ + TSVエクスポート | 未着手 |
-| Phase 5 | ダッシュボード（ヒートマップ・約束トラッカー等） | 未着手 |
-| Phase 6 | BYOK + OpenRouter連携 + 高度機能 | 未着手 |
+| Phase 1 | 衆議院パイプラインPoC（deli_id=56149） | ✅ 完了 |
+| Phase 2 | venv + GHA自動バッチ + Astroサイト基盤 + ShugiinScraper | ✅ 完了 |
+| Phase 3 | 参議院対応（mediasp.jp解決含む） | ✅ 完了 |
+| Phase 4 | フィルタ + TSVエクスポート | ✅ 完了 |
+| Phase 5 | ダッシュボード（ヒートマップ・約束トラッカー等） | ✅ 完了 |
+| Phase 6 | BYOK + OpenRouter連携 + 高度機能 | 🔄 着手中 |
 
-**Phase 1の最初のタスク**: `deli_id=56149`（2026-04-09本会議）を使って全パイプラインを手動実行し、出力JSONの構造を確定する。
+各フェーズの詳細チェックリストは `ARCH.md` §9 を参照。
 
 ---
 
