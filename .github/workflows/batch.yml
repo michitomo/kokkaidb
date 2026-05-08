@@ -189,11 +189,10 @@ jobs:
       - name: Run pipeline
         env:
           DEEPINFRA_API_KEY: ${{ secrets.DEEPINFRA_API_KEY }}
+          SESSION_CHAMBER: ${{ matrix.session.chamber }}
+          SESSION_SID: ${{ matrix.session.sid }}
         working-directory: kokkai-transcriber
-        run: ./.venv/bin/python -m src.pipeline \
-            --chamber ${{ matrix.session.chamber }} \
-            --session-id ${{ matrix.session.sid }} \
-            --no-push
+        run: ./.venv/bin/python -m src.pipeline --chamber "$SESSION_CHAMBER" --session-id "$SESSION_SID" --no-push
       
       - name: Upload session data
         uses: actions/upload-artifact@v4
