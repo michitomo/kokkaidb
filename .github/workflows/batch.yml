@@ -25,6 +25,12 @@ permissions:
   pages: write
   id-token: write
 
+# 多重実行防止: 走行中のバッチは中断せず、後続の cron / workflow_dispatch を待たせる。
+# 1 時間 cron と 180 分 timeout が重なってもレースしないように in_progress=false。
+concurrency:
+  group: kokkai-batch
+  cancel-in-progress: false
+
 jobs:
   discovery:
     runs-on: ubuntu-latest
@@ -209,7 +215,9 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: main
-      
+          # rebase + push retry のため履歴全体が必要
+          fetch-depth: 0
+
       - name: Configure git identity
         run: |
           git config --global user.name "kokkaidb-bot"
