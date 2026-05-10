@@ -33,8 +33,10 @@
 | **#11 (追加修正)** | F2 再走で残存した systemic 問題対応 | PR23.1 / PR26.1 / PR29 (議長分離) / PR30 (参考人補強) | ✅ 完了 (2026-05-10): 4 PR 実装、F1 で 議長 role 分離・affiliation 補完・anchor URL 確認、PR25 は別セッション |
 | **#12 (F2 再々走)** | 6 件で F2 再々評価 | (実装なし) | ❌ ゲート FAIL (avg 13.50/sess、Session #10 比 +1.5)、PR31-35 起票 (オフバイワン / duration / hallucination chain / 境界 leak / metadata missing) |
 | **#13 (追加修正 2)** | LLM provider 切替 + 並列化 + 新規 systemic PR 群 | PR36 ✅ / PR37 ✅ / PR25 ✅ / PR31 ✅ / PR32 ✅ / PR33 ✅ / PR34 ✅ / PR35 ✅ | ✅ 完了 (2026-05-11): 全 8 PR 実装、F2 再々々走 regen 起動中 (PID=89362、/tmp/regen-f2-rerun3/) |
-| **#14 (F2 再々々走)** | 6 件で再評価 | (実装なし) | 🔄 regen 実行中 → Sonnet audit → ゲート (avg ≤ 8) 評価 |
-| **#15 検証 F3** | 中規模 30 件で再生成 + 比較 | (実装なし、状況により PR27 追加) | F3 ゲート通過 |
+| **#14 (F2 再々々走)** | 6 件で再評価 | (実装なし) | ❌ ゲート FAIL (avg 12.7/sess、Session #12 比 -0.8)。PR38 (Gemini Flash QA gen) は今回初適用。新規 systemic: ① Q&A1ペアズレ (本会議一括質問) ② question断片化 (挨拶のみ) ③ segment境界誤帰属 ④ 答弁者 affiliation 機能名固定。PR39-42 起票 |
+| **#15 (追加修正 3)** | F2 再々々走で残存した systemic 問題対応 | PR39 / PR40 / PR41 / PR42 | F2 avg ≤ 8 目標 |
+| **#16 (F2 再走)** | 6 件で再評価 | (実装なし) | F2 ゲート (avg ≤ 8) 通過 |
+| **#17 検証 F3** | 中規模 30 件で再生成 + 比較 | (実装なし、状況により PR27 追加) | F3 ゲート通過 |
 | **#16 全件 F4** | 全 156 件削除 + 再生成 + サイトビルド | (実装なし) | 公開 |
 
 合計 **約16セッション**、6-7週間。F2 ゲート FAIL が連続するため Session #13-14 で追加 PR + 再評価。
@@ -86,7 +88,11 @@
 | PR35 | role 名 vs 機能名の表記統一 (Session #12 起票) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-11 | `_answerer_role_from_info` を機能名 (答弁者/政府参考人/参考人) 返却に変更。具体役職名 ("防衛大臣" 等) は metadata.speakers.affiliation に保持。qa_pairs.answer.role と utterances.role の不統一を解消 |
 | PR36 | LLM provider を OpenRouter に切替 (Session #13 起票) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-11 | `api_client.get_client()` の base_url を `https://openrouter.ai/api/v1` に、env を `OPENROUTER_API_KEY` に。`LLM_MODEL` / `CORRECTOR_MODEL` / `STRUCTURER_MODEL` / `_METRICS_MODEL` 全 4 箇所を `google/gemma-4-31b-it` に変更 (Gemini Flash latest を一旦試したが、Gemma の方が安価で品質も同等以上の見込み)。Whisper (`transcriber.py`) は DeepInfra のまま据え置き。テスト 41 件の API key mock も更新 (transcriber は `DEEPINFRA_API_KEY` のまま)。`json_object` JSON force は全 4 LLM 箇所で既に有効。`json_schema` 厳格モードは別 PR (PR38 候補) |
 | PR37 | regen の セッション間並列化 (Session #13 起票) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-11 |
-| PR38 | QA gen モデルを Gemini 3 Flash Preview に変更 (Session #13 起票) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-11 | `structurer.QA_MODEL = "google/gemini-3-flash-preview"`。split_anchor_sentence_idx の精度が重要な `generate_qa_pairs` の `_qa_call` のみ変更。summary/topics/metrics/commitments は Gemma のまま。CLAUDE.md のモデル表・サービス表も更新 | `/tmp/regen_test.py` と `/tmp/regen_f2_rerun2.py` の `main()` を `ThreadPoolExecutor` ベースに書き換え、`REGEN_WORKERS=N` env で並列度指定。`writeresults` を lock で保護、incremental に `_summary.json` を更新。F1 4 並列実測: wall-clock **394s** (逐次合計 810s 比 2.06x 高速、56211 律速)。F2 6 件相当なら逐次 ~25min → 並列 ~6-7min 想定 |
+| PR38 | QA gen モデルを Gemini 3 Flash Preview に変更 (Session #13 起票) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-11 |
+| PR39 | question断片化 (挨拶のみQA) 対策 (Session #14 起票) | 🟡 中 | ☐ | | | 56212/8986/8977 で question.full_text が挨拶のみや数語のダミー QA が多発。structurer の `_extract_pairs_from_response` で question.full_text が MIN_ANSWER_LENGTH (30) 未満のペアを drop or 後続ペアに吸収するロジックを追加 |
+| PR40 | 本会議一括質問の Q&A ズレ対策 (Session #14 起票) | 🟡 中 | ☐ | | | 56176 で Q&A 全10ペアが1つオフセット。本会議一括質問形式 (1人が全質問を連続で述べ、複数大臣が順番に回答) を検出し、LLM に question と answer の1対1対応を明示させる prompt 変更 or コード側での post-hoc マッチング |
+| PR41 | segment_index 境界誤帰属修正 (Session #14 起票) | 🟡 中 | ☐ | | | 56179/8986 で各質疑者ブロックの先頭ペアが前ブロックの segment_index に誤分類。utterances の `segment_index` と `question.speaker` の不一致を検出し、video_url を正しい segment の start_seconds から再計算するロジック追加 |
+| PR42 | 答弁者 affiliation を役職名で補完 (Session #14 起票) | 🟢 小 | ☐ | | | 8986 で高市早苗/上野賢一郎/赤澤亮正の affiliation が全て「答弁者」のまま。`_answerer_role_from_info` が metadata.speakers に役職情報がない場合でも、corrector の発言テキスト先頭から「内閣総理大臣 高市早苗」のような役職 + 氏名パターンを抽出して補完する | `structurer.QA_MODEL = "google/gemini-3-flash-preview"`。split_anchor_sentence_idx の精度が重要な `generate_qa_pairs` の `_qa_call` のみ変更。summary/topics/metrics/commitments は Gemma のまま。CLAUDE.md のモデル表・サービス表も更新 | `/tmp/regen_test.py` と `/tmp/regen_f2_rerun2.py` の `main()` を `ThreadPoolExecutor` ベースに書き換え、`REGEN_WORKERS=N` env で並列度指定。`writeresults` を lock で保護、incremental に `_summary.json` を更新。F1 4 並列実測: wall-clock **394s** (逐次合計 810s 比 2.06x 高速、56211 律速)。F2 6 件相当なら逐次 ~25min → 並列 ~6-7min 想定 |
 
 ---
 
@@ -99,6 +105,7 @@
 | **F2 多様性** | 12 (層化抽出) | 平均 ≤ 5件/セッション、未知カテゴリ unchanged ≤ 2 | ❌ | 2026-05-10 (Session #8): 12件全 regen exit 0、Sonnet サブエージェント 12並列で audit。**finding 平均 14.75/session (177/12) → ゲート FAIL** (基準 ≤5)。high=52、systemic=152。Top カテゴリ: whisper_misrecognition(33)、schema_inconsistency(25)、schema_empty_field(24)、fact_error(18)、speaker_misattribution(13)。**新規 systemic 問題群** (PR21-28 候補)。**判定: F4 全件再生成前に追加 PR が必要**。詳細: `/tmp/regen-f2-audit/_aggregate.json` |
 | **F2 再走** | 6 (Session #8 で重症だった 6 件) | 平均 ≤ 5件/セッション、未知 unchanged ≤ 2 | ❌ | 2026-05-10 (Session #10): 6 件全 regen exit 0、Sonnet 6 並列 audit。**finding 平均 12.00/session (72/6) → ゲート FAIL も Session #8 比 -20% (90→72)、avg 15.0→12.0**。high=20、systemic=61。Top カテゴリ: schema_empty_field(15)、whisper_misrecognition(12)、schema_inconsistency(11)、timestamp_inconsistency(6)、role_label_error(6)。**PR21/PR22/PR26/PR28 効果確認**: summary 冒頭 6/6 整合、安倍元総理ハルシネーション解消、role 充足率向上、56176 の 9 QA full_text 重複完全解消 (17→10)。**残存 systemic**: PR23 同一 head_utt 内のペアが同一 URL になる、PR26 が affiliation/start_seconds/duration を埋めない、議長 role が「委員長」に統合される、参考人 role 誤分類 (56212 で 5 名)、whisper hallucination loop (56162)。**判定: Session #11 で追加 PR 後に F2 再々走**。詳細: `docs/regen-comparison/f2-rerun/_aggregate.json` |
 | **F2 再々走** | 6 (Session #10 と同一) | 平均 ≤ 5件/セッション、未知 unchanged ≤ 2 | ❌ | 2026-05-11 (Session #12): 6 件全 regen exit 0 (8977 のみ Step 6 wedge → 単独 re-run で復帰)、Sonnet 6 並列 audit。**finding 平均 13.50/session (81/6) → ゲート FAIL、Session #10 比 +1.5 (72→81)**。high=22、systemic=20 (auditor の systemic 判定基準が異なるため、絶対比較は不可)。Top カテゴリ: whisper_misrecognition(16, +4)、schema_empty_field(15, ±0)、schema_inconsistency(13, +2)、speaker_misattribution(8, +4)、whisper_hallucination_loop(5, +4)。**PR23.1/26.1/29/30 効果確認**: ✅ 56212 参考人 5/5 全員 role="参考人"、✅ 56176 forsmary 'video_url' 同 head_utt 内で別 timestamp、✅ 56162/56074 議長 role 分離、✅ 8986 affiliation/start_seconds 補完。**新規 systemic 問題**: 56176 で answer.full_text のオフバイワン (8 ペア)、duration_minutes 全 0 (PR26.1 未対応)、56162 「福祉法」44 回ループ再発、56179 セグメント境界 leak、8977 metadata 3 名未登録。**判定: Session #13 で PR25/PR31-35 後に F2 再々々走**。詳細: `docs/regen-comparison/f2-rerun2/_aggregate.json` |
+| **F2 再々々走** | 6 (Session #12 と同一) | 平均 ≤ 8件/セッション (目標緩和)、未知 unchanged ≤ 2 | ❌ | 2026-05-11 (Session #13-14): 6 件全 regen exit 0、Sonnet 6 並列 audit。**finding 平均 12.7/session (76/6) → ゲート FAIL、Session #12 比 -0.8 (81→76)**。high=24、medium=29、low=23。PR25/31-35 の効果は限定的。**改善確認**: 56179 -2 / 8986 -5。**残存・新規 systemic**: ① 56176 Q&A全10ペア1ペアズレ (本会議一括質問形式、PR31プロンプト修正では不十分) ② 56212/8986/8977 question断片化 (挨拶のみQA、structurer過剰分割) ③ 56179/8986 segment_index境界誤帰属 (次ブロック冒頭が前ブロックに混入) ④ 56179 横山次郎→次長誤認識が全ペアに伝播 ⑤ 8986 答弁者 affiliation が全員「答弁者」機能名。**判定: PR39-42 起票、Session #15 で修正後 F2 再走**。詳細: `docs/regen-comparison/f2-rerun3/_aggregate.json` |
 | **F3 中規模** | 30 | F1/F2 整合、エラー率 < 5%、コスト < $0.5/sess | ☐ | |
 | **F4 全件** | 156 | — | ☐ | |
 
@@ -190,9 +197,16 @@
   - **PR33**: `_ALL_VALID_ROLES` に質疑者追加 (metadata 未登録の質疑者を補完対象化)
   - **PR34**: `_strip_crosschunk_loops` 新設 — チャンク境界をまたぐ hallucination loop 除去
   - **PR35**: `_answerer_role_from_info` を機能名返却に統一 (qa_pairs.answer.role の役職名混在解消)
+  - **PR38**: QA gen のみ `google/gemini-3-flash-preview` に変更 (split_anchor 精度向上のため)
+  - **CLAUDE.md / STRUCTURER_REWRITE.md §6**: LLM モデル使い分け方針を文書化
 - 検証:
   - 161 件 (test_structurer, test_speaker_tagger, test_metadata_enricher, test_transcript_corrector) 全通過
-  - F2 再々々走 (Session #14) regen を 3 並列で起動 (`/tmp/regen-f2-rerun3/`)
+- F2 再々々走 (Session #14 として実施):
+  - 6 件全 regen 完了、Sonnet 6 並列 audit
+  - **finding 平均 12.7/session (76/6) → ゲート FAIL (基準 ≤8、目標緩和後)**
+  - Session #12 比 -0.8 (81→76)。PR35 (role統一) / PR32 (duration) / PR33 (質疑者追加) 効果は限定的
+  - **新規 systemic**: Q&A1ペアズレ (本会議一括質問、PR39)、question断片化 (PR40)、segment境界誤帰属 (PR41)、答弁者 affiliation 機能名固定 (PR42)
+  - 詳細: `docs/regen-comparison/f2-rerun3/_aggregate.json`
 
 ### Session #12 (F2 再々走) — 2026-05-11 完了 (ゲート FAIL、Session #10 比 +1.5)
 - **F2 再々走サンプル選定** (6 件、Session #10 と同一で直接比較):
