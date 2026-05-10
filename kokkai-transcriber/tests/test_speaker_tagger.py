@@ -276,7 +276,7 @@ class TestBuildVideoUrl:
 
     def test_sangiin_url(self) -> None:
         url = _build_video_url("sangiin", "7890", 180.5)
-        assert "webtv.sangiin.go.jp" in url
+        assert url.startswith("https://www.webtv.sangiin.go.jp/")
         assert "sid=7890" in url
         assert "#180.5" in url
 

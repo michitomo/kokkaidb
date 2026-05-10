@@ -178,7 +178,10 @@ def run_pipeline(
                 # 音声は leading_silence 秒目から始まる。TVはfirst_speaker_timeと言っている。
                 # first_speaker_time が leading_silence より十分大きければオフセットが存在。
                 offset = first_speaker_time - leading_silence
-                if offset > 30.0:
+                # 閾値 5.0s: 30s 制では小さなズレが補正されず video_url 精度が
+                # 落ちるため、誤補正リスクが低い 5s 超に下げて積極的に補正する
+                # (docs/STRUCTURER_REWRITE.md §2.13)
+                if offset > 5.0:
                     logger.info(
                         "Applying audio offset correction: %.1fs "
                         "(leading_silence=%.1fs, first_speaker=%.1fs)",

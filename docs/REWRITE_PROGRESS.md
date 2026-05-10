@@ -42,9 +42,9 @@
 | PR | 内容 (§参照) | サイズ | ステータス | ブランチ | 完了日 | メモ |
 |---|---|---|---|---|---|---|
 | PR1 | scraper dedup (§2.4) | 🟢 小 | ☐ | | | (#4 batch) |
-| PR2 | video_url www. 修正 (§2.14) | 🟢 小 | ☐ | | | (#1 smoke) |
+| PR2 | video_url www. 修正 (§2.14) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | speaker_tagger.py:208 + test 強化 |
 | PR3 | derive_role 拡張 (§2.9) | 🟢 小 | ☐ | | | (#4 batch) |
-| PR4 | schema 規約明文化 (§2.12) | 🟢 小 | ☐ | | | (#1 smoke) |
+| PR4 | schema 規約明文化 (§2.12) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | models.py モジュール docstring に規約追記 |
 | PR5 | 拡張閣僚リスト (§2.6) | 🟢 小 | ☐ | | | (#5 batch) |
 | PR6 | metadata enrichment (§2.2/2.3) | 🟡 中 | ☐ | | | (#4 batch、PR1+PR3 依存) |
 | PR7 | corrector 安全チェック緩和 (§2.5) | 🟢 小 | ☐ | | | (#5 batch) |
@@ -54,8 +54,8 @@
 | PR11 | floor_speech summary 経路 (§2.10) | 🟡 中 | ☐ | | | (#5 batch、PR10 依存) |
 | PR12 | summary post-validation (§2.11) | 🟡 中 | ☐ | | | (#6 batch、PR9+PR11 依存) |
 | PR13 | follow_up_ids 実装 (§2.14) | 🟢 小 | ☐ | | | (#6 batch、PR9 依存) |
-| PR14 | leading_silence 閾値調整 (§2.13) | 🟢 小 | ☐ | | | (#1 smoke) |
-| PR15 | schema validator スクリプト (§2.12) | 🟢 小 | ☐ | | | (#1 smoke) |
+| PR14 | leading_silence 閾値調整 (§2.13) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | pipeline.py offset 30s → 5s |
+| PR15 | schema validator スクリプト (§2.12) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | scripts/validate_data_schema.py 追加、現 data/ 156件全 parse 成功 |
 | PR16 | 比較サブエージェント仕様 (§3.4) | 🟢 小 | ☐ | | | (#1 smoke or 必要時) |
 | PR17 | ffmpeg subprocess timeout (§2.15) | 🟢 小 | ☐ | | | (#7 batch) |
 | PR18 | speaker_tagger json.loads ラップ (§2.15) | 🟢 小 | ☐ | | | (#7 batch) |
@@ -68,7 +68,7 @@
 
 | フェーズ | サンプル数 | ゲート条件 | ステータス | 結果ノート |
 |---|---:|---|---|---|
-| **F0 smoke** | 1 (56074) | exit 0 + 6ファイル出力 | ☐ | |
+| **F0 smoke** | 1 (56074) | exit 0 + 6ファイル出力 | ✅ | 2026-05-10: Step 4.5+ 再実行 122s、qa=1/topics=1、6ファイル全て生成 (PR14 は Step 3 のため smoke カバー外、コード差分のみ確認) |
 | **F1 既知問題** | 4 (56074, 56075, 56211, 8967) | resolved ≥ 50%、新規 NEW_ISSUE = 0 | ☐ | |
 | **F2 多様性** | 12 (層化抽出) | 平均 ≤ 5件/セッション、未知カテゴリ unchanged ≤ 2 | ☐ | |
 | **F3 中規模** | 30 | F1/F2 整合、エラー率 < 5%、コスト < $0.5/sess | ☐ | |
@@ -137,9 +137,19 @@
 - ISSUES.md / ISSUES2.md からデータ生成起因項目を `STRUCTURER_REWRITE.md` §2.15-§2.17 に移管
 - 本書 `REWRITE_PROGRESS.md` を作成、D+B ハイブリッド方針を採用
 
-### Session #1 (smoke) — まだ
-- 予定: PR2, PR4, PR14, PR15 + F0 通過
-- 着手前に: 本書のセッション計画表を確認
+### Session #1 (smoke) — 2026-05-10 完了
+- 実装:
+  - PR2: `speaker_tagger.py:208` の参議院 video_url を `www.webtv.sangiin.go.jp` に修正
+  - PR4: `models.py` モジュール docstring に null/空文字統一規約 (§2.12) を明文化
+  - PR14: `pipeline.py` の offset 補正閾値を 30s → 5s に (§2.13)
+  - PR15: `kokkai-transcriber/scripts/validate_data_schema.py` 新規作成。data/ 配下を Pydantic で parse + speaker 整合チェック
+- 検証:
+  - `tests/test_speaker_tagger.py::TestBuildVideoUrl` 3件 pass
+  - validator 現 data/ 156件 全 Pydantic parse 成功 / 115件で speaker 整合 warning (§2.3、PR6 で対応予定)
+  - F0 smoke: `/tmp/regen_smoke.py` で 56074 を Step 4.5+ 再実行、122s、6ファイル出力 OK
+- メモ:
+  - PR14 (Step 3 閾値) は Step 4.5+ 再実行ではカバー外。フルパイプライン smoke は次セッション以降で機会があれば
+  - validator の speaker 不整合 warning は PR6 metadata enrichment で大幅減少見込み
 
 ### Session #2 (schema-1) — まだ
 - 予定: PR9 前半

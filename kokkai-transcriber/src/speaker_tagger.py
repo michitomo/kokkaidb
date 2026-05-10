@@ -205,7 +205,7 @@ def _build_video_url(chamber: str, session_id: str, start_seconds: float) -> str
         )
     elif chamber == "sangiin":
         return (
-            f"https://webtv.sangiin.go.jp/webtv/detail.php"
+            f"https://www.webtv.sangiin.go.jp/webtv/detail.php"
             f"?sid={session_id}#{start_seconds}"
         )
     return ""
