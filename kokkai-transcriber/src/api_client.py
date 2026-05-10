@@ -18,7 +18,7 @@ from typing import TypeVar
 import openai
 
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
-LLM_MODEL = "~google/gemini-flash-latest"
+LLM_MODEL = "google/gemma-4-31b-it"
 
 # ---------------------------------------------------------------------------
 # ステップごとのデフォルト並列数

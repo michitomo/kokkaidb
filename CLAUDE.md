@@ -38,7 +38,7 @@ kokkai-db/                          # このリポジトリ
 │       │   ├── extractor.py        # ffmpeg HLS/MP4 → WAVセグメント
 │       │   └── sangiin_resolver.py # mediasp.jp hash → ストリームURL解決
 │       ├── transcriber.py          # DeepInfra Whisper large-v3-turbo
-│       ├── speaker_tagger.py       # LLM話者タグ付け（OpenRouter Gemini Flash latest）
+│       ├── speaker_tagger.py       # LLM話者タグ付け（OpenRouter Gemma 4 31B-it）
 │       ├── structurer.py           # LLM Q&Aペア・要約・トピック生成
 │       ├── publisher.py            # git commit + push
 │       └── state.py                # SQLite状態管理
@@ -73,7 +73,7 @@ kokkai-db/                          # このリポジトリ
 | データ収集 | Python 3.12+、requests、BeautifulSoup4、ffmpeg |
 | 状態管理 | SQLite（両院統合、`chamber + session_id` 複合PK） |
 | 文字起こし | DeepInfra Whisper large-v3-turbo（$0.0002/min） |
-| LLM処理 | OpenRouter `~google/gemini-flash-latest`（話者タグ・構造化・要約・metrics） |
+| LLM処理 | OpenRouter `google/gemma-4-31b-it`（話者タグ・構造化・要約・metrics） |
 | SSG | Astro 5.x（Content Collections、partial hydration） |
 | 検索 | Pagefind（静的CJK全文検索） |
 | チャート | Recharts（React互換） |
@@ -196,7 +196,7 @@ npm run check
 | `sangiin-vod.live.ipcasting.jp` | 参議院 HLS 配信 (IIJ MSP) | なし |
 | `www.webtv.sangiin.go.jp` (POST `keyword_search.php`) | 参議院 過去日付セッション検索 | なし (Playwright + stealth で F5 ASM bypass) |
 | DeepInfra Whisper | 文字起こし (Step 3/4) | `DEEPINFRA_API_KEY` |
-| OpenRouter `~google/gemini-flash-latest` | 話者タグ・構造化・要約・metrics (Step 4.5/5/6) | `OPENROUTER_API_KEY` |
+| OpenRouter `google/gemma-4-31b-it` | 話者タグ・構造化・要約・metrics (Step 4.5/5/6) | `OPENROUTER_API_KEY` |
 | OpenRouter | BYOK LLM（ブラウザのみ） | ユーザー入力キー |
 
 環境変数は `kokkai-transcriber/.env`（gitignore済み）に配置。`DEEPINFRA_API_KEY` (Whisper) と `OPENROUTER_API_KEY` (LLM) の両方が必須。

@@ -32,7 +32,7 @@
 | **#10 (旧 F4 → F2 再走)** | 6 件サンプリングで F2 再評価 | (実装なし) | ❌ ゲート FAIL (avg 12.00/sess) も -20% 改善、PR21/22/26/28 効果確認 |
 | **#11 (追加修正)** | F2 再走で残存した systemic 問題対応 | PR23.1 / PR26.1 / PR29 (議長分離) / PR30 (参考人補強) | ✅ 完了 (2026-05-10): 4 PR 実装、F1 で 議長 role 分離・affiliation 補完・anchor URL 確認、PR25 は別セッション |
 | **#12 (F2 再々走)** | 6 件で F2 再々評価 | (実装なし) | ❌ ゲート FAIL (avg 13.50/sess、Session #10 比 +1.5)、PR31-35 起票 (オフバイワン / duration / hallucination chain / 境界 leak / metadata missing) |
-| **#13 (追加修正 2)** | LLM provider 切替 + 新規 systemic PR 群 | PR36 / PR25 / PR31 / PR32 / PR33 / PR34 / PR35 | F2 4-5 件目標 ≤ 8 |
+| **#13 (追加修正 2)** | LLM provider 切替 + 並列化 + 新規 systemic PR 群 | PR36 ✅ / PR37 ✅ / PR25 / PR31 / PR32 / PR33 / PR34 / PR35 | F2 4-5 件目標 ≤ 8 |
 | **#14 (F2 再々々走)** | 4-6 件で再評価 | (実装なし) | F2 ゲート (≤ 5) 通過 |
 | **#15 検証 F3** | 中規模 30 件で再生成 + 比較 | (実装なし、状況により PR27 追加) | F3 ゲート通過 |
 | **#16 全件 F4** | 全 156 件削除 + 再生成 + サイトビルド | (実装なし) | 公開 |
@@ -84,7 +84,8 @@
 | PR33 | metadata_missing_speaker 補完強化 (Session #12 起票、PR6 拡張) | 🟡 中 | ☐ | | | 8977 で 3 名 (藤井和弘 / 小西博之 / 河合貴則) が metadata 未登録、56179 で近藤和也 start_seconds=18359.3 誤帰属、西園勝秀 start_seconds 不整合。`enrich_metadata_from_utterances` で utterance 観測のみベースで自動追加するロジック強化 |
 | PR34 | whisper hallucination loop 再発抑制 (Session #12 起票、PR7/PR8 拡張) | 🟡 中 | ☐ | | | 56162 で「福祉法」が 44 回ループ (compression_ratio=18.96)。PR7 の単一 chunk 内検出だけでは捉えきれず。corrector の loop 検出を chunk 跨ぎで適用 + Whisper 出力時点 (transcriber.py) の compression_ratio 閾値で Whisper segment ごと drop も検討 |
 | PR35 | role 名 vs 機能名の表記統一 (Session #12 起票) | 🟢 小 | ☐ | | | 56176 で qa_pairs.answer.role='防衛大臣' (役職名) に対し utterances/metadata は '答弁者' (機能名) で不統一。`_answerer_role_from_info` の出力を「機能名 (答弁者/政府参考人/参考人)」に統一して、affiliation 側に役職名を残すルールに |
-| PR36 | LLM provider を OpenRouter に切替 (Session #13 起票) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-11 | `api_client.get_client()` の base_url を `https://openrouter.ai/api/v1` に、env を `OPENROUTER_API_KEY` に。`LLM_MODEL` / `CORRECTOR_MODEL` / `STRUCTURER_MODEL` / `_METRICS_MODEL` 全 4 箇所を `~google/gemini-flash-latest` に変更。Whisper (`transcriber.py`) は DeepInfra のまま据え置き。テスト 41 件の API key mock も更新 (transcriber は `DEEPINFRA_API_KEY` のまま)。F1 smoke 56074 で 33.4s/qa=2/topics=1、PR12 retry も動作確認 |
+| PR36 | LLM provider を OpenRouter に切替 (Session #13 起票) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-11 | `api_client.get_client()` の base_url を `https://openrouter.ai/api/v1` に、env を `OPENROUTER_API_KEY` に。`LLM_MODEL` / `CORRECTOR_MODEL` / `STRUCTURER_MODEL` / `_METRICS_MODEL` 全 4 箇所を `google/gemma-4-31b-it` に変更 (Gemini Flash latest を一旦試したが、Gemma の方が安価で品質も同等以上の見込み)。Whisper (`transcriber.py`) は DeepInfra のまま据え置き。テスト 41 件の API key mock も更新 (transcriber は `DEEPINFRA_API_KEY` のまま)。`json_object` JSON force は全 4 LLM 箇所で既に有効。`json_schema` 厳格モードは別 PR (PR38 候補) |
+| PR37 | regen の セッション間並列化 (Session #13 起票) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-11 | `/tmp/regen_test.py` と `/tmp/regen_f2_rerun2.py` の `main()` を `ThreadPoolExecutor` ベースに書き換え、`REGEN_WORKERS=N` env で並列度指定。`writeresults` を lock で保護、incremental に `_summary.json` を更新。F1 4 並列実測: wall-clock **394s** (逐次合計 810s 比 2.06x 高速、56211 律速)。F2 6 件相当なら逐次 ~25min → 並列 ~6-7min 想定 |
 
 ---
 
