@@ -31,6 +31,7 @@ from src.structurer import (
     _has_placeholder_header,
     _shift_video_url_time,
     _split_sentences,
+    _strip_leading_speaker_label,
     _strip_trailing_speaker_label,
     _validate_summary_person_refs,
     build_summary_related_laws,
@@ -1979,6 +1980,64 @@ class TestPR43TrailingLabelStrip:
         result = _strip_trailing_speaker_label(text)
         assert "委員長" not in result
         assert "森本真治" not in result
+
+    def test_strips_inline_kun_no_newline(self) -> None:
+        """PR43 v2: 改行なし+君。パターン（同一行末）を除去する。"""
+        text = "引き続き取り組んでまいります。山内君。"
+        result = _strip_trailing_speaker_label(text)
+        assert result == "引き続き取り組んでまいります。"
+
+    def test_strips_inline_party_no_newline(self) -> None:
+        """PR43 v2: 改行なし+（党名）パターンを除去する。"""
+        text = "対応してまいります。三原じゅん子（自由民主党）。"
+        result = _strip_trailing_speaker_label(text)
+        assert result == "対応してまいります。"
+
+    def test_strips_inline_chair_no_newline(self) -> None:
+        """PR43 v2: 改行なし+委員長パターンを除去する。"""
+        text = "以上でございます。藤川政人委員長。"
+        result = _strip_trailing_speaker_label(text)
+        assert result == "以上でございます。"
+
+    def test_no_false_positive_sentence_ending(self) -> None:
+        """正常な文末（「ございます。」等）は除去しない。"""
+        text = "取り組んでまいります。早急に対応してございます。"
+        result = _strip_trailing_speaker_label(text)
+        assert result == text
+
+
+class TestPR43LeadingLabelStrip:
+    """PR43 v2: answer.full_text 冒頭の話者ラベル除去。"""
+
+    def test_strips_prime_minister_label(self) -> None:
+        """「高市早苗内閣総理大臣。[答弁]」→「[答弁]」"""
+        text = "高市早苗内閣総理大臣。御質問にお答えします。具体的な対応を検討してまいります。"
+        result = _strip_leading_speaker_label(text)
+        assert result == "御質問にお答えします。具体的な対応を検討してまいります。"
+
+    def test_strips_minister_label(self) -> None:
+        """「上野賢一郎厚生労働大臣。[答弁]」→「[答弁]」"""
+        text = "上野賢一郎厚生労働大臣。この問題については早急に対応いたします。"
+        result = _strip_leading_speaker_label(text)
+        assert result == "この問題については早急に対応いたします。"
+
+    def test_no_false_positive_question_start(self) -> None:
+        """御質問文の冒頭は除去しない。"""
+        text = "御質問にお答えします。エネルギー政策については引き続き検討します。"
+        result = _strip_leading_speaker_label(text)
+        assert result == text
+
+    def test_no_false_positive_plain_content(self) -> None:
+        """通常の答弁冒頭は除去しない。"""
+        text = "今朝5時23分頃に発生した地震について申し上げます。"
+        result = _strip_leading_speaker_label(text)
+        assert result == text
+
+    def test_strips_fullwidth_colon_delimiter(self) -> None:
+        """「名前役職：[答弁]」形式も除去する。"""
+        text = "高市早苗内閣総理大臣：まず基本的な考え方を申し上げます。"
+        result = _strip_leading_speaker_label(text)
+        assert result == "まず基本的な考え方を申し上げます。"
 
 
 @pytest.mark.integration

@@ -327,10 +327,21 @@ _VIDEO_TIME_PARAM_RE = re.compile(r"time=[\d.]+")
 _VIDEO_HASH_TIME_RE = re.compile(r"#[\d.]+$")
 
 # PR43: full_text 末尾に混入した次発言者ラベルを除去する。
-# 「\n森本真治（立憲民主・無所属）」「\n藤川政人委員長」「\n小里君。」等のパターン。
-# PR43 enhanced: 「君。」「さん。」等の敬称+句点にも対応。
+# Pattern A: 改行後のラベル（既存） — 「\n森本真治（立憲民主・無所属）」「\n藤川政人委員長」
+# Pattern B: 改行なし+党名括弧 — 「三原じゅん子（自由民主党）。」
+# Pattern C: 改行なし+敬称/役職 — 「小里君。」「山内君。」「藤川委員長。」（2〜8 字+敬称）
 _TRAILING_SPEAKER_LABEL_RE = re.compile(
-    r"\n+(?:[○◯])?[一-鿿ぁ-ゟ]{2,10}(?:（[^）]{2,40}）)?(?:委員長|議長|君|さん)?[。、]?\s*$"
+    r"(?:"
+    r"\n+(?:[○◯])?[一-鿿ぁ-ゟ]{2,10}(?:（[^）]{2,40}）)?(?:委員長|議長|君|さん)?[。、]?"  # A
+    r"|(?:[○◯])?[一-鿿ぁ-ゟ]{2,10}（[^）]{2,40}）(?:委員長|議長|君|さん)?[。、]?"          # B
+    r"|(?:[○◯])?[一-鿿ぁ-ゟ]{2,8}(?:委員長|議長|君|さん)[。、]?"                            # C
+    r")\s*$"
+)
+
+# PR43: answer.full_text 冒頭に混入した話者ラベルを除去する。
+# 「高市早苗内閣総理大臣。」「古川内閣府大臣政務官。」等のパターン。
+_LEADING_SPEAKER_LABEL_RE = re.compile(
+    rf"^[一-鿿ぁ-ゟ]{{2,20}}?(?:{'|'.join(re.escape(k) for k in ('内閣総理大臣','総理大臣','国務大臣','大臣政務官','副大臣','大臣','副長官','長官','次長','局長','審議官','参事官','部長'))})[。、：]\s*"
 )
 
 
@@ -346,6 +357,15 @@ def _strip_trailing_speaker_label(text: str) -> str:
             break
         text = stripped
     return text
+
+
+def _strip_leading_speaker_label(text: str) -> str:
+    """answer.full_text 冒頭の話者ラベルを除去する (PR43)。
+
+    「高市早苗内閣総理大臣。[答弁内容...]」→「[答弁内容...]」
+    役職キーワードで終わる名前+役職のラベルが「。」「、」「：」で区切られている場合のみ除去。
+    """
+    return _LEADING_SPEAKER_LABEL_RE.sub("", text)
 
 
 def _shift_video_url_time(video_url: str, new_start_seconds: float) -> str:
@@ -657,6 +677,8 @@ def _extract_pairs_from_response(
         # PR43: answer / question 末尾に混入した次発言者ラベルを除去
         a_full = _strip_trailing_speaker_label(a_full)
         q_full = _strip_trailing_speaker_label(q_full)
+        # PR43: answer 冒頭に混入した話者ラベルを除去（「高市早苗内閣総理大臣。[答弁]」等）
+        a_full = _strip_leading_speaker_label(a_full)
 
         if len(a_full) < MIN_ANSWER_LENGTH and not p["a_uidx"]:
             dropped_short += 1

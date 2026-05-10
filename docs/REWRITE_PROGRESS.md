@@ -97,6 +97,7 @@
 | PR42 | 答弁者 affiliation を役職名で補完 (Session #14 起票) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-11 | `metadata_enricher._extract_affiliation_from_utterance_text` 新設。utterance テキスト先頭の「内閣総理大臣の高市でございます」等のパターンで役職タイトルを抽出する正規表現 `_UTT_AFFILIATION_RE`。`enrich_metadata_from_utterances` の affiliation 推定 step 3 として挿入 (nomination_map → name suffix → utterance text の順)。テスト 6 件追加。**Session #17 bug fix**: regex prefix `{0,12}→{0,20}`、全角コロン「：」lookahead 追加、`speaker_name` 引数で名前プレフィックスを除去。`_NOMINATION_PATTERN` も同様に `{0,20}` 拡張。テスト 4 件追加 |
 | PR43 | answer.full_text 末尾の次発言者ラベル除去 (Session #16 起票) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-11 | `_TRAILING_SPEAKER_LABEL_RE` + `_strip_trailing_speaker_label` 新設。`_extract_pairs_from_response` で `a_full`・`q_full` 両方に適用。「`\n森本真治（立憲民主・無所属）`」「`\n藤川政人委員長`」等のパターンを除去。**Session #17 enhanced**: `君。`/`さん。` 敬称+句点パターン追加、最大 3 回反復適用でスタック除去。テスト 9 件追加 |
 | PR44 | _NOMINATION_PATTERN の「、」区切り対応 (Session #17 起票) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-11 | `_NOMINATION_PATTERN` に `[、，\s]{0,2}` を追加。「内閣総理大臣、高市早苗君。」等の「、」区切りパターンに対応し nomination_map での affiliation 抽出成功率を向上。テスト 2 件追加 |
+| PR43 v2 | PR43 trailing/leading label 強化 (Session #17、F2 rerun5 audit 後) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-11 | trailing: 改行なし+敬称/役職パターン追加 (Pattern B: 党名括弧, Pattern C: 君/委員長 inline)。leading: `_LEADING_SPEAKER_LABEL_RE` + `_strip_leading_speaker_label` 新設で answer 冒頭の「高市早苗内閣総理大臣。」等を除去。テスト +9件 |
 
 ---
 
