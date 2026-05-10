@@ -1,0 +1,199 @@
+{
+  "session_id": "shugiin/2026/04/24/56212_経済産業委員会",
+  "chamber": "shugiin",
+  "date": "2026-04-24",
+  "deli_id": "56212",
+  "committee": "経済産業委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T10:00:00Z",
+  "overall_quality": "medium",
+  "issue_count": {"high": 3, "medium": 4, "low": 3, "total": 10},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "role_label_error",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "参考人5名全員 role が未修正のまま誤分類 (PR26 未解決)",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[*].role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "大橋弘: role=\"その他\", 澤田純: role=\"委員長\", 峯村健司: role=\"その他\", 濱口伸明: role=\"その他\", 宮澤伸: role=\"政府参考人\"。全5名の参考人が role=\"参考人\" 以外に分類されている。澤田純の affiliationに「産業競争力強化委員長」という文字列が含まれるため、PR26のパターンマッチが誤って role=\"委員長\" を付与している。宮澤伸は「政府参考人」に誤分類（民間の日本商工会議所職員）。大橋弘・峯村健司・濱口伸明は「その他」に分類。",
+      "estimated_cause": "PR26 で参考人ロール検出を試みたが、affiliation に含まれるキーワード（委員長、政府等）に引っ張られて誤判定が残存。「参考人」を明示的に affiliation 先頭から検出するロジックが未実装か未適用。",
+      "downstream_impact": ["utterances.json", "qa_pairs.json"]
+    },
+    {
+      "id": "F002",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["content_missing"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "utterances.json でセグメント冒頭に前セグメント話者の発言が混入",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[*].utterances[0].speaker",
+        "segment_index": 2,
+        "qa_id": null
+      },
+      "evidence": "segment_index=2 (segment_speaker=澤田純) の最初の utterance は speaker=濱口伸明 で、テキストは「大臣、すなわちEBPMの取り組みを…2点目は、産業政策と競争政策との関係の整理です…」と、明らかに大橋弘の意見陳述（segment_index=1）の末尾部分。同様のパターンがseg1,3,4,5,6,8,9,11（計9/12セグメント）で確認。",
+      "estimated_cause": "HLS セグメント切り出しが segment_speaker の発言開始より前に設定されているため、前話者の音声末尾が次セグメントに含まれる。話者タガーがこの「前話者音声」を誤って次セグメントの先頭 utterance として記録している。",
+      "downstream_impact": ["qa_pairs.json", "topics.json"]
+    },
+    {
+      "id": "F003",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "参考人質疑セッションで「大臣、大臣」Whisper 誤認識",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[10].utterances[0].text",
+        "segment_index": 10,
+        "qa_id": null
+      },
+      "evidence": "segment_index=10 (牧野俊一の時間帯) の最初の utterance（speaker=牧野俊一）のテキストが「大臣、大臣。上がっちゃうみたいなことが起きかねないので…」と始まる。本セッションは参考人質疑であり大臣は出席していない。直前の大橋弘の発言「データセンターは確かに建設においては地元に落ちるお金がある。ただ、できた後どうなんだと。」が続いているため、音声の接続部分での Whisper 誤認識と判断。",
+      "estimated_cause": "セグメント境界付近の音声が途切れており、Whisper が「先生」「委員」等を「大臣」と誤認識した可能性。参考人質疑コンテキストが Whisper に与えられていない。",
+      "downstream_impact": ["qa_pairs.json"]
+    },
+    {
+      "id": "F004",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.json の duration・committee_id・session_number が空/null",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.duration / $.committee_id / $.session_number",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "duration=\"\" (空文字), committee_id=null, session_number=null の3フィールドが未設定。session_kind=\"regular_qa\" は設定されている。",
+      "estimated_cause": "スクレイパーが委員会ID・回次・動画時間長を取得できていない。衆議院TVサイトの構造上これらのフィールドの取得が困難か、未実装。",
+      "downstream_impact": ["summary.json", "topics.json", "site 表示"]
+    },
+    {
+      "id": "F005",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_009 の metrics フィールドが null",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[8].metrics",
+        "segment_index": 8,
+        "qa_id": "qa_009"
+      },
+      "evidence": "qa_009 は \"metrics\": null。他の26件はすべて metrics オブジェクトを持つ。qa_009 は阿部司(segment_index=8)のラウンドロビン質疑における濱口伸明への回答ペア。",
+      "estimated_cause": "LLM による metrics 生成処理がこの qa_pair に対してタイムアウトまたは失敗し、null のまま格納された。",
+      "downstream_impact": ["フィルタ・ダッシュボード機能での集計誤り"]
+    },
+    {
+      "id": "F006",
+      "category": "summary_qa_divergence",
+      "secondary_categories": ["fact_error"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.json が参考人発言を「答弁」と誤表現",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.session_summary",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "session_summary: 「澤田純、大橋弘、宮澤伸、濱口伸明、峯村健司の各参考人は…について答弁しました。」。参考人は国会法上「答弁」を行う主体ではなく、「意見を述べる」立場である（国会法第95条）。「答弁」は政府参考人・大臣の行為を指す。",
+      "estimated_cause": "LLM サマリー生成プロンプトが参考人質疑と通常の政府質疑を区別せず、デフォルトの「答弁」テンプレートを使用した。",
+      "downstream_impact": ["公開データの法的・国会手続き的正確性"]
+    },
+    {
+      "id": "F007",
+      "category": "duplicate",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_006〜qa_010 が全て segment_index=8, video_url time=5779.045 に集中",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[5:10].video_url",
+        "segment_index": 8,
+        "qa_id": "qa_006"
+      },
+      "evidence": "qa_006, qa_007, qa_008, qa_009, qa_010 の5件全てで video_url の time パラメータが 5779.045（segment_index=8 の start_seconds そのまま）。阿部司が5名の参考人に順次質問するラウンドロビン形式のため、各回答者への個別 time は異なるはずだが、全て同じ値。同様に qa_012〜qa_016 は全て time=6846.5。",
+      "estimated_cause": "ラウンドロビン形式（1つの質問に複数参考人が順次回答）の場合、各回答開始時刻を個別に取得せず、セグメント start_seconds を一律使用している。",
+      "downstream_impact": ["video_url クリック時に全て同じ位置から再生される（ユーザー体験劣化）"]
+    },
+    {
+      "id": "F008",
+      "category": "role_label_error",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "utterances.json の澤田純 role が「委員長」のまま",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[*].utterances[?(@.speaker=='澤田純')].role",
+        "segment_index": 2,
+        "qa_id": null
+      },
+      "evidence": "澤田純（参考人 一般社団法人日本経済団体連合会副会長・産業競争力強化委員長）の全発言が role=\"委員長\" に設定されている。affiliation 文字列に「委員長」が含まれるための誤分類。qa_pairs.json では同一人物が role=\"参考人 一般社団法人日本経済団体連合会副会長・産業競争力強化委員長\" と正しい affiliation ベースのラベルを使用しており、utterances と qa_pairs でラベルが不統一。",
+      "estimated_cause": "utterances の role は metadata.speakers から直接コピーされており、F001 で指摘したメタデータの誤分類がそのまま反映されている。",
+      "downstream_impact": ["metadata.json", "site のフィルタ機能"]
+    },
+    {
+      "id": "F009",
+      "category": "role_label_error",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "宮澤伸（日本商工会議所職員）が「政府参考人」に誤分類",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[5].role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "宮澤伸 affiliation=\"参考人 日本商工会議所産業政策第一部長\", role=\"政府参考人\"。日本商工会議所は民間団体であり、政府参考人ではない。utterances.json でも同人物が role=\"政府参考人\" として全発言に付与されている。",
+      "estimated_cause": "参考人ロール分類で「政府参考人」という新しい誤カテゴリが生じている。PR26の修正が「政府参考人」を正しく除外していない可能性。",
+      "downstream_impact": ["utterances.json", "site フィルタ・ダッシュボード"]
+    },
+    {
+      "id": "F010",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "topics.json の related_qa_ids が 6トピック合計27件だが一部重複あり",
+      "location": {
+        "file": "topics.json",
+        "json_path": "$.topics[*].related_qa_ids",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "topics.json に6トピックが列挙されるが、qa_027 は「中小企業の支援と地方経済の活性化」トピックにのみ含まれる一方、qa_001〜qa_017 のうち複数が複数トピックに重複登録されていない。また、「AIと製造業の共生」「外国人労働者の受け入れ」等の内容は topics.json に独立項目がなく、実際の qa_018〜qa_020 の「労働力確保と外国人材の受け入れ」が別トピック群として存在する（整合性は概ね取れている）。summary.json の key_topics は4件で topics.json の6件と不一致。",
+      "estimated_cause": "summary.json と topics.json の生成プロンプトが異なるため、key_topics の件数と topics.topics の件数が一致しない構造的問題。",
+      "downstream_impact": ["site 検索・フィルタ機能のトピック表示"]
+    }
+  ],
+  "blindspots": [
+    "raw_transcript.json の whisper_segments 全件を逐字精査していない（サンプリングのみ）",
+    "外部の議事録・議員名簿との照合は未実施（参考人名・所属の正確性）",
+    "qa_pairs の full_text 内容の事実正確性を全件検証していない",
+    "video_url の実際の再生確認は未実施"
+  ]
+}

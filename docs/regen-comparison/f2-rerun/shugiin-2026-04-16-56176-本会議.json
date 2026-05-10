@@ -1,0 +1,183 @@
+{
+  "session_id": "shugiin/2026/04/16/56176_本会議",
+  "chamber": "shugiin",
+  "date": "2026-04-16",
+  "deli_id": "56176",
+  "committee": "本会議",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T12:00:00Z",
+  "overall_quality": "medium",
+  "issue_count": {"high": 3, "medium": 4, "low": 3, "total": 10},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["content_missing"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_001 答弁が茂木NPT答弁に誤帰属（医療用品答弁と逆転）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[0].answer",
+        "segment_index": 7,
+        "qa_id": "qa_001"
+      },
+      "evidence": "qa_001 の question は人工透析廃液回収容器の確保を問う内容だが、answer.full_text は「吉田議員から、NPT運用検討会議についてお尋ねがありました…核兵器のない世界に向けた唯一の普遍的な枠組み…」と茂木外務大臣のNPT答弁が入っている。raw_transcript segment_index=7 の茂木答弁ブロックでは NPT 答弁が先、医療用品答弁が後の順序。structurer が茂木の2答弁を逆順で qa_001/qa_002 に割り当てた。",
+      "estimated_cause": "structurer が答弁者ブロックを時系列に読み取る際、茂木答弁内の複数トピックを逆順でマッチングした。段落区切りの「吉田宣弘議員の御質問にお答えをいたします。医療用の石油関連製品の確保についてお尋ねがありました」という再冒頭が1つ目のQAに紐付けられず2つ目に回った可能性が高い。",
+      "downstream_impact": ["summary.json", "topics.json"]
+    },
+    {
+      "id": "F002",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["summary_qa_divergence"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_002 質問サマリーとfull_textが別トピックを指す（NPT vs 医療用品）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[1]",
+        "segment_index": 7,
+        "qa_id": "qa_002"
+      },
+      "evidence": "qa_002.question.summary は「NPT再検討会議に対する政府の認識を問う」「総理や外務大臣が出席を見合わせる理由を問う」と記載。しかし qa_002.question.full_text は「人工透析の廃液を回収する容器…タイへの船方供給が今月半ばで終了する可能性…廃液回収容器が日本に輸入できず」と医療用品内容。summary と full_text が別トピックを指している。また qa_002.answer.full_text は「医療用の石油関連製品の確保についてお尋ねがありました…ナフサについて」と医療答弁であり、question.summary（NPT）と answer 内容（医療）が乖離している。",
+      "estimated_cause": "F001 と同根。structurer が吉田の長い質問発言を分割する際、医療用品セクションの full_text を qa_002 に、NPT セクションの summary を qa_002 に誤って組み合わせた。Q/A ペアリングと質問分割の両方で不整合が生じている。",
+      "downstream_impact": ["summary.json", "topics.json"]
+    },
+    {
+      "id": "F003",
+      "category": "role_label_error",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "森英介（衆議院議長）の role が「委員長」と誤分類",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[0].role"
+      },
+      "evidence": "metadata.json では speakers[0] は name=\"森英介\", affiliation=\"衆議院議長\", role=\"委員長\"。衆議院議長は本会議を主宰する「議長」であり、「委員長」ではない。utterances.json でも森英介の role が全箇所「委員長」になっている（例：segment_index=0, utterances[0].role=\"委員長\"、segment_index=7 の複数箇所も同様）。",
+      "estimated_cause": "本会議の役割マッピングにおいて、speaker_tagger または structurer が「議長」ロールを持たず、「委員長」にフォールバックしている。委員会の「委員長」と本会議の「議長」を区別するロジックが実装されていない。",
+      "downstream_impact": ["utterances.json", "qa_pairs.json"]
+    },
+    {
+      "id": "F004",
+      "category": "timestamp_inconsistency",
+      "secondary_categories": ["schema_empty_field"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "茂木敏充の start_seconds/start_time/duration_minutes が全て空値",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[8]"
+      },
+      "evidence": "metadata.json speakers[8]: name=\"茂木敏充\", affiliation=\"\", role=\"答弁者\", start_seconds=0.0, start_time=\"\", duration_minutes=0。茂木は実際に答弁しており（raw_transcript segment_index=7 の末尾、utterances.json でも確認可能）、タイムスタンプが全て未取得の状態。affiliation も空文字。",
+      "estimated_cause": "茂木敏充が metadata.speakers に追加された際、実際の発言タイムスタンプとの紐付けが失敗した。scraper が事前登録した speakers リストと、実際の発言セグメントのマッチングが外れた可能性がある。",
+      "downstream_impact": ["site UI での話者タイムライン表示が壊れる"]
+    },
+    {
+      "id": "F005",
+      "category": "timestamp_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "全10件のQAペアのvideo_urlが同一時刻（time=2232.9）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].video_url"
+      },
+      "evidence": "qa_001 から qa_010 の全ペアで video_url が \"https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56176&time=2232.9\" と同一。吉田宣弘の発言開始時刻（2231.4秒）のみが使われており、各Q/Aの実際の開始時刻（例：茂木答弁は別時刻）が反映されていない。",
+      "estimated_cause": "structurer が QA ペア生成時に video_url を segment の start_seconds から設定しているが、segment_index=7（吉田の発言全体）の開始時刻のみを使用しており、各答弁の個別タイムスタンプを計算していない。",
+      "downstream_impact": ["site UI での動画リンクが全て吉田発言冒頭を指す、各答弁へのディープリンクが機能しない"]
+    },
+    {
+      "id": "F006",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata の duration および committee_id が空値/null",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.duration"
+      },
+      "evidence": "metadata.json: duration=\"\", committee_id=null, session_number=null, mediasp_hash=\"\"。duration は必須フィールドであり空文字はスキーマ違反。session_number は本会議の回次を示す重要フィールドだが null。",
+      "estimated_cause": "衆議院スクレイパーが本会議の duration/session_number を取得できていない。HTML から該当フィールドを抽出するロジックが未実装か、ページ構造が委員会と異なるため取得失敗している。",
+      "downstream_impact": ["site UI での会期・会議回次表示が欠如"]
+    },
+    {
+      "id": "F007",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "茂木敏充の metadata.affiliation が空文字（他話者は所属を持つ）",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[8].affiliation"
+      },
+      "evidence": "speakers[8]: name=\"茂木敏充\", affiliation=\"\"。他の答弁者は affiliation に役職（\"防衛大臣\"）や委員会名を持つが、茂木だけ空文字。茂木敏充は外務大臣（または元外務大臣）であり、affiliation が欠落している。summary.json では茂木が NPT と医療用品について答弁しているが肩書がない。",
+      "estimated_cause": "F004 と同根。metadata への話者登録時に茂木の役職情報が取得できなかった。scraper 側で事前登録された話者リストに茂木の肩書が含まれていなかった可能性。",
+      "downstream_impact": ["site UI での話者所属表示が欠如"]
+    },
+    {
+      "id": "F008",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_002 と qa_007 の metrics が null",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[1].metrics"
+      },
+      "evidence": "qa_002.metrics=null、qa_007.metrics=null。他の8件は metrics オブジェクトを持つ。qa_002 と qa_007 のみ評価スコアが欠落している。",
+      "estimated_cause": "structurer の metrics 生成がこれら2件でタイムアウトまたはAPIエラーで失敗し、null のまま保存された。",
+      "downstream_impact": ["ダッシュボードの品質スコア集計に欠損値が生じる"]
+    },
+    {
+      "id": "F009",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "session_specific",
+      "title": "qa_008 question.full_text に「不逮捕議決」の誤記（附帯決議の誤認識）",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[4].utterances[1].text"
+      },
+      "evidence": "utterances.json segment_index=4 の藤井比早之（農林水産委員長）の発言: 「なお、両法律案に対し、それぞれ不逮捕議決が附されました」。正しくは「附帯決議（ふたいけつぎ）」が附されたはずで、「不逮捕議決（ふたいほけつぎ）」は国会議員の特権に関する別概念。Whisper が「附帯決議」を「不逮捕議決」と誤認識した可能性が高い（音が類似）。同様の誤認識が segment_index=5 にも: 「不逮捕議決がされたことを申し添えます」。",
+      "estimated_cause": "Whisper large-v3-turbo が「ふたいけつぎ」（附帯決議）と「ふたいほけつぎ」（不逮捕議決）を聴き誤った。いずれも国会用語であり一般的なテキストデータが少ないため誤認識しやすい。",
+      "downstream_impact": ["委員会報告の正確性が損なわれる"]
+    },
+    {
+      "id": "F010",
+      "category": "summary_qa_divergence",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "unknown",
+      "title": "topics.json が qa_001 を「医療用品の安定確保」トピックに紐付けるが実際はNPT答弁",
+      "location": {
+        "file": "topics.json",
+        "json_path": "$.topics[4].related_qa_ids"
+      },
+      "evidence": "topics.json では topics[4].name=\"医療用品の安定確保\"、related_qa_ids=[\"qa_001\"]。しかし qa_pairs.json では qa_001 の answer は茂木のNPT答弁（「NPT体制の維持・強化のために…核兵器国と非核兵器国の双方が一致できる点を見出す」）。医療用品の答弁は qa_002.answer に入っている。F001/F002 のQAペアリング逆転が topics.json にも波及している。",
+      "estimated_cause": "F001/F002 の質問分割誤りが topics 生成に伝播した。topics 生成 LLM は qa_001 の question 内容（医療用品）を参照してトピック分類したが、answer の内容（NPT）との齟齬を検知できていない。",
+      "downstream_impact": ["site UI でのトピックフィルタリングで医療用品トピックをクリックするとNPT答弁が表示される"]
+    }
+  ],
+  "blindspots": [
+    "raw_transcript の全 whisper_segments を逐次精査していない（サイズ超過のため冒頭のみ確認）",
+    "茂木敏充の実際の役職（外務大臣か別の役職か）を外部議員名簿と照合していない",
+    "video_url の time=2232.9 が吉田発言の正確な開始時刻と一致するか検証していない（metadata の start_seconds=2231.4 と微差あり）",
+    "重複したQAペアの解消（前回問題: 9件同一テキスト）は今回10件の distinct pairs で解決済みと判断したが、全ペアのテキスト類似度チェックは未実施"
+  ]
+}
