@@ -229,6 +229,7 @@ jobs:
           pattern: session-*
           path: data/
           merge-multiple: true
+          fail-if-no-files-found: warn
       
       - name: Commit and push
         id: commit
@@ -278,6 +279,7 @@ jobs:
 
       - name: Build search index
         working-directory: kokkai-transcriber
+        continue-on-error: true
         run: python -m src.build_search_index
 
       - uses: actions/setup-node@v4
