@@ -60,8 +60,11 @@ _HONORIFIC = r"(?:君|氏|さん|議員|委員)"
 
 # 役職タイトル + 人名 + 敬称 — non-greedy 20-char prefix で省名等を含めて拾う
 # PR43 fix: {0,20} に拡張 (公正取引委員会事務総局官房審議官 等の長い省庁名に対応)
+# PR44: 役職と人名の間に「、」等の区切り文字がある場合にも対応
+#   「内閣総理大臣、高市早苗君。」「防衛大臣木原稔君。」両パターンを許容
 _NOMINATION_PATTERN = re.compile(
     rf"(?P<title>[一-鿿]{{0,20}}?(?:{_TITLE_KEYWORDS_PAT}))"
+    r"[、，\s]{0,2}"  # 0〜2 字の区切り (「、」「, 」等)
     rf"(?P<name>{_NAME_CHARS}{{2,8}}){_HONORIFIC}"
 )
 

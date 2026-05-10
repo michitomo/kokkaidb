@@ -98,6 +98,20 @@ class TestNominationPattern:
         m = _NOMINATION_PATTERN.search("委員長坂本哲志君。")
         assert m is None
 
+    def test_nomination_with_comma_separator(self) -> None:
+        """PR44: 「内閣総理大臣、高市早苗君。」の「、」区切りに対応。"""
+        m = _NOMINATION_PATTERN.search("内閣総理大臣、高市早苗君。")
+        assert m is not None
+        assert m.group("title") == "内閣総理大臣"
+        assert m.group("name") == "高市早苗"
+
+    def test_nomination_with_space_separator(self) -> None:
+        """PR44: 役職と人名の間にスペースがある場合。"""
+        m = _NOMINATION_PATTERN.search("防衛大臣 木原稔君。")
+        assert m is not None
+        assert m.group("title") == "防衛大臣"
+        assert m.group("name") == "木原稔"
+
 
 class TestExtractAffiliationFromName:
     """speaker_tagger が役職込みの speaker 名 (e.g. '松本大臣') を返すケース。"""

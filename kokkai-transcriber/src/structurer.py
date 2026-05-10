@@ -326,16 +326,26 @@ def _estimate_pair_offset_seconds(
 _VIDEO_TIME_PARAM_RE = re.compile(r"time=[\d.]+")
 _VIDEO_HASH_TIME_RE = re.compile(r"#[\d.]+$")
 
-# PR43: answer.full_text 末尾に混入した次発言者ラベルを除去する。
-# 「\n森本真治（立憲民主・無所属）」「\n藤川政人委員長」等のパターンにマッチする。
+# PR43: full_text 末尾に混入した次発言者ラベルを除去する。
+# 「\n森本真治（立憲民主・無所属）」「\n藤川政人委員長」「\n小里君。」等のパターン。
+# PR43 enhanced: 「君。」「さん。」等の敬称+句点にも対応。
 _TRAILING_SPEAKER_LABEL_RE = re.compile(
-    r"\n+(?:[○◯])?[一-鿿ぁ-ゟ]{2,8}(?:（[^）]{2,40}）)?(?:委員長|議長)?\s*$"
+    r"\n+(?:[○◯])?[一-鿿ぁ-ゟ]{2,10}(?:（[^）]{2,40}）)?(?:委員長|議長|君|さん)?[。、]?\s*$"
 )
 
 
 def _strip_trailing_speaker_label(text: str) -> str:
-    """answer.full_text 末尾の次発言者ラベルを除去する (PR43)。"""
-    return _TRAILING_SPEAKER_LABEL_RE.sub("", text).rstrip()
+    """full_text 末尾の次発言者ラベルを除去する (PR43)。
+
+    複数のラベルが積み重なっているケース（例: 「\n委員長\n次質疑者君。」）に対応するため
+    最大 3 回まで繰り返し適用する。
+    """
+    for _ in range(3):
+        stripped = _TRAILING_SPEAKER_LABEL_RE.sub("", text).rstrip()
+        if stripped == text:
+            break
+        text = stripped
+    return text
 
 
 def _shift_video_url_time(video_url: str, new_start_seconds: float) -> str:
@@ -644,8 +654,9 @@ def _extract_pairs_from_response(
             seg, layout, p["a_uidx"], p["a_anchor"], a_boundaries[i],
         )
 
-        # PR43: answer 末尾に混入した次発言者ラベルを除去
+        # PR43: answer / question 末尾に混入した次発言者ラベルを除去
         a_full = _strip_trailing_speaker_label(a_full)
+        q_full = _strip_trailing_speaker_label(q_full)
 
         if len(a_full) < MIN_ANSWER_LENGTH and not p["a_uidx"]:
             dropped_short += 1

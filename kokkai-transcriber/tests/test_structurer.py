@@ -1961,6 +1961,25 @@ class TestPR43TrailingLabelStrip:
         result = _strip_trailing_speaker_label(text)
         assert result == text
 
+    def test_strips_kun_suffix_with_period(self) -> None:
+        """PR43 enhanced: 「\n小里君。」パターンを除去する。"""
+        text = "御指摘の点については早急に対応いたします。\n小里君。"
+        result = _strip_trailing_speaker_label(text)
+        assert result == "御指摘の点については早急に対応いたします。"
+
+    def test_strips_kun_with_longer_name(self) -> None:
+        """PR43 enhanced: 「\n牧野たかお君。」（ひらがな含む）を除去する。"""
+        text = "引き続き取り組んでまいります。\n牧野たかお君。"
+        result = _strip_trailing_speaker_label(text)
+        assert result == "引き続き取り組んでまいります。"
+
+    def test_strips_stacked_labels(self) -> None:
+        """PR43 enhanced: 複数ラベルが積み重なった場合も最大3回適用で除去する。"""
+        text = "具体的に説明いたします。\n藤川政人委員長\n森本真治君。"
+        result = _strip_trailing_speaker_label(text)
+        assert "委員長" not in result
+        assert "森本真治" not in result
+
 
 @pytest.mark.integration
 class TestStructurerIntegration:
