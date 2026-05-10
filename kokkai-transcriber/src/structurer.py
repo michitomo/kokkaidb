@@ -326,6 +326,17 @@ def _estimate_pair_offset_seconds(
 _VIDEO_TIME_PARAM_RE = re.compile(r"time=[\d.]+")
 _VIDEO_HASH_TIME_RE = re.compile(r"#[\d.]+$")
 
+# PR43: answer.full_text 末尾に混入した次発言者ラベルを除去する。
+# 「\n森本真治（立憲民主・無所属）」「\n藤川政人委員長」等のパターンにマッチする。
+_TRAILING_SPEAKER_LABEL_RE = re.compile(
+    r"\n+(?:[○◯])?[一-鿿ぁ-ゟ]{2,8}(?:（[^）]{2,40}）)?(?:委員長|議長)?\s*$"
+)
+
+
+def _strip_trailing_speaker_label(text: str) -> str:
+    """answer.full_text 末尾の次発言者ラベルを除去する (PR43)。"""
+    return _TRAILING_SPEAKER_LABEL_RE.sub("", text).rstrip()
+
 
 def _shift_video_url_time(video_url: str, new_start_seconds: float) -> str:
     """既存 video_url の時刻部分 (`time=` パラメータ or `#` ハッシュ) を差し替える。
@@ -632,6 +643,9 @@ def _extract_pairs_from_response(
         a_full = _assemble_full_text_for_pair(
             seg, layout, p["a_uidx"], p["a_anchor"], a_boundaries[i],
         )
+
+        # PR43: answer 末尾に混入した次発言者ラベルを除去
+        a_full = _strip_trailing_speaker_label(a_full)
 
         if len(a_full) < MIN_ANSWER_LENGTH and not p["a_uidx"]:
             dropped_short += 1

@@ -31,6 +31,7 @@ from src.structurer import (
     _has_placeholder_header,
     _shift_video_url_time,
     _split_sentences,
+    _strip_trailing_speaker_label,
     _validate_summary_person_refs,
     build_summary_related_laws,
     generate_key_commitments,
@@ -1922,6 +1923,43 @@ class TestPR41BoundaryMispairs:
         pair = self._make_pair(0, "鈴木", "https://example.com/?time=0.0")
         _fix_boundary_mispairs([pair], [seg0])
         assert pair.segment_index == 0  # 対応 segment なければ変更しない
+
+
+class TestPR43TrailingLabelStrip:
+    """PR43: answer.full_text 末尾の次発言者ラベル除去。"""
+
+    def test_strips_name_with_party(self) -> None:
+        """「\n森本真治（立憲民主・無所属）」を除去する。"""
+        text = "お答えいたします。具体的な対策を講じてまいります。\n森本真治（立憲民主・無所属）"
+        result = _strip_trailing_speaker_label(text)
+        assert result == "お答えいたします。具体的な対策を講じてまいります。"
+
+    def test_strips_chair_label(self) -> None:
+        """「\n藤川政人委員長」を除去する。"""
+        text = "以上でございます。詳細については資料を御参照ください。\n藤川政人委員長"
+        result = _strip_trailing_speaker_label(text)
+        assert result == "以上でございます。詳細については資料を御参照ください。"
+
+    def test_strips_multiple_trailing_newlines(self) -> None:
+        """複数の改行 + ラベルを除去する。"""
+        text = "御質問にお答えします。\n\n田中一郎"
+        result = _strip_trailing_speaker_label(text)
+        assert "田中一郎" not in result
+
+    def test_no_change_for_normal_text(self) -> None:
+        """末尾がラベル形式でない場合は変更しない。"""
+        text = "御質問にお答えします。エネルギー政策について引き続き検討してまいります。"
+        result = _strip_trailing_speaker_label(text)
+        assert result == text
+
+    def test_no_change_for_empty(self) -> None:
+        assert _strip_trailing_speaker_label("") == ""
+
+    def test_no_false_positive_for_name_mid_text(self) -> None:
+        """文中の名前は除去しない（末尾のみ対象）。"""
+        text = "田中一郎委員長の御指摘のとおりでございます。早急に対応いたします。"
+        result = _strip_trailing_speaker_label(text)
+        assert result == text
 
 
 @pytest.mark.integration

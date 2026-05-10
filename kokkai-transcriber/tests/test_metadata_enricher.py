@@ -550,6 +550,31 @@ class TestPR42ExtractAffiliationFromUtteranceText:
     def test_empty_text(self) -> None:
         assert _extract_affiliation_from_utterance_text("") == ""
 
+    def test_fullwidth_colon_delimiter(self) -> None:
+        """PR42 fix: 全角コロン「：」区切りパターンに対応。"""
+        result = _extract_affiliation_from_utterance_text(
+            "高市早苗内閣総理大臣：ご質問にお答えします。", "高市早苗"
+        )
+        assert result == "内閣総理大臣"
+
+    def test_name_prefix_stripped(self) -> None:
+        """PR42 fix: speaker_name を渡すと名前プレフィックスが除去される。"""
+        result = _extract_affiliation_from_utterance_text(
+            "上野賢一郎厚生労働大臣。この問題に関しましては", "上野賢一郎"
+        )
+        assert result == "厚生労働大臣"
+
+    def test_long_org_prefix(self) -> None:
+        """PR42 fix: 12 文字超の省庁名プレフィックスに対応。"""
+        result = _extract_affiliation_from_utterance_text(
+            "向井浩二公正取引委員会事務総局官房審議官、お答えいたします。", "向井浩二"
+        )
+        assert "審議官" in result
+
+    def test_no_match_without_title_keyword(self) -> None:
+        """役職キーワードを含まない場合はマッチしない。"""
+        assert _extract_affiliation_from_utterance_text("今朝5時23分頃に地震が発生しました。") == ""
+
     def test_enrich_uses_utterance_text_when_no_nomination(self) -> None:
         """nomination_map も name suffix も効かないが utterance テキストから役職が取れる場合。"""
         utterances = _mk_utterances([

@@ -58,17 +58,19 @@ _TITLE_KEYWORDS_PAT = "|".join(re.escape(k) for k in _ANSWERER_TITLE_KEYWORDS)
 _NAME_CHARS = r"[ぁ-ゟァ-ヿ一-鿿]"
 _HONORIFIC = r"(?:君|氏|さん|議員|委員)"
 
-# 役職タイトル + 人名 + 敬称 — non-greedy 12-char prefix で省名等を含めて拾う
+# 役職タイトル + 人名 + 敬称 — non-greedy 20-char prefix で省名等を含めて拾う
+# PR43 fix: {0,20} に拡張 (公正取引委員会事務総局官房審議官 等の長い省庁名に対応)
 _NOMINATION_PATTERN = re.compile(
-    rf"(?P<title>[一-鿿]{{0,12}}?(?:{_TITLE_KEYWORDS_PAT}))"
+    rf"(?P<title>[一-鿿]{{0,20}}?(?:{_TITLE_KEYWORDS_PAT}))"
     rf"(?P<name>{_NAME_CHARS}{{2,8}}){_HONORIFIC}"
 )
 
 # PR42: utterance テキスト先頭から「内閣総理大臣の高市でございます」等のパターンで役職を抽出
-# 0〜12 字の省名プレフィックス + 役職キーワード、直後は「の/は/で/、/。/空白」
+# 0〜20 字の省名プレフィックス + 役職キーワード、直後は「の/は/で/、/。/：/空白」
+# PR42 fix: {0,20} に拡張 + 全角コロン「：」を追加
 _UTT_AFFILIATION_RE = re.compile(
-    rf"^([一-鿿ぁ-ゟァ-ヿ]{{0,12}}?(?:{_TITLE_KEYWORDS_PAT}))"
-    r"(?:の|は|で[ごあ]|でし|、|。|\s|$)"
+    rf"^([一-鿿ぁ-ゟァ-ヿ]{{0,20}}?(?:{_TITLE_KEYWORDS_PAT}))"
+    r"(?:の|は|で[ごあ]|でし|、|。|：|\s|$)"
 )
 
 _ENRICH_ROLES: frozenset[str] = frozenset(("答弁者", "政府参考人", "参考人"))
@@ -119,20 +121,27 @@ def _extract_affiliation_from_name(name: str) -> str:
     return ""
 
 
-def _extract_affiliation_from_utterance_text(text: str) -> str:
+def _extract_affiliation_from_utterance_text(text: str, speaker_name: str = "") -> str:
     """utterance テキスト先頭から役職タイトルを抽出する (PR42)。
 
     「内閣総理大臣の高市でございます」→「内閣総理大臣」
     「厚生労働省社会・援護局長の山下です」→「厚生労働省社会・援護局長」
+    「高市早苗内閣総理大臣：ご質問にお答えします」→「内閣総理大臣」（speaker_name="高市早苗"）
 
+    speaker_name を渡すと抽出結果の先頭から人名プレフィックスを除去する。
     マッチしない場合は空文字を返す。
     """
     if not text:
         return ""
     m = _UTT_AFFILIATION_RE.match(text.strip())
-    if m:
-        return m.group(1)
-    return ""
+    if not m:
+        return ""
+    extracted = m.group(1)
+    # speaker_name が抽出結果の先頭と一致する場合は除去して役職部分のみ返す
+    # 例: "高市早苗内閣総理大臣" → "内閣総理大臣"（speaker_name="高市早苗" のとき）
+    if speaker_name and extracted.startswith(speaker_name):
+        extracted = extracted[len(speaker_name):]
+    return extracted or ""
 
 
 def _build_utterance_role_map(utterances: UtterancesOutput) -> dict[str, str]:
@@ -303,7 +312,7 @@ def enrich_metadata_from_utterances(
                 affiliation = _extract_affiliation_from_name(name)
             # 3. PR42: それでも不明なら utterance テキスト先頭から役職パターンを抽出
             if not affiliation and u.role in _ENRICH_ROLES:
-                affiliation = _extract_affiliation_from_utterance_text(u.text)
+                affiliation = _extract_affiliation_from_utterance_text(u.text, name)
             candidates[name] = (affiliation, u.role)
 
     if not candidates:
