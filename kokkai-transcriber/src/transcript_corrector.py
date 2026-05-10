@@ -40,7 +40,6 @@ _LOOP_MIN_REPEATS = 3
 _LOOP_MAX_PHRASE_LEN = 30
 _LOOP_PHRASE_SPLIT_RE = re.compile(r"[。？！\n\t　]")
 
-
 def _has_repetition_loop(
     text: str,
     min_repeats: int = _LOOP_MIN_REPEATS,
@@ -68,6 +67,42 @@ def _has_repetition_loop(
         if all(parts[i + k] == target for k in range(min_repeats)):
             return True
     return False
+
+
+def _strip_crosschunk_loops(text: str) -> tuple[str, bool]:
+    """チャンク境界をまたぐ短語ループを除去して (cleaned_text, was_cleaned) を返す。
+
+    PR34: 56162 の「福祉法」44 回ループなど、単一チャンク内では _has_repetition_loop
+    で捉えきれなかった連続繰り返しフレーズを除去する。
+
+    戦略: `_LOOP_PHRASE_SPLIT_RE` で分割した句単位で連続重複を検出し、
+    1 回に圧縮する。_has_repetition_loop と同じ判定基準を使う。
+    """
+    if not _has_repetition_loop(text):
+        return text, False
+
+    # ループ検出済み: フレーズ単位で重複を圧縮する
+    parts = [p.strip() for p in _LOOP_PHRASE_SPLIT_RE.split(text)]
+    result: list[str] = []
+    i = 0
+    while i < len(parts):
+        target = parts[i]
+        if not target:
+            i += 1
+            continue
+        if len(target) <= _LOOP_MAX_PHRASE_LEN:
+            j = i + 1
+            while j < len(parts) and parts[j] == target:
+                j += 1
+            if j - i >= _LOOP_MIN_REPEATS:
+                result.append(target)
+                i = j
+                continue
+        result.append(target)
+        i += 1
+
+    cleaned = "".join(result)
+    return cleaned, cleaned != text
 
 SYSTEM_PROMPT = """あなたは国会議事録の校正専門家です。
 Whisper音声認識が生成したテキストを、以下の観点で修正してください。
@@ -439,6 +474,16 @@ def correct_transcript(
             for c in chunks
         ]
         corrected_text = "\n".join(corrected_parts)
+
+        # PR34: チャンク境界をまたぐループを除去 (単一チャンク内検出では捕まらないケース)
+        stripped_text, was_stripped = _strip_crosschunk_loops(corrected_text)
+        if was_stripped:
+            logger.warning(
+                "Segment %d (%s): cross-chunk loop stripped (%d→%d chars)",
+                seg.segment_index, seg.speaker_name,
+                len(corrected_text), len(stripped_text),
+            )
+            corrected_text = stripped_text
 
         original_len = len(seg.text)
         corrected_len = len(corrected_text)

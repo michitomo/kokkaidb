@@ -20,6 +20,22 @@ from src.models import (
 )
 
 
+def _mk_speaker(
+    name: str,
+    affiliation: str,
+    role: str,
+    start_seconds: float = 0.0,
+) -> SpeakerInfo:
+    return SpeakerInfo(
+        name=name,
+        affiliation=affiliation,
+        role=role,
+        start_seconds=start_seconds,
+        start_time="",
+        duration_minutes=0,
+    )
+
+
 def _mk_utterances(
     rows: list[tuple[str, str, str]],
 ) -> UtterancesOutput:
@@ -267,13 +283,25 @@ class TestEnrichMetadataFromUtterances:
         # 委員長指名文の "厚生労働大臣" が、name 末尾の "大臣" より優先される
         assert result[0].affiliation == "厚生労働大臣"
 
-    def test_political_party_role_skipped(self) -> None:
+    def test_missing_questioner_added(self) -> None:
+        """PR33: metadata に未登録の質疑者も補完対象になる。"""
         existing: list[SpeakerInfo] = []
         utterances = _mk_utterances([
-            ("田中太郎", "質疑者", "質問します。"),  # 質疑者 は対象外
+            ("田中太郎", "質疑者", "質問します。"),
         ])
         result = enrich_metadata_from_utterances(utterances, existing)
-        assert result == existing
+        assert len(result) == 1
+        assert result[0].name == "田中太郎"
+        assert result[0].role == "質疑者"
+
+    def test_existing_questioner_not_duplicated(self) -> None:
+        """PR33: 既存 metadata に登録済みの質疑者は重複追加しない。"""
+        existing = [_mk_speaker("田中太郎", "立憲民主党", "質疑者", 0)]
+        utterances = _mk_utterances([
+            ("田中太郎", "質疑者", "質問します。"),
+        ])
+        result = enrich_metadata_from_utterances(utterances, existing)
+        assert len(result) == 1
 
     def test_government_attendee_role_kept(self) -> None:
         existing: list[SpeakerInfo] = []

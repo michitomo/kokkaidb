@@ -379,17 +379,15 @@ def _is_member_of_parliament(affiliation: str) -> bool:
 def _answerer_role_from_info(info: SpeakerInfo | None, fallback_utt_role: str) -> str:
     """答弁者の role 文字列 (qa_pairs.answer.role) を info から取り出す。
 
-    PR26: affiliation が空 (古い metadata.json や enrich で affiliation 推定失敗の
-    ケース) でも、speakers.role / utterance role に情報があればそれを採用する。
+    PR35: utterances/metadata の機能名 (答弁者/政府参考人/参考人) と統一するため、
+    qa_pairs.answer.role も機能名カテゴリを返す。具体的な役職名 ("防衛大臣" 等) は
+    metadata.speakers.affiliation に保持し、answer.role には用いない。
     優先順:
-        1. info.affiliation (具体的な肩書き、例 "農林水産大臣")
-        2. info.role (汎用カテゴリ、例 "答弁者" / "政府参考人")
-        3. fallback_utt_role (utterances 由来 role、例 "答弁者")
+        1. info.role (機能名カテゴリ、例 "答弁者" / "政府参考人" / "参考人")
+        2. fallback_utt_role (utterances 由来 role)
     """
     if info is None:
         return fallback_utt_role
-    if info.affiliation:
-        return info.affiliation
     if info.role and info.role != "その他":
         return info.role
     return fallback_utt_role

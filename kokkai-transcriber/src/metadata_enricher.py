@@ -66,6 +66,12 @@ _NOMINATION_PATTERN = re.compile(
 
 _ENRICH_ROLES: frozenset[str] = frozenset(("答弁者", "政府参考人", "参考人"))
 
+# PR33: 質疑者も含め、metadata に未登録なら補完する対象ロール
+# 委員長・議長はスクレイパーが通常取得するため除外
+_ALL_VALID_ROLES: frozenset[str] = frozenset(
+    ("答弁者", "政府参考人", "参考人", "質疑者")
+)
+
 # PR26: 既存 speakers の role を utterances から逆引き補完する際に許容する役割
 _BACKFILL_ROLES: frozenset[str] = frozenset(
     ("委員長", "議長", "質疑者", "答弁者", "政府参考人", "参考人")
@@ -201,10 +207,14 @@ def enrich_metadata_from_utterances(
     utterances: UtterancesOutput,
     speakers: list[SpeakerInfo],
 ) -> list[SpeakerInfo]:
-    """utterances から答弁者・政府参考人を抽出して speakers に逆補完。
+    """utterances から答弁者・政府参考人・質疑者を抽出して speakers に逆補完。
 
     既存 speakers との fuzzy 重複チェックを行い、新規エントリのみ追加する。
     affiliation は委員長 utterance の「(役職)<名前>君。」パターンから推定する。
+
+    PR32: start_seconds / duration_minutes を utterance 観測ベースで補完。
+    PR33: 答弁系ロール (_ENRICH_ROLES) に加え、質疑者・委員長・議長も
+    metadata 未登録なら追加対象とする。
 
     Args:
         utterances: speaker_tagger の出力 (Step 5 後・Step 5.5 前)
@@ -227,8 +237,9 @@ def enrich_metadata_from_utterances(
             backfilled, len(speakers),
         )
 
-    # PR26.1: name → (segment_start_seconds) で最初の発言時刻を記録
+    # PR26.1 + PR32: name → (first_seen_at, last_seen_at) で発言区間を記録
     first_seen_at: dict[str, float] = {}
+    last_seen_at: dict[str, float] = {}
     for seg in utterances.segments:
         for u in seg.utterances:
             name = (u.speaker or "").strip()
@@ -236,13 +247,24 @@ def enrich_metadata_from_utterances(
                 continue
             if name not in first_seen_at:
                 first_seen_at[name] = seg.start_seconds
+            last_seen_at[name] = seg.start_seconds
+
+    # PR32: 既存 speakers の duration_minutes が 0 ならば utterance 観測から補完
+    for sp in enriched:
+        if sp.duration_minutes > 0:
+            continue
+        t0 = first_seen_at.get(sp.name, 0.0)
+        t1 = last_seen_at.get(sp.name, 0.0)
+        if t1 > t0:
+            sp.duration_minutes = max(1, int((t1 - t0) / 60))
 
     # name → (affiliation, fallback_role) を蓄積
+    # PR33: _ENRICH_ROLES のみではなく _ALL_VALID_ROLES を対象とする
     candidates: dict[str, tuple[str, str]] = {}
 
     for seg in utterances.segments:
         for u in seg.utterances:
-            if u.role not in _ENRICH_ROLES:
+            if u.role not in _ALL_VALID_ROLES:
                 continue
             name = (u.speaker or "").strip()
             if not name:
@@ -270,13 +292,15 @@ def enrich_metadata_from_utterances(
         else:
             role = fallback_role
         # PR26.1: affiliation が空なら role 名を最低限の affiliation として使う
-        # ("答弁者" / "政府参考人" / "参考人")。downstream の structurer
-        # `_resolve_answerer_from_utterances` が answer.role に空文字を出さない
-        # ためにも非空が望ましい。
+        # ("答弁者" / "政府参考人" / "参考人")。ただし 質疑者/委員長/議長 は
+        # affiliation 空のままにして party 等は未知扱い。
         if not affiliation and role in _ENRICH_ROLES:
             affiliation = role
         # PR26.1: start_seconds を最初の発言 segment.start_seconds で補完
         start_seconds = first_seen_at.get(name, 0.0)
+        # PR32: duration_minutes を観測区間から算出
+        t1 = last_seen_at.get(name, start_seconds)
+        dur = max(1, int((t1 - start_seconds) / 60)) if t1 > start_seconds else 0
         enriched.append(
             SpeakerInfo(
                 name=name,
@@ -284,7 +308,7 @@ def enrich_metadata_from_utterances(
                 role=role,
                 start_seconds=start_seconds,
                 start_time=_format_hms(start_seconds),
-                duration_minutes=0,
+                duration_minutes=dur,
             )
         )
 
