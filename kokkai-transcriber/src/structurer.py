@@ -45,6 +45,9 @@ from src.speaker_lookup import find_by_name
 # Step 6 LLM: OpenRouter 経由 Gemma 4 31B-it
 STRUCTURER_MODEL = "google/gemma-4-31b-it"
 
+# QA ペア生成のみ高精度モデルを使う (split_anchor 指定の精度が重要)
+QA_MODEL = "google/gemini-3-flash-preview"
+
 # 答弁本文がこの長さ未満かつ utterance_indices が空のペアは Q&A として成立していないため drop
 MIN_ANSWER_LENGTH = 30
 
@@ -747,7 +750,7 @@ def _generate_qa_for_segment(
 
     def _qa_call(prompt: str, tokens: int, temperature: float) -> Any:
         return with_retry(lambda: client.chat.completions.create(
-            model=STRUCTURER_MODEL,
+            model=QA_MODEL,
             messages=[
                 {"role": "system", "content": QA_SEGMENT_SYSTEM_PROMPT},
                 {"role": "user", "content": prompt},
