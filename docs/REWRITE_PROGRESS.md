@@ -32,8 +32,8 @@
 | **#10 (旧 F4 → F2 再走)** | 6 件サンプリングで F2 再評価 | (実装なし) | ❌ ゲート FAIL (avg 12.00/sess) も -20% 改善、PR21/22/26/28 効果確認 |
 | **#11 (追加修正)** | F2 再走で残存した systemic 問題対応 | PR23.1 / PR26.1 / PR29 (議長分離) / PR30 (参考人補強) | ✅ 完了 (2026-05-10): 4 PR 実装、F1 で 議長 role 分離・affiliation 補完・anchor URL 確認、PR25 は別セッション |
 | **#12 (F2 再々走)** | 6 件で F2 再々評価 | (実装なし) | ❌ ゲート FAIL (avg 13.50/sess、Session #10 比 +1.5)、PR31-35 起票 (オフバイワン / duration / hallucination chain / 境界 leak / metadata missing) |
-| **#13 (追加修正 2)** | LLM provider 切替 + 並列化 + 新規 systemic PR 群 | PR36 ✅ / PR37 ✅ / PR25 / PR31 / PR32 / PR33 / PR34 / PR35 | F2 4-5 件目標 ≤ 8 |
-| **#14 (F2 再々々走)** | 4-6 件で再評価 | (実装なし) | F2 ゲート (≤ 5) 通過 |
+| **#13 (追加修正 2)** | LLM provider 切替 + 並列化 + 新規 systemic PR 群 | PR36 ✅ / PR37 ✅ / PR25 ✅ / PR31 ✅ / PR32 ✅ / PR33 ✅ / PR34 ✅ / PR35 ✅ | ✅ 完了 (2026-05-11): 全 8 PR 実装、F2 再々々走 regen 起動中 (PID=89362、/tmp/regen-f2-rerun3/) |
+| **#14 (F2 再々々走)** | 6 件で再評価 | (実装なし) | 🔄 regen 実行中 → Sonnet audit → ゲート (avg ≤ 8) 評価 |
 | **#15 検証 F3** | 中規模 30 件で再生成 + 比較 | (実装なし、状況により PR27 追加) | F3 ゲート通過 |
 | **#16 全件 F4** | 全 156 件削除 + 再生成 + サイトビルド | (実装なし) | 公開 |
 
@@ -71,7 +71,7 @@
 | PR22 | corrector で故人ハルシネーション抑制 (Session #8 起票) | 🟡 中 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | corrector SYSTEM_PROMPT に「故人・元政治家リファレンス」セクション追加 (安倍晋三 / 中曽根康弘 / 岸田文雄 等)。「現職答弁としての混入は削除」「歴史的言及は保持」を時制で見分けるルール明記 |
 | PR23 | video_url 時刻を qa-pair 単位生成 (Session #8 起票) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | `_estimate_pair_offset_seconds` 新設 (4 char/sec で線形推定) + `_shift_video_url_time` で URL の time= / # を差し替え。`_extract_pairs_from_response` でペアごとに補正。F1: 8967=58/58、56211=69/72、56074=2/2 unique URL |
 | PR24 | speakers dedup を name fuzzy 化 (Session #8、PR1 拡張) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | `src/scrapers/_speakers.py` 新規。`merge_fuzzy_duplicates` で name 完全一致 / prefix 一致 + affiliation 互換 (substring) チェック。PR1 の `(name, affiliation)` exact dedup の後段で実行。テスト 21 件 |
-| PR25 | speaker_tagger 境界 leak 抑制 (Session #8 起票) | 🟡 中 | ☐ | | | F2 で 8+ セッション。前 segment 末尾の議長コール / 答弁者発言が次 segment に混入 |
+| PR25 | speaker_tagger 境界 leak 抑制 (Session #8 起票) | 🟡 中 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-11 | SYSTEM_PROMPT にセグメント冒頭の境界ノイズ除去ルールを追加。前 segment 末尾の指名文・結語がセグメント先頭 (文番号 0〜1) に混入した場合は segment_speaker に帰属させ、別 split に切り出さないよう指示 |
 | PR26 | metadata role 推定書き戻し (Session #8、PR6 拡張) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | `_backfill_existing_speaker_roles` 新設 — derive_role(affiliation) → utterance 観測 role の 2 段フォールバック。`enrich_metadata_from_utterances` で実行。さらに structurer `_resolve_answerer_from_utterances` を `_answerer_role_from_info` 経由で affiliation→info.role→utt_role の 3 段フォールバックに拡張。F1: 8967 28%→**100%**、56211 49%→**100%**、56074 100% (維持) |
 | PR27 | utterances 空問題の root cause (Session #8 起票) | 🟡 中 | ☐ | | | F2 で 8982 (sangiin/04/23/農水) が `utterances.json` 完全空。speaker_tagger or normalizer の致命的失敗 — root cause 特定要 |
 | PR28 | `_assemble_full_text_for_pair` 同一 anchor 重複対策 (Session #8 起票) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | `_compute_share_boundaries` を layout 受け取り版に拡張。同一 head utterance を共有する N ペアで anchor が全/部分 null の場合、sentence count で均等分割または前後 explicit anchor の中点で補完。F1: 全 4 件で full_text 重複 0/{n} |
@@ -79,11 +79,11 @@
 | PR26.1 | enriched speakers の affiliation/start_seconds 補完 (Session #10 起票、PR26 拡張) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | `enrich_metadata_from_utterances` で affiliation 空のとき role 名 ("答弁者"/"政府参考人"/"参考人") をフォールバック、start_seconds は最初に登場した segment.start_seconds、start_time は HH:MM 整形。`_backfill_existing_speaker_roles` を「常に再計算」に変更し、partial regen で derive_role 修正版が反映されるように。pipeline.py / regen scripts を「count 不変でも metadata を書き出す」に修正 |
 | PR29 | 議長 role を委員長から分離 (Session #10 起票) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | `models.SpeakerRole` に「議長」追加。`_role.derive_role` で 議長/副議長/衆議院議長/参議院議長 を「議長」、委員長/事務総長 を「委員長」に分離。F1 56074: 議長 3 / 委員長 1、56075: 議長 2 / 答弁者 4 |
 | PR30 | 参考人 role 補強 (Session #10 起票) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | `_role.derive_role` で `affiliation.startswith("参考人")` を最優先判定。後段 (委員長 substring / 部長 suffix) の誤分類を防止。`_ENRICH_ROLES` に「参考人」追加、`_BACKFILL_ROLES` に「議長」追加。56212 で 大橋弘/澤田純/峯村健司/濱口伸明/宮澤伸 5 名全員 role="参考人" — **Session #12 で 5/5 確認 ✓** |
-| PR31 | answer.full_text オフバイワン修正 (Session #12 起票) | 🟡 中 | ☐ | | | 56176 で 8 ペア (qa_003〜010) の answer.full_text が直前の回答末尾を含む。「次に、XXXについてお尋ねがありました」マーカーでスライス開始位置がずれる。`_compute_share_boundaries` の anchor 計算 or `_assemble_full_text_for_pair` のオフセット修正が必要 |
-| PR32 | duration_minutes 計算 (Session #12 起票、PR26.1 拡張) | 🟢 小 | ☐ | | | metadata.speakers の duration_minutes が全件 0 のまま (PR26.1 では未対応)。utterance 観測 (segment.start_seconds + duration_seconds) から最初〜最後の登壇区間で計算する必要あり |
-| PR33 | metadata_missing_speaker 補完強化 (Session #12 起票、PR6 拡張) | 🟡 中 | ☐ | | | 8977 で 3 名 (藤井和弘 / 小西博之 / 河合貴則) が metadata 未登録、56179 で近藤和也 start_seconds=18359.3 誤帰属、西園勝秀 start_seconds 不整合。`enrich_metadata_from_utterances` で utterance 観測のみベースで自動追加するロジック強化 |
-| PR34 | whisper hallucination loop 再発抑制 (Session #12 起票、PR7/PR8 拡張) | 🟡 中 | ☐ | | | 56162 で「福祉法」が 44 回ループ (compression_ratio=18.96)。PR7 の単一 chunk 内検出だけでは捉えきれず。corrector の loop 検出を chunk 跨ぎで適用 + Whisper 出力時点 (transcriber.py) の compression_ratio 閾値で Whisper segment ごと drop も検討 |
-| PR35 | role 名 vs 機能名の表記統一 (Session #12 起票) | 🟢 小 | ☐ | | | 56176 で qa_pairs.answer.role='防衛大臣' (役職名) に対し utterances/metadata は '答弁者' (機能名) で不統一。`_answerer_role_from_info` の出力を「機能名 (答弁者/政府参考人/参考人)」に統一して、affiliation 側に役職名を残すルールに |
+| PR31 | answer.full_text オフバイワン修正 (Session #12 起票) | 🟡 中 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-11 | `QA_SEGMENT_SYSTEM_PROMPT` の split_anchor_sentence_idx 説明を強化。「移行句 (次に、XXXについてお尋ねがありました) の文番号が当ペア開始位置」「直前ペアの最後の文番号は指定しない」を明記。コード側は変更なし (LLM の anchor 指定ミスが根本原因) |
+| PR32 | duration_minutes 計算 (Session #12 起票、PR26.1 拡張) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-11 | `enrich_metadata_from_utterances` で first_seen_at / last_seen_at を記録。新規追加 speakers の duration_minutes を `(t1 - t0) / 60` から算出。既存 speakers も duration_minutes=0 のとき utterance 観測区間で補完 |
+| PR33 | metadata_missing_speaker 補完強化 (Session #12 起票、PR6 拡張) | 🟡 中 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-11 | `_ALL_VALID_ROLES = {答弁者, 政府参考人, 参考人, 質疑者}` を追加。質疑者も metadata 未登録なら補完対象。委員長・議長はスクレイパー取得対象として除外。テスト更新 (test_missing_questioner_added / test_existing_questioner_not_duplicated) |
+| PR34 | whisper hallucination loop 再発抑制 (Session #12 起票、PR7/PR8 拡張) | 🟡 中 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-11 | `_strip_crosschunk_loops` 新設。チャンク境界をまたぐ hallucination loop (56162 「福祉法」44 回等) を `_has_repetition_loop` + フレーズ圧縮で除去。`correct_transcript` 内でセグメント組み立て後に適用 |
+| PR35 | role 名 vs 機能名の表記統一 (Session #12 起票) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-11 | `_answerer_role_from_info` を機能名 (答弁者/政府参考人/参考人) 返却に変更。具体役職名 ("防衛大臣" 等) は metadata.speakers.affiliation に保持。qa_pairs.answer.role と utterances.role の不統一を解消 |
 | PR36 | LLM provider を OpenRouter に切替 (Session #13 起票) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-11 | `api_client.get_client()` の base_url を `https://openrouter.ai/api/v1` に、env を `OPENROUTER_API_KEY` に。`LLM_MODEL` / `CORRECTOR_MODEL` / `STRUCTURER_MODEL` / `_METRICS_MODEL` 全 4 箇所を `google/gemma-4-31b-it` に変更 (Gemini Flash latest を一旦試したが、Gemma の方が安価で品質も同等以上の見込み)。Whisper (`transcriber.py`) は DeepInfra のまま据え置き。テスト 41 件の API key mock も更新 (transcriber は `DEEPINFRA_API_KEY` のまま)。`json_object` JSON force は全 4 LLM 箇所で既に有効。`json_schema` 厳格モードは別 PR (PR38 候補) |
 | PR37 | regen の セッション間並列化 (Session #13 起票) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-11 | `/tmp/regen_test.py` と `/tmp/regen_f2_rerun2.py` の `main()` を `ThreadPoolExecutor` ベースに書き換え、`REGEN_WORKERS=N` env で並列度指定。`writeresults` を lock で保護、incremental に `_summary.json` を更新。F1 4 並列実測: wall-clock **394s** (逐次合計 810s 比 2.06x 高速、56211 律速)。F2 6 件相当なら逐次 ~25min → 並列 ~6-7min 想定 |
 
@@ -177,6 +177,21 @@
 - メモ:
   - PR14 (Step 3 閾値) は Step 4.5+ 再実行ではカバー外。フルパイプライン smoke は次セッション以降で機会があれば
   - validator の speaker 不整合 warning は PR6 metadata enrichment で大幅減少見込み
+
+### Session #13 (追加修正 2) — 2026-05-11 完了
+
+- 実装:
+  - **PR36 (修正再掲)**: LLM provider を OpenRouter に切替済み (Gemini Flash → Gemma へ戻し、`~`なし)
+  - **PR37**: regen スクリプトを ThreadPoolExecutor 並列化 (`REGEN_WORKERS=N`)。F1 実測 2.06x 高速
+  - **PR25**: speaker_tagger SYSTEM_PROMPT にセグメント冒頭の境界ノイズ除去ルール追加
+  - **PR31**: `QA_SEGMENT_SYSTEM_PROMPT` の split_anchor_sentence_idx 説明強化 (移行句の文番号が開始位置)
+  - **PR32**: `enrich_metadata_from_utterances` で duration_minutes を utterance 観測区間から算出
+  - **PR33**: `_ALL_VALID_ROLES` に質疑者追加 (metadata 未登録の質疑者を補完対象化)
+  - **PR34**: `_strip_crosschunk_loops` 新設 — チャンク境界をまたぐ hallucination loop 除去
+  - **PR35**: `_answerer_role_from_info` を機能名返却に統一 (qa_pairs.answer.role の役職名混在解消)
+- 検証:
+  - 161 件 (test_structurer, test_speaker_tagger, test_metadata_enricher, test_transcript_corrector) 全通過
+  - F2 再々々走 (Session #14) regen を 3 並列で起動 (`/tmp/regen-f2-rerun3/`)
 
 ### Session #12 (F2 再々走) — 2026-05-11 完了 (ゲート FAIL、Session #10 比 +1.5)
 - **F2 再々走サンプル選定** (6 件、Session #10 と同一で直接比較):
