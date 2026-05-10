@@ -338,15 +338,18 @@ const sessionType = hasQA ? 'debate' : 'procedural';
   <script>
     // --- 発言ハッシュナビゲーション ---
     function navigateUtterance(hash: string) {
-      if (!hash.startsWith('#utt-')) return;
+      if (!hash.startsWith('#utt-') && !hash.startsWith('#qa-')) return;
       const el = document.getElementById(hash.slice(1));
       if (!el) return;
-      const details = el.closest('details');
-      if (details) details.open = true;
+      // utt- の場合は親 <details> を展開
+      if (hash.startsWith('#utt-')) {
+        const details = el.closest('details');
+        if (details) (details as HTMLDetailsElement).open = true;
+      }
       setTimeout(function() {
         el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        el.classList.add('utt-highlight');
-        setTimeout(function() { el.classList.remove('utt-highlight'); }, 2000);
+        el.classList.add('search-highlight');
+        setTimeout(function() { el.classList.remove('search-highlight'); }, 2000);
       }, 100);
     }
     navigateUtterance(location.hash);
@@ -740,14 +743,6 @@ const sessionType = hasQA ? 'debate' : 'procedural';
     color: #1e40af;
   }
 
-  /* 発言ハイライト（検索結果からの遷移時） */
-  .utt-highlight {
-    animation: utt-fade 2s ease-out;
-  }
-  @keyframes utt-fade {
-    0% { background: #fef3c7; outline: 2px solid #f59e0b; outline-offset: 2px; border-radius: 4px; }
-    100% { background: transparent; outline: none; }
-  }
 </style>
 <style is:global>
   .utt-text p {
@@ -756,4 +751,13 @@ const sessionType = hasQA ? 'debate' : 'procedural';
     text-indent: 1em;
   }
   .utt-text p:last-child { margin-bottom: 0 !important; }
+
+  /* 検索結果からの遷移時ハイライト（utt- / qa- どちらの要素にも適用） */
+  .search-highlight {
+    animation: search-highlight-fade 2s ease-out;
+  }
+  @keyframes search-highlight-fade {
+    0%   { background: #fef3c7; outline: 2px solid #f59e0b; outline-offset: 3px; border-radius: 6px; }
+    100% { background: transparent; outline: none; }
+  }
 </style>

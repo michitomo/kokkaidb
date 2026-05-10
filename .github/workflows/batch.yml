@@ -25,6 +25,8 @@ permissions:
   pages: write
   id-token: write
 
+# 多重実行防止: 走行中のバッチは中断せず、後続の cron / workflow_dispatch を待たせる。
+# 1 時間 cron と 180 分 timeout が重なってもレースしないように in_progress=false。
 concurrency:
   group: kokkai-batch
   cancel-in-progress: false
@@ -63,13 +65,22 @@ jobs:
           echo "since=$SINCE" >> "$GITHUB_OUTPUT"
           echo "needs_browser=$NEEDS_BROWSER" >> "$GITHUB_OUTPUT"
 
+      - name: Cache .venv
+        id: cache-venv
+        uses: actions/cache@v4
+        with:
+          path: kokkai-transcriber/.venv
+          key: venv-${{ runner.os }}-3.12-${{ hashFiles('kokkai-transcriber/pyproject.toml') }}-${{ steps.dates.outputs.needs_browser }}
+
       - name: Install discovery dependencies
+        if: steps.cache-venv.outputs.cache-hit != 'true'
         run: |
           cd kokkai-transcriber
+          python -m venv .venv
           if [ "${{ steps.dates.outputs.needs_browser }}" = "true" ]; then
-            pip install -e '.[browser]'
+            .venv/bin/pip install -e '.[browser]'
           else
-            pip install -e .
+            .venv/bin/pip install -e .
           fi
 
       - name: Cache Playwright browsers
@@ -81,10 +92,12 @@ jobs:
 
       - name: Install Playwright Chromium
         if: steps.dates.outputs.needs_browser == 'true'
-        run: python -m playwright install --with-deps chromium
+        working-directory: kokkai-transcriber
+        run: .venv/bin/python -m playwright install --with-deps chromium
 
       - name: Probe for new sessions
         id: probe
+        working-directory: kokkai-transcriber
         run: |
           CH="${{ github.event.inputs.chamber }}"
           if [ "$CH" = "shugiin" ]; then
@@ -94,8 +107,7 @@ jobs:
           else
             ARGS="--chamber shugiin --chamber sangiin"
           fi
-          cd kokkai-transcriber
-          JSON=$(python -m src.batch $ARGS --since "${{ steps.dates.outputs.since }}" --dry-run --json)
+          JSON=$(./.venv/bin/python -m src.batch $ARGS --since "${{ steps.dates.outputs.since }}" --dry-run --json)
           echo "sessions=$JSON" >> "$GITHUB_OUTPUT"
           TOTAL=$(echo "$JSON" | jq 'length')
           echo "total=$TOTAL" >> "$GITHUB_OUTPUT"
@@ -108,9 +120,8 @@ jobs:
 
       - name: Refresh laws
         if: steps.probe.outputs.total != '0'
-        run: |
-          cd kokkai-transcriber
-          python -m src.laws_builder --sessions "221"
+        working-directory: kokkai-transcriber
+        run: ./.venv/bin/python -m src.laws_builder --sessions "221"
 
       - name: Upload laws
         if: steps.probe.outputs.total != '0'
@@ -144,13 +155,22 @@ jobs:
           name: laws-data
           path: data/laws/
       
+      - name: Cache .venv
+        id: cache-venv
+        uses: actions/cache@v4
+        with:
+          path: kokkai-transcriber/.venv
+          key: venv-${{ runner.os }}-3.12-${{ hashFiles('kokkai-transcriber/pyproject.toml') }}-${{ matrix.session.chamber }}
+
       - name: Install dependencies
+        if: steps.cache-venv.outputs.cache-hit != 'true'
         run: |
           cd kokkai-transcriber
+          python -m venv .venv
           if [ "${{ matrix.session.chamber }}" = "sangiin" ]; then
-            pip install -e '.[browser]'
+            .venv/bin/pip install -e '.[browser]'
           else
-            pip install -e .
+            .venv/bin/pip install -e .
           fi
 
       - name: Cache Playwright browsers
@@ -162,7 +182,8 @@ jobs:
 
       - name: Install Playwright Chromium
         if: matrix.session.chamber == 'sangiin'
-        run: python -m playwright install --with-deps chromium
+        working-directory: kokkai-transcriber
+        run: .venv/bin/python -m playwright install --with-deps chromium
 
       - name: Install ffmpeg
         run: |
@@ -174,12 +195,10 @@ jobs:
       - name: Run pipeline
         env:
           DEEPINFRA_API_KEY: ${{ secrets.DEEPINFRA_API_KEY }}
-        run: |
-          cd kokkai-transcriber
-          python -m src.pipeline \
-            --chamber ${{ matrix.session.chamber }} \
-            --session-id ${{ matrix.session.sid }} \
-            --no-push
+          SESSION_CHAMBER: ${{ matrix.session.chamber }}
+          SESSION_SID: ${{ matrix.session.sid }}
+        working-directory: kokkai-transcriber
+        run: ./.venv/bin/python -m src.pipeline --chamber "$SESSION_CHAMBER" --session-id "$SESSION_SID" --no-push
       
       - name: Upload session data
         uses: actions/upload-artifact@v4
@@ -196,7 +215,9 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: main
-      
+          # rebase + push retry のため履歴全体が必要
+          fetch-depth: 0
+
       - name: Configure git identity
         run: |
           git config --global user.name "kokkaidb-bot"

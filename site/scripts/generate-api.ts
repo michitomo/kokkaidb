@@ -467,8 +467,8 @@ export function generateApi(dataDir: string, outDir: string): void {
     try {
       const docs: Record<string, unknown>[] = JSON.parse(fs.readFileSync(searchIndexSrc, 'utf-8'));
       const tokenizeOptions = {
-        fields: ['tokens', 'speaker', 'committee'],
-        storeFields: ['id', 'speaker', 'role', 'text', 'date', 'committee', 'chamber', 'url', 'segIdx', 'uttIdx'],
+        fields: ['tokens', 'speaker', 'q_speaker', 'a_speaker', 'committee'],
+        storeFields: ['id', 'type', 'speaker', 'role', 'q_speaker', 'a_speaker', 'topic', 'text', 'date', 'committee', 'chamber', 'url', 'anchor'],
         tokenize: (s: string) => s.split(/\s+/).filter(Boolean),
       };
       const miniSearch = new MiniSearch(tokenizeOptions);
