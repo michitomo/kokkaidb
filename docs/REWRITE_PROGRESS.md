@@ -30,7 +30,7 @@
 | **#8 検証 F2** | 多様性12件で再生成 + 比較 | (実装なし) | F2 ゲート通過 → **❌ FAIL (avg 14.75/sess)、PR21-28 起票** |
 | **#9 (旧 F3 → F2 修正)** | F2 で発見した systemic 問題の修正 | PR21, PR22, PR23, PR24, PR26, PR28 | ✅ 完了 (2026-05-10): 6 PR 実装、F1 で role=100% / full_text duplicate 0 / summary 冒頭整合確認 |
 | **#10 (旧 F4 → F2 再走)** | 6 件サンプリングで F2 再評価 | (実装なし) | ❌ ゲート FAIL (avg 12.00/sess) も -20% 改善、PR21/22/26/28 効果確認 |
-| **#11 (追加修正)** | F2 再走で残存した systemic 問題対応 | PR23.1 (anchor-aware URL) / PR26.1 (affiliation fill) / PR25 / 議長 role 分離 / start_seconds 補完 | F2 再々走で平均 < 8 を目標 |
+| **#11 (追加修正)** | F2 再走で残存した systemic 問題対応 | PR23.1 / PR26.1 / PR29 (議長分離) / PR30 (参考人補強) | ✅ 完了 (2026-05-10): 4 PR 実装、F1 で 議長 role 分離・affiliation 補完・anchor URL 確認、PR25 は別セッション |
 | **#12 (F2 再々走)** | 4-6 件で F2 再々評価 | (実装なし) | F2 再々ゲート (≤ 5) 通過 |
 | **#13 検証 F3** | 中規模 30 件で再生成 + 比較 | (実装なし、状況により PR27 追加) | F3 ゲート通過 |
 | **#14 全件 F4** | 全 156 件削除 + 再生成 + サイトビルド | (実装なし) | 公開 |
@@ -73,6 +73,10 @@
 | PR26 | metadata role 推定書き戻し (Session #8、PR6 拡張) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | `_backfill_existing_speaker_roles` 新設 — derive_role(affiliation) → utterance 観測 role の 2 段フォールバック。`enrich_metadata_from_utterances` で実行。さらに structurer `_resolve_answerer_from_utterances` を `_answerer_role_from_info` 経由で affiliation→info.role→utt_role の 3 段フォールバックに拡張。F1: 8967 28%→**100%**、56211 49%→**100%**、56074 100% (維持) |
 | PR27 | utterances 空問題の root cause (Session #8 起票) | 🟡 中 | ☐ | | | F2 で 8982 (sangiin/04/23/農水) が `utterances.json` 完全空。speaker_tagger or normalizer の致命的失敗 — root cause 特定要 |
 | PR28 | `_assemble_full_text_for_pair` 同一 anchor 重複対策 (Session #8 起票) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | `_compute_share_boundaries` を layout 受け取り版に拡張。同一 head utterance を共有する N ペアで anchor が全/部分 null の場合、sentence count で均等分割または前後 explicit anchor の中点で補完。F1: 全 4 件で full_text 重複 0/{n} |
+| PR23.1 | video_url を anchor 位置で shift (Session #10 起票、PR23 拡張) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | `_estimate_pair_offset_seconds` に `split_anchor_sentence_idx` 引数追加、head utterance 内の sentence 位置からも文字数を加算。同一 head_utt 共有のペアでも別時刻 URL を生成。F1: 8967=60/60、56211=68/71、56074=2/2 unique URL |
+| PR26.1 | enriched speakers の affiliation/start_seconds 補完 (Session #10 起票、PR26 拡張) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | `enrich_metadata_from_utterances` で affiliation 空のとき role 名 ("答弁者"/"政府参考人"/"参考人") をフォールバック、start_seconds は最初に登場した segment.start_seconds、start_time は HH:MM 整形。`_backfill_existing_speaker_roles` を「常に再計算」に変更し、partial regen で derive_role 修正版が反映されるように。pipeline.py / regen scripts を「count 不変でも metadata を書き出す」に修正 |
+| PR29 | 議長 role を委員長から分離 (Session #10 起票) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | `models.SpeakerRole` に「議長」追加。`_role.derive_role` で 議長/副議長/衆議院議長/参議院議長 を「議長」、委員長/事務総長 を「委員長」に分離。F1 56074: 議長 3 / 委員長 1、56075: 議長 2 / 答弁者 4 |
+| PR30 | 参考人 role 補強 (Session #10 起票) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | `_role.derive_role` で `affiliation.startswith("参考人")` を最優先判定。後段 (委員長 substring / 部長 suffix) の誤分類を防止。`_ENRICH_ROLES` に「参考人」追加、`_BACKFILL_ROLES` に「議長」追加。56212 で 大橋弘/澤田純/峯村健司/濱口伸明/宮澤伸 5 名全員 role="参考人" になる想定 (Session #12 で確認) |
 
 ---
 
@@ -163,6 +167,50 @@
 - メモ:
   - PR14 (Step 3 閾値) は Step 4.5+ 再実行ではカバー外。フルパイプライン smoke は次セッション以降で機会があれば
   - validator の speaker 不整合 warning は PR6 metadata enrichment で大幅減少見込み
+
+### Session #11 (追加修正) — 2026-05-10 完了
+- 実装 (PR23.1 / PR26.1 / PR29 / PR30):
+  - **PR29** (議長 role 分離):
+    - `models.py:SpeakerRole` に「議長」追加、`SPEAKER_ROLES` も更新
+    - `_role.py:derive_role` で 議長/副議長/衆議院議長/参議院議長 を「議長」に、委員長/事務総長 のみ「委員長」に分離
+    - `tests/test_role_derivation.py` を更新 (5 件の議長系を「議長」期待値に)
+  - **PR30** (参考人 role 補強):
+    - `_role.py:derive_role` の最優先判定として `affiliation.startswith("参考人")` を追加。後段の suffix ベースマッチ (委員長 substring / 部長 suffix / 局長 suffix) の誤分類を防止
+    - `metadata_enricher._ENRICH_ROLES` に「参考人」追加 (utterance 経由で参考人を metadata.speakers に逆補完)
+    - `metadata_enricher._BACKFILL_ROLES` に「議長」も追加
+    - 4 件の参考人 affiliation テストケースを追加 (56212 の 5 名全員想定)
+  - **PR26.1** (enriched speakers の affiliation/start_seconds 補完):
+    - `metadata_enricher.enrich_metadata_from_utterances`:
+      - 新規 `_format_hms` ヘルパで秒 → HH:MM 整形
+      - affiliation が空のとき role 名 (答弁者/政府参考人/参考人) を最低限の affiliation として埋める
+      - start_seconds を `first_seen_at` (最初に登場した segment.start_seconds) で補完、start_time も同期
+    - `_backfill_existing_speaker_roles` を「常に再計算 (既存 role が非空でも上書き)」に変更 — partial regen で PR29/PR30 の修正版 derive_role が反映されるように
+    - `pipeline.py` Step 5.25: count 不変でも `(name, role, affiliation)` signature が変われば metadata を書き出す (旧来 count 不変だと書き出されず、role backfill が永続化されないバグの修正)
+    - `/tmp/regen_test.py` / `/tmp/regen_f2_rerun.py` も同様に修正
+  - **PR23.1** (anchor 位置で video_url shift):
+    - `_estimate_pair_offset_seconds` に `split_anchor_sentence_idx` 引数追加
+    - head utterance 内の sentence 位置 (anchor 直前までの文字数) を加算してオフセット計算
+    - 同一 head_utt を共有する複数ペアでも anchor 値が異なれば URL も別時刻
+    - PR28 で自動推定した anchor も活用される (代表質問・所信表明での頭出し精度向上)
+- 検証:
+  - **unit tests +9 件 pass**:
+    - `test_role_derivation.py`: 26 → 35 件 (議長 5 件、参考人 prefix 4 件)
+    - `test_metadata_enricher.py`: 36 → 39 件 (PR30 / PR29 / PR26.1 各 1 件)
+    - `test_structurer.py`: 既存 +1 (PR23.1 anchor offset テスト)
+    - 全 unit (-m "not integration"): 370 pass / pre-existing 3 scraper failure のみ、新規 regression なし
+  - **F1 サンプル 4 件 全 exit 0** (`/tmp/regen-test/_summary.json`、書き直し後の 2 回目 run):
+    - 56075 本会議: 207.5s, qa=0/topics=8、metadata.speakers role: {答弁者: 4, 議長: 2} (旧: 全 "")
+    - 56211 内閣委員会: 354.5s, qa=71/topics、metadata.speakers role: {政府参考人: 24, 答弁者: 16, 質疑者: 10, 委員長: 2, **参考人: 1**}
+    - 56074 本会議: 189.2s, qa=2/topics=1、metadata.speakers role: {**議長: 3**, 委員長: 1, 質疑者: 1} (旧: 全 "")
+    - 8967 内閣委員会: 368.5s, qa=60/topics、metadata.speakers role: {政府参考人: 15, 答弁者: 11, 質疑者: 8, 委員長: 1}
+  - **PR23.1 効果**: F1 で uniqURL/total: 56211 67/71 → **68/71**、8967 58/58 → **60/60** (Session #10 比は同一 head_utt 共有部での改善)
+  - **PR29 効果**: 56074 で「衆議院議長」「衆議院副議長」が role="議長" に分離 (旧: 「委員長」)
+  - **PR30 効果**: 56211 で 1 件「参考人」が新たに role 検出 (Session #12 の 56212 audit で 5 名全員確認予定)
+  - **PR26.1 効果**: 56075/56074 で metadata.speakers role が以前は全 "" だったのが正しく埋まる
+- ノート:
+  - PR25 (speaker_tagger 境界 leak)、PR27 (utterances 空 root cause) は本セッション外。F2 再々走 (Session #12) で残存影響を確認後判断
+  - 「llm_model="google/gemma-4-31B-it" 架空名」の指摘は SessionDetail の default 値であり、実際の運用では Step 5/6 で gemma-4-31B が使われるため誤指摘。models.py default 値を修正するかは F4 直前で判断
+- 残作業 (Session #12 へ): F2 再々走 (4-6 件、56212 含む) で平均 < 8 を目標、PR25/PR27 の必要性判定
 
 ### Session #10 (F2 再走) — 2026-05-10 完了 (ゲート FAIL も大幅改善)
 - **F2 再走サンプル選定** (6 件、Session #8 で重症だった 6 件):

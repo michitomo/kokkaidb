@@ -1709,6 +1709,53 @@ class TestPR23PerPairVideoUrl:
         new_time = float(m.group(1))
         assert 640.0 <= new_time <= 700.0, f"unexpected time: {new_time}"
 
+    def test_pr23_1_anchor_position_adds_offset(self) -> None:
+        """PR23.1: 同一 head_utt 共有のペアでも anchor 位置が異なれば URL も異なる。
+
+        56176 のような代表質問パターンを再現: 1 質問者の長文 utterance に
+        9 個の Q が含まれ、PR28 の anchor 自動推定で各 Q が別 sentence index に
+        紐付く → URL も別時刻を指す。
+        """
+        # 1 質疑者発言が 6 文に分かれる長文 utterance
+        long_q_text = "".join(f"質問文{i}。" for i in range(6))  # 6 sentences
+        seg = SegmentUtterances(
+            segment_index=5,
+            segment_speaker="X",
+            segment_affiliation="X党",
+            start_seconds=600.0,
+            video_url="https://www.shugiintv.go.jp/jp/index.php?ex=VL&deli_id=99999&time=600.0",
+            utterances=[
+                Utterance(speaker="X", role="質疑者", text=long_q_text),
+                Utterance(speaker="A", role="答弁者", text="お答えします。具体的に対応してまいります。"),
+            ],
+        )
+        # 4 ペアが同一 head_utt=[0] を共有、anchor は全 null (PR28 が均等推定)
+        response = json.dumps({
+            "pairs": [
+                {
+                    "topic": f"トピック{i}",
+                    "question": {
+                        "utterance_indices": [0],
+                        "split_anchor_sentence_idx": None,
+                        "summary": f"- 質問{i}",
+                        "intent": "information_request",
+                    },
+                    "answer": {
+                        "utterance_indices": [1],
+                        "split_anchor_sentence_idx": None,
+                        "summary": f"- 回答{i}",
+                    },
+                }
+                for i in range(4)
+            ]
+        })
+        layout = _compute_segment_layout(seg)
+        pairs = _extract_pairs_from_response(response, seg, layout, {})
+        assert len(pairs) == 4
+        urls = [p.video_url for p in pairs]
+        # 4 ペア全部 unique であることを期待 (anchor 0/1/3/4 → time 異なる)
+        assert len(set(urls)) >= 3, f"PR23.1 should differentiate URLs by anchor position: {urls}"
+
     def test_per_pair_video_url_unchanged_when_first_utterance(self) -> None:
         """質問が U0 → offset=0 → seg.video_url のまま。"""
         seg = SegmentUtterances(

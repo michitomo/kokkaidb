@@ -282,20 +282,42 @@ _AVG_CHARS_PER_SECOND = 4.0
 
 def _estimate_pair_offset_seconds(
     seg: SegmentUtterances,
+    layout: _SegmentLayout,
     utterance_indices: list[int],
+    split_anchor_sentence_idx: int | None = None,
 ) -> float:
-    """utterance_indices の最初の utterance 開始秒を、segment 内の文字位置から推定する。
+    """質問先頭の発言開始秒を、segment 内の文字位置から推定する (PR23 + PR23.1)。
 
-    Returns: seg.start_seconds に加算するオフセット (秒)。先頭 utterance なら 0。
+    1. utterance 単位のオフセット: head utterance より前の utterances の総文字数 / 4
+    2. PR23.1: anchor が指定されていれば、head utterance 内で anchor sentence
+       より前の文字数も加算する。これにより同一 head_utt を共有する複数ペアの
+       video_url が pair ごとに異なる時刻を指す (代表質問・所信表明での頭出し)。
+
+    Returns: seg.start_seconds に加算するオフセット (秒)。先頭 utterance かつ
+    anchor が先頭または None なら 0。
     """
     valid = [i for i in utterance_indices if 0 <= i < len(seg.utterances)]
     if not valid:
         return 0.0
     head = valid[0]
-    if head == 0:
+    chars_before_head = sum(len(seg.utterances[j].text) for j in range(head))
+
+    chars_within_head = 0
+    if (
+        split_anchor_sentence_idx is not None
+        and isinstance(split_anchor_sentence_idx, int)
+        and 0 <= head < len(layout.per_utt_sentences)
+    ):
+        sentences = layout.per_utt_sentences[head]
+        g_start = layout.utt_global_starts[head]
+        local_anchor = max(0, split_anchor_sentence_idx - g_start)
+        if 0 < local_anchor < len(sentences):
+            chars_within_head = sum(len(sentences[k]) for k in range(local_anchor))
+
+    total_chars = chars_before_head + chars_within_head
+    if total_chars <= 0:
         return 0.0
-    chars_before = sum(len(seg.utterances[j].text) for j in range(head))
-    return chars_before / _AVG_CHARS_PER_SECOND
+    return total_chars / _AVG_CHARS_PER_SECOND
 
 
 _VIDEO_TIME_PARAM_RE = re.compile(r"time=[\d.]+")
@@ -620,8 +642,13 @@ def _extract_pairs_from_response(
         q_speaker, q_party = _resolve_speaker_from_utterances(seg, p["q_uidx"], speakers_lookup)
         a_speaker, a_role = _resolve_answerer_from_utterances(seg, p["a_uidx"], speakers_lookup)
 
-        # PR23: 質問先頭 utterance の文字位置から開始秒を推定し video_url を補正
-        offset = _estimate_pair_offset_seconds(seg, p["q_uidx"])
+        # PR23 + PR23.1: 質問先頭 utterance + anchor sentence の文字位置から
+        # 開始秒を推定し video_url を補正。同一 head_utt を共有する複数ペアでも
+        # 異なる時刻を指せるようにする。q_anchor は PR28 で推定された anchor も
+        # 含む (parsed_pairs[i]["q_anchor"] は _compute_share_boundaries で更新済)。
+        offset = _estimate_pair_offset_seconds(
+            seg, layout, p["q_uidx"], p["q_anchor"]
+        )
         if offset > 0.0:
             pair_video_url = _shift_video_url_time(seg.video_url, seg.start_seconds + offset)
         else:

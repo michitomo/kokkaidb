@@ -254,13 +254,26 @@ def run_pipeline(
         raise RuntimeError(f"Step 5 (speaker tagging) failed: {e}") from e
 
     # Step 5.25: utterances 由来で metadata.speakers を逆補完 (PR6, §2.2/2.3)
+    # PR26/PR29/PR30: 既存 speakers の role 再計算も含む。count 不変でも書き出す。
     logger.info("=== Step 5.25: Enriching metadata.speakers from utterances ===")
+    pre_count = len(session_detail.speakers)
+    pre_signature = tuple(
+        (s.name, s.role, s.affiliation) for s in session_detail.speakers
+    )
     enriched_speakers = enrich_metadata_from_utterances(
         utterances_output, session_detail.speakers
     )
-    if len(enriched_speakers) != len(session_detail.speakers):
-        added = len(enriched_speakers) - len(session_detail.speakers)
-        logger.info("Step 5.25: appended %d answerer/参考人 entries", added)
+    post_signature = tuple(
+        (s.name, s.role, s.affiliation) for s in enriched_speakers
+    )
+    if len(enriched_speakers) != pre_count or pre_signature != post_signature:
+        added = len(enriched_speakers) - pre_count
+        logger.info(
+            "Step 5.25: %s",
+            f"appended {added} entries"
+            if added
+            else "backfilled role/affiliation on existing entries",
+        )
         session_detail.speakers = enriched_speakers
         metadata_path.write_text(
             session_detail.model_dump_json(indent=2, ensure_ascii=False),

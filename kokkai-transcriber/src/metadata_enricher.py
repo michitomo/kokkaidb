@@ -64,11 +64,11 @@ _NOMINATION_PATTERN = re.compile(
     rf"(?P<name>{_NAME_CHARS}{{2,8}}){_HONORIFIC}"
 )
 
-_ENRICH_ROLES: frozenset[str] = frozenset(("答弁者", "政府参考人"))
+_ENRICH_ROLES: frozenset[str] = frozenset(("答弁者", "政府参考人", "参考人"))
 
 # PR26: 既存 speakers の role を utterances から逆引き補完する際に許容する役割
 _BACKFILL_ROLES: frozenset[str] = frozenset(
-    ("委員長", "質疑者", "答弁者", "政府参考人", "参考人")
+    ("委員長", "議長", "質疑者", "答弁者", "政府参考人", "参考人")
 )
 
 # 委員長相当 (進行役) の追加キーワード — 名前末尾から affiliation 抽出時に使う
@@ -126,24 +126,29 @@ def _backfill_existing_speaker_roles(
     speakers: list[SpeakerInfo],
     role_map: dict[str, str],
 ) -> int:
-    """既存 speakers のうち role が空 / "その他" のものを補完する (PR26、in-place)。
+    """既存 speakers の role を再計算 (PR26 + PR29/PR30 で更新、in-place)。
 
     補完優先度:
         1. ``derive_role(affiliation)`` が「その他」以外を返せばそれを採用
-        2. utterances の観測 role (`role_map`) を採用
+           — 既存 role が異なる値だった場合も上書きする (PR29/PR30 の修正版
+           derive_role を partial regen でも反映するため)
+        2. utterances の観測 role (`role_map`) を採用 (role 空 or その他 のとき)
         3. 最終フォールバック: "その他"
 
     Returns: 実際に role が更新されたエントリ数。
     """
     updated = 0
     for sp in speakers:
-        if sp.role and sp.role != "その他":
-            continue
+        # まず affiliation 由来で再計算 — derive_role 修正 (PR29/PR30) が
+        # 既存データにも適用されるよう、role 値の有無に関わらず実施。
         derived = derive_role(sp.affiliation) if sp.affiliation else "その他"
         if derived != "その他":
             if sp.role != derived:
                 sp.role = derived
                 updated += 1
+            continue
+        # affiliation で決まらない場合は既存 role を維持 (空でなければ)
+        if sp.role and sp.role != "その他":
             continue
         utt_role = role_map.get(sp.name)
         if utt_role and utt_role in _BACKFILL_ROLES:
@@ -156,6 +161,20 @@ def _backfill_existing_speaker_roles(
             sp.role = "その他"
             updated += 1
     return updated
+
+
+def _format_hms(seconds: float) -> str:
+    """秒数を `HH:MM` 形式に整形する (PR26.1、SpeakerInfo.start_time 用)。
+
+    seconds <= 0 / NaN は空文字列を返す。HH は 0 詰め 2 桁、ただし >= 100h は
+    桁数増加。
+    """
+    if seconds is None or seconds <= 0:
+        return ""
+    total_minutes = int(seconds) // 60
+    h = total_minutes // 60
+    m = total_minutes % 60
+    return f"{h:02d}:{m:02d}"
 
 
 def _build_chair_nomination_map(utterances: UtterancesOutput) -> dict[str, str]:
@@ -208,6 +227,16 @@ def enrich_metadata_from_utterances(
             backfilled, len(speakers),
         )
 
+    # PR26.1: name → (segment_start_seconds) で最初の発言時刻を記録
+    first_seen_at: dict[str, float] = {}
+    for seg in utterances.segments:
+        for u in seg.utterances:
+            name = (u.speaker or "").strip()
+            if not name:
+                continue
+            if name not in first_seen_at:
+                first_seen_at[name] = seg.start_seconds
+
     # name → (affiliation, fallback_role) を蓄積
     candidates: dict[str, tuple[str, str]] = {}
 
@@ -240,13 +269,21 @@ def enrich_metadata_from_utterances(
                 role = fallback_role
         else:
             role = fallback_role
+        # PR26.1: affiliation が空なら role 名を最低限の affiliation として使う
+        # ("答弁者" / "政府参考人" / "参考人")。downstream の structurer
+        # `_resolve_answerer_from_utterances` が answer.role に空文字を出さない
+        # ためにも非空が望ましい。
+        if not affiliation and role in _ENRICH_ROLES:
+            affiliation = role
+        # PR26.1: start_seconds を最初の発言 segment.start_seconds で補完
+        start_seconds = first_seen_at.get(name, 0.0)
         enriched.append(
             SpeakerInfo(
                 name=name,
                 affiliation=affiliation,
                 role=role,
-                start_seconds=0.0,
-                start_time="",
+                start_seconds=start_seconds,
+                start_time=_format_hms(start_seconds),
                 duration_minutes=0,
             )
         )

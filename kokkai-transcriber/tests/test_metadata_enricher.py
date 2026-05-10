@@ -226,8 +226,9 @@ class TestEnrichMetadataFromUtterances:
         assert len(result) == 1
         added = result[0]
         assert added.name == "田中太郎"
-        assert added.affiliation == ""
-        assert added.role == "答弁者"  # fallback: speaker_tagger の role
+        # PR26.1: affiliation が推定できない場合は role 名を最低限の affiliation として使う
+        assert added.affiliation == "答弁者"
+        assert added.role == "答弁者"
 
     def test_affiliation_extracted_from_name_suffix(self) -> None:
         """speaker_tagger が役職込みの名前 (松本大臣) を返したケース。"""
@@ -370,9 +371,72 @@ class TestPR26BackfillExistingRoles:
         ]
         updated = _backfill_existing_speaker_roles(speakers, role_map={})
         assert updated == 3
-        assert speakers[0].role == "委員長"  # 議長は CHAIR_SUFFIXES
+        assert speakers[0].role == "議長"  # PR29: 議長 系は独立 role
         assert speakers[1].role == "答弁者"  # 大臣
         assert speakers[2].role == "質疑者"  # 政党
+
+    def test_pr30_sankounin_prefix_overrides_old_role(self) -> None:
+        """PR30: 既存 role が「委員長」「政府参考人」「その他」でも
+        affiliation が「参考人 …」始まりなら「参考人」に再分類する。
+        """
+        speakers = [
+            self._sp("澤田純", "参考人 一般社団法人日本経済団体連合会副会長・産業競争力強化委員長", role="委員長"),
+            self._sp("宮澤伸", "参考人 日本商工会議所産業政策第一部長", role="政府参考人"),
+            self._sp("大橋弘", "参考人 東京大学副学長・経済学研究科教授", role="その他"),
+        ]
+        updated = _backfill_existing_speaker_roles(speakers, role_map={})
+        assert updated == 3
+        for sp in speakers:
+            assert sp.role == "参考人"
+
+    def test_pr26_1_start_seconds_filled_from_first_utterance(self) -> None:
+        """PR26.1: enriched speaker の start_seconds は最初に登場した
+        segment.start_seconds で埋まる。affiliation も role 名で最低限埋まる。"""
+        existing: list[SpeakerInfo] = []
+        # _mk_utterances は segment.start_seconds=0.0 なので別途構築
+        utterances = UtterancesOutput(
+            segments=[
+                SegmentUtterances(
+                    segment_index=0,
+                    segment_speaker="質問者",
+                    segment_affiliation="X党",
+                    start_seconds=0.0,
+                    video_url="https://example.com/v",
+                    utterances=[
+                        Utterance(speaker="質問者", role="質疑者", text="質問。"),
+                    ],
+                ),
+                SegmentUtterances(
+                    segment_index=1,
+                    segment_speaker="質問者",
+                    segment_affiliation="X党",
+                    start_seconds=600.0,
+                    video_url="https://example.com/v",
+                    utterances=[
+                        Utterance(speaker="質問者", role="質疑者", text="続けて質問。"),
+                        Utterance(speaker="鈴木大輔", role="答弁者", text="お答えします。改革を進めます。"),
+                    ],
+                ),
+            ]
+        )
+        result = enrich_metadata_from_utterances(utterances, existing)
+        added = next(s for s in result if s.name == "鈴木大輔")
+        assert added.start_seconds == 600.0  # 最初に登場した segment
+        assert added.start_time == "00:10"  # 600s = 10 min
+        assert added.affiliation == "答弁者"  # PR26.1 最低限の affiliation
+        assert added.role == "答弁者"
+
+    def test_pr29_existing_chairman_role_replaced_with_gicho(self) -> None:
+        """PR29: 既存 metadata で role="委員長" が付いていた議長系は「議長」に
+        再分類する (partial regen で derive_role 修正版を反映)。"""
+        speakers = [
+            self._sp("森英介", "衆議院議長", role="委員長"),
+            self._sp("関口昌一", "参議院議長", role="委員長"),
+        ]
+        updated = _backfill_existing_speaker_roles(speakers, role_map={})
+        assert updated == 2
+        assert speakers[0].role == "議長"
+        assert speakers[1].role == "議長"
 
     def test_falls_back_to_utterance_role_when_derive_returns_other(self) -> None:
         """affiliation が空または derive_role が「その他」を返す場合、
@@ -432,9 +496,9 @@ class TestPR26BackfillExistingRoles:
             duration_minutes=0,
         )
         speakers = [original]
-        utterances = _mk_utterances([("森英介", "委員長", "開会いたします。")])
+        utterances = _mk_utterances([("森英介", "議長", "開会いたします。")])
         result = enrich_metadata_from_utterances(utterances, speakers)
-        assert result[0].role == "委員長"  # backfill 済み
+        assert result[0].role == "議長"  # PR29: 衆議院議長 → 議長
         assert original.role == ""  # 入力は触らない
 
 

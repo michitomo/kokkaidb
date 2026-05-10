@@ -142,6 +142,7 @@ SessionKind = Literal[
 
 SpeakerRole = Literal[
     "委員長",
+    "議長",
     "質疑者",
     "答弁者",
     "政府参考人",
@@ -150,7 +151,7 @@ SpeakerRole = Literal[
 ]
 
 SPEAKER_ROLES: frozenset[str] = frozenset(
-    ("委員長", "質疑者", "答弁者", "政府参考人", "参考人", "その他")
+    ("委員長", "議長", "質疑者", "答弁者", "政府参考人", "参考人", "その他")
 )
 
 
