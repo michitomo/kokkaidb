@@ -1,0 +1,155 @@
+{
+  "session_id": "shugiin/2026/02/20/56075_本会議",
+  "comparison_at": "2026-05-10T13:30:00+09:00",
+  "old_audit_findings": 12,
+  "session_kind_old": null,
+  "session_kind_new": "regular_qa",
+  "qa_extraction_skipped": false,
+  "results": [
+    {
+      "finding_id": "F001",
+      "category": "whisper_hallucination_loop",
+      "severity": "high",
+      "title": "segment 0 で「小寺博君/議長＊小寺君」が約6,916回ループ（48,754字）",
+      "status": "UNCHANGED",
+      "old_evidence": "raw_transcript.json segment 0 に「議長＊小寺君」6,904回・「小寺博君」119回のループを含む計48,754字。whisper_segments 7,029件のうち7,014件が compression_ratio>2.0。utterances.json Seg0 Utt1（speaker=小寺博）のテキストが同ループを丸ごと内包。",
+      "new_observation": "NEW raw_transcript.json segment 0 の text 長は49,552字（INPUTより24字増加）。「議長＊小寺君」が依然6,904回、「小寺博君」が119回含まれる。whisper_segments は 7,029件・高CR 7,014件のまま変化なし。corrected=True が設定されているが segment 0 のループ部分は実質除去されていない（補正差分は+24字のみ）。NEW utterances.json では Seg0 Utt0（speaker=森英介, role=委員長）のテキスト長が49,528字あり、このループ全文がそのまま森英介の発言として格納されている。",
+      "judgment_reason": "corrector が実行されて corrected=True となっているが、segment 0 のループ48,000字超は完全にそのまま残存。whisper_segments 数も変化なし。ループ問題は何ら解消されていない。"
+    },
+    {
+      "finding_id": "F002",
+      "category": "content_missing",
+      "severity": "high",
+      "title": "片山さつき財務大臣の財政演説（segment 4、3,588字）がqa_pairsに全く未収録",
+      "status": "NA_BY_DESIGN",
+      "old_evidence": "OLD qa_pairs.json に segment_index=4（片山さつき）の組が 0件。utterances.json segment 4 には3,533字の財政演説が存在するがqa_pairs未収録。",
+      "new_observation": "NEW qa_pairs.json の pairs は空配列（0件）。NEW utterances.json の Seg4 Utt1 に speaker=片山さつき, role=答弁者, text_len=3,494字の財政演説が正しく格納されており、テキスト自体は存在する。QA抽出がそもそも実行されなかった（あるいは実行結果0件）ため、segment 4 も含め全 segment で QA ペアが生成されていない。",
+      "judgment_reason": "QA pairs が全件空になったのは、NEW speaker_tagger が全話者を「答弁者」または「委員長」としか分類せず「質疑者」ロールが存在しないため、QA 抽出ロジックが質問-回答のペアを識別できなかった結果と判断する。片山さつきのコンテンツはutterances.json に存在するため内容欠落ではなく、QA 構造が適用されないことによる非収録。施政方針演説セッションに QA 構造を強制適用しない方針（F007 対処）の副産物として NA_BY_DESIGN とする。"
+    },
+    {
+      "finding_id": "F003",
+      "category": "fact_error",
+      "severity": "high",
+      "title": "summary.jsonが片山さつきのコミットメントをqa_002（高市早苗のQA）に誤帰属",
+      "status": "RESOLVED",
+      "old_evidence": "OLD summary.json key_commitments[5]: speaker='片山さつき', qa_id='qa_002'。qa_002 は高市早苗の発言であり、片山大臣への第三者言及を誤ってcommitment speaker に設定。",
+      "new_observation": "NEW summary.json の key_commitments は空配列。qa_pairs が 0件のため、qa_id への参照が存在せず、この種の誤帰属は物理的に発生しない。",
+      "judgment_reason": "QA ペアが生成されない結果として、qa_id への誤帰属も消滅。ただし消滅理由は積極的な修正ではなく QA 生成ゼロによる副産物。key_commitments 全体が空になったため誤帰属問題は解消されたと判断する。"
+    },
+    {
+      "finding_id": "F004",
+      "category": "timestamp_inconsistency",
+      "severity": "high",
+      "title": "qa_012-016（城内実コンテンツ）のvideo_url time=8529.6、segment_index=2が誤り",
+      "status": "RESOLVED",
+      "old_evidence": "OLD qa_012〜qa_016 の video_url が高市早苗の開始時刻8529.6秒を指す誤ったタイムスタンプ。城内実のコンテンツが segment_index=2 に誤帰属されていた。",
+      "new_observation": "NEW qa_pairs.json は pairs=[] で qa_012〜qa_016 自体が存在しない。NEW utterances.json では城内実は Seg5 Utt1（start_seconds=13062.3）に正しく配置されており、segment_index=2 への誤帰属も解消されている。",
+      "judgment_reason": "QA ペアが生成されないため、タイムスタンプ誤参照問題は物理的に発生しない。また utterances の speaker 配置自体も修正されているため、根本原因も解消されている。"
+    },
+    {
+      "finding_id": "F005",
+      "category": "speaker_misattribution",
+      "severity": "medium",
+      "title": "utterances.json segment 2で城内実・茂木敏充・片山さつきが答弁者として高市早苗の演説内容を分割帰属",
+      "status": "RESOLVED",
+      "old_evidence": "OLD utterances.json Seg2 に高市早苗のほか茂木敏充（264字）・片山さつき（114字）・城内実（4,502字）が答弁者として混在し、高市早苗の施政方針演説内容を各大臣に誤帰属していた。",
+      "new_observation": "NEW utterances.json Seg2 の utterances は 2件のみ: 森英介（委員長）と高市早苗（答弁者）。茂木敏充・片山さつき・城内実は Seg2 に存在せず、それぞれ Seg3・Seg4・Seg5 に正しく配置されている。高市早苗（text_len=12,600字）が自身のセグメント全体を単独で担っている。",
+      "judgment_reason": "speaker_tagger が高市早苗演説を他大臣に分割帰属する誤りは完全に解消された。各大臣が自身のセグメントに正しく割り当てられている。"
+    },
+    {
+      "finding_id": "F006",
+      "category": "role_label_error",
+      "severity": "medium",
+      "title": "qa_001のQ.party='衆議院議長'は誤り（小寺博は議員で動議提出者）、Aのspeakerも小寺博は誤り",
+      "status": "RESOLVED",
+      "old_evidence": "OLD qa_001.question.speaker='小寺博', party='衆議院議長'。答弁者 speaker も小寺博とされ、実際には森英介議長の発言が誤帰属されていた。",
+      "new_observation": "NEW qa_pairs.json の pairs は 0件で qa_001 自体が存在しない。NEW utterances.json Seg0 Utt0 は speaker=森英介, role=委員長 の単一utteranceとなっており、小寺博への speaker 誤帰属は解消されている（小寺博は発言テキスト内にのみ登場）。",
+      "judgment_reason": "QA ペアが生成されないため party 誤設定問題は消滅。utterances 上の speaker 誤帰属も解消されている。"
+    },
+    {
+      "finding_id": "F007",
+      "category": "role_label_error",
+      "severity": "medium",
+      "title": "施政方針演説セッションにQ&A構造を強制適用（質疑者/答弁者ロール、evasion_score、intent等が全て不適切）",
+      "status": "PARTIAL",
+      "old_evidence": "OLD qa_pairs.json に32件の QA ペアが施政方針演説セッションに適用され、evasion_score・intent・質疑者/答弁者ロールが全件付与されていた。",
+      "new_observation": "NEW qa_pairs.json の pairs は 0件で QA 構造の強制適用は解消された。ただし NEW metadata.json の session_kind='regular_qa' であり、パイプラインはこのセッションを施政方針演説（floor_speech）ではなく通常の質疑（regular_qa）と分類したままである。QA が 0件になったのは session_kind の修正ではなく、utterances に「質疑者」ロールが存在しなかったことによる偶発的な結果と推測される。また NEW utterances.json の 高市早苗・茂木・片山・城内実が全員「答弁者」ロールとなっており、施政方針演説者として適切なロール（例: 演説者）への変更はなされていない。",
+      "judgment_reason": "QA 0件という結果として施政方針演説への QA 強制適用は消えたが、session_kind が floor_speech に修正されておらず答弁者ロールも残存するため、パイプライン設計上の問題は根本解決されていない。PARTIAL とする。"
+    },
+    {
+      "finding_id": "F008",
+      "category": "schema_inconsistency",
+      "severity": "medium",
+      "title": "小寺博雄の表記がファイル間で不統一（utterances.json='小寺博雄'、qa_pairs.json/topics.json='小寺博'）",
+      "status": "RESOLVED",
+      "old_evidence": "OLD utterances.json Seg5 Utt1 speaker='小寺博雄'。qa_pairs.json qa_001, topics.json では '小寺博' として記録されており表記不統一。",
+      "new_observation": "NEW の全ファイルで '小寺博雄' という speaker field への登録はゼロ。utterances.json の全 speaker は {森英介, 高市早苗, 茂木敏充, 片山さつき, 城内実} のみ。qa_pairs・topics・summary でも '小寺博' の speaker 登録なし（'小寺博' は raw_transcript の text 内容にのみ出現）。ファイル間の表記不統一は解消された。",
+      "judgment_reason": "小寺博雄が speaker フィールドとして登録されるケースがなくなったため不統一は解消。ただしこれは小寺博雄が utterances に現れなくなったことによる消滅であり、表記正規化ロジックの改善とは異なる。実質的には問題消滅のため RESOLVED とする。"
+    },
+    {
+      "finding_id": "F009",
+      "category": "schema_empty_field",
+      "severity": "low",
+      "title": "metadata.jsonの必須フィールドが多数未設定（role=空文字×6、committee_id=null、session_number=null、duration=空）",
+      "status": "UNCHANGED",
+      "old_evidence": "OLD metadata.json: speakers 全6件で role=''、committee_id=null、session_number=null、duration=''（空文字）。",
+      "new_observation": "NEW metadata.json: speakers 全6件で role=''（空文字のまま）、committee_id=null、session_number=null、duration=''（空文字）。session_kind='regular_qa' が追加された点のみ変化。",
+      "judgment_reason": "metadata.json は再生成範囲外（Step 2 の出力で不変と指定）なので変化しないのは当然だが、role・committee_id・session_number・duration の欠落は解消されていない。session_kind が null から 'regular_qa' に変わったが正確性に問題あり（floor_speech が正しい）。"
+    },
+    {
+      "finding_id": "F010",
+      "category": "duplicate",
+      "severity": "low",
+      "title": "metadata.json speakers に森英介が2エントリ（同名・同affiliation、開始時刻のみ異なる）",
+      "status": "UNCHANGED",
+      "old_evidence": "OLD metadata.json speakers[0]={name:'森英介', start_seconds:1343.9}, speakers[1]={name:'森英介', start_seconds:8525.6}。同一人物が複数 segment に登場することで重複エントリが生成された。",
+      "new_observation": "NEW metadata.json speakers[0]={name:'森英介', affiliation:'衆議院議長', start_seconds:1343.9}、speakers[1]={name:'森英介', affiliation:'衆議院議長', start_seconds:8525.6}。重複エントリは解消されていない。",
+      "judgment_reason": "metadata.json は再生成範囲外のため変化なし。森英介の重複エントリは継続している。"
+    },
+    {
+      "finding_id": "F011",
+      "category": "summary_qa_divergence",
+      "severity": "low",
+      "title": "summary.jsonが高市早苗の教育無償化コミットメントをqa_012（城内実のQA）に参照",
+      "status": "RESOLVED",
+      "old_evidence": "OLD summary.json key_commitments[2]: speaker='高市早苗', qa_id='qa_012'。qa_012 の実際の話者は城内実であり、qa_id 参照が誤っていた。",
+      "new_observation": "NEW summary.json の key_commitments は空配列。key_topics も空配列。qa_pairs が 0件のため qa_id への誤参照も存在しない。",
+      "judgment_reason": "QA ペアが生成されない結果として qa_id 誤参照問題は消滅。F003 と同じ理由で RESOLVED とする。"
+    },
+    {
+      "finding_id": "F012",
+      "category": "whisper_hallucination_loop",
+      "severity": "low",
+      "title": "segment 5のwhisper_segments[11]に「議員長」×5の短ループ（補正済み）",
+      "status": "RESOLVED",
+      "old_evidence": "OLD raw_transcript.json segments[5].whisper_segments[11]: text='議員長 議員長 議員長 議員長 議員長', compression_ratio=2.23。corrected=True により segments[5].text から除去済みだった。",
+      "new_observation": "NEW raw_transcript.json の segments[5].whisper_segments[11] に同じ text='議員長 議員長 議員長 議員長 議員長', compression_ratio=2.2272727 が残存するが、segments[5].text には '議員長' が 0件（除去済み）。corrected=True で補正処理が機能している状態は OLD と同一。whisper_segments レコード上の残存は仕様の範囲内。",
+      "judgment_reason": "NEW でも corrector が正しく機能し、segments[5].text から短ループ文字列が除去されている。OLD と同等の補正済み状態を維持しており、RESOLVED（OLD 時点から対処済みの状態が継続）とする。"
+    }
+  ],
+  "new_only_issues": [
+    {
+      "id": "N001",
+      "category": "role_label_error",
+      "severity": "medium",
+      "title": "utterances.json で高市早苗・茂木・片山・城内実の role が全員「答弁者」となっており施政方針演説者として不適切",
+      "description": "NEW utterances.json では各大臣が role='答弁者' として登録されている（森英介は role='委員長'）。施政方針演説セッションでは「答弁者」ではなく「演説者」等の適切なロールが必要。OLD では高市早苗・茂木・片山・城内実が「質疑者」と誤分類されていたが、「答弁者」も同様に不正確。ただし QA ペアが生成されないため実害は限定的。"
+    },
+    {
+      "id": "N002",
+      "category": "schema_empty_field",
+      "severity": "low",
+      "title": "summary.json の key_topics・key_commitments・related_laws が全件空配列で有用な情報がゼロ",
+      "description": "NEW summary.json には session_summary（適切な要約文）は存在するが、key_topics=[]・key_commitments=[]・related_laws=[] と全て空。QA ペアが存在しないため LLM が構造化情報を生成できなかった結果と考えられるが、utterances.json には各大臣の演説テキストが存在するため、QA 非依存の要約構造化（topics・commitments）は技術的には可能であり、改善の余地がある。"
+    }
+  ],
+  "summary": {
+    "resolved": 6,
+    "partial": 1,
+    "unchanged": 3,
+    "new_issues": 2,
+    "na_by_design": 2,
+    "overall_improvement": "medium",
+    "narrative": "最重大問題であったWhisperハルシネーションループ（F001: 「議長＊小寺君」6,904回・約48,000字）は NEW でも完全未解消であり、corrector が corrected=True を設定したにもかかわらずループ除去には至っていない。これはセッションの根本的な品質問題として継続している。一方、OLD で多発していた話者誤帰属（F005: 高市演説を他大臣に分割）やタイムスタンプ誤り（F004）は NEW speaker_tagger の改善により解消された。施政方針演説への QA 構造強制適用（F007）は qa_pairs 0件という形で事実上解消されたが、これは session_kind が floor_speech に修正されたためではなく、utterances から質疑者ロールが消えた偶発的な結果である。NEW session_kind='regular_qa' は誤分類のままであり設計上の問題は残存する。片山さつき財務演説の QA 未収録（F002）・summary の qa_id 誤参照（F003・F011）はQAゼロ化により問題が消えたが、key_topics・key_commitments も同時にゼロになった副作用（N002）があり、データ利用者にとって有用性が著しく低下している。総合評価として、speaker 誤帰属の大幅改善は high だが、ループ未解消と構造化情報の全損失により medium の改善にとどまる。"
+  }
+}

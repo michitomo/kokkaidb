@@ -1,0 +1,207 @@
+{
+  "session_id": "shugiin/2026/04/03/56143_法務委員会",
+  "chamber": "shugiin",
+  "date": "2026-04-03",
+  "deli_id": "56143",
+  "committee": "法務委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T10:00:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 3, "medium": 4, "low": 3, "total": 10},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "content_missing",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "平口大臣の政策説明演説 (3014字) が qa_pairs に未収録",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "utterances.json には segment_index=0〜3 の4セグメントが存在するが、qa_pairs.json の pairs は segment_index=2 (三谷副大臣の予算説明) 1件のみ。segment_index=1 の平口法務大臣演説 (3014字: 再犯防止・出入国管理・民法改正・司法外交など政策全般) および segment_index=3 の染谷武信裁判所予算説明 (696字) が完全に欠落。4セグメント合計 4,692字 (全体の約80%) が qa_pairs から不可視。",
+      "estimated_cause": "この委員会は大臣説明+副大臣予算説明のみで質疑応答なし (新体制発足時の所信表明的セッション)。structurer.py の qa_pairs 生成ロジックが、質疑応答形式でないセグメントを qa_pair 非対象と判断してスキップした可能性が高い。同様の委員会冒頭セッションでシステム的に発生すると推定される。",
+      "downstream_impact": ["topics.json", "summary.json"]
+    },
+    {
+      "id": "F002",
+      "category": "role_label_error",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "三谷英弘 (法務副大臣) の role が 質疑者 (正しくは 答弁者/報告者)",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[2].utterances[2].role",
+        "segment_index": 2,
+        "qa_id": null
+      },
+      "evidence": "utterances.json segment_index=2 の三谷英弘の発話 role=質疑者。三谷英弘は法務副大臣として令和8年度法務省予算の概要説明を行っており、委員長の指名「三谷君。」を受けた上での報告者であり、質問者ではない。qa_pairs.json の qa_001 では answer.role=法務副大臣 と正しく記録されているが、utterances.json と不一致。",
+      "estimated_cause": "speaker_tagger.py が委員長の呼名直後に発言するパターンを質問者パターンとして誤認識した可能性。大臣・副大臣による政府側報告と質疑者を区別するロールが定義されていない、またはプロンプトに明示されていないと推定される。",
+      "downstream_impact": ["qa_pairs.json"]
+    },
+    {
+      "id": "F003",
+      "category": "whisper_hallucination_loop",
+      "secondary_categories": ["whisper_misrecognition"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "平口大臣演説中に 最高裁判所で性同一性障害特例法に、国会議員 の異物テキストが混入",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[1].utterances[1].text",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "utterances.json segment_index=1 の平口洋発言テキスト中に「持続可能な総合法律支援体制の整備・強化に努めます。最高裁判所で性同一性障害特例法に、国会議員、次に法務行政における国際貢献に向けた取組等についてです。」という文脈上不整合な断片が存在。raw_transcript.json whisper_id=23 (start=627.7s) で同テキストが確認でき、直後の whisper_id=24 は text=国会議員 のみ (avg_logprob=-1.12、compression_ratio=0.57) という低信頼度の1語断片。LLM 補正段階でこの異物が除去されず raw_transcript の corrected テキストおよび utterances に引き継がれた。",
+      "estimated_cause": "whisper_id=23〜24 の音声区間 (627.7〜675.6s) において音声品質の低下または段落間の無音区間で Whisper が前後文脈に引きずられたハルシネーションを生成。avg_logprob=-1.12 は Whisper の通常発話認識 (-0.05 程度) に比べて大幅に低く、ハルシネーション指標と判断できる。LLM 補正プロンプトが断片テキストの除去を適切に指示していない可能性。",
+      "downstream_impact": ["raw_transcript.json", "summary.json"]
+    },
+    {
+      "id": "F004",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "segment_index=3 の utterances.text に話者名プレフィックスが混入",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[3].utterances",
+        "segment_index": 3,
+        "qa_id": null
+      },
+      "evidence": "segment_index=3 の全5発話テキストに話者名が埋め込まれている。例: speaker=井上英孝 の text は「井上委員長：この際、福山法務大臣政務官から…」、speaker=染谷武信 の text は「染谷経理局長。染谷経理局長：令和8年度…」と話者名を重複表記。segment_index=0〜2 の発話テキストにはこの形式は一切なく、同ファイル内で不一致が生じている。",
+      "estimated_cause": "speaker_tagger または structurer の処理において、segment_index=3 のみ話者ラベリングプロンプトのアウトプットフォーマットが誤った形式で返却され、テキストに埋め込まれてしまったと推定される。段落境界の処理差異または LLM 出力パース失敗が原因の可能性。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F005",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "染谷武信 (最高裁判所事務総局経理局長) が metadata.speakers に未登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": 3,
+        "qa_id": null
+      },
+      "evidence": "metadata.json の speakers リストは [井上英孝, 平口洋, 三谷英弘, 福山守] の4名のみ。utterances.json segment_index=3 には 染谷武信 (最高裁判所事務総局経理局長) が参考人として登場し、裁判所予算説明 (696字) を行っている。speakers リストに含まれない登壇者がセッション後半に存在するため、UI上のスピーカー一覧から欠落する。",
+      "estimated_cause": "metadata.speakers の生成が scraper 側の事前情報 (委員会告知に記載された出席予定者) に基づいており、当日追加で出席を求められた参考人 (最高裁経理局長) を動的に追加するロジックがないと推定される。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F006",
+      "category": "summary_qa_divergence",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "topics.json が 1 件のみで summary の 6 key_topics と大幅乖離",
+      "location": {
+        "file": "topics.json",
+        "json_path": "$.topics",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "topics.json には 「令和8年度法務省関係予算」1件のみ存在。summary.json の key_topics は 「令和8年度法務省・裁判所関係予算」「出入国在留管理の適正化とDX」「再犯防止推進計画と保護司法の充実」「民法等改正法案」「司法手続きのデジタル化」「国際法務人材の育成と司法外交の推進」の6件。さらに topics.json の related_speakers=[井上英孝] は手続き上の委員長発言のみを指し、実際に内容を説明した 三谷英弘 が含まれていない。",
+      "estimated_cause": "structurer.py の topics 生成が qa_pairs のみを参照しており、qa_pairs に収録されなかったセグメント (平口大臣演説・染谷参考人) の内容がトピックとして抽出されない設計になっていると推定される。related_speakers も qa_pairs の質問者を誤ってマッピングしている。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F007",
+      "category": "role_label_error",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "福山守 (法務大臣政務官) の role が segment 2 では その他、segment 3 では 質疑者 と不整合",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[2].utterances[3].role",
+        "segment_index": 2,
+        "qa_id": null
+      },
+      "evidence": "utterances.json segment_index=2 の福山守発話 role=その他、segment_index=3 の福山守発話 role=質疑者。同一人物が同一セッション内で異なる role 値を持っており、どちらも不正確 (正しくは政務官としての所信報告者)。質疑応答のない委員会冒頭セッションにおいて 質疑者 ラベルが割り当てられること自体も問題。",
+      "estimated_cause": "speaker_tagger が各 segment を独立してロール判定するため、同一人物のロールが segment 毎に変動する可能性がある。また 質疑者/答弁者 の二値ラベル体系が政府側報告者・参考人といったロールを表現できていない。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F008",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "ジェスター → ゲスター に LLM が誤部分訂正 (正しい用語は不明)",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[1].utterances[1].text",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json whisper_id=10 のテキスト「上陸審査手続の一層の円滑化を図るためのジェスターの創設等を行う出入国管理及び難民認定法等改正案」に対し、LLM 補正後の utterances では「ゲスターの創設」に変更されている。「ジェスター」も「ゲスター」も法律用語として存在せず、どちらも誤認識と判断される。正しい用語は出入国管理法改正案の具体的システム名 (例: 電子渡航認証システム等) と推測されるが特定できない。",
+      "estimated_cause": "Whisper が専門用語・新造語・略称を音響特徴に基づき誤認識し、LLM 補正が類似音のカタカナ語に置換したが正確な法律用語への訂正には至らなかった。LLM の学習データに当該法改正の具体的システム名が含まれていない可能性。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F009",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.json の複数フィールドが null/空文字 (committee_id, session_number, duration, role)",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.committee_id",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json において committee_id=null、session_number=null、duration=\"\"、mediasp_hash=\"\" (衆議院セッションでは空が正常)。さらに speakers の全4名の role フィールドが空文字列 (\"\") であり、役職情報が affiliation にのみ存在し role には入っていない。",
+      "estimated_cause": "committee_id・session_number は衆議院TVの公式APIから取得できないため null が恒常的に入っていると推定 (systemic)。duration は HLS 解析完了前に metadata が書き込まれた可能性。speakers[].role の空文字は scraper が affiliation フィールドのみ取得し role の設定ロジックが未実装の可能性。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F010",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "raw_transcript に 散席しており・国勢調査・国内一案・厚生かつ円満 等の誤認識が残存",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[0].whisper_segments",
+        "segment_index": 0,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json segment_index=0 の Whisper 生テキストに複数の誤認識が存在: whisper_id=1「問題が散席しており」(→ 錯綜しており)、whisper_id=2「厚生かつ円満」(→ 公正かつ円満)、whisper_id=3「国勢調査承認要求」(→ 国政調査承認要求)、whisper_id=5「国内一案人権擁護」(→ 国内治安人権擁護)。corrected=True のため utterances.json では全て訂正済み。また segment_index=1 whisper_id=1 では「平口博士でございます」(→ 平口でございます) も発生しており LLM が正しく削除している。",
+      "estimated_cause": "Whisper large-v3-turbo が委員会冒頭の定型的手続き発言・固有名詞 (国政調査、国内治安) の認識精度が低い。短い単語の同音異義語混同が主因。LLM 補正で概ね解決されているため下流への影響は限定的。",
+      "downstream_impact": []
+    }
+  ],
+  "blindspots": [
+    "raw_transcript.json の全33 whisper_segment を逐字確認しておらず、segment_index=1 の長大な大臣演説中に他にも誤認識が潜在している可能性がある",
+    "外部の法律資料・国会議事録との照合は未実施のため、ゲスター の正確な用語は特定できていない",
+    "summary.json の key_commitments 内容が実際の発言と一致するかの逐字照合は未実施",
+    "topics.json の related_qa_ids=['qa_001'] の妥当性のみ検証済み; qa_pairs の evasion_score 算出ロジックは未検証"
+  ],
+  "narrative": {
+    "overall": "本セッションは法務委員会の新体制発足に伴う所信表明・予算説明セッション (質疑応答なし) であり、パイプラインが想定する質疑応答型フォーマットと乖離している。最重要問題は、平口法務大臣の政策演説 (3014字) が qa_pairs から完全欠落しており、このセッションの核心コンテンツがデータベース利用者に不可視になっていること。Whisper 認識精度は標準的水準で、ハルシネーション断片「最高裁判所で性同一性障害特例法に、国会議員」の混入は深刻だが孤立事例と評価される。ロールラベルの誤分類 (副大臣・政務官を質疑者と誤認) は質疑応答のない委員会セッションでシステム的に発生する構造的問題と推定される。スキーマの空フィールドは衆議院TVのデータ制約に起因する恒常的問題であり個別改善が困難。",
+    "top_findings": [
+      "平口法務大臣の政策説明演説 (3014字・全セッション内容の約50%) と染谷最高裁経理局長の予算説明 (696字) が qa_pairs に未収録。質疑応答なし型セッションでの structurer の設計限界を示す systemic な問題。",
+      "segment_index=1 の平口大臣演説テキスト中に Whisper ハルシネーション由来の断片「最高裁判所で性同一性障害特例法に、国会議員」が LLM 補正後も残存。whisper_id=24 の avg_logprob=-1.12 という低信頼度指標が事前検出に利用可能。",
+      "三谷英弘 (法務副大臣) の utterances.json ロールが「質疑者」に誤分類されており、政府報告者ロールが既存の役割体系で表現できていない。topics.json の related_speakers が委員長 (井上英孝) のみで実際の報告者 (三谷英弘) が欠落しているのも同根問題。"
+    ]
+  }
+}

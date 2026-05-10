@@ -1,0 +1,298 @@
+{
+  "session_id": "shugiin/2026/03/10/56111_総務委員会",
+  "chamber": "shugiin",
+  "date": "2026-03-10",
+  "deli_id": "56111",
+  "committee": "総務委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T10:00:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 4, "medium": 6, "low": 5, "total": 15},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "whisper_hallucination_loop",
+      "secondary_categories": ["whisper_misrecognition"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "神谷裕セグメントで「安倍内閣総理大臣」が22回ループ",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[5].whisper_segments[66]",
+        "segment_index": 5,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json の segments[5]（神谷裕、start_seconds=11165.3）の whisper_segments id=67 に text='安倍内閣総理大臣。安倍内閣総理大臣。...' が22回繰り返し（compression_ratio=11.58、avg_logprob=-0.054）。absolute timestamp は約12697秒。当該セッションは高市政権下（2026年）のため安倍は現職ではなく完全なハルシネーション。utterances.json および qa_pairs.json にはこのループは伝播していない（text フィールドで既にフィルタ済み）。",
+      "estimated_cause": "Whisper large-v3-turbo が約25秒の音声区間で繰り返しループに入った。compression_ratio=11.58 は典型的なループ指標（正常は 1.2〜2.0 程度）。BGM・拍手・無音区間でのハルシネーション。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F002",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["role_label_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_031 の答弁者が鈴木英敬（質疑者）に誤帰属",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[30].answer.speaker",
+        "segment_index": 4,
+        "qa_id": "qa_031"
+      },
+      "evidence": "qa_031（segment_index=4、平林晃の質疑セグメント）の answer.speaker='鈴木英敬'、answer.role='自由民主党・無所属の会'。utterances.json の segments[4].utterances[2] でも speaker=鈴木英敬、role=答弁者 と誤帰属。当該テキストは '総務大臣。地域未来交付金でございますが...' で始まり、政府側答弁の文体。鈴木英敬は segment 1（自民党質疑者）であり segment 4 で答弁者になり得ない。summary.json の key_commitments にはこのペアへの言及なし。",
+      "estimated_cause": "speaker_tagger が平林晃セグメント内の最初の質問（qa_031 の Q）直後の答弁音声において、segment 1 の質疑者（鈴木英敬）と混同。発話冒頭の '総務大臣。' という呼びかけラベルをWhisperが正しく認識したが、speaker_tagger がその直前の短い発声を鈴木英敬と誤認した可能性。",
+      "downstream_impact": ["summary.json"]
+    },
+    {
+      "id": "F003",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs の answer.role が 115/116 件で空文字列",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "全 116 件の qa_pairs を検査したところ、answer.role='' が 115 件、唯一の非空は qa_031 の '自由民主党・無所属の会'（これ自体は誤帰属の副産物）。答弁者の役職（総務大臣・自治財政局長等）がUI表示・集計で参照不能。question.role フィールドはそもそも存在しない（スキーマ非対称）。",
+      "estimated_cause": "structurer.py の LLM プロンプトまたはパース処理が answer.role を consistently 埋めていない。question 側に role フィールド自体がない点も含め、スキーマ設計の一貫性不足。",
+      "downstream_impact": ["summary.json", "topics.json"]
+    },
+    {
+      "id": "F004",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "主要答弁者（林芳正・高橋はるみ等）が metadata.speakers に未登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers は 12 名（委員長含む）の質疑者のみで、答弁者を一切含まない。qa_pairs での登場回数：出口自治財政局長(26件)、寺崎自治税務局長(24件)、林芳正/林総務大臣(各18件)、消防庁田辺次長(6件)、高橋はるみ(2件)、他多数。これら全員が metadata.speakers に未登録。116件の qa_pairs のうち答弁者側が metadata で検索不能。",
+      "estimated_cause": "metadata 生成パイプラインが衆議院TV のスクレイピングから質疑者のみを抽出し、答弁者（政府参考人・大臣・官僚）は対象外としている構造的設計。",
+      "downstream_impact": ["qa_pairs.json", "topics.json", "summary.json"]
+    },
+    {
+      "id": "F005",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "答弁者名の Whisper 誤認識（寺崎実現局長・寺崎自治事務局長等）が qa_pairs に伝播",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[80].answer.speaker",
+        "segment_index": null,
+        "qa_id": "qa_081"
+      },
+      "evidence": "qa_081 answer.speaker='寺崎実現局長'（正：寺崎自治税務局長）、qa_086 answer.speaker='寺崎自治事務局長'（正：寺崎自治税務局長）。utterances.json でも同様の誤認識が確認できる。'自治税務' を Whisper が '実現' や '自治事務' と誤認識。同様に qa_043 '出口地方財政局長'（正：出口自治財政局長）、qa_071 '出口財政局長' も存在。",
+      "estimated_cause": "Whisper large-v3-turbo が長い役職名の音声を誤認識。省庁固有の役職名（自治税務局長・自治財政局長）は訓練データが少なく、誤認識しやすい。speaker_tagger がこれを補正せずにそのまま採用。",
+      "downstream_impact": ["utterances.json", "topics.json"]
+    },
+    {
+      "id": "F006",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "同一答弁者の表記ゆれが大量に混在（林/出口/寺崎 三氏）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.speaker",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "林芳正=18件、林総務大臣=18件、林大臣=1件（計37件に三表記）。出口治明=3件、出口自治財政局長=26件、出口地方財政局長=1件、出口財政局長=1件、出口理事財政局長=1件（計32件に五表記）。寺崎一成=1件、寺崎自治税務局長=24件、寺崎実現局長=1件、寺崎自治事務局長=1件（計27件に四表記）。qa_id による集計・フィルタで同一人物として扱えない。",
+      "estimated_cause": "Whisper の書き起こし冒頭ラベル（'林総務大臣。'/'林大臣。'）が話者タグとして混入。structurer が正規化せずにそのまま採用。",
+      "downstream_impact": ["topics.json", "summary.json"]
+    },
+    {
+      "id": "F007",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "raw_transcript に「安倍内閣総理大臣。」の単発誤認識（ループ外）が複数箇所",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[2].whisper_segments[23]",
+        "segment_index": 2,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript segments[2] ws_id=24（田嶋要セグメント内、logprob=-0.827, comp=0.71）text='安倍内閣総理大臣。'、segments[4] ws_id=55（平林晃セグメント内）text='市長、石井啓一議長、石井啓一議長。'、segments[5] ws_id=77,103（神谷裕セグメント内）各 text='安倍内閣総理大臣。'。2026年セッションに安倍・石井啓一は文脈上不自然。utterances.json の text フィールドからは除去済み。",
+      "estimated_cause": "Whisper が短い無音・拍手区間または話者交代の合間に、国会議事録の学習データから頻出フレーズ（政府議事録での議長コール）をハルシネーション。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F008",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["speaker_misattribution"],
+      "severity": "medium",
+      "confidence": "medium",
+      "systemic_signal": "likely_systemic",
+      "title": "utterances で「田嶋要君。石井啓一議員」として誤認識テキストが混入",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[2].utterances[44].text",
+        "segment_index": 2,
+        "qa_id": null
+      },
+      "evidence": "utterances.json segments[2].utterances[44]（田嶋要、質疑者）text の冒頭が '田嶋要君。石井啓一議員、どういうふうに応急的にやっていくのかということと...' となっている。raw_transcript segments[2] ws_id=95（logprob=-0.935, comp=0.76）text='田嶋要議長 石井啓一議員' がそのまま次の発言頭部に連結されて伝播。発言本体は寺崎局長への質問であり、石井啓一は文脈に登場しない。",
+      "estimated_cause": "speaker_tagger が ws_id=95（短い誤認識ラベル）をフィルタせず、隣接 ws_id=96 のテキストと連結して utterance に組み込んだ。",
+      "downstream_impact": ["qa_pairs.json"]
+    },
+    {
+      "id": "F009",
+      "category": "role_label_error",
+      "secondary_categories": ["speaker_misattribution"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "委員長（古川康）の utterance に「お答えいたします」テキストが誤帰属",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[4].utterances[20]",
+        "segment_index": 4,
+        "qa_id": null
+      },
+      "evidence": "utterances.json segments[4].utterances[20]：speaker=古川康、role=委員長、text='古川康委員長：お答えいたします。'。委員長が答弁する文脈は存在せず、この utterance は政府参考人（デジタル庁系）の答弁の冒頭が委員長の発言として誤帰属された可能性が高い。qa_pairs.json では当該部分が qa_037 answer.speaker='政府参考人'（無名）となり、実際の答弁者名が失われている。",
+      "estimated_cause": "Whisper が話者交代の合間に委員長のマイク開放音を委員長発言として誤認識し、直後の政府参考人答弁冒頭と混合。",
+      "downstream_impact": ["qa_pairs.json"]
+    },
+    {
+      "id": "F010",
+      "category": "content_missing",
+      "secondary_categories": ["schema_empty_field"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "unknown",
+      "title": "qa_028 の answer.speaker・answer.full_text が空で答弁内容を記録できていない",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[27].answer",
+        "segment_index": 3,
+        "qa_id": "qa_028"
+      },
+      "evidence": "qa_028（中川宏昌、公営企業老朽化対策の技術人材不足）の answer.speaker=''、answer.full_text=''、answer.evasion_score=1.0、answer.summary='（本セグメント内に直接的な答弁なし。前後の文脈で要望として提示されている）'。utterances.json segments[3] には技術的なDX対応に関する答弁utteranceが存在するはずだが、structurer がこのQAを未回答と判定して空にした。",
+      "estimated_cause": "structurer の LLM が qa_028 の質問（技術職員不足のDX活用）に対する答弁を検出できなかった。前後の答弁と質問の境界判定ミスの可能性。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F011",
+      "category": "schema_inconsistency",
+      "secondary_categories": ["metadata_missing_speaker"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers の role フィールドが全員空文字列",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[*].role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers 全 12 エントリの role フィールドがすべて '' (空文字列)。委員長（古川康）・各質疑者の役職・所属政党等を格納すべきフィールドが空。affiliation に政党名等は入っているが、role（委員長/委員/議員等）の区別がない。",
+      "estimated_cause": "metadata 生成スクリプトが role を scraping 結果から取得できていない、または意図的に未設定。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F012",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata の committee_id・session_number・duration が null/空文字列",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.committee_id",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json：committee_id=null、session_number=null、duration=''、mediasp_hash=''（mediasp_hash は衆議院では不要だが duration='' は問題）。duration が空のためセッション総時間（metadata の speakers から推算すると約7.77時間）がメタデータから直接取得できない。",
+      "estimated_cause": "衆議院 HLS は duration 情報をヘッダーから取得しにくく、pipeline が未実装のまま。committee_id・session_number は衆議院TVのHTMLから抽出されていない。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F013",
+      "category": "duplicate",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "metadata.speakers に古川康（委員長）が午前・午後で2エントリ重複登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[0]",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers[0]: name=古川康, affiliation=総務委員長, start_seconds=1185.1, start_time=09:00（午前開会）。speakers[6]: name=古川康, affiliation=総務委員長, start_seconds=17385.5, start_time=13:30（午後再開）。同一人物が2エントリで登録されている。",
+      "estimated_cause": "衆議院TVの動画が午前・午後で別クリップとして提供され、各クリップの委員長発言開始点がそれぞれ speakers エントリとして生成された。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F014",
+      "category": "other",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "116件のうち12件の QA ペアがどのトピックにも分類されていない",
+      "location": {
+        "file": "topics.json",
+        "json_path": "$.topics[*].related_qa_ids",
+        "segment_index": null,
+        "qa_id": "qa_010"
+      },
+      "evidence": "topics.json の全トピック related_qa_ids に含まれない qa_ids: qa_010, qa_025, qa_026, qa_033, qa_039, qa_053, qa_054, qa_063, qa_068, qa_071, qa_092, qa_093（12件 = 全体の10.3%）。内容は多岐にわたり（外国税制・交通・DX・地方自治等）、特定の欠落パターンは見当たらない。",
+      "estimated_cause": "topics 生成 LLM が 11 トピックへの割り当てで一部の QA を漏らした。116 件のうち 12 件が未分類でも LLM がエラーを出さず通過。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F015",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "session_specific",
+      "title": "raw_transcript seg1 ws_id=13 に UTF-8 置換文字（U+FFFD）含む文字化けテキスト",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].whisper_segments[12]",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json segments[1].whisper_segments id=13：text='鈴木英敬� 鈴木英敬�'（U+FFFD 置換文字 2 箇所を含む、logprob=-0.582, comp=1.107）。発話者コールの短い区間で Whisper が認識できない文字を出力した。utterances.json には伝播していない。",
+      "estimated_cause": "Whisper が短い非テキスト音（拍手・ノイズ）区間で文字コード境界を誤認識し、不完全な UTF-8 シーケンスを出力した可能性。",
+      "downstream_impact": []
+    }
+  ],
+  "blindspots": [
+    "raw_transcript の全973件の whisper_segments を逐字精査していない（quality indicator の異常値を持つものをサンプリングのみ）",
+    "答弁内容の事実確認（数値・統計・政策言及）は外部資料との照合が必要で未実施",
+    "発言が途中でセグメント分割されているケースでの QA 対応関係の完全検証は未実施",
+    "utterances の全 347 件 utterance の内容精査は未実施（重大なものを中心にサンプリング）",
+    "qa_028 の実際の答弁が何であったかの確認（当該区間の utterances との突合）は未実施"
+  ],
+  "narrative": {
+    "overall": "本セッション（地方税法・地方交付税法改正案審議）のデータ品質は中程度（medium）と評価される。12名の質疑者・116件のQAペアという大規模なデータを処理しており、内容の構造化自体は概ね成功しているが、複数の系統的問題が検出された。最大の懸念は回答者（大臣・官僚）の metadata 未登録と answer.role 空白という設計上の問題で、答弁側のデータ活用性を著しく損なっている。Whisper の誤認識（安倍内閣ハルシネーションループ・安倍単発誤認識・石井啓一混入）はいずれも utterances/qa_pairs レベルではほぼ除去されており、フィルタ機構は概ね機能している。speaker_tagger による鈴木英敬への答弁誤帰属（qa_031）は downstream まで伝播した高severity 問題として要再生成の対象。",
+    "top_findings": [
+      "神谷裕セグメントで「安倍内閣総理大臣」が22回ループ（ws_id=67, compression_ratio=11.58）—現政権と無関係な前政権名のハルシネーションで、utterances/qa_pairs には伝播済みないが raw_transcript が汚染されている",
+      "qa_031 answer.speaker=鈴木英敬（本来は政府側答弁者）という speaker_misattribution—answer.role='自由民主党・無所属の会' という異常値とセットで発生しており、speaker_tagger の段階でセグメント外の話者を割り当てる構造的バグの症例",
+      "answer.role が 115/116 件で空文字列、かつ answer 側主要話者（林芳正・出口自治財政局長・寺崎自治税務局長ら）が metadata.speakers に全員未登録—答弁者情報の検索・集計が機能しないという利用者体験上の重大欠陥"
+    ]
+  }
+}

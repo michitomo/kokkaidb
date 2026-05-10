@@ -1,0 +1,280 @@
+{
+  "session_id": "sangiin/2026/04/21/8968_総務委員会",
+  "chamber": "sangiin",
+  "date": "2026-04-21",
+  "deli_id": "8968",
+  "committee": "総務委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T14:00:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 4, "medium": 5, "low": 5, "total": 14},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["content_missing"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_014: 林審議官(厚労省)の答弁が林芳正(総務大臣)に誤帰属",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[13].answer.speaker",
+        "segment_index": 3,
+        "qa_id": "qa_014"
+      },
+      "evidence": "utterances.json segment 3 では「林審議官」(厚生労働省)が「高齢者施設等をはじめとする福祉施設における水害対策は非常に重要な課題であります。このため垂直避難に有効な設備の設置、施設内における垂直避難場所の確保など、必要な措置を進めていく必要があると認識しております。ご指摘ございました、令和2年の7月豪雨災害における特別養護老人ホームでの被害も踏まえまして、厚生労働省では令和2年度補正予算から高齢者施設等が垂直避難用のエレベーター[以下truncated]引き続き、昨年6月に閣議決定されました第1次国土強靭化実施中期計画などに基づきまして...」と答弁している。qa_pairs.json では同一テキストが speaker=林芳正、role=総務大臣 として記録されている。実際の林芳正の発言は「今、委員がおっしゃったように、この社会福祉施設等の要配慮者利用施設における、この入所者の避難の実効性、これを確保して、犠牲者を発生させないということは重要であると。」という別の短い発言である。",
+      "estimated_cause": "speaker_tagger が「林」という姓の一致でマッチングし、厚労省「林審議官」と「林芳正総務大臣」を混同。姓のみで同定する際に役職名を区別できなかったと推定される。",
+      "downstream_impact": ["summary.json", "topics.json"]
+    },
+    {
+      "id": "F002",
+      "category": "content_missing",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_015 答弁 full_text が文中で途切れている",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[14].answer.full_text",
+        "segment_index": 3,
+        "qa_id": "qa_015"
+      },
+      "evidence": "qa_015 の answer.full_text は「...水防法においては水害時の避難に関して福祉施設等の要配慮した施設の避難確保計画の作成と訓練の実施が義務付けられ、その避難確保計画の中には」(161文字) で文末に句点も接続詞の着地もなく終了している。utterances.json では田辺次長の答弁テキスト自体も同様に途中で切れており(unmatched=true)、Whisper発話境界の取得漏れがそのまま structurer に伝搬した。scoring_confidence=medium も異常を示唆している。",
+      "estimated_cause": "Whisper セグメント境界または speaker_tagger のバッファ管理で田辺次長の発話後半が drop した。unmatched=true フラグが立っており、音声認識レイヤーの取得失敗が原因と推定される。",
+      "downstream_impact": ["topics.json"]
+    },
+    {
+      "id": "F003",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers に答弁者8名全員が未登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers に登録されているのは質疑者・委員長・林芳正(大臣)のみ9名。qa_pairs.json および utterances.json に登場する答弁者は次の8名だが全員未登録: 田辺次長、長谷川選挙部長、小川自治行政局長、中井次長、本田地域力創造審議官、笹野内閣審議官、門松、井上会長(NHK参考人)。加えて utterances.json では「林審議官」(厚労省)も発言しているが metadata に未登録。合計9名の答弁者が speakers リストから欠落しており、UI の人物検索・フィルタ機能が機能しない。",
+      "estimated_cause": "speaker_tagger が scraper から取得した発言者リスト(参議院TV detail.php の `class='play2'` アンカー)に掲載されない政府参考人・参考人を metadata に追加しない設計になっていると推定される。答弁者の自動補完ロジックが欠如している。",
+      "downstream_impact": ["topics.json", "summary.json"]
+    },
+    {
+      "id": "F004",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "笹野内閣審議官の氏名が「佐々野内閣審議官」と誤認識",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[5].utterances[3].text",
+        "segment_index": 5,
+        "qa_id": "qa_024"
+      },
+      "evidence": "utterances.json segment 5 で笹野内閣審議官の答弁 full_text が「佐々野内閣審議官。鹿児島県及び沖縄県におきましては...」と始まっており、2回とも「佐々野」と誤認識されている(qa_024, qa_025 に対応)。speaker_tagger は speaker_name 側は「笹野内閣審議官」と正しく補正しているが、full_text 内には「佐々野」が残存。qa_pairs.json の full_text にはこの誤認識テキストは含まれず訂正済みだが、utterances.json には誤りが残っている。",
+      "estimated_cause": "Whisper large-v3-turbo が珍しい苗字「笹野」を「佐々野」と誤認識。同音でないが音響的に近似する発音のため混同された。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F005",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "答弁者23件の answer.role が空文字列（大臣のみ有値）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "34件中23件(67.6%)の answer.role が空文字列 \"\" であり、田辺次長・長谷川選挙部長・小川自治行政局長・中井次長・本田地域力創造審議官・笹野内閣審議官・門松・井上会長らの役職名がすべて欠落している。林芳正(総務大臣)の role=\"総務大臣\" のみが有値。schema_version=\"2.0\" では role フィールドが定義されているにもかかわらず、政府参考人・参考人の役職が空文字で記録されている。",
+      "estimated_cause": "structurer が answer.role を metadata.speakers から引き当てているが、答弁者が metadata に未登録(F003参照)のため空文字になる。大臣は metadata に登録済みのため正常に取得できている。",
+      "downstream_impact": ["topics.json"]
+    },
+    {
+      "id": "F006",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata の全 speaker で start_time と duration_minutes が空/ゼロ",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[*].start_time",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "9名全員の start_time=\"\" かつ duration_minutes=0。さらに metadata の duration=\"\"、hls_url=\"\"、committee_id=null、session_number=null も未設定。start_seconds は正しく記録されているが、ヒューマンリーダブルな start_time(HH:MM:SS形式等)が全件空文字。",
+      "estimated_cause": "参議院スクレイパーが HLS 再生時刻の変換処理を実装していないか、duration 情報が参議院TV側 API から取得できない設計になっている可能性が高い。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F007",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metrics=null が qa_011, qa_014 の2件に存在",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[10].metrics",
+        "segment_index": 3,
+        "qa_id": "qa_011"
+      },
+      "evidence": "qa_011 と qa_014 の metrics フィールドが null。他32件は metrics オブジェクトが存在しており schema_version=\"2.0\" が設定されている。null metrics はダッシュボードのスコア集計・可視化で NULL 参照エラーや除外を引き起こす可能性がある。",
+      "estimated_cause": "structurer のメトリクス生成処理でタイムアウトまたは LLM の出力パースエラーが発生し、該当 QA ペアの metrics が設定されなかったと推定される。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F008",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「域外避難」が「行きがい避難」と誤認識され qa_025 に伝搬",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[24].answer.full_text",
+        "segment_index": 5,
+        "qa_id": "qa_025"
+      },
+      "evidence": "utterances.json segment 5 の笹野内閣審議官答弁テキスト: 「鹿児島県訓練は、武力攻撃事態下における離島からの行きがい避難を想定した訓練を通じまして...」。「行きがい避難」は国民保護法上の用語ではなく、「域外避難」(いきがいひなん? →ゐきがいひなん) または「広域避難」の誤認識と判断される。この文言が qa_025 の answer.full_text にそのまま含まれている。",
+      "estimated_cause": "Whisper が専門用語「域外避難」を音響的に近似する「行きがい避難」と誤認識した。国民保護関連の専門語彙が学習データ不足と推定される。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F009",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "小沢議員発言中「証紙」が「消費」と誤認識",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[1].utterances[9].text",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "utterances.json segment 1 の小沢雅仁発言: 「各党会派の議論ということですけれど、やっぱり消費を印刷する経費だとか、いろいろあると思いますし...」。文脈から「消費」は「証紙」の誤認識と判断される（前後の議論がすべて証紙貼付制度のデジタル化に関するもの）。この誤認識は qa_pairs.json のこの箇所に対応する QA ペアには含まれていない（別話者の発言後に小沢議員が続けた補足コメントのため独立した QA に切り出されていない）。",
+      "estimated_cause": "Whisper が「しょうし」という音に対して「証紙」より「消費」を優先的に認識した。選挙法文脈の専門語彙が学習データで希少と推定される。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F010",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "qa_004 full_text 中「証紙を貼る莫大な労力は総務委員会」は誤認識の混入",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[3].question.full_text",
+        "segment_index": 1,
+        "qa_id": "qa_004"
+      },
+      "evidence": "qa_004 の question.full_text に「そうすれば証紙を貼る莫大な労力は総務委員会。」という意味不明な文が含まれる。文脈は「証紙を貼る莫大な労力は[省ける/解消される]。」が正しいはずで、「総務委員会」はWhisperが後続のノイズや場内音(委員長の発声等)を混入させた誤認識と判断される。",
+      "estimated_cause": "Whisper が小沢議員の発話途中に「総務委員会」という別の音声(委員長の割り込み・場内放送等)を混入させた。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F011",
+      "category": "role_label_error",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "伊波洋一・齊藤健一郎の role が「その他」（質疑者が正しい）",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[5].role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json の伊波洋一の role=\"その他\"、齊藤健一郎の role=\"その他\"。両者ともセッション内で積極的に質疑を行っており(伊波: qa_023〜qa_027 全5問、齊藤: qa_031〜qa_034 全4問)、正しくは「質疑者」とすべき。speakers リストの他の質疑者(小沢・足立・宮崎・中田・安野)は「質疑者」と正しく分類されており、特定議員のみ「その他」に誤分類されている。",
+      "estimated_cause": "参議院TVの detail.php 発言者リスト(`class='play2'`)の取得順序や会派名称により、scraper が「所属会派なし・複数人会派」の議員を「その他」にフォールバックする可能性がある。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F012",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "田上次長と田辺次長の混在（utterances と qa_pairs で呼称が異なる）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[0].question.full_text",
+        "segment_index": 1,
+        "qa_id": "qa_001"
+      },
+      "evidence": "qa_001 の question.full_text と utterances.json segment 1 で小沢議員が「田上次長お越しでございますので」と呼んでいるが、実際の答弁者表記は全件「田辺次長」。委員が「田上次長」と呼んだのは議場での呼び違えか Whisper 誤認識の可能性がある。統一が必要。",
+      "estimated_cause": "実際の役職者氏名の確認不足か、Whisper が「たなべ」を「たがみ」と誤認識した可能性。議員が当日場内で呼び間違えた可能性もある。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F013",
+      "category": "other",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers に 林芳正 が segment 8 の start_seconds で登録されているが質問者セグメントと対応しない",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[8].start_seconds",
+        "segment_index": 8,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers に林芳正(総務大臣)が start_seconds=9173.19 で登録されているが、これは utterances.json segment 8 (法律案説明)に対応する時刻。segment 8 は法律案趣旨説明(質疑なし)であり、qa_pairs.json にはこのセグメントの QA エントリが存在しない。実際に林芳正が答弁しているのは segments 1〜7 であり、start_seconds が実態と乖離している。",
+      "estimated_cause": "metadata.speakers の start_seconds は「その話者が最初に登場した segment の start_seconds」ではなく、参議院TV側のメタデータ(発言者リスト)の登場順を使用しているため、法律案説明の開始時刻が登録されていると推定される。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F014",
+      "category": "content_missing",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "segment 8（法律案趣旨説明）が qa_pairs から完全に除外されている",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs",
+        "segment_index": 8,
+        "qa_id": null
+      },
+      "evidence": "utterances.json には segment 8 (start_seconds=9173.19) として林芳正大臣による「株式会社海外通信放送郵便事業支援機構」の法律案趣旨説明が記録されているが、qa_pairs.json には対応するエントリが存在しない(segments は 1〜7 のみ)。法律案の趣旨説明や採決前の内容が失われている。ただし、これは QA 形式のデータ構造上、質疑応答でない趣旨説明が QA ペアとして切り出せないため意図的に除外された可能性もある。",
+      "estimated_cause": "structurer が「質疑者/答弁者」のペアを前提としているため、単独の趣旨説明セグメントを QA ペアに変換できない設計になっていると推定される。",
+      "downstream_impact": ["summary.json"]
+    }
+  ],
+  "blindspots": [
+    "raw_transcript.json の個別 whisper_segments を全件精査していない(サンプリングのみ)",
+    "クロード・ミトス(Claude Mitos)という名称の事実確認が未実施。qa_028 では安野議員が「クロード・ミトス」と呼んでいるが、実際の製品名は Claude 3.7 Sonnet (\"Sonnet with extended thinking\")など。ただし政治家の発言として記録する本 DB の性質上、事実確認による修正は不適切であり blindspot として記録する",
+    "GPT-5.4 サイバー(qa_028)という製品名の実在性未確認。実際には GPT-4o または o1 の防衛向けバリアントの可能性があるが、安野議員の発言として記録しているため対処不要",
+    "外部の議会会議録や議員名簿との照合による人名誤認識の追加チェックは未実施",
+    "related_law_ids の clb-5156 がどの法律に対応するかの検証未実施"
+  ],
+  "narrative": {
+    "overall": "このセッションは消防装備・選挙制度・水害避難・地域振興・国民保護訓練・サイバーセキュリティ・NHKと多岐にわたる行政課題について7名の質疑者が順に質問した標準的な参議院総務委員会の審議記録である。Whisper文字起こしおよび LLM 構造化の品質は概ね許容範囲内であるが、複数の中程度〜高重大度の問題が確認された。最も深刻な問題は、厚労省「林審議官」の答弁が「林芳正総務大臣」に誤帰属されていること(F001)で、同姓の別人物を混同する LLM の話者識別限界が露呈している。また metadata.speakers から答弁者8名全員が欠落するという構造的問題(F003)はフィルタ・検索機能に直接影響する。Whisper誤認識では「笹野→佐々野」「域外避難→行きがい避難」「証紙→消費」など複数の固有名詞・専門語彙の誤認識が確認されており、国民保護・選挙法分野の専門語彙への対応強化が課題である。",
+    "top_findings": [
+      "qa_014 で厚労省「林審議官」の答弁内容が「林芳正総務大臣」(role=総務大臣)に誤帰属されており、答弁者が別省庁にもかかわらず答弁者識別が完全に失敗している",
+      "metadata.speakers に答弁者8名(田辺次長・長谷川選挙部長・小川自治行政局長・中井次長・本田審議官・笹野審議官・門松・井上会長)が全員未登録であり、人物検索・フィルタ機能に支障が出る構造的欠陥",
+      "qa_015 answer.full_text が文の途中で切断されており(161文字、句点なし終端)、田辺次長の答弁の実質的内容が失われている"
+    ]
+  }
+}

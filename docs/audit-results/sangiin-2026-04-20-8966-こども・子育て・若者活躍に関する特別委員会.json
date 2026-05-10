@@ -1,0 +1,262 @@
+{
+  "session_id": "sangiin/2026/04/20/8966_こども・子育て・若者活躍に関する特別委員会",
+  "chamber": "sangiin",
+  "date": "2026-04-20",
+  "deli_id": "8966",
+  "committee": "こども・子育て・若者活躍に関する特別委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T10:00:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 2, "medium": 7, "low": 4, "total": 13},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["role_label_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_033 質問者が「中村局長（公明党）」に誤帰属 → 実際は宮崎勝",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[32].question.speaker",
+        "segment_index": 5,
+        "qa_id": "qa_033"
+      },
+      "evidence": "qa_033 question.speaker=「中村局長」、party=「公明党」と記録されているが、raw_transcript.json segment 5 のテキストを照合すると「一方で気になるのが補正の希望感です。補正率の水準をあくまで限定的な調整にとどめるのか…」という発言は、直前の中村局長の政府答弁（地域手当見直しの詳細説明）が終わった直後に続く宮崎勝（公明党）の追質問として出現する。中村局長は答弁者であり質問者になりえない。topics.json の「多様な保育・育児支援の拡充」related_speakers にも「中村局長（公明党）」と誤記されている。",
+      "estimated_cause": "speaker_tagger が segment 5 の冒頭付近に配置された政府答弁（中村局長）の直後の発言を、前の話者の継続として誤帰属した。segment 5 の raw text が「宮崎勝君。」という委員長呼称で始まり、その直後に中村局長の答弁が続く特殊な構造（前の質疑への答弁が先に配置される）が混乱の原因。",
+      "downstream_impact": ["topics.json（related_speakersに中村局長（公明党）と誤記）", "utterances.json"]
+    },
+    {
+      "id": "F002",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "木原稔大臣の名前が「木川田」と誤認識（8セグメント・10箇所以上）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[*].whisper_segments",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "seg2 ws62「木川田大臣」、seg3 ws10「木川田内閣府」、seg4 ws0「木川田内閣府特命担当大臣」、seg4 ws55「木川田大臣」、seg5 ws2「木川田内閣府特命担当大臣」、seg5 ws52「木川田大臣」、seg6 ws1「木川田内閣府特命担当大臣」、seg7 ws28「木川田大臣の御所見をお伺いいたします。木川田大臣」、seg8 ws19「木川田大臣」、seg8 ws29。LLM補正後のcorrected textでは「木原」に修正されているが、whisper_segments 原文に誤記が残存。",
+      "estimated_cause": "Whisper large-v3-turbo が「木原稔（きはらみのる）」の発音を「木川田（きかわだ）」と音韻混同して誤認識。「きは」→「きかわ」の変化。LLM補正でほぼ修正されたが whisper_segments レイヤーには原形が残る。",
+      "downstream_impact": ["raw_transcript.json whisper_segments に誤記が全セッションにわたり残存"]
+    },
+    {
+      "id": "F003",
+      "category": "schema_inconsistency",
+      "secondary_categories": ["whisper_misrecognition"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "斉藤/斎藤 異字同音で同一答弁者が2種の漢字表記に分散",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.speaker",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "qa_008, qa_012, qa_048 では answer.speaker=「斉藤支援局長」（斉=U+6589）、qa_015〜qa_020 では「斎藤支援局長」（斎=U+6596）と異なる漢字を使用。raw_transcript でも seg2「子ども家庭庁 斉藤支援局長」、seg3「こども家庭庁斎藤支援局長」と混在。同一人物（こども家庭庁支援局長）が2表記で記録されている。",
+      "estimated_cause": "Whisper が発音「さいとう」の漢字変換で「斉」「斎」を文脈によって不安定に選択。LLM構造化ステップおよびcorrection stepで正規化が未実施。",
+      "downstream_impact": ["speaker 集計・フィルタリングで同一人物が2名として扱われる"]
+    },
+    {
+      "id": "F004",
+      "category": "schema_inconsistency",
+      "secondary_categories": ["whisper_misrecognition"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "中村局長の肩書が3表記（中村生育局長/中村政役/中村局長）に分散",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.speaker",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "qa_001〜qa_004「中村生育局長」、qa_024〜qa_030「中村政役」（utterances.jsonでは「中村政役局長」）、qa_033〜qa_035・qa_038〜qa_039「中村局長」の3表記。「政役」はWhisper が「生育（せいいく）」を「政役（せいえき）」と誤認識したと推定される。raw_transcript corrected textにも「中村政役局長」が混入。",
+      "estimated_cause": "Whisper の音韻誤認識（生育[せいいく]→政役[せいえき]）とLLM構造化時の speaker 正規化未実施の組み合わせ。",
+      "downstream_impact": ["speaker 集計で同一人物が3名として扱われる", "qa_pairs の answer speaker の一貫性喪失"]
+    },
+    {
+      "id": "F005",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers に答弁者・政府参考人16名が全て未登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers には委員長（舟山康江）と質疑者8名のみ登録。qa_pairs.json に出現する answer.speaker の木原稔、津島内閣副大臣、竹林（法務省審議官）、斎藤支援局長、中村局長、中村政役、川野政策立案総括審議官、堀野学習基盤審議官、包み審議官、政府側（匿名）等16ユニークな答弁者が全て未登録。",
+      "estimated_cause": "スクレイパー（sangiin.py）のspeakers収集ロジックが参議院TVの質疑者リスト（class=\"play2\" アンカー）のみを対象とし、政府参考人リスト（別構造のHTML要素）を収集していない。",
+      "downstream_impact": ["APIやUIで答弁者による検索・フィルタ不可能", "答弁者の所属省庁情報が参照できない"]
+    },
+    {
+      "id": "F006",
+      "category": "content_missing",
+      "secondary_categories": ["timestamp_inconsistency"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_044の回答本文がセグメント境界で切断（「日本人が68人」で終了）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[43].answer.full_text",
+        "segment_index": 6,
+        "qa_id": "qa_044"
+      },
+      "evidence": "qa_044（中田優子の外国人出生数質問）の answer.full_text 末尾が「令和6年の日本における出生数は、日本人が68人」で切断。実際の答弁（utterances.json seg7 utt0）は「日本人が77万759人で、97.9%。外国人が16,874人で2.1%。令和5年は…」と続く統計データを含む。川野政策立案総括審議官の答弁がseg6/seg7の音声境界を跨いだため後半が欠落。",
+      "estimated_cause": "川野審議官の答弁が audio segment 6（9088.54s）末尾で切断され、続きが segment 7（9857.51s）冒頭の utterances に分配された。qa_pairs structurer が seg6 内の断片テキストのみを使用し、seg7 の続きを統合しなかった。",
+      "downstream_impact": ["出生数統計（日本人77万759人、外国人16,874人）が全て欠落した不完全な答弁が記録される"]
+    },
+    {
+      "id": "F007",
+      "category": "timestamp_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "medium",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_044のvideo_urlが中田優子質疑開始より約13分早い高木かおりの開始時刻を指す",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[43].video_url",
+        "segment_index": 6,
+        "qa_id": "qa_044"
+      },
+      "evidence": "qa_044 video_url=「https://webtv.sangiin.go.jp/webtv/detail.php?sid=8966#9088.54」（高木かおり質疑開始）。metadata.speakers での中田優子 start_seconds=9857.51（segment 7）。差は769秒（約13分）。中田優子の実際のQ&Aは raw_transcript segment 7（9857.51s 以降）に記録されている。segment_index=6 の設定もsegment 7 が正しい。",
+      "estimated_cause": "中田優子の質問がaudioセグメント切替直前のseg6末尾utterancesに含まれたため、structurer がseg6の開始秒数をvideo_urlに誤使用した。",
+      "downstream_impact": ["video_urlリンクが約13分早い位置（高木かおりの質疑開始部）を指す"]
+    },
+    {
+      "id": "F008",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "「包み審議官」は実在しない役職名（法務省大臣官房審議官の誤認識）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[48].answer.speaker",
+        "segment_index": 8,
+        "qa_id": "qa_049"
+      },
+      "evidence": "qa_049 answer.speaker=「包み審議官」。raw_transcript seg8 text に「法務省大臣官房、包み審議官。お答えいたします。」と記録。「包み（つつみ）」は日本語の官僚姓として極めて稀。utterances.json seg8 でも同表記が踏襲。法務省大臣官房審議官の実名が認識できていない。",
+      "estimated_cause": "Whisper が法務省大臣官房審議官の氏名を「包み」と誤認識し、LLM補正・構造化の両段階で修正されなかった。",
+      "downstream_impact": ["当該審議官の答弁が誰のものか識別不能"]
+    },
+    {
+      "id": "F009",
+      "category": "whisper_hallucination_loop",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "Whisper が話者呼称テキストを繰り返しループ生成（seg4/seg5中心）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[4].whisper_segments, $.segments[5].whisper_segments",
+        "segment_index": 5,
+        "qa_id": null
+      },
+      "evidence": "seg5 whisper_segments: 「宮崎勝�」7回、「宮崎議員」4回、「宮崎県議長。」3回（誤認識を含む）、「中村局長。」3回。seg4 whisper_segments: 「小林さん。」5回、「小林さん。小林さん。」4回、「小林さやかさん。」3回。合計20件以上の繰り返し出力が確認された。",
+      "estimated_cause": "Whisper large-v3-turbo が話者切替・無音区間で委員長による議員呼称（「宮崎勝君。」等の短いフレーズ）を繰り返しループ出力する既知の傾向。",
+      "downstream_impact": ["raw_transcript.json の whisper_segments に大量のノイズが残存（LLM補正後のtextでは概ね除去済み）"]
+    },
+    {
+      "id": "F010",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata の duration/hls_url/committee_id/session_number/start_time/duration_minutes が全て空",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.duration, $.hls_url, $.committee_id, $.session_number, $.speakers[*].start_time, $.speakers[*].duration_minutes",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "duration=\"\", hls_url=\"\", committee_id=null, session_number=null。9名全員の start_time=\"\", duration_minutes=0。start_seconds は正しく設定（1857.59〜10787.76）されており、HLS URL 取得段階まで成功したが最終フィールドへの書き込みが欠落。",
+      "estimated_cause": "パイプラインの duration/hls_url 計算ステップが未実装または失敗（mediasp.jp 解決後の HLS URL が metadata に書き戻されていない）。start_time 変換（秒→HH:MM:SS）未実装。",
+      "downstream_impact": ["動画時間表示不可", "HLS直接再生不可", "話者別発言時間サマリ不明"]
+    },
+    {
+      "id": "F011",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs 全53件の answer.role が空文字",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "全53件の answer.role=\"\"（空文字）。question.intent は設定済み。answer.speaker は設定されているが role（大臣/副大臣/政府参考人/局長等）は未入力。",
+      "estimated_cause": "LLM structurer が answer.role フィールドを生成しない設計になっているか、プロンプトで当該フィールドが指示されていない。",
+      "downstream_impact": ["答弁者の役職によるフィルタリング・集計不可"]
+    },
+    {
+      "id": "F012",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "「想定的に容易になり」が答弁テキストに残存（標準日本語に存在しない語）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[3].answer.full_text",
+        "segment_index": 1,
+        "qa_id": "qa_004"
+      },
+      "evidence": "qa_004 answer.full_text に「認定事務が想定的に容易になり、迅速な支給につながる」。raw_transcript seg1 corrected text にも同じ表現が存在。「想定的に」は標準日本語に存在しない語であり、「相対的に」「統計的に」等の誤認識と推定。",
+      "estimated_cause": "Whisper が「相対的に（そうたいてきに）」等を「想定的に（そうていてきに）」と音韻混同して誤認識し、LLM補正・構造化の両段階でも検出されなかった。",
+      "downstream_impact": ["答弁テキストに意味不明瞭な語が記録"]
+    },
+    {
+      "id": "F013",
+      "category": "whisper_hallucination_loop",
+      "secondary_categories": ["fact_error"],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "session_specific",
+      "title": "「高市内閣総理大臣」がWhisper hallucination として木原大臣答弁部に混入",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[5].text",
+        "segment_index": 5,
+        "qa_id": "qa_036"
+      },
+      "evidence": "raw_transcript seg5 corrected text に「宮崎議員。\nご指摘の子ども誰でも通園制度からの利用からの、高市内閣総理大臣、すべての子どもの育ちと子育て、家庭を支援する仕組みを推進していきたいと考えております。」が混入。文脈的に木原大臣が答弁する場面。utterances.json ではこの箇所が木原稔に正しく帰属されているが、corrected text には残存。",
+      "estimated_cause": "Whisper が首相名（高市早苗）を音声から拾い文脈外で挿入。LLM補正で意味解析したが除去しきれなかった可能性がある。",
+      "downstream_impact": ["raw_transcript.json corrected text に首相名の不正挿入が残存"]
+    }
+  ],
+  "blindspots": [
+    "raw_transcript の whisper_segments 全チャンクの逐字精査は実施していない（サンプリングのみ）",
+    "外部の議員名簿・政府参考人名簿との照合は未実施（包み審議官の実名特定不可）",
+    "summary.json の key_commitments と実際の答弁内容の詳細な事実確認は表面的",
+    "topics.json の related_qa_ids の意味論的整合性（qa_021が「多様な保育」と「ひとり親」両トピックに跨るべきかどうか等）は未検証",
+    "音声ファイル自体への直接アクセスができないため、Whisper誤認識の完全な列挙は不可能"
+  ],
+  "narrative": {
+    "overall": "本セッションは9名の質疑者と53件のQ&Aペアを含む中規模委員会審議の記録であり、qa_pairsの構造・topics/summaryとの整合性は概ね保たれている。しかし、speaker_tagger由来の誤帰属（qa_033の質問者が中村局長に誤記）とWhisperの体系的な固有名詞誤認識（木原大臣→木川田、中村生育局長→中村政役）が複数のファイルにわたって影響しており、speaker集計・フィルタリングの信頼性を損なっている。答弁者がmetadataのspeakersから全件欠落している点はパイプライン設計上の構造的問題であり、他セッションでも同様の課題が生じていると推定される。セグメント境界問題（qa_044の回答切断・video_url誤指定）はセグメント分割ロジックの改善で対処すべき横断的な課題を示している。",
+    "top_findings": [
+      "qa_033 speaker誤帰属: 公明党・宮崎勝の質問が中村局長（政府官僚）の質問として記録されており、topics.jsonにも伝播している。誤った人物が質問者として永続的に記録される高影響の問題。",
+      "中村局長の3表記分散（中村生育局長/中村政役/中村局長）と斉藤/斎藤の異字混在: 同一答弁者が複数の表記で記録され、speaker集計で別人扱いされる。パイプライン全体で発生する構造的問題。",
+      "qa_044の回答切断: 外国人出生数統計データ（日本人77万759人、外国人16,874人）が全て欠落した不完全な答弁が記録されており、統計的事実が正確に伝わらない。セグメント境界跨ぎ問題の典型例。"
+    ]
+  }
+}

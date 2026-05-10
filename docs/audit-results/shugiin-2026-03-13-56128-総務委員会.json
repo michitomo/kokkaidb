@@ -1,0 +1,279 @@
+{
+  "session_id": "shugiin/2026/03/13/56128_総務委員会",
+  "chamber": "shugiin",
+  "date": "2026-03-13",
+  "deli_id": "56128",
+  "committee": "総務委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T10:00:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 4, "medium": 5, "low": 5, "total": 14},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "whisper_hallucination_loop",
+      "secondary_categories": ["content_missing"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "Whisperが決議文の静音区間に架空議員名を挿入し項目4・5・9・10・11が欠落",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].whisper_segments[4]",
+        "segment_index": 1,
+        "qa_id": "qa_001"
+      },
+      "evidence": "seg1 id=5 avg_logprob=-1.277 compression_ratio=0.625 text=「山本一議員」、id=9 avg_logprob=-1.355 cr=0.571 text=「国会議員」。これらは決議案条文の4・5番と9〜11番にあたる約60秒×2区間の無音/低音部に挿入された架空テキスト。corrected textでも items 1,2,3→6→7,8→12と番号が飛んでおり、qa_001.question.full_textでも同じ欠番パターンが確認できる（re.findall結果: ['1.','2.','3.','6.','7.','8.','12.']）。",
+      "estimated_cause": "Whisperが低音量・休止区間でhallucinate short-string（単語レベル、logprob<-1.2かつcr<0.65）する既知パターン。LLM補正ステップで誤テキストの削除は行われたが、元来存在した条文テキストも一緒に消去されたか、そもそも音声として収録されていなかった可能性がある。",
+      "downstream_impact": ["qa_pairs.json", "summary.json", "topics.json"]
+    },
+    {
+      "id": "F002",
+      "category": "content_missing",
+      "secondary_categories": ["summary_qa_divergence"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "井上達彦（NHK会長）の発言がqa_pairsに一切存在しない",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs",
+        "segment_index": 2,
+        "qa_id": null
+      },
+      "evidence": "utterances.json seg[2]に role=参考人 speaker=井上達彦 の発言が存在（「附帯決議を十分に踏まえて、協会の運営にあたり業務執行に万全を期したいと考えております」）。summary.json の key_commitments[2] も 井上達彦 の約束として qa_id=\"qa_002, qa_003, qa_004, qa_005, qa_006, qa_007\" を参照しているが、これらのペアはすべて林芳正が answerer であり、井上達彦は含まれていない。qa_pairs に 井上達彦 のエントリがゼロ。",
+      "estimated_cause": "LLM構造化ステップが 参考人 による発言を Q&A として分類できず、qa_pair を生成しなかった。NHK予算承認セッションでは NHK会長も大臣と並んで決議に応答する慣行があるが、structurer が想定する「質問→答弁」2者フォーマットに合致しないため脱落したと推定。",
+      "downstream_impact": ["summary.json"]
+    },
+    {
+      "id": "F003",
+      "category": "schema_inconsistency",
+      "secondary_categories": ["whisper_misrecognition"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "附帯決議の表記が「不帯決議」に統一されず4ファイルで不一致",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[2].utterances[2].text",
+        "segment_index": 2,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript whisper raw: 「不対決議」（2箇所）。corrected text / utterances: 「不帯決議」（4箇所）。summary.json: 「附帯決議」（4箇所、正しい）。qa_pairs.json question.full_text: 「附帯決議」（正しい）だが answer.summary: 「不帯決議の趣旨を…」（6箇所、誤り）。正しい法令用語は「附帯決議」（ふたいけつぎ）。Whisperの音韻誤認（ふたい→不対/不帯）がLLM補正で部分的にしか修正されなかった。",
+      "estimated_cause": "Whisperが「ふたい」を「不対」と誤認識。LLM補正ステップが「不対→不帯」と部分補正したが、「附帯」への完全修正に至らなかった。structurer が answer.summary を生成する際に補正前の utterances テキストを参照したため 「不帯」表記が残留。",
+      "downstream_impact": ["qa_pairs.json", "utterances.json"]
+    },
+    {
+      "id": "F004",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers に 林芳正（総務大臣）と井上達彦（NHK会長）が未登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers には [古川康, 神谷裕, 中川宏昌] の3名のみ。utterances.json には 林芳正（答弁者、seg[1]・seg[2]）と 井上達彦（参考人、seg[2]）が存在する。qa_pairs でも 林芳正 が全7ペアの answerer として登場。summary.key_commitments でも両名が記録されている。",
+      "estimated_cause": "metadata 生成ロジックが shugiintv.go.jp のスクレイピング結果（発言者リスト）をそのまま使用しており、大臣・参考人は委員会の発言者リストに含まれないか、別フィールドに記載されているため取り込まれない。",
+      "downstream_impact": ["summary.json", "qa_pairs.json"]
+    },
+    {
+      "id": "F005",
+      "category": "role_label_error",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "神谷裕・中川宏昌のroleが「質疑者」だが実際は「提出者」（動議提案者）",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[1].utterances[1].role",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "utterances.json seg[1]の神谷裕 role=「質疑者」、seg[2]の中川宏昌 role=「質疑者」。しかし両者の発言は「ただいま議題となりました決議案につきまして、提出者を代表してその趣旨を御説明申し上げます」であり、動議の提出者として案文を朗読している。本セッションはQ&Aではなく動議提出→採決の場であり、「質疑者」ではなく「提出者」が正確なrole。",
+      "estimated_cause": "speaker_tagger が utterances の role 分類をパイプライン的に「質問→質疑者、答弁→答弁者」で機械処理するため、動議提出という特殊な発言形態に対応していない。",
+      "downstream_impact": ["qa_pairs.json"]
+    },
+    {
+      "id": "F006",
+      "category": "summary_qa_divergence",
+      "secondary_categories": ["content_missing"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.key_commitments の井上達彦エントリがqa_pairsの誤IDを参照",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments[2].qa_id",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "summary.json key_commitments[2]: speaker=「井上達彦」role=「日本放送協会会長」qa_id=「qa_002, qa_003, qa_004, qa_005, qa_006, qa_007」。しかし qa_002〜qa_007 の answer.speaker はすべて「林芳正」であり、井上達彦は答弁者として登場しない。井上達彦の発言はこれらのペアには対応しない。",
+      "estimated_cause": "structurer が参考人発言を独立した qa_pair として生成できなかったため、最も関連するQAのID群を代替参照として割り当てた。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F007",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "参政党→賛成党、チームみらい→チーム未来 の党名誤認（raw未補正）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[0].whisper_segments[4].text",
+        "segment_index": 0,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript seg[0] id=5: 「…国民民主党無所属クラブ賛成党チーム未来の6派…」。seg[1] id=18: 同様。utterances では 参政党・チームみらい に正しく補正されている。しかし raw_transcript.json には誤記が残存しており、将来の再処理時にフィードバックされるリスクがある。",
+      "estimated_cause": "Whisperの日本語語彙バイアス：「さんせいとう」を「賛成党」（一般語）と解釈、「チームみらい」を「チーム未来」（漢字変換）と解釈。LLM補正が utterances では修正したが raw_transcript の whisper_segments.text フィールドは未更新。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F008",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "神谷裕の名前が「上谷裕志」とWhisper誤認識（seg1 id=1）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].whisper_segments[0].text",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "raw seg1 id=1 text: 「…提出者から趣旨の説明を求めます上谷裕志君ただいま議題と…」。corrected text では「神谷裕君」に修正済み。utterances も正しい。raw_transcript の whisper_segments.text には誤記残存。",
+      "estimated_cause": "Whisperが「かみたに ゆたか」を同音近似の「うえたに ひろし」に誤認識。LLM補正ステップで文脈から判断し修正済み。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F009",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「起立を求めます」→「規律を求めます」 の誤認識が2箇所（raw未補正）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[0].whisper_segments[2].text",
+        "segment_index": 0,
+        "qa_id": null
+      },
+      "evidence": "seg[0] id=3: 「…本案に賛成の諸君の規律を求めます規律総員よって…」。seg[1] id=17: 「…本件を承認すべきものと決するに賛成の諸君の規律を求めます規律相印よって…」。utterances では「起立を求めます。起立。総員」に正しく修正されている。",
+      "estimated_cause": "Whisperが「きりつ（起立）」を「きりつ（規律）」の同音異義語と誤認識。parliamentary procedureの専門語彙として起立が正しい。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F010",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "全qa_pairs.answer.role が空文字列（林芳正の役職が未記録）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "qa_001〜qa_007 全7ペアで answer.role=\"\" 。utterances.json では 林芳正 の role=「答弁者」と記録されており、summary.json では role=「総務大臣」と記録されている。qa_pairs だけが空。",
+      "estimated_cause": "structurer が answer.role フィールドを utterances の role（答弁者）ではなく別ソース（役職名）から取得しようとするが、大臣の役職名を特定できなかった場合に空を返す設計と推定。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F011",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers[*].role が全員空文字列",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[*].role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "古川康 role=\"\"、神谷裕 role=\"\"、中川宏昌 role=\"\"。affiliation フィールドには所属情報（総務委員長、中道改革連合・無所属）があるが、role（委員長、委員など）は空。",
+      "estimated_cause": "metadata スクレイピング時に role フィールドを取得するロジックが未実装、またはサイト上で役職情報が別の場所に記載されているため取得できない。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F012",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.duration が空文字列、committee_id・session_number が null",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.duration",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json: duration=\"\"（空文字列）、committee_id=null、session_number=null。他の3ファイルからセッション長は推計可能（最終 start_seconds=21791.5 + duration_minutes=6 → 約22分間）だが、metadata では未記録。",
+      "estimated_cause": "衆議院TVサイトでは総合時間・委員会IDがHTML上に構造化されていない、またはスクレイパーが未取得。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F013",
+      "category": "duplicate",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_002〜007の answer.full_text が実質的に同一（林芳正の同一発言を6回複製）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[1:7].answer.full_text",
+        "segment_index": 2,
+        "qa_id": "qa_002"
+      },
+      "evidence": "qa_002〜qa_007 の answer.full_text はすべて「林芳正大臣：ただいま御決議のありました事項につきましては、その御趣旨を十分に尊重してまいりたいと存じます。」（qa_001 のみ「林芳正：」と役職なし）。6件がまったく同じ発言の繰り返し。evasion_score も全件 0.4 に固定。",
+      "estimated_cause": "決議採択セッションでは大臣が条文ごとではなく全体に対して1回だけ答弁するため、LLMが各条文ペアにそれを割り当てた。構造的に正しい実態だが、データ利用者が「7件の別々の答弁」と誤認するリスクがある。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F014",
+      "category": "whisper_hallucination_loop",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "seg0 id=2 に「総理議員」が挿入（logprob=-1.41、孤立短文hallucination）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[0].whisper_segments[1].text",
+        "segment_index": 0,
+        "qa_id": null
+      },
+      "evidence": "seg[0] id=2: text=「総理議員」、avg_logprob=-1.410、compression_ratio=0.571、duration=27.1秒。前後のセグメント（委員会開会宣言→採決）の文脈に合わない孤立挿入。corrected text では削除済み。",
+      "estimated_cause": "Whisperが着席・立起などの雑音区間を「総理議員」という短フレーズとしてhallucinate。logprob<-1.0かつcr<0.6は典型的な短文hallucination指標。",
+      "downstream_impact": []
+    }
+  ],
+  "blindspots": [
+    "raw_transcript の whisper_segments.tokens をデコードして文字列と照合する逐語精査は未実施",
+    "外部の衆議院議事録・NHK予算審議記録と照合しておらず、決議案条文の項目4・5・9・10・11が本当に音声収録されていたかどうかは確認できていない",
+    "evasion_score=0.4 の妥当性（決議採択セッションでは意味が異なる可能性）については外部基準がないため評価不能",
+    "duration_minutes の正確性（古川康=3分、神谷裕=8分、中川宏昌=6分）を video timestamp から検証していない"
+  ],
+  "narrative": {
+    "overall": "本セッション（56128 総務委員会 2026-03-13）は地方財政決議案およびNHK予算附帯決議案の採択という短時間の議事進行であり、Q&A形式ではなく動議提出→採決→大臣応答という構造を持つ。全体品質は medium と評価する。最大の問題は、地方財政決議案の条文4・5・9・10・11番がWhisperの短文hallucination（山本一議員・国会議員）によって欠落しており、qa_001の full_text が不完全なまま下流ファイルに伝播していることである。次いで重要な問題は、NHK会長・井上達彦の発言が qa_pairs に全く現れないことと、附帯決議の表記が「附帯」「不帯」「不対」と4ファイルで不統一なことである。スキーマ上の空フィールドやメタデータの不完全さ（林芳正・井上達彦の speaker 未登録）は他セッションでも観測される systemic な問題であり、パイプライン修正の優先度が高い。",
+    "top_findings": [
+      "Whisper hallucination（山本一議員・国会議員）による決議文 items 4・5・9・10・11 の消失（F001）：地方財政決議案の内容が約40%欠落しており、政策データとして深刻な情報損失",
+      "NHK会長・井上達彦の発言が qa_pairs に完全欠落し、summary.key_commitments が誤IDを参照（F002・F006）：NHK予算承認セッションで参考人が行った約束が構造化データに記録されないという content_missing",
+      "附帯決議の表記が「附帯」「不帯」「不対」と4ファイルで不統一（F003）：法令用語の誤認識が補正ステップで部分的にしか直らず、検索・集計の際に同一概念が別々にカウントされるリスク"
+    ]
+  }
+}

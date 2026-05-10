@@ -1,0 +1,316 @@
+{
+  "session_id": "sangiin/2026/04/23/8981_財政金融委員会",
+  "chamber": "sangiin",
+  "date": "2026-04-23",
+  "deli_id": "8981",
+  "committee": "財政金融委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T00:00:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 5, "medium": 6, "low": 5, "total": 16},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["fact_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "担当大臣「片山さつき」が質疑者「片山大介」として全qa_pairsに誤帰属",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "pairs[*].answer.speaker",
+        "segment_index": null,
+        "qa_id": "qa_001 〜 qa_048 (答弁全般)"
+      },
+      "evidence": "qa_pairs の answer.speaker は全て「片山大介」（日本維新の会議員）とされているが、raw_transcript.json および utterances.json のテキスト内に「片山さつき：」という発言ラベルが複数確認される（例: raw_transcript.json line 34, 46）。委員会での答弁者は「片山さつき 内閣府特命担当大臣」であり、「片山大介」は日本維新の会の質疑者として segment_index=5 に登場する別人物。utterances.json の segment_index=10（附帯決議後）でも「片山さつき大臣委員長。」という発言が確認できる。",
+      "estimated_cause": "話者タグ付けLLMが、segment_index=5 の segment_speaker（片山大介）を他セグメントの答弁者ラベルとして誤適用した可能性が高い。または大臣の自己紹介「片山さつき：」をWhisperが「片山大介」と認識し、その誤認識をLLMが引き継いだと考えられる。",
+      "downstream_impact": ["summary.json が『片山大介大臣』と記述し事実誤認を伝播", "検索・フィルタで片山さつきの発言が取得不能になる", "全qa_pairsの答弁者情報が信頼不能"]
+    },
+    {
+      "id": "F002",
+      "category": "role_label_error",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs.answer.role に政党名「日本維新の会」が誤入力（25件）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "pairs[*].answer.role",
+        "segment_index": null,
+        "qa_id": "qa_001, qa_002, qa_005, qa_006, qa_009, qa_013, qa_014, qa_015, qa_016, qa_024, qa_025, qa_026, qa_028, qa_032, qa_033, qa_037, qa_038, qa_039, qa_040, qa_041, qa_042, qa_043, qa_044, qa_046, qa_047"
+      },
+      "evidence": "answer.role フィールドの値が「日本維新の会」（政党名）となっている。このフィールドは「大臣」「政府参考人」「委員長」等の役職を格納すべきもの。他の回答者（石田監督局長、岡田審議官等）は role=\"\" として空欄にされているが、「片山大介」名義の答弁のみ政党名が記入されている。",
+      "estimated_cause": "LLMが answer.speaker を F001 で誤帰属した際、その人物の所属政党（日本維新の会の議員=片山大介）を role フィールドに書き込んだ。本来は「内閣府特命担当大臣」とすべきところ。",
+      "downstream_impact": ["role によるフィルタリングが機能しない", "大臣答弁の識別が不能", "データ利用者が政党を役職と誤解する可能性"]
+    },
+    {
+      "id": "F003",
+      "category": "fact_error",
+      "secondary_categories": ["whisper_misrecognition"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "qa_024答弁 full_text で「鈴鹿銀行」と誤記（正：駿河銀行）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "pairs[23].answer.full_text",
+        "segment_index": 4,
+        "qa_id": "qa_024"
+      },
+      "evidence": "qa_024 の answer.full_text 冒頭：「鈴鹿銀行の不正融資問題のまず全容解明から申し上げますと、金融庁は2018年の10月…」。同QAのトピックは「駿河銀行の不正融資問題への対応」と明記されており、前後の文脈でも「駿河銀行」への言及が多数ある。utterances.json の segment_index=4 にも同一誤記が確認される（line 379）。",
+      "estimated_cause": "Whisperによる音声認識誤り。「駿河銀行」→「鈴鹿銀行」という固有名詞の誤認識。LLMのspeaker_taggerが訂正しなかった。",
+      "downstream_impact": ["データ利用者が実在しない銀行名「鈴鹿銀行」の不正融資問題として誤解する", "全文検索で「駿河銀行」ヒット漏れが生じる"]
+    },
+    {
+      "id": "F004",
+      "category": "summary_qa_divergence",
+      "secondary_categories": ["fact_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.json が「衆議院（委員会名不明）」と記述し院名を誤記",
+      "location": {
+        "file": "summary.json",
+        "json_path": "session_summary",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "summary.json の session_summary 冒頭：「衆議院（委員会名不明）において、…」。しかしこのセッションは明確に参議院財政金融委員会（metadata.json: chamber=sangiin, committee=財政金融委員会）。session_id は「sangiin/2026/04/23/8981_財政金融委員会」。",
+      "estimated_cause": "structurer LLMがセッションコンテキスト（chamber情報）を参照せずに院名を誤推定した。または summary 生成プロンプトに chamber 情報が渡されていなかった可能性。",
+      "downstream_impact": ["院別の検索・フィルタリングで誤表示", "利用者が参議院審議を衆議院として誤認する深刻な誤り"]
+    },
+    {
+      "id": "F005",
+      "category": "content_missing",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_019答弁が文中途絶（「金融庁の方から当社に対して。」で終了）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "pairs[18].answer.full_text",
+        "segment_index": 3,
+        "qa_id": "qa_019"
+      },
+      "evidence": "qa_019 の answer.full_text 末尾：「…ソニー生命が先般3月18日でございますけれども、この2023年当時の今回の事案を公表したことにつきまして、金融庁の方から当社に対して。」で途絶する。utterances.json segment_index=3 の石田監督局長の発言も同様に途絶しており（unmatched=True）、その後に別のunmatched utterance「本件につきましては、もともとソニー生命の側におきまして…」が続いているが、これは qa_020 の answer full_text（「お答え申し上げます。」）とも異なる。qa_020の実質的な答弁内容が欠落している。",
+      "estimated_cause": "音声セグメント境界でのテキスト分割問題。LLMがunmatched utteranceの本体部分を qa_020 answer に正しく割り当てられなかった。",
+      "downstream_impact": ["qa_019 と qa_020 の答弁内容が実質的に失われる", "ソニー生命不祥事に関する金融庁の公式見解が記録から欠落"]
+    },
+    {
+      "id": "F006",
+      "category": "content_missing",
+      "secondary_categories": ["schema_empty_field"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_020 answer.full_text が「お答え申し上げます。」のみ（実質的答弁内容ゼロ）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "pairs[19].answer.full_text",
+        "segment_index": 3,
+        "qa_id": "qa_020"
+      },
+      "evidence": "qa_020 answer.full_text = 「お答え申し上げます。」のみ。answer.summary は「複雑な事情があるとの報告を受けているが、保険契約者の信頼維持の観点から適切であったか検討が必要であり、当社の対応をしっかりと確認し必要な対応を行いたい」と内容を持つが、full_text がそれを全く反映していない。metrics.as1_directness.addresses_main_question = 'not_at_all'、score=0.0 は実際の内容欠落を示している。utterances.json の石田監督局長 unmatched テキスト「本件につきましては、もともとソニー生命の側におきまして…」が正しいqa_020答弁であることが確認できる。",
+      "estimated_cause": "LLMがqa_020の答弁用 utterance を正しくマッピングできず、前置き句のみをfull_textとして採用した。",
+      "downstream_impact": ["ソニー生命不祥事への金融庁対応記録の完全欠落", "metrics scores が誤った内容に基づく"]
+    },
+    {
+      "id": "F007",
+      "category": "content_missing",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "森ゆうこ委員の附帯決議朗読（segment_index=10）が qa_pairs に未収録",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "pairs",
+        "segment_index": 10,
+        "qa_id": null
+      },
+      "evidence": "utterances.json の segment_index=10 に森ゆうこの附帯決議案朗読が収録されている（7項目、全会一致可決）。しかし qa_pairs.json には森ゆうこに起因するエントリが1件もない（検索結果: grep で「森ゆうこ」ヒットなし）。metadata.json の speakers リストには「森ゆうこ」が登録されている（start_seconds=11106.18）。",
+      "estimated_cause": "附帯決議は Q&A 形式ではないため structurer が qa_pairs 対象外と判断したと思われる。しかし附帯決議は重要な立法記録であり何らかの形で収録すべき。",
+      "downstream_impact": ["附帯決議の7項目が検索対象から外れる", "topics/summary に附帯決議への言及がなく立法プロセスの記録として不完全"]
+    },
+    {
+      "id": "F008",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["fact_error"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "qa_044答弁に「全力温暖化」という意味不明の語句が混入",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "pairs[43].answer.full_text",
+        "segment_index": 8,
+        "qa_id": "qa_044"
+      },
+      "evidence": "qa_044 answer.full_text に「それよりももう少しあとから全力温暖化の問題って出てきたというのを私は記憶しております。」という文が含まれる。「全力温暖化」は意味不明な語句で、文脈（不良債権・金融危機の歴史的経緯）から「地価暴落」「金融システム不安」等の語句が Whisper に誤認識されたと考えられる。raw_transcript.json にも同一テキストが確認される（line 40445）。",
+      "estimated_cause": "Whisper による音声認識ハルシネーション。長い答弁の途中で音声が不明瞭になり、意味不明な語句を生成した。",
+      "downstream_impact": ["答弁の意味が通じない箇所が生じる", "大臣答弁の記録として信頼性を損なう"]
+    },
+    {
+      "id": "F009",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "複数箇所で「外為法」が「外貯め法」と誤認識",
+      "location": {
+        "file": "qa_pairs.json / utterances.json",
+        "json_path": "pairs[5].question.full_text",
+        "segment_index": 2,
+        "qa_id": "qa_006"
+      },
+      "evidence": "qa_006 question.full_text：「実は昨日、外貯め法の改正案についての中道改革連合…」。utterances.json segment_index=2 の柴愼一発言テキストも同様。正しくは「外為法（外国為替及び外国貿易法）」。同セグメントで「中道改革連合」という架空の政党名も使用（正：「令和改革連合」または「民主改革連合」等の可能性があるが、文脈から3党合同部会の名称がWhisperに誤認識された）。",
+      "estimated_cause": "Whisperによる法律名の音声認識誤り。「外為法」の読みが誤変換された。",
+      "downstream_impact": ["全文検索で「外為法」ヒット漏れが生じる", "重要な法律名の誤記として記録品質を損なう"]
+    },
+    {
+      "id": "F010",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「牧野フライス製作所」が「牧野フライス政策署」と誤認識",
+      "location": {
+        "file": "qa_pairs.json / utterances.json",
+        "json_path": "pairs[5].topic",
+        "segment_index": 2,
+        "qa_id": "qa_006"
+      },
+      "evidence": "qa_006 topic：「牧野フライス政策署の買収計画中止勧告に関する財務省の対応」。qa_006 question.full_text：「今お話がありました、牧野フライス政策署の買収計画中止の勧告について」。正しい企業名は「牧野フライス製作所」（qa_001 では正しく認識されている）。utterances.json の柴愼一発言テキスト（line 109）でも同誤りが確認される。",
+      "estimated_cause": "Whisperによる固有名詞の音声認識誤り。同一企業名が前のセグメントでは正しく認識されているが、別音声セグメントで誤認識が発生した。",
+      "downstream_impact": ["企業名による検索でヒット漏れが発生する", "架空の行政機関「政策署」と誤読される可能性"]
+    },
+    {
+      "id": "F011",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_007 oc3_quotability に「圧戦」という誤認識語が引用候補として記録",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "pairs[6].answer.full_text / metrics.oc3_quotability.quote_candidate",
+        "segment_index": 2,
+        "qa_id": "qa_007"
+      },
+      "evidence": "qa_007 answer.full_text：「相談室は個別事案の圧戦、仲介、調停を行う機関ではございませんで」。「圧戦」は「あっせん（斡旋）」の誤認識と考えられる。metrics.oc3_quotability.quote_candidate にもこの誤語が含まれる。utterances.json segment_index=2 の石田監督局長発言（line 127）でも同一誤りが確認される。",
+      "estimated_cause": "Whisperによる音声認識誤り。「あっせん」という言葉が「圧戦」と変換された。法令用語の誤認識。",
+      "downstream_impact": ["「あっせん」の検索でヒットしない", "引用候補として誤語が記録される"]
+    },
+    {
+      "id": "F012",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.json の duration・hls_url・start_time・duration_minutes が全て空/0",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "duration / hls_url / speakers[*].start_time / speakers[*].duration_minutes",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json: duration=\"\", hls_url=\"\"（全て空文字）。speakers 11名全員が start_time=\"\"、duration_minutes=0。start_seconds は正常値（1978.54〜11106.18）が入っている。",
+      "estimated_cause": "パイプラインで duration と hls_url の取得が失敗しているか、start_time・duration_minutes の計算処理が実装されていない可能性。",
+      "downstream_impact": ["動画再生時間の表示不能", "話者ごとの発言時間分析が不能", "HLS URL 未取得のため音声再処理が困難"]
+    },
+    {
+      "id": "F013",
+      "category": "schema_inconsistency",
+      "secondary_categories": ["metadata_missing_speaker"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "答弁者（岡田審議官・岩田内閣副大臣・金子内閣府大臣政務官等）が metadata.speakers に未登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json の speakers リストには委員長1名＋質疑者10名（計11名）のみが登録されている。qa_pairs.json および utterances.json に登場する答弁者：岡田審議官、岩田内閣副大臣、金子内閣府大臣政務官、石田監督局長（石田（推定）含む）、井上企画市場局長は speakers リストに未登録。",
+      "estimated_cause": "参議院TVスクレイパーが質疑者リストのみを取得し、政府参考人・政務官等の答弁者を登録していない。",
+      "downstream_impact": ["答弁者による検索・フィルタが機能しない", "答弁者プロフィールの表示が不能"]
+    },
+    {
+      "id": "F014",
+      "category": "schema_inconsistency",
+      "secondary_categories": ["metadata_missing_speaker"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.json と qa_pairs.json で金子政務官の名称表記が不一致",
+      "location": {
+        "file": "summary.json / qa_pairs.json",
+        "json_path": "key_commitments[0].speaker / pairs[2].answer.speaker",
+        "segment_index": null,
+        "qa_id": "qa_003"
+      },
+      "evidence": "summary.json key_commitments[0].speaker = \"金子\"（姓のみ）、role = \"内閣府大臣政務官\"。qa_pairs.json qa_003 answer.speaker = \"金子内閣府大臣政務官\"（役職込み一体表記）。同一人物の名称が2ファイルで異なる形式で記録されている。",
+      "estimated_cause": "summary生成 LLM と structurer LLM が独立して動作しており、名称正規化のルールが統一されていない。",
+      "downstream_impact": ["データ統合時に同一人物のマッチングが困難になる"]
+    },
+    {
+      "id": "F015",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "utterances.json で「石田（推定）」という非標準スピーカーラベルが使用されている",
+      "location": {
+        "file": "utterances.json / qa_pairs.json",
+        "json_path": "segments[4].utterances[?].speaker / pairs[26].answer.speaker",
+        "segment_index": 4,
+        "qa_id": "qa_027"
+      },
+      "evidence": "utterances.json segment_index=4 に speaker=\"石田（推定）\" の utterance が存在する（unmatched=True）。qa_pairs.json qa_027 answer.speaker = \"石田（推定）\"。通常の話者名は「石田監督局長」であり、括弧付き「（推定）」という表記はスキーマ上非標準。",
+      "estimated_cause": "speaker_tagger LLM が音声セグメント境界付近の発言を特定できず、推定ラベルを付与した。",
+      "downstream_impact": ["石田監督局長名での検索でqa_027がヒットしない", "名称正規化処理で異常値として扱われる可能性"]
+    },
+    {
+      "id": "F016",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "話者交代時の低信頼度Whisperセグメントに「長谷川財務大臣」「小泉委員長」「財政権議員」等の架空話者が生成",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "segments[2].whisper_segments[45,46,50]",
+        "segment_index": 2,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json の低信頼度 Whisper セグメント（avg_logprob < -0.8）に「長谷川財務大臣」（id=45, logprob=-0.996）、「小泉委員長」（id=46, logprob=-1.083）、「財政権議員」（id=12, -0.826; id=50, -1.088）、「財政議長」（id=56, -1.058）等の架空人物名が生成されている。これらは話者交代のアナウンス音声をWhisperが誤認識したものと考えられる。utterances.json では正しく処理されており下流影響は限定的。",
+      "estimated_cause": "話者交代時の短い発話（「○○君。」等の指名音声）をWhisperが別の人名として誤認識するパターン。セグメント境界付近で発生しやすい既知のWhisper挙動。",
+      "downstream_impact": ["raw_transcript.jsonレベルでの品質劣化（上位ファイルへの影響は限定的）"]
+    }
+  ],
+  "blindspots": [
+    "森ゆうこ附帯決議の詳細7項目の内容と qa_pairs との整合性検証（当該 qa_pairs が存在しないため比較不能）",
+    "related_law_ids（clb-5203, clb-5162）の正確性検証（法案IDの正否を確認する手段がない）",
+    "片山さつきの正式役職名（「内閣府特命担当大臣」のみか「金融担当大臣」等の別称があるか）の確認",
+    "qa_044 の「全力温暖化」が実際に何の語句の誤認識かは文脈から確定できない（地価崩壊・金融不安・バブル崩壊等の候補がある）",
+    "大島九州男セグメント（segment_index=8）の qa_pairs が qa_044 のみであることの妥当性（発言時間からみて他にも質疑があった可能性）"
+  ],
+  "narrative": {
+    "overall": "このセッションは48件の Q&A ペアが収録されており、金融機能強化法改正を中心に多数の質疑者が出席した大規模セッションである。最も重篤な問題は、担当大臣「片山さつき」の発言が全て質疑者「片山大介」（日本維新の会）に誤帰属されていることで、これにより answer.role フィールドにも政党名「日本維新の会」が誤入力されている（25件）。加えて summary.json が「衆議院（委員会名不明）」と院名を誤記するという根本的な誤りがある。qa_019・qa_020 の答弁内容が実質的に欠落しており、ソニー生命不祥事に関する金融庁の重要な公式見解が記録されていない。Whisper による誤認識（鈴鹿銀行、外貯め法、牧野フライス政策署、圧戦、全力温暖化）は複数確認されるが、上流の speaker_misattribution と院名誤記の方が利用上の影響は大きい。全体として、データとして閲覧する分には内容は概ね把握できるが、スピーカー帰属・院名・答弁内容欠落の問題が深刻なため再生成を推奨する。",
+    "top_findings": [
+      "担当大臣「片山さつき」が質疑者「片山大介」として全 qa_pairs に誤帰属し、answer.role が「日本維新の会」（政党名）となる構造的誤り（F001, F002）",
+      "summary.json が「衆議院（委員会名不明）」と院を誤記（正：参議院財政金融委員会）、データの根幹となる属性が誤っている（F004）",
+      "qa_019 答弁が文中途絶し qa_020 答弁が「お答え申し上げます。」のみという、ソニー生命不祥事への金融庁見解が実質的に欠落（F005, F006）"
+    ]
+  }
+}

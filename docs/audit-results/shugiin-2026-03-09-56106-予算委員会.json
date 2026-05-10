@@ -1,0 +1,244 @@
+{
+  "session_id": "shugiin/2026/03/09/56106_予算委員会",
+  "chamber": "shugiin",
+  "date": "2026-03-09",
+  "deli_id": "56106",
+  "committee": "予算委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T10:30:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 3, "medium": 5, "low": 4, "total": 12},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "whisper_hallucination_loop",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "Seg10(笹川博義)で「ご視聴ありがとうございました」が604回繰り返し",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[10].whisper_segments[52:]",
+        "segment_index": 10,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json segments[10] (笹川博義) の whisper_segments 656件中、インデックス52以降の604件が全て text=\"ご視聴ありがとうございました。\" の繰り返し。start=183s〜3194sの間、5秒ごとに1件のレートで繰り返している。utterances.json の segment_index=10 の笹川博義 utterance の full_text にも同テキストが604回含まれており (text length=10,114文字)、raw_transcript の汚染が utterances に伝播している。qa_pairs.json への伝播はなし（当該セグメントからのQAペアは生成されていない）。",
+      "estimated_cause": "笹川博義の派遣委員報告は約3分で終了したが、次の発言者（坂本哲志 13:00）まで約53分の無音・待機期間があった。Whisper large-v3-turbo が音声がない（または会議休憩中の映像BGM等）セグメントを処理した際、典型的な EOL ハルシネーションとして動画配信サービスの終了フレーズを繰り返した。セグメント分割がタイムスタンプベースで行われているため、この長い無音区間が笹川博義セグメントとして一括処理されてしまった。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F002",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["role_label_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_023 の answer.speaker が質問者「山本香苗」に誤帰属",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[22].answer.speaker",
+        "segment_index": 3,
+        "qa_id": "qa_023"
+      },
+      "evidence": "qa_023（中小企業の福利厚生導入・拡充への支援）の answer.speaker=\"山本香苗\" かつ question.speaker=\"山本香苗\" で同一人物。raw_transcript.json segments[3] および utterances.json segment_index=3 を確認すると、この質問への実際の答弁者は: (1)山本和則（中小企業庁次長）role=政府参考人、(2)赤澤亮正（経済産業大臣）role=答弁者、(3)城内実（経済財政政策担当大臣）role=答弁者 の3名。qa_023 の answer.full_text は主に赤澤亮正と城内実の答弁をマージしたもので、「先ほど赤澤経産大臣からも御答弁ありましたが」という引用も含まれている。answer.role=\"中道改革連合・無所属\" は所属政党名であり、役職名ではない（二重の誤り）。",
+      "estimated_cause": "speaker_tagger が複数大臣への連続質問（赤澤・城内の両名に1問として構造化）の際に、質問を挙手した山本香苗のラベルを答弁側に誤適用した。複数答弁者への質問をLLMが1つのQAペアに畳み込む過程で発生。answer.role には本来大臣の役職名が入るべきところ、question.party（中道改革連合・無所属）がコピーされた。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F003",
+      "category": "summary_qa_divergence",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "summary.key_commitments[qa_106]の発言者が松本洋平→実際は高市早苗",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments[4]",
+        "segment_index": null,
+        "qa_id": "qa_106"
+      },
+      "evidence": "summary.json の key_commitments に { speaker=\"松本洋平\", role=\"文部科学大臣\", text=\"高校無償化の実施による影響を検証しながら、必要な制度見直しを行う。\", qa_id=\"qa_106\" } とある。しかし qa_pairs.json の qa_106.answer.speaker=\"高市早苗\" で、answer.full_text 末尾に「なお、高校無償化の実施による影響につきましては、これは検証を行いながら必要な制度の見直しも行ってまいります。」と記述されており、これは高市早苗の発言。qa_106.answer.full_text 中に「先ほど文部科学大臣からグランドデザインも含めて詳しい説明がありましたので」とあり、高市早苗が松本洋平の発言を引用・補足した後に自身のコミットメントを述べている。",
+      "estimated_cause": "summary 生成LLMが、答弁テキスト中で参照された松本洋平（文部科学大臣）を発言者と誤解した。答弁者が先行発言者を引用する構造の中でアトリビューションを誤った。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F004",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "Seg3冒頭「イラクの情勢」→本来は「イランの情勢」の誤認識",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[3].text",
+        "segment_index": 3,
+        "qa_id": "qa_017"
+      },
+      "evidence": "raw_transcript.json segments[3] (山本香苗) の冒頭：「今回のイラクの情勢の緊迫化を受けまして、つい先ほどニューヨーク原油先物市場で1バーレル111ドルと、100ドルを突破いたしました」。当セッション全体でイランが72回・イラクが4回登場するが、イラクの3例は全て「イラク戦争」「イラクに行っているんじゃないか」等の過去事例への言及（seg13, seg15）であり文脈に適合。一方、この冒頭1例は「原油先物価格急騰・ホルムズ海峡危機・タンカーへのミサイル攻撃」等のイラン有事文脈であり、明らかに誤認識。この誤認識は qa_pairs.json の qa_017.question.full_text にそのまま引き継がれている（LLMが訂正せず）。",
+      "estimated_cause": "Whisper が「イラン」の音声を「イラク」と誤認識した（i-ra-n vs i-ra-ku の音響的類似）。LLMの speaker_tagger・structurer いずれも文脈からの訂正を行わなかった。",
+      "downstream_impact": ["qa_pairs.json"]
+    },
+    {
+      "id": "F005",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_002 の answer.speaker が「上野厚生労働大臣」で他の15件と命名規則が不一致",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[1].answer.speaker",
+        "segment_index": 1,
+        "qa_id": "qa_002"
+      },
+      "evidence": "qa_002.answer.speaker=\"上野厚生労働大臣\"（役職名付き）。同じ上野賢一郎が答弁する他の15件（qa_030〜qa_039, qa_045, qa_046, qa_083〜qa_085）はすべて answer.speaker=\"上野賢一郎\"（氏名のみ）。同様に qa_025.answer.speaker=\"大臣\"（匿名）、qa_026.answer.speaker=\"岡本\"（姓のみ）の不完全な名前も存在する。これらは同一セッション内での命名規則のゆれであり、集計・検索に支障をきたす。",
+      "estimated_cause": "speaker_tagger が raw_transcript のセグメント先頭テキストから話者名を抽出する際、テキスト内の表記形式（「上野厚生労働大臣」「大臣」「内閣審議官、岡本君」等）をそのまま採用するケースが混在している。正規化ルールが欠けている。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F006",
+      "category": "role_label_error",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_023.answer.role が役職名ではなく政党名「中道改革連合・無所属」",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[22].answer.role",
+        "segment_index": 3,
+        "qa_id": "qa_023"
+      },
+      "evidence": "qa_023.answer.role=\"中道改革連合・無所属\" は政党・会派名であり、role フィールドに入るべき役職名（例：経済産業大臣、予算委員長）ではない。セッション全体で answer.role に値が設定されている3件のうち1件（qa_023）が誤った種類の値。正常例：qa_007.answer.role=\"予算委員長\"、qa_115.answer.role=\"予算委員長\"。",
+      "estimated_cause": "F002 の speaker_misattribution と同根。LLMが答弁者を山本香苗（questioner）と誤認し、question.party の値を answer.role に誤って引き写した。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F007",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers 全22エントリの role フィールドが空文字",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[*].role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json の speakers リスト22件全てで role=\"\"。speakers には 坂本哲志（予算委員長）、山田美樹（委員）等が含まれるが、委員長と一般委員の区別が role フィールドで表現されていない。affiliation フィールドには「予算委員長」が入っているケース（坂本哲志）もあるが、他は会派名のみ。データ利用者が委員長・委員を区別しようとすると affiliation 文字列解析が必要になる。",
+      "estimated_cause": "speakers データ生成時に role フィールドが空文字で初期化されたまま、後続処理で埋められていない。パイプラインの役割分類ステップ（委員長/委員/参考人）がメタデータ側に反映されていない構造的欠陥。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F008",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata の committee_id/session_number/duration/mediasp_hash が null または空文字",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.committee_id, $.session_number, $.duration, $.mediasp_hash",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json: committee_id=null, session_number=null, duration=\"\", mediasp_hash=\"\"（衆議院セッションには mediasp_hash は不要だが、フィールド自体が存在している）。duration はセッション全体の長さを示す重要フィールドだが空。raw_transcript.json から推算すると最終セグメント (田村智子 start_seconds=29252.2 + 約13分) より総尺は約8時間以上と推定される。",
+      "estimated_cause": "パイプラインの metadata 生成段階でスクレイパーから取得できなかったフィールドが null/空文字のままで残されている。committee_id と session_number はサイト側に公開情報がない場合がある。duration は HLS プレイリストから計算可能だが実装されていない。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F009",
+      "category": "duplicate",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "metadata.speakers に坂本哲志が2件重複登録（午前・午後の会議開始）",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[0], $.speakers[11]",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json.speakers に坂本哲志が2エントリ: (1) start_seconds=1340.3, start_time=\"09:02\", duration_minutes=1 と (2) start_seconds=15586.8, start_time=\"13:00\", duration_minutes=1。予算委員長として午前の開会（09:02）と午後の再開（13:00）の両方に登場したため2件生成されている。同一人物の複数エントリは集計・検索時に重複カウントを招く。",
+      "estimated_cause": "speakers リスト生成時、委員長の複数回登場（開会・閉会・再開等）を同一人物としてマージする処理がなく、各タイムスタンプ出現を独立エントリとして登録している。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F010",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers に答弁側の大臣・政府参考人26名が未登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "qa_pairs.json の answer.speaker に登場する26名（高市早苗40件、上野賢一郎15件、赤澤亮正11件、松本洋平10件等）が metadata.speakers に一切登録されていない。metadata は委員（質問者）22名のみを収録。楠田美樹（国土交通省不動産建設経済局長）、山本和則（中小企業庁次長）、宿本昌吾、城内実等の政府参考人・大臣も未収録。",
+      "estimated_cause": "metadata.speakers の生成がスクレイパーの「質問者リスト」（衆議院TVの発言者タイムライン）のみを参照しており、答弁者は対象外となっている設計上の制限。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F011",
+      "category": "content_missing",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "unknown",
+      "title": "qa_027/046/052/066/072 の5件がどのトピックにも分類されていない",
+      "location": {
+        "file": "topics.json",
+        "json_path": "$.topics[*].related_qa_ids",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "topics.json の全15トピックの related_qa_ids に含まれないQAペアが5件: qa_027（大阪・関西万博の成果の展開、うるま譲司）, qa_046（育児休業の延長要件、古川あおい）, qa_052（現役世代の不安解消と社会保障制度の構築、勝俣孝明）, qa_066（福島・東北の復興への認識と決意、赤羽一嘉）, qa_072（花粉症対策予算の当初予算化、後藤祐一）。全115件のうち5件（4.3%）がトピック未分類。",
+      "estimated_cause": "トピック分類LLMが115件のQAペアを15のトピックに分類する際、一部のペアを見落とした。qa_066（復興）はqa_067（能登半島）と近接しており、前者のみ分類漏れになった可能性がある。qa_052やqa_072は他トピックとの親和性が低く分類しにくかった可能性。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F012",
+      "category": "summary_qa_divergence",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "session_specific",
+      "title": "summary.key_topics「普天間飛行場の返還と辺野古移設」が topics.json に独立トピックなし",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_topics[5]",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "summary.json.key_topics[5]=\"普天間飛行場の返還と辺野古移設\"。対応するqa_114・qa_115は topics.json では「国会運営・政治倫理・その他」に分類されており、専用トピックが立てられていない。summary では主要論点の一つとして明示されているが、topics.json の粒度では埋没している。",
+      "estimated_cause": "summary と topics.json はそれぞれ独立したLLM呼び出しで生成されており、トピック粒度の判断基準が一致していなかった。qa_114・qa_115はセッション末尾に位置し、topics 生成時に「その他」へ格下げされた可能性がある。",
+      "downstream_impact": []
+    }
+  ],
+  "blindspots": [
+    "raw_transcript の全2,648行を逐字確認していない。Whisper 誤認識は今回発見した1件（イラク/イラン）以外にも固有名詞で発生している可能性がある",
+    "qa_pairs の answer.full_text とその根拠となる utterances.json の対応を全件照合していない。qa_023 以外にも複数答弁者をマージした誤帰属が存在する可能性がある",
+    "外部の閣僚名簿・政府参考人リストとの照合は未実施のため、answer.speaker の名前誤認識（同音異字等）を検出できていない",
+    "発言のカット・省略の有無（委員長が中断させた場面のQ&A構造化）を検証していない",
+    "evasion_score の妥当性は個別答弁を精読して検証していない"
+  ],
+  "narrative": {
+    "overall": "本セッション（2026-03-09 予算委員会、115件QAペア）の全体品質は「medium」と評価する。最重大問題は笹川博義セグメント（seg10）でのWhisperハルシネーションループ（604回繰り返し）で、約53分の休憩期間中の無音をWhisperが誤処理したものと推定される。この汚染はutterances.jsonにまで伝播しているが、qa_pairsへの汚染は回避されており、直接的な情報利用への影響は限定的。スキーマ上の問題として、metadata.speakers.roleが全22件空文字、committee_id等の必須フィールド欠落、answer.speakerの命名規則ゆれ（「上野厚生労働大臣」vs「上野賢一郎」等）が散見される。内容面では、qa_023の答弁者誤帰属（山本香苗に誤帰属、実際は赤澤亮正・城内実）とsummary.key_commitmentsのqa_106発言者誤記（松本洋平→実際は高市早苗）が信頼性を損なう問題として注目される。",
+    "top_findings": [
+      "Seg10（笹川博義）Whisperハルシネーション604回繰り返し：休憩中の無音53分をWhisperが誤処理し「ご視聴ありがとうございました」を連続生成。raw_transcript.jsonとutterances.jsonに汚染が及んでおり、パイプライン全体で長時間無音区間を適切に除外する処理が必要。",
+      "qa_023 答弁者誤帰属：中小企業福利厚生への支援を問うQ&Aで、実際の答弁者（赤澤亮正・城内実・山本和則）が質問者の山本香苗に誤帰属。answer.roleにも政党名が混入しており二重の誤り。複数大臣への連続質問の構造化で発生するシステム的問題の可能性が高い。",
+      "イラク/イラン Whisper誤認識：山本香苗発言冒頭の「イランの情勢」が「イラクの情勢」と誤認識され、qa_017にそのまま引き継がれた。LLMが文脈（原油価格急騰・ホルムズ海峡）から訂正しなかった点も課題であり、固有名詞の音響的類似による誤認識パターンとして他セッションでも確認すべき。"
+    ]
+  }
+}

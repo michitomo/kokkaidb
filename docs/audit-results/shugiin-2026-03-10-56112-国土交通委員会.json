@@ -1,0 +1,280 @@
+{
+  "session_id": "shugiin/2026/03/10/56112_国土交通委員会",
+  "chamber": "shugiin",
+  "date": "2026-03-10",
+  "deli_id": "56112",
+  "committee": "国土交通委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T10:00:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 4, "medium": 5, "low": 5, "total": 14},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "speaker_misattribution",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_026 質問者が五十嵐清に誤帰属（実際は犬飼明佳）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[25].question.speaker",
+        "segment_index": 5,
+        "qa_id": "qa_026"
+      },
+      "evidence": "qa_026 question.speaker=「五十嵐清」（栃木第二選挙区）だが、「特に私の地元の庄内川水系において」と発言。庄内川は愛知県（名古屋市）を流れる一級河川であり、五十嵐清の選挙区（栃木県）とは地理的に矛盾する。raw_transcript seg 5 にも同じ質問文が存在し、seg 5 は犬飼明佳（愛知県選出、自己紹介で「地元は愛知県でございます」と発言）の割り当てセグメント。また五十嵐清の自セグメント（seg 1）には「私の地元の栃木県」との言及があり、庄内川への言及は皆無。utterances.json seg5[10]の発言冒頭「五十嵐清君。」は委員長の指名または話者が自名を述べた形式と思われるが、speaker_tagger が誤ってラベルを付与した。",
+      "estimated_cause": "speaker_tagger が seg 5 音声の話者ラベリング時に「五十嵐清君」というフレーズを検出し、委員会メンバーリスト上の 五十嵐清 に帰属させた。実際は犬飼明佳の質疑時間内の発言であり、seg 1 の五十嵐清との名前の一致による誤帰属。",
+      "downstream_impact": ["utterances.json", "topics.json"]
+    },
+    {
+      "id": "F002",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["role_label_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_008 答弁者が五十嵐清（委員）に誤帰属（実際は五十嵐鉄道局長）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[7].answer.speaker",
+        "segment_index": 2,
+        "qa_id": "qa_008"
+      },
+      "evidence": "qa_008 answer.speaker=「五十嵐清」role=「自由民主党・無所属の会」。しかし答弁内容は「成田空港の鉄道アクセスについては…国土交通省においては今後の成田空港施設の機能強化に関する検討会において議論を進めており…令和8年度予算案に新たに盛り込まれました利子補給制度などの支援策…」と行政官が答弁する文体・内容。utterances.json seg2[8] では同一テキストの話者は「五十嵐鉄道局長（答弁者）」として正しく記録されており、qa_pairs.json の構造化段階で委員の五十嵐清（seg 1 質疑者）と混同された。",
+      "estimated_cause": "structurer が utterances.json で「五十嵐鉄道局長」の発言を参照する際に、同じ委員会に「五十嵐清」という同姓の委員がいたため名前照合を誤り、委員として登録されている「五十嵐清」を answer.speaker に付与した可能性が高い。",
+      "downstream_impact": ["summary.json", "topics.json"]
+    },
+    {
+      "id": "F003",
+      "category": "role_label_error",
+      "secondary_categories": ["speaker_misattribution"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_029 質問者が政府参考人（林水管理・国土保全局長）に誤帰属",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[28].question.speaker",
+        "segment_index": 5,
+        "qa_id": "qa_029"
+      },
+      "evidence": "qa_029 question.speaker=「林水管理・国土保全局長」party=「中道改革連合・無所属」。政府参考人が委員会で質問することはなく、party 欄が質疑者（犬飼明佳）の所属党になっている矛盾がある。raw_transcript seg 5 では「そうしたものを防ぐ浸水防止盤、いわゆる止水盤…費用負担が大きくて中小企業や個人住宅、さらには避難所でも設置がなかなか進まない…リスクの高い地域におけるこうした浸水防止盤の設置支援と自治体との連携強化について、国としてどのように考えているのかお伺いをいたします。」は犬飼明佳の語調・文体と一致。",
+      "estimated_cause": "structurer が qa_028 の答弁者（林水管理・国土保全局長）と qa_029 の質問者を連続テキストから抽出した際に、区切り認識を誤って答弁者名を次の質問者に付与したと考えられる。",
+      "downstream_impact": ["topics.json"]
+    },
+    {
+      "id": "F004",
+      "category": "summary_qa_divergence",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "summary.key_commitments qa_004 の発言者が誤り（大臣 vs 楠田局長）",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments[4].speaker",
+        "segment_index": null,
+        "qa_id": "qa_004"
+      },
+      "evidence": "summary.json key_commitments の qa_004 エントリは speaker=「金子恭之」role=「国土交通大臣」と記録。しかし qa_pairs.json qa_004.answer.speaker=「国土交通省 楠田不動産建設経済局長」であり、commitmentは局長レベルの行政答弁。大臣答弁と局長答弁では政治的重みが異なり、データ利用者が誤認する可能性がある。",
+      "estimated_cause": "summary 生成時に qa_004 の answer.speaker を参照せず、セッション内の主要答弁者（金子大臣）を汎用的に充てた。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F005",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs.json の role フィールドが全 75 件で空文字",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].question.role および $.pairs[*].answer.role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "全 75 件の qa_pairs において question.role=「」（空文字）が 75/75 件、answer.role=「」が 74/75 件（qa_008 のみ answer.role=「自由民主党・無所属の会」）。utterances.json では role が「質疑者」「答弁者」「政府参考人」「委員長」として正しく付与されており、structurer への情報は存在するが qa_pairs への転記が行われていない。",
+      "estimated_cause": "structurer の qa_pairs 生成ロジックで role フィールドを utterances から引き継がない設計になっている。",
+      "downstream_impact": ["site/pages - フィルタ・表示ロジックに影響"]
+    },
+    {
+      "id": "F006",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers の role フィールドが全 14 件で空文字",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[*].role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json の全 14 speakers エントリ（冨樫博之（委員長）×3、委員 11 名）において role=「」（空文字）。委員長・質疑委員・大臣等のロールは明確に特定できるにもかかわらず未設定。",
+      "estimated_cause": "scraper または metadata 生成ロジックで role フィールドを埋めない設計。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F007",
+      "category": "whisper_hallucination_loop",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "seg 5 末尾で「委員長。」が 21 回連続繰り返し（Whisper ループ）",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[5].utterances[30].text",
+        "segment_index": 5,
+        "qa_id": null
+      },
+      "evidence": "utterances.json seg 5 最後の utterance（冨樫博之 委員長）のテキスト：「委員長。委員長。委員長。委員長。委員長。委員長。委員長。委員長。委員長。委員長。委員長。委員長。委員長。委員長。委員長。委員長。委員長。委員長。委員長。委員長。委員長。」（合計 21 回）。raw_transcript.json seg 5 にも同一の繰り返しが確認され、Whisper の出力段階で発生したループ。",
+      "estimated_cause": "Whisper large-v3-turbo の既知の繰り返しループ挙動。セグメント末尾の無音・聞き取り困難部分でトークンが収束しない場合に発生することが多い。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F008",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "「国土教授委員会」という存在しない機関名が生成された（Whisper 誤認識）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[25].answer.full_text",
+        "segment_index": 5,
+        "qa_id": "qa_026"
+      },
+      "evidence": "qa_026 answer.full_text の末尾：「国土交通省としても、引き続き国土教授委員会の活用し、庄内川の治水対策をしっかりと進めてまいります。」raw_transcript.json seg 5 にも同表記が存在し Whisper 起源。正しい機関名は文脈から「流域治水協議会」と推定される。また「の活用し」という非文法的な表現も Whisper が一部テキストを脱落させた痕跡。",
+      "estimated_cause": "Whisper が「流域治水協議会」を「国土教授委員会」と誤認識。固有名詞（省庁の委員会名）の音声認識ミス。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F009",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "原垣海事局長 vs 荒垣海事局長（同一人物が 2 種の誤認識名で記録）",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[6].utterances[*].speaker",
+        "segment_index": 6,
+        "qa_id": null
+      },
+      "evidence": "seg 6（住吉寛紀セグメント）の utterances に「原垣海事局長」（qa_035, qa_036 の answer.speaker）と「荒垣海事局長」（qa_037, qa_038 の answer.speaker）が混在。両者とも発言冒頭で「（原/荒）垣海事局長。お答えいたします。」と自称し、海事局長として造船・海運脱炭素化について答弁している。同一人物が 2 つの異なる漢字表記で記録されており、集約・検索時に別人として扱われるリスクがある。正しい氏名は外部照合が必要。",
+      "estimated_cause": "Whisper が同一話者の自己紹介「原垣/荒垣」を発話ごとに異なる漢字に誤変換。",
+      "downstream_impact": ["topics.json", "サイト検索インデックス"]
+    },
+    {
+      "id": "F010",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers に答弁側（大臣・副大臣・局長等）が全員未登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers には質疑委員 11 名と委員長 のみ登録。utterances.json に登録されている答弁者（金子恭之/金子国土交通大臣、坂井国土交通副大臣、堺国土交通副大臣、宮沢航空局長、五十嵐鉄道局長、楠田局長等）約 33 名が metadata.speakers に存在しない。summary.key_commitments では answer 側の speaker への言及が必要だが参照先不整合が発生する。",
+      "estimated_cause": "metadata 生成時に衆議院TVのページから取得できる「発言者リスト」が質疑委員のみを対象としており、政府参考人の動的な出席情報を取得していない。",
+      "downstream_impact": ["summary.json", "topics.json"]
+    },
+    {
+      "id": "F011",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "金子国土交通大臣 vs 金子恭之（同一人物が 2 表記で混在）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.speaker",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "qa_pairs.json の answer.speaker に「金子国土交通大臣」18 件と「金子恭之」16 件が混在。utterances.json にも同様の混在あり（seg ごとに表記が異なる）。集約時に同一人物を識別できず、コミットメント集計等で二重計上リスクがある。",
+      "estimated_cause": "Whisper が発言冒頭の自己紹介（「金子国土交通大臣」or「金子恭之（国土交通大臣）」）のバリエーションをそのまま話者名として採用し、LLM が正規化しなかった。",
+      "downstream_impact": ["summary.json key_commitments の speaker 名称不一致"]
+    },
+    {
+      "id": "F012",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata の null vs 空文字混在（committee_id/session_number=null、duration/mediasp_hash=\"\"）",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.committee_id, $.session_number, $.duration, $.mediasp_hash",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json: committee_id=null, session_number=null, duration=\"\", mediasp_hash=\"\"。同じ「未設定」の意味を持つフィールドが null と空文字で表現が統一されていない。機械処理時に `if not value` で統一的に扱える場合でも、スキーマ定義上は一方に統一すべき。",
+      "estimated_cause": "フィールドごとにスクレイパーと structurer が異なるデフォルト値を返している。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F013",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "答弁者名が省略・フル表記で混在（坂井 vs 坂井国土交通副大臣、楠田 vs 楠田不動産建設経済局長等）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.speaker",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "同一人物の speaker 名が発言によって異なる表記で記録されている例：「坂井」（qa_034）vs「坂井国土交通副大臣」（qa_002）、「楠田」（qa_073, qa_074）vs「国土交通省 楠田不動産建設経済局長」（qa_004）vs「国土交通省 楠田建設経済局長」（utterances）。また「林水管理・国土保全局長」（qa_026〜qa_028）vs「林水管理国土保全局長」（qa_030）の中黒有無。合計で少なくとも 5 つの speaker 名重複ペアが存在。",
+      "estimated_cause": "Whisper が発言冒頭の自己紹介テキストをそのまま speaker 名に採用しており、短縮形と完全形が発話ごとに混在する。LLM の正規化処理が行われていない。",
+      "downstream_impact": ["sites/search 検索インデックス", "topics.json の related_speakers"]
+    },
+    {
+      "id": "F014",
+      "category": "duplicate",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers に冨樫博之（委員長）が 3 エントリ重複登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[0], $.speakers[7], $.speakers[13]",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers に「冨樫博之 国土交通委員長」が start_seconds=1176.0（09:00）、15572.6（13:00）、23977.5（15:19）の 3 エントリで登録。午前開会・午後再開・閉会の 3 つの議事進行を反映しているが、UI 上で同一人物が 3 回表示されるリスクがある。",
+      "estimated_cause": "speakers リスト生成ロジックが発言セグメントごとに登録しており、委員長の重複セグメントを dedup していない。",
+      "downstream_impact": ["サイトの speakers 一覧表示"]
+    }
+  ],
+  "blindspots": [
+    "答弁者の正確な氏名照合（外部の官報・議事録との突き合わせ未実施）。原垣/荒垣の正式表記が特定できていない",
+    "raw_transcript の全 Whisper セグメントを逐字精査していない（サンプリングのみ）",
+    "大臣が八潮サイズを誤って述べ後に訂正した事実（utterances.seg5[2] と [28]）が qa_pairs に記録されていない点を content_missing として計上するか検討したが、誤情報そのものが qa full_text に含まれていないため今回は除外した",
+    "各 qa_pair の evasion_score・commitment_text の正確性の検証は未実施",
+    "topics.json の related_speakers に政府参考人（林水管理・国土保全局長）が含まれる点は分類上の問題だが他の issue に包含したため個別 finding として立てていない"
+  ],
+  "narrative": {
+    "overall": "本セッション（衆議院 国土交通委員会 2026-03-10、75 QA ペア）は、14 名の質疑委員と 30 超の政府参考人が登場する大規模な審議記録である。全体として Whisper 文字起こし・LLM 構造化ともに概ね機能しているが、同姓（五十嵐）を持つ委員と政府官僚が同一委員会に出席したことで speaker_tagger が混乱し、2 件の高確信度 speaker_misattribution が発生している。また seg 5 末尾の Whisper ループ（委員長 21 回繰り返し）、「国土教授委員会」という存在しない機関名の生成、原垣/荒垣の二重誤認識といった Whisper 由来の誤りも散見される。スキーマ品質面では qa_pairs.role が全件空欄であるほか、同一人物に複数の表記が並存する speaker 名の正規化未実施が横断的課題として確認された。",
+    "top_findings": [
+      "qa_026 質問者誤帰属（五十嵐清→犬飼明佳）：五十嵐清（栃木選出）が「私の地元の庄内川水系（愛知）」と発言する地理的矛盾が証拠となる高信頼度の speaker_misattribution。同姓の委員と政府官僚が共存する状況がシステム的弱点を露呈した",
+      "qa_008 答弁者誤帰属（五十嵐清委員→五十嵐鉄道局長）：委員が政府答弁を行った形で記録され、役割と内容が根本的に矛盾する。summary.key_commitments でも同様の帰属誤りが qa_004 で発生（大臣 vs 局長）しており、重要政策コミットメントの発言者識別精度に課題",
+      "全 75 件の qa_pairs.role が空欄：utterances.json では role が正しく付与されているにもかかわらず、structurer が qa_pairs に転記しない設計上の欠落。フィルタ・検索機能の精度に直接影響する likely_systemic な問題"
+    ]
+  }
+}

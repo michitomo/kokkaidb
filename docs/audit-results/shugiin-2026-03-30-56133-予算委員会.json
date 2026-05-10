@@ -1,0 +1,183 @@
+{
+  "audit_meta": {
+    "session_path": "data/shugiin/2026/03/30/56133_予算委員会",
+    "chamber": "shugiin",
+    "date": "2026-03-30",
+    "committee": "予算委員会",
+    "deli_id": "56133",
+    "audited_at": "2026-05-10",
+    "auditor": "claude-sonnet-4-6",
+    "format_version": "1.0"
+  },
+  "overall_quality": "medium",
+  "issue_counts": {
+    "high": 2,
+    "medium": 2,
+    "low": 7,
+    "total": 11
+  },
+  "findings": [
+    {
+      "id": "F001",
+      "category": "whisper_hallucination_loop",
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "file": "raw_transcript.json",
+      "location": "segment index 4, whisper_id=24",
+      "description": "「村岡君。」が約38回連続して繰り返されるWhisperハルシネーションループが検出された。村岡敏英委員が質疑を開始した際の冒頭「村岡君。」という委員長呼称が無音・低音声区間で連鎖的に幻覚生成されたと推定される。",
+      "evidence": "raw_transcript.json seg[4] whisper_id=24: text に「村岡君。村岡君。村岡君。...」が38回以上連続する文字列が存在",
+      "propagated_to_utterances": false,
+      "propagated_to_qa_pairs": false,
+      "resolution_status": "corrected_in_utterances",
+      "recommendation": "Whisper出力後の後処理として正規表現によるループ検出・除去を実装する。例: 同一文字列が5回以上連続した場合に1回に圧縮する。"
+    },
+    {
+      "id": "F002",
+      "category": "whisper_misrecognition",
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "file": "raw_transcript.json",
+      "location": "複数セグメント（seg 2, 3, 4）",
+      "description": "議員・大臣の固有名詞の誤認識が多数発生した。特に「9条を盾に」→「救助を縦に」など内容を変質させる誤認識も確認された。すべてLLMによる後修正でutterances.jsonでは正しく修正済み。",
+      "evidence": {
+        "name_misrecognitions": [
+          {"raw": "篠岡敬", "correct": "階猛", "location": "seg 2, whisper_id=1"},
+          {"raw": "高市さなえ／高市佐内", "correct": "高市早苗", "location": "seg 2, whisper_id=22, 25, 27"},
+          {"raw": "小泉慎二郎", "correct": "小泉進次郎", "location": "seg 2, whisper_id=31; seg 4, whisper_id=48"},
+          {"raw": "茂木敏光", "correct": "茂木敏充", "location": "複数セグメント"},
+          {"raw": "伊佐信一", "correct": "伊佐進一", "location": "seg 3, whisper_id=1"},
+          {"raw": "赤澤良成／赤澤良生", "correct": "赤澤亮正", "location": "複数セグメント"}
+        ],
+        "content_altering_misrecognitions": [
+          {"raw": "救助を縦に", "correct": "9条を盾に", "location": "seg 2, whisper_id=27"},
+          {"raw": "所得の新設", "correct": "租税特別措置の新設", "location": "seg 2, whisper_id=69"}
+        ]
+      },
+      "propagated_to_utterances": false,
+      "propagated_to_qa_pairs": false,
+      "resolution_status": "corrected_in_utterances",
+      "recommendation": "政治家・大臣の固有名詞辞書をWhisperのinitial_promptに追加する。特に「9条」「租税特別措置」「法人税」など法律・政策用語も追加することで内容改変誤認識を防ぐ。"
+    },
+    {
+      "id": "F003",
+      "category": "schema_empty_field",
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "file": "qa_pairs.json",
+      "location": "qa_001〜qa_047 の answer.role フィールド",
+      "description": "47件のqa_pairsのうち43件でanswer.roleが空文字列\"\"。役割情報が欠落しているため、答弁者が大臣・副大臣・政務官・参考人のいずれであるかが識別できない。唯一埋まっているのはqa_001, qa_010, qa_022, qa_038（すべて片山さつき財務大臣）の4件のみ。",
+      "evidence": "Pythonスクリプトによるカウント: answer.role==\"\" の件数 43/47",
+      "propagated_to_utterances": false,
+      "resolution_status": "unresolved",
+      "recommendation": "structurer.py のqa_pairs生成時に utterances.json の answer.role を参照してanswer.roleを埋めるロジックを追加する。答弁者のroleはutterances.jsonには正しく記録されている（答弁者, 参考人, 政府参考人）。"
+    },
+    {
+      "id": "F004",
+      "category": "metadata_missing_speaker",
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "file": "metadata.json",
+      "location": "speakers 配列",
+      "description": "metadata.speakersには質疑者9名（階猛, 伊佐進一, 村岡敏英, 和田政宗, 高山聡史, 辰巳孝太郎×2, 坂本哲志, 片山さつき）しか含まれておらず、答弁者10名（高市早苗, 茂木敏充, 赤澤亮正, 小泉進次郎, 上田和夫〔参考人〕, 上野賢一郎, 松本洋平, 金子恭之, 鈴木憲和, 松本京介〔政府参考人〕）が完全に欠落している。大臣の答弁は会議の主要コンテンツであるにもかかわらずメタデータに反映されていない。",
+      "evidence": "utterances.json の distinct speaker リスト vs metadata.speakers リストの差分。qa_pairs の answer.speaker に登場する10名がmetadata.speakersに存在しない。",
+      "propagated_to_utterances": false,
+      "resolution_status": "unresolved",
+      "recommendation": "scraper または publisher.py で metadata.speakers を生成する際、utterances.json から全distinct speakerを収集してmetadataに追記する。質疑者・答弁者ともに含める。"
+    },
+    {
+      "id": "F005",
+      "category": "fact_error",
+      "severity": "medium",
+      "confidence": "medium",
+      "systemic_signal": "session_specific",
+      "file": "qa_pairs.json",
+      "location": "qa_010, qa_011",
+      "description": "qa_010・qa_011のtopic・question_summaryで「所得税」という語が使われているが、実際の議論対象は「租税特別措置（投資促進税制）」による法人税の軽減措置である。qa_011のtopic_title「新規所得税創設のチェック」は事実として誤り（所得税の新設議論ではない）。Whisper生誤認識「所得の新設」（本来「租税特別措置の新設」）がLLM構造化段階でそのまま引き継がれた可能性が高い。",
+      "evidence": "qa_pairs.json qa_011: topic_title=\"新規所得税創設のチェック\"; raw_transcript.json seg 2 whisper_id=69: \"所得の新設\"（誤認識）; summary.json の key_commitment qa_010: \"大胆な投資促進税制について、既存・新規ともに効果の分析・検証を行い、見直しを行いたい。\"（正しくは投資促進税制）",
+      "resolution_status": "unresolved",
+      "recommendation": "qa_pairs.json の qa_010/qa_011 のtopic_title・question_summaryを「租税特別措置（投資促進税制）の効果検証」等に修正する。構造化LLMのプロンプトにWhisper誤認識が疑われる場合のチェックロジックを追加することが望ましい。"
+    },
+    {
+      "id": "F006",
+      "category": "timestamp_inconsistency",
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "file": "metadata.json",
+      "location": "speakers[6] 坂本哲志 と speakers[7] 片山さつき",
+      "description": "坂本哲志（start_seconds=1195.2）と片山さつき（start_seconds=1211.8）のstart_timeがともに\"09:00\"で同一。両者は16.6秒しか離れていないため、分単位のstart_timeでは区別できない。",
+      "evidence": "metadata.json speakers: 坂本哲志 start_seconds=1195.2 start_time=\"09:00\"; 片山さつき start_seconds=1211.8 start_time=\"09:00\"",
+      "resolution_status": "unresolved",
+      "recommendation": "start_timeフィールドを \"HH:MM:SS\" 秒単位に変更する、またはstart_secondsのみを使用するよう仕様を統一する。"
+    },
+    {
+      "id": "F007",
+      "category": "schema_inconsistency",
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "file": "metadata.json",
+      "location": "duration, committee_id, session_number, mediasp_hash フィールド",
+      "description": "欠損値の表現が統一されていない。duration=\"\"（空文字列）、mediasp_hash=\"\"（空文字列）に対し、committee_id=null、session_number=nullとnullが混在。",
+      "evidence": "metadata.json: \"duration\": \"\", \"committee_id\": null, \"session_number\": null, \"mediasp_hash\": \"\"",
+      "resolution_status": "unresolved",
+      "recommendation": "欠損値はnullに統一する。特に数値型フィールド（duration, committee_id, session_number）は空文字列ではなくnullを使用する。"
+    },
+    {
+      "id": "F008",
+      "category": "schema_empty_field",
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "file": "metadata.json",
+      "location": "speakers[*].role フィールド（全9件）",
+      "description": "metadata.speakersの全9エントリのroleフィールドが空文字列\"\"。委員長・質疑者・答弁者などの役割情報がメタデータに記録されていない。",
+      "evidence": "metadata.json speakers全9件: \"role\": \"\"",
+      "resolution_status": "unresolved",
+      "recommendation": "metadata.speakers生成時にutterances.jsonのroleフィールドを参照してroleを埋める。"
+    },
+    {
+      "id": "F009",
+      "category": "duplicate",
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "file": "metadata.json",
+      "location": "speakers 配列 index 5 および 8",
+      "description": "辰巳孝太郎がmetadata.speakersに2回登場している（start_seconds=9885.8の質疑フェーズ分と10540.7の討論・採決フェーズ分）。同一人物の複数フェーズの発言が別エントリとして重複して記録されている。",
+      "evidence": "metadata.json speakers: {\"name\": \"辰巳孝太郎\", \"start_seconds\": 9885.8, ...}, {\"name\": \"辰巳孝太郎\", \"start_seconds\": 10540.7, ...}",
+      "resolution_status": "unresolved",
+      "recommendation": "metadata.speakers生成時に同一人物の重複エントリをマージする（最初の出現のみ保持、またはstart_seconds最小値を使用）。"
+    },
+    {
+      "id": "F010",
+      "category": "other",
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "likely_systemic",
+      "file": "qa_pairs.json",
+      "location": "全47件のvideo_urlフィールド",
+      "description": "同一セグメント内の全qa_pairsが同一のvideo_urlを共有しており、個別Q&Aの開始タイムスタンプではなくセグメント開始時刻を指している。実際のQ&Aが始まる時刻に飛べないため、ユーザーの動画参照精度が低下する。",
+      "evidence": "例: qa_005〜qa_011（すべてsegment 2）のvideo_urlが同一URLを共有。セグメント開始は0秒付近を指しているが各Q&Aは数分後に開始する。",
+      "resolution_status": "unresolved",
+      "recommendation": "qa_pairs生成時に各Q&Aの最初の発言（question.utterances[0]）のstart_secondsをvideo_urlのtパラメータとして付与する。"
+    },
+    {
+      "id": "F011",
+      "category": "summary_qa_divergence",
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "session_specific",
+      "file": "summary.json",
+      "location": "key_commitments[0] (qa_029参照)",
+      "description": "summary.jsonのkey_commitmentでqa_029を参照し「食料品の消費税ゼロ化について、政権公約として実現したいと考えている。」と高市早苗に帰属しているが、qa_pairs.jsonのqa_029のcommitment_textは「事業者の不安を解消し、問題のない制度ができるように努力する。」（鈴木憲和）と異なる内容・人物になっている。summaryは質疑の冒頭での高市発言を捉え、qa_pairsは鈴木憲和の詳細答弁を捉えた結果と推定されるが、参照先の不整合が生じている。",
+      "evidence": "summary.json key_commitments[0]: speaker=高市早苗, text=\"食料品の消費税ゼロ化について、政権公約として実現したいと考えている。\", qa_id=\"qa_029\"; qa_pairs.json qa_029: answer.speaker=鈴木憲和, commitment_text=\"事業者の不安を解消し、問題のない制度ができるように努力する。\"",
+      "resolution_status": "unresolved",
+      "recommendation": "summary生成プロンプトで、key_commitmentsのqa_idはcommitment_textを発言した話者のqa_pairsエントリに対応するよう指示を明確化する。"
+    }
+  ]
+}

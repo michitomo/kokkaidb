@@ -1,0 +1,177 @@
+{
+  "session_id": "shugiin/2026/02/18/56074_本会議",
+  "comparison_at": "2026-05-10T11:00:00Z",
+  "old_audit_findings": 14,
+  "results": [
+    {
+      "finding_id": "F001",
+      "category": "content_missing",
+      "severity": "high",
+      "title": "内閣総理大臣指名選挙（高市早苗）がqa_pairsに完全欠落",
+      "status": "UNCHANGED",
+      "old_evidence": "utterances.json segment_index=4に高市早苗354票・PM指名宣告があるが、qa_pairs.json 4件（qa_001〜qa_004）のいずれにも内閣総理大臣指名に関するpairが存在しない。topics.jsonにも対応トピックなし。",
+      "new_observation": "NEW qa_pairs.json は3件（qa_001〜qa_003）のみで、内閣総理大臣指名に関するpairは引き続き存在しない。NEW utterances.json segment_index=4 には築山信彦のutteranceとして「投票の結果を御報告いたします。…高市早苗君、三百五十四。…」および森英介の「以上の結果、衆議院議則第18条第2項により、高市早苗君を本院において内閣総理大臣に指名することに決まりました。」が確認できる。NEW topics.json は「議会運営および委員長選任手続き」1件のみで内閣総理大臣指名トピックが存在しない。NEW summary.json の session_summary は「最終的に森英介議長が点呼を命じ、投票手続きが開始されました」と記述しており、PM指名の結論すら言及がない（OLD では「最後に内閣総理大臣の指名選挙が実施され、高市早苗氏が指名されました」と正しく言及していたが、NEWはさらに悪化）。",
+      "judgment_reason": "NEW output においても内閣総理大臣指名選挙がqa_pairsに独立pairとして生成されていない。さらに、OLD summary.jsonでは「内閣総理大臣の指名選挙が実施され高市早苗氏が指名された」と言及されていたが、NEW summary.json では投票手続き開始までしか記述されず、PM指名の結論が完全に脱落しており、summary品質はむしろ悪化している。UNCHANGED（summary悪化の観点ではNEW_ISSUEに近い）。"
+    },
+    {
+      "finding_id": "F002",
+      "category": "content_missing",
+      "severity": "high",
+      "title": "segment 1〜3（森英介・石井啓一就任挨拶、森山裕お祝い発言）がqa_pairsに完全欠落",
+      "status": "UNCHANGED",
+      "old_evidence": "utterances.json segment_index=1（森英介就任挨拶）、2（石井啓一就任挨拶）、3（森山裕お祝い発言）が qa_pairs.json に一切参照されていない（参照はsegment_index=0と4のみ）。",
+      "new_observation": "NEW qa_pairs.json の3件（qa_001〜qa_003）はすべて segment_index=4 に属し、segment_index=1・2・3 への参照は一切ない。NEW utterances.json では segment_index=1に森英介「議会制民主政治の本質に則り…」、segment_index=2に石井啓一「公正を胸に据え…」、segment_index=3に森山裕「両君の御就任を祝し…」が存在することを確認した。これらはqa_pairsに変換されていない。OLD で存在した segment_index=0 のqa_pairs（qa_001議長選挙・qa_002副議長選挙）は NEW ではなくなっており、segment_index=0の内容も qa_pairs から消えている点は変化だが、segment_index=1〜3の欠落は依然として継続。",
+      "judgment_reason": "segment_index=1・2・3の就任挨拶・お祝い発言が引き続きqa_pairsに変換されない構造的問題は解消されていない。UNCHANGED。"
+    },
+    {
+      "finding_id": "F003",
+      "category": "summary_qa_divergence",
+      "severity": "high",
+      "title": "summary.json の key_commitments が誤ったqa_idを参照（森英介・石井啓一の発言はqa_001/qa_002に存在しない）",
+      "status": "PARTIAL",
+      "old_evidence": "OLD summary.json の key_commitments[0]={speaker:'森英介', qa_id:'qa_001', text:'議会制民主政治の本質に則り…'}、key_commitments[1]={speaker:'石井啓一', qa_id:'qa_002', text:'公正を胸に据え…'}。しかしqa_001はsegment_index=0の築山信彦による議長選挙手続きであり、森英介・石井啓一の発言を含まない。",
+      "new_observation": "NEW summary.json の key_commitments は空配列 [] となっており、誤ったqa_idを参照するcommitmentは消滅した。ただし、これは誤参照が修正されたのではなく、commitmentエントリ自体が削除された（= 森英介・石井啓一の就任誓約が一切記録されなくなった）ことによる「問題の隠蔽」である。就任挨拶の内容（森英介「議会制民主政治の本質に則り…」、石井啓一「公正を胸に据え…」）はutterances.jsonに存在するが、summary.key_commitmentsには反映されていない。",
+      "judgment_reason": "誤ったqa_idへの参照という具体的な不整合は解消された。しかしcommitmentが空配列になったことで、本来記録すべき就任誓約が完全に欠落するという別の問題が残存する。「誤帰属」から「完全欠落」への変化であり、完全解決ではない。PARTIAL。"
+    },
+    {
+      "finding_id": "F004",
+      "category": "role_label_error",
+      "severity": "high",
+      "title": "小寺博夫のparty属性が'衆議院議長'と誤帰属（qa_003・qa_004）",
+      "status": "UNCHANGED",
+      "old_evidence": "OLD qa_003・qa_004 の question.speaker=小寺博夫、question.party='衆議院議長'。小寺博夫は議員（動議提出者）であり衆議院議長ではない。",
+      "new_observation": "NEW qa_pairs.json の qa_001（議員運営委員長選任）・qa_002（常任委員長選挙延期）・qa_003（日程延期・投票方法）のいずれも question.speaker='小寺博夫'、question.party='衆議院議長' と記録されている。例: qa_001: {speaker:'小寺博夫', party:'衆議院議長', full_text:'議員運営委員長の選挙は、その手続きを省略して、議長において指名されることを望みます。'}。小寺博夫は動議提出議員であり衆議院議長ではない（議長は森英介）。",
+      "judgment_reason": "NEW output でも同一の誤帰属（小寺博夫のparty='衆議院議長'）が3件のqa_pairsすべてで発生している。UNCHANGED。"
+    },
+    {
+      "finding_id": "F005",
+      "category": "role_label_error",
+      "severity": "medium",
+      "title": "森英介（衆議院議長）のroleが'委員長'と誤分類（utterances segment 3・4）",
+      "status": "UNCHANGED",
+      "old_evidence": "OLD utterances.json segment_index=3のutterance {speaker:'森英介', role:'委員長', text:'森山裕君。'} およびsegment_index=4の {speaker:'森英介', role:'委員長', text:'日程第4、会期の件につき…'} で森英介のroleが'委員長'と分類。本会議議長を委員長と誤分類。",
+      "new_observation": "NEW utterances.json segment_index=2: {speaker:'森英介', role:'委員長', text:'副議長にご当選になりました石井啓一君をご紹介いたします。'}、segment_index=3: {speaker:'森英介', role:'委員長', text:'森英介君。森山裕君。'}、segment_index=4: {speaker:'森英介', role:'委員長', text:'日程第3、議席の指定を行います…'} および {speaker:'森英介', role:'委員長', text:'これより、点呼を命じます。…'} および {speaker:'森英介', role:'委員長', text:'以上の結果、衆議院議則第18条第2項により…'}。森英介は衆議院議長であるがrole='委員長'の誤分類が全出現箇所で継続。",
+      "judgment_reason": "森英介のrole='委員長'誤分類は NEW output の複数箇所（segment_index=2, 3, 4の計5utterance以上）で確認。解消されていない。UNCHANGED。"
+    },
+    {
+      "finding_id": "F006",
+      "category": "role_label_error",
+      "severity": "medium",
+      "title": "築山信彦（事務総長/議長代理）のroleが全て'質疑者'と誤分類（utterances segment 0）",
+      "status": "PARTIAL",
+      "old_evidence": "OLD utterances.json segment_index=0において築山信彦の全14utteranceのroleが'質疑者'。議事進行・点呼・開票報告を行う事務総長が質疑者と誤分類。",
+      "new_observation": "NEW utterances.json では segment_index=0 が統合されて1つのutteranceになっており、そこでの築山信彦のroleは'委員長'に変更されている。segment_index=1・4では{speaker:'築山信彦', role:'その他', text:'築山信彦君、議長に御当選になりました…'}、{speaker:'築山信彦', role:'政府参考人', text:'投票の結果を御報告いたします…'}など多様なroleが付与されている。'質疑者'という明確な誤分類は消えたが、segment_index=0の'委員長'、segment_index=4の'政府参考人'なども正確とは言い難い（事務総長が議長職代行中の正確なroleは存在しないカテゴリ）。少なくとも'質疑者'という最悪の誤分類は回避された。",
+      "judgment_reason": "segment_index=0での'質疑者'誤分類は解消された。ただし代替のroleラベル（'委員長'、'政府参考人'等）も完全に正確とは言えない。'質疑者'よりは実態に近い分類に改善されたためPARTIAL。"
+    },
+    {
+      "finding_id": "F007",
+      "category": "whisper_misrecognition",
+      "severity": "medium",
+      "title": "山本大地 → 山本大臣 の誤認識がcorrected text・utterancesに残存",
+      "status": "UNCHANGED",
+      "old_evidence": "OLD utterances.json segment_index=4の点呼リスト内に「山本大臣君」が残存（正しくは「山本大地君」）。LLM補正で修正されなかった。",
+      "new_observation": "NEW utterances.json の segment_index=4、森英介発話の点呼リスト（role:'委員長'）内に「山本大臣君、大西洋平君、森下千里君…」と確認できる（line 103付近: '山本大臣君'）。同様にsegment_index=0の点呼リスト（築山信彦utterance）内では「山本大地君」と正しく記録されている箇所がある。segment_index=4（PM指名投票の点呼）での誤認識は残存。",
+      "judgment_reason": "NEW utterances.json segment_index=4の点呼リスト内に「山本大臣君」が確認された。segment_index=0での同名議員は「山本大地君」と正しく記録されており、誤認識はsegment_index=4の点呼リストに限定して残存している。UNCHANGED。"
+    },
+    {
+      "finding_id": "F008",
+      "category": "whisper_misrecognition",
+      "severity": "medium",
+      "title": "衆議院規則 → 衆議院議則 の誤認識がcorrected text・utterancesに残存（内閣総理大臣指名の根拠条文）",
+      "status": "UNCHANGED",
+      "old_evidence": "OLD utterances.json segment_index=4のutteranceに「衆議院議則第18条第2項により、高市早苗君を本院において内閣総理大臣に指名することに決まりました」と誤記。正しくは「衆議院規則第18条第2項」。",
+      "new_observation": "NEW utterances.json segment_index=4、森英介のutterance（role:'委員長'）: 「以上の結果、衆議院議則第18条第2項により、高市早苗君を本院において内閣総理大臣に指名することに決まりました。この際、暫時休憩いたします。」が確認できる。「衆議院議則」という誤記は完全に残存している。",
+      "judgment_reason": "NEW utterances.json でも同一の誤記「衆議院議則第18条第2項」が残存しており、LLM補正は引き続きこの誤りを検出・修正できていない。UNCHANGED。"
+    },
+    {
+      "finding_id": "F009",
+      "category": "metadata_missing_speaker",
+      "severity": "medium",
+      "title": "小寺博夫がmetadata.speakersに未登録",
+      "status": "UNCHANGED",
+      "old_evidence": "utterances.json segment_index=4に小寺博夫が発言し、qa_pairsに参照されているが、metadata.json speakers配列（5エントリ）に小寺博夫が未登録。",
+      "new_observation": "NEW metadata.json（Step 2の出力で不変）の speakers配列には築山信彦・森英介（×2）・石井啓一・森山裕の5エントリのみ。小寺博夫は引き続き未登録。なお再生成範囲はStep 4.5以降であり、metadata.jsonはStep 2の出力として不変と明記されている。NEW utterances.json のsegment_index=4では小寺博夫の発言が2utteranceで確認できる。NEW qa_pairs.json の qa_001〜qa_003のいずれもquestion.speaker='小寺博夫'。",
+      "judgment_reason": "metadata.jsonはStep 2の出力で再生成範囲外（不変）のため、この問題は構造上修正不能。小寺博夫のmetadata未登録は継続。UNCHANGED。"
+    },
+    {
+      "finding_id": "F010",
+      "category": "whisper_hallucination_loop",
+      "severity": "medium",
+      "title": "Whisperループ：田中和則君が8連続繰り返し（raw whisper segment id=71）",
+      "status": "UNCHANGED",
+      "old_evidence": "OLD raw_transcript.json segment_index=0、whisper_segment id=71に「田中和則君」が8回繰り返し。LLM補正で1回に修正済みだったが原データに問題が残存。",
+      "new_observation": "raw_transcript.json は再生成範囲外（Step 4.5以降の再生成対象はtranscript_corrector以降）のため原データは変更なし。ただしNEW utterances.json segment_index=0 の点呼リスト（築山信彦utterance）内には「田中和則君」が1回のみ登場しており、補正後テキストへの影響は限定的。NEW utterances.json segment_index=4の点呼リスト内も「田中和則君」は1回のみ確認（ループは見られない）。",
+      "judgment_reason": "raw_transcript.json は再生成範囲外で変化なし。utterances.json上はループの繰り返しは見られないため、補正ステップでの処理は継続して機能している。根本原因（whisper hallucination）は変わらないがdownstream影響はNEWでも限定的。UNCHANGED（原データ問題は構造上不変）。"
+    },
+    {
+      "finding_id": "F011",
+      "category": "duplicate",
+      "severity": "low",
+      "title": "metadata.speakersに森英介が2エントリ重複登録",
+      "status": "UNCHANGED",
+      "old_evidence": "OLD metadata.json の speakers配列に森英介がindex=1（start_seconds:5580.1, start_time:'14:13', duration_minutes:2）とindex=4（start_seconds:5973.7, start_time:'14:19', duration_minutes:43）の2エントリ重複。",
+      "new_observation": "NEW metadata.json（不変）は OLD と全く同一内容。speakers配列に森英介が2エントリ（index=1: start_seconds:5580.1, duration_minutes:2 と index=4: start_seconds:5973.7, duration_minutes:43）として重複登録されている。",
+      "judgment_reason": "metadata.jsonは再生成範囲外で不変。重複エントリは継続。UNCHANGED。"
+    },
+    {
+      "finding_id": "F012",
+      "category": "schema_empty_field",
+      "severity": "low",
+      "title": "metadata.speakers の role フィールドが全エントリ空文字列",
+      "status": "UNCHANGED",
+      "old_evidence": "OLD metadata.json の speakers配列の全5エントリでroleフィールドが空文字列。duration フィールドも空文字列。築山信彦のduration_minutes=0も不正確。",
+      "new_observation": "NEW metadata.json（不変）はOLDと全く同一内容。全5エントリのroleフィールドは空文字列、築山信彦のduration_minutes=0が確認できる。",
+      "judgment_reason": "metadata.jsonは再生成範囲外で不変。スキーマ問題は継続。UNCHANGED。"
+    },
+    {
+      "finding_id": "F013",
+      "category": "summary_qa_divergence",
+      "severity": "low",
+      "title": "topics.jsonが内閣総理大臣指名選挙トピックを欠落（summary.jsonとの乖離）",
+      "status": "NEW_ISSUE",
+      "old_evidence": "OLD topics.json に「内閣総理大臣の指名選挙」トピックが欠落。OLD summary.json の key_topics には「内閣総理大臣の指名選挙」が含まれていたため不整合が発生。",
+      "new_observation": "NEW topics.json は「議会運営および委員長選任手続き」1件のみ。内閣総理大臣指名トピックは引き続き欠落。NEW summary.json の key_topics も「議会運営および委員長選任手続き」1件のみであり、summary と topics の間の直接的不整合は解消された。しかし両ファイルとも内閣総理大臣指名・衆議院議長副議長選挙・就任挨拶など本会議の主要イベントが軒並み欠落しており、セッション全体の内容カバレッジが著しく劣化している。NEW summary.session_summary は「議員運営委員長の選任および常任委員長選挙に関する手続き」のみ記述し、議長・副議長選挙もPM指名も言及がない。",
+      "judgment_reason": "OLD では summary.key_topicsにPM指名があり topics.jsonになかったため両ファイル間に不整合があった。NEW では両ファイルとも同様に縮小されたため不整合は表面上消えたが、根本的な内容欠落は悪化した。topics/summaryの内容カバレッジが大幅に低下（本会議の最重要イベントが全欠落）しており、NEW_ISSUEとして評価する。"
+    },
+    {
+      "finding_id": "F014",
+      "category": "schema_inconsistency",
+      "severity": "low",
+      "title": "qa_004 の answer.speaker・role が空文字列（応答者不明扱い）",
+      "status": "RESOLVED",
+      "old_evidence": "OLD qa_004（日程延期・投票方法要望）のanswerフィールドにspeaker=\"\"、role=\"\"、full_text=\"\"、evasion_score=1.0。他のqa_pairsと比べてスキーマ不一致。",
+      "new_observation": "NEW qa_pairs.json ではqa_003（日程延期・投票方法要望）がOLDのqa_004に対応する。NEW qa_003のanswerは {speaker:'森英介', role:'衆議院議長', summary:'点呼を命じ、投票手続きを開始した', full_text:'これより、点呼を命じます。'} と設定されており、speaker・role・full_textが全て入力されている。answer.speaker=森英介、role='衆議院議長'は実態を反映しており、空文字列問題は解消。ただしrole='衆議院議長'はNEWのqa_pairs全体で使われるroleフィールドがない（OLD schemaではanswerにroleあり、NEW schemaでは as1_directness等metrics構造に変更）ことに留意が必要。",
+      "judgment_reason": "OLD qa_004相当のNEW qa_003において、answerのspeaker・role・full_textが適切に設定されており、空文字列問題は解消。evasion_score相当の指標も廃止され、より適切なメトリクス体系に変更されている。RESOLVED。"
+    }
+  ],
+  "new_only_issues": [
+    {
+      "category": "content_missing",
+      "severity": "high",
+      "description": "NEW summary.json のsession_summary が本会議の主要議事（衆議院議長・副議長選挙、就任挨拶、内閣総理大臣指名選挙）を完全に欠落させ、段落全体が議員運営委員長選任手続きのみを記述している。OLD summary.json は「森英介氏が議長に、石井啓一氏が副議長に当選。会期150日間決定。内閣総理大臣指名選挙で高市早苗氏が指名された」と主要イベントをカバーしていたが、NEW summary.json では「小寺博夫議長により…議員運営委員長の選挙手続きの省略と…常任委員長選挙の延期が提案」のみで、セッション全体像の把握が不可能。"
+    },
+    {
+      "category": "content_missing",
+      "severity": "high",
+      "description": "NEW qa_pairs.json が OLD の4件からさらに3件に削減され、かつ参照するsegment_indexがsegment_index=4のみに限定されている。OLD ではsegment_index=0（議長・副議長選挙）を対象としたqa_001・qa_002が存在したが、NEW ではこれらが消滅した。結果として議長選挙（森英介463票）および副議長選挙（石井啓一464票）の詳細がqa_pairsから完全に消えた。"
+    },
+    {
+      "category": "role_label_error",
+      "severity": "medium",
+      "description": "NEW utterances.json segment_index=4において小寺博夫のroleが'質疑者'のまま（line 96: {speaker:'小寺博夫', role:'質疑者', unmatched:true}）。小寺博夫は動議提出議員であり'質疑者'は適切でないが、OLD でも同様であった。加えてNEWではunmatched:true フラグが付与されており、発話マッチングに問題があることを示している。"
+    },
+    {
+      "category": "schema_inconsistency",
+      "severity": "medium",
+      "description": "NEW qa_pairs.json の answer フィールドに role キーが存在する場合と存在しない場合が混在している。qa_001・qa_002のanswerにはrole:\"\"（空文字列）が設定されているが、qa_003のanswerにはrole:'衆議院議長'が設定されており、スキーマが一貫していない。"
+    }
+  ],
+  "summary": {
+    "resolved": 1,
+    "partial": 2,
+    "unchanged": 10,
+    "new_issues": 1,
+    "overall_improvement": "regression",
+    "narrative": "再生成（Step 4.5以降）によってOLDの14件の監査指摘は1件解消（F014: qa_004のanswer空文字列問題）、2件が部分的に改善（F003: key_commitmentsの誤qa_id参照が誤帰属消去に→ただし完全欠落に変化、F006: 築山信彦のrole='質疑者'が廃止）されたに留まり、10件はUNCHANGEDである。最重要問題であるPM指名選挙のqa_pairs欠落（F001）・segment 1〜3の完全欠落（F002）・role_label系の系統的誤り（F004・F005）・whisper誤認識残存（F007・F008）・metadata問題（F009・F011・F012）はいずれも解消されていない。それどころかNEW output ではOLD summary.json が正確に記述していた「議長・副議長選挙・PM指名」という本会議の主要議事が summary から消え去り、qa_pairs も OLD の4件から3件に減少してsegment_index=4のみに絞り込まれた結果、全体のコンテンツカバレッジが著しく低下している。F013（topics/summaryの不整合）はtopics.jsonとsummary.json双方が縮小されて表面的な不整合が解消したように見えるが、実態はNEW_ISSUEとして評価すべき重大な内容劣化である。再生成によってデータ品質が向上したとは評価できず、overall_improvementは regression と判定する。"
+  }
+}

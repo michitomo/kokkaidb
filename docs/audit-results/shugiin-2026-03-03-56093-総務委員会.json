@@ -1,0 +1,243 @@
+{
+  "session_id": "shugiin/2026/03/03/56093_総務委員会",
+  "chamber": "shugiin",
+  "date": "2026-03-03",
+  "deli_id": "56093",
+  "committee": "総務委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T10:30:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 3, "medium": 5, "low": 4, "total": 12},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "content_missing",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "topics.json が空 — 5つの重点政策が記録されていない",
+      "location": {
+        "file": "topics.json",
+        "json_path": "$.topics",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "topics.json = {\"topics\": []}。一方 summary.json の key_topics には「地方創生と地方行財政基盤の確立」「信頼できる情報通信環境の整備とサイバーセキュリティ」「防災・減災・国土強靭化の推進」「国際競争力の強化と経済安全保障（AI・デジタルインフラ）」「郵政事業のユニバーサルサービス確保と社会基盤の整備」「令和8年度総務省関係予算案」の6トピックが記録されている。",
+      "estimated_cause": "structurer が所信表明会 (Q&Aなし) のセッションタイプに対して topics 生成をスキップした、またはエラーで空配列を返した。qa_pairs も空であるため、topics 生成ロジックが Q&A の存在を前提としている可能性がある。",
+      "downstream_impact": ["site/", "search-index", "dashboard"]
+    },
+    {
+      "id": "F002",
+      "category": "speaker_misattribution",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "向山淳 utterance に委員長の散会宣言が誤帰属",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[6].utterances[1].text",
+        "segment_index": 6,
+        "qa_id": null
+      },
+      "evidence": "utterances.json segment 6 で 向山淳 (質疑者) の text に「次回は広報をもってお知らせすることとし、本日はこれにて散会いたします。」が含まれている。raw_transcript.json segment 6 の wseg2 も同じテキストを含み、この発言は常に委員長（古川康）が行う定型句。raw_transcript.json segment 6 の text は向山淳の挨拶と散会宣言を改行で区切っているが、LLM が境界判定を誤り 向山淳 に帰属させた。",
+      "estimated_cause": "speaker_tagger または structurer が segment 末尾の委員長定型発言 (散会宣言) を音声セグメントの主話者 (向山淳) に帰属させた。委員長発言が極めて短く (1文) かつ audio boundary が曖昧なためと推定。",
+      "downstream_impact": ["utterances.json", "qa_pairs.json"]
+    },
+    {
+      "id": "F003",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["fact_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "三学館 (産学官の誤認識) が utterances.json に残存",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[1].utterances[1].text",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "utterances.json segment 1 (林芳正) の text に「具体的には、三学館の結節点である国立研究開発法人情報通信研究機構と連携し」と記録されている。raw_transcript.json segment 1 wseg30 にも同じ「三学館」がある。正しくは「産学官 (さんがくかん)」であり、NICT は産学官連携の結節点と説明されるのが正確。Whisper が音声 /sa-ŋa-ku-ka-N/ を「三学館」と漢字変換した誤認識が LLM 修正をすり抜けて下流に伝播した。",
+      "estimated_cause": "Whisper large-v3-turbo が「産学官」を「三学館」と誤認識。LLM (speaker_tagger/structurer) が文脈から「産学官」に補正できなかった。この種の同音漢字変換ミスは LLM が既存テキストを優先する場合に見過ごされやすい。",
+      "downstream_impact": ["utterances.json", "summary.json"]
+    },
+    {
+      "id": "F004",
+      "category": "role_label_error",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "副大臣・政務官 5名が role=質疑者 に誤分類",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[2,3,4,5,6].utterances[1].role",
+        "segment_index": 2,
+        "qa_id": null
+      },
+      "evidence": "utterances.json segments 2〜6 で 堀内詔子・高橋克法・中野英幸・梶原大介・向山淳がいずれも role=\"質疑者\" となっている。実際はこのセッションは所信表明会であり、これらの政府側参加者は予算案説明・就任挨拶を行う「答弁者」または「政府参考人」であって質疑者ではない。segment 1 の 林芳正 は role=\"答弁者\" とされており一貫性もない。",
+      "estimated_cause": "structurer の role 分類ロジックが「質疑者」「答弁者」の二択しか持たず、所信表明・就任挨拶という第三のセッションタイプを扱えない。林芳正が「答弁者」になったのは偶然か先行ルールの影響。",
+      "downstream_impact": ["qa_pairs.json", "site/"]
+    },
+    {
+      "id": "F005",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "経常調査 (毎月勤労統計調査等の誤認識) が utterances に残存",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[1].utterances[1].text",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "utterances.json segment 1 の林芳正 text に「毎月の経常調査など各種政策の基盤となる統計調査を確実に実施します」と記録されている。raw_transcript.json segment 1 wseg42 にも同じ「経常調査」がある。政府の統計調査文脈では「毎月勤労統計調査」が代表的な月次統計であり、「経常調査」はその誤認識の可能性が高い。LLM は補正せずそのまま残した。",
+      "estimated_cause": "Whisper が「勤労統計調査」を「経常調査」と誤認識。LLM が「経常調査」を統計用語として有効とみなし補正しなかった。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F006",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "恩急 (恩給の誤認識) が raw_transcript に複数箇所",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[0].whisper_segments[5].text",
+        "segment_index": 0,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json segment 0 の wseg5・wseg6 に「恩急に関する事項」「恩急に関する件」が計2箇所。正しくは「恩給（おんきゅう）に関する事項」。utterances.json では LLM が「恩給」に修正済みだが、raw_transcript には誤認識が残る。また segment 0 wseg3 に「選例により委員長において指名する」も存在（正しくは「慣例」または「先例」）。utterances.json で修正済み。",
+      "estimated_cause": "Whisper large-v3-turbo が「恩給 (おんきゅう)」を「恩急」に誤字起こし。音声的に近い。LLM は文脈から正しく修正した。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F007",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "都半島地震 (能登半島地震の誤認識) が raw_transcript に残存",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].whisper_segments[26].text",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json segment 1 wseg26 に「令和6年の都半島地震など」と記録されている。正しくは「令和6年の能登半島地震」。utterances.json では LLM が「能登半島地震」に修正済み。また同セグメントに「官民で逮捕する体制」(正しくは「連携する」)、「処方分散」(正しくは「地方分散」)、「生産不設能力」(正しくは「敷設能力」)、「三同国・三同企業」(正しくは「参加国・参加企業」)、「複雑行動化」(正しくは「複雑高度化」)、「SN事業者」(正しくは「SNS事業者」)など複数の誤認識が集中している。",
+      "estimated_cause": "林芳正の所信表明は長時間（約16分・5,600字）にわたるため、Whisper が特に専門用語・固有名詞で誤認識を多発。多くは LLM が修正したが、三学館・経常調査は修正されなかった。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F008",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers の role フィールドが全員空文字列",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[*].role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json の speakers リスト全7名（古川康・林芳正・堀内詔子・高橋克法・中野英幸・梶原大介・向山淳）が role=\"\" (空文字列) となっている。affiliation フィールドには「総務委員長」「総務大臣」等が正しく入っており、role だけが未設定。",
+      "estimated_cause": "scraper または metadata 生成ロジックが role フィールドを設定しないまま空文字列で初期化している。役職情報は affiliation に格納されているため、role が冗長フィールドとして放置されたと推定。",
+      "downstream_impact": ["site/"]
+    },
+    {
+      "id": "F009",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "utterances テキストに speaker 名/role プレフィックスが不規則に混入",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[4,5].utterances",
+        "segment_index": 4,
+        "qa_id": null
+      },
+      "evidence": "segment 4 (古川康 utterance): text=\"古川委員長\" のみ（動詞なし）。segment 5 (古川康 utterance): text=\"古川委員長：次に梶原総務大臣政務官。\" (コロン区切り)。segment 5 (梶原大介 utterance): text=\"梶原大介：はい。総務大臣政務官の梶原大介でございます。\" (コロン区切りかつ自名プレフィックス)。segment 2 (古川康 utterance): text=\"古川康君。次に、令和8年度...\" (自名が文頭に)。各 segment でフォーマットが異なる。",
+      "estimated_cause": "speaker_tagger/structurer が raw_transcript 内のスピーカー識別子（議事録書き起こし形式の「○○委員長」「○○君。」等）をそのままテキストに含めてしまった。フォーマット統一ルールが適用されていない。",
+      "downstream_impact": ["site/", "search-index"]
+    },
+    {
+      "id": "F010",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.committee_id=null, session_number=null, duration=\"\"",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.committee_id",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json にて committee_id=null, session_number=null, duration=\"\", mediasp_hash=\"\" (衆議院なので空は正常)。committee_id と session_number は null、duration は空文字列と型不一致（null vs 空文字列の混在）。",
+      "estimated_cause": "scraper が衆議院TV から committee_id・session_number・duration を取得する実装がない、またはパース失敗時に null と空文字列を使い分けている。",
+      "downstream_impact": ["site/", "search-index"]
+    },
+    {
+      "id": "F011",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.key_commitments の qa_id が全て空文字列",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments[*].qa_id",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "summary.json の key_commitments 4件すべてで qa_id=\"\" となっている。qa_pairs.json が空配列 ({\"pairs\": []}) であるため、対応する qa_id がないのは構造上の必然だが、フィールドが空文字列のまま残されている。",
+      "estimated_cause": "structurer が所信表明会 (Q&Aなし) においても key_commitments を生成するが、対応する qa_id を参照できず空文字列を設定した。qa_id フィールドは Q&A があるセッションにのみ意味を持つが、型チェックや条件分岐がない。",
+      "downstream_impact": ["site/"]
+    },
+    {
+      "id": "F012",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "unknown",
+      "title": "中野英幸 utterance に重複する自己紹介フレーズが混入",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[4].utterances[1].text",
+        "segment_index": 4,
+        "qa_id": null
+      },
+      "evidence": "utterances.json segment 4 中野英幸 の text は「次に中野総務大臣政務官。中野英幸総務大臣政務官の中野英幸でございます。」となっている。raw_transcript.json segment 4 wseg1 では「次に中野総務大臣政務官。総務大臣政務官の中野英樹でございます。」（英幸を英樹と誤認識）。LLM が「英樹」を「英幸」に修正する際に「中野英幸」を前置きとして追加し、「中野英幸総務大臣政務官の中野英幸でございます」という冗長テキストを生成した。",
+      "estimated_cause": "LLM が名前の修正 (英樹 → 英幸) を行う際に、修正前テキストに speaker 名プレフィックスを追加するパターンを踏み、結果として名前が重複した。",
+      "downstream_impact": ["utterances.json"]
+    }
+  ],
+  "blindspots": [
+    "raw_transcript.json の全 whisper_segments を逐字精査していない (代表的な誤認識のみサンプリング確認)",
+    "衆議院TVの実際の映像と照合していないため、start_seconds が正確にスピーカー発話開始を指しているかは未確認",
+    "堀内詔子 segment 冒頭の「古川康君。」の発生源を特定できていない（前セグメント音声のクロスオーバーか、Whisper 幻聴か）",
+    "session_number が null であるため、当日の何番目の審議かを外部ソースと照合できていない"
+  ],
+  "narrative": {
+    "overall": "このセッションは総務委員会の開会日 (所信表明会) であり、質疑は行われず、委員長の開会手続き・理事選任、林総務大臣の所信表明、堀内副大臣の予算説明、4名の政務官就任挨拶で構成される。品質上の最大問題は topics.json が完全に空であること（5大政策トピックが記録されない）とデータ構造上の問題である。Whisper の誤認識は林芳正の長い所信表明で集中的に発生したが、多くは LLM が修正しており、downstream に残ったのは「三学館（産学官）」「経常調査」の2件のみ。role ラベルについては、副大臣・政務官が質疑者に誤分類されるパターンが確認され、所信表明会セッションタイプへの対応不備が示唆される。",
+    "top_findings": [
+      "topics.json が空配列 — 5つの重点政策（地方創生・情報通信・防災・経済安保・社会基盤）が topics として抽出されず、summary.json との乖離が生じている。所信表明会タイプのセッションでの topics 生成ロジック欠如が原因と推定される。",
+      "向山淳 utterance に委員長の散会宣言「次回は広報をもってお知らせすることとし、本日はこれにて散会いたします。」が誤帰属 — 閉会時に必ず登場する定型句が session 末尾話者に帰属されるパターンは他セッションでも発生している可能性がある。",
+      "三学館（産学官の Whisper 誤認識）が utterances.json に残存 — 「産学官の結節点である NICT」という政策上重要な記述が誤語で残り、事実誤認に近い品質低下を引き起こしている。LLM の補正をすり抜けた同音異義語誤認識の代表例。"
+    ]
+  }
+}

@@ -1,0 +1,315 @@
+{
+  "session_id": "sangiin/2026/04/23/8979_法務委員会",
+  "chamber": "sangiin",
+  "date": "2026-04-23",
+  "deli_id": "8979",
+  "committee": "法務委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T14:00:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 4, "medium": 7, "low": 5, "total": 16},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "fact_error",
+      "secondary_categories": ["whisper_misrecognition"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.json の院名が「衆議院（委員会名不明）」と誤記（正しくは「参議院法務委員会」）",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.session_summary",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "session_summary の冒頭: 「衆議院（委員会名不明）において、平口法務大臣や最高裁判所事務総局の各局長らが出席し…」。本セッションは chamber=sangiin であり、正しくは「参議院法務委員会」。",
+      "estimated_cause": "LLM（google/gemma-4-31B-it）がsummary生成時にchammerコンテキストを誤認識し「衆議院」と出力。前回の8969法務委員会監査でも同一パターンが確認されており、同モデルのsangiin処理で再現性の高い障害。",
+      "downstream_impact": ["summary.json表示", "site検索・フィルタリング", "院別統計集計"]
+    },
+    {
+      "id": "F002",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "清藤総務局長の名前が「清富士」と誤認識され、utterances・topicsに異なる話者として混在",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[1].utterances[2].speaker / $.segments[1].utterances[4].speaker / $.segments[3].utterances[0].speaker",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.jsonのseg 1では同一人物に対してwhisper_segments[2]で「清藤総務局長」、whisper_segments[19]で「清富士総務局長」と2種の表記が混在。utterances.jsonはこれを継承し、seg 1では speaker='清藤'、seg 3では speaker='清富士' と異なる話者として記録。topics.jsonの related_speakers にも「清藤」のみが登録され「清富士」は欠落。実際は全て最高裁判所事務総局 清藤 総務局長1名。",
+      "estimated_cause": "Whisperが「清藤（きよとう）」という固有名詞を発音の類似から「清富士（きよふじ）」と誤認識。話者タグ付け（speaker_tagger.py）はwhisper出力の名前表記をそのまま使用したため、同一人物が2名の話者として分裂した。",
+      "downstream_impact": ["utterances.json話者統計の歪み", "topics.json related_speakers 欠落", "検索・フィルタリングによる重複ヒット"]
+    },
+    {
+      "id": "F003",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "毛田家庭局長の名前が「もうたい」「蒙体」と誤認識され、topics.jsonに別人として混在",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[6].utterances[1].speaker / $.segments[9].utterances[1].speaker",
+        "segment_index": 6,
+        "qa_id": null
+      },
+      "evidence": "utterances.jsonのseg 6では speaker='もうたい'（テキスト冒頭に「最高裁判所事務総局、もうたい家庭局長。」）、seg 9では speaker='蒙体家庭局長' として記録されている。seg 4・5では同じ人物が正しく '毛田' / '毛田家庭局長' と記録されている。topics.jsonの「共同親権制度の導入と審理・運用」の related_speakers に「毛田」と「蒙体」が両方含まれており、同一人物が2名として登録されている。",
+      "estimated_cause": "Whisperが「毛田（もうた）」という固有名詞を「もうたい」または「蒙体」と誤認識。セグメントによって認識精度が異なり、同一人物の表記が分裂した。",
+      "downstream_impact": ["topics.json related_speakers の重複エントリ", "話者別統計の誤算出", "サイト表示の整合性欠如"]
+    },
+    {
+      "id": "F004",
+      "category": "speaker_misattribution",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "segment 7 冒頭で政府官僚の答弁が安達悠司議員に誤帰属",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[7].utterances[0]",
+        "segment_index": 7,
+        "qa_id": null
+      },
+      "evidence": "utterances.json seg 7の最初の発言: speaker='安達悠司'、text='安達悠司：お答え申し上げます。親権には、この身の回りの世話等を内容とする身上看護権と、子を代理して契約を締結すること…'。「お答え申し上げます」は政府官僚が質問に回答する際の定型句であり、内容も親権制度の法的説明（法務省の答弁）。実際の話者は法務省政府参考人（松井民事局長ほか）。raw_transcript seg 7 が「安達悠司：お答え申し上げます」で始まっているのは、議長が「安達悠司君」と呼んだ後、引き続き政府官僚が答弁した音声がWhisperに一体として取り込まれたため。",
+      "estimated_cause": "Whisperがセグメント境界を「安達悠司君。」（議長の指名）→政府答弁という流れで分割せず、冒頭の「安達悠司：」というラベルを維持したまま政府答弁を連結してしまった。speaker_tagger.pyがこれを訂正できなかった。",
+      "downstream_impact": ["utterances.jsonの話者統計誤差", "安達悠司の「質問数」と「答弁数」の混同"]
+    },
+    {
+      "id": "F005",
+      "category": "other",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "政府参考人の答弁テキストに議長の次話者指名句が系統的に混入（23件）",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[*].utterances[?(@.role=='政府参考人')]",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "utterances.jsonの政府参考人・答弁者utterancesのうち23件で、答弁文末に議長の次話者指名句が付加されている。例: 清藤 seg1「…引き続き努めてまいりたいと考えているところでございます。こやり隆史君。」、坂木原 seg2「…働き方は可能と承知しているところでございます。牧山ひろえさん。」、毛田 seg4「…配置しまして。小林さやか（国民民主党・新緑風会）」。単純な名前指名から「XXX（政党名）」形式まで混入パターンが複数ある。",
+      "estimated_cause": "Whisperのセグメント分割が「答弁終了→議長指名」の音声境界で正確に切れず、直後の議長発言が前の答弁テキストに連結される。話者タグ付けもこれを修正しなかった。",
+      "downstream_impact": ["答弁full_text・summaryの文末がノイズを含む", "qa_pairs.answer.full_textへの波及", "引用時の不正確性"]
+    },
+    {
+      "id": "F006",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "「共同親権」が「共同審計」と誤認識",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[1].utterances[2].text",
+        "segment_index": 1,
+        "qa_id": "qa_003"
+      },
+      "evidence": "こやり隆史の発言テキスト: 「この委員会でもいろいろ議論があって、共同審計の問題だったり、さまざま…」。文脈から「共同審計」は「共同親権」の誤認識であることが明白（本委員会は共同親権制度の施行を主要議題としており、「共同審計」という制度は存在しない）。",
+      "estimated_cause": "Whisperが「きょうどうしんけん（共同親権）」を「きょうどうしんけい（共同審計）」または類似音として誤認識した可能性。",
+      "downstream_impact": ["qa_003 question.full_text", "フルテキスト検索の精度低下"]
+    },
+    {
+      "id": "F007",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "「小林議員（小林さやか）」が「小泉議員」と誤認識",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[5].utterances[0].text",
+        "segment_index": 5,
+        "qa_id": "qa_028"
+      },
+      "evidence": "嘉田由紀子の発言テキスト冒頭: 「すでに先ほど小泉議員が聞いてくださいましたけれども」。本セッションに「小泉」という議員は存在せず、嘉田の直前に質問していた議員は「小林さやか（国民民主党）」。raw_transcript seg 5にも「小泉議員」として記録されており、Whisperレベルでの誤認識が起点。",
+      "estimated_cause": "Whisperが「こばやし（小林）」を「こいずみ（小泉）」と誤認識。いずれも「こ」で始まる2音節の苗字であり、音声上の類似から混同が生じた可能性。",
+      "downstream_impact": ["qa_028 question.full_text", "人名検索の誤ヒット"]
+    },
+    {
+      "id": "F008",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "「民主党のところがとっても長期化」という文脈不明な発言が転写（「調停事件が長期化」の誤認識と推定）",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[5].utterances[0].text",
+        "segment_index": 5,
+        "qa_id": "qa_028"
+      },
+      "evidence": "嘉田由紀子の発言テキスト: 「家庭裁判所の特に民主党のところがとっても長期化していると。平均6.8ヶ月。」。本委員会は法務委員会であり「民主党のところが長期化」という文脈は意味をなさない。文脈から「家事調停事件（かじちょうていじけん）が長期化」等を誤認識したと推定される。また「民主党」という政党名は当発言中で全く文脈外であり、Whisperのハルシネーション的誤認識の可能性も排除できない。",
+      "estimated_cause": "Whisperが「調停」「家事」等の単語を「民主党」と音的に近い語に誤認識したか、発話の音声品質が低い箇所でハルシネーションが生じた。",
+      "downstream_impact": ["qa_028 question.full_text の誤情報", "政党名の誤出現による検索ノイズ"]
+    },
+    {
+      "id": "F009",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "「親権」が「新権」「申権」と複数箇所で誤認識",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[7].utterances[3].text / $.segments[7].utterances[5].text",
+        "segment_index": 7,
+        "qa_id": "qa_041"
+      },
+      "evidence": "松井民事局長の発言テキスト: 「新権の意義や新権行使の方法も含め」（「新権」×2）。安達悠司の発言テキスト: 「共同申権と単独申権の場合の違いが1枚で分かるような」（「申権」×2）。いずれも文脈から「親権（しんけん）」の誤認識。raw_transcript seg 7にも同様に記録されている。",
+      "estimated_cause": "Whisperが「しんけん（親権）」の「親（しん）」を「新（しん）」または「申（しん/もうし）」と誤変換。同音異義語への変換ミス。",
+      "downstream_impact": ["qa_041 answer.full_text・question.full_text", "フルテキスト検索での「親権」がヒットしない箇所が発生"]
+    },
+    {
+      "id": "F010",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "medium",
+      "systemic_signal": "session_specific",
+      "title": "「法曹の採用」が「法曹法の採用」と誤認識",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[1].utterances[7].text",
+        "segment_index": 1,
+        "qa_id": "qa_005"
+      },
+      "evidence": "平口法務大臣の発言テキスト冒頭: 「法曹法の採用を含め、司法を担う裁判所の人的体制が適切に確保されることは…」。「法曹法」という法律は存在せず、文脈から「法曹の採用」の誤認識と推定される。なお元の発言の前の文脈が「弁護士任用制度等」に関する議論であり「法曹の採用」が自然。",
+      "estimated_cause": "Whisperが「ほうそうのさいよう（法曹の採用）」を「ほうそうほうのさいよう（法曹法の採用）」に誤変換。音声の区切り位置の誤認識。",
+      "downstream_impact": ["qa_005 answer.full_text", "法律用語の誤記による信頼性低下"]
+    },
+    {
+      "id": "F011",
+      "category": "role_label_error",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "北村晴男議員のroleが「その他」で、質疑を行っているにもかかわらず「質疑者」でない",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[9].role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.jsonの speakers[9]: {'name': '北村晴男', 'affiliation': '日本保守党', 'role': 'その他', 'start_seconds': 9384.72}。utterances.jsonのseg 9・10を確認すると、北村晴男は共同親権・ADR・法制審議会委員選任等について複数回質問（5回以上の質疑を展開）しており、実態は「質疑者」に相当する。同じくqa_pairsのqa_039〜qa_048でも質問者（question.speaker）として登録されている。",
+      "estimated_cause": "speaker_tagger.pyがscraper由来のメタデータ（参議院TVの発言者リスト）で北村晴男を識別できず、デフォルトロール「その他」を割り当てた可能性がある。日本保守党は比較的新しい政党であり、スクレイパーの政党リストに未登録だったか、参議院TVの表記が異なったことが考えられる。",
+      "downstream_impact": ["metadata.json speakers リスト", "フィルタリング（質疑者のみ表示）での北村晴男の欠落", "サイト表示の不整合"]
+    },
+    {
+      "id": "F012",
+      "category": "duplicate",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "metadata.speakers に仁比聡平が重複登録（質疑区間とs討論区間の両方）",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[8] / $.speakers[10]",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.jsonのspeakersに仁比聡平が2エントリ: [8]start_seconds=8381.21（質疑）、[10]start_seconds=10246.06（採決後討論）。同一人物が2つのセグメントに登場するため重複登録されている。utterances.jsonのseg 8（質疑）とseg 10（反対討論）の両方に仁比聡平が話者として登録されており、これは実態に即しているが、metadata.speakersの重複はデータ利用者に混乱を招く可能性がある。",
+      "estimated_cause": "speaker_tagger.pyが各セグメントの「新規話者」を抽出してspeakersリストに追加する際、同一人物が複数セグメントに登場するケースで重複チェックが行われなかった。",
+      "downstream_impact": ["speakers.length の誤カウント", "APIでspeakers配列を利用するクライアント側での重複処理"]
+    },
+    {
+      "id": "F013",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs.jsonの全49件でanswer.roleが空文字列",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "qa_pairs.jsonの全49件のペアでanswer.roleフィールドが空文字列（''）。utterances.jsonでは同じ話者が「政府参考人」「答弁者」などのroleを持っており、情報は存在するにもかかわらずqa_pairsに引き継がれていない。例: qa_001のanswer.speaker='清藤'はutterances.jsonでrole='政府参考人'として登録されている。",
+      "estimated_cause": "QAペア構造化（structurer.py）でanswer.roleフィールドにutterancesからのrole情報をマッピングするロジックが欠落しているか、空文字をデフォルト値として設定している。",
+      "downstream_impact": ["フィルタリング（役職別答弁検索）の機能不全", "summary.json key_commitments.role とのスキーマ不整合"]
+    },
+    {
+      "id": "F014",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.jsonの複数フィールドが空値（duration、hls_url、start_time、duration_minutes）",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.duration / $.hls_url / $.speakers[*].start_time / $.speakers[*].duration_minutes",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json: duration=''、hls_url=''、session_number=null、committee_id=null。speakers配列の全12エントリでstart_time=''（start_secondsは正しく設定済み）、duration_minutes=0。hls_urlは参議院TVのHLSストリームURLであり、取得できていれば他のセッションと同様に設定されるべきフィールド。start_timeはstart_secondsを時:分:秒形式に変換した値が期待されるが未設定。",
+      "estimated_cause": "参議院TVのHLS URL取得処理（sangiin_resolver.py）またはセッション詳細取得のタイミングでHLS URLが取得できなかった可能性。start_timeとduration_minutesの計算ロジックが実行されなかった、またはhls_urlが未設定のためスキップされた。",
+      "downstream_impact": ["サイト上での動画リンク機能不全（hls_urlが空）", "start_time未表示", "duration表示なし"]
+    },
+    {
+      "id": "F015",
+      "category": "content_missing",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "3つの発言が文の途中で切断（板津人事局長・北村晴男・打越さく良）",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[1].utterances[5].text / $.segments[8].utterances[4].text / $.segments[10].utterances[2].text",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "3箇所で発言テキストが文末まで記録されずに切断: (1) seg 1 板津 「…裁判官の仕事の実情とその魅力を」（続きなし）。(2) seg 8 北村晴男 「…面的には法制審において共同親権そのものに対する強硬の反対論が」（続きなし）。(3) seg 10 打越さく良「…定員の在り方について不断の検討を行うこと。3、判事法を」（附帯決議文が途中で切断）。",
+      "estimated_cause": "セグメント境界でWhisperのテキスト出力が次のセグメント開始前に終了してしまったか、話者タグ付けの分割ロジックがセグメント末尾の一部を取りこぼした。",
+      "downstream_impact": ["qa_004のanswer.full_textの完全性（板津答弁が途中で終わっている）", "附帯決議内容の不完全な記録"]
+    },
+    {
+      "id": "F016",
+      "category": "content_missing",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "unknown",
+      "title": "topics.jsonのqa_006が全トピックのrelated_qa_idsに含まれていない（孤立ペア）",
+      "location": {
+        "file": "topics.json",
+        "json_path": "$.topics[*].related_qa_ids",
+        "segment_index": null,
+        "qa_id": "qa_006"
+      },
+      "evidence": "qa_006（「医師の偏在対策と柔軟な働き方の現状」、牧山ひろえ → 坂木原審議官（厚労省））は、topics.jsonの7トピック全てのrelated_qa_idsに含まれていない。他の48件のqa_idはいずれかのトピックに関連付けられている。qa_006は裁判官の働き方改革議論の前振りとして厚労省に医師偏在対策を確認したQAであり、「裁判官・法曹人材の確保と処遇改善」トピックに関連付けるのが適切と考えられる。",
+      "estimated_cause": "LLMによるトピック分類時に、厚労省への参照質問であることから直接的な委員会テーマと見なされず分類から漏れた。",
+      "downstream_impact": ["topics.jsonを使ったQAフィルタリングでqa_006が表示されない", "「裁判官・法曹人材」トピックの関連QA件数が実態より少なく計上される"]
+    }
+  ],
+  "blindspots": [
+    "発言者の肩書・所属の正確性について、参議院TV・法務省公式資料との照合を行っていない（坂木原審議官・松井民事局長等の正式職名が正しいか未検証）",
+    "raw_transcript.jsonのWhisper信頼スコア（logprob等）を精査しておらず、低信頼スコア区間でのさらなる誤認識箇所が残存している可能性がある",
+    "附帯決議文（打越さく良発言・seg 10〜11）の内容が途中で切断されているため、決議本文との照合ができていない",
+    "qa_pairs.jsonのmetricsフィールドについてV4スキーマの論理的一貫性（スコア間の矛盾等）は監査対象外とした"
+  ],
+  "narrative": {
+    "overall": "本セッション（2026年4月23日参議院法務委員会、裁判所職員定員法改正審議）のデータ品質は概ね中程度と評価する。Whisper文字起こし精度は全体として高いが、固有名詞の誤認識が複数確認され、特に「清藤総務局長」→「清富士」、「毛田家庭局長」→「もうたい/蒙体」という名前の誤変換が異なる話者として utterances・topicsに混入した点は構造的なデータ汚染を引き起こしている。加えて、summary.jsonが参議院委員会であるにもかかわらず「衆議院（委員会名不明）」と誤記する問題は前回の8969法務委員会と同一パターンであり、LLMによる院名生成の系統的バグが継続している。議会答弁の記録文書として最も重大な点は、政府参考人23件の答弁テキスト末尾に議長の次話者指名句（「小林さやか（国民民主党・新緑風会）」等）が系統的に混入していることであり、引用・検索時の正確性に影響する。",
+    "top_findings": [
+      "summary.jsonの院名誤記（「衆議院（委員会名不明）」→正しくは「参議院法務委員会」）が前回セッションと同一パターンで再現しており、LLMの系統的バグとして早急な修正が必要",
+      "清藤総務局長（→清富士）・毛田家庭局長（→もうたい/蒙体）の名前誤認識により、同一人物が utterances.json・topics.jsonで複数の話者として分裂登録されており、話者統計・検索の信頼性を損なっている",
+      "政府参考人の答弁テキスト23件に議長の次話者指名句が系統的に混入しており、answer.full_textの末尾が汚染されている。これはWhisperのセグメント分割の境界誤りに起因する構造的問題であり、スクリプトレベルでの後処理が必要"
+    ]
+  }
+}

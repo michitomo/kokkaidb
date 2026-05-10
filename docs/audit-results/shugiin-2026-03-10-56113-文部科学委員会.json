@@ -1,0 +1,406 @@
+{
+  "session_id": "shugiin/2026/03/10/56113_文部科学委員会",
+  "chamber": "shugiin",
+  "date": "2026-03-10",
+  "deli_id": "56113",
+  "committee": "文部科学委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T09:00:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 7, "medium": 9, "low": 5, "total": 21},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "content_missing",
+      "secondary_categories": ["summary_qa_divergence"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "第2議題（中学校35人学級法案）の質疑が qa_pairs/summary/topics に完全欠落",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[12]",
+        "segment_index": 12,
+        "qa_id": null
+      },
+      "evidence": "segment 12 (松本洋平) の text は中学校35人学級法案の提案理由説明（181秒分）で終わり、その後の質疑は raw_transcript に存在しない。浮島智子 segment（3）では「35人学級。これは2つとも重要な法案」と明言しており、同日に別法案の審議が行われたことが確認できる。qa_pairs は 82件すべて就学支援金法案のみを扱い、summary.json も就学支援金のみに言及する。",
+      "estimated_cause": "HLS音声ストリームの分割方式が就学支援金審議で終了した可能性、または scraper が2本目の議題のセグメントを取得できなかった可能性。metadata.speakers の最終エントリが松本洋平（17:30, 3分）で切れており、その後の委員の質疑データが存在しない。",
+      "downstream_impact": ["summary.json", "topics.json", "qa_pairs.json"]
+    },
+    {
+      "id": "F002",
+      "category": "whisper_hallucination_loop",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「安倍内閣総理大臣」が複数セグメントで合計3回ハルシネーション出現",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].whisper_segments[?(@.start==628)]",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "seg 1 [628-657]: '安倍内閣総理大臣。'、seg 2 [380-394]: '安倍内閣総理大臣。'、seg 2 [701-727]: '安倍内閣総理大臣 石井啓一議員'、seg 8 [912-942]: '安倍内閣総理長'。2026年の衆議院文部科学委員会では安倍氏は登場しない（2022年逝去）。各事例は前後のテキストから見て、大臣答弁の冒頭で話者ラベルが誤生成された箇所に相当する（直後に松本文部科学大臣の実際の発言が続く）。",
+      "estimated_cause": "Whisper large-v3-turbo が委員長の指名発話（スピーカー名のみの短い発話）区間で、訓練データ由来の高頻度パターン（安倍元首相の発言文脈）をハルシネーションとして出力。utterances.json での corrected 段階で除去されていないケースが一部残存している可能性。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F003",
+      "category": "whisper_hallucination_loop",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "seg 10 の最後（9455秒ギャップ後）に '河合道。' という孤立ハルシネーション",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[10].whisper_segments[59]",
+        "segment_index": 10,
+        "qa_id": null
+      },
+      "evidence": "segment 10 (河合道雄) の whisper_segments は sub-seg [58] で終了後（1391.7s）、sub-seg [59] が [10846.9-10847.3] に孤立して '河合道。' を出力。gap は 9455.2 秒（約2.6時間）。segment の start_seconds=20945.2 + 10847.3 = 31792.5 は次の斎藤洋明 segment の start_seconds と一致し、実際の音声クリップ長が 10847 秒（約3時間）になっている異常な拡張を示す。metadata の duration_minutes=23 と大きく乖離。",
+      "estimated_cause": "音声クリップ抽出ロジックが次 segment の開始点で切断できず、後続の長時間無音・他セッション音声を含む大容量クリップを Whisper に投入した。Whisper が10000秒以上の沈黙区間を経て最後に短いハルシネーションを出力した。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F004",
+      "category": "whisper_hallucination_loop",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "seg 5 の最後（3125秒ギャップ後）に '森英介議員' という孤立ハルシネーション",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[5].whisper_segments[69]",
+        "segment_index": 5,
+        "qa_id": null
+      },
+      "evidence": "segment 5 (村上智信) の whisper_segments は sub-seg [68]（1706.2s「この際休憩いたします」）で実質終了し、sub-seg [69] が [4831.0-4831.6] に '森英介議員' を出力。gap は 3124.8 秒。metadata の duration_minutes=29 に対して実クリップ長は 4831 秒（80.5分）。'森英介' はこの委員会の参加者として metadata に登録されていない。",
+      "estimated_cause": "F003 と同一原因。音声クリップが昼休憩をまたいで次の委員再開分まで取り込み、長時間無音後に Whisper がハルシネーション出力。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F005",
+      "category": "whisper_hallucination_loop",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "seg 10 の ws[57] で '河合道雄議員' が3回連続繰り返し",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[10].whisper_segments[57]",
+        "segment_index": 10,
+        "qa_id": null
+      },
+      "evidence": "sub-seg [57] [1346.4-1372.7] のテキスト: '河合道雄議員 河合道雄議員 河合道雄議員'。同じ名前が3回反復されており、典型的な Whisper の繰り返しハルシネーションパターン。前後のテキストは正常。",
+      "estimated_cause": "Whisper の attention が局所的に収束し、話者名のみを繰り返す既知のループバグ。長い音声クリップや不明瞭な音声区間で発生しやすい。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F006",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "政府参考人 餅月忠志（初等中等教育局長）の名前が6種類以上に分裂して表記",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[*].utterances[?(@.role=='政府参考人')]",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "utterances.json において同一人物（餅月忠志・文部科学省初等中等教育局長）が以下の6つ以上の表記で登場: '餅月初等中等教育局長'（12件）、'初等中等教育局長'（11件）、'餅月'（6件）、'もちづき初等中等教育局長'（4件）、'政府参考人'（4件）、'森月初等中等教育局長'（2件）、'茂木初等中等教育局長'（1件）、'中等教育局長'（1件）。raw_transcript の seg 7 [853] に '森月初等中等教育局長' の誤認識が直接確認できる。qa_pairs.json でも同様の分裂が answer.speaker に継承されている。",
+      "estimated_cause": "Whisper が「餅月（もちづき）」という珍しい姓を聞き取れず、「茂木」「森月」等の類似音へ誤認識。speaker_tagger が発話ラベルを raw_transcript から抽出する際に正規化できていないため、すべての誤表記バリアントがそのまま utterances に引き継がれた。",
+      "downstream_impact": ["qa_pairs.json", "topics.json", "summary.json"]
+    },
+    {
+      "id": "F007",
+      "category": "speaker_misattribution",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_007 の question.speaker が '餅月初等中等教育局長'（答弁者側）に誤帰属（正: 深澤陽一）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[6].question.speaker",
+        "segment_index": 1,
+        "qa_id": "qa_007"
+      },
+      "evidence": "qa_007 の question.full_text は「グランドデザイン自体も、3年あるいは5年といった期間で見直していくべきと考えますが、その点についてお答えいただきたいと思います」という質問文で、segment 1（深澤陽一）内に存在する。question.speaker='餅月初等中等教育局長' は答弁者であり、質問者としての帰属は明らかに誤り。utterances.json でもこの発話が segment 1 (segment_speaker=深澤陽一) 内に配置されていることで裏付けられる。",
+      "estimated_cause": "structurer (LLM) が Q/A ペアを生成する際、局長の発言を question として誤分類した。質問文の主体が文法的に不明瞭な箇所でミスが起きやすい。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F008",
+      "category": "speaker_misattribution",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_041 の question.speaker が '政府参考人' に誤帰属（正: 村上智信）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[40].question.speaker",
+        "segment_index": 5,
+        "qa_id": "qa_041"
+      },
+      "evidence": "qa_041 の question.full_text は「法令の仕組みに係るテクニカルなことなので、政府参考人に伺います。高等学校等就学支援金の支給に関する法律のうち…都道府県が条例において…定めた場合、これは有効なのでしょうか、無効なのでしょうか」という質問で、segment 5（村上智信）内に存在する。'政府参考人に伺います' という一節を question.speaker として誤認識した。",
+      "estimated_cause": "LLM structurer が質問文内の '政府参考人に伺います' という呼びかけフレーズを話者名として誤抽出した。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F009",
+      "category": "speaker_misattribution",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_044 の question.speaker が '斎藤洋明'（委員長）に誤帰属（正: 河井昭成）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[43].question.speaker",
+        "segment_index": 7,
+        "qa_id": "qa_044"
+      },
+      "evidence": "qa_044 の question.full_text は「改めて、今般の改正における高校授業料無償化の必要な背景と目的について、大臣にお伺いをいたします」で、segment 7（河井昭成）内に存在。question.speaker='斎藤洋明' は委員長で質疑者ではなく明らかに誤り。",
+      "estimated_cause": "Whisper が河井昭成の発話前に斎藤委員長による指名発話を含むクリップを生成し、LLM が指名部分を質問者名として誤抽出した。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F010",
+      "category": "fact_error",
+      "secondary_categories": ["summary_qa_divergence"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.json の key_commitments で qa_021・qa_025 の発言者を '松本洋平' と誤記（実際は局長）",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments[1]",
+        "segment_index": null,
+        "qa_id": "qa_021"
+      },
+      "evidence": "summary.json の key_commitments[1] は speaker='松本洋平' role='文部科学大臣' で qa_021 を参照するが、qa_pairs.json の qa_021.answer.speaker='初等中等教育局長'（役職: 政府参考人）。同様に key_commitments[2] は qa_025 を speaker='松本洋平' としているが、qa_025.answer.speaker='茂木初等中等教育局長'。コミットメントの実際の発言者が大臣か局長かは政治的説明責任の観点で重要な差異。",
+      "estimated_cause": "LLM structurer が summary 生成時に大臣答弁と局長答弁を区別せず、セッションの主要答弁者（松本大臣）に統一帰属させた。",
+      "downstream_impact": ["summary.json"]
+    },
+    {
+      "id": "F011",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs.json の answer.role が政府参考人答弁38件すべてで空文字列",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "82件中 answer.role='' が 38件（46.3%）。role='文部科学大臣' が 44件で残り。役割が空のケースはすべて answer.speaker が '初等中等教育局長' '餅月初等中等教育局長' '政府参考人' 等の政府参考人答弁。qa_003, qa_004, qa_006, qa_007, qa_008 等が代表例。",
+      "estimated_cause": "structurer が大臣の role ('文部科学大臣') は抽出できるが、政府参考人の役職ラベルの抽出ロジックが未実装または文脈依存で失敗している。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F012",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.json の全 speakers で role フィールドが空文字列",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[*].role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "13エントリすべてで role=''。斎藤洋明（文部科学委員長）、松本洋平（文部科学大臣）を含む全員が role 未設定。affiliation フィールドには '文部科学委員長' '文部科学大臣' 等が格納されており、role と affiliation の役割分担が不明確。",
+      "estimated_cause": "scraper または publisher が metadata.speakers の role フィールドを設定するロジックが未実装。affiliation に役職が入っているため実害は限定的だが、スキーマとして不整合。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F013",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.json で committee_id=null、session_number=null、duration=''、mediasp_hash='' の混在",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.committee_id",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "committee_id=null (JSON null)、session_number=null、duration='' (空文字列)、mediasp_hash='' (空文字列)。null と空文字列が混在しており、利用側での null チェックと空文字チェックを両方実装する必要がある。",
+      "estimated_cause": "scraper が衆議院向けに未実装フィールドを null または空文字のどちらで初期化するかが統一されていない。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F014",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "metadata.json で浮島智子の duration_minutes=0（実際は約61分）",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[3].duration_minutes",
+        "segment_index": 3,
+        "qa_id": null
+      },
+      "evidence": "浮島智子（index 3）: start_seconds=4803.4, duration_minutes=0。次話者の山崎正恭が start_seconds=8442.0 で開始するため、実際の質疑時間は (8442.0 - 4803.4) / 60 ≈ 60.6 分。utterances.json では浮島智子は 17件の発話を持ち、qa_pairs では 11件の質疑対応者として登録されており、0分は明らかに誤り。",
+      "estimated_cause": "shugiintv.go.jp の speakers リストのスクレイプ時に duration フィールドを解析できなかった（HTML構造の変化等）。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F015",
+      "category": "duplicate",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.json で斎藤洋明（委員長）が3エントリ重複登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers に '斎藤洋明'（文部科学委員長）が index 0、6、11 の3か所に登録（start_seconds: 1193.8, 15593.1, 31792.5）。これは午前・昼休み後・夕方の3回の開会宣言を別エントリとして登録したもの。speaker のリストアップとしては冗長で、同一人物が別人として扱われる可能性がある。",
+      "estimated_cause": "scraper が shugiintv の speakers リストを時系列でそのまま追加しており、委員長の複数回出現を重複排除していない。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F016",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "政府参考人（餅月忠志・塩見水江）が metadata.speakers に未登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json の speakers リストに政府参考人として出席が確認された餅月忠志（初等中等教育局長：utterances で合計36件超の発言）と塩見水江（総合教育政策局長：冒頭指名で出席確認）が含まれていない。また財務大臣政務官も utterances に登録されているが metadata には不在。",
+      "estimated_cause": "scraper が shugiintv の speakers リスト（質問者と大臣のみを掲載）をそのまま取得し、政府参考人を別途追加するロジックが存在しない。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F017",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「三島合意」という誤認識（正: 3党合意/三党合意）が utterances に継承",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[1].utterances[20].text",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "utterances.json の seg 1 utterances[20] (餅月初等中等教育局長): '昨年2月の三島合意以降、収入要件を撤廃することや…'。raw_transcript の同箇所（seg 1 [1727]）でも '三島合意' と認識されている。本審議において '3党合意'（自民・公明・維新）は中心的な根拠であり、'三島合意' という用語は存在しない。同 utterance に '文部各省' という誤認識も混在（正: 文部科学省）。",
+      "estimated_cause": "Whisper が '三党合意' （さんとうごうい）を '三島合意' （みしまごうい）と誤認識。短い発話区間での日本語音素の混同。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F018",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「併願制」が「閉館制」「平岸制」と誤認識（2件、seg 10）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[10].whisper_segments[52]",
+        "segment_index": 10,
+        "qa_id": null
+      },
+      "evidence": "seg 10 (河合道雄) の ws[52] [1238.1-1260.3]: 'すでに一部都道府県では閉館制が実施されていると承知しておりますが'、ws[56] [1326.8-1346.4]: 'あと大分も平岸制を導入したというふうに承知をしているところであります。デジタル技術を活用した平岸制につきましては'。文脈（公私立入試の複数出願制度の議論）から正しくは '併願制'。utterances でも引き継がれている。",
+      "estimated_cause": "Whisper が '併願（へいがん）' を '閉館' '平岸' と誤認識。漢字は異なるが音が類似。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F019",
+      "category": "summary_qa_divergence",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "unknown",
+      "title": "topics.json が 82件中 11件の qa_pairs をいずれのトピックにも紐づけていない",
+      "location": {
+        "file": "topics.json",
+        "json_path": "$.topics[*].related_qa_ids",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "topics.json の全トピックに含まれない qa_ids: qa_039（私立中学校への就学支援制度の不在理由）、qa_040（事情がある生徒の公立中学校への就学変更）、qa_041（在学期間計算の条例有効性）、qa_042（海外高校における日本人支援の有無）、qa_043（制度改正の実効性）、qa_045（他国における高校授業料負担）、qa_053（私立高校の役割変化）、qa_055（公私立の公費投入額比較）、qa_056（公立高校の施設整備と財政支援）、qa_063（所得層別支給増額差）、qa_067（3党合意の過程と現場の声）。全体の13.4%がトピック外。",
+      "estimated_cause": "LLM structurer がトピック分類を行う際に 82件すべてを網羅できなかった。10トピックの粒度設定が不足している。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F020",
+      "category": "role_label_error",
+      "secondary_categories": ["speaker_misattribution"],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "session_specific",
+      "title": "utterances.json の石井啓一（1件）が role='質疑者' に誤分類",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[1].utterances[21]",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "utterances.json の seg 1 utterances[21]: speaker='石井啓一', role='質疑者', text='石井啓一君。はい、終わります。ありがとうございました。'。内容は「終わります」という1行のみで質疑者としての実質的な発言がなく、委員長指名に対する短い応答。石井啓一は metadata.speakers に登録されていない。raw_transcript の seg 1 [1757-1770] でも '石井啓一君。はい、終わります。ありがとうございました。' と確認できる。",
+      "estimated_cause": "speaker_tagger が'石井啓一君'という委員長の呼びかけ直後の短い発話を独立した質疑者発言として切り出した。実態は簡単な応答または傍聴委員の発声。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F021",
+      "category": "timestamp_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.json の山崎正恭の start_time が計算値（11:00）と1分ずれ（11:01）",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[4].start_time",
+        "segment_index": 4,
+        "qa_id": null
+      },
+      "evidence": "山崎正恭: start_seconds=8442.0, start_time='11:01'。基準（斎藤洋明: start_seconds=1193.8=09:00）から計算すると (8442.0-1193.8)/60 = 120.7 分 → 09:00+120.7分 = 11:00:44 → 11:00。列挙値 '11:01' との1分差。同様のズレが斎藤洋明（2回目・3回目）でも発生（computed='12:59'/'17:29' vs listed='13:00'/'17:30'）。",
+      "estimated_cause": "start_time の端数処理が切り上げ（ceil）ではなく四捨五入か切り捨てかで実装が揺れているか、スクレイプ元の時刻表示が秒単位ではなく分単位のため不可避なズレ。軽微だが一貫性がない。",
+      "downstream_impact": []
+    }
+  ],
+  "blindspots": [
+    "raw_transcript の全 whisper_segments を逐字精照合していない（サンプリングベース）",
+    "外部の議員名簿・委員会名簿との突合による議員存在確認は未実施",
+    "実際の動画 URL にアクセスして音声内容を直接確認していない",
+    "塩見水江（総合教育政策局長）が実際に発言したかどうかは音声確認なしに断定できない（委員長指名はあるが utterances に未登録）",
+    "35人学級法案の審議が本当に欠落しているか、あるいは別セッション ID として別途収録されていないか未確認"
+  ],
+  "narrative": {
+    "overall": "本セッション（2026-03-10 衆議院文部科学委員会 deli_id=56113）は主に高等学校等就学支援金制度の拡充法案を扱い、9名の委員が松本文部科学大臣および政府参考人に質疑を行った標準的な委員会。全体的なデータ品質は「medium」で、就学支援金法案の内容は概ね捕捉されているが、複数の系統的問題が存在する。最も重大な問題は、同日に議題となった第2法案（中学校35人学級標準法）の審議が qa_pairs・summary・topics にまったく存在しない点で、セッションのほぼ半分の内容が欠落している可能性がある。Whisper の「安倍内閣総理大臣」ハルシネーション（3件）と音声クリップ境界の異常拡張（seg 5: 3125秒ギャップ、seg 10: 9455秒ギャップ）は systemic_signal=likely_systemic として他セッションでも同様の問題が起きている可能性が高い。政府参考人（餅月忠志）の名前が6種類以上に分裂する misrecognition もパイプライン全体で発生しているとみられ、答弁者の役職の空欄（answer.role 46.3%）と合わせて答弁者属性の整合性が低下している。",
+    "top_findings": [
+      "中学校35人学級法案（第2議題）の審議内容が qa_pairs・summary・topics から完全欠落しており、当セッションの重要な議事内容が提供されていない（F001）",
+      "政府参考人 餅月忠志の氏名が 6種以上の誤バリアントで分裂し、かつ speaker_misattribution が 3件の qa_pairs で確認された。structurer の Q/A 話者分類精度に構造的な問題がある（F006, F007, F008, F009）",
+      "音声クリップ境界の異常拡張により seg 5 と seg 10 に数千秒のサイレントギャップが発生し、Whisper がハルシネーション（安倍内閣総理大臣×3、河合道雄議員×3反復、森英介議員、河合道。）を生成した（F002, F003, F004, F005）"
+    ]
+  }
+}

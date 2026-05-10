@@ -1,0 +1,226 @@
+{
+  "session_id": "shugiin/2026/03/05/56100_予算委員会",
+  "chamber": "shugiin",
+  "date": "2026-03-05",
+  "deli_id": "56100",
+  "committee": "予算委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T10:00:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 3, "medium": 5, "low": 3, "total": 11},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["metadata_missing_speaker"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「神奈川人志」は厚生労働省社会援護局長の名前をWhisperが誤認識",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[6].utterances[19].speaker",
+        "segment_index": 6,
+        "qa_id": "qa_008"
+      },
+      "evidence": "utterances.json seg6に speaker=「神奈川人志」、role=「答弁者」と記録されている。テキストは「厚生労働省社会援護局長、神奈川人志君。お答えいたします。先生、まさにおっしゃるように介護人材の不足…」。「神奈川」は神奈川県と同字であり人名として不自然。raw_transcript.json seg6でも同一テキストが確認される。qa_pairs.json qa_008のanswer.speakerも「神奈川人志」のまま引き継がれている。",
+      "estimated_cause": "Whisperが政府参考人の氏名紹介（「○○局長、△△君」形式）を聞き取る際に苗字部分を誤認識。地名（神奈川）と酷似した音韻の苗字をWhisperが地名で代替した可能性が高い。corrected=Trueにもかかわらず修正されていない。",
+      "downstream_impact": ["qa_pairs.json", "topics.json"]
+    },
+    {
+      "id": "F002",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["duplicate"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「餅月忠志」と「望月忠子」は同一人物（文科省初等中等教育局長）の誤認識",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[11].utterances",
+        "segment_index": 11,
+        "qa_id": "qa_042"
+      },
+      "evidence": "utterances.json seg11に「文部科学省初等中等教育局長、餅月忠志君」（qa_039, qa_041, qa_043）と「文部科学省初等中等教育局長、望月忠子君」（qa_042）が混在している。役職が完全に同一であるにもかかわらず氏名が2通り記録されており、同一人物をWhisperが異なる名前で認識している。raw_transcript.json seg11でも両方の表記が存在する。",
+      "estimated_cause": "「もちづき」という音が似ている漢字複数候補（餅月・望月）をWhisperが交互に誤変換。同一発言者が複数回登場する際に毎回独立して音声認識されるため、誤認識が発話ごとに異なる。",
+      "downstream_impact": ["qa_pairs.json", "topics.json"]
+    },
+    {
+      "id": "F003",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["duplicate"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「佐々木政宏」と「佐々木雅宏」は同一人物（厚労省危機管理医務技術総括審議官）の誤認識",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[10].utterances",
+        "segment_index": 10,
+        "qa_id": "qa_030"
+      },
+      "evidence": "utterances.json seg10に「厚生労働省大臣官房危機管理・医務技術総括審議官、佐々木政宏君」（qa_030）と「厚生労働省大臣官房危機管理医務技術総括審議官、佐々木雅宏君」（qa_031, qa_032）が混在。役職タイトルは同一（点の有無のみ差異）であるため明らかに同一人物。",
+      "estimated_cause": "「まさひろ」という音をWhisperが「政宏」「雅宏」で交互に誤変換。人名の漢字変換精度が不安定なWhisper固有の問題。",
+      "downstream_impact": ["qa_pairs.json", "topics.json"]
+    },
+    {
+      "id": "F004",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["duplicate"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「中村英雅」と「中村秀政」は同一人物（こども家庭庁生育局長）の誤認識",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[11].utterances",
+        "segment_index": 11,
+        "qa_id": "qa_037"
+      },
+      "evidence": "utterances.json seg11に「こども家庭庁生育局長」として「中村英雅君」（qa_034, qa_035, qa_036）と「中村秀政君」（qa_037, qa_038, qa_040）が混在。seg13でも「子ども家庭庁生育局長、中村英雅君」（qa_048）が出現。役職は同一。raw_transcript.json seg11でも両表記が確認される。",
+      "estimated_cause": "「ひでまさ」などの音をWhisperが「英雅」「秀政」と交互に誤変換。政府参考人の氏名認識における系統的な漢字変換エラー。",
+      "downstream_impact": ["qa_pairs.json", "topics.json"]
+    },
+    {
+      "id": "F005",
+      "category": "role_label_error",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "予算説明者（あかま二郎・黄川田仁志・松本洋平）のroleが「質疑者」に誤分類",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[1].utterances[0].role",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "utterances.json: seg1（あかま二郎）role=「質疑者」だがテキストは「令和8年度の警察庁関係予算について、その概要をご説明申し上げます」（予算説明）。seg2（黄川田仁志）role=「質疑者」だがテキストは「令和8年度の子ども家庭庁予算案について、概要をご説明申し上げます」（予算説明）。seg4（松本洋平）role=「質疑者」だがテキストは「令和8年度文部科学省関係予算について説明いたします」（予算説明）。なお松本尚（seg3）は「答弁者」と誤ったラベルだが内容は予算説明。",
+      "estimated_cause": "speaker_taggerが予算委員会冒頭の省庁別予算説明（所管大臣による一方向スピーチ）をQ&A形式の「質疑者」に誤分類。セッション構造（冒頭予算説明 → その後質疑応答）を理解できていない。",
+      "downstream_impact": ["qa_pairs.json"]
+    },
+    {
+      "id": "F006",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakersに政府参考人15名が未登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json の speakers リストには質問者15名のみ登録。qa_pairs.json の answer.speaker に出現する以下15名が未登録: 森光恵子、栗原政務官、岸本局長、神奈川人志、鈴木隼人、尾崎正直、常藤明、西条正明、佐々木政宏、佐々木雅宏、中村英雅、中村秀政、餅月忠志、望月忠子、黒田秀郎。実際には委員長の坂本哲志による招集（「本日、政府参考人として…24名の出席を求め」）が冒頭に記録されている。",
+      "estimated_cause": "metadataの speakers 収集ロジックがshugiintv.go.jp の衆議院TV出演者リスト（衆議院議員・大臣のみ）から取得し、政府参考人（官僚）を対象外としている構造的欠陥。",
+      "downstream_impact": ["summary.json", "topics.json"]
+    },
+    {
+      "id": "F007",
+      "category": "summary_qa_divergence",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.json のコミットメント判定がqa_pairs.jsonと不一致（qa_007, qa_022）",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments",
+        "segment_index": null,
+        "qa_id": "qa_007"
+      },
+      "evidence": "summary.json の key_commitments に qa_007（上野賢一郎「薬価原則維持・ともずれ廃止」）と qa_022（松本尚「3割削減目標への引き続きの努力」）が掲載されている。しかし qa_pairs.json では両者とも has_commitment=false、commitment_text=null と記録されており、コミットメント有無の判定が矛盾している。qa_007 の答弁テキストには明確な政策決定（「ともずれを廃止することといたしました」）が含まれており、summary.json 側の判定が実態に近い。",
+      "estimated_cause": "structurer.py の1回目LLM呼び出し（qa_pairs生成）と2回目呼び出し（summary生成）が独立しており、同一コンテンツに対して異なる判定を下した。qa_pairs生成時のコミットメント認識閾値が summary 生成時より厳しい可能性がある。",
+      "downstream_impact": ["summary.json"]
+    },
+    {
+      "id": "F008",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs.json の answer.role が政府参考人全員（26件）で空文字",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.role",
+        "segment_index": null,
+        "qa_id": "qa_001"
+      },
+      "evidence": "qa_pairs.json 全56件のうち、大臣などのroleフィールドが埋まるのは29件のみ。残り26件（qa_001: 森光恵子、qa_002-003,005: 栗原政務官、qa_006: 岸本局長、qa_008: 神奈川人志、qa_013,024: 鈴木隼人 など）はrole=\"\"（空文字）。これらは全員 政府参考人として呼ばれた官僚であり、役職情報が一切欠落している。utterances.json では同じ人物が role=「政府参考人」と記録されているため、情報はパイプライン上に存在している。",
+      "estimated_cause": "structurer.py がqa_pairs生成時にanswer.roleを utterances の role フィールドから引き継がず、speaker_tagger の出力（大臣のみ役職あり）をそのまま使用している。",
+      "downstream_impact": ["summary.json", "topics.json"]
+    },
+    {
+      "id": "F009",
+      "category": "schema_inconsistency",
+      "secondary_categories": ["schema_empty_field"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs.json の qa_id フィールドが全56件で null（id フィールドに値あり）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].qa_id",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "qa_pairs.json の全56件を検査したところ、qa_id フィールドが全件 null である。一方、id フィールドに「qa_001」〜「qa_056」の値が格納されている。topics.json や summary.json では「qa_001」形式の参照が使われているが、それらは qa_id ではなく id フィールドを参照している。フィールド名の不一致により、qa_id をキーとして参照するアプリケーションコードが機能しない可能性がある。",
+      "estimated_cause": "structurer.py がqa_pairs生成時に qa_id フィールドに値を設定せず id フィールドのみ設定している。スキーマ定義と実装の不一致。",
+      "downstream_impact": ["topics.json", "summary.json"]
+    },
+    {
+      "id": "F010",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.json の duration・committee_id・session_number・mediasp_hash が空/null",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.duration",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json: duration=\"\"（空文字）、committee_id=null、session_number=null、mediasp_hash=\"\"（空文字）。またmetadata.speakers の全15名の role フィールドが空文字。durationは動画の総再生時間に対応するべきフィールドで、UIやフィルタリングに使われる可能性がある。",
+      "estimated_cause": "衆議院TV（shugiintv.go.jp）のスクレイピング時に duration・committee_id・session_number を取得するロジックが未実装または取得失敗。mediasp_hash は衆議院では不使用のため空が正常だが、null と空文字の混在は一貫性を欠く。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F011",
+      "category": "role_label_error",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_047 の evasion_score=1.0 は時間切れを「完全な質問回避」として誤分類",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[46].answer.evasion_score",
+        "segment_index": 12,
+        "qa_id": "qa_047"
+      },
+      "evidence": "qa_pairs.json qa_047（豊田真由子・ジェネリック政策）のanswer.summary に「（時間終了のため答弁なし）」と明記されており、answer.speaker=\"\"、full_text=\"\"。しかし evasion_score=1.0 が付与されている。時間切れによる答弁未実施は大臣等の意図的な「質問回避（evasion）」とは意味が異なる。スコアを集計する際に意図的な回避と混同されるリスクがある。",
+      "estimated_cause": "structurer.py が「答弁なし」ケースを一律に evasion_score=1.0 とする処理をしている可能性。時間切れのケースを区別するロジックが存在しない。",
+      "downstream_impact": []
+    }
+  ],
+  "blindspots": [
+    "神奈川人志の正確な氏名を外部議員名簿・政府参考人名簿と照合できていない",
+    "中村英雅と中村秀政が本当に同一人物かどうかを第三者資料で確認していない（役職同一から推定）",
+    "Whisper whisper_segments の個別タイムスタンプ精度（セグメント内の微小なズレ）を逐一検査していない",
+    "qa_pairs の question.full_text 内容と raw_transcript の逐字一致を全件サンプリングしていない",
+    "topics.json の related_speakers が全 QA を網羅しているか（補助的な答弁者が関連発言者として登録されているか）を検査していない"
+  ],
+  "narrative": {
+    "overall": "このセッション（2026年3月5日 予算委員会 省庁別審査）は15名の質問者と多数の政府参考人を含む大規模なセッションで、qa_pairs の内容・構造・相互参照は概ね整合的だった。最も深刻な問題群は Whisper による政府参考人の氏名誤認識で、同一人物が2〜3通りの異なる漢字名で記録される事例が4件確認された（神奈川人志・餅月忠志／望月忠子・佐々木政宏／佐々木雅宏・中村英雅／中村秀政）。これらはすべてパイプラインの corrected=True 後にも残存しており、話者修正ロジックが政府参考人の氏名バリエーションを吸収できていないことを示す。役割ラベルの誤分類（冒頭の省庁予算説明者が「質疑者」に分類）とメタデータへの政府参考人15名の未登録は、衆議院TVの出演者リスト取得ロジックの構造的制約に起因し、複数セッションに共通するシステム的問題と判断される。summary.json と qa_pairs.json のコミットメント判定不一致（qa_007・qa_022）は LLM 2段階呼び出しの一貫性問題で、これも他セッションで再発の可能性が高い。",
+    "top_findings": [
+      "Whisper が政府参考人の氏名を4件で誤認識（神奈川人志、餅月忠志／望月忠子、佐々木政宏／佐々木雅宏、中村英雅／中村秀政）。すべて同一役職の同一人物が別人として記録されており、検索・集計・話者分析に直接影響する。corrected 処理でも修正されていない。",
+      "metadata.speakers に政府参考人15名が未登録。予算委員会では多数の官僚が政府参考人として答弁するが、衆議院TV出演者リストが議員・大臣のみを対象とするため、全員が metadata から欠落する構造的問題。qa_pairs の answer.role も26件が空文字のまま。",
+      "summary.json と qa_pairs.json のコミットメント判定が qa_007（上野大臣・薬価ともずれ廃止）と qa_022（松本尚・3割削減努力継続）で矛盾。qa_pairs では has_commitment=false なのに summary では key_commitments に列挙されており、約束トラッカー機能の信頼性を損なう。"
+    ]
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "session_id": "shugiin/2026/03/10/56114_原子力特別委員会",
+  "chamber": "shugiin",
+  "date": "2026-03-10",
+  "deli_id": "56114",
+  "committee": "原子力特別委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T10:00:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {
+    "high": 1,
+    "medium": 5,
+    "low": 3,
+    "total": 9
+  },
+  "findings": [
+    {
+      "id": "F001",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["fact_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "FLAという存在しない略称がFICE参照箇所に残存",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[1].utterances[1].text",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json seg1 ws20 で Whisper が「FLAの取組を」と誤認識。corrected text でも修正されず、utterances.json の牧野たかお発言テキストに「引き続き、FLAの取組を関係大臣と連携しながら、政府一丸となって支えてまいります。」として残存。同一セグメント内では「福島国際研究教育機構、いわゆるFICEに関しては」（idx 1931）と正しい略称が先行しており、FLAはその結語部分（idx 2310）で使われている。FLAはこの文脈に存在しない略称であり、FICE（福島国際研究教育機構）の誤認識と判断される。",
+      "estimated_cause": "Whisper がアルファベット略称FICEの末尾部分を誤認識してFLAを生成。speaker_tagger/structurer の LLM 補正ステップで同一セグメント内に正しいFICEが存在するにもかかわらず、FLAの修正に失敗した。",
+      "downstream_impact": ["summary.json", "topics.json"]
+    },
+    {
+      "id": "F002",
+      "category": "role_label_error",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "副大臣・政務官7名が一律「質疑者」に誤分類",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[2].utterances[1].role",
+        "segment_index": 2,
+        "qa_id": null
+      },
+      "evidence": "segments 2-8 の田所嘉徳（復興副大臣）・瀬戸隆一（復興副大臣）・酒井庸行（復興副大臣）・古川直季（復興大臣政務官）・清水真人（復興大臣政務官）・小森卓郎（復興大臣政務官）・上田英俊（復興大臣政務官）が全員 role=「質疑者」。これら7名は質問・質疑ではなく、委員会冒頭の所信陳述または挨拶を行っており、role は「答弁者」もしくは「所信陳述者」が適切。牧野たかお（seg1）も role=「答弁者」だが所信陳述者である。",
+      "estimated_cause": "speaker_tagger が所信表明・挨拶のみのセッションで、所信を述べる大臣・副大臣・政務官を「答弁者/質疑者」の二値で分類する設計に起因。Q&A不在のセッション形式（所信聴取）に対応するロール定義が未整備。",
+      "downstream_impact": ["qa_pairs.json"]
+    },
+    {
+      "id": "F003",
+      "category": "content_missing",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "topics.json が空 (7つのkey_topicがsummary.jsonに存在するにもかかわらず)",
+      "location": {
+        "file": "topics.json",
+        "json_path": "$.topics",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "topics.json は {\"topics\": []} で完全に空。一方 summary.json は key_topics として7項目（第3期復興創生期間の取り組み、廃炉とALPS処理水対策、除去土壌の最終処分、帰還困難区域の避難指示解除、FICE/福島イノベーションコースト、令和8年度復興庁予算6,334億円、原子力規制委員会の審査・監視指導）を列挙している。これらは qa_pairs が空であるため Q&A 形式のトピック抽出が不可能だったことが原因と思われるが、所信表明のテキストからは抽出可能なはずである。",
+      "estimated_cause": "structurer が topics.json 生成時に qa_pairs に依存しており、qa_pairs が空の所信表明セッションでは topics 抽出を実行しないかエラー終了している可能性。summary.json は別ロジックで生成されたため7件が抽出できている。",
+      "downstream_impact": ["search-index"]
+    },
+    {
+      "id": "F004",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「排出措置計画」が corrected text に残存（正: 廃止措置計画）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[9].text",
+        "segment_index": 9,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json seg9 ws4 で Whisper が「原子力施設の排出措置計画については、これまでに発電用原子力に対して18基の認可を…」と誤認識。corrected text（seg9.text）でも修正されず残存。utterances.json の山中伸介発言テキストにも同様に残存。「廃止措置計画」は原子力規制法に定義された法定用語（廃炉の計画書）であり、「排出措置計画」は存在しない。",
+      "estimated_cause": "Whisper が「はい・し・そ・ち」を「はい・しゅ・つ・そ・ち」と誤認識。原子力専門用語のドメイン知識不足による LLM 補正失敗。「廃止（はいし）」と「排出（はいしゅつ）」の混同はWhisperで頻発するパターンと思われる。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F005",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "medium",
+      "systemic_signal": "likely_systemic",
+      "title": "「法案規定」が corrected text に残存（正: 法令規定）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[9].text",
+        "segment_index": 9,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json seg9 ws7「審査資料作成作業に関わる品質管理に対する法案規定の遵守状況等を確認するための検査を開始しております」。corrected text（seg9.text）でも「法案規定」のまま残存。utterances.json の山中伸介発言テキストにも同様。中部電力浜岡発電所の不正行為に関する検査文脈では「法令規定」（原子炉等規制法の条文遵守）が適切。「法案」は審議中の法律草案を指すため、この文脈では意味が通じない。",
+      "estimated_cause": "Whisper が「ほうれいきてい（法令規定）」を「ほうあんきてい（法案規定）」と誤認識。規制当局の専門的な法的文脈においてLLM補正が対処できなかった。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F006",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "発話テキストに委員長の呼名・閉会宣言が混入（発話分離不全）",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[2].utterances[1].text",
+        "segment_index": 2,
+        "qa_id": null
+      },
+      "evidence": "複数箇所で発話テキストに他話者の発言が埋め込まれている。(1) seg2 田所嘉徳の utterance が「西銘委員長「復興副大臣田所嘉徳君」田所嘉徳「復興副大臣の…」」という引用符付き形式で始まっており、委員長の呼名が田所の発言テキスト内に混在。(2) seg2 西銘恒三郎の3番目のutterance が「西銘委員長「以上で説明は終わりました。」」という引用符形式。(3) seg9 西銘委員長のutteranceが「…聴取いたします。西銘委員長「山中原子力規制委員会委員長。」」と自己の名前への引用形式を含む。(4) seg9 山中伸介のutteranceが「山中委員長「原子力規制委員会委員長の…」」と引用符形式で開始。seg5-7の委員長発言はそれぞれ「西銘委員長。」だけで内容がない。",
+      "estimated_cause": "speaker_tagger が話者ラベル付きの「委員長による発言者指名（呼名）」部分を該当話者の発言テキストに統合してしまった。corrected text の段階で引用符形式のラベルが含まれており、utterances 生成時に分離されなかった。",
+      "downstream_impact": ["qa_pairs.json"]
+    },
+    {
+      "id": "F007",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers の role フィールドが全10名で空文字",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[*].role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json の speakers 配列の全10エントリ（西銘恒三郎・牧野たかお・田所嘉徳・瀬戸隆一・酒井庸行・古川直季・清水真人・小森卓郎・上田英俊・山中伸介）で role=\"\" (空文字列)。affiliation フィールドには役職が記載されており（例：牧野たかお は「復興大臣 福島原発事故再生総括担当 防災庁設置準備担当 国土強靱化担当」）、role と affiliation の情報分離が機能していない。",
+      "estimated_cause": "metadata 生成パイプラインで speakers.role フィールドへの値設定が未実装またはスキップされている。likely_systemic として他セッションでも同様の問題が発生している可能性。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F008",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata の committee_id・session_number・duration が欠損",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.committee_id",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json で committee_id=null、session_number=null、duration=\"\" (空文字列)、mediasp_hash=\"\" (空文字列)。committee_id と session_number は検索・フィルタリングに使用される重要なメタデータ。duration がないとセッション長の表示が不可能。mediasp_hash は参院専用フィールドで衆院セッションでは空が正常。",
+      "estimated_cause": "committee_id と session_number のスクレイピングが未実装。duration は音声処理後に集計する必要があるが該当ステップが未実装またはエラー。衆議院TV の一次データには committee_id に相当するフィールドが存在しない可能性。",
+      "downstream_impact": ["search-index", "browse.astro"]
+    },
+    {
+      "id": "F009",
+      "category": "summary_qa_divergence",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.key_commitments の qa_id が全件空文字でqa_pairsへのリンク不能",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments[*].qa_id",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "summary.json の key_commitments 4件全ての qa_id が \"\" (空文字列)。このセッションは所信表明のみで qa_pairs.pairs=[] であるため、リンク対象が存在しないことは構造上仕方ない面があるが、空文字列ではなく null または欠落が適切。また、このセッションの topics.json が空にもかかわらず summary.json には 7件の key_topics が存在し、データ間の一貫性が取れていない。",
+      "estimated_cause": "qa_pairs が空のセッションで summary 生成側が qa_id を空文字列で埋めるフォールバック処理をしている。所信表明セッションに対するパイプライン設計の考慮不足。",
+      "downstream_impact": ["topics.json"]
+    }
+  ],
+  "blindspots": [
+    "raw_transcript の全whisper_segmentsを逐字精査しておらず、サンプリングベースの確認。他にも corrected text に残存する誤認識がある可能性。",
+    "外部の公式議事録（衆議院HP掲載）との照合は未実施。人名・法令名の確認精度に限界がある。",
+    "FLA が文脈上あり得る別の略称（未知の組織名等）である可能性を完全に排除できていない（確信度高だが要二次確認）。",
+    "法案規定 vs 法令規定 の判断は文脈推論に依存しており、実際の発言音声との照合は未実施。",
+    "qa_pairs が空であること自体は所信表明セッションとして正常動作の可能性があり、content_missing 問題として計上すべきか判断が難しい。"
+  ],
+  "narrative": {
+    "overall": "本セッション（56114）は2026年3月10日開催の衆議院東日本大震災復興及び原子力問題調査特別委員会の所信聴取会であり、牧野復興大臣の所信表明・復興庁予算説明・副大臣政務官の自己紹介・山中原子力規制委員会委員長の活動報告という形式で構成される。質疑応答が行われない特殊なセッション形式のため qa_pairs.pairs は空だが、speaker_tagger や structurer が所信表明型セッションを適切に扱えていない問題が複数確認された。最も深刻なのは、FICE（福島国際研究教育機構）への参照箇所にFLAという存在しない略称が残存している点（F001）で、事実上の情報改変となる。Whisperの誤認識については corrector LLM が大半を修正しているが、原子力専門用語「廃止措置計画→排出措置計画」（F004）および法律用語「法令規定→法案規定」（F005）は補正に失敗しており、分野特化型の補正プロンプト強化が必要。スキーマ面では metadata.role の全件空文字（F007）と committee_id/duration 欠損（F008）が横断的な問題として確認された。",
+    "top_findings": [
+      "F001: FLAという架空の略称がFICE（福島国際研究教育機構）を指すべき箇所に残存し、事実誤認に相当する誤りが corrected text・utterances.json 両方に波及している",
+      "F004+F005: 原子力規制の専門用語「廃止措置計画」「法令規定」がWhisper誤認識のまま corrected text に残存しており、LLM補正が原子力ドメイン知識の要る専門用語に対して機能不全を起こしていることを示す",
+      "F002+F006: 所信表明型セッションで副大臣・政務官7名が一律「質疑者」に誤分類され、かつ委員長呼名が発言テキストに混入するという speaker_tagger の構造的課題が露呈した"
+    ]
+  }
+}

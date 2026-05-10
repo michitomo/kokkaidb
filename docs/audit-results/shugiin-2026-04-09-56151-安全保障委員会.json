@@ -1,0 +1,370 @@
+{
+  "session_id": "shugiin/2026/04/09/56151_安全保障委員会",
+  "chamber": "shugiin",
+  "date": "2026-04-09",
+  "deli_id": "56151",
+  "committee": "安全保障委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T10:30:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 4, "medium": 9, "low": 6, "total": 19},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers に答弁者・政府参考人が全員未登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers は質疑者10名のみを収録。高市内閣総理大臣・小泉防衛大臣・茂木外務大臣・万波防衛政策局長・小杉装備政策部長・中道内閣審議官・伊藤整備計画局長・山田経済産業副大臣（計8名以上）が未登録。utterances.json には答弁者として全員登場しており、実際にセッションに出席している。",
+      "estimated_cause": "メタデータ収集パイプライン (scraper) が衆議院TV の発言者リストから質疑者のみを抽出し、答弁者・政府参考人を取得していない構造的欠陥。",
+      "downstream_impact": ["topics.json", "summary.json", "site/search"]
+    },
+    {
+      "id": "F002",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["whisper_misrecognition"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_008・qa_011 の質問者が小泉防衛大臣に誤帰属",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[7].question.speaker",
+        "segment_index": 2,
+        "qa_id": "qa_008"
+      },
+      "evidence": "qa_008 Q.speaker=小泉防衛大臣 だが full_text は '今般のイラン攻撃、米国とイスラエルは、この外交交渉中の武力攻撃を、先制的自衛の措置なんだ...' と河西宏一の質問文。qa_011 Q.speaker=小泉防衛大臣 だが full_text は '防衛装備移転の許可、これは行政権の作用に含まれる...' と河西の立場表明。A.speaker も qa_011 では 小泉防衛大臣 で同一人物が Q と A に重複。",
+      "estimated_cause": "structurer (DeepSeek V3.2) が segment 2 (河西宏一) 内の発言を qa_pair 分割する際、答弁者名を質問者として誤記入。質問文が答弁者名で始まる形式 ('〇〇大臣にお聞きします') を Q.speaker として拾った可能性あり。",
+      "downstream_impact": ["topics.json related_speakers"]
+    },
+    {
+      "id": "F003",
+      "category": "speaker_misattribution",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_033 の質問者が茂木外務大臣に誤帰属",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[32].question.speaker",
+        "segment_index": 6,
+        "qa_id": "qa_033"
+      },
+      "evidence": "qa_033 Q.speaker=茂木外務大臣、A.speaker=茂木外務大臣 で同一人物。Q.full_text は '首脳会談の目的、目標は何でしょうか。そして、今回の成果、どのような手応えがあったのか、茂木外務大臣が把握されている範囲で教えてください。' であり、これは明確に福田徹が茂木に対して問う質問文。raw_transcript seg6 でも '次、茂木外務大臣にお聞きします。首脳会談の目的...' と福田の発話として記録されている。",
+      "estimated_cause": "utterances.json seg6 utt7 で speaker=茂木外務大臣 に '次、茂木外務大臣にお聞きします...' から始まる福田の質問文が誤帰属されており、structurer がそのまま引き継いだ。",
+      "downstream_impact": ["topics.json related_speakers"]
+    },
+    {
+      "id": "F004",
+      "category": "whisper_hallucination_loop",
+      "secondary_categories": ["whisper_misrecognition"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "複数箇所で話者名の繰り返しループ (compression_ratio 3-4倍)",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[4].whisper_segments[13]",
+        "segment_index": 4,
+        "qa_id": null
+      },
+      "evidence": "Seg4/ws13: '前原誠司君。前原誠司君。前原誠司君。前原誠司君。前原誠司君。前原誠司君。前原誠司君。' (compression_ratio=4.065)。Seg4/ws19: '山本議員 議員 議員 議員 議員 議員 議員 議員 議員 議員' (cr=3.125, logprob=-0.487)。Seg5/ws8: '石井啓一議長 石井啓一議長 石井啓一議長 石井啓一議長' (cr=2.344)。Seg5/ws19: '橋本幹部長、 山田委員長、 山田委員長、 山田委員長、 山田委員長' (cr=2.068)。",
+      "estimated_cause": "Whisper large-v3-turbo が委員長による指名音声（短い発話）を認識する際にループを生成するパターン。seg5/ws8 の '石井啓一議長' ループがその後の話者誤帰属 (F005) を引き起こした。",
+      "downstream_impact": ["utterances.json", "qa_pairs.json"]
+    },
+    {
+      "id": "F005",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["whisper_hallucination_loop", "content_missing"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "石井啓一議長に官僚のサプライチェーン答弁が誤帰属・QAから消失",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[5].utterances[11].speaker",
+        "segment_index": 5,
+        "qa_id": null
+      },
+      "evidence": "utterances.json seg5 utt11: speaker=石井啓一議長, role=その他, text='サプライチェーンの強靭化を進めていくということが喫緊の課題...令和5年度から防衛生産基盤強化法に基づくサプライチェーン調査を開始...延べ約1万2千社に対して確認を実施...' 。石井啓一は衆議院議長であり、この政策実施答弁の内容は直前で登場している 小杉装備政策部長 の口調・役割に合致する。このサプライチェーン答弁内容は qa_pairs.json に一切登場しない。",
+      "estimated_cause": "Whisper seg5/ws8 の '石井啓一議長' 繰り返しループ (F004) により、corrected transcript に '石井啓一議長。' が挿入され、speaker_tagger がそれに続く官僚答弁を石井に帰属させた。",
+      "downstream_impact": ["qa_pairs.json (content lost)"]
+    },
+    {
+      "id": "F006",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "安倍内閣総理大臣が複数セグメントで誤挿入 (現職PM は高市)",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].whisper_segments[24]",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "Seg1/ws24, Seg3/ws46, Seg4/ws1, Seg4/ws21, Seg6/ws11, Seg6/ws12, Seg6/ws36, Seg6/ws37 に '安倍内閣総理大臣' が単独で登場 (avg_logprob -0.76〜-1.21 と低信頼)。本セッション (2026-04-09) の内閣総理大臣は高市早苗。これらは委員長の指名音声を Whisper が誤認識したもの。LLM 補正で qa_pairs・utterances への伝播はおおむね防がれているが、raw_transcript には残存。",
+      "estimated_cause": "Whisper large-v3-turbo のトレーニングデータに安倍総理のセッションが大量に含まれており、短い委員長指名音声のパターンを '安倍内閣総理大臣' と誤認識するバイアス。",
+      "downstream_impact": ["raw_transcript.json (残存)", "qa_041 question.full_text (伝播あり: F007参照)"]
+    },
+    {
+      "id": "F007",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["fact_error"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_041 question.full_text に '安倍内閣総理大臣' 誤認識が未修正で残存",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[40].question.full_text",
+        "segment_index": 7,
+        "qa_id": "qa_041"
+      },
+      "evidence": "qa_041 question.full_text: 'イランが今までどういう歴史があって...アメリカの……安倍内閣総理大臣の影響を受けた政権があったり、そうじゃない、変わったということも' — 谷浩一郎はイランのモサデグ政権・パフラヴィー朝 (US-backed Shah) について話しており '安倍内閣総理大臣' は文脈上全く意味をなさない。raw_transcript seg7 にも同じ文字列が残存。LLM が修正せずにそのまま引き継いだ。",
+      "estimated_cause": "Whisper が '…' (ポーズ/不明瞭音声) の後に '安倍内閣総理大臣' を hallucinate。structurer (DeepSeek V3.2) が question.full_text では音声テキストを忠実に反映するモードであり hallucination を自動修正しなかった。",
+      "downstream_impact": ["利用者がイラン歴史を誤解する可能性"]
+    },
+    {
+      "id": "F008",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs 全52件で question.role フィールドが欠如・answer.role が空文字",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].question",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "全52件の qa_pair で question オブジェクトに role キー自体が存在しない (json_path で $.pairs[*].question.role を引くと全件 null)。answer.role は51件が '' (空文字)。例外は qa_024 のみで A.role='チームみらい' (政党名であり role ではない — F009参照)。",
+      "estimated_cause": "structurer のプロンプトまたはスキーマ定義が question.role を出力させるよう指示していないか、LLM が出力を省略している。answer.role は空文字で出力されており、フィールド定義はあるが内容生成がなされていない。",
+      "downstream_impact": ["フィルタリング機能 (FilterPanel.jsx)", "ダッシュボード集計"]
+    },
+    {
+      "id": "F009",
+      "category": "schema_inconsistency",
+      "secondary_categories": ["role_label_error"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_024 answer.role='チームみらい' (政党名が role に誤入力)",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[23].answer.role",
+        "segment_index": 4,
+        "qa_id": "qa_024"
+      },
+      "evidence": "qa_024: answer.speaker='山田瑛理', answer.role='チームみらい'。役職名ではなく政党名が入力されている。answer.speaker は実際には '山田経済産業副大臣' が主な答弁者であり speaker 自体も不正確 (山田瑛理は質疑側議員)。",
+      "estimated_cause": "qa_024 の answer は 山田経済産業副大臣 と 小泉防衛大臣 の両者が答弁しており構造が複雑。structurer がスキーマを混乱させた。前段の question 内に '山田瑛理' '高市内閣総理大臣' 等の名前が複数登場し、answer.speaker に誤った人名が選ばれた可能性。",
+      "downstream_impact": ["topics.json related_speakers 整合性", "UIフィルタ"]
+    },
+    {
+      "id": "F010",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "utterances.json で同一人物の話者名が複数表記に分裂",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[*].utterances[*].speaker",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "'小泉防衛大臣' 34件 vs '小泉大臣' 2件 (seg9 utt12, utt15)。'茂木外務大臣' 11件 vs '茂木大臣' 2件 (seg3 utt2, utt6)。同一セッション内で同一人物の名称が揺れており、集計・検索時に別人扱いされる。",
+      "estimated_cause": "speaker_tagger が Whisper テキスト内の呼称をそのままラベルに使用。テキスト中で '茂木大臣：' と省略表記されている箇所がそのまま話者名になった。正規化処理が欠如。",
+      "downstream_impact": ["site/search スピーカー集計", "ダッシュボード答弁回数統計"]
+    },
+    {
+      "id": "F011",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "topics.json related_speakers がフルネームと役職名混在",
+      "location": {
+        "file": "topics.json",
+        "json_path": "$.topics[*].related_speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "'長島昭久'・'河西宏一'・'吉田宣弘' 等はフルネームで収録。一方 '小泉防衛大臣'・'茂木外務大臣'・'田村智子' 等は役職付き・フルネーム混在。metadata.speakers は全員フルネームのみ。同一人物の名前が文書間で不統一。",
+      "estimated_cause": "structurer が topics.related_speakers を生成する際に、utterances.json の話者名（表記ゆれあり）をそのまま採用した。正規化処理が欠如。",
+      "downstream_impact": ["topics ページの speakers リンク", "クロス検索"]
+    },
+    {
+      "id": "F012",
+      "category": "summary_qa_divergence",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.key_topics が 12 議題のうち 6 議題を未収録",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_topics",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "topics.json には '非核三原則と安全保障戦略'(qa_014,015)・'対中国防衛当局間連携'(qa_016,017)・'スタンドオフ防衛能力と地域住民への対応'(qa_018,019,021)・'防衛予算と財政目標'(qa_025,044)・'安全保障上の概念定義と公平性'(qa_038-041) の5議題が記録されているが、summary.key_topics (6件) には全て欠落。session_summary 本文にも '非核三原則' 'スタンドオフ' 'GDP比2%' 'ホットライン' は言及なし。",
+      "estimated_cause": "structurer が summary 生成時に全 segment を通じた主要議題の包括的抽出を行わず、最初の数 segment の議題を優先した可能性。または key_topics の件数に上限制約がある。",
+      "downstream_impact": ["サイトトップページの議題表示", "検索 (非核三原則 等で検索しても要約がヒットしない)"]
+    },
+    {
+      "id": "F013",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.key_commitments の speaker が姓のみ表記 (全5件)",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments[*].speaker",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "key_commitments の speaker は '小泉' (4件)・'茂木' (1件)。一方 qa_pairs では '小泉防衛大臣'・'茂木外務大臣' で収録。metadata.speakers には両名とも未登録 (F001)。同一文書群内で一貫した speaker キー正規化がない。",
+      "estimated_cause": "structurer が summary 生成時に speaker フィールドを qa_pairs と独立したフォーマットで出力。役職情報を別 role フィールドに分離したため姓のみになった。",
+      "downstream_impact": ["約束トラッカー UI の話者マッチング"]
+    },
+    {
+      "id": "F014",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers[*].role が全10件で空文字",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[*].role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers の全10エントリで role='' (空文字)。西村明宏は affiliation='安全保障委員長' であり role='委員長' と記入されるべき。質疑者には role='質疑者' が期待される。",
+      "estimated_cause": "scraper が役割情報を抽出していないか、speaker_tagger が metadata.speakers の role フィールドを未更新のまま放置している。",
+      "downstream_impact": ["サイトの話者ロール表示"]
+    },
+    {
+      "id": "F015",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata: committee_id=null, session_number=null, duration='' (複数フィールド未取得)",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.committee_id",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json: committee_id=null, session_number=null, duration='' (空文字)。hls_url は存在するため動画 URL から所要時間は算出可能だが duration フィールドは未計算。committee_id・session_number は衆議院TV サイト上で取得可能かは不明。",
+      "estimated_cause": "scraper が committee_id・session_number の取得ロジックを持たない。duration は HLS 解析または処理済み音声ファイルから算出する実装が欠落している。",
+      "downstream_impact": ["フィルタ・集計機能"]
+    },
+    {
+      "id": "F016",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "utterances.json segments の top-level speaker_name が全件 N/A (フィールド未設定)",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[*].speaker_name",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "utterances.json の各 segment オブジェクトに speaker_name キーが存在しない（取得すると N/A）。ネストされた utterances[*].speaker には値が入っており、セグメントレベルのサマリーとしての speaker_name が欠落している。raw_transcript.json では segments[*].speaker_name は正しく設定されている。",
+      "estimated_cause": "utterances.json 生成処理が raw_transcript の segment 構造を引き継いでいないか、speaker_tagger が speaker_name フィールドを書き込まない仕様になっている。",
+      "downstream_impact": ["セグメント単位の speaker 検索・集計"]
+    },
+    {
+      "id": "F017",
+      "category": "timestamp_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "山田瑛理の start_time が計算値と1分ズレ (11:29 vs 実計算 11:28)",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[8].start_time",
+        "segment_index": 8,
+        "qa_id": null
+      },
+      "evidence": "HLS ストリーム開始時刻を西村明宏の start_seconds=1189.5 / start_time=09:00 から逆算すると 08:40:10。山田瑛理 start_seconds=10119.0 → 08:40:10 + 10119.0s = 11:28:39 → 11:28 となるが、metadata 記録は '11:29'。切り捨てと切り上げの違い (約20秒差)。",
+      "estimated_cause": "start_time 算出時に秒数を分に変換する際の端数処理が四捨五入・切り上げで行われている一方、他の話者は切り捨てで一致している。処理の一貫性がない。",
+      "downstream_impact": ["video_url の time パラメータとの微細なズレ (qa_pairs ではセグメント先頭時刻を使用しているので実害は小さい)"]
+    },
+    {
+      "id": "F018",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_041 answer.speaker='' (答弁なし QA の speaker が空文字)",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[40].answer.speaker",
+        "segment_index": 7,
+        "qa_id": "qa_041"
+      },
+      "evidence": "qa_041: answer.speaker='', answer.full_text='', answer.summary='（本セグメント内では、この点に関する大臣の直接的な答弁は含まれていない）', evasion_score=1.0。谷浩一郎の最終質問 (情報の非対称性) は時間切れで答弁なしで終了しており、empty answer の事実は正確。ただし speaker='' は null や 'N/A' との混在を招く。",
+      "estimated_cause": "答弁なしパターンへの schema 対応が未定義。structurer が答弁なし時の speaker フィールドをどう表現すべきか指定されていない。",
+      "downstream_impact": ["UI で空欄表示される"]
+    },
+    {
+      "id": "F019",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "likely_systemic",
+      "title": "Seg4/ws30 で '安倍内総理' が '高市総理' の誤認識として残存 (LLMが qa_pairs では修正済み)",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[4].whisper_segments[30].text",
+        "segment_index": 4,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript seg4/ws30: '安倍内総理が掲げております日本成長戦略の17分野...' — 山田経済産業副大臣の発言であり '高市総理' の誤認識。LLM が qa_024 answer.full_text では '高市総理が掲げております' と正しく修正しているが、raw_transcript には誤認識テキストが残存。",
+      "estimated_cause": "Whisper が '高市' の音声を認識できず '安倍内' と代替出力した。corrected=true フラグがあるが raw 側は修正されない設計。",
+      "downstream_impact": ["raw_transcript.json を直接利用するユーザーが誤情報を参照する可能性"]
+    }
+  ],
+  "blindspots": [
+    "raw_transcript.json の全 whisper_segments を逐字精査していない (高圧縮比・低 logprob セグメントのサンプリング調査のみ)",
+    "外部の議員名簿・衆議院公式会議録との照合は未実施 (議員名の Whisper 誤認識を完全には検出できていない)",
+    "qa_pairs の evasion_score の妥当性検証 (各スコアが実際の答弁回避度と一致するかの評価)",
+    "音声セグメント分割の境界 (start_seconds の精度) を動画で直接確認していない",
+    "Whisper 誤認識が LLM 補正後の各種 summary/full_text に完全に伝播していないかの網羅的確認"
+  ],
+  "narrative": {
+    "overall": "セッション全体の会話構造・発言者の特定・主要議題カバレッジはおおむね機能しており、medium 評価とする。最大の問題は metadata.speakers から答弁者・政府参考人が全員欠落していること（構造的）と、Whisper の話者名繰り返しループが引き起こした石井啓一議長への誤帰属・サプライチェーン答弁消失の連鎖。qa_pairs では質問者フィールドに答弁者名が入る誤帰属が3件あり、いずれも structurer が '〇〇大臣にお聞きします' という発話パターンを Q.speaker として取り込んだものと推察される。schema 面では role フィールドの空欄・欠落・表記ゆれが全ファイルに横断的に存在し、likely_systemic シグナルを多数持つ。",
+    "top_findings": [
+      "metadata_missing_speaker (F001): 小泉防衛大臣・茂木外務大臣・高市内閣総理大臣等8名超が metadata.speakers に未登録。答弁者の検索・集計が構造的に不可能。",
+      "Whisper ハルシネーションループ (F004) → 石井啓一議長誤帰属 (F005) の連鎖: seg5 で '石井啓一議長' が4回ループし、その後の小杉装備政策部長のサプライチェーン答弁が石井に帰属されて QA ペアから消失した。",
+      "qa_pairs の Q.speaker 誤帰属 (F002/F003): '〇〇大臣にお聞きします' 形式の質問文で答弁者名が Q.speaker に入る問題が3件確認され、likely_systemic パターンと判断。"
+    ]
+  }
+}

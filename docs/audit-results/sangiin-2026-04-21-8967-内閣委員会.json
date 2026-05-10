@@ -1,0 +1,280 @@
+{
+  "session_id": "sangiin/2026/04/21/8967_内閣委員会",
+  "chamber": "sangiin",
+  "date": "2026-04-21",
+  "deli_id": "8967",
+  "committee": "内閣委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T12:00:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 4, "medium": 5, "low": 5, "total": 14},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "content_missing",
+      "secondary_categories": ["summary_qa_divergence"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "segment 4 (司隆史/公明党) が qa_pairs・topics・summary から完全欠落",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[?(@.segment_index==4)]",
+        "segment_index": 4,
+        "qa_id": null
+      },
+      "evidence": "utterances.json には segment_index=4 (司隆史、5578.05秒開始) に 32 発話が存在し、raw_transcript.json にも 55 whisper セグメントがある。しかし qa_pairs.json の segment_index は [1,2,3,5,6,7,8] のみで 4 が一件も存在しない。topics.json にも 司隆史 の名前は一切なく、summary.json の session_summary にも 外国人共生・民泊 の記述がない。司隆史 が扱った議題: (1) イラン情勢長期化を見据えた原油高・代替ルート調達コスト (山田内閣府副大臣との問答約6往復)、(2) 外国人との秩序ある共生社会・特区民泊への業務停止命令 (小山審議官・小野田大臣)、(3) 外国人へのオリエンテーション制度 (福原審議官)。これら約8テーマ分の QA が完全に欠落している。",
+      "estimated_cause": "structurer.py が LLM に対して各 segment を個別に送る際、segment 4 のリクエストが失敗またはタイムアウトし、その結果を qa_pairs に書き込まずに通過した可能性が高い。あるいはキュー管理のバグで segment 4 がスキップされた。処理ログを確認すれば特定できるはず。",
+      "downstream_impact": ["topics.json", "summary.json"]
+    },
+    {
+      "id": "F002",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "砲来庁（法来庁）→ 砲術長 の誤認識が qa_pairs まで伝播",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[47].answer.full_text",
+        "segment_index": 8,
+        "qa_id": "qa_048"
+      },
+      "evidence": "raw_transcript.json segment 8 ws_id 15: '攻撃指揮官である法来庁' / utterances.json 宮崎正幸の発話: '砲来庁' / qa_pairs.json qa_048 answer: '砲来庁' — いずれも '砲術長 (ほうじゅつちょう、艦の砲撃担当幹部)' の誤認識である。同 ws_id 15 では '訓練全体の指揮官である官庁' とあるが正しくは '艦長'。さらに ws_id 17 では '退院に関する処分' → '隊員に関する処分'、'定職等の懲戒処分' → '停職等の懲戒処分' の誤認識も確認。LLM による correction では修正されなかった。",
+      "estimated_cause": "Whisper large-v3-turbo は軍事専門用語 (砲術長) を日常語 (法来・砲来) に誤認識した。speaker_tagger の LLM correction フェーズがこの区間の専門用語を修正しなかった。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F003",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "久里浜医療センター → 栗浜医療センター の誤認識が全ファイルに伝播",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[35].answer.full_text",
+        "segment_index": 6,
+        "qa_id": "qa_036"
+      },
+      "evidence": "raw_transcript.json segment 6 の whisper セグメント: '独立行政法人国立病院機構の栗浜医療センター' および '栗浜医療センターで令和6年度に調査' — いずれも正しくは '久里浜医療センター (くりはまいりょうせんたー、神奈川県横須賀市の依存症専門病院)'。utterances.json にも '栗浜医療センター' のまま残り、qa_pairs.json の qa_036・qa_039 answer.full_text にも伝播している。データ利用者が機関名を誤認識するリスクが高い。",
+      "estimated_cause": "Whisper が '久里浜' (4モーラ) を漢字変換時に '栗浜' に誤変換。correction フェーズの LLM (Gemma) が機関名の正誤を判断できなかった。固有名詞辞書や後処理ルールの欠如が原因と推定。",
+      "downstream_impact": ["utterances.json", "qa_pairs.json"]
+    },
+    {
+      "id": "F004",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs 全 50 件で answer.role が空文字列",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "qa_pairs.json の全 50 件を確認したところ、answer.role はすべて空文字列 ('') である。utterances.json では同じ答弁者に対して '政府参考人'・'答弁者'・'委員長' 等のロールが正しく付与されているが、qa_pairs ではそれが引き継がれていない。これにより UI でのロールフィルタリングや役職別集計が不可能になる。",
+      "estimated_cause": "structurer.py が qa_pairs を生成する際に utterances.json の role フィールドをコピーしないか、LLM プロンプトで role の出力を指示していない。スキーマ定義はあるが生成ロジックでの対応が漏れていると推定。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F005",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers に答弁者・政府参考人 25 名が未登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json の speakers には 9 名 (委員長 1 名 + 質疑者 8 名) のみが登録されているが、utterances.json には 34 名の異なる話者が存在する。未登録の 25 名: 三宅審議官・上山・伊沢・国家公安委員会委員長・城内茂・宮崎正幸・小山・小野田・山下参事官・山田・山田副大臣・岡田局長・木原稔・森本長官官房長・河野次長・浅井審議官・福原・竹林審議官・総務省総合通信基盤局電気通信事業部長・茂松刑事局長・警察庁サイバー警察局長・赤澤・赤間・野村・長坂 が欠落している。これらは全て答弁者側であり、答弁者を起点とした検索・フィルタリングが不能になる。",
+      "estimated_cause": "scrapers/sangiin.py の speakers 抽出ロジックが質疑者リスト (委員情報) しか収集していない。答弁側の政府参考人は議事録ページには未掲載のため、動的に transcript から抽出する仕組みが必要だが未実装と推定。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F006",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "司会議長 (しかいぎちょう) ハルシネーションが segment 4 に 11 回出現",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[4].whisper_segments[?(@.text contains '司会議長')]",
+        "segment_index": 4,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json segment 4 (司隆史) の whisper_segments: ws_id 8, 12 (2回), 20, 23, 27, 33, 43 (2回), 45, 46 の計 11 回 '司会議長。' が出現。これは委員長 北村経夫 が '司(隆史)君。' と指名する発言を Whisper が '司会議長 (しかいぎちょう)' と誤認識したもの。ws_id 45, 46 は '司会議長。' が連続して全く同じテキストで出現するループでもある。utterances.json では '司隆史君。' や '司隆君。' に部分的に修正されているが、完全修正ではない。",
+      "estimated_cause": "話者の名前 '司隆史 (つかさ たかし)' の苗字 '司' が Whisper の音声パターン認識で '司会 (しかい)' と混同される。委員長の短い指名発言 (1-2 秒) で no_speech_prob が高い区間でのハルシネーション。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F007",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "speaker 名称の表記ゆれ (山田 vs 山田副大臣、赤間 vs 赤間国家公安委員長 等)",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[*].utterances[*].speaker",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "utterances.json で同一人物の speaker フィールドが複数表記で登録されている。(1) '山田' (segment 4 に 5 件) vs '山田副大臣' (segment 2 に 1 件) — 同一人物のはずだが異なる表記。(2) '赤間' (6 件) vs 'segment 5 ws 内で '赤間国家公安委員長' として自己紹介' — qa_pairs では '赤間' のみ。(3) qa_pairs の answer speakers にも '山田副大臣' 1 件だが、これは segment 4 には存在しないため qa_pairs 内での参照と矛盾する可能性。これにより同一人物の全発言を名前で集計できない。",
+      "estimated_cause": "speaker_tagger の LLM が発言の都度、文脈から役職付き氏名を抽出するが、一貫した正規化をしていない。名前の正規化ポストプロセスが未実装と推定。",
+      "downstream_impact": ["qa_pairs.json"]
+    },
+    {
+      "id": "F008",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata の duration・hls_url・start_time・duration_minutes が空/ゼロ",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.duration",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json: duration='' (空文字列)、hls_url='' (空文字列)、committee_id=null、session_number=null。speakers 全 9 名で start_time='' (空文字列)、duration_minutes=0。start_seconds は正常に入力されている (北村: 1852.82, 鬼木: 1905.89 等)。hls_url が空のためアーカイブ HLS への直リンクが提供できない。duration が空のため動画長さの表示・フィルタリングが不能。",
+      "estimated_cause": "sangiin.py scraper が mediasp.jp ハッシュ解決後の最終 m3u8 URL を metadata.hls_url に書き戻していないか、duration を HLS プレイリストから取得していない。start_time の変換ロジック (start_seconds → HH:MM:SS) が未実装と推定。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F009",
+      "category": "other",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "speaker 名がそのまま utterance テキスト冒頭に混入 (37 発話)",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[*].utterances[*].text",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "utterances.json の 183 発話中 37 件 (20.2%) で text フィールドが speaker 名で始まる。例: speaker='鬼木誠', text='鬼木誠君。自主的判断に委ねていては…'; speaker='木原稔', text='木原稔法案については…'; speaker='大門実紀史', text='大門実紀史まさにその点で…'。これは Whisper が委員長の指名発言や答弁者の自己紹介を直前の発言に連結した結果、speaker_tagger が切り出した際に名前ラベルが残ったもの。qa_pairs にも 6 件伝播 (qa_015, qa_016, qa_017 answer; qa_037, qa_043 question; qa_041 answer)。",
+      "estimated_cause": "Whisper が短い指名発言 (例: '委員長、鬼木誠君。') を直前の発話セグメントに結合してしまい、speaker_tagger がその後のテキストをそのまま発話として処理した。前処理で冒頭の氏名パターンを除去するロジックが未実装。",
+      "downstream_impact": ["qa_pairs.json"]
+    },
+    {
+      "id": "F010",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "骨子案 → 個市案 の誤認識が qa_pairs まで伝播",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[4].answer.full_text",
+        "segment_index": 1,
+        "qa_id": "qa_005"
+      },
+      "evidence": "utterances.json segment 1 の総務省総合通信基盤局電気通信事業部長の発話: '本年3月に取りまとめ、個市案の提示があったところでございます。個市案におきましては…' — qa_005 および qa_006 の answer.full_text にも同じ誤りが伝播。正しくは '骨子案 (こっしあん)' であり、有識者検討会の報告書の中間まとめに使われる標準用語。'個市案' は意味不明な造語。",
+      "estimated_cause": "Whisper が '骨子案 (こっしあん)' を '個市案' と誤変換。専門用語辞書の欠如が原因。LLM correction が '個市案' を既存語として許容してしまった可能性がある。",
+      "downstream_impact": ["qa_pairs.json"]
+    },
+    {
+      "id": "F011",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs 全 50 件で follow_up_ids・related_law_ids が空配列",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].follow_up_ids",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "全 50 件の follow_up_ids=[] かつ related_law_ids=[]。セッションには 法改正への言及 (ギャンブル等依存症対策基本法、資金決済法、割賦販売法、道路交通法 等) が多数あり、related_law_ids への入力が期待されるが一件も入力されていない。また鬼木誠 6 件や杉尾秀哉 11 件のように明らかに連続する QA があるが follow_up_ids も空。",
+      "estimated_cause": "structurer.py が LLM に法律名の抽出と follow_up リンク作成を依頼していないか、出力パース後の書き込みが未実装。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F012",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs 12 件で metrics が null",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[?(@.metrics==null)]",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "qa_004・qa_005・qa_006 (鬼木誠)、qa_008〜qa_017 (杉尾秀哉)、qa_048〜qa_050 (伊勢崎賢治) の計 12 件が metrics=null。残り 38 件は metrics が正常に生成されている。null が集中するのは各質疑者の中・後半の QA であり、LLM がトークン上限に達した可能性がある。",
+      "estimated_cause": "structurer.py が各セグメントの QA を一括してメトリクス生成する際、トークン上限 (コンテキスト長) を超えると後続の QA の metrics が生成されず null になる。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F013",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "障害保健福祉部長 → 障害保険福祉部長 の誤認識",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[3].utterances[0].text",
+        "segment_index": 3,
+        "qa_id": null
+      },
+      "evidence": "utterances.json segment 3 の牛田茉友の発話: '厚生労働省社会援護局野村障害保険福祉部長。' — 正しくは '障害保健福祉部長 (しょうがいほけんふくしぶちょう)'。'保健 (ほけん=health)' が '保険 (ほけん=insurance)' に誤認識されている (発音が同一のため)。同様に野村の自己紹介: '野村障害保険福祉部長' にも伝播。",
+      "estimated_cause": "Whisper が同音異義語 '保健/保険' を区別できず文脈から正しい漢字を選択できなかった。同音異義語の文脈依存修正が未実装。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F014",
+      "category": "summary_qa_divergence",
+      "secondary_categories": ["content_missing"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "summary.json の key_topics が session 実態 (8 テーマ) より少ない 5 項目のみ",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_topics",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "summary.json の key_topics は 5 項目: オンラインカジノ対策・旧姓通称使用・特別児童扶養手当・警察組織構造改革・自衛官国外事故。topics.json には 8 トピックが存在する。summary から抜けているのは '中東情勢と日本船舶の安全確保'・'交通安全と車両規制'・'薬物乱用および依存症対策' の 3 件。また F001 で確認した segment 4 (司隆史) の '外国人共生・特区民泊' も当然ながら含まれていない。",
+      "estimated_cause": "summary.json の key_topics は LLM が重要度に基づき 5 件に絞り込んで生成するが、絞り込み基準が不明確で重要トピックが漏れている。また segment 4 が qa_pairs 生成時に欠落したためその内容が summary にも反映されなかった。",
+      "downstream_impact": []
+    }
+  ],
+  "blindspots": [
+    "raw_transcript の全 whisper_segments を逐字精査していない (サンプリングのみ)。他にも誤認識が存在する可能性がある。",
+    "外部の議員名簿・政府参考人リストとの照合は未実施 (木原稔を '木原内閣官房長官' と呼ぶ文脈があったが役職名の正確性を検証していない)。",
+    "segment 4 (司隆史) の qa_pairs 欠落に関し、実際のパイプライン実行ログを確認していないため原因は推定のみ。",
+    "LLM (Gemma-4-31B) による事実補正・創作の有無について、qa_pairs の summary フィールドが原発言と意味的に一致しているかを全件検証していない。",
+    "伊沢審議官の '令和7年における自殺件数 395 件' の正確性を外部統計と照合していない。"
+  ],
+  "narrative": {
+    "overall": "このセッションは 9 名の質疑者が 9 つの議題 (オンラインギャンブル対策・中東情勢・夫婦別姓・特別児童扶養手当・交通安全・警察組織改革・依存症対策・選択的夫婦別姓・自衛官国外事故) を扱った充実した委員会であるが、データ品質はいくつかの重大な問題を抱えている。最も深刻なのは公明党・司隆史 (segment 4) の全発言が qa_pairs・topics・summary から完全に脱落していることで、約 40 分分の質疑内容が失われている。また複数の Whisper 誤認識 (久里浜→栗浜・砲術長→砲来庁・骨子案→個市案) が correction フェーズをすり抜けて qa_pairs まで伝播しており、データの信頼性を損ねている。一方、utterances.json の発話内容は概ね正確に書き起こされており、Whisper ループの規模は限定的 (司会議長 11 件程度) でセッション全体の品質崩壊には至っていない。schema 上の問題 (answer.role 全空・duration 空・follow_up_ids 全空) は likely_systemic であり優先的な修正が必要。",
+    "top_findings": [
+      "segment 4 (司隆史/公明党) が qa_pairs・topics・summary から完全欠落 — 約 40 分・8 テーマ分の質疑が消失しており、データ利用者は公明党の発言を一切参照できない。structurer のバグが原因と推定される。",
+      "久里浜医療センター → 栗浜医療センター の誤認識が全ファイルに伝播 — 実在する依存症専門病院名が誤った名称で公開され、検索・参照において機関名が見つからなくなる。固有名詞辞書の整備が必要。",
+      "qa_pairs 全 50 件で answer.role が空文字列 — utterances.json には role 情報が正しく入力されているが、qa_pairs 生成時に引き継がれていない likely_systemic バグ。役職別分析・フィルタリング機能が全セッションで無効になっている可能性がある。"
+    ]
+  }
+}

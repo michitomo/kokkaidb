@@ -1,0 +1,243 @@
+{
+  "session_id": "shugiin/2026/03/05/56099_総務委員会",
+  "chamber": "shugiin",
+  "date": "2026-03-05",
+  "deli_id": "56099",
+  "committee": "総務委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T10:00:00+09:00",
+  "overall_quality": "low",
+  "issue_count": {"high": 3, "medium": 5, "low": 4, "total": 12},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "content_missing",
+      "secondary_categories": ["summary_qa_divergence"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "午後セッション4名分の質疑がqa_pairsに未生成",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "qa_pairs.json は43件でseg 0〜5（古川/国定/高見/田嶋/中川/平林）のみ対象。utterances.json seg5には許斐亮太郎(16発言)・高沢一基(15発言)・青木ひとみ(10発言)・武藤かず子(7発言)のQ&Aが収録されているにもかかわらず、これら4名を questioner とするqa_pairが1件も存在しない。topics.json はこれら4名をrelated_speakersとして列挙しているが、対応するqa_idsはすべて別の質問者（高見亮・平林晃）のものを流用しており、実際の質疑との対応関係が崩れている。",
+      "estimated_cause": "raw_transcript seg5（平林晃）の音声クリップが平林晃の登壇時刻から録音終了まで長大なファイルとなり、午後セッション（許斐亮太郎〜武藤かず子）の音声が全て含まれてしまった。utterances生成はこれを正しく分離できたが、qa_pairs構造化の際にseg5を「平林晃セグメント」と認識しseg5のquestioner=平林晃のQ&Aのみ生成した。午後個別クリップ（segs 6〜11）は無音または収録終了後の音声を含んでおりWhisperハルシネーションが発生（F002）。",
+      "downstream_impact": ["topics.json", "summary.json"]
+    },
+    {
+      "id": "F002",
+      "category": "whisper_hallucination_loop",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "午後セッション6セグメントが全て「ご視聴ありがとうございました。」で上書き",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[6:12].text",
+        "segment_index": 6,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json の segments[6]〜[11]（古川康/許斐亮太郎/高沢一基/青木ひとみ/武藤かず子/林芳正）が全て text='ご視聴ありがとうございました。'（15文字）、whisper_segments=[{start:0.0, end:29.98, avg_logprob:-0.412}]の1件のみ。6セグメントで同一テキスト・ほぼ同一avg_logprobが繰り返される典型的なWhisperハルシネーションパターン。no_speech_prob=0.0だが実際は無音またはクロージング画面音声が原因と推定。",
+      "estimated_cause": "午後セッションの各話者に割り当てた個別HLS音声クリップが無音区間または配信終了後のエンドカードを含んでいた。Whisperは無音・単調音声に対して「ご視聴ありがとうございました。」という定型フレーズをハルシネーションとして出力した。本会議・長時間審議セッションで昼休憩を挟むケースで同種問題が発生している可能性が高い。",
+      "downstream_impact": ["utterances.json", "qa_pairs.json", "topics.json", "summary.json"]
+    },
+    {
+      "id": "F003",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["role_label_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_002 answer.speaker が国定勇人（正: 出口財政局長）に誤帰属",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[1].answer.speaker",
+        "segment_index": 1,
+        "qa_id": "qa_002"
+      },
+      "evidence": "qa_002 の answer.speaker='国定勇人'、answer.role='自由民主党・無所属の会'。しかし答弁内容は「消費者物価指数や公共工事設計労務単価等の動向を踏まえ所要額を積算、令和7年度は1781億円（令和元年度比281億円増）」という政府局長答弁。utterances.json seg1 の最初のutteranceも speaker=国定勇人, role=質疑者 であるが、テキストは同じ官僚答弁の続きから始まっている。has_commitment=True, commitment_text='今後とも物価等の動向を踏まえ適切な算定に努めてまいりたい'も国定勇人名義となっている。",
+      "estimated_cause": "seg1の音声クリップは国定勇人の登壇時刻（start_seconds=1260.7）から始まるが、その冒頭には前の質問（古川康 seg0）への出口財政局長答弁の続きが含まれていた。LLM構造化器がseg1をすべて「国定勇人セグメント」と認識し、先頭の答弁テキストを国定勇人の発言として誤帰属した。この種の「前セグメント末尾の答弁が次セグメント先頭に混入」はHLS分割構造上の構造的欠陥であり複数セッションで発生している可能性がある。",
+      "downstream_impact": ["summary.json"]
+    },
+    {
+      "id": "F004",
+      "category": "summary_qa_divergence",
+      "secondary_categories": ["fact_error"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "unknown",
+      "title": "summary key_commitments[1]の発言者が林芳正（正: 尾田地域力創造審議官）",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments[1].speaker",
+        "segment_index": null,
+        "qa_id": "qa_029"
+      },
+      "evidence": "summary.json key_commitments[1]: speaker='林芳正', role='総務大臣', text='ふるさと住民登録制度について、3月目途にガイドラインを発出し、来年度中の運営開始を目指す。' qa_id='qa_029'。しかしqa_029のanswer.speaker='尾田'であり、utterances.json seg4においても同テキストの発話者は '尾田: 尾田地域力創造審議官' と記録されている。林芳正は同セッションで別の郵政関連質問（qa_016等）に答弁しているが、このガイドライン発出発言はしていない。",
+      "estimated_cause": "LLM構造化器がkey_commitmentsを生成する際、政策推進責任者として所管大臣（林芳正）に自動帰属した可能性がある。答弁者の正確な特定よりも大臣名の方が「重要な約束」として扱いやすいというLLMのバイアス。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F005",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs 答弁者が姓のみ表記（田辺/本田/尾田/小川/牛山/出口）で8件に肩書欠如",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[26:34].answer.speaker",
+        "segment_index": 4,
+        "qa_id": "qa_027"
+      },
+      "evidence": "seg4（中川宏昌セグメント）のqa_027〜034の8件でanswer.speakerが姓のみ1〜2文字: 田辺/本田/尾田/小川/本田/出口/牛山/小川。同一人物がutterances.json では '消防庁田辺次長'、'本田地域力創造審議官'、'尾田地域力創造審議官'、'出口自治財政局長' と正式名・肩書付きで記録されている。qa_pairs内でも他セグメントでは '消防庁田辺次長'（qa_008）、'出口自治財政局長'（qa_019,020,022）と肩書付き表記が混在し、同一人物が2種類の形式で登場する。",
+      "estimated_cause": "LLMがseg4の長文テキストを処理する際に肩書き抽出を省略した。seg4は39utterancesと長く、政府参考人が多数登場するため名前解決が劣化した可能性がある。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F006",
+      "category": "timestamp_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "video_url の time がセグメント開始時刻のみで同一セグメント内の質問を区別不能",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[].video_url",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "同一セグメント内の全qa_pairsが同一video_url time値を持つ。例: qa_002〜qa_008は全て time=1260.7（国定勇人のseg開始）。qa_009〜015は全てtime=3116.1（高見亮のseg開始）。国定勇人の8質問すべてが同一URLを指し、個別質問の動画位置へのダイレクトリンクとして機能しない。実際の発話開始時刻はutterances.json各utteranceのstartフィールドから取得可能だが連携されていない。",
+      "estimated_cause": "qa_pairs生成時にsegment_indexからセグメントstart_secondsを取得しvideo_urlに使用。qa_pair個別の開始時刻はutterancesレベルの情報が必要だが、structurerはそこまで掘り下げていない。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F007",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "惨事ストレスが三次ストレスに誤認識され corrected text に5箇所残存",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[5].text",
+        "segment_index": 5,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json seg5のcorrected textに '三次ストレス' が5箇所残存（位置15720, 15795, 15832, 15867, 15911）。全て消防庁田辺次長の答弁で '三次ストレス対策研究会' '三次ストレス対策の徹底' 等の文脈。raw whisper_segmentsには9箇所あり、correctionが '惨事ストレス' と '三次ストレス' の間で不完全（4箇所修正、5箇所未修正）。正しくは消防・防災専門用語 '惨事（さんじ）ストレス'（disaster-induced critical stress）であり、意味が全く異なる。",
+      "estimated_cause": "Whisperが '惨事' を '三次' と同音混同。correctionフェーズではメタデータの人名リストに基づく固有名詞修正を優先し、一般専門用語の音韻類似誤認識には対応しなかった。同種の消防・医療専門用語誤認識は他セッションでも発生している可能性がある。",
+      "downstream_impact": ["utterances.json", "qa_pairs.json"]
+    },
+    {
+      "id": "F008",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_010 answer.speaker が空文字、answer.full_text が空文字",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[9].answer",
+        "segment_index": 2,
+        "qa_id": "qa_010"
+      },
+      "evidence": "qa_010 の answer.speaker=''、answer.full_text=''。answer.summary='（このセグメント内では、この特定の問いに対する直接的な答弁は含まれていない。次の質問である自治体DX全般への問いに統合して回答されている）'。Q speaker=高見亮、質問内容は自治体DXの小規模市町村支援。答弁が存在しないとしてqa_pairを生成したが、対応する答弁はqa_011または他のpairに吸収されているはず。利用者がqa_010を参照した場合、答弁者不明・答弁なしと誤認する。",
+      "estimated_cause": "LLMが複数の質問を1つの答弁でまとめて回答するケース（一括答弁）の際に、一部のqaペアで answer.full_text を空にする処理が発生。一括答弁の対応関係をfollow_up_idsで表現すべきだが機能していない。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F009",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.duration が空文字、committee_id と session_number が null",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.duration",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json: duration=''（空文字）、committee_id=null、session_number=null、mediasp_hash=''（衆議院では不要だが空文字）。durationは計算可能（last_speaker.start_seconds=34003.1 - first_speaker.start_seconds=1189.8 + last_speaker.duration_minutes*60 ≈ 435分）だが未算出。committee_idはsite側フィルタリングで使用される可能性がある。null と空文字が混在しスキーマ一貫性が欠如。",
+      "estimated_cause": "スクレイパーが衆議院TVページからcommittee_idを取得する実装がない（shugiintv.go.jpの委員会IDはURLパラメータではなくHTMLから抽出が必要）。durationの自動算出ロジックが未実装。",
+      "downstream_impact": ["site/"]
+    },
+    {
+      "id": "F010",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers 全12名の role フィールドが空文字",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[].role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json speakers配列の全12エントリでrole=''. 古川康（委員長）・国定勇人（自民質問者）・林芳正（総務大臣）等、affiliationフィールドでは属性が明示されているが、role（質疑者/答弁者/委員長等）フィールドは空文字のまま。utterances.jsonでは各utteranceにrole='質疑者'/'答弁者'/'委員長'が設定されており情報は存在するが、メタデータレベルへの集約がなされていない。",
+      "estimated_cause": "metadata生成がscraperによる構造化のみで、LLM処理後のutterances情報を逆引きするステップが未実装。",
+      "downstream_impact": ["site/"]
+    },
+    {
+      "id": "F011",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs 全43件の question.role が null",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[].question.role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "qa_pairs.json 全43ペアで question.role=null。answer.roleは16件が '総務大臣'、1件が '自由民主党・無所属の会'（F003参照）、26件が空文字と混在。question.party は設定あり（例: qa_001 party未確認）。question.roleが常にnullではqa_pairs単体で質問者の立場が不明となる。スキーマ上roleフィールドは存在するが機能していない。",
+      "estimated_cause": "structurer.pyのqaペア生成プロンプトまたは後処理でquestion.roleの設定が省略されている。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F012",
+      "category": "duplicate",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "metadata.speakers に古川康（委員長）が午前・午後で2エントリ重複登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[0]",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json speakers配列に古川康が2エントリ: {start_seconds:1189.8, start_time:'09:00', affiliation:'総務委員長'} と {start_seconds:26775.8, start_time:'16:06', affiliation:'総務委員長'}。同一人物が同一affiliation・同一役職で重複登録されている。この委員長の午後再登場はHLS上の午後セッション開会発言に対応するものだが、speakers配列で1件のエントリとしてまとめる方が自然。午後セッション（許斐/高沢/青木/武藤/林）のsegmentsが存在するにもかかわらずメタデータに林芳正（総務大臣）のみ1エントリで他答弁者が未登録な点も要注意。",
+      "estimated_cause": "スクレイパーがHLS speaker segmentsを機械的にリスト化し、同一人物の重複チェック・マージを行っていない。",
+      "downstream_impact": ["site/"]
+    }
+  ],
+  "blindspots": [
+    "raw_transcript seg1〜4のcorrected textを個別に逐語精査しておらず、他の固有名詞誤認識が残存している可能性がある",
+    "外部の衆議院議員名簿・政府参考人リストとの照合は未実施（吉山行政部長等の人名正確性未確認）",
+    "qa_pairs の evasion_score（0.0〜1.0）の妥当性を個別検証していない",
+    "topics.json の related_qa_ids と実際のqa_pair内容の意味的整合性をトピックごとに詳細検証していない"
+  ],
+  "narrative": {
+    "overall": "本セッションは衆議院総務委員会の令和8年度地方財政計画審議であり、HLSストリームが午前・午後の2部構成になっていたことで重大な構造的問題が発生した。午後の4名の質問者（許斐亮太郎・高沢一基・青木ひとみ・武藤かず子）のQ&Aペアがqa_pairsから完全に欠落しており、セッション全体の約40%相当の質疑が検索・閲覧不能となっている。utterances.jsonは正しく全員の発言を収録しており、パイプラインの後段（qa_pairs構造化）での欠落と確認された。午後各話者の個別HLSクリップがWhisperハルシネーション（「ご視聴ありがとうございました。」の連続）を引き起こしており、昼休憩のある長時間セッション全般で同種問題が発生している可能性が高い。",
+    "top_findings": [
+      "午後4名（許斐/高沢/青木/武藤）の質疑がqa_pairsに完全欠落: utterances.jsonには148utterancesが正しく収録されているにもかかわらず、HLS分割に起因する構造的問題でqa_pairs生成が午前分のみに限定された。topics.jsonがこれら4名をrelated_speakersとして参照しているがqa_idとの対応が別の質問者に向いており情報の信頼性が損なわれている。",
+      "午後セッション6クリップ全てで同一Whisperハルシネーション: raw_transcript segments[6〜11]が全てtext='ご視聴ありがとうございました。'というブロードキャスト終了フレーズで上書きされた。avg_logprob約-0.412が6クリップで酷似しており、無音/エンドカード音声に対するWhisperの定型ハルシネーションパターン。昼休憩を挟む審議セッション全般で再現性が高い。",
+      "qa_002 answer.speaker の誤帰属（国定勇人→正: 出口財政局長）: seg1の音声クリップ冒頭に前セグメント答弁の末尾が混入し、LLMがそれを国定勇人（セグメントの名義人）の発言として処理した。has_commitment=Trueも国定勇人名義で記録されており、government commitment trackingに誤りが生じている。"
+    ]
+  }
+}

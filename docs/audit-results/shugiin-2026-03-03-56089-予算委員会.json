@@ -1,0 +1,280 @@
+{
+  "session_id": "shugiin/2026/03/03/56089_予算委員会",
+  "chamber": "shugiin",
+  "date": "2026-03-03",
+  "deli_id": "56089",
+  "committee": "予算委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T14:00:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 3, "medium": 7, "low": 4, "total": 14},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "whisper_hallucination_loop",
+      "secondary_categories": ["whisper_misrecognition"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "Whisperが長無音区間で「山本哲志議員」を繰り返しハルシネーション",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[*].whisper_segments[?(@.text=='山本哲志議員')]",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "segments 1, 5, 11, 17 の whisper_segments において、約19〜29秒の長い無音区間に「山本哲志議員」「山本哲志議長」「山本哲志, 山崎議員」というテキストが出現（計4件）。実際の予算委員長は坂本哲志であり、山本哲志という人物は当委員会に存在しない。whisper_segments[8] in seg5: start=163.3, end=192.5, duration=29.2s, text='山本哲志議員'。修正済みフラグ（corrected=true）があり、これらは main text および utterances.json/qa_pairs.json には伝播していない。",
+      "estimated_cause": "Whisper が長い無音区間（発言者交代の間の休止）でハルシネーションを起こし、音響的に類似する「坂本哲志」の発音を「山本哲志」と誤認した。パイプラインの corrector ステップが whisper_segments レベルではなく main text レベルのみ修正したため、raw_transcript.json の whisper_segments に残留している。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F002",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "「六ヶ所村の再処理工場」が「六ヶ村の再処理工場」と誤認識され下流に伝播",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[13].question.full_text",
+        "segment_index": 3,
+        "qa_id": "qa_014"
+      },
+      "evidence": "岸信千世（segment 3）の発言中に「六ヶ所村の再処理工場」（青森県六ヶ所村、六カ所再処理工場）という固有名詞を Whisper が「六ヶ村の再処理工場」と誤認識。raw_transcript.json segment 3 の main text、utterances.json segment 3、qa_pairs.json qa_014 question.full_text のすべてに伝播している。一方、同qa_014の answer.full_text では赤澤経産大臣が「六カ所再処理工場」と正しく発言しており、質問と回答で表記が不一致になっている。",
+      "estimated_cause": "六ヶ所村（Rokkasho-mura）は地名として難読であり、Whisper の言語モデルが「六ヶ所」より「六ヶ村」を優先して出力した。corrector ステップで修正されなかった。",
+      "downstream_impact": ["utterances.json", "qa_pairs.json"]
+    },
+    {
+      "id": "F003",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["role_label_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_038 の answer.speaker が渡辺創（質問者）で、実際の答弁者 高市早苗 と不一致",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[37].answer.speaker",
+        "segment_index": 7,
+        "qa_id": "qa_038"
+      },
+      "evidence": "qa_038 のトピック「国会法および憲法の条項の目的」において、answer.speaker='渡辺創'、answer.role='中道改革連合・無所属'（質問者の党派）と記録されている。しかし utterances.json の segment 7 utterance[4] では speaker='高市早苗'（答弁者）が「内閣総理大臣、高市早苗さん。通告がないままでございますけれども、参議院が衆議院を通過した後30日以内にということ、これは国民の皆様の生活に大きな影響を与えないために…」と発言しており、qa_038 answer.full_text の内容と一致する。高市早苗が発言者であることは明白。",
+      "estimated_cause": "speaker_tagger が segment 7（渡辺創がquestioner）内の答弁者を正しく識別できず、セグメントのデフォルト話者（渡辺創）をそのまま answer.speaker に設定した。国会法の技術的な議論が含まれる短い交換で、「通告がない」発言のため質疑応答の構造が不明確だった可能性。",
+      "downstream_impact": ["topics.json"]
+    },
+    {
+      "id": "F004",
+      "category": "fact_error",
+      "secondary_categories": ["other"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_010 answer.full_text に LLM の注釈「（※文脈により要確認）」が混入",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[9].answer.full_text",
+        "segment_index": 2,
+        "qa_id": "qa_010"
+      },
+      "evidence": "小泉進次郎防衛大臣の答弁 full_text に「先ほど本田委員からお話のありました、5類型（※文脈により要確認）の撤廃も含めた」という記述があり、「（※文脈により要確認）」は明らかに LLM が挿入した不確実性を示す注釈。実際の発言テキストには存在しない文言。この注釈が verbatim transcript として記録され、データ利用者が議事録として誤信するリスクがある。",
+      "estimated_cause": "structurer または speaker_tagger の LLM プロンプトが「不確かな箇所は注釈を入れよ」という指示を含んでいるか、あるいはモデルが自律的に注釈を追加した。生成されたテキストの事後検証が不十分。",
+      "downstream_impact": ["topics.json", "summary.json"]
+    },
+    {
+      "id": "F005",
+      "category": "content_missing",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_025 question.full_text が qa_024 の先頭2文を複写した不完全な内容",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[24].question.full_text",
+        "segment_index": 5,
+        "qa_id": "qa_025"
+      },
+      "evidence": "qa_025（トピック「エネルギー供給への影響と電気・ガス代支援」）の question.full_text は「今回の事態を受けて経済対策を打つ必要があると思いますが、この点いかがかという点が1点。いろいろ中身もありますが、これらについて総理いかがでしょうか。」（74文字）のみ。これは qa_024 full_text の後半部分の一節を切り取ったもので、エネルギー支援という独立した質問の内容をまったく含まない。utterances.json segment 5 utterance[1] では落合の実際の発言が大幅に多い。",
+      "estimated_cause": "structurer が qa_024 と qa_025 を分割する際に、qa_025 の question.full_text 生成時に qa_024 のテキストを再利用してしまった。LLM の文脈ウィンドウ処理または Q&A 分割ロジックの不具合。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F006",
+      "category": "role_label_error",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "qa_002 answer.full_text が委員長の退出指示であり、木原稔の答弁として誤記録",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[1].answer",
+        "segment_index": 1,
+        "qa_id": "qa_002"
+      },
+      "evidence": "qa_002 answer.speaker='木原稔'、answer.full_text='タイミングでどうぞご退出してください。' utterances.json segment 1 utterance[4] でも speaker='木原稔' role='答弁者' となっている。しかし発言内容から、これは坂本哲志委員長が木原稔官房長官に退出を促した言葉であり、平将明の質問（認知戦タスクフォース名称設定）への回答ではない。木原稔が退出を認識して自ら「どうぞ退出してください」と言うのは文脈上不自然で、委員長発言の誤帰属と判断される。evasion_score=1.0 は正しいが、発言の帰属自体が誤り。",
+      "estimated_cause": "speaker_tagger が委員長の短い発言を直前の答弁者（木原稔）に誤帰属した。委員長の退場指示という珍しい発話行為のパターンを正しく識別できなかった。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F007",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "answer.speaker の名称表記が不統一（フルネームあり・役職のみあり）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.speaker",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "qa_058 answer.speaker='木原大臣'（正しくは木原稔）、qa_063 answer.speaker='宿本昌吾'（参考人/政府参考人、フルネームのみで役職なし）、qa_072 answer.speaker='牧野'（姓のみ、正式には牧野たかお副大臣またはフルネーム要確認）。他の答弁者は「高市早苗」「上野賢一郎」のようにフルネームで統一されているが、一部に役職のみ・姓のみのケースが混在。",
+      "estimated_cause": "speaker_tagger が音声認識テキスト中の呼称をそのまま使用したため、委員長が「木原大臣」と呼んだ場合はその表現が入力された。正規化処理が不十分。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F008",
+      "category": "role_label_error",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_038 answer.role が質問者の党派（中道改革連合・無所属）になっている",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[37].answer.role",
+        "segment_index": 7,
+        "qa_id": "qa_038"
+      },
+      "evidence": "qa_038 answer.role='中道改革連合・無所属' は渡辺創（質問者）の党派であり、答弁者のロールとして記録するのは誤り。他の answer.role はすべて空文字列（111件）か '予算委員長'（qa_015）のみであり、qa_038 だけが質問者党派を answer.role に持つ。F003（speaker誤帰属）の副次的影響。",
+      "estimated_cause": "F003（qa_038 answer.speaker 誤帰属）と同一原因。answer.speaker が渡辺創と誤設定されたため、structurer がその党派をroleとして付与した。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F009",
+      "category": "summary_qa_divergence",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "medium",
+      "systemic_signal": "unknown",
+      "title": "qa_040 が topics.json では農業政策、summary.json では予算編成改革に分類されて不一致",
+      "location": {
+        "file": "topics.json",
+        "json_path": "$.topics[5].related_qa_ids",
+        "segment_index": 7,
+        "qa_id": "qa_040"
+      },
+      "evidence": "qa_040（topic='補正予算依存からの脱却（農林水産予算）'）は topics.json の「農業政策と食料安全保障」トピックに含まれている（related_qa_ids に qa_040 あり）。一方、summary.json の key_commitments では qa_040 の topic='予算編成改革'と分類されている。また topics.json の「予算編成と財政運営の効率化」トピックには qa_040 が含まれていない（qa_056〜qa_105）。qa_040 は農水予算を文脈として補正予算依存脱却の方針を述べており、両面を持つが分類が一貫していない。",
+      "estimated_cause": "structurer の topics 生成 LLM と summary 生成 LLM が独立して動作し、qa_040 の分類について異なる判断をした。qa_040 は農業予算の文脈で予算編成改革を述べているため、どちらの解釈も完全に誤りではないが不一致を生じた。",
+      "downstream_impact": ["summary.json"]
+    },
+    {
+      "id": "F010",
+      "category": "content_missing",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "medium",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_031, qa_049, qa_058 の3件がいずれのトピックにも紐付けられていない",
+      "location": {
+        "file": "topics.json",
+        "json_path": "$.topics[*].related_qa_ids",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "topics.json の全16トピックの related_qa_ids を集計すると、qa_031（コーポレートガバナンス改革、落合貴之↔片山さつき）、qa_049（農林中央金庫法改正、渡辺創↔鈴木憲和）、qa_058（地方分権改革、池下卓↔木原大臣）の3件がどのトピックにも含まれていない。これらは他の qa と同等の重要度を持つ政策議論である。",
+      "estimated_cause": "structurer のトピック生成 LLM が qa_031、qa_049、qa_058 を既存トピックに当てはめる際に見落とした、または意図的に除外した（コーポレートガバナンスや農林中金は既存16トピックに収まりにくい）。",
+      "downstream_impact": ["topics.json"]
+    },
+    {
+      "id": "F011",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers に答弁者（閣僚・参考人）が一切登録されていない",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers は質疑者（衆議院議員、質問順）のみ20エントリを収録し、答弁者（高市早苗総理、木原稔官房長官、上野賢一郎厚労大臣ら16名）、政府参考人（宿本昌吾、牧野等）が一切含まれていない。qa_pairs では高市早苗が47回答弁するが、metadata に存在しない。全セッション共通の設計上の制約と思われるが、データ利用者が答弁者を検索する際に障壁となる。",
+      "estimated_cause": "metadata.speakers の設計が衆議院TVの議事日程（質問者順番表）をスクレイピングしてそのまま格納する設計であり、答弁者は含まれない。システム設計上の既知の制約である可能性が高い。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F012",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "answer.role が111/113件（98.2%）で空文字列",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "113件の qa_pairs のうち answer.role が非空なのは qa_015（予算委員長）と qa_038（中道改革連合・無所属・誤帰属）の2件のみ。残り111件は answer.role=''。高市早苗（内閣総理大臣）、木原稔（内閣官房長官）、上野賢一郎（厚生労働大臣）など全閣僚の role が未記録。",
+      "estimated_cause": "speaker_tagger または structurer が answer.role の生成ロジックを持っていないか、フィールドを意図的に空のままにしている。パイプライン設計上の省略。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F013",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.json の committee_id=null, session_number=null, duration='', mediasp_hash='' が空",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.committee_id",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json において committee_id=null、session_number=null、duration=''（空文字列）、mediasp_hash=''（空文字列）の4フィールドが未設定。特に duration は基本的なセッション情報であり、他フィールドとの null vs 空文字列混在（committee_id=null vs duration=''）はスキーマ不一致。",
+      "estimated_cause": "committee_id と session_number は衆議院TVのスクレイパーが取得できない情報。duration はセッション終了後に計算される想定だが未実装、または計算に失敗している。mediasp_hash は参議院専用フィールドのため衆議院セッションでは空が正常だが、null ではなく '' となっている点で schema inconsistency。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F014",
+      "category": "duplicate",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers に坂本哲志（予算委員長）が4件登録されている",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers 内に坂本哲志（予算委員長）が start_seconds=1239.3（09:00）、15593.4（13:00）、24653.4（15:31）、32242.1（17:37）の4エントリで登録されている。他の質問者は1エントリのみ。委員長が午前・午後・休憩明けに会議を開始するたびに記録されており、データ集約時に議員数カウントが過剰になる可能性がある。",
+      "estimated_cause": "スクレイパーが衆議院TVの議事日程から坂本哲志の全出番を個別に取得し、重複排除せずにそのまま speakers リストに追加している。委員長の複数回の開会発言を別エントリとして扱う設計上の問題。",
+      "downstream_impact": []
+    }
+  ],
+  "blindspots": [
+    "raw_transcript.json の全 whisper_segments を逐字精査していない（高速サンプリングのみ）。他にも誤認識箇所がある可能性がある",
+    "qa_063（宿本昌吾）、qa_072（牧野）の答弁者フルネームおよび役職を外部議員名簿と照合していない",
+    "qa_pairs の question.intent 分類（policy_proposal / information_request / fact_check / accountability）の妥当性を個別に検証していない",
+    "video_url の time パラメータ（segment start_seconds の流用）が実際の発言開始時刻と一致しているか未確認",
+    "qa_083（上野賢一郎のアナフィラキシー答弁）等、summary.json で言及されるトピックが qa_pairs の内容と完全一致するか全件確認していない"
+  ],
+  "narrative": {
+    "overall": "本セッション（2026-03-03、予算委員会、56089）は113件の qa_pairs を持つ大規模なデータであり、全体的なデータ構造は正常に出力されている。しかし高品質とは言えず、いくつかの重大な問題が確認された。最も深刻なのは、LLMの注釈「（※文脈により要確認）」が qa_010 answer.full_text に混入した事実誤認（F004）、地名「六ヶ所村」の Whisper 誤認識「六ヶ村」が qa_pairs まで伝播した点（F002）、および qa_038 の答弁者が高市早苗であるにもかかわらず渡辺創（質問者）と誤帰属された点（F003）である。また qa_025 の question.full_text が qa_024 の断片を再利用した内容的欠陥（F005）、answer.role の大規模な空フィールド（F012）、speaker 名称の非統一（F007）なども検出された。Whisper ハルシネーション（山本哲志）は修正済み（corrected=true）フィールドにより下流伝播が防がれており、パイプラインの一定の防御機能が確認できた。",
+    "top_findings": [
+      "LLM注釈「（※文脈により要確認）」が qa_010 の答弁 full_text に混入しており、verbatim 議事録として誤信されるリスクがある（F004）",
+      "Whisper が「六ヶ所村」を「六ヶ村」と誤認識し、raw_transcript・utterances・qa_014 question.full_text に伝播。正誤が同一 qa の質問文と回答文で食い違っている（F002）",
+      "qa_038 の answer.speaker が高市早苗（実答弁者）でなく渡辺創（質問者）に誤帰属され、answer.role にも質問者の党派が記録されている（F003）"
+    ]
+  }
+}

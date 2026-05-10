@@ -1,0 +1,279 @@
+{
+  "session_id": "shugiin/2026/03/10/56109_農林水産委員会",
+  "chamber": "shugiin",
+  "date": "2026-03-10",
+  "deli_id": "56109",
+  "committee": "農林水産委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T08:00:00Z",
+  "overall_quality": "medium",
+  "issue_count": {"high": 3, "medium": 6, "low": 5, "total": 14},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["role_label_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_018 の質問者が山本啓介（政務官）と誤帰属（実際は角田秀穂）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[17].question.speaker",
+        "segment_index": 8,
+        "qa_id": "qa_018"
+      },
+      "evidence": "qa_018 の question.speaker=山本啓介、party=農林水産大臣政務官。しかし utterances.json の segment 8 (segment_speaker=角田秀穂) を確認すると、utterance 17 (role=質疑者) は角田秀穂が「今後、中山間の……農村RMOの形成……」と質問しており、utterance 18 が山本啓介 (role=答弁者) の答弁。qa_018 の question.full_text には山本啓介の答弁冒頭「山本啓介君。あくまでも農業を守るという視点から……」が丸ごと入っており、答弁文が質問として誤分類されている。",
+      "estimated_cause": "structurer.py がセグメント内の qa ペア分割時、質問よりも長い隣接発言（政務官の答弁冒頭）を質問として誤認。角田秀穂の実際の質問（utterance 17）が短く断片的で、次の発言（山本啓介答弁）の方が長かったため逆転した可能性が高い。",
+      "downstream_impact": ["summary.json", "topics.json"]
+    },
+    {
+      "id": "F002",
+      "category": "fact_error",
+      "secondary_categories": ["speaker_misattribution"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.json の qa_004 コミットメント帰属が鈴木大臣→実際は山口農産局長",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments[1].speaker",
+        "segment_index": null,
+        "qa_id": "qa_004"
+      },
+      "evidence": "summary.json の key_commitments で qa_004 の speaker=鈴木憲和、role=農林水産大臣と記載。しかし qa_pairs.json の qa_004 の answer.speaker=山口農産局長（answer.role=空文字）。大臣と局長では政治的責任の重さが大きく異なる。commitment_text の内容も要約レベルで詳細が異なる（summary: '59万トンについても需給状況を見極めて買い戻しを行う' vs QA: '21万トンを買い入れる'のみ）。",
+      "estimated_cause": "structurer.py の summary 生成プロンプトが qa_pairs の answer.speaker を参照せずに前後の大臣答弁から帰属を推定した。局長答弁は role フィールドが空のため LLM が誰の発言か判別しにくい状況。",
+      "downstream_impact": ["topics.json"]
+    },
+    {
+      "id": "F003",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "口頭（こうとう）が高騰（こうとう）の誤認識（qa_045、qa_答弁）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[44].question.full_text",
+        "segment_index": 12,
+        "qa_id": "qa_045"
+      },
+      "evidence": "qa_045 question.full_text: '米の口頭によって飼料用米が非常に減りましたけれども' (米の高騰の意)。同じく qa_045 answer.full_text: '主食用の口頭に伴ってかなり面積が減ってしまいました'。utterances.json segment 12（村岡敏英、鈴木憲和）双方に '口頭' が出現。'口頭' と '高騰' は同音語（こうとう）であり、Whisper が同音異義語を誤認識した典型例。文脈的に '米価の高騰' が正しい。",
+      "estimated_cause": "Whisper large-v3-turbo の同音異義語認識誤り。agricultural policy discourse における価格文脈で '高騰' が正しいが、'口頭' を選択。",
+      "downstream_impact": ["qa_pairs.json の summary（誤りは qa_pairs に留まる）"]
+    },
+    {
+      "id": "F004",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "農泊（のうはく）が農博（のうはく）と誤認識（qa_023, 027, 028, 029）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[22].question.full_text",
+        "segment_index": 9,
+        "qa_id": "qa_023"
+      },
+      "evidence": "qa_023 question: '加工とか直販とか農博とか六次化'、qa_028 question/answer に計 4 回 '農博'、qa_029 question/answer に '農博' 複数回。utterances.json でも同じく segment 9 の庄子賢一・広瀬建・松本農村振興局長発言に '農博' が散在。同一 utterance 内で '農泊' と '農博' が混在しており（広瀬建の発言 '農博に取り組みたい地域…' の同一 utterance に '農泊は農林漁業者…' も含まれる）、Whisper が同音語 '農泊'（のうはく）を '農博' に変換したことが明白。農博（農業博覧会）は文脈に不適合。",
+      "estimated_cause": "Whisper の同音異義語誤認識。'農泊'（農家民泊）と '農博' は同じ読み。文脈で農家民泊について議論しているにもかかわらず、より一般語の '農博' を選択した。",
+      "downstream_impact": ["summary.json（session_summary は '農泊' と正しく記載しており乖離が生じている）"]
+    },
+    {
+      "id": "F005",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "弊社（へいしゃ）が政府機関答弁内に混入（qa_004 answer）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[3].answer.full_text",
+        "segment_index": 6,
+        "qa_id": "qa_004"
+      },
+      "evidence": "qa_004 answer.full_text: '実際の買い付けにつきましては、弊社付けの状況なども緩和しつつ'。山口農産局長（政府機関職員）の答弁に '弊社付け' は意味論的に不適合。政府コメ買い付けの文脈では '相対付け'（相対取引：bilateral trading）の誤認識と推測される。utterances.json segment 6 にも同一テキストが存在し、Whisper 誤認識が raw_transcript から qa_pairs まで伝播。",
+      "estimated_cause": "Whisper が '相対（あいたい）付け' を '弊社（へいしゃ）付け' に誤認識。音声的類似性よりも、Whisper の言語モデルが文脈にそぐわない単語を選択した可能性がある。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F006",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "湾区間（わんくかん）が遠距離文脈に出現（qa_022 answer）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[21].answer.full_text",
+        "segment_index": 9,
+        "qa_id": "qa_022"
+      },
+      "evidence": "qa_022 answer.full_text: '原料供給国としては、湾区間最も遠方にあるモロッコから緊急な調達を行った際に、発注から湾区に到着まで2.5ヶ月を要した'。'湾区間最も遠方' は日本語として不自然。'遠距離' または '産地間' 等の誤認識と思われる。utterances.json segment 9 の山口農産局長発言でも同一。",
+      "estimated_cause": "Whisper の誤認識。'産地間最も遠方' もしくは '遠距離にある' 等を '湾区間' に誤変換した可能性。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F007",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "ランピース菌病（ランピースキン病の誤認識）が大臣所信に混入",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[1].utterances[1].text",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "utterances.json segment 1（鈴木憲和大臣所信）: 'ランピース菌病の家畜伝染病への格上げに加え'。正式名称は 'ランピースキン病'（Lumpy Skin Disease）。'ランピース菌病' という病名は存在せず、Whisper が 'キン' の音を誤落としまたは '菌病' に変換した。qa_pairs には所信表明は含まれないが utterances.json および raw_transcript.json に誤認識が記録されている。",
+      "estimated_cause": "Whisper の専門用語誤認識。家畜伝染病の固有名詞 'ランピースキン病' が正しい名称であるが、音韻的に類似した '菌病' の組み合わせに変換された。",
+      "downstream_impact": ["utterances.json", "raw_transcript.json"]
+    },
+    {
+      "id": "F008",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "medium",
+      "systemic_signal": "likely_systemic",
+      "title": "域出（いきだし）の粗飼料・管電（かんでん）直播など意味不明語が複数混入",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[7].answer.full_text",
+        "segment_index": 7,
+        "qa_id": "qa_008"
+      },
+      "evidence": "qa_008 answer: '域出の粗飼料を増産する取組'（'域出' は語義不明、'国産' の誤認識の可能性）。qa_054 answer: '管電直播や生育データに基づく適正施肥技術'（'管電' は意味不明、'乾田' または '慣行' の誤認識の可能性）。utterances.json segment 7（畜産局長）と segment 13（鈴木憲和）に同一テキスト。",
+      "estimated_cause": "Whisper による農業専門用語の誤認識。'国産（こくさん）' → '域出（いきだし）'、または '地域産' 等の変換ミス。'乾田（かんでん）直播' → '管電直播' の同音語誤認識。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F009",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "answer.role が bureaucrat 答弁 25件すべてで空文字（役職情報欠落）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "qa_pairs.json で answer.role が空文字 '' のペアは 25件（全 54件の 46%）。空の対象は局長・審議官・部長など政府参考人（例：山口農産局長、畜産局長、消費安全局長、国土交通省松原官房審議官等）。大臣・副大臣・政務官は role が正しく設定（例：qa_001 鈴木憲和 '農林水産大臣'）。役職が空だと UI 表示や集計での大臣/局長の区別ができない。",
+      "estimated_cause": "structurer.py が政府参考人の役職名を answer.role に書き込む処理が未実装または欠落。大臣・副大臣クラスは所信表明等で役職が明示されるが、局長・審議官は発言冒頭に役職名が含まれないため LLM が抽出できない。",
+      "downstream_impact": ["summary.json（fact_error F002 の要因の一つ）"]
+    },
+    {
+      "id": "F010",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "answer.speaker に表記ゆれ（山口農産局長 / 農産局長 / 山口農三局長 の 3 形態）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.speaker",
+        "segment_index": null,
+        "qa_id": "qa_009"
+      },
+      "evidence": "同一人物（山口康史農産局長）の speaker 表記が 3 種類存在: '山口農産局長'（qa_004, 006, 014, 022, 031, 032, 033, 038, 041）、'農産局長'（qa_009）、'山口農三局長'（qa_048）。'山口農三局長' は Whisper 誤認識（'農産局長' が '農三局長' に変換）が structurer に伝播したもの。'農産局長'（qa_009）は姓なし形式のため別人と誤認識されるリスク。",
+      "estimated_cause": "Whisper による '農産（のうさん）' → '農三（のうさん）' の同音誤認識（qa_048）と、structurer.py の speaker 名前正規化処理の欠如。",
+      "downstream_impact": ["集計・横断分析時に同一人物が複数エントリとして計上される"]
+    },
+    {
+      "id": "F011",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers に政府参考人 12名（局長・審議官等）が未登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers には委員・大臣・副大臣・政務官の 13名（藤井比早之は重複で 14エントリ）のみ登録。qa_pairs.json の answer.speaker として出現するが metadata に存在しない人物: 山口農産局長, 農産局長, 山口農三局長, 畜産局長, 消費安全局長, 小林経営局長, 国土交通省松原官房審議官, 松本農村振興局長, 川南総括審議官, 星切総括審議官, 深井統計部長, 大井川食品衛生技術審議官 の 12名（表記ゆれ考慮で実質 10名程度）。",
+      "estimated_cause": "metadata の speakers リストは scraper が衆議院TV の参考人情報から生成するが、委員会質疑における政府参考人は別途登録が必要な仕様。pipeline の設計上、政府参考人を metadata.speakers に含める処理が未実装。",
+      "downstream_impact": ["UI での話者フィルタリング、話者別集計が不完全になる"]
+    },
+    {
+      "id": "F012",
+      "category": "duplicate",
+      "secondary_categories": ["schema_empty_field"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers に藤井比早之（委員長）が重複登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[0], $.speakers[11]",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers の index 0（start_seconds=1196.0, start_time=09:30, duration_minutes=2）と index 11（start_seconds=13792.5, start_time=13:00, duration_minutes=1）に同一人物 '藤井比早之'（農林水産委員長）が 2エントリ存在。午前・午後の開会宣言を別セグメントとして取得したため重複。",
+      "estimated_cause": "scraper が委員長の複数発言タイムスタンプを別話者として登録する設計。各セグメントの先頭話者をそのまま speakers に追加するため、委員長が複数回発言すると重複が生じる。",
+      "downstream_impact": ["UI での委員長フィルタリング時に重複表示"]
+    },
+    {
+      "id": "F013",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata の複数フィールドが null/空文字（committee_id, session_number, duration, role）",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.committee_id, $.session_number, $.duration, $.speakers[*].role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json: committee_id=null, session_number=null, duration=''（空文字）, mediasp_hash=''（空文字、衆議院セッションなので正常）。speakers 全 14エントリの role フィールドが空文字 ''。committee_id と session_number は null なのに対し、duration と mediasp_hash は null ではなく空文字と、null/空文字が混在している。",
+      "estimated_cause": "scraper が衆議院TVから committee_id, session_number, duration を取得する処理が未実装または取得失敗。speakers.role の設定も metadata 生成時には未実施。",
+      "downstream_impact": ["API レスポンスで null と '' の混在はクライアント側のバリデーション処理を複雑にする"]
+    },
+    {
+      "id": "F014",
+      "category": "summary_qa_divergence",
+      "secondary_categories": ["content_missing"],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "session_specific",
+      "title": "topics.json で 5件の QA（qa_022, 032, 034, 035, 036）がいずれのトピックにも未分類",
+      "location": {
+        "file": "topics.json",
+        "json_path": "$.topics[*].related_qa_ids",
+        "segment_index": null,
+        "qa_id": "qa_032"
+      },
+      "evidence": "topics.json の全トピックの related_qa_ids を集計すると、qa_022（肥料備蓄水準）、qa_032（米の需要創出）、qa_034（水田の多面的機能）、qa_035（米生産性向上・大臣の意気込み）、qa_036（秋田豪雪果樹被害）の 5件がいずれのトピックにも含まれていない。特に qa_032〜035 は関健一郎（日本維新の会）の連続質疑であり、米輸出・食料安全保障という重要テーマを扱っている。",
+      "estimated_cause": "structurer.py のトピック生成プロセスで、54件の QA を 9トピックに分類する際に上記 5件が漏れた。LLM が質問内容をトピック分類に適切にマッピングできなかったか、コンテキスト長の制約で後半 QA の処理が不完全になった可能性。",
+      "downstream_impact": ["topics.json の related_speakers リストにも 関健一郎が部分的にしか反映されない"]
+    }
+  ],
+  "blindspots": [
+    "raw_transcript.json の個別 whisper_segments レベルでの繰り返しループ検査は未実施（セグメント長が長く、サンプリングのみ実施）",
+    "utterances.json の 役割ラベル（質疑者 vs 答弁者）の全件精査は未実施。副大臣・政務官（根本、山下、広瀬、山本）が '質疑者' としてラベルされているが、正しい役職ラベルは '答弁者' または '政府側発言者' と思われる（所信表明的発言のため）",
+    "qa_021, qa_033 の full_text が '……。' で終わっており内容途切れの可能性があるが、known issue（transcript_truncation）の可能性もあるため評価を保留",
+    "外部議員名簿・委員会記録との照合による話者名の正確性検証は未実施"
+  ],
+  "narrative": {
+    "overall": "本セッション（2026-03-10農林水産委員会）は所信表明質疑を主体とする標準的な構成で、54件の QA ペアが生成された。データ品質は全体的に中程度であり、Whisper の同音異義語誤認識が最も顕著な問題として複数箇所に確認された。特に '農泊 → 農博'、'高騰 → 口頭' など農業政策文脈でよく使われる用語が誤変換されており、システム的な問題と判断される。話者帰属については qa_018 が角田秀穂の質問文を山本啓介の答弁で上書きする重篤な誤帰属を含む。summary.json での qa_004 コミットメント帰属エラー（山口農産局長 → 鈴木大臣）は政治的説明責任の観点から high severity と評価した。スキーマ面では answer.role 空文字（46%）と政府参考人の metadata 未登録が一貫したパターンとして確認された。",
+    "top_findings": [
+      "qa_018 の質問者誤帰属: 角田秀穂の RMO 質問が山本啓介（政務官）の答弁テキストに置き換わっており、質問文・回答文・話者がすべて誤り。LLM の QA 分割ロジックの構造的欠陥を示す。",
+      "summary.json の qa_004 コミットメント帰属エラー: 山口農産局長の答弁が鈴木農林水産大臣のコミットメントとして誤記録されており、政治的説明責任の帰属を歪める重大な事実誤認。",
+      "農泊→農博・高騰→口頭など同音異義語の Whisper 誤認識が複数セッション横断的パターンとして存在しており、農業政策ドメイン特化のポストプロセシング（辞書補正）の必要性を示している。"
+    ]
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "session_id": "shugiin/2026/02/20/56077_政治改革特別委員会",
+  "chamber": "shugiin",
+  "date": "2026-02-20",
+  "deli_id": "56077",
+  "committee": "政治改革特別委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T10:00:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 1, "medium": 5, "low": 3, "total": 9},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "role_label_error",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "石田真敏が臨時委員長なのに全発言が role=質疑者 で記録",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[0].utterances[*].role",
+        "segment_index": 0,
+        "qa_id": null
+      },
+      "evidence": "石田真敏は発言冒頭で「衆議院規則第101条第4項の規定によりまして、委員長は選任されるまで、私が委員長の職務を行います」と明示しているが、utterances.json の segment 0 における石田真敏の全6発言が role=質疑者 になっている。委員長の選出・指名・異議確認を行う臨時委員長に 質疑者 は不適切。",
+      "estimated_cause": "speaker_tagger が「臨時委員長」「仮議長」などの特殊役職を正規 role セットに持たず、デフォルトの 質疑者 を付与した可能性が高い。委員会開始直後の臨時議長フェーズという特殊な議事進行を LLM が正しく扱えていない。",
+      "downstream_impact": ["qa_pairs.json", "metadata.json", "summary.json"]
+    },
+    {
+      "id": "F002",
+      "category": "speaker_misattribution",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「内谷貴之君。」という呼名発言が内谷貴之本人に誤帰属",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[0].utterances[1]",
+        "segment_index": 0,
+        "qa_id": null
+      },
+      "evidence": "utterances.json の segments[0].utterances[1] に speaker=内谷貴之, text=\"内谷貴之君。\" と記録されている。議事進行上、「内谷貴之君。」は臨時委員長（石田真敏）が委員を指名する呼名であり、内谷貴之本人の発言ではない。raw_transcript.json segment 0 の corrected text でも「これより委員長の御選を行います。\n\n内谷貴之君。\n\nはい。同意を提出いたします。」と続いており、呼名⇒返答の構造が明確。",
+      "estimated_cause": "speaker_tagger が呼名テキスト（「○○君。」）をその名前の議員本人の発言として帰属する誤りパターン。委員長の呼名後に同一名の発言が続くパターンを区別できていない。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F003",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers に内谷貴之・落合孝一が未登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json の speakers は石田真敏と美延映夫の2名のみ。しかし utterances.json には 内谷貴之（segment 0 で同意提出）と 落合孝一（segment 1 で動議提出）が登場し、qa_pairs.json では 落合孝一 が question.speaker として記録されている。主要な動議提出者2名が speakers リストから欠落している。",
+      "estimated_cause": "scraper または metadata 生成ロジックが、segment の代表話者（segment_speaker）のみを speakers に登録し、segment 内の副次的話者を拾っていない構造的欠陥。",
+      "downstream_impact": ["summary.json", "topics.json"]
+    },
+    {
+      "id": "F004",
+      "category": "content_missing",
+      "secondary_categories": ["summary_qa_divergence"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "segment 0（委員長選出）が qa_pairs に未収録",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs",
+        "segment_index": 0,
+        "qa_id": null
+      },
+      "evidence": "qa_pairs.json には qa_001 のみ存在し segment_index=1（理事選出）に対応。segment 0 の委員長選出（石田真敏が臨時議長として美延映夫を委員長に選任する手続き）は qa_pairs に一切対応エントリがない。一方 summary.json の key_topics には「委員長の選出」が明示的に含まれており、乖離が生じている。",
+      "estimated_cause": "委員長選出は質疑応答形式でなく投票・推薦・異議確認の手続きであるため、LLM の Q/A 構造化ロジックが QA ペアに変換できなかった。ただし委員長選出も本セッションの核心的事件であり、topics または procedural_records として記録すべきだった。",
+      "downstream_impact": ["topics.json", "summary.json"]
+    },
+    {
+      "id": "F005",
+      "category": "summary_qa_divergence",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.key_topics の3項目のうち2項目が topics.json に存在しない",
+      "location": {
+        "file": "topics.json",
+        "json_path": "$.topics",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "summary.json の key_topics は [\"委員長の選出\", \"理事の選出\", \"委員会の運営方針\"] の3項目。topics.json には \"理事の選出および指名\" の1トピックのみ存在。「委員長の選出」「委員会の運営方針」の2トピックが topics.json に未収録で整合しない。",
+      "estimated_cause": "summary と topics が独立した LLM 呼び出しで生成されており、互いの参照なしに生成されたため差異が生じた。また topics は qa_pairs を参照して related_qa_ids を付与するため、qa_pairs に存在しない委員長選出フェーズが topics でも欠落している。",
+      "downstream_impact": ["summary.json"]
+    },
+    {
+      "id": "F006",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "Whisper が美延映夫を水戸照夫/水戸智夫と誤認識（LLM補正済）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[0].whisper_segments[0].text",
+        "segment_index": 0,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json segment 0 の Whisper 生出力: id=1 「水戸照夫君を委員長に推薦いたします」、id=2 「水戸智夫君が委員長にご当選になりました。委員長、水戸智夫君に本席を譲ります。」。正しくは「美延映夫」。LLM 補正ステップで corrected text には「美延映夫」と修正されているが、同一人物を2種類の誤字で認識している。同 segment 1 Whisper id=3,4 でも 落合孝一→落合孝幸、動議→同議、委員各位→委員閣議 の誤認識が見られる（いずれも LLM 補正済）。",
+      "estimated_cause": "Whisper large-v3-turbo の日本語固有名詞認識の弱さ。委員会構成員リストを事前コンテキストとして渡していないため、音声類似の別人名に誤変換される。補正 LLM が適切に修正しているため下流への影響は限定的。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F007",
+      "category": "schema_inconsistency",
+      "secondary_categories": ["role_label_error"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_001.question.party に落合孝一の政党でなく委員長役職名が入力",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[0].question.party",
+        "segment_index": 1,
+        "qa_id": "qa_001"
+      },
+      "evidence": "qa_pairs.json の pairs[0].question.party = \"政治改革特別委員長\"。これは美延映夫（委員長）の役職名であり、落合孝一の所属政党ではない。落合孝一は動議提出者（委員）であって委員長ではない。また question フィールドに party、answer フィールドに role という非対称なスキーマになっており、party と role の意味的対応も不明確。",
+      "estimated_cause": "structurer LLM が question.party フィールドを生成する際に、セッションのメタ情報（委員長名）を誤って流用した。スキーマ上 question と answer で対応するフィールド名が異なること（party vs role）も混乱を招いている。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F008",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.duration・committee_id・session_number が空/null、speakers.role が空文字",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.duration",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json: duration=\"\"（空文字）、committee_id=null、session_number=null、mediasp_hash=\"\"。speakers の全エントリで role=\"\"（空文字）。これらは UI 表示・フィルタリング・検索の際に欠損情報となる。",
+      "estimated_cause": "衆議院TVのスクレイパーが committee_id・session_number を取得していない（または対応するフィールドが shugiintv ページに存在しない）。duration は音声処理後に設定すべきだが未設定。speakers.role は metadata 生成時に LLM が空文字を出力するパターン。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F009",
+      "category": "schema_empty_field",
+      "secondary_categories": ["summary_qa_divergence"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.key_commitments[0].qa_id が空文字（qa_001 参照漏れ）",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments[0].qa_id",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "summary.json の key_commitments[0] は美延映夫の「公正かつ円満な委員会の運営を行っていく」というコミットメントを記録しているが、qa_id=\"\"（空文字）。このコミットメントは qa_001 の answer.commitment_text（「井出陽成君...8名を理事に指名する」）ではなく美延映夫の挨拶部分（segment 1 冒頭）に対応しており、qa_001 との明示的な紐付けがない。",
+      "estimated_cause": "美延映夫の挨拶は qa_pairs に含まれていない（qa_001 は落合孝一の動議から始まる）ため、structurer が対応する qa_id を見つけられず空文字を出力した。",
+      "downstream_impact": []
+    }
+  ],
+  "blindspots": [
+    "議員名簿・政党所属データとの照合未実施（落合孝一・内谷貴之の正確な政党所属を確認できていない）",
+    "動画の実際の映像・音声を直接確認していないため、Whisper corrected text の正確性に関する独立検証ができていない",
+    "このセッションは非常に短い（約3分の手続きのみ）ため、大型セッション特有の問題（話者交代多発、長時間ドリフト等）は評価対象外"
+  ],
+  "narrative": {
+    "overall": "本セッションは委員長選出と理事選出のみを扱う極めて短い手続き会議（約3分）であり、コンテンツ自体は単純。最大の問題は、臨時委員長として議事を主宰した石田真敏が role=質疑者 と誤記録されていること（F001）で、当人が冒頭で「委員長の職務を行います」と明言しているにもかかわらずパイプラインが正しく認識できていない。また、segment 0（委員長選出手続き）が qa_pairs に全く取り込まれておらず（F004）、summary が言及する3トピックのうち2つが topics.json に不在という乖離も生じている（F005）。Whisper の固有名詞誤認識（美延映夫→水戸照夫/水戸智夫）は LLM 補正で適切に修正されており実害は限定的。全体として手続き会議を Q/A 形式に強制変換しようとした構造的無理が複数の問題を連鎖発生させており、procedural session への対応が課題。",
+    "top_findings": [
+      "石田真敏（臨時委員長）の role=質疑者 誤記録（F001）: 「委員長の職務を行います」と発言しているにもかかわらず誤分類。speaker_tagger が 臨時委員長 等の特殊役職を正規 role セットに持たない構造的欠陥。",
+      "委員長選出フェーズ（segment 0）が qa_pairs に未収録（F004）: 本セッションの主要イベントである委員長選出が QA 構造に変換されず消滅しており、summary との乖離も引き起こしている。",
+      "呼名発言の話者誤帰属（F002）: 「内谷貴之君。」という臨時委員長による呼名を内谷貴之本人の発言と誤帰属するパターンは、他セッションでも委員長の委員指名場面で同様に発生している可能性が高い。"
+    ]
+  }
+}

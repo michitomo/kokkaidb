@@ -1,0 +1,243 @@
+{
+  "session_id": "shugiin/2026/02/20/56083_不明",
+  "chamber": "shugiin",
+  "date": "2026-02-20",
+  "deli_id": "56083",
+  "committee": "不明",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T10:00:00+09:00",
+  "overall_quality": "low",
+  "issue_count": {"high": 3, "medium": 5, "low": 4, "total": 12},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": ["schema_empty_field"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "committee=不明: スクレイパーが委員会名を抽出できなかった",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.committee",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json の committee=\"不明\", committee_id=null, session_number=null。ディレクトリ名も \"56083_不明\"。コンテンツ（raw_transcript / utterances）から会議体が「衆議院憲法審査会」であることは明白（平沢勝栄が「衆議院憲法審査会規定第4条第2項において…私が会長の職務を行います」と発言）。",
+      "estimated_cause": "ShugiinScraperがこのセッションのHTML取得時に委員会名フィールドを解析できなかった可能性が高い。憲法審査会は通常の委員会一覧とは別のエントリとして掲載されるため、セレクタが一致しなかったと推測される。",
+      "downstream_impact": ["topics.json", "summary.json", "qa_pairs.json", "utterances.json"]
+    },
+    {
+      "id": "F002",
+      "category": "fact_error",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "qa_001: 国重徹のpartyフィールドに「憲法審査会会長」という誤った値",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[0].question.party",
+        "segment_index": 1,
+        "qa_id": "qa_001"
+      },
+      "evidence": "qa_pairs.json の pairs[0].question.party = \"憲法審査会会長\"。これは古屋圭司の役職であり、国重徹の所属政党ではない。国重徹は公明党所属の議員で、このセッションでは幹事選出動議を提出した委員として登場している。",
+      "estimated_cause": "LLMがspeaker_tagger/structurer処理時に、直前の文脈（古屋圭司が会長に選出される場面）から「憲法審査会会長」という語を誤って国重徹のpartyフィールドに充当した。party（政党）とrole（役職）の区別が混乱した可能性が高い。",
+      "downstream_impact": ["summary.json"]
+    },
+    {
+      "id": "F003",
+      "category": "role_label_error",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "古屋圭司と平沢勝栄の role が「委員長」だが正しくは「会長」",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[1].utterances[0].role",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "utterances.json の全発話で古屋圭司の role=\"委員長\"、平沢勝栄の role=\"委員長\"。しかし衆議院憲法審査会は「会長」制を採用しており、テキスト中も「会長に御当選になりました」「憲法審査会会長の重責を担う」と明記されている。委員長と会長は日本の国会では異なる役職。",
+      "estimated_cause": "speaker_tagger/LLMが「委員長」を汎用の議長役職ラベルとして使用し、憲法審査会固有の「会長」と区別できなかった。likely_systematicとして他セッションでも発生している可能性あり。",
+      "downstream_impact": ["qa_pairs.json", "summary.json"]
+    },
+    {
+      "id": "F004",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "Whisperが法律用語・議会用語を複数誤認識（準用→順位、動議→同義、人数→因数など）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[0].whisper_segments[0].text",
+        "segment_index": 0,
+        "qa_id": null
+      },
+      "evidence": "segment 0, sub-seg 1: 「順位をする」（正: 準用をする）。segment 1, sub-seg 1: 「委員閣議のご推挙」（正: 委員各位のご推挙）、「問題を払う者も」（正: 問題を含むものもございます）。segment 1, sub-seg 4: 「同義を提出いたします」（正: 動議を提出いたします）×2回、「幹事の因数は9名」（正: 幹事の人数は9名）。LLM correctorが corrected_text でこれらを修正済みだが、raw_transcript には誤認識が残存。",
+      "estimated_cause": "Whisper large-v3-turboが議会専門用語（準用、動議、各位）を日常的な同音異義語や類似発音の語と混同した。短い会議でシングルスピーカー区間が長く、コンテキストが限定的。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F005",
+      "category": "whisper_hallucination_loop",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "Whisperが無音区間（19秒）に「これでいいのか」を幻覚生成",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[0].whisper_segments[2].text",
+        "segment_index": 0,
+        "qa_id": null
+      },
+      "evidence": "segment 0, sub-seg 3: start=67.82s, end=86.40s（18.6秒間）、text=\"これでいいのか\"（7文字）、avg_logprob=-1.334（他のサブセグは-0.067〜-0.221の範囲）。前のsub-seg 2終端(48.59s)から67.82sまで19.23秒の無音ギャップがあり、その後の区間でハルシネーションが発生。LLM correctorはcorrected_textから除外したが、raw_transcriptには残存。",
+      "estimated_cause": "Whisperが長い無音区間の後に不確かな音声信号を拾い、無関係なテキストを生成した。avg_logprobが-1.334という極端な低値がハルシネーションを示す明確な指標。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F006",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "Whisperがsegment 0末尾に「フリア」という無意味なフラグメントを生成",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[0].whisper_segments[0].text",
+        "segment_index": 0,
+        "qa_id": null
+      },
+      "evidence": "segment 0, sub-seg 1の末尾: 「…会長の御選は投票によらないでフリア」。「フリア」は日本語文脈では無意味な外来語断片で、明らかにハルシネーション。LLM correctorはcorrected_textで「会長の御選は投票によらないで。」として除去したが、raw_transcriptに残存。",
+      "estimated_cause": "Whisperが発話終端の音声フェードアウトや環境音を誤って外来語音節として認識した。発話区切りの検出精度の問題と推測。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F007",
+      "category": "role_label_error",
+      "secondary_categories": ["speaker_misattribution"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "国重徹の role が「質疑者」だが実際は動議提出者（委員）",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[1].utterances[3].role",
+        "segment_index": 1,
+        "qa_id": "qa_001"
+      },
+      "evidence": "utterances.json の segments[1].utterances[3].role=\"質疑者\"、speaker=\"国重徹\"。テキストは「会長、動議を提出いたします。幹事の人数は9名とし、会長において指名されることを望みます。」。これは政府への質問ではなく手続き上の動議（組織運営に関する提案）であり、「質疑者」は不正確。qa_pairs.jsonでもqa_001のintent=\"policy_proposal\"となっているが「procedural_motion」が適切。",
+      "estimated_cause": "LLMが「何かを言う人」を汎用的に「質疑者」とラベル付けし、議会手続き上の動議と政策質疑を区別できなかった。",
+      "downstream_impact": ["qa_pairs.json"]
+    },
+    {
+      "id": "F008",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "国重徹がutterancesに登場するがmetadata.speakersに未登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json の speakers リストには平沢勝栄・古屋圭司の2名のみ。utterances.json では国重徹が発言者として登録され、qa_pairs.json のqa_001でも質問者として記録されている。国重徹は幹事選出動議を提出した実質的な登場人物。",
+      "estimated_cause": "ShugiinScraperのspeakers抽出ロジックが、衆議院TVの発言者リスト（play2クラスのアンカー）から発言時間が短い/補助的な発言者を抽出できなかった可能性。または、metadata生成時に主要スピーカーのみを記録するロジックが適用されている。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F009",
+      "category": "summary_qa_divergence",
+      "secondary_categories": ["schema_empty_field"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.key_commitments[0].qa_idが空文字列（qa_001を参照すべき）",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments[0].qa_id",
+        "segment_index": null,
+        "qa_id": "qa_001"
+      },
+      "evidence": "summary.json の key_commitments[0].qa_id=\"\"（空文字列）。内容的には古屋圭司の「委員各位のご指導とご協力をいただきながら、公平かつ円満なる審査会運営に努めてまいりたい」という発言に相当し、qa_pairs.json のqa_001.answer に対応する。qa_idを空にするとクロスリンクが機能しない。",
+      "estimated_cause": "structurer.pyのkey_commitments生成時にqa_idマッピングが失敗した、またはnullの代わりに空文字列を出力した。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F010",
+      "category": "summary_qa_divergence",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "topics.related_speakersが国重徹のみで、古屋圭司・平沢勝栄が欠落",
+      "location": {
+        "file": "topics.json",
+        "json_path": "$.topics[0].related_speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "topics.json の topics[0].related_speakers=[\"国重徹\"]。しかし平沢勝栄はセグメント0全体の主発言者（会議開設、会長選出進行）、古屋圭司はセグメント1全体の主発言者（就任挨拶、幹事指名）。国重徹の発言は1行の動議提出のみで実質的には最も短い。",
+      "estimated_cause": "LLMがqa_pairs.jsonの質問者（国重徹）をトピックの主体と誤って判断し、実際の主要発言者（古屋圭司・平沢勝栄）をrelated_speakersから除外した。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F011",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.durationが空文字列、committee_id/session_numberがnull（nullと空文字の混在）",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.duration",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json: duration=\"\"（空文字列）、committee_id=null、session_number=null、mediasp_hash=\"\"（空文字列）、speakers[0].role=\"\"（空文字列）、speakers[1].role=\"\"（空文字列）。未取得フィールドにnullと空文字列が混在している。",
+      "estimated_cause": "ShugiinScraperがデータ取得できなかったフィールドにnullと空文字列を不統一に使用。パイプラインのフィールド初期化ロジックの一貫性不足。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F012",
+      "category": "content_missing",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "session_specific",
+      "title": "segment 0（平沢勝栄による会長選出プロセス）がqa_pairsに未表現",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs",
+        "segment_index": 0,
+        "qa_id": null
+      },
+      "evidence": "qa_pairs.json にはqa_001（segment 1の幹事選出動議）のみ。segment 0（平沢勝栄が進行する会長選出プロセス：国重徹による国重徹→古屋圭司推薦動議 → 異議なし → 当選確認）はqa_pairsに一切記録されていない。これはセッション最初のイベントであり、重要度は高い。ただし純粋に手続き的なQ&A形式でない点から意図的省略の可能性もある。",
+      "estimated_cause": "structurer.pyが「質疑応答ペア」の定義から手続き的な選挙プロセスを除外するロジックを適用した可能性。または短いセグメント（約86秒）が処理閾値を下回った。",
+      "downstream_impact": ["summary.json", "topics.json"]
+    }
+  ],
+  "blindspots": [
+    "raw_transcriptの全Whisperトークンを逐一検証していない（サンプリングベースの確認）",
+    "外部の議員名簿（衆議院公式）との照合未実施（国重徹の党籍、平沢勝栄の役職詳細等）",
+    "HLS URLのタイムスタンプ解釈の妥当性を同日他セッションと比較したが、start_timeの正確性の独立検証は未実施",
+    "幹事として指名された高谷恵美子・和田芳明・馬場信之・浅野さとちの氏名表記が正確かどうか未検証（特に「浅野さとち」の表記）"
+  ],
+  "narrative": {
+    "overall": "このセッションは衆議院憲法審査会の初回組織会議（会長・幹事選出）であり、音声的には比較的短く明瞭なセッションにもかかわらず、パイプライン全段にわたって品質問題が確認された。最も重大な問題は委員会名「不明」という抽出失敗であり、このセッションの分類・検索可能性を根本から損なっている。また、役職ラベル（会長vs委員長）の体系的誤分類と、国重徹のpartyフィールドへの他者役職名混入というLLM起因の事実誤認も検出された。Whisper層では議会専門用語（準用・動議・各位）の誤認識と無音区間ハルシネーションが観察されたが、LLM correctorが大部分を修正しており、downstream影響は限定的。スキーマ品質（nullと空文字の混在、空ロールフィールド）は横断的な問題である可能性が高い。",
+    "top_findings": [
+      "委員会名「不明」：スクレイパーが衆議院憲法審査会を識別できず、committee=不明・committee_id=nullで保存されている。コンテンツから「衆議院憲法審査会」であることは明白で、分類・検索・UI表示に直接影響する最重要問題。",
+      "役職誤分類（委員長vs会長）：古屋圭司・平沢勝栄の両者がutterances.jsonで「委員長」とラベル付けされているが、衆議院憲法審査会は「会長」制を採用しており、テキスト内でも「会長」として明記されている。LLMが汎用ラベルを使用した体系的問題の可能性が高い。",
+      "国重徹のpartyフィールドに「憲法審査会会長」という事実誤認：qa_001の質問者である国重徹の所属政党に、古屋圭司の役職名が誤って入力されている。LLMが文脈から誤った情報を引用したと推測され、データ利用者が誤解する可能性がある。"
+    ]
+  }
+}

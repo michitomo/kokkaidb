@@ -1,0 +1,244 @@
+{
+  "session_id": "shugiin/2026/03/04/56094_予算委員会",
+  "chamber": "shugiin",
+  "date": "2026-03-04",
+  "deli_id": "56094",
+  "committee": "予算委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T10:30:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 3, "medium": 5, "low": 4, "total": 12},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["role_label_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_006 答弁者が質問者・穂坂泰に誤帰属（実際は外務省参考人）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[5].answer.speaker",
+        "segment_index": 6,
+        "qa_id": "qa_006"
+      },
+      "evidence": "qa_006 answer.speaker=穂坂泰、answer.role=自由民主党・無所属の会。答弁本文「OECDの開発援助委員会、DACと俗に呼ばれているものですが、統計によりますと、日本は1991年から2000年まで、毎年の支出純額ベースで、世界一のODAでございました」はDAC統計データの提示であり政府参考人の発言。raw_transcript seg 6 では当該答弁の前に参考人名コールが存在するが Whisper が取り込まず、utterances.json にも当該答弁の utterance が登録されていない。穂坂泰は質問者として segment_speaker であり答弁者にはなり得ない。",
+      "estimated_cause": "raw_transcript seg 6 で ODA 統計答弁の直前に参考人名のコール（議長指名）が Whisper に取り込まれなかったか、あるいは低音量で認識されなかったため、LLM が直前の発言者（穂坂泰）を答弁者として誤帰属。utterances.json に該当の参考人 utterance 自体が欠落しており、Q&A 構造化段階での情報不足が原因。",
+      "downstream_impact": ["topics.json related_speakers（該当QAのトピック）"]
+    },
+    {
+      "id": "F002",
+      "category": "speaker_misattribution",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_104 質問者が答弁者・林芳正に誤帰属（実際は高山聡史）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[103].question.speaker",
+        "segment_index": 28,
+        "qa_id": "qa_104"
+      },
+      "evidence": "qa_104 question.speaker=林芳正 だが、question.full_text に「もう少し林大臣からお考えを伺いたいと思います」とあり明らかに林芳正に向けて質問している第三者の発言。utterances.json seg 28 では当該文脈の質問発言が高山聡史（role=質疑者）から発出されており、林芳正は答弁者。qa_103 (高山→林) に続く同一トピック（広域リージョン連携）の追加質問。",
+      "estimated_cause": "qa_103→qa_104 と同一トピックが連続する中で、LLM が質問内で言及された「林大臣」という名前を質問者として誤認。前後の qa_103 (question.speaker=高山聡史 → answer.speaker=林芳正) パターンから継続しているが質問者の抽出が失敗した。",
+      "downstream_impact": ["topics.json related_speakers"]
+    },
+    {
+      "id": "F003",
+      "category": "summary_qa_divergence",
+      "secondary_categories": ["fact_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "summary key_commitments: 石原宏高→qa_100 が誤り（qa_100 は中尾豊の答弁）",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments[3]",
+        "segment_index": null,
+        "qa_id": "qa_100"
+      },
+      "evidence": "summary.json key_commitments の4番目エントリは speaker=石原宏高、qa_id=qa_100、text=「大量排出事業者に対し...法制度案を今国会に提出する」。しかし qa_100 の answer.speaker は中尾豊（環境省太陽光パネルリサイクル制度グループ長）であり石原宏高（環境大臣）ではない。石原宏高の実際の答弁は qa_101 に存在するが、qa_101 の commitment_text は '今国会への法案提出' を直接確約してはいない。summary が大臣の確約として記録されているが、実際の約束は局長級官僚の発言である。",
+      "estimated_cause": "太陽光パネルリサイクル関連 qa_100 (参考人・中尾豊) → qa_101 (大臣・石原宏高) の2件が連続する中で、LLM が担当大臣名を key_commitments に引き当てる際に qa_id を誤選択（qa_101 でなく qa_100 を使用）。",
+      "downstream_impact": ["summary.json key_commitments が誤った責任者を示す"]
+    },
+    {
+      "id": "F004",
+      "category": "role_label_error",
+      "secondary_categories": ["speaker_misattribution"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_020 委員長・坂本哲志の議事進行発言が質問として誤抽出",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[19].question.speaker",
+        "segment_index": 9,
+        "qa_id": "qa_020"
+      },
+      "evidence": "qa_020 question.speaker=坂本哲志、party=予算委員長。seg 9 は大島敦のセッションだが、冒頭で委員長坂本哲志が「官房長官は45分には出なければいけないので、まず官房長官からの御答弁をいただきたいと思います。今回の米国とイスラエルのイランへの攻撃を受けて...まず答弁をお願いします」と議事進行した。utterances.json seg 9 [0] では speaker=坂本哲志 role=委員長 として正しく記録されているが、qa_pairs 抽出で質問として誤分類された。",
+      "estimated_cause": "委員長の議事進行発言（「まず答弁をお願いします」）が質問文として誤って抽出された。LLM が委員長 role を考慮せず、内容が質問的な文体だったため Q&A として分類した。",
+      "downstream_impact": ["topics.json related_speakers に坂本哲志が列挙される"]
+    },
+    {
+      "id": "F005",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "26名の政府参考人・答弁者が metadata.speakers に未登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers に登録されているのは主な質問者・大臣30名のみ。qa_pairs の answer.speaker に登場するが metadata.speakers に存在しない人物が26名：岩本啓一、今福隆雄、今福貴男、小杉雄一、茶谷英二、内閣官房審議官岡本彦、内閣官房副長官尾崎正直・尾崎正男、小野田紀美、中尾豊、外務大臣政務官（エリー・アルフィア）、子ども家庭庁長官官房審議官、宮内庁（担当者不明）等。",
+      "estimated_cause": "metadata.speakers の生成時に発言者リストから質問者と主要閣僚のみを抽出し、政府参考人・副大臣・政務官・局長级官僚を除外した設計上の制約。",
+      "downstream_impact": ["metadata.speakers を使ったフィルタリングで参考人の答弁が検索されない"]
+    },
+    {
+      "id": "F006",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["metadata_missing_speaker"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "外務大臣政務官エリー・アルフィアの氏名が抽出されず役職のみで記録",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[4].answer.speaker",
+        "segment_index": 6,
+        "qa_id": "qa_005"
+      },
+      "evidence": "raw_transcript seg 6 に「外務大臣政務官、エリー・アルフィア君」と明確に記録されているが、utterances.json および qa_pairs.json では speaker=外務大臣政務官 と役職のみとなり個人名が欠落。エリー・アルフィアは非日本人名を持つ議員であり、カタカナ複合名が後続の訂正プロセスで脱落したと思われる。",
+      "estimated_cause": "LLM の speaker 正規化処理がカタカナ外来語名（エリー・アルフィア）を個人名として認識せず、または訂正プロセスで役職部分のみを採用した可能性。",
+      "downstream_impact": ["エリー・アルフィア政務官の答弁が個人に帰属されない"]
+    },
+    {
+      "id": "F007",
+      "category": "schema_inconsistency",
+      "secondary_categories": ["whisper_misrecognition"],
+      "severity": "medium",
+      "confidence": "medium",
+      "systemic_signal": "likely_systemic",
+      "title": "同一人物（外務省国際協力局長）が今福隆雄/今福貴男の2名義で記録",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[1].answer.speaker vs $.pairs[2,3].answer.speaker",
+        "segment_index": 6,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript seg 6 では「外務省国際協力局長今福隆雄君」と3回一貫して記録されている。しかし qa_pairs では qa_002 (今福隆雄) と qa_003/qa_004 (今福貴男) の2種類の名前が使われている。utterances.json でも同様の分裂が確認できる。同一役職（外務省国際協力局長）に2名の異なる名前が割り当てられている。",
+      "estimated_cause": "correction LLM が訂正プロセスで一部の 今福隆雄 を 今福貴男 に変更した可能性。あるいは実際に2名いる場合だが、raw_transcript が一貫して 今福隆雄 を示していることから誤訂正の可能性が高い。",
+      "downstream_impact": ["qa_002 と qa_003/004 が別人として処理される"]
+    },
+    {
+      "id": "F008",
+      "category": "role_label_error",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "予算説明を行う大臣4名が utterances で役割=質疑者 と誤分類",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[1,2,18,19][*].utterances[*].role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "utterances.json のセグメント 1 (城内実)、2 (木原稔)、18 (赤澤亮正)、19 (石原宏高) で各大臣が省庁別予算の概要説明を行っている utterance の role が 質疑者 となっている。これらは質疑ではなく政府説明（説明者/答弁者）である。例：seg 1 の城内実 utterance で role=質疑者 だが「予算委員会での省庁別審査をお願いするにあたり、令和8年度予算の前提となる我が国の経済の状況及び経済財政運営の考え方について御説明申し上げます」と説明開始の発言。",
+      "estimated_cause": "発言者が国会議員でもある大臣（城内実、木原稔等）に対して、議員=質疑者 のラベルが自動付与された可能性。予算説明時の特殊な役割（大臣が政府立場で説明）を区別できていない。",
+      "downstream_impact": ["データ利用者が質疑者フィルタで大臣の予算説明を検索した際に誤ヒット"]
+    },
+    {
+      "id": "F009",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "answer.speaker の命名規則が不統一（名前のみ/役職+名前/役職のみ の混在）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.speaker",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "112件中: (1) 名前のみ（例: 小泉進次郎, role=防衛大臣）が 105件。(2) 役職+名前が speaker に埋め込まれている（例: 内閣官房審議官岡本彦, 防衛大臣小泉進次郎）が 4件で role=空文字。(3) 役職のみで個人名なし（例: 外務大臣政務官, 宮内庁）が 3件。パターン(2)の qa_028 では同じ小泉進次郎が qa_013 等の 9件では名前のみ/role=防衛大臣 で統一されているのに、qa_028 だけ 防衛大臣小泉進次郎/role=空文字 という異なる形式。",
+      "estimated_cause": "LLM の speaker 抽出が raw_transcript 内の表記（「内閣官房副長官尾崎正直君」等の役職+名前形式）をそのまま使った場合と、正規化した場合が混在している。",
+      "downstream_impact": ["speaker フィルタリングで 防衛大臣小泉進次郎 と 小泉進次郎 が別人として扱われる"]
+    },
+    {
+      "id": "F010",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers の role フィールドが全件空文字（30件）",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[*].role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers の30件全てで role=空文字。affiliation フィールドには役職情報が記録されている（例: 片山さつき の affiliation=財務大臣 内閣府特命担当大臣...）が、role は空のまま。metadata.speakers[0] = {name:坂本哲志, affiliation:予算委員長, role:, start_seconds:1416.5, ...} が代表例。",
+      "estimated_cause": "metadata 生成時に role フィールドの値を設定するロジックが未実装または affiliation と role の役割分担が未定義のまま。",
+      "downstream_impact": ["metadata.speakers.role が空なのでフィルタリング不可"]
+    },
+    {
+      "id": "F011",
+      "category": "schema_inconsistency",
+      "secondary_categories": ["schema_empty_field"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata の duration/committee_id/session_number が null/空文字",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.duration, $.committee_id, $.session_number, $.mediasp_hash",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json: duration=\"\"（空文字）、committee_id=null、session_number=null、mediasp_hash=\"\"（空文字）。null と空文字が混在している。衆議院セッションなので mediasp_hash は空が正常だが、duration と committee_id は本来設定されるべきフィールド。",
+      "estimated_cause": "スクレイパーが duration を HLS から取得できていないか、committee_id のマッピングが未実装。null と空文字の混在はスキーマ上の不整合。",
+      "downstream_impact": ["セッション長時間フィルタリング不可、委員会 ID での絞り込み不可"]
+    },
+    {
+      "id": "F012",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "raw_transcript に複数の Whisper 誤認識（ほぼ修正済み）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[9].text",
+        "segment_index": 9,
+        "qa_id": null
+      },
+      "evidence": "seg 9 の raw_transcript に確認された誤認識: (1) 木原美成→木原稔、(2) ホノズ海峡→ホルムズ海峡、(3) 大島敦史→大島敦、(4) 余談を持って→予断を持って（seg 9・22 共通）、(5) 不足の事態→不測の事態（seg 9・22 共通）、(6) 日本政策金融広報→日本政策金融公庫。これらは utterances.json では訂正済み。",
+      "estimated_cause": "Whisper large-v3-turbo の日本語固有名詞認識の限界。同音異義語（よだん/よたん）や字形の近い漢字（木原稔/木原美成）の混同が典型的パターン。",
+      "downstream_impact": ["raw_transcript を直接利用するケースでは誤情報が残る。utterances以降は修正済み。"]
+    }
+  ],
+  "blindspots": [
+    "raw_transcript の全 whisper_segments を逐字精査していない（サンプル確認のみ）",
+    "外部の議員名簿・参考人名簿との照合未実施（今福隆雄 vs 今福貴男 の実際の正誤を外部確認していない）",
+    "動画 URL の time パラメータが各 QA の実際の発言開始時刻と一致するかのプレーヤー実機確認未実施",
+    "evasion_score の評価精度（LLM による主観的スコアリングの一貫性）は未検証",
+    "全 qa_pairs 112 件の full_text と utterances の逐次テキスト照合は未実施（主要件のみ確認）"
+  ],
+  "narrative": {
+    "overall": "当セッション（2026-03-04 予算委員会省庁別審査、112件のQAペア）は全体として構造化の精度は高く、主要大臣の答弁内容・コミットメントの抽出は概ね正確である。一方で3件の話者誤帰属（qa_006・qa_020・qa_104）、summary の重要コミットメントにおける担当者誤り（qa_100/石原宏高 vs 中尾豊）が検出され、データ利用者が誰が何を確約したかを誤認するリスクがある。また、政府参考人26名が metadata.speakers に未登録であり、長い審議のセッションで答弁者の検索・フィルタリングに支障が出る。スキーマ整合性については role フィールドの空欄・命名規則の混在・null/空文字の混在が横断的に発生しており、パイプライン全体の統一が必要。",
+    "top_findings": [
+      "qa_104 の質問者帰属誤り（林芳正←→高山聡史）は、前後の Q&A コンテキストを LLM が混同した典型的パターンであり、他セッションにも同種問題が発生している可能性が高い（likely_systemic）。",
+      "summary.json の key_commitments で qa_100 が石原宏高（環境大臣）に誤帰属されているが、実際の「今国会への法案提出」コミットメントは参考人・中尾豊の答弁であり、大臣の政治的責任の所在が誤って記録されるという実害がある。",
+      "metadata.speakers の role フィールドが全件空文字・政府参考人が全員未登録という構造的欠陥は、セッション横断で発生している likely_systemic 問題であり、パイプラインレベルでの修正が必要。"
+    ]
+  }
+}

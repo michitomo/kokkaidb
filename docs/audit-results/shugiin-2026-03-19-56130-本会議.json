@@ -1,0 +1,316 @@
+{
+  "session_id": "shugiin/2026/03/19/56130_本会議",
+  "chamber": "shugiin",
+  "date": "2026-03-19",
+  "deli_id": "56130",
+  "committee": "本会議",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T10:30:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 5, "medium": 7, "low": 4, "total": 16},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "role_label_error",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "本会議の議長(森英介)が「委員長」とラベル付けされている",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[*].utterances[?(@.speaker=='森英介')].role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "utterances.json の全3箇所で森英介のrole='委員長'。metadata.json では affiliation='衆議院議長' と正しく記載されているが、utterances では「委員長」に誤分類。本会議の議長は「議長」が正式役職であり、「委員長」は委員会での呼称。",
+      "estimated_cause": "speaker_tagger が委員会セッション向けに設計されており、「議長」発話パターンを「委員長」に画一的にマッピングするロジックが本会議でも適用されている可能性。",
+      "downstream_impact": ["qa_pairs.json", "summary.json"]
+    },
+    {
+      "id": "F002",
+      "category": "role_label_error",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "謝辞を述べる渡辺博道が「質疑者」にラベル付けされている",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[1].utterances[1].role",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "utterances.json segments[1].utterances[1]: speaker='渡辺博道', role='質疑者'。渡辺博道は在職25年表彰の謝辞を述べている（発言内容：「この度、意義をもって衆議院議員在職25年の表彰を賜り、心から熱く御礼を申し上げます」）。質疑ではなくスピーチ発言（謝辞）であり「質疑者」は完全な誤分類。",
+      "estimated_cause": "structurer が本会議の表彰式・謝辞という特殊なセッション形式を処理するロジックを持たず、デフォルトの質疑/答弁ペアのフレームを適用した。",
+      "downstream_impact": ["qa_pairs.json", "summary.json"]
+    },
+    {
+      "id": "F003",
+      "category": "speaker_misattribution",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "unknown",
+      "title": "segment 0 の2つ目の発言が渡辺博道に誤帰属（実際は森英介が朗読）",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[0].utterances[1].speaker",
+        "segment_index": 0,
+        "qa_id": null
+      },
+      "evidence": "utterances.json segments[0].utterances[1]: speaker='渡辺博道'、role='質疑者'、text='本院議員として在職25年に達せられました渡辺博道君に対し、先例により…表彰文を朗読いたします。議員、渡辺博道君は…'。この発言は全て森英介(議長)が述べた議事進行・表彰文朗読であり、渡辺博道は表彰を受ける側。渡辺博道が自分を三人称で呼んでいる不自然さから明らか。",
+      "estimated_cause": "segment_speaker が '渡辺博道' に設定されているsegment 0 の中で、speaker_tagger が議長の発言部分も渡辺博道に誤帰属した。表彰状朗読の定型フレーズ（「議員、〇〇君は…よって衆議院は…」）を発言者本人の言葉と誤解した可能性。",
+      "downstream_impact": ["qa_pairs.json", "summary.json", "topics.json"]
+    },
+    {
+      "id": "F004",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「皇室会議」「皇室経済会議」が「公室会議」「公室経済会議」に誤認識",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].whisper_segments[12].text",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript segments[1] ws13: 「公室会議予備議員、公室経済会議予備議員」。utterances.json でも同様に残存。正しくは「皇室会議予備議員、皇室経済会議予備議員」（日本国憲法・皇室典範に基づく実在の機関）。「公室」と「皇室」の音韻的混同（おうしつ vs こうしつ）が原因で、実在する憲法上の機関名が誤認識されている。LLM 補正でも修正されていない。",
+      "estimated_cause": "Whisper が「皇室（おうしつ）」を「公室（こうしつ）」に音韻的に混同。本会議の特殊な議事（皇室会議委員選挙）は頻度が低くモデルの学習データが少ない可能性。LLM 補正段階でも「公室会議」が正規機関名として誤認され修正されなかった。",
+      "downstream_impact": ["utterances.json", "summary.json"]
+    },
+    {
+      "id": "F005",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["fact_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "「公正取引委員会」が「厚生取引委員会」に誤認識（ws21、ws24）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].whisper_segments[20].text",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript segments[1] ws21: 「内閣から人事官、厚生取引委員会議員、国家公安委員会議員…」、ws24: 「次に、厚生取引委員会委員に、若林有佐君及び八尾和子君を」。正しくは「公正取引委員会」（Fair Trade Commission）。utterances.json では修正されているが、raw_transcript には誤認識が残存。",
+      "estimated_cause": "Whisper が「公正（こうせい）取引」を「厚生（こうせい）取引」に混同。どちらも「こうせい」という同音異義語であり、音声から区別が困難。",
+      "downstream_impact": ["utterances.json（部分的に修正済み）"]
+    },
+    {
+      "id": "F006",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「額賀福志郎」が「ぬかか福士郎」に誤認識",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].whisper_segments[14].text",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "utterances.json（修正後）: 「公室会議予備議員に、ぬかか福士郎君及び野田芳彦君を指名」。正しくは「額賀福志郎（ぬかが ふくしろう）」。「ぬかか」は誤認識、「福士郎」も「福志郎」の誤り。額賀福志郎は実在する自民党議員。LLM 補正でも修正されず。",
+      "estimated_cause": "珍しい読みの姓（額賀＝ぬかが）をWhisperが正確に認識できず、後続のLLM補正でも著名政治家として認識されなかった。",
+      "downstream_impact": ["utterances.json", "summary.json"]
+    },
+    {
+      "id": "F007",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "「野田佳彦」が「野田芳彦」に誤認識",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[1].utterances[2].text",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "utterances.json segments[1].utterances[2]: 「公室会議予備議員に、ぬかか福士郎君及び野田芳彦君を指名いたします」。正しくは「野田佳彦（よしひこ）」（元総理大臣・現職衆院議員）。「芳彦（よしひこ）」と「佳彦（よしひこ）」の音が同じため混同。LLM 補正でも修正されず。",
+      "estimated_cause": "同音異字の「よしひこ」をWhisperが確率的に「芳彦」と認識し、LLMも候補として「野田佳彦」を選ばなかった。",
+      "downstream_impact": ["summary.json"]
+    },
+    {
+      "id": "F008",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "「動議のとおり決まりました」が「同議のとおり決まりました」に誤認識",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].whisper_segments[14].text",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript segments[1] ws14: 「ご異議なしと認めます。よって、同議のとおり決まりました」。utterances.json にも同様に「同議」が残存。正しくは「動議（どうぎ）のとおり決まりました」（parliamentary motion）。「どうぎ」の同音異義語（動議/同議）の混同。",
+      "estimated_cause": "Whisper の音韻的混同。「どうぎ」が「動議」か「同議」かは文脈から判断可能だがモデルが誤った方を選択。LLM 補正でも修正されなかった。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F009",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "表彰用語「額をもって」が「意義をもって」「印義をもって」に誤認識",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[0].whisper_segments[0].text",
+        "segment_index": 0,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript ws1（段0）: 「先例により、因義をもってその功労を表彰いたしたい」→ corrected text: 「印義をもって」。utterances: 渡辺博道の発言中に「意義をもって衆議院議員在職25年の表彰を賜り」。正しい議会用語では「額（がく）をもって」または「金杯をもって」が標準的な表彰慣行。「印義」「意義」ともに実在しない表彰用語。LLM 補正が「因義→印義」と半修正したが依然として誤り。",
+      "estimated_cause": "Whisper が「がくをもって（額をもって）」または「きんぱいをもって（金杯をもって）」を「いんぎ/いぎ」に誤認識し、LLMが「因義→印義」と不完全補正のみ行った。",
+      "downstream_impact": ["utterances.json", "summary.json"]
+    },
+    {
+      "id": "F010",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "「国土開発幹線自動車道建設会議委員」が「国土開発感染自動車道建設会議委員」に誤認識",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].whisper_segments[12].text",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript segments[1] ws13: 「国土開発感染自動車道建設会議委員の選挙を行います」。正しくは「国土開発幹線自動車道建設会議委員」（法定の議会機関）。utterances.json では修正されている。",
+      "estimated_cause": "「かんせん（幹線）」を「かんせん（感染）」に音韻的に混同。専門的な機関名の誤認識。",
+      "downstream_impact": ["utterances.json（修正済み）"]
+    },
+    {
+      "id": "F011",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "medium",
+      "systemic_signal": "session_specific",
+      "title": "日本銀行政策委員会審議委員の氏名が「綾野君」と不完全認識",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[1].utterances[2].text",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "utterances.json: 「日本銀行政策委員会審議委員に佐藤綾名君、綾野君及び浅田藤一郎君を任命」。「綾野君」は苗字のみで名前が欠落した不完全な人名。佐藤綾名・浅田藤一郎と対比すると「綾野〇〇」という完全な氏名が存在するはずで、Whisper が名前の後半部分を欠落させた可能性が高い。",
+      "estimated_cause": "Whisper が音声区切りで氏名の後半部分を次の文の先頭と誤認識してカットした可能性、または実際の音声での話者の発音が不明瞭だった。",
+      "downstream_impact": ["summary.json"]
+    },
+    {
+      "id": "F012",
+      "category": "summary_qa_divergence",
+      "secondary_categories": ["content_missing"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "topics.json が空配列だが summary.json には3つのキートピックが記載",
+      "location": {
+        "file": "topics.json",
+        "json_path": "$.topics",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "topics.json: {\"topics\": []}（空）。summary.json.key_topics: ['渡辺博道議員の在職25年表彰', '東日本大震災からの復興と防災・減災', '各種委員の指名および人事同意手続き']（3件）。セッション内容は実在し summary は正確に記述しているが、topics.json が生成されていない。",
+      "estimated_cause": "structurer が本会議の「表彰式＋人事手続き」セッションを Q&A 形式でないと判断し、topics 生成ステップをスキップまたは空で出力した。",
+      "downstream_impact": ["ブラウズ・フィルタ機能でトピック絞り込み不能"]
+    },
+    {
+      "id": "F013",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.duration が空文字列、committee_id・session_number が null",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.duration",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json: duration=''（空文字列）、committee_id=null、session_number=null。whisper セグメントの時刻から推算すると本セッションは約15分。duration の欠落はデータ利用者の集計・フィルタに支障。null と空文字列の混在（duration='' vs committee_id=null）はスキーマ不整合。",
+      "estimated_cause": "scraper が衆議院TVのページから duration を抽出するロジックを持たない、または抽出に失敗している。committee_id と session_number はページ上に露出していないか抽出未実装。",
+      "downstream_impact": ["ダッシュボードの発言時間集計"]
+    },
+    {
+      "id": "F014",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers[].role が全て空文字列",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[*].role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json speakers: 森英介.role=''、渡辺博道.role=''。affiliation フィールドには「衆議院議長」「自由民主党・無所属の会」が正しく設定されているが、role は未設定。",
+      "estimated_cause": "scraper が shugiintv のページから role を抽出する実装を持たないか、本会議では role 情報がページ上に掲載されていない。",
+      "downstream_impact": ["話者フィルタ・役職別集計機能"]
+    },
+    {
+      "id": "F015",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.key_commitments[0].qa_id が空文字列",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments[0].qa_id",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "summary.json key_commitments[0]: qa_id=''（空文字列）。qa_pairs.json が空配列（0件）のため参照先が存在しないことは理解できるが、空文字列ではなく null または 'N/A' 等の明示的な値が望ましい。",
+      "estimated_cause": "structurer が qa_pairs が空の場合に qa_id を空文字列で出力する設計。",
+      "downstream_impact": ["コミットメントトラッカーの qa_pairs との連携"]
+    },
+    {
+      "id": "F016",
+      "category": "timestamp_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "unknown",
+      "title": "metadata.speakers[].start_time と start_seconds の参照フレームが不一致",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[0].start_seconds",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json speaker 森英介: start_seconds=1322.7、start_time='12:12'。HLS URL (2026-0319-1210-00) がストリーム開始 12:10 を示す場合、1322.7秒後 = 12:32 となり start_time='12:12' と約20分の乖離が生じる。video_url も同じ 1322.7 を seek パラメータとして使用しており、start_time とは別の参照フレーム（スクレイパーが取得した wall-clock time vs ストリーム内オフセット）が混在している可能性がある。",
+      "estimated_cause": "start_time は shugiintv ページの議事スケジュール情報（wall-clock）から取得、start_seconds は scraper が HLS プレイヤーの内部パラメータから取得したストリーム内オフセット。参照系が異なる値を同一オブジェクトに格納している。",
+      "downstream_impact": ["video_url deep-link の精度"]
+    }
+  ],
+  "blindspots": [
+    "raw_transcript の全 whisper_segment を逐字精査していない（サンプリングのみ）。人名の正誤確認は外部議員名簿との照合が必要",
+    "「小寺博君」が実在の議員か Whisper の誤認識かを外部資料なしに確認できなかった（動議提出者として名前が現れているが文脈が不自然）",
+    "「綾野君」の正確な氏名特定不能（日本銀行審議委員の外部名簿との照合が必要）",
+    "音声と文字起こしの直接比較（実際の音声への アクセス）を行っていないため、 Whisper 誤認識の一部を見逃している可能性がある",
+    "「印義/因義/意義」の正確な表彰用語確認のため衆議院議事録の原文との照合が必要"
+  ],
+  "narrative": {
+    "overall": "本セッション（2026年3月19日・衆議院本会議）は渡辺博道議員の在職25年表彰と各種委員選挙・人事同意手続きが議事内容であり、通常の質疑応答が存在しない特殊なセッション形式である。qa_pairs が空（0件）・topics が空（0件）という構造的欠落が見られ、structurer が非Q&A形式の本会議を適切に処理できていないことが最大の問題である。Whisper の誤認識は多数検出されたが、LLM 補正で主要な誤り（大渕→小渕、F-0→FICE、県政→国政など）は修正されており、修正精度は一定水準を保っている。ただし「公室会議（→皇室会議）」「ぬかか福士郎（→額賀福志郎）」「野田芳彦（→野田佳彦）」「厚生取引委員会（→公正取引委員会）」など実在機関・人物名の誤認識がLLM補正後も残存しており、データ利用者が誤情報を参照するリスクがある。role_label_error（委員長/質疑者の誤分類）は本会議セッション固有ではなく、委員会向けロジックが本会議にも誤適用されるパイプライン構造的問題の可能性が高い。",
+    "top_findings": [
+      "role_label_error（F001・F002）: 議長が「委員長」、謝辞発言が「質疑者」に誤分類。本会議セッションに委員会向けロジックが適用されている構造的問題で、likely_systemic。",
+      "whisper_misrecognition（F004）: 「皇室会議・皇室経済会議」が「公室会議・公室経済会議」に誤認識されLLM補正でも未修正。憲法上の実在機関名が別の（存在しない）機関名として記録されており、事実誤認リスクが高い。",
+      "summary_qa_divergence（F012）: topics.json が空だが summary.json には3つのキートピックが記載。structurer が非Q&A形式の本会議に対し topics 生成をスキップした likely_systemic なパイプライン問題。"
+    ]
+  }
+}

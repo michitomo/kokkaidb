@@ -1,0 +1,280 @@
+{
+  "session_id": "sangiin/2026/04/21/8973_農林水産委員会",
+  "chamber": "sangiin",
+  "date": "2026-04-21",
+  "deli_id": "8973",
+  "committee": "農林水産委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T10:00:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 3, "medium": 7, "low": 4, "total": 14},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "content_missing",
+      "secondary_categories": ["metadata_missing_speaker"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "舟山康江（国民民主党）のセグメント全体がqa_pairsから消失",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[?(@.segment_index==2)]",
+        "segment_index": 2,
+        "qa_id": null
+      },
+      "evidence": "utterances.json にはsegment_index=2（舟山康江、国民民主党・新緑風会、start_seconds=4950.53）が存在し、中山間地域等直接支払い制度・農地バンク・農地中間管理機構手数料などの豊富な質疑が記録されている（約15往復）。しかしqa_pairs.jsonの全45ペアにsegment_index=2のエントリが1件も存在しない。また topics.json も舟山康江をどのトピックの related_speakers にも含めず、session_summary にも「舟山」という言及がない。",
+      "estimated_cause": "structurer.py によるQ&Aペア生成処理において、segment_index=2 のセグメントが処理対象から除外されたか、出力が失敗してスキップされた可能性が高い。セグメント単位でLLMを呼ぶ場合にタイムアウトやトークン上限で失敗しても後続のセグメントは処理できる実装の場合に起こりうる。",
+      "downstream_impact": ["topics.json", "summary.json"]
+    },
+    {
+      "id": "F002",
+      "category": "fact_error",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "summary.json に「衆議院農林水産委員会」と誤記（参議院の会議）",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.session_summary",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "summary.json の session_summary 冒頭に「衆議院農林水産委員会において、鈴木憲和農林水産大臣らが出席し...」とある。しかしこのセッションは参議院（sangiin）の会議であり、metadata.json にも chamber=sangiin と明記されている。",
+      "estimated_cause": "LLM（google/gemma-4-31B-it）がサマリー生成時に「農林水産委員会」という語句から「衆議院」を連想して補完した、または他の類似セッション（衆議院）のプロンプトコンテキストが混入した可能性。",
+      "downstream_impact": ["topics.json", "site/"]
+    },
+    {
+      "id": "F003",
+      "category": "schema_inconsistency",
+      "secondary_categories": ["fact_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metrics.oc1_record_value.answerer_seniority が鈴木大臣答弁で9件誤分類（bureaucrat）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].metrics.oc1_record_value.answerer_seniority",
+        "segment_index": null,
+        "qa_id": "qa_002"
+      },
+      "evidence": "answer.speaker=鈴木憲和（農林水産大臣）にもかかわらず answerer_seniority が 'bureaucrat' になっているケースが qa_002, qa_010, qa_022, qa_028, qa_029, qa_030, qa_041, qa_045 など9件存在する。qa_005 では 'vice_minister' と分類されている。正しくは 'minister' であるべき。",
+      "estimated_cause": "LLMによる発言者属性の自動推定で、前後の文脈（他の答弁者が官僚）から誤って属性を引き継いだ、またはスコアリングのプロンプトで大臣を正確に識別できなかった可能性。",
+      "downstream_impact": ["oc1_record_value.score の過小評価（ministerは0.4-0.5のボーナス）"]
+    },
+    {
+      "id": "F004",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "answer.role が全29件で空文字（鈴木大臣以外の全答弁者）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "qa_pairs.json の全45ペアのうち、answer.role が非空なのは鈴木憲和（農林水産大臣）の16件のみ。残り29件（山下、川南、松本、沢井総務部長ら）はすべて role='' の空文字。utterances.json では同じ答弁者が role='政府参考人' や role='答弁者' として記録されており、役職名も utterances から取得可能。",
+      "estimated_cause": "structurer.py がQ&Aペアを生成する際、大臣以外の政府参考人・官僚のrole解決ロジックが未実装または抜け落ちている。",
+      "downstream_impact": ["site/ での表示", "検索・フィルタ機能"]
+    },
+    {
+      "id": "F005",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.json key_commitments の role フィールドが未解決プレースホルダー",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments[*].role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "summary.json の key_commitments 2件（山下・松本）のroleフィールドがいずれも「役職名（主要1つ）」というLLMプロンプトのテンプレート文言そのままになっている。山下は副大臣、松本は農村振興局長であり、正しい役職名に置換されるべきだった。",
+      "estimated_cause": "LLM（google/gemma-4-31B-it）がプロンプト内の指示文字列「役職名（主要1つ）」を自身で出力としてそのまま返してしまった。Few-shot例またはJSON schema出力の品質問題。",
+      "downstream_impact": ["site/ での表示"]
+    },
+    {
+      "id": "F006",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.json の duration・hls_url・start_time・duration_minutes が全件空/null/0",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.duration, $.hls_url, $.speakers[*].start_time, $.speakers[*].duration_minutes",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json では duration='' (空文字)、hls_url='' (空文字)、committee_id=null、session_number=null。また全8名のスピーカーで start_time='' (空文字) かつ duration_minutes=0。start_seconds は正しく設定されているが、start_time（HH:MM:SS形式）は未変換のまま。",
+      "estimated_cause": "scraper または metadata生成処理において、start_seconds からの start_time 変換・duration 計算・hls_url取得のステップが未実装または失敗している。sangiin_resolver.py の mediasp_hash（d7itfr3sgq8s72rika6g）は存在するため、hls_url 解決は可能なはずだが実施されなかった。",
+      "downstream_impact": ["site/ での動画リンク・時刻表示"]
+    },
+    {
+      "id": "F007",
+      "category": "content_missing",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_022・023・027・030 の answer.full_text が文中で途切れている",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[?(@.id=='qa_022')].answer.full_text",
+        "segment_index": null,
+        "qa_id": "qa_022"
+      },
+      "evidence": "qa_022 (鈴木憲和の答弁) は「...ここで官民ミッションのフォローアップを含めて」で終了、qa_023 (服部審議官の答弁) は「...パトロールを強化しているほか、」で終了、qa_027 (小林局長の答弁) は「...50歳以上65歳未満の方は80人ということで。」で終了、qa_030 (鈴木大臣の答弁) は「...こういった負担が大きいことが就農時の」で終了。いずれも文末が不完全。",
+      "estimated_cause": "LLM がfull_text 整形時にトークン上限に達し、出力が中断した。qa_pairs.json の metrics.evaluation_note にも qa_022 について「回答が途中で切れているため不十分」と自己言及している。",
+      "downstream_impact": ["会議録としての信頼性低下"]
+    },
+    {
+      "id": "F008",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers に答弁者（政府参考人・副大臣等）が11名未登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers には質疑者8名のみ登録されているが、qa_pairs.json と utterances.json には山下（副大臣）・川南（総括審議官）・山口（農産局長）・山本（政務官）・松本（農村振興局長）・沢井総務部長・笠川・服部審議官・杉中・小林局長・小林経営局長 の計11名の答弁者が登場している。",
+      "estimated_cause": "scraper がウェブ上の質疑者リストから登壇者情報を取得するが、政府参考人は別途リストに掲載される形式のため、自動取得から漏れた。",
+      "downstream_impact": ["site/ の speakers 一覧", "答弁者検索機能"]
+    },
+    {
+      "id": "F009",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "answer.speaker の表記が不統一（川南 vs 川南総括審議官等）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.speaker",
+        "segment_index": null,
+        "qa_id": "qa_003"
+      },
+      "evidence": "同一人物と思われる答弁者について、qa_003では「川南」、qa_024・qa_025では「川南総括審議官」と表記が異なる。同様に utterances.json では「松本農村振興局長」「小林経営局長」「山下副大臣」などフルタイトル形式のものと、qa_pairs では「松本」「小林局長」「山下」の略称形式が混在している。",
+      "estimated_cause": "utterances.json からのスピーカー名抽出がセグメント単位で行われており、各セグメントで委員長が名前を読み上げる形式（例：「山下副大臣」「松本農村振興局長」）のバリエーションに対応していない。",
+      "downstream_impact": ["答弁者の同定・集計", "site/ での発言者表示"]
+    },
+    {
+      "id": "F010",
+      "category": "metrics",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_004・011・015・017・031 の5件で metrics が null",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[?(@.metrics==null)]",
+        "segment_index": null,
+        "qa_id": "qa_004"
+      },
+      "evidence": "qa_004（米穀包装規格）、qa_011（Jクレジット）、qa_015（副業実践型交付金）、qa_017（林業交付金柔軟運用）、qa_031（新規就農者チャレンジ事業）の5件で metrics=null。これらには全てトークンの多い質疑・答弁が含まれており、メトリクス生成のステップが失敗またはスキップされている。",
+      "estimated_cause": "metricsスコアリングのLLM呼び出しが特定のペアで失敗し、nullのまま保存された。",
+      "downstream_impact": ["ダッシュボードのメトリクス集計"]
+    },
+    {
+      "id": "F011",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "unknown",
+      "title": "qa_042 に「イラン戦争」という誤認識語が残存（中東情勢の誤転写）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[42].question.full_text",
+        "segment_index": 6,
+        "qa_id": "qa_042"
+      },
+      "evidence": "qa_042 の question.full_text および utterances.json seg6・raw_transcript.json seg6 に「イラン戦争による資材の高騰」という表現が存在する。同セッションの他の箇所では「中東情勢」という表現が多用されており（qa_001, qa_020 等）、「イラン戦争」は実際の発言の誤認識の可能性が高い。raw_transcript の同箇所whisperには「資材の口頭」（→「資材の高騰」）という誤認識も併発している。",
+      "estimated_cause": "Whisper large-v3-turbo が「中東情勢」や「イスラエル・ハマス」などの音声を「イラン戦争」と誤認識した。ポストコレクション処理で「口頭→高騰」は修正されたが「イラン戦争」は未修正のまま残った。",
+      "downstream_impact": ["qa_042 の question.full_text", "topics.json 関連発言の正確性"]
+    },
+    {
+      "id": "F012",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "likely_systemic",
+      "title": "Whisper が議事進行語句を誤認識（委員の移動→異動、決員→欠員、選例→慣例など）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[0].whisper_segments[0].text",
+        "segment_index": 0,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json のsegment_index=0 のwhisper_segments[0] に「委員の移動に伴い→異動」「1名決員→欠員」「選例→慣例」の誤認識が存在する。corrected=true のため本文では修正済みだが、Whisper段階で複数の固有表現を誤認識している。また whisper_segments[2] では「採択を決定→採択」→「採用」「作用を決定」という誤認識、「理事会行議→協議」という誤認識も存在する。",
+      "estimated_cause": "Whisper large-v3-turbo が議会特有の形式的な語句（異動、欠員、慣例、理事会協議など）を汎用語（移動、決員、選例）に誤って認識する。これはドメイン外語彙の典型的なWhisper弱点。",
+      "downstream_impact": ["raw_transcript.json の品質（ただしcorrectedフラグで修正済み）"]
+    },
+    {
+      "id": "F013",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.committee_id・session_number が null（スキーマ上必須相当のフィールド）",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.committee_id, $.session_number",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json では committee_id=null、session_number=null。参議院TV側でこれらが識別子として提供されない場合にnullとなる仕様かもしれないが、他フィールド（duration, hls_url）も空文字として設定されており、null vs 空文字の不統一が存在する（duration=\"\"、hls_url=\"\" 対 committee_id=null）。",
+      "estimated_cause": "参議院スクレイパーが committee_id・session_number を公式サイトから取得できなかった場合に、null と空文字が混在して設定されている。スキーマの未定義フィールドに対するデフォルト値の仕様が不統一。",
+      "downstream_impact": ["データ集計・フィルタリング処理でのnull/空文字チェック漏れ"]
+    },
+    {
+      "id": "F014",
+      "category": "summary_qa_divergence",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "topics.json に舟山康江の質疑（中山間地域直接支払い・農地バンク）が一切反映されていない",
+      "location": {
+        "file": "topics.json",
+        "json_path": "$.topics",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "topics.json の7トピックに「中山間地域等直接支払い」「農地バンク（農地中間管理機構）」「個別協定の活用」などのトピックが含まれていない。これらは utterances.json segment_index=2（舟山康江）で詳細に議論されているが、F001のqa_pairs欠落に連動して topics.json にも反映されていない。summary.json の key_topics にも該当する項目が存在しない。",
+      "estimated_cause": "F001（舟山セグメントのqa_pairs欠落）に起因する連鎖的な欠落。topics/summary の生成がqa_pairsを入力とする場合、当該セグメントの欠落がそのまま伝播する。",
+      "downstream_impact": ["site/ のトピック一覧・検索精度"]
+    }
+  ],
+  "blindspots": [
+    "舟山康江セグメント（seg_index=2）は utterances.json では存在するが qa_pairs にないため、当該セグメントの詳細品質（Whisper精度・話者帰属）を個別検証できていない",
+    "raw_transcript.json の全whisper_segments（segment 1-7）のWhisper誤認識を網羅的にはサンプリングのみで確認しており、全数精査は未実施",
+    "外部の参議院会議録や政府参考人の正式職位名との照合は実施していないため、答弁者の姓のみ表記（山下・松本・山本等）が正しく一人の人物を指しているかは未確認",
+    "segment_index=7（鈴木憲和による農林中央金庫関連法案の趣旨説明）はqa_pairs に存在しないが、これは質疑でなく法案説明のため意図的な除外の可能性がある（問題なし）",
+    "related_law_ids の法律IDが qa_032 の clb-5171 のみで他の言及法令がほぼ未記録だが、構造的問題かセッション特性かは判断できない"
+  ],
+  "narrative": {
+    "overall": "このセッションは45件のQ&Aペアが生成され、農林水産分野の幅広いトピック（物流・養殖・林業・農業担い手・重油流出事故賠償）をカバーしている点では一定の品質を持つ。しかし最大の問題は舟山康江議員（国民民主党）の質疑約30分間（segment_index=2、中山間地域直接支払い制度・農地バンク改革という政策的に重要な内容）がqa_pairs・topics・summaryいずれからも完全に消失していることで、セッション全体の再現性が大きく損なわれている。加えてsummary.json冒頭の「衆議院農林水産委員会」という院の誤記は、データの信頼性に直接影響する事実誤認である。schema面ではanswer.roleの空文字（29/45件）・seniority誤分類（9件）・metadata空フィールド群・speaker表記の不統一が散見され、これらは他セッションでも同様に再発している構造的問題と見られる。",
+    "top_findings": [
+      "舟山康江（国民民主党）の質疑セグメント全体がqa_pairs・topics・summaryから消失（F001）——中山間地域直接支払い制度や農地バンクに関する数十分の重要質疑が完全に欠落しており、会議録としての完全性を著しく損なう",
+      "summary.json に「衆議院農林水産委員会」と参院/衆院を取り違えた記述（F002）——このセッションは参議院委員会であり、データ利用者が院を誤認するリスクがある重大な事実誤認",
+      "鈴木農水大臣の答弁9件でanswerer_seniority=bureaucrat と誤分類（F003）——大臣発言のoc1_record_valueスコアが過小評価され、ダッシュボードの記録価値スコアが不正確になる"
+    ]
+  }
+}

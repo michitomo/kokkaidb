@@ -1,0 +1,298 @@
+{
+  "session_id": "sangiin/2026/04/27/8986_予算委員会",
+  "chamber": "sangiin",
+  "date": "2026-04-27",
+  "deli_id": "8986",
+  "committee": "予算委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T10:30:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 4, "medium": 6, "low": 5, "total": 15},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["fact_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "岩手県大槌町の林野火災地名が「大津市町」に誤認識",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[1].utterances[*].text",
+        "segment_index": 1,
+        "qa_id": "qa_006"
+      },
+      "evidence": "raw_transcript.json seg1 wseg49「岩手県大津市町において発生した林野火災」、seg1 wseg51「大津市町を対象に災害救助法が適用」、seg5 wseg51「岩手県の大津市町の山林火災」。utterances.json に「大津市町」が3件、qa_pairs.json qa_006 answer にも「大津市町」が1件残存。「大津市町」は実在しない地名（大津市は滋賀県）。正しくは岩手県大槌町（おおつちちょう）。downstream補正なし。",
+      "estimated_cause": "Whisper が「おおつちちょう」を「大津市町」と誤認識。音韻的に近似しているが地名として誤り。再審→最新の誤認識（同セッション内で33件 → LLMが全件補正）とは異なり、speaker_tagger/structurer LLMが固有名詞として補正せずスルーした。",
+      "downstream_impact": ["utterances.json", "qa_pairs.json"]
+    },
+    {
+      "id": "F002",
+      "category": "content_missing",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "森本真治セッション(seg2)の5QA交換がqa_pairsから欠落",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[?(@.segment_index==2)]",
+        "segment_index": 2,
+        "qa_id": null
+      },
+      "evidence": "utterances.json seg2（森本真治）は17 utteranceを持ち、6つの質疑応答交換が確認できる: (1)森本→高市早苗（物価高騰/中東情勢対応）、(2)森本→赤澤亮正（石油供給目詰まり対策）、(3)森本→向井浩二（公正取引委員会/価格転嫁）、(4)森本→高市早苗（緊急経済対策/補正予算）、(5)森本→高市早苗（武器輸出国会関与）、(6)森本→高市早苗（武器輸出厳格ルール提案）。qa_pairsに存在するのは qa_007（武器輸出）のみで、(1)-(4)の4QA交換が完全に欠落している。また向井浩二（公正取引委員会審議官）の答弁も記録されていない。",
+      "estimated_cause": "structurer LLMがseg2の長いチャンク（17 utterance）を処理する際に、最後のトピック（武器輸出）のみを抽出し、それ以前の4つの質疑（物価高・石油供給・公正取引・経済対策）を取りこぼした。context長超過またはLLMの選択的要約が原因と推定。",
+      "downstream_impact": ["topics.json", "summary.json"]
+    },
+    {
+      "id": "F003",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["role_label_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_005 の質問者が子ども政策担当大臣となっているが実際は三原じゅん子",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[4].question.speaker",
+        "segment_index": 1,
+        "qa_id": "qa_005"
+      },
+      "evidence": "qa_005 question.speaker=「子ども政策担当大臣」、question.full_text は「そこで最後に総理にお尋ねをしたいと思います…子ども真ん中社会の実現…」。utterances.json seg1 uttt9（子ども政策担当大臣 role=答弁者）の後半には三原じゅん子の締め括り発言と総理への質問が混入しており、これを誤ってまとめて子ども政策担当大臣の発言とみなした。三原じゅん子は質疑者として他のqa_001-004を担当しており、「子ども真ん中社会」への質問も彼女のものと特定できる。",
+      "estimated_cause": "speaker_tagger が seg1 uttt9 の長大テキスト（大臣答弁 + 三原じゅん子の締め発言）を分離できず、全体を「子ども政策担当大臣」に帰属させた。「プレコンの普及、推進に向けた…ぜひお聞かせいただきたい」という三原の質問フレーズが大臣の答弁テキストに混入していた。",
+      "downstream_impact": ["topics.json"]
+    },
+    {
+      "id": "F004",
+      "category": "speaker_misattribution",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "seg9 utterance0 が木村英子に帰属されているが実際は高市早苗の答弁継続",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[9].utterances[0]",
+        "segment_index": 9,
+        "qa_id": null
+      },
+      "evidence": "utterances.json seg9 uttt0: speaker=木村英子, role=質疑者, text=「一方で、この3議員におきましては…議員の国会活動中の介助費用は、現時点では3議員で負担をしていると承知をしています。木村議員のご活躍による第一歩だと思っております…」。この内容は政府答弁（高市早苗の答弁継続）であり、「現時点では3議員で負担をしていると承知をしています」「木村議員のご活躍による第一歩」というフレーズは答弁者の立場から述べられている。seg8 uttt6 に高市早苗の最初の答弁があり、seg9 uttt0 はその続きと判断できる。",
+      "estimated_cause": "audio segmentの境界がちょうど高市早苗の答弁の途中に位置したため、seg9の先頭テキストが答弁の後半部分となった。speaker_taggerがseg9のスタートは木村英子のセグメント（start_seconds=12804.19）と判断し、先頭utteranceを木村英子に誤帰属した。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F005",
+      "category": "speaker_misattribution",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_028 の質問者が赤澤亮正となっているが実際は里見隆治",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[27].question.speaker",
+        "segment_index": 5,
+        "qa_id": "qa_028"
+      },
+      "evidence": "qa_028 question.speaker=「赤澤亮正」、topic=「食料品消費税ゼロの実現と低所得者支援」。utterances.json seg5 uttt3: speaker=里見隆治「今総理が御答弁いただいたこの社会保障国民会議、私も実務者会議に参加させていただいております…食料品消費税ゼロ、食料品の消費税ゼロについて…」が実際の質問。里見隆治がこのセグメントの質疑者であることはseg5全体の流れ（里見→qa_027,qa_029等）から明確。赤澤亮正は答弁者として登場する。",
+      "estimated_cause": "seg5 uttt3 は前の赤澤亮正答弁（uttt1）との境界が不明確で、structurerが里見隆治の発言を赤澤亮正の発言として誤分類した可能性。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F006",
+      "category": "content_missing",
+      "secondary_categories": ["timestamp_inconsistency"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "木村英子セッション(seg9)のqa_pairsがゼロ件で、対応するqa_052はseg8に誤配置",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[51].segment_index",
+        "segment_index": 8,
+        "qa_id": "qa_052"
+      },
+      "evidence": "utterances.json seg9（木村英子, start=12804.19）に対応するqa_pairsがゼロ件。qa_052（障害者議員の議員活動中の介護保障）はsegment_index=8（山添拓のセグメント, start=12314.59）に配置され、video_url=「...#12314.59」を参照している。木村英子の実際の質疑はseg8のuttt5-6（木村→高市）とseg9のuttt0-1（高市答弁継続、木村締め発言）に分断されている。また木村英子の本来の出番（12804.19秒〜）へのリンクが存在しない。",
+      "estimated_cause": "木村英子のsessionがseg8とseg9に分断されたため、structurerはseg8側でqa_052を生成したが、segment_indexの割り当てとvideo_urlがseg9の値（12804.19）に更新されなかった。",
+      "downstream_impact": ["topics.json"]
+    },
+    {
+      "id": "F007",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakersに答弁者7名が全員未登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers（10名）は質疑者のみで構成: 藤川政人（委員長）、三原じゅん子、森本真治、泉房穂、上田清司、里見隆治、片山大介、大津力、山添拓、木村英子。qa_pairs.json に登場する答弁者（高市早苗、赤澤亮正、上野賢一郎、松本洋平、小林寛一）、政府参考人（向井浩二）、役職のみで同定不能な「子ども政策担当大臣」が全員 metadata.speakers から欠落している。",
+      "estimated_cause": "スクレイパーが参議院TV詳細ページ（detail.php?sid=8986）の質疑者一覧のみを取得し、答弁者・参考人の一覧を取得しないパイプライン設計のため、構造的に答弁者が metadata に入らない。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F008",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": ["schema_empty_field"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "子ども政策担当大臣の実名がセッション全体で特定されず役職名のまま",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[1].utterances[?(@.speaker=='子ども政策担当大臣')]",
+        "segment_index": 1,
+        "qa_id": "qa_004"
+      },
+      "evidence": "utterances.json seg1 uttt7・uttt9のspeaker=「子ども政策担当大臣」、qa_pairs qa_004・qa_005のanswer.speaker=「子ども政策担当大臣」、topics.json related_speakers にも「子ども政策担当大臣」として記録。raw_transcript.json でも委員長が「子ども政策担当大臣。」と役職名のみで指名しており、Whisperが実名を認識できなかった（または実際に役職名のみで指名された）。どのファイルでも実名が不明のまま。",
+      "estimated_cause": "委員長が役職名のみで指名したか、Whisperが名前音声部分を認識できなかったか、いずれかの理由で実名が消失。speaker_taggerもrawに実名がないため補完できなかった。",
+      "downstream_impact": ["qa_pairs.json", "topics.json", "summary.json"]
+    },
+    {
+      "id": "F009",
+      "category": "summary_qa_divergence",
+      "secondary_categories": ["speaker_misattribution"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "unknown",
+      "title": "summary.json key_commitment qa_031 の speaker が高市早苗だが qa_031 答弁者は松本洋平",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments[3].speaker",
+        "segment_index": null,
+        "qa_id": "qa_031"
+      },
+      "evidence": "summary.json key_commitments qa_031: speaker=「高市早苗」、text=「令和7年度補正予算で警備経費を含む136億円を措置しており…」。qa_pairs.json qa_031 の answer.speaker=「松本洋平」。ただし qa_031 の answer.full_text を精査すると、松本洋平の答弁の直後に高市早苗の答弁が混入しており（「令和7年度補正予算では…136億円を措置しました」は高市早苗の発言）、answer全体が松本洋平に誤帰属されている。summary LLMは正しく高市早苗の発言と識別したが、qa_pairs 側の answerer 表記が松本洋平のまま。",
+      "estimated_cause": "qa_031 answer は松本洋平と高市早苗 2名の答弁を1テキストにマージしたもの。structurer は全体を松本洋平に帰属したが、summary LLMは内容から高市早苗の発言と正しく識別した。二者間で整合性が失われた。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F010",
+      "category": "schema_inconsistency",
+      "secondary_categories": ["fact_error"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.json key_commitments 2件のroleフィールドがテンプレートプレースホルダーのまま",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments[0].role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "summary.json key_commitments: (1) speaker=上野賢一郎, role=「役職名（主要1つ）」; (2) speaker=赤澤亮正, role=「役職名（主要1つ）」。他の3件（高市早苗×3）はrole=「総理」と正常入力。「役職名（主要1つ）」はプロンプトのinstruction文字列であり、LLMが置換に失敗した。上野賢一郎の正しい役職は「厚生労働大臣」、赤澤亮正は「経済産業大臣」。",
+      "estimated_cause": "summary生成プロンプトのroleフィールドのinstruction（「役職名（主要1つ）」）をLLMが文字列値として出力した。大臣名の特定が不確かだった場合、プレースホルダーをそのまま出力する挙動。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F011",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs全52件のanswer.roleが空文字列",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "全52件のqa_pairsでanswer.role=\"\"（空文字列）。question.party フィールドは正常に入力されており（例: 「自由民主党・無所属の会」）、answer.role のみが全件空。metadata.speakers の回答者には role フィールドが存在しないため、パイプラインが answer.role を補完できていない。",
+      "estimated_cause": "structurer が answer.role の補完ロジックを持たず、デフォルト空文字列のまま出力している。全セッションで同様の現象が発生している可能性が高い（likely_systemic）。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F012",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata 複数フィールドが空値（duration, hls_url, start_time, duration_minutes）",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.duration",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json: duration=\"\", hls_url=\"\", committee_id=null, session_number=null。10名全員のspeaker.start_time=\"\"、speaker.duration_minutes=0。start_seconds は正常入力（例: 三原じゅん子=2184.52秒）。hls_url が空のため音声への直接リンクが機能しない。",
+      "estimated_cause": "参議院TVの mediasp.jp 経由 HLS URL は処理時に揮発するため保存されていない。duration はpipeline側で計算されていない。session_number/committee_id は参議院TVのソースに存在しない可能性がある。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F013",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs 5件のmetricsがnull",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[0].metrics",
+        "segment_index": null,
+        "qa_id": "qa_001"
+      },
+      "evidence": "qa_001, qa_002, qa_026, qa_043, qa_044 の5件でmetrics=null。null対象は特定のセグメント（0,1,4,6,7）に分散しており、規則性は不明確。残る47件は metrics オブジェクトが正常入力。",
+      "estimated_cause": "metrics生成プロセスで一部のqa_pairsに対してタイムアウトまたは処理スキップが発生した可能性。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F014",
+      "category": "whisper_hallucination_loop",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "raw_transcript seg2 に「市長。」×7の繰り返しループ（downstream補正済み）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[2].whisper_segments[35].text",
+        "segment_index": 2,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json seg2 wseg35: text=\"市長。市長。市長。市長。市長。市長。市長。\", compression_ratio=3.00（通常値 ~1.0-1.7の3倍）。前後のwseg34（「森英介議長。」avg_logprob=-1.0）、wseg36（「国民の皆さんに…」正常）から、音声上の短い休止・アナウンスをWhisperが繰り返し出力したと推定。utterances.jsonおよびqa_pairs.jsonには当該テキストは出現しておらず、downstream処理で正常にフィルタリングされた。",
+      "estimated_cause": "Whisperが短時間の無音区間や不明瞭音声を「市長。」として繰り返しデコードするハルシネーションループ。低avg_logprobの隣接セグメント（wseg34「森英介議長。」logprob=-1.0）が音声認識困難区間の証拠。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F015",
+      "category": "other",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "unknown",
+      "title": "utterances.jsonの全答弁者utteranceがunmatched=True（100%）",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[*].utterances[?(@.role=='答弁者')].unmatched",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "utterances.json の全utterance(157件)のうち、role=答弁者 は59件で全件unmatched=True。role=質疑者(71件)、role=委員長(23件)、role=政府参考人(4件)は全件unmatched=False。つまり「unmatched」フラグは役割と完全に相関しており、答弁者=unmatched:True、その他=unmatched:Falseという二値になっている。これはフラグの意図する意味（話者が未特定の utterance を示す？）と合致しない可能性がある。",
+      "estimated_cause": "speaker_taggerがraw_transcriptのtimestamp-based utteranceと話者情報のマッチングを行う際、答弁者（政府側）は参議院TVの質疑者リストに含まれないため全件unmatched=Trueとなっている構造的問題。質疑者はリストと照合できるためunmatched=False。",
+      "downstream_impact": []
+    }
+  ],
+  "blindspots": [
+    "raw_transcript の全 whisper_segments を逐字精査しておらず、サンプリングに留めた。他にも誤認識が潜在する可能性がある",
+    "「子ども政策担当大臣」の実名（高市政権2026年時点での担当大臣）を外部情報源で照合していない",
+    "森本真治セッションの欠落QA（4件）についてraw_transcript側での確認を行ったが、qa_pairs生成ロジックの詳細（context window境界）は推定にとどまる",
+    "各QAの内容精度（事実誤認の有無）は発言量が多く、主要なもの以外を逐一検証できていない",
+    "音声セグメント境界での内容欠落（AZEC/FOIP質問への高市答弁が消失）はaudio gapによるものだが、どの範囲が欠落しているか秒数ベースで未確認"
+  ],
+  "narrative": {
+    "overall": "本セッション（2026-04-27 予算委員会、10名の質疑者、52 qa_pairs）は全体的に中程度の品質で、重大な問題が4件確認された。最も深刻なのは森本真治セッションでの qa_pairs 大量欠落（6交換中5件）で、物価高対応・石油供給・公正取引委員会への質疑が記録から消えている。次いで「大槌町→大津市町」の Whisper 地名誤認識が 4 ファイルに伝播している。話者誤帰属も 3 件（qa_005 questioner、qa_028 questioner、seg9 utt0）確認された。一方、Whisper が大量に発生させた「再審→最新」誤認識（33 件）は LLM が全件正しく補正しており、パイプラインの自己修正能力も示されている。メタデータは答弁者全員（高市早苗ほか 6 名）が未登録という構造的欠陥を抱えているが、これは参議院 TV のデータ収集設計によるものと推定される。",
+    "top_findings": [
+      "森本真治セッション(seg2)で 6 QA 交換中 5 件が qa_pairs から欠落：物価高/石油供給/公正取引委員会/緊急経済対策への質疑が完全消失し、向井浩二（公正取引委員会審議官）の答弁も記録なし",
+      "岩手県大槌町の林野火災地名が「大津市町」（実在しない地名）に誤認識され utterances.json(3件)・qa_pairs.json(1件)に残存：LLMが補正せずスルーした点が再審→最新の補正成功例と対照的",
+      "qa_005 の questioner が「子ども政策担当大臣」（実際は三原じゅん子）、qa_028 の questioner が「赤澤亮正」（実際は里見隆治）に誤帰属：長いチャンク内での話者境界推定失敗が原因"
+    ]
+  }
+}
