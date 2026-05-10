@@ -33,6 +33,7 @@ from src.structurer import (
     _split_sentences,
     _strip_leading_questioner_label,
     _strip_leading_speaker_label,
+    _strip_pure_label_lines,
     _strip_trailing_speaker_label,
     _validate_summary_person_refs,
     build_summary_related_laws,
@@ -2045,6 +2046,45 @@ class TestPR43LeadingLabelStrip:
         text = "澤田純参考人。本日は貴重な機会をいただきありがとうございます。"
         result = _strip_leading_speaker_label(text)
         assert result == "本日は貴重な機会をいただきありがとうございます。"
+
+
+class TestPR46PureLabelLines:
+    """PR46: answer.full_text 内の純粋な話者ラベル行除去。"""
+
+    def test_strips_pure_sankounin_line(self) -> None:
+        """「\n砂原参考人。\n」の純粋なラベル行を除去する。"""
+        text = "本日の問題についてお答えします。\n砂原参考人。\n憲法の規定については複数の解釈があります。"
+        result = _strip_pure_label_lines(text)
+        assert "砂原参考人。" not in result
+        assert "本日の問題についてお答えします。" in result
+        assert "憲法の規定については複数の解釈があります。" in result
+
+    def test_strips_minister_label_line(self) -> None:
+        """「\n高市早苗内閣総理大臣。\n」行を除去する。"""
+        text = "まず最初の御質問にお答えします。\n高市早苗内閣総理大臣。\nその件については早急に対応します。"
+        result = _strip_pure_label_lines(text)
+        assert "高市早苗内閣総理大臣。" not in result
+
+    def test_preserves_content_lines(self) -> None:
+        """コンテンツを含む行は保持する。"""
+        text = "砂原参考人によると、この問題は複雑です。\n具体的な対策を検討してまいります。"
+        result = _strip_pure_label_lines(text)
+        assert result == text
+
+    def test_no_change_for_single_line(self) -> None:
+        """改行のない単一行はそのまま返す。"""
+        text = "御質問にお答えします。具体的な政策について説明いたします。"
+        result = _strip_pure_label_lines(text)
+        assert result == text
+
+    def test_strips_multiple_embedded_labels(self) -> None:
+        """複数のラベル行を除去する。"""
+        text = "答弁します。\n上田参考人。\n憲法審査会の見解です。\n砂原参考人。\n補足意見を申し上げます。"
+        result = _strip_pure_label_lines(text)
+        assert "上田参考人。" not in result
+        assert "砂原参考人。" not in result
+        assert "憲法審査会の見解です。" in result
+        assert "補足意見を申し上げます。" in result
 
 
 class TestPR43LeadingQuestionerLabelStrip:

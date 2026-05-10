@@ -361,6 +361,30 @@ _LEADING_QUESTIONER_LABEL_RE = re.compile(
     r")"
 )
 
+# PR46: answer.full_text 内の「純粋な話者ラベル行」を除去する。
+# 複数話者の発言が1answerに統合されたとき「\n砂原参考人。\n」等の行が挿入される。
+# 行全体が話者ラベルのみの場合に限り除去（内容を含む行は保持）。
+_PURE_LABEL_LINE_RE = re.compile(
+    r"^\s*(?:"
+    r"[一-鿿ぁ-ゟ]{2,20}?(?:内閣総理大臣|総理大臣|国務大臣|大臣政務官|副大臣|大臣|副長官|長官|次長|局長|審議官|参事官|部長|参考人)[。、：]"
+    r"|[一-鿿ぁ-ゟ]{2,10}（[^）]{2,40}）(?:君|さん)?[。、：]"
+    r"|[一-鿿ぁ-ゟ]{2,8}(?:委員長|議長|君|さん)[。、：]"
+    r")\s*$"
+)
+
+
+def _strip_pure_label_lines(text: str) -> str:
+    """answer.full_text 内の純粋な話者ラベル行を除去する (PR46)。
+
+    行全体が「名前+役職/敬称+句点」のみで構成される行をスキップする。
+    内容テキストを含む行は変更しない。
+    """
+    if '\n' not in text:
+        return text
+    lines = text.split('\n')
+    result = [line for line in lines if not _PURE_LABEL_LINE_RE.match(line)]
+    return '\n'.join(result).rstrip()
+
 
 def _strip_trailing_speaker_label(text: str) -> str:
     """full_text 末尾の次発言者ラベルを除去する (PR43)。
@@ -704,6 +728,8 @@ def _extract_pairs_from_response(
         # PR43: answer 冒頭の話者ラベル、question 冒頭の質疑者ラベルを除去
         a_full = _strip_leading_speaker_label(a_full)
         q_full = _strip_leading_questioner_label(q_full)
+        # PR46: answer 内の純粋な話者ラベル行を除去（「\n砂原参考人。\n」等）
+        a_full = _strip_pure_label_lines(a_full)
 
         if len(a_full) < MIN_ANSWER_LENGTH and not p["a_uidx"]:
             dropped_short += 1
