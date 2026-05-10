@@ -1,0 +1,127 @@
+{
+  "session_id": "sangiin/2026/04/22/8977_憲法審査会",
+  "chamber": "sangiin",
+  "date": "2026-04-22",
+  "deli_id": "8977",
+  "committee": "憲法審査会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-11T00:21:41+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 3, "medium": 5, "low": 4, "total": 12},
+  "findings": [
+    {
+      "id": "F01",
+      "severity": "high",
+      "category": "timestamp_inconsistency",
+      "title": "PR23.1 残留: seg10 内 7 ペアが segment 開始時刻 (7177.77) にフォールバック",
+      "description": "31 ペア中 7 ペア (qa_019/022/024/025/027/029 および藤井・小西・松沢1st・河合・奥田2nd・佐々木1st・宮出1st) が seg10 の開始秒 7177.77 を video_url に使用。PR23.1 により seg10 内の '2番目以降の質問' はユニーク timestamp を取得できているが、各質疑者の最初の質問 (segment_opener を除く) は依然フォールバック。全体 unique 率は 25/31 (80.6%)。Session #10 (27/29 = 93.1%) より低い。パターン: 各質疑者の seg10 初回質問 ↔ フォールバック、2回目以降 ↔ ユニーク取得。",
+      "affected_ids": ["qa_019", "qa_022", "qa_024", "qa_025", "qa_027", "qa_029"],
+      "evidence": "video_url '#7177.77' x7 (重複); 他 seg の QA には重複なし"
+    },
+    {
+      "id": "F02",
+      "severity": "high",
+      "category": "whisper_misrecognition",
+      "title": "5倍 → 5億 の誤認識が QA pairs まで波及 (4 箇所)",
+      "description": "Whisper が '1票の格差 5倍 (ばい)' を '5億 (おく)' と誤認識。入力 transcript で 14 箇所、LLM 校正後も 5 箇所残存、QA pairs には 4 箇所残存。2015年改正を '2つの5億と10増10減' と誤記するなど論旨を歪める。正しくは '5倍 (格差倍率)' であり '5億' (金額単位) は文脈上不適切。山添拓 (qa_017) および奥田ふみよ (qa_018) の question.full_text に含まれる。",
+      "affected_ids": ["qa_017", "qa_018"],
+      "evidence": "raw_transcript_input 5億 x14, raw_transcript (corrected) x5, qa_pairs x4; 5倍は input x1 のみ"
+    },
+    {
+      "id": "F03",
+      "severity": "high",
+      "category": "whisper_misrecognition",
+      "title": "訂正 LLM が 松沢成文 の呼び出し部分を 原田秀一 に誤変換",
+      "description": "Whisper input では chair が松沢成文を '浅田ひとし君' / 松沢本人が '佐田ひとし' と誤認識された。LLM 校正により '浅田ひとし' → '原田秀一君' に変換されたが、これも誤り（正しくは '松沢成文君'）。corrected transcript の当該箇所に '原田秀一君。' + '日本維新の会、松沢成文でございます。' という矛盾が生じた。QA pairs・utterances は松沢成文で正しく構造化されているため下流への影響は限定的だが、raw_transcript.json には誤情報が残る。",
+      "affected_ids": [],
+      "evidence": "raw_transcript_input pos ~7771: '浅田ひとし君。佐田ひとしでございます。'; corrected transcript: '原田秀一君。' + '松沢成文'; utterances[17] seg10 confirms '原田秀一君。' speaker=長浜博行 role=委員長"
+    },
+    {
+      "id": "F04",
+      "severity": "medium",
+      "category": "metadata_missing_speaker",
+      "title": "seg10 の質疑者 3 名 (藤井和弘・小西博之・河合貴則) が metadata.speakers に未登録",
+      "description": "seg10 super-segment には奥田ふみよ以外に藤井和弘 (自民)・小西博之 (立憲)・河合貴則 (国民) が質疑したが、metadata.speakers リストには奥田ふみよのみ登録。3名の start_seconds・affiliation が metadata に存在しない。utterances では unmatched=True フラグが付与されている。QA pairs では question.speaker に正しく反映済み。",
+      "affected_ids": [],
+      "evidence": "metadata.speakers: 11名 (奥田のみ seg10 代表); utterances seg10 unmatched=True for 藤井[6][10], 小西[12][15], 河合[24]"
+    },
+    {
+      "id": "F05",
+      "severity": "medium",
+      "category": "schema_inconsistency",
+      "title": "questioner フィールドが全 31 ペアで null",
+      "description": "qa_pairs.json の各ペアに 'questioner' フィールドが存在するが、全 31 件が null。質疑者情報は question.speaker に格納されており実害は限定的だが、スキーマ上の冗長フィールドが常に空のまま。",
+      "affected_ids": [],
+      "evidence": "全 31 ペアの questioner 値が None"
+    },
+    {
+      "id": "F06",
+      "severity": "medium",
+      "category": "schema_empty_field",
+      "title": "metadata の duration・hls_url・committee_id・session_number・全 speaker の start_time/duration_minutes が空",
+      "description": "metadata.json の duration (空文字)、hls_url (空文字)、committee_id (null)、session_number (null) が未設定。さらに全 11 名の speaker エントリの start_time・duration_minutes も空または 0。",
+      "affected_ids": [],
+      "evidence": "metadata.json 参照"
+    },
+    {
+      "id": "F07",
+      "severity": "medium",
+      "category": "summary_qa_divergence",
+      "title": "summary.key_topics が 3 件で topics.json の 6 トピックを網羅していない",
+      "description": "summary.json の key_topics は '投票価値の平等と選挙区設定'・'参議院の機能定義'・'二院制の構造' の 3 件のみ。topics.json には追加で '選挙制度議論のプロセスと正当性'・'地方自治制度と憲法への明記'・'憲法制定過程と国家指針の審議' の 3 トピックが存在する。session_summary 本文には国家指針・ブロック制への言及はあるが、地方議会政党政治・憲法制定過程は記載なし。",
+      "affected_ids": [],
+      "evidence": "summary.key_topics x3 vs topics.json x6"
+    },
+    {
+      "id": "F08",
+      "severity": "medium",
+      "category": "content_missing",
+      "title": "qa_025 の question.full_text が '  ありがとうございます。' (11 文字) のみで質問内容なし",
+      "description": "qa_025 (奥田ふみよ、都道府県代表の役割と連邦制との比較) の question.full_text が感謝の言葉のみ。summary フィールドには '都道府県代表の役割を明確にすべき' という内容が記載されているが、実際の質問テキストは次の qa_026 に含まれている。utterances では奥田の[31]発言 'ありがとうございます。' + 次[28]の実質的質問に対応しており、QA pair 分割が不適切。",
+      "affected_ids": ["qa_025"],
+      "evidence": "qa_025 question.full_text = 'ありがとうございます。'; utterances seg10[28] に実質的な質問テキストあり"
+    },
+    {
+      "id": "F09",
+      "severity": "low",
+      "category": "whisper_hallucination_loop",
+      "title": "Whisper seg10 内に '憲法審査会。憲法審査会。' の繰り返しハルシネーション (入力のみ、補正済み)",
+      "description": "input transcript の whisper_segment[5] に '憲法審査会。憲法審査会。' (29秒間) の繰り返しテキストが発生。avg_logprob=-0.34、no_speech_prob=0.0。LLM 校正により corrected transcript・QA pairs からは除去済み。",
+      "affected_ids": [],
+      "evidence": "raw_transcript_input seg10 whisper_segment[5]: '憲法審査会。憲法審査会。' start=113.6 end=142.9"
+    },
+    {
+      "id": "F10",
+      "severity": "low",
+      "category": "whisper_hallucination_loop",
+      "title": "Whisper seg10 内に '安藤大臣'・'武士議長'・'小泉委員長'・'大臣、大臣、大臣' のハルシネーション (入力のみ、補正済み)",
+      "description": "input transcript の低 logprob セグメント (< -1.0) に無関係な人物名・役職名が混入: '安藤大臣' (logprob=-1.32)・'武士議長' (logprob=-1.40)・'小泉委員長' (logprob=-1.13)・'大臣、大臣、大臣' (logprob=-1.09)。憲法審査会には大臣・議長・小泉委員長は存在しない。LLM 校正により全て除去済み。",
+      "affected_ids": [],
+      "evidence": "raw_transcript_input seg10 whisper_segments[60][72][73][77][84]: 各ハルシネーションテキスト"
+    },
+    {
+      "id": "F11",
+      "severity": "low",
+      "category": "whisper_misrecognition",
+      "title": "Whisper が '両院 (りょういん)' を '両議員 (りょうぎいん)' と誤認識 (入力のみ、補正済み)",
+      "description": "input transcript seg10 whisper_segment[4] で '両院' が '両議員' と誤認識 (8 箇所)。校正後は '両院' に統一されている。",
+      "affected_ids": [],
+      "evidence": "raw_transcript_input '両議員' x8 → corrected '両院' x7"
+    },
+    {
+      "id": "F12",
+      "severity": "low",
+      "category": "other",
+      "title": "metadata.llm_model が 'google/gemma-4-31B-it' で CLAUDE.md 規定 (DeepSeek V3.2) と相違",
+      "description": "metadata.json の llm_model フィールドが 'google/gemma-4-31B-it' を示す。CLAUDE.md では 'DeepInfra DeepSeek V3.2' を使用と規定されている。Session #12 の実行環境でモデルが変更されたか、または metadata フィールドが実際と異なる値を記録している可能性がある。",
+      "affected_ids": [],
+      "evidence": "metadata.llm_model = 'google/gemma-4-31B-it'; CLAUDE.md: 'DeepInfra DeepSeek V3.2'"
+    }
+  ],
+  "blindspots": [
+    "参議院TV公式記録との詳細な事実照合 (実際の議事録未取得)",
+    "seg3 (古賀友一郎) 質問冒頭の '最も優れた選挙区だと、このように考えております' が mid-sentence start かどうかの確認 (HLS 音声未確認)",
+    "related_law_ids 'shugiin-221-sanhou-1' の存在確認 (laws.json 未照合)",
+    "seg0-9 の whisper_misrecognition の網羅的検出 (seg10 のみ重点調査)"
+  ]
+}

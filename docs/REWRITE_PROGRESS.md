@@ -31,11 +31,13 @@
 | **#9 (旧 F3 → F2 修正)** | F2 で発見した systemic 問題の修正 | PR21, PR22, PR23, PR24, PR26, PR28 | ✅ 完了 (2026-05-10): 6 PR 実装、F1 で role=100% / full_text duplicate 0 / summary 冒頭整合確認 |
 | **#10 (旧 F4 → F2 再走)** | 6 件サンプリングで F2 再評価 | (実装なし) | ❌ ゲート FAIL (avg 12.00/sess) も -20% 改善、PR21/22/26/28 効果確認 |
 | **#11 (追加修正)** | F2 再走で残存した systemic 問題対応 | PR23.1 / PR26.1 / PR29 (議長分離) / PR30 (参考人補強) | ✅ 完了 (2026-05-10): 4 PR 実装、F1 で 議長 role 分離・affiliation 補完・anchor URL 確認、PR25 は別セッション |
-| **#12 (F2 再々走)** | 4-6 件で F2 再々評価 | (実装なし) | F2 再々ゲート (≤ 5) 通過 |
-| **#13 検証 F3** | 中規模 30 件で再生成 + 比較 | (実装なし、状況により PR27 追加) | F3 ゲート通過 |
-| **#14 全件 F4** | 全 156 件削除 + 再生成 + サイトビルド | (実装なし) | 公開 |
+| **#12 (F2 再々走)** | 6 件で F2 再々評価 | (実装なし) | ❌ ゲート FAIL (avg 13.50/sess、Session #10 比 +1.5)、PR31-35 起票 (オフバイワン / duration / hallucination chain / 境界 leak / metadata missing) |
+| **#13 (追加修正 2)** | 新規 systemic PR 群 | PR25 / PR31 / PR32 / PR33 / PR34 / PR35 | F2 4-5 件目標 ≤ 8 |
+| **#14 (F2 再々々走)** | 4-6 件で再評価 | (実装なし) | F2 ゲート (≤ 5) 通過 |
+| **#15 検証 F3** | 中規模 30 件で再生成 + 比較 | (実装なし、状況により PR27 追加) | F3 ゲート通過 |
+| **#16 全件 F4** | 全 156 件削除 + 再生成 + サイトビルド | (実装なし) | 公開 |
 
-合計 **約14セッション**、5-6週間。F2 再走でゲート FAIL が継続したため当初 12 セッションから 14 へ増加。
+合計 **約16セッション**、6-7週間。F2 ゲート FAIL が連続するため Session #13-14 で追加 PR + 再評価。
 
 ---
 
@@ -76,7 +78,12 @@
 | PR23.1 | video_url を anchor 位置で shift (Session #10 起票、PR23 拡張) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | `_estimate_pair_offset_seconds` に `split_anchor_sentence_idx` 引数追加、head utterance 内の sentence 位置からも文字数を加算。同一 head_utt 共有のペアでも別時刻 URL を生成。F1: 8967=60/60、56211=68/71、56074=2/2 unique URL |
 | PR26.1 | enriched speakers の affiliation/start_seconds 補完 (Session #10 起票、PR26 拡張) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | `enrich_metadata_from_utterances` で affiliation 空のとき role 名 ("答弁者"/"政府参考人"/"参考人") をフォールバック、start_seconds は最初に登場した segment.start_seconds、start_time は HH:MM 整形。`_backfill_existing_speaker_roles` を「常に再計算」に変更し、partial regen で derive_role 修正版が反映されるように。pipeline.py / regen scripts を「count 不変でも metadata を書き出す」に修正 |
 | PR29 | 議長 role を委員長から分離 (Session #10 起票) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | `models.SpeakerRole` に「議長」追加。`_role.derive_role` で 議長/副議長/衆議院議長/参議院議長 を「議長」、委員長/事務総長 を「委員長」に分離。F1 56074: 議長 3 / 委員長 1、56075: 議長 2 / 答弁者 4 |
-| PR30 | 参考人 role 補強 (Session #10 起票) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | `_role.derive_role` で `affiliation.startswith("参考人")` を最優先判定。後段 (委員長 substring / 部長 suffix) の誤分類を防止。`_ENRICH_ROLES` に「参考人」追加、`_BACKFILL_ROLES` に「議長」追加。56212 で 大橋弘/澤田純/峯村健司/濱口伸明/宮澤伸 5 名全員 role="参考人" になる想定 (Session #12 で確認) |
+| PR30 | 参考人 role 補強 (Session #10 起票) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | `_role.derive_role` で `affiliation.startswith("参考人")` を最優先判定。後段 (委員長 substring / 部長 suffix) の誤分類を防止。`_ENRICH_ROLES` に「参考人」追加、`_BACKFILL_ROLES` に「議長」追加。56212 で 大橋弘/澤田純/峯村健司/濱口伸明/宮澤伸 5 名全員 role="参考人" — **Session #12 で 5/5 確認 ✓** |
+| PR31 | answer.full_text オフバイワン修正 (Session #12 起票) | 🟡 中 | ☐ | | | 56176 で 8 ペア (qa_003〜010) の answer.full_text が直前の回答末尾を含む。「次に、XXXについてお尋ねがありました」マーカーでスライス開始位置がずれる。`_compute_share_boundaries` の anchor 計算 or `_assemble_full_text_for_pair` のオフセット修正が必要 |
+| PR32 | duration_minutes 計算 (Session #12 起票、PR26.1 拡張) | 🟢 小 | ☐ | | | metadata.speakers の duration_minutes が全件 0 のまま (PR26.1 では未対応)。utterance 観測 (segment.start_seconds + duration_seconds) から最初〜最後の登壇区間で計算する必要あり |
+| PR33 | metadata_missing_speaker 補完強化 (Session #12 起票、PR6 拡張) | 🟡 中 | ☐ | | | 8977 で 3 名 (藤井和弘 / 小西博之 / 河合貴則) が metadata 未登録、56179 で近藤和也 start_seconds=18359.3 誤帰属、西園勝秀 start_seconds 不整合。`enrich_metadata_from_utterances` で utterance 観測のみベースで自動追加するロジック強化 |
+| PR34 | whisper hallucination loop 再発抑制 (Session #12 起票、PR7/PR8 拡張) | 🟡 中 | ☐ | | | 56162 で「福祉法」が 44 回ループ (compression_ratio=18.96)。PR7 の単一 chunk 内検出だけでは捉えきれず。corrector の loop 検出を chunk 跨ぎで適用 + Whisper 出力時点 (transcriber.py) の compression_ratio 閾値で Whisper segment ごと drop も検討 |
+| PR35 | role 名 vs 機能名の表記統一 (Session #12 起票) | 🟢 小 | ☐ | | | 56176 で qa_pairs.answer.role='防衛大臣' (役職名) に対し utterances/metadata は '答弁者' (機能名) で不統一。`_answerer_role_from_info` の出力を「機能名 (答弁者/政府参考人/参考人)」に統一して、affiliation 側に役職名を残すルールに |
 
 ---
 
@@ -88,6 +95,7 @@
 | **F1 既知問題** | 4 (56074, 56075, 56211, 8967) | resolved ≥ 50%、新規 NEW_ISSUE = 0 | 🔄 | 2026-05-10 (Session #7 PR17-20 後): 4件全 exit 0 (56075=86.3s/qa=0/topics=8、56211=295.1s/qa=73/topics=17、56074=154.5s/qa=2/topics=1、8967=324.4s/qa=57/topics=10)。**Session #7 は堅牢性 PR (timeout / json fallback / scraper 例外化) でデータ品質指標は据え置き想定**。**follow_up_ids 充足率**: 56211 **83%** (61/73)、8967 **85%** (49/57)、56074 50% (1/2) — Session #6 とほぼ同水準。**role 充足率**: 56211 **49%**、56074 100%、8967 **28%** — Session #6 とほぼ同水準。Session #6 の PR12 retry 効果 (56074 の `山口俊一` 幻覚除去) は本ランでも維持 (qa_pairs speakers のみで完結)。LLM ベース全件比較は F2/F3 で実施 |
 | **F2 多様性** | 12 (層化抽出) | 平均 ≤ 5件/セッション、未知カテゴリ unchanged ≤ 2 | ❌ | 2026-05-10 (Session #8): 12件全 regen exit 0、Sonnet サブエージェント 12並列で audit。**finding 平均 14.75/session (177/12) → ゲート FAIL** (基準 ≤5)。high=52、systemic=152。Top カテゴリ: whisper_misrecognition(33)、schema_inconsistency(25)、schema_empty_field(24)、fact_error(18)、speaker_misattribution(13)。**新規 systemic 問題群** (PR21-28 候補)。**判定: F4 全件再生成前に追加 PR が必要**。詳細: `/tmp/regen-f2-audit/_aggregate.json` |
 | **F2 再走** | 6 (Session #8 で重症だった 6 件) | 平均 ≤ 5件/セッション、未知 unchanged ≤ 2 | ❌ | 2026-05-10 (Session #10): 6 件全 regen exit 0、Sonnet 6 並列 audit。**finding 平均 12.00/session (72/6) → ゲート FAIL も Session #8 比 -20% (90→72)、avg 15.0→12.0**。high=20、systemic=61。Top カテゴリ: schema_empty_field(15)、whisper_misrecognition(12)、schema_inconsistency(11)、timestamp_inconsistency(6)、role_label_error(6)。**PR21/PR22/PR26/PR28 効果確認**: summary 冒頭 6/6 整合、安倍元総理ハルシネーション解消、role 充足率向上、56176 の 9 QA full_text 重複完全解消 (17→10)。**残存 systemic**: PR23 同一 head_utt 内のペアが同一 URL になる、PR26 が affiliation/start_seconds/duration を埋めない、議長 role が「委員長」に統合される、参考人 role 誤分類 (56212 で 5 名)、whisper hallucination loop (56162)。**判定: Session #11 で追加 PR 後に F2 再々走**。詳細: `docs/regen-comparison/f2-rerun/_aggregate.json` |
+| **F2 再々走** | 6 (Session #10 と同一) | 平均 ≤ 5件/セッション、未知 unchanged ≤ 2 | ❌ | 2026-05-11 (Session #12): 6 件全 regen exit 0 (8977 のみ Step 6 wedge → 単独 re-run で復帰)、Sonnet 6 並列 audit。**finding 平均 13.50/session (81/6) → ゲート FAIL、Session #10 比 +1.5 (72→81)**。high=22、systemic=20 (auditor の systemic 判定基準が異なるため、絶対比較は不可)。Top カテゴリ: whisper_misrecognition(16, +4)、schema_empty_field(15, ±0)、schema_inconsistency(13, +2)、speaker_misattribution(8, +4)、whisper_hallucination_loop(5, +4)。**PR23.1/26.1/29/30 効果確認**: ✅ 56212 参考人 5/5 全員 role="参考人"、✅ 56176 forsmary 'video_url' 同 head_utt 内で別 timestamp、✅ 56162/56074 議長 role 分離、✅ 8986 affiliation/start_seconds 補完。**新規 systemic 問題**: 56176 で answer.full_text のオフバイワン (8 ペア)、duration_minutes 全 0 (PR26.1 未対応)、56162 「福祉法」44 回ループ再発、56179 セグメント境界 leak、8977 metadata 3 名未登録。**判定: Session #13 で PR25/PR31-35 後に F2 再々々走**。詳細: `docs/regen-comparison/f2-rerun2/_aggregate.json` |
 | **F3 中規模** | 30 | F1/F2 整合、エラー率 < 5%、コスト < $0.5/sess | ☐ | |
 | **F4 全件** | 156 | — | ☐ | |
 
@@ -167,6 +175,61 @@
 - メモ:
   - PR14 (Step 3 閾値) は Step 4.5+ 再実行ではカバー外。フルパイプライン smoke は次セッション以降で機会があれば
   - validator の speaker 不整合 warning は PR6 metadata enrichment で大幅減少見込み
+
+### Session #12 (F2 再々走) — 2026-05-11 完了 (ゲート FAIL、Session #10 比 +1.5)
+- **F2 再々走サンプル選定** (6 件、Session #10 と同一で直接比較):
+  - shugiin/2026/04/16/56176_本会議 (PR23.1: 同 head_utt 共有での anchor 別 URL 検証)
+  - shugiin/2026/04/14/56162_本会議 (PR23.1, whisper hallucination loop は未対応で残存予定)
+  - shugiin/2026/04/16/56179_災害対策特別 (cross-check)
+  - shugiin/2026/04/24/56212_経産 (PR30: 5名参考人 role 検証)
+  - sangiin/2026/04/27/8986_予算 (PR26.1: affiliation/start_seconds 補完検証)
+  - sangiin/2026/04/22/8977_憲法審査会 (PR23.1: timestamp diversity)
+- **F2 再々走 regen** (`/tmp/regen_f2_rerun2.py`、Session #11 マージ後の最新パイプライン):
+  - 5/6 完走、8977 のみ Step 6 で httpx CLOSE_WAIT 状態で wedge → kill して `SESSIONS_FILTER=8977_憲法審査会` で単独 re-run、275.1s で完走 qa=31/topics=6
+  - `_summary_first5.json` に 5 件分をバックアップ後、8977 単独結果と jq マージで 6 件統合
+  - 出力先: `/tmp/regen-f2-rerun2/{session_path}/`
+- **F2 再々走 audit** (Sonnet サブエージェント 6 並列):
+  - 6 全 audit JSON 取得・jq で集約: `docs/regen-comparison/f2-rerun2/_aggregate.json`
+- **集約結果**:
+  - **総 findings: 81 件 (high=22、medium=33、low=26)**、systemic=20 (auditor 個体差による)
+  - **平均: 13.50 件/セッション → ゲート FAIL** (基準 ≤ 5、Session #10 比 +1.5、Session #8 比 -1.25)
+  - per session 内訳 (h/m/l/total) — Session #10 比較込み:
+    - 56176_本会議: 4/6/4/**14** (#10: 10 → +4) — answer.full_text オフバイワン 8 ペアが新発見
+    - 56162_本会議: 4/5/4/**13** (#10: 12 → +1) — 福祉法 44 回ループ高重大評価
+    - 56179_災害対策特別: 4/5/5/**14** (#10: 15 → -1) — 安倍ハルシネーション seg 境界混入が新発見
+    - 56212_経産: 3/5/5/**13** (#10: 10 → +3) — content_missing 4 ペア新発見
+    - 8986_予算: 4/8/3/**15** (#10: 11 → +4) — whisper 誤認識 (大津市町/皇室典範/NSC) が新発見
+    - 8977_憲法審査会: 3/5/4/**12** (#10: 14 → -2) — seg10 super-segment 解消、PR23.1 で 25/31 unique URL
+  - **カテゴリ別 (count, high, systemic)**:
+    - whisper_misrecognition: 16, 6, 3 — 5倍/5億・大津市町/大槌町・皇室典範/公室典範 等
+    - schema_empty_field: 15, 1, 7 — duration_minutes 全 0、duration/hls_url 空、metrics null
+    - schema_inconsistency: 13, 2, 4 — answer.full_text オフバイワン (56176)、follow_up_ids 逆方向、affiliation 「答弁者」のまま
+    - speaker_misattribution: 8, 5, 1 — 56212 大橋参考人指名なのに answer.speaker=宮澤、qa_034 質問者/答弁者 role 逆転 (8986)、seg 境界 leak (56176/56179)
+    - content_missing: 5, 1, 0 — 答弁文中截断 (56212)
+    - metadata_missing_speaker: 5, 3, 1 — 8977 で 3 名 (藤井和弘 / 小西博之 / 河合貴則)、56179 で近藤和也 start_seconds 誤帰属
+    - timestamp_inconsistency: 5, 2, 1 — 8977 で seg10 内初回質問が segment 起点にフォールバック (PR23.1 部分的限界)
+    - whisper_hallucination_loop: 5, 2, 2 — 56162 「福祉法」44 回 / 「議員長」8-9 回 (56179)、PR7 単一 chunk 検出の限界
+    - other: 4, 0, 0
+    - summary_qa_divergence: 3, 0, 0
+    - duplicate: 1, 0, 0
+    - role_label_error: 1, 0, 1 — 56176 で qa_pairs.answer.role='防衛大臣' (役職名) vs metadata '答弁者' (機能名) 不統一
+- **PR23.1/26.1/29/30 効果検証 (Session #10 比較)**:
+  - **PR30 ✅** (参考人 role): 56212 で 5/5 名 (大橋弘・澤田純・峯村健司・濱口伸明・宮澤伸) 全員 role="参考人" 検証完了。Session #10 では誤分類だった
+  - **PR29 ✅** (議長分離): 56076 で 森英介 role="議長"、56162 で 森英介・石井啓一 role="議長"
+  - **PR23.1 🔶 部分的** (anchor URL): 8977=25/31 (80.6%, #10 27/29=93.1% より低下)。seg10 内で各質疑者の「初回質問」は segment 起点にフォールバックする残存問題。56176=10/10 unique
+  - **PR26.1 ✅ 部分的** (affiliation/start_seconds): 8986 で質疑者 10 名 affiliation (政党名) と start_seconds 補完済 / **duration_minutes は全件 0 のまま (新規 PR32)**
+- **新規 systemic 問題 (PR31-35 起票)**:
+  - **PR31** answer.full_text オフバイワン: 56176 qa_003〜010 の 8 ペアで直前回答末尾を含む。「次に、XXXについてお尋ねがありました」マーカーでスライス位置がずれる (anchor 計算 or boundary オフセットのバグ)
+  - **PR32** duration_minutes 計算: 全 6 セッションで全件 0 (PR26.1 未対応)
+  - **PR33** metadata_missing_speaker 補完強化: 8977 で 3 名未登録、56179 で start_seconds 誤帰属。`enrich_metadata_from_utterances` の utterance 追加ロジック強化
+  - **PR34** whisper hallucination loop 再発抑制: 56162 「福祉法」44 回 chunk 跨ぎループは PR7 (単一 chunk 内 ≥3 回検出) では捉えきれず。Whisper transcribe 時点 (compression_ratio 閾値) と corrector 全文走査の二段で対策
+  - **PR35** role 名 vs 機能名統一: '防衛大臣' vs '答弁者' の混在を解消、機能名統一 + 役職名は affiliation に分離
+  - **PR25** (既存起票): 56176/56179 で seg 境界 leak 再確認、優先度上昇
+- **次セッション (#13) のスコープ**:
+  - PR25 / PR31 / PR32 / PR33 / PR34 / PR35 を実装 (中規模 PR が多いため分割しても可)
+  - F1 で smoke 確認後、F2 再々々走 (4-6 件) でゲート再判定
+- **wedge note**: Session #12 の regen で 8977 Step 6 (関連法案タグ付け or score_qa_pairs_metrics) で httpx 接続が CLOSE_WAIT で wedge した。SIGKILL → SESSIONS_FILTER で単独 re-run で復帰。score_qa_pairs_metrics or tag_related_laws の httpx timeout 不在が疑わしい (PR17 は ffmpeg のみ対象)
+- 詳細: `docs/regen-comparison/f2-rerun2/_aggregate.json`、各 session の audit JSON
 
 ### Session #11 (追加修正) — 2026-05-10 完了
 - 実装 (PR23.1 / PR26.1 / PR29 / PR30):

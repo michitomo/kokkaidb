@@ -1,0 +1,232 @@
+{
+  "session_id": "shugiin/2026/04/14/56162_本会議",
+  "chamber": "shugiin",
+  "date": "2026-04-14",
+  "deli_id": "56162",
+  "committee": "本会議",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-11T02:30:00Z",
+  "overall_quality": "medium",
+  "issue_count": {"high": 4, "medium": 5, "low": 4, "total": 13},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "whisper_hallucination_loop",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "seg9/ws[16]: 「福祉法」が44回繰り返すループハルシネーション",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[9].whisper_segments[16]",
+        "segment_index": 9
+      },
+      "evidence": "raw_transcript.json segments[9].whisper_segments[16].text = '福祉法、福祉法、福祉法、...（44回繰り返し）' compression_ratio=18.96（正常値は1.2〜1.7）、avg_logprob=-0.064（異常に高く信頼度を誤表示）。この区間（475.6-504.6 sec in segment audio）は川裕一郎の質問中の高市早苗への答弁前の無音・拍手区間と推定される。ループはutterances.jsonでは除去されており、qa_pairsにも伝播していない。",
+      "estimated_cause": "Whisper large-v3-turbo が高圧縮比区間（拍手・無音・ノイズ）でトークン繰り返しループを起こす既知の挙動。compression_ratio 検出フィルターが pipeline に未実装のため raw_transcript にそのまま記録された。utterances/qa_pairs には伝播していないのは speaker_tagger の後段補正が機能したため。",
+      "downstream_impact": ["raw_transcript.json"]
+    },
+    {
+      "id": "F002",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers: 高市早苗の affiliation が「答弁者」で役職名が欠落",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[10]"
+      },
+      "evidence": "metadata.json speakers[10] = {\"name\": \"高市早苗\", \"affiliation\": \"答弁者\", \"role\": \"答弁者\", \"start_seconds\": 2006.7, \"start_time\": \"00:33\", \"duration_minutes\": 0}。utterances.json seg6-utt2 に「高市早苗内閣総理大臣が、黒田征樹議員のご質問にお答えいたします」、seg8-utt1 に「佐々木真琴議員のご質問にお答えいたします」とあり、qa_pairs 全 30 ペア中 26 件の答弁者が高市早苗であることから、高市早苗は内閣総理大臣として答弁している。affiliation は「内閣総理大臣」と明記すべきで、現状の「答弁者」は役職情報を損失している。",
+      "estimated_cause": "PR26.1 の enriched speakers fallback 補完が適用されたが、speaker_tagger が本会議での総理答弁者を scraped speakers リスト（衆議院TVの発言者欄）から取得できず、role/affiliation を「答弁者」で代替した。本会議の場合、総理・大臣は発言者欄に掲載されないケースがある。",
+      "downstream_impact": ["summary.json", "topics.json", "qa_pairs.json"]
+    },
+    {
+      "id": "F003",
+      "category": "timestamp_inconsistency",
+      "secondary_categories": ["metadata_missing_speaker"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.高市早苗 start_time=00:33 は誤計算値（2006秒÷60≒33分）",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[10].start_time"
+      },
+      "evidence": "高市早苗 start_seconds=2006.7、start_time=\"00:33\"。他スピーカーの計算: 森英介 start_seconds=1304.6 → start_time=13:02（HLS 2026-0414-1300 基準の wall clock）、西田昭二 start_seconds=2006.7 → start_time=13:14。高市早苗の start_seconds=2006.7 は西田昭二と同値（fallback で西田のセグメント開始を使用）で、start_time=\"00:33\"は 2006/60=33.4分 をゼロ基点で計算した誤変換。duration_minutes=0 も誤り（高市は 26/30 ペアで答弁）。また start_seconds=2006.7 自体も西田昭二の登壇時刻であり、高市の初答弁時刻（約 2243 秒、qa_001 video_url time=2012.7 から推定）と不一致。",
+      "estimated_cause": "PR26.1 の start_seconds/start_time fallback 補完において、答弁者として後から追加される高市早苗に対し、所属セグメント(seg4)の segment_start_seconds をそのまま割り当て、さらに start_time の wall-clock 変換ロジックが 13:00 基点ではなく 0:00 基点で計算してしまった。",
+      "downstream_impact": ["metadata.json"]
+    },
+    {
+      "id": "F004",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["whisper_misrecognition"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_025 answer.full_text が話者名タグで途中切断・不完全",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[24].answer.full_text",
+        "qa_id": "qa_025"
+      },
+      "evidence": "qa_025 answer.full_text = \"高市早苗（内閣総理大臣）川裕一郎議員の御質問にお答えいたします。自治体への支援についてお尋ねがございました。中山間地や離島の自治体を含め、人口減少や職員不足に直面する自治体の実情も踏まえつつ、平時から地域の防災力を川裕一郎（参政党）。\"。文末の「川裕一郎（参政党）。」は utterances.json seg9-utt2 で高市早苗の答弁テキスト中に埋め込まれたスピーカータグが原因。また先頭にも「高市早苗（内閣総理大臣）」タグが残存しており、答弁本文が約200字で打ち切られている。utterances.json seg9-utt2.text にも同様の埋め込みを確認。",
+      "estimated_cause": "Whisper が答弁者の発言中に別の話者の名前（「川裕一郎（参政党）」）を音声から誤認識してテキストに挿入し（raw_transcript.json seg9/ws[16] の前後）、speaker_tagger がこれをスピーカー切り替えと誤解して答弁を打ち切った。ループハルシネーション（F001）が同一 seek 位置で前後の音声コンテキストを破壊したことが連鎖影響した可能性が高い。",
+      "downstream_impact": ["utterances.json", "summary.json"]
+    },
+    {
+      "id": "F005",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "utterances.json の全 29 utterances に start_seconds が欠如",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[*].utterances[*]"
+      },
+      "evidence": "utterances.json の全 10 segments 合計 29 utterances を検査した結果、すべての utterance オブジェクトに start_seconds フィールドが存在しない（utterance keys: ['speaker', 'role', 'text', 'unmatched']）。一方、segments 自体には start_seconds と video_url が存在する。各 utterance の timestamp が不明なため、UI での timeline 表示や video_url のタイムスタンプ分岐（PR23.1）が utterance 単位で機能しない。",
+      "estimated_cause": "structurer/speaker_tagger が utterance レベルの start_seconds を付与するロジックを実装していない。segment レベルの start_seconds は scraper で取得されるが、segment 内の各 utterance への分割時に Whisper whisper_segments の start 値を対応付ける処理が欠落している。",
+      "downstream_impact": ["qa_pairs.json"]
+    },
+    {
+      "id": "F006",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs の全 30 ペアで question.role・head_utt・question.start_seconds が欠如",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].question"
+      },
+      "evidence": "qa_pairs.json 全 30 ペアを検査。question オブジェクトのキーは ['speaker', 'party', 'summary', 'full_text', 'intent'] のみで、role・start_seconds は存在しない。head_utt フィールドも全 30 ペアで欠如（pair keys: ['id', 'segment_index', 'topic', 'question', 'answer', 'follow_up_ids', 'related_law_ids', 'video_url', 'metrics']）。PR23.1 で実装予定の head_utt を基にした video_url 分岐も head_utt 自体が存在しないため適用不可。",
+      "estimated_cause": "structurer の question スキーマに role・start_seconds フィールドが実装されておらず、head_utt フィールドも生成ロジックが未実装。F005 と同根（utterance 単位の timing が存在しないため question.start_seconds を計算できない）。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F007",
+      "category": "whisper_hallucination_loop",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "seg8/ws[17]: 「委員長 委員長 委員長 委員長」4連繰り返しループ",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[8].whisper_segments[17]",
+        "segment_index": 8
+      },
+      "evidence": "raw_transcript.json segments[8].whisper_segments[17] = {\"text\": \"委員長 委員長 委員長 委員長\", \"compression_ratio\": 1.77, \"avg_logprob\": -0.583, start=476.3, end=503.2}。この区間は佐々木真琴の質問中（seg8 は duration 約 1420s と長い）の静音または拍手部分と推定。utterances.json には伝播していない（LLM が除去）。",
+      "estimated_cause": "F001 と同様。Whisper が短い繰り返し単語（「委員長」）を静音区間でループ生成する挙動。compression_ratio=1.77 は閾値判定をギリギリ回避している。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F008",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "utterances seg5-utt2 が話者名の連結文字列になっている（話者遷移の誤認識）",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[5].utterances[2]",
+        "segment_index": 5
+      },
+      "evidence": "utterances.json segments[5].utterances[2] = {\"speaker\": \"森英介\", \"role\": \"議長\", \"text\": \"森英介議長高市早苗君高市早苗内閣総理大臣\"}。これは議長が高市早苗を指名する場面（森英介が「高市早苗君」と呼んだ後、高市が「内閣総理大臣、高市早苗でございます」と自己紹介した部分）が Whisper に話者名として認識され連結したもの。本来は「高市早苗君。」（1〜2語）程度のコールで終わるべきが、話者遷移後の高市の自己紹介が混入している。qa_pairs には影響なし（LLM が補正）。",
+      "estimated_cause": "Whisper が speaker_segment 境界付近のオーバーラップを誤認識し、隣接する話者の発言を現在の utterance テキストに混入。seg5 の境界（中川質疑→高市答弁遷移）は音声的に短い。speaker_tagger による境界切り出しの精度不足が一因。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F009",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.高市早苗 duration_minutes=0（実際は全 30 ペア中 26 件で答弁）",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[10].duration_minutes"
+      },
+      "evidence": "metadata.speakers[10].duration_minutes=0。qa_pairs 全 30 ペアのうち 24 件（qa_001, qa_005-qa_024, qa_025-qa_027, qa_030）は高市早苗が答弁者。各答弁 full_text は 100〜600 字程度あり、答弁時間は累計で少なくとも 30 分超と推定される。duration_minutes=0 は UI の話者別発言時間表示で高市早苗の寄与を完全に消失させる。",
+      "estimated_cause": "PR26.1 の enriched speakers fallback において、本会議の総理答弁者として後から追加された高市早苗に対し、duration が計算・付与されていない（0 のまま）。scraper の発言者リストに高市が存在しないため duration 推定もできなかった。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F010",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.duration 空文字・committee_id/session_number が null",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.duration"
+      },
+      "evidence": "metadata.json: duration=\"\", committee_id=null, session_number=null, mediasp_hash=\"\"。HLS URL の末端時刻から推定すると本セッションは 13:00〜15:00 頃の約 120 分。本会議に committee_id/session_number が null なのは設計上許容範囲だが、duration 空文字は UI 表示に影響する。",
+      "estimated_cause": "衆議院TVスクレイパーが本会議セッションの duration を取得できていない（ページに明示的な終了時刻がないため）。committee_id=null は本会議には委員会IDが存在しないため期待通り。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F011",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "raw_transcript で「能登半島地震」が複数箇所で誤認識（野党/野田半島地震等）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[5].whisper_segments[7].text"
+      },
+      "evidence": "raw_transcript.json で確認された誤認識: (1) seg5/ws[7] '野党半島地震発災直後' (should: 能登半島地震)、(2) seg5/ws[22] '野党半島地震では' (should: 能登半島地震)、(3) seg9/ws[1] '野田半島地震を体験した' (should: 能登半島地震)、(4) seg9/ws[4] '野党半島地震発災' (should: 能登半島地震)、(5) seg9/ws[0] '防災省設置法' (should: 防災庁設置法)、(6) seg5/ws[30] '中川弘政議員' (should: 中川宏昌)。これらはすべて utterances.json および qa_pairs.json では正しい形で記述されており、LLM が補正済み。",
+      "estimated_cause": "Whisper が「能登」「庁」「宏昌」等の固有名詞を音響的に近似した別語に誤認識する既知の傾向。本会議音声は遠距離マイクで収録されており、固有名詞誤認率が高い。LLM補正が機能しているため downstream への影響は限定的。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F012",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "session_specific",
+      "title": "utterances seg0-utt0: 「予見法」は「旅券法」の誤認識と推定",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[0].utterances[0].text"
+      },
+      "evidence": "utterances.json segments[0].utterances[0].text = 'これより会議を開きます。日程第一、予見法の一部を改正する法律案を議題といたします。'。当日の衆議院本会議（2026年4月14日）では旅券法（一般旅券発給に係る手数料改正）が議題に上っていたと推定されるが、「旅券法」(ryoken-hou) が Whisper によって「予見法」(yoken-hou) と誤認識された可能性が高い。この utterance は qa_pairs に含まれない手続き部分のため下流影響は軽微。",
+      "estimated_cause": "Whisper が「旅券法」の音声を近音の「予見法」として誤認識。「旅券」は低頻度語であるためトレーニングデータが少ない。実際、seg1-utt1 の外務委員会報告には「一般旅券の発給等に係る国庫の手数料」とあり旅券法が議題であることが確認できる（utterances seg1 では正しく表記）。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F013",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "unknown",
+      "title": "metadata.session_kind が「regular_qa」だが実態は委員長報告+採決+趣旨説明+質疑の複合本会議",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.session_kind"
+      },
+      "evidence": "metadata.session_kind=\"regular_qa\"。しかし実際のセッション構造はより複雑: segments[0-2]=手続き議事(外務委員長報告+採決、国土交通委員長報告+採決)、segments[3]=防災庁設置法案趣旨説明(牧野たかお大臣)、segments[4-9]=会派別代表質疑。本会議(衆議院全体会議)の議事形式が「regular_qa」（委員会質疑を想定した区分）に分類されている。topics.json が防災庁設置法案の質疑のみを対象としており、委員長報告部分に対応する qa_pairs が存在しないのはそのため。",
+      "estimated_cause": "scraper の session_kind 推定ロジックが本会議かどうかを committee 名（「本会議」）から判定できているが、本会議内の議事形式（委員長報告+採決+趣旨説明+質疑の混在）を細分化する分類が未実装。",
+      "downstream_impact": []
+    }
+  ],
+  "blindspots": [
+    "raw_transcript の全 whisper_segments を逐字精査していない。seg5（46セグ）・seg8（53セグ）は特に長く、追加の誤認識が存在する可能性がある",
+    "外部の国会議事録（正式版、公開後）との照合は未実施のため、qa_pairs 内の発言内容の事実誤認を検出できていない",
+    "中川宏昌の所属「中道改革連合・無所属」は現実の政党名としてやや不自然で、scraper による取得誤りの可能性があるが外部情報源との照合未実施",
+    "本会議で採決された 2 法案（旅券法改正、物資流通効率化法）の委員長報告内容の正確性は検証していない",
+    "topics.json の 8 トピックと qa_pairs 30 件の完全対応は確認したが、topics が未カバーの重要論点（原子力複合災害、副首都構想等）の欠落は未検証"
+  ]
+}
