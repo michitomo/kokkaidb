@@ -26,8 +26,8 @@ from pathlib import Path
 from src.api_client import get_client, with_retry
 from src.models import RawTranscript, SegmentTranscript, SessionDetail, SpeakerInfo
 
-# Step 4.5はDeepSeek-V3.2を使用（prompt cachingで長いsystem promptのコストを削減）
-CORRECTOR_MODEL = "google/gemma-4-31B-it"
+# Step 4.5 LLM: OpenRouter 経由 Gemini Flash latest (prompt caching 有り)
+CORRECTOR_MODEL = "~google/gemini-flash-latest"
 
 logger = logging.getLogger(__name__)
 

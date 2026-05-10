@@ -42,8 +42,8 @@ from src.prompts import (
 )
 from src.speaker_lookup import find_by_name
 
-# Step 6はgemma-4-31bを使用（ペア数抽出がV3.2より安定: 10/10 vs 6/10）
-STRUCTURER_MODEL = "google/gemma-4-31B-it"
+# Step 6 LLM: OpenRouter 経由 Gemini Flash latest
+STRUCTURER_MODEL = "~google/gemini-flash-latest"
 
 # 答弁本文がこの長さ未満かつ utterance_indices が空のペアは Q&A として成立していないため drop
 MIN_ANSWER_LENGTH = 30
@@ -1494,8 +1494,8 @@ def build_summary_related_laws(qa_pairs: QAPairsOutput) -> list[RelatedLawTag]:
     ]
 
 
-# V4評価プロンプトはDeepSeek V3.1を使用
-_METRICS_MODEL = "google/gemma-4-31B-it"
+# V4 metrics LLM: OpenRouter 経由 Gemini Flash latest
+_METRICS_MODEL = "~google/gemini-flash-latest"
 
 
 def _score_one_pair(pair: QAPair) -> QAMetrics | None:

@@ -103,7 +103,7 @@ class TestTagSpeakers:
             mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_splits)
             mock_client_factory.return_value = mock_client
 
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 result = tag_speakers(raw_text, segment_speaker, all_speakers)
 
         assert len(result) == 3
@@ -135,7 +135,7 @@ class TestTagSpeakers:
             mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_splits)
             mock_client_factory.return_value = mock_client
 
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 result = tag_speakers(raw_text, segment_speaker, all_speakers)
 
         assert len(result) == 2
@@ -159,7 +159,7 @@ class TestTagSpeakers:
             mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_splits)
             mock_client_factory.return_value = mock_client
 
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 result = tag_speakers(raw_text, segment_speaker, all_speakers)
 
         assert len(result) == 1
@@ -179,7 +179,7 @@ class TestTagSpeakers:
             mock_client.chat.completions.create.return_value = _make_mock_llm_response([])
             mock_client_factory.return_value = mock_client
 
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 result = tag_speakers(raw_text, segment_speaker, all_speakers)
 
         assert len(result) == 1
@@ -202,7 +202,7 @@ class TestTagSpeakers:
             mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_splits)
             mock_client_factory.return_value = mock_client
 
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 result = tag_speakers(raw_text, segment_speaker, all_speakers)
 
         # 文0がsegment_speakerに割り当てられる
@@ -227,7 +227,7 @@ class TestTagSpeakers:
             mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_splits)
             mock_client_factory.return_value = mock_client
 
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 result = tag_speakers(raw_text, segment_speaker, all_speakers)
 
         assert all(isinstance(u, Utterance) for u in result)
@@ -247,7 +247,7 @@ class TestTagSpeakers:
             )
             mock_client_factory.return_value = mock_client
 
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 tag_speakers(raw_text, segment_speaker, all_speakers)
 
         call_kwargs = mock_client.chat.completions.create.call_args.kwargs
@@ -259,9 +259,9 @@ class TestTagSpeakers:
         segment_speaker: SpeakerInfo,
         all_speakers: list[SpeakerInfo],
     ) -> None:
-        """DEEPINFRA_API_KEY が未設定の場合に EnvironmentError が送出されること。"""
+        """OPENROUTER_API_KEY が未設定の場合に EnvironmentError が送出されること。"""
         import os
-        env = {k: v for k, v in os.environ.items() if k != "DEEPINFRA_API_KEY"}
+        env = {k: v for k, v in os.environ.items() if k != "OPENROUTER_API_KEY"}
         with patch.dict("os.environ", env, clear=True):
             with pytest.raises(EnvironmentError):
                 tag_speakers("テスト。", segment_speaker, all_speakers)
@@ -294,7 +294,7 @@ class TestMalformedJsonHandling:
             )
             mock_client_factory.return_value = mock_client
 
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 result = tag_speakers(raw_text, segment_speaker, all_speakers)
 
         assert len(result) == 1
@@ -313,7 +313,7 @@ class TestMalformedJsonHandling:
             mock_client.chat.completions.create.return_value = self._make_raw_response(None)
             mock_client_factory.return_value = mock_client
 
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 result = tag_speakers(raw_text, segment_speaker, all_speakers)
 
         assert len(result) == 1

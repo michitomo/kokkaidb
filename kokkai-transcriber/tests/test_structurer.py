@@ -634,7 +634,7 @@ class TestGenerateQAPairs:
             mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_data)
             mock_client_factory.return_value = mock_client
 
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 result = generate_qa_pairs(sample_utterances)
 
         assert isinstance(result, QAPairsOutput)
@@ -679,7 +679,7 @@ class TestGenerateQAPairs:
             mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_data)
             mock_client_factory.return_value = mock_client
 
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 result = generate_qa_pairs(sample_utterances)
 
         assert result.pairs[0].id == "qa_001"
@@ -713,7 +713,7 @@ class TestGenerateQAPairs:
             mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_data)
             mock_client_factory.return_value = mock_client
 
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 result = generate_qa_pairs(sample_utterances)
 
         assert len(result.pairs) == 1
@@ -764,7 +764,7 @@ class TestGenerateSessionSummary:
             mock_client = MagicMock()
             mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_data)
             mock_factory.return_value = mock_client
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 result = generate_session_summary(qa_pairs)
 
         assert result == "今回の会議では高額療養費について議論された。"
@@ -802,7 +802,7 @@ class TestGenerateTopicsAndKeyTopics:
             mock_client = MagicMock()
             mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_data)
             mock_factory.return_value = mock_client
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 topics, key_topics = generate_topics_and_key_topics(qa_pairs)
 
         assert isinstance(topics, TopicsOutput)
@@ -827,7 +827,7 @@ class TestGenerateTopicsAndKeyTopics:
             mock_client = MagicMock()
             mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_data)
             mock_factory.return_value = mock_client
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 topics, _ = generate_topics_and_key_topics(qa_pairs)
 
         assert topics.topics[0].related_qa_ids == ["qa_001"]
@@ -867,7 +867,7 @@ class TestGenerateKeyCommitments:
             mock_client = MagicMock()
             mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_data)
             mock_factory.return_value = mock_client
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 commitments = generate_key_commitments(qa_pairs)
 
         assert len(commitments) == 1
@@ -971,7 +971,7 @@ class TestGenerateQAForSegmentErrorHandling:
             )
             mock_factory.return_value = mock_client
 
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 result = _generate_qa_for_segment(segment, "context", {})
 
         assert result == []
@@ -992,7 +992,7 @@ class TestGenerateQAForSegmentErrorHandling:
             mock_client.chat.completions.create.return_value = mock_response
             mock_factory.return_value = mock_client
 
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 result = _generate_qa_for_segment(segment, "context", {})
 
         assert result == []
@@ -1008,7 +1008,7 @@ class TestGenerateQAForSegmentErrorHandling:
             )
             mock_factory.return_value = mock_client
 
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 result = _generate_qa_for_segment(segment, "context", {})
 
         assert result == []
@@ -1043,7 +1043,7 @@ class TestGenerateQAForSegmentErrorHandling:
             )
             mock_factory.return_value = mock_client
 
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 result = _generate_qa_for_segment(segment, "context", {})
 
         assert len(result) == 1
@@ -1286,7 +1286,7 @@ class TestGenerateTopicsWithoutQA:
                 _make_mock_llm_response(mock_data)
             )
             mock_factory.return_value = mock_client
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 topics, key_topics = generate_topics_without_qa(utterances)
 
         assert isinstance(topics, TopicsOutput)
@@ -1314,7 +1314,7 @@ class TestGenerateTopicsWithoutQA:
                 _make_mock_llm_response(mock_data)
             )
             mock_factory.return_value = mock_client
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 topics, key_topics = generate_topics_without_qa(utterances)
 
         assert key_topics == ["経済政策"]
@@ -1380,7 +1380,7 @@ class TestSessionSummaryRetryOnUnknownRefs:
                 _make_mock_llm_response(retry_data),
             ]
             mock_factory.return_value = mock_client
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 result = generate_session_summary(qa_pairs)
 
         assert result == "上野大臣が古川議員の質問に答弁した。"
@@ -1394,7 +1394,7 @@ class TestSessionSummaryRetryOnUnknownRefs:
             mock_client = MagicMock()
             mock_client.chat.completions.create.return_value = _make_mock_llm_response(clean_data)
             mock_factory.return_value = mock_client
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 result = generate_session_summary(qa_pairs)
 
         assert result == "上野大臣の答弁が中心であった。"
@@ -1414,7 +1414,7 @@ class TestSessionSummaryRetryOnUnknownRefs:
                 _make_mock_llm_response(retry_data),
             ]
             mock_factory.return_value = mock_client
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 result = generate_session_summary(qa_pairs)
 
         # リトライ結果を採用
@@ -1449,7 +1449,7 @@ class TestKeyCommitmentsSpeakerValidation:
             mock_client = MagicMock()
             mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_data)
             mock_factory.return_value = mock_client
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 commitments = generate_key_commitments(qa_pairs)
 
         assert len(commitments) == 1
@@ -1476,7 +1476,7 @@ class TestKeyCommitmentsSpeakerValidation:
                 _make_mock_llm_response(retry_data),
             ]
             mock_factory.return_value = mock_client
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 commitments = generate_key_commitments(qa_pairs)
 
         assert len(commitments) == 1
@@ -1497,7 +1497,7 @@ class TestKeyCommitmentsSpeakerValidation:
             mock_client = MagicMock()
             mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_data)
             mock_factory.return_value = mock_client
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 commitments = generate_key_commitments(qa_pairs)
 
         assert len(commitments) == 1

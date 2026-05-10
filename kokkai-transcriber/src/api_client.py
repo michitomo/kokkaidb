@@ -1,4 +1,9 @@
-"""共通 DeepInfra API クライアントファクトリ & 並列数設定"""
+"""共通 LLM API クライアントファクトリ & 並列数設定
+
+Whisper (Step 3/4) は DeepInfra (transcriber.py 側で独立クライアント) を使う。
+Step 4.5 / 5 / 6 (corrector / speaker_tagger / structurer / metrics) は
+本モジュール get_client() 経由で OpenRouter を使う。
+"""
 
 from __future__ import annotations
 
@@ -12,17 +17,18 @@ from typing import TypeVar
 
 import openai
 
-DEEPINFRA_BASE_URL = "https://api.deepinfra.com/v1/openai"
-LLM_MODEL = "google/gemma-4-31B-it"
+OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
+LLM_MODEL = "~google/gemini-flash-latest"
 
 # ---------------------------------------------------------------------------
 # ステップごとのデフォルト並列数
-# DeepInfra 200 concurrent limit を前提に配分
+# OpenRouter は provider 経由で rate limit が分散されるため、DeepInfra 時代と
+# 同じ 80 をそのまま使う (実測で詰まれば下げる)
 # ---------------------------------------------------------------------------
 MAX_WORKERS_AUDIO = 4        # Step 3: ffmpeg subprocess（fd重い）
 MAX_WORKERS_HLS = 8          # Step 3前段: HLSセグメント並列取得（HTTP keep-alive）
-MAX_WORKERS_WHISPER = 16     # Step 4: Whisper API
-MAX_WORKERS_LLM = 80         # Step 4.5/5/6: LLM API（fd軽い、1req=1socket）
+MAX_WORKERS_WHISPER = 16     # Step 4: Whisper API (DeepInfra)
+MAX_WORKERS_LLM = 80         # Step 4.5/5/6: LLM API (OpenRouter)
 
 
 def ensure_fd_limit(minimum: int = 2048) -> None:
@@ -120,8 +126,8 @@ def _parse_retry_after(exc: openai.RateLimitError) -> float | None:
 
 
 def get_client() -> openai.OpenAI:
-    """DeepInfra APIクライアントを返す。"""
-    api_key = os.environ.get("DEEPINFRA_API_KEY")
+    """OpenRouter APIクライアントを返す (LLM ステップ専用)。"""
+    api_key = os.environ.get("OPENROUTER_API_KEY")
     if not api_key:
-        raise OSError("DEEPINFRA_API_KEY environment variable is not set")
-    return openai.OpenAI(api_key=api_key, base_url=DEEPINFRA_BASE_URL)
+        raise OSError("OPENROUTER_API_KEY environment variable is not set")
+    return openai.OpenAI(api_key=api_key, base_url=OPENROUTER_BASE_URL)
