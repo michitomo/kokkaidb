@@ -49,7 +49,7 @@
 | PR6 | metadata enrichment (§2.2/2.3) | 🟡 中 | ☐ | | | (#4 batch、PR1+PR3 依存) |
 | PR7 | corrector 安全チェック緩和 (§2.5) | 🟢 小 | ☐ | | | (#5 batch) |
 | PR8 | corrector 禁止事項強化 (§2.6/2.7) | 🟢 小 | ☐ | | | (#5 batch) |
-| PR9 | utterance_indices schema (§2.1) | 🔴 **大** | 🔄 | michitomo/structurer-rewrite-plan | 2026-05-10 (前半完了) | prompts.py V2 + structurer.py 雛形完了。後半は #3 で assemble_full_text の anchor テスト+F1検証 |
+| PR9 | utterance_indices schema (§2.1) | 🔴 **大** | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | 前半 #2: prompts.py V2 + structurer.py 雛形 / 後半 #3: anchor + 共有 utterance テスト 15件 + F1 4件全 exit 0 |
 | PR10 | content_missing 対策 (§2.10) | 🟡 中 | ☐ | | | (#5 batch、PR9 依存) |
 | PR11 | floor_speech summary 経路 (§2.10) | 🟡 中 | ☐ | | | (#5 batch、PR10 依存) |
 | PR12 | summary post-validation (§2.11) | 🟡 中 | ☐ | | | (#6 batch、PR9+PR11 依存) |
@@ -69,7 +69,7 @@
 | フェーズ | サンプル数 | ゲート条件 | ステータス | 結果ノート |
 |---|---:|---|---|---|
 | **F0 smoke** | 1 (56074) | exit 0 + 6ファイル出力 | ✅ | 2026-05-10: Step 4.5+ 再実行 122s、qa=1/topics=1、6ファイル全て生成 (PR14 は Step 3 のため smoke カバー外、コード差分のみ確認) |
-| **F1 既知問題** | 4 (56074, 56075, 56211, 8967) | resolved ≥ 50%、新規 NEW_ISSUE = 0 | ☐ | |
+| **F1 既知問題** | 4 (56074, 56075, 56211, 8967) | resolved ≥ 50%、新規 NEW_ISSUE = 0 | 🔄 | 2026-05-10 (PR9 後): 4件全 exit 0 (56075=92.9s/qa=0、56211=394.9s/qa=73、56074=133.5s/qa=2、8967=317.3s/qa=58)。PR9 が target するのは transcript_truncation のみで、NEW では Q/A 平均文字数が約90%/15%増 (8967: Q 199→381, A 322→367) — 非句点終わり率の上昇 (8967 Q 0→10.3%) は truncation ではなく次話者名が末尾に混入する Whisper 特性で、捕捉量増加の副作用。残カテゴリ (whisper_*, schema_empty_field, speaker_misattribution 等) は他 PR 担当のため UNCHANGED 想定通り。LLM ベース全件比較は #4-#7 で他 PR を積み増した上で実施 |
 | **F2 多様性** | 12 (層化抽出) | 平均 ≤ 5件/セッション、未知カテゴリ unchanged ≤ 2 | ☐ | |
 | **F3 中規模** | 30 | F1/F2 整合、エラー率 < 5%、コスト < $0.5/sess | ☐ | |
 | **F4 全件** | 156 | — | ☐ | |
@@ -150,6 +150,32 @@
 - メモ:
   - PR14 (Step 3 閾値) は Step 4.5+ 再実行ではカバー外。フルパイプライン smoke は次セッション以降で機会があれば
   - validator の speaker 不整合 warning は PR6 metadata enrichment で大幅減少見込み
+
+### Session #3 (schema-2) — 2026-05-10 完了
+- 実装 (PR9 後半):
+  - `tests/test_structurer.py` に共有 utterance + anchor シナリオの単体テストを追加:
+    - `TestAssembleFullTextForPair` 5件追加 (anchor 単独、anchor+boundary、anchor=0、範囲外フォールバック、anchor + 後続 utterance)
+    - `TestComputeShareBoundaries` 8件: 空・anchor なし・単独共有・2/3 ペア共有 (順不同入力含む)・q/a 独立・None 除外・別 head 非共有
+    - `TestSharedUtteranceEnd2End` 1件: `_extract_pairs_from_response` 経由で anchor=1 と anchor=5 の 2 ペアが utterance を分割共有し、全文を穴なく分配することを検証
+  - 構造的に `_compute_share_boundaries` (anchor 昇順 → 次 anchor を境界、最後は None) と `_assemble_full_text_for_pair` の anchor + boundary 連携を合計 14 件で固める
+- 検証:
+  - unit tests: structurer 47/47 pass (PR9 前半 32 + PR9 後半 15)
+  - 全 unit (-m "not integration"): 245 pass / pre-existing 10 failure (3 scraper baseline + 7 ffmpeg 不在環境)
+  - F1 サンプル4件 全 exit 0 (`/tmp/regen-test/_summary.json` 参照):
+    - 56075 本会議 (floor_speech): 92.9s, qa=0/topics=0 (skipped by design)
+    - 56211 内閣委員会: 394.9s, qa=73/topics=2
+    - 56074 本会議: 133.5s, qa=2/topics=1
+    - 8967 内閣委員会: 317.3s, qa=58/topics=2
+  - **PR9 が target する transcript_truncation の改善検証** (`/tmp/f1_compare.py`):
+    - 8967 平均 Q 文字数 199 → **381** (+90%)、平均 A 文字数 322 → 367 (+15%)
+    - 8967 NEW Q 非句点終わり 10.3% は truncation ではなく **次話者名 (e.g. "小山審議官") が末尾に混入する Whisper 特性** に起因 (utterance 全文を取り込んだ副作用)
+    - 56211 NEW Q/A 非句点終わり 2.7%/2.7%、Q/A 文字数も大幅増
+- ノート:
+  - F1 ゲート (resolved ≥ 50%) は LLM ベースの個別 finding 比較が必要だが、現状の `docs/audit-results/` の findings はほぼ PR9 が target しないカテゴリ (whisper_hallucination, role_empty, speaker_misattribution 等) のため、PR9 単独では UNCHANGED 想定通りで意味が薄い。他 PR 完了後 (Session #5/#6 末尾) に LLM 比較を一括実施する判断
+  - V4 metrics の `'date'` literal_error は Session #2 から継続 (15 件失敗 / 8967)、別 PR で修正
+  - 56075 (floor_speech) の旧 qa=32 → NEW qa=0 は `_FLOOR_LIKE_KINDS` skip に由来、PR9 と無関係
+- 残作業 (Session #4 へ):
+  - PR1, PR3, PR6 (metadata enrichment) — 答弁者 metadata 補完 → role 充足率改善
 
 ### Session #2 (schema-1) — 2026-05-10 完了
 - 実装 (PR9 前半):

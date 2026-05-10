@@ -20,6 +20,8 @@ from src.structurer import (
     _assemble_full_text_for_pair,
     _build_utterance_map,
     _compute_segment_layout,
+    _compute_share_boundaries,
+    _extract_pairs_from_response,
     _fuzzy_lookup,
     _split_sentences,
     build_summary_related_laws,
@@ -241,6 +243,235 @@ class TestAssembleFullTextForPair:
         layout = _compute_segment_layout(seg)
         result = _assemble_full_text_for_pair(seg, layout, [99], None, None)
         assert result == ""
+
+    def _make_long_seg(self) -> SegmentUtterances:
+        """1 つの長文 utterance (10 文) を持つセグメント。anchor 検証用。"""
+        long_text = "".join(f"これは{i}番目の文です。" for i in range(10))
+        return SegmentUtterances(
+            segment_index=0,
+            segment_speaker="高市",
+            segment_affiliation="自由民主党",
+            start_seconds=0.0,
+            video_url="",
+            utterances=[Utterance(speaker="高市", role="答弁者", text=long_text)],
+        )
+
+    def test_anchor_with_no_boundary_slices_to_end(self) -> None:
+        """anchor あり・boundary なし: anchor から utterance 末尾まで。"""
+        seg = self._make_long_seg()
+        layout = _compute_segment_layout(seg)
+        # anchor=3 → 3,4,5,6,7,8,9 の 7 文
+        result = _assemble_full_text_for_pair(seg, layout, [0], 3, None)
+        assert "これは2番目の文です。" not in result
+        assert "これは3番目の文です。" in result
+        assert "これは9番目の文です。" in result
+
+    def test_anchor_with_boundary_slices_range(self) -> None:
+        """anchor + boundary: [anchor, boundary) のスライスのみ。"""
+        seg = self._make_long_seg()
+        layout = _compute_segment_layout(seg)
+        # anchor=2, boundary=5 → 2,3,4 の 3 文
+        result = _assemble_full_text_for_pair(seg, layout, [0], 2, 5)
+        assert "これは1番目の文です。" not in result
+        assert "これは2番目の文です。" in result
+        assert "これは4番目の文です。" in result
+        assert "これは5番目の文です。" not in result
+
+    def test_anchor_at_zero_returns_full(self) -> None:
+        """anchor=0, boundary なし: 全文と等価。"""
+        seg = self._make_long_seg()
+        layout = _compute_segment_layout(seg)
+        result = _assemble_full_text_for_pair(seg, layout, [0], 0, None)
+        assert "これは0番目の文です。" in result
+        assert "これは9番目の文です。" in result
+
+    def test_anchor_out_of_range_falls_back_to_full(self) -> None:
+        """anchor が utterance の sentence 数を超えた場合は utterance 全文にフォールバック。"""
+        seg = self._make_long_seg()
+        layout = _compute_segment_layout(seg)
+        result = _assemble_full_text_for_pair(seg, layout, [0], 999, None)
+        assert "これは0番目の文です。" in result
+        assert "これは9番目の文です。" in result
+
+    def test_anchor_plus_trailing_utterances(self) -> None:
+        """anchor 付き head + 後続 utterance: head は slice、後続は丸ごと連結。"""
+        long_text = "".join(f"head文{i}。" for i in range(8))
+        seg = SegmentUtterances(
+            segment_index=0,
+            segment_speaker="A",
+            segment_affiliation="X党",
+            start_seconds=0.0,
+            video_url="",
+            utterances=[
+                Utterance(speaker="A", role="答弁者", text=long_text),
+                Utterance(speaker="B", role="答弁者", text="後続発言。"),
+            ],
+        )
+        layout = _compute_segment_layout(seg)
+        result = _assemble_full_text_for_pair(seg, layout, [0, 1], 5, None)
+        assert "head文4。" not in result
+        assert "head文5。" in result
+        assert "head文7。" in result
+        assert "後続発言。" in result
+
+
+class TestComputeShareBoundaries:
+    """`_compute_share_boundaries` の境界計算ロジック。"""
+
+    def _pair(
+        self,
+        q_uidx: list[int] | None = None,
+        q_anchor: int | None = None,
+        a_uidx: list[int] | None = None,
+        a_anchor: int | None = None,
+    ) -> dict[str, object]:
+        return {
+            "q_uidx": q_uidx or [],
+            "q_anchor": q_anchor,
+            "a_uidx": a_uidx or [],
+            "a_anchor": a_anchor,
+        }
+
+    def test_empty_pairs(self) -> None:
+        assert _compute_share_boundaries([], "q") == []
+
+    def test_no_anchors_all_none(self) -> None:
+        """anchor なしのペアは boundary も None。"""
+        pairs = [self._pair(q_uidx=[5]), self._pair(q_uidx=[5])]
+        assert _compute_share_boundaries(pairs, "q") == [None, None]
+
+    def test_single_pair_with_anchor_unshared(self) -> None:
+        """anchor 付きでも他に共有相手がいなければ boundary は None。"""
+        pairs = [self._pair(q_uidx=[5], q_anchor=3)]
+        assert _compute_share_boundaries(pairs, "q") == [None]
+
+    def test_two_pairs_share_head_boundaries_in_anchor_order(self) -> None:
+        """同じ head を共有する 2 ペアは anchor 昇順で次の anchor が boundary。最後は None。"""
+        pairs = [
+            self._pair(q_uidx=[5], q_anchor=120),
+            self._pair(q_uidx=[5], q_anchor=145),
+        ]
+        # ソート後: pair0 (anchor=120) → boundary=145 / pair1 (anchor=145) → boundary=None
+        assert _compute_share_boundaries(pairs, "q") == [145, None]
+
+    def test_three_pairs_share_head_unsorted_input(self) -> None:
+        """LLM 出力が anchor 順でなくても正しく境界を割り当てる。"""
+        pairs = [
+            self._pair(q_uidx=[5], q_anchor=200),  # 後半
+            self._pair(q_uidx=[5], q_anchor=100),  # 前半
+            self._pair(q_uidx=[5], q_anchor=150),  # 中央
+        ]
+        # anchor 昇順: 100→150, 150→200, 200→None
+        # 元の index に戻す: pair0(200)→None, pair1(100)→150, pair2(150)→200
+        assert _compute_share_boundaries(pairs, "q") == [None, 150, 200]
+
+    def test_q_and_a_independent(self) -> None:
+        """q 側の共有は a 側に影響しない。"""
+        pairs = [
+            self._pair(q_uidx=[5], q_anchor=10, a_uidx=[7]),
+            self._pair(q_uidx=[5], q_anchor=20, a_uidx=[8]),
+        ]
+        assert _compute_share_boundaries(pairs, "q") == [20, None]
+        assert _compute_share_boundaries(pairs, "a") == [None, None]
+
+    def test_anchor_none_excluded_from_share_group(self) -> None:
+        """anchor=None のペアは共有グループに含めない (boundary 計算対象外)。"""
+        pairs = [
+            self._pair(q_uidx=[5], q_anchor=10),
+            self._pair(q_uidx=[5], q_anchor=None),  # 共有グループに入らない
+            self._pair(q_uidx=[5], q_anchor=30),
+        ]
+        # 共有グループは pair0(10), pair2(30) のみ
+        assert _compute_share_boundaries(pairs, "q") == [30, None, None]
+
+    def test_different_heads_no_sharing(self) -> None:
+        """別 utterance を head にもつペア同士は共有しない。"""
+        pairs = [
+            self._pair(q_uidx=[5], q_anchor=10),
+            self._pair(q_uidx=[6], q_anchor=20),
+        ]
+        assert _compute_share_boundaries(pairs, "q") == [None, None]
+
+
+class TestSharedUtteranceEnd2End:
+    """`_extract_pairs_from_response` を経由した共有 utterance のシナリオ。
+
+    代表質問・所信表明など 1 utterance に複数 Q または A が連なるケースを再現。
+    """
+
+    def _make_long_seg(self) -> SegmentUtterances:
+        # 質疑者 (短文) + 答弁者 (長文 12 文) の 2 utterance
+        answer_text = "".join(f"answer文{i}。" for i in range(12))
+        return SegmentUtterances(
+            segment_index=0,
+            segment_speaker="質問者",
+            segment_affiliation="X党",
+            start_seconds=0.0,
+            video_url="https://example.com/",
+            utterances=[
+                Utterance(speaker="質問者", role="質疑者", text="まとめて伺います。"),
+                Utterance(speaker="高市早苗", role="答弁者", text=answer_text),
+            ],
+        )
+
+    def test_two_answers_share_one_utterance_via_anchors(self) -> None:
+        """2 ペアが同じ答弁 utterance を anchor で分割共有する。"""
+        seg = self._make_long_seg()
+        layout = _compute_segment_layout(seg)
+        # answer utterance は seg.utterances[1] で sentences は global index 1..12
+        # (質問者 utterance の 1 文 "まとめて伺います。" が s0)
+        # → anchor を s1 (answer の先頭) と s5 (answer の途中) に置く
+        response = json.dumps({
+            "pairs": [
+                {
+                    "topic": "前半トピック",
+                    "question": {
+                        "utterance_indices": [0],
+                        "split_anchor_sentence_idx": None,
+                        "summary": "- 前半",
+                        "intent": "information_request",
+                    },
+                    "answer": {
+                        "utterance_indices": [1],
+                        "split_anchor_sentence_idx": 1,
+                        "summary": "- 前半回答",
+                    },
+                },
+                {
+                    "topic": "後半トピック",
+                    "question": {
+                        "utterance_indices": [0],
+                        "split_anchor_sentence_idx": None,
+                        "summary": "- 後半",
+                        "intent": "information_request",
+                    },
+                    "answer": {
+                        "utterance_indices": [1],
+                        "split_anchor_sentence_idx": 5,
+                        "summary": "- 後半回答",
+                    },
+                },
+            ]
+        }, ensure_ascii=False)
+
+        pairs = _extract_pairs_from_response(response, seg, layout, {})
+        assert len(pairs) == 2
+
+        a0 = pairs[0].answer.full_text
+        a1 = pairs[1].answer.full_text
+        # ペア0 は anchor=1 → boundary=5: answer 文 0..3 (global 1..4)
+        assert "answer文0。" in a0
+        assert "answer文3。" in a0
+        assert "answer文4。" not in a0
+        # ペア1 は anchor=5 → boundary=None: answer 文 4..11 (global 5..12)
+        assert "answer文0。" not in a1
+        assert "answer文4。" in a1
+        assert "answer文11。" in a1
+
+        # 全文をどちらかが拾い切ること (穴ができない)
+        combined = a0 + a1
+        for i in range(12):
+            assert f"answer文{i}。" in combined
 
 
 class TestGenerateQAPairs:
