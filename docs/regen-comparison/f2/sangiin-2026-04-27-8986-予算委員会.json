@@ -1,0 +1,264 @@
+{
+  "session_id": "sangiin/2026/04/27/8986_予算委員会",
+  "chamber": "sangiin",
+  "date": "2026-04-27",
+  "deli_id": "8986",
+  "committee": "予算委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T20:05:00Z",
+  "overall_quality": "medium",
+  "issue_count": {"high": 4, "medium": 5, "low": 6, "total": 15},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "fact_error",
+      "secondary_categories": ["metadata_missing_speaker"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.json が参議院セッションを「衆議院（委員会名不明）」と誤記",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.session_summary"
+      },
+      "evidence": "summary.json の session_summary は『衆議院（委員会名不明）において、高市早苗氏を中心に多岐にわたる質疑が行われました。』で始まる。実際は参議院・予算委員会 (metadata.chamber=sangiin, metadata.committee=予算委員会)。委員会名と所属院の両方が誤り。",
+      "estimated_cause": "summarizer プロンプトに metadata (chamber/committee) が確実に渡っておらず、LLM が文脈から推測した結果 'chamber不明' と判断して衆議院と誤記。プロンプト側で metadata を明示的に固定して与える必要あり。",
+      "downstream_impact": ["site の セッション概要表示", "検索結果スニペット", "RSS/SNS 共有時の誤情報"]
+    },
+    {
+      "id": "F002",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["role_label_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "セグメント境界またぎで答弁者発言が次の質疑者に誤帰属 (seg4/seg6/seg9)",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[9].utterances[0]",
+        "segment_index": 9
+      },
+      "evidence": "seg9 utterance[0] は speaker=木村英子, role=質疑者 だが、テキストは『一方で、この3議員におきましては、バリアフリー化などと同様に、議員活動に必要な介助を提供する…』と高市総理の答弁。同様に seg4 utterance[0] は speaker=上田清司, role=質疑者 で『前からのナフサ輸入も加速して…』と高市総理答弁、seg8 では『藤川政人君。山添拓君。』と委員長指名のみが委員長 utterance になっているが、その直後の seg6 utterance[0] では speaker=高市早苗 が正しく取れているケースもあり、ロジックが安定していない。",
+      "estimated_cause": "segment は『次の発言者の音声チャンク』で区切られており、前話者（答弁者）の余韻部分が次セグメント先頭に流入しているが、speaker_tagger/utterance splitter が segment_speaker をデフォルトで割り当てるため、境界またぎの最初の発言が常に segment_speaker (=次の質疑者) に誤帰属する。utterance 分割時に話者交代を再判定するロジックが必要。",
+      "downstream_impact": ["qa_pairs.json の対応する Q/A の混乱", "時系列分析の誤り", "speaker network 図の歪み"]
+    },
+    {
+      "id": "F003",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": ["schema_empty_field"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers の答弁者・参考人 6名で affiliation が空文字",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[*].affiliation"
+      },
+      "evidence": "metadata.speakers の答弁者/政府参考人 7名のうち 6名 (高市早苗, 上野賢一郎, 赤澤亮正, 向井浩二, 松本洋平, 小林寛一) で affiliation が ''。raw_transcript には『高市早苗内閣総理大臣』『上野賢一郎厚生労働大臣』『赤澤亮正経済産業大臣』『松本洋平文部科学大臣』『向井浩二公正取引委員会事務総局官房審議官』『小林寛一資源エネルギー庁省エネルギー部長』と肩書きが明示されているにも関わらず、metadata に反映されていない。さらに start_seconds=0.0、duration_minutes=0 も全員空。",
+      "estimated_cause": "metadata 構築時に sangiin TV detail.php の質疑者リスト (発言者表) のみを当該フィールドに使い、答弁側情報は raw_transcript からの抽出が不完全。speaker_tagger 後に再度 metadata を更新する処理がない。",
+      "downstream_impact": ["site での所属表示が空", "BYOK での所属別集計が壊れる", "ダッシュボードでの政府答弁集計の不正確さ"]
+    },
+    {
+      "id": "F004",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": ["fact_error"],
+      "severity": "high",
+      "confidence": "medium",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers に役職名 '子ども政策担当大臣' が人名として登録されている",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[12].name"
+      },
+      "evidence": "metadata.speakers[12] は name='子ども政策担当大臣', affiliation='大臣', role='答弁者'。これは個人名ではなくポートフォリオ名。raw_transcript seg1 ws@511.2 では委員長が『木川田子ども政策担当大臣。』(Whisper: 木川田 — 誤認識の可能性) と呼んでおり、実在の大臣名が抽出できなかった結果、肩書きをそのまま name に格納した。utterances.json でも speaker='子ども政策担当大臣' のまま展開。",
+      "estimated_cause": "speaker_tagger が委員長の指名フレーズから人名抽出に失敗し、肩書き文字列をフォールバックで name に採用。委員長指名の Whisper 誤認識 ('木川田' は実在性低) が直接原因の一つ。指名フレーズ → 人名解決のロジック改善と、解決失敗時に name を空のままにして role/affiliation のみ埋める設計が必要。",
+      "downstream_impact": ["qa_004 の answer.speaker='子ども政策担当大臣'", "summary.json の key_speakers が役職名混在", "話者ネットワークでの重複/孤立"]
+    },
+    {
+      "id": "F005",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs.answer.role が 57件中 56件 (98.2%) で空文字",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.role"
+      },
+      "evidence": "57件中 role='大臣' は qa_004 (子ども政策担当大臣) のみ。残り 56件 (高市早苗41, 赤澤亮正8, 小林寛一3, 上野賢一郎2, 向井浩二1, 松本洋平1) は answer.role=''。実際は raw_transcript から '内閣総理大臣' '経済産業大臣' '厚生労働大臣' '文部科学大臣' '公正取引委員会審議官' '資源エネルギー庁部長' のいずれかに分類可能。",
+      "estimated_cause": "structurer の qa_pair 生成プロンプトで answer.role を抽出する指示が機能していないか、スキーマ仕様で role を「答弁者」相当に正規化する設計が無い。raw_transcript の冒頭フレーズ ('高市早苗内閣総理大臣') から肩書き抜き出しのポストプロセスが必要。",
+      "downstream_impact": ["site の答弁者ロール表示が空", "ロール別集計クエリが破綻"]
+    },
+    {
+      "id": "F006",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs の metrics が 57件中 8件 (14.0%) で null",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].metrics"
+      },
+      "evidence": "metrics=null の qa: qa_002, qa_004, qa_006, qa_011, qa_031, qa_037, qa_048, qa_049。残りは qq1_clarity / qq2_groundedness / qq4_stakeholder / qq5_actionability などのスコア構造を持つ。null になる qa は内容的に欠陥があるわけではなく、scorer 側でランダム/間欠的な失敗。score_schema_version=2.0, prompt_version=V4 のもとで 14% も欠落するのは品質問題。",
+      "estimated_cause": "metrics scorer (LLM 呼び出し) のリトライ/フォールバック不足。タイムアウトや JSON パース失敗時に null フォールバックしている可能性。リトライ回数増+部分失敗時のスキーマ補完が必要。",
+      "downstream_impact": ["site のメトリクス表示", "QQスコア集計"]
+    },
+    {
+      "id": "F007",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["fact_error"],
+      "severity": "medium",
+      "confidence": "medium",
+      "systemic_signal": "likely_systemic",
+      "title": "参政党質疑者の名前で Whisper(大津勤) と metadata(大津力) が不一致",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[6].whisper_segments[*].text",
+        "segment_index": 6
+      },
+      "evidence": "Whisper raw text では『大津勤君』(seg6 ws@703, seg7 複数, seg7 ws@866) または『大津総務君』(seg6 ws@914) と認識。metadata.speakers および utterances.json の正規化済み speaker 名は『大津力』。qa_pairs.json qa_048 の question.full_text では『参政党の大津力でございます。』と LLM がメタデータ側の名前で raw 文字列を上書き。Whisper 0回, 大津勤 4回, 大津総務 1回。",
+      "estimated_cause": "metadata 側の人名 (sangiin TV detail.php 由来) と Whisper の音声認識結果が乖離。LLM 構造化時に metadata 優先で raw を改変する仕様。どちらが正しいかは外部ソース照合が必要だが、少なくとも『LLM が transcript を改変している』という事実は記録すべき。raw_transcript の text フィールドと whisper_segments の不整合源にもなっている。",
+      "downstream_impact": ["raw_transcript.text と qa_pairs.full_text の文字列不一致", "全文検索結果の不安定性"]
+    },
+    {
+      "id": "F008",
+      "category": "timestamp_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs の video_url が segment 先頭時刻に固定され、Q毎の正確な位置を指さない",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].video_url"
+      },
+      "evidence": "57件すべての video_url は所属 segment の start_seconds をフラグメントとして使う。例えば segment 5 内の qa_030〜qa_037 (8件) はすべて #8608.27、segment 6 内の qa_038〜qa_047 (10件) はすべて #10162.31。さらに qa_001 (=三原じゅん子の質問) は segment 0 の chairman 開会挨拶始点 (#1854.48) を指しており、実際の質問開始は segment 0 内 ws@83.3 に相当する 1937.78s。約 80 秒の誤差。",
+      "estimated_cause": "qa_pair 生成時に segment.start_seconds をそのまま video_url に使う設計。utterance / whisper_segment レベルの timestamp を Q/A 単位で再計算するロジックが必要。raw_transcript には whisper_segments に詳細時刻が残っているので参照可能。",
+      "downstream_impact": ["site の動画ジャンプリンクが質問頭出しにならない", "ユーザーが探す体験悪化"]
+    },
+    {
+      "id": "F009",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": ["schema_empty_field"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers の答弁者全員で start_seconds=0.0 となり時刻情報が欠落",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[10:].start_seconds"
+      },
+      "evidence": "metadata.speakers の質疑者 (10名) は start_seconds に有効値 (1854.48〜12804.19) が入っているが、答弁者 7名 (高市早苗, 上野賢一郎, 子ども政策担当大臣, 赤澤亮正, 向井浩二, 松本洋平, 小林寛一) は全員 start_seconds=0.0。実際は各セグメント内の最初の答弁時刻が取得可能なはず。duration_minutes も 17名全員 0。",
+      "estimated_cause": "metadata 構築時に sangiin TV の質疑者表 (start_time が表示される) しか参照しておらず、答弁者の最初の発言時刻を raw_transcript から後付けする処理が無い。",
+      "downstream_impact": ["タイムライン上で答弁者の登場時刻が示せない", "発言時間集計が常にゼロ"]
+    },
+    {
+      "id": "F010",
+      "category": "schema_inconsistency",
+      "secondary_categories": ["schema_empty_field"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata の duration/hls_url が空文字、committee_id/session_number が null",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$"
+      },
+      "evidence": "metadata.json: duration='', hls_url='', committee_id=null, session_number=null。空文字と null が混在しており、また各 speaker の start_time='' も空文字。スキーマ一貫性の観点では null 統一または値挿入が望ましい。",
+      "estimated_cause": "scrapers.sangiin の出力スキーマ標準化が不十分。空値の表現が null/空文字で混在。",
+      "downstream_impact": ["site の null チェックロジックが両方カバー必須", "JSON Schema 検証時のノイズ"]
+    },
+    {
+      "id": "F011",
+      "category": "fact_error",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "unknown",
+      "title": "metadata.llm_model が 'google/gemma-4-31B-it' (実在モデル名と思われない)",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.llm_model"
+      },
+      "evidence": "metadata.llm_model='google/gemma-4-31B-it'。Gemma の公開モデルは gemma-2/-3 系 (例: gemma-3-27b-it) であり、'gemma-4-31B-it' は2026年時点で実在しない。CLAUDE.md および既存ドキュメントでは DeepSeek V3.2 を使う設計。表記/値が誤っている可能性。",
+      "estimated_cause": "metadata 生成時に llm_model フィールドへハードコードもしくは誤った env 値が記入された。実際の使用モデルとの乖離が疑われる。",
+      "downstream_impact": ["再現実験時のモデル情報が不正確", "audit/ガバナンス上の透明性低下"]
+    },
+    {
+      "id": "F012",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "Whisper による '介助' → '解除' の同音異義誤認識 (seg9)",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[9].whisper_segments[0:3].text",
+        "segment_index": 9
+      },
+      "evidence": "seg9 ws@0.0 と ws@25.3 で『議員活動に必要な解除を提供する』『議員の国会活動中の解除費用』『各地方議会の議員活動の際の解除をどうするか』と『解除』(かいじょ=取消) を出力。文脈上は『介助』(かいじょ=支援) が正しく、utterances.json では『介助』に修正されている。",
+      "estimated_cause": "Whisper の同音異義誤認識。LLM 修正パスでは正しく 介助 に補正できているため、raw_transcript の whisper_segments と text フィールドに不整合が残る。",
+      "downstream_impact": ["raw_transcript の検索 noise", "Pagefind インデクシングで '解除' を含む雑音"]
+    },
+    {
+      "id": "F013",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "Whisper の固有名詞誤認識 ('高市早稲', '三原淳子', '木川田', '賛成党', '岩手県大津市町')",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[*].whisper_segments[*].text"
+      },
+      "evidence": "raw whisper text 中に 高市早稲 (×2 回), 三原淳子 (×2 回, 三原じゅん子=5回と混在), 賛成党 (=参政党), 木川田子ども政策担当大臣, 岩手県大津市町 (大津町 が正), 大津総務君 (大津勤の更なる崩れ) など多数。LLM 補正パスで多くは正しく直っているが、whisper_segments には残存。",
+      "estimated_cause": "Whisper large-v3-turbo の人名・地名固有表現の誤認識。サブシステムレベルの誤りであり、LLM correction で補正されるためダウンストリーム影響は限定。",
+      "downstream_impact": ["raw_transcript ベースの全文検索 noise"]
+    },
+    {
+      "id": "F014",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs の question に role/affiliation が無く、answer のみ role 持ち (非対称)",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].question"
+      },
+      "evidence": "question オブジェクトのキーは speaker / party / summary / full_text / intent。answer オブジェクトのキーは speaker / role / summary / full_text。質疑者には role フィールドがなく party のみ、答弁者には party がなく role のみ。スキーマが非対称。",
+      "estimated_cause": "structurer プロンプトのスキーマ設計上、Q/A の役割が事前に固定されている前提だが、データ利用者には対称形のほうが扱いやすい。両方に role と affiliation/party を持たせる方が望ましい。",
+      "downstream_impact": ["クエリ書きづらさ", "TS 型定義の冗長化"]
+    },
+    {
+      "id": "F015",
+      "category": "fact_error",
+      "secondary_categories": ["whisper_hallucination_loop"],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "session_specific",
+      "title": "seg1 冒頭の不可解な Whisper 出力 'ただ手は起きない'",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].whisper_segments[0].text",
+        "segment_index": 1
+      },
+      "evidence": "seg1 先頭 (ws@0.0) は『ただ手は起きない我が国の強靭性を表す政策であることを期待しております。』で始まる。文脈的には三原じゅん子の発言だが、『ただ手は起きない』は意味不明。原音声では恐らく『二度と起きない』『ふたたび起きない』など。utterances.json でもこの誤認識テキストがそのまま保持されている。",
+      "estimated_cause": "Whisper による短時間音声 (録画開始直後の発言断片) の誤認識。LLM correction が文意不明の表現をそのまま受け流したと推測。",
+      "downstream_impact": ["qa_pair 周辺コンテキストの可読性低下"]
+    }
+  ],
+  "blindspots": [
+    "raw_transcript の全 whisper_segments を逐字精査していない (代表箇所サンプリング+キーワード検索のみ)",
+    "外部の議員名簿との照合 (大津勤 vs 大津力, 子ども政策担当大臣の人名解決) は未実施 — auto モードのため外部 HTTP は不可",
+    "音声波形に直接アクセスしていないため、話者ダイアライゼーションの妥当性は raw_transcript の文脈手がかりのみで判断",
+    "raw_transcript.text と utterances.json の差分集計を全行レベルで実施していない (LLM correction による改変箇所の網羅は不完全)",
+    "qa_pairs の summary フィールドと full_text の論理整合性は代表のみ確認"
+  ]
+}

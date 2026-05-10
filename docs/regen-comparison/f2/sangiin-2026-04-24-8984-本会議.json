@@ -1,0 +1,254 @@
+{
+  "session_id": "sangiin/2026/04/24/8984_本会議",
+  "chamber": "sangiin",
+  "date": "2026-04-24",
+  "deli_id": "8984",
+  "committee": "本会議",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T20:05:00Z",
+  "overall_quality": "medium",
+  "issue_count": {"high": 2, "medium": 5, "low": 6, "total": 13},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["content_missing"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "segment 末尾の議長コール (\"小池晃君。\" 等) が前話者に誤帰属",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[3].utterances[0]",
+        "segment_index": 3,
+        "qa_id": null
+      },
+      "evidence": "segment_index=3 (segment_speaker=松山政司) の utterances[0].text 末尾に \"小池晃君。\" が含まれる (本来は議長関口昌一による次発言者の指名)。utterance.speaker は \"松山政司\", role は \"質疑者\" のまま。同様のパターンが他 segment でも観察される (例: segment 5 末尾 \"関口昌一議長日程第一...\" が utterance.speaker=関口昌一 だが \"関口昌一議長\" という話者名がテキスト先頭に leak)。話者の交代を segment 内で検出できていない。",
+      "estimated_cause": "speaker_tagger / utterance 分割段階で segment 内の話者交代 (議長による次発言者指名) を検出できず、segment_speaker をそのまま utterance.speaker に流用している。本会議では segment 末尾に議長の短い指名フレーズが頻発するため、本会議系すべてで再現する可能性が高い。",
+      "downstream_impact": ["topics.json", "summary.json"]
+    },
+    {
+      "id": "F002",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["fact_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "固有名詞・地名の誤認識多数 (川内原発→仙台原発、古賀誠→小賀誠 ほか)",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[2].utterances[0].text",
+        "segment_index": 2,
+        "qa_id": null
+      },
+      "evidence": "segment 2 (宮沢洋一): \"仙台原発の再稼働\" は実際は鹿児島県の \"川内 (せんだい) 原発\" (経産大臣在任中の2015年再稼働)。\"総理大臣正官\" は \"総理大臣秘書官\"。\"松井浩二前京都市長\" は \"松井孝治前京都市長\" (元民主党参院議員)。segment 3 (松山政司): \"小賀誠先生\" は \"古賀誠先生\" (元自民党幹事長)。\"筑後郡\" は \"筑紫郡\" の可能性が高い (福岡県に筑後郡は現存しない)。segment 4 (小池晃): \"自民党の小辻英久議員\" は \"尾辻秀久 (おつじひでひさ)\" (元厚労大臣、自殺対策で著名)、\"小山本隆議員\" は \"山本孝史 (民主党、自殺対策法立法に尽力、故人)\" の可能性が高い。",
+      "estimated_cause": "Whisper large-v3-turbo の固有名詞 (人名・地名) 誤認識。同音異字を含む議員名・地名・原発名は LLM の校正でも修復しきれていない。後段の校正パスでスピーカー DB / 議員名簿との照合が無いため再現性が高い。",
+      "downstream_impact": ["summary.json", "topics.json"]
+    },
+    {
+      "id": "F003",
+      "category": "role_label_error",
+      "secondary_categories": ["metadata_missing_speaker"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "参議院議長 関口昌一 の role が \"委員長\" と誤分類",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[0].role",
+        "segment_index": 0,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers[0]: name=\"関口昌一\", affiliation=\"参議院議長\", role=\"委員長\"。本会議には委員長は存在せず、議長 (chair_president) が正しい。utterances.json の segment 0/1/4/5 でも 関口 の utterance.role が \"委員長\" として一貫して付与されている。enum を \"委員長/質疑者\" のみに制約しているため議長を 委員長 に押し込んだ可能性。",
+      "estimated_cause": "role enum が {委員長, 質疑者, 答弁者} 等の限定セットで、議長/院長 (chair_president) が定義されていないため fallback として \"委員長\" が選択されている。本会議系セッションでは必ず再現する。",
+      "downstream_impact": ["utterances.json", "site UI 上の役職表示"]
+    },
+    {
+      "id": "F004",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": ["fact_error"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "llm_model が実態と乖離 (\"google/gemma-4-31B-it\")",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.llm_model",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json: \"llm_model\": \"google/gemma-4-31B-it\"。Gemma-4 は (cutoff 時点で) 公開されていないモデル名 (Gemma-3 まで)。さらに CLAUDE.md / ARCH.md 上の指定は DeepInfra DeepSeek V3.2。実際にどのモデルが使われたのか不明確で、後段の品質分析・モデル改善のトレーサビリティを毀損する。",
+      "estimated_cause": "structurer の metadata 出力で llm_model フィールドがハードコードあるいはモデル選択ロジックと整合していない。設定キャプチャの不備。",
+      "downstream_impact": ["audit reproducibility", "site dashboard"]
+    },
+    {
+      "id": "F005",
+      "category": "schema_inconsistency",
+      "secondary_categories": ["schema_empty_field"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata 必須フィールドの null/空文字混在 (committee_id=null, duration=\"\", start_time=\"\")",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "committee_id=null, session_number=null, duration=\"\", hls_url=\"\", speakers[*].start_time=\"\", speakers[*].duration_minutes=0。null と空文字が混在。speakers の duration_minutes が全員 0 (実際には少なくとも segments の長さから 60-200秒程度の発言時間がある)。下流クライアントは型分岐を強いられる。",
+      "estimated_cause": "structurer/metadata builder で未取得値の defaulting 規則が統一されていない (一部 None → null、一部 None → \"\"、一部 None → 0)。スキーマ定義の不徹底。",
+      "downstream_impact": ["site/lib", "Pagefind index"]
+    },
+    {
+      "id": "F006",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "\"院議\" → \"委員議\"/\"委員議会\" の繰り返し誤認識",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[2].utterances[0].text",
+        "segment_index": 2,
+        "qa_id": null
+      },
+      "evidence": "segment 2 (宮沢): \"ただいま、委員議会をもちまして、在職25年の永年在職表彰を賜り\"。segment 3 (松山): \"ただいま、委員議をもちまして、在職25年の永年在職議員として表彰を賜り\"。segment 5 (有村): \"本日、参議院の委員会をもって、永年在職議員表彰を賜り\"。本来は \"院議をもちまして\" (本会議の議決) であり、永年在職表彰の定型句。委員会と院議を取り違えると意味が逆転する (委員会 = 各分野の小会議、院議 = 本会議全員での議決)。",
+      "estimated_cause": "Whisper の音響モデルが \"いんぎ\" → \"いいんぎ/いいんかい\" にバイアスする傾向 (国会用語ドメインに弱い)。LM 校正パスで国会定型表現の再正規化が実装されていない。",
+      "downstream_impact": ["summary.json", "topics.json"]
+    },
+    {
+      "id": "F007",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["other"],
+      "severity": "medium",
+      "confidence": "medium",
+      "systemic_signal": "likely_systemic",
+      "title": "話者名がテキスト先頭に leak (\"関口昌一議長日程第一...\", \"松下新平ただいま...\")",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[5].utterances[2].text",
+        "segment_index": 5,
+        "qa_id": null
+      },
+      "evidence": "segment 5 末 (utterance speaker=関口昌一): \"関口昌一議長日程第一、人工衛星等の打ち上げ及び人工衛星の管理に関する法律案、内閣提出を議題といたします。\" — 話者名 \"関口昌一議長\" がテキスト本文先頭に混入。同様に segment 5 末 (松下新平): \"松下新平ただいま議題となりました法律案につきまして...\"、segment 11 (藤木眞也): \"藤木眞也委員長。農業近代化資金融通法改正案に賛成する旨の意見が述べられました。\"。",
+      "estimated_cause": "Whisper への音声入力前段で話者名キャプション/字幕が音声トラックに含まれている、もしくは字幕テキストを補助として LLM 校正に投入した結果テキスト本文に流入。speaker_tagger の clean-up が不十分。",
+      "downstream_impact": ["site display", "Pagefind 検索結果"]
+    },
+    {
+      "id": "F008",
+      "category": "content_missing",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "medium",
+      "systemic_signal": "likely_systemic",
+      "title": "委員長報告内の反対意見/詳細答弁が複数 segment で途中で打ち切られている",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[6].utterances[1].text",
+        "segment_index": 6,
+        "qa_id": null
+      },
+      "evidence": "segment 6 (伊藤孝江) 末: \"日本共産党を代表して二品委員より、\" でテキスト終了。次 segment 7 冒頭 \"本法律案に反対する旨の意見が述べられました。\" で続く。同様に segment 7 末 \"共同で利用する。\" で唐突に終了 → segment 8 冒頭 \"総裁は会議録によって御承知願います。\" (\"詳細\" の誤認識?)。segment 8 末 \"詳細は会議録\" → segment 9 冒頭 \"国によって御承知願います。\" — 内容が segment 境界で歯抜けになっている可能性。",
+      "estimated_cause": "音声 chunk の境界で発言の中間が欠落している (HLS セグメント分割 + Whisper の chunk 切り出しで overlap が不足)。または speaker_tagger が直前話者名と被るフレーズを別 segment 起点として落としている。",
+      "downstream_impact": ["summary.json", "topics.json", "law-level 集計"]
+    },
+    {
+      "id": "F009",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs.json の prompt_version が空文字",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.prompt_version",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "qa_pairs.json: {\"pairs\": [], \"score_schema_version\": \"1.0\", \"prompt_version\": \"\"}。score_schema_version は値があるが prompt_version は空文字。session_kind=floor_speech で pairs=[] は意図通りだが、prompt_version は使用したプロンプトのバージョンを示すべきメタ情報。",
+      "estimated_cause": "floor_speech 経路では QA プロンプトを実行しないため prompt_version を記録するロジックが skip されているが、空文字でなく null か \"n/a (floor_speech)\" などの明示値が望ましい。",
+      "downstream_impact": ["audit reproducibility"]
+    },
+    {
+      "id": "F010",
+      "category": "summary_qa_divergence",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "session_specific",
+      "title": "topics[0].related_speakers が description の \"4名\" と齟齬 (実際 6名 listed)",
+      "location": {
+        "file": "topics.json",
+        "json_path": "$.topics[0]",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "topics[0].description=\"在職25年を迎えた議員4名への表彰...\" だが related_speakers は 6名 (関口昌一, 水岡俊一, 宮沢洋一, 松山政司, 小池晃, 有村治子)。議長と祝辞者を含めるなら description で言及すべき。topic 内の number 表現と speakers リストの不整合。",
+      "estimated_cause": "topics 生成 LLM が description を被表彰者ベース、related_speakers を発言者ベースで生成した結果のミスマッチ。topic 内整合性チェックなし。",
+      "downstream_impact": ["site UI", "trust"]
+    },
+    {
+      "id": "F011",
+      "category": "timestamp_inconsistency",
+      "secondary_categories": ["schema_empty_field"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers[*].start_time が全員空文字、duration_minutes が全員 0",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[*].start_time",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "12名の speakers すべてで start_time=\"\"、duration_minutes=0。start_seconds は値ありなので H:MM:SS 形式への変換は機械的に可能なはずだが空欄。duration_minutes も 0 で初期化されたまま (実発言時間 60-400秒の発言が複数ある)。",
+      "estimated_cause": "structurer が start_seconds から start_time / duration_minutes を派生計算するステップを skip している。enrichment ロジック未実装または未呼び出し。",
+      "downstream_impact": ["site UI (時刻表示)", "duration ベースの集計/可視化"]
+    },
+    {
+      "id": "F012",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "low",
+      "systemic_signal": "session_specific",
+      "title": "有村治子発言: \"投落戦場の選挙\" は \"当落戦上の選挙\"/\"当落線上の選挙\" の誤認識疑い",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[5].utterances[0].text",
+        "segment_index": 5,
+        "qa_id": null
+      },
+      "evidence": "segment 5: \"投落戦場の選挙を抱える国会議員として\"。文脈から \"当落線上の選挙\" (touraku-senjou) の誤認識と推測される。下流に大きな影響はないが文意が崩れる。",
+      "estimated_cause": "Whisper の同音異義語誤りと LM 校正の見落とし。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F013",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "raw_transcript.segments[*].speaker が全 segment で null (speaker_name は付与されているが \"speaker\" は空)",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[*].speaker",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.segments[*] には speaker_name フィールドが付与されているが、別途 speaker フィールドが全 segment で null。同名フィールドが2つ存在 (speaker / speaker_name) するスキーマ定義が冗長で、片方のみ埋まっている。",
+      "estimated_cause": "transcriber → speaker_tagger 移行時にフィールド名を speaker_name に変更したが、旧 speaker フィールドを残したまま null で出力している。スキーマクリーンアップ未完。",
+      "downstream_impact": ["downstream parsing complexity"]
+    }
+  ],
+  "blindspots": [
+    "raw_transcript.whisper_segments の word-level 時刻整合性は確認していない",
+    "外部の議員名簿 (参議院公式) との人名照合は手動の知識ベースのみで未自動化",
+    "音声本体を聞いておらず、Whisper の固有名詞誤認識のうち本当の発話とのズレは紙のみで判定 (川内原発/仙台原発などは状況強い、その他は推測含む)",
+    "topics の related_speakers が utterances 上の発言者と完全一致するかは抜き取り確認のみ",
+    "session_kind=floor_speech 経路の topics 生成プロンプトに対する横断比較は未実施"
+  ]
+}

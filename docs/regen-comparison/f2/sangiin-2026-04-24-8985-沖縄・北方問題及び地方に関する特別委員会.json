@@ -1,0 +1,308 @@
+{
+  "session_id": "sangiin/2026/04/24/8985_沖縄・北方問題及び地方に関する特別委員会",
+  "chamber": "sangiin",
+  "date": "2026-04-24",
+  "deli_id": "8985",
+  "committee": "沖縄・北方問題及び地方に関する特別委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T20:05:00Z",
+  "overall_quality": "medium",
+  "issue_count": {"high": 4, "medium": 7, "low": 5, "total": 16},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["speaker_misattribution", "duplicate"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "木原稔大臣を「木川田」と誤認識し別人扱い (4 qa_pairs / 多数utterances)",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[?(@.answer.speaker=='木川田内閣府特命担当大臣')]",
+        "segment_index": 6,
+        "qa_id": "qa_040"
+      },
+      "evidence": "raw_transcript.json segments[6] では「木川田大臣」「木川田内閣府特命担当大臣」「木川田大革命担当大臣」と多数登場 (Whisper raw)。一方 segment_speakers 含む複数箇所では同一人物が「木原稔」「木原大臣」と正しく文字起こしされている (segment 2, segment 7 qa_051)。例: segment 6 utterance「梅村みずほ参政党…沖縄北方大臣であります、木原大臣に対してですね、お伺いしたい」と本人は呼んでいるが、答弁話者は metadata.speakers と qa_pairs では「木川田内閣府特命担当大臣」として別エントリ化。実在の閣僚は『木原稔』であり『木川田』という大臣は存在しない。",
+      "estimated_cause": "Whisper が「きはら」を「きかわだ」と誤認識する箇所が多発し、speaker_tagger / structurer が補正せずそのまま別人として保持。metadata.speakers でも木原稔(答弁者) / 木原(答弁者) / 木川田内閣府特命担当大臣(答弁者) と3エントリに分裂。",
+      "downstream_impact": ["metadata.json", "utterances.json", "qa_pairs.json", "topics.json"]
+    },
+    {
+      "id": "F002",
+      "category": "content_missing",
+      "secondary_categories": ["speaker_misattribution"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "鈴木宗男のアイヌ発言 (約2分) が segment 2 (徳永エリ) 冒頭にリーク",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[2].utterances[0]",
+        "segment_index": 2,
+        "qa_id": null
+      },
+      "evidence": "utterances.json segments[2].utterances[0] は speaker=横沢高徳 (委員長) として「これはこの委員会にいる先生方も…我々子供の頃、私はアイヌの子と長焼き合った…毛深いとか臭いとか…差別したんです…一部国会議員の中でもアイヌの民族は先住民族でないという話をする人に言っても…」と記録されているが、内容は明らかに鈴木宗男のアイヌ問題演説の続き。raw_transcript.json segments[2].whisper_segments[0..1] (start=0.0〜53.7秒) と segment[1] 末尾内容と接続している。segment 2 (徳永エリ) の本来開始は raw segments[2].whisper_segments[3] (start=54.2 秒, 「立憲民主党の徳永エリ…」) から。最初の53秒が前話者 (鈴木宗男) のクロージング発言で、それが committee chair に誤帰属。",
+      "estimated_cause": "audio_extractor の話者切替境界が音声タイムスタンプ約54秒分後ろにずれ、segment 2 の冒頭に前話者音声が混入。speaker_tagger は当該クリップの前提話者 (徳永エリ) と内容の不整合を検出できず、「みなさんに理解いただきたい」調から委員長と推定して付与した可能性が高い。qa_pairs にこの内容を扱う pair が存在せず情報欠落も発生。",
+      "downstream_impact": ["qa_pairs.json", "summary.json", "topics.json"]
+    },
+    {
+      "id": "F003",
+      "category": "duplicate",
+      "secondary_categories": ["metadata_missing_speaker", "schema_inconsistency"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers に同一人物が複数表記で重複登録 (8件以上)",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json speakers 配列に: (1) 茂木敏充 と 茂木外務大臣 (大臣), (2) 木原稔 と 木原, (3) 金子恵美子 と 金子大臣, (4) 木原稔 と 木川田内閣府特命担当大臣 (Whisper誤認識による別エントリ — F001参照), (5) 宮崎正夫 と 宮崎, (6) 茂原 (single — おそらく茂木の誤認識), が並列して登録。33エントリ中、実体としては 10〜12 名程度の重複構造。役職フィールドも『大臣』(役職のみ) ないし『木川田内閣府特命担当大臣』(肩書フル文字列を name と affiliation 両方に重複代入) と混在。",
+      "estimated_cause": "speaker_tagger / metadata generator が同一発話者の異なる呼ばれ方 (フルネーム / 苗字 / 肩書) を正規化せず別話者として保持。metadata.speakers の重複排除ロジック欠落。",
+      "downstream_impact": ["site UI (話者フィルタ)", "topics.json (related_speakers)", "summary.json"]
+    },
+    {
+      "id": "F004",
+      "category": "summary_qa_divergence",
+      "secondary_categories": ["fact_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.session_summary が衆議院セッションと誤記述",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.session_summary",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "summary.json: \"衆議院（委員会名不明）において、茂木敏充外務大臣、木原稔大臣、金子恵美子大臣らが出席し…\" と冒頭から chamber を誤記述。本セッションは参議院 (chamber=sangiin、source_url=webtv.sangiin.go.jp)、委員会名は metadata に「沖縄・北方問題及び地方に関する特別委員会」と明記されている。",
+      "estimated_cause": "structurer prompt に chamber / committee 情報が渡されておらず、LLM が出力ラベルから推測 (失敗) してハルシネートしたと推定。",
+      "downstream_impact": ["site (sessionページ要約表示)", "search-index"]
+    },
+    {
+      "id": "F005",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs.answer.role が 39/59 (66%) で空文字",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "59 pairs 中 answer.role==\"\" が 39件 (例: qa_001 茂木敏充 役職なし, qa_006 木原稔 役職なし, qa_008 小泉進次郎 役職なし, qa_055 金子恵美子 役職なし)。一方で qa_015 茂木外務大臣 role=\"大臣\"、qa_021 梶田装備技術部長 role=\"部長\" のように肩書相当文字列が入る場合もあり、表記方針が一貫しない。fullname (茂木敏充) のときは role 空、肩書込み name のときは role に役職部分を切り出す、という分岐が想定される。",
+      "estimated_cause": "structurer が name / role 切り出しを Whisper 出力の話者ラベル文字列に依存。ラベルが本名のみの場合に role を抽出できず空文字に。",
+      "downstream_impact": ["site (qa pair card 表示)", "search-index"]
+    },
+    {
+      "id": "F006",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metrics=null が 11/59 (18.6%) — 序盤 qa_pairs 集中",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].metrics",
+        "segment_index": null,
+        "qa_id": "qa_001"
+      },
+      "evidence": "qa_001, qa_002, qa_009, qa_010, qa_012, qa_014, qa_020, qa_021, qa_027, qa_036, qa_051 が metrics=null。残り48件は完全な metrics オブジェクトを持つ。前半セッションに偏り、特に segment 1〜3 で多発 (鈴木宗男セッション全5件中2件 null)。",
+      "estimated_cause": "metrics 評価フェーズの LLM 呼び出しが一部 pair で失敗または truncate し、null fallback された可能性。retry 機構不足。",
+      "downstream_impact": ["site (5W1H スコア表示)", "ダッシュボード"]
+    },
+    {
+      "id": "F007",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers に 33 エントリのうち答弁者の duration_minutes 全件 0、start_seconds 0",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[*]",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "答弁者 (茂木敏充以下24名) は全員 start_seconds=0.0、duration_minutes=0、start_time=空。質疑者 (鈴木宗男〜伊勢崎賢治の9名) のみ start_seconds が実値。durations 全件 0 で、実際の発話時間情報が完全欠落。",
+      "estimated_cause": "metadata builder が segment_speaker (= 質疑者の主軸) からのみ duration / start を埋め、答弁者は枠だけ作って中身 0 のまま追加。",
+      "downstream_impact": ["site (話者プロフィール / タイムライン)", "ダッシュボード"]
+    },
+    {
+      "id": "F008",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.json の committee_id / session_number / duration / hls_url / start_time 空または null",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "committee_id=null, session_number=null, duration=\"\", hls_url=\"\", speakers[*].start_time=\"\". null と空文字が混在しており型一貫性が欠ける。duration は約 13900 秒 (ラスト segment 13622 + 数百秒) のはずだが空文字。hls_url は parser でセッション全体の m3u8 URL が取れているはずだが空。",
+      "estimated_cause": "metadata builder が必須でない field を保留したまま書き出し。null と \"\" の使い分け規約が未定義。",
+      "downstream_impact": ["site (詳細ページの動画リンク等)"]
+    },
+    {
+      "id": "F009",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["fact_error"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "宮森小学校 → 宮盛小学校 (1959年米軍機墜落事故の地名誤認識)",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[5].question.full_text",
+        "segment_index": 2,
+        "qa_id": "qa_006"
+      },
+      "evidence": "qa_006 question full_text: 「1959年、17人が死亡した宮盛小学校米軍機墜落事故」。実際の事件は 1959 年 6 月 30 日、沖縄県石川市 (現うるま市) の『宮森小学校』への米軍ジェット機墜落事故。raw_transcript segments[2].whisper_segments[3] でも「宮盛」と誤認識。",
+      "estimated_cause": "Whisper の固有地名辞書に宮森小学校が含まれず音響的に近い「宮盛」を出力。LLM 後処理でも歴史的名称への正規化未実装。",
+      "downstream_impact": ["search-index", "事実検証性"]
+    },
+    {
+      "id": "F010",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "session_specific",
+      "title": "「アイヌ」が「愛の」「藍野」と raw_transcript で複数誤記",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].whisper_segments[*].text",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript segments[1] 末尾「私は沖縄・北方担当大臣が今、藍野政策の担当なんです。ならば委員長…これは本来は藍野問題は、沖縄・北方委員会で扱うべき」、segments[2] 冒頭「私は愛の子供と長焼き合った…愛の民族は先住民族でない」と表記揺れ。utterances / qa_pairs では「アイヌ」に修正済みだが raw に残置。",
+      "estimated_cause": "Whisper が一部箇所で『アイヌ』を漢字交じりに変換。後続正規化で修正されているため利用面の影響は限定的。",
+      "downstream_impact": ["raw_transcript ダウンロード利用時"]
+    },
+    {
+      "id": "F011",
+      "category": "content_missing",
+      "secondary_categories": ["timestamp_inconsistency"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "segment 6 末尾に岩渕友の冒頭発言がリーク (segment 7 へ持ち越し未完)",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[6].utterances[14]",
+        "segment_index": 6,
+        "qa_id": null
+      },
+      "evidence": "segment_speaker=梅村みずほ の segment 6 だが、最終 utterance (15個目) が「はい、日本共産党の岩渕友です。根室市の八原浜にある根室国後・色丹館海底電信線陸揚げ施設…」と岩渕友の演説冒頭。続く segment 7 (segment_speaker=岩渕友) では「北方領土関連施設として、初めて国の登録有形文化財となりました」と中途から開始しており、根室国後館の固有名詞紹介の前半が segment 6 にリークしたまま、segment 7 では文意が連続しない。",
+      "estimated_cause": "audio_extractor の境界が次話者の冒頭まで含めるオーバーラップ仕様で、speaker_tagger は内容から岩渕友と判定したが segment 移動はせず残置。F002 と同種の問題が複数 segment 境界で発生。",
+      "downstream_impact": ["qa_pairs.json (qa_046 文意連続性)", "summary.json"]
+    },
+    {
+      "id": "F012",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["whisper_misrecognition"],
+      "severity": "medium",
+      "confidence": "medium",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_023 答弁者「茂原」は実在閣僚名でなく茂木敏充誤認識の可能性",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[?(@.id=='qa_023')].answer.speaker",
+        "segment_index": 4,
+        "qa_id": "qa_023"
+      },
+      "evidence": "qa_023 (普天間飛行場の返還条件) の answer.speaker=「茂原」だが、metadata.speakers でも affiliation 空・role=政府参考人。質問者 窪田哲也は普天間返還条件を質問しており通常は外務大臣 (茂木) または防衛副大臣 (宮崎) が答える内容。「茂原」という政府参考人 / 大臣が当該委員会答弁者に該当する記録なし。Whisper が『茂木』を『茂原』と取り違えた可能性が高い。",
+      "estimated_cause": "Whisper で『もてぎ』を『もはら』に近接認識し、speaker_tagger / structurer が当該名を保持。",
+      "downstream_impact": ["qa_023 信頼性"]
+    },
+    {
+      "id": "F013",
+      "category": "duplicate",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs answer.speaker に苗字のみ vs 苗字+肩書 vs フルネームが混在",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.speaker",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "answer.speaker のユニーク値 25 件のうち、(a) フルネーム『茂木敏充』『木原稔』『金子恵美子』『小泉進次郎』『宮崎正夫』、(b) 苗字+肩書『茂木外務大臣』『金子大臣』『木川田内閣府特命担当大臣』、(c) 苗字のみ『木原』『宮崎』『梶山』『三浦』『津島』『渡辺』『茂原』『原田』『魚谷』『長崎』、(d) 役職+苗字『梶田装備技術部長』『河野次長』『野村審議官』『黒瀬政策統括官』が混在。同一人物が複数表記で別 pair に登録される。",
+      "estimated_cause": "speaker_tagger が Whisper のラベル文字列をそのまま保持し、表記正規化辞書を持たない。",
+      "downstream_impact": ["site (話者フィルタ)", "topics.json related_speakers"]
+    },
+    {
+      "id": "F014",
+      "category": "fact_error",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "session_specific",
+      "title": "summary.key_commitments の role に『役職名（主要1つ）』というプレースホルダ文字列",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments[0].role",
+        "segment_index": null,
+        "qa_id": "qa_014"
+      },
+      "evidence": "key_commitments[0]: speaker=笹野徹, role=\"役職名（主要1つ）\", text=\"令和8年度までに受入れ基本要領を作成する予定である\"。実際の笹野徹は内閣官房審議官 (政府参考人)。LLM がプロンプトのプレースホルダを答えとして出力した形跡。",
+      "estimated_cause": "structurer prompt の few-shot またはスキーマ説明テキストの『役職名（主要1つ）』ガイドをそのまま値としてコピーした LLM の指示追従ミス。",
+      "downstream_impact": ["site (key_commitments セクション表示)"]
+    },
+    {
+      "id": "F015",
+      "category": "fact_error",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "session_specific",
+      "title": "竹石智子 (本来) → 武石智子 (誤記) の固有人名表記",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[6].utterances[6].text",
+        "segment_index": 6,
+        "qa_id": "qa_040"
+      },
+      "evidence": "segment 5 ラスト (梅村みずほ冒頭) では『17歳の竹石智子さんが亡くなった』と表記。segment 6 中盤では『武石智子さん、17歳で命を失われた高校生』と別漢字表記。実在の遺族公開情報では Whisper の双方とも参照精度が不確実だが、同一発話者が同一被害者を 2 文字違いで指している点は不整合。",
+      "estimated_cause": "Whisper が長文中で固有名詞を異なる漢字割当で出力、structurer 段階で同一個人として正規化されず。",
+      "downstream_impact": ["qa_040 全文の信頼性"]
+    },
+    {
+      "id": "F016",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.llm_model = 'google/gemma-4-31B-it' (実在しないモデル名)",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.llm_model",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.llm_model=\"google/gemma-4-31B-it\"。CLAUDE.md / ARCH.md ではこのプロジェクトの構造化LLMは『DeepInfra DeepSeek V3.2』。プロジェクト全体の使用モデルと整合せず、また Google の Gemma に 4-31B-it という SKU は (公開モデルラインナップ上) 存在しない。",
+      "estimated_cause": "structurer / metadata_writer のモデル名取得経路がハードコード or 環境変数誤設定。あるいは実験用モデル切替時の記録ミス。",
+      "downstream_impact": ["品質監査 (どのLLM由来か追跡不能)", "再現性"]
+    }
+  ],
+  "blindspots": [
+    "実音声 (HLS) を聴いて Whisper 誤認識を確認していない (テキスト整合性のみ)",
+    "実在の議員役職データベース (国会議員一覧) との完全照合は未実施",
+    "全 segment の whisper_segment 単位での timestamp 精査は実施せず代表 segment のみサンプリング",
+    "raw_transcript_input.json と raw_transcript.json の差分 (corrected フラグ) を逐字検証していない",
+    "qa_pairs.related_law_ids に登場する clb-5195 の妥当性 (実在法令との対応) は確認できず"
+  ]
+}

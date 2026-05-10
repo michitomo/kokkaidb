@@ -1,0 +1,269 @@
+{
+  "session_id": "sangiin/2026/04/20/8966_こども・子育て・若者活躍に関する特別委員会",
+  "chamber": "sangiin",
+  "date": "2026-04-20",
+  "deli_id": "8966",
+  "committee": "こども・子育て・若者活躍に関する特別委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T20:05:00Z",
+  "overall_quality": "medium",
+  "issue_count": {"high": 4, "medium": 7, "low": 4, "total": 15},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "fact_error",
+      "secondary_categories": ["summary_qa_divergence"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.session_summary が「衆議院（委員会名不明）」と誤記",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.session_summary"
+      },
+      "evidence": "summary.json 冒頭: 「衆議院（委員会名不明）において、木川田内閣府特命担当大臣や木原稔、高市早苗らが出席し...」。実際は参議院こども・子育て・若者活躍に関する特別委員会 (sid=8966)。metadata.json は chamber=sangiin / committee=こども・子育て・若者活躍に関する特別委員会 を持っているにもかかわらず、要約LLMにこのコンテキストが渡らず誤生成された。",
+      "estimated_cause": "structurer/summarizer 段階で metadata の chamber/committee がプロンプトに注入されておらず、LLM がデフォルトで「衆議院」かつ「委員会名不明」と書いてしまった。委員会フィールドが空だと推測した可能性。",
+      "downstream_impact": ["site/UI 上の概要表示", "検索インデックス"]
+    },
+    {
+      "id": "F002",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["content_missing"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_033 の question.full_text に答弁者の発言が混入",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[32].question.full_text",
+        "qa_id": "qa_033",
+        "segment_index": 5
+      },
+      "evidence": "qa_033 question.full_text は「宮崎勝。内閣府特命担当大臣。保育については、民間施設においても、公立施設と同水準の保育を提供できるよう、公定価格における保育士等の人件費は、公務員の給与水準に準拠しております…」と続き、約1,000字以上が実際は答弁者（高市早苗 内閣府特命担当大臣）の答弁内容。宮崎勝の本来の質問本文は最後の数文「補正の希望感です…可能な範囲でお答えいただければ…」のみ。answer.full_text には別の発話「議論が始まったばかりでございますので…」が入る。Q→A 境界の誤分割。",
+      "estimated_cause": "speaker_tagger / utterance segmentation が委員長の話者切替指示「内閣府特命担当大臣。」を見落とし、宮崎勝の utterance 末尾に大臣の答弁を結合した。Whisper transcript には話者交替明示マーカーがないため、構造化段階で適切に区切れていない。",
+      "downstream_impact": ["site/QAPairCard 表示", "summary key_commitments の根拠破綻", "検索結果の発話帰属誤り"]
+    },
+    {
+      "id": "F003",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["content_missing"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_050 の question.full_text に大臣答弁が混入し質問者発話に紛れている",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[49].question.full_text",
+        "qa_id": "qa_050",
+        "segment_index": 8
+      },
+      "evidence": "qa_050 question.full_text 冒頭: 「吉良よし子（日本共産党）議員ご指摘の塾や習い事、この場所についても、子どもが自分の居場所だと思えば…ハラスメントなどの人権侵害を受けることは決して許されません。このため、令和5年12月に閣議決定しました。あらゆる機会をとらえて働きかけてまいりたいと考えております。はい。習い事も大事な子どもたちの居場所であって…」。前半は明らかに大臣答弁（「考えております」「働きかけてまいりたい」）であり、吉良議員の質問発話と結合している。",
+      "estimated_cause": "F002 と同根。話者交替検出が不十分で、前 qa の答弁末尾が次 qa の質問頭部に取り込まれている。委員長の指名 utterance を区切りとして使えていない。",
+      "downstream_impact": ["UI 表示", "「議員ご指摘の」のような答弁敬語が質問者のセリフとして表示される"]
+    },
+    {
+      "id": "F004",
+      "category": "duplicate",
+      "secondary_categories": ["whisper_misrecognition", "metadata_missing_speaker"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "同一人物が複数の表記ゆれで speakers リストに重複登録 (中村・斉藤・川野)",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers"
+      },
+      "evidence": "metadata.speakers に同一人物が表記ゆれで複数登録: 「中村生育局長 / 中村政役 / 中村局長」(子ども家庭庁成育局長)、「斉藤支援局長 / 斎藤支援局長」(子ども家庭庁支援局長)、「川野政策立案総括審議官 / 川野審議官」(厚労省)。「中村政役」は Whisper の誤認識「中村成育局長」→「中村政役局長」を切り出したもので、qa_pairs でも qa_024〜qa_030 の answer.speaker に「中村政役」が使われている。各エントリの role/affiliation も統一されておらず (「中村政役」は affiliation 空、他は局長)、利用者から見て別人物に見える。",
+      "estimated_cause": "speaker_tagger が utterance ごとに独立して話者を抽出し、同一人物の表記正規化／集約を行っていない。Whisper が同じ話者紹介を毎回少しずつ違う読みで起こしているため、表記ゆれが累積する。",
+      "downstream_impact": ["topics.related_speakers が分裂", "ダッシュボードの発言者統計が水増し", "speakers ファセット検索で同一人物が複数項目に"]
+    },
+    {
+      "id": "F005",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["metadata_missing_speaker"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「木川田内閣府特命担当大臣」は実在しないWhisper誤認識（こども政策担当大臣の取違え）",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[14]"
+      },
+      "evidence": "metadata.speakers[14].name=「木川田内閣府特命担当大臣」だが、参議院公開資料および本会議録の文脈では「木川田」姓のこども政策担当大臣は2026年時点で実在しない。raw_transcript seg2 で委員長が「最後に木川田大臣」と呼んでいるのは Whisper の誤認識（実在の現職こども政策担当大臣の取り違え）。同セッションには別途 qa_014/qa_022/qa_023/qa_032/qa_040〜qa_044 の answer.speaker として「木原稔」（実在の閣僚名）も並列で登場し、共存矛盾している。",
+      "estimated_cause": "Whisper が委員長の話者交代呼びかけを誤認識。speaker_tagger は raw transcript の literal 文字列をそのまま採用しており、固有名詞 dictionary や閣僚名簿との照合（post-correction）が無い。",
+      "downstream_impact": ["summary 冒頭の「木川田内閣府特命担当大臣」記述", "topics related_speakers", "外部ユーザの誤情報取得"]
+    },
+    {
+      "id": "F006",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["metadata_missing_speaker"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「包み審議官」は法務省「鶴海(つるみ)」等の誤認識と推定",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[24]",
+        "qa_id": "qa_051"
+      },
+      "evidence": "raw_transcript seg8: 「法務省大臣官房、包み審議官。」「包み」姓の法務省大臣官房審議官は実在せず、Whisper の誤認識と判断される。qa_051 でこの不正な人名が answer.speaker として伝播し、metadata.speakers にも残存。",
+      "estimated_cause": "F005 と同様の構造的問題。Whisper が日常語に近い音にスナップ（「包み」）し、閣僚・幹部名簿との照合 post-correction が行われていない。",
+      "downstream_impact": ["qa_051 表示", "metadata.speakers の信頼度低下"]
+    },
+    {
+      "id": "F007",
+      "category": "schema_inconsistency",
+      "secondary_categories": ["role_label_error"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "高市早苗の役職表記が summary と raw_transcript で不一致 (大臣 vs 内閣総理大臣)",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments[2:4].role"
+      },
+      "evidence": "raw_transcript seg5 で委員長が「高市内閣総理大臣。」と呼びかけているにもかかわらず、metadata.speakers では「高市早苗 / role=答弁者 / affiliation=空」、summary.key_commitments[2,3] では role=「大臣」。qa_pairs の answer.role も空。役職名解決が複数箇所で揃っていない。",
+      "estimated_cause": "Whisper の発話文字列から role を機械的に抽出する処理が無く、speaker_tagger は role を空のままにし、structurer/summarizer が「大臣」と短縮した。「内閣総理大臣」という重要肩書が捨てられている。",
+      "downstream_impact": ["summary 表示", "ダッシュボードでの首相発言検索が引っかからない"]
+    },
+    {
+      "id": "F008",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs の question.role が55件中55件すべて空、answer.role が19件空",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].question.role"
+      },
+      "evidence": "55 pairs 全てで question.role が None / 不在。answer.role は 19/55 (34.5%) が空文字（特に 木原稔・中村政役・高市早苗の答弁）。spkは入っているが役職が抜ける。",
+      "estimated_cause": "structurer のスキーマで question 側の role を求めていない／output schema が optional のまま放置。answer.role は metadata.speakers のテーブル参照失敗時に空フォールバック。",
+      "downstream_impact": ["UI フィルタ「答弁者ロール別」が機能しない", "検索インデックスのファセット欠落"]
+    },
+    {
+      "id": "F009",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs.metrics が13件 (23.6%) で null、start_seconds/duration_seconds は全件 None",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].metrics"
+      },
+      "evidence": "13/55 pairs で metrics=null。pairs[*] には start_seconds / duration_seconds キーが存在せず（None）、video_url は segment-level の start のみで個別 qa の精密な時刻に紐付かない。すべての qa_001〜qa_004 が同じ video_url 1911.39 を共有。",
+      "estimated_cause": "metrics 抽出が一部 LLM 呼び出しで失敗し null フォールバック。qa-level の start_seconds は構造化段階で生成されておらず、video_url は segment 起点 fallback のみ。",
+      "downstream_impact": ["タイムスタンプ近接ジャンプ機能の精度低下", "重要度スコアでの並び替え不可"]
+    },
+    {
+      "id": "F010",
+      "category": "timestamp_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_045 の segment_index=6 だが質問者は seg7 の中田優子 (動画URLが先頭9088.54で前話者位置を指す)",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[44]",
+        "qa_id": "qa_045",
+        "segment_index": 6
+      },
+      "evidence": "qa_045 segment_index=6 / video_url = #9088.54 (高木かおり開始時刻)。しかし question.speaker=中田優子 で、中田の発話は seg7 の start_seconds=9857.51 から。動画URLをクリックすると約 13分前の高木かおりの質疑から再生される。",
+      "estimated_cause": "委員長による話者交代「中田優子君。」が seg6 の末尾に含まれる構成 (raw_transcript seg6 末尾に中田の挨拶冒頭まで取り込み) で、qa 抽出が segment_index を seg6 のままにしている。Q→A の utterance source 判定が segment 境界に追従しない。",
+      "downstream_impact": ["video 再生位置が13分ズレ", "UI 上の seg ナビゲーション不整合"]
+    },
+    {
+      "id": "F011",
+      "category": "fact_error",
+      "secondary_categories": ["whisper_misrecognition"],
+      "severity": "medium",
+      "confidence": "medium",
+      "systemic_signal": "likely_systemic",
+      "title": "raw_transcript 開会冒頭「総合的な対策自立に関する調査」「対策受立に関する調査」と表記揺れ",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[0].text",
+        "segment_index": 0
+      },
+      "evidence": "seg0 内に「総合的な対策自立に関する調査」「総合的な対策受立に関する調査」が並存。実際の参議院議事規則上は「樹立 (じゅりつ)」が正しく、Whisper の誤認識。同 seg 内で表記が異なるのは LLM 校正でも修正されていない。",
+      "estimated_cause": "Whisper の誤起こしを後段の corrector が日本語の同音異義語置換だけでカバーしきれていない。「樹立」「自立」「受立」が混在。",
+      "downstream_impact": ["セッション冒頭の開会宣言の信頼性", "全文検索でヒットさせるべきキーワードが見つからない"]
+    },
+    {
+      "id": "F012",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.duration='' / hls_url='' / committee_id=null / session_number=null の混在",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$"
+      },
+      "evidence": "metadata.json に duration=\"\" (空文字)、hls_url=\"\" (空文字)、committee_id=null、session_number=null が混在。型整合性なし。speakers[*].start_time も空文字、duration_minutes は 0 (未測定の意味で integer)。",
+      "estimated_cause": "scraper/structurer 段階の null と \"\" の使い分けポリシーが定まっていない。",
+      "downstream_impact": ["site 側の null チェック分岐ミスリスク"]
+    },
+    {
+      "id": "F013",
+      "category": "schema_inconsistency",
+      "secondary_categories": ["metadata_missing_speaker"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers[*].start_seconds=0.0 / start_time='' / duration_minutes=0 が答弁者全員に",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[9:]"
+      },
+      "evidence": "metadata.speakers の質疑者9名は実際の start_seconds (1857.59〜10787.76) を持つが、答弁者・参考人16名すべてで start_seconds=0.0 / start_time=空 / duration_minutes=0。冒頭から発話していたかのような誤導表示。",
+      "estimated_cause": "speaker_tagger は質疑者の segment 境界しか時刻抽出しておらず、答弁者・参考人の utterance 開始時刻を埋める処理がない。",
+      "downstream_impact": ["タイムライン表示で全答弁者が0秒に集中", "UI のレンダリングが歪む"]
+    },
+    {
+      "id": "F014",
+      "category": "role_label_error",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "likely_systemic",
+      "title": "「服部審議官」の affiliation が「服部審議官」 / 「木川田内閣府特命担当大臣」も同様の自己参照",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[14], $.speakers[4]"
+      },
+      "evidence": "speakers[4] (服部審議官) の affiliation=\"服部審議官\"、speakers[14] (木川田内閣府特命担当大臣) の affiliation=\"木川田内閣府特命担当大臣\" のように name と affiliation が同一文字列。speakers[24] (包み審議官) も同様。affiliation には本来「警察庁長官官房審議官」などの所属が入るべき。",
+      "estimated_cause": "speaker_tagger が affiliation 取得に失敗した場合、フォールバックで name をそのまま代入している。",
+      "downstream_impact": ["所属組織別の集計不能", "プロフィール表示の冗長化"]
+    },
+    {
+      "id": "F015",
+      "category": "summary_qa_divergence",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "session_specific",
+      "title": "summary.key_commitments[3] の「令和7年度補正予算」発言は qa_037 answer 本文中に見当たらない",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments[3]",
+        "qa_id": "qa_037"
+      },
+      "evidence": "summary.key_commitments[3].text=「令和7年度補正予算において、ニーズ把握の調査研究や、事業者情報の集約・公開による普及啓発事業を盛り込んだ」だが、qa_037 answer 本文 (full_text) を全文確認しても「令和7年度補正予算」「集約・公開」のフレーズは出現しない。summary 段階で他の発話または LLM 推論から付加された可能性。",
+      "estimated_cause": "summarizer が qa_pairs ではなく raw_transcript を直接読んでいる場合、qa_037 に紐付け出来ない別箇所の発言から抽出した可能性。または LLM の hallucination。",
+      "downstream_impact": ["コミットメント追跡機能の証拠紐付け失敗"]
+    }
+  ],
+  "blindspots": [
+    "raw_transcript の whisper_segments (Whisper原始タイムコード) は逐字精査せず、segments.text を中心に確認した",
+    "外部の参議院議員名簿・閣僚名簿との完全照合は未実施 (実在しない人名の検出はサンプル的)",
+    "qa_pairs.json の summary.bullet_text と full_text の整合性はサンプリング確認のみ",
+    "whisper_segments と utterances の time alignment は確認していない",
+    "音声品質起因のハルシネーションはテキストのみからは判定不能 (ループ繰り返しは見当たらず)"
+  ]
+}
