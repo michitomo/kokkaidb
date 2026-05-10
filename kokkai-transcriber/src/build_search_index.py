@@ -1,4 +1,7 @@
-"""data/ 以下の全 utterances.json から MiniSearch 用検索インデックスを生成する。
+"""data/ 以下の全セッションから MiniSearch 用検索インデックスを生成する。
+
+質疑セッション: qa_pairs.json の各ペア（トピック+要約）をインデックス化 → anchor: qa-{id}
+手続きセッション: utterances.json の発言セグメントをインデックス化 → anchor: utt-{id}
 
 使用方法:
     python -m src.build_search_index
@@ -30,8 +33,8 @@ MAX_INPUT_BYTES = 48000
 KEEP_POS = frozenset({"名詞", "動詞", "形容詞", "副詞", "形状詞", "接頭辞"})
 
 
-def collect_utterance_files(data_dir: Path) -> list[Path]:
-    files: list[Path] = []
+def collect_session_dirs(data_dir: Path) -> list[Path]:
+    dirs: list[Path] = []
     for chamber in ("shugiin", "sangiin"):
         chamber_dir = data_dir / chamber
         if not chamber_dir.exists():
@@ -46,12 +49,9 @@ def collect_utterance_files(data_dir: Path) -> list[Path]:
                     if not day_dir.is_dir():
                         continue
                     for session_dir in sorted(day_dir.iterdir()):
-                        if not session_dir.is_dir():
-                            continue
-                        fp = session_dir / "utterances.json"
-                        if fp.exists():
-                            files.append(fp)
-    return files
+                        if session_dir.is_dir():
+                            dirs.append(session_dir)
+    return dirs
 
 
 def tokenize_safe(tok, text: str, mode) -> list[str]:
@@ -77,45 +77,90 @@ def tokenize_safe(tok, text: str, mode) -> list[str]:
         return list(text)
 
 
-def build_docs(tok, mode, utterance_files: list[Path], data_dir: Path) -> list[dict]:
-    docs: list[dict] = []
-    for fp in utterance_files:
+def build_docs_from_session(tok, mode, session_dir: Path, data_dir: Path) -> list[dict]:
+    rel = session_dir.relative_to(data_dir)
+    parts = rel.parts
+    chamber = parts[0]
+    date_val = f"{parts[1]}-{parts[2]}-{parts[3]}"
+    session_id = parts[4].split("_", 1)[0]
+    committee = parts[4].split("_", 1)[1] if "_" in parts[4] else ""
+    slug = parts[4]
+    url = f"/{chamber}/{parts[1]}/{parts[2]}/{parts[3]}/{slug}"
+
+    # 質疑セッション: qa_pairs.json を優先
+    qa_path = session_dir / "qa_pairs.json"
+    if qa_path.exists():
         try:
-            data = json.loads(fp.read_text(encoding="utf-8"))
+            qa_data = json.loads(qa_path.read_text(encoding="utf-8"))
+            pairs = qa_data.get("pairs", [])
+            if pairs:
+                docs: list[dict] = []
+                for pair in pairs:
+                    pair_id = pair.get("id", "")
+                    topic = pair.get("topic", "")
+                    q = pair.get("question", {})
+                    a = pair.get("answer", {})
+                    q_speaker = q.get("speaker", "")
+                    a_speaker = a.get("speaker", "")
+                    q_summary = (q.get("summary") or "").strip()
+                    a_summary = (a.get("summary") or "").strip()
+                    text_for_index = f"{topic} {q_summary} {a_summary}"
+                    text_for_display = (q_summary + " / " + a_summary) if (q_summary and a_summary) else (q_summary or a_summary)
+                    tokens = " ".join(tokenize_safe(tok, text_for_index, mode))
+                    docs.append({
+                        "id": f"{chamber}_{session_id}_{pair_id}",
+                        "type": "qa",
+                        "chamber": chamber,
+                        "date": date_val,
+                        "committee": committee,
+                        "topic": topic,
+                        "q_speaker": q_speaker,
+                        "a_speaker": a_speaker,
+                        "speaker": "",
+                        "role": "",
+                        "text": text_for_display,
+                        "tokens": tokens,
+                        "url": url,
+                        "anchor": f"qa-{pair_id}",
+                    })
+                return docs
         except Exception as exc:
-            logger.warning("skipping %s: %s", fp, exc)
-            continue
+            logger.warning("skipping qa_pairs %s: %s", qa_path, exc)
 
-        rel = fp.relative_to(data_dir)
-        parts = rel.parts
-        chamber = parts[0]
-        date_val = f"{parts[1]}-{parts[2]}-{parts[3]}"
-        session_id = parts[4].split("_", 1)[0]
-        committee = parts[4].split("_", 1)[1] if "_" in parts[4] else ""
-        slug = parts[4]
-        url = f"/{chamber}/{parts[1]}/{parts[2]}/{parts[3]}/{slug}"
+    # 手続きセッション: utterances.json にフォールバック
+    utt_path = session_dir / "utterances.json"
+    if not utt_path.exists():
+        return []
+    try:
+        data = json.loads(utt_path.read_text(encoding="utf-8"))
+    except Exception as exc:
+        logger.warning("skipping %s: %s", utt_path, exc)
+        return []
 
-        for seg_idx, seg in enumerate(data.get("segments", [])):
-            for utt_idx, utt in enumerate(seg.get("utterances", [])):
-                text = (utt.get("text") or "").strip()
-                if not text:
-                    continue
-                global_id = f"{chamber}_{session_id}_{seg_idx}_{utt_idx}"
-                tokens = " ".join(tokenize_safe(tok, text, mode))
-                docs.append({
-                    "id": global_id,
-                    "chamber": chamber,
-                    "date": date_val,
-                    "committee": committee,
-                    "speaker": utt.get("speaker", ""),
-                    "role": utt.get("role", ""),
-                    "text": text,
-                    "tokens": tokens,
-                    "url": url,
-                    "segIdx": seg_idx,
-                    "uttIdx": utt_idx,
-                })
-
+    docs = []
+    for seg_idx, seg in enumerate(data.get("segments", [])):
+        for utt_idx, utt in enumerate(seg.get("utterances", [])):
+            text = (utt.get("text") or "").strip()
+            if not text:
+                continue
+            global_id = f"{chamber}_{session_id}_{seg_idx}_{utt_idx}"
+            tokens = " ".join(tokenize_safe(tok, text, mode))
+            docs.append({
+                "id": global_id,
+                "type": "utt",
+                "chamber": chamber,
+                "date": date_val,
+                "committee": committee,
+                "topic": "",
+                "q_speaker": "",
+                "a_speaker": "",
+                "speaker": utt.get("speaker", ""),
+                "role": utt.get("role", ""),
+                "text": text,
+                "tokens": tokens,
+                "url": url,
+                "anchor": f"utt-{global_id}",
+            })
     return docs
 
 
@@ -127,16 +172,21 @@ def main() -> None:
     mode = tokenizer.Tokenizer.SplitMode.C
     logger.info("SudachiPy ready")
 
-    utterance_files = collect_utterance_files(DATA_DIR)
-    logger.info("Found %d utterance files", len(utterance_files))
+    session_dirs = collect_session_dirs(DATA_DIR)
+    logger.info("Found %d session dirs", len(session_dirs))
 
-    docs = build_docs(tok, mode, utterance_files, DATA_DIR)
-    logger.info("Total documents: %d", len(docs))
+    docs: list[dict] = []
+    for sd in session_dirs:
+        docs.extend(build_docs_from_session(tok, mode, sd, DATA_DIR))
+
+    qa_count = sum(1 for d in docs if d["type"] == "qa")
+    utt_count = len(docs) - qa_count
+    logger.info("Total documents: %d (Q&A: %d, 発言: %d)", len(docs), qa_count, utt_count)
 
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_PATH.write_text(json.dumps(docs, ensure_ascii=False), encoding="utf-8")
     size_mb = OUTPUT_PATH.stat().st_size / 1024 / 1024
-    logger.info("Written: %s (%.1f MB; gzip ~%.0f MB)", OUTPUT_PATH, size_mb, size_mb * 0.25)
+    logger.info("Written: %s (%.1f MB)", OUTPUT_PATH, size_mb)
 
 
 if __name__ == "__main__":

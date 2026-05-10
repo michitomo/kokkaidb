@@ -426,21 +426,25 @@ def main() -> None:
     try:
         if args.session_id or args.deli_id:
             session_id = args.session_id or args.deli_id
-            if args.output_dir:
-                output_dir = args.output_dir
-                output_dir.mkdir(parents=True, exist_ok=True)
-                run_pipeline(
-                    chamber=args.chamber,
-                    session_id=session_id,
-                    output_dir=output_dir,
-                    no_push=args.no_push,
-                )
-            else:
-                run_pipeline_for_session(
-                    chamber=args.chamber,
-                    session_id=session_id,
-                    no_push=args.no_push,
-                )
+            try:
+                if args.output_dir:
+                    output_dir = args.output_dir
+                    output_dir.mkdir(parents=True, exist_ok=True)
+                    run_pipeline(
+                        chamber=args.chamber,
+                        session_id=session_id,
+                        output_dir=output_dir,
+                        no_push=args.no_push,
+                    )
+                else:
+                    run_pipeline_for_session(
+                        chamber=args.chamber,
+                        session_id=session_id,
+                        no_push=args.no_push,
+                    )
+            except SessionNotReadyError as e:
+                logger.warning("Session %s not ready (skipping): %s", session_id, e)
+                sys.exit(0)
 
         elif args.date:
             target_date = (

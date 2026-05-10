@@ -6,24 +6,208 @@ import SearchUI from '../components/SearchUI';
 <BaseLayout title="検索 - 国会議事録リアルタイムDB">
   <h1>全文検索</h1>
   <p class="search-hint">
-    <strong>スペース区切りでAND検索</strong>（例: <code>予算 委員会</code>）。話者名や委員会名も検索対象です。
-    検索結果をクリックすると該当発言に直接ジャンプします。
+    話者名・トピック・委員会名で検索できます。スペース区切りでAND検索。
   </p>
   <SearchUI client:load />
 </BaseLayout>
 
 <style>
-  h1 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+  h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
   .search-hint {
     font-size: 0.85rem;
     color: #6b7280;
-    margin-bottom: 1rem;
-    line-height: 1.6;
+    margin-bottom: 1.25rem;
   }
-  .search-hint code {
-    background: #f1f5f9;
-    padding: 0.1rem 0.3rem;
+</style>
+
+<style is:global>
+  /* ── SearchUI コンポーネント ── */
+  .search-ui { max-width: 100%; }
+
+  .search-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .search-input {
+    flex: 1;
+    padding: 0.6rem 0.9rem;
+    border: 1.5px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    background: #fff;
+  }
+  .search-input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  }
+  .search-input:disabled { background: #f9fafb; color: #9ca3af; }
+
+  .search-button {
+    padding: 0.6rem 1.25rem;
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.15s;
+    white-space: nowrap;
+  }
+  .search-button:hover:not(:disabled) { background: #1d4ed8; }
+  .search-button:disabled { background: #9ca3af; cursor: not-allowed; }
+
+  .search-error {
+    font-size: 0.85rem;
+    color: #dc2626;
+    background: #fef2f2;
+    border: 1px solid #fee2e2;
+    border-radius: 6px;
+    padding: 0.6rem 0.85rem;
+    margin: 0 0 1rem;
+  }
+
+  .search-loading {
+    color: #6b7280;
+    font-size: 0.875rem;
+    text-align: center;
+    padding: 2rem 0;
+  }
+
+  .result-count {
+    font-size: 0.82rem;
+    color: #6b7280;
+    margin: 0 0 0.75rem;
+  }
+
+  /* ── 結果リスト ── */
+  .result-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .result-link {
+    display: block;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    background: #fff;
+    transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+  }
+  .result-link:hover {
+    border-color: #93c5fd;
+    box-shadow: 0 1px 6px rgba(59, 130, 246, 0.12);
+    background: #f8fbff;
+  }
+
+  /* ── メタ行 ── */
+  .result-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.3rem 0.45rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .chamber-badge {
+    display: inline-block;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .chamber-badge.shugiin { background: #dbeafe; color: #1e40af; }
+  .chamber-badge.sangiin { background: #fce7f3; color: #9d174d; }
+
+  .result-date {
+    color: #6b7280;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+  }
+  .result-committee {
+    color: #374151;
+    font-size: 0.78rem;
+    font-weight: 500;
+  }
+  .result-topic {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #1d4ed8;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 4px;
+    padding: 0.05rem 0.4rem;
+  }
+
+  .role-badge {
+    display: inline-block;
+    padding: 0.08rem 0.35rem;
     border-radius: 3px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  .role-badge.role-chair      { background: #fef3c7; color: #92400e; }
+  .role-badge.role-questioner { background: #dbeafe; color: #1e40af; }
+  .role-badge.role-answerer   { background: #dcfce7; color: #166534; }
+
+  /* ── 発言者行 ── */
+  .result-speakers {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.82rem;
+    margin-bottom: 0.3rem;
+  }
+  .result-q-speaker { font-weight: 600; color: #1e40af; }
+  .result-arrow     { color: #9ca3af; font-size: 0.75rem; }
+  .result-a-speaker { font-weight: 600; color: #065f46; }
+
+  .result-speaker-line {
+    font-size: 0.82rem;
+    margin-bottom: 0.3rem;
+  }
+  .result-speaker { font-weight: 600; color: #374151; }
+
+  /* ── 抜粋テキスト ── */
+  .result-text {
+    font-size: 0.85rem;
+    color: #4b5563;
+    line-height: 1.55;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .result-text mark {
+    background: #fef9c3;
+    color: #713f12;
+    border-radius: 2px;
+    padding: 0 1px;
+    font-style: normal;
+  }
+
+  /* ── フッター ── */
+  .result-more {
+    text-align: center;
+    padding: 0.75rem;
+    color: #9ca3af;
     font-size: 0.8rem;
+    border: 1px dashed #e5e7eb;
+    border-radius: 8px;
+    list-style: none;
   }
 </style>
