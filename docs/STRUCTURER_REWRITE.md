@@ -732,6 +732,22 @@ Step 4.5+ 再実行検証 (4セッション、47 findings) で resolved は 19% 
 
 同一質疑者の連続発言は通常 1 質疑ブロックに含まれるが、答弁を挟んだ「再質問」「再質疑」は別ペアとなる。同一 segment 内で同一質疑者の qa_pairs が時系列順で 2件以上ある場合、後者の `follow_up_ids` に前者の `id` を入れる。複数答弁者にまたがる追及は本刷新では対象外 (将来課題)。
 
+### Q: LLM モデルの使い分け方針
+
+各ステップで使うモデルは **「Gemma で足りないとわかった箇所だけ Gemini Flash に上げる」** が原則。
+
+| ステップ | モデル | 理由 |
+|---|---|---|
+| Step 4.5 corrector | `google/gemma-4-31b-it` | 入力が 2-3k tokens 程度の校正タスク。Gemma で品質上の問題なし |
+| Step 5 speaker_tagger | `google/gemma-4-31b-it` | JSON splits の出力は小さく、Gemma で十分 |
+| Step 6 **QA gen** | `google/gemini-3-flash-preview` | `split_anchor_sentence_idx` の正確な指定が重要で Gemma だと1ペアズレが頻発 (F2 再々々走で確認)。Flash に切り替え |
+| Step 6 summary/topics/commitments | `google/gemma-4-31b-it` | 自由記述生成は Gemma で品質上の問題なし |
+| Step 6 metrics | `google/gemma-4-31b-it` | 構造化スコアリングは Gemma で十分 |
+
+**判定基準**: F2 以降の検証で特定ステップの `schema_inconsistency` や `content_missing` が `likely_systemic` かつ改善されない場合に、そのステップを `google/gemini-3-flash-preview` へ切り替えることを検討する。Flash は Gemma 比 1.5〜2.3倍のコストなので、品質問題が確認されてから切り替える。
+
+実装箇所: `src/structurer.py:QA_MODEL` / `STRUCTURER_MODEL` / `_METRICS_MODEL`、`src/transcript_corrector.py:CORRECTOR_MODEL`、`src/speaker_tagger.py` (import `LLM_MODEL` from `api_client`)。
+
 ---
 
 ## 7. 未解決の論点 (実装着手時に再検討)
