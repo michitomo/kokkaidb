@@ -740,8 +740,32 @@ def generate_qa_pairs(
             pair.id = f"qa_{pair_counter:03d}"
             all_pairs.append(pair)
 
+    # PR13: follow_up_ids — 同一 segment 内で同一質疑者の連続ペアを連鎖
+    _assign_follow_up_ids(all_pairs)
+
     logger.info("Total Q&A pairs generated: %d (from %d blocks)", len(all_pairs), len(qa_blocks))
     return QAPairsOutput(pairs=all_pairs)
+
+
+def _assign_follow_up_ids(pairs: list[QAPair]) -> None:
+    """同一 segment 内で同一質疑者の qa_pairs が時系列で 2 件以上ある場合、
+    後続ペアの follow_up_ids に直前ペアの id を入れる (in-place)。
+
+    判定基準 (docs/STRUCTURER_REWRITE.md §6 Q):
+    - 同一 segment_index 内で時系列順 (= pairs リストの出現順) に走査
+    - question.speaker が同一 (空文字でない) なら、直前同一 speaker ペアの id を follow_up_ids 先頭に追加
+    - 別 segment や別 speaker は別質疑ブロック扱いで連鎖しない
+    """
+    last_id_by_key: dict[tuple[int, str], str] = {}
+    for p in pairs:
+        speaker = p.question.speaker.strip()
+        if not speaker:
+            continue
+        key = (p.segment_index, speaker)
+        prev_id = last_id_by_key.get(key)
+        if prev_id and prev_id not in p.follow_up_ids:
+            p.follow_up_ids = [prev_id, *p.follow_up_ids]
+        last_id_by_key[key] = p.id
 
 
 def _drop_leading_proposal_segments(
@@ -830,6 +854,48 @@ def _call_structurer(
     return data
 
 
+# PR12: session_summary 内で「<人名>大臣」「<人名>議員」等の honorific-attached 人名を抽出する正規表現
+# qa_pairs に登場しない人名を要約が含むケース (summary_qa_divergence) を検出するために使う
+_SUMMARY_PERSON_REF_RE = re.compile(
+    r"([一-龥々ヶ]{1,8})"
+    r"(?:大臣|副大臣|総理|長官|次官|議員|委員長|議長|参考人|政務官|氏|君|さん)"
+)
+
+
+def _collect_known_speaker_names(qa_pairs: QAPairsOutput) -> set[str]:
+    """qa_pairs から既知 speaker 名 (question/answer 双方) を集める。"""
+    known: set[str] = set()
+    for p in qa_pairs.pairs:
+        if p.question.speaker:
+            known.add(p.question.speaker.strip())
+        if p.answer.speaker:
+            known.add(p.answer.speaker.strip())
+    return {n for n in known if n}
+
+
+def _validate_summary_person_refs(
+    summary: str,
+    qa_pairs: QAPairsOutput,
+) -> list[str]:
+    """summary 内の honorific-attached 人名で qa_pairs にないものを返す。
+
+    既知 speaker 名と部分一致 (どちらかが substring) すれば known 扱い。
+    qa_pairs が空の場合は検証しない (空リストを返す)。
+    """
+    if not qa_pairs.pairs:
+        return []
+    known = _collect_known_speaker_names(qa_pairs)
+    if not known:
+        return []
+    refs = {m.group(1) for m in _SUMMARY_PERSON_REF_RE.finditer(summary)}
+    unknown: list[str] = []
+    for ref in sorted(refs):
+        if any(ref in name or name in ref for name in known):
+            continue
+        unknown.append(ref)
+    return unknown
+
+
 def generate_session_summary(
     qa_pairs: QAPairsOutput,
     utterances: UtterancesOutput | None = None,
@@ -871,7 +937,42 @@ def generate_session_summary(
     summary = data.get("session_summary", "")
     if not isinstance(summary, str):
         return ""
-    return summary.strip()
+    summary = summary.strip()
+
+    # PR12: post-validation — qa_pairs にない人名が含まれていれば 1 回だけリトライ
+    unknown_refs = _validate_summary_person_refs(summary, qa_pairs)
+    if unknown_refs:
+        logger.warning(
+            "generate_session_summary: detected unknown person refs not in qa_pairs: %s — retrying once",
+            unknown_refs,
+        )
+        retry_prompt = (
+            user_prompt
+            + "\n\n## 注意（再生成）\n"
+            + "前回の要約に Q&A ペアに登場しない人名"
+            + f" ({', '.join(unknown_refs)}) が含まれていました。"
+            + "qa_pairs の `質問者:` および `回答者:` に登場する人物のみを言及し、"
+            + "推測による人名・法案名の補完を行わないでください。"
+        )
+        try:
+            retry_data = _call_structurer(
+                SESSION_SUMMARY_SYSTEM_PROMPT, retry_prompt, max_tokens=4096
+            )
+            retry_summary = retry_data.get("session_summary", "")
+            if isinstance(retry_summary, str) and retry_summary.strip():
+                retry_summary = retry_summary.strip()
+                still_unknown = _validate_summary_person_refs(retry_summary, qa_pairs)
+                if still_unknown:
+                    logger.warning(
+                        "generate_session_summary: retry still has unknown refs %s "
+                        "— using retry output anyway",
+                        still_unknown,
+                    )
+                summary = retry_summary
+        except Exception as e:
+            logger.warning("generate_session_summary retry failed: %s", e)
+
+    return summary
 
 
 def _parse_topics_data(
@@ -988,36 +1089,101 @@ def generate_topics_without_qa(
     return TopicsOutput(topics=topics_list), key_topics
 
 
-def generate_key_commitments(qa_pairs: QAPairsOutput) -> list[KeyCommitment]:
-    """key_commitments を生成する（Step 6b-3）。"""
-    if not qa_pairs.pairs:
-        return []
+def _parse_commitments_payload(
+    raw: dict,
+    qa_pair_lookup: dict[str, QAPair],
+) -> tuple[list[KeyCommitment], int, int]:
+    """LLM 応答から key_commitments を構築 + (qa_id, speaker) 整合検証。
 
-    user_prompt = "## Q&Aペア一覧\n" + _format_qa_pairs_for_prompt(qa_pairs)
-    data = _call_structurer(COMMITMENTS_SYSTEM_PROMPT, user_prompt, max_tokens=8192)
-
-    valid_qa_ids = {p.id for p in qa_pairs.pairs}
+    Returns:
+        (commitments, dropped_unknown_qa_id, dropped_speaker_mismatch)
+    """
     commitments: list[KeyCommitment] = []
-    dropped = 0
-    for c in data.get("key_commitments", []):
-        qa_id = c.get("qa_id") or ""
-        if qa_id and qa_id not in valid_qa_ids:
-            dropped += 1
+    dropped_qa_id = 0
+    dropped_speaker = 0
+    for c in raw.get("key_commitments", []) or []:
+        qa_id = (c.get("qa_id") or "").strip()
+        speaker = (c.get("speaker") or "").strip()
+        if qa_id and qa_id not in qa_pair_lookup:
+            dropped_qa_id += 1
             continue
+        # PR12: qa_id が指定されていれば speaker と回答者の整合を検証
+        if qa_id and speaker:
+            expected = qa_pair_lookup[qa_id].answer.speaker.strip()
+            if expected and not (speaker in expected or expected in speaker):
+                dropped_speaker += 1
+                continue
         commitments.append(
             KeyCommitment(
-                speaker=c.get("speaker") or "",
+                speaker=speaker,
                 role=c.get("role") or "",
                 text=c.get("text") or "",
                 topic=c.get("topic") or "",
                 qa_id=qa_id or None,
             )
         )
-    if dropped:
+    return commitments, dropped_qa_id, dropped_speaker
+
+
+def generate_key_commitments(qa_pairs: QAPairsOutput) -> list[KeyCommitment]:
+    """key_commitments を生成する（Step 6b-3）。
+
+    PR12: 各 commitment の (qa_id, speaker) ペアが qa_pairs と整合するか検証し、
+    不一致は drop。drop 率が高い (受理 0 件 + raw > 0) 場合は 1 回だけリトライする。
+    """
+    if not qa_pairs.pairs:
+        return []
+
+    qa_pair_lookup = {p.id: p for p in qa_pairs.pairs}
+
+    user_prompt = "## Q&Aペア一覧\n" + _format_qa_pairs_for_prompt(qa_pairs)
+    data = _call_structurer(COMMITMENTS_SYSTEM_PROMPT, user_prompt, max_tokens=8192)
+
+    raw_count = len(data.get("key_commitments", []) or [])
+    commitments, dropped_qa_id, dropped_speaker = _parse_commitments_payload(
+        data, qa_pair_lookup
+    )
+
+    if dropped_qa_id:
         logger.warning(
             "generate_key_commitments: dropped %d commitments referencing unknown qa_id",
-            dropped,
+            dropped_qa_id,
         )
+    if dropped_speaker:
+        logger.warning(
+            "generate_key_commitments: dropped %d commitments with speaker mismatched against qa_pair.answer.speaker",
+            dropped_speaker,
+        )
+
+    # PR12: raw が 0 でないのに全て drop されたら 1 回リトライ
+    if raw_count > 0 and not commitments:
+        logger.info(
+            "generate_key_commitments: all %d commitments dropped — retrying once with stronger guidance",
+            raw_count,
+        )
+        retry_prompt = (
+            user_prompt
+            + "\n\n## 注意（再生成）\n"
+            + "speakerは入力 Q&A 一覧の `回答者:` フィールドを正確に転記し、"
+            + "qa_id とその Q&A の回答者が必ず一致するようにしてください。"
+            + "回答者が不明確な発言からはコミットメントを抽出しないでください。"
+        )
+        try:
+            retry_data = _call_structurer(
+                COMMITMENTS_SYSTEM_PROMPT, retry_prompt, max_tokens=8192
+            )
+            commitments, dropped_qa_id_r, dropped_speaker_r = _parse_commitments_payload(
+                retry_data, qa_pair_lookup
+            )
+            if dropped_qa_id_r or dropped_speaker_r:
+                logger.warning(
+                    "generate_key_commitments retry: still dropped %d unknown_qa_id + %d speaker_mismatch",
+                    dropped_qa_id_r,
+                    dropped_speaker_r,
+                )
+        except Exception as e:
+            logger.warning("generate_key_commitments retry failed: %s", e)
+
     return commitments
 
 

@@ -52,8 +52,8 @@
 | PR9 | utterance_indices schema (§2.1) | 🔴 **大** | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | 前半 #2: prompts.py V2 + structurer.py 雛形 / 後半 #3: anchor + 共有 utterance テスト 15件 + F1 4件全 exit 0 |
 | PR10 | content_missing 対策 (§2.10) | 🟡 中 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | `_extract_pairs_from_response` に空質問drop / 範囲外indices比率 50%超 WARN / 受理統計1行ログを追加。`generate_topics_without_qa` 新規 + `TOPICS_FROM_UTTERANCES_SYSTEM_PROMPT` 新規。テスト 7件追加 |
 | PR11 | floor_speech summary 経路 (§2.10) | 🟡 中 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | pipeline.py で `qa_pairs.pairs` が空かつ `utterances.segments` がある場合は `generate_topics_without_qa` 経路。session_kind=None でも適用 (全 procedural skip もケアできる)。56075 高市所信表明で **topics 0→9 件生成** |
-| PR12 | summary post-validation (§2.11) | 🟡 中 | ☐ | | | (#6 batch、PR9+PR11 依存) |
-| PR13 | follow_up_ids 実装 (§2.14) | 🟢 小 | ☐ | | | (#6 batch、PR9 依存) |
+| PR12 | summary post-validation (§2.11) | 🟡 中 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | `SESSION_SUMMARY_SYSTEM_PROMPT` に「qa_pairs に存在する事実のみ言及」を追加。`_validate_summary_person_refs` 新設、未知人名検出で 1回リトライ。`generate_key_commitments` に (qa_id, speaker) 整合検証 + 全 drop 時 1回リトライ。F1 で 56074 の旧幻覚 (山口俊一) を retry で除去 |
+| PR13 | follow_up_ids 実装 (§2.14) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | `_assign_follow_up_ids` 新設、`generate_qa_pairs` 末尾で適用。同一 segment 内で同一質疑者の連続ペアを直前 id で連鎖。F1: 56211 84%、8967 86% のペアが follow_up に紐付く |
 | PR14 | leading_silence 閾値調整 (§2.13) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | pipeline.py offset 30s → 5s |
 | PR15 | schema validator スクリプト (§2.12) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | scripts/validate_data_schema.py 追加、現 data/ 156件全 parse 成功 |
 | PR16 | 比較サブエージェント仕様 (§3.4) | 🟢 小 | ☐ | | | (#1 smoke or 必要時) |
@@ -69,7 +69,7 @@
 | フェーズ | サンプル数 | ゲート条件 | ステータス | 結果ノート |
 |---|---:|---|---|---|
 | **F0 smoke** | 1 (56074) | exit 0 + 6ファイル出力 | ✅ | 2026-05-10: Step 4.5+ 再実行 122s、qa=1/topics=1、6ファイル全て生成 (PR14 は Step 3 のため smoke カバー外、コード差分のみ確認) |
-| **F1 既知問題** | 4 (56074, 56075, 56211, 8967) | resolved ≥ 50%、新規 NEW_ISSUE = 0 | 🔄 | 2026-05-10 (PR7+PR8+PR10+PR11 後): 4件全 exit 0 (56075=66.8s/qa=0/topics=9、56211=291.9s/qa=73、56074=167.3s/qa=2、8967=893.5s/qa=58)。**PR7 安全チェック緩和の効果**: 56075 で 25 chunks の loop 除去を許可、raw_transcript 74,258 → 25,414 chars (-65%)。「議長＊小寺君」6904 回ループが正しく削除された。**PR11 floor_speech 経路の効果**: 56075 (高市所信表明) で QA=0 だが utterances から topics 9 件生成 (経済政策・外交安保・エネルギー・国土強靭化・農林水産業 等)。**role 充足率 (PR6+PR10 通算)**: 56211 1.4%→**54.8%** (+53.4pt)、56074 75%→**100%**、8967 0%→**25.9%** (+25.9pt)。LLM ベース全件比較は #6-#7 で実施 |
+| **F1 既知問題** | 4 (56074, 56075, 56211, 8967) | resolved ≥ 50%、新規 NEW_ISSUE = 0 | 🔄 | 2026-05-10 (PR12+PR13 後): 4件全 exit 0 (56075=75.5s/qa=0/topics=8、56211=245.7s/qa=76/topics=17、56074=115.3s/qa=2/topics=1、8967=301.1s/qa=58/topics=10)。**PR12 効果**: 56074 の旧幻覚 (`山口俊一`) を post-validation で検出 → 1 回リトライで除去成功。要約は qa_pairs speakers (小寺博夫・森英介) のみに収束。**PR13 効果**: follow_up_ids 充足率 56211=**84.2%** (64/76)、8967=**86.2%** (50/58)、56074=**50%** (1/2)。**role 充足率** (PR6+PR10 通算+PR12 retry): 56211 **55.3%** (54.8→55.3)、56074 **100%**、8967 **27.6%** (25.9→27.6)。**累積効果**: 旧 baseline (56211=1.4% / 8967=0% / follow_up=0%) 比で大幅改善。LLM ベース全件比較は #7 ISSUES 取り込み後に実施 |
 | **F2 多様性** | 12 (層化抽出) | 平均 ≤ 5件/セッション、未知カテゴリ unchanged ≤ 2 | ☐ | |
 | **F3 中規模** | 30 | F1/F2 整合、エラー率 < 5%、コスト < $0.5/sess | ☐ | |
 | **F4 全件** | 156 | — | ☐ | |
@@ -150,6 +150,44 @@
 - メモ:
   - PR14 (Step 3 閾値) は Step 4.5+ 再実行ではカバー外。フルパイプライン smoke は次セッション以降で機会があれば
   - validator の speaker 不整合 warning は PR6 metadata enrichment で大幅減少見込み
+
+### Session #6 (structurer 検証強化) — 2026-05-10 完了
+- 実装:
+  - **PR12** (`prompts.py:SESSION_SUMMARY_SYSTEM_PROMPT`): 「事実根拠ルール (厳守)」section 追加 — 「入力の Q&A ペアに存在する事実のみ言及」「Q&A に登場しない人名・法案名・採決事項を追加禁止」「推測・補完・常識補足は禁止」を明示。
+  - **PR12** (`structurer.py`):
+    - `_SUMMARY_PERSON_REF_RE`: summary 内の `<人名 1-8字>(大臣|副大臣|総理|長官|次官|議員|委員長|議長|参考人|政務官|氏|君|さん)` パターンで honorific 付き人名を抽出。
+    - `_collect_known_speaker_names`: qa_pairs から question.speaker / answer.speaker を集合化。
+    - `_validate_summary_person_refs`: summary 内人名が known set と部分一致しなければ unknown と判定。qa_pairs が空なら検証スキップ (PR11 経路の所信表明には適用しない)。
+    - `generate_session_summary`: 生成後 unknown refs があれば `## 注意（再生成）` で注意喚起 + 1 回リトライ。リトライでも残れば warning ログだけ出してリトライ結果を採用 (前回より少ないため)。
+    - `generate_key_commitments`: `_parse_commitments_payload` を分離し (qa_id, speaker) 整合を検証。`speaker in expected or expected in speaker` の部分一致で valid 判定。raw_count > 0 で受理 0 件なら 1 回リトライ。drop 内訳を 2 種類の WARN ログで分けて出力 (`unknown_qa_id` / `speaker_mismatched`)。
+  - **PR13** (`structurer.py:_assign_follow_up_ids`): 同一 segment_index + 同一 question.speaker のペアを時系列 (リスト出現順) に走査、直前同一 speaker ペアの id を follow_up_ids 先頭に prepend。`generate_qa_pairs` 末尾で in-place 適用。空 speaker は対象外、別 segment / 別 speaker は連鎖しない。既存 follow_up_ids との重複は追加しない。
+- 検証:
+  - unit tests:
+    - `test_structurer.py` +25件 pass:
+      - `TestValidateSummaryPersonRefs` 5件 (known_speaker_passes / unknown_minister_detected / substring_match / empty_qa_skips / collect_known)
+      - `TestSessionSummaryRetryOnUnknownRefs` 3件 (retry_replaces / no_retry_when_clean / retry_kept_even_if_still_unknown)
+      - `TestKeyCommitmentsSpeakerValidation` 3件 (drops_speaker_mismatch / retry_when_all_dropped / no_retry_when_some_pass)
+      - `TestAssignFollowUpIds` 7件 (chains_same_speaker / different_segments / different_speakers / empty_speaker / interleaved / preserves_existing / does_not_double_add)
+    - 既存 `TestGenerateKeyCommitments::test_drops_unknown_qa_id` も pass (regression なし)
+    - 全 unit (-m "not integration"): 326 pass / pre-existing 10 failure (3 scraper baseline + 7 ffmpeg 不在環境) のみ、新規 regression なし
+  - **F1 サンプル4件 全 exit 0** (`/tmp/regen-test/_summary.json`):
+    - 56075 本会議 (高市所信表明、PR11 経路): 75.5s, qa=0/topics=8、PR12 検証スキップ (qa_pairs 空)
+    - 56211 内閣委員会: 245.7s, qa=76/topics=17、**follow_up_ids 充足 84.2% (64/76)**、role 充足率 55.3%
+    - 56074 本会議: 115.3s, qa=2/topics=1、**follow_up_ids 充足 50% (1/2)**、role 充足率 100%、**PR12 で `山口俊一` 幻覚を検出 → リトライで除去成功**
+    - 8967 内閣委員会: 301.1s, qa=58/topics=10、**follow_up_ids 充足 86.2% (50/58)**、role 充足率 27.6%
+  - **PR12 検証ログ抜粋** (`run.log`):
+    ```
+    WARNING generate_session_summary: detected unknown person refs not in qa_pairs: ['山口俊一', '議員運営'] — retrying once
+    WARNING generate_session_summary: retry still has unknown refs ['議員運営'] — using retry output anyway
+    ```
+    `山口俊一` は完全に除去、`議員運営` は「議員運営委員長」マッチ (本来は「議院運営委員長」であるべき表記、kanji typo の副次検出)。意図通り。
+  - **PR13 検証**: 56211 で 76 ペア中 64 ペア (84.2%) が直前同質疑者ペアを follow_up_ids として保持。8967 でも 58 ペア中 50 ペア (86.2%)。同一質疑者の連続質疑が委員会では一般的なため高い充足率。
+- ノート:
+  - PR12 の `_SUMMARY_PERSON_REF_RE` は「議員運営」のような複合語を誤検出するケースがあるが、嘘ではなく typo 検出につながり実害なし。本来 false-positive 抑制 (例: blocklist) の余地はあるが、優先度低。
+  - PR12 の commitments 整合検証は今回 4 セッションでは drop ゼロ (LLM が比較的正確に転記)。`raw_count > 0 だが受理 0` ケースのリトライ動作はテストでカバー、本番遭遇時に効く。
+  - V4 metrics の `'date'` literal_error は #2 から継続、別 PR で修正
+- 残作業 (Session #7 へ):
+  - PR17 (ffmpeg subprocess timeout)、PR18 (speaker_tagger json.loads ラップ)、PR19 (スクレイパー堅牢性)、PR20 (法案タグ精度検証)
 
 ### Session #5 (corrector+content) — 2026-05-10 完了
 - 実装:

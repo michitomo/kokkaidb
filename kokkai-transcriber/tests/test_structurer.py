@@ -18,12 +18,15 @@ from src.models import (
 )
 from src.structurer import (
     _assemble_full_text_for_pair,
+    _assign_follow_up_ids,
     _build_utterance_map,
+    _collect_known_speaker_names,
     _compute_segment_layout,
     _compute_share_boundaries,
     _extract_pairs_from_response,
     _fuzzy_lookup,
     _split_sentences,
+    _validate_summary_person_refs,
     build_summary_related_laws,
     generate_key_commitments,
     generate_qa_pairs,
@@ -1202,6 +1205,273 @@ class TestGenerateTopicsWithoutQA:
         assert topics.topics == []
         assert key_topics == []
         mock_factory.assert_not_called()
+
+
+class TestValidateSummaryPersonRefs:
+    """PR12: summary_qa_divergence 検出 — qa_pairs にない人名を抽出する。"""
+
+    def test_known_speaker_passes(self) -> None:
+        qa_pairs = _make_qa_pairs("qa_001")
+        # _make_qa_pairs は question.speaker=古川あおい / answer.speaker=上野賢一郎
+        summary = "上野大臣が古川議員の質問に答弁した。"
+        assert _validate_summary_person_refs(summary, qa_pairs) == []
+
+    def test_unknown_minister_detected(self) -> None:
+        qa_pairs = _make_qa_pairs("qa_001")
+        summary = "高市総理が答弁し、片山大臣も補足した。"
+        unknown = _validate_summary_person_refs(summary, qa_pairs)
+        # 「上野賢一郎」「古川あおい」とは無関係 → 高市・片山 両方 unknown
+        assert "高市" in unknown
+        assert "片山" in unknown
+
+    def test_substring_match_is_known(self) -> None:
+        """qa_pairs の speaker が長い実名でも、要約が surname 単独でも known 扱い。"""
+        qa_pairs = _make_qa_pairs("qa_001")
+        # answer.speaker = "上野賢一郎"
+        summary = "上野大臣が答弁した。"
+        assert _validate_summary_person_refs(summary, qa_pairs) == []
+
+    def test_empty_qa_pairs_skips_validation(self) -> None:
+        empty = QAPairsOutput(pairs=[])
+        summary = "高市総理が所信を述べた。"
+        assert _validate_summary_person_refs(summary, empty) == []
+
+    def test_collect_known_speaker_names(self) -> None:
+        qa_pairs = _make_qa_pairs("qa_001", "qa_002")
+        known = _collect_known_speaker_names(qa_pairs)
+        assert "古川あおい" in known
+        assert "上野賢一郎" in known
+
+
+class TestSessionSummaryRetryOnUnknownRefs:
+    """PR12: 未知人名検出 → 1 回リトライ → クリーンな要約に置換。"""
+
+    def test_retry_replaces_summary_when_first_has_unknown_ref(self) -> None:
+        qa_pairs = _make_qa_pairs("qa_001")
+        first_data = {"session_summary": "高市総理が答弁した。"}  # 高市 は qa_pairs に存在しない
+        retry_data = {"session_summary": "上野大臣が古川議員の質問に答弁した。"}
+
+        with patch("src.structurer._get_client") as mock_factory:
+            mock_client = MagicMock()
+            mock_client.chat.completions.create.side_effect = [
+                _make_mock_llm_response(first_data),
+                _make_mock_llm_response(retry_data),
+            ]
+            mock_factory.return_value = mock_client
+            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+                result = generate_session_summary(qa_pairs)
+
+        assert result == "上野大臣が古川議員の質問に答弁した。"
+        assert mock_client.chat.completions.create.call_count == 2
+
+    def test_no_retry_when_summary_clean(self) -> None:
+        qa_pairs = _make_qa_pairs("qa_001")
+        clean_data = {"session_summary": "上野大臣の答弁が中心であった。"}
+
+        with patch("src.structurer._get_client") as mock_factory:
+            mock_client = MagicMock()
+            mock_client.chat.completions.create.return_value = _make_mock_llm_response(clean_data)
+            mock_factory.return_value = mock_client
+            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+                result = generate_session_summary(qa_pairs)
+
+        assert result == "上野大臣の答弁が中心であった。"
+        assert mock_client.chat.completions.create.call_count == 1
+
+    def test_retry_kept_even_if_still_unknown(self) -> None:
+        """リトライ後も未知人名が残っても、リトライ結果を採用 (warning は出る)。"""
+        qa_pairs = _make_qa_pairs("qa_001")
+        first_data = {"session_summary": "高市総理が答弁した。"}
+        # リトライしても改善せず別の未知人名
+        retry_data = {"session_summary": "片山大臣が答弁した。"}
+
+        with patch("src.structurer._get_client") as mock_factory:
+            mock_client = MagicMock()
+            mock_client.chat.completions.create.side_effect = [
+                _make_mock_llm_response(first_data),
+                _make_mock_llm_response(retry_data),
+            ]
+            mock_factory.return_value = mock_client
+            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+                result = generate_session_summary(qa_pairs)
+
+        # リトライ結果を採用
+        assert result == "片山大臣が答弁した。"
+
+
+class TestKeyCommitmentsSpeakerValidation:
+    """PR12: (qa_id, speaker) 整合検証 + 全 drop 時のリトライ。"""
+
+    def test_drops_commitment_with_speaker_mismatch(self) -> None:
+        qa_pairs = _make_qa_pairs("qa_001")  # answer.speaker = 上野賢一郎
+        mock_data = {
+            "key_commitments": [
+                {  # speaker matches answer.speaker (substring)
+                    "speaker": "上野",
+                    "role": "答弁者",
+                    "text": "正しい コミット",
+                    "topic": "T",
+                    "qa_id": "qa_001",
+                },
+                {  # speaker は qa_001 の回答者と全く違う → drop
+                    "speaker": "高市早苗",
+                    "role": "答弁者",
+                    "text": "誤帰属コミット",
+                    "topic": "T",
+                    "qa_id": "qa_001",
+                },
+            ]
+        }
+
+        with patch("src.structurer._get_client") as mock_factory:
+            mock_client = MagicMock()
+            mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_data)
+            mock_factory.return_value = mock_client
+            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+                commitments = generate_key_commitments(qa_pairs)
+
+        assert len(commitments) == 1
+        assert commitments[0].speaker == "上野"
+
+    def test_retry_when_all_commitments_dropped(self) -> None:
+        """raw が 0 でないのに整合検証で全 drop されたらリトライ。"""
+        qa_pairs = _make_qa_pairs("qa_001")
+        first_data = {
+            "key_commitments": [
+                {"speaker": "高市早苗", "role": "総理", "text": "x", "topic": "T", "qa_id": "qa_001"},
+            ]
+        }
+        retry_data = {
+            "key_commitments": [
+                {"speaker": "上野賢一郎", "role": "答弁者", "text": "正しい", "topic": "T", "qa_id": "qa_001"},
+            ]
+        }
+
+        with patch("src.structurer._get_client") as mock_factory:
+            mock_client = MagicMock()
+            mock_client.chat.completions.create.side_effect = [
+                _make_mock_llm_response(first_data),
+                _make_mock_llm_response(retry_data),
+            ]
+            mock_factory.return_value = mock_client
+            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+                commitments = generate_key_commitments(qa_pairs)
+
+        assert len(commitments) == 1
+        assert commitments[0].speaker == "上野賢一郎"
+        assert mock_client.chat.completions.create.call_count == 2
+
+    def test_no_retry_when_some_commitments_pass(self) -> None:
+        """1 件でも valid commitment があればリトライしない。"""
+        qa_pairs = _make_qa_pairs("qa_001")
+        mock_data = {
+            "key_commitments": [
+                {"speaker": "上野賢一郎", "role": "答弁者", "text": "ok", "topic": "T", "qa_id": "qa_001"},
+                {"speaker": "幽霊", "role": "答弁者", "text": "x", "topic": "T", "qa_id": "qa_999"},
+            ]
+        }
+
+        with patch("src.structurer._get_client") as mock_factory:
+            mock_client = MagicMock()
+            mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_data)
+            mock_factory.return_value = mock_client
+            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+                commitments = generate_key_commitments(qa_pairs)
+
+        assert len(commitments) == 1
+        assert mock_client.chat.completions.create.call_count == 1
+
+
+class TestAssignFollowUpIds:
+    """PR13: 同一 segment 内で同一質疑者の連続ペアを follow_up_ids で連鎖。"""
+
+    @staticmethod
+    def _pair(pid: str, segment_index: int, question_speaker: str) -> "QAPair":
+        from src.models import AnswerDetail, QAPair, QuestionDetail
+        return QAPair(
+            id=pid,
+            segment_index=segment_index,
+            topic="T",
+            question=QuestionDetail(
+                speaker=question_speaker,
+                party="X",
+                summary="",
+                full_text="",
+                intent="information_request",
+            ),
+            answer=AnswerDetail(speaker="A", role="答弁者", summary="", full_text="x" * 50),
+            video_url="https://example.com",
+        )
+
+    def test_chains_same_speaker_in_same_segment(self) -> None:
+        pairs = [
+            self._pair("qa_001", 0, "古川あおい"),
+            self._pair("qa_002", 0, "古川あおい"),
+            self._pair("qa_003", 0, "古川あおい"),
+        ]
+        _assign_follow_up_ids(pairs)
+        assert pairs[0].follow_up_ids == []
+        assert pairs[1].follow_up_ids == ["qa_001"]
+        assert pairs[2].follow_up_ids == ["qa_002"]
+
+    def test_does_not_chain_different_segments(self) -> None:
+        pairs = [
+            self._pair("qa_001", 0, "古川あおい"),
+            self._pair("qa_002", 1, "古川あおい"),  # 別 segment
+        ]
+        _assign_follow_up_ids(pairs)
+        assert pairs[1].follow_up_ids == []
+
+    def test_does_not_chain_different_speakers(self) -> None:
+        pairs = [
+            self._pair("qa_001", 0, "古川あおい"),
+            self._pair("qa_002", 0, "別議員"),  # 別 speaker
+        ]
+        _assign_follow_up_ids(pairs)
+        assert pairs[1].follow_up_ids == []
+
+    def test_skips_empty_speaker(self) -> None:
+        pairs = [
+            self._pair("qa_001", 0, ""),
+            self._pair("qa_002", 0, ""),
+        ]
+        _assign_follow_up_ids(pairs)
+        assert pairs[0].follow_up_ids == []
+        assert pairs[1].follow_up_ids == []
+
+    def test_interleaved_speakers_chain_separately(self) -> None:
+        """同一 segment 内で 2 人の質疑者が交互に発言した場合、各 speaker 内で連鎖。"""
+        pairs = [
+            self._pair("qa_001", 0, "Aさん"),
+            self._pair("qa_002", 0, "Bさん"),
+            self._pair("qa_003", 0, "Aさん"),
+            self._pair("qa_004", 0, "Bさん"),
+        ]
+        _assign_follow_up_ids(pairs)
+        assert pairs[0].follow_up_ids == []
+        assert pairs[1].follow_up_ids == []
+        assert pairs[2].follow_up_ids == ["qa_001"]
+        assert pairs[3].follow_up_ids == ["qa_002"]
+
+    def test_preserves_existing_follow_up_ids(self) -> None:
+        """既存の follow_up_ids が空でなければ前置 (上書きしない)。"""
+        pairs = [
+            self._pair("qa_001", 0, "古川"),
+            self._pair("qa_002", 0, "古川"),
+        ]
+        pairs[1].follow_up_ids = ["other_001"]
+        _assign_follow_up_ids(pairs)
+        assert pairs[1].follow_up_ids == ["qa_001", "other_001"]
+
+    def test_does_not_double_add(self) -> None:
+        """既存 follow_up_ids に同じ id があれば重複追加しない。"""
+        pairs = [
+            self._pair("qa_001", 0, "古川"),
+            self._pair("qa_002", 0, "古川"),
+        ]
+        pairs[1].follow_up_ids = ["qa_001"]
+        _assign_follow_up_ids(pairs)
+        assert pairs[1].follow_up_ids == ["qa_001"]
 
 
 @pytest.mark.integration
