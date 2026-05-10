@@ -406,6 +406,24 @@ class TestExtractSpeakersDedup:
         assert [s.name for s in speakers] == ["Aさん", "Bさん", "Cさん"]
 
 
+class TestExtractDateRaisesOnFailure:
+    """PR19: 日付パースに失敗したら ValueError を送出 (silent 'unknown' フォールバック禁止)。"""
+
+    def test_unparseable_html_raises_value_error(self) -> None:
+        from bs4 import BeautifulSoup
+
+        from src.scrapers.shugiin import _extract_date
+
+        # 日付情報が一切ないページを与える。
+        soup = BeautifulSoup(
+            "<html><head><title>無関係なタイトル</title></head>"
+            "<body><div>議事手続のみ</div></body></html>",
+            "html.parser",
+        )
+        with pytest.raises(ValueError, match="Could not extract date"):
+            _extract_date(soup, "99999")
+
+
 @pytest.mark.integration
 class TestGetSessionDetailIntegration:
     def test_real_request(self) -> None:

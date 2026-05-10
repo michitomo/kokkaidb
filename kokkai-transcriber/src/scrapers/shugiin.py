@@ -147,8 +147,7 @@ def _extract_date(soup: BeautifulSoup, deli_id: str) -> str:
         if found := _parse_reiwa(str(tag)):
             return found
 
-    logger.warning("Could not extract date for deli_id=%s", deli_id)
-    return "unknown"
+    raise ValueError(f"Could not extract date for deli_id={deli_id}")
 
 
 def _parse_reiwa(text: str) -> str:

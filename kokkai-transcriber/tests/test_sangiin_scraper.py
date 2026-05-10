@@ -351,6 +351,33 @@ class TestEdgeCases:
             _extract_date(soup)
 
 
+class TestEmptySpeakersRaisesNotReady:
+    """PR19: 発言者リストが空のページに対しては SessionNotReadyError を投げる
+    (再試行可能化、後段の不正データ生成を防ぐ)。"""
+
+    def test_no_speakers_in_html_raises(self) -> None:
+        from src.scrapers.base import SessionNotReadyError
+
+        # 発言者アンカー (class='play2') を含まない最小限の HTML。
+        # 日付と mediasp script だけ持たせて detail ページの体裁を整える。
+        minimal_html = (
+            "<html><head><title>参議院インターネット中継</title></head>"
+            "<body>"
+            "<dt>会議名</dt><dd>内閣委員会</dd>"
+            "<div>令和8年5月10日</div>"
+            "<script src='https://public.mediasp.jp/v1/player?hash=abc123'></script>"
+            "</body></html>"
+        )
+        mock_response = MagicMock()
+        mock_response.text = minimal_html
+        mock_response.raise_for_status = MagicMock()
+
+        scraper = SangiinScraper()
+        with patch("src.scrapers.sangiin.requests.get", return_value=mock_response):
+            with pytest.raises(SessionNotReadyError):
+                scraper.get_session_detail("99999")
+
+
 @pytest.mark.integration
 class TestSangiinScraperIntegration:
     def test_detect_today_real(self) -> None:

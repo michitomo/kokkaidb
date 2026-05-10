@@ -347,6 +347,55 @@ class TestSplitSegments:
         assert float(last_cmd[to_idx + 1]) == total_duration
 
 
+class TestSubprocessTimeouts:
+    """PR17: ffmpeg/ffprobe subprocess.run に必ず timeout を渡すことを検証する。"""
+
+    def test_ffmpeg_direct_download_has_timeout(self, tmp_path: Path) -> None:
+        output_path = tmp_path / "audio.wav"
+        url = "https://example.com/video.mp4"
+
+        with patch("src.audio.extractor.subprocess.run") as mock_run:
+            mock_run.return_value = MagicMock(returncode=0)
+            download_full_audio(url, output_path)
+
+        kwargs = mock_run.call_args.kwargs
+        assert "timeout" in kwargs and kwargs["timeout"] >= 600
+
+    def test_split_segments_passes_timeout(
+        self, dummy_wav: Path, sample_speakers: list[SpeakerInfo], tmp_path: Path
+    ) -> None:
+        output_dir = tmp_path / "segments"
+
+        with patch("src.audio.extractor.subprocess.run") as mock_run, \
+             patch("src.audio.extractor._get_audio_duration", return_value=10.0):
+            mock_run.return_value = MagicMock(returncode=0)
+            split_segments(dummy_wav, sample_speakers, output_dir)
+
+        for call in mock_run.call_args_list:
+            assert "timeout" in call.kwargs, "split_segments must pass timeout="
+            assert call.kwargs["timeout"] > 0
+
+    def test_get_audio_duration_passes_timeout(self, dummy_wav: Path) -> None:
+        from src.audio.extractor import _get_audio_duration
+
+        with patch("src.audio.extractor.subprocess.run") as mock_run:
+            mock_run.return_value = MagicMock(stdout="42.5\n", returncode=0)
+            _get_audio_duration(dummy_wav)
+
+        kwargs = mock_run.call_args.kwargs
+        assert kwargs.get("timeout") == 30  # ffprobe メタ取得は 30s
+
+    def test_detect_leading_silence_passes_timeout(self, dummy_wav: Path) -> None:
+        from src.audio.extractor import detect_leading_silence
+
+        with patch("src.audio.extractor.subprocess.run") as mock_run:
+            mock_run.return_value = MagicMock(stderr="", returncode=0)
+            detect_leading_silence(dummy_wav)
+
+        kwargs = mock_run.call_args.kwargs
+        assert "timeout" in kwargs and kwargs["timeout"] >= 60
+
+
 @pytest.mark.integration
 class TestAudioExtractorIntegration:
     def test_real_hls_download(self, tmp_path: Path) -> None:

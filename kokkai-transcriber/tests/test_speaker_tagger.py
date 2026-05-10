@@ -267,6 +267,60 @@ class TestTagSpeakers:
                 tag_speakers("テスト。", segment_speaker, all_speakers)
 
 
+class TestMalformedJsonHandling:
+    """PR18: speaker_tagger の json.loads が malformed JSON / empty content で
+    例外を上位伝播せず、フォールバック (全文を 1 utterance) を返すことを検証。"""
+
+    def _make_raw_response(self, content: str | None) -> MagicMock:
+        mock_message = MagicMock()
+        mock_message.content = content
+        mock_choice = MagicMock()
+        mock_choice.message = mock_message
+        mock_response = MagicMock()
+        mock_response.choices = [mock_choice]
+        return mock_response
+
+    def test_malformed_json_falls_back_to_single_utterance(
+        self,
+        segment_speaker: SpeakerInfo,
+        all_speakers: list[SpeakerInfo],
+    ) -> None:
+        raw_text = "テスト発言です。"
+
+        with patch("src.speaker_tagger._get_client") as mock_client_factory:
+            mock_client = MagicMock()
+            mock_client.chat.completions.create.return_value = self._make_raw_response(
+                "this is not json {{{"
+            )
+            mock_client_factory.return_value = mock_client
+
+            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+                result = tag_speakers(raw_text, segment_speaker, all_speakers)
+
+        assert len(result) == 1
+        assert result[0].speaker == segment_speaker.name
+        assert result[0].text == raw_text
+
+    def test_empty_content_falls_back_to_single_utterance(
+        self,
+        segment_speaker: SpeakerInfo,
+        all_speakers: list[SpeakerInfo],
+    ) -> None:
+        raw_text = "別のテスト。"
+
+        with patch("src.speaker_tagger._get_client") as mock_client_factory:
+            mock_client = MagicMock()
+            mock_client.chat.completions.create.return_value = self._make_raw_response(None)
+            mock_client_factory.return_value = mock_client
+
+            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+                result = tag_speakers(raw_text, segment_speaker, all_speakers)
+
+        assert len(result) == 1
+        assert result[0].speaker == segment_speaker.name
+        assert result[0].text == raw_text
+
+
 class TestBuildVideoUrl:
     def test_shugiin_url(self) -> None:
         url = _build_video_url("shugiin", "56149", 7320.2)

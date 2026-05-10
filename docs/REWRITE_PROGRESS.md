@@ -57,10 +57,10 @@
 | PR14 | leading_silence 閾値調整 (§2.13) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | pipeline.py offset 30s → 5s |
 | PR15 | schema validator スクリプト (§2.12) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | scripts/validate_data_schema.py 追加、現 data/ 156件全 parse 成功 |
 | PR16 | 比較サブエージェント仕様 (§3.4) | 🟢 小 | ☐ | | | (#1 smoke or 必要時) |
-| PR17 | ffmpeg subprocess timeout (§2.15) | 🟢 小 | ☐ | | | (#7 batch) |
-| PR18 | speaker_tagger json.loads ラップ (§2.15) | 🟢 小 | ☐ | | | (#7 batch) |
-| PR19 | スクレイパー堅牢性 (§2.16) | 🟡 中 | ☐ | | | (#7 batch、テスト含む) |
-| PR20 | 法案タグ精度検証 (§2.17) | 🟡 中 | ☐ | | | (#7 batch、F2 ゲート前必須) |
+| PR17 | ffmpeg subprocess timeout (§2.15) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | extractor.py 5箇所の subprocess.run に用途別 timeout (DL=1800/EXTRACT=600/SPLIT=300/SILENCE=120/PROBE=30s)。テスト 4件 |
+| PR18 | speaker_tagger json.loads ラップ (§2.15) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | speaker_tagger の json.loads を try/except で囲み、空 content / malformed JSON 時は全文 1 utterance フォールバック (raise しない)。テスト 2件 |
+| PR19 | スクレイパー堅牢性 (§2.16) | 🟡 中 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | (1) shugiin `_extract_date` を `unknown` 戻りから `ValueError` 例外化、(2) `find_committee_in_body` を h1-h3 + td/th/dd に限定 (div/span/p の本文走査廃止)、(3) sangiin `get_session_detail` も speakers 空で `SessionNotReadyError`。テスト 7件 (committee 5、shugiin 1、sangiin 1)。HTML フィクスチャ smoke は別途 (Phase 後送り) |
+| PR20 | 法案タグ精度検証 (§2.17) | 🟡 中 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | `scripts/eval_law_tagging.py` 新規。既存 `tests/fixtures/law_tagging_benchmark.json` (6 cases) を groundtruth として使い、`data/<ref>/qa_pairs.json` の `related_law_ids` を集合突合 → micro/macro precision/recall/F1。`--threshold 0.6` で exit code を返す F2 ゲート用 CLI。現データ baseline は micro_F1=0 (benchmark の `law_XXX` ID と現 data の `clb-XXXX` ID が異なる schema 不一致による。F4 再生成後にアラインを再確認) |
 
 ---
 
@@ -69,7 +69,7 @@
 | フェーズ | サンプル数 | ゲート条件 | ステータス | 結果ノート |
 |---|---:|---|---|---|
 | **F0 smoke** | 1 (56074) | exit 0 + 6ファイル出力 | ✅ | 2026-05-10: Step 4.5+ 再実行 122s、qa=1/topics=1、6ファイル全て生成 (PR14 は Step 3 のため smoke カバー外、コード差分のみ確認) |
-| **F1 既知問題** | 4 (56074, 56075, 56211, 8967) | resolved ≥ 50%、新規 NEW_ISSUE = 0 | 🔄 | 2026-05-10 (PR12+PR13 後): 4件全 exit 0 (56075=75.5s/qa=0/topics=8、56211=245.7s/qa=76/topics=17、56074=115.3s/qa=2/topics=1、8967=301.1s/qa=58/topics=10)。**PR12 効果**: 56074 の旧幻覚 (`山口俊一`) を post-validation で検出 → 1 回リトライで除去成功。要約は qa_pairs speakers (小寺博夫・森英介) のみに収束。**PR13 効果**: follow_up_ids 充足率 56211=**84.2%** (64/76)、8967=**86.2%** (50/58)、56074=**50%** (1/2)。**role 充足率** (PR6+PR10 通算+PR12 retry): 56211 **55.3%** (54.8→55.3)、56074 **100%**、8967 **27.6%** (25.9→27.6)。**累積効果**: 旧 baseline (56211=1.4% / 8967=0% / follow_up=0%) 比で大幅改善。LLM ベース全件比較は #7 ISSUES 取り込み後に実施 |
+| **F1 既知問題** | 4 (56074, 56075, 56211, 8967) | resolved ≥ 50%、新規 NEW_ISSUE = 0 | 🔄 | 2026-05-10 (Session #7 PR17-20 後): 4件全 exit 0 (56075=86.3s/qa=0/topics=8、56211=295.1s/qa=73/topics=17、56074=154.5s/qa=2/topics=1、8967=324.4s/qa=57/topics=10)。**Session #7 は堅牢性 PR (timeout / json fallback / scraper 例外化) でデータ品質指標は据え置き想定**。**follow_up_ids 充足率**: 56211 **83%** (61/73)、8967 **85%** (49/57)、56074 50% (1/2) — Session #6 とほぼ同水準。**role 充足率**: 56211 **49%**、56074 100%、8967 **28%** — Session #6 とほぼ同水準。Session #6 の PR12 retry 効果 (56074 の `山口俊一` 幻覚除去) は本ランでも維持 (qa_pairs speakers のみで完結)。LLM ベース全件比較は F2/F3 で実施 |
 | **F2 多様性** | 12 (層化抽出) | 平均 ≤ 5件/セッション、未知カテゴリ unchanged ≤ 2 | ☐ | |
 | **F3 中規模** | 30 | F1/F2 整合、エラー率 < 5%、コスト < $0.5/sess | ☐ | |
 | **F4 全件** | 156 | — | ☐ | |
@@ -150,6 +150,40 @@
 - メモ:
   - PR14 (Step 3 閾値) は Step 4.5+ 再実行ではカバー外。フルパイプライン smoke は次セッション以降で機会があれば
   - validator の speaker 不整合 warning は PR6 metadata enrichment で大幅減少見込み
+
+### Session #7 (ISSUES 取り込み) — 2026-05-10 完了
+- 実装:
+  - **PR17** (`audio/extractor.py`): 5 箇所の `subprocess.run` に用途別 timeout を追加。`_FFMPEG_TIMEOUT_DOWNLOAD=1800` (HLS 直接 DL)、`_FFMPEG_TIMEOUT_EXTRACT=600` (ローカル TS → WAV)、`_FFMPEG_TIMEOUT_SPLIT=300` (silenceremove 込みセグメント分割)、`_FFMPEG_TIMEOUT_SILENCE=120` (detect_leading_silence)、`_FFPROBE_TIMEOUT=30` (duration 取得)。HLS 配信が途中停滞してもプロセスがハングしない (旧来は GH Actions の 180分 timeout でしか救えなかった)。
+  - **PR18** (`speaker_tagger.py`): `json.loads(content)` を try/except で囲み、`content` が空 / malformed JSON のいずれでも上位伝播せず「全文 1 utterance」フォールバックを返す。`structurer.py` の同等パターンに揃える。
+  - **PR19** スクレイパー堅牢性:
+    - `scrapers/shugiin.py:_extract_date` を `logger.warning + return "unknown"` から `ValueError` 例外化。silent fallback 廃止により `data/shugiin/unkn/ow/n/` パス生成を構造的に防ぐ。
+    - `scrapers/_committee.py:find_committee_in_body` の走査対象を `h1-h3 + td/th/dd` に限定 (`div/span/p` を除外)。本文段落に「○○委員会」言及があるだけで誤検知するパスを構造的に排除。本来 `h1-h3` と「会議名」label / `<title>` を経由するメインパスは影響なし。
+    - `scrapers/sangiin.py:get_session_detail` で speakers が空のときに `SessionNotReadyError` を送出 (shugiin と同じ semantics)。
+  - **PR20** 法案タグ精度検証:
+    - `scripts/eval_law_tagging.py` 新規。既存 `tests/fixtures/law_tagging_benchmark.json` (6 cases × required/forbidden law IDs) を groundtruth として読み、各 case の `session_ref` 配下の `data/<ref>/qa_pairs.json` から `related_law_ids` の集合を集計、required/forbidden と突合して micro/macro precision/recall/F1 を出力する CLI。`--threshold 0.6` で exit code を返し F2 ゲート用に組み込み可能。
+    - `forbidden_laws` の表記揺れ (string list / dict list) を normalize、`session_ref` 末尾の「（qa_001のみ）」「（抜粋）」を strip するヘルパを内蔵。
+    - 現データの baseline 結果は micro_F1=0 (benchmark の synthetic ID `law_XXX` と現 data の実 ID `clb-XXXX` の schema 差異)。F4 全件再生成後に benchmark 側の ID を data の実 ID にアラインする必要あり (本 PR の eval スクリプト自体は機能する)。
+- 検証:
+  - unit tests:
+    - `test_audio_extractor.py::TestSubprocessTimeouts` 4 件 (ffmpeg direct DL / split_segments / _get_audio_duration / detect_leading_silence)
+    - `test_speaker_tagger.py::TestMalformedJsonHandling` 2 件 (malformed JSON / empty content)
+    - `test_committee_resolver.py::TestFindCommitteeInBodyScopeRestriction` 5 件 (paragraph_ignored / div_ignored / span_ignored / h2_still_matches / td_still_matches)
+    - `test_shugiin_scraper.py::TestExtractDateRaisesOnFailure::test_unparseable_html_raises_value_error` 1 件
+    - `test_sangiin_scraper.py::TestEmptySpeakersRaisesNotReady::test_no_speakers_in_html_raises` 1 件
+    - 計 +13 件 全 pass。`scripts/eval_law_tagging.py --threshold 0` 実走で 6 cases 全評価成功
+    - 全 unit (-m "not integration"): **339 pass / pre-existing 10 failure (3 scraper baseline + 7 ffmpeg 不在環境) のみ**、新規 regression なし
+  - **F1 サンプル4件 全 exit 0** (`/tmp/regen-test/_summary.json`):
+    - 56075 本会議: 86.3s, qa=0/topics=8 (PR11 経路、PR12 検証スキップ)
+    - 56211 内閣委員会: 295.1s, qa=73/topics=17、follow_up 充足 **83%** (61/73)、role 充足 **49%**
+    - 56074 本会議: 154.5s, qa=2/topics=1、follow_up 50% (1/2)、role 100%
+    - 8967 内閣委員会: 324.4s, qa=57/topics=10、follow_up 充足 **85%** (49/57)、role 充足 **28%**
+  - Session #7 は堅牢性 PR のためデータ品質指標 (follow_up / role) は Session #6 と同水準を維持 (PR12 retry 効果 = `山口俊一` 幻覚除去 も維持)。
+- ノート:
+  - PR19 で `find_committee_in_body` から `div/span/p` を除外したが、フィクスチャ `shugiin_56149.html` 由来の 2 件 (`test_committee_extracted` / `test_session_kind_for_floor_meeting`) は変更前から失敗していた pre-existing failure (`git stash` 検証済)。PR19 起因ではない。
+  - PR20 の `law_id` schema 差異 (benchmark `law_XXX` vs data `clb-XXXX`) は別 PR で benchmark 側を再生成 (F4 後の data に合わせる)。
+  - PR19 スコープのうち「HTML フィクスチャ + 構造変化検出 smoke test」(`tests/fixtures/scraper_html/`) は実 HTML レイアウト変更検知用で本セッションのスコープ外、F2/F3 のサイト運用フェーズで導入する。
+- 残作業 (Session #8 へ):
+  - F2 多様性検証 (12 セッション、`docs/STRUCTURER_REWRITE.md §3.2` のゲート条件で go/no-go 判定)。実装 PR は本セッションで全完了 (PR16 を除く)。
 
 ### Session #6 (structurer 検証強化) — 2026-05-10 完了
 - 実装:

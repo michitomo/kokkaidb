@@ -145,9 +145,28 @@ def tag_speakers(
 
     content = response.choices[0].message.content
     if not content:
-        raise ValueError("Empty response from LLM")
+        logger.warning(
+            "Empty response from LLM for segment speaker=%s; using whole text as single utterance",
+            segment_speaker.name,
+        )
+        return [Utterance(
+            speaker=segment_speaker.name,
+            role=segment_speaker.role or "質疑者",
+            text=raw_text,
+        )]
 
-    data = json.loads(content)
+    try:
+        data = json.loads(content)
+    except json.JSONDecodeError as e:
+        logger.error(
+            "Failed to parse LLM JSON for segment speaker=%s: %s; using whole text as single utterance",
+            segment_speaker.name, e,
+        )
+        return [Utterance(
+            speaker=segment_speaker.name,
+            role=segment_speaker.role or "質疑者",
+            text=raw_text,
+        )]
     splits = data.get("splits", [])
 
     if not splits:

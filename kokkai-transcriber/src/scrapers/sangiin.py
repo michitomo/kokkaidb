@@ -25,7 +25,7 @@ from src.models import SessionDetail, SpeakerInfo
 from src.scrapers._committee import resolve_committee
 from src.scrapers._role import derive_role
 from src.scrapers._session_kind import detect_session_kind
-from src.scrapers.base import BaseScraper
+from src.scrapers.base import BaseScraper, SessionNotReadyError
 
 logger = logging.getLogger(__name__)
 
@@ -110,6 +110,11 @@ class SangiinScraper(BaseScraper):
         soup = BeautifulSoup(response.text, "html.parser")
 
         speakers = _extract_speakers(soup, session_id)
+        if not speakers:
+            raise SessionNotReadyError(
+                f"Speaker list not yet published for sid={session_id}. "
+                "Will retry later."
+            )
         for s in speakers:
             s.role = derive_role(s.affiliation)
 
