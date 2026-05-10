@@ -1625,6 +1625,39 @@ def build_summary_related_laws(qa_pairs: QAPairsOutput) -> list[RelatedLawTag]:
 # V4 metrics LLM: OpenRouter 経由 Gemma 4 31B-it
 _METRICS_MODEL = "google/gemma-4-31b-it"
 
+# PR45: LLM が混同しやすい型の許容値セット (Literal から外れた値を coerce する)
+_VALID_CONCRETE_ITEM_TYPES: frozenset[str] = frozenset(
+    ("number", "proper_noun", "deadline", "evidence_citation")
+)
+_VALID_CITED_SOURCE_TYPES: frozenset[str] = frozenset(
+    ("number", "organization", "law", "date", "past_answer", "field_case", "other")
+)
+
+
+def _sanitize_metrics_data(data: dict) -> None:
+    """LLM 出力の metrics JSON を Pydantic Literal 制約に合わせて修正する (in-place)。
+
+    ConcreteItem.type / CitedSource.type が想定外の値を返した場合に最近似値へ coerce。
+    """
+    # ConcreteItem.type の coerce
+    as2 = (data.get("as2_information_density") or {})
+    for item in (as2.get("concrete_items_in_answer") or []):
+        if isinstance(item, dict) and item.get("type") not in _VALID_CONCRETE_ITEM_TYPES:
+            # "date"/"organization"/"law" → "evidence_citation" (closest semantically)
+            raw_type = str(item.get("type", ""))
+            if raw_type in ("date", "deadline"):
+                item["type"] = "deadline"
+            elif raw_type in ("organization", "law", "past_answer", "field_case"):
+                item["type"] = "evidence_citation"
+            else:
+                item["type"] = "proper_noun"
+
+    # CitedSource.type の coerce
+    qq2 = (data.get("qq2_groundedness") or {})
+    for item in (qq2.get("cited_sources") or []):
+        if isinstance(item, dict) and item.get("type") not in _VALID_CITED_SOURCE_TYPES:
+            item["type"] = "other"
+
 
 def _score_one_pair(pair: QAPair) -> QAMetrics | None:
     """1ペアをV4プロンプトで評価してQAMetricsを返す。失敗時はNoneを返す。"""
@@ -1656,7 +1689,13 @@ def _score_one_pair(pair: QAPair) -> QAMetrics | None:
 
     try:
         data = with_retry(_call)
-        return QAMetrics.model_validate(data)
+        try:
+            return QAMetrics.model_validate(data)
+        except Exception:
+            # PR45: Pydantic Literal 違反 (LLM が ConcreteItem.type に "date" 等を返す) を
+            # sanitize して再試行する。sanitize 後も失敗したら None。
+            _sanitize_metrics_data(data)
+            return QAMetrics.model_validate(data)
     except Exception as e:
         logger.warning("score_qa_pairs_metrics: failed for %s: %s", pair.id, e)
         return None
