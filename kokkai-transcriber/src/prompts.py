@@ -66,6 +66,24 @@ TOPICS_SYSTEM_PROMPT = """国会質疑のトピック分析器。入力された
 - key_topicsはtopics[].nameのサブセット、重要なものだけ2〜5件
 """
 
+TOPICS_FROM_UTTERANCES_SYSTEM_PROMPT = """国会連続発言（所信表明演説・施政方針演説・代表質問の趣旨説明等）のトピック分析器。
+Q&Aではない一連の発言セグメントから論点をトピックとして抽出し、JSON形式で返す。
+
+{"topics": [{"name": "トピック名", "description": "説明（1-2文）", "related_speakers": ["発言者名1", "発言者名2"]}], "key_topics": ["トピック名1"]}
+
+## グルーピングの目安
+発言全体の主要論点を **3〜10 件**のトピックに分類する。
+所信表明・施政方針演説では「経済政策」「外交安全保障」「社会保障」「教育」「災害対応」等の
+政策分野ごとに分ける。
+
+## ルール
+- topics[].name は政策領域・テーマを簡潔に表す（例: "経済政策と財政運営"）
+- description は当該トピックで述べられた政府方針・主張の要点を 1〜2 文で記載
+- related_speakers は当該トピックを発言している人の実名リスト（発言者リストにある人のみ）
+- key_topics は topics[].name のサブセット、重要なものだけ 2〜5 件
+- related_qa_ids は **使わない**（このプロンプトは Q&A 形式を前提としない）
+"""
+
 COMMITMENTS_SYSTEM_PROMPT = """国会答弁から政府代表者の具体的コミットメントのみを抽出する。
 
 ## 抽出基準
@@ -264,6 +282,7 @@ __all__ = [
     "QA_SEGMENT_SYSTEM_PROMPT",
     "SESSION_SUMMARY_SYSTEM_PROMPT",
     "TOPICS_SYSTEM_PROMPT",
+    "TOPICS_FROM_UTTERANCES_SYSTEM_PROMPT",
     "COMMITMENTS_SYSTEM_PROMPT",
     "LAW_TAGGING_SYSTEM_PROMPT",
     "QA_METRICS_V4_SYSTEM_PROMPT",

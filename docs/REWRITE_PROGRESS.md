@@ -45,13 +45,13 @@
 | PR2 | video_url www. 修正 (§2.14) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | speaker_tagger.py:208 + test 強化 |
 | PR3 | derive_role 拡張 (§2.9) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | 事務総長/臨時委員長/副議長 を委員長扱い、複合 affiliation の substring 検出、テスト +6件 |
 | PR4 | schema 規約明文化 (§2.12) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | models.py モジュール docstring に規約追記 |
-| PR5 | 拡張閣僚リスト (§2.6) | 🟢 小 | ☐ | | | (#5 batch) |
+| PR5 | 拡張閣僚リスト (§2.6) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | `_WHISPER_PROMPT_BASE` に松本尚デジタル大臣・関口昌一参議院議長・社会民主党を追加 (Whisper 224-token budget 内に収める)。PR5 効果は Step 4 (Whisper) 再実行が必要なため F1 では未測定 |
 | PR6 | metadata enrichment (§2.2/2.3) | 🟡 中 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | metadata_enricher.py 新規、Step 5.25 として pipeline 挿入、委員長指名文 + speaker 名末尾の役職抽出、テスト 29件、F1 で 56211 role 充足率 1.4→52.8%、8967 0→26.3% |
-| PR7 | corrector 安全チェック緩和 (§2.5) | 🟢 小 | ☐ | | | (#5 batch) |
-| PR8 | corrector 禁止事項強化 (§2.6/2.7) | 🟢 小 | ☐ | | | (#5 batch) |
+| PR7 | corrector 安全チェック緩和 (§2.5) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | `_has_repetition_loop` 追加。元テキストにループ (同一短文 ≥3回反復) があれば 80%縮小チェックを bypass。56075 で 25 chunks の loop 除去を許可、raw_transcript 74k→25k chars (-65%) |
+| PR8 | corrector 禁止事項強化 (§2.6/2.7) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | corrector SYSTEM_PROMPT に「同一文3回以上削除」「議長＊○○君明示削除」「ご視聴ありがとう等定型文削除」「存在しない略語/役職/地名創作禁止」を追加 |
 | PR9 | utterance_indices schema (§2.1) | 🔴 **大** | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | 前半 #2: prompts.py V2 + structurer.py 雛形 / 後半 #3: anchor + 共有 utterance テスト 15件 + F1 4件全 exit 0 |
-| PR10 | content_missing 対策 (§2.10) | 🟡 中 | ☐ | | | (#5 batch、PR9 依存) |
-| PR11 | floor_speech summary 経路 (§2.10) | 🟡 中 | ☐ | | | (#5 batch、PR10 依存) |
+| PR10 | content_missing 対策 (§2.10) | 🟡 中 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | `_extract_pairs_from_response` に空質問drop / 範囲外indices比率 50%超 WARN / 受理統計1行ログを追加。`generate_topics_without_qa` 新規 + `TOPICS_FROM_UTTERANCES_SYSTEM_PROMPT` 新規。テスト 7件追加 |
+| PR11 | floor_speech summary 経路 (§2.10) | 🟡 中 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | pipeline.py で `qa_pairs.pairs` が空かつ `utterances.segments` がある場合は `generate_topics_without_qa` 経路。session_kind=None でも適用 (全 procedural skip もケアできる)。56075 高市所信表明で **topics 0→9 件生成** |
 | PR12 | summary post-validation (§2.11) | 🟡 中 | ☐ | | | (#6 batch、PR9+PR11 依存) |
 | PR13 | follow_up_ids 実装 (§2.14) | 🟢 小 | ☐ | | | (#6 batch、PR9 依存) |
 | PR14 | leading_silence 閾値調整 (§2.13) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | pipeline.py offset 30s → 5s |
@@ -69,7 +69,7 @@
 | フェーズ | サンプル数 | ゲート条件 | ステータス | 結果ノート |
 |---|---:|---|---|---|
 | **F0 smoke** | 1 (56074) | exit 0 + 6ファイル出力 | ✅ | 2026-05-10: Step 4.5+ 再実行 122s、qa=1/topics=1、6ファイル全て生成 (PR14 は Step 3 のため smoke カバー外、コード差分のみ確認) |
-| **F1 既知問題** | 4 (56074, 56075, 56211, 8967) | resolved ≥ 50%、新規 NEW_ISSUE = 0 | 🔄 | 2026-05-10 (PR1+PR3+PR6 後): 4件全 exit 0 (56075=103.9s/qa=0、56211=312.5s/qa=72、56074=165.8s/qa=2、8967=233.5s/qa=57)。**PR6 metadata enrichment の効果検証** — 56211 で metadata.speakers 12→48 (答弁者 0→11、政府参考人 0→25 補完)、answer.role 充足率 **1.4% → 52.8% (+51.4pt)**。8967 で speakers 9→34 (答弁者 0→10、政府参考人 0→15)、role 充足率 **0% → 26.3% (+26.3pt)**。56074 (本会議) は speakers 不変だが role 充足率 75% → 100%。委員長指名文での affiliation 推定に加え、speaker 名末尾の役職タイトル抽出 ("松本大臣" → "大臣"、"内閣府宇宙開発戦略推進事務局長" → 全文を affiliation) のフォールバックが効いた。Step 5.25 ステップ追加コストは無視できる (1-3ms/セッション)。残カテゴリは PR9 後と同様、他 PR 担当のため UNCHANGED 想定通り。LLM ベース全件比較は #5-#7 で実施 |
+| **F1 既知問題** | 4 (56074, 56075, 56211, 8967) | resolved ≥ 50%、新規 NEW_ISSUE = 0 | 🔄 | 2026-05-10 (PR7+PR8+PR10+PR11 後): 4件全 exit 0 (56075=66.8s/qa=0/topics=9、56211=291.9s/qa=73、56074=167.3s/qa=2、8967=893.5s/qa=58)。**PR7 安全チェック緩和の効果**: 56075 で 25 chunks の loop 除去を許可、raw_transcript 74,258 → 25,414 chars (-65%)。「議長＊小寺君」6904 回ループが正しく削除された。**PR11 floor_speech 経路の効果**: 56075 (高市所信表明) で QA=0 だが utterances から topics 9 件生成 (経済政策・外交安保・エネルギー・国土強靭化・農林水産業 等)。**role 充足率 (PR6+PR10 通算)**: 56211 1.4%→**54.8%** (+53.4pt)、56074 75%→**100%**、8967 0%→**25.9%** (+25.9pt)。LLM ベース全件比較は #6-#7 で実施 |
 | **F2 多様性** | 12 (層化抽出) | 平均 ≤ 5件/セッション、未知カテゴリ unchanged ≤ 2 | ☐ | |
 | **F3 中規模** | 30 | F1/F2 整合、エラー率 < 5%、コスト < $0.5/sess | ☐ | |
 | **F4 全件** | 156 | — | ☐ | |
@@ -150,6 +150,34 @@
 - メモ:
   - PR14 (Step 3 閾値) は Step 4.5+ 再実行ではカバー外。フルパイプライン smoke は次セッション以降で機会があれば
   - validator の speaker 不整合 warning は PR6 metadata enrichment で大幅減少見込み
+
+### Session #5 (corrector+content) — 2026-05-10 完了
+- 実装:
+  - **PR5** (`transcriber.py:_WHISPER_PROMPT_BASE`): 第221回現職閣僚 16名の代わりに、Whisper 224-token budget 内に収まる最小拡張として「松本尚デジタル大臣」「関口昌一参議院議長」「社会民主党」を追加。「衆議院の」を削除し参議院セッション対応も改善。閣僚 16名のうち平口/松本洋平/鈴木/金子/石原/林/城内/小野田は token 予算外、transcript_corrector の固有名詞リファレンスに委任。
+  - **PR7** (`transcript_corrector.py:_has_repetition_loop` 新設): 同一短文 (≤30 char) が連続 3 回以上反復するパターンを検出。安全チェック2 (80%縮小チェック) を、ループ判定時に bypass。「議長＊小寺君」6904回・「ご視聴ありがとう」連続等の Whisper トークンループが正しく削除されるようになった。
+  - **PR8** (`transcript_corrector.py:SYSTEM_PROMPT`): 「同一文3回以上削除」「議長＊○○君明示削除」「ご視聴ありがとう等動画配信定型文削除」を**必須**として明示。「禁止事項」に「存在しない略語の創作禁止 (OSA→OSC等)」「存在しない役職名の創作禁止 (秘書官→正官等)」「公的固有名詞 (地名・法律名・政府機関名) の改変禁止 (八潮市→八代市等)」「括弧注釈の挿入禁止」を追加。
+  - **PR10** (`structurer.py:_extract_pairs_from_response`):
+    - 空質問 drop: `q_full == "" and not q_uidx` のペアを drop (旧 ISSUES2 §1-2 由来)
+    - 範囲外 indices 比率: ペア横断で `utterance_indices` の out-of-range 数を計測、50%超で WARN log (LLM hallucination 検知)
+    - 受理統計サマリ: `Segment N: parsed X raw → kept Y pairs (drop_short, drop_empty_q, oor_idx)` の 1 行ログ
+    - 新規 `generate_topics_without_qa(utterances)` + `TOPICS_FROM_UTTERANCES_SYSTEM_PROMPT` (`prompts.py`): QA なしで utterances から直接 topics + key_topics を生成
+  - **PR11** (`pipeline.py:_run_step6`): `qa_pairs.pairs` が空かつ `utterances_output.segments` がある場合、`generate_topics_without_qa` 経路を呼ぶ。session_kind=None で全 procedural skip されたケースもケア (旧 logic は session_kind in _FLOOR_LIKE_KINDS のみだった)。
+- 検証:
+  - unit tests:
+    - `test_transcript_corrector.py` 新規 12 件 pass (loop 検出: chair_nomination_loop / youtube_filler_loop / speaker_name_loop / two_repeats_not_loop / normal_text / long_phrase_not_loop / min_repeats_two / short_text / empty / whitespace / intermittent / question_mark)
+    - `test_structurer.py` +7件 pass (TestEmptyQuestionDrop 2件、TestOutOfRangeIndicesWarning 2件、TestGenerateTopicsWithoutQA 3件)
+  - 全 unit (-m "not integration"): pre-existing 10 failure (3 scraper baseline + 7 ffmpeg 不在環境) のみ、新規 regression なし
+  - **F1 サンプル4件 全 exit 0**:
+    - 56075 本会議 (高市所信表明、whisper_loop=high): 66.8s, qa=0/**topics=9** (PR11 経路)、raw_transcript **74,258 → 25,414 chars (-65%)** = PR7+PR8 がループ除去成功 (chunks に 25 件の `kept correction despite 0% (loop pattern detected)` が記録)
+    - 56211 内閣委員会: 291.9s, qa=73/topics=15、role 充足率 1.4% → **54.8%** (+53.4pt)
+    - 56074 本会議: 167.3s, qa=2/topics=1、role 充足率 75% → **100%**
+    - 8967 内閣委員会: 893.5s, qa=58/topics=9、role 充足率 0% → **25.9%** (+25.9pt)
+- ノート:
+  - PR5 の効果は Step 4 (Whisper) 再実行が必要なため F1 では未測定。本番処理 or 単体 transcribe テストで別途検証
+  - 56075 で qa=0 のままだが、これは _is_qa_segment の判定 (質疑者 role がない segment は skip) が正しく機能している結果。趣旨説明・施政方針演説でも topics は PR11 で復元される
+  - V4 metrics の `'date'` literal_error は Session #2 から継続 (8967 で 15 件失敗)、別 PR で修正
+- 残作業 (Session #6 へ):
+  - PR12 (summary post-validation)、PR13 (follow_up_ids 実装) — F1 で summary_qa_divergence 改善
 
 ### Session #4 (enrichment) — 2026-05-10 完了
 - 実装:

@@ -29,6 +29,7 @@ from src.structurer import (
     generate_qa_pairs,
     generate_session_summary,
     generate_topics_and_key_topics,
+    generate_topics_without_qa,
 )
 
 
@@ -922,6 +923,285 @@ class TestGenerateQAForSegmentErrorHandling:
 
         assert len(result) == 1
         assert result[0].topic == "テスト"
+
+
+class TestEmptyQuestionDrop:
+    """PR10/§2.10: q_full_text が空かつ q_uidx が空のペアは drop される。"""
+
+    def test_drops_pair_with_empty_question_and_no_indices(self) -> None:
+        seg = SegmentUtterances(
+            segment_index=0,
+            segment_speaker="質問太郎",
+            segment_affiliation="チームみらい",
+            start_seconds=0.0,
+            video_url="",
+            utterances=[
+                Utterance(speaker="質問太郎", role="質疑者", text="質問本文。"),
+                Utterance(
+                    speaker="答弁次郎",
+                    role="答弁者",
+                    text="お答えします。十分長い回答です。" + "x" * 50,
+                ),
+            ],
+        )
+        layout = _compute_segment_layout(seg)
+        content = json.dumps(
+            {
+                "pairs": [
+                    {
+                        "topic": "ダミー",
+                        "question": {
+                            "summary": "Q",
+                            "utterance_indices": [],
+                            "split_anchor_sentence_idx": None,
+                            "intent": "other",
+                        },
+                        "answer": {
+                            "summary": "A",
+                            "utterance_indices": [1],
+                            "split_anchor_sentence_idx": None,
+                        },
+                    }
+                ]
+            }
+        )
+        result = _extract_pairs_from_response(content, seg, layout, {})
+        assert result == []
+
+    def test_keeps_pair_with_question_indices(self) -> None:
+        """質問 utterance_indices が指定されていれば q_full は生成され drop されない。"""
+        seg = SegmentUtterances(
+            segment_index=0,
+            segment_speaker="質問太郎",
+            segment_affiliation="チームみらい",
+            start_seconds=0.0,
+            video_url="",
+            utterances=[
+                Utterance(speaker="質問太郎", role="質疑者", text="質問本文。"),
+                Utterance(
+                    speaker="答弁次郎",
+                    role="答弁者",
+                    text="十分に長い回答本文です。" + "x" * 50,
+                ),
+            ],
+        )
+        layout = _compute_segment_layout(seg)
+        content = json.dumps(
+            {
+                "pairs": [
+                    {
+                        "topic": "ダミー",
+                        "question": {
+                            "summary": "Q",
+                            "utterance_indices": [0],
+                            "split_anchor_sentence_idx": None,
+                            "intent": "other",
+                        },
+                        "answer": {
+                            "summary": "A",
+                            "utterance_indices": [1],
+                            "split_anchor_sentence_idx": None,
+                        },
+                    }
+                ]
+            }
+        )
+        result = _extract_pairs_from_response(content, seg, layout, {})
+        assert len(result) == 1
+        assert result[0].question.full_text
+
+
+class TestOutOfRangeIndicesWarning:
+    """PR10/§2.10: 範囲外 utterance_indices の比率を計測する。"""
+
+    def test_high_oor_ratio_logs_warning(self, caplog: pytest.LogCaptureFixture) -> None:
+        import logging
+
+        seg = SegmentUtterances(
+            segment_index=5,
+            segment_speaker="質問太郎",
+            segment_affiliation="チームみらい",
+            start_seconds=0.0,
+            video_url="",
+            utterances=[
+                Utterance(speaker="質問太郎", role="質疑者", text="質問本文。"),
+                Utterance(
+                    speaker="答弁次郎",
+                    role="答弁者",
+                    text="長い回答本文です。" + "y" * 50,
+                ),
+            ],
+        )
+        layout = _compute_segment_layout(seg)
+        # 4 indices, 3 of which are out of range (>=2)
+        content = json.dumps(
+            {
+                "pairs": [
+                    {
+                        "topic": "T",
+                        "question": {
+                            "summary": "Q",
+                            "utterance_indices": [0, 99],
+                            "split_anchor_sentence_idx": None,
+                            "intent": "other",
+                        },
+                        "answer": {
+                            "summary": "A",
+                            "utterance_indices": [88, 77],
+                            "split_anchor_sentence_idx": None,
+                        },
+                    }
+                ]
+            }
+        )
+        with caplog.at_level(logging.WARNING, logger="src.structurer"):
+            _extract_pairs_from_response(content, seg, layout, {})
+
+        warnings = [
+            r for r in caplog.records if "out of range" in r.getMessage()
+        ]
+        assert warnings, "expected an out-of-range warning"
+        assert "Segment 5" in warnings[0].getMessage()
+
+    def test_low_oor_ratio_no_warning(
+        self, caplog: pytest.LogCaptureFixture
+    ) -> None:
+        import logging
+
+        seg = SegmentUtterances(
+            segment_index=2,
+            segment_speaker="質問太郎",
+            segment_affiliation="チームみらい",
+            start_seconds=0.0,
+            video_url="",
+            utterances=[
+                Utterance(speaker="質問太郎", role="質疑者", text="質問本文。"),
+                Utterance(
+                    speaker="答弁次郎",
+                    role="答弁者",
+                    text="長い回答本文です。" + "y" * 50,
+                ),
+            ],
+        )
+        layout = _compute_segment_layout(seg)
+        # 4 indices, all in range
+        content = json.dumps(
+            {
+                "pairs": [
+                    {
+                        "topic": "T",
+                        "question": {
+                            "summary": "Q",
+                            "utterance_indices": [0],
+                            "split_anchor_sentence_idx": None,
+                            "intent": "other",
+                        },
+                        "answer": {
+                            "summary": "A",
+                            "utterance_indices": [1],
+                            "split_anchor_sentence_idx": None,
+                        },
+                    }
+                ]
+            }
+        )
+        with caplog.at_level(logging.WARNING, logger="src.structurer"):
+            _extract_pairs_from_response(content, seg, layout, {})
+
+        warnings = [
+            r for r in caplog.records if "out of range" in r.getMessage()
+        ]
+        assert not warnings
+
+
+class TestGenerateTopicsWithoutQA:
+    """PR10/PR11/§2.10: utterances から直接 topics + key_topics を生成する。"""
+
+    def _make_utterances(self) -> UtterancesOutput:
+        return UtterancesOutput(
+            segments=[
+                SegmentUtterances(
+                    segment_index=0,
+                    segment_speaker="高市早苗",
+                    segment_affiliation="自由民主党",
+                    start_seconds=0.0,
+                    video_url="",
+                    utterances=[
+                        Utterance(
+                            speaker="高市早苗",
+                            role="答弁者",
+                            text="経済成長と財政運営について申し上げます。",
+                        ),
+                    ],
+                ),
+            ]
+        )
+
+    def test_returns_topics_with_empty_qa_ids(self) -> None:
+        utterances = self._make_utterances()
+        mock_data = {
+            "topics": [
+                {
+                    "name": "経済政策",
+                    "description": "成長戦略と財政再建",
+                    "related_speakers": ["高市早苗"],
+                },
+                {
+                    "name": "外交政策",
+                    "description": "同盟関係の強化",
+                    "related_speakers": ["高市早苗"],
+                },
+            ],
+            "key_topics": ["経済政策"],
+        }
+
+        with patch("src.structurer._get_client") as mock_factory:
+            mock_client = MagicMock()
+            mock_client.chat.completions.create.return_value = (
+                _make_mock_llm_response(mock_data)
+            )
+            mock_factory.return_value = mock_client
+            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+                topics, key_topics = generate_topics_without_qa(utterances)
+
+        assert isinstance(topics, TopicsOutput)
+        assert len(topics.topics) == 2
+        # related_qa_ids は常に空 (QA が存在しないため)
+        assert all(t.related_qa_ids == [] for t in topics.topics)
+        assert key_topics == ["経済政策"]
+
+    def test_drops_unknown_key_topic(self) -> None:
+        utterances = self._make_utterances()
+        mock_data = {
+            "topics": [
+                {
+                    "name": "経済政策",
+                    "description": "...",
+                    "related_speakers": [],
+                },
+            ],
+            "key_topics": ["経済政策", "存在しないトピック"],
+        }
+
+        with patch("src.structurer._get_client") as mock_factory:
+            mock_client = MagicMock()
+            mock_client.chat.completions.create.return_value = (
+                _make_mock_llm_response(mock_data)
+            )
+            mock_factory.return_value = mock_client
+            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+                topics, key_topics = generate_topics_without_qa(utterances)
+
+        assert key_topics == ["経済政策"]
+
+    def test_empty_utterances_returns_empty(self) -> None:
+        empty = UtterancesOutput(segments=[])
+        with patch("src.structurer._get_client") as mock_factory:
+            topics, key_topics = generate_topics_without_qa(empty)
+
+        assert topics.topics == []
+        assert key_topics == []
+        mock_factory.assert_not_called()
 
 
 @pytest.mark.integration

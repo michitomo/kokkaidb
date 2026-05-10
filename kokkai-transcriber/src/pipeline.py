@@ -59,6 +59,7 @@ from src.structurer import (
     generate_qa_pairs,
     generate_session_summary,
     generate_topics_and_key_topics,
+    generate_topics_without_qa,
     score_qa_pairs_metrics,
     tag_related_laws,
 )
@@ -352,7 +353,20 @@ def _run_step6(
         )
 
     session_summary = generate_session_summary(qa_pairs, utterances_output)
-    topics, key_topics = generate_topics_and_key_topics(qa_pairs)
+
+    # PR11/§2.10: QA が空でも utterances がある場合 (所信表明・施政方針演説・
+    # 全 procedural skip 等) は utterances から topics + key_topics を生成し、
+    # content_missing を防ぐ
+    if qa_pairs.pairs:
+        topics, key_topics = generate_topics_and_key_topics(qa_pairs)
+    elif utterances_output.segments:
+        logger.info(
+            "Step 6: generating topics from utterances (session_kind=%s, no Q&A produced)",
+            sk,
+        )
+        topics, key_topics = generate_topics_without_qa(utterances_output)
+    else:
+        topics, key_topics = generate_topics_and_key_topics(qa_pairs)
     commitments = generate_key_commitments(qa_pairs)
 
     if qa_pairs.pairs:

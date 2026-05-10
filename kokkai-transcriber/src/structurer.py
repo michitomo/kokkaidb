@@ -37,6 +37,7 @@ from src.prompts import (
     QA_METRICS_V4_USER_TEMPLATE,
     QA_SEGMENT_SYSTEM_PROMPT,
     SESSION_SUMMARY_SYSTEM_PROMPT,
+    TOPICS_FROM_UTTERANCES_SYSTEM_PROMPT,
     TOPICS_SYSTEM_PROMPT,
 )
 from src.speaker_lookup import find_by_name
@@ -454,9 +455,21 @@ def _extract_pairs_from_response(
     q_boundaries = _compute_share_boundaries(parsed_pairs, "q")
     a_boundaries = _compute_share_boundaries(parsed_pairs, "a")
 
+    n_utterances = len(seg.utterances)
+    indices_total = 0
+    indices_out_of_range = 0
+
     pairs: list[QAPair] = []
     dropped_short = 0
+    dropped_empty_q = 0
     for i, p in enumerate(parsed_pairs):
+        # 範囲外 utterance_indices の比率を計測 (LLM hallucination 検知)
+        for side_uidx in (p["q_uidx"], p["a_uidx"]):
+            for idx in side_uidx:
+                indices_total += 1
+                if idx < 0 or idx >= n_utterances:
+                    indices_out_of_range += 1
+
         q_full = _assemble_full_text_for_pair(
             seg, layout, p["q_uidx"], p["q_anchor"], q_boundaries[i],
         )
@@ -466,6 +479,10 @@ def _extract_pairs_from_response(
 
         if len(a_full) < MIN_ANSWER_LENGTH and not p["a_uidx"]:
             dropped_short += 1
+            continue
+        # 質問本文が空かつ utterance_indices も空なら Q&A として成立しない (PR10, ISSUES2 §1-2)
+        if not q_full and not p["q_uidx"]:
+            dropped_empty_q += 1
             continue
 
         q_speaker, q_party = _resolve_speaker_from_utterances(seg, p["q_uidx"], speakers_lookup)
@@ -492,13 +509,33 @@ def _extract_pairs_from_response(
                 video_url=seg.video_url,
             )
         )
-    if dropped_short:
-        logger.info(
-            "Segment %d: dropped %d short-answer pair(s) (<%d chars + no utterance_indices)",
-            seg.segment_index,
-            dropped_short,
-            MIN_ANSWER_LENGTH,
-        )
+
+    # 範囲外 indices 比率が 50% 超なら LLM が utterance 番号を hallucinate している
+    # 可能性が高い (PR10, §2.10)
+    if indices_total > 0:
+        oor_ratio = indices_out_of_range / indices_total
+        if oor_ratio > 0.5:
+            logger.warning(
+                "Segment %d: %d/%d (%.0f%%) utterance_indices out of range — "
+                "LLM may have hallucinated indices",
+                seg.segment_index,
+                indices_out_of_range,
+                indices_total,
+                oor_ratio * 100,
+            )
+
+    # 受理/drop 統計サマリ (PR10, §2.10)
+    logger.info(
+        "Segment %d: parsed %d raw → kept %d pairs (drop_short=%d, drop_empty_q=%d, "
+        "oor_idx=%d/%d)",
+        seg.segment_index,
+        len(parsed_pairs),
+        len(pairs),
+        dropped_short,
+        dropped_empty_q,
+        indices_out_of_range,
+        indices_total,
+    )
     return pairs
 
 
@@ -889,6 +926,67 @@ def generate_topics_and_key_topics(
         )
 
     return TopicsOutput(topics=topics_list), key_topics
+
+
+def generate_topics_without_qa(
+    utterances: UtterancesOutput,
+) -> tuple[TopicsOutput, list[str]]:
+    """utterances から直接 topics + key_topics を生成する (Step 6b-2 fallback)。
+
+    Q&A が抽出されない floor_speech / procedural セッション (所信表明・施政方針演説等)
+    でも topics を保持できるようにする。related_qa_ids は空 (QA が存在しないため)。
+
+    Args:
+        utterances: 話者タグ付き発言データ
+
+    Returns:
+        (topics, key_topics) のペア。utterances が空なら空タプル相当。
+    """
+    if not utterances.segments:
+        return TopicsOutput(topics=[]), []
+
+    user_prompt = (
+        "## 発言セグメント (連続発言・所信表明・施政方針演説・趣旨説明等)\n"
+        + _format_segments_for_prompt(utterances.segments)
+    )
+    data = _call_structurer(
+        TOPICS_FROM_UTTERANCES_SYSTEM_PROMPT,
+        user_prompt,
+        max_tokens=_MAX_TOKENS_CEILING,
+    )
+
+    topics_list: list[Topic] = []
+    for t in data.get("topics", []):
+        related_speakers = [
+            s for s in (t.get("related_speakers") or []) if isinstance(s, str)
+        ]
+        topics_list.append(
+            Topic(
+                name=t.get("name") or "",
+                description=t.get("description") or "",
+                related_qa_ids=[],
+                related_speakers=related_speakers,
+            )
+        )
+
+    valid_topic_names = {t.name for t in topics_list}
+    raw_key_topics = data.get("key_topics") or []
+    key_topics: list[str] = []
+    dropped: list[str] = []
+    for name in raw_key_topics:
+        if isinstance(name, str) and name in valid_topic_names:
+            key_topics.append(name)
+        else:
+            dropped.append(str(name))
+    if dropped:
+        logger.warning(
+            "generate_topics_without_qa: dropped %d key_topics not in topics[].name: %s",
+            len(dropped),
+            dropped,
+        )
+
+    return TopicsOutput(topics=topics_list), key_topics
+
 
 def generate_key_commitments(qa_pairs: QAPairsOutput) -> list[KeyCommitment]:
     """key_commitments を生成する（Step 6b-3）。"""
