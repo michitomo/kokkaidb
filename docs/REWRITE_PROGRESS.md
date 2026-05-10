@@ -38,7 +38,7 @@
 | **#16 (F2 再走)** | 6 件で再評価 | (実装なし) | ❌ ゲート FAIL (avg 11.2/sess、#14 比 -1.5)。PR40/PR41 は部分効果、PR42 は regex 不具合 (全角コロン未対応・prefix 12 字制限) で affiliation 補完ほぼ無効。新規: answer.full_text 末尾 next-speaker ラベル混入 (5 pairs)、metrics=null 集中。PR43 起票 |
 | **#17 (追加修正 4)** | PR42 bug fix + PR43-PR44 実装 | PR42 fix / PR43 / PR43 v2 / PR43 v3 / PR44 / anchor bug fix | ✅ 完了 (2026-05-11): 計 7 PR 実装。F2 rerun4-7 を 6 サイクル実行、毎回 audit してフィードバックループ。自走実施 |
 | **#18 (F2 再走)** | 6 件で再評価 | (実装なし) | ✅ **F2 ゲート PASS** (avg 5.8/sess ≤ 8)。rerun7 (PR43v3 + anchor fix 適用) で初通過。6/6 全件成功、35 findings / 6 sessions。主な改善: 56212 -5 / 8977 -5 / 56162 -10 / 56176 -5。残課題: affiliation 役職名欠落 (56162/56176)、answer 内埋め込みラベル (8977/56179) |
-| **#19 検証 F3** | 中規模 30 件で再生成 + 比較 | (実装なし、状況により PR27 追加) | F3 ゲート通過 |
+| **#19 検証 F3** | 中規模 30 件で再生成 + 比較 | (実装なし) | ✅ **F3 ゲート PASS** (avg 4.6/sess, エラー率 0%)。30/30 全件成功。139 findings / 30 sessions。主な残存: metrics=null 14-24%、所信表明セッション CRITICAL 誤判定、leading labels 一部残存。詳細: `/tmp/regen-f3/` + `/tmp/regen-f3-audit/` |
 | **#16 全件 F4** | 全 156 件削除 + 再生成 + サイトビルド | (実装なし) | 公開 |
 
 合計 **約16セッション**、6-7週間。F2 ゲート FAIL が連続するため Session #13-14 で追加 PR + 再評価。
@@ -114,7 +114,7 @@
 | **F2 再々々走** | 6 (Session #12 と同一) | 平均 ≤ 8件/セッション (目標緩和)、未知 unchanged ≤ 2 | ❌ | 2026-05-11 (Session #13-14): 6 件全 regen exit 0、Sonnet 6 並列 audit。**finding 平均 12.7/session (76/6) → ゲート FAIL、Session #12 比 -0.8 (81→76)**。high=24、medium=29、low=23。PR25/31-35 の効果は限定的。**改善確認**: 56179 -2 / 8986 -5。**残存・新規 systemic**: ① 56176 Q&A全10ペア1ペアズレ (本会議一括質問形式、PR31プロンプト修正では不十分) ② 56212/8986/8977 question断片化 (挨拶のみQA、structurer過剰分割) ③ 56179/8986 segment_index境界誤帰属 (次ブロック冒頭が前ブロックに混入) ④ 56179 横山次郎→次長誤認識が全ペアに伝播 ⑤ 8986 答弁者 affiliation が全員「答弁者」機能名。**判定: PR39-42 起票、Session #15 で修正後 F2 再走**。詳細: `docs/regen-comparison/f2-rerun3/_aggregate.json` |
 | **F2 再走 (PR39-42 後)** | 6 (同一) | 平均 ≤ 8件/セッション | ❌ | 2026-05-11 (Session #15-16): PR39-42 適用後 regen (f2-rerun3 再走)、Sonnet 6 並列 audit。**finding 平均 11.2/session (67/6) → ゲート FAIL、Session #14 比 -1.5 (76→67)**。high=6、medium=31、low=30。**改善確認**: 8986 -5 / 8977 -3。**残存 + 新規**: PR42 regex 不具合 (全角コロン未対応・prefix 12 字制限) で affiliation 補完ほぼ無効 (8986 全答弁者 aff="答弁者" のまま)。PR41 は部分効果 (5 ペア残存)。PR40 は本会議1ペアズレ依然残存。**新規**: answer.full_text 末尾に次発言者ラベル混入 (5 pairs)、metrics=null 集中 (12%)。**判定: PR42 bug fix + PR43 起票、Session #17 で修正**。詳細: `/tmp/regen-f2-rerun3-audit/` |
 | **F2 再走 (Session #17/18 — PR43 v1-v3 + PR44 + bug fix)** | 6 (同一) | 平均 ≤ 8件/セッション | ✅ **PASS** | 2026-05-11 (Session #17-18): PR42 fix / PR43 (trailing+leading label) / PR44 (nomination separator) / anchor TypeError fix を段階的に適用。rerun4→5→6→7 の 4 サイクル。**rerun7: avg 5.8/session (35/6) → ゲート PASS**。8977 9→4 / 56162 14→4 / 56176 9→4 / 56179 13→6 / 56212 11→5 / 8986 11→12 (regression 含む)。詳細: `/tmp/regen-f2-rerun7-audit/` |
-| **F3 中規模** | 30 | F1/F2 整合、エラー率 < 5%、コスト < $0.5/sess | ☐ | |
+| **F3 中規模** | 30 | F1/F2 整合、エラー率 < 5%、コスト < $0.5/sess | ✅ **PASS** | 2026-05-11 (Session #19): 30/30 exit 0 (retry後)、avg 4.6 findings/sess (F2: 5.8)、エラー率 0%。929 QA pairs, 19 active sessions。残課題: metrics=null 14-24%、所信表明 session_kind 誤分類、leading label 残存。詳細: `/tmp/regen-f3-audit/_partial_aggregate.json` |
 | **F4 全件** | 156 | — | ☐ | |
 
 ゲート詳細: `docs/STRUCTURER_REWRITE.md §3.2`
