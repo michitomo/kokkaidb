@@ -25,6 +25,7 @@ from src.structurer import (
     _compute_segment_layout,
     _compute_share_boundaries,
     _extract_pairs_from_response,
+    _fix_boundary_mispairs,
     _fuzzy_lookup,
     _has_chamber_mismatch,
     _has_placeholder_header,
@@ -535,7 +536,7 @@ class TestSharedUtteranceEnd2End:
             start_seconds=0.0,
             video_url="https://example.com/",
             utterances=[
-                Utterance(speaker="質問者", role="質疑者", text="まとめて伺います。"),
+                Utterance(speaker="質問者", role="質疑者", text="少子化対策の財源確保と経済安全保障について政府の見解をまとめて伺います。"),
                 Utterance(speaker="高市早苗", role="答弁者", text=answer_text),
             ],
         )
@@ -946,8 +947,8 @@ class TestGenerateQAForSegmentErrorHandling:
             start_seconds=0.0,
             video_url="",
             utterances=[
-                Utterance(speaker="テスト太郎", role="質疑者", text="質問です。"),
-                Utterance(speaker="テスト次郎", role="答弁者", text="お答えします。"),
+                Utterance(speaker="テスト太郎", role="質疑者", text="質問です。高額療養費制度の見直しについて政府の見解を伺います。"),
+                Utterance(speaker="テスト次郎", role="答弁者", text="お答えします。現行制度を維持しつつ次期改正の検討課題として対応してまいります。"),
             ],
         )
 
@@ -1102,7 +1103,7 @@ class TestEmptyQuestionDrop:
             start_seconds=0.0,
             video_url="",
             utterances=[
-                Utterance(speaker="質問太郎", role="質疑者", text="質問本文。"),
+                Utterance(speaker="質問太郎", role="質疑者", text="少子化対策の財源確保について政府の具体的見解をお聞かせください。"),
                 Utterance(
                     speaker="答弁次郎",
                     role="答弁者",
@@ -1765,8 +1766,8 @@ class TestPR23PerPairVideoUrl:
             start_seconds=100.0,
             video_url="https://example.com/?time=100.0",
             utterances=[
-                Utterance(speaker="X", role="質疑者", text="質問。"),
-                Utterance(speaker="Y", role="答弁者", text="答え。だいぶ長い回答です。"),
+                Utterance(speaker="X", role="質疑者", text="少子化対策の財源確保について政府の具体的な考え方を伺います。"),
+                Utterance(speaker="Y", role="答弁者", text="答え。だいぶ長い回答です。こども・子育て支援金制度で対応してまいります。"),
             ],
         )
         layout = _compute_segment_layout(seg)
@@ -1790,6 +1791,137 @@ class TestPR23PerPairVideoUrl:
         })
         pairs = _extract_pairs_from_response(response, seg, layout, {})
         assert pairs[0].video_url == seg.video_url
+
+
+class TestPR39ShortQuestionDrop:
+    """PR39: question.full_text が短すぎるペアを drop する。"""
+
+    def _make_seg(self) -> SegmentUtterances:
+        return SegmentUtterances(
+            segment_index=0,
+            segment_speaker="田中",
+            segment_affiliation="立憲民主党",
+            start_seconds=0.0,
+            video_url="https://www.shugiintv.go.jp/jp/index.php?ex=VL&deli_id=99&time=0.0",
+            utterances=[
+                Utterance(speaker="田中", role="質疑者",
+                          text="おはようございます。"),
+                Utterance(speaker="大臣", role="答弁者",
+                          text="お答えいたします。高額療養費制度の見直しについては次期改正で対応します。"),
+                Utterance(speaker="田中", role="質疑者",
+                          text="次に、少子化対策について政府の見解を伺います。具体的な財源確保の方針を教えてください。"),
+                Utterance(speaker="大臣", role="答弁者",
+                          text="少子化対策財源については、こども・子育て支援金制度を活用し、医療保険料に上乗せする形で確保してまいります。"),
+            ],
+        )
+
+    def test_drops_short_question(self) -> None:
+        seg = self._make_seg()
+        layout = _compute_segment_layout(seg)
+        response = json.dumps({
+            "pairs": [
+                {
+                    "topic": "挨拶",
+                    "question": {"summary": "- 挨拶", "utterance_indices": [0],
+                                 "split_anchor_sentence_idx": None, "intent": "other"},
+                    "answer": {"summary": "- 回答", "utterance_indices": [1],
+                               "split_anchor_sentence_idx": None},
+                },
+                {
+                    "topic": "少子化対策",
+                    "question": {"summary": "- 財源方針", "utterance_indices": [2],
+                                 "split_anchor_sentence_idx": None, "intent": "information_request"},
+                    "answer": {"summary": "- 支援金制度", "utterance_indices": [3],
+                               "split_anchor_sentence_idx": None},
+                },
+            ]
+        })
+        pairs = _extract_pairs_from_response(response, seg, layout, {})
+        # U0 "おはようございます。" は 10 文字 < 30 → drop
+        # U2 "次に、少子化対策について..." は 30 文字以上 → kept
+        assert len(pairs) == 1
+        assert "少子化" in pairs[0].question.full_text
+
+    def test_keeps_adequate_question(self) -> None:
+        seg = self._make_seg()
+        layout = _compute_segment_layout(seg)
+        response = json.dumps({
+            "pairs": [
+                {
+                    "topic": "少子化",
+                    "question": {"summary": "- 財源", "utterance_indices": [2],
+                                 "split_anchor_sentence_idx": None, "intent": "information_request"},
+                    "answer": {"summary": "- 支援金", "utterance_indices": [3],
+                               "split_anchor_sentence_idx": None},
+                }
+            ]
+        })
+        pairs = _extract_pairs_from_response(response, seg, layout, {})
+        assert len(pairs) == 1
+
+
+class TestPR41BoundaryMispairs:
+    """PR41: question.speaker が segment_speaker と不一致の場合、segment_index/video_url を補正。"""
+
+    def _make_pair(self, seg_idx: int, q_speaker: str, video_url: str) -> "QAPair":
+        from src.models import AnswerDetail, QAPair, QuestionDetail
+        return QAPair(
+            id="qa_001",
+            segment_index=seg_idx,
+            topic="テスト",
+            question=QuestionDetail(
+                speaker=q_speaker, party="", summary="- テスト",
+                full_text="これは質問のテキストです。" * 3,
+                intent="other",
+            ),
+            answer=AnswerDetail(
+                speaker="大臣", role="答弁者", summary="- 答弁",
+                full_text="お答えいたします。" * 3,
+            ),
+            video_url=video_url,
+        )
+
+    def test_fixes_mispaired_segment(self) -> None:
+        seg0 = SegmentUtterances(
+            segment_index=0, segment_speaker="古川",
+            segment_affiliation="自由民主党", start_seconds=0.0,
+            video_url="https://example.com/?time=0.0",
+            utterances=[],
+        )
+        seg1 = SegmentUtterances(
+            segment_index=1, segment_speaker="田中",
+            segment_affiliation="立憲民主党", start_seconds=500.0,
+            video_url="https://example.com/?time=500.0",
+            utterances=[],
+        )
+        # pair は segment_index=0 (古川) だが question.speaker="田中" (segment 1 の話者)
+        pair = self._make_pair(0, "田中", "https://example.com/?time=0.0")
+        _fix_boundary_mispairs([pair], [seg0, seg1])
+        assert pair.segment_index == 1
+        assert pair.video_url == "https://example.com/?time=500.0"
+
+    def test_no_change_when_speaker_matches(self) -> None:
+        seg0 = SegmentUtterances(
+            segment_index=0, segment_speaker="古川",
+            segment_affiliation="自由民主党", start_seconds=0.0,
+            video_url="https://example.com/?time=0.0",
+            utterances=[],
+        )
+        pair = self._make_pair(0, "古川", "https://example.com/?time=0.0")
+        _fix_boundary_mispairs([pair], [seg0])
+        assert pair.segment_index == 0
+        assert "time=0.0" in pair.video_url
+
+    def test_no_change_when_speaker_not_in_any_segment(self) -> None:
+        seg0 = SegmentUtterances(
+            segment_index=0, segment_speaker="古川",
+            segment_affiliation="自由民主党", start_seconds=0.0,
+            video_url="https://example.com/?time=0.0",
+            utterances=[],
+        )
+        pair = self._make_pair(0, "鈴木", "https://example.com/?time=0.0")
+        _fix_boundary_mispairs([pair], [seg0])
+        assert pair.segment_index == 0  # 対応 segment なければ変更しない
 
 
 @pytest.mark.integration

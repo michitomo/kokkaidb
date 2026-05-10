@@ -616,6 +616,7 @@ def _extract_pairs_from_response(
 
     pairs: list[QAPair] = []
     dropped_short = 0
+    dropped_short_q = 0
     dropped_empty_q = 0
     for i, p in enumerate(parsed_pairs):
         # 範囲外 utterance_indices の比率を計測 (LLM hallucination 検知)
@@ -635,6 +636,18 @@ def _extract_pairs_from_response(
         if len(a_full) < MIN_ANSWER_LENGTH and not p["a_uidx"]:
             dropped_short += 1
             continue
+        # PR39: 質問 utterance の合計文字数が短すぎるペアを drop (挨拶のみ・数語ダミー対策)。
+        # 共有 utterance では assembled q_full が短くなることがあるため、
+        # utterance 自体の合計文字数で判定する (q_uidx が空の場合は次の空チェックに委ねる)
+        if p["q_uidx"]:
+            q_total_chars = sum(
+                len(seg.utterances[i].text)
+                for i in p["q_uidx"]
+                if 0 <= i < n_utterances
+            )
+            if q_total_chars < MIN_ANSWER_LENGTH:
+                dropped_short_q += 1
+                continue
         # 質問本文が空かつ utterance_indices も空なら Q&A として成立しない (PR10, ISSUES2 §1-2)
         if not q_full and not p["q_uidx"]:
             dropped_empty_q += 1
@@ -693,12 +706,13 @@ def _extract_pairs_from_response(
 
     # 受理/drop 統計サマリ (PR10, §2.10)
     logger.info(
-        "Segment %d: parsed %d raw → kept %d pairs (drop_short=%d, drop_empty_q=%d, "
-        "oor_idx=%d/%d)",
+        "Segment %d: parsed %d raw → kept %d pairs "
+        "(drop_short_a=%d, drop_short_q=%d, drop_empty_q=%d, oor_idx=%d/%d)",
         seg.segment_index,
         len(parsed_pairs),
         len(pairs),
         dropped_short,
+        dropped_short_q,
         dropped_empty_q,
         indices_out_of_range,
         indices_total,
@@ -907,11 +921,52 @@ def generate_qa_pairs(
             pair.id = f"qa_{pair_counter:03d}"
             all_pairs.append(pair)
 
+    # PR41: segment_index 境界誤帰属修正 — question.speaker が segment_speaker と不一致な
+    # ペアを正しい segment に再帰属し、video_url を補正する
+    _fix_boundary_mispairs(all_pairs, utterances.segments)
+
     # PR13: follow_up_ids — 同一 segment 内で同一質疑者の連続ペアを連鎖
     _assign_follow_up_ids(all_pairs)
 
     logger.info("Total Q&A pairs generated: %d (from %d blocks)", len(all_pairs), len(qa_blocks))
     return QAPairsOutput(pairs=all_pairs)
+
+
+def _fix_boundary_mispairs(
+    pairs: list[QAPair],
+    segments: list[SegmentUtterances],
+) -> None:
+    """PR41: segment 境界誤帰属修正 (in-place)。
+
+    LLM が前セグメントの末尾ブロックを次セグメントの先頭ペアとして返すとき、
+    pair.question.speaker が seg.segment_speaker と一致しないケースが発生する。
+    正しい segment を speaker 名で検索し、segment_index と video_url を補正する。
+    """
+    seg_by_idx = {s.segment_index: s for s in segments}
+    # 同名が複数 segment にまたがる場合は最初のものを採用
+    speaker_to_seg: dict[str, SegmentUtterances] = {}
+    for s in segments:
+        if s.segment_speaker not in speaker_to_seg:
+            speaker_to_seg[s.segment_speaker] = s
+
+    for pair in pairs:
+        current_seg = seg_by_idx.get(pair.segment_index)
+        if current_seg is None:
+            continue
+        q_speaker = pair.question.speaker.strip()
+        if not q_speaker or q_speaker == current_seg.segment_speaker:
+            continue
+        correct_seg = speaker_to_seg.get(q_speaker)
+        if correct_seg is None:
+            continue
+        logger.info(
+            "PR41 boundary fix: pair segment %d (%s) → %d (%s) for speaker '%s'",
+            pair.segment_index, current_seg.segment_speaker,
+            correct_seg.segment_index, correct_seg.segment_speaker,
+            q_speaker,
+        )
+        pair.segment_index = correct_seg.segment_index
+        pair.video_url = correct_seg.video_url
 
 
 def _assign_follow_up_ids(pairs: list[QAPair]) -> None:

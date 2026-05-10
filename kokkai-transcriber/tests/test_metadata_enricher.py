@@ -10,6 +10,7 @@ from src.metadata_enricher import (
     _build_chair_nomination_map,
     _build_utterance_role_map,
     _extract_affiliation_from_name,
+    _extract_affiliation_from_utterance_text,
     enrich_metadata_from_utterances,
 )
 from src.models import (
@@ -528,6 +529,37 @@ class TestPR26BackfillExistingRoles:
         result = enrich_metadata_from_utterances(utterances, speakers)
         assert result[0].role == "議長"  # PR29: 衆議院議長 → 議長
         assert original.role == ""  # 入力は触らない
+
+
+class TestPR42ExtractAffiliationFromUtteranceText:
+    """PR42: utterance テキスト先頭から役職タイトルを抽出。"""
+
+    def test_prime_minister(self) -> None:
+        assert _extract_affiliation_from_utterance_text("内閣総理大臣の高市でございます。") == "内閣総理大臣"
+
+    def test_minister(self) -> None:
+        assert _extract_affiliation_from_utterance_text("防衛大臣でございます。") == "防衛大臣"
+
+    def test_bureau_chief_with_ministry(self) -> None:
+        result = _extract_affiliation_from_utterance_text("厚生労働省社会・援護局長の山下です。")
+        assert "局長" in result
+
+    def test_no_match_for_plain_greeting(self) -> None:
+        assert _extract_affiliation_from_utterance_text("おはようございます。") == ""
+
+    def test_empty_text(self) -> None:
+        assert _extract_affiliation_from_utterance_text("") == ""
+
+    def test_enrich_uses_utterance_text_when_no_nomination(self) -> None:
+        """nomination_map も name suffix も効かないが utterance テキストから役職が取れる場合。"""
+        utterances = _mk_utterances([
+            ("委員長", "委員長", "次に、答弁者の高市君。"),
+            ("高市", "答弁者", "内閣総理大臣の高市でございます。ご質問にお答えします。"),
+        ])
+        result = enrich_metadata_from_utterances(utterances, [])
+        answerer = next((s for s in result if s.name == "高市"), None)
+        assert answerer is not None
+        assert "大臣" in answerer.affiliation
 
 
 if __name__ == "__main__":

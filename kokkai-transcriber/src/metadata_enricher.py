@@ -64,6 +64,13 @@ _NOMINATION_PATTERN = re.compile(
     rf"(?P<name>{_NAME_CHARS}{{2,8}}){_HONORIFIC}"
 )
 
+# PR42: utterance テキスト先頭から「内閣総理大臣の高市でございます」等のパターンで役職を抽出
+# 0〜12 字の省名プレフィックス + 役職キーワード、直後は「の/は/で/、/。/空白」
+_UTT_AFFILIATION_RE = re.compile(
+    rf"^([一-鿿ぁ-ゟァ-ヿ]{{0,12}}?(?:{_TITLE_KEYWORDS_PAT}))"
+    r"(?:の|は|で[ごあ]|でし|、|。|\s|$)"
+)
+
 _ENRICH_ROLES: frozenset[str] = frozenset(("答弁者", "政府参考人", "参考人"))
 
 # PR33: 質疑者も含め、metadata に未登録なら補完する対象ロール
@@ -109,6 +116,22 @@ def _extract_affiliation_from_name(name: str) -> str:
             ):
                 return name
             return kw
+    return ""
+
+
+def _extract_affiliation_from_utterance_text(text: str) -> str:
+    """utterance テキスト先頭から役職タイトルを抽出する (PR42)。
+
+    「内閣総理大臣の高市でございます」→「内閣総理大臣」
+    「厚生労働省社会・援護局長の山下です」→「厚生労働省社会・援護局長」
+
+    マッチしない場合は空文字を返す。
+    """
+    if not text:
+        return ""
+    m = _UTT_AFFILIATION_RE.match(text.strip())
+    if m:
+        return m.group(1)
     return ""
 
 
@@ -278,6 +301,9 @@ def enrich_metadata_from_utterances(
             # 2. 推定不可なら speaker name 自体から末尾役職を抽出
             if not affiliation:
                 affiliation = _extract_affiliation_from_name(name)
+            # 3. PR42: それでも不明なら utterance テキスト先頭から役職パターンを抽出
+            if not affiliation and u.role in _ENRICH_ROLES:
+                affiliation = _extract_affiliation_from_utterance_text(u.text)
             candidates[name] = (affiliation, u.role)
 
     if not candidates:
@@ -321,4 +347,4 @@ def enrich_metadata_from_utterances(
     return enriched
 
 
-__all__ = ["enrich_metadata_from_utterances"]
+__all__ = ["enrich_metadata_from_utterances", "_extract_affiliation_from_utterance_text"]
