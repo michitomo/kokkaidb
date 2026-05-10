@@ -39,6 +39,7 @@ from src.api_client import (
 )
 from src.audio.extractor import detect_leading_silence, download_full_audio, split_segments
 from src.committee_to_ministry import filter_laws_for_committee
+from src.metadata_enricher import enrich_metadata_from_utterances
 from src.models import (
     QAPairsOutput,
     SessionDetail,
@@ -250,6 +251,20 @@ def run_pipeline(
         utterances_output = tag_all_segments(raw_transcript, session_detail, max_workers=MAX_WORKERS_LLM)
     except Exception as e:
         raise RuntimeError(f"Step 5 (speaker tagging) failed: {e}") from e
+
+    # Step 5.25: utterances 由来で metadata.speakers を逆補完 (PR6, §2.2/2.3)
+    logger.info("=== Step 5.25: Enriching metadata.speakers from utterances ===")
+    enriched_speakers = enrich_metadata_from_utterances(
+        utterances_output, session_detail.speakers
+    )
+    if len(enriched_speakers) != len(session_detail.speakers):
+        added = len(enriched_speakers) - len(session_detail.speakers)
+        logger.info("Step 5.25: appended %d answerer/参考人 entries", added)
+        session_detail.speakers = enriched_speakers
+        metadata_path.write_text(
+            session_detail.model_dump_json(indent=2, ensure_ascii=False),
+            encoding="utf-8",
+        )
 
     # Step 5.5: speaker / role を metadata.speakers に正規化
     logger.info("=== Step 5.5: Normalizing utterance speakers and roles ===")

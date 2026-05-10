@@ -136,6 +136,64 @@ class TestExtractFromFixture:
         assert speakers[1].duration_minutes == 25
 
 
+class TestExtractSpeakersDedup:
+    """_extract_speakers の (name, affiliation) dedup を検証する (PR1, §2.4)。"""
+
+    @staticmethod
+    def _build_soup(rows: list[tuple[str, str, str, str]]) -> object:
+        """rows = [(href_seconds, anchor_text, start_time_text, duration_text), ...]"""
+        from bs4 import BeautifulSoup
+
+        tr_html = []
+        for ts, text, start_time, duration in rows:
+            tr_html.append(
+                f'<tr><td><a class="play2" href="#{ts}">{text}</a></td>'
+                f"<td>{start_time}</td><td>{duration}</td></tr>"
+            )
+        html = "<table>" + "".join(tr_html) + "</table>"
+        return BeautifulSoup(html, "html.parser")
+
+    def test_same_name_and_affiliation_dedup(self) -> None:
+        soup = self._build_soup([
+            ("100.0", "山下貴司(自由民主党)", "10時 00分", "30分"),
+            ("8000.0", "山下貴司(自由民主党)", "13時 00分", "20分"),
+        ])
+        speakers = _extract_speakers(soup, "test")
+        assert len(speakers) == 1
+        s = speakers[0]
+        assert s.start_seconds == 100.0
+        assert s.duration_minutes == 50
+
+    def test_different_affiliation_not_deduped(self) -> None:
+        soup = self._build_soup([
+            ("100.0", "山下貴司(自由民主党)", "10時 00分", "30分"),
+            ("8000.0", "山下貴司(法務委員長)", "13時 00分", "20分"),
+        ])
+        speakers = _extract_speakers(soup, "test")
+        assert len(speakers) == 2
+
+    def test_three_slot_dedup_sums_duration(self) -> None:
+        soup = self._build_soup([
+            ("100.0", "辰巳孝太郎(日本共産党)", "10時 00分", "5分"),
+            ("4000.0", "辰巳孝太郎(日本共産党)", "11時 00分", "10分"),
+            ("9000.0", "辰巳孝太郎(日本共産党)", "13時 00分", "15分"),
+        ])
+        speakers = _extract_speakers(soup, "test")
+        assert len(speakers) == 1
+        assert speakers[0].duration_minutes == 30
+        assert speakers[0].start_seconds == 100.0
+
+    def test_dedup_keeps_minimum_start_seconds_when_unsorted(self) -> None:
+        soup = self._build_soup([
+            ("8000.0", "辰巳孝太郎(日本共産党)", "13時 00分", "20分"),
+            ("100.0", "辰巳孝太郎(日本共産党)", "10時 00分", "30分"),
+        ])
+        speakers = _extract_speakers(soup, "test")
+        assert len(speakers) == 1
+        assert speakers[0].start_seconds == 100.0
+        assert speakers[0].start_time == "10:00"
+
+
 class TestSangiinScraperClass:
     def test_chamber_attribute(self) -> None:
         scraper = SangiinScraper()

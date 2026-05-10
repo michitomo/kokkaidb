@@ -11,6 +11,7 @@ from src.models import SessionDetail
 from src.scrapers.shugiin import (
     ShugiinScraper,
     _extract_hls_url,
+    _extract_speakers,
     _parse_speaker_text,
     get_session_detail,
 )
@@ -328,6 +329,81 @@ class TestShugiinScraperClass:
 
         assert "hlsvod.shugiintv.go.jp" in url
         assert url.startswith("https://")
+
+
+class TestExtractSpeakersDedup:
+    """_extract_speakers の (name, affiliation) dedup を検証する (PR1, §2.4)。"""
+
+    @staticmethod
+    def _build_soup(rows: list[tuple[str, str, str, str]]) -> object:
+        """rows = [(time_seconds, anchor_text, start_time_text, duration_text), ...]"""
+        from bs4 import BeautifulSoup
+
+        tr_html = []
+        for ts, text, start_time, duration in rows:
+            tr_html.append(
+                f'<tr><td></td>'
+                f'<td><a href="/path?ex=VL&deli_id=1&time={ts}">{text}</a></td>'
+                f"<td>{start_time}</td><td>{duration}</td></tr>"
+            )
+        html = "<table>" + "".join(tr_html) + "</table>"
+        return BeautifulSoup(html, "html.parser")
+
+    def test_same_name_and_affiliation_dedup(self) -> None:
+        soup = self._build_soup([
+            ("100.0", "山田太郎(自由民主党)", "10時 00分", "30分"),
+            ("8000.0", "山田太郎(自由民主党)", "13時 00分", "20分"),
+        ])
+        speakers = _extract_speakers(soup, "test")
+        assert len(speakers) == 1
+        s = speakers[0]
+        assert s.name == "山田太郎"
+        assert s.affiliation == "自由民主党"
+        assert s.start_seconds == 100.0
+        assert s.start_time == "10:00"
+        assert s.duration_minutes == 50
+
+    def test_different_affiliation_not_deduped(self) -> None:
+        soup = self._build_soup([
+            ("100.0", "山田太郎(自由民主党)", "10時 00分", "30分"),
+            ("8000.0", "山田太郎(法務委員長)", "13時 00分", "20分"),
+        ])
+        speakers = _extract_speakers(soup, "test")
+        assert len(speakers) == 2
+        assert {s.affiliation for s in speakers} == {"自由民主党", "法務委員長"}
+
+    def test_dedup_keeps_minimum_start_seconds_when_unsorted(self) -> None:
+        soup = self._build_soup([
+            ("8000.0", "山田太郎(自由民主党)", "13時 00分", "20分"),
+            ("100.0", "山田太郎(自由民主党)", "10時 00分", "30分"),
+        ])
+        speakers = _extract_speakers(soup, "test")
+        assert len(speakers) == 1
+        s = speakers[0]
+        assert s.start_seconds == 100.0
+        assert s.start_time == "10:00"
+        assert s.duration_minutes == 50
+
+    def test_three_slot_dedup_sums_duration(self) -> None:
+        soup = self._build_soup([
+            ("100.0", "辰巳孝太郎(日本共産党)", "10時 00分", "5分"),
+            ("4000.0", "辰巳孝太郎(日本共産党)", "11時 00分", "10分"),
+            ("9000.0", "辰巳孝太郎(日本共産党)", "13時 00分", "15分"),
+        ])
+        speakers = _extract_speakers(soup, "test")
+        assert len(speakers) == 1
+        assert speakers[0].duration_minutes == 30
+        assert speakers[0].start_seconds == 100.0
+
+    def test_order_preserved_for_unique_speakers(self) -> None:
+        soup = self._build_soup([
+            ("100.0", "Aさん(自由民主党)", "10時 00分", "5分"),
+            ("200.0", "Bさん(立憲民主党)", "10時 05分", "5分"),
+            ("300.0", "Aさん(自由民主党)", "10時 10分", "5分"),  # dup of #1
+            ("400.0", "Cさん(公明党)", "10時 15分", "5分"),
+        ])
+        speakers = _extract_speakers(soup, "test")
+        assert [s.name for s in speakers] == ["Aさん", "Bさん", "Cさん"]
 
 
 @pytest.mark.integration

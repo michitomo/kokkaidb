@@ -33,22 +33,31 @@ _GOV_ATTENDEE_SUFFIXES: tuple[str, ...] = (
 )
 
 
+_CHAIR_SUFFIXES: tuple[str, ...] = ("委員長", "議長", "副議長", "事務総長")
+_CHAIR_SUBSTRINGS: tuple[str, ...] = ("委員長", "議長", "事務総長")
+
+
 def derive_role(affiliation: str) -> SpeakerRole:
     """affiliation から SpeakerRole を 1 つ決定する。マッチしなければ "その他"。
 
     優先順位:
-        委員長/議長 > 大臣系 > 政府参考人(局長等) > 参考人 > 政党所属 > その他
+        委員長/議長/事務総長(進行役) > 大臣系 > 政府参考人(局長等) > 参考人 > 政党所属 > その他
+
+    委員長相当には「臨時委員長」「事務総長」「副議長」「衆議院事務総長」等を含む。
+    複合 affiliation (空白区切り等) でも substring 検出する。
     """
     if not affiliation:
         return "その他"
 
-    if affiliation.endswith(("委員長", "議長", "副議長")) or affiliation in {
-        "委員長",
-        "議長",
-        "副議長",
-    }:
+    # 進行役 (委員長相当): 委員長/議長/副議長/事務総長
+    if (
+        affiliation.endswith(_CHAIR_SUFFIXES)
+        or any(s in affiliation for s in _CHAIR_SUBSTRINGS)
+        or affiliation in {"委員長", "議長", "副議長", "事務総長"}
+    ):
         return "委員長"
 
+    # 答弁者: 大臣・副大臣・政務官
     if affiliation.endswith(("大臣", "副大臣", "政務官")):
         return "答弁者"
 

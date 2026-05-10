@@ -177,8 +177,12 @@ def _extract_speakers(soup: BeautifulSoup, deli_id: str) -> list[SpeakerInfo]:
       <td>13時 02分</td>
       <td>01分</td>
     </tr>
+
+    同一人物の複数スロット (午前/午後など) は (name, affiliation) で dedup し、
+    start_seconds は最小、duration_minutes は合算、start_time は若い方を残す。
     """
-    speakers: list[SpeakerInfo] = []
+    seen: dict[tuple[str, str], SpeakerInfo] = {}
+    seen_order: list[tuple[str, str]] = []
 
     anchors = soup.find_all("a", href=re.compile(r"time=[\d.]+"))
 
@@ -200,16 +204,25 @@ def _extract_speakers(soup: BeautifulSoup, deli_id: str) -> list[SpeakerInfo]:
 
         start_time, duration_minutes = _find_speaker_row_data(anchor)
 
-        speakers.append(
-            SpeakerInfo(
-                name=name,
-                affiliation=affiliation,
-                start_seconds=start_seconds,
-                start_time=start_time,
-                duration_minutes=duration_minutes,
-            )
-        )
+        key = (name, affiliation)
+        if key in seen:
+            existing = seen[key]
+            if start_seconds < existing.start_seconds:
+                existing.start_seconds = start_seconds
+                existing.start_time = start_time
+            existing.duration_minutes += duration_minutes
+            continue
 
+        seen[key] = SpeakerInfo(
+            name=name,
+            affiliation=affiliation,
+            start_seconds=start_seconds,
+            start_time=start_time,
+            duration_minutes=duration_minutes,
+        )
+        seen_order.append(key)
+
+    speakers = [seen[k] for k in seen_order]
     logger.info("Extracted %d speakers for deli_id=%s", len(speakers), deli_id)
     return speakers
 
