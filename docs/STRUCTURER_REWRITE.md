@@ -320,6 +320,9 @@ unique = list(seen.values())
 **実装箇所**:
 - `src/structurer.py:_INPUT_CHAR_LIMIT` 撤廃 (`structurer.py:412-422`)
 - `src/structurer.py` ブロック分割後の QA密度チェック強化 (~30行)
+- `src/structurer.py:_extract_pairs_from_response` (340-380) の drop 条件に **`q_full_text == ""` の追加** (旧 `ISSUES2.md §1-2` 由来。`a_full_text` のみで判定していたため、空質問が混入していた問題)
+- `src/structurer.py:_assemble_full_text_from_sentences` (94-100) の範囲外 indices 比率を計測 → 50% 超なら WARN ログ
+- `src/structurer.py:_extract_pairs_from_response` 末尾に受理/drop 統計サマリの 1行ログ追加
 - 新規: `generate_topics_without_qa()` (utterances ベース、~50行)
 - `src/pipeline.py:_run_step6` の floor_speech 分岐拡張
 
@@ -375,23 +378,27 @@ unique = list(seen.values())
 
 ---
 
-### 2.13 timestamp_inconsistency — start_seconds と start_time のズレ
+### 2.13 timestamp_inconsistency — start_seconds と start_time のズレ・video_url 精度
 
-**観察**: 27件。例:
+**観察**: 27件 + 旧 `ISSUES.md §1-8` 由来。例:
 - `start_seconds=2050.3` と `start_time=12:14` が90分以上乖離 (8978: HLS 開始が 10:10 JST)
 - `start_time` (`HH:MM` 形式) と `start_seconds` (HLS秒数) が異なる基準系
 - `video_url` の `time=` パラメータが他話者の値
+- **同一セグメント内の全 Q&A ペアが同じ `video_url` を持ち、ペア単位のタイムスタンプ精度がない** (`ISSUES.md §1-8` Low: utterance 単位の `start_seconds` を活用すべき)
 
-**現コード状態**: PARTIAL FIXED。`detect_leading_silence` + offset 補正で 30秒超のズレは補正される (`pipeline.py:175-193`)。Step 4.5+ で 1/1 resolved。
+**現コード状態**: PARTIAL FIXED。`detect_leading_silence` + offset 補正で 30秒超のズレは補正される (`pipeline.py:175-193`)。Step 4.5+ で 1/1 resolved。`video_url` のペア単位精度向上は未実装。
 
 **採用方針**: 現状維持 + 補強:
 - `detect_leading_silence` の閾値 (現 30秒超) を **5秒超** に下げる
 - `start_time` と `start_seconds` の不整合を pipeline 終盤で検出 → 警告ログ
-- `video_url` 生成時に `time=` を該当話者の `start_seconds` から確実に派生させる (既存実装の確認)
+- `video_url` 生成時に **Q&A ペアの開始 utterance の `start_seconds` を使う** (現在のセグメント単位ではなくペア単位)
+- 将来的には Whisper word-level timestamps 活用で更に高精度化 (本刷新スコープ外、§7 未解決論点)
 
 **実装箇所**:
 - `src/pipeline.py:175-193` 閾値調整 (1行)
 - `src/pipeline.py` 終盤に整合性チェック追加 (~20行)
+- `src/structurer.py` qa_pairs 生成時、各ペアの `video_url` を `seg.utterances[utterance_indices[0]].start_seconds` から派生 (~10行)
+- `src/models.py` `QAPair` の `video_url` フィールドが既に存在する想定 (要確認)
 
 **期待解消率**: ~80%
 
@@ -422,6 +429,82 @@ unique = list(seen.values())
 
 ---
 
+### 2.15 パイプライン堅牢性 — ffmpeg / LLM 応答ハンドリング
+
+`docs/ISSUES.md` および `docs/ISSUES2.md` から取り込み。データ品質の category にはないが、生成パイプラインの reliability に直接影響するため本刷新スコープに含める。
+
+**観察**:
+- ffmpeg `subprocess.run` 全箇所 (`src/audio/extractor.py:91, 260, 317, 356, 379`) で `timeout=` 未指定 (旧 `ISSUES2.md §1-1` High)。HLS 配信が途中で停滞すると無限ハング、ingest ジョブの 180分 `timeout-minutes` でしか救えない
+- `speaker_tagger.py` の `json.loads(content)` が try/except なしで残存しており `structurer.py` 側と粒度が揃っていない (旧 `ISSUES.md §1-7` Partial)。malformed JSON で例外伝播
+
+**現コード状態**: NOT FIXED (ffmpeg) / PARTIAL FIXED (json.loads は `structurer.py` のみ対応済)。`publisher.py:65-71` の `_run_git` は既に `timeout=120` を使っており、パターンは確立済み。
+
+**採用方針**:
+- ffmpeg コマンドに用途別 timeout を設定:
+  - HLS 直接 DL: `timeout=1800` (30分)
+  - セグメント連結等の短命: `timeout=120`
+  - メタ取得 (`_get_audio_duration`): `timeout=30`
+  - `subprocess.TimeoutExpired` を捕捉して上位伝播 or フォールバック
+- `speaker_tagger.py` の `json.loads` を try/except で囲み、`structurer.py:340-343, 683-686` と同等のエラー処理を実装
+
+**実装箇所**:
+- `src/audio/extractor.py:91, 260, 317, 356, 379` timeout 追加 (~10行)
+- `src/speaker_tagger.py` `json.loads` ラップ (~10行)
+
+**期待解消率**: ハング回避 100%、JSON parse エラー耐性向上
+
+---
+
+### 2.16 スクレイパー堅牢性 — DOM 依存・委員会推定・日付フォールバック
+
+`docs/ISSUES.md` および `docs/ISSUES2.md` から取り込み。
+
+**観察**:
+- 衆議院スクレイパーの speaker 抽出が `<a href=re("time=")>` → 5階層上の `<tr>` という DOM 走査に依存。HTML レイアウト変更で即座に壊れる (旧 `ISSUES.md §3-1` Medium)
+- 参議院スクレイパーで日付解析失敗時に `"unknown"` が返り、`data/sangiin/unkn/ow/n/` のような不正パスが生成される (旧 `ISSUES.md §3-3` Low)
+- `find_committee_in_body` が下位タグまで全文走査し、本文に含まれる「○○委員会」言及で誤検知し得る (旧 `ISSUES2.md §4-2` Low)
+
+**現コード状態**: NOT FIXED。
+
+**採用方針**:
+- DOM 期待構造のバリデーション関数を追加。期待タグ階層が見つからなければ WARNING ログ + `SessionNotReadyError` で再試行可能化
+- HTML フィクスチャを `tests/fixtures/scraper_html/` に保存し、定期的に実サイトと比較するスモークテスト追加
+- 日付解析失敗時は `RuntimeError` で stop (silent `"unknown"` フォールバック禁止)
+- `find_committee_in_body` を `<title>` / `<h1>` / 上位 metadata DOM に限定 (本文走査の禁止)
+
+**実装箇所**:
+- `src/scrapers/shugiin.py` / `sangiin.py` DOM バリデーション追加 (~30行)
+- `src/scrapers/sangiin.py` 日付解析の例外化 (~5行)
+- `src/scrapers/shugiin.py:find_committee_in_body` スコープ制限 (~10行)
+- `tests/fixtures/scraper_html/` HTML スナップショット (新規ディレクトリ)
+- `tests/test_scrapers_smoke.py` 構造変化検出テスト (~50行)
+
+**期待解消率**: DOM 構造変更検出 100% (silent failure を禁止)、誤検知 ~80% 削減
+
+---
+
+### 2.17 法案タグ精度検証
+
+`docs/ISSUES.md §6-2` から取り込み。
+
+**観察**: `tag_related_laws` による自動タグ付けの精度を検証する仕組みがない。誤タグ・タグ漏れが起きても気付けない。
+
+**現コード状態**: NOT FIXED (検証手段未整備)。
+
+**採用方針**:
+- 手動アノテーション CSV を `tests/fixtures/laws_groundtruth.csv` に整備 (例: 20-30 セッション × 各3-5法案、合計 100件程度)
+- `scripts/eval_law_tagging.py` で自動タグ付け結果と CSV を突合し、precision/recall/F1 を出力
+- F2/F3 検証フェーズの go/no-go ゲートに「法案タグ F1 ≥ 0.6」を追加 (§3.2 検証ゲートに統合)
+
+**実装箇所**:
+- `tests/fixtures/laws_groundtruth.csv` 新規 (手動キュレーション ~100件)
+- `scripts/eval_law_tagging.py` 新規 (~80行)
+- `docs/STRUCTURER_REWRITE.md §3.2` 検証ゲートに F1 閾値追加
+
+**期待解消率**: 検証可能性 0% → 100% (精度自体は別途改善対象)
+
+---
+
 ## 3. 段階的検証戦略
 
 修正後にいきなり全件再生成せず、サンプル → 検証 → ゴーサインの順で進める。
@@ -445,6 +528,7 @@ unique = list(seen.values())
 4. 新規 finding 件数: 各カテゴリで unchanged → resolved への遷移を確認、逆遷移ゼロ
 5. リグレッション検出: 前フェーズで OK だった項目の再悪化チェック
 6. コスト/時間/エラー: API 使用量、wall-clock、エラー率の閾値内
+7. 法案タグ精度: `scripts/eval_law_tagging.py` の F1 ≥ 0.6 (§2.17、F2 以降のみ)
 ```
 
 ### 3.3 サンプル選定ルール
@@ -518,6 +602,12 @@ unique = list(seen.values())
 [検証ツール]
   PR15: schema validator (§2.12)         — scripts/validate_data_schema.py +50行
   PR16: 比較サブエージェント仕様統合     — docs/REGEN_VERIFICATION.md
+
+[ISSUES から取り込んだ堅牢性改修]
+  PR17: ffmpeg subprocess timeout (§2.15) — audio/extractor.py +10行
+  PR18: speaker_tagger json.loads ラップ (§2.15) — speaker_tagger.py +10行
+  PR19: スクレイパー DOM 検証 + 日付例外化 + find_committee 制限 (§2.16) — scrapers/*.py +45行 + tests/fixtures/scraper_html/ + tests/test_scrapers_smoke.py +50行
+  PR20: 法案タグ精度検証 (§2.17) — tests/fixtures/laws_groundtruth.csv + scripts/eval_law_tagging.py +80行
 ```
 
 ### 4.2 依存グラフ
@@ -535,7 +625,8 @@ PR9 (utterance schema) ───────────────┤
 PR5 (cabinet list) ──> PR7 (corrector loop)  │
 PR8 (corrector facts) ───────────────────────┘
 
-PR2, PR4, PR11, PR14, PR15, PR16: 独立、いつでもマージ可
+PR2, PR4, PR11, PR14, PR15, PR16, PR17-20: 独立、いつでもマージ可
+PR20 (法案タグ精度) は F2 ゲート前にマージ要 (検証ゲート §3.2 #7)
 ```
 
 ### 4.3 想定実装期間
@@ -546,9 +637,11 @@ PR2, PR4, PR11, PR14, PR15, PR16: 独立、いつでもマージ可
 - PR9: 4-5日 (大規模、§Appendix A)
 - PR10-13: 並列 2-3日
 - PR14-16: 1日
+- PR17-19: 並列 1-2日 (ISSUES 取り込み)
+- PR20: 1-2日 (groundtruth キュレーション含む)
 - 統合検証 F0-F4: 5-7日 (修正の手戻り含む)
 
-合計: **3-4週間**。並列開発と修正手戻りで前後する。
+合計: **4-5週間**。並列開発と修正手戻りで前後する。ISSUES 取り込み分 (PR17-20) を含めた更新。
 
 ---
 
