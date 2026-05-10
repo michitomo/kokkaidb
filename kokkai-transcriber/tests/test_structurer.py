@@ -17,6 +17,7 @@ from src.models import (
     UtterancesOutput,
 )
 from src.structurer import (
+    _SegmentLayout,
     _assemble_full_text_for_pair,
     _assign_follow_up_ids,
     _build_utterance_map,
@@ -25,6 +26,9 @@ from src.structurer import (
     _compute_share_boundaries,
     _extract_pairs_from_response,
     _fuzzy_lookup,
+    _has_chamber_mismatch,
+    _has_placeholder_header,
+    _shift_video_url_time,
     _split_sentences,
     _validate_summary_person_refs,
     build_summary_related_laws,
@@ -34,6 +38,28 @@ from src.structurer import (
     generate_topics_and_key_topics,
     generate_topics_without_qa,
 )
+
+
+def _build_dummy_layout(
+    n_utts: int,
+    sentences_per_utt: int = 1,
+) -> _SegmentLayout:
+    """テスト用の簡易レイアウト。utt × sentences_per_utt の文を生成する。"""
+    per_utt = [
+        [f"u{u}_s{s}." for s in range(sentences_per_utt)]
+        for u in range(n_utts)
+    ]
+    starts: list[int] = []
+    cur = 0
+    for sents in per_utt:
+        starts.append(cur)
+        cur += len(sents)
+    return _SegmentLayout(
+        per_utt_sentences=per_utt,
+        utt_global_starts=starts,
+        total_sentences=cur,
+        is_long_utt=[False] * n_utts,
+    )
 
 
 def _make_mock_llm_response(data: dict) -> MagicMock:
@@ -337,64 +363,160 @@ class TestComputeShareBoundaries:
         }
 
     def test_empty_pairs(self) -> None:
-        assert _compute_share_boundaries([], "q") == []
+        layout = _build_dummy_layout(n_utts=1)
+        assert _compute_share_boundaries([], "q", layout) == []
 
-    def test_no_anchors_all_none(self) -> None:
-        """anchor なしのペアは boundary も None。"""
+    def test_no_anchors_all_none_single_sentence_head(self) -> None:
+        """head utterance が 1 sentence しか無ければ PR28 の均等分割は走らず None のまま。"""
+        # head=5 だが utt 5 が 1 文しかない (n_sent < 2) ので分割不能
+        layout = _build_dummy_layout(n_utts=6, sentences_per_utt=1)
         pairs = [self._pair(q_uidx=[5]), self._pair(q_uidx=[5])]
-        assert _compute_share_boundaries(pairs, "q") == [None, None]
+        assert _compute_share_boundaries(pairs, "q", layout) == [None, None]
 
     def test_single_pair_with_anchor_unshared(self) -> None:
         """anchor 付きでも他に共有相手がいなければ boundary は None。"""
+        layout = _build_dummy_layout(n_utts=6)
         pairs = [self._pair(q_uidx=[5], q_anchor=3)]
-        assert _compute_share_boundaries(pairs, "q") == [None]
+        assert _compute_share_boundaries(pairs, "q", layout) == [None]
 
     def test_two_pairs_share_head_boundaries_in_anchor_order(self) -> None:
         """同じ head を共有する 2 ペアは anchor 昇順で次の anchor が boundary。最後は None。"""
+        layout = _build_dummy_layout(n_utts=6, sentences_per_utt=200)
         pairs = [
             self._pair(q_uidx=[5], q_anchor=120),
             self._pair(q_uidx=[5], q_anchor=145),
         ]
-        # ソート後: pair0 (anchor=120) → boundary=145 / pair1 (anchor=145) → boundary=None
-        assert _compute_share_boundaries(pairs, "q") == [145, None]
+        assert _compute_share_boundaries(pairs, "q", layout) == [145, None]
 
     def test_three_pairs_share_head_unsorted_input(self) -> None:
         """LLM 出力が anchor 順でなくても正しく境界を割り当てる。"""
+        layout = _build_dummy_layout(n_utts=6, sentences_per_utt=300)
         pairs = [
             self._pair(q_uidx=[5], q_anchor=200),  # 後半
             self._pair(q_uidx=[5], q_anchor=100),  # 前半
             self._pair(q_uidx=[5], q_anchor=150),  # 中央
         ]
-        # anchor 昇順: 100→150, 150→200, 200→None
-        # 元の index に戻す: pair0(200)→None, pair1(100)→150, pair2(150)→200
-        assert _compute_share_boundaries(pairs, "q") == [None, 150, 200]
+        assert _compute_share_boundaries(pairs, "q", layout) == [None, 150, 200]
 
     def test_q_and_a_independent(self) -> None:
-        """q 側の共有は a 側に影響しない。"""
+        """q 側の共有は a 側に影響しない (a 側は別 utt なので推定対象外)。"""
+        layout = _build_dummy_layout(n_utts=9, sentences_per_utt=50)
         pairs = [
             self._pair(q_uidx=[5], q_anchor=10, a_uidx=[7]),
             self._pair(q_uidx=[5], q_anchor=20, a_uidx=[8]),
         ]
-        assert _compute_share_boundaries(pairs, "q") == [20, None]
-        assert _compute_share_boundaries(pairs, "a") == [None, None]
+        assert _compute_share_boundaries(pairs, "q", layout) == [20, None]
+        # a 側は別 utt 7, 8 — 共有なし → None
+        assert _compute_share_boundaries(pairs, "a", layout) == [None, None]
 
-    def test_anchor_none_excluded_from_share_group(self) -> None:
-        """anchor=None のペアは共有グループに含めない (boundary 計算対象外)。"""
+    def test_anchor_none_filled_by_pr28_inference(self) -> None:
+        """PR28: anchor=None のペアは前後 explicit anchor の中点で補完される。"""
+        # 1 utt × 100 sentences、g_start=0 → anchors 10, ?, 30 が範囲内
+        layout = _build_dummy_layout(n_utts=1, sentences_per_utt=100)
         pairs = [
-            self._pair(q_uidx=[5], q_anchor=10),
-            self._pair(q_uidx=[5], q_anchor=None),  # 共有グループに入らない
-            self._pair(q_uidx=[5], q_anchor=30),
+            self._pair(q_uidx=[0], q_anchor=10),
+            self._pair(q_uidx=[0], q_anchor=None),
+            self._pair(q_uidx=[0], q_anchor=30),
         ]
-        # 共有グループは pair0(10), pair2(30) のみ
-        assert _compute_share_boundaries(pairs, "q") == [30, None, None]
+        # 補完後 anchors: [10, 20, 30] → 境界: [20, 30, None]
+        assert _compute_share_boundaries(pairs, "q", layout) == [20, 30, None]
 
     def test_different_heads_no_sharing(self) -> None:
         """別 utterance を head にもつペア同士は共有しない。"""
+        layout = _build_dummy_layout(n_utts=8, sentences_per_utt=50)
         pairs = [
             self._pair(q_uidx=[5], q_anchor=10),
             self._pair(q_uidx=[6], q_anchor=20),
         ]
-        assert _compute_share_boundaries(pairs, "q") == [None, None]
+        assert _compute_share_boundaries(pairs, "q", layout) == [None, None]
+
+
+class TestPR28AnchorInference:
+    """PR28: 同一 head utterance を共有するペアの anchor 自動推定。
+
+    F2 56176 で 9 ペア全て q.full_text 完全重複していた事象の再発防止。
+    """
+
+    def _pair(
+        self,
+        q_uidx: list[int] | None = None,
+        q_anchor: int | None = None,
+    ) -> dict[str, object]:
+        return {
+            "q_uidx": q_uidx or [],
+            "q_anchor": q_anchor,
+            "a_uidx": [],
+            "a_anchor": None,
+        }
+
+    def test_all_null_anchors_evenly_distributed(self) -> None:
+        """全ペア anchor=None かつ複数共有 → 均等分割で anchor 推定。"""
+        # head=0, n_sent=8, n_pairs=4 → local_anchor = 0, 2, 4, 6 (g_start=0)
+        layout = _build_dummy_layout(n_utts=1, sentences_per_utt=8)
+        pairs = [self._pair(q_uidx=[0]) for _ in range(4)]
+        boundaries = _compute_share_boundaries(pairs, "q", layout)
+        # 推定後 anchors: [0, 2, 4, 6] → 境界: [2, 4, 6, None]
+        assert boundaries == [2, 4, 6, None]
+
+    def test_inference_skipped_for_single_pair_head(self) -> None:
+        """同 head を共有するペアが 1 件しか無ければ推定は走らない (boundary=None)。"""
+        layout = _build_dummy_layout(n_utts=2, sentences_per_utt=8)
+        pairs = [
+            self._pair(q_uidx=[0]),
+            self._pair(q_uidx=[1]),  # 別 head
+        ]
+        assert _compute_share_boundaries(pairs, "q", layout) == [None, None]
+
+    def test_inference_skipped_when_head_has_one_sentence(self) -> None:
+        """head utterance が 1 文しか無ければ分割不能 → 推定スキップ。"""
+        layout = _build_dummy_layout(n_utts=1, sentences_per_utt=1)
+        pairs = [self._pair(q_uidx=[0]) for _ in range(3)]
+        assert _compute_share_boundaries(pairs, "q", layout) == [None, None, None]
+
+    def test_pr28_e2e_avoids_full_text_duplication(self) -> None:
+        """E2E: 56176 を再現する 4 ペア (全 anchor null、長文 1 utt 共有) で
+        full_text が完全重複しないことを確認。
+        """
+        # 6 文 × 1 utt の質問 utt + 1 utt の答弁
+        question_text = "".join(f"質問文{i}。" for i in range(6))
+        seg = SegmentUtterances(
+            segment_index=10,
+            segment_speaker="X",
+            segment_affiliation="X党",
+            start_seconds=0.0,
+            video_url="https://example.com/?time=0.0",
+            utterances=[
+                Utterance(speaker="X", role="質疑者", text=question_text),
+                Utterance(speaker="A", role="答弁者", text="お答えいたします。具体的に対応してまいります。"),
+            ],
+        )
+        response = json.dumps({
+            "pairs": [
+                {
+                    "topic": f"トピック{i}",
+                    "question": {
+                        "utterance_indices": [0],
+                        "split_anchor_sentence_idx": None,
+                        "summary": f"- 質問{i}",
+                        "intent": "information_request",
+                    },
+                    "answer": {
+                        "utterance_indices": [1],
+                        "split_anchor_sentence_idx": None,
+                        "summary": f"- 回答{i}",
+                    },
+                }
+                for i in range(4)
+            ]
+        })
+        layout = _compute_segment_layout(seg)
+        pairs = _extract_pairs_from_response(response, seg, layout, {})
+        assert len(pairs) == 4
+        # 4 ペアの question.full_text が全て同一になっていなければ OK
+        q_texts = [p.question.full_text for p in pairs]
+        assert len(set(q_texts)) > 1, (
+            f"full_text duplicated across pairs: {q_texts}"
+        )
 
 
 class TestSharedUtteranceEnd2End:
@@ -1472,6 +1594,155 @@ class TestAssignFollowUpIds:
         pairs[1].follow_up_ids = ["qa_001"]
         _assign_follow_up_ids(pairs)
         assert pairs[1].follow_up_ids == ["qa_001"]
+
+
+class TestPR21SummaryHeaderValidation:
+    """PR21: summary 冒頭のプレースホルダ・院取り違え検出。"""
+
+    def test_placeholder_committee_unknown(self) -> None:
+        assert _has_placeholder_header("衆議院（委員会名不明）において、…")
+        assert _has_placeholder_header("委員会名不明の場で…")
+
+    def test_placeholder_marubatsu(self) -> None:
+        assert _has_placeholder_header("〇〇委員会において、…")
+        assert _has_placeholder_header("○○委員会において、…")
+
+    def test_no_placeholder_normal(self) -> None:
+        assert not _has_placeholder_header("衆議院内閣委員会において、高額療養費が議論された。")
+
+    def test_chamber_mismatch_detected(self) -> None:
+        # 期待: 参議院、summary は「衆議院」のみ → 取り違え
+        assert _has_chamber_mismatch("衆議院予算委員会において、…", "参議院")
+        # 逆向きも検知
+        assert _has_chamber_mismatch("衆議院内閣委員会では、…", "参議院")
+
+    def test_chamber_mismatch_when_both_present_is_ok(self) -> None:
+        # 「参議院」が含まれていれば、たまたま「衆議院」も含まれていてもミスマッチではない
+        assert not _has_chamber_mismatch("参議院の予算委員会と衆議院の合同で…", "参議院")
+
+    def test_chamber_mismatch_when_expected_present(self) -> None:
+        assert not _has_chamber_mismatch("衆議院内閣委員会において、…", "衆議院")
+
+    def test_chamber_mismatch_empty_expected(self) -> None:
+        # expected が空文字なら検出しない (情報なし)
+        assert not _has_chamber_mismatch("衆議院○○において、…", "")
+
+
+class TestPR23VideoUrlShift:
+    """PR23: video_url の time / hash 部分の差し替え。"""
+
+    def test_shift_shugiin_time_param(self) -> None:
+        url = "https://www.shugiintv.go.jp/jp/index.php?ex=VL&deli_id=56176&time=1230.0"
+        result = _shift_video_url_time(url, 1500.5)
+        assert "time=1500.5" in result
+        assert "deli_id=56176" in result
+        assert "time=1230.0" not in result
+
+    def test_shift_sangiin_hash(self) -> None:
+        url = "https://www.webtv.sangiin.go.jp/webtv/detail.php?sid=8985#100.0"
+        result = _shift_video_url_time(url, 250.7)
+        assert result.endswith("#250.7")
+        assert "sid=8985" in result
+
+    def test_shift_negative_clamped_to_zero(self) -> None:
+        url = "https://example.com/?time=10.0"
+        result = _shift_video_url_time(url, -5.0)
+        assert "time=0.0" in result
+
+    def test_shift_no_time_pattern_returns_unchanged(self) -> None:
+        url = "https://example.com/no-time-param"
+        assert _shift_video_url_time(url, 100.0) == url
+
+    def test_shift_empty_url(self) -> None:
+        assert _shift_video_url_time("", 100.0) == ""
+
+
+class TestPR23PerPairVideoUrl:
+    """PR23: _extract_pairs_from_response が pair の video_url を utterance 位置で
+    補正することを確認 (segment 起点ではなく、質問 utterance 位置を反映)。
+    """
+
+    def test_per_pair_video_url_offset(self) -> None:
+        # 質問が U2 (前に長い utt が 2 つ) → segment.start_seconds + offset
+        seg = SegmentUtterances(
+            segment_index=3,
+            segment_speaker="議長",
+            segment_affiliation="衆議院議長",
+            start_seconds=600.0,
+            video_url="https://www.shugiintv.go.jp/jp/index.php?ex=VL&deli_id=56176&time=600.0",
+            utterances=[
+                Utterance(speaker="議長", role="委員長", text="開会します。" * 20),  # ~120 chars
+                Utterance(speaker="X", role="質疑者", text="質疑前置き。" * 20),  # ~120 chars
+                Utterance(speaker="Y", role="質疑者", text="主たる質疑文。" * 5),
+                Utterance(speaker="Z", role="答弁者", text="お答えします。回答内容です。"),
+            ],
+        )
+        layout = _compute_segment_layout(seg)
+        response = json.dumps({
+            "pairs": [
+                {
+                    "topic": "T",
+                    "question": {
+                        "utterance_indices": [2],
+                        "split_anchor_sentence_idx": None,
+                        "summary": "- Q",
+                        "intent": "information_request",
+                    },
+                    "answer": {
+                        "utterance_indices": [3],
+                        "split_anchor_sentence_idx": None,
+                        "summary": "- A",
+                    },
+                }
+            ]
+        })
+        pairs = _extract_pairs_from_response(response, seg, layout, {})
+        assert len(pairs) == 1
+        # video_url は seg.start_seconds (600.0) より大きい時刻になっているはず
+        # 240 chars before utt 2, 約 240/4 = 60 秒 のオフセット → time=660.0 付近
+        url = pairs[0].video_url
+        assert "time=600.0" not in url  # 補正されているはず
+        # 補正後 time= は 660 秒前後
+        import re
+        m = re.search(r"time=([\d.]+)", url)
+        assert m
+        new_time = float(m.group(1))
+        assert 640.0 <= new_time <= 700.0, f"unexpected time: {new_time}"
+
+    def test_per_pair_video_url_unchanged_when_first_utterance(self) -> None:
+        """質問が U0 → offset=0 → seg.video_url のまま。"""
+        seg = SegmentUtterances(
+            segment_index=0,
+            segment_speaker="X",
+            segment_affiliation="X党",
+            start_seconds=100.0,
+            video_url="https://example.com/?time=100.0",
+            utterances=[
+                Utterance(speaker="X", role="質疑者", text="質問。"),
+                Utterance(speaker="Y", role="答弁者", text="答え。だいぶ長い回答です。"),
+            ],
+        )
+        layout = _compute_segment_layout(seg)
+        response = json.dumps({
+            "pairs": [
+                {
+                    "topic": "T",
+                    "question": {
+                        "utterance_indices": [0],
+                        "split_anchor_sentence_idx": None,
+                        "summary": "- q",
+                        "intent": "information_request",
+                    },
+                    "answer": {
+                        "utterance_indices": [1],
+                        "split_anchor_sentence_idx": None,
+                        "summary": "- a",
+                    },
+                }
+            ]
+        })
+        pairs = _extract_pairs_from_response(response, seg, layout, {})
+        assert pairs[0].video_url == seg.video_url
 
 
 @pytest.mark.integration

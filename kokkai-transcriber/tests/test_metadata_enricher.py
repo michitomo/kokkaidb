@@ -6,7 +6,9 @@ import pytest
 
 from src.metadata_enricher import (
     _NOMINATION_PATTERN,
+    _backfill_existing_speaker_roles,
     _build_chair_nomination_map,
+    _build_utterance_role_map,
     _extract_affiliation_from_name,
     enrich_metadata_from_utterances,
 )
@@ -343,6 +345,97 @@ class TestEnrichMetadataFromUtterances:
         result = enrich_metadata_from_utterances(utterances, existing)
         assert result == existing
         assert result is not existing
+
+
+class TestPR26BackfillExistingRoles:
+    """PR26: 既存 metadata.speakers の role が空文字のとき、derive_role と
+    utterance 観測 role の 2 段フォールバックで補完する。
+    """
+
+    def _sp(self, name: str, affiliation: str = "", role: str = "") -> SpeakerInfo:
+        return SpeakerInfo(
+            name=name,
+            affiliation=affiliation,
+            role=role,
+            start_seconds=0.0,
+            start_time="",
+            duration_minutes=0,
+        )
+
+    def test_derive_role_from_affiliation_when_empty(self) -> None:
+        speakers = [
+            self._sp("森英介", "衆議院議長"),
+            self._sp("牧野たかお", "復興大臣 福島原発事故再生総括担当"),
+            self._sp("西田昭二", "自由民主党"),
+        ]
+        updated = _backfill_existing_speaker_roles(speakers, role_map={})
+        assert updated == 3
+        assert speakers[0].role == "委員長"  # 議長は CHAIR_SUFFIXES
+        assert speakers[1].role == "答弁者"  # 大臣
+        assert speakers[2].role == "質疑者"  # 政党
+
+    def test_falls_back_to_utterance_role_when_derive_returns_other(self) -> None:
+        """affiliation が空または derive_role が「その他」を返す場合、
+        utterance 観測 role を使う。"""
+        speakers = [
+            self._sp("木原稔", ""),  # affiliation 空 → derive_role はその他
+        ]
+        role_map = {"木原稔": "答弁者"}
+        updated = _backfill_existing_speaker_roles(speakers, role_map=role_map)
+        assert updated == 1
+        assert speakers[0].role == "答弁者"
+
+    def test_skips_already_populated(self) -> None:
+        speakers = [
+            self._sp("既存", "自由民主党", role="質疑者"),
+        ]
+        updated = _backfill_existing_speaker_roles(speakers, role_map={})
+        assert updated == 0
+        assert speakers[0].role == "質疑者"  # 触らない
+
+    def test_replaces_その他_with_better(self) -> None:
+        """role='その他' は要再計算とみなす (古い書き出しの修復)。"""
+        speakers = [
+            self._sp("田中", "立憲民主党", role="その他"),
+        ]
+        updated = _backfill_existing_speaker_roles(speakers, role_map={})
+        assert updated == 1
+        assert speakers[0].role == "質疑者"
+
+    def test_falls_back_to_その他_when_no_signal(self) -> None:
+        """affiliation も role_map も無ければ「その他」を入れる。"""
+        speakers = [self._sp("UNKNOWN", "", role="")]
+        updated = _backfill_existing_speaker_roles(speakers, role_map={})
+        assert updated == 1
+        assert speakers[0].role == "その他"
+
+    def test_build_utterance_role_map(self) -> None:
+        utterances = _mk_utterances([
+            ("田中", "質疑者", "質問します。"),
+            ("木原稔", "答弁者", "お答えいたします。"),
+            ("局長X", "政府参考人", "数値を申し上げます。"),
+            ("田中", "質疑者", "重ねて質問。"),  # 重複 — 最初の値を採用
+        ])
+        role_map = _build_utterance_role_map(utterances)
+        assert role_map["田中"] == "質疑者"
+        assert role_map["木原稔"] == "答弁者"
+        assert role_map["局長X"] == "政府参考人"
+
+    def test_enrich_does_not_mutate_input_speakers(self) -> None:
+        """PR26 で role 補完を行うが、入力 speakers は破壊しない。"""
+        original = SpeakerInfo(
+            name="森英介",
+            affiliation="衆議院議長",
+            role="",
+            start_seconds=0.0,
+            start_time="",
+            duration_minutes=0,
+        )
+        speakers = [original]
+        utterances = _mk_utterances([("森英介", "委員長", "開会いたします。")])
+        result = enrich_metadata_from_utterances(utterances, speakers)
+        assert result[0].role == "委員長"  # backfill 済み
+        assert original.role == ""  # 入力は触らない
 
 
 if __name__ == "__main__":

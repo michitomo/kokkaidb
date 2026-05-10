@@ -66,6 +66,11 @@ _NOMINATION_PATTERN = re.compile(
 
 _ENRICH_ROLES: frozenset[str] = frozenset(("答弁者", "政府参考人"))
 
+# PR26: 既存 speakers の role を utterances から逆引き補完する際に許容する役割
+_BACKFILL_ROLES: frozenset[str] = frozenset(
+    ("委員長", "質疑者", "答弁者", "政府参考人", "参考人")
+)
+
 # 委員長相当 (進行役) の追加キーワード — 名前末尾から affiliation 抽出時に使う
 _CHAIR_LIKE_KEYWORDS: tuple[str, ...] = ("委員長", "事務総長", "副議長", "議長")
 
@@ -99,6 +104,58 @@ def _extract_affiliation_from_name(name: str) -> str:
                 return name
             return kw
     return ""
+
+
+def _build_utterance_role_map(utterances: UtterancesOutput) -> dict[str, str]:
+    """speaker name → 観測 role のマップを作る (PR26)。
+
+    最初に見つかった有効 role を採用する。「その他」は採用しない。
+    """
+    role_map: dict[str, str] = {}
+    for seg in utterances.segments:
+        for u in seg.utterances:
+            name = (u.speaker or "").strip()
+            if not name or u.role not in _BACKFILL_ROLES:
+                continue
+            if name not in role_map:
+                role_map[name] = u.role
+    return role_map
+
+
+def _backfill_existing_speaker_roles(
+    speakers: list[SpeakerInfo],
+    role_map: dict[str, str],
+) -> int:
+    """既存 speakers のうち role が空 / "その他" のものを補完する (PR26、in-place)。
+
+    補完優先度:
+        1. ``derive_role(affiliation)`` が「その他」以外を返せばそれを採用
+        2. utterances の観測 role (`role_map`) を採用
+        3. 最終フォールバック: "その他"
+
+    Returns: 実際に role が更新されたエントリ数。
+    """
+    updated = 0
+    for sp in speakers:
+        if sp.role and sp.role != "その他":
+            continue
+        derived = derive_role(sp.affiliation) if sp.affiliation else "その他"
+        if derived != "その他":
+            if sp.role != derived:
+                sp.role = derived
+                updated += 1
+            continue
+        utt_role = role_map.get(sp.name)
+        if utt_role and utt_role in _BACKFILL_ROLES:
+            if sp.role != utt_role:
+                sp.role = utt_role
+                updated += 1
+            continue
+        # フォールバック (Pydantic デフォルトとの差を防ぐ)
+        if not sp.role:
+            sp.role = "その他"
+            updated += 1
+    return updated
 
 
 def _build_chair_nomination_map(utterances: UtterancesOutput) -> dict[str, str]:
@@ -139,6 +196,17 @@ def enrich_metadata_from_utterances(
     """
     lookup = build_lookup(speakers)
     nomination_map = _build_chair_nomination_map(utterances)
+    role_map = _build_utterance_role_map(utterances)
+
+    # PR26: 既存 speakers の role を補完 (古い metadata.json で role="" のケース対応)
+    # 入力 speakers を破壊しないよう各 SpeakerInfo を deep-copy する
+    enriched = [s.model_copy() for s in speakers]
+    backfilled = _backfill_existing_speaker_roles(enriched, role_map)
+    if backfilled:
+        logger.info(
+            "metadata role backfill: filled %d/%d existing speakers",
+            backfilled, len(speakers),
+        )
 
     # name → (affiliation, fallback_role) を蓄積
     candidates: dict[str, tuple[str, str]] = {}
@@ -162,9 +230,8 @@ def enrich_metadata_from_utterances(
             candidates[name] = (affiliation, u.role)
 
     if not candidates:
-        return list(speakers)
+        return enriched
 
-    enriched = list(speakers)
     for name, (affiliation, fallback_role) in candidates.items():
         if affiliation:
             role = derive_role(affiliation)

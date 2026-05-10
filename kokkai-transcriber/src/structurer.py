@@ -176,17 +176,80 @@ def _assemble_full_text_for_pair(
 
 
 def _compute_share_boundaries(
-    parsed_pairs: list[dict[str, Any]], side: str
+    parsed_pairs: list[dict[str, Any]],
+    side: str,
+    layout: _SegmentLayout,
 ) -> list[int | None]:
     """同一 head utterance を共有するペアの anchor 順序から境界を求める。
 
     side: "q" or "a"。各ペアの (uidx_key, anchor_key) を見て、anchor を持つペアが
     同じ head utterance に複数あれば anchor 昇順でソートし、各ペアの境界を
     「次のペアの anchor」とする。最後のペアは None (utterance 末尾まで)。
+
+    PR28: 複数ペアが同一 head utterance を共有しているのに anchor が全/部分的に
+    null の場合 (代表質問など、LLM が anchor 指示を省略した場合)、その utterance の
+    sentence 数で均等分割した anchor を `parsed_pairs` に書き戻して duplicate
+    full_text を防ぐ。
     """
     uidx_key = f"{side}_uidx"
     anchor_key = f"{side}_anchor"
 
+    # 1. head utterance ごとにペアをグループ化 (入力順 = 時系列)
+    head_groups: dict[int, list[int]] = {}
+    for i, p in enumerate(parsed_pairs):
+        uidx = p[uidx_key]
+        if not uidx:
+            continue
+        head_groups.setdefault(uidx[0], []).append(i)
+
+    # 2. 同一 head に N>=2 ペアあって anchor が欠けていれば均等補完 (PR28)
+    for head, pair_indices in head_groups.items():
+        if len(pair_indices) < 2:
+            continue
+        if head < 0 or head >= len(layout.per_utt_sentences):
+            continue
+        n_sent = len(layout.per_utt_sentences[head])
+        if n_sent < 2:
+            continue
+        g_start = layout.utt_global_starts[head]
+        n_pairs = len(pair_indices)
+
+        explicit = [
+            (j, parsed_pairs[i][anchor_key])
+            for j, i in enumerate(pair_indices)
+            if isinstance(parsed_pairs[i][anchor_key], int)
+        ]
+
+        if not explicit:
+            # 全 null: 入力順に均等分割
+            for j, pair_idx in enumerate(pair_indices):
+                local_anchor = (j * n_sent) // n_pairs
+                parsed_pairs[pair_idx][anchor_key] = g_start + local_anchor
+            logger.info(
+                "PR28 (%s): inferred even-split anchors for head U%d (n_sent=%d, n_pairs=%d)",
+                side, head, n_sent, n_pairs,
+            )
+            continue
+
+        # 部分的: null を前後 explicit anchor の中点で埋める
+        for j, pair_idx in enumerate(pair_indices):
+            if isinstance(parsed_pairs[pair_idx][anchor_key], int):
+                continue
+            prev_anchor = g_start
+            next_anchor = g_start + n_sent
+            for prev_j, prev_anc in explicit:
+                if prev_j < j:
+                    prev_anchor = max(prev_anchor, prev_anc)
+            for next_j, next_anc in explicit:
+                if next_j > j:
+                    next_anchor = min(next_anchor, next_anc)
+                    break
+            inferred = (prev_anchor + next_anchor) // 2
+            parsed_pairs[pair_idx][anchor_key] = max(
+                g_start, min(inferred, g_start + n_sent - 1)
+            )
+
+    # 3. anchor ベースで境界を計算 (既存ロジック)
     shared: dict[int, list[tuple[int, int]]] = {}
     for i, p in enumerate(parsed_pairs):
         uidx = p[uidx_key]
@@ -209,6 +272,53 @@ def _compute_share_boundaries(
 def _fuzzy_lookup(name: str, speakers_lookup: dict[str, SpeakerInfo]) -> SpeakerInfo | None:
     """完全一致 → 姓一致で speaker 情報を取得する（structurer 互換ラッパー）。"""
     return find_by_name(name, speakers_lookup, allow_single_char=True)
+
+
+# PR23: 日本語の平均発話速度 (政治家の演説で 200-260 char/min ≒ 4 char/sec) で
+# segment 内の utterance 開始秒を線形推定する。segment 起点固定よりは
+# 大幅にマシなジャンプ精度になる (誤差 ±10-30s 程度)。
+_AVG_CHARS_PER_SECOND = 4.0
+
+
+def _estimate_pair_offset_seconds(
+    seg: SegmentUtterances,
+    utterance_indices: list[int],
+) -> float:
+    """utterance_indices の最初の utterance 開始秒を、segment 内の文字位置から推定する。
+
+    Returns: seg.start_seconds に加算するオフセット (秒)。先頭 utterance なら 0。
+    """
+    valid = [i for i in utterance_indices if 0 <= i < len(seg.utterances)]
+    if not valid:
+        return 0.0
+    head = valid[0]
+    if head == 0:
+        return 0.0
+    chars_before = sum(len(seg.utterances[j].text) for j in range(head))
+    return chars_before / _AVG_CHARS_PER_SECOND
+
+
+_VIDEO_TIME_PARAM_RE = re.compile(r"time=[\d.]+")
+_VIDEO_HASH_TIME_RE = re.compile(r"#[\d.]+$")
+
+
+def _shift_video_url_time(video_url: str, new_start_seconds: float) -> str:
+    """既存 video_url の時刻部分 (`time=` パラメータ or `#` ハッシュ) を差し替える。
+
+    - shugiin: `?ex=VL&deli_id=XXX&time=1234.5` → `time=` を上書き
+    - sangiin: `detail.php?sid=XXX#1234.5` → `#` 後を上書き
+
+    パターンに合わない URL はそのまま返す。new_start_seconds は小数 1 桁に丸める
+    (URL 短縮のため)。
+    """
+    if not video_url:
+        return video_url
+    rounded = f"{max(0.0, new_start_seconds):.1f}"
+    if _VIDEO_TIME_PARAM_RE.search(video_url):
+        return _VIDEO_TIME_PARAM_RE.sub(f"time={rounded}", video_url)
+    if _VIDEO_HASH_TIME_RE.search(video_url):
+        return _VIDEO_HASH_TIME_RE.sub(f"#{rounded}", video_url)
+    return video_url
 
 
 def _resolve_speaker_from_utterances(
@@ -244,12 +354,31 @@ def _is_member_of_parliament(affiliation: str) -> bool:
     return any(p in affiliation for p in _PARTY_KEYWORDS)
 
 
+def _answerer_role_from_info(info: SpeakerInfo | None, fallback_utt_role: str) -> str:
+    """答弁者の role 文字列 (qa_pairs.answer.role) を info から取り出す。
+
+    PR26: affiliation が空 (古い metadata.json や enrich で affiliation 推定失敗の
+    ケース) でも、speakers.role / utterance role に情報があればそれを採用する。
+    優先順:
+        1. info.affiliation (具体的な肩書き、例 "農林水産大臣")
+        2. info.role (汎用カテゴリ、例 "答弁者" / "政府参考人")
+        3. fallback_utt_role (utterances 由来 role、例 "答弁者")
+    """
+    if info is None:
+        return fallback_utt_role
+    if info.affiliation:
+        return info.affiliation
+    if info.role and info.role != "その他":
+        return info.role
+    return fallback_utt_role
+
+
 def _resolve_answerer_from_utterances(
     seg: SegmentUtterances,
     utterance_indices: list[int],
     speakers_lookup: dict[str, SpeakerInfo],
 ) -> tuple[str, str]:
-    """utterance_indices から答弁者の speaker と role(=affiliation) を取得する。
+    """utterance_indices から答弁者の speaker と role(=affiliation/カテゴリ) を取得する。
 
     議員が答弁者として選ばれた場合は、同じ utterance 範囲内で「議員でない」発言者
     （大臣・政府参考人）を探す。見つからなければ議員のまま返す（ログで警告）。
@@ -260,30 +389,33 @@ def _resolve_answerer_from_utterances(
 
     head = valid[0]
     name = seg.utterances[head].speaker
+    head_utt_role = seg.utterances[head].role
     info = _fuzzy_lookup(name, speakers_lookup)
     candidate_name = info.name if info else name
     candidate_aff = info.affiliation if info else ""
+    candidate_role = _answerer_role_from_info(info, head_utt_role)
 
     if not _is_member_of_parliament(candidate_aff):
-        return candidate_name, candidate_aff
+        return candidate_name, candidate_role
 
     for ui in valid:
         alt_name = seg.utterances[ui].speaker
         alt_info = _fuzzy_lookup(alt_name, speakers_lookup)
         alt_aff = alt_info.affiliation if alt_info else ""
         if alt_name != candidate_name and not _is_member_of_parliament(alt_aff):
+            alt_role = _answerer_role_from_info(alt_info, seg.utterances[ui].role)
             logger.info(
                 "Corrected answerer: %s (%s) → %s (%s)",
-                candidate_name, candidate_aff,
-                alt_info.name if alt_info else alt_name, alt_aff,
+                candidate_name, candidate_role,
+                alt_info.name if alt_info else alt_name, alt_role,
             )
-            return (alt_info.name if alt_info else alt_name), alt_aff
+            return (alt_info.name if alt_info else alt_name), alt_role
 
     logger.warning(
         "MP '%s' (%s) resolved as answerer but no non-MP alternative found in utterance range",
-        candidate_name, candidate_aff,
+        candidate_name, candidate_role,
     )
-    return candidate_name, candidate_aff
+    return candidate_name, candidate_role
 
 
 # ---------------------------------------------------------------------------
@@ -452,8 +584,8 @@ def _extract_pairs_from_response(
             "a_summary": a.get("summary", "") or "",
         })
 
-    q_boundaries = _compute_share_boundaries(parsed_pairs, "q")
-    a_boundaries = _compute_share_boundaries(parsed_pairs, "a")
+    q_boundaries = _compute_share_boundaries(parsed_pairs, "q", layout)
+    a_boundaries = _compute_share_boundaries(parsed_pairs, "a", layout)
 
     n_utterances = len(seg.utterances)
     indices_total = 0
@@ -488,6 +620,13 @@ def _extract_pairs_from_response(
         q_speaker, q_party = _resolve_speaker_from_utterances(seg, p["q_uidx"], speakers_lookup)
         a_speaker, a_role = _resolve_answerer_from_utterances(seg, p["a_uidx"], speakers_lookup)
 
+        # PR23: 質問先頭 utterance の文字位置から開始秒を推定し video_url を補正
+        offset = _estimate_pair_offset_seconds(seg, p["q_uidx"])
+        if offset > 0.0:
+            pair_video_url = _shift_video_url_time(seg.video_url, seg.start_seconds + offset)
+        else:
+            pair_video_url = seg.video_url
+
         pairs.append(
             QAPair(
                 id="",  # 後でマージ時に付番
@@ -506,7 +645,7 @@ def _extract_pairs_from_response(
                     summary=p["a_summary"],
                     full_text=a_full,
                 ),
-                video_url=seg.video_url,
+                video_url=pair_video_url,
             )
         )
 
@@ -896,6 +1035,36 @@ def _validate_summary_person_refs(
     return unknown
 
 
+_PLACEHOLDER_HEADER_PATTERNS = (
+    "委員会名不明",
+    "（委員会名不明）",
+    "(委員会名不明)",
+    "○○委員会",
+    "〇〇委員会",
+    "XX委員会",
+)
+
+
+def _has_placeholder_header(summary: str) -> bool:
+    """summary 冒頭付近に「委員会名不明」等のプレースホルダ表現が含まれているか判定。"""
+    head = summary[:120]
+    return any(pat in head for pat in _PLACEHOLDER_HEADER_PATTERNS)
+
+
+def _has_chamber_mismatch(summary: str, expected_chamber_ja: str) -> bool:
+    """冒頭で期待した院と異なる院名が現れたら True。
+
+    例: expected「参議院」だが summary 冒頭に「衆議院」が出てくるケースを検出。
+    """
+    if not expected_chamber_ja:
+        return False
+    head = summary[:80]
+    other = "衆議院" if expected_chamber_ja == "参議院" else "参議院"
+    if other in head and expected_chamber_ja not in head:
+        return True
+    return False
+
+
 def generate_session_summary(
     qa_pairs: QAPairsOutput,
     utterances: UtterancesOutput | None = None,
@@ -904,7 +1073,7 @@ def generate_session_summary(
     """セッション要約（3-5文）を生成する（Step 6b-1）。
 
     session_meta で院名・委員会名を渡すと冒頭の種別表記が正確になる。
-    使用可能なキー: chamber ("shugiin"|"sangiin"), committee, description (qa_pairs が空の場合のフォールバック)
+    使用可能なキー: chamber ("shugiin"|"sangiin"), committee, session_kind, description
     """
     if qa_pairs.pairs:
         body = "## Q&Aペア一覧\n" + _format_qa_pairs_for_prompt(qa_pairs)
@@ -916,19 +1085,21 @@ def generate_session_summary(
         return ""
 
     meta_prefix = ""
+    expected_chamber_ja = ""
+    expected_committee = ""
     if session_meta:
         chamber_raw = session_meta.get("chamber", "")
-        committee = session_meta.get("committee", "")
-        chamber_ja = (
+        expected_committee = session_meta.get("committee", "") or ""
+        expected_chamber_ja = (
             "衆議院" if chamber_raw == "shugiin"
             else "参議院" if chamber_raw == "sangiin"
-            else chamber_raw
+            else chamber_raw or ""
         )
         parts = []
-        if chamber_ja:
-            parts.append(f"院: {chamber_ja}")
-        if committee:
-            parts.append(f"委員会: {committee}")
+        if expected_chamber_ja:
+            parts.append(f"院: {expected_chamber_ja}")
+        if expected_committee:
+            parts.append(f"委員会: {expected_committee}")
         if parts:
             meta_prefix = "## セッション情報\n" + "\n".join(parts) + "\n\n"
 
@@ -938,6 +1109,46 @@ def generate_session_summary(
     if not isinstance(summary, str):
         return ""
     summary = summary.strip()
+
+    # PR21: 冒頭にプレースホルダが残っている / 院が取り違えられている場合は 1 回リトライ
+    header_issue: str | None = None
+    if _has_placeholder_header(summary):
+        header_issue = (
+            "前回の要約の冒頭に「委員会名不明」等のプレースホルダ表現が残っていました。"
+        )
+    elif _has_chamber_mismatch(summary, expected_chamber_ja):
+        header_issue = (
+            f"前回の要約の冒頭が「{expected_chamber_ja}」ではない院を指していました。"
+        )
+    if header_issue and meta_prefix:
+        logger.warning("generate_session_summary: header issue detected — retrying once")
+        retry_prompt = (
+            user_prompt
+            + "\n\n## 注意（再生成）\n"
+            + header_issue
+            + f"冒頭の一文には「## セッション情報」の値（院: {expected_chamber_ja}"
+            + (f"、委員会: {expected_committee}" if expected_committee else "")
+            + "）をそのまま使い、プレースホルダや別の院名を出力しないでください。"
+        )
+        try:
+            retry_data = _call_structurer(
+                SESSION_SUMMARY_SYSTEM_PROMPT, retry_prompt, max_tokens=4096
+            )
+            retry_summary = retry_data.get("session_summary", "")
+            if isinstance(retry_summary, str) and retry_summary.strip():
+                retry_summary = retry_summary.strip()
+                if (
+                    not _has_placeholder_header(retry_summary)
+                    and not _has_chamber_mismatch(retry_summary, expected_chamber_ja)
+                ):
+                    summary = retry_summary
+                else:
+                    logger.warning(
+                        "generate_session_summary: header issue persisted after retry"
+                    )
+                    summary = retry_summary  # 元出力よりはマシなので採用
+        except Exception as e:
+            logger.warning("generate_session_summary header retry failed: %s", e)
 
     # PR12: post-validation — qa_pairs にない人名が含まれていれば 1 回だけリトライ
     unknown_refs = _validate_summary_person_refs(summary, qa_pairs)

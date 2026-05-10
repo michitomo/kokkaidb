@@ -17,6 +17,7 @@ from src.models import SessionDetail, SpeakerInfo
 from src.scrapers._committee import resolve_committee
 from src.scrapers._role import derive_role
 from src.scrapers._session_kind import detect_session_kind
+from src.scrapers._speakers import merge_fuzzy_duplicates
 from src.scrapers.base import BaseScraper, SessionNotReadyError
 
 logger = logging.getLogger(__name__)
@@ -222,6 +223,13 @@ def _extract_speakers(soup: BeautifulSoup, deli_id: str) -> list[SpeakerInfo]:
         seen_order.append(key)
 
     speakers = [seen[k] for k in seen_order]
+    pre_merge = len(speakers)
+    speakers = merge_fuzzy_duplicates(speakers)
+    if len(speakers) != pre_merge:
+        logger.info(
+            "Fuzzy merge dedup'd speakers for deli_id=%s: %d -> %d",
+            deli_id, pre_merge, len(speakers),
+        )
     logger.info("Extracted %d speakers for deli_id=%s", len(speakers), deli_id)
     return speakers
 

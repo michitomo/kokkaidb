@@ -28,7 +28,7 @@
 | **#6 structurer 検証強化** | summary validation + follow_up | PR12, PR13 | F1 で summary_qa_divergence 改善 |
 | **#7 ISSUES 取り込み** | 堅牢性改修 | PR17, PR18, PR19, PR20 | F1 通過維持 |
 | **#8 検証 F2** | 多様性12件で再生成 + 比較 | (実装なし) | F2 ゲート通過 → **❌ FAIL (avg 14.75/sess)、PR21-28 起票** |
-| **#9 (旧 F3 → F2 修正)** | F2 で発見した systemic 問題の修正 | PR21, PR22, PR23, PR24, PR26 (優先), PR28 | F2 再走で平均 < 10、新規 high systemic 0 を目標 |
+| **#9 (旧 F3 → F2 修正)** | F2 で発見した systemic 問題の修正 | PR21, PR22, PR23, PR24, PR26, PR28 | ✅ 完了 (2026-05-10): 6 PR 実装、F1 で role=100% / full_text duplicate 0 / summary 冒頭整合確認 |
 | **#10 (旧 F4 → F2 再走)** | 4-6 件サンプリングで F2 再評価 | (実装なし) | F2 再ゲート通過 |
 | **#11 検証 F3** | 中規模30件で再生成 + 比較 | (実装なし、状況により PR25/PR27 追加) | F3 ゲート通過 |
 | **#12 全件 F4** | 全156件削除 + 再生成 + サイトビルド | (実装なし) | 公開 |
@@ -63,14 +63,14 @@
 | PR18 | speaker_tagger json.loads ラップ (§2.15) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | speaker_tagger の json.loads を try/except で囲み、空 content / malformed JSON 時は全文 1 utterance フォールバック (raise しない)。テスト 2件 |
 | PR19 | スクレイパー堅牢性 (§2.16) | 🟡 中 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | (1) shugiin `_extract_date` を `unknown` 戻りから `ValueError` 例外化、(2) `find_committee_in_body` を h1-h3 + td/th/dd に限定 (div/span/p の本文走査廃止)、(3) sangiin `get_session_detail` も speakers 空で `SessionNotReadyError`。テスト 7件 (committee 5、shugiin 1、sangiin 1)。HTML フィクスチャ smoke は別途 (Phase 後送り) |
 | PR20 | 法案タグ精度検証 (§2.17) | 🟡 中 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | `scripts/eval_law_tagging.py` 新規。既存 `tests/fixtures/law_tagging_benchmark.json` (6 cases) を groundtruth として使い、`data/<ref>/qa_pairs.json` の `related_law_ids` を集合突合 → micro/macro precision/recall/F1。`--threshold 0.6` で exit code を返す F2 ゲート用 CLI。現データ baseline は micro_F1=0 (benchmark の `law_XXX` ID と現 data の `clb-XXXX` ID が異なる schema 不一致による。F4 再生成後にアラインを再確認) |
-| PR21 | summary header に committee/chamber 確実伝搬 (Session #8 起票) | 🟢 小 | ☐ | | | F2 で 4+ セッションが「衆議院（委員会名不明）」誤記。`generate_session_summary` プロンプトに metadata 値を明示注入 |
-| PR22 | corrector で故人ハルシネーション抑制 (Session #8 起票) | 🟡 中 | ☐ | | | F2 で 56179 / 56212 で安倍元総理 (故) が答弁者として残存。corrector の固有名詞リファレンスに「故人マーカー」セクション追加 |
-| PR23 | video_url 時刻を qa-pair 単位生成 (Session #8 起票) | 🟢 小 | ☐ | | | F2 で 5+ セッション。現状は segment 起点固定。`question.utterance_indices[0]` の `start_seconds` を使う |
-| PR24 | speakers dedup を name fuzzy 化 (Session #8、PR1 拡張) | 🟢 小 | ☐ | | | F2 で 5+ セッションが表記揺れ重複 (鈴木×3 等)。PR1 の `(name, affiliation)` キーから `name` 部分一致 + affiliation 統合に拡張 |
+| PR21 | summary header に committee/chamber 確実伝搬 (Session #8 起票) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | pipeline.py で session_meta を generate_session_summary に注入。SESSION_SUMMARY_SYSTEM_PROMPT を強化 (プレースホルダ禁止・院取り違え禁止)。`_has_placeholder_header` / `_has_chamber_mismatch` 検出 + 1 回リトライ。F1: 4 件全 summary 冒頭が「衆議院○○委員会」/「参議院○○委員会」 |
+| PR22 | corrector で故人ハルシネーション抑制 (Session #8 起票) | 🟡 中 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | corrector SYSTEM_PROMPT に「故人・元政治家リファレンス」セクション追加 (安倍晋三 / 中曽根康弘 / 岸田文雄 等)。「現職答弁としての混入は削除」「歴史的言及は保持」を時制で見分けるルール明記 |
+| PR23 | video_url 時刻を qa-pair 単位生成 (Session #8 起票) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | `_estimate_pair_offset_seconds` 新設 (4 char/sec で線形推定) + `_shift_video_url_time` で URL の time= / # を差し替え。`_extract_pairs_from_response` でペアごとに補正。F1: 8967=58/58、56211=69/72、56074=2/2 unique URL |
+| PR24 | speakers dedup を name fuzzy 化 (Session #8、PR1 拡張) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | `src/scrapers/_speakers.py` 新規。`merge_fuzzy_duplicates` で name 完全一致 / prefix 一致 + affiliation 互換 (substring) チェック。PR1 の `(name, affiliation)` exact dedup の後段で実行。テスト 21 件 |
 | PR25 | speaker_tagger 境界 leak 抑制 (Session #8 起票) | 🟡 中 | ☐ | | | F2 で 8+ セッション。前 segment 末尾の議長コール / 答弁者発言が次 segment に混入 |
-| PR26 | metadata role 推定書き戻し (Session #8、PR6 拡張) | 🟢 小 | ☐ | | | F2 で 8+ セッションの metadata.speakers が全 role 空文字。`enrich_metadata_from_utterances` で utterance 由来 role を speakers にも書き戻す |
+| PR26 | metadata role 推定書き戻し (Session #8、PR6 拡張) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | `_backfill_existing_speaker_roles` 新設 — derive_role(affiliation) → utterance 観測 role の 2 段フォールバック。`enrich_metadata_from_utterances` で実行。さらに structurer `_resolve_answerer_from_utterances` を `_answerer_role_from_info` 経由で affiliation→info.role→utt_role の 3 段フォールバックに拡張。F1: 8967 28%→**100%**、56211 49%→**100%**、56074 100% (維持) |
 | PR27 | utterances 空問題の root cause (Session #8 起票) | 🟡 中 | ☐ | | | F2 で 8982 (sangiin/04/23/農水) が `utterances.json` 完全空。speaker_tagger or normalizer の致命的失敗 — root cause 特定要 |
-| PR28 | `_assemble_full_text_for_pair` 同一 anchor 重複対策 (Session #8 起票) | 🟢 小 | ☐ | | | F2 で 56176 が 9 QA 全 question.full_text 完全重複 (3,398字×9)、8977 で類似。boundary 計算が同一 anchor で破綻 |
+| PR28 | `_assemble_full_text_for_pair` 同一 anchor 重複対策 (Session #8 起票) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-10 | `_compute_share_boundaries` を layout 受け取り版に拡張。同一 head utterance を共有する N ペアで anchor が全/部分 null の場合、sentence count で均等分割または前後 explicit anchor の中点で補完。F1: 全 4 件で full_text 重複 0/{n} |
 
 ---
 
@@ -160,6 +160,61 @@
 - メモ:
   - PR14 (Step 3 閾値) は Step 4.5+ 再実行ではカバー外。フルパイプライン smoke は次セッション以降で機会があれば
   - validator の speaker 不整合 warning は PR6 metadata enrichment で大幅減少見込み
+
+### Session #9 (F2 systemic 問題修正) — 2026-05-10 完了
+- 実装 (PR21/22/23/24/26/28 = 優先 6 件):
+  - **PR21** (summary header 整合):
+    - `pipeline.py:_run_step6` で `session_meta = {chamber, committee, session_kind}` を組み立て、`generate_session_summary` に渡す。
+    - `prompts.py:SESSION_SUMMARY_SYSTEM_PROMPT` を強化: 「## セッション情報」の値をそのまま転記、プレースホルダ ("委員会名不明" / "○○委員会") 禁止、院の取り違え禁止を明示。自己確認チェック追加。
+    - `structurer.py`: `_has_placeholder_header` / `_has_chamber_mismatch` を新設。`generate_session_summary` で検出時 1 回リトライ。リトライ後も残れば retry 出力を採用 (warning ログ)。
+    - `/tmp/regen_test.py` / `/tmp/regen_f2.py` も session_meta を渡すように更新 (検証ハーネス側)。
+  - **PR22** (corrector 故人ハルシネーション抑制):
+    - `transcript_corrector.py:SYSTEM_PROMPT` に「故人・元政治家リファレンス」セクション追加。
+    - 故人/元政治家 9 名 (安倍晋三・中曽根康弘・海部俊樹・大平正芳・宮沢喜一・細川護熙・菅義偉・岸田文雄・麻生太郎) を列挙。
+    - 処理ルール: ① 現職答弁としての混入は削除、② 歴史的・引用的言及は保持。判断基準は動詞の時制と主語の同定で。
+  - **PR23** (video_url ペア単位):
+    - `structurer.py:_estimate_pair_offset_seconds` 新設 (日本語平均速度 4 char/sec で utterance 開始秒を線形推定)。
+    - `structurer.py:_shift_video_url_time` 新設 (`time=` パラメータ / `#` ハッシュを差し替え、shugiin / sangiin 両対応、小数 1 桁丸め)。
+    - `_extract_pairs_from_response` で各ペアごとに `seg.start_seconds + offset` で video_url 補正。
+  - **PR24** (speakers fuzzy dedup):
+    - `src/scrapers/_speakers.py` 新規モジュール。`merge_fuzzy_duplicates` 関数。
+    - マッチ: 完全一致または短い方が長い方の prefix (≥2 文字)。affiliation 衝突 (両方非空かつ substring 関係なし) は merge しない (過剰 merge 防止)。
+    - `shugiin._extract_speakers` / `sangiin._extract_speakers` で `(name, affiliation)` exact dedup の後段で呼び出し。
+  - **PR26** (metadata role 補完):
+    - `metadata_enricher.py:_backfill_existing_speaker_roles` 新設。優先順: ① `derive_role(affiliation)`、② utterance 観測 role、③ "その他"。
+    - `enrich_metadata_from_utterances` で `model_copy()` ベースの非破壊的書き換えに変更し、新規追加と既存補完の両方を 1 関数で完結。
+    - **追加修正 (re-run で発見)**: `structurer.py:_resolve_answerer_from_utterances` が affiliation を `answer.role` に書き出していたが、affiliation 空のとき role 空になる問題を解消。`_answerer_role_from_info` で affiliation→info.role→utt_role の 3 段フォールバック。
+  - **PR28** (full_text 重複対策):
+    - `structurer.py:_compute_share_boundaries` の signature を `(parsed_pairs, side, layout)` に拡張。
+    - 複数ペアが同一 head utterance を共有しているのに anchor が全/部分 null の場合:
+      - 全 null → sentence count で均等分割し anchor を `parsed_pairs` に書き戻し
+      - 部分 null → 前後の explicit anchor の中点で補完
+    - 1 文しかない utterance では分割不能なのでスキップ (代表質問・所信表明等の長文 utterance のみ対象)。
+- 検証:
+  - **unit tests**:
+    - `tests/test_structurer.py`: +25 件 pass (TestComputeShareBoundaries 既存 9 件を layout 対応に更新、TestPR28AnchorInference 4 件、TestPR21SummaryHeaderValidation 7 件、TestPR23VideoUrlShift 5 件、TestPR23PerPairVideoUrl 2 件)
+    - `tests/test_metadata_enricher.py`: +7 件 pass (TestPR26BackfillExistingRoles 7 件)
+    - `tests/test_speakers_fuzzy_dedup.py`: +21 件 pass (新規ファイル、`_names_fuzzy_match` / `_affiliations_compatible` / `_pick_affiliation` / `merge_fuzzy_duplicates` を網羅)
+    - 全 unit (-m "not integration"): pre-existing 3 scraper failure (Session #7 から継続) のみ、新規 regression なし
+  - **F1 サンプル4件 全 exit 0** (`/tmp/regen-test/_summary.json`、2 回目走で確認):
+    - 56075 本会議 (floor_speech): 82.7s, qa=0/topics=8 (PR11 経路継続)
+    - 56211 内閣委員会: 273.7s, qa=72/topics=2、unique Q=72/72・unique A=72/72・unique URL=69/72、**answer.role 100%** (旧 49%)
+    - 56074 本会議: 114.0s, qa=2/topics=1、unique Q=2/2・unique A=2/2・unique URL=2/2、answer.role 100% (維持)
+    - 8967 内閣委員会: 228.2s, qa=58/topics=10、unique Q=58/58・unique A=58/58・unique URL=58/58、**answer.role 100%** (旧 28%)
+  - **PR21 summary 冒頭検証**:
+    - 56075: 「衆議院本会議において、高市早苗内閣総理大臣、茂木敏充…」 ✓
+    - 56211: 「衆議院内閣委員会において、AI によるサイバー攻撃への対応…」 ✓
+    - 56074: 「衆議院本会議において、小寺博夫衆議院議長と森英介衆議…」 ✓
+    - 8967: 「参議院内閣委員会において、オンラインカジノ対策、外交…」 ✓
+    - 4/4 全て chamber + committee 整合。プレースホルダ・院取り違えなし。
+  - **PR23 video_url ユニーク性**: 56211 の 3 件重複は同一 segment で単一ペアのケース → seg.video_url のまま (期待動作)。それ以外はペア単位で異なる。
+  - **PR26 answer.role 充足率**: 8967 28%→**100%** (+72pt)、56211 49%→**100%** (+51pt)。affiliation 空エントリでも info.role / utt_role からの fallback で答弁者カテゴリ を埋める。具体的肩書き (大臣・副大臣・局長・審議官・内閣府担当大臣 等) と汎用カテゴリ (答弁者・政府参考人) が混在するが、UI フィルタには両方が活用できる。
+  - **PR28 重複検証**: 4 件全 unique full_text。56176 / 8977 のような duplicate 完全消失。
+- ノート:
+  - **PR22 (corrector 故人) は本ランで効果未検証**。F1 サンプルに 56179 / 56212 (安倍残存ケース) を含めていないため。F2 再走で確認する。
+  - **PR24 (fuzzy dedup) も同様**: F1 ではすでに dedup 済みデータを使うため scraper 経路の検証が不十分。F2 再走で確認するか、scraper 単体テストで間接確認 (HTML フィクスチャ)。
+  - 未着手: PR25 (speaker_tagger 境界 leak)、PR27 (utterances 空 root cause)。優先度の判断は F2 再走後に再評価。
+- 残作業 (Session #10 へ): F2 再走で平均 finding < 10、新規 high systemic 0 を目標。
 
 ### Session #8 (F2 多様性検証) — 2026-05-10 完了 (ゲート FAIL、PR21-28 起票)
 - **F2 サンプル選定** (12 件、層化抽出):

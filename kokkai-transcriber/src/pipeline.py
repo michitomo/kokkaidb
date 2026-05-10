@@ -352,7 +352,14 @@ def _run_step6(
             skip_proposal_segments=(sk == "representative_questions"),
         )
 
-    session_summary = generate_session_summary(qa_pairs, utterances_output)
+    session_meta = {
+        "chamber": session_detail.chamber,
+        "committee": session_detail.committee,
+        "session_kind": session_detail.session_kind,
+    }
+    session_summary = generate_session_summary(
+        qa_pairs, utterances_output, session_meta=session_meta
+    )
 
     # PR11/§2.10: QA が空でも utterances がある場合 (所信表明・施政方針演説・
     # 全 procedural skip 等) は utterances から topics + key_topics を生成し、
