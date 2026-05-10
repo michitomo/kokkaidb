@@ -153,7 +153,9 @@ def _assemble_full_text_for_pair(
     if not valid_uidx:
         return ""
 
-    if split_anchor_sentence_idx is None:
+    # BUG FIX: LLM が anchor を文字列 "4" 等で返した場合 `"4" - int` で TypeError になる。
+    # isinstance(int) チェックで非 int anchor はフォールバック扱いにする。
+    if not isinstance(split_anchor_sentence_idx, int):
         return "\n".join(seg.utterances[i].text for i in valid_uidx)
 
     head_uidx = valid_uidx[0]
@@ -339,9 +341,24 @@ _TRAILING_SPEAKER_LABEL_RE = re.compile(
 )
 
 # PR43: answer.full_text 冒頭に混入した話者ラベルを除去する。
-# 「高市早苗内閣総理大臣。」「古川内閣府大臣政務官。」等のパターン。
+# 「高市早苗内閣総理大臣。」「古川内閣府大臣政務官。」「澤田純参考人。」等のパターン。
+# PR43 v3: 参考人ラベルも対象追加
+_LEADING_ANSWER_LABEL_KEYWORDS = (
+    '内閣総理大臣','総理大臣','国務大臣','大臣政務官','副大臣','大臣',
+    '副長官','長官','次長','局長','審議官','参事官','部長','参考人',
+)
 _LEADING_SPEAKER_LABEL_RE = re.compile(
-    rf"^[一-鿿ぁ-ゟ]{{2,20}}?(?:{'|'.join(re.escape(k) for k in ('内閣総理大臣','総理大臣','国務大臣','大臣政務官','副大臣','大臣','副長官','長官','次長','局長','審議官','参事官','部長'))})[。、：]\s*"
+    rf"^[一-鿿ぁ-ゟ]{{2,20}}?(?:{'|'.join(re.escape(k) for k in _LEADING_ANSWER_LABEL_KEYWORDS)})[。、：]\s*"
+)
+
+# PR43 v3: question.full_text 冒頭の質疑者識別ラベルを除去する。
+# 「森本真治（立憲民主・無所属）：」「泉房穂君。」等のパターン。
+# 誤 strip 防止のため (党名括弧) または 君/さん 敬称のいずれかを必須とする。
+_LEADING_QUESTIONER_LABEL_RE = re.compile(
+    r"(?:"
+    r"^[一-鿿ぁ-ゟ]{2,10}（[^）]{2,40}）(?:君|さん)?[。、：]\s*"  # name + (party)
+    r"|^[一-鿿ぁ-ゟ]{2,8}(?:君|さん)[。、：]\s*"                   # name + honorific
+    r")"
 )
 
 
@@ -363,9 +380,16 @@ def _strip_leading_speaker_label(text: str) -> str:
     """answer.full_text 冒頭の話者ラベルを除去する (PR43)。
 
     「高市早苗内閣総理大臣。[答弁内容...]」→「[答弁内容...]」
-    役職キーワードで終わる名前+役職のラベルが「。」「、」「：」で区切られている場合のみ除去。
     """
     return _LEADING_SPEAKER_LABEL_RE.sub("", text)
+
+
+def _strip_leading_questioner_label(text: str) -> str:
+    """question.full_text 冒頭の質疑者識別ラベルを除去する (PR43 v3)。
+
+    「森本真治（立憲民主・無所属）：[質問...]」→「[質問...]」
+    """
+    return _LEADING_QUESTIONER_LABEL_RE.sub("", text)
 
 
 def _shift_video_url_time(video_url: str, new_start_seconds: float) -> str:
@@ -677,8 +701,9 @@ def _extract_pairs_from_response(
         # PR43: answer / question 末尾に混入した次発言者ラベルを除去
         a_full = _strip_trailing_speaker_label(a_full)
         q_full = _strip_trailing_speaker_label(q_full)
-        # PR43: answer 冒頭に混入した話者ラベルを除去（「高市早苗内閣総理大臣。[答弁]」等）
+        # PR43: answer 冒頭の話者ラベル、question 冒頭の質疑者ラベルを除去
         a_full = _strip_leading_speaker_label(a_full)
+        q_full = _strip_leading_questioner_label(q_full)
 
         if len(a_full) < MIN_ANSWER_LENGTH and not p["a_uidx"]:
             dropped_short += 1

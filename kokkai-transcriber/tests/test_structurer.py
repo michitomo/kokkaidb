@@ -31,6 +31,7 @@ from src.structurer import (
     _has_placeholder_header,
     _shift_video_url_time,
     _split_sentences,
+    _strip_leading_questioner_label,
     _strip_leading_speaker_label,
     _strip_trailing_speaker_label,
     _validate_summary_person_refs,
@@ -2038,6 +2039,40 @@ class TestPR43LeadingLabelStrip:
         text = "高市早苗内閣総理大臣：まず基本的な考え方を申し上げます。"
         result = _strip_leading_speaker_label(text)
         assert result == "まず基本的な考え方を申し上げます。"
+
+    def test_strips_sankounin_label(self) -> None:
+        """PR43 v3: 参考人ラベルも除去する。"""
+        text = "澤田純参考人。本日は貴重な機会をいただきありがとうございます。"
+        result = _strip_leading_speaker_label(text)
+        assert result == "本日は貴重な機会をいただきありがとうございます。"
+
+
+class TestPR43LeadingQuestionerLabelStrip:
+    """PR43 v3: question.full_text 冒頭の質疑者ラベル除去。"""
+
+    def test_strips_name_with_party_colon(self) -> None:
+        """「森本真治（立憲民主・無所属）：[質問]」→「[質問]」"""
+        text = "森本真治（立憲民主・無所属）：エネルギー政策について伺います。"
+        result = _strip_leading_questioner_label(text)
+        assert result == "エネルギー政策について伺います。"
+
+    def test_strips_kun_period(self) -> None:
+        """「泉房穂君。[質問]」→「[質問]」"""
+        text = "泉房穂君。少子化対策について質問します。"
+        result = _strip_leading_questioner_label(text)
+        assert result == "少子化対策について質問します。"
+
+    def test_no_false_positive_content_start(self) -> None:
+        """通常の質問開始（名前+役職なし）は除去しない。"""
+        text = "少子化対策の財源確保についてお聞きします。"
+        result = _strip_leading_questioner_label(text)
+        assert result == text
+
+    def test_no_false_positive_questioner_reference(self) -> None:
+        """文中の名前言及（「山田大臣に伺います」等）は除去しない。"""
+        text = "山田大臣に伺います。エネルギー価格の高騰についてどのようにお考えでしょうか。"
+        result = _strip_leading_questioner_label(text)
+        assert result == text
 
 
 @pytest.mark.integration

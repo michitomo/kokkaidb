@@ -98,6 +98,7 @@
 | PR43 | answer.full_text 末尾の次発言者ラベル除去 (Session #16 起票) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-11 | `_TRAILING_SPEAKER_LABEL_RE` + `_strip_trailing_speaker_label` 新設。`_extract_pairs_from_response` で `a_full`・`q_full` 両方に適用。「`\n森本真治（立憲民主・無所属）`」「`\n藤川政人委員長`」等のパターンを除去。**Session #17 enhanced**: `君。`/`さん。` 敬称+句点パターン追加、最大 3 回反復適用でスタック除去。テスト 9 件追加 |
 | PR44 | _NOMINATION_PATTERN の「、」区切り対応 (Session #17 起票) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-11 | `_NOMINATION_PATTERN` に `[、，\s]{0,2}` を追加。「内閣総理大臣、高市早苗君。」等の「、」区切りパターンに対応し nomination_map での affiliation 抽出成功率を向上。テスト 2 件追加 |
 | PR43 v2 | PR43 trailing/leading label 強化 (Session #17、F2 rerun5 audit 後) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-11 | trailing: 改行なし+敬称/役職パターン追加 (Pattern B: 党名括弧, Pattern C: 君/委員長 inline)。leading: `_LEADING_SPEAKER_LABEL_RE` + `_strip_leading_speaker_label` 新設で answer 冒頭の「高市早苗内閣総理大臣。」等を除去。テスト +9件 |
+| PR43 v3 | PR43 参考人ラベル + question 冒頭ラベル + anchor 型エラー修正 (Session #17、F2 rerun6 audit 後) | 🟢 小 | ✅ | michitomo/structurer-rewrite-plan | 2026-05-11 | (1) `_LEADING_SPEAKER_LABEL_RE` に「参考人」追加 (expert hearing 対応)。(2) `_LEADING_QUESTIONER_LABEL_RE` 新設 + `_strip_leading_questioner_label` で question 冒頭「森本真治（立憲民主）：」等を除去。(3) `_assemble_full_text_for_pair` の anchor `isinstance(None)` チェックを `isinstance(int)` に修正 — LLM が `"4"` (文字列) を返したときの TypeError を防止。テスト +5件 |
 
 ---
 
