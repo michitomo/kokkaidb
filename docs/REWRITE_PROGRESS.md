@@ -49,7 +49,7 @@
 | PR6 | metadata enrichment (§2.2/2.3) | 🟡 中 | ☐ | | | (#4 batch、PR1+PR3 依存) |
 | PR7 | corrector 安全チェック緩和 (§2.5) | 🟢 小 | ☐ | | | (#5 batch) |
 | PR8 | corrector 禁止事項強化 (§2.6/2.7) | 🟢 小 | ☐ | | | (#5 batch) |
-| PR9 | utterance_indices schema (§2.1) | 🔴 **大** | ☐ | | | (#2-#3 集中) |
+| PR9 | utterance_indices schema (§2.1) | 🔴 **大** | 🔄 | michitomo/structurer-rewrite-plan | 2026-05-10 (前半完了) | prompts.py V2 + structurer.py 雛形完了。後半は #3 で assemble_full_text の anchor テスト+F1検証 |
 | PR10 | content_missing 対策 (§2.10) | 🟡 中 | ☐ | | | (#5 batch、PR9 依存) |
 | PR11 | floor_speech summary 経路 (§2.10) | 🟡 中 | ☐ | | | (#5 batch、PR10 依存) |
 | PR12 | summary post-validation (§2.11) | 🟡 中 | ☐ | | | (#6 batch、PR9+PR11 依存) |
@@ -151,8 +151,30 @@
   - PR14 (Step 3 閾値) は Step 4.5+ 再実行ではカバー外。フルパイプライン smoke は次セッション以降で機会があれば
   - validator の speaker 不整合 warning は PR6 metadata enrichment で大幅減少見込み
 
-### Session #2 (schema-1) — まだ
-- 予定: PR9 前半
+### Session #2 (schema-1) — 2026-05-10 完了
+- 実装 (PR9 前半):
+  - `src/prompts.py` `QA_SEGMENT_SYSTEM_PROMPT` を V2 に全面書き換え (utterance_indices + 任意 split_anchor_sentence_idx)
+  - `src/structurer.py` 雛形:
+    - 旧 `_build_sentence_map` / `_assemble_full_text_from_sentences` / `_build_sentence_to_utterance_map` / `_resolve_*_from_sentences` を削除
+    - 新 `_SegmentLayout` dataclass + `_compute_segment_layout` / `_build_utterance_map` (`[U0]`...形式、長文 utterance のみ `(sN)` 併記) を追加
+    - 新 `_assemble_full_text_for_pair` (anchor 対応、共有 utterance の boundary 計算は `_compute_share_boundaries`)
+    - `_resolve_speaker_from_utterances` / `_resolve_answerer_from_utterances` を utterance_indices ベースに刷新
+    - `_extract_pairs_from_response` 新スキーマ対応
+    - `_INPUT_CHAR_LIMIT = 20000` の暫定切り捨てを撤廃 (代わりに 50000 char 警告ログ)
+  - `tests/test_structurer.py` 更新: 削除された helper のテストを新 helper 用に書き換え、mock data を `utterance_indices` ベースに移行
+- 検証:
+  - unit tests: 32/32 pass (`tests/test_structurer.py`)
+  - 全 unit (除く integration / ffmpeg依存): 226 pass / 3 pre-existing scraper failure
+  - F0 dry-run #1: 56074 (本会議, procedural-only) — exit 0、6ファイル、qa=0/topics=0 (旧 qa=1 はおそらく hallucination、新プロンプトはより厳格に「往復必須」を要求)
+  - F0 dry-run #2: 56211 (内閣委員会, 実 QA) — exit 0、6ファイル、qa=74/topics=17
+    - first question.full_text=966 chars、answer.full_text=679 chars (utterance 全文連結が機能)
+    - 句点終わり: question 2/74 (2.7%)、answer 5/74 (6.8%) — **旧スキーマの 52.5%/21.1% から大幅改善**
+    - 「おはようございます。」「ご答弁いただきまして…」等の挨拶も full_text に保持される (新方式の意図通り)
+- 残作業 (Session #3 へ):
+  - 共有 utterance + anchor の単体テスト追加
+  - F1 サンプル4件 (56074, 56075, 56211, 8967) で resolved ≥ 50% 検証
+  - `_INPUT_CHAR_LIMIT` 撤廃の影響確認 (極端に長いセグメントの分割品質)
+  - V4 metrics の `date` 型 literal_error (19/74 ペア失敗) は別 PR (pre-existing)
 
 (以下、セッション完了ごとに追記)
 

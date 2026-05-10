@@ -1,7 +1,8 @@
 """LLM Q&Aペア生成・要約・トピック抽出 (DeepInfra DeepSeek V3.2)
 
 セグメント単位で並列にQ&Aペアを生成し、抜け漏れを防止する。
-LLMにはutterance_indicesと判断のみ返させ、full_textはコードで組み立てる。
+LLMには utterance_indices と判断のみ返させ、full_text はコードが
+utterance 全文を連結して組み立てる (docs/STRUCTURER_REWRITE.md §2.1 / Appendix A)。
 """
 
 from __future__ import annotations
@@ -10,6 +11,7 @@ import json
 import logging
 import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from dataclasses import dataclass
 from typing import Any
 
 from src.api_client import get_client as _get_client
@@ -42,42 +44,82 @@ from src.speaker_lookup import find_by_name
 # Step 6はgemma-4-31bを使用（ペア数抽出がV3.2より安定: 10/10 vs 6/10）
 STRUCTURER_MODEL = "google/gemma-4-31B-it"
 
-# 答弁本文がこの長さ未満かつ sentence_indices が空のペアは Q&A として成立していないため drop
+# 答弁本文がこの長さ未満かつ utterance_indices が空のペアは Q&A として成立していないため drop
 MIN_ANSWER_LENGTH = 30
+
+# 長文 utterance 判定 (sentence sub-number `(sN)` を併記する閾値)
+# 代表質問・所信表明など共有 utterance 候補のみ対象。99% の utterance は素のテキストのみ
+_LONG_UTTERANCE_CHARS = 800
+_LONG_UTTERANCE_SENTENCES = 8
+
+# プロンプトが極端に長くなったときの警告閾値 (block 分割不足の検知用)
+_PROMPT_TEXT_WARN_THRESHOLD = 50000
 
 logger = logging.getLogger(__name__)
 
 
 def _split_sentences(text: str) -> list[str]:
     """テキストを文単位に分割する。句点・疑問符・感嘆符で分割。"""
-    # Split on sentence-ending punctuation, keeping the delimiter
     parts = re.split(r'(?<=[。？！])', text)
     result = [p.strip() for p in parts if p.strip()]
     return result if result else [text]
 
 
-def _build_sentence_map(seg: SegmentUtterances) -> tuple[str, list[str]]:
-    """セグメント全体の文にフラットな通し番号を振り、プロンプト用テキストと文リストを返す。
+@dataclass
+class _SegmentLayout:
+    """セグメント内の utterance / sentence マッピング情報。
 
-    Returns:
-        (prompt_text, sentences): 番号付きテキストと文のフラットリスト
+    LLM プロンプト構築 (`_build_utterance_map`) と full_text 組み立て
+    (`_assemble_full_text_for_pair`) の両方で参照する。
     """
-    lines: list[str] = []
-    lines.append(f"セグメント発言者: {seg.segment_speaker}（{seg.segment_affiliation}）")
-    lines.append("")
 
-    all_sentences: list[str] = []
-    sent_idx = 0
-    for u in seg.utterances:
-        lines.append(f"[{u.role}] {u.speaker}:")
-        sentences = _split_sentences(u.text)
-        for s in sentences:
-            lines.append(f"  ({sent_idx}) {s}")
-            all_sentences.append(s)
-            sent_idx += 1
+    per_utt_sentences: list[list[str]]  # [u_idx][local_sent_idx] -> sentence text
+    utt_global_starts: list[int]  # [u_idx] -> 最初の sentence の global index
+    total_sentences: int
+    is_long_utt: list[bool]  # [u_idx] -> sentence sub-number を出すか
+
+
+def _compute_segment_layout(seg: SegmentUtterances) -> _SegmentLayout:
+    per_utt: list[list[str]] = [_split_sentences(u.text) for u in seg.utterances]
+    starts: list[int] = []
+    is_long: list[bool] = []
+    cur = 0
+    for sentences, u in zip(per_utt, seg.utterances, strict=True):
+        starts.append(cur)
+        cur += len(sentences)
+        is_long.append(
+            len(u.text) >= _LONG_UTTERANCE_CHARS
+            or len(sentences) >= _LONG_UTTERANCE_SENTENCES
+        )
+    return _SegmentLayout(
+        per_utt_sentences=per_utt,
+        utt_global_starts=starts,
+        total_sentences=cur,
+        is_long_utt=is_long,
+    )
+
+
+def _build_utterance_map(seg: SegmentUtterances, layout: _SegmentLayout) -> str:
+    """セグメントを `[U0]`, `[U1]`, ... の番号付きテキストに整形する。
+
+    長文 utterance のみ sentence サブ番号 `(sN)` をグローバル通番で併記。
+    LLM はこの番号を `utterance_indices` / `split_anchor_sentence_idx` に
+    そのまま使う。
+    """
+    lines: list[str] = [
+        f"セグメント発言者: {seg.segment_speaker}（{seg.segment_affiliation}）",
+        "",
+    ]
+    for i, u in enumerate(seg.utterances):
+        lines.append(f"[U{i}] [{u.role}] {u.speaker}:")
+        if layout.is_long_utt[i]:
+            start = layout.utt_global_starts[i]
+            for j, s in enumerate(layout.per_utt_sentences[i]):
+                lines.append(f"  (s{start + j}) {s}")
+        else:
+            lines.append(f"  {u.text}")
         lines.append("")
-
-    return "\n".join(lines), all_sentences
+    return "\n".join(lines)
 
 
 def _format_segments_for_prompt(segments: list[SegmentUtterances]) -> str:
@@ -90,14 +132,77 @@ def _format_segments_for_prompt(segments: list[SegmentUtterances]) -> str:
     return "\n".join(lines)
 
 
-def _assemble_full_text_from_sentences(
-    all_sentences: list[str], indices: list[int],
+def _assemble_full_text_for_pair(
+    seg: SegmentUtterances,
+    layout: _SegmentLayout,
+    utterance_indices: list[int],
+    split_anchor_sentence_idx: int | None,
+    boundary_global_idx: int | None,
 ) -> str:
-    """sentence_indicesからfull_textを機械的に組み立てる。"""
-    valid = [i for i in indices if 0 <= i < len(all_sentences)]
-    if not valid:
+    """utterance_indices と anchor から full_text を機械的に組み立てる。
+
+    - `split_anchor_sentence_idx` が None: 全 utterance の text を改行連結 (99% のケース)
+    - anchor あり: 先頭 utterance を anchor で slice し、後続 utterance は丸ごと連結。
+      `boundary_global_idx` は同じ utterance を共有する次のペアの anchor (排他的境界)。
+    """
+    valid_uidx = [i for i in utterance_indices if 0 <= i < len(seg.utterances)]
+    if not valid_uidx:
         return ""
-    return "".join(all_sentences[i] for i in valid)
+
+    if split_anchor_sentence_idx is None:
+        return "\n".join(seg.utterances[i].text for i in valid_uidx)
+
+    head_uidx = valid_uidx[0]
+    sentences = layout.per_utt_sentences[head_uidx]
+    g_start = layout.utt_global_starts[head_uidx]
+
+    local_anchor = max(0, split_anchor_sentence_idx - g_start)
+    if local_anchor >= len(sentences):
+        # 範囲外 anchor は信頼できないので utterance 全文にフォールバック
+        head_text = "".join(sentences)
+    else:
+        if boundary_global_idx is not None:
+            local_end = max(local_anchor, boundary_global_idx - g_start)
+            local_end = min(local_end, len(sentences))
+        else:
+            local_end = len(sentences)
+        head_text = "".join(sentences[local_anchor:local_end])
+
+    if len(valid_uidx) == 1:
+        return head_text
+    rest = "\n".join(seg.utterances[i].text for i in valid_uidx[1:])
+    return f"{head_text}\n{rest}" if head_text else rest
+
+
+def _compute_share_boundaries(
+    parsed_pairs: list[dict[str, Any]], side: str
+) -> list[int | None]:
+    """同一 head utterance を共有するペアの anchor 順序から境界を求める。
+
+    side: "q" or "a"。各ペアの (uidx_key, anchor_key) を見て、anchor を持つペアが
+    同じ head utterance に複数あれば anchor 昇順でソートし、各ペアの境界を
+    「次のペアの anchor」とする。最後のペアは None (utterance 末尾まで)。
+    """
+    uidx_key = f"{side}_uidx"
+    anchor_key = f"{side}_anchor"
+
+    shared: dict[int, list[tuple[int, int]]] = {}
+    for i, p in enumerate(parsed_pairs):
+        uidx = p[uidx_key]
+        anchor = p[anchor_key]
+        if not uidx or anchor is None or not isinstance(anchor, int):
+            continue
+        head = uidx[0]
+        shared.setdefault(head, []).append((i, anchor))
+
+    boundaries: list[int | None] = [None] * len(parsed_pairs)
+    for items in shared.values():
+        if len(items) <= 1:
+            continue
+        items.sort(key=lambda x: x[1])
+        for j, (pair_idx, _) in enumerate(items):
+            boundaries[pair_idx] = items[j + 1][1] if j + 1 < len(items) else None
+    return boundaries
 
 
 def _fuzzy_lookup(name: str, speakers_lookup: dict[str, SpeakerInfo]) -> SpeakerInfo | None:
@@ -105,31 +210,20 @@ def _fuzzy_lookup(name: str, speakers_lookup: dict[str, SpeakerInfo]) -> Speaker
     return find_by_name(name, speakers_lookup, allow_single_char=True)
 
 
-def _build_sentence_to_utterance_map(seg: SegmentUtterances) -> list[int]:
-    """各sentenceがどのutteranceに属するかのマッピングを返す。"""
-    mapping: list[int] = []
-    for u_idx, u in enumerate(seg.utterances):
-        n_sentences = len(_split_sentences(u.text))
-        mapping.extend([u_idx] * n_sentences)
-    return mapping
-
-
-def _resolve_speaker_from_sentences(
+def _resolve_speaker_from_utterances(
     seg: SegmentUtterances,
-    sentence_indices: list[int],
-    sent_to_utt: list[int],
+    utterance_indices: list[int],
     speakers_lookup: dict[str, SpeakerInfo],
 ) -> tuple[str, str]:
-    """sentence_indicesから質疑者のspeakerとparty(=affiliation)を取得する。"""
-    valid = [i for i in sentence_indices if 0 <= i < len(sent_to_utt)]
-    if valid:
-        u_idx = sent_to_utt[valid[0]]
-        name = seg.utterances[u_idx].speaker
-        info = _fuzzy_lookup(name, speakers_lookup)
-        if info:
-            return info.name, info.affiliation
-        return name, seg.segment_affiliation
-    return seg.segment_speaker, seg.segment_affiliation
+    """utterance_indices から質疑者の speaker と party(=affiliation) を取得する。"""
+    valid = [i for i in utterance_indices if 0 <= i < len(seg.utterances)]
+    if not valid:
+        return seg.segment_speaker, seg.segment_affiliation
+    name = seg.utterances[valid[0]].speaker
+    info = _fuzzy_lookup(name, speakers_lookup)
+    if info:
+        return info.name, info.affiliation
+    return name, seg.segment_affiliation
 
 
 # 政党名パターン: このいずれかが所属に含まれていれば議員（答弁者にはならない）
@@ -149,48 +243,43 @@ def _is_member_of_parliament(affiliation: str) -> bool:
     return any(p in affiliation for p in _PARTY_KEYWORDS)
 
 
-def _resolve_answerer_from_sentences(
+def _resolve_answerer_from_utterances(
     seg: SegmentUtterances,
-    sentence_indices: list[int],
-    sent_to_utt: list[int],
+    utterance_indices: list[int],
     speakers_lookup: dict[str, SpeakerInfo],
 ) -> tuple[str, str]:
-    """sentence_indicesから答弁者のspeakerとrole(=affiliation)を取得する。
+    """utterance_indices から答弁者の speaker と role(=affiliation) を取得する。
 
-    議員が答弁者として選ばれた場合は、同じsentence範囲内で「答弁者」roleを持つ
-    別の発言者（大臣・政府参考人）を探す。見つからなければ議員のまま返す（ログで警告）。
+    議員が答弁者として選ばれた場合は、同じ utterance 範囲内で「議員でない」発言者
+    （大臣・政府参考人）を探す。見つからなければ議員のまま返す（ログで警告）。
     """
-    valid = [i for i in sentence_indices if 0 <= i < len(sent_to_utt)]
+    valid = [i for i in utterance_indices if 0 <= i < len(seg.utterances)]
     if not valid:
         return "", ""
 
-    # 最初のsentenceの発言者を候補に
-    u_idx = sent_to_utt[valid[0]]
-    name = seg.utterances[u_idx].speaker
+    head = valid[0]
+    name = seg.utterances[head].speaker
     info = _fuzzy_lookup(name, speakers_lookup)
     candidate_name = info.name if info else name
     candidate_aff = info.affiliation if info else ""
 
-    # 議員でなければそのまま返す
     if not _is_member_of_parliament(candidate_aff):
         return candidate_name, candidate_aff
 
-    # 議員が答弁者に → 同範囲内で非議員の発言者を探す
-    seen_utt_indices = {sent_to_utt[i] for i in valid if 0 <= i < len(sent_to_utt)}
-    for ui in sorted(seen_utt_indices):
+    for ui in valid:
         alt_name = seg.utterances[ui].speaker
         alt_info = _fuzzy_lookup(alt_name, speakers_lookup)
         alt_aff = alt_info.affiliation if alt_info else ""
         if alt_name != candidate_name and not _is_member_of_parliament(alt_aff):
             logger.info(
                 "Corrected answerer: %s (%s) → %s (%s)",
-                candidate_name, candidate_aff, alt_info.name if alt_info else alt_name, alt_aff,
+                candidate_name, candidate_aff,
+                alt_info.name if alt_info else alt_name, alt_aff,
             )
             return (alt_info.name if alt_info else alt_name), alt_aff
 
-    # 見つからない場合はそのまま返すが警告
     logger.warning(
-        "MP '%s' (%s) resolved as answerer but no non-MP alternative found in sentence range",
+        "MP '%s' (%s) resolved as answerer but no non-MP alternative found in utterance range",
         candidate_name, candidate_aff,
     )
     return candidate_name, candidate_aff
@@ -328,10 +417,14 @@ _QA_DENSITY_RETRY_HINT = (
 def _extract_pairs_from_response(
     content: str | None,
     seg: SegmentUtterances,
-    all_sentences: list[str],
+    layout: _SegmentLayout,
     speakers_lookup: dict[str, SpeakerInfo],
 ) -> list[QAPair]:
-    """LLMレスポンスをパースしてQAPairリストを組み立てる。"""
+    """LLM レスポンスをパースして QAPair リストを組み立てる。
+
+    新スキーマ (utterance_indices + 任意 split_anchor_sentence_idx) を解釈し、
+    full_text は `_assemble_full_text_for_pair` がコード側で組み立てる。
+    """
     if not content:
         logger.warning("Empty response for segment %d", seg.segment_index)
         return []
@@ -341,51 +434,67 @@ def _extract_pairs_from_response(
     except json.JSONDecodeError as e:
         logger.error("Failed to parse LLM JSON for segment %d: %s", seg.segment_index, e)
         return []
-    raw_pairs = data.get("pairs", [])
+    raw_pairs = data.get("pairs", []) or []
 
-    sent_to_utt = _build_sentence_to_utterance_map(seg)
+    parsed_pairs: list[dict[str, Any]] = []
+    for p in raw_pairs:
+        q = p.get("question") or {}
+        a = p.get("answer") or {}
+        parsed_pairs.append({
+            "topic": p.get("topic", "") or "",
+            "q_uidx": [int(x) for x in (q.get("utterance_indices") or []) if isinstance(x, int)],
+            "q_anchor": q.get("split_anchor_sentence_idx"),
+            "q_summary": q.get("summary", "") or "",
+            "q_intent": q.get("intent", "other") or "other",
+            "a_uidx": [int(x) for x in (a.get("utterance_indices") or []) if isinstance(x, int)],
+            "a_anchor": a.get("split_anchor_sentence_idx"),
+            "a_summary": a.get("summary", "") or "",
+        })
+
+    q_boundaries = _compute_share_boundaries(parsed_pairs, "q")
+    a_boundaries = _compute_share_boundaries(parsed_pairs, "a")
+
     pairs: list[QAPair] = []
     dropped_short = 0
-    for p in raw_pairs:
-        q = p.get("question", {})
-        a = p.get("answer", {})
+    for i, p in enumerate(parsed_pairs):
+        q_full = _assemble_full_text_for_pair(
+            seg, layout, p["q_uidx"], p["q_anchor"], q_boundaries[i],
+        )
+        a_full = _assemble_full_text_for_pair(
+            seg, layout, p["a_uidx"], p["a_anchor"], a_boundaries[i],
+        )
 
-        q_indices = q.get("sentence_indices", [])
-        a_indices = a.get("sentence_indices", [])
-        q_full_text = _assemble_full_text_from_sentences(all_sentences, q_indices)
-        a_full_text = _assemble_full_text_from_sentences(all_sentences, a_indices)
-
-        if len(a_full_text) < MIN_ANSWER_LENGTH and not a_indices:
+        if len(a_full) < MIN_ANSWER_LENGTH and not p["a_uidx"]:
             dropped_short += 1
             continue
 
-        q_speaker, q_party = _resolve_speaker_from_sentences(seg, q_indices, sent_to_utt, speakers_lookup)
-        a_speaker, a_role = _resolve_answerer_from_sentences(seg, a_indices, sent_to_utt, speakers_lookup)
+        q_speaker, q_party = _resolve_speaker_from_utterances(seg, p["q_uidx"], speakers_lookup)
+        a_speaker, a_role = _resolve_answerer_from_utterances(seg, p["a_uidx"], speakers_lookup)
 
         pairs.append(
             QAPair(
                 id="",  # 後でマージ時に付番
                 segment_index=seg.segment_index,
-                topic=p.get("topic", ""),
+                topic=p["topic"],
                 question=QuestionDetail(
                     speaker=q_speaker,
                     party=q_party,
-                    summary=q.get("summary", ""),
-                    full_text=q_full_text,
-                    intent=q.get("intent", "other"),
+                    summary=p["q_summary"],
+                    full_text=q_full,
+                    intent=p["q_intent"],
                 ),
                 answer=AnswerDetail(
                     speaker=a_speaker,
                     role=a_role,
-                    summary=a.get("summary", ""),
-                    full_text=a_full_text,
+                    summary=p["a_summary"],
+                    full_text=a_full,
                 ),
                 video_url=seg.video_url,
             )
         )
     if dropped_short:
         logger.info(
-            "Segment %d: dropped %d short-answer pair(s) (<%d chars + no indices)",
+            "Segment %d: dropped %d short-answer pair(s) (<%d chars + no utterance_indices)",
             seg.segment_index,
             dropped_short,
             MIN_ANSWER_LENGTH,
@@ -398,34 +507,33 @@ def _generate_qa_for_segment(
     session_context: str,
     speakers_lookup: dict[str, SpeakerInfo],
 ) -> list[QAPair]:
-    """1セグメントからQ&Aペアを生成する。
+    """1セグメントから Q&A ペアを生成する。
 
-    LLMにはutterance_indicesと判断のみ返させ、full_textはコードで組み立てる。
-    QA密度が低い場合は1回リトライする。
+    LLM には utterance_indices と判断のみ返させ、full_text はコードで組み立てる。
+    QA 密度が低い場合は 1 回リトライする。
     """
     client = _get_client()
 
-    sentence_text, all_sentences = _build_sentence_map(seg)
+    layout = _compute_segment_layout(seg)
+    prompt_text = _build_utterance_map(seg, layout)
     total_chars = sum(len(u.text) for u in seg.utterances)
 
-    # 方向性4: 入力テキストが長すぎる場合は先頭20000文字で切り捨て（暫定措置）
-    # TODO: 将来的には _split_segment_into_blocks を利用して sub-block ごとに QA 生成してマージ
-    _INPUT_CHAR_LIMIT = 20000
-    if len(sentence_text) > _INPUT_CHAR_LIMIT:
+    if len(prompt_text) > _PROMPT_TEXT_WARN_THRESHOLD:
         logger.warning(
-            "Segment %d input text too long (%d chars), truncating to %d chars",
+            "Segment %d prompt text very large (%d chars). "
+            "Block-splitting may be insufficient — investigate.",
             seg.segment_index,
-            len(sentence_text),
-            _INPUT_CHAR_LIMIT,
+            len(prompt_text),
         )
-        sentence_text = sentence_text[:_INPUT_CHAR_LIMIT]
 
     base_user_prompt = (
         f"以下は国会質疑の1つの発言セグメントです。"
         f"この発言者の持ち時間で行われた質疑応答を**すべて**Q&Aペアとして抽出してください。\n"
-        f"sentence_indicesには入力の(N)の番号を使ってください。\n\n"
+        f"utterance_indices には入力の [Un] の番号を使ってください。"
+        f"split_anchor_sentence_idx は通常 null。1つの utterance を複数ペアで共有する場合のみ "
+        f"(sN) のグローバル番号を入れてください。\n\n"
         f"セッション情報: {session_context}\n\n"
-        f"{sentence_text}"
+        f"{prompt_text}"
     )
 
     logger.info(
@@ -457,10 +565,9 @@ def _generate_qa_for_segment(
         )
 
     pairs = _extract_pairs_from_response(
-        response.choices[0].message.content, seg, all_sentences, speakers_lookup,
+        response.choices[0].message.content, seg, layout, speakers_lookup,
     )
 
-    # QA密度チェック: 低密度ならリトライ（1回のみ）
     if total_chars >= 2000:
         density = len(pairs) / (total_chars / 1000)
         if density < _MIN_QA_DENSITY:
@@ -484,7 +591,7 @@ def _generate_qa_for_segment(
                 )
 
             retry_pairs = _extract_pairs_from_response(
-                retry_response.choices[0].message.content, seg, all_sentences, speakers_lookup,
+                retry_response.choices[0].message.content, seg, layout, speakers_lookup,
             )
 
             if len(retry_pairs) > len(pairs):

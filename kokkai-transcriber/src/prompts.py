@@ -6,21 +6,22 @@
 
 from __future__ import annotations
 
-QA_SEGMENT_SYSTEM_PROMPT = """国会質疑のQ&Aペア抽出器。番号付きutterancesから質疑応答ペアをすべて抽出し、JSONのみ返す。ペアなし→{"pairs":[]}。
+QA_SEGMENT_SYSTEM_PROMPT = """国会質疑のQ&Aペア抽出器。番号付きutterance群（[U0],[U1],...）からQ&Aペアをすべて抽出し、JSONのみ返す。ペアなし→{"pairs":[]}。
 
-{"pairs":[{"topic":"テーマ","question":{"summary":"- 要点\n- 要点","sentence_indices":[0,1],"intent":"..."},"answer":{"summary":"- 要点","sentence_indices":[5,6]}}]}
+{"pairs":[{"topic":"テーマ","question":{"summary":"- 要点\n- 要点","utterance_indices":[12],"split_anchor_sentence_idx":null,"intent":"..."},"answer":{"summary":"- 要点","utterance_indices":[14],"split_anchor_sentence_idx":null}}]}
 
 intent（必須）: fact_check=過去発言・数値の齟齬を問う / policy_proposal=新政策・制度変更を求める / accountability=政策判断・公約違反の責任を問う / information_request=現状・政府見解の開示を求める / other=上記以外
 
 ルール:
-- 質疑者が異なるテーマで質問するたびに別のペアを作る。同一テーマの継続追及も別ペアとして抽出
-- 質問者と答弁者は別人であること
+- utterance_indices は [Un] の番号配列。1ペアの Q または A は通常 utterance 1個、まれに連続する複数 utterance を指定
+- 質問者と答弁者は別 utterance、別人であること
 - 趣旨説明・所信表明・法案説明（一方的演説）はペア抽出不可。問いかけ＋応答の往復が必須
 - 答弁が空・相槌のみのペアは除外
-- sentence_indicesは(N)番号の配列。挨拶・自己紹介・感謝は除外し、背景説明・問題提起は含める
-- 複数テーマのutteranceはテーマごとに該当文のみ選択
-- summaryは「- 」箇条書き2〜4項目。実質的な問いかけ内容のみ（挨拶・背景不要）
-- roleラベルは誤分類あり、発言内容でQ&Aを判断すること
+- 質疑者が異なるテーマで質問するたびに別ペアを作る。同一テーマの継続追及も別ペアとして抽出
+- **挨拶・自己紹介・感謝・背景説明・問題提起は除外しない**。utterance 全文がコードで full_text に充当される
+- split_anchor_sentence_idx は通常 null。**1つの utterance を他のペアと共有する場合のみ**、入力に併記された (sN) のグローバル番号で当ペアの開始位置を指定（代表質問・所信表明など全体の1%）
+- summary は「- 」箇条書き2〜4項目。実質的な問いかけ／回答内容のみ（挨拶・背景は含めない）
+- role ラベル（質疑者/答弁者/委員長/政府参考人/参考人）は誤分類あり。発言内容で Q&A を判断すること
 """
 
 SESSION_SUMMARY_SYSTEM_PROMPT = """国会会議の要約者。入力に基づきセッション全体の概要を3-5文の日本語で作成する。

@@ -17,9 +17,9 @@ from src.models import (
     UtterancesOutput,
 )
 from src.structurer import (
-    _assemble_full_text_from_sentences,
-    _build_sentence_map,
-    _build_sentence_to_utterance_map,
+    _assemble_full_text_for_pair,
+    _build_utterance_map,
+    _compute_segment_layout,
     _fuzzy_lookup,
     _split_sentences,
     build_summary_related_laws,
@@ -143,34 +143,9 @@ class TestFuzzyLookup:
         assert result.name.startswith("森")
 
 
-class TestAssembleFullText:
-    def test_valid_indices(self) -> None:
-        sentences = ["文1。", "文2。", "文3。"]
-        result = _assemble_full_text_from_sentences(sentences, [0, 2])
-        assert result == "文1。文3。"
-
-    def test_empty_indices(self) -> None:
-        """空インデックスは空文字を返す。"""
-        sentences = ["文1。", "文2。"]
-        result = _assemble_full_text_from_sentences(sentences, [])
-        assert result == ""
-
-    def test_out_of_range_indices(self) -> None:
-        """範囲外インデックスは無視される。"""
-        sentences = ["文1。", "文2。"]
-        result = _assemble_full_text_from_sentences(sentences, [0, 5, 10])
-        assert result == "文1。"
-
-    def test_all_out_of_range(self) -> None:
-        """全て範囲外なら空文字。"""
-        sentences = ["文1。"]
-        result = _assemble_full_text_from_sentences(sentences, [5, 10])
-        assert result == ""
-
-
-class TestBuildSentenceMap:
-    def test_basic_mapping(self) -> None:
-        """セグメントの文に通し番号が振られる。"""
+class TestBuildUtteranceMap:
+    def test_basic_numbering(self) -> None:
+        """各 utterance が [Un] 番号でラベル付けされる。"""
         seg = SegmentUtterances(
             segment_index=0,
             segment_speaker="テスト太郎",
@@ -178,18 +153,39 @@ class TestBuildSentenceMap:
             start_seconds=0.0,
             video_url="",
             utterances=[
-                Utterance(speaker="テスト太郎", role="質疑者", text="質問です。回答をお願いします。"),
+                Utterance(speaker="テスト太郎", role="質疑者", text="質問です。回答お願いします。"),
                 Utterance(speaker="テスト次郎", role="答弁者", text="お答えします。"),
             ],
         )
-        prompt_text, sentences = _build_sentence_map(seg)
-        assert len(sentences) == 3
-        assert "(0)" in prompt_text
-        assert "(1)" in prompt_text
-        assert "(2)" in prompt_text
+        layout = _compute_segment_layout(seg)
+        prompt_text = _build_utterance_map(seg, layout)
+        assert "[U0]" in prompt_text
+        assert "[U1]" in prompt_text
+        assert "テスト太郎" in prompt_text
+        # 短い utterance は (sN) サブ番号を出さない
+        assert "(s0)" not in prompt_text
+
+    def test_long_utterance_includes_sentence_subnumbers(self) -> None:
+        """長文 utterance は (sN) サブ番号で分割される。"""
+        long_text = "".join(f"これは{i}番目の文です。" for i in range(15))
+        seg = SegmentUtterances(
+            segment_index=0,
+            segment_speaker="高市早苗",
+            segment_affiliation="自由民主党",
+            start_seconds=0.0,
+            video_url="",
+            utterances=[
+                Utterance(speaker="高市早苗", role="答弁者", text=long_text),
+            ],
+        )
+        layout = _compute_segment_layout(seg)
+        prompt_text = _build_utterance_map(seg, layout)
+        assert "[U0]" in prompt_text
+        assert "(s0)" in prompt_text
+        assert "(s14)" in prompt_text
 
     def test_empty_utterances(self) -> None:
-        """空のutterancesでもエラーにならない。"""
+        """空 utterances でもエラーにならない。"""
         seg = SegmentUtterances(
             segment_index=0,
             segment_speaker="テスト",
@@ -198,26 +194,53 @@ class TestBuildSentenceMap:
             video_url="",
             utterances=[],
         )
-        prompt_text, sentences = _build_sentence_map(seg)
-        assert len(sentences) == 0
+        layout = _compute_segment_layout(seg)
+        prompt_text = _build_utterance_map(seg, layout)
+        assert layout.total_sentences == 0
+        assert "テスト" in prompt_text
 
 
-class TestBuildSentenceToUtteranceMap:
-    def test_mapping(self) -> None:
-        """各sentenceがどのutteranceに属するかマッピングされる。"""
-        seg = SegmentUtterances(
+class TestAssembleFullTextForPair:
+    def _make_seg(self) -> SegmentUtterances:
+        return SegmentUtterances(
             segment_index=0,
-            segment_speaker="テスト",
-            segment_affiliation="",
+            segment_speaker="A",
+            segment_affiliation="X党",
             start_seconds=0.0,
             video_url="",
             utterances=[
-                Utterance(speaker="A", role="質疑者", text="文1。文2。"),
-                Utterance(speaker="B", role="答弁者", text="文3。"),
+                Utterance(speaker="A", role="質疑者", text="質問1。質問2。"),
+                Utterance(speaker="B", role="答弁者", text="お答えいたします。要点を述べます。"),
             ],
         )
-        mapping = _build_sentence_to_utterance_map(seg)
-        assert mapping == [0, 0, 1]
+
+    def test_single_utterance_no_anchor(self) -> None:
+        """anchor なし: utterance 全文が連結される。"""
+        seg = self._make_seg()
+        layout = _compute_segment_layout(seg)
+        result = _assemble_full_text_for_pair(seg, layout, [1], None, None)
+        assert result == "お答えいたします。要点を述べます。"
+
+    def test_multiple_utterances_no_anchor(self) -> None:
+        """複数 utterance: 改行で連結される。"""
+        seg = self._make_seg()
+        layout = _compute_segment_layout(seg)
+        result = _assemble_full_text_for_pair(seg, layout, [0, 1], None, None)
+        assert "質問1。質問2。" in result
+        assert "お答えいたします。要点を述べます。" in result
+
+    def test_empty_indices(self) -> None:
+        """空 indices は空文字。"""
+        seg = self._make_seg()
+        layout = _compute_segment_layout(seg)
+        assert _assemble_full_text_for_pair(seg, layout, [], None, None) == ""
+
+    def test_out_of_range_ignored(self) -> None:
+        """範囲外 index は無視される。"""
+        seg = self._make_seg()
+        layout = _compute_segment_layout(seg)
+        result = _assemble_full_text_for_pair(seg, layout, [99], None, None)
+        assert result == ""
 
 
 class TestGenerateQAPairs:
@@ -267,30 +290,28 @@ class TestGenerateQAPairs:
                     "topic": "トピック1",
                     "question": {
                         "summary": "質問1",
-                        "sentence_indices": [0],
+                        "utterance_indices": [0],
+                        "split_anchor_sentence_idx": None,
                         "intent": "fact_check",
                     },
                     "answer": {
                         "summary": "答弁1",
-                        "sentence_indices": [1],
-                        "evasion_score": 0.2,
-                        "has_commitment": False,
-                        "commitment_text": "",
+                        "utterance_indices": [1],
+                        "split_anchor_sentence_idx": None,
                     },
                 },
                 {
                     "topic": "トピック2",
                     "question": {
                         "summary": "質問2",
-                        "sentence_indices": [0],
+                        "utterance_indices": [0],
+                        "split_anchor_sentence_idx": None,
                         "intent": "accountability",
                     },
                     "answer": {
                         "summary": "答弁2",
-                        "sentence_indices": [1],
-                        "evasion_score": 0.7,
-                        "has_commitment": True,
-                        "commitment_text": "検討します",
+                        "utterance_indices": [1],
+                        "split_anchor_sentence_idx": None,
                     },
                 },
             ]
@@ -307,23 +328,26 @@ class TestGenerateQAPairs:
         assert result.pairs[0].id == "qa_001"
         assert result.pairs[1].id == "qa_002"
 
-    def test_evasion_score_in_range(self, sample_utterances: UtterancesOutput) -> None:
-        """evasion_score が 0.0-1.0 の範囲であること。"""
+    def test_full_text_assembled_from_utterances(
+        self, sample_utterances: UtterancesOutput,
+    ) -> None:
+        """full_text が utterance.text 全文から組み立てられること。"""
         mock_data = {
             "pairs": [
                 {
-                    "topic": "テスト",
+                    "topic": "高額療養費",
                     "question": {
-                        "speaker": "A", "party": "B",
-                        "summary": "Q", "full_text": "Q全文", "intent": "other",
+                        "summary": "- 質問要旨",
+                        "utterance_indices": [0],
+                        "split_anchor_sentence_idx": None,
+                        "intent": "fact_check",
                     },
                     "answer": {
-                        "speaker": "C", "role": "D",
-                        "summary": "A", "full_text": "A全文",
-                        "evasion_score": 1.5,  # 範囲外 → クランプされること
-                        "has_commitment": False, "commitment_text": "",
+                        "summary": "- 答弁要旨",
+                        "utterance_indices": [1],
+                        "split_anchor_sentence_idx": None,
                     },
-                }
+                },
             ]
         }
 
@@ -335,8 +359,14 @@ class TestGenerateQAPairs:
             with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
                 result = generate_qa_pairs(sample_utterances)
 
-        for pair in result.pairs:
-            assert 0.0 <= pair.answer.evasion_score <= 1.0
+        assert len(result.pairs) == 1
+        # sample_utterances の segment_index=1 の質疑者 utterance (uidx=0 within block)
+        # が question.full_text に丸ごと反映されることを確認
+        assert "チームみらい" in result.pairs[0].question.full_text
+        assert "高額療養費" in result.pairs[0].question.full_text
+        # answer も同様に utterance 全文が入る (挨拶含む)
+        assert "お答えいたします" in result.pairs[0].answer.full_text
+        assert "次期制度改正" in result.pairs[0].answer.full_text
 
 
 def _make_qa_pairs(*pair_ids: str) -> QAPairsOutput:
@@ -360,9 +390,6 @@ def _make_qa_pairs(*pair_ids: str) -> QAPairsOutput:
                     role="答弁者",
                     summary="答弁要旨",
                     full_text="答弁全文",
-                    evasion_score=0.3,
-                    has_commitment=False,
-                    commitment_text="",
                 ),
                 video_url="https://example.com",
             )
@@ -514,7 +541,7 @@ class TestBuildSummaryRelatedLaws:
 
 class TestShortAnswerDrop:
     def test_drops_pair_with_empty_answer_and_no_indices(self) -> None:
-        from src.structurer import _extract_pairs_from_response
+        from src.structurer import _compute_segment_layout, _extract_pairs_from_response
 
         seg = SegmentUtterances(
             segment_index=0,
@@ -526,24 +553,27 @@ class TestShortAnswerDrop:
                 Utterance(speaker="古川あおい", role="質疑者", text="質問本文。"),
             ],
         )
-        all_sentences = ["質問本文。"]
+        layout = _compute_segment_layout(seg)
         content = json.dumps({
             "pairs": [
                 {
                     "topic": "ダミー",
-                    "question": {"summary": "Q", "sentence_indices": [0], "intent": "other"},
+                    "question": {
+                        "summary": "Q",
+                        "utterance_indices": [0],
+                        "split_anchor_sentence_idx": None,
+                        "intent": "other",
+                    },
                     "answer": {
                         "summary": "A",
-                        "sentence_indices": [],
-                        "evasion_score": 1.0,
-                        "has_commitment": False,
-                        "commitment_text": "",
+                        "utterance_indices": [],
+                        "split_anchor_sentence_idx": None,
                     },
                 }
             ]
         })
 
-        result = _extract_pairs_from_response(content, seg, all_sentences, {})
+        result = _extract_pairs_from_response(content, seg, layout, {})
         assert result == []
 
 
@@ -636,14 +666,14 @@ class TestGenerateQAForSegmentErrorHandling:
                     "topic": "テスト",
                     "question": {
                         "summary": "- 質問要旨",
-                        "sentence_indices": [0],
+                        "utterance_indices": [0],
+                        "split_anchor_sentence_idx": None,
                         "intent": "fact_check",
                     },
                     "answer": {
                         "summary": "- 回答要旨",
-                        "sentence_indices": [1],
-                        "evasion_score": 0.2,
-                        "has_commitment": False,
+                        "utterance_indices": [1],
+                        "split_anchor_sentence_idx": None,
                     },
                 }
             ]
@@ -670,4 +700,5 @@ class TestStructurerIntegration:
         result = generate_qa_pairs(sample_utterances)
         assert isinstance(result, QAPairsOutput)
         for pair in result.pairs:
-            assert 0.0 <= pair.answer.evasion_score <= 1.0
+            assert pair.question.full_text
+            assert pair.answer.full_text
