@@ -1,10 +1,8 @@
 # 国会議事録リアルタイムDB
 
-衆議院TV・参議院TVのアーカイブ動画から音声を自動抽出し、Whisper文字起こし + LLM構造化を行い、GitHub Pages上の静的サイトとして公開するシステム。
+衆議院TV・参議院TVのアーカイブ動画から音声を自動抽出し、Whisper文字起こし + LLM構造化を行い、静的サイトとして公開するシステム。
 
 公式会議録の公開タイムラグ（数週間〜数ヶ月）を解消し、質疑内容を当日中にデータベース化する。
-
-**[→ サイトを見る](https://michitomo.github.io/kokkaidb)**
 
 ---
 
@@ -27,7 +25,8 @@ GitHub Actions (毎時 cron)
   └─ ShugiinScraper / SangiinScraper
         └─ ffmpeg (HLS → WAV)
               └─ Whisper large-v3-turbo (DeepInfra)
-                    └─ DeepSeek V3.2 (話者タグ・Q&A構造化・要約)
+                    └─ OpenRouter / Gemma 4 31B-it (話者タグ・要約・トピック)
+                    └─ OpenRouter / Gemini 3 Flash Preview (Q&A構造化)
                           └─ data/ に JSON を git push
                                 └─ GitHub Actions (Astro build + Pagefind)
                                       └─ GitHub Pages (静的サイト)
@@ -49,8 +48,10 @@ source .venv/bin/activate
 pip install -e .
 # ffmpeg が必要: brew install ffmpeg (macOS) / apt install ffmpeg (Linux)
 
-# .env に DEEPINFRA_API_KEY を設定
+# .env に API キーを設定
 cp .env.example .env
+# DEEPINFRA_API_KEY  ... Whisper 文字起こし
+# OPENROUTER_API_KEY ... LLM 処理（話者タグ・Q&A構造化・要約）
 
 # 単体実行（--no-push でローカルのみ）
 python -m src.pipeline --chamber shugiin --session-id 56149 --no-push
