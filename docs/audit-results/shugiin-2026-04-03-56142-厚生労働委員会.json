@@ -1,0 +1,351 @@
+{
+  "session_id": "shugiin/2026/04/03/56142_厚生労働委員会",
+  "chamber": "shugiin",
+  "date": "2026-04-03",
+  "deli_id": "56142",
+  "committee": "厚生労働委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T12:00:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 5, "medium": 7, "low": 6, "total": 18},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "仁木博文が「二期博文」「二期副大臣」と誤認識 (複数箇所)",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[3].whisper_segments[0].text",
+        "segment_index": 3,
+        "qa_id": ""
+      },
+      "evidence": "raw_transcript.json seg3 id=1: 「二期厚生労働副大臣…厚生労働副大臣の二期博文でございます」。同様に seg2 id=1: 「二期副大臣上谷栗原両政務官とともに」。「仁木」が「二期」に、「神谷」が「上谷」に系統的に誤認識されている。LLM correction後のutterances.jsonでは正しく「仁木博文」「神谷」に修正されているが、raw_transcript.jsonには誤字が残存。",
+      "estimated_cause": "「仁木」は日本語音声でWhisperが認識しにくい固有名詞。同音・近音の「二期」に誤認識。「神谷」→「上谷」も同様の音韻近似誤り。Whisperの日本語人名認識の系統的弱点。",
+      "downstream_impact": ["utterances.json", "raw_transcript.json"]
+    },
+    {
+      "id": "F002",
+      "category": "role_label_error",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "副大臣・政務官の就任挨拶を全員「質疑者」にラベル",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[2].utterances[1].role",
+        "segment_index": 2,
+        "qa_id": ""
+      },
+      "evidence": "utterances.json: segments[2] (長坂康正/副大臣) utterances[1].role=\"質疑者\"、segments[3] (仁木博文/副大臣) utterances[1].role=\"質疑者\"、segments[4] (神谷政幸/政務官) utterances[1].role=\"質疑者\"、segments[5] (栗原渉/政務官) utterances[0].role=\"質疑者\"。これは所信表明・予算説明・就任挨拶のみのセッションであり質疑は行われていない。正しくは「答弁者」または「発言者」。",
+      "estimated_cause": "speaker_tagger/structurerのロールラベリングプロンプトが質疑応答形式を前提としており、就任挨拶のような一方向スピーチセッションでのロール判定ロジックが不十分。大臣は「答弁者」、副大臣・政務官の挨拶は「発言者」が適切。",
+      "downstream_impact": ["summary.json", "qa_pairs.json"]
+    },
+    {
+      "id": "F003",
+      "category": "whisper_hallucination_loop",
+      "secondary_categories": ["content_missing"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "unknown",
+      "title": "seg1 whisper id=8: 21秒間のセグメントから「政策委員長」3文字のみ生成",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].whisper_segments[7]",
+        "segment_index": 1,
+        "qa_id": ""
+      },
+      "evidence": "raw_transcript.json seg1 id=8: start=179.5s, end=200.8s (21.3秒)、text=\"政策委員長\"、avg_logprob=-1.0575 (他セグは -0.02〜-0.12)、compression_ratio=0.577 (他セグは 1.2〜1.6)。前後のid=7 (税と社会保障改革) とid=9 (後期高齢者医療制度の金融所得勘案) の間にある。約21秒の音声に対してわずか3文字しか生成されておらず、発話内容は完全に欠落している。",
+      "estimated_cause": "上野大臣の発話の中間でWhisperが音声を誤認識・ハルシネーションを起こし、3文字の意味不明な出力を生成した。「政策委員長」は当セッションに登場しない人物・肩書。当該21秒分の発話内容が完全に記録から失われている。",
+      "downstream_impact": ["utterances.json", "summary.json"]
+    },
+    {
+      "id": "F004",
+      "category": "fact_error",
+      "secondary_categories": ["whisper_misrecognition"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "栗原渉の就任挨拶に「上野大臣とともに、上野大臣をお支えし」と重複矛盾表現",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[5].utterances[0].text",
+        "segment_index": 5,
+        "qa_id": ""
+      },
+      "evidence": "utterances.json seg5 utterances[0].text: 「両副大臣、上野大臣とともに、上野大臣をお支えし」。raw_transcript.json seg5 id=1では「上野政務官とともに上野大臣をお支えし」と記録されている。Whisperが「神谷政務官」を「上野政務官」と誤認識し、LLMが修正時に「上野政務官」→「上野大臣」と誤って置換した結果、「上野大臣とともに上野大臣をお支えし」という論理矛盾文が生成された。実際の発言は「神谷政務官とともに、上野大臣をお支えし」が正しい。",
+      "estimated_cause": "Whisperの人名誤認識 (神谷→上野) + LLM修正時の不適切な置換 (政務官→大臣) という2段階の誤りが連鎖した。LLMが文脈から「上野大臣」はコンテキストに存在すると判断して誤置換した。",
+      "downstream_impact": ["summary.json"]
+    },
+    {
+      "id": "F005",
+      "category": "content_missing",
+      "secondary_categories": ["schema_empty_field"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "topics.json が空配列 (所信表明・予算説明の主要政策トピック未生成)",
+      "location": {
+        "file": "topics.json",
+        "json_path": "$.topics",
+        "segment_index": -1,
+        "qa_id": ""
+      },
+      "evidence": "topics.json: {\"topics\": []}。一方、summary.jsonには「医療・介護の処遇改善」「全世代型社会保障」「医療DX」「労働市場改革」「創薬基盤」「令和8年度予算35兆433億円」など6つのkey_topicsが明記されており、utterances.jsonには厚生労働大臣の詳細な所信表明 (上野大臣の発言テキストは約5,000字) が収録されている。",
+      "estimated_cause": "topics.json生成のパイプラインステップがqa_pairsが空の場合にスキップまたは空を返している可能性。または所信表明セッション特有の構造 (Q&A不在) でトピック抽出ロジックが失敗している。",
+      "downstream_impact": ["サイトのトピック検索・フィルタ機能"]
+    },
+    {
+      "id": "F006",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "医療・福祉専門用語の系統的誤認識 (12件)",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].whisper_segments",
+        "segment_index": 1,
+        "qa_id": ""
+      },
+      "evidence": "raw_transcript.json seg1内で確認された専門用語誤認識: (1) 「救急医療」→「救世機医療」(id=4)、(2) 「不断の改革」→「普段の改革」(id=7)、(3) 「後発医薬品」→「高発薬品」(id=24)、(4) 「改正薬機法」→「改正薬器法」(id=25)、(5) 「創薬力」→「総薬力」(id=21)、(6) 「国際保健」→「国際保険」(id=35)、(7) 「価格転嫁」→「価格添加」(id=37)、(8) 「地域医療提供体制」→「地域療提供体制」(id=9)、(9) 「歯と口腔」→「歯と航空」(id=28)、(10) 「更年期」→「精査」(id=30)、(11) 「認知症」→「陳致症」(id=16)、(12) 「認知症観」→「認知症感」(id=16)。",
+      "estimated_cause": "Whisper large-v3-turboの厚生労働・医療分野の専門用語認識精度の限界。音声的に類似した一般語への誤認識パターン。医療・薬事・社会保障の専門語彙はWhisperのトレーニングデータでカバーが薄い可能性。",
+      "downstream_impact": ["utterances.json (一部はLLM修正で改善)", "summary.json"]
+    },
+    {
+      "id": "F007",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "委員会手続き用語の誤認識4件 (委員各位・員数・国政調査・小委員会)",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[0].whisper_segments",
+        "segment_index": 0,
+        "qa_id": ""
+      },
+      "evidence": "raw_transcript.json seg0: (1) 「委員各位」→「委員閣議」(id=1)、(2) 「公正かつ」→「厚生かつ」(id=1)、(3) 「理事の員数」→「理事の因数」(id=2)、(4) 「国政調査」→「国勢調査」(id=3)、(5) 「策定する」→「受立する」(id=4)、(6) 「小委員会」→「省委員会」(id=4)。これらはいずれも委員長が行う定型的な議事開始手続きの定型語。",
+      "estimated_cause": "委員会開始の定型的言い回しにおけるWhisper誤認識。「国政調査」vs「国勢調査」は音声上ほぼ同音のため特に難しい。LLM修正でutterances.jsonでは修正済みだが、raw_transcript.jsonに誤字が残る。",
+      "downstream_impact": ["utterances.json (LLM修正で改善)"]
+    },
+    {
+      "id": "F008",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「分科会長」「分科会」が「文化会長」「文化会」に誤認識",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].whisper_segments[16].text",
+        "segment_index": 1,
+        "qa_id": ""
+      },
+      "evidence": "raw_transcript.json seg1 id=17: 「私が文化会長として労働市場改革文化会を開催し」。正しくは「私が分科会長として労働市場改革分科会を開催し」。utterances.jsonでは「分科会長」「分科会」に修正されている。",
+      "estimated_cause": "「分科会」と「文化会」は日本語音声で音韻が近い。Whisper large-v3-turboでも同様の誤認識パターンが他セッションで出る可能性がある。",
+      "downstream_impact": ["utterances.json (LLM修正で改善)"]
+    },
+    {
+      "id": "F009",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["fact_error"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「ごん検診」がutterances.jsonとsummary.jsonに残存 (がん検診の誤字)",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[1].utterances[1].text",
+        "segment_index": 1,
+        "qa_id": ""
+      },
+      "evidence": "utterances.json seg1 speaker=上野賢一郎: 「令和10年度までにごん検診受診率60%、精密検査受診率90%を達成」。summary.json key_commitments[1].text: 「令和10年度までにごん検診受診率60%、精密検査受診率90%を達成できるよう」。raw_transcript.json seg1 id=28では「がん検診受診率60%」と正しく記録されているが、LLMがutterances生成時に「ごん検診」と誤って変換した。id=27では「眼検診」とWhisperが誤認し、LLMが「ごん検診」に補正する過程で誤りが生じた。",
+      "estimated_cause": "whisper seg1 id=27で「がん検診」→「眼検診」と誤認識し、LLMが「眼」→「ごん」と音韻近似で補正したが「がん」に戻せなかった。utterancesとsummaryへの二重伝播。",
+      "downstream_impact": ["summary.json"]
+    },
+    {
+      "id": "F010",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.json の全key_commitments.qa_idが空文字列",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments[*].qa_id",
+        "segment_index": -1,
+        "qa_id": ""
+      },
+      "evidence": "summary.json: key_commitments 4件全てで qa_id=\"\"。qa_pairs.jsonは空 ({\"pairs\": []}) であり、当セッションは所信表明のみでQ&Aがないため参照先が存在しない。しかし空文字列ではなく null が適切 (または qa_id フィールド自体を省略)。",
+      "estimated_cause": "qa_pairsが空の場合のsummary生成ロジックがqa_idフィールドをnullに設定せず空文字列を出力している。スキーマの null/\"\" 混在問題。",
+      "downstream_impact": ["フロントエンドのリンク解決処理"]
+    },
+    {
+      "id": "F011",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers 全員の role フィールドが空文字列",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[*].role",
+        "segment_index": -1,
+        "qa_id": ""
+      },
+      "evidence": "metadata.json: 6名全員 (大串正樹/上野賢一郎/長坂康正/仁木博文/神谷政幸/栗原渉) のrole=\"\"。affiliationフィールドには「厚生労働委員長」「厚生労働大臣」等の役職情報が入っており、roleとaffilitionの役割分担が不明確。",
+      "estimated_cause": "metadata生成時にroleフィールドへの値設定ロジックが未実装または空返し。affiliationに同等情報があるため機能上は問題ないが、スキーマ上は一貫性欠如。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F012",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.duration が空文字列 (null との混在)",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.duration",
+        "segment_index": -1,
+        "qa_id": ""
+      },
+      "evidence": "metadata.json: duration=\"\" (空文字列)。committee_id=null, session_number=null, mediasp_hash=\"\" と、null/空文字が混在している。durationはセッション総長さの重要メタデータであり、start_secondsから算出可能 (最終セグメント start=2827.8s + 約37s ≒ 2865秒 = 47.7分) なのに空。",
+      "estimated_cause": "衆議院TVのスクレーパーがduration情報を取得していない (または取得不能)。後処理でHLS情報から算出する処理が未実装。",
+      "downstream_impact": ["サイトのセッション長表示"]
+    },
+    {
+      "id": "F013",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "Segment 4 (神谷政幸) の whisper_segment id が 0 始まり (他は 1 始まり)",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[4].whisper_segments[0].id",
+        "segment_index": 4,
+        "qa_id": ""
+      },
+      "evidence": "raw_transcript.json: segments[0].whisper_segments: id=1,2,3,4。segments[1]: id=1〜49。segments[2]: id=1〜10。segments[3]: id=1,2。segments[4]: id=0 のみ。segments[5]: id=1,2。Segment 4のみ id=0 から始まっており、0-indexed と 1-indexed が混在している。",
+      "estimated_cause": "神谷政務官セグメントが特に短く (1 whisper segment)、音声分割またはWhisper呼び出しの際にidカウンターのリセット処理に差異が生じた可能性。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F014",
+      "category": "summary_qa_divergence",
+      "secondary_categories": ["schema_empty_field"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "summary.key_commitmentsがqa_pairsへのリンクなしで生成 (セッション構造との不整合)",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments",
+        "segment_index": -1,
+        "qa_id": ""
+      },
+      "evidence": "summary.json: 4件のkey_commitments全てでqa_id=\"\"。当セッションは所信表明・予算概要説明のみでQ&A質疑なし (qa_pairs.jsonも空)。summary.key_topicsとkey_commitmentsはutterances.jsonの内容から適切に生成されているが、qa_idへのリンクは意味をなさない。",
+      "estimated_cause": "summaryテンプレートが所信表明セッション・Q&A有りセッション問わず同一スキーマを使用。qa_pairsが空の場合のフォールバック処理がない。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F015",
+      "category": "speaker_misattribution",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "Segment 3 第1発話テキストが「大串委員長。」から始まる (司会呼びかけの混入)",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[3].utterances[0].text",
+        "segment_index": 3,
+        "qa_id": ""
+      },
+      "evidence": "utterances.json seg3 utterances[0]: speaker=\"大串正樹\"、text=\"大串委員長。この際、仁木厚生労働副大臣…\". 発話テキストが「大串委員長。」という第三者による呼びかけで始まっており、大串委員長が自分自身の名を呼んでいるように見える。raw_transcript.json seg3 text冒頭にも「大串委員長。」が含まれており、LLMがこれを委員長の発言テキストに含めてしまった。",
+      "estimated_cause": "LLMが「大串委員長。」という司会呼びかけを大串委員長自身の発言として処理した。Whisperがセグメント先頭に呼びかけを記録し、LLMのセグメント分割ロジックが呼びかけと本文の区切りを誤認識した。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F016",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "神谷政幸セグメントで「上谷政幸」として誤認識 (raw_transcript)",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[4].whisper_segments[0].text",
+        "segment_index": 4,
+        "qa_id": ""
+      },
+      "evidence": "raw_transcript.json seg4 id=0: 「次に上谷厚生労働大臣政務官 厚生労働大臣政務官の上谷政幸でございます」。正しくは「神谷厚生労働大臣政務官…神谷政幸」。utterances.jsonでは「神谷政幸」に修正済み。",
+      "estimated_cause": "「神谷」と「上谷」の音韻類似によるWhisper誤認識。固有名詞「神谷」はWhisperの認識語彙に乏しい可能性。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F017",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「三位一体」が「三味一体」に誤認識 (長坂副大臣セグメント)",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[2].whisper_segments[5].text",
+        "segment_index": 2,
+        "qa_id": ""
+      },
+      "evidence": "raw_transcript.json seg2 id=6: 「物価上昇を上回る賃上げの普及定着に向けた三味一体の労働市場改革の推進」。utterances.jsonでは「三位一体」に修正済み。政府の重要政策用語「三位一体の労働市場改革」が誤認識されている。",
+      "estimated_cause": "「三位一体」と「三味一体」の音韻類似。政府の定型政策ワードであり、他のセッションでも同様の誤認識が発生する可能性が高い。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F018",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["fact_error"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「被爆の実相」が「被爆の実装」に誤認識",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].whisper_segments[32].text",
+        "segment_index": 1,
+        "qa_id": ""
+      },
+      "evidence": "raw_transcript.json seg1 id=33: 「原子爆弾被爆者援護対策については被爆の実装を後世に伝えるための取組を進める」。「実相」(事実の真の姿) が「実装」(IT用語・プログラム実装) に誤認識されており、文脈上全く意味が異なる。utterances.jsonでは「被爆の実相」に修正済み。",
+      "estimated_cause": "「実相」はWhisperの日本語語彙に少なく、近音の「実装」に誤認識。被爆関連の文脈で「実装」という技術用語は不適切で意味の逆転が起きている。",
+      "downstream_impact": ["utterances.json (LLM修正済み)"]
+    }
+  ],
+  "blindspots": [
+    "raw_transcript.jsonのwhisper_segmentsトークン列の詳細分析は未実施 (ハルシネーションループの定量的確認は困難)",
+    "外部の公式議事録・衆議院TV字幕との照合未実施 (音声発話内容の完全検証不能)",
+    "LLM修正 (corrected_at: 2026-04-15T16:17:38) と structurer のバージョン情報が不明のため、修正ロジックの詳細追跡不可",
+    "所信表明セッション特有の問題 (Q&A無し、発言者が政府側のみ) がシステム設計上の想定内かどうか確認未実施"
+  ],
+  "narrative": {
+    "overall": "本セッション (2026-04-03 厚生労働委員会、大串委員長再任・上野大臣所信表明・令和8年度予算概要説明・副大臣政務官就任挨拶) は6人の話者がいずれも答弁・説明者として発言するのみの所信表明型セッション。全体としてテキスト内容は概ね適切に記録されているが、Whisperによる人名・専門用語誤認識が多数確認され、LLM修正で一部は修正されているものの「ごん検診」「上野大臣とともに上野大臣をお支えし」のようなLLM起因の二次誤りも発生している。topics.jsonが完全空という重大なコンテンツ欠落があり、副大臣・政務官の就任挨拶が全員「質疑者」とラベルされているrolラベルエラーも系統的問題を示す。スキーマ面ではduration空文字、speakers.role空文字、qa_id空文字の混在が見られる。総合評価はmedium。",
+    "top_findings": [
+      "仁木博文が「二期博文」、神谷政幸が「上谷政幸」に誤認識 (raw_transcript全体で系統的): 人名の音韻近似誤認識がWhisperの日本語処理の主要弱点であることを示す系統的問題。LLM修正で対処されているが、認識精度向上か追加プロンプトによる人名リスト提供が根本解決策。",
+      "topics.json が空配列: 所信表明セッションでQ&Aがない場合にtopics生成パイプラインが機能していない。summary.json には6つのkey_topicsが正しく生成されているのに、topics.jsonへの変換が欠落している。フロントエンドのトピック検索機能に影響する高優先度の欠落。",
+      "副大臣・政務官4名が全員「質疑者」とラベル: 就任挨拶セッション (所信表明型) におけるロールラベリングロジックの系統的誤り。Q&Aがなく発言者が全員政府側という構造を正確に反映できていない。「答弁者」または「発言者」への修正が必要。"
+    ]
+  }
+}

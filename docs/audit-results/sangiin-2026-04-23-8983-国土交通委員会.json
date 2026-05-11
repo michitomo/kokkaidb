@@ -1,0 +1,261 @@
+{
+  "session_id": "sangiin/2026/04/23/8983_国土交通委員会",
+  "chamber": "sangiin",
+  "date": "2026-04-23",
+  "deli_id": "8983",
+  "committee": "国土交通委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T10:30:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 4, "medium": 5, "low": 4, "total": 13},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["role_label_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_005-007: 木村英子(れいわ議員)が政府官僚の答弁に誤帰属",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[4:7].answer.speaker",
+        "segment_index": 2,
+        "qa_id": "qa_005"
+      },
+      "evidence": "qa_005-007 の answer.speaker='木村英子'、answer.role='れいわ新選組'。しかし raw_transcript.json segment 2 の text には明示的に '内閣府大臣官房、木村審議官。お答えいたします。' (qa_005/006 に対応) および '国土交通省、木村次長。お答え申し上げます。' (qa_007 に対応) と記載されている。utterances.json でも該当 utterance の text が '国土交通省、木村次長。お答え申し上げます。4月2日に…' と始まっており、答弁者が政府官僚 (木村審議官 / 木村次長) であることが確定的。れいわ新選組の委員である木村英子は段落内で質疑者として登場 (qa_038, qa_039) しており、政府側官僚とは別人。",
+      "estimated_cause": "speaker_tagger が segment 2 に登録された質問者リスト (木村英子 が含まれる) から '木村' という姓でマッチングを行い、'木村審議官'・'木村次長' を委員会メンバーの木村英子に誤帰属。'木村英子' という同一姓のメンバーが委員会に存在することで、姓マッチングが誤動作した可能性が高い。",
+      "downstream_impact": ["utterances.json", "topics.json"]
+    },
+    {
+      "id": "F002",
+      "category": "content_missing",
+      "secondary_categories": ["summary_qa_divergence"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "topics.json が全44 QAのうち6件(14%)しかカバーしない",
+      "location": {
+        "file": "topics.json",
+        "json_path": "$.topics",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "topics.json に収録されたトピックは3件のみ (建設業界の資材供給と価格対応, 建設業界の就業環境整備, 地震注意情報の定義と備え)。related_qa_ids の合計は6件 (qa_001-qa_006) のみ。一方 qa_pairs.json には44件のQAがあり、qa_007-qa_044 の38件は topics.json に未登録。session_summary.json では観光, 国内航空, 都市ガス, 車体整備, リニア中央新幹線, グリーンインフラ, バリアフリー, 松山空港, 物流業界など12以上のテーマが記述されているが、それらを表すトピックがない。",
+      "estimated_cause": "LLM による topics 生成プロセスが全セグメントを処理せず、最初の数セグメント (segment 1-2) のみで完了した可能性。または topics 生成プロンプトが出力トークン数に制限されており途中で打ち切られた。",
+      "downstream_impact": ["summary.json"]
+    },
+    {
+      "id": "F003",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers に9名の政府参考人・官僚が未登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers に登録されているのは委員 (質問者) と金子恭之大臣のみ11名。qa_pairs の answer.speaker に出現する以下9名が metadata.speakers に存在しない: 小林 (qa_002), 楠田 (qa_003), 気象庁長官 (qa_004), 宮沢 (qa_020, qa_022), 都市局長 (qa_023), 石原物流自動車局長 (qa_026-028, qa_043), 中田 (qa_036), 宿本 (qa_038), 岡野総括審議官 (qa_042, qa_044)。これら官僚・参考人の所属機関・役職が metadata から参照不能。",
+      "estimated_cause": "metadata 生成スクリプトが scraper から取得できる公式参考人リスト (webtv.sangiin.go.jp の detail.php) のみを登録し、委員会中に追加で呼ばれた政府参考人を自動補完しない設計になっている。",
+      "downstream_impact": ["qa_pairs.json", "topics.json"]
+    },
+    {
+      "id": "F004",
+      "category": "timestamp_inconsistency",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers 金子恭之の start_seconds が実際の初登場より約7500秒ずれている",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[10].start_seconds",
+        "segment_index": 10,
+        "qa_id": null
+      },
+      "evidence": "metadata.json で 金子恭之 の start_seconds=9486.7 (segment 10 相当) と登録されている。しかし utterances.json では 金子恭之 は segment 1 (start=1922.69) から最初に発言しており (qa_001 の答弁)、start_seconds=9486.7 は会期末の法案説明 (segment 10) のみを指す。qa_pairs の video_url はすべて questioner の start_seconds を使用しており金子恭之の start_seconds は直接影響しないが、metadata の speakers リストを参照した場合に誤誘導される。",
+      "estimated_cause": "scraper が参議院 webtv の detail.php から登録する際に 金子恭之 を '最後に登場したセグメント' の代表として取得したか、segment 10 のみ別途登録された可能性。",
+      "downstream_impact": ["site/pages での答弁者タイムライン表示"]
+    },
+    {
+      "id": "F005",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "answer.role が14/44件 (32%) 空文字",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.role",
+        "segment_index": null,
+        "qa_id": "qa_002"
+      },
+      "evidence": "answer.role が空文字 ('') の QA ペア: qa_002 (小林), qa_003 (楠田), qa_004 (気象庁長官), qa_020 (宮沢), qa_022 (宮沢), qa_023 (都市局長), qa_026-028 (石原物流自動車局長), qa_036 (中田), qa_038 (宿本), qa_042 (岡野総括審議官), qa_043 (石原物流自動車局長), qa_044 (岡野総括審議官)。金子恭之の場合は role='国土交通大臣、水循環政策担当、国際園芸博覧会担当' が設定されているが、他の政府参考人は未設定。加えて qa_005-007 では answer.role='れいわ新選組' (政党名) が役職として誤記載されている。",
+      "estimated_cause": "structurer が金子恭之 (大臣) の role は metadata から取得できたが、他の政府参考人の role を metadata.speakers から取得できず空文字にフォールバックした。metadata_missing_speaker (F003) が連鎖した問題。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F006",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata 全スピーカーの start_time と duration_minutes が未設定",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[*].start_time",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json の全11名の speakers エントリで start_time='' (空文字) かつ duration_minutes=0。start_seconds は各自設定されているが、対応する HH:MM:SS 形式の start_time が計算・記録されていない。また metadata.duration も空文字、hls_url も空文字。",
+      "estimated_cause": "metadata 生成スクリプトが start_seconds → start_time 変換ステップを未実装、または scraper 段階で HLS URLを取得できずに duration も計算不能になっている。",
+      "downstream_impact": ["site/pages でのスピーカータイムライン表示"]
+    },
+    {
+      "id": "F007",
+      "category": "schema_inconsistency",
+      "secondary_categories": ["fact_error"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "金子恭之 (大臣) の answerer_seniority が15/36件で 'minister' 以外に誤分類",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].metrics.oc1_record_value.answerer_seniority",
+        "segment_index": null,
+        "qa_id": "qa_001"
+      },
+      "evidence": "金子恭之は国土交通大臣であるが、qa_001, qa_008-011, qa_014, qa_017-018, qa_021, qa_024-025, qa_031, qa_035 (計15件) で answerer_seniority='bureaucrat' に誤分類。さらに qa_012 では 'other'、qa_013 では 'vice_minister' と分類されている。正しい分類は全件 'minister'。minister=16件、bureaucrat=15件、vice_minister=1件、other=1件 と著しく不整合。oc1_record_value スコアも seniority に依存するため、同じ大臣の答弁でも QA によってスコアが変わりうる。",
+      "estimated_cause": "structurer (LLM) が answer 本文のみから seniority を推定しており、answer.role フィールドから一貫して読み取っていない。一部の answer.full_text が '金子恭之「お答え申し上げます。' という引用スタイル (qa_008-011 等) で始まり、LLM が大臣答弁と認識できなかった可能性。",
+      "downstream_impact": ["metrics.oc1_record_value.score"]
+    },
+    {
+      "id": "F008",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metrics フィールドが8/44件 (18%) で null",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].metrics",
+        "segment_index": null,
+        "qa_id": "qa_002"
+      },
+      "evidence": "metrics=null の QA ペア: qa_002, qa_015, qa_020, qa_023, qa_034, qa_039, qa_040, qa_041。これらは qa_pairs.json 全体の18%に相当し、品質評価スコアが欠損している。null となっている QA は特定の話者 (複数の質問者にわたる) に偏らず、かつ複数セグメントにまたがっている。",
+      "estimated_cause": "metrics 生成時の LLM 呼び出しがタイムアウトまたはエラーで失敗し、null のまま保存されたと推定。8/44件は特定パターン (短い QA?) に集中していない。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F009",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "Whisper が 'eメタン' を 'eメタル' と誤認識 (raw_transcript ws_24)",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[3].whisper_segments[23].text",
+        "segment_index": 3,
+        "qa_id": "qa_023"
+      },
+      "evidence": "raw_transcript.json の segment_index=3、whisper_segment id=24 のテキストに '街中のガス導管ネットワークやeメタルの活用等を通じて' と記録されている。文脈上は都市ガスのカーボンニュートラル化 (eメタン = e-methane) を指すものであり、'eメタル' (e-metal) は全く異なる意味。LLM 補正ステップによって raw_transcript.text および utterances.json では 'eメタン' に修正されており、qa_pairs.json への影響はない。",
+      "estimated_cause": "Whisper が英字+カタカナのハイブリッド専門用語 (eメタン) を音響的に近い 'eメタル' と誤認識。英語技術用語として未学習の可能性。LLM 補正が事後的に修正したため下流への伝播は防がれた。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F010",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "raw_transcript ws_24 で答弁末尾が部分的に繰り返す微小ループ",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[3].whisper_segments[23].text",
+        "segment_index": 3,
+        "qa_id": "qa_023"
+      },
+      "evidence": "raw_transcript.json segment_index=3 の whisper_segment id=24 で '引き続き、都市のコンパクト化とカーボンニュートラルの実現に向けた都市政策の議論も開始しているところでございます。' という文が、直前の '…カーボンニュートラルの実現に向けた都市政策の議論も開始しているところでございます。' とほぼ同内容で繰り返されている (compression_ratio=2.05)。LLM 補正済みの raw_transcript.text ではこの繰り返しが除去されており、qa_pairs への影響なし。",
+      "estimated_cause": "Whisper の temperature=0 デコードにおいて音声境界付近でのグリーディ探索が同一フレーズを重複出力するパターン。短い答弁末尾で発生しやすい。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F011",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "follow_up_ids が全44件で空配列 (明確な追質問連鎖が存在するにも関わらず)",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].follow_up_ids",
+        "segment_index": null,
+        "qa_id": "qa_004"
+      },
+      "evidence": "全44件の qa ペアで follow_up_ids=[]。しかし qa_004→qa_005→qa_006 (地震注意情報の連続追質問) や qa_009→qa_010→qa_011 (観光分科会資料の連続追質問)、qa_013→qa_014 (出国税決定時期の重複トピック) など明確な follow-up 関係が存在する。topics が同一の qa_009/010/011 (観光分科会資料の抽出基準について) も follow_up_ids が空のため、ユーザが追質問の流れを追えない。",
+      "estimated_cause": "structurer の follow_up_ids 生成ロジックが同一 segment 内の前後 QA を参照していないか、実装されていない。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F012",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.committee_id と session_number が null",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.committee_id",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json で committee_id=null、session_number=null。他のフィールド (chamber, session_id, date, committee, source_url 等) は適切に設定されている。committee_id は参議院 TV の委員会識別子、session_number は国会回次に相当し、どちらもフィルタリングや集計に使用される重要フィールド。",
+      "estimated_cause": "参議院 TV のレスポンスに committee_id に相当するフィールドが存在しないか、scraper が未実装のまま。session_number は 国会回次の別途管理が必要。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F013",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "qa_008-011の answer.full_text に '金子恭之「' という話者名引用スタイルが混在",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[7].answer.full_text",
+        "segment_index": 2,
+        "qa_id": "qa_008"
+      },
+      "evidence": "qa_008 の answer.full_text は '金子恭之「お答え申し上げます。ただいま申し上げましたように…' と始まり、発言テキスト内に話者名と鍵括弧が埋め込まれている。同様のパターンが qa_009 ('金子恭之「お答え申し上げます。したがいまして…'), qa_010, qa_011 にもある。また qa_012 では 蓮舫 の発言内にも '蓮舫「謝っていただきたいということではなくて…' という形式が混在。これは Whisper が委員長による議事進行アナウンス (「金子大臣」等の呼びかけ) と話者本人の発言を連結して書き起こしたためと推定され、LLM 補正で除去されていない箇所が残存している。",
+      "estimated_cause": "Whisper が発言者指名アナウンスを発言本体と連続して書き起こし、speaker_tagger の話者分離が不完全。蓮舫の発言部分は raw_transcript.text でも '蓮舫「' という形式が残っており、LLM 補正が除去できなかった。",
+      "downstream_impact": []
+    }
+  ],
+  "blindspots": [
+    "raw_transcript.json の全 whisper_segments を逐字精査していない (1段階サンプリングのみ)。ループが他の whisper_segment にも潜在している可能性がある",
+    "外部の議員名簿・政府参考人名簿との照合未実施。小林, 楠田, 宮沢, 中田, 宿本 等の苗字のみ記録されている答弁者の正式氏名・役職が不明",
+    "発言内容の事実正確性 (数字・法令名) の詳細精査は未実施",
+    "木村審議官 (内閣府) と木村次長 (国土交通省/観光庁) が別人かどうかの確認未実施。qa_005/006 と qa_007 では別々の木村が答弁している可能性がある"
+  ],
+  "narrative": {
+    "overall": "本セッションは9名の質問者が44件の QA を行う大規模委員会であり、qa_pairs のデータ量・内容の多様性は高い。一方で、中核的な品質問題として speaker_misattribution (れいわ新選組の木村英子が政府官僚の答弁に誤帰属)、topics.json の著しい不完全性 (44 QA のうち 6 件しかカバーされず)、政府参考人 9 名が metadata.speakers から欠落という 3 点が確認された。これらはいずれもパイプライン構造に起因する systemic な問題であり、他セッションでも発生していると推定される。summary.json の session_summary は全体を適切に要約しているものの、key_topics および topics.json との乖離が著しく、機械的集計への利用に支障をきたす。Whisper 由来の誤認識 (eメタル, 微小ループ) は LLM 補正によって下流への伝播が防がれており、Whisper 単体の品質は許容範囲内。",
+    "top_findings": [
+      "木村英子 (れいわ新選組) が内閣府・国交省の官僚答弁 (qa_005-007) に誤帰属されており、答弁者情報が根本的に誤っている。raw_transcript.text では '内閣府大臣官房、木村審議官' '国土交通省、木村次長' と明記されており証拠が確定的",
+      "topics.json が 44 QA のうち最初の 6 件しかカバーしておらず、観光・航空・リニア・物流など本セッションの主要議題の大半がトピック分類されていない。データ利用者が UI のトピックフィルタから重要 QA に到達できない",
+      "9 名の政府参考人・局長・審議官が metadata.speakers に未登録であり、answer.role も 14 件 (32%) が空文字。答弁者の役職情報が欠落したまま公開されており、情報の信頼性が損なわれる"
+    ]
+  }
+}

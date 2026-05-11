@@ -1,0 +1,243 @@
+{
+  "session_id": "shugiin/2026/03/11/56118_文部科学委員会",
+  "chamber": "shugiin",
+  "date": "2026-03-11",
+  "deli_id": "56118",
+  "committee": "文部科学委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T10:00:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 3, "medium": 5, "low": 4, "total": 12},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["role_label_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "seg5全7件のqa_pairsで質問者が渡辺藍理でなく答弁者に誤帰属",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[?(@.segment_index==5)]",
+        "segment_index": 5,
+        "qa_id": "qa_030"
+      },
+      "evidence": "qa_030〜qa_036（segment_index=5）の全7件でquestion.speaker==answer.speaker（餅月、堀野、松本文部科学大臣、森野大臣官房学習基盤審議官）となっており、正しい質問者「渡辺藍理」が1件も登場しない。utterances.jsonのseg5では渡辺藍理がrole=質疑者として8発言（pos 1,3,5,7,9,11,13,15）を持ち、qa_030のquestion.full_textは渡辺の発言「そこでまず政府参考人にお伺いします…」と完全一致する。utterance[2]（speaker=餅月）のtextに渡辺の質問文と餅月の答弁文が混在しており、LLM構造化がこの結合テキストを餅月の発言と誤認した。",
+      "estimated_cause": "speaker_taggerがseg5の複数utteranceで質問文と答弁文を同一utteranceに結合し（utterance[2]: role=政府参考人、text=「そこでまず政府参考人にお伺いします…餅月 初等中等教育局長。お答え申し上げます…」）、LLM構造化がその先頭話者（餅月）を質問者として採用した。質問文が「そこで…お伺いします」で終わる間接話法形式のため、LLMが質問主体を特定できなかった可能性もある。",
+      "downstream_impact": ["topics.json", "summary.json"]
+    },
+    {
+      "id": "F002",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakersに答弁者17名（大臣・副大臣・政府参考人）が全員未登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers（11名）には衆議院委員（質疑者側）のみが登録され、qa_pairs.answerに登場する17名の答弁者（松本洋平文部科学大臣、中村文部科学副大臣、福田文部科学大臣政務官、堀野大臣官房学習基盤審議官、森野大臣官房学習基盤審議官、海老名大臣官房文教施設企画防災部長、望月忠（各種誤字形式含む）初等中等教育局長、室井初等中等教育局長等）が1名も含まれていない。委員会審議の主役である文部科学大臣の回答がスピーカーリストに存在しない。",
+      "estimated_cause": "scraperがshugiintv.go.jpの話者リストページから衆議院委員（質疑時間割り振り対象）のみを取得し、政府側出席者（大臣・政府参考人）を収集していない構造的問題。",
+      "downstream_impact": ["topics.json", "summary.json"]
+    },
+    {
+      "id": "F003",
+      "category": "summary_qa_divergence",
+      "secondary_categories": ["fact_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "summary.key_commitments[0]の発言者が松本大臣（誤）→実際は中村副大臣",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments[0]",
+        "segment_index": null,
+        "qa_id": "qa_012"
+      },
+      "evidence": "summary.json の key_commitments[0] は speaker='松本'、role='文部科学大臣'、qa_id='qa_012' として「教師不足対策プロジェクトチームを設置し…」の約束を記録。しかしqa_012のanswer.speaker='中村文部科学副大臣'であり、answer.full_textも「文部科学大臣からも、教師不足対策プロジェクトチームを新たに設置し…事務方に指示を出している」と中村副大臣が大臣の指示を代弁する形になっている。約束の当事者（発言者）が大臣でなく副大臣であることが誤って記録されている。",
+      "estimated_cause": "LLM構造化が答弁内容に含まれる「文部科学大臣からも…指示を出している」という表現から約束の主体を松本大臣と判断したが、実際の発言者は中村副大臣。answer.speakerをそのまま使わずに本文から主体を推論した際の誤解釈。",
+      "downstream_impact": ["summary.json"]
+    },
+    {
+      "id": "F004",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "望月忠初等中等教育局長の氏名がセグメント跨ぎで5種類に分裂（餅月/茂月/茂木/餅中/室井）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[*].text",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "seg0の委員長発言「初等中等教育局長、望月忠君の出席を求め」で正式氏名が確認できる。ところがraw_transcript全体で「餅月」13回、「餅中」2回、「茂月」2回、「茂木」1回の合計18回の誤認識が発生している。さらにutterances/qa_pairsでは同一人物が'餅月初等中等教育局長'(seg2,3,4,5,10)、'茂月初等中等教育局長'(seg4)、'茂木初等中等教育局長'(seg3,4,8)、'餅中 初等中等教育局長'(seg2)、'室井初等中等教育局長'(seg3)の5種類として登録され、検索・集計が困難になっている。'室井'については盛山委員の発言中「室井局長からの御答弁」という言及もあり別人の可能性もあるが、要確認。",
+      "estimated_cause": "Whisperが「モチヅキ」の音に対して正しい漢字変換ができず、複数の類似音漢字（餅月・茂月・茂木・餅中）に誤変換。人名辞書が不十分なWhisper large-v3-turboの固有名詞弱点。音響的に類似するセグメントごとに異なる誤変換が発生するため表記ゆれが生じる。",
+      "downstream_impact": ["utterances.json", "qa_pairs.json", "topics.json"]
+    },
+    {
+      "id": "F005",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["role_label_error"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "seg8 utterance[30]で「松本大臣」が「山本大臣」と誤認識され答弁者として登録",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[8].utterances[30]",
+        "segment_index": 8,
+        "qa_id": null
+      },
+      "evidence": "utterances.jsonのseg8のutterance[30]: speaker='山本大臣', role='答弁者', text='山本大臣。'（1文のみ）。前後のコンテキスト（utterance[29]=松本文部科学大臣の答弁、utterance[31]=山崎正恭の結語）を見ると、これは委員長が次の発言者を呼ぶ際の「松本大臣。」がWhisperに「山本大臣。」と誤認識されたものと推定される。実際の文部科学大臣は松本洋平であり「山本大臣」は存在しない。また役割も「委員長の呼びかけ」であるにもかかわらず「答弁者」と誤分類されている。",
+      "estimated_cause": "委員長の短い呼びかけ「松本大臣。」に対してWhisperが「松本」と「山本」の音韻的類似（マツモト vs ヤマモト）により誤変換。さらにspeaker_taggerが1文のみのutteranceを「答弁者」として誤ラベルした。",
+      "downstream_impact": ["qa_pairs.json"]
+    },
+    {
+      "id": "F006",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "medium",
+      "systemic_signal": "likely_systemic",
+      "title": "江戸名義行文教施設企画防災部長の氏名が「海老名」と誤認識",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[4].utterances[?(@.speaker==\"海老名大臣官房文教施設企画防災部長\")]",
+        "segment_index": 4,
+        "qa_id": "qa_025"
+      },
+      "evidence": "seg0の委員長発言に「大臣官房文教施設企画防災部長江戸名義行君」として正式氏名が確認できる（エドナ ヨシユキ）。seg4のWhisperセグメント（start=807.2s, end=829.8s）では同じ役職の人物が「海老名大臣官房文教施設企画防災部長」（エビナ）と認識されており、qa_025のanswer.speakerにも「海老名大臣官房文教施設企画防災部長」として記録されている。江戸名（エドナ）と海老名（エビナ）は音響的に類似しておらず、Whisperの誤認識と判断できる。",
+      "estimated_cause": "珍しい姓「江戸名」に対してWhisperの言語モデルが「海老名」（神奈川県の地名として頻出）に引きずられた可能性。固有名詞の学習データ不足。",
+      "downstream_impact": ["qa_pairs.json"]
+    },
+    {
+      "id": "F007",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "松本洋平文部科学大臣の話者名が3種類に分裂（松本洋平/松本文部科学大臣/松本洋平文部科学大臣）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.speaker",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "qa_pairsにおいてanswer.speakerが「松本洋平」(10件: qa_037-047等)、「松本文部科学大臣」(22件: qa_001, qa_032等)、「松本洋平文部科学大臣」(1件: qa_057)の3形式で混在。いずれも同一人物（松本洋平文部科学大臣）を指すが、文字列一致ベースの集計では別人として扱われる。同様にtopics.jsonのrelated_speakersでは「松本文部科学大臣」のみ使用されており、「松本洋平」表記のqa_pairsとの対応が取れない。",
+      "estimated_cause": "speaker_taggerがraw_transcriptの文脈によって話者ラベルを生成する際、委員長の「松本洋平文部科学大臣。」という呼びかけと、発言者自身の自己紹介、そして省略形の混在に対して一貫したnormalizeを行っていない。",
+      "downstream_impact": ["topics.json", "summary.json"]
+    },
+    {
+      "id": "F008",
+      "category": "summary_qa_divergence",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "渡辺藍理（参政党）が summary/topics に一切登場せず質疑が完全に不可視化",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.session_summary",
+        "segment_index": 5,
+        "qa_id": null
+      },
+      "evidence": "seg5（渡辺藍理、参政党、7qa_pairs）は全7件でquestion.speakerが誤帰属（F001参照）しており、その結果summary.session_summaryに「渡辺」の言及がなく、topics.jsonの8トピック全てでrelated_speakersに渡辺藍理が含まれていない。渡辺は35人学級の効果、教員確保、働き方改革、事務職員のタスクシフト等についてqa_030-036で7件の質疑を行っているにもかかわらず、データ利用者には質疑の事実すら確認できない。",
+      "estimated_cause": "F001の誤帰属が上流で発生したことで、LLM構造化が渡辺藍理を質疑者として認識できず、下流のsummary/topics生成においても渡辺の質疑が政府参考人・大臣の発言として処理された。",
+      "downstream_impact": ["topics.json"]
+    },
+    {
+      "id": "F009",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs全72件でanswer.roleが空文字列",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "qa_pairsの全72件においてanswer.role=''（空文字列）。utterances.jsonではroleフィールドが適切に入力（答弁者/政府参考人/委員長）されているにもかかわらず、qa_pairs生成時にこの情報が引き継がれていない。フィルタリングやUI表示でroleを使う場合に支障が出る。",
+      "estimated_cause": "LLM構造化（structurer.py）がqa_pairsのanswer.roleを生成する際にutterances.jsonのrole情報を参照していない可能性。またはLLMがroleフィールドを埋めるよう指示されていない。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F010",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.jsonで複数必須フィールドがnull/空文字（committee_id, session_number, duration, speaker.role）",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.committee_id",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.jsonにおいて: committee_id=null、session_number=null、duration=''（空文字列）、mediasp_hash=''（空文字列）、speakers全11名のrole=''（空文字列）。特にdurationは動画時間・会議時間の把握に必要なフィールド。speakers[*].roleが全空であることで、委員長・質疑者・答弁者の区別がメタデータレベルで失われている。",
+      "estimated_cause": "scraperがこれらのフィールドを取得していない（committee_idはshugiintv側に対応する識別子がない等）またはパイプラインがデフォルト値のまま未入力で保存している。durationはHLSプレイリストの解析で算出できるはずだが未実装の可能性。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F011",
+      "category": "duplicate",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "metadata.speakersに斎藤洋明（委員長）が午前・午後で重複登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[?(@.name==\"斎藤洋明\")]",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers に斎藤洋明（文部科学委員長）がstart_seconds=1190.8（09:00）とstart_seconds=11992.8（12:00）の2エントリで登録されている。休憩を挟んで午後の会議再開時に改めて登録されたと推定される。同一委員会で同一役職の人物が重複登録されることで、集計時に2名として計上される恐れがある。",
+      "estimated_cause": "speaker_taggerが会議再開（seg6: 斎藤洋明が一言発言）の際に既存エントリへの参照でなく新規エントリを作成している。もしくはsegmentごとに独立してspeakers配列を構築するため重複が発生している。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F012",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs全72件のfollow_up_idsが空配列で関連質疑のリンクが未構築",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].follow_up_ids",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "qa_pairs全72件においてfollow_up_ids=[]。本セッションには同一話者が続けて複数の質問をするパターンが多く（例: qa_005→qa_006でともに養護教諭配置を扱う山本→河合の連続質疑など）、関連質疑のリンク情報があればUI上での追跡が容易になる。フィールドは定義されているが全件未使用。",
+      "estimated_cause": "LLM構造化がfollow_up_idsを生成するよう指示されていないかロジックが未実装。",
+      "downstream_impact": []
+    }
+  ],
+  "blindspots": [
+    "raw_transcript.whisper_segmentsを逐字精査していないため、認識精度の低いセグメントの誤字・語彙誤認識の全容は不明",
+    "室井初等中等教育局長が望月忠と同一人物か別人かを外部議事録なしで確定できなかった（発言内容からは同一役職名が使われているが字幕誤認識の可能性あり）",
+    "qa_pairs各ペアの事実的正確性（数値・固有名詞等）を外部資料と照合していない",
+    "qa_012以外のkey_commitmentsの発言者一致検証が限定的"
+  ],
+  "narrative": {
+    "overall": "本セッション（衆議院文部科学委員会2026-03-11、義務標準法改正審議）は全体として構造化の品質は標準的だが、seg5（参政党・渡辺藍理）全7質疑の質問者誤帰属という重大問題が存在する。utterances段階で質問文と答弁文が同一utteranceに混在したことでLLM構造化が質疑者を誤認し、渡辺藍理がsummary/topicsに一切登場しない状態になっている。加えてメタデータレベルでは大臣・政府参考人17名が全員未登録という構造的欠陥があり、スピーカーリストの実用性が低い。Whisperによる望月忠局長の氏名誤認識（5種類、計18回）は本セッションの固有名詞品質を最も損なっている問題であり、他セッションでも類似の誤認識が発生している可能性が高い。一方でタイムスタンプの整合性は良好で、qa_pairs内の数値情報・コミットメントテキスト自体は概ね正確に記録されている。",
+    "top_findings": [
+      "渡辺藍理（参政党）の全7質疑でquestion.speakerが答弁側官僚に誤帰属され、summary/topicsから完全に消失している（F001+F008）",
+      "望月忠初等中等教育局長の氏名がWhisperにより5種類（餅月/茂月/茂木/餅中/室井）に分裂し、qa_pairsの18%近くで話者名表記が不統一（F004）",
+      "metadata.speakersに大臣・副大臣・政府参考人17名が全員未登録であり、委員会審議の答弁側参加者をメタデータから把握できない（F002）"
+    ]
+  }
+}

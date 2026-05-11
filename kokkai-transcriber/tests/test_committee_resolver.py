@@ -96,3 +96,51 @@ class TestStage3Unknown:
         soup = BeautifulSoup(html, "html.parser")
         speakers = [_speaker("田中太郎", "自由民主党")]
         assert resolve_committee(soup, speakers) == "不明"
+
+
+class TestFindCommitteeInBodyScopeRestriction:
+    """PR19: find_committee_in_body は <p>/<div>/<span> を走査せず、本文中の
+    「○○委員会」言及で誤検知しないことを検証する。"""
+
+    def test_paragraph_committee_mention_ignored(self) -> None:
+        from src.scrapers._committee import find_committee_in_body
+
+        html = (
+            "<html><body>"
+            "<p>本日の質疑では内閣委員会の運営について議論された。</p>"
+            "</body></html>"
+        )
+        soup = BeautifulSoup(html, "html.parser")
+        assert find_committee_in_body(soup) == ""
+
+    def test_div_committee_mention_ignored(self) -> None:
+        from src.scrapers._committee import find_committee_in_body
+
+        html = (
+            "<html><body>"
+            "<div class='content'>外務委員会という言葉が本文に出てきます</div>"
+            "</body></html>"
+        )
+        soup = BeautifulSoup(html, "html.parser")
+        assert find_committee_in_body(soup) == ""
+
+    def test_span_committee_mention_ignored(self) -> None:
+        from src.scrapers._committee import find_committee_in_body
+
+        html = "<html><body><span>○○委員会についての言及</span></body></html>"
+        soup = BeautifulSoup(html, "html.parser")
+        assert find_committee_in_body(soup) == ""
+
+    def test_h2_still_matches(self) -> None:
+        from src.scrapers._committee import find_committee_in_body
+
+        html = "<html><body><h2>厚生労働委員会</h2></body></html>"
+        soup = BeautifulSoup(html, "html.parser")
+        assert find_committee_in_body(soup) == "厚生労働委員会"
+
+    def test_td_still_matches(self) -> None:
+        from src.scrapers._committee import find_committee_in_body
+
+        html = "<html><body><table><tr><td>環境委員会</td></tr></table></body></html>"
+        soup = BeautifulSoup(html, "html.parser")
+        assert find_committee_in_body(soup) == "環境委員会"

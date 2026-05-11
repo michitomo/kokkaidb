@@ -1,4 +1,19 @@
-"""Pydanticモデル定義: パイプライン全体で使用するデータ構造"""
+"""Pydanticモデル定義: パイプライン全体で使用するデータ構造
+
+スキーマ規約 (docs/STRUCTURER_REWRITE.md §2.12):
+
+- 「未取得値」と「意図的に空」を None / "" で区別する。
+  - None: 値が取得できなかった / 該当しない (例: 衆議院セッションの mediasp_hash)
+  - "": 取得を試みたが空文字列だった / 構造上必須だが現時点で値がない (例: 表記なし)
+- 数値型・任意のメタデータ: `int | None = None`、`float | None = None`
+- 文字列型:
+  - 必須フィールド (常に何らかの値を持つべき): `str = ""`
+  - 任意フィールド (取得できないことがある): `str | None = None`
+- 表記ゆれ (例: `斎藤` vs `斉藤`、`城内` vs `城内大臣`) は metadata.speakers の表記を
+  正解として normalizer が utterances 内で統一する (`src/normalizer.py`)。
+- JSON シリアライズ時の `null` ↔ `""` 不整合を避けるため、新規フィールド追加時は
+  この方針を踏襲し、`scripts/validate_data_schema.py` で検証可能にしておくこと。
+"""
 
 from __future__ import annotations
 
@@ -127,6 +142,7 @@ SessionKind = Literal[
 
 SpeakerRole = Literal[
     "委員長",
+    "議長",
     "質疑者",
     "答弁者",
     "政府参考人",
@@ -135,7 +151,7 @@ SpeakerRole = Literal[
 ]
 
 SPEAKER_ROLES: frozenset[str] = frozenset(
-    ("委員長", "質疑者", "答弁者", "政府参考人", "参考人", "その他")
+    ("委員長", "議長", "質疑者", "答弁者", "政府参考人", "参考人", "その他")
 )
 
 

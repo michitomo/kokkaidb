@@ -1,0 +1,262 @@
+{
+  "session_id": "shugiin/2026/02/20/56082_特別委員会",
+  "chamber": "shugiin",
+  "date": "2026-02-20",
+  "deli_id": "56082",
+  "committee": "特別委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T04:00:00Z",
+  "overall_quality": "medium",
+  "issue_count": {"high": 3, "medium": 5, "low": 5, "total": 13},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "other",
+      "secondary_categories": ["metadata_missing_speaker"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.committee が「特別委員会」のみで実名（地域・こども・デジタル特別委員会）が欠落",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.committee",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json の committee フィールドは「特別委員会」のみ。しかし summary.json の session_summary に「地域・こども・デジタル特別委員会の設置に伴う」と明記されており、metadata.json speakers[1].affiliation にも「地域・こども・デジタル特別委員長」と記載されている。ディレクトリ名 56082_特別委員会 もこの誤りを引き継いでいる。衆議院では同日に複数の「特別委員会」が存在しうるため、委員会名の短縮は検索・フィルタを無効にする。",
+      "estimated_cause": "scraper がスクレイピングした際に委員会名を「特別委員会」とのみ取得し、正式名称（地域・こども・デジタル特別委員会）を切り捨てた。衆議院TVの委員会名取得ロジックに名称正規化の不備がある可能性が高い。",
+      "downstream_impact": ["topics.json", "summary.json", "ディレクトリ名"]
+    },
+    {
+      "id": "F002",
+      "category": "role_label_error",
+      "secondary_categories": ["speaker_misattribution"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "上川陽子の role が「質疑者」に誤分類（正しくは「臨時委員長（年長委員）」）",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[0].utterances[0].role",
+        "segment_index": 0,
+        "qa_id": null
+      },
+      "evidence": "utterances.json segment_index=0 の上川陽子 utterances[0] の role が「質疑者」になっている。同じく segment_index=1 の utterances[2]（上川陽子）も role=「質疑者」。しかし上川陽子は「衆議院規則第111条第4項の規定によりまして、委員長が選任されるまで年長者である私が委員長の職務を行います」と発言しており、臨時委員長（年長委員）として議事進行を行っている。「質疑者」という役割分類は事実と完全に矛盾する。metadata.speakers においても role フィールドは空文字のままで正しい役職が記録されていない。",
+      "estimated_cause": "speaker_tagger が「質疑者」「答弁者」「委員長」という限定的な role 候補を持ち、「臨時委員長（年長委員）」のような特殊な議事進行役を「質疑者」にデフォルト分類している可能性がある。委員長選任セッション固有の議事形式（委員長不在での年長委員進行）をパターンとして認識できていない。",
+      "downstream_impact": ["summary.json"]
+    },
+    {
+      "id": "F003",
+      "category": "timestamp_inconsistency",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "medium",
+      "systemic_signal": "likely_systemic",
+      "title": "start_seconds=2050.3 と start_time=12:14 が90分以上乖離",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[0].start_seconds",
+        "segment_index": 0,
+        "qa_id": null
+      },
+      "evidence": "metadata.json の speakers[0]（上川陽子）: start_seconds=2050.3、start_time='12:14'。HLS URL（hls_url）のサブディレクトリ名 '2026-0220-1010-01' はストリーム開始が10:10 JST であることを示す。start_seconds=2050.3 はストリーム先頭から34.2分 → 推定実時刻 10:44 JST。しかし start_time='12:14' は公式サイト掲載の12:14 JST。差分は約5400秒（約90分）。utterances.json および video_url の time パラメータも start_seconds=2050.3 を使用しており、このリンクをクリックすると12:14の発言箇所ではなく10:44付近にシークされる可能性がある。丹羽秀樹も同様（start_seconds=2128.6 vs start_time='12:15'）。",
+      "estimated_cause": "scraper が公式サイトの発言開始時刻（clock time）と HLS ストリーム内のオフセット（video offset）を別々に取得したが、前日・同日の先行セッションを含む長尺ストリームにおいてオフセット計算の起点がずれている可能性がある。あるいは start_seconds がストリーム先頭からのオフセットではなく別の基準で計算されている。",
+      "downstream_impact": ["utterances.json", "video_url"]
+    },
+    {
+      "id": "F004",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「委員各位」が「委員閣議」に誤認識（全体で7箇所）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[0].whisper_segments[1].text",
+        "segment_index": 0,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json segment_index=0 の whisper_segment id=1 に「早稲田幸君同議を提出いたします委員長の御選は」（委員長を呼ぶ際の「委員長」が挿入）、segment_index=1 の text に「委員閣議の御推挙によりまして」「委員閣議の御指導と御協力を賜りまして」が出現。正しい語は「委員各位（いいんかくい）」であるが、全体で4箇所（raw_transcript）、2箇所（utterances）、1箇所（summary）の合計7箇所で「委員閣議（いいんかくぎ）」と誤認識されている。「閣議」は内閣会議であり意味が全く異なる。",
+      "estimated_cause": "Whisper large-v3-turbo が「各位（かくい）」を「閣議（かくぎ）」に誤認識。音響的に類似しており、「委員」という直前の単語との共起から「委員閣議」という語が生成された。この種の漢字音韻混同は国会審議特有の専門語で頻発する可能性がある。",
+      "downstream_impact": ["utterances.json", "summary.json"]
+    },
+    {
+      "id": "F005",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「互選」が「御選」に誤認識（委員長互選・理事互選を誤記）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[0].whisper_segments[0].text",
+        "segment_index": 0,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json segment_index=0 の whisper_segment text に「これより委員長の御選を行います」「委員長の御選は」、segment_index=1 の whisper_segment id=3 に「理事の御選を行います」と記録されている。正しい議会用語は「委員長の互選（ごせん）」および「理事の互選」。これは「互選」（委員会内での投票選出）という重要な法的手続き用語の誤認識であり、utterances.json のテキストにも「御選任を行います」と混在して伝播している。",
+      "estimated_cause": "Whisper が「互選（ごせん）」を「御選（ごせん）」に誤認識。同音異字の混同。国会議事手続きにおける専門用語として学習データが少ない可能性がある。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F006",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["role_label_error"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "utterances.json segment 1 で「上川陽子君、動議を提出いたします」が丹羽秀樹に誤帰属",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[1].utterances[1]",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "utterances.json segment_index=1 の utterances[1]: speaker=「丹羽秀樹」、role=「委員長」、text=「上川陽子君、動議を提出いたします。」。この発言は実際には上川陽子（年長委員）が動議を提出する際の自己申告であり、丹羽秀樹（新委員長）が上川陽子に動議提出を求めた後、上川陽子が「動議を提出いたします」と応じる場面。raw_transcript では「上川陽子君同議を提出いたします」が一続きのテキストとして記録されており、Whisper が発言者の切り替えを検出できないままLLMが丹羽秀樹に帰属させた。",
+      "estimated_cause": "この発話ブロックが speaker_tagger の入力として segment_speaker=丹羽秀樹 のセグメント内にあり、発言者交代の境界検出に失敗した。「上川陽子君」という名前呼びかけと「動議を提出いたします」が同一 whisper segment に含まれ、呼びかけた人（丹羽）の発言と混同された。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F007",
+      "category": "content_missing",
+      "secondary_categories": ["summary_qa_divergence"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "topics.json が空配列で、summary.json の key_topics 3件と完全乖離",
+      "location": {
+        "file": "topics.json",
+        "json_path": "$.topics",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "topics.json は {\"topics\": []} と完全に空。一方、summary.json の key_topics には「委員長の選任」「委員会の所管事項（地域活性化・子ども政策・デジタル社会形成）」「理事の選任」の3件が存在する。topics.json にトピックが1件も生成されていないが、summary に明記されている主要議題が3件ある。qa_pairs.json も空（{\"pairs\": []}）のため、topics.json 生成が qa_pairs に依存する構造であれば、空の qa_pairs がトリガーとなってトピック生成もスキップされた可能性がある。",
+      "estimated_cause": "structurer.py の topics 生成ロジックが qa_pairs を入力として使用しており、qa_pairs が空の場合に topics も空になる。委員長・理事選任のみの短時間セッション（質疑応答なし）において、structurer が qa_pairs を生成できず、その結果として topics も生成されなかったと推定される。",
+      "downstream_impact": ["summary.json"]
+    },
+    {
+      "id": "F008",
+      "category": "whisper_hallucination_loop",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "raw_transcript segment 0 の whisper_segment id=3 に低信頼度ハルシネーション「国会議員会議員」",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[0].whisper_segments[2]",
+        "segment_index": 0,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json segment_index=0 の whisper_segment id=3: text=「国会議員会議員」、avg_logprob=-1.5615（他セグメントは-0.07〜-0.20 の範囲、これのみ突出して低信頼）、duration=1.28秒、compression_ratio=0.913（他は1.35〜1.60 の範囲より大幅に低い）。「国会議員会議員」は意味を成さず、無音または拍手音などのノイズに対してWhisperが生成した偽テキストと判断される。utterances.json のテキストにはこの箇所が含まれていないため（LLMが除外したか、別セグメント境界で処理された）、下流への直接影響は限定的。",
+      "estimated_cause": "委員長選任直後の一時的な無音・拍手期間（約1.3秒）に対して Whisper がハルシネーションを生成。avg_logprob が-1.56 と極端に低く、no_speech_prob=0.0 は no_speech 閾値が適切に機能しなかったことを示す。短時間無音区間での Whisper の既知の挙動。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F009",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "動議提出者「早稲田幸」と理事候補代表「日野サリア」が metadata.speakers に未登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json の speakers リストには上川陽子・丹羽秀樹の2名のみ。しかし utterances.json および raw_transcript.json のテキストには「早稲田幸君、動議を提出いたします」（委員長選任動議を提出した委員）、「日野サリア君」（理事8名のうち1名として指名）の名前が出現する。理事として選任された8名の氏名は「日野サリア」以外は転記されていない（Whisperの文字起こしに未収録）。これらの人物が speakers リストに存在しないため、会議の参加者情報が不完全。",
+      "estimated_cause": "scraper が衆議院TVの公式発言者リスト（委員長・年長委員の2名のみ掲載）をそのまま取得しており、本会議録中に言及される他の委員（動議提出者・理事候補）を自動的には収録しない構造。また Whisper で転記した7名分の理事氏名は文字起こしに現れないため、データとして欠落。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F010",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.json の duration・mediasp_hash・committee_id・session_number・speakers[*].role が空/null",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.duration",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json: duration=\"\"（空文字）、mediasp_hash=\"\"（空文字）、committee_id=null、session_number=null、speakers[0].role=\"\"、speakers[1].role=\"\"。duration は会議の長さの把握に必要な基本フィールド。committee_id は委員会フィルタに必要。speakers.role は role_label_error（F002）とも連動する。mediasp_hash は参議院専用フィールドであり衆議院では空文字が正常だが、null との表記ゆれが存在する（他フィールドは null を使用）。",
+      "estimated_cause": "scraper がセッション時刻・委員会IDを公式サイトから取得できなかった、またはパーサが対応していない。speakers.role は speaker_tagger が utterances の role と metadata の role を同期していない。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F011",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.json の key_commitments[0].qa_id が空文字（null ではなく \"\"）",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments[0].qa_id",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "summary.json の key_commitments[0].qa_id=\"\"（空文字）。qa_pairs.json は pairs=[] で空のため、このコミットメントはいずれの qa_id とも紐付かない。qa_id が参照するエントリが存在しないにもかかわらず null ではなく空文字が入っており、スキーマの一貫性がない。他セッションで qa_id=null と qa_id=\"\" が混在している可能性がある。",
+      "estimated_cause": "structurer.py が qa_pairs が空の場合に qa_id フィールドを null ではなく空文字で初期化している。フィールドの型定義が不明確。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F012",
+      "category": "fact_error",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "session_specific",
+      "title": "summary.json key_commitments[0].text が Whisper 誤認識「委員閣議」をそのまま踏襲",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments[0].text",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "summary.json key_commitments[0].text=「委員閣議の指導と協力を得て、円満な委員会運営に努める。」。正しくは「委員各位の御指導と御協力を賜りまして、円満な委員会運営に努めてまいりたい」（丹羽秀樹発言）。LLM が Whisper 誤認識「委員閣議」を修正せずにそのまま要約に取り込んでおり、「閣議の指導」という誤った事実陳述が summary に記録されている。",
+      "estimated_cause": "structurer.py の要約生成が raw_transcript または utterances のテキストをそのまま参照したため、F004 の Whisper 誤認識「委員閣議」が summary にも伝播。LLM が文脈から「各位」への修正を行わなかった。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F013",
+      "category": "content_missing",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "理事8名のうち「日野サリア」以外の7名の氏名が文字起こし・発言者情報から欠落",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[1].utterances[2].text",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "utterances.json segment_index=1 の utterances[2]（上川陽子）text=「理事の員数は8名とし、委員長において指名されることを望みます。日野サリア君。以上8名の方々を指名いたします。」とあり、「日野サリア君」の1名のみ転記されている。実際の委員長指名では8名の理事氏名が一人ずつ読み上げられるはずだが、Whisper の文字起こし（raw_transcript segment_index=1 の whisper_segment id=5）でも「日野サリア君」以降の7名分の氏名読み上げが欠落している。音声区間が短い（7人分の名前読み上げ約30秒）か Whisper のセグメント分割の問題の可能性がある。",
+      "estimated_cause": "Whisper の文字起こし対象 WAV セグメントが、理事名読み上げ部分をほぼ含まずに終端していた可能性がある（audio/extractor.py のセグメント切り取り境界の問題）。あるいは Whisper が無音後の名前の羅列を途中でスキップした。",
+      "downstream_impact": ["metadata.json (speakers 欠落と連動)"]
+    }
+  ],
+  "blindspots": [
+    "外部の国会議事録（公式会議録）との詳細な内容照合は未実施（丹羽秀樹の就任挨拶の正確なテキスト検証等）",
+    "HLS ストリームへの実際のシーク確認は未実施（start_seconds=2050.3 でのシーク先が実際に誤っているか未検証）",
+    "日野サリア以外の理事7名の実際の氏名は公式会議録を参照しないと確認不能",
+    "raw_transcript.json の全 whisper_segment テキストの逐字精査は行っていない（低信頼セグメントのみ重点確認）",
+    "早稲田幸（動議提出者）の氏名表記の正確性（早稲田夕季？）は外部照合なしでは確認不能"
+  ],
+  "narrative": {
+    "overall": "このセッション（deli_id=56082）は「地域・こども・デジタル特別委員会」の設立初日であり、委員長・理事の選任のみを行う極めて短時間の形式的会議である。qa_pairs と topics が空であることはセッションの性質（質疑応答なし）から一定程度説明がつくが、パイプラインがこの形式を認識できずに topics 生成をスキップした点は構造的問題である。最大の問題は委員会名が「特別委員会」のみに短縮されており実名が欠落していること、および start_seconds と start_time の約90分の乖離であり、いずれもデータ利用者の検索・アクセスに直接影響する。また「委員各位」→「委員閣議」という Whisper 誤認識が全ファイルに伝播しており、重要な議会用語の誤記として要修正である。",
+    "top_findings": [
+      "委員会名「特別委員会」のみに短縮（実名：地域・こども・デジタル特別委員会）— ディレクトリ名・metadata・検索インデックスに誤った情報が固定されており、同日複数の特別委員会が存在する場合に識別不能になる構造的問題",
+      "start_seconds=2050.3 と start_time=12:14 が約90分乖離 — video_url のシーク先が公式掲載時刻と合致せず、ユーザーが動画の正しい位置を参照できない可能性がある",
+      "「委員各位」→「委員閣議」の Whisper 誤認識が raw_transcript・utterances・summary の7箇所に伝播 — 「閣議の指導」という誤った事実陳述が summary に固定されており、重要な法的・政治的用語の誤記として修正が必要"
+    ]
+  }
+}

@@ -1,0 +1,316 @@
+{
+  "session_id": "sangiin/2026/04/24/8985_沖縄・北方問題及び地方に関する特別委員会",
+  "chamber": "sangiin",
+  "date": "2026-04-24",
+  "deli_id": "8985",
+  "committee": "沖縄・北方問題及び地方に関する特別委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T10:00:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 4, "medium": 7, "low": 5, "total": 16},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "fact_error",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.json session_summary に「衆議院（または参議院）」という未確定表記",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.session_summary",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "session_summary の冒頭が「衆議院（または参議院）の委員会において」と始まっており、参議院委員会であることが明らかな本セッションで院を特定していない。LLMが院名を確定せずテンプレート的な表現を出力したと判断される。",
+      "estimated_cause": "structurer.py（またはLLM呼び出しプロンプト）がsession情報（chamber=sangiin）をsummary生成時に注入できていないか、モデルが出力において院名を確定しない回避表現を使用した。",
+      "downstream_impact": ["summary.json"]
+    },
+    {
+      "id": "F002",
+      "category": "fact_error",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.json key_commitments の role フィールドがテンプレートの穴埋め未完了",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments[0].role",
+        "segment_index": null,
+        "qa_id": "qa_042"
+      },
+      "evidence": "key_commitments[0].role の値が「役職名（主要1つ）」という指示文字列のままであり、実際の役職名（内閣府政策統括官等）に置き換えられていない。speaker は「三浦」と正しく記録されているが、役職が未入力のままになっている。",
+      "estimated_cause": "LLMがプロンプト中のフィールド名指示をそのまま出力した。summary生成のプロンプトに「役職名（主要1つ）」というプレースホルダが含まれており、モデルがそれを値として出力している。",
+      "downstream_impact": ["summary.json"]
+    },
+    {
+      "id": "F003",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「墓参」が「母さん」と繰り返し誤認識（5箇所）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].text",
+        "segment_index": 1,
+        "qa_id": "qa_003"
+      },
+      "evidence": "raw_transcript.json segment 1（鈴木宗男）および qa_pairs.json qa_002/qa_003 の full_text において、「北方墓参（ぼさん）」が「北方母さん」と誤認識されている。5箇所確認: (1)「元島民のビザなし、母さんですね。これ、母さんが一番です」(2)「どうか、母さんだけは今年何とか実現したい」(3)「ビザなし交流の枠組みを元に戻さない限り、母さんもできないもん」(4)「ビザなし交流を再開することが…北方母さんにもつながる」。qa_003の質問・回答両方に「母さん」表記が残存。",
+      "estimated_cause": "Whisper large-v3-turbo が「ぼさん（墓参）」を「おかあさん（母さん）」と音響的に近い語として誤認識。政治文脈での「北方墓参」という専門用語への対応が不十分。corrected=true にもかかわらず修正されていない。",
+      "downstream_impact": ["qa_pairs.json", "utterances.json"]
+    },
+    {
+      "id": "F004",
+      "category": "speaker_misattribution",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "qa_037 の質問が「木原大臣」に向けられているが答弁者が「木川田」",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[36].answer.speaker",
+        "segment_index": 6,
+        "qa_id": "qa_037"
+      },
+      "evidence": "qa_037 question.full_text の最後「どのようにお感じになられますでしょうか。木原大臣。」と明示的に木原大臣に質問しているが、answer.speaker は「木川田」になっている。utterances.json segment 6 を確認すると、実際に答弁したのは「木川田」であり、질問者が木原大臣に指名したにもかかわらず木川田大臣が答弁した実態が正しく記録されているが、qa_pairs上の解釈では質問の誰に向けられたかと実際の答弁者の乖離について説明がなく、利用者が誤解する恐れがある。",
+      "estimated_cause": "speaker_tagger が質問の呼びかけ先（木原大臣）と実際の答弁者（木川田）を区別できず、utterances.json の実際発話者を採用したもの。正しい記録ではあるが、この齟齬に関する注記がない。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F005",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「宮森小学校」が「宮盛小学校」と誤認識",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[2].text",
+        "segment_index": 2,
+        "qa_id": "qa_007"
+      },
+      "evidence": "1959年の宮森（みやもり）小学校米軍機墜落事故への言及で、raw_transcript.json segment 2 および qa_pairs.json qa_007 の question.full_text に「宮盛小学校」と誤記されている。正式名称は「宮森小学校」（石川市宮森）。歴史的事件の固有名詞が誤認識されたまま構造化データに伝播している。",
+      "estimated_cause": "Whisper が「みやもり」を「みやさかり/みやもり」として誤認識し、漢字変換で「宮盛」となった。地名・学校名などの沖縄固有名詞への対応が不十分。",
+      "downstream_impact": ["qa_pairs.json", "utterances.json"]
+    },
+    {
+      "id": "F006",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "施設名「根室国後館海底電信線陸揚げ施設」が「海底電信船陸上げ施設」と誤認識",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[37].topic",
+        "segment_index": 7,
+        "qa_id": "qa_038"
+      },
+      "evidence": "qa_038 の topic および answer.full_text で「根室国後館海底電信船陸上げ施設」と記録されているが、正式名称は「根室国後・色丹館海底電信線陸揚げ施設」（submarine telegraph cable landing facility）。「電信線（でんしんせん）」が「電信船（でんしんせん/でんしんぶね）」と誤認識されており、施設の性格（海底ケーブル陸揚げ施設）を誤伝している。梶山答弁の utterance にも同じ誤認識あり。",
+      "estimated_cause": "Whisper が「でんしんせん（電信線）」を「でんしんせん（電信船）」として同音の漢字を誤って当てはめた。また「陸揚げ（りくあげ）」が「陸上げ（りくあげ）」として variant 表記になっている。",
+      "downstream_impact": ["qa_pairs.json"]
+    },
+    {
+      "id": "F007",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "answer.speaker の表記が同一人物に対し3種類混在（木川田大臣）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.speaker",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "木川田内閣府特命担当大臣の発言が qa_013・qa_014 では「木川田内閣府特命担当大臣」、qa_025 では「木川田内閣特命担当大臣」（「府」が欠落）、qa_032・qa_033・qa_034・qa_037 では「木川田」（姓のみ）の3種類で記録されている。同様に宮崎防衛副大臣も「宮崎正夫」(qa_011・012)と「宮崎防衛副大臣」(qa_024)で混在。茂木外務大臣も「茂木外務大臣」と「茂木敏充」(qa_008)で混在。",
+      "estimated_cause": "speaker_tagger がWhisper transcript から話者名を抽出する際、文中での呼称の揺れ（肩書き付き vs 姓名 vs 姓のみ）をそのまま採用し、正規化していない。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F008",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers に答弁者24名が全員未登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json の speakers リストには質疑者9名（横沢高徳・鈴木宗男・徳永エリ・山田吉彦・窪田哲也・青島健太・梅村みずほ・岩渕友・伊勢崎賢治）のみが登録されており、茂木外務大臣・小泉進次郎防衛大臣・木原稔・木川田内閣府大臣・城内実・宮崎正夫副大臣・各審議官・参考人ら24名の答弁者が一切登録されていない。qa_pairs.json に登場する答弁者が metadata.speakers に存在しない。",
+      "estimated_cause": "metadata 生成ロジックが質疑者（委員）のみを speakers として登録し、答弁者（政府側）を登録対象外としている設計上の問題。パイプラインの設計判断として意図的かもしれないが、データ利用者が全話者を把握できない。",
+      "downstream_impact": ["qa_pairs.json"]
+    },
+    {
+      "id": "F009",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers の start_time と duration_minutes が全員空/ゼロ",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[*].start_time",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json の全9名の speakers について start_time='' （空文字列）、duration_minutes=0 が設定されている。一方で start_seconds は正しい値（例: 鈴木宗男=3537.11）が入っている。また metadata.duration=''、hls_url=''、committee_id=null、session_number=null も全て欠損。null と空文字列が混在している（duration/hls_url/start_time は ''、committee_id/session_number は null）。",
+      "estimated_cause": "start_time（人間可読の時刻文字列）は start_seconds から変換する処理が実装されていないか、変換後の格納が失敗している。duration_minutes の計算ロジックも未実装または失敗。hls_url はデータ処理後にクリアされた可能性がある。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F010",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs.answer.role が全51件で空文字列",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "51件全ての qa_pair において answer.role='' （空文字列）。metadata.json の speakers に登録されている質疑者は role（「委員長」「質疑者」）を持つが、答弁者の role が全件空のまま。茂木大臣（外務大臣）、小泉大臣（防衛大臣）等の役職情報が欠落している。",
+      "estimated_cause": "speaker_tagger または structurer.py が答弁者の役職をqa_pairs に格納するロジックを実装していない。answer.speaker から役職を推定する処理が欠如している。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F011",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs.metrics が10件で null（19.6%）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].metrics",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "51件中10件（qa_004・qa_010・qa_013・qa_015・qa_019・qa_021・qa_024・qa_027・qa_043・qa_046）で metrics=null。これらの qa_pair は評価スコアが全て欠如しており、ダッシュボードや分析機能でゼロ扱い/エラーになりうる。null=metrics の qa は概して長文の答弁を含むものが多い。",
+      "estimated_cause": "metrics 生成処理（LLM評価）がタイムアウト、トークン超過、またはレート制限により一部の qa_pair で失敗し、null のまま格納された可能性が高い。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F012",
+      "category": "other",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_015 答弁文に「1つ目は、3つ目は」と2つ目が欠落した構造的欠陥",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[14].answer.full_text",
+        "segment_index": 2,
+        "qa_id": "qa_015"
+      },
+      "evidence": "qa_015（笹野内閣審議官による先島諸島住民避難計画の説明）の answer.full_text に「これまでの訓練の内容について3点申し上げますと、1つ目は、3つ目は、先島諸島のご市町村における避難要領等のさらなる具体化…」と記されており、「2つ目は」が完全に欠落している。先島諸島住民避難計画という重要な安保関連情報の2点目が失われている。",
+      "estimated_cause": "Whisper の音声認識で「2つ目は」に対応する区間が認識失敗（沈黙、音量低下等）したか、speaker_tagger の utterance 分割時に対応する発話がカットされた。",
+      "downstream_impact": ["topics.json"]
+    },
+    {
+      "id": "F013",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metrics.oc1_record_value.answerer_seniority の誤分類が8件",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].metrics.oc1_record_value.answerer_seniority",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "以下8件で seniority が誤分類: (1)qa_009 小泉進次郎→bureaucrat（正: minister）(2)qa_012 宮崎正夫→bureaucrat（正: vice_minister）(3)qa_016 茂木外務大臣→bureaucrat（正: minister）(4)qa_017 茂木外務大臣→bureaucrat（正: minister）(5)qa_018 野村審議官→minister（正: bureaucrat）(6)qa_020 茂木外務大臣→bureaucrat（正: minister）(7)qa_025 木川田内閣特命担当大臣→bureaucrat（正: minister）(8)qa_051 金子恵美子→minister（正: bureaucrat）。",
+      "estimated_cause": "structurer.py がスピーカー名から肩書きを推定する際、「大臣」付きの名前でも一貫して minister に分類できていない。また「内閣特命担当大臣」の変形表記や、「金子恵美子」（政策統括官）を大臣と誤判定するケースがある。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F014",
+      "category": "other",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "utterances.json の全62件の答弁者発話が unmatched=true",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[*].utterances[?(@.unmatched==true)]",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "utterances.json の全163発話のうち、役割が「答弁者」または「政府参考人」の発話62件（全体の38%）が unmatched=true となっている。質疑者の発話は全て unmatched=false。これは qa_pairs.json と utterances.json の間でマッチングが設計上行われていないことを示す。",
+      "estimated_cause": "utterances.json は speaker_tagger の中間出力であり、qa_pairs.json のstructurer処理とは独立して生成されているため、答弁者の utterance は qa_pairs に吸収されたとみなされ unmatched のまま残る設計になっている可能性が高い。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F015",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "session_specific",
+      "title": "qa_022 答弁中の「太山飛行場」は実在しない可能性（正: 牧港補給地区等）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[21].answer.full_text",
+        "segment_index": 3,
+        "qa_id": "qa_022"
+      },
+      "evidence": "qa_022 answer.full_text で「太山飛行場及び那覇公安施設」と記録されているが、「太山飛行場」という名称の米軍施設は沖縄に存在しない。文脈（「中南部都市圏の中心部」「那覇公安施設と並列」「跡地利用」）から、那覇港湾施設（なはぐんこう）・牧港補給地区（キャンプ・キンサー）のいずれかである可能性が高い。utterances.json にも同じ誤記が存在する。",
+      "estimated_cause": "Whisper が議員の発言した施設名（漢字5字程度）を音響的に近い誤った漢字で変換した。沖縄の米軍基地名は発音が不規則なものが多く、特に難しい。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F016",
+      "category": "other",
+      "secondary_categories": ["whisper_misrecognition"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_011 question.full_text に「小泉君徳永エリ」という発言者ラベルが混入",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[10].question.full_text",
+        "segment_index": 2,
+        "qa_id": "qa_011"
+      },
+      "evidence": "qa_011 の question.full_text に「…さまざまな方がさまざまな試算をしていると。小泉君徳永エリ、軟弱地盤の改善のための…」と、委員長が次の発言者「小泉君」と「徳永エリ」を指名するフレーズが質問文中に混入している。これは Whisper が委員長の指名発言と質疑者の発言を一続きのテキストとして認識した結果。",
+      "estimated_cause": "speaker_tagger が委員長の短い指名発言（「小泉君」）と次話者（「徳永エリ」）の発言境界を正確に分割できず、質疑者の発話として吸収してしまった。委員長指名のリアルタイム的な発話パターンへの対応が困難。",
+      "downstream_impact": []
+    }
+  ],
+  "blindspots": [
+    "raw_transcript.json の whisper_segments を逐一精査していない（サンプリングのみ）。他の固有名詞誤認識が存在する可能性がある",
+    "外部の議会公式議事録との照合は未実施（宮森小学校・太山飛行場等の確認に限界あり）",
+    "各 qa_pair の summary の事実正確性（要約でのLLM補正による情報改変）を全件検証していない",
+    "topics.json の related_speakers 記載は questioner 側のみ確認し、answer 側は照合していない",
+    "llm_model が google/gemma-4-31B-it であることによる特有の幻覚傾向を考慮していない"
+  ],
+  "narrative": {
+    "overall": "本セッション（参議院 沖縄・北方問題及び地方に関する特別委員会、2026-04-24）は51件の質問応答を含む大規模な委員会で、全体的な構造品質は中程度である。最も深刻な問題は Whisper による「墓参→母さん」の繰り返し誤認識（5箇所）と、summary.json における院名未確定・role フィールドの未置換という LLM 出力の不完全さである。スキーマ面では answer.role が全件空、metadata.speakers に答弁者が全員未登録、metrics が19.6%で null という系統的な欠損が確認された。Whisper 固有名詞誤認識（宮森→宮盛、電信線→電信船）は沖縄・北方領土文脈固有の難語に起因し、他セッションでも同種の問題が発生している可能性が高い。speaker 名の表記揺れ（木川田の3バリアント）と seniority 誤分類（8件）は downstream の分析精度に影響する。",
+    "top_findings": [
+      "Whisper が「北方墓参（ぼさん）」を「母さん」と5箇所誤認識し、回答文を含む qa_pairs.json に伝播している。北方領土問題の最重要用語の誤認識であり、誤解を招く記録となっている",
+      "summary.json の session_summary が「衆議院（または参議院）」と院名を確定しない形で出力され、key_commitments.role がテンプレート文字列「役職名（主要1つ）」のままになっている。LLM がプロンプト指示を値として出力する系統的バグの証拠",
+      "qa_015 答弁文（先島諸島住民避難計画）で「3点申し上げますと、1つ目は、3つ目は…」と2点目が完全欠落しており、安全保障に関わる重要情報が記録から失われている"
+    ]
+  }
+}

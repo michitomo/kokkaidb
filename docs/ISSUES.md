@@ -2,13 +2,15 @@
 
 現時点（2026-04-14）のコードベース・生成データ・閲覧サイトを網羅的にレビューした結果をまとめる。
 
+> **2026-05-10 追記**: 後続コミットで対応された項目のタイトル先頭を `[Resolved]` に書き換え、各項目末尾に検証根拠（**対応**: ...）を追記した。残課題のうちコード/CI 由来の指摘は `docs/ISSUES2.md` に再整理済み。
+
 法案タグ凡例: 各課題に `📋 法案関連` タグがある場合、第221回国会の提出予定法案（`docs/laws.md`）に直接影響する問題であることを示す。
 
 ---
 
 ## 1. データ生成（kokkai-transcriber）
 
-### 1-1. [Critical] full_text がQ&Aペアごとに正しく分割されていない — 📋 法案関連
+### 1-1. [Resolved] full_text がQ&Aペアごとに正しく分割されていない — 📋 法案関連
 
 **現象**: 同一セグメント内の複数Q&Aペアが同一の `full_text` を持っている。例えばセグメント3（早稲田ゆき）の10ペアは、Q側が全て同じ3,328文字、A側も8ペアが同じ2,590文字。
 
@@ -22,7 +24,9 @@
    - 最終フォールバック: セグメント全体ではなく、該当ロール（質疑者or答弁者）の発言のみを使用
 3. パイプラインを再実行してデータを再生成
 
-### 1-2. [Critical] sentence_indices が全ペアで空配列 — 📋 法案関連
+**対応**: `structurer.py` が sentence_indices フローに刷新済み（`_assemble_full_text_from_sentences`、`_extract_pairs_from_response` が `sentence_indices` を直接読む）。実データ（`data/shugiin/2026/03/02/56088_予算委員会/qa_pairs.json`）で `[.pairs[].question.full_text] | group_by(.) | map(length) | max` = 1 を確認。
+
+### 1-2. [Resolved] sentence_indices が全ペアで空配列 — 📋 法案関連
 
 **現象**: 42ペア全てで `sentence_indices` が空（`[]`）。LLMがインデックスを返していない。
 
@@ -34,7 +38,9 @@
 3. プロンプトを改善: 番号指定の例を具体的に複数示す、few-shot例を追加
 4. 代替アプローチ: TF-IDF/embeddingベースでsummaryに最も近い文を自動選択
 
-### 1-3. [High] 姓の先頭2文字マッチングが不正確 — 📋 法案関連
+**対応**: プロンプト改善後、実データで `q_full_text` 長が 26〜843 文字とばらつく値を確認（旧データのように全 0 ではない）。`docs/ISSUES2.md` 1-2 にて、それでも空 `sentence_indices` が混入した場合の保存抑制を残課題として追跡。
+
+### 1-3. [Resolved] 姓の先頭2文字マッチングが不正確 — 📋 法案関連
 
 **現象**: `_fuzzy_lookup()` は `name[:2]` で姓マッチングを行うが、1文字姓（林、森など）で誤マッチする。
 
@@ -45,7 +51,9 @@
 - または、Levenshtein距離で最も近い名前を選択
 - 最低限: マッチが複数候補ある場合は完全一致を優先、なければ最短一致
 
-### 1-4. [High] SQLite並行アクセスの競合
+**対応**: `src/speaker_lookup.py` に切り出し、`SINGLE_CHAR_SURNAMES`（林・森・原・関 ほか）を frozenset 化、`find_by_name` が prefix 長 (2,1,3) を順に試行する `allow_single_char` ゲート付きアルゴリズムを実装。`structurer._fuzzy_lookup` はその互換ラッパー。テストは `tests/test_speaker_lookup.py`。
+
+### 1-4. [Resolved] SQLite並行アクセスの競合
 
 **現象**: `state.py` にロック機構がなく、複数パイプラインプロセスが同時に同じDBにアクセスすると破損の恐れ。
 
@@ -57,7 +65,9 @@ conn.execute("PRAGMA journal_mode=WAL")
 conn.execute("PRAGMA busy_timeout=5000")
 ```
 
-### 1-5. [Medium] 文分割が「。」のみ対応
+**対応**: `state.py:18-21` で `check_same_thread=False` + `PRAGMA journal_mode=WAL` + `PRAGMA busy_timeout=5000` を実装済み。なお現状 `state.py` 自体は `batch.py`/`pipeline.py` から未使用（`docs/ISSUES2.md` 3-2 でデッドコード化を別課題として追跡）。
+
+### 1-5. [Resolved] 文分割が「。」のみ対応
 
 **現象**: `_split_sentences()` は `。`（句点）でのみ分割。`？`、`！`、`…。` などのパターンに対応していない。
 
@@ -65,45 +75,37 @@ conn.execute("PRAGMA busy_timeout=5000")
 
 **解決策**: 正規表現で `。|！|？` + 後続空白で分割。括弧内の句読点は除外。
 
-### 1-6. [Medium] LLMレスポンスのJSON解析にエラーハンドリングなし
+**対応**: `structurer.py:54` で `re.split(r'(?<=[。？！])', text)` を採用。
+
+### 1-6. [Resolved] LLMレスポンスのJSON解析にエラーハンドリングなし
 
 **現象**: `structurer.py:298` の `json.loads(content)` は malformed JSON で例外が出る。
 
 **解決策**: try/except で囲み、パースエラー時はログ出力して空配列を返す。リトライも検討。
 
-### 1-7. [Medium] speaker_tagger.py のLLMレスポンス検証が不十分
+**対応**: `structurer.py:340-343, 683-686` で `json.JSONDecodeError` を捕捉して `logger.error` + 空リスト/早期 return を実装。
 
-**現象**: LLMが返すutterancesの `speaker`/`role`/`text` キーが欠損した場合、KeyErrorで落ちる。
+### 1-7〜1-9. [Migrated → STRUCTURER_REWRITE.md]
 
-**解決策**: `.get()` でデフォルト値を使い、欠損フィールドをログに記録。
+以下の3項目はパイプライン完全刷新計画に取り込み、本書から削除した:
 
-### 1-8. [Low] video_url がセグメント単位で同一 — 📋 法案関連
+- **1-7 speaker_tagger.py の LLMレスポンス検証 (json.loads 残課題)** → `docs/STRUCTURER_REWRITE.md §2.15 パイプライン堅牢性`
+- **1-8 video_url がセグメント単位で同一 (ペア単位の精度向上)** → `docs/STRUCTURER_REWRITE.md §2.13 timestamp_inconsistency`
+- **1-9 follow_up_ids 未実装** → `docs/STRUCTURER_REWRITE.md §2.14 other`
 
-**現象**: 同一セグメント内の全Q&Aペアが同じ `video_url` を持つ。ペアごとのタイムスタンプ精度がない。
-
-**原因**: `video_url` はセグメントの開始時間を使っているため、ペアごとの開始時刻が区別できない。
-
-**解決策**:
-- utterances にタイムスタンプがあれば、Q&Aペアの開始utteranceの時刻を使用
-- Whisperのword-level timestampsを活用してより精密なタイムスタンプを算出
-
-### 1-9. [Low] follow_up_ids が未実装
-
-**現象**: モデルに `follow_up_ids` フィールドがあるが、常に空配列。
-
-**解決策**: 実装するか、モデルからフィールドを削除して混乱を防ぐ。
-
-### 1-10. [Low] Dockerfileにffprobeが含まれていない可能性
+### 1-10. [Resolved] Dockerfileにffprobeが含まれていない可能性
 
 **現象**: `audio/extractor.py` は ffprobe を使って動画の長さを取得するが、Docker imageに ffprobe が含まれているか未確認。
 
 **解決策**: Dockerfileで `ffmpeg` パッケージをインストールすれば通常 `ffprobe` も含まれるが、明示的に確認。
 
+**対応**: Docker 構成自体を廃止（CLAUDE.md 参照）。`batch.yml` の ingest ジョブで `apt-get install -y ffmpeg` を直接実行しており、ubuntu-latest の `ffmpeg` パッケージは ffprobe を同梱するため問題なし。
+
 ---
 
 ## 2. 静的サイト（site/）
 
-### 2-1. [High] 「全文を表示」が全ペアで同じテキストを表示 — 📋 法案関連
+### 2-1. [Resolved] 「全文を表示」が全ペアで同じテキストを表示 — 📋 法案関連
 
 **現象**: 同一セグメント内のQ&Aペアの全文展開が全て同じテキスト。ユーザーが「このQ&Aの該当部分」を読みたいのに、長いテキスト全体が表示される。
 
@@ -113,7 +115,9 @@ conn.execute("PRAGMA busy_timeout=5000")
 - full_text が空の場合は「全文を表示」ボタンを非表示
 - 同一セグメント内で重複するfull_textの場合、「セグメント全文」と表示して誤解を防ぐ
 
-### 2-2. [Medium] browse ページのbase path 取得が不統一
+**対応**: 1-1 の解消によりデータ側で重複が消えたため、UI 側の表示も自動的に改善。
+
+### 2-2. [Resolved] browse ページのbase path 取得が不統一
 
 **現象**: コンポーネントによって base path の取得方法が異なる:
 - `FilterPanel.jsx`: `import.meta.env.BASE_URL`
@@ -124,13 +128,17 @@ conn.execute("PRAGMA busy_timeout=5000")
 
 **解決策**: Astro親コンポーネントから `base` をpropsで渡す方式に統一。
 
-### 2-3. [Medium] OGP・SEOメタタグの欠如
+**対応**: `FilterPanel.jsx`、`SessionCalendar.jsx`、`TopicHeatmap.jsx`、`CommitmentTracker.jsx` のすべてが `import.meta.env.BASE_URL` 経由に統一済み。`document.querySelector("base")` パターンは消滅。
+
+### 2-3. [Resolved] OGP・SEOメタタグの欠如
 
 **現象**: `<meta property="og:*">` タグ、`<meta name="description">` が未設定。SNSでシェアした際にプレビューが表示されない。
 
 **解決策**: `BaseLayout.astro` にOGPタグを追加。各ページからtitle/descriptionをslotで渡す。
 
-### 2-4. [Medium] ダッシュボードページがデータ1セッションのみ
+**対応**: `site/src/layouts/BaseLayout.astro:16-20` で `meta name="description"` / `og:title` / `og:description` / `og:type` / `og:locale` を実装。Props で title/description を受ける。
+
+### 2-4. [Resolved] ダッシュボードページがデータ1セッションのみ
 
 **現象**: ヒートマップ、トレンドチャート、回避度ランキング等がデータ1件のため実質的に意味をなさない。
 
@@ -138,13 +146,17 @@ conn.execute("PRAGMA busy_timeout=5000")
 
 **解決策**: 複数セッションのデータを蓄積した後に評価する。現段階では「データが蓄積されると充実します」等のメッセージを表示。
 
-### 2-5. [Medium] generate-api.ts と data.ts で型定義が重複
+**対応**: バッチ運用が回り始め、`data/` 配下に両院多数（2026-02 以降の衆議院、2026-04 以降の参議院）のセッションが蓄積済み。ダッシュボードは実用レベルの分布を表示する。
+
+### 2-5. [Resolved] generate-api.ts と data.ts で型定義が重複
 
 **現象**: `scripts/generate-api.ts` と `src/lib/data.ts` で `QAPair`、`SessionMetadata` 等の型が独立に定義されている。
 
 **リスク**: 片方を変更した際にもう一方との不整合が起きる。
 
 **解決策**: 共通の型定義ファイル（`src/types.ts`）を作成し、両方からimport。
+
+**対応**: `site/src/types.ts` を共通ソースに据え、`generate-api.ts` も `src/lib/data.ts` も同ファイルから `SessionMetadata` / `QAPair` / `QAPairsOutput` 等を import する形に統一済み。
 
 ### 2-6. [Low] SessionCalendar のキーボードナビゲーション未対応
 
@@ -170,13 +182,9 @@ conn.execute("PRAGMA busy_timeout=5000")
 
 ## 3. スクレイパー
 
-### 3-1. [Medium] 衆議院スクレイパーのDOM構造依存
+### 3-1. [Migrated → STRUCTURER_REWRITE.md §2.16] 衆議院スクレイパーのDOM構造依存
 
-**現象**: speaker抽出が `<a href=re("time=")>` → 5階層上の `<tr>` というDOM走査に依存。HTMLレイアウト変更で即座に壊れる。
-
-**解決策**:
-- HTML構造変更を検出するバリデーション（期待するタグ階層がない場合はWARNING）
-- テスト用のHTMLフィクスチャを定期的に実サイトと比較するスモークテスト
+`docs/STRUCTURER_REWRITE.md §2.16 スクレイパー堅牢性` に取り込み。
 
 ### 3-2. [Resolved] 参議院の動画 URL 解決と過去日付検索
 
@@ -196,23 +204,23 @@ POST `keyword_search.php` が F5 BIG-IP ASM Bot Defense で保護されており
 
 依存: `pip install -e '.[browser]'` && `python -m playwright install --with-deps chromium`
 
-### 3-3. [Low] 日付 "unknown" のフォールバック
+### 3-3. [Migrated → STRUCTURER_REWRITE.md §2.16] 日付 "unknown" のフォールバック
 
-**現象**: 参議院スクレイパーで日付解析に失敗した場合、`"unknown"` が返される。これがそのまま出力ディレクトリパスに使われると `data/sangiin/unkn/ow/n/` のようなおかしなパスが生成される。
-
-**解決策**: 日付解析失敗時は例外を投げてパイプラインを停止。
+`docs/STRUCTURER_REWRITE.md §2.16 スクレイパー堅牢性` に取り込み。
 
 ---
 
 ## 4. テスト
 
-### 4-1. [High] structurer のsentence_indices関連テストが不足
+### 4-1. [Resolved] structurer のsentence_indices関連テストが不足
 
 **不足テスト**:
 - sentence_indices が空配列の場合の振る舞い
 - sentence_indices が範囲外の場合
 - 空セグメント（utterancesなし）の場合
 - fuzzy_lookup の1文字姓・一致なしケース
+
+**対応**: `tests/test_structurer.py` に「範囲外インデックスは無視される」「全て範囲外なら空文字」「`sentence_indices: []` ケース」「evasion_score の範囲外クランプ」等のユニットテストを追加。1 文字姓・複数候補ケースは `tests/test_speaker_lookup.py` に分離して網羅。
 
 ### 4-2. [Medium] LLMレスポンス異常系テストがない
 
@@ -243,17 +251,21 @@ POST `keyword_search.php` が F5 BIG-IP ASM Bot Defense で保護されており
 
 **解決策**: `uv.lock` または `requirements.txt` で lockfile を生成・管理。
 
-### 5-2. [Medium] API キー管理が分散
+### 5-2. [Resolved] API キー管理が分散
 
 **現象**: `DEEPINFRA_API_KEY` を `transcriber.py`、`speaker_tagger.py`、`structurer.py` がそれぞれ独立に取得。
 
 **解決策**: `src/api_client.py` に共通クライアントファクトリを作成。
 
-### 5-3. [Low] publisher.py が origin/main 固定
+**対応**: `src/api_client.py` を実装し、共通の `DEEPINFRA_BASE_URL` / `MAX_WORKERS_*` 設定 / `with_retry`（指数バックオフ + ジッター）/ `ensure_fd_limit` を集約。各ステップ（transcriber, speaker_tagger, structurer, transcript_corrector）はここから利用する。
+
+### 5-3. [Resolved] publisher.py が origin/main 固定
 
 **現象**: `git push origin main` がハードコード。デフォルトブランチ名が異なるリポジトリで失敗。
 
 **解決策**: `git symbolic-ref refs/remotes/origin/HEAD` でデフォルトブランチを自動検出。
+
+**対応**: `publisher.py:15-23` の `_get_default_branch()` で `git symbolic-ref refs/remotes/origin/HEAD` を呼び、失敗時のみ `"main"` フォールバック。`publisher.publish_session` と `batch._batch_push` の双方が同関数を共有。
 
 ---
 
@@ -286,15 +298,11 @@ POST `keyword_search.php` が F5 BIG-IP ASM Bot Defense で保護されており
 - ダッシュボードの法案別回避度サマリー
 - Q&Aペア単位の法案タグ付け（現在はセッション単位）
 
-### 6-2. [Medium] 法案タグの精度検証手段がない
+### 6-2. [Migrated → STRUCTURER_REWRITE.md §2.17] 法案タグの精度検証手段がない
 
-**現象**: 自動タグ付けの精度を検証する仕組みがない。
+`docs/STRUCTURER_REWRITE.md §2.17 法案タグ精度検証` に取り込み。
 
-**解決策**:
-- 手動アノテーション用のCSVを用意し、自動タグとの一致率を計測
-- 初期は少数セッションで手動検証し、閾値を調整
-
-### 6-3. [Low] 法案マスタの更新フロー
+### 6-3. [Resolved] 法案マスタの更新フロー
 
 **現象**: laws.md は手動更新。国会開会中に法案が追加・修正される。
 
@@ -302,20 +310,61 @@ POST `keyword_search.php` が F5 BIG-IP ASM Bot Defense で保護されており
 - 衆議院・参議院のWebサイトから法案一覧をスクレイピングする自動更新スクリプト（将来的）
 - 当面は手動更新で対応。laws.md 更新時に `parse_laws.py` を再実行
 
+**対応**: `src/laws_builder.py` を実装し、CLB（閣法; `scrapers/clb.py`）と Gian（衆法/参法; `scrapers/gian.py`）から法案一覧を統合スクレイピングして `data/laws/laws.json` と `laws_compact.txt` を生成。`batch.yml` の discovery ジョブで `python -m src.laws_builder --sessions 221` が走り、毎時更新される。
+
 ---
 
-## 優先度まとめ
+## 優先度まとめ（2026-05-10 時点）
 
-| 優先度 | ID | 概要 | 影響範囲 | 📋 法案関連 |
-|--------|-----|------|----------|:---:|
-| **Critical** | 1-1, 1-2 | full_text が正しく分割されない / sentence_indices が空 | データ品質・UX | Yes |
-| **High** | 1-3 | 姓マッチングの不正確さ | speaker/role 誤帰属 | Yes |
-| **High** | 1-4 | SQLite並行アクセス競合 | データ破損 | |
-| **High** | 2-1 | 全文表示が重複 | UX | Yes |
-| **High** | 4-1 | structurer テスト不足 | 品質保証 | |
-| **Done** | 6-1 | 法案フィルタ（browse ページ） | 実装済み | Yes |
-| **Medium** | 1-5〜1-7, 2-2〜2-5, 3-1〜3-2, 4-2〜4-3, 5-1〜5-2, 6-2 | 各種改善 | 堅牢性・保守性 | |
-| **Low** | 1-8〜1-10, 2-6〜2-8, 3-3, 4-4, 5-3, 6-3 | 細かい改善 | 体験向上 | |
+### 解消済み
+
+| ID | 概要 | 📋 法案関連 |
+|----|------|:---:|
+| 1-1 | full_text が Q&A ペアごとに正しく分割されない | Yes |
+| 1-2 | sentence_indices が全ペアで空 | Yes |
+| 1-3 | 姓の prefix マッチング不正確（1 文字姓） | Yes |
+| 1-4 | SQLite 並行アクセス（PRAGMA 未設定） | |
+| 1-5 | 文分割が `。` のみ | |
+| 1-6 | LLM JSON 解析にエラーハンドリング無し | |
+| 1-10 | Dockerfile の ffprobe（Docker 廃止で moot） | |
+| 2-1 | 全文表示が重複（1-1 連鎖） | Yes |
+| 2-2 | base path 取得方法の不統一 | |
+| 2-3 | OGP / SEO メタタグ欠如 | |
+| 2-4 | ダッシュボードがデータ少なすぎ | |
+| 2-5 | generate-api.ts と data.ts の型重複 | |
+| 3-2 | 参議院 mediasp.jp / 過去日付検索 | |
+| 4-1 | structurer の sentence_indices テスト不足 | |
+| 5-2 | API キー管理の分散 | |
+| 5-3 | publisher.py の origin/main ハードコード | |
+| 6-1 | 法案フィルタの実装 | Yes |
+| 6-3 | 法案マスタの更新フロー | Yes |
+
+### 残課題
+
+| 優先度 | ID | 概要 | 備考 |
+|--------|-----|------|------|
+| Medium | 4-2 | LLM レスポンス異常系テスト | 一部のみ |
+| Medium | 4-3 | スクレイパーのエンコーディング異常系テスト | フィクスチャ readBytes は対応済み、悪条件テスト未追加 |
+| Medium | 5-1 | 依存バージョンピン不足 | `docs/ISSUES2.md` 3-6 で再追跡 |
+| Low | 2-6 | SessionCalendar のキーボードナビ未対応 | |
+| Low | 2-7 | Pagefind の事前読み込みなし | |
+| Low | 2-8 | settings ページがプレースホルダ | Phase 6 待ち |
+| Low | 4-4 | 並行処理のテストなし | |
+
+### パイプライン完全刷新計画に取り込んだ項目（残課題から削除）
+
+下記はデータ生成起因のため、`docs/STRUCTURER_REWRITE.md` で統合管理する:
+
+| ID | 概要 | 移管先 |
+|-----|------|--------|
+| 1-7 | speaker_tagger の json.loads 例外捕捉 | §2.15 パイプライン堅牢性 |
+| 1-8 | video_url がセグメント単位で同一 | §2.13 timestamp_inconsistency |
+| 1-9 | follow_up_ids が未実装 | §2.14 other |
+| 3-1 | 衆議院スクレイパーの DOM 構造依存 | §2.16 スクレイパー堅牢性 |
+| 3-3 | 参議院スクレイパーの日付 "unknown" フォールバック | §2.16 スクレイパー堅牢性 |
+| 6-2 | 法案タグ精度の検証手段 | §2.17 法案タグ精度検証 |
+
+`docs/ISSUES2.md` には本ドキュメント作成後の第 2 次監査で見つかった項目（CI/CD・サイト堅牢性等）を別途整理してある。データ生成起因のものは ISSUES2 側でも `STRUCTURER_REWRITE.md` に移管済。
 
 ### 処理済みセッションと法案の対応
 

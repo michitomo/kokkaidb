@@ -1,0 +1,280 @@
+{
+  "session_id": "shugiin/2026/03/03/56090_議院運営委員会",
+  "chamber": "shugiin",
+  "date": "2026-03-03",
+  "deli_id": "56090",
+  "committee": "議院運営委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T12:00:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 2, "medium": 7, "low": 5, "total": 14},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "speaker_misattribution",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "raw_transcript seg 0 が山口俊一に帰属されているが内容は菅原晶子の所信表明",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[0].speaker_name",
+        "segment_index": 0,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.segments[0].speaker_name='山口俊一' だが text の冒頭は「私は同友会において長年にわたり、経済社会の諸問題の解決に向けた政策課題に取り組んでまいりました。」と明らかに菅原晶子の所信表明である。utterances.segments[0] の唯一の発話も speaker='菅原晶子', role='参考人' となっており矛盾している。metadata.speakers の山口俊一の start_seconds=1191.0 はこのセグメントの開始時刻と一致するが、実際の発話者は菅原晶子。",
+      "estimated_cause": "HLSセグメントの scraper がセグメント開始時点の登壇者（山口俊一委員長）をそのまま speaker_name に割り当てているが、実際の発話はその直後から始まる菅原晶子の所信表明であった。scraper がページ上の『発言者一覧』の最初のエントリを取得したことで委員長名が誤割当された可能性が高い。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F002",
+      "category": "content_missing",
+      "secondary_categories": ["speaker_misattribution"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "西岡秀子の厚生労働大臣補佐官役割に関する質問がqa_pairsに未収録",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs",
+        "segment_index": 3,
+        "qa_id": null
+      },
+      "evidence": "utterances.segments[3] に西岡秀子の質問「官のご経験の中で、先ほども申し上げました厚生労働大臣補佐官、これを務められた中で……国家公務員の人事制度につき、」（seg 3 末尾で途切れ）が存在する。これに対する菅原晶子の回答が utterances.segments[4] 冒頭「内閣官房や厚労省における勤務を通じて……国家公務員制度改革推進本部企画官という立場で……」として記録されているが、qa_pairs.json にはこの Q&A に対応するペアが存在しない。西岡の質問は 6 件だが qa_pairs の西岡質問は qa_009, qa_010, qa_012 の 3 件のみ。",
+      "estimated_cause": "セグメント境界をまたぐ質問（seg 3 で途切れ、seg 4 で回答が始まる）を structurer が独立したQAペアとして認識できなかった。また seg 4 の菅原回答 utterance が qa_009（西岡の別質問への回答）として流用されている可能性がある。",
+      "downstream_impact": ["summary.json", "topics.json"]
+    },
+    {
+      "id": "F003",
+      "category": "timestamp_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs の video_url が質問者の実際の開始時刻ではなくHLSセグメント開始時刻を指す（14/17件）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].video_url",
+        "segment_index": null,
+        "qa_id": "qa_001"
+      },
+      "evidence": "qa_001, qa_002（Q=中曽根康隆）の video_url は time=1265.3（菅原晶子の開始秒）を指すが、中曽根の実際の開始時刻は metadata.speakers によると 1710.9。qa_003, qa_004（Q=中川宏昌）は time=1710.9（中曽根の開始秒）。qa_005（Q=奥下剛光）は time=1710.9（中曽根の開始秒、奥下は 2706.3）。qa_009-012（Q=西岡秀子）は time=2706.3（奥下の開始秒、西岡は 3103.0）。17件中 14件が不一致。ユーザーが動画リンクをクリックすると、実際の質問開始よりも数分前の映像に飛ぶ。",
+      "estimated_cause": "structurer が QA を抽出する際、video_url に HLS セグメントの start_seconds（=前の登壇者の開始時刻）をそのまま使用している。実際の質問者は前のセグメントの後半から発言を開始するため、セグメント開始時刻は常に 1〜数十分ずれる構造的問題。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F004",
+      "category": "whisper_hallucination_loop",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "seg 7・8 が同一テキスト・同一 avg_logprob の Whisper ハルシネーション出力",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[7].text",
+        "segment_index": 7,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.segments[7]（speaker=峰島侑也）と segments[8]（speaker=山口俊一）が完全に同一の text='ご視聴ありがとうございました。' かつ avg_logprob=-0.41225735188436374（完全一致）を持つ。映像末尾またはポーズ部分の無音/低音量区間に対して Whisper が同一のボイラープレートを繰り返し生成した典型的なハルシネーション。utterances.segments[7], [8] にも同文が転記されている。",
+      "estimated_cause": "HLS切り出し後の末尾セグメントが無音または映像エンドカードのみで、Whisper large-v3-turbo が低エントロピーな音声に対してよく生成するボイラープレートフレーズを出力した。同一 avg_logprob は同一音声チャンクが 2 回処理された可能性も示唆する。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F005",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "誠実正義（菅原氏の座右の銘）が精神整備と誤認識",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[6].text",
+        "segment_index": 6,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.segments[6].text に「私はこれまでの職業人生で、フェアネス、精神整備をとても重視してまいりました」と記録されている。しかし同じ発言者（菅原晶子）が qa_011 の回答（値観について問われた箇所）で「誠実正義という言葉は大切にしてまいりました」と述べており、「誠実正義」が菅原氏の個人的な座右の銘であることが確認できる。「誠実正義」（じょうじ/seiritu-seigi）が音韻的に近い「精神整備」（せいしんせいび）に誤変換された。utterances.segments[6][0].text にも同誤認識が転記されている。",
+      "estimated_cause": "「誠実正義」は固有の四字熟語でWhisperの学習コーパスに少ない表現。音韻的に類似する「精神整備」に誤変換されたと推定。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F006",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "橋下徹が橋本徹と誤認識（奥下剛光の発言）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[3].text",
+        "segment_index": 3,
+        "qa_id": null
+      },
+      "evidence": "utterances.segments[3].utterances[12].text に「橋本徹の秘書をしていたときに、大阪市役所時代に民間の力を入れようということで」とある。奥下剛光は日本維新の会所属議員であり、大阪市役所での民間登用改革は橋下徹（大阪市長）が行ったものと照合できる。正しい氏名は「橋下徹」（はしもとてつ）だが、「橋本徹」（はしもとてつ）と誤変換されている（橋下→橋本の一字誤認識）。raw_transcript.segments[3].text にも同誤認識が存在する。",
+      "estimated_cause": "橋下徹は著名人だが「橋下」という珍しい字の苗字がWhisperに正確に認識されにくい。より一般的な苗字「橋本」に誤変換されたと推定。事実誤認として利用者が誤った人物を検索する可能性がある。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F007",
+      "category": "content_missing",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_010 Q・A ともにセグメント境界で途切れ（中長期視点の問い・答えが不完全）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[9]",
+        "segment_index": 4,
+        "qa_id": "qa_010"
+      },
+      "evidence": "qa_010.question.full_text は「なかなか個別の政策に落ちた途端、中長期的な視点よりもどうしても足元……。」で終了（文中断）。utterances.segments[3] の西岡発言も同様に途切れている。qa_010.answer.full_text は「行くためには、政治と政党間の関係をしっかり厳粛に守っていくことが必要だと思います。」と文の途中から始まっている。直前セグメント(seg 3)の末尾で切断された質問の続きと、seg 4 冒頭の回答の前半部分がいずれも欠落している。",
+      "estimated_cause": "HLS セグメント境界でのテキスト切断をstructurerが処理しきれず、セグメント末尾の断片をそのままfull_textに使用した。セグメント境界をまたぐ発言の統合ロジックが機能していない。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F008",
+      "category": "content_missing",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_013 回答がセグメント先頭で途切れ（最初の一文が欠落）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[12].answer.full_text",
+        "segment_index": 5,
+        "qa_id": "qa_013"
+      },
+      "evidence": "qa_013.answer.full_text は「実体験することができました。先ほど架け橋とおっしゃられましたが……」と始まるが、utterances.segments[4].utterances[0].text は「内閣官房や厚労省における勤務を通じて、公務員が実際にどのように物事を分析し、関係者と調整し、施策として取りまとめていくのか、実体験することができました。」であり、「内閣官房や厚労省における勤務を通じて……施策として取りまとめていくのか、」という文頭部分が qa_013 の full_text から欠落している。",
+      "estimated_cause": "seg 4（start=2706.3）の冒頭 utterance が前のQA（西岡秀子の 補佐官質問への回答）と判断されたか、セグメント境界処理の不整合により全文が取り込まれなかった。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F009",
+      "category": "content_missing",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_012 回答がセグメント境界で途切れ（官民比較・勧告機能の説明が欠落）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[11].answer.full_text",
+        "segment_index": 4,
+        "qa_id": "qa_012"
+      },
+      "evidence": "qa_012.answer.full_text は「……このため、労働基本権制約の代償機能を担う人事院は、毎年民間賃金等の調査を……。」で終わっている（省略記号で明示的に途切れ）。実際の回答続きは utterances.segments[5] 冒頭の菅原発話「官民比較を行って、民間情勢に準拠することを基本として勧告を行っていると承知しています。……魅力ある公務職場を実現していくことが、労働基本権制約の代償機能を担う人事院の役割だと認識しております。」であり、この重要な部分が欠落している。",
+      "estimated_cause": "qa_012 に対応する菅原回答はセグメント 4 と 5 をまたいでいるが、structurer が seg 4 末尾のテキストのみを使用し、seg 5 冒頭の続きを取り込まなかった。",
+      "downstream_impact": ["summary.json"]
+    },
+    {
+      "id": "F010",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers の role フィールドが全員空文字列",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[*].role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers の全 9 エントリについて role=\"\" (空文字列)。qa_pairs.json の answer.role は「参考人 人事官候補（公益社団法人経済同友会常務理事）」と充実した内容を持つが、metadata 側には反映されていない。また affiliation フィールドが「議院運営委員長」「参考人 人事官候補（公益社団法人経済同友会常務理事）」などの役割情報を保持しており role との二重化・不整合が生じている。",
+      "estimated_cause": "pipeline の speaker_tagger が role フィールドを埋めるロジックを持っていないか、デフォルト値として空文字列を出力している。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F011",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata の duration・committee_id・session_number が空/null",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.duration",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.duration=\"\" (空文字列)、metadata.committee_id=null、metadata.session_number=null。動画の総再生時間（4435.2秒から逆算で約73分）は raw_transcript から算出可能だが duration フィールドには反映されていない。committee_id と session_number は衆議院TV側でも提供されない場合があるが、空文字と null の混在はスキーマ一貫性を損なう。",
+      "estimated_cause": "scraperまたはpipelineが衆議院TVからこれらの値を取得できなかった場合のデフォルト値が null と空文字で統一されていない。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F012",
+      "category": "schema_inconsistency",
+      "secondary_categories": ["role_label_error"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_017.question.party に政党名でなく役職名「議院運営委員長」が入っている",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[16].question.party",
+        "segment_index": 6,
+        "qa_id": "qa_017"
+      },
+      "evidence": "qa_017.question.speaker='山口俊一'、question.party='議院運営委員長'。party フィールドは政党名を格納するフィールドであるが、委員長職（役職）が入っている。他の QA では party は「自由民主党・無所属の会」「日本維新の会」等の政党名が正しく入っている。山口俊一の実際の政党は自由民主党であり、議院運営委員長は単なる委員会職。",
+      "estimated_cause": "structurer（LLM）が山口俊一の政党情報を取得できず、発言者ラベルから「議院運営委員長」を party フィールドに誤って代入した。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F013",
+      "category": "duplicate",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers に山口俊一が2回登録されている",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers に山口俊一が start_seconds=1191.0 (11:00, duration=1分) と start_seconds=4435.2 (11:54, duration=1分) の 2 エントリで存在する。委員長として開会・閉会の両方で発言したためだが、同一人物が複数エントリとして登録されている。speakers リストを人物単位で使う際に重複カウントが生じる。",
+      "estimated_cause": "pipeline が scraper の登壇者リスト（各発言セグメントごとに記録）をそのまま speakers に変換しており、同一人物の複数回登壇を dedup していない。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F014",
+      "category": "speaker_misattribution",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "likely_systemic",
+      "title": "utterances.segments[3][12] の奥下剛光発話が委員長の呼名「奥下剛光君。」から始まる",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[3].utterances[12].text",
+        "segment_index": 3,
+        "qa_id": null
+      },
+      "evidence": "utterances.segments[3].utterances[12].text='奥下剛光君。橋本徹の秘書をしていたときに、大阪市役所時代に……'。発話テキストが委員長による指名コール「奥下剛光君。」から始まっており、speaker_tagger が委員長発話（指名）と奥下の続く発言を同一 utterance として統合してしまっている。同様のパターンが utterances.segments[6] の山口俊一発話にも見られる（「山口俊一。それでは3点目……」）。",
+      "estimated_cause": "speaker_tagger が連続する短い発話（委員長の指名コール→次の発言者の発言）の境界を認識できず、単一 utterance に統合した。指名コールと本発話の音声的距離が短い場合に発生しやすい。",
+      "downstream_impact": []
+    }
+  ],
+  "blindspots": [
+    "raw_transcript の全 whisper_segments の logprob・temperature を逐一検査していない（サンプルのみ）",
+    "菅原晶子の所信表明（seg 0〜1）の内容の事実確認（経歴・役職等）は外部情報源との照合未実施",
+    "自由質疑フェーズが実際に行われたか（utterances に記録がない）の確認が不十分",
+    "summary.related_laws の law_004 が qa_006（デジタル化）に対応する根拠の詳細確認未実施",
+    "topics.json の related_speakers に石川勝が '官民の人材循環' トピックに含まれているが qa_013 のみで根拠が薄い点の検証不足"
+  ],
+  "narrative": {
+    "overall": "本セッションは人事官候補者（菅原晶子氏）への所信聴取・質疑という構造的に単純な一問一答形式であり、qa_pairs の話者帰属・内容は全体的に正確である。一方で、HLS セグメント境界をまたぐ発言の処理に構造的な弱点があり、qa_010・qa_012・qa_013 の計 3 件でセグメント境界での内容欠落が確認された。さらに西岡秀子の厚生労働大臣補佐官に関する質問（セグメント 3 末尾で途切れ）に対応する QA ペアが完全に欠落しており、重要な Q&A 内容がデータベースから失われている。Whisper については「誠実正義→精神整備」「橋下徹→橋本徹」の 2 件の誤認識と、末尾セグメントでの同一ボイラープレート二重出力ハルシネーションが確認された。video_url の時刻参照は全 17 件中 14 件が実際の質問者開始時刻でなく前セグメントの開始時刻を指すという構造的問題を抱えており、動画ナビゲーション機能の実用性を大きく損なっている。",
+    "top_findings": [
+      "video_url タイムスタンプが 14/17 件で誤り（前のHLSセグメント開始時刻を指す）—構造的問題でユーザーが動画の正しい箇所にジャンプできない",
+      "西岡秀子の補佐官役割質問（＋菅原の内閣官房経験回答）が qa_pairs から完全欠落—重要な経歴情報が検索・閲覧不能",
+      "セグメント境界での内容欠落が qa_010・qa_012・qa_013 で確認—回答の途中から始まるまたは途中で終わる不完全なテキストが3件"
+    ]
+  }
+}

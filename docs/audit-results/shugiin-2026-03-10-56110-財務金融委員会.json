@@ -1,0 +1,279 @@
+{
+  "session_id": "shugiin/2026/03/10/56110_財務金融委員会",
+  "chamber": "shugiin",
+  "date": "2026-03-10",
+  "deli_id": "56110",
+  "committee": "財務金融委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T10:30:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 5, "medium": 6, "low": 3, "total": 14},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["metadata_missing_speaker"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "segment 2全11QAの質問者が岡本三成→武村展英に誤帰属",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[?(@.segment_index==2)].question.speaker",
+        "segment_index": 2,
+        "qa_id": "qa_019"
+      },
+      "evidence": "utterances.json segment 2 の segment_speaker=岡本三成、かつ全 utterances の role に「質疑者」が存在せず委員長（武村展英）の発言テキスト内に岡本三成の質問文が埋め込まれている。qa_pairs.json ではqa_019〜qa_029 の question.speaker がすべて武村展英（財務金融委員長）と記録されており、対応する topics.json の related_speakers も武村展英を列挙（岡本三成なし）。実際に qa_020 question.full_text の冒頭は「岡本三成はじめに大臣にこの質問をさせていただいたのは…」と岡本三成本人の一人称で語っている。",
+      "estimated_cause": "speaker_tagger が委員長の「岡本三成君。」呼びかけと岡本三成の発言テキストを同一 utterance に混在させた utterances.json の段階で既に話者分離に失敗しており、質疑者ラベルが付与されなかった。structurer が segment_speaker ではなく utterance の role=委員長 から speaker を引き継いだため。",
+      "downstream_impact": ["topics.json", "summary.json"]
+    },
+    {
+      "id": "F002",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["role_label_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_039 回答者が政府側→伊佐進一（質問者）に誤帰属",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[?(@.id=='qa_039')].answer",
+        "segment_index": 3,
+        "qa_id": "qa_039"
+      },
+      "evidence": "qa_039.answer.speaker=「伊佐進一」、role=「中道改革連合・無所属」。伊佐進一は本セッションの質疑者（野党議員）であり、住宅ローン減税周知施策の答弁者ではありえない。answer.full_text の内容（「令和8年度税制改正による住宅ローン減税制度の改正内容の周知につきましては…民間の住宅情報サイトや住宅の関連団体などと連携をしまして…」）は明らかに政府側（財務省）の答弁文体で、role フィールドにも党名「中道改革連合・無所属」が入るスキーマ違反を伴う。",
+      "estimated_cause": "speaker_tagger が segment 3（近藤雅彦質疑ブロック）中の発言をパーシングした際、直前の質疑者（伊佐進一）のラベルを誤って次の答弁に持ち越した。委員長による「伊佐君。」呼びかけを同一 utterance に取り込んだため、答弁直前に「伊佐進一」が発言者として登場する構造になっていた可能性がある。",
+      "downstream_impact": ["topics.json"]
+    },
+    {
+      "id": "F003",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["role_label_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_064 回答者が政府側→岡本三成（質問者）に誤帰属",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[?(@.id=='qa_064')].answer",
+        "segment_index": 5,
+        "qa_id": "qa_064"
+      },
+      "evidence": "qa_064.answer.speaker=「岡本三成」、role=「中道改革連合・無所属」。JFREC（金融経済教育推進機構）の実績に関する答弁内容（「JFRECはKPIといたしまして、講師派遣やセミナーイベントにつきまして、実施回数で1万回…金融庁といたしましては…」）は金融庁担当者の答弁であり、岡本三成（野党議員）が述べる内容ではない。role にも党名が記載されスキーマ違反。",
+      "estimated_cause": "F002 と同じ構造的原因。speaker_tagger が段落境界で話者ラベルを誤引き継ぎ。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F004",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["role_label_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_087 回答者が政府側→田中健（質問者）に誤帰属",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[?(@.id=='qa_087')].answer",
+        "segment_index": 6,
+        "qa_id": "qa_087"
+      },
+      "evidence": "qa_087.answer.speaker=「田中健」、role=「国民民主党・無所属クラブ」。外国人団体旅行客への対応に関する答弁（「現在、都市部を中心とした地域への観光客の偏在傾向が見られ…国際観光旅客税も活用し…」）は観光庁/国土交通省の行政官的文体で、田中健（野党議員）の答弁ではない。",
+      "estimated_cause": "F002 と同じ構造的原因。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F005",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["fact_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "qa_107 answer.full_text で「高市総理」が「高橋総理」と誤認識",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[?(@.id=='qa_107')].answer.full_text",
+        "segment_index": 8,
+        "qa_id": "qa_107"
+      },
+      "evidence": "qa_107.answer.full_text 中に「高橋総理がいつも申し上げておりますように、投資の足枷にならないように…」という記述がある。本セッションの全体を通じて内閣総理大臣は「高市総理」（高市早苗）として言及されており（summary、他QA全体で一貫）、「高橋総理」という人物は存在しない。同一 full_text 内に「高市内閣」も出現しており（qa_106 参照）、明らかに Whisper による音声認識誤り（高市→高橋）。",
+      "estimated_cause": "Whisper large-v3-turbo が「高市（たかいち）」を「高橋（たかはし）」と誤認識。「市」と「橋」は音が一部類似する。LLM 構造化ステップでも補正されなかった。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F006",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_079 answer.speaker「青木市税局長」（主税局長の誤認識）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[?(@.id=='qa_079')].answer.speaker",
+        "segment_index": 6,
+        "qa_id": "qa_079"
+      },
+      "evidence": "qa_079.answer.speaker=「青木市税局長」。本セッション全体で21回出現する「青木主税局長」と同一人物であるが、「主税」が「市税」に誤認識されている。「主（しゅ）」と「市（し）」の音韻的近接によるWhisper誤り。データ利用者が検索・集計する際に別人扱いされる。",
+      "estimated_cause": "Whisper large-v3-turbo による音声認識誤り。speaker_tagger がこの誤り表記をそのまま使用した。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F007",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "同一人物の answer.speaker が複数表記で混在",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.speaker",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "片山財務大臣（24回）・片山さつき（19回）・片山大臣（3回）の3表記、堀本総合政策局長（2回）・堀本局長（1回）・堀本直長（1回）の3表記、中谷財務副大臣（2回）・中谷副大臣（5回）、吉沢主税局次長（1回）・吉澤主計局次長（1回）（さらに漢字表記も揺れ）、今村大臣官房審議官（2回）・今村大臣官房文部科学戦略官（1回）等が混在。集計・検索時に同一人物として扱われない。",
+      "estimated_cause": "speaker_tagger が transcript の話者発言から動的にラベルを生成するため、同一人物でも文脈により呼称が変わる。正規化処理がない。",
+      "downstream_impact": ["summary.json"]
+    },
+    {
+      "id": "F008",
+      "category": "duplicate",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers に武村展英が午前・午後で2エントリ重複登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[0] and $.speakers[4]",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers[0]={name='武村展英', affiliation='財務金融委員長', start_seconds=150.8, start_time='09:00', duration_minutes=1} と metadata.speakers[4]={name='武村展英', affiliation='財務金融委員長', start_seconds=11876.1, start_time='13:00', duration_minutes=1} の2エントリが存在する。武村展英は委員長として午前・午後で会議を開会したため2エントリになったが、speakers リストでは同一人物として統合すべき。",
+      "estimated_cause": "speaker 検出ロジックが「会議の開会発言」を新規話者として登録する仕様のため、午後の再開時に同一人物が再度エントリされた。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F009",
+      "category": "timestamp_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "午後登壇者の start_time が start_seconds から約45分ずれ（昼休憩未考慮）",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[4..8].start_time",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "start_seconds=150.8 を 09:00 の基準として計算すると、午後の話者の start_seconds から求めた推定時刻と metadata.start_time の乖離は約45分（武村展英13:00→実計算12:15、田中健13:00→12:15、牧野俊一14:13→13:28、峰島侑也15:32→14:47、河村たかし16:27→15:42）。HLSストリームが昼休憩（約12:00〜13:00）を通じて連続録画されているため、start_seconds はそのまま増加するが start_time は実際の委員会再開時刻（13:00）に合わせており、両者の間に一貫性がない。",
+      "estimated_cause": "start_time は scraper が HTML から取得した実時刻、start_seconds は HLS stream のタイムスタンプで連続カウントされており、ランチブレーク分のオフセット補正が行われていない。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F010",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "video_url の time パラメータがセグメント先頭時刻のみで各QA個別時刻なし",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].video_url",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "同一 segment_index に属する全 QA の video_url が同じ time 値を持つ（例: segment 1 の qa_001〜qa_018 は全て time=220.3、segment 3 の qa_030〜qa_052 は全て time=7485.0）。セグメント内の質疑は数十分にわたる場合があり、最初の QA 以外では動画の正確な開始位置に飛べない。",
+      "estimated_cause": "structurer が video_url 生成時にセグメントの start_seconds のみを使用しており、個別 QA の時刻情報を持たない。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F011",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_080 の answer.speaker と answer.full_text が空文字（回答なし状態の未構造化）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[?(@.id=='qa_080')].answer",
+        "segment_index": 6,
+        "qa_id": "qa_080"
+      },
+      "evidence": "qa_080.answer.speaker=''、answer.full_text=''、answer.evasion_score=1.0。summary フィールドには「（回答なし。青木局長が制度説明をした後、牧野議員が要望を述べたところで次の質問へ移行）」と記録されており、実質的に答弁がなかった状態だが、answer.speaker が空文字でスキーマ的に誰が答弁しなかったかが不明確。",
+      "estimated_cause": "structurer が『回答なし』ケースを定義されたスキーマに落とし込む際に speaker を空にした。'no_answer' などの明示的な値や発言者を記録する設計がない。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F012",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata の必須フィールド（duration, committee_id, session_number, role）が空/null",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.duration, $.committee_id, $.session_number, $.speakers[*].role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.duration=''（空文字）、committee_id=null、session_number=null、mediasp_hash=''（空文字）。speakers 全9エントリの role フィールドも全て空文字。qa_pairs.json の answer.role も109件中106件が空文字（97.2%）。",
+      "estimated_cause": "スクレイパーが委員会IDや会期番号を衆議院TVのHTML から抽出できていない（フォールバック値なし）。duration はHLS ストリームを最後まで読み込まないと確定しないため未記入。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F013",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers に政府側答弁者（30名超）が未登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "qa_pairs の answer.speaker に登場するユニークな政府側答弁者は35名（青木主税局長、片山財務大臣、中谷副大臣、井口理財局長、中村理事等を含む）だが、metadata.speakers には議員9名のみ（うち武村展英は重複で実質8名）が登録されており、財務省・金融庁・その他省庁の参考人・答弁者は一切含まれない。",
+      "estimated_cause": "metadata.speakers の設計が「議事参加議員」のみを対象としており、政府参考人や答弁者を登録しない仕様。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F014",
+      "category": "summary_qa_divergence",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "unknown",
+      "title": "topics.json の14件のQAが「その他」にも未収録",
+      "location": {
+        "file": "topics.json",
+        "json_path": "$.topics[*].related_qa_ids",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "qa_pairs に存在するqa_004, qa_005, qa_006, qa_007, qa_047, qa_048, qa_049, qa_059, qa_060, qa_096, qa_097, qa_102, qa_067, qa_103 の14件が topics.json のいずれのトピックの related_qa_ids にも収録されていない。例えば qa_006（1.2兆円財源の内訳）、qa_007（租税改革の限界）、qa_103（租税特別措置透明化）等はsummary.key_commitments にも言及があり重要な議論である。",
+      "estimated_cause": "LLM によるトピック分類時に重複内容と判断したか、「その他」バケットへの割り当てが漏れた。",
+      "downstream_impact": []
+    }
+  ],
+  "blindspots": [
+    "raw_transcript.json の全セグメントを逐字照合していない（Whisperハルシネーションループの有無を完全確認できていない）",
+    "start_seconds と実時刻の対応を外部の議事録（公式会議録）と照合していない",
+    "政府参考人氏名の正式表記（漢字）を外部名簿と照合していない（吉沢/吉澤等）",
+    "qa_014 の質問者（武村展英）が伊佐進一の発言を引用して質問しているケースが委員長の正当な質問行為か委員長の誤帰属かを最終確認していない"
+  ],
+  "narrative": {
+    "overall": "本セッション（56110_財務金融委員会）は109件のQAペアを含む大規模な委員会審議で、特例国債法改正・所得税・防衛財源等の多岐にわたるテーマが審議された。最重大の問題はsegment 2（岡本三成質疑ブロック）の11件全てにおいて質問者が武村展英（委員長）と誤帰属されており、実際の質問者である岡本三成の名前がqa_pairsおよびtopics.jsonから完全に欠落している。またqa_039・qa_064・qa_087では議員（野党質問者）が答弁者として記録される誤帰属が3件発生しており、いずれも委員長の呼びかけと議員発言が混在したutterancesの話者分離失敗に起因する構造的問題である。Whisper誤認識では「高市総理→高橋総理」という固有名詞誤変換（qa_107）と「主税局長→市税局長」（qa_079）が確認された。スキーマ面では全答弁者のrole空文字（97.2%）、午後話者の start_time が約45分ずれ（昼休憩未考慮）、同一人物の複数表記混在が横断的課題として見られた。",
+    "top_findings": [
+      "segment 2 全11QAの質問者が岡本三成→武村展英に完全誤帰属：utterancesの話者分離失敗により岡本三成の質問者としての記録が消失しており、データ利用者が岡本三成の主張・見解を検索・追跡することが不可能になっている",
+      "qa_039/qa_064/qa_087 の答弁者に野党議員名が誤帰属：政府側答弁を議員が述べたかのように記録されており、発言の責任の所在が逆転する情報誤りで信頼性を大きく損なう",
+      "qa_107 で「高市総理」が「高橋総理」と Whisper 誤認識：存在しない総理大臣名が full_text に記録され、LLM 補正も機能しなかった。固有名詞の音韻誤認識は他セッションでも同様のパターンが生じている可能性がある"
+    ]
+  }
+}

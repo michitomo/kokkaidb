@@ -1,0 +1,245 @@
+{
+  "session_id": "sangiin/2026/04/22/8977_憲法審査会",
+  "chamber": "sangiin",
+  "date": "2026-04-22",
+  "deli_id": "8977",
+  "committee": "憲法審査会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T12:00:00Z",
+  "overall_quality": "medium",
+  "issue_count": {"high": 4, "medium": 5, "low": 5, "total": 14},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "content_missing",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "segment 10が約60分・10話者を1セグメントに統合（旧問題未解消）",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[10]",
+        "segment_index": 10
+      },
+      "evidence": "utterances.json segment 10 (segment_speaker=奥田ふみよ, start=7177.77) に44発話・10話者（奥田ふみよ/藤井和弘/小西博之/松沢成文/宮出千慧/原田秀一/佐々木雅文/上田健介/砂原庸介/長浜博行）が収録。qa_pairs における segment 10 の QA タイムスタンプ範囲は 7179.5〜10816.5 (約60分) であり、前回指摘の「42分・8質疑者」より悪化している。",
+      "estimated_cause": "scraper/speaker_tagger がセグメント境界を 奥田ふみよ の発言開始点から次のセグメント切り替えを検出できず、その後の藤井和弘・小西博之・2巡目の全発言者をすべて segment 10 に収容している。PRs 21-28 では本質的なセグメント分割ロジックが修正されていない可能性がある。",
+      "downstream_impact": ["qa_pairs.json", "topics.json", "summary.json"]
+    },
+    {
+      "id": "F002",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers に藤井和弘・小西博之が未登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers"
+      },
+      "evidence": "metadata.json の speakers リストは ['長浜博行', '上田健介', '砂原庸介', '古賀友一郎', '山内佳菜子', '原田秀一', '佐々木雅文', '松沢成文', '宮出千慧', '山添拓', '奥田ふみよ'] の11名のみ。qa_pairs.json には qa_019 (藤井和弘) と qa_020 (小西博之) が存在し、summary.json も両名に言及しているが、metadata.speakers には登録されていない。",
+      "estimated_cause": "metadata 生成ステップが segment_speaker ベースで話者リストを生成しており、segment 10 が超大型セグメント（奥田ふみよ名義）であるため、後半から登場する藤井和弘・小西博之が segment_speaker として現れず、speakers リストに入らなかった。",
+      "downstream_impact": ["summary.json", "topics.json"]
+    },
+    {
+      "id": "F003",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers の start_time が全員空文字列、duration/hls_url も空",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[*].start_time"
+      },
+      "evidence": "metadata.json の全11名の speakers エントリで start_time=\"\" 、duration_minutes=0。また duration=\"\"、hls_url=\"\"、committee_id=null、session_number=null。speakers[*].start_seconds は存在するが、対応する start_time が空のため UI 表示で時刻を利用できない。",
+      "estimated_cause": "publisher/structurer が start_time フィールドに start_seconds を変換して入れる処理を省略している。hls_url は sangiin セッションで URL が確定しない場合に空になる既知の問題の可能性もある。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F004",
+      "category": "duplicate",
+      "secondary_categories": ["timestamp_inconsistency"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_014/015 と qa_016/017 がそれぞれ同一 video_url を共有",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[?(@.id=='qa_014' || @.id=='qa_015')].video_url"
+      },
+      "evidence": "qa_014 と qa_015 は共に video_url='https://www.webtv.sangiin.go.jp/webtv/detail.php?sid=8977#6697.1'。qa_016 と qa_017 は共に '#7017.6'。これらは山添拓が上田・砂原両参考人に同一質問を行いそれぞれが回答した構造だが、質問 timestamp が同一になっており、いずれの QA が先かをビデオ時刻で区別できない。",
+      "estimated_cause": "1つの質問に複数参考人が回答するパターンで、video_url が質問者の発言 timestamp を指す設計のため、両 QA ペアが同じ質問 timestamp を共有する。PR28 で改善見込みとされていたが、本 session では残存している。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F005",
+      "category": "schema_inconsistency",
+      "secondary_categories": ["other"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "answer.full_text に次話者指名テキスト（「佐々木雅文君。」等）が混入",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[?(@.id=='qa_009')].answer.full_text"
+      },
+      "evidence": "qa_009 の answer.full_text に「これはもちろん佐々木雅文君。なり変わっていくということは」と会長の次話者指名フレーズが回答本文中に混入している。同様に qa_012 の answer full_text 末尾に「宮出千慧」、qa_013 末尾にも「宮出千慧」が追加されている。",
+      "estimated_cause": "utterances.json の段階で上田健介の発言テキスト内に「佐々木雅文君。」が含まれており、Whisper が会長の指名発言と参考人の答弁を同一 utterance として認識した。structurer がこの汚染を除去せず full_text に採用した。",
+      "downstream_impact": ["topics.json"]
+    },
+    {
+      "id": "F006",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "answer.full_text に「上田参考人：」「砂原参考人。」等の話者タグが混入",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.full_text"
+      },
+      "evidence": "qa_006, qa_007, qa_019, qa_020, qa_021, qa_022, qa_023, qa_024, qa_025, qa_026, qa_027, qa_028, qa_029 の answer.full_text が「上田参考人：…」「砂原参考人。…」「上田健介（参考人）…」「砂原庸介（参考人）…」等の話者ラベルで始まっている。question.full_text も qa_006, qa_007 は「原田秀一：」で始まっている。",
+      "estimated_cause": "utterances.json の text フィールドに話者ラベルが混入しており（特に後半 2巡目以降）、structurer がそのまま full_text に採用した。前半 QA（qa_001〜qa_005）は対応する utterance の text が clean で発生していないため、2巡目以降の transcript 処理に問題がある。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F007",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_008 と qa_018 の metrics フィールドが null",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[?(@.id=='qa_008')].metrics"
+      },
+      "evidence": "qa_008 (佐々木雅文→上田健介、最高裁判決の着地点) と qa_018 (奥田ふみよ→上田健介、憲法14条) の metrics フィールドが null。他 27 件は metrics dict を持つ。",
+      "estimated_cause": "LLM（google/gemma-4-31B-it）が特定の QA ペアに対してメトリクス生成をスキップした、またはレスポンス解析失敗によるフォールバック。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F008",
+      "category": "fact_error",
+      "secondary_categories": ["whisper_misrecognition"],
+      "severity": "medium",
+      "confidence": "medium",
+      "systemic_signal": "unknown",
+      "title": "qa_003 に「荒山誠教授」という実在不確認の氏名が記録",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[?(@.id=='qa_003')].answer.full_text"
+      },
+      "evidence": "qa_003 answer.full_text および utterances.json seg 4 の上田健介発言に「荒山誠教授が都におっしゃっていることですけれども」と記録されている。raw_transcript にも同様に「荒山誠教授」と転写されている。「荒山誠」という憲法学者は確認が難しく、Whisper による固有名詞誤認識（例：荒木和博、山花郁夫、荒田等）の可能性がある。",
+      "estimated_cause": "Whisper large-v3-turbo が日本語固有名詞（人名）を誤認識した可能性がある。確認のためには音声ファイルとの照合が必要。",
+      "downstream_impact": ["qa_pairs.json"]
+    },
+    {
+      "id": "F009",
+      "category": "fact_error",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "medium",
+      "systemic_signal": "unknown",
+      "title": "summary.related_laws に「shugiin-221-sanhou-1」が参照されているが法的根拠不明",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.related_laws[0].law_id"
+      },
+      "evidence": "summary.json に related_laws=[{\"law_id\": \"shugiin-221-sanhou-1\", \"qa_ids\": [\"qa_026\"]}] が記録されている。qa_026 は砂原参考人への「地方議会への政党交付金支給」に関する参考人意見交換であり、特定の法律案を指すものではない。また「shugiin-221-sanhou-1」が実際に存在する法律 ID かどうか不明。",
+      "estimated_cause": "LLM (gemma-4-31B-it) が参考人への意見を議員立法と混同し、実在しない可能性のある法律 ID を生成したと考えられる。",
+      "downstream_impact": ["topics.json"]
+    },
+    {
+      "id": "F010",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_023 の answer.full_text が文の途中で途切れている",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[?(@.id=='qa_023')].answer.full_text"
+      },
+      "evidence": "qa_023 (原田秀一→上田健介＋砂原庸介、比例代表の格差計算) の answer.full_text は「…そういう意味ではその1票の格差、つまり最大選挙区と最小選挙区だけを比べるというのは、合理的な比べ方ではないというふうに思います。ただし、そういったような得票不均衡全体を見ると、おそらく都道府県単位で選挙をすること自体が」で終了している。文が途中で切れており、砂原参考人の回答が不完全。",
+      "estimated_cause": "structurer による full_text 抽出時のテキスト長制限または LLM コンテキスト窓によるカットオフ。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F011",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata の llm_model が google/gemma-4-31B-it（CLAUDE.md 指定の DeepSeek V3.2 と異なる）",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.llm_model"
+      },
+      "evidence": "metadata.json の llm_model=\"google/gemma-4-31B-it\"。CLAUDE.md では LLM 処理として「DeepInfra DeepSeek V3.2」を使用すると記載されているが、本セッションでは Gemma 4 が使用されている。",
+      "estimated_cause": "再生成バッチ（regen-f2-rerun）でモデルが変更されたか、パイプライン設定が変更された。意図的な変更であれば問題ないが、記録上の一貫性の問題がある。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F012",
+      "category": "content_missing",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "utterances.json で藤井和弘・小西博之の utterances に unmatched=true フラグ",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[10].utterances[?(@.speaker=='藤井和弘' || @.speaker=='小西博之')]"
+      },
+      "evidence": "segment 10 内の藤井和弘の2発話（質問本文・締め括り）および小西博之の2発話がいずれも unmatched=true。qa_pairs には両名の QA が存在するため実質的なデータ損失はないが、マッチング失敗を示している。",
+      "estimated_cause": "speaker_tagger が segment 10 の超大型セグメント内で、segment_speaker（奥田ふみよ）と異なる話者の utterance をマッチングできなかった。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F013",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "session_specific",
+      "title": "utterances に「大石誠教授」という表記（実際は大石眞教授の可能性）",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[1].utterances[0].text"
+      },
+      "evidence": "utterances.json seg 1（上田健介）の冒頭で「大石誠教授が都に指摘されるとおり、権限と組織は相関関係にあると考えられます」と記録。憲法学者としては「大石眞（まこと）教授」（京都大学名誉教授）が有名であり、「誠」は Whisper の誤認識の可能性がある。",
+      "estimated_cause": "Whisper が「まこと」を「誠」と漢字変換した際に別の人名と混同した可能性。",
+      "downstream_impact": ["qa_pairs.json"]
+    },
+    {
+      "id": "F014",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers の duration_minutes が全員 0（未計算）",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[*].duration_minutes"
+      },
+      "evidence": "metadata.json の全11名の speakers エントリで duration_minutes=0。各話者の発言時間が計算されていないため、ダッシュボードの話者別発言時間グラフ等が正常に機能しない。",
+      "estimated_cause": "duration_minutes の計算ロジックが実装されていないか、sangiin セッションでは HLS タイムスタンプから duration を算出できない。",
+      "downstream_impact": []
+    }
+  ],
+  "blindspots": [
+    "raw_transcript の全 whisper_segments を逐字精査していない（サンプリングのみ）",
+    "「大石誠」「荒山誠」の実在性については音声ファイルとの照合が必要",
+    "法律 ID 'shugiin-221-sanhou-1' の実在確認は外部 DB 照合が必要",
+    "2巡目 QA（qa_019〜qa_029）の video_url タイムスタンプが正確かどうかは動画再生での確認が必要",
+    "奥田ふみよの発言（qa_018）の全文が qa_pairs に正しく収録されているか（発言量が多く、政治的意見表明部分の処理が不明）"
+  ]
+}

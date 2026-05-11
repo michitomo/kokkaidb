@@ -1,0 +1,261 @@
+{
+  "session_id": "shugiin/2026/02/25/56085_本会議",
+  "chamber": "shugiin",
+  "date": "2026-02-25",
+  "deli_id": "56085",
+  "committee": "本会議",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T10:00:00Z",
+  "overall_quality": "low",
+  "issue_count": {"high": 3, "medium": 5, "low": 5, "total": 13},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "content_missing",
+      "secondary_categories": ["summary_qa_divergence"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "玉木雄一郎 (国民民主党) segment全体がqa_pairsから欠落",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "utterances.json segment 1 に 玉木雄一郎 (11,898文字の質疑) と 高市早苗 (11,103文字の答弁) が存在する。raw_transcript.json も segment 1 (speaker=玉木雄一郎, text_len=23,247, whisper_segs=170) が実在する。しかし qa_pairs.json には segment_index=1 に対応するペアが0件で、段落ごとに国民民主党の質疑内容 (TBAC/国債発行諮問委員会の創設提案, 社会保険料130万円の壁, 給付付き税額控除, プライマリーバランス管理) が完全に失われている。",
+      "estimated_cause": "structurer.py が segment 1 を qa_pairs 生成の入力に渡さなかった可能性。または segment 1 の質問数が多く LLM のコンテキスト上限を超えて欠落した可能性。本会議の複数質問者セッションで特定セグメントが structuring 対象外になるパターンが疑われる。",
+      "downstream_impact": ["topics.json", "summary.json"]
+    },
+    {
+      "id": "F002",
+      "category": "summary_qa_divergence",
+      "secondary_categories": ["content_missing"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary が国民民主党の参加を記述するが qa_pairs に当該内容ゼロ",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.session_summary",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "summary.session_summary = '高市早苗総理大臣に対し、国民民主党、参政党、チームみらいの各代表が...質疑を行った。' と記述。key_topics には '年収の壁（103万円・130万円）の解消' '社会保険料負担の軽減と医療費窓口負担の見直し' '責任ある積極財政と財政持続可能性' を含む。一方 qa_pairs.pairs に国民民主党 (玉木雄一郎) の質疑は0件。topics.json も 玉木雄一郎 を related_speakers に含むトピックが0個。key_topic '130万円' 部分は 玉木 speech 固有の内容だが qa_pairs で参照不能。",
+      "estimated_cause": "summary.json は utterances.json (segment 1 を含む) を元に生成されたが、qa_pairs.json は segment 1 をスキップして生成された。両ファイルの生成元データが異なるため乖離が生じた。",
+      "downstream_impact": ["topics.json"]
+    },
+    {
+      "id": "F003",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "高市早苗 (内閣総理大臣) が metadata.speakers に未登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers に登録されている5名は [森英介, 玉木雄一郎, 和田政宗, 石井啓一, 高山聡史] のみ。qa_pairs.json の全28件で answer.speaker=高市早苗、utterances.json の segment 1, 2, 4 に answer speaker 高市早苗 が登場する。検索・フィルタ機能で '高市早苗' の答弁を含むセッションを検索した場合、このセッションがヒットしない。",
+      "estimated_cause": "speaker_tagger が質問者リスト (衆議院TV の番組情報) のみを speakers として登録し、答弁者 (PM・大臣) を自動的に追加しないパイプライン設計上の欠陥。本会議では答弁者が固定 (PM が全質問に答弁) であるため特に顕著。",
+      "downstream_impact": ["qa_pairs.json"]
+    },
+    {
+      "id": "F004",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["role_label_error"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "utterances seg0 の後半テキストが誤って玉木雄一郎に帰属",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[0].utterances[1].speaker",
+        "segment_index": 0,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json の segment 0 (speaker=森英介) のテキストは '「これより会議を開きます。内閣総理大臣高市早苗君。あ、どういうのですか。失礼、大変失礼しました...国務大臣の演説に対する質疑を継続いたします。」' と一体。しかし utterances.json では 森英介='これより会議を開きます。' と 玉木雄一郎='内閣総理大臣高市早苗君。あ...' に分割。議長が発言を読み上げ途中で言い間違えた内容をすべて 玉木雄一郎 に誤帰属している。",
+      "estimated_cause": "speaker_tagger が '内閣総理大臣高市早苗君' という呼称を 玉木雄一郎 への指名と誤解析し、その後のテキストを 玉木 の発言と誤分類した可能性。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F005",
+      "category": "whisper_hallucination_loop",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "seg2 whisper idx0: '参政党（参政党（' が27回以上ループ",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[2].whisper_segments[0].text",
+        "segment_index": 2,
+        "qa_id": null
+      },
+      "evidence": "whisper_segments[2][0].text = '和田政宗（参政党（参政党（参政党（...' compression_ratio=9.6 (正常値~1.5以下)。最終 corrected text では '和田政宗（参政党）' と正常に修正済みだが、raw_transcript に hallucination データが残存。",
+      "estimated_cause": "Whisper large-v3-turbo が最初の発話フレーム (字幕テロップの表示タイミング) で帰属テキスト '参政党（' を繰り返し生成。本会議の開会直後や話者交代点で頻発するパターンと推測。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F006",
+      "category": "whisper_hallucination_loop",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "seg4 whisper idx10: '石井啓一議長、' が20回以上ループ",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[4].whisper_segments[10].text",
+        "segment_index": 4,
+        "qa_id": null
+      },
+      "evidence": "whisper_segments[4][10].text = '森英介議長、石井啓一議長、石井啓一議長、...' compression_ratio=12.3。最終 corrected text には含まれないため修正済みだが、raw_transcript に残存。",
+      "estimated_cause": "議長交代タイミング (seg3→seg4 境界付近) で Whisper が字幕テロップの副議長名テキストをループ生成。画面上の字幕が変化する際に繰り返しパターンが発生する既知の Whisper 挙動。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F007",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs 全28件の answer.role が空文字列",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "全28件の pairs で answer.role='' (空文字列)。答弁者は常に 高市早苗 (内閣総理大臣) であり、role='内閣総理大臣' と記録されるべき。一方 summary.json の key_commitments では speaker=高市早苗, role='内閣総理大臣' と正しく記録されており、同一セッション内でフィールドの充足率が不一致。",
+      "estimated_cause": "structurer.py が answer.role を生成する際、話者タグのロール情報を参照していないか、本会議の答弁者ロールを自動解決するロジックが欠如している。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F008",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "玉木雄一郎の duration_minutes=0 (実際は~72分の発言区間)",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[1].duration_minutes",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers[1] (玉木雄一郎) の start_seconds=1332.3, duration_minutes=0。次話者 和田政宗 の start_seconds=5679.2 なので区間長は (5679.2-1332.3)=4346.9秒=72.4分。実際の質疑は11,898文字 (utterances), 170 whisper_segments に及ぶ。duration_minutes=0 はシステムが区間計算を誤った証拠。",
+      "estimated_cause": "duration_minutes の算出ロジックが次話者の start_seconds との差分ではなく、別ソースの値を参照しているか、デフォルト値のまま格納された可能性。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F009",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "seg4で '高市早苗さん' が誤修正されず最終テキストに残存",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[4].text",
+        "segment_index": 4,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.segments[4].whisper_segments[43].text = '内閣総理大臣、高市佐奈さん。' (avg_logprob=-0.113)。corrected text では '高市佐奈' → '高市早苗' と名前は修正されたが '君' ではなく 'さん' が残存し '高市早苗さん。' となっている。国会では総理大臣は '君' と呼称するのが慣例であり、'さん' は誤り。utterances.json seg4 の答弁者テキスト冒頭にも '内閣総理大臣、高市早苗さん。' として残存。",
+      "estimated_cause": "LLM 補正処理が固有名詞の誤認識 (佐奈→早苗) を修正したが、敬称の誤認識 (さん→君) まで対応していない。国会慣例に関する知識が補正ルールに組み込まれていない。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F010",
+      "category": "role_label_error",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "本会議の議長 (森英介) が複数箇所で '委員長' または '質疑者' と誤分類",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[0].utterances[0].role",
+        "segment_index": 0,
+        "qa_id": null
+      },
+      "evidence": "utterances.json: seg0 森英介.role='質疑者' (正しくは '議長')。seg3/seg4 末尾 森英介.role='委員長' (正しくは '議長')。本会議は '委員会' ではないため '委員長' は誤り。metadata では affiliation='衆議院議長' と正しく記録されているが、utterances の role フィールドと不一致。",
+      "estimated_cause": "speaker_tagger が議長の role を委員会セッションと同一の '委員長' ラベルで処理している。本会議と委員会でラベルを分岐するロジックが未実装。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F011",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs.pairs[*].qa_id が全件 null (id フィールドには値あり)",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].qa_id",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "qa_pairs の各 pair には 'id' フィールド (値: 'qa_001'〜'qa_028') と 'qa_id' フィールド (値: null) が共存。summary.json key_commitments の参照キーは 'qa_id' フィールドを想定しているが、実際のデータは 'id' フィールドに値が入っている。利用コードが qa_id フィールドを参照した場合に null 参照エラーが発生する可能性がある。",
+      "estimated_cause": "スキーマ変更の際に 'id' から 'qa_id' へのリネームが途中で止まり、両フィールドが混在する状態になった可能性。",
+      "downstream_impact": ["summary.json", "topics.json"]
+    },
+    {
+      "id": "F012",
+      "category": "schema_empty_field",
+      "secondary_categories": ["metadata_missing_speaker"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata の必須フィールド複数が null/空: committee_id, session_number, duration, mediasp_hash",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.committee_id",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.committee_id=null, session_number=null, duration='' (空文字列), mediasp_hash='' (空文字列)。同一ファイル内で null と空文字列が混在している (committee_id=null vs duration='')。speakers[*].role が全5件 '' (空文字列) で役職が未記録。",
+      "estimated_cause": "衆議院TV の metadata 取得処理で committee_id や session_number が未実装 (または HTML パース失敗)。duration は ffmpeg から HLS の長さを取得する処理が未実装か失敗している可能性。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F013",
+      "category": "other",
+      "secondary_categories": ["metadata_missing_speaker"],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "session_specific",
+      "title": "石井啓一 (副議長) が metadata に登録されているがどの utterance にも発言なし",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[3]",
+        "segment_index": 3,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers に 石井啓一 (衆議院副議長, start_seconds=7807.5, duration_minutes=1) が登録されているが、utterances.json の全発話者リストに '石井啓一' は含まれない。segment 3 の segment_speaker=石井啓一 だが、実際の utterance speaker は 森英介 の議長交代アナウンス '議長が交代いたしました。' のみ。石井啓一 本人の発言がゼロのため、データ利用者にとって誤解を招く可能性がある。",
+      "estimated_cause": "HLS 録画上、石井啓一が議長席に着いた際に対応する発話がなかった (または Whisper がその発話を石井啓一として認識しなかった)。segment_speaker のラベルが '誰が議長席にいるか' を示すのか '誰が話しているか' を示すのかが曖昧。",
+      "downstream_impact": []
+    }
+  ],
+  "blindspots": [
+    "raw_transcript.json の全 whisper_segments の逐語精査は未実施 (サンプリングのみ)。中間セグメントでの誤認識が他にも残存している可能性がある",
+    "qa_pairs の question.full_text と utterances の実際の質問テキストとの逐語比較は未実施。LLM 構造化による事実改変 (fact_error) が潜在している可能性がある",
+    "外部議事録・国会会議録との照合未実施のため、答弁内容の事実誤認を検出できていない",
+    "玉木雄一郎 segment (seg 1) の qa_pairs 欠落が LLM ハルシネーションか structurer のバグかを特定できていない"
+  ],
+  "narrative": {
+    "overall": "本セッションは 3 名の代表質問者 (玉木雄一郎/国民民主党、和田政宗/参政党、高山聡史/チームみらい) と高市総理の質疑応答を収録しているが、最初の質問者である玉木雄一郎 (国民民主党) のセグメント全体が qa_pairs から欠落しており、11,898 文字の質疑と PM 答弁が失われている。この欠落は summary.json に '国民民主党の代表が質疑を行った' と記述されているにもかかわらず qa_pairs で裏付けデータが存在しないという summary/qa 乖離を引き起こしており、データ利用者に重大な誤解を与える可能性がある。高市早苗 総理 (答弁者) が metadata.speakers に未登録である点も含め、答弁者側の処理が全体的に手薄であることが示唆される。Whisper のハルシネーションループ 2 件は LLM 補正で修正済みだが、敬称誤認識 ('さん' 残存) などの軽微な誤りが最終テキストに残存している。",
+    "top_findings": [
+      "玉木雄一郎 (国民民主党) の代表質疑全体 (~11,900文字) が qa_pairs から完全欠落 — TBAC 提案・130万円の壁・社会保険料完付住民税控除など固有の政策提案が検索不能になっている (F001)",
+      "summary が '国民民主党が質疑を行った' と記述しているが qa_pairs に国民民主党の内容がゼロ — summary と qa_pairs の乖離が最大 (F002)",
+      "高市早苗 総理が metadata.speakers に未登録 — 全 28 件の答弁者が検索インデックス上 '未知話者' 扱いとなり、セッション検索フィルタで漏れが生じる (F003)"
+    ]
+  }
+}

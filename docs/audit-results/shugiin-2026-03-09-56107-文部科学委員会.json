@@ -1,0 +1,207 @@
+{
+  "session_id": "shugiin/2026/03/09/56107_文部科学委員会",
+  "chamber": "shugiin",
+  "date": "2026-03-09",
+  "deli_id": "56107",
+  "committee": "文部科学委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T10:00:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 2, "medium": 4, "low": 4, "total": 10},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "content_missing",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs.json が空 — 趣旨説明全体が Q&A ペアから欠落",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "qa_pairs.json の pairs フィールドが空配列 `[]`。一方 utterances.json には segment_index=0（委員長開会冒頭挨拶）と segment_index=1（松本洋平文部科学大臣による趣旨説明）の実質的なコンテンツが存在する。趣旨説明は約250秒にわたる法案提案全文であり、学校就学支援金法改正の第一〜第四の改正内容が含まれる。",
+      "estimated_cause": "structurer.py が趣旨説明（一方的な説明で質問が存在しない）を Q&A ペアとして構造化できなかった。質問→答弁の形式を前提とした構造化ロジックが、質疑なし・趣旨説明のみのセッションに対応していない可能性が高い。",
+      "downstream_impact": ["summary.json", "topics.json"]
+    },
+    {
+      "id": "F002",
+      "category": "role_label_error",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "松本洋平（文部科学大臣）の role が「質疑者」と誤分類",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[1].utterances[1].role",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "utterances.json の segments[1].utterances[1] および utterances[3] で speaker=「松本洋平」、role=「質疑者」と設定されている。しかし同人は metadata.json で affiliation=「文部科学大臣」として登録されており、発言内容は法律案の趣旨説明（提案者として答弁側に立つ立場）。「質疑者」は質問する委員を指すラベルであり、大臣の役割と真逆。",
+      "estimated_cause": "speaker_tagger.py の role 推定ロジックが「発言量が多い = 質疑者」または「質問されている側でない = 質疑者」と誤推論している可能性。大臣・参考人など答弁者側が長文を話すケースで同様の誤分類が起きると考えられる。",
+      "downstream_impact": ["qa_pairs.json", "summary.json"]
+    },
+    {
+      "id": "F003",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "Whisper が「支障」→「指標」「御鞭撻」→「御弁達」と誤認識",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[0].whisper_segments[1].text",
+        "segment_index": 0,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json の segments[0].whisper_segments[1].text: 「委員会運営に重大な**指標**を招きましたこと、重ねてお**配備**を申し上げます。…御指導御**弁達**を賜りますよう」。正しくは「重大な**支障**を招きました」「心から**お詫び**を申し上げます」「御指導御**鞭撻**を賜りますよう」。avg_logprob=-0.093 と他セグメント（-0.04〜-0.06）より若干低く、誤認識の兆候が見られる。この誤認識は utterances.json では訂正済み（正しいテキストが使われている）。",
+      "estimated_cause": "Whisper が音声的に近似した語を選択した典型的な誤認識。LLM 訂正フェーズ (corrected=true) で utterances 側は修正されたが、raw_transcript には元の Whisper 出力が残るため差異が生じた。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F004",
+      "category": "summary_qa_divergence",
+      "secondary_categories": ["schema_empty_field"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.json の key_commitments[0].qa_id が空文字列で Q&A へのリンクなし",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments[0].qa_id",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "summary.json の key_commitments[0] に松本大臣の約束（「3年以内に施行状況等を勘案し…必要な措置を講じる」）が記録されているが、qa_id が空文字列 `\"\"` になっている。qa_pairs.json が空（pairs=[]）であるため対応する qa_id が存在せず、約束の根拠となる発言箇所を Q&A 側でトレースできない。",
+      "estimated_cause": "qa_pairs.json が空のため structurer.py が qa_id を付与できなかった（F001 の派生問題）。structurer はフォールバックとして空文字列を設定した。",
+      "downstream_impact": ["約束トラッカー機能でのリンク切れ"]
+    },
+    {
+      "id": "F005",
+      "category": "other",
+      "secondary_categories": ["schema_empty_field"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "topics.json が空配列 — セッションのトピック情報が全欠落",
+      "location": {
+        "file": "topics.json",
+        "json_path": "$.topics",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "topics.json の topics フィールドが空配列 `[]`。summary.json には key_topics として「高等学校等就学支援金の支給に関する法律の一部を改正する法律案」「教育の機会均等」「就学支援金の受給資格および費用負担の見直し」が列挙されており、トピック情報は存在するはずだが topics.json に反映されていない。",
+      "estimated_cause": "structurer.py のトピック生成フェーズが qa_pairs が空の場合に topics を生成しないか、生成処理が qa_pairs の存在を前提としている可能性（F001 の派生問題）。または structurer の topic 生成呼び出し自体がエラー終了している可能性。",
+      "downstream_impact": ["フィルタ・検索機能でのトピックタグなし", "ダッシュボード可視化への影響"]
+    },
+    {
+      "id": "F006",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "medium",
+      "systemic_signal": "session_specific",
+      "title": "Whisper が「松本洋平氏の〜」を「松本洋平法にあります」と誤認識",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].whisper_segments[8].text",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json の segments[1].whisper_segments[8].text 冒頭: 「**松本洋平法**にあります人口減少にある我が国において社会経済状況が一層困難な局面を迎えることが予想される中というところの局面を**私状況**ということで発言をいたしました。」。正しくは「ただいまの趣旨説明の中で…というところの**局面**を**状況**ということで…」。「法にあります」「私状況」はともに Whisper の誤認識であり、avg_logprob=-0.105 と低め。utterances.json では正しく訂正されている。",
+      "estimated_cause": "Whisper が委員長の「松本君。」の呼びかけ後に続く松本大臣の発言を連続処理する際、話者交代境界付近で音声が混在し誤認識が生じた。LLM 訂正フェーズで修正済み。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F007",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "unknown",
+      "title": "Whisper segment id=3 (27秒) がテキスト「松本洋平議員」のみで avg_logprob が異常低値",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].whisper_segments[2]",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json の segments[1].whisper_segments[2]: start=55.7s, end=82.9s（約27秒間）、text=「松本洋平議員」のみ、avg_logprob=-0.832（他セグメントは -0.02〜-0.19）、compression_ratio=0.621（1未満）。非常に長い無音または拍手区間を Whisper が「松本洋平議員」という発話として誤検出したと推定される。",
+      "estimated_cause": "松本大臣が立席・移動中の無音・椅子音・足音等を Whisper がハルシネーションにより「松本洋平議員」と誤認識した。avg_logprob の絶対値が大きく no_speech_prob=0.0 であるため Whisper の自己評価では発話と判定されたが信頼性は低い。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F008",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.json の複数フィールドが null/空文字の混在状態",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.committee_id",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json: committee_id=null, session_number=null, duration=\"\"（空文字）, mediasp_hash=\"\"（空文字）, speakers[0].role=\"\"（空文字）, speakers[1].role=\"\"（空文字）。欠損値の表現が null と空文字列で統一されていない（committee_id は null、duration は \"\"）。",
+      "estimated_cause": "各フィールドの初期化方針が統一されていない。衆議院データでは committee_id・session_number が公式に提供されないため null が正しいが、duration・role は後処理で埋めるべきフィールドが空のまま残っている。",
+      "downstream_impact": ["フィルタ・ソート機能での null vs 空文字の扱いの不整合"]
+    },
+    {
+      "id": "F009",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers の role フィールドが全員空文字列",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[*].role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json の speakers 配列全 2 件で role=\"\"。斎藤洋明は「委員長」、松本洋平は「文部科学大臣」という role が utterances.json には正しく記録されているが、metadata.speakers への反映がない。affiliation フィールドには「文部科学委員長」「文部科学大臣」と記録されており、role と affiliation が重複機能を持ちながら片方が常に空。",
+      "estimated_cause": "pipeline の speaker 情報抽出ステップで role フィールドの設定ロジックが未実装または抽出に失敗している。affiliation で代替されているため気付かれにくい。",
+      "downstream_impact": ["speakers ページでの role 表示なし"]
+    },
+    {
+      "id": "F010",
+      "category": "speaker_misattribution",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "session_specific",
+      "title": "utterances.json segment 1 の委員長発話「趣旨の説明を聴取いたします」が松本洋平のセグメントに混在",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[1].utterances[0]",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "utterances.json の segments[1]（segment_speaker=「松本洋平」）の utterances[0] に speaker=「斎藤洋明」(委員長) の発話「趣旨の説明を聴取いたします。」が含まれている。segments は speaker 単位で分割されているはずだが、委員長の短い発話が松本洋平のセグメントに混在している。raw_transcript でも segments[1].speaker_name=「松本洋平」の text 冒頭に「趣旨の説明を聴取いたします。松本君。」が含まれており、元からセグメント分割が不完全。",
+      "estimated_cause": "audio/extractor.py の話者セグメント分割境界が、委員長の短い発話（数秒）を次の長い発話（松本大臣）のセグメントに含めてしまった。話者変化検出の粒度の問題。",
+      "downstream_impact": ["話者別トランスクリプト表示での混乱"]
+    }
+  ],
+  "blindspots": [
+    "whisper_segments の token 列を逐語的に検証していないため、utterances.json への訂正が適切かどうかの全量確認は未実施",
+    "法律案の実際の条文との突き合わせ（事実確認）は未実施 — 特に第二改正の受給資格変更内容（日本国籍・特別永住者・永住者等への限定）が正確か否か",
+    "HLS ストリームの実際の開始時刻と start_seconds=1185.5 の対応関係の外部検証は未実施",
+    "他の同種セッション（趣旨説明のみ）での qa_pairs 空問題の発生頻度は本セッション単体からは確認不能"
+  ],
+  "narrative": {
+    "overall": "本セッション（2026-03-09 文部科学委員会）は、高等学校等就学支援金法改正案の趣旨説明のみを行う短時間セッション（約4分の実質コンテンツ）である。品質上の最大問題は qa_pairs.json が完全に空である点で、趣旨説明という質疑なし形式のセッションに structurer が対応できていないことを示す。この問題により summary.json の key_commitments に qa_id を付与できず、topics.json も空になるという派生問題が連鎖している。また松本洋平文部科学大臣の role が「質疑者」と誤分類されており、これは大臣・参考人が長文を話すセッションで広く発生する可能性がある systemic 問題である。Whisper の誤認識は複数箇所あるが LLM 訂正フェーズで主要なものは修正されており、raw_transcript に痕跡として残る程度の影響に留まる。全体として、質疑応答を前提とした structurer が趣旨説明専用セッションに適切に対応できていないことが根本的な品質低下要因である。",
+    "top_findings": [
+      "qa_pairs.json が完全に空 — 趣旨説明形式（質疑なし）のセッションで structurer が Q&A ペアを生成できず、summary の key_commitments リンクも topics.json も空になる連鎖問題が発生している（F001・F004・F005）",
+      "松本洋平文部科学大臣の role が「質疑者」と誤分類 — 大臣が長文の趣旨説明を行う場面で speaker_tagger が答弁者・提案者を質疑者と誤判定しており、同様の誤分類が他のセッションでも発生している可能性が高い（F002）",
+      "Whisper の誤認識（支障→指標、御鞭撻→御弁達、松本洋平法）は LLM 訂正で修正されているが、27秒無音区間を「松本洋平議員」と誤検出した箇所（avg_logprob=-0.83）は非発話区間の誤処理として注意が必要（F003・F007）"
+    ]
+  }
+}

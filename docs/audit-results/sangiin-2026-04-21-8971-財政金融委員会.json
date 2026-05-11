@@ -1,0 +1,388 @@
+{
+  "session_id": "sangiin/2026/04/21/8971_財政金融委員会",
+  "chamber": "sangiin",
+  "date": "2026-04-21",
+  "deli_id": "8971",
+  "committee": "財政金融委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T10:00:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 4, "medium": 11, "low": 5, "total": 20},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "fact_error",
+      "secondary_categories": ["summary_qa_divergence"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.json が院を誤認識（衆議院→参議院）",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.session_summary",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "session_summary の冒頭が「衆議院（委員会名不明）において」と記述されているが、本セッションは参議院財政金融委員会（sangiin/2026/04/21/8971）。metadata.json の chamber=\"sangiin\"、committee=\"財政金融委員会\" と矛盾する。",
+      "estimated_cause": "LLM structurer（google/gemma-4-31B-it）が文字起こし内の院・委員会情報を正確に把握できず、デフォルト的に衆議院と誤帰属した可能性。あるいはプロンプトにセッションメタデータが十分渡されていなかった。",
+      "downstream_impact": ["summary.json", "topics.json"]
+    },
+    {
+      "id": "F002",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "金融整理管財人 → 金融整理官材 に誤認識（seg[1]）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].text",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "片山大臣の政府報告冒頭：「金融整理官材による業務及び財産の管理を命ずる処分は行われておりません」。正しくは「金融整理管財人」（Financial Administrator）。金融破綻処理の法的主体を誤った表記で記録しており、法令用語として重大な誤り。",
+      "estimated_cause": "「かんざいにん」（管財人）という読みをWhisperが「かんざい」→「官材」と誤認識した音声認識エラー。法律・金融専門用語への対応力不足。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F003",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "時代による解決 → 誤認識（seg[2]）、qa_002に波及",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[2].text",
+        "segment_index": 2,
+        "qa_id": "qa_002"
+      },
+      "evidence": "片山大臣答弁：「当事者間の個別の返済プランの協議によって、時代による解決が図られていくものと承知しております」。「時代による解決」は文脈上全く意味をなさない。正しい表現は「段階的な解決」「逐次的な解決」または「当事者による解決」等。qa_002の answer.full_text にも同一テキストが引用されており、ユーザーに誤情報を提示する。",
+      "estimated_cause": "「じだい」（時代）という音が実際の発話（「じゅんじ・だんかい」等）をWhisperが誤認識した可能性。専門的文脈での流暢な音声認識の失敗。",
+      "downstream_impact": ["qa_pairs.json"]
+    },
+    {
+      "id": "F004",
+      "category": "content_missing",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "ラサール石井の最初のQ&A（拡大情報コミュニティ確認）がqa_pairsから欠落",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs",
+        "segment_index": 7,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json seg[7]（大島九州男セグメント）末尾に、ラサール石井委員が「財務省、金融庁は拡大情報コミュニティを構成するという趣旨の政府答弁があったが相違ないか」と質問し、蒲谷内閣審議官が「金融庁、財務省、経済産業省及び海上保安庁を拡大情報コミュニティを構成するメンバーとして位置づけ」と答えている。このQ&Aペアはqa_pairs.jsonに存在しない。qa_036はその次の質問から始まっている。",
+      "estimated_cause": "セグメント境界（seg[7]と seg[8]の分割点）でラサール石井の発言が2つのセグメントに分割されており、LLM structurerが seg[7] のラサール石井部分を大島九州男セグメントとして処理した際に独立したQAペアとして抽出しなかった可能性。",
+      "downstream_impact": ["topics.json"]
+    },
+    {
+      "id": "F005",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["whisper_misrecognition"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "ご視聴ありがとうございました を片山さつきの発言として誤帰属",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[9].utterances[0]",
+        "segment_index": 9,
+        "qa_id": null
+      },
+      "evidence": "utterances.json seg[9] の speaker=片山さつき, text=\"ご視聴ありがとうございました。\" 。これは参議院TVウェブサイトの再生終了画面に表示されるシステムテキストであり、片山大臣が発した発言ではない。metadata.json にも speakers[9] として片山さつき（start_seconds=9581.91, role=答弁者）が重複登録されており、このダミーセグメントに起因している。",
+      "estimated_cause": "参議院TV動画の末尾に表示されるプレーヤーの終了画面テキスト（または音声読み上げ）をWhisperが文字起こしし、直前の話者（片山さつき）に帰属させた。",
+      "downstream_impact": ["metadata.json"]
+    },
+    {
+      "id": "F006",
+      "category": "duplicate",
+      "secondary_categories": ["metadata_missing_speaker"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers に片山さつきが2エントリ（実質重複）",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json の speakers リストに片山さつき（財務大臣）が2回登録されている：speakers[1]（start_seconds=2296.63）と speakers[9]（start_seconds=9581.91）。2番目のエントリは実際には「ご視聴ありがとうございました」のウェブサイトアウトロセグメントに対応しており、実質的なダミー登録。真の答弁者（中山、井上、井口、堀本、石田、蒲谷等7名）は speakers リストに未登録。",
+      "estimated_cause": "metadata生成ロジックが raw_transcript の全セグメントを機械的に speakers として登録しており、ウェブサイトアウトロの除外フィルタがない。また政府参考人は自動抽出対象外になっている可能性。",
+      "downstream_impact": ["qa_pairs.json", "topics.json"]
+    },
+    {
+      "id": "F007",
+      "category": "timestamp_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_035（大島九州男）の video_url が小池晃の開始時刻（7236.18）を指している",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[34].video_url",
+        "segment_index": 6,
+        "qa_id": "qa_035"
+      },
+      "evidence": "qa_035の video_url=\"https://webtv.sangiin.go.jp/webtv/detail.php?sid=8971#7236.18\"。しかし大島九州男の実際の発言開始は metadata.speakers[7].start_seconds=8043.17（utterances.json seg[7] も同一）。7236.18 は小池晃の開始タイムスタンプであり、ユーザーがリンクをクリックすると小池晃の質疑中盤に飛ぶ。大島の発言は raw_transcript seg[6]（start=7236.18）末尾に含まれているため qa_pairs が segment_index=6 を正しく使うが、video_url がセグメント開始時刻（7236.18）を使うため約8分のズレが生じる。",
+      "estimated_cause": "video_url生成ロジックが「セグメント開始時刻」をタイムスタンプとして使用しており、セグメント内に複数話者が含まれる場合に後の話者の正確な開始時刻を反映できない。utterances.json の話者別 start_seconds を使うべきところ。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F008",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairsの回答者7名がmetadata.speakersに未登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "qa_pairs.json に登場する回答者のうち、metadata.speakers に登録されていない話者：中山（財務省主計局次長）、井上（金融庁企画市場局長）、井口（財務省関係者）、堀本（金融庁総合政策局長）、石田（金融庁監督局長）、石田監督局長（同一人物の表記揺れ）、蒲谷（内閣官房内閣審議官）。これら7名は委員長の開会発言で「蒲谷晴之君ほか13名を政府参考人として出席を求め」と明示されているが、speakers リストから全員漏れている。",
+      "estimated_cause": "speakers リスト生成ロジックが参議院TVの発言者リスト（play2クラスのアンカー）からのみ取得しており、政府参考人が除外されているため。政府参考人は動画サイトの発言者リストに含まれないことが多い。",
+      "downstream_impact": ["qa_pairs.json", "topics.json"]
+    },
+    {
+      "id": "F009",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "同校が → 同行が の誤認識（seg[2]）、qa_002に波及",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[2].text",
+        "segment_index": 2,
+        "qa_id": "qa_002"
+      },
+      "evidence": "片山大臣答弁：「同校が債務者の自宅処分の強制など、通常の日常生活を妨げることにも、困窮するような取り立てを行うことがないように、指導監督をしているところであります」。文脈は駿河銀行への指導監督の話であり、「同校」（学校）ではなく「同行」（同じ銀行）が正しい。qa_002の answer.full_text にも引用されている。",
+      "estimated_cause": "「どうこう」（同行）と「どうこう」（同校）が同音のため、Whisperが文脈なしに誤った漢字を選択した音声認識エラー。",
+      "downstream_impact": ["qa_pairs.json"]
+    },
+    {
+      "id": "F010",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "後陣を拝している → 後陣を廃止している の誤認識（seg[3]）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[3].text",
+        "segment_index": 3,
+        "qa_id": null
+      },
+      "evidence": "原田秀一委員の発言冒頭：「日本は後陣を廃止しているように見えます」。正しい慣用句は「後陣を拝している」（後れをとっている・遅れをとっている）。「廃止」（abolish）は文脈と全く意味が合わない。このフレーズは qa_pairs の summary には引用されていないが raw_transcript に残存する。",
+      "estimated_cause": "「はいしている」の音を「廃止」と誤認識。「後陣を拝する」という慣用句がWhisperの学習データに乏しかった可能性。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F011",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "実需拡大 → 実図拡大 の誤認識（seg[3]）、qa_009に波及",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[3].text",
+        "segment_index": 3,
+        "qa_id": "qa_009"
+      },
+      "evidence": "原田委員の発言：「米国のステーブルコイン、USDTやUSDCが爆発的成長と実図拡大が進む一方」。「実図拡大」は意味のない表記。文脈上「実需拡大」（actual demand expansion）または「実途拡大」が正しいと推測される。qa_009 の question.full_text にもこのテキストが引用されている。",
+      "estimated_cause": "「じっすいかくだい」や「じっと（実途）」等の専門金融用語をWhisperが「実図」と誤認識。",
+      "downstream_impact": ["qa_pairs.json"]
+    },
+    {
+      "id": "F012",
+      "category": "whisper_hallucination_loop",
+      "secondary_categories": ["whisper_misrecognition"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "seg[3]冒頭にWhisperハルシネーション的な導入文（プロジェクトクリプト等）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[3].text",
+        "segment_index": 3,
+        "qa_id": null
+      },
+      "evidence": "seg[3]冒頭：「国民民主党議員管轄を明確化し、さらにプロジェクトクリプトによる産業育成によって、さまざまなクリプトマーケットが成長し、日本は後陣を廃止しているように見えます。」。この文は意味的に断片的で、委員長の「国民民主党・新緑風会の原田秀一君」という議員紹介と、原田委員自身のDefi関連の発言冒頭が混在してWhisperがハルシネーション的に合成した可能性が高い。「プロジェクトクリプト」はProject Crypto系の英語フレーズの誤変換と推定。",
+      "estimated_cause": "セグメント境界付近での音声品質低下・話者交代時のWhisperの文脈喪失。英語専門用語（Project Crypto等）の音声を日本語コンテキストで誤認識・合成した可能性。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F013",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "medium",
+      "systemic_signal": "likely_systemic",
+      "title": "国民民主党オースティン・スコット議員 - 日本政党名と米議員名の混在誤認識",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[3].text",
+        "segment_index": 3,
+        "qa_id": null
+      },
+      "evidence": "seg[3]内の原田委員発言：「国民民主党オースティン・スコット議員は、ハイパーリキッド社のようにオフショア無期限先物市場が巨大化し...」。Austin Scott は米国共和党下院議員であり「国民民主党」所属ではない。Whisperが直前の政党名「国民民主党」（原田委員の所属）の音声を米議員名と結合して誤認識した可能性が高い。",
+      "estimated_cause": "原田委員が自党名を述べた後すぐに米議員の名前を引用した際に、Whisperが2つの発話を1つの主語として誤って結合した可能性。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F014",
+      "category": "content_missing",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "杉久武の第1質問イントロ（seg[3]末尾）がqa_019の full_text から欠落",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[18].question.full_text",
+        "segment_index": 4,
+        "qa_id": "qa_019"
+      },
+      "evidence": "杉久武の第1質問は raw_transcript seg[3]（原田秀一のセグメント）末尾に含まれている：「公明党の杉久武でございます。...中東情勢が世界経済に与える影響について、IMF世界銀行春季会合、またG7財務相・中央銀行総裁会議において」と始まり、seg[4]の冒頭「どのような議論がなされたのか」に続く。しかし qa_019 の question.full_text は seg[4]の「どのような議論がなされたのか、確認をさせていただきたいと思います」から始まっており、質問の前半部分（自己紹介・質問背景）が欠落している。",
+      "estimated_cause": "LLM structurer が seg[4] のテキストのみを使って QA ペアを生成しており、seg[3] 末尾に含まれる同一話者の発言を参照していない。セグメント境界をまたぐ発言の扱いがない。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F015",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers 全員の start_time=\"\" かつ duration_minutes=0",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[*].start_time",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json の全 speakers 10 エントリで start_time=\"\" および duration_minutes=0。start_seconds は有効値が入っているが、人間可読な start_time（HH:MM:SS形式等）は全て空文字列。UI 表示や検索での時刻表示に支障が出る可能性がある。",
+      "estimated_cause": "start_time フィールドの変換ロジック（start_seconds → HH:MM:SS 変換）が未実装またはバグにより空文字のまま出力されている。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F016",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata の committee_id=null, session_number=null, duration=\"\", hls_url=\"\"",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.committee_id",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json: committee_id=null, session_number=null, duration=\"\", hls_url=\"\"。4フィールドが未設定。duration と hls_url は参議院TVのスクレイピング制限により取得困難な場合があるが、committee_id と session_number は他セッションとの比較・集計に必要なフィールド。",
+      "estimated_cause": "参議院TVのスクレイピングでは committee_id（委員会識別子）の一貫した取得が困難。hls_url は mediasp.jp 経由で解決済みの場合に記録しないフローになっている可能性。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F017",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs answer.role が 15/39 ペアで空文字列",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "空文字列の answer.role：qa_004（中山）、qa_005（中山）、qa_007（井口）、qa_011（堀本）、qa_012（井上）、qa_013（井上）、qa_014（井上）、qa_018（井上）、qa_021（石田）、qa_022（井上）、qa_023（井上）、qa_029（石田監督局長）、qa_033（石田監督局長）、qa_038（蒲谷）、qa_039（蒲谷）。15/39 ペア（38%）が role 空。一方 片山さつきのペアは role 設定済み。政府参考人（局長・審議官等）の role が欠落している。",
+      "estimated_cause": "LLM structurer が政府参考人の role（局長、審議官等）を抽出できていない。発言者ラベルに役職が含まれる場合（「石田監督局長」）でも分離されていない。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F018",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "石田監督局長と石田の表記揺れ（qa_pairs内）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.speaker",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "同一人物（金融庁石田監督局長）が qa_021 では「石田」、qa_029・qa_033 では「石田監督局長」と表記される。topics.json でも「石田」と「石田監督局長」の両表記が混在（related_speakers 内）。集計・検索での名寄せに支障。",
+      "estimated_cause": "LLM structurer が話者名の正規化ルールを持たず、raw_transcript 内の表記をそのまま引き継いでいる。raw_transcript 内での呼び方の揺れが伝播している。",
+      "downstream_impact": ["topics.json"]
+    },
+    {
+      "id": "F019",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metrics フィールドが 11/39 ペアで null（残り 28 ペアはオブジェクト）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].metrics",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metrics=null のペア：qa_001, qa_002, qa_009, qa_019, qa_021, qa_022, qa_024, qa_028, qa_030, qa_031, qa_036（計11件）。残り28件は metrics オブジェクト有り。null と オブジェクトが混在しており、集計時に型チェックが必要。",
+      "estimated_cause": "metrics 計算の処理で一部のペアがタイムアウトまたはエラーになり null のまま保存されたと推測。あるいはバッチ処理の途中終了。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F020",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs の question に role フィールドが存在しない（answer.role と非対称）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].question",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "全 39 ペアで answer オブジェクトには role フィールドがあるが、question オブジェクトには role フィールドが存在しない。question には party フィールドがあり答弁者との非対称なスキーマになっている。データ利用者が質問者・答弁者の role を同じ方法でアクセスできない。",
+      "estimated_cause": "スキーマ設計上、質問者は party で所属を表し、答弁者は role で職位を表す意図と推測されるが、フィールド命名の一貫性がなく、question に role がない空欄が生じている。",
+      "downstream_impact": []
+    }
+  ],
+  "blindspots": [
+    "raw_transcript の全セグメントを逐字精査しておらず、サンプリングのみ実施。seg[2]〜seg[8]の全テキストに他の誤認識が残存している可能性がある",
+    "外部議事録（官報・公式会議録）との照合による事実確認は未実施",
+    "音声を直接聴取していないため、Whisper誤認識の確信度は文脈推定によるもの",
+    "topics.json と qa_pairs の内容対応について、各 qa_id の内容を全件精査していない（ランダムサンプルのみ）",
+    "LLMモデル（google/gemma-4-31B-it）固有のバイアスや hallucination については評価対象外"
+  ],
+  "narrative": {
+    "overall": "本セッション（参議院財政金融委員会 2026-04-21）は、駿河銀行問題・Web3規制・国家情報会議法案等の幅広いテーマを扱う標準的な委員会審議で、39の Q&A ペアが生成されている。全体的なデータ構造・QA抽出の論理は機能しているが、Whisperの音声認識エラーが複数存在し一部は qa_pairs にそのまま波及している点、および summary.json が院を誤認識している点が品質低下の主因である。コンテンツ欠落（ラサール石井の最初のQ&A欠落、杉久武の質問イントロ欠落）はセグメント境界処理の構造的問題に起因しており、他セッションでも再発している可能性が高い。スキーマ整合性の問題（start_time 空文字、answer.role 空文字、metrics 混在 null）は軽微だが横断的に発生しているとみられる。",
+    "top_findings": [
+      "summary.json の院誤認識（衆議院→参議院）は LLM structurer がセッションメタデータを正確に参照していないことを示す構造的問題であり、他セッションでも同様の誤りが起きている可能性が高い",
+      "ラサール石井の最初のQ&A（拡大情報コミュニティ確認）がセグメント境界分割により qa_pairs から欠落しており、国家情報会議法案に関する重要な政府答弁がデータベースに存在しない",
+      "Whisperの専門用語誤認識（金融整理管財人→金融整理官材、時代による解決、同校が→同行が）が qa_pairs の answer.full_text にそのまま波及しており、データ利用者が事実と異なる政府答弁内容を閲覧するリスクがある"
+    ]
+  }
+}

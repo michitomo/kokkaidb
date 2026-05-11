@@ -1,0 +1,148 @@
+{
+  "session_id": "shugiin/2026/04/24/56212_経済産業委員会",
+  "chamber": "shugiin",
+  "date": "2026-04-24",
+  "deli_id": "56212",
+  "committee": "経済産業委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T15:16:12+00:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 3, "medium": 5, "low": 5, "total": 13},
+  "findings": [
+    {
+      "id": "F01",
+      "severity": "high",
+      "category": "content_missing",
+      "location": "qa_pairs.json / qa_013",
+      "description": "qa_013 (阿部司→峯村健司) の answer.full_text が文中で途切れている。「そこに日本は同盟というか」で終了しており、以降の主張（台北一辺倒への対抗策）が欠落している。",
+      "evidence": "full_text 末尾: 「...そこに日本は同盟というか」（文末句読点なし）",
+      "recommendation": "utterances.json seg8 の峯村健司発言と対照し、続きを補完する。"
+    },
+    {
+      "id": "F02",
+      "severity": "high",
+      "category": "speaker_misattribution",
+      "location": "qa_pairs.json / qa_012",
+      "description": "質問者 阿部司 が「まず大橋参考人をお願いいたします」と明示しているにもかかわらず、answer.speaker が「宮澤伸」になっている。大橋弘の発言が欠落し、宮澤伸の発言が大橋宛回答として記録されている。",
+      "evidence": "question.full_text: 「はい。まず大橋参考人をお願いいたします。」 / answer.speaker: 「宮澤伸」",
+      "recommendation": "大橋弘の発言をqa_012の答弁として修正し、宮澤伸の発言は別QAペアとして追加するか qa_012に複数回答フォーマットで格納する。"
+    },
+    {
+      "id": "F03",
+      "severity": "high",
+      "category": "speaker_misattribution",
+      "location": "qa_pairs.json / qa_018",
+      "description": "質問者 鈴木義弘 が「大橋参考人」を名指しして質問しているが、answer.speaker が「宮澤伸」になっている。大橋弘の発言が欠落している可能性がある。",
+      "evidence": "question.full_text 末尾: 「...大橋先生、大橋参考人。」 / answer.speaker: 「宮澤伸」",
+      "recommendation": "qa_014 (同じ質疑ブロックで大橋弘が答弁) との整合を確認し、発話順序を再検証する。"
+    },
+    {
+      "id": "F04",
+      "severity": "medium",
+      "category": "content_missing",
+      "location": "qa_pairs.json / qa_024",
+      "description": "qa_024 (牧野俊一→濱口伸明) の answer.full_text が「ご質問ありがとうございます。私も牧野先生がおっしゃるように、まさに同じ思いを。大臣。」で終了。濱口参考人が大臣に発言を振った直後に打ち切られており、実質的な答弁内容が欠落している。",
+      "evidence": "answer.full_text の全文が上記89文字のみ",
+      "recommendation": "当該時刻 (t=8735s) 以降の発言（大臣発言および濱口の補足）を確認し、answer 内容を補完する。"
+    },
+    {
+      "id": "F05",
+      "severity": "medium",
+      "category": "content_missing",
+      "location": "qa_pairs.json / qa_006",
+      "description": "qa_006 (吉田宣弘→宮澤伸) の answer.full_text が「省力化、あるいは自動化といったよろしくお願いいたします。」で途切れており、実質的な回答が完結していない。",
+      "evidence": "answer.full_text 末尾: 「...省力化、あるいは自動化といったよろしくお願いいたします。」（文脈上不完全）",
+      "recommendation": "utterances.json seg7 の宮澤伸発言と照合し、続きを補完する。"
+    },
+    {
+      "id": "F06",
+      "severity": "medium",
+      "category": "content_missing",
+      "location": "qa_pairs.json / qa_019",
+      "description": "qa_019 (鈴木義弘→大橋弘) の answer.full_text が「データセンターは確かに建設においては地元に落ちるお金がある。ただ、できた後どうなんだと。」で終了。質問で求められた2点（データセンターの地域波及効果、海外展開戦略）への回答が実質欠落している。",
+      "evidence": "answer.full_text: 80文字のみ、2点目への言及なし",
+      "recommendation": "utterances.json seg9 の大橋弘発言と照合し、続きを補完する。"
+    },
+    {
+      "id": "F07",
+      "severity": "medium",
+      "category": "timestamp_inconsistency",
+      "location": "qa_pairs.json / qa_024",
+      "description": "qa_024 の segment_index=10（牧野俊一ブロック: 7591-8547s）に対し、video_url の time パラメータが 8735s を指しており、seg10 の終端 8547s を超えている。当該 QA ペアは実際には seg11 (河合道雄ブロック) の時間帯に属する。",
+      "evidence": "seg10 range: 7591-8547s / qa_024 video_url time=8735s",
+      "recommendation": "qa_024 の segment_index を 11 に修正する。"
+    },
+    {
+      "id": "F08",
+      "severity": "medium",
+      "category": "schema_inconsistency",
+      "location": "qa_pairs.json / qa_008〜qa_012",
+      "description": "qa_008, 009, 010, 011, 012 の 5 ペアすべてが同一の question.summary（「政府の関与と市場の規律のバランスという観点から...」）を持っている。実際には各ペアの question.full_text は異なる内容（挨拶のみ、前置きのみ、本質問のみ）であり、LLM が元質問の意図を一括で summary に適用した構造的問題。",
+      "evidence": "5ペア全て同一 summary: 「- 改正案に盛り込まれた投資促進税制や産業用地整備などの措置について\\n- 政府の関与と市場の規律のバランスという観点から、最も評価できる点と懸念すべき点についての見解を求める」",
+      "recommendation": "各 qa ペアの question.full_text に基づき、それぞれ適切な summary に修正する。"
+    },
+    {
+      "id": "F09",
+      "severity": "low",
+      "category": "schema_empty_field",
+      "location": "metadata.json",
+      "description": "metadata.json の duration フィールドが空文字列。総発言時間が不明のため、セッション長の検証ができない。",
+      "evidence": "\"duration\": \"\"",
+      "recommendation": "最終発言の終了時刻から開始時刻（470s）を引いて duration を算出し記録する。"
+    },
+    {
+      "id": "F10",
+      "severity": "low",
+      "category": "schema_empty_field",
+      "location": "metadata.json",
+      "description": "metadata.json の committee_id と session_number が null。他セッションとの横断検索・集計に支障が生じる。",
+      "evidence": "\"committee_id\": null, \"session_number\": null",
+      "recommendation": "衆議院TVの公式ソース (deli_id=56212) から補完する。"
+    },
+    {
+      "id": "F11",
+      "severity": "low",
+      "category": "other",
+      "location": "qa_pairs.json / qa_001, qa_015",
+      "description": "answer.full_text に委員長の発言（「工藤彰三委員長」「工藤委員長峯村君。」）が混入している。回答者の発言終了後の進行発言が answer テキストに含まれている。",
+      "evidence": "qa_001 末尾: 「...以上でございます。工藤彰三委員長」 / qa_015 末尾: 「...以上です。工藤委員長峯村君。」",
+      "recommendation": "answer.full_text から委員長の進行発言を除去する。"
+    },
+    {
+      "id": "F12",
+      "severity": "low",
+      "category": "other",
+      "location": "qa_pairs.json / qa_002, qa_003",
+      "description": "question.full_text が次の回答者名（「澤田純」「濱口伸明」）で終わっている。質問文末の発話指示が question テキストに混入している。",
+      "evidence": "qa_002 question末尾: 「...澤田参考人。澤田純」 / qa_003 question末尾: 「...濱口参考人。濱口伸明」",
+      "recommendation": "question.full_text から次話者の名指し部分（最後の参考人名）を除去する。"
+    },
+    {
+      "id": "F13",
+      "severity": "low",
+      "category": "other",
+      "location": "qa_pairs.json / qa_015, qa_016, qa_017, qa_018 / qa_021, qa_022",
+      "description": "qa_015-018（鈴木義弘ブロック）と qa_021-022（牧野俊一ブロック）で複数ペアが同一の question.summary を共有している。それぞれ異なる question.full_text に基づく要約が必要。",
+      "evidence": "4ペア共通: 「- AIの導入により、国民が何をやって食べていけばいいのかという生存戦略について見解を求める」 / 2ペア共通: 「- 今後のAI社会において、外国人労働者の受け入れ方を社会全体としてどう考えるべきか」",
+      "recommendation": "各 qa ペアの question.full_text に即した個別 summary に修正する。"
+    }
+  ],
+  "blindspots": [
+    {
+      "area": "PR30 参考人 role 検証",
+      "note": "全5名（大橋弘・澤田純・峯村健司・濱口伸明・宮澤伸）の metadata.speakers.role が「参考人」に正しく設定されていることを確認。PR30 の修正が有効に適用されている。"
+    },
+    {
+      "area": "PR22 安倍元総理ハルシネーション",
+      "note": "qa_027 (峯村健司) に「安倍晋三元首相」の言及があるが、「第一次トランプ政権のとき」「生前よく伺った」という文脈上の正当な歴史的引用であり、ハルシネーションではない。summary.json・topics.json には安倍の言及なし。PR22 の除去対象にはあたらない。"
+    },
+    {
+      "area": "Whisper ハルシネーション・ループ",
+      "note": "370個の whisper_segments を検査した結果、繰り返しループ（3回以上の同一テキスト）は検出されなかった。raw_transcript.json に corrected=false が記録されており、corrector 未適用の状態だが、肉眼での重大な誤認識も確認されなかった。"
+    },
+    {
+      "area": "事実誤認",
+      "note": "「戦後日本が10年足らずで造船シェア世界一」（qa_022 質問文）は1956年頃に英国を抜いた史実と概ね整合。「高市総理大臣の訪米」は2026年時点の文脈として一貫性がある。IOWN を澤田純（元NTT会長）が説明するのは適切。数値（ROI15%・投資規模35億/5億・7%税額控除）の文書上の整合性に問題なし。"
+    }
+  ]
+}

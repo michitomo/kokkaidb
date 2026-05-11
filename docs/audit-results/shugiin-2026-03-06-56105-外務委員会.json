@@ -1,0 +1,280 @@
+{
+  "session_id": "shugiin/2026/03/06/56105_外務委員会",
+  "chamber": "shugiin",
+  "date": "2026-03-06",
+  "deli_id": "56105",
+  "committee": "外務委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T10:30:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 5, "medium": 5, "low": 4, "total": 14},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "content_missing",
+      "secondary_categories": ["speaker_misattribution"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "segment 9 (穂坂泰 30分質疑) が qa_pairs に1件も生成されていない",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[?(@.segment_index==9)]",
+        "segment_index": 9,
+        "qa_id": null
+      },
+      "evidence": "utterances.json segment 9 は segment_speaker=穂坂泰、22 utterances（11問11答）を持つ。しかし qa_pairs.json の segment_index リストは [1,2,3,4,5,6,7,10] であり segment 9 が皆無。metadata.speakers に穂坂泰（duration_minutes=30）が登録されており、topics.json・summary.json でも穂坂泰は related_speakers に一切登場しない。",
+      "estimated_cause": "utterances.json の segment 9 において、questioner（穂坂泰）の全発言が speaker=国場幸之助・role=委員長 に誤帰属されている（F002）。その結果 structurer が QA ペアを組み立てられず、segment 9 全体の qa_pairs 生成をスキップしたと推定。",
+      "downstream_impact": ["topics.json", "summary.json"]
+    },
+    {
+      "id": "F002",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["role_label_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "segment 9: 穂坂泰の質問 11 発言が全て 国場幸之助 (委員長) に誤帰属",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[8].utterances[*]",
+        "segment_index": 9,
+        "qa_id": null
+      },
+      "evidence": "utterances.json segment 9 の 22 utterances のうち、奇数インデックス（質疑者ターン）11件が全て speaker='國場幸之助'・role='委員長' に設定されている。しかしテキストは「穂坂泰君。自由民主党の穂坂泰です。本日はこの質問の時間をいただきまして…」と始まり、穂坂泰本人の質問内容が続く。穂坂泰は utterances.json 全体を通じて speaker フィールドに一度も登場しない。",
+      "estimated_cause": "speaker_tagger が segment 9 の音声において、委員長の指名読み上げ（「穂坂泰君。」）直後に続く穂坂の発話を委員長の継続発話と判定した。委員長指名テキストと質問テキストが同一 segment に混在したため、話者交代を検出できなかったと推定。",
+      "downstream_impact": ["qa_pairs.json", "topics.json", "summary.json"]
+    },
+    {
+      "id": "F003",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["role_label_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_041/042/044/045: 答弁者を佐々木真琴 (質疑議員) に誤帰属",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[?(@.id=='qa_041' || @.id=='qa_042' || @.id=='qa_044' || @.id=='qa_045')].answer.speaker",
+        "segment_index": 5,
+        "qa_id": "qa_041"
+      },
+      "evidence": "qa_041（topic: 最新の石油備蓄量）: question.speaker=深作ヘスス, answer.speaker=佐々木真琴, answer.role=国民民主党・無所属クラブ。answer.full_text は「日本の石油備蓄量は、国家備蓄、民間備蓄、三位国共同備蓄合わせて…」と石油備蓄数値を答弁する内容。utterances.json segment 5 では同一内容が speaker='佐々木大臣官房エネルギー地域政策統括調整官'・role='政府参考人' として正しく記録されている。qa_042/044/045 も同様。",
+      "estimated_cause": "structurer が qa_pairs を組み立てる際、segment 4 の質疑者 '佐々木真琴' の名前と、segment 5 で答弁した '佐々木大臣官房エネルギー地域政策統括調整官' の姓（佐々木）を混同した。姓同一による surname collision が原因と推定。",
+      "downstream_impact": ["topics.json"]
+    },
+    {
+      "id": "F004",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["role_label_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "unknown",
+      "title": "qa_030: answer.speaker=佐々木真琴 だが本文冒頭に「茂木大臣：」と明記",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[?(@.id=='qa_030')].answer",
+        "segment_index": 4,
+        "qa_id": "qa_030"
+      },
+      "evidence": "qa_030 answer.speaker='佐々木真琴', answer.role='国民民主党・無所属クラブ' だが、answer.full_text の冒頭は「茂木大臣：日本政府として、女性・平和・安全保障に関する行動計画を策定しておりまして…」であり、明らかに茂木外務大臣の答弁。",
+      "estimated_cause": "qa_030 の question.speaker=佐々木真琴 (WPS 質問) に対し、structurer が answer の speaker を question.speaker と同じく佐々木真琴に割り当てる誤りを犯した。full_text の「茂木大臣：」プレフィクスは無視された。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F005",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "邦人 → 法人 の誤認識が raw_transcript 全体に約 20 箇所",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].text",
+        "segment_index": 1,
+        "qa_id": "qa_004"
+      },
+      "evidence": "raw_transcript segment 1 で「イラン国内で法人が拘束されている人数」「同法人を含めまして2名が拘束」「この法人の早期解放」など、文脈上「邦人（日本国民）」とすべき箇所が全て「法人（法人格）」になっている。邦人は raw_transcript 全体で 49 回、法人は 24 回出現するが、拘束文脈の法人はほぼ全て邦人の誤認識。qa_pairs.json にも伝播し commitment_text が「拘束されている法人の早期解放」となっている（summary.json では LLM が「日本人」と意味補正）。",
+      "estimated_cause": "邦人（ほうじん）と法人（ほうじん）は同音異義語。Whisper large-v3-turbo が音声から漢字変換する際に誤選択した。",
+      "downstream_impact": ["utterances.json", "qa_pairs.json"]
+    },
+    {
+      "id": "F006",
+      "category": "other",
+      "secondary_categories": ["fact_error"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "LLM の編集注釈が transcript テキストに混入（有権的 注記）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[8].text",
+        "segment_index": 9,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json segment 9 および utterances.json segment 9 の茂木大臣答弁箇所に「（※注：文脈により「有権的に」は不自然ですが、意味を変えないため維持）」という LLM 編集注釈が混入している。実際のテキスト: 「…日本政府として有権的に（※注：文脈により「有権的に」は不自然ですが、意味を変えないため維持）お答えする立場にはございません…」",
+      "estimated_cause": "speaker_tagger または transcript 補正 LLM が Whisper 出力の語彙チェック時に自己注釈を生成し、それを削除せずに transcript テキストに埋め込んだ。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F007",
+      "category": "schema_empty_field",
+      "secondary_categories": ["role_label_error"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs 23件で answer.role が空文字列 (政府参考人答弁)",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[?(@.answer.role=='')].answer.role",
+        "segment_index": null,
+        "qa_id": "qa_012"
+      },
+      "evidence": "qa_012, qa_013, qa_014, qa_015, qa_020, qa_022, qa_025, qa_026, qa_036, qa_037, qa_040, qa_046, qa_048, qa_049, qa_051, qa_052, qa_054, qa_057, qa_058, qa_060, qa_064, qa_065, qa_066 の 23 件で answer.role=''。対応する answer.speaker は上田大臣官房参事官、野村大臣官房審議官、外務審議官、岩本中東アフリカ局長、藤沢通商政策局国際経済部長 等の政府参考人。utterances.json では同一発言者が role='政府参考人' として正しく記録されている。",
+      "estimated_cause": "structurer が政府参考人の role を qa_pairs に転写する処理で、role フィールドを空文字のまま出力した。茂木大臣（role='外務大臣'）は正しく設定されており、参考人ロールの処理が抜けている可能性。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F008",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "23 名の政府参考人が metadata.speakers に未登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers には 11 名（質疑議員+委員長+茂木大臣）のみ記録。utterances.json に登場する政府参考人（上田大臣官房参事官、野村大臣官房審議官、岩本中東アフリカ局長、外務審議官、大鶴、藤沢通商政策局国際経済部長、高山大臣官房審議官、渡辺大臣官房審議官、田口大臣官房参事官、門脇大臣官房参事官、熊谷、官房政策立案担当主幹、佐々木大臣官房エネルギー地域政策統括調整官、麻生大臣官房審議官、外務報道官、貿易経済安全保障局貿易管理部長 等 23 名）が一切記録されていない。",
+      "estimated_cause": "metadata 生成ロジックが衆議院TVのスクレイパーで取得できた主要質疑者のみを speakers に入れており、政府参考人（大臣所信で事前配付されたリスト23名）の情報を metadata に反映していない。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F009",
+      "category": "role_label_error",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_030/041/042/044/045: answer.role に政党名 '国民民主党・無所属クラブ' が設定",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[?(@.answer.role=='国民民主党・無所属クラブ')].answer.role",
+        "segment_index": null,
+        "qa_id": "qa_030"
+      },
+      "evidence": "qa_030, qa_041, qa_042, qa_044, qa_045 の 5 件で answer.role='国民民主党・無所属クラブ'。これは佐々木真琴の会派名であり、答弁者の職責（例: 政府参考人、外務大臣）ではない。他の全答弁は role='外務大臣' またはblank が設定されている。",
+      "estimated_cause": "speaker_misattribution (F003/F004) の連鎖的影響。佐々木真琴が answerer として誤設定された際に、structurer が佐々木真琴の party フィールドを role に転記した。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F010",
+      "category": "summary_qa_divergence",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary の key_commitments に qa_018 があるが qa_pairs では has_commitment=False",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments[1]",
+        "segment_index": null,
+        "qa_id": "qa_018"
+      },
+      "evidence": "summary.json key_commitments に qa_id='qa_018'（キャンパスアジア 2030年3万人目標）が含まれ、茂木外務大臣のコミットメントとして記載。一方 qa_pairs.json qa_018 の answer.has_commitment=false、commitment_text=null。answer.full_text には「2030年度末までに3万人の学生の参加を目指すことを目標として…着実に進めていく」と明確な目標言及がある。",
+      "estimated_cause": "structurer が qa_pairs と summary で独立した LLM 呼び出しを使用しており、commitment 判定の閾値や解釈が異なった。summary LLM の方が目標言及をコミットメントと正しく評価した。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F011",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata: committee_id=null, session_number=null, duration=空文字",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.committee_id",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json: committee_id=null, session_number=null, duration='' (空文字), mediasp_hash='' (空文字)。duration は speakers の start_seconds から推定約 383 分相当。committee_id と session_number は衆議院TVのソースから取得可能なはずだが未入力。",
+      "estimated_cause": "衆議院スクレイパーが committee_id・session_number フィールドの抽出ロジックを持っていないか、または 2026-03-06 時点のページ構造から取得できなかった可能性。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F012",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "utterances.json 内で 茂木大臣 と 茂木敏充 の speaker 名が混在",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[8].utterances[17].speaker",
+        "segment_index": 9,
+        "qa_id": null
+      },
+      "evidence": "utterances.json で茂木外務大臣の speaker 名が段落により 茂木敏充（大多数）・茂木大臣（segment 9 の 1 件）と混在。qa_pairs.json では全件 '茂木敏充' に統一されているが、utterances.json にはバリアントが残る。",
+      "estimated_cause": "speaker_tagger が Whisper テキスト中の「茂木大臣。」という呼称をそのまま speaker 名として取得した。正規化処理が不完全。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F013",
+      "category": "duplicate",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers に 国場幸之助 (委員長) が AM/PM で 2 エントリ重複",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[0]",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers に 国場幸之助・外務委員長 が start_seconds=1188.1 (09:00) と start_seconds=19188.6 (14:00) の 2 エントリ存在。午前・午後の 2 セッションを反映したものだが、同一委員長の重複登録であり、speakers リストとして冗長。",
+      "estimated_cause": "metadata 生成ロジックが「発言した時刻」ベースで speakers を作成しているため、同一人物が複数の発言時刻を持つ場合に重複エントリが生じる。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F014",
+      "category": "content_missing",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "qa_034（深作ヘスス 1問目）がいずれのトピックにも紐付けられていない",
+      "location": {
+        "file": "topics.json",
+        "json_path": "$.topics[*].related_qa_ids",
+        "segment_index": 5,
+        "qa_id": "qa_034"
+      },
+      "evidence": "qa_034（topic: '日本への国際社会からの期待と外交姿勢'、question.speaker=深作ヘスス）は qa_pairs.json に存在するが、topics.json の 10 トピック全てのrelated_qa_ids リストに含まれていない。他の 66 件は少なくとも 1 トピックに参照されている。",
+      "estimated_cause": "structurer がトピック分類時に qa_034 の「外交姿勢・国際的期待」という抽象的テーマを既存トピックに分類しきれずスキップした可能性。",
+      "downstream_impact": []
+    }
+  ],
+  "blindspots": [
+    "raw_transcript.json の全 whisper_segments を逐字精査していない（サンプリングベース）",
+    "外部の議員名簿・公式議事録との照合は未実施（誤認識の全数把握に不足）",
+    "法人/邦人 以外の同音異義語誤認識の網羅的チェックは未実施",
+    "qa_pairs の evasion_score の妥当性検証は未実施",
+    "segment 11（茂木大臣 提案趣旨説明）が qa_pairs にない点は意図的スキップ可能性もあり断定しなかった"
+  ],
+  "narrative": {
+    "overall": "本セッション（衆議院外務委員会 2026-03-06）は 8 名の議員が外務大臣・23 名の政府参考人と質疑を交わした長時間セッション（推定約 6.4 時間）であり、総じて qa_pairs の構造は良好で多くの Q&A が正確に記録されている。しかし speaker_tagger の話者識別失敗により穂坂泰議員（自民党・約 30 分の質疑）の全発言が委員長に誤帰属され、qa_pairs・topics・summary からも完全に欠落するという高重大度の問題が発生している。加えて Whisper の邦人→法人同音異義語誤認識が約 20 箇所に及び、LLM による編集注釈がトランスクリプト本文に混入するという品質汚染も確認された。5 件の qa_pairs で 佐々木 姓衝突による誤帰属（委員と政府参考人の混同）も発生しており、全体として姓が一致する人物が複数登場するセッションでの処理脆弱性が浮き彫りになった。",
+    "top_findings": [
+      "穂坂泰議員（自民党）の 30 分質疑が speaker_tagger の誤帰属により qa_pairs・topics・summary から完全欠落（F001/F002）：委員長指名読み上げ直後の話者交代を検出できず、質問11件が全て委員長発言として記録された。データ利用者は穂坂泰の質疑を一切参照できず、当該議員の国会活動記録に重大な欠損が生じる。",
+      "Whisper による 邦人→法人 同音異義語誤認識（F005）：qa_004 の答弁「拘束されている法人の早期解放」など約 20 箇所で誤認識が発生し qa_pairs.json の commitment_text にも伝播。summary.json では LLM が「日本人」と意味補正しているため、2 ファイル間で表記が矛盾する。",
+      "佐々木姓衝突による 4 件の答弁者誤帰属（F003）：segment 5 で答弁した佐々木大臣官房エネルギー地域政策統括調整官を、segment 4 の質疑者 佐々木真琴と混同。qa_041/042/044/045 で answer.speaker が委員（国民民主党）となり answer.role に政党名が設定された。"
+    ]
+  }
+}

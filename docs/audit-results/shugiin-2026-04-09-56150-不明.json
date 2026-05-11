@@ -1,0 +1,169 @@
+{
+  "session_id": "shugiin/2026/04/09/56150_不明",
+  "chamber": "shugiin",
+  "date": "2026-04-09",
+  "deli_id": "56150",
+  "committee": "不明",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T00:00:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 4, "medium": 5, "low": 2, "total": 11},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": ["other"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "committee名が「不明」：スクレイパーによるメタデータ抽出失敗。実際は憲法審査会",
+      "location": {"file": "metadata.json", "json_path": "$.committee", "segment_index": null, "qa_id": null},
+      "evidence": "metadata.json: committee=\"不明\", committee_id=null, session_number=null。HLS URLは 2026-0409-1100-18 (suffix -18)。同じ suffix -18 の 2026/04/23 セッション (deli_id=56206) は committee=\"憲法審査会\" として正しく抽出されている。さらに utterances.json segment 0 の古屋圭司発言冒頭に「本日は憲法審査会の今後の議論について討議を行います」と明記されており、また metadata.speakers の古屋圭司の affiliation が「憲法審査会会長」と記録されている。",
+      "estimated_cause": "衆議院TVのソースページ (deli_id=56150) からcommittee名を抽出するスクレイパーの処理が、このセッションでは失敗した。ページ構造の差異またはセッション当日のエンコーディング/DOM変動が原因と推測される。",
+      "downstream_impact": ["ディレクトリ名が 56150_不明 となりサイト上のナビゲーション・フィルタで憲法審査会として表示されない", "topics.json・summary.json の正確性は保たれているが、committee フィールドを利用した検索・集計が機能しない", "committee_id=null により審査会シリーズとしての連続性が失われる"]
+    },
+    {
+      "id": "F002",
+      "category": "speaker_misattribution",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_008-011 の answer.speaker が玉木雄一郎に誤帰属（実際の発言者は古屋圭司）",
+      "location": {"file": "qa_pairs.json", "json_path": "$.pairs[?(@.id=~'qa_00[89]|qa_01[01]')].answer.speaker", "segment_index": 4, "qa_id": "qa_008,qa_009,qa_010,qa_011"},
+      "evidence": "qa_008/009/010/011 の answer.speaker=\"玉木雄一郎\", answer.role=\"国民民主党・無所属クラブ\" だが、answer.full_text=\"今、玉木雄一郎君から具体的な提案がございましたけども、5党幹事会で議論をさせていただきます。\" の「玉木雄一郎君から…」という三人称表現から、話者は古屋圭司（会長）本人ではなく玉木を指しており、これは会長が玉木に言及している文脈である。summary.json の key_commitments では同テキストの話者が正しく古屋圭司・役職「憲法審査会会長」と記録されており矛盾している。utterances.json でも当該テキストは segment_index=4 の玉木ブロック末尾に誤って付属している（F009参照）。",
+      "estimated_cause": "utterances.json のセグメント 4（玉木）の単一 utterance テキスト末尾に古屋圭司の発言が混在（F009）し、LLM structurer がこのテキストブロックを玉木の発言として処理した。Whisper の話者ダイアライゼーション境界の遅れにより、古屋の短い応答が玉木の音声チャンクに含まれたことが根本原因。",
+      "downstream_impact": ["commitment の帰属が誤っており、古屋圭司の議会運営コミットメントが玉木雄一郎への誤帰属となる", "has_commitment=true, commitment_text が誤話者に紐付けられるため約束トラッカー機能が誤動作する", "key_commitments の speaker と qa_pairs の answer.speaker が不一致（F010 参照）"]
+    },
+    {
+      "id": "F003",
+      "category": "content_missing",
+      "secondary_categories": ["whisper_misrecognition"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "和田政宗（参政党）の発言で「なぜ創憲なのか」の第二の理由が脱落",
+      "location": {"file": "utterances.json", "json_path": "$.segments[4].utterances[1].text", "segment_index": 5, "qa_id": null},
+      "evidence": "utterances.json segment 5 (和田政宗) のテキスト中、「なぜ創憲なのか。第一に、日本固有の価値観や考え方がほとんど取り入れられておらず…からです。三つ目に、現行憲法には…」と「第一に」から「三つ目に」へ直接飛んでおり、「二つ目に」（第二の理由）が完全に欠落している。raw_transcript.json の同セグメントでも同様に欠落しており、Whisper が第二の理由を認識・出力しなかったことが確認できる。",
+      "estimated_cause": "Whisper による音声認識時に第二の理由に相当する音声区間が無音・低声量・重複認識等の理由でスキップされた可能性がある。LLM 補正段階でも補完されなかった。",
+      "downstream_impact": ["和田政宗の主張の論理構造が欠損し、利用者が発言を完全に理解できない", "この発言は qa_pairs にも収録されていないため、欠落を qa 側でも補完できない"]
+    },
+    {
+      "id": "F004",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "「ホルム会長」が LLM 補正で修正されずに残存（正しくは「ホルムズ海峡」の文脈）",
+      "location": {"file": "utterances.json", "json_path": "$.segments[3].utterances[1].text", "segment_index": 4, "qa_id": "qa_011"},
+      "evidence": "utterances.json segment 4 (玉木雄一郎) のテキスト：「今、馬場幹事からホルム会長の話が出ましたけれども、いわゆる改憲4項目の自衛隊明記においては…」。raw_transcript.json の同箇所の Whisper 出力も「ホルム会長」となっている。馬場伸幸の発言（segment 3）ではホルムズ海峡の文脈で「ホルムズ海峡通行の問題」と述べており、「ホルム会長」という人物への言及は存在しない。qa_011 の full_text にも同じ誤認識が残っている。",
+      "estimated_cause": "Whisper が「ホルムズ海峡の話」を「ホルム会長の話」と誤認識し、LLM 補正がこのコンテキスト外の固有名詞の誤りを修正しなかった。",
+      "downstream_impact": ["玉木の発言テキストに実在しない「ホルム会長」という人物名が混入し、検索・分析時に誤情報となる", "qa_011 の full_text にも同誤認識が伝播している"]
+    },
+    {
+      "id": "F005",
+      "category": "content_missing",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "5名（國重徹・馬場伸幸・和田政宗・古川あおい・古屋圭司冒頭）の発言が qa_pairs に収録されていない",
+      "location": {"file": "qa_pairs.json", "json_path": "$.pairs", "segment_index": null, "qa_id": null},
+      "evidence": "utterances.json には 8 セグメント（segment 0-7）が存在し、それぞれ古屋圭司(seg 0)・新藤義孝(seg 1)・國重徹(seg 2)・馬場伸幸(seg 3)・玉木雄一郎(seg 4)・和田政宗(seg 5)・古川あおい(seg 6)・畑野君枝(seg 7)が収録されている。qa_pairs.json が対象とするセグメントは seg 1、4、7 のみ。seg 2（國重：2294文字）、seg 3（馬場：2036文字）、seg 5（和田：2149文字）、seg 6（古川：2327文字）の実質的な発言はいずれも qa_pairs に収録されていない。topics.json の related_speakers にもこれら4名が一切記載されていない。",
+      "estimated_cause": "LLM structurer がセグメント選択時に特定のセグメントのみを処理対象とした、または処理に失敗した可能性がある。自由討議形式のセッションで q/a 構造が取りにくいため、LLM が発言のない（実質モノローグ型）セグメントを qa_pairs 生成対象外と判断した可能性もある。",
+      "downstream_impact": ["8議員中5名（62.5%）の発言内容がデータベース上で検索・閲覧不能", "特に馬場伸幸（維新）・國重徹（中道改革連合）・古川あおい（チームみらい）・和田政宗（参政党）の重要な憲法論議が失われる", "summary と topics が一部議員（國重・馬場・和田・古川）の固有名詞には触れているが内容を参照できない"]
+    },
+    {
+      "id": "F006",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers の role フィールドが全員空文字列（utterances.json では委員長/質疑者と記録）",
+      "location": {"file": "metadata.json", "json_path": "$.speakers[*].role", "segment_index": null, "qa_id": null},
+      "evidence": "metadata.json の speakers 配列で全 8 名の role フィールドが \"\" （空文字列）。utterances.json では古屋圭司は role=\"委員長\"、その他全員は role=\"質疑者\" として記録されている。同一情報が 2 ファイルで不一致。",
+      "estimated_cause": "metadata.json の speakers はスクレイパーが衆議院TVのページから取得した情報だが、role 情報はページに存在しないか取得に失敗した。utterances.json の role は LLM が発言文脈から推定したもの。",
+      "downstream_impact": ["metadata.speakers.role を利用してフィルタリングを行う下流アプリが機能しない", "データ利用者が metadata を参照した際に役職情報が欠如している"]
+    },
+    {
+      "id": "F007",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "metadata.json の duration・committee_id・session_number が空/null",
+      "location": {"file": "metadata.json", "json_path": "$.duration", "segment_index": null, "qa_id": null},
+      "evidence": "metadata.json: duration=\"\" (空文字列), committee_id=null, session_number=null。他の正常セッション（例：56152_総務委員会）では committee_id が設定されている。session_number=null は憲法審査会固有（会期制ではなく任期通算）かもしれないが、duration の欠落は異常。raw_transcript.json から計算可能な総尺は 4214.5 秒（約70分）。",
+      "estimated_cause": "committee=不明 と同じスクレイパー失敗に起因。委員会情報が取得できなかったため committee_id も設定できなかった。duration は HLS から取得するが、処理エラーで空文字列となった可能性がある。",
+      "downstream_impact": ["サイト上のセッション一覧で duration が表示されない", "committee_id を用いたシリーズ集計が不可能"]
+    },
+    {
+      "id": "F008",
+      "category": "duplicate",
+      "secondary_categories": ["speaker_misattribution"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "qa_008・009・010・011 の answer.full_text が完全に同一（同一テキストが4回重複）",
+      "location": {"file": "qa_pairs.json", "json_path": "$.pairs[?(@.id=~'qa_00[89]|qa_01[01]')].answer.full_text", "segment_index": 4, "qa_id": "qa_008,qa_009,qa_010,qa_011"},
+      "evidence": "qa_008, qa_009, qa_010, qa_011 の answer.full_text はすべて「今、玉木雄一郎君から具体的な提案がございましたけども、5党幹事会で議論をさせていただきます。」と完全一致。has_commitment=true, commitment_text=\"5党幹事会で議論する\", evasion_score=0.3 もすべて同一。会長の一言が4つの quality（運営方法・緊急事態・緊急集会・9条）へのまとめ回答として4回複製されている。",
+      "estimated_cause": "LLM structurer が玉木セグメントの複数質問群に対して会長の締め括り一言を個別に紐付けようとした結果、同一応答が4回コピーされた。自由討議形式で質疑応答が明確に分離されない場合の構造化処理限界。",
+      "downstream_impact": ["qa_pairs の answer 品質が実態より高く見える（has_commitment=true が4件計上）", "コミットメント集計時に1件の発言が4件として重複カウントされる"]
+    },
+    {
+      "id": "F009",
+      "category": "speaker_misattribution",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "utterances.json の segment 4 で古屋圭司の発言が玉木雄一郎の utterance テキストに混在",
+      "location": {"file": "utterances.json", "json_path": "$.segments[3].utterances[1].text", "segment_index": 4, "qa_id": null},
+      "evidence": "utterances.json segment 4 (segment_speaker=\"玉木雄一郎\") の utterances[1].text の末尾に「以上です。今、玉木雄一郎君から具体的な提案がございましたけども、5党幹事会で議論をさせていただきます。」が含まれている。raw_transcript.json segment 4 の最後の Whisper サブセグメント (id=17) も同テキストを含んでいる。「玉木雄一郎君から…」は三人称表現であり、古屋圭司が自身のターン中に玉木の提案を受けて発言したテキストが、Whisper の音声チャンク切り出しの遅れにより玉木のセグメントに混入した。",
+      "estimated_cause": "話者ダイアライゼーション（またはスクレイパーの発言者リスト取得）が定めたセグメント境界（end=3016.3秒）より前に古屋圭司の短い応答発言が発生し、当該音声がすでに玉木のチャンクとして Whisper に送られた。",
+      "downstream_impact": ["utterances.json を参照するシステムが古屋の発言を玉木の発言と誤認識する", "F002（qa_pairs の answer.speaker 誤帰属）の根本原因"]
+    },
+    {
+      "id": "F010",
+      "category": "summary_qa_divergence",
+      "secondary_categories": ["speaker_misattribution"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "summary.json の key_commitments 話者（古屋圭司）と qa_pairs.answer.speaker（玉木雄一郎）が矛盾",
+      "location": {"file": "summary.json", "json_path": "$.key_commitments[0]", "segment_index": null, "qa_id": "qa_008,qa_009,qa_010,qa_011"},
+      "evidence": "summary.json の key_commitments[0]: speaker=\"古屋圭司\", role=\"憲法審査会会長\", qa_id=\"qa_008, qa_009, qa_010, qa_011\". 一方 qa_008-011 の answer.speaker=\"玉木雄一郎\", answer.role=\"国民民主党・無所属クラブ\" (F002参照)。同一コミットメントテキストに対して2つのファイルが異なる発言者を示している。",
+      "estimated_cause": "summary.json の LLM 処理では発言の前後文脈（三人称表現）から話者を正しく古屋圭司と推定できたが、qa_pairs.json の LLM 処理では utterances テキストのセグメント話者（玉木）をそのまま継承した。",
+      "downstream_impact": ["summary と qa_pairs の話者帰属が不一致のため、利用者が cross-reference すると矛盾に直面する", "コミットメントトラッカー機能で古屋圭司への帰属が失われる（F002）"]
+    },
+    {
+      "id": "F011",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "畑野君枝発言中に「もたらしています。」が文脈なく単独で出現（先行節の脱落）",
+      "location": {"file": "utterances.json", "json_path": "$.segments[6].utterances[1].text", "segment_index": 7, "qa_id": "qa_014"},
+      "evidence": "utterances.json segment 7 (畑野君枝) のテキスト：「…外交努力が世界中で求められています。もたらしています。両国はイランの軍事施設だけでなく…」と「もたらしています。」が主語・目的語なしに孤立している。raw_transcript.json の同箇所の Whisper サブセグメント (id=9) も同様に「もたらしています」から始まっており、先行する節（例：「深刻な被害を」等）が Whisper で認識されなかったことを示す。qa_014 の full_text にも同じ孤立テキストが残っている。",
+      "estimated_cause": "Whisper が当該音声区間の先行部分を無音扱いまたは認識失敗し、「もたらしています」の述語部分のみを出力した。LLM 補正でも補完されなかった。",
+      "downstream_impact": ["畑野発言の論理が不完全となり、読解・引用時に文意が不明確になる", "qa_014 の full_text に孤立述語が残るため、検索や引用での信頼性が低下する"]
+    }
+  ],
+  "blindspots": [
+    "HLS URL にアクセスして実際の動画と転写テキストを照合した検証は行っていないため、低信頼度の転写誤り（固有名詞の細かい誤字等）が他に存在する可能性がある",
+    "参政党の和田政宗発言で欠落した「二つ目に」の内容は原音声からのみ確認可能であり、本監査では推定のみ",
+    "古川あおいおよび馬場伸幸の発言が qa_pairs に収録されていないため、その品質（Whisper誤認識・話者誤帰属等）は utterances.json の参照のみで評価しており、より深い分析には raw_transcript の詳細照合が必要"
+  ],
+  "narrative": {
+    "overall": "このセッション（deli_id=56150）は 2026 年 4 月 9 日の衆議院憲法審査会（古屋圭司会長）における各会派自由討議であるにもかかわらず、metadata.committee が「不明」となっておりスクレイパーによるメタデータ抽出の失敗が基点となっている。qa_pairs の答弁帰属エラー（玉木雄一郎への誤帰属）は話者ダイアライゼーション境界の問題に起因し、summary.json は正しく古屋圭司へ帰属しているため同一セッション内での内部矛盾が生じている。また 8 発言者のうち 5 名（62.5%）が qa_pairs・topics の双方で実質的に欠落しており、データ完全性として中程度（medium）の評価となる。Whisper の誤認識は LLM 補正で大部分が修正されているが「ホルム会長」「もたらしています」の 2 件は残存する。",
+    "top_findings": [
+      "committee=\"不明\"（実際は憲法審査会）: スクレイパーのメタデータ抽出失敗。HLS URL suffix -18 と同日 04/23 セッション (56206) との比較、および発言内容から「憲法審査会」と確定できる。ディレクトリ名・フィルタ・検索に影響するため最重要修正対象",
+      "qa_008-011 の answer.speaker 誤帰属（玉木雄一郎→古屋圭司）: 古屋圭司が「5党幹事会で議論する」と述べた発言が話者ダイアライゼーション境界の遅れにより玉木のセグメントに混入し、LLM がセグメント話者を継承した。summary.json では正しく古屋圭司と記録されており内部矛盾が発生。コミットメントトラッカーへの影響大",
+      "5 議員分（國重徹・馬場伸幸・和田政宗・古川あおい・古屋圭司開会）の発言が qa_pairs および topics から欠落: 8 発言中 5 件（合計約 9000 文字相当）が qa 化・トピック化されておらず、自由討議形式セッションへの LLM structurer の対応力不足が示されている。和田政宗発言では加えて Whisper による第二理由の脱落も確認"
+    ]
+  }
+}

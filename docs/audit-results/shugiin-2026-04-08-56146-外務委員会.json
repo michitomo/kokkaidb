@@ -1,0 +1,170 @@
+{
+  "session_id": "shugiin/2026/04/08/56146_外務委員会",
+  "chamber": "shugiin",
+  "date": "2026-04-08",
+  "deli_id": "56146",
+  "committee": "外務委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T10:00:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 2, "medium": 4, "low": 2, "total": 8},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "fact_error",
+      "secondary_categories": ["speaker_misattribution"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "LLM補正が「国場幸之助君」をWhisper未収録のまま捏造追加",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].text",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json segment 1のWhisper生テキスト（whisper_segments[0].text）は「市市の説明を聴取いたします外務大臣茂木敏充君おはようございます…」で始まり「国場幸之助君」は存在しない。しかしLLM補正後のsegment[1].textは「国場幸之助君。\n\n茂木敏充君。\n\nおはようございます…」と始まり、Whisperが拾っていない「国場幸之助君」がLLMによって挿入されている。utterances.jsonではこの捏造テキストを根拠に「speaker=国場幸之助, role=委員長, text=国場幸之助君」という架空の発言utteranceが生成されている。",
+      "estimated_cause": "speaker_tagger/correctorのLLMが、国会議事進行の典型パターン（委員長が自分の名前を呼び上げてから外務大臣を指名する形式）を補完しようとして、Whisper音声に存在しないテキストを補完した。LLM hallucination by completion of expected procedural formula.",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F002",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["role_label_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "utterances: 委員長が自分の名前を呼ぶ架空utteranceが生成される",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[1].utterances[0]",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "utterances.json segments[1].utterances[0]: {\"speaker\": \"国場幸之助\", \"role\": \"委員長\", \"text\": \"国場幸之助君。\"}。委員長が自分の名前「国場幸之助君」と呼ぶことはあり得ない。実際には委員長が「趣旨の説明を聴取いたします。外務大臣茂木敏充君。」と指名した発言をWhisperが部分的に拾い（「市市の説明を聴取いたします外務大臣茂木敏充君」）、その冒頭にF001のLLM捏造「国場幸之助君」が付加された結果、この誤ったutteranceが生成されたと判断される。",
+      "estimated_cause": "F001と連鎖。LLMが補完したテキスト「国場幸之助君」をspeaker_taggerがそのまま委員長の発言として構造化した。Whisperが委員長の指名発言全体を十分に拾えていないことも一因。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F003",
+      "category": "summary_qa_divergence",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.json に4つの key_topics があるが topics.json は空配列",
+      "location": {
+        "file": "topics.json",
+        "json_path": "$.topics",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "summary.json: key_topics=[\"旅券手数料の政令化\", \"失効旅券の再申請手数料\", \"18歳未満の旅券有効期間\", \"公用旅券の発給要件\"]（4件）。topics.json: topics=[]（空配列）。同一セッションのデータが2ファイルで矛盾している。summary.jsonのkey_topicsはqa_pairs.jsonへの参照を必要としないセッション全体の話題を抽出しているが、topics.jsonは趣旨説明のみのセッションのためstructurer側が空と判断した可能性がある。",
+      "estimated_cause": "structurer.pyのsummary生成ロジックとtopics生成ロジックが独立しており、一方（summary）は趣旨説明セッションでも動作し、他方（topics）は動作しない（またはqa_pairs依存）という設計上の非一貫性と推定される。",
+      "downstream_impact": ["summary.json"]
+    },
+    {
+      "id": "F004",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.json の空値フィールドで null と空文字列が混在",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.duration",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json: duration=\"\"（空文字列）、mediasp_hash=\"\"（空文字列）に対し、committee_id=null、session_number=null。空値の表現がフィールドによってnullと\"\"で揺れており、JSONスキーマの一貫性が保たれていない。duration は数値または null であるべきで空文字列は型不整合を起こす。",
+      "estimated_cause": "収集パイプラインの各フィールドが別々の経路で設定されており、一部は未取得時にnull、一部は空文字列を書き込む実装の差異が原因と推定される。衆議院TV固有の項目（mediasp_hash）が参議院用フィールドのため空文字列デフォルト値になっている可能性もある。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F005",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "Whisper生テキストに複数の誤認識（趣旨→市市、国庫→国分、失効→執行等）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].whisper_segments",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "whisper_segments[0].text: 「市市」（→趣旨）、「国分の手数料」（→国庫の手数料）。whisper_segments[1].text: 「受領されずに執行した」（→失効した）、「執行してから」（→失効してから）。whisper_segments[3].text: 「公用料券」（→公用旅券）、「戸籍当本」（→戸籍謄本）。計6か所の誤認識が確認される。なおLLM補正後（raw_transcript.jsonのtextフィールド）では失効/公用旅券/戸籍謄本の修正は適切に行われているが、「まかないるよう」（→まかなえるよう）は補正されていない（F006参照）。",
+      "estimated_cause": "Whisper large-v3-turboが法律・旅券関連の専門語彙（失効・国庫・謄本）を音響的に類似する一般語彙に誤置換する既知の挙動。漢字同士の音の類似（失効/執行、謄本/当本等）による誤認識。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F006",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["fact_error"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "LLM補正後も「まかないるよう」の文法誤りが残存",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].text",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json segments[1].text（LLM補正済みテキスト）に「旅券の発給に必要な費用をまかないるよう手数料の額を定めることです」と記載。「まかないるよう」は文法的に非文（正しくは「まかなえるよう」）。whisper_segments[1].textにも同じ形で存在しており、LLMがこの文法誤りを訂正せずにそのまま出力した。utterances.jsonの茂木敏充発言テキストにも同一の誤りが引き継がれている。",
+      "estimated_cause": "LLMが文法的に不自然な表現を修正対象と認識しなかった、または音声から見てそのような発言内容であると判断した可能性。実際には旅券法改正案提案理由の公式文書から乖離した誤り。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F007",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.json の speakers[].role が全員空文字列",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[*].role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json speakers配列の全2エントリ（国場幸之助、茂木敏充）で role=\"\"（空文字列）。affiliation フィールドには「外務委員長」「外務大臣」が正しく設定されているため、role フィールドが設計上どのような値を持つべきかは明確（委員長/答弁者など）だが未設定のまま。utterances.json では role=委員長/答弁者として正しく設定されており、metadata.json との不整合がある。",
+      "estimated_cause": "metadata生成時にroleフィールドの設定ロジックが未実装または欠落。affiliationは登録されているがroleは別途タグ付けが必要な設計で、そのステップが走っていない可能性。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F008",
+      "category": "timestamp_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "speakers 2名が同一 start_time=\"11:00\" だが start_seconds は8秒差",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[*].start_time",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json speakers[0](国場幸之助): start_seconds=1193.0, start_time=\"11:00\"。speakers[1](茂木敏充): start_seconds=1201.4, start_time=\"11:00\"。両者の start_seconds 差は約8秒だが start_time はいずれも\"11:00\"で区別不能。start_time は start_seconds から計算された値ではなく、外部ソース（衆議院TV）から取得した粗い時刻情報と推定される。",
+      "estimated_cause": "衆議院TVの発言者リストが1分単位の時刻しか提供しておらず、同一分内に複数の話者が始まる場合は同じstart_timeになる。start_seconds（Whisper由来の高精度タイムスタンプ）とstart_time（スクレイピング由来の粗い時刻）の粒度不一致が根本原因。",
+      "downstream_impact": []
+    }
+  ],
+  "blindspots": [
+    "旅券法改正案の公式提案理由書との逐語比較は未実施のため、「まかないるよう」以外にも法文との乖離がある可能性を排除できない",
+    "音声ファイル自体へのアクセスがないため、Whisper誤認識がすべて列挙できているか不明",
+    "このセッションは趣旨説明のみで質疑がなく、qa_pairs/topics が空であることの適切性を他の趣旨説明セッションと比較していない"
+  ],
+  "narrative": {
+    "overall": "このセッション（2026-04-08 外務委員会 旅券法趣旨説明）は趣旨説明のみの短いセッション（2セグメント、約2分）であり、全体の音声認識精度はおおむね良好でLLM補正も機能している。ただし最も深刻な問題として、LLM補正がWhisper未収録のテキスト「国場幸之助君」を捏造挿入し、これがutterances.jsonで委員長が自分の名前を呼ぶ架空発言として構造化された（F001・F002）。また、summary.jsonには4つのkey_topicsが存在するがtopics.jsonは空配列であり、同一セッションデータ間の矛盾が見られる（F003）。スキーマ面ではnull/空文字列の混在、role空文字列、start_time粒度の粗さなど横断的な構造問題も複数確認された。",
+    "top_findings": [
+      "LLM補正によるテキスト捏造（F001）: Whisper生テキストに存在しない「国場幸之助君」がLLMによって補完・挿入され、utterances.jsonに委員長が自分の名前を呼ぶという議事進行上あり得ない架空utteranceが生成された。他セッションでも同様の補完パターンが発生している可能性が高い（likely_systemic）。",
+      "summary/topicsの内容乖離（F003）: summary.jsonに4件のkey_topicsが存在するがtopics.jsonは空配列。structurerの2つの生成ロジックが趣旨説明セッションで異なる挙動をしており、データ利用者がどちらのファイルを信頼すべきか不明確になる。",
+      "「まかないるよう」文法誤りの残存（F006）: Whisperが出力した文法的非文をLLMが補正せず引き継いだ結果、茂木外務大臣の発言として誤った日本語が記録された。公式文書との比較が必要な利用シーンで問題となる。"
+    ]
+  }
+}

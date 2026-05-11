@@ -39,6 +39,7 @@ from src.api_client import (
 )
 from src.audio.extractor import detect_leading_silence, download_full_audio, split_segments
 from src.committee_to_ministry import filter_laws_for_committee
+from src.metadata_enricher import enrich_metadata_from_utterances
 from src.models import (
     QAPairsOutput,
     SessionDetail,
@@ -58,6 +59,7 @@ from src.structurer import (
     generate_qa_pairs,
     generate_session_summary,
     generate_topics_and_key_topics,
+    generate_topics_without_qa,
     score_qa_pairs_metrics,
     tag_related_laws,
 )
@@ -178,7 +180,10 @@ def run_pipeline(
                 # 音声は leading_silence 秒目から始まる。TVはfirst_speaker_timeと言っている。
                 # first_speaker_time が leading_silence より十分大きければオフセットが存在。
                 offset = first_speaker_time - leading_silence
-                if offset > 30.0:
+                # 閾値 5.0s: 30s 制では小さなズレが補正されず video_url 精度が
+                # 落ちるため、誤補正リスクが低い 5s 超に下げて積極的に補正する
+                # (docs/STRUCTURER_REWRITE.md §2.13)
+                if offset > 5.0:
                     logger.info(
                         "Applying audio offset correction: %.1fs "
                         "(leading_silence=%.1fs, first_speaker=%.1fs)",
@@ -247,6 +252,33 @@ def run_pipeline(
         utterances_output = tag_all_segments(raw_transcript, session_detail, max_workers=MAX_WORKERS_LLM)
     except Exception as e:
         raise RuntimeError(f"Step 5 (speaker tagging) failed: {e}") from e
+
+    # Step 5.25: utterances 由来で metadata.speakers を逆補完 (PR6, §2.2/2.3)
+    # PR26/PR29/PR30: 既存 speakers の role 再計算も含む。count 不変でも書き出す。
+    logger.info("=== Step 5.25: Enriching metadata.speakers from utterances ===")
+    pre_count = len(session_detail.speakers)
+    pre_signature = tuple(
+        (s.name, s.role, s.affiliation) for s in session_detail.speakers
+    )
+    enriched_speakers = enrich_metadata_from_utterances(
+        utterances_output, session_detail.speakers
+    )
+    post_signature = tuple(
+        (s.name, s.role, s.affiliation) for s in enriched_speakers
+    )
+    if len(enriched_speakers) != pre_count or pre_signature != post_signature:
+        added = len(enriched_speakers) - pre_count
+        logger.info(
+            "Step 5.25: %s",
+            f"appended {added} entries"
+            if added
+            else "backfilled role/affiliation on existing entries",
+        )
+        session_detail.speakers = enriched_speakers
+        metadata_path.write_text(
+            session_detail.model_dump_json(indent=2, ensure_ascii=False),
+            encoding="utf-8",
+        )
 
     # Step 5.5: speaker / role を metadata.speakers に正規化
     logger.info("=== Step 5.5: Normalizing utterance speakers and roles ===")
@@ -333,8 +365,28 @@ def _run_step6(
             skip_proposal_segments=(sk == "representative_questions"),
         )
 
-    session_summary = generate_session_summary(qa_pairs, utterances_output)
-    topics, key_topics = generate_topics_and_key_topics(qa_pairs)
+    session_meta = {
+        "chamber": session_detail.chamber,
+        "committee": session_detail.committee,
+        "session_kind": session_detail.session_kind,
+    }
+    session_summary = generate_session_summary(
+        qa_pairs, utterances_output, session_meta=session_meta
+    )
+
+    # PR11/§2.10: QA が空でも utterances がある場合 (所信表明・施政方針演説・
+    # 全 procedural skip 等) は utterances から topics + key_topics を生成し、
+    # content_missing を防ぐ
+    if qa_pairs.pairs:
+        topics, key_topics = generate_topics_and_key_topics(qa_pairs)
+    elif utterances_output.segments:
+        logger.info(
+            "Step 6: generating topics from utterances (session_kind=%s, no Q&A produced)",
+            sk,
+        )
+        topics, key_topics = generate_topics_without_qa(utterances_output)
+    else:
+        topics, key_topics = generate_topics_and_key_topics(qa_pairs)
     commitments = generate_key_commitments(qa_pairs)
 
     if qa_pairs.pairs:

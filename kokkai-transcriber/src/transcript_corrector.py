@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import argparse
 import logging
+import re
 import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
@@ -25,14 +26,83 @@ from pathlib import Path
 from src.api_client import get_client, with_retry
 from src.models import RawTranscript, SegmentTranscript, SessionDetail, SpeakerInfo
 
-# Step 4.5はDeepSeek-V3.2を使用（prompt cachingで長いsystem promptのコストを削減）
-CORRECTOR_MODEL = "google/gemma-4-31B-it"
+# Step 4.5 LLM: OpenRouter 経由 Gemma 4 31B-it (prompt caching 有り)
+CORRECTOR_MODEL = "google/gemma-4-31b-it"
 
 logger = logging.getLogger(__name__)
 
 JST = timezone(timedelta(hours=9))
 
 CHUNK_CHAR_LIMIT = 2000
+
+# ループ判定: 同一文 (≤30 char) が連続 N 回以上反復されたらループとみなす
+_LOOP_MIN_REPEATS = 3
+_LOOP_MAX_PHRASE_LEN = 30
+_LOOP_PHRASE_SPLIT_RE = re.compile(r"[。？！\n\t　]")
+
+def _has_repetition_loop(
+    text: str,
+    min_repeats: int = _LOOP_MIN_REPEATS,
+) -> bool:
+    """同一の短い文/句が連続 ``min_repeats`` 回以上反復するパターンを検出する。
+
+    Whisper の典型ループパターン (PR7, §2.5):
+    - 「議長＊小寺君。議長＊小寺君。議長＊小寺君。…」 (6,904 回観測例あり)
+    - 「ご視聴ありがとうございました。ご視聴ありがとうございました。…」
+
+    検出ロジック: 句点・疑問符・感嘆符・改行で分割した各 phrase について、
+    長さ ``_LOOP_MAX_PHRASE_LEN`` 以内の非空 phrase が連続 N 回現れたら True。
+    ループ判定後、80% 縮小チェックを bypass する用途で使う。
+    """
+    if min_repeats < 2:
+        return False
+    parts = [p.strip() for p in _LOOP_PHRASE_SPLIT_RE.split(text)]
+    n = len(parts)
+    if n < min_repeats:
+        return False
+    for i in range(n - min_repeats + 1):
+        target = parts[i]
+        if not target or len(target) > _LOOP_MAX_PHRASE_LEN:
+            continue
+        if all(parts[i + k] == target for k in range(min_repeats)):
+            return True
+    return False
+
+
+def _strip_crosschunk_loops(text: str) -> tuple[str, bool]:
+    """チャンク境界をまたぐ短語ループを除去して (cleaned_text, was_cleaned) を返す。
+
+    PR34: 56162 の「福祉法」44 回ループなど、単一チャンク内では _has_repetition_loop
+    で捉えきれなかった連続繰り返しフレーズを除去する。
+
+    戦略: `_LOOP_PHRASE_SPLIT_RE` で分割した句単位で連続重複を検出し、
+    1 回に圧縮する。_has_repetition_loop と同じ判定基準を使う。
+    """
+    if not _has_repetition_loop(text):
+        return text, False
+
+    # ループ検出済み: フレーズ単位で重複を圧縮する
+    parts = [p.strip() for p in _LOOP_PHRASE_SPLIT_RE.split(text)]
+    result: list[str] = []
+    i = 0
+    while i < len(parts):
+        target = parts[i]
+        if not target:
+            i += 1
+            continue
+        if len(target) <= _LOOP_MAX_PHRASE_LEN:
+            j = i + 1
+            while j < len(parts) and parts[j] == target:
+                j += 1
+            if j - i >= _LOOP_MIN_REPEATS:
+                result.append(target)
+                i = j
+                continue
+        result.append(target)
+        i += 1
+
+    cleaned = "".join(result)
+    return cleaned, cleaned != text
 
 SYSTEM_PROMPT = """あなたは国会議事録の校正専門家です。
 Whisper音声認識が生成したテキストを、以下の観点で修正してください。
@@ -52,14 +122,24 @@ Whisper音声認識が生成したテキストを、以下の観点で修正し�
 
 ## Whisper音声認識ノイズの取り扱い
 Whisperはメイン発言者以外の音声（PA放送・隣席のマイク・委員長の呼びかけ等）を
-発言文中に混入させることがある。以下のパターンを**除去してよい**:
+発言文中に混入させることがある。以下のパターンは**必ず除去**すること:
 
-- 話者名の2回以上の繰り返し（例: 「石井啓一議長、石井啓一議長、石井啓一議長。」）
-- 文脈に合わない固有名詞の単独出現（例: 「成長型経済すなわち**岩田和親**こうした中」の「岩田和親」は発言者名の呼びかけノイズ）
-- 「議長＊○○君」「＊○○君」のような特殊記号付き挿入句
+- **同一文の3回以上の繰り返し** — Whisperのトークンループによる典型ノイズ。
+  例: 「議長＊小寺君。議長＊小寺君。議長＊小寺君。」が数千回続く場合は
+  すべて削除し、繰り返しがなかったかのように前後をつなぐ。1〜2回の反復は
+  発言の繰り返し強調の可能性があるので残してよい。
+- **「ご視聴ありがとうございました。」「字幕ありがとうございました。」等の
+  Whisper学習バイアス由来の定型文** — 国会発言には出現しない動画配信常套句。
+  必ず削除する。
+- **「議長＊○○君」「＊○○君」のような特殊記号付き挿入句** — マイク切替時の
+  PA音声混入。テキスト中央に出現したら削除し、前後を直接つなぐ。
+- **話者名の2回以上の繰り返し**（例: 「石井啓一議長、石井啓一議長、石井啓一議長。」）
+- **文脈に合わない固有名詞の単独出現**（例: 「成長型経済すなわち**岩田和親**こうした中」の
+  「岩田和親」は発言者名の呼びかけノイズ）
 
 **ノイズ除去後の処理**: 前後のテキストを直接つなぐ。「……」は絶対に挿入しない。
 文の末尾が「を」「が」「は」等の助詞で終わる不完全な形になっても、そのまま次の文に続ける。
+ループ削除によりテキストが大幅に短くなっても問題ない。
 
 ## 第221回国会（令和8年特別会）固有名詞リファレンス
 
@@ -110,6 +190,27 @@ Whisperはメイン発言者以外の音声（PA放送・隣席のマイク・�
 - 労働者災害補償保険法等の一部を改正する法律案
 - ヒトゲノム編集胚等の取扱いの規制に関する法律案
 
+### 故人・職を退いた元政治家（重要・答弁者としての混入を排除）
+以下は故人または現職を退いた元政治家。第221回国会（令和8年特別会、2026年）の
+**答弁者として登場することはありえない**。Whisper の音声誤認識により、これらの
+名前が「答弁いたします」「お答えします」等の現職答弁文の主語として混入することが
+あるため、必ず以下のルールで処理する。
+
+- 安倍晋三（元内閣総理大臣、2022年7月逝去）
+- 中曽根康弘（元内閣総理大臣、2019年逝去）
+- 海部俊樹（元内閣総理大臣、2022年逝去）
+- 大平正芳（元内閣総理大臣、故人）
+- 宮沢喜一（元内閣総理大臣、故人）
+- 細川護熙（元内閣総理大臣、退任済）
+- 菅義偉（元内閣総理大臣、現職首相ではない）
+- 岸田文雄（元内閣総理大臣、現職首相ではない）
+- 麻生太郎（元内閣総理大臣、現職首相ではない）
+
+#### 処理ルール
+1. **現職答弁としての混入 → 削除**: 「安倍総理が答弁いたします」「お答えいたします、安倍でございます」「安倍内閣総理大臣の答弁では」のように、上記人名が**現在進行形の答弁文の発言主体**として現れたら、Whisper の音声誤認識（現職大臣の名前を誤変換した）と判断し、**人名を削除して前後をつなぐ**か、可能なら現職答弁者（高市早苗 内閣総理大臣 等）に修正する。判断が困難な場合は人名のみ削除し「内閣総理大臣」等の役職表現で代替する。
+2. **歴史的・引用的言及 → 保持**: 「安倍政権下で」「故安倍元総理のもと」「中曽根行革の時代」「岸田内閣で成立した」のような**過去への参照**として現れる場合は、発言の意味を変えるためそのまま保持する。
+3. **判断基準**: 動詞の時制と主語の同定で見分ける。現在形・未来形の答弁動詞（「答弁する」「お答えします」「決定いたします」）の主語であれば現職誤認識、過去形・引用文脈であれば保持。
+
 ### 頻出する国会用語・近音誤変換に注意すべき語
 - 高額療養費（こうがくりょうようひ）
 - OTC類似薬（オーティーシーるいじやく）
@@ -121,11 +222,26 @@ Whisperはメイン発言者以外の音声（PA放送・隣席のマイク・�
 - 祈念（きねん）: Whisperが「懸念（けねん）」と誤変換することがある。哀悼・黙祷・復興の文脈では「祈念」が正しい
 
 ## 禁止事項
-- テキストの意味を変えない。要約・省略・追加をしない
+- テキストの意味を変えない。要約・省略・追加をしない（ノイズ・ループ除去は除く）
 - 発言の順序を変えない
 - 存在しない発言を捏造しない
 - 発言者リストに記載された名前の表記を勝手に変えない
 - 「……」を**絶対に**出力しない（例外なし）。元のテキストが不完全であっても、聞き取れない箇所があっても、ノイズを除去した後も、「……」は一切使用しない。前後テキストを直接つなぐこと
+
+### 創作禁止 (重要)
+LLM が文脈に合わせて「補完」「修正」した結果、Whisper 出力に存在しなかった
+文字列を生成してしまうケースがある。以下は**禁止**:
+
+- **存在しない略語の創作**: 「OSA」(Official Security Assistance) を「OSC」に
+  書き換える等。略語の正誤判断ができない場合は元の表記を保持
+- **存在しない役職名の創作**: 「総理大臣秘書官」を「総理大臣正官」のような
+  実在しない役職に変換しない。役職の正誤判断ができない場合は元の表記を保持
+- **公的固有名詞 (地名・法律名・政府機関名) の改変**: 「八潮市」(埼玉県) を
+  「八代市」(熊本県) のような同音/類似異義語に書き換えない。地名は文脈での
+  正誤判断が困難なため、Whisper の出力をそのまま保持する
+- **括弧注釈の挿入**: 「○○（注: ××）」のような注釈を勝手に追加しない
+- 発言者リスト・上記固有名詞リファレンスに**明示的に記載のない**名前/語句に
+  対する「ふさわしい」表記への書き換えは行わない
 
 修正後のテキストのみを返してください。JSON形式ではなく、プレーンテキストで返してください。"""
 
@@ -326,13 +442,23 @@ def correct_transcript(
                 corrected_text = chunk_obj.text
 
             # 安全チェック2: 80%未満に縮んだ場合は棄却
+            # ただし元テキストにループパターン (同一文 3 回以上反復) があれば
+            # 大幅縮小は意図された除去とみなして許可する (PR7, §2.5)
             ratio = corrected_len / original_len if original_len > 0 else 1.0
             if ratio < 0.8:
-                logger.warning(
-                    "Chunk seg=%d chunk=%d: rejected (%.0f%%, %d→%d chars)",
-                    seg_idx, chunk_idx, ratio * 100, original_len, corrected_len,
-                )
-                corrected_text = chunk_obj.text  # 元テキストを使用
+                if _has_repetition_loop(chunk_obj.text):
+                    logger.info(
+                        "Chunk seg=%d chunk=%d: kept correction despite %.0f%% "
+                        "(loop pattern detected in original, %d→%d chars)",
+                        seg_idx, chunk_idx, ratio * 100,
+                        original_len, corrected_len,
+                    )
+                else:
+                    logger.warning(
+                        "Chunk seg=%d chunk=%d: rejected (%.0f%%, %d→%d chars)",
+                        seg_idx, chunk_idx, ratio * 100, original_len, corrected_len,
+                    )
+                    corrected_text = chunk_obj.text  # 元テキストを使用
 
             corrected_chunks[(seg_idx, chunk_idx)] = corrected_text
             done_count += 1
@@ -348,6 +474,16 @@ def correct_transcript(
             for c in chunks
         ]
         corrected_text = "\n".join(corrected_parts)
+
+        # PR34: チャンク境界をまたぐループを除去 (単一チャンク内検出では捕まらないケース)
+        stripped_text, was_stripped = _strip_crosschunk_loops(corrected_text)
+        if was_stripped:
+            logger.warning(
+                "Segment %d (%s): cross-chunk loop stripped (%d→%d chars)",
+                seg.segment_index, seg.speaker_name,
+                len(corrected_text), len(stripped_text),
+            )
+            corrected_text = stripped_text
 
         original_len = len(seg.text)
         corrected_len = len(corrected_text)

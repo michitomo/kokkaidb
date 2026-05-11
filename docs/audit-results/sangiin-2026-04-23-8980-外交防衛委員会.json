@@ -1,0 +1,243 @@
+{
+  "session_id": "sangiin/2026/04/23/8980_外交防衛委員会",
+  "chamber": "sangiin",
+  "date": "2026-04-23",
+  "deli_id": "8980",
+  "committee": "外交防衛委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T10:30:00Z",
+  "overall_quality": "medium",
+  "issue_count": {"high": 3, "medium": 4, "low": 5, "total": 12},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "fact_error",
+      "secondary_categories": ["metadata_missing_speaker"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.session_summary が院・委員会名を誤記（衆議院外務委員会）",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.session_summary",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "session_summary の冒頭が「衆議院外務委員会において、茂木外務大臣らが出席し…」と記載されているが、本セッションは参議院外交防衛委員会 (sid=8980)。院名・委員会名の両方が誤っている。metadata.json の chamber='sangiin'、committee='外交防衛委員会' と完全に矛盾する。",
+      "estimated_cause": "LLM 構造化 (google/gemma-4-31B-it) が summary 生成時にシステムプロンプトのコンテキスト（院・委員会名）を誤って注入したか、あるいは類似セッション（衆議院外務委員会）のプロンプトを流用した可能性がある。",
+      "downstream_impact": ["summary.json", "site UI（委員会名表示）"]
+    },
+    {
+      "id": "F002",
+      "category": "content_missing",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "segment_index=3（山田吉彦）の質疑が qa_015 の1件しか抽出されず5件超が欠落",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[?(@.segment_index==3)]",
+        "segment_index": 3,
+        "qa_id": "qa_015"
+      },
+      "evidence": "raw_transcript segment_index=3 は 6,691 文字・59 whisper_segments を持ち、以下の質疑が確認できる: ①オーバーツーリズム対策（観光庁部長答弁）、②対日理解促進・訪日外国人マナー啓発（外務省答弁）、③中国への学術交流と邦人拘束問題（茂木大臣答弁 + 三林領事局長が「17名拘束、現在5名服役中」と答弁）、④北朝鮮の4月19日戦術弾道ミサイル試射と脅威認識（防衛省万波部長答弁）、⑤日韓防衛協力（小泉防衛大臣答弁）、⑥防衛装備移転三原則の紛争当事国定義・現在該当国なし（防衛装備庁部長答弁）。qa_pairs には⑥の最後の部分のみ qa_015 として収録されており、①〜⑤は全て欠落している。",
+      "estimated_cause": "structurer が segment_index=3 の処理中に token 上限またはタイムアウトに達し、末尾の qa_015 のみ生成された可能性。またはセグメントが長大すぎて LLM の出力が truncate された。",
+      "downstream_impact": ["topics.json", "summary.json（中国・北朝鮮・日韓防衛協力に関する記述が summary に不在）"]
+    },
+    {
+      "id": "F003",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "外務省領事局長 '三林' が '三昂良次' / '見栄良次' / '見栄領事局長' に誤認識（7件）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[6:13].answer.speaker",
+        "segment_index": 2,
+        "qa_id": "qa_007"
+      },
+      "evidence": "qa_007〜qa_013（計7件）の answer.speaker が '三昂良次' と記録されている。utterances.json では同一人物が speaker='三昂良次' かつ text 内に '三昂良次局長。' / '見栄良次局長。' と記録されており、raw_transcript segment 2 でも '三昂領事局長。' が出現する。一方、同一人物の他の発言は '三林領事局長' として正常に認識されており（qa_001〜qa_006, qa_018, qa_021, qa_025 等）、また topics.json には '三昂良次' '三林' '三林領事局長' '三林領事局局長' '外務省旅券領事局長' '見栄領事局長' の6種類の名前表記が混在している。Whisper が 'みばやし / みはやし 領事局長' を複数の読みに誤認識したと推定。",
+      "estimated_cause": "Whisper large-v3-turbo による音声からのテキスト変換時に固有名詞（漢字3文字の人名）を誤認識。特に「三昂」「見栄」は漢字の音韻類似による誤変換。speaker_tagger もこの誤認識を踏襲した。",
+      "downstream_impact": ["topics.json（6種の表記ゆれ）", "summary.json（key_commitments の speaker フィールド '三林'）"]
+    },
+    {
+      "id": "F004",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs 全 45 件で answer.role が空文字列",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "全 45 qa_pairs の answer.role が '' (空文字列) であることをスクリプトで確認。utterances.json では同一の答弁者に対して '政府参考人' '答弁者' '委員長' のいずれかが正しく付与されており、情報は上流ファイルに存在する。例: qa_001 の answer.speaker='三林' は utterances で role='政府参考人'、qa_005 の answer.speaker='茂木外務大臣' は role='答弁者'。",
+      "estimated_cause": "structurer が qa_pairs 生成時に answer.role フィールドに utterances.json の role を引き継ぐロジックが未実装または欠落している。",
+      "downstream_impact": ["サイト UI（役職表示が空欄）", "横断集計スクリプト（役職別分類が機能しない）"]
+    },
+    {
+      "id": "F005",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.json で duration・hls_url・speakers[*].start_time が全て空文字列",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.duration, $.hls_url, $.speakers[*].start_time",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json を確認すると duration=''、hls_url=''。speakers 9名全員の start_time='' であり start_seconds のみ値あり（例: 里見隆治 start_seconds=1849.66）。また committee_id=null、session_number=null。llm_model='google/gemma-4-31B-it' はモデル名称が通常と異なる（他セッションでは deepseek 等）。",
+      "estimated_cause": "スクレイパーが hls_url を取得できていない（mediasp.jp 解決失敗か省略）。start_time 文字列変換ロジックが未実装。committee_id・session_number はスクレイパー側で未対応フィールド。",
+      "downstream_impact": ["サイト UI（動画リンク・時間表示の欠落）", "ダッシュボード（duration が空のためグラフ生成不可）"]
+    },
+    {
+      "id": "F006",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers に答弁者 11 名全員が未登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers に登録されているのは委員長（里見隆治）と質疑者 8 名のみ（計 9 名）。qa_pairs および utterances.json に登場する答弁者として茂木外務大臣・三林領事局長・松浦審議官・上刈谷審議官・小泉防衛大臣・磯部部長・蒲谷審議官など合計 11 名以上が確認されるが、全員 speakers リストに不在。topics.json の related_speakers にも '茂木外務大臣' '三林領事局長' '磯部' '蒲谷' 等が記載されているが metadata には存在しない。",
+      "estimated_cause": "スクレイパーが参議院TVの政府参考人リスト取得を実装しておらず、委員会出席者は質疑者のみ取得している。",
+      "downstream_impact": ["サイト UI（答弁者フィルタ・検索が機能しない）", "ダッシュボード（発言者グラフで答弁側が未計上）"]
+    },
+    {
+      "id": "F007",
+      "category": "timestamp_inconsistency",
+      "secondary_categories": ["content_missing"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_039（福島みずほ／パスポート保有率）の segment_index=7 と video_url が誤り",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[38].segment_index",
+        "segment_index": 7,
+        "qa_id": "qa_039"
+      },
+      "evidence": "qa_039 の question.speaker='福島みずほ'、topic='パスポート保有率の低下'。しかし segment_index=7 かつ video_url='…#9458.14'（段落 7 = 山添拓の発言開始時刻）となっている。utterances.json で確認すると、この Q&A は segment_index=7 の末尾（山添拓の質疑終了後に里見委員長が「福島みずほ君」と指名してから発生）に記録されており、内容的には 9458 秒台ではなく 10200 秒台以降の発言と推定される。正しい動画リンクは segment_index=8 (10291.87秒) またはその前後が適切。video_url がクリックされると山添拓の質疑開始部分に飛ぶ。",
+      "estimated_cause": "structurer がセグメント境界近傍の Q&A を処理する際、所属セグメントの判定に誤りが生じた。セグメント 7 の末尾に滑り込んだ福島みずほの発言を、video_url は先頭時刻 (9458.14) のままとした。",
+      "downstream_impact": ["サイト UI（動画タイムスタンプリンクが誤った位置へ飛ぶ）"]
+    },
+    {
+      "id": "F008",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "topics.json の related_speakers で同一答弁者に 4 種の表記ゆれ",
+      "location": {
+        "file": "topics.json",
+        "json_path": "$.topics[*].related_speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "topics.json の related_speakers フィールドに、同一人物（外務省領事局長）が '三林'（topic 1）/ '三昂良次'（topic 2）/ '三林領事局局長'（topic 3）/ '三林領事局長'（topic 4）/ '外務省旅券領事局長'（topic 6）/ '見栄領事局長'（topic 2）の 6 種で記載されている。さらに topics に登場する '三林領事局長' は qa_pairs の '三林' と別エントリのように見える。",
+      "estimated_cause": "F003 の Whisper 誤認識が topics 生成まで波及したことに加え、LLM が同一人物を役職名の有無や略称で異なる文字列として記録した。",
+      "downstream_impact": ["サイト UI（話者フィルタで複数エントリが出現）", "横断集計（speaker 別統計が分散）"]
+    },
+    {
+      "id": "F009",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs 10 件で metrics=null（うち大臣・審議官の重要答弁を含む）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[?(@.metrics==null)].id",
+        "segment_index": null,
+        "qa_id": "qa_001"
+      },
+      "evidence": "metrics が null の qa_id: qa_001, qa_017, qa_018, qa_021, qa_026, qa_028, qa_032, qa_035, qa_037, qa_041 の計 10 件（22.2%）。qa_018（国際観光旅客税 175 億円の財政的対応関係）、qa_028（175 億円予算の十分性）など、summary.key_commitments にも引用される重要答弁を含む。",
+      "estimated_cause": "metrics 計算バッチが一部の qa_pairs に対してタイムアウトまたはエラーで終了し null が格納された。",
+      "downstream_impact": ["ダッシュボード（metrics スコア集計で qa 数が減少）"]
+    },
+    {
+      "id": "F010",
+      "category": "other",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "utterances.json の unmatched 発言が 62/191 件（32.5%）と高比率",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[*].utterances[?(@.unmatched==true)]",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "utterances.json 全 191 発言のうち unmatched=true が 62 件（32.5%）。特に segment_index=1（三林領事局長の答弁 4 件、茂木大臣の答弁 1 件すべてが unmatched）。unmatched の発言テキストは qa_pairs の answer.full_text に収録されているため情報欠落ではないが、utterances が qa_pairs との照合に失敗していることを示す。",
+      "estimated_cause": "speaker_tagger が utterances を qa_pairs に紐付ける際のテキスト一致ロジックが、政府参考人の発言（self-introduction prefix '外務省三林領事局長' が付く等）に対して失敗している。",
+      "downstream_impact": ["utterances.json の unmatched フィールドを利用した品質チェックが機能しない"]
+    },
+    {
+      "id": "F011",
+      "category": "content_missing",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "session_specific",
+      "title": "qa_028（茂木大臣の 175 億円答弁）が文章途中で切断",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[27].answer.full_text",
+        "segment_index": 6,
+        "qa_id": "qa_028"
+      },
+      "evidence": "qa_028 の answer.full_text（172文字）が「…国際観光旅客税を財源として支援されない法人保護に係る経費については、引き続き外務省の通常の予算によって、」で終了しており、文末が完結していない。raw_transcript segment_index=6 の同箇所テキストは「…外務省の通常の予算によって」の後に続きがある（ただし raw 側でも茂木大臣の発言は途中で segment_index=6 の本文が終わっている可能性）。本件は「known issue（full_text 途切れ）」の一例の可能性があるが、answer 本文の情報量が著しく少ない（175 億円という数値のみ）ことを記録する。",
+      "estimated_cause": "structurer の token 制限または既知の full_text truncation 問題。",
+      "downstream_impact": ["summary.key_commitments（qa_028 の 175 億円が引用されているが答弁が不完全）"]
+    },
+    {
+      "id": "F012",
+      "category": "summary_qa_divergence",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "session_specific",
+      "title": "topics.json に '防衛装備品移転の審査' が掲載されているが中国・北朝鮮質疑は不在",
+      "location": {
+        "file": "topics.json",
+        "json_path": "$.topics",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "topics.json の 9 トピック中に '防衛装備品移転の審査' (related_qa_ids=['qa_015']) は存在するが、同じ segment_index=3 で質疑された '中国学術交流・邦人拘束問題'（茂木大臣が「17名拘束、5名現在服役中」と答弁）、'北朝鮮弾道ミサイル脅威対策'、'日韓防衛協力' 等のトピックが一切存在しない（F002 の content_missing に起因）。summary.session_summary にも中国・北朝鮮への言及は皆無で、実際の委員会審議内容と大きく乖離している。",
+      "estimated_cause": "F002（segment_index=3 の qa_pairs 生成失敗）の downstream effect として topics.json の網羅性が損なわれた。",
+      "downstream_impact": ["サイト UI（トピック検索・フィルタで重要安保議題がヒットしない）"]
+    }
+  ],
+  "blindspots": [
+    "raw_transcript の whisper_segments を逐字精査していないため、さらに細かいレベルの Whisper 誤認識が存在する可能性がある",
+    "外部の議員名簿・政府参考人リストとの照合は未実施（'三昂良次' の正確な実名は '三林良次' 等の推定に留まる）",
+    "segment_index=3 の欠落 QA（オーバーツーリズム・中国・北朝鮮）の正確な件数は raw_transcript の詳細分析が必要",
+    "llm_model='google/gemma-4-31B-it' が他セッションと異なるか確認していない（モデルバージョン固有の品質問題の有無）"
+  ],
+  "narrative": {
+    "overall": "本セッション（参議院外交防衛委員会 2026-04-23, sid=8980）は旅券法改正を主テーマとし 45 件の qa_pairs が生成された。全体の構造は概ね良好で、主要な質疑（旅券手数料改定・邦人保護・NPT・国家情報局）は適切に収録されている。しかし3点の高重要度問題が存在する。①summary が「衆議院外務委員会」と院・委員会名を誤記するという LLM ハルシネーションによる事実誤認、②segment_index=3（山田吉彦議員の質疑）で中国・北朝鮮・日韓防衛協力を含む 5 件以上の重要 QA が完全に欠落、③外務省領事局長の氏名が「三昂良次」「見栄領事局長」等 Whisper 誤認識で 6 種に表記ゆれ。これらはパイプライン全体に影響しており、再生成計画での修正が必要である。",
+    "top_findings": [
+      "summary.session_summary が '衆議院外務委員会' と誤記（F001）: 参議院外交防衛委員会でのセッションにもかかわらず LLM が異なる院・委員会名を生成。データ利用者が基本的な出典情報を誤認するリスクがある。",
+      "segment_index=3 の質疑5件超が qa_pairs から完全欠落（F002）: 中国学術交流と邦人拘束（茂木大臣答弁「17名拘束、5名服役中」）・北朝鮮ミサイル脅威・日韓防衛協力などの安全保障上重要な答弁が検索・閲覧できない。",
+      "外務省領事局長が '三昂良次'/'見栄領事局長' 等 Whisper 誤認識で 7 件に波及（F003）: 同一の政府参考人が topics・utterances・qa_pairs にわたり 6 種の名前で記録され、話者別検索や統計が機能しない。"
+    ]
+  }
+}

@@ -1,0 +1,327 @@
+{
+  "session_id": "shugiin/2026/04/16/56179_災害対策特別委員会",
+  "chamber": "shugiin",
+  "date": "2026-04-16",
+  "deli_id": "56179",
+  "committee": "災害対策特別委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T20:05:00Z",
+  "overall_quality": "low",
+  "issue_count": {"high": 6, "medium": 7, "low": 4, "total": 17},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "fact_error",
+      "secondary_categories": ["whisper_hallucination_loop", "metadata_missing_speaker"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "故安倍晋三元総理が答弁者として登録 (Whisperハルシネーション)",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[27]",
+        "segment_index": 5,
+        "qa_id": null
+      },
+      "evidence": "metadata.json speakers[27] に name='安倍晋三', role='答弁者' が登録されている。utterances.json segment 5 にも speaker='安倍晋三' で「安倍内閣総理大臣でございます。そして名簿情報の共有の話でございますけれども...」というutteranceが存在。raw_transcript.json の whisper_segments には『安倍内閣総理大臣』が6回ハルシネーションとして出現 (start=875.3, 1216.1, 5702.7, 6304.2, 0.0 等)。なお安倍晋三は2022年7月8日に逝去しており、本委員会 (2026-04-16) に出席することは物理的に不可能。",
+      "estimated_cause": "Whisper が無音/低品質音声区間で『安倍内閣総理大臣』を反復ハルシネーションし、speaker_tagger / structurer がこれを実在話者として metadata.speakers と utterances に登録した。話者名のサニティチェックが存在しない。",
+      "downstream_impact": ["utterances.json", "metadata.json"]
+    },
+    {
+      "id": "F002",
+      "category": "timestamp_inconsistency",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_046–qa_075 の video_url と segment_index が他話者の値で固定 (30件)",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[45..74]",
+        "segment_index": 5,
+        "qa_id": "qa_046–qa_075"
+      },
+      "evidence": "qa_046〜qa_075 (30件) の segment_index がすべて 5 (柏倉祐司)、video_url がすべて time=10668.4 (柏倉開始時刻 11:38)。しかし q_speaker は柏倉祐司・近藤和也・西園勝秀の3人が混在。例えば qa_064 (q_speaker=西園勝秀) が time=10668.4 を指す。本来 近藤和也 は segment 7 (start=18359.3, 13:46)、西園勝秀 は segment 8 (start=21988.2, 14:46)。利用者が動画リンクをクリックすると当該発言と無関係な区間にジャンプする。",
+      "estimated_cause": "audio extraction が segment 5 (柏倉、11:38–) の音声を 7684s (≈2h8m) と過大に抽出し、segment 6/7/8 の境界を越えて 13:46 直前まで取り込んだ (start=10668.4 + 7684 = 18352s = 13:46)。一方 segment 7 audio は 436s しかなく、segment 8 audio は 30s でハルシネーションのみ。structurer は extracted audio が属する segment_index/video_url を機械的に割り当てるため、近藤・西園の発言も全て segment 5 の URL に紐づいた。",
+      "downstream_impact": ["site rendering", "video_url click navigation"]
+    },
+    {
+      "id": "F003",
+      "category": "content_missing",
+      "secondary_categories": ["timestamp_inconsistency"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "近藤和也 (約1時間) と 西園勝秀 (約59分) の音声抽出が極端に短い",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[7,8]",
+        "segment_index": 7,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json segments[7] (近藤和也, 13:46–) は whisper_segments の最大 end=436.4s しかなく約7分の音声しか抽出されていない (text_len=2076)。segments[8] (西園勝秀, 14:46–) は end=29.98s 1ファイルのみで text='ご視聴ありがとうございました。' のみ。一方 segments[5] (柏倉, 11:38–) は last_end=7684.1s と過大で 2時間超の音声を含み、近藤・西園のQ&Aがそこに包含されている。近藤・西園セッション本来の音声からの再抽出が行われていない。",
+      "estimated_cause": "audio セグメンテーションが speaker boundary に追随せず、segment 5 の終点 (=segment 6 開始) まで 1 ファイルで音声を抽出。後続 segment 7/8 は重複回避のため切り詰められた結果、近藤・西園セッションの独立した audio file が事実上空になった。",
+      "downstream_impact": ["utterances.json", "qa_pairs.json", "summary.json", "topics.json"]
+    },
+    {
+      "id": "F004",
+      "category": "fact_error",
+      "secondary_categories": ["whisper_hallucination_loop"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "segment 7 冒頭の『高市内閣総理大臣、貴重なご提案ありがとうございます』はLLM補正による事実改変",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[7].text",
+        "segment_index": 7,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json segments[7].text 冒頭は『高市内閣総理大臣、貴重なご提案ありがとうございます。先ほど横浜次長が答弁されたみたいに...』となっているが、対応する whisper_segments[0] の生テキストは『安倍内閣総理大臣』。本会議でない災害対策特別委員会に総理は出席しておらず、両者ともハルシネーション。LLM 補正段階で『安倍』を『高市』(現職総理) に書き換えており、誤りを別の誤りに置換した。さらに当該utteranceは utterances.json で speaker=近藤和也 に紐付けられ、横山次長の答弁内容 (女性職員の働き方改革等) が近藤の質問の前置きとして表示されている。",
+      "estimated_cause": "(a) Whisper による『安倍内閣総理大臣』ハルシネーション、(b) LLM 補正がハルシネーションを認識せず現職総理名に置換、(c) speaker_tagger が segment 7 の冒頭を全て segment 名義の話者 (近藤和也) に帰属。3段階のフェイルセーフが全て機能していない。",
+      "downstream_impact": ["utterances.json", "qa_pairs.json"]
+    },
+    {
+      "id": "F005",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["role_label_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_001 の質問者が委員長 関芳弘 に誤帰属 (実際は小里泰弘)",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[0].question.speaker",
+        "segment_index": 0,
+        "qa_id": "qa_001"
+      },
+      "evidence": "qa_001 の question.speaker='関芳弘', party='災害対策特別委員長' で full_text は『これに期待をしたいと思います。勧告された省庁には尊重義務がありますが...方針をお伺いいたします。内閣官房横山次長。』。委員長が政策質問を行うことはなく、文末の『内閣官房横山次長』は次の答弁者を呼び出す動作で 質問者本人が小里泰弘 (segment 1 の話者) であることを示す。utterances.json segment 0 の最初の utterance も同テキストを 関芳弘 (役職『委員長』) に誤帰属。",
+      "estimated_cause": "segment 0 (関芳弘 09:00, 関の開会発言) の音声抽出が 小里泰弘 (segment 1 開始 09:03) の冒頭発言まで包含し、speaker_tagger が segment 名義の話者 (関芳弘) に全 utterance を機械的に帰属させた。話者交代点 (『小里君。』など) が適切に検出されていない。",
+      "downstream_impact": ["utterances.json", "summary.json", "topics.json"]
+    },
+    {
+      "id": "F006",
+      "category": "duplicate",
+      "secondary_categories": ["metadata_missing_speaker", "schema_inconsistency"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "同一人物が複数エントリで重複登録 (横山次郎/横山次長、神原/神原公益避難計画推進室長、関芳弘×2)",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json speakers に (a) '横山次郎' (役割『政府参考人』, affiliation 空) と '横山次長' (役割『政府参考人』, affiliation '次長') が別エントリ。実体は内閣官房副長官補（防災担当）の同一人物。qa_pairs では同人物について answer.speaker='横山次郎' が2件、'横山次長' が20件と表記揺れ。(b) '神原' と '神原公益避難計画推進室長' も同様に重複。(c) '関芳弘' が 09:00 (委員長) と 13:46 の2エントリで重複。",
+      "estimated_cause": "speaker_tagger が委員長の呼び出し『内閣官房横山次長。』の『次長』を姓名の一部として推測し『横山次郎』を生成 (役職と人名の境界判定エラー)。同時に正しく『横山次長』とタグした utterance も存在し、両表記が同一人物として正規化されないまま metadata に2エントリ登録された。",
+      "downstream_impact": ["site speaker pages", "search-index"]
+    },
+    {
+      "id": "F007",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["fact_error"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "『個別避難計画推進室長』が『公益避難計画推進室長』に誤認識 (組織名の創作)",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[].text",
+        "segment_index": 5,
+        "qa_id": "qa_065"
+      },
+      "evidence": "raw_transcript・metadata・qa_pairs 全てで『神原公益避難計画推進室長』として登場するが、災害対策基本法における用語は『個別避難計画』(自ら避難することが困難な要支援者の個別計画)。『公益』は法令上存在しない誤称。文脈 (要支援者名簿、避難計画の作成義務化等) からも『個別』が正しい。Whisper の音響的誤認識を LLM 補正が検出できなかった。",
+      "estimated_cause": "Whisper の音響モデルが『個別 (こべつ)』を『公益 (こうえき)』と誤認識。LLM補正は災害対策基本法の専門用語 (個別避難計画) を辞書として持たず、文脈整合性のみでチェックするため発見できない。",
+      "downstream_impact": ["metadata.json", "qa_pairs.json", "summary.json", "topics.json"]
+    },
+    {
+      "id": "F008",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["role_label_error"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "『神原室長』を『神原市長』と誤認識 (役職→自治体首長)",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[68].answer.full_text",
+        "segment_index": 5,
+        "qa_id": "qa_069"
+      },
+      "evidence": "qa_069 の answer.full_text は『内閣府、神原市長。お答え申し上げます...』で始まる。raw_transcript の whisper_segments にも『神原市長』が複数個所に出現。実際は内閣府の『神原室長』(室の長) で、政府参考人。市長 (mayor) ではない。",
+      "estimated_cause": "Whisperが『しちょう』(室長) を『しちょう』(市長) として誤認識した可能性 (両者同音)。LLM補正が文脈 (内閣府の役職) と整合性チェックをしていない。",
+      "downstream_impact": ["qa_pairs.json", "summary.json"]
+    },
+    {
+      "id": "F009",
+      "category": "schema_inconsistency",
+      "secondary_categories": ["schema_empty_field"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "answer.role に役職名と話者フルネームが混在 (古川内閣府大臣政務官 等9件)",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[].answer.role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "answer.role の値分布は: '' (11件), '次長' (20), '国務大臣' (12), '古川内閣府大臣政務官' (9), '審議官' (4), '大臣政務官' (4), '部長' (3), '副大臣' (2), '局長' (2), '厚生労働省大臣官房審議官' (2), '消防庁門前国民保護防災部長' (2), '服部大臣官房審議官' (1), '金子内閣府大臣政務官' (1), '国土交通省担当局長' (1), '国土交通省林局長' (1), '国土交通省河川局長' (1)。本来 role は『国務大臣』『大臣政務官』などの役職カテゴリのみであるべきだが、answer.speaker の値そのもの (フルネーム+役職) が role に重複コピーされている例が多数。",
+      "estimated_cause": "speaker_tagger / structurer が role を answer.speaker から派生する際、役職部分のみを抽出する正規化処理が未実装。speaker = '古川内閣府大臣政務官' のような値が role にもそのまま入っている。",
+      "downstream_impact": ["site filter UI", "search-index facets"]
+    },
+    {
+      "id": "F010",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "answer.role が空文字の qa_pair が 11/76件 (14%)",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[].answer.role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "qa_001/002/028/029/051/065/066/067/069/073/076 の answer.role が ''。当該答弁者は '横山次郎', '片山さつき', '神原公益避難計画推進室長', '神原' などで、metadata.speakers では何らかの role が設定されているにも関わらず qa_pairs 側では空。",
+      "estimated_cause": "structurer が answer.speaker と metadata.speakers の照合に失敗した場合に role を空文字に落とすフォールバックがある。横山次郎/横山次長 のように表記揺れがある場合に特に発生。",
+      "downstream_impact": ["site filter UI", "downstream analytics"]
+    },
+    {
+      "id": "F011",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": ["schema_empty_field"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers に『（不明）』エントリ (役割=答弁者)",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[22]",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json speakers[22] に name='（不明）', affiliation='', role='答弁者', start_seconds=0.0 のエントリが存在。話者特定不能のフォールバックがそのまま正式エントリとして残っている。",
+      "estimated_cause": "speaker_tagger が同定できなかった発言を『（不明）』にラベルし、structurer が deduplication / cleanup せずに metadata に流し込んだ。",
+      "downstream_impact": ["site speaker filter"]
+    },
+    {
+      "id": "F012",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers の答弁者・参考人 22名が start_seconds=0.0 / start_time='' / duration_minutes=0",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[9..36]",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers の質問者9名 (関芳弘×2, 小里, 木村, 高見, 青柳, 柏倉, 近藤, 西園) には start_seconds と start_time が設定されているが、答弁者・参考人22名 (横山次郎, 横山次長, 成田審議官, 牧野国務大臣, 片山さつき, 安倍晋三, 神原, 神原公益避難計画推進室長 など) は全て start_seconds=0.0, start_time='', duration_minutes=0。実際に登壇しているにも関わらず時刻情報が欠落。",
+      "estimated_cause": "Shugiin TV のサイドバーに記載の登壇者リストに答弁者は含まれず、時刻情報もない。speaker_tagger は LLM 推論で答弁者を発見するが、その音声内位置 (start_seconds) を計算/転写しないため 0.0 のまま。",
+      "downstream_impact": ["site speaker timeline", "video deep link to answerer"]
+    },
+    {
+      "id": "F013",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "medium",
+      "systemic_signal": "likely_systemic",
+      "title": "『横山次長』が『横浜次長』と誤認識 (姓→自治体名)",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[7].text",
+        "segment_index": 7,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript segment 7.text に『先ほど横浜次長が答弁されたみたいに、もう既に内閣防災部門の中で...』。同人物は他箇所では『横山次長』として登場。LLM 補正が一部箇所で `横山`→`横浜` を残置。",
+      "estimated_cause": "Whisper の同音異字誤認識 (やまやま vs はま)。LLM 補正は同一発話内で表記統一を行わない。",
+      "downstream_impact": ["raw_transcript readability"]
+    },
+    {
+      "id": "F014",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "『男女共同参画局』を『男女共同三角局』と誤認識",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[7].whisper_segments[2].text",
+        "segment_index": 7,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript segment 7 whisper_segments[2].text に『男女共同三角局の女性職員』。正式名称は『男女共同参画局』。corrected text 側では『男女共同参画局』に修正されているが、whisper_segments には誤認識のままの値が残る。",
+      "estimated_cause": "Whisper による同音誤認識 (さんかく vs さんかく)。LLM 補正で本文修正は機能している。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F015",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "likely_systemic",
+      "title": "『マレリーナ・エポジースト』(イタリア人名) 誤認識の可能性",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[7].utterances[0].text",
+        "segment_index": 7,
+        "qa_id": null
+      },
+      "evidence": "近藤和也の発言中『元イタリア市民保護庁のマレリーナ・エポジースト氏』。実在のイタリア市民保護庁長官として『Mauro Dolce』『Fabrizio Curcio』『Angelo Borrelli』等は知られるが、Marellina Espositoは確認できない。Whisperによるカタカナ表記の誤認識または別人物の創作の可能性。要二次確認。",
+      "estimated_cause": "Whisper の外国人名誤認識。LLM 補正は固有名詞辞書を持たないため検証不能。",
+      "downstream_impact": ["fact accuracy in citation"]
+    },
+    {
+      "id": "F016",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.json の committee_id, session_number, duration が空/null",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json の committee_id=null, session_number=null, duration='' (空文字), mediasp_hash='' (空文字)。null と空文字が混在。",
+      "estimated_cause": "scraper の値抽出失敗時のフォールバックが null と '' の両方を返す箇所が併存。スキーマ正規化が未実装。",
+      "downstream_impact": ["search-index", "filter UI"]
+    },
+    {
+      "id": "F017",
+      "category": "duplicate",
+      "secondary_categories": ["content_missing"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "segment 6 (関芳弘 13:46) audio が無関係な6.8秒断片『組織文化へと進化していくためには...』",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[6]",
+        "segment_index": 6,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript segments[6] (関芳弘, 13:46, 18352.5s〜) の text は『組織文化へと進化していくためには、組織編成の段階から意図的かつ積極的に。』(36字, 6.8s)。委員長 関芳弘の本来の役割 (次の質疑者の指名) と全く異なる文脈の文断片。実際にはこの内容は他の質疑者の発言の一部 (組織論を語る箇所) が混入。",
+      "estimated_cause": "audio extraction が segment 5 と segment 7 の境界処理で短い重複/隙間を作成し、関の数秒の発言区間に他の話者の音声フラグメントを誤って割り当てた。",
+      "downstream_impact": ["site rendering", "raw_transcript readability"]
+    }
+  ],
+  "blindspots": [
+    "raw_transcript の全 segment の whisper_segments を逐字確認していない (主要な箇所のみサンプリング)",
+    "イタリア人名 (マレリーナ・エポジースト) など外国固有名詞の正確性は外部ソース照合が必要",
+    "牧野国務大臣の本名 (牧野京夫? 等) は metadata で 役職のみ で確認できないため misrecognition か否か判定不能",
+    "個別の数値 (約280万人、補助限度額100→115万円、市町村負担0.3%等) の事実誤認チェックは未実施",
+    "防災庁設置法案の名称・条文番号など法令固有名詞の正確性は照合していない",
+    "片山さつき の役職 (現職経済安全保障担当大臣?) と本セッションでの担当領域整合は確認していない"
+  ]
+}

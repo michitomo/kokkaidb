@@ -38,6 +38,14 @@ _HTTP_TIMEOUT_SECONDS = 60
 _SEGMENT_RETRIES = 3
 _USER_AGENT = "Mozilla/5.0 (compatible; kokkai-transcriber/0.1)"
 
+# ffmpeg/ffprobe サブプロセスの用途別タイムアウト (秒)。
+# HLS 配信が途中で停滞してもプロセスがハングしないよう必ず timeout を渡す。
+_FFMPEG_TIMEOUT_DOWNLOAD = 1800   # HLS 直接 DL (~30分の音声を想定)
+_FFMPEG_TIMEOUT_EXTRACT = 600     # ローカル TS → WAV 抽出
+_FFMPEG_TIMEOUT_SPLIT = 300       # 1 セグメント分割 (silenceremove 込み)
+_FFMPEG_TIMEOUT_SILENCE = 120     # detect_leading_silence
+_FFPROBE_TIMEOUT = 30             # メタ取得 (duration)
+
 
 def download_full_audio(hls_url: str, output_path: Path) -> Path:
     """HLSストリームをWAVファイルとしてダウンロードする。
@@ -88,7 +96,10 @@ def _download_via_ffmpeg(url: str, output_path: Path) -> Path:
         str(output_path),
     ]
     logger.info("Downloading audio (ffmpeg direct): %s -> %s", url, output_path)
-    subprocess.run(cmd, check=True, capture_output=True, text=True)
+    subprocess.run(
+        cmd, check=True, capture_output=True, text=True,
+        timeout=_FFMPEG_TIMEOUT_DOWNLOAD,
+    )
     logger.info("Audio downloaded: %s", output_path)
     return output_path
 
@@ -257,7 +268,10 @@ def _extract_audio_with_ffmpeg(input_ts: Path, output_wav: Path) -> None:
         str(output_wav),
     ]
     logger.info("Extracting audio from local TS: %s -> %s", input_ts, output_wav)
-    subprocess.run(cmd, check=True, capture_output=True, text=True)
+    subprocess.run(
+        cmd, check=True, capture_output=True, text=True,
+        timeout=_FFMPEG_TIMEOUT_EXTRACT,
+    )
 
 
 def split_segments(
@@ -314,7 +328,10 @@ def split_segments(
             "Splitting segment %d/%d: %s (%.1fs - %.1fs)",
             i + 1, len(speakers), speaker.name, start, end,
         )
-        subprocess.run(cmd, check=True, capture_output=True, text=True)
+        subprocess.run(
+            cmd, check=True, capture_output=True, text=True,
+            timeout=_FFMPEG_TIMEOUT_SPLIT,
+        )
 
         if output_path.exists():
             original_size = (end - start) * 16000 * 2
@@ -353,7 +370,10 @@ def _get_audio_duration(wav_path: Path) -> float:
         "-of", "default=noprint_wrappers=1:nokey=1",
         str(wav_path),
     ]
-    result = subprocess.run(cmd, check=True, capture_output=True, text=True)
+    result = subprocess.run(
+        cmd, check=True, capture_output=True, text=True,
+        timeout=_FFPROBE_TIMEOUT,
+    )
     return float(result.stdout.strip())
 
 
@@ -376,7 +396,10 @@ def detect_leading_silence(wav_path: Path, threshold_db: float = -60.0) -> float
         "-af", f"silencedetect=noise={threshold_db}dB:d=1.0",
         "-f", "null", "-",
     ]
-    result = subprocess.run(cmd, capture_output=True, text=True)
+    result = subprocess.run(
+        cmd, capture_output=True, text=True,
+        timeout=_FFMPEG_TIMEOUT_SILENCE,
+    )
     # silencedetect は stderr に出力する
     # "silence_end: 470.123 | silence_duration: 470.123" の形式
     for line in result.stderr.split("\n"):

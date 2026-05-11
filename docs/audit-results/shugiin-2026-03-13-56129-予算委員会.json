@@ -1,0 +1,261 @@
+{
+  "session_id": "shugiin/2026/03/13/56129_予算委員会",
+  "chamber": "shugiin",
+  "date": "2026-03-13",
+  "deli_id": "56129",
+  "committee": "予算委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T10:30:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 3, "medium": 5, "low": 5, "total": 13},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["role_label_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_013 答弁者が和田政宗（野党議員）に誤帰属（実際は政府参考人・和田はじめ）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[12].answer.speaker",
+        "segment_index": 3,
+        "qa_id": "qa_013"
+      },
+      "evidence": "qa_pairs.json の qa_013 answer.speaker='和田政宗'、answer.role='参政党' となっているが、utterances.json segment 3 では同じ発言テキスト（「資源エネルギー庁が集計している石油統計に基づきますと、直近の値として公表している令和7年1月から12月の軽油の国内販売量は約930万キロリットル…」）の speaker='和田はじめ'、role='政府参考人' となっている。和田はじめは資源エネルギー庁の政府参考人であり、和田政宗（参政党議員）とは全くの別人。",
+      "estimated_cause": "speaker_tagger が漢字3文字の「和田」姓を共有する議員名（和田政宗）と政府参考人（和田はじめ）を混同した。セッション内に同姓が複数存在する場合のタグ付け精度が低い構造的問題と推測される。",
+      "downstream_impact": ["topics.json の related_speakers には和田政宗が登録されており、政府参考人による統計答弁が野党議員の発言と誤記録される"]
+    },
+    {
+      "id": "F002",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「しんぶん赤旗」が「しんぶん赤田」と誤認識され全ファイルに伝播",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[41].question.full_text",
+        "segment_index": 8,
+        "qa_id": "qa_043"
+      },
+      "evidence": "qa_pairs.json qa_043 の question.full_text: 「我が党の機関紙「しんぶん赤田」日曜版3月22日号によれば」。raw_transcript.json segment 8 の corrected text にも「しんぶん赤田」として残存。Whisper の whisper_segments id=5 でも同様。正しくは「しんぶん赤旗」（日本共産党機関紙）。この誤認識は LLM による修正フェーズでも修正されていない。",
+      "estimated_cause": "「赤旗」（あかはた）の音を Whisper が「赤田」と誤認識。正確な固有名詞として学習データに含まれていないか、音響的に類似する別語に引っ張られたと推測。LLM 修正フェーズが新聞名を政治的固有名詞として認識し修正を加えなかった可能性もある。",
+      "downstream_impact": ["qa_pairs.json", "raw_transcript.json", "利用者が共産党の機関紙名を誤って認識する"]
+    },
+    {
+      "id": "F003",
+      "category": "duplicate",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers に同一人物が複数エントリ（辰巳3件、長友・和田・高山各2件）",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json の speakers 配列に辰巳孝太郎が3エントリ（start_seconds: 32134.6, 33140.5, 34536.7）、長友慎治が2エントリ（28395.2, 33949.8）、和田政宗が2エントリ（30083.7, 34161.7）、高山聡史が2エントリ（31250.1, 34342.4）存在する。これらは同一議員の複数回登壇を別エントリとして重複登録している。",
+      "estimated_cause": "scraper/structurer が各登壇区間を独立エントリとして speakers に追加しており、同一話者の重複チェックを行っていない構造的問題。採決討論フェーズで同じ議員が再登壇する予算委員会特有の構成が重複を引き起こした。",
+      "downstream_impact": ["フロントエンドの speakers 表示に同一人物が複数表示される", "topics.json の related_speakers は重複なし（別途正規化済みと推測）"]
+    },
+    {
+      "id": "F004",
+      "category": "content_missing",
+      "secondary_categories": ["role_label_error"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "採決討論（segments 11-15,17）が qa_pairs から完全に欠落",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "utterances.json に segment 11（鳩山二郎・賛成討論）、12（中野洋昌・反対討論）、13（横田光弘・反対討論）、14（長友慎治2回目・討論）、15（和田政宗2回目・討論）、17（辰巳孝太郎2回目・賛成討論）が存在するが、qa_pairs.json にこれらに対応するエントリが存在しない。これらはそれぞれ約3分間の演説で、予算案への賛否と理由を述べる重要な政治的コンテンツ。",
+      "estimated_cause": "structurer が「討論フェーズ」（採決前の賛否演説）を Q&A ペアとして処理せず、スキップした。質疑応答形式でないため Q&A ペア化困難だが、重要な政治的コンテンツが失われている。",
+      "downstream_impact": ["summary.json には採決結果の記述はあるが、各党の賛否理由・討論内容が記録されない", "topics.json の related_speakers に鳩山二郎・中野洋昌・横田光弘が登録されていない"]
+    },
+    {
+      "id": "F005",
+      "category": "role_label_error",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_051-053 が Q&A でなく編成替え動議の趣旨説明なのに同一人物を question/answer 双方に配置",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[49:52]",
+        "segment_index": 9,
+        "qa_id": "qa_051"
+      },
+      "evidence": "qa_051, qa_052, qa_053 はすべて question.speaker='後藤祐一'（中道改革連合）かつ answer.speaker='後藤祐一'（中道改革連合）。answer.role='中道改革連合・無所属'（政党名が role に入っている）。これらは後藤委員が令和8年度予算の編成替えを求める動議の趣旨説明を行った 3 段階のスピーチであり、質疑応答ではない。同様に qa_054-057（辰巳、共産党動議）も同構造だが、そちらは answer.speaker='' で整合。",
+      "estimated_cause": "structurer が segment 9（後藤祐一）の内容を質疑形式として処理しようとした際、答弁者が存在しないため同一話者を answer に配置した。動議趣旨説明フェーズを Q&A 以外の category として識別するロジックが不足している。",
+      "downstream_impact": ["利用者が後藤祐一が自身に答弁したと誤認する", "evasion_score=0.0 が付与されており意味をなさない"]
+    },
+    {
+      "id": "F006",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「公正取引委員会」が「厚生取引委員会」と誤認識（複数箇所）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[0].whisper_segments[1].text",
+        "segment_index": 0,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json の whisper_segments において「厚生取引委員会」が複数箇所出現: segment 0 id=2 (「厚生取引委員会事務総局官房審議官、向井康二君」)、segment 5 id=33（「公正取引委員会や中小企業庁において」の文脈で「厚生取引委員会」）、segment 5 id=35（「価格カクテル等の独占禁止法」文脈で「厚生取引委員会」）。corrected text では segment 0 は「厚生労働省事務総局官房審議官」に修正済みだが、segment 5 での誤認識が qa_pairs.json qa_028 の answer.full_text に伝播したか確認が必要（qa_028 は公正取引委員会として正確）。",
+      "estimated_cause": "Whisper が「こうせい」（公正）を「厚生」と誤認識する継続的パターン。「公正取引委員会」（Fair Trade Commission）は音声的に「厚生」（Health/Welfare）と混同されやすい。",
+      "downstream_impact": ["raw_transcript.json の一部に誤認識が残存", "LLM 修正フェーズが一部のみ修正し漏れが生じている"]
+    },
+    {
+      "id": "F007",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「子牛（こうし）」が「甲子」と誤認識され qa_pairs に伝播",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[15].question.full_text",
+        "segment_index": 3,
+        "qa_id": "qa_017"
+      },
+      "evidence": "qa_017 question.full_text: 「私、甲子の競りにできるだけ行っておるんですけれども、競りに係る頭数が減少している…黒毛和種の甲子の頭数が、前年比5.6%減の34万3千頭余り」。農業・畜産文脈での「競り」「頭数」「黒毛和種」と組み合わせると「甲子（子牛）」は子牛市場（こうし競り）を指す。raw_transcript segment 3 の whisper_segments でも「甲子」のまま。corrected text でも未修正。「甲子」は干支の一つで、子牛市場用語としては「子牛」が正しい。なお raw では同文脈で「黒毛和紙」（黒毛和種の誤認識）も発生したが、corrected では修正済み。",
+      "estimated_cause": "「こうし」の発音に対して Whisper が干支の「甲子」（こうし/きのえね）を選択した。子牛（こうし）という専門用語が学習データに不足していた可能性。LLM 修正フェーズが農業専門用語として認識できなかった。",
+      "downstream_impact": ["qa_017 の質疑内容を読む利用者が「子牛競り」を「甲子（干支）」と誤認する"]
+    },
+    {
+      "id": "F008",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「激変緩和」が「激減緩和」と誤認識（複数箇所）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[3].whisper_segments[9].text",
+        "segment_index": 3,
+        "qa_id": "qa_023"
+      },
+      "evidence": "raw_transcript.json segments 3 id=9、segment 5 id=15、id=17 で「激減緩和措置」「燃料油油価格、激減緩和基金」が出現。qa_pairs.json qa_023 answer.full_text: 「3月19日木曜日からガソリン小売価格を170円程度に抑制するための緊急的な激減緩和措置を実施することとしております」。正しくは「激変緩和」（げきへんかんわ）。また segment 5 id=17 では「燃料油油価格」（油が重複）というノイズも同一 whisper segment に出現。",
+      "estimated_cause": "「げきへん」の音を Whisper が「激減」と誤認識。「激変」は「変化が激しい」意味だが「激減」（急激に減少）と音が近く、補助金文脈で「減る」というニュアンスに引っ張られた可能性。",
+      "downstream_impact": ["qa_023 answer の読解で政策用語が誤記される"]
+    },
+    {
+      "id": "F009",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs answer.role が全 60 件中 55 件で空文字列",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "60 件中 55 件で answer.role='' が設定されている。例外は qa_013（role='参政党'・誤帰属問題）、qa_042（role='予算委員長'）、qa_051-053（role='中道改革連合・無所属'）の計 5 件。role が空の場合、答弁者が大臣なのか副大臣なのか・どの省のアクターなのかが判別できない。",
+      "estimated_cause": "speaker_tagger または structurer が answer.role を一貫して付与していない。utterances.json では 答弁者の role が「答弁者」「政府参考人」「委員長」と区別されているが、qa_pairs への変換時に情報が失われている。",
+      "downstream_impact": ["フロントエンドでの答弁者の肩書き・役職表示が不可能", "データ利用者が答弁者の立場を把握できない"]
+    },
+    {
+      "id": "F010",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "evasion_score=1.0 が空 answer（動議説明・討論）に付与されている（8件）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[49].answer.evasion_score",
+        "segment_index": null,
+        "qa_id": "qa_050"
+      },
+      "evidence": "qa_050, qa_054, qa_055, qa_056, qa_057, qa_058, qa_059, qa_060 の 8 件で answer.full_text='' かつ evasion_score=1.0。これらは採決前討論や動議説明のため答弁者が存在しないが、evasion_score=1.0（最大回避度）が付与されており意味をなさない。qa_050 のみ実際には辰巳委員が質疑中に時間切れとなったケースで、answer.summary='（答弁なし。質疑終了のため）' と明記されている。",
+      "estimated_cause": "structurer が answer.full_text が空の場合に evasion_score をデフォルト 1.0 として設定するロジックが存在すると推測。空答弁を「最大回避」と機械的に解釈している。",
+      "downstream_impact": ["evasion_score の集計・分析時に空答弁が最大回避として集計され分析結果を歪める"]
+    },
+    {
+      "id": "F011",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "12名の答弁者（大臣等）が metadata.speakers に未登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "qa_pairs.json に登場する答弁者のうち、metadata.speakers に存在しない人物: 高市早苗、片山さつき、赤澤亮正、上野賢一郎、小泉進次郎、鈴木憲和、牧野孝太郎、茂木敏充（utterances のみ）、木原官房長官、金子国土交通大臣、林芳正、久米孝、松本洋平（計 12 名以上）。metadata.speakers には質問者（主登壇者）のみが登録されており、答弁者が全員抜けている。",
+      "estimated_cause": "scraper が衆議院TVの登壇者リストから主たる質問者のみを speakers に登録し、答弁者を収集していない構造的問題。",
+      "downstream_impact": ["メタデータ経由で答弁者を検索できない", "木原官房長官・金子国土交通大臣のように職位のみで個人名が記録されていないケースと混在"]
+    },
+    {
+      "id": "F012",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata の複数フィールドが null/空文字混在（committee_id, session_number, duration, mediasp_hash）",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.committee_id",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json: committee_id=null, session_number=null, duration=''（空文字列）, mediasp_hash=''（空文字列）。null と空文字が混在している。speakers[*].role もすべて空文字列 '' であり null でも値入りでもない。duration が空のため映像の長さが不明。",
+      "estimated_cause": "scraper がこれらフィールドを衆議院TVから取得できず、null（未取得）と ''（空文字）が用途に応じて混在している。統一的な未設定値の設計がない。",
+      "downstream_impact": ["スキーマバリデーションで type チェックが通らない可能性", "フロントエンドでの duration 表示が不可能"]
+    },
+    {
+      "id": "F013",
+      "category": "duplicate",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_024 と qa_025 の question.full_text が完全に同一",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[23].question.full_text",
+        "segment_index": 5,
+        "qa_id": "qa_024"
+      },
+      "evidence": "qa_024（topic: ガソリン・石油製品および農業用肥料への補助について）と qa_025（topic: 農業用肥料の供給状況と対策について）の question.full_text が「それでは、ガソリン、そして石油関連製品、また農業用の肥料等への補助金を求める声も上がっております…」で完全一致。実際には長友慎治委員が肥料について別の詳細質問をしており、qa_025 の answer（鈴木農水大臣）は qa_024 の answer（赤澤経産大臣）と異なる内容を扱っている。",
+      "estimated_cause": "structurer が連続する2つの質疑において、qa_025 の question テキストを適切に抽出できず、直前の qa_024 の question をコピーした可能性。utterances.json のセグメント境界認識の誤りに起因すると推測。",
+      "downstream_impact": ["qa_025 の question 内容が実際の発言と乖離しており、肥料政策の質疑内容が正確に記録されない"]
+    }
+  ],
+  "blindspots": [
+    "segments 11-15（各党の採決討論）の内容を逐字確認していないため、それら討論スピーチ内部の Whisper 誤認識は未検出の可能性",
+    "raw_transcript の全 whisper_segments（約18 segment × 多数の whisper_segment）を網羅的にスキャンしていないため、他の誤認識パターンが存在する可能性",
+    "実際の議事録・映像との照合をしていないため、qa_019 の「日本版ドージ」（whisper が「日本版同時」と認識し corrected で「ドージ」に修正済み）が実際に議員が発言した言葉かどうかは未確認",
+    "外部の議員名簿・政府参考人リストとの照合は未実施のため、他の政府参考人の名前誤認識が存在する可能性"
+  ],
+  "narrative": {
+    "overall": "本セッションは令和8年度予算の締めくくり質疑・採決を収録した約2時間の審議で、全体的なデータ品質は中程度（medium）と評価する。テキストの質疑応答内容は概ね正確に構造化されており、主要な政治的発言・コミットメントは summary.json や topics.json に適切に反映されている。一方で、政府参考人「和田はじめ」が野党議員「和田政宗」に誤帰属される深刻な speaker_misattribution（F001）や、「しんぶん赤旗」が「しんぶん赤田」として全ファイルに伝播する固有名詞誤認識（F002）など、データ利用者に誤情報を与えうる高重度の問題が発見された。スキーマ面では answer.role の大量空白（55/60件）、metadata.speakers への答弁者未登録（12名以上）が横断的に見られ、パイプラインの構造的欠陥を示している。採決討論フェーズ（segments 11-15,17）の qa_pairs への未収録は、予算採決に際する各党の賛否理由が記録されないという content_missing 問題として重要性が高い。",
+    "top_findings": [
+      "qa_013 で政府参考人「和田はじめ（資源エネルギー庁）」の軽油統計答弁が野党議員「和田政宗（参政党）」に誤帰属されており、同姓話者の混同が systemic な問題である可能性が高い",
+      "「しんぶん赤旗」→「しんぶん赤田」の Whisper 誤認識が corrected text・qa_pairs 双方に残存しており、LLM 修正フェーズが政党機関紙名の固有名詞を適切に補正できていない",
+      "metadata.speakers に質問者のみ登録され答弁大臣12名以上が全員未登録という構造的欠損があり、データ利用者のメタデータ経由検索を完全に阻害している"
+    ]
+  }
+}

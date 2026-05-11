@@ -25,7 +25,8 @@ from src.models import SessionDetail, SpeakerInfo
 from src.scrapers._committee import resolve_committee
 from src.scrapers._role import derive_role
 from src.scrapers._session_kind import detect_session_kind
-from src.scrapers.base import BaseScraper
+from src.scrapers._speakers import merge_fuzzy_duplicates
+from src.scrapers.base import BaseScraper, SessionNotReadyError
 
 logger = logging.getLogger(__name__)
 
@@ -110,6 +111,11 @@ class SangiinScraper(BaseScraper):
         soup = BeautifulSoup(response.text, "html.parser")
 
         speakers = _extract_speakers(soup, session_id)
+        if not speakers:
+            raise SessionNotReadyError(
+                f"Speaker list not yet published for sid={session_id}. "
+                "Will retry later."
+            )
         for s in speakers:
             s.role = derive_role(s.affiliation)
 
@@ -193,8 +199,12 @@ def _extract_speakers(soup: BeautifulSoup, session_id: str) -> list[SpeakerInfo]
 
     参議院TV の発言者リスト:
     <a href='#1850.95' class='play2'>名前(所属)</a>
+
+    同一人物の複数スロットは (name, affiliation) で dedup し、
+    start_seconds は最小、duration_minutes は合算、start_time は若い方を残す。
     """
-    speakers: list[SpeakerInfo] = []
+    seen: dict[tuple[str, str], SpeakerInfo] = {}
+    seen_order: list[tuple[str, str]] = []
 
     anchors = soup.find_all("a", class_="play2")
 
@@ -218,16 +228,32 @@ def _extract_speakers(soup: BeautifulSoup, session_id: str) -> list[SpeakerInfo]
 
         start_time, duration_minutes = _find_speaker_row_data(anchor)
 
-        speakers.append(
-            SpeakerInfo(
-                name=name,
-                affiliation=affiliation,
-                start_seconds=start_seconds,
-                start_time=start_time,
-                duration_minutes=duration_minutes,
-            )
-        )
+        key = (name, affiliation)
+        if key in seen:
+            existing = seen[key]
+            if start_seconds < existing.start_seconds:
+                existing.start_seconds = start_seconds
+                existing.start_time = start_time
+            existing.duration_minutes += duration_minutes
+            continue
 
+        seen[key] = SpeakerInfo(
+            name=name,
+            affiliation=affiliation,
+            start_seconds=start_seconds,
+            start_time=start_time,
+            duration_minutes=duration_minutes,
+        )
+        seen_order.append(key)
+
+    speakers = [seen[k] for k in seen_order]
+    pre_merge = len(speakers)
+    speakers = merge_fuzzy_duplicates(speakers)
+    if len(speakers) != pre_merge:
+        logger.info(
+            "Fuzzy merge dedup'd speakers for sid=%s: %d -> %d",
+            session_id, pre_merge, len(speakers),
+        )
     logger.info("Extracted %d speakers for sid=%s", len(speakers), session_id)
     return speakers
 

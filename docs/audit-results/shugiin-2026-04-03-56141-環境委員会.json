@@ -1,0 +1,207 @@
+{
+  "session_id": "shugiin/2026/04/03/56141_環境委員会",
+  "chamber": "shugiin",
+  "date": "2026-04-03",
+  "deli_id": "56141",
+  "committee": "環境委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T10:30:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 3, "medium": 4, "low": 3, "total": 10},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["role_label_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "segs 3・4 が辻清人予算説明中に 青山/友納 として誤帰属",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[3].utterances[0].speaker",
+        "segment_index": 3,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json seg2 (辻清人, start=1258.7s) の text末尾は「資源循環政策の推進といたしまして、」で途中終了し、seg3 (青山繁晴, start=1501.2s) の text冒頭は「再生資源の供給サプライチェーンの強靭化、廃棄物処理施設や浄化槽の整備などに必要な経費として、475億円余」と続く。これは辻清人が行った令和8年度予算説明の続きであり、青山繁晴が話している内容ではない。同様に seg4 (友納理緒) も「以上が令和8年度環境省所管一般会計予算及び特別会計予算の概要であります」と辻清人の予算説明を結ぶ文章を含む。utterances.json では seg3 utt0 のspeaker=青山繁晴, seg4 utt0 のspeaker=友納理緒 と誤帰属されている。",
+      "estimated_cause": "衆議院TVの発言者リストは次の話者のstartタイムを基準に音声クリップを分割するが、辻清人の発言が長く複数クリップ（seg3, seg4）に及んだため、scraper が次話者（青山、友納）のラベルで誤ってクリップを登録した。speaker_tagger がクリップラベルをそのまま採用したことで誤帰属が確定した。",
+      "downstream_impact": ["metadata.json (duration_minutes 青山=1min, 実際は辻清人の後半)", "topics.json (related_speakersの誤り可能性)"]
+    },
+    {
+      "id": "F002",
+      "category": "whisper_hallucination_loop",
+      "secondary_categories": ["whisper_misrecognition"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "seg4 冒頭に「高市内閣総理大臣」が出現（Whisper hallucination）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[4].whisper_segments[0].text",
+        "segment_index": 4,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json seg4 (友納理緒, start=1579.8s) の whisper_segment id=1 のテキストは「安倍内閣総理大臣総理大臣。」(avg_logprob=-0.743, セッション最低値)。LLM訂正後の raw_transcript.segments[4].text も「高市内閣総理大臣。」から始まる。このセッションは環境委員会の初回（所信表明・予算説明のみ）であり、内閣総理大臣は出席・発言していない。utterances.json seg4 utt0 (speaker=友納理緒, role=質疑者) のtext冒頭も「高市内閣総理大臣。除去土壌等の県外最終処分に向けた取組の推進など…」となっており、誤ったPM名がデータに残留している。",
+      "estimated_cause": "音声クリップ切れ目での Whisper ハルシネーション（avg_logprob=-0.743 は信頼性の著しい低下を示す）。LLM訂正ステップで「安倍」→「高市」と現在のPM名に修正したが、前後文脈から この句が不要な挿入であることを見抜けなかった。クリップ先頭の無音・雑音区間で政治家名が繰り返し生成されるパターンと一致する。",
+      "downstream_impact": ["utterances.json (友納理緒の utterance text に誤ったPM名が含まれる)"]
+    },
+    {
+      "id": "F003",
+      "category": "role_label_error",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "副大臣・政務官・委員会委員長が role=質疑者 に誤分類",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[3].utterances[0].role",
+        "segment_index": 3,
+        "qa_id": null
+      },
+      "evidence": "utterances.json において以下の4件で role=質疑者 が付与されているが、いずれも質疑ではなく行政側の説明・報告発言である: (1) seg3 utt0 speaker=青山繁晴, role=質疑者（予算説明文）; (2) seg4 utt0 speaker=友納理緒, role=質疑者（予算説明結び）; (3) seg5 utt0 speaker=森下千里, role=質疑者（「以上で説明は終わりました」）; (4) seg6 utt8 speaker=永野厚郎, role=質疑者（公害等調整委員会委員長の業務報告）。これらの発言者は全員 政府・委員会側の答弁者/説明者であり、質疑者ではない。",
+      "estimated_cause": "speaker_tagger が「Q&Aセッション」を前提とした分類ロジックを持ち、政府答弁者を 答弁者、それ以外を 質疑者 としたと推定される。所信表明・予算説明・業務報告等の一方通行の説明フォーマットに対応したロール分類ルールが欠如している。",
+      "downstream_impact": ["qa_pairs.json (このセッションでは pairs=[] のため表面化していない)", "UI表示（答弁者が質疑者として表示される恐れ）"]
+    },
+    {
+      "id": "F004",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "corrected transcript に4件の誤認識残留",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[6].text",
+        "segment_index": 6,
+        "qa_id": null
+      },
+      "evidence": "LLM訂正後の corrected text に以下の誤認識が残留している: (1) seg6.text「総務省の総務省と6の締結に向けた法案」— 文脈から「南極条約環境保護議定書付属書6の締結」を指すと推定されるが、whisper id=1 (logprob=-0.193) の誤認識がそのまま残った; (2) seg2.text冒頭「市長をはじめとする公害健康被害対策」— 石原大臣の所信表明末尾(水俣病70年に言及後)に続く辻清人の発言であり「水俣をはじめとする」が正しい; (3) seg2.text「日本自家等の長寿被害対策」— 原文は熊(クマ)等の鳥獣被害対策または日本ジカ等と推定、意味不明な表現が残留; (4) seg1.text「復興再生度の利用の取組を拡大する」— 除去土壌の「復興再生利用」の文脈であり「復興再生地」か「復興再生利用」が正しい。",
+      "estimated_cause": "LLM訂正ステップが当該箇所の前後文脈を十分に参照できなかった。特に(1)は前の文(南極条約議定書)が前のsegmentに属するため、segment単位での訂正では文脈が途切れる問題が顕在化している。",
+      "downstream_impact": ["utterances.json (同一テキストを使用)"]
+    },
+    {
+      "id": "F005",
+      "category": "schema_inconsistency",
+      "secondary_categories": ["schema_empty_field"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "utterances.json の話者テキストに発話者名「辻清人「…」」等が混入",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[2].utterances[2].text",
+        "segment_index": 2,
+        "qa_id": null
+      },
+      "evidence": "utterances.json seg2 utt2 (speaker=辻清人) の text が「辻清人「皆さんおはようございます。…」」と話者名+「 で始まっており、話者ラベルが発話テキストに混入している。同 seg2 utt1 (speaker=宮路拓馬) のtextも「…宮路委員長「辻環境副大臣」」と」で終わる書式になっている。また seg5 utt1 (speaker=宮路拓馬) のtextは「宮路委員長。青山副大臣。」と自己名称と次話者呼び出しが同一utteranceに混在している。",
+      "estimated_cause": "Whisper が speaker-label style の書き起こしを出力し、LLM structurer がそれをテキストから分離できなかった。発言テキストフィールドに話者名・括弧・句点形式のラベルが混在するのは構造化ロジックの問題。",
+      "downstream_impact": ["UI表示 (発話テキストに話者名が重複表示される)", "テキスト検索 (話者名がテキスト内に埋め込まれる)"]
+    },
+    {
+      "id": "F006",
+      "category": "speaker_misattribution",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "seg1 (石原宏高) の前半が宮路委員長発言なのに石原に帰属",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[1].utterances[0].speaker",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "utterances.json seg1 (segment_speaker=石原宏高, start=657.4s) の utt0・utt1 はspeaker=宮路拓馬が理事指名・国勢調査承認要求・所信聴取宣言を行う内容で正しく委員長に帰属されている。ただし utt2 (speaker=石原宏高) のtext冒頭が「石原環境大臣。石原環境大臣、おはようございます。」と、委員長が石原を呼ぶ句が石原の発言テキストに含まれている。また seg1 の audio clip は開始が657.4s であり、実際には同clip内で宮路委員長の長い発言（理事指名含む）が先行している。raw_transcript でも seg1 speaker_name=石原宏高 だが、text冒頭は宮路委員長の理事指名発言から始まっている。",
+      "estimated_cause": "衆議院TVが石原宏高の発言開始前の宮路委員長発言も同じクリップに含めており、speaker_tagger が クリップ後半の主要話者（石原）をクリップ全体のラベルに使用した。Whisper の speaker_diarization がなければ、クリップ先頭の実際の話者は見分けられない。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F007",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.json の role・committee_id・session_number・duration が空/null",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[*].role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json において: (1) speakers 全7名の role フィールドが空文字列 \"\"; (2) committee_id=null; (3) session_number=null; (4) duration=\"\" (空文字)。同様のパターンが他セッションでも確認されており（他セッションをサンプル確認: 全て session_number=null）、システム全体の未充填フィールドと判断される。",
+      "estimated_cause": "パイプラインの metadata 生成ステップで、committee_id / session_number / duration の導出ロジックが未実装または欠損。speakers[].role は utterances.json 側のroleとの使い分けが設計上不明確。",
+      "downstream_impact": ["フィルタ・集計処理 (session_number でのフィルタが使えない)", "UI (role 表示が空)"]
+    },
+    {
+      "id": "F008",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.key_topics とtopics.json のトピック名が不一致",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_topics",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "summary.json の key_topics: ['震災復興と原子力防災', '循環経済（サーキュラーエコノミー）の推進', '気候変動対策と脱炭素化', 'ネイチャーポジティブと自然共生', '公害紛争の処理'] (5件)。topics.json のトピック名: ['震災復興と原子力防災', '循環経済と廃棄物対策', '気候変動・自然共生', '公害紛争処理'] (4件)。'循環経済（サーキュラーエコノミー）の推進' vs '循環経済と廃棄物対策'、'気候変動対策と脱炭素化' vs '気候変動・自然共生'、'公害紛争の処理' vs '公害紛争処理' の3対が名前不一致。また summary.key_commitments[*].topic ('震災復興'/'循環経済'/'気候変動対策') も topics.json 名と一致しない。",
+      "estimated_cause": "summary.json と topics.json を別々のLLMプロンプトで生成しており、トピック名の統一テンプレートが存在しない。各プロンプトが独立してトピック名を考案するため表記が揺れる。",
+      "downstream_impact": ["topics ↔ summary の join が文字列マッチングに依存する場合に失敗する"]
+    },
+    {
+      "id": "F009",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.key_commitments の qa_id が空文字列、related_laws の qa_ids が全て空配列",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments[*].qa_id",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "summary.json の key_commitments 3件全てで qa_id=\"\" (空文字)。related_laws 5件全てで qa_ids=[] (空配列)。topics.json の related_qa_ids も全4件で [] (空配列)。このセッションは所信表明・予算説明のみで qa_pairs.json が pairs=[] であるため、qa_id の紐付けが不能なのは構造上当然だが、空文字と空配列の使い分けが不一致 (qa_id=\"\" vs qa_ids=[])。",
+      "estimated_cause": "qa_pairs が空の場合のフォールバック処理で、フィールドごとにデフォルト値が統一されていない。qa_id には空文字を、qa_ids には空配列をそれぞれ返している。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F010",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "辻清人発言で ポリ塩化ビフェニル(PCB) と誤訂正（原文はポリ塩化ビニル系）",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[2].utterances[2].text",
+        "segment_index": 2,
+        "qa_id": null
+      },
+      "evidence": "utterances.json seg2 utt2 (辻清人) のtextに「ポリ塩化ビフェニル廃棄物の適正な処理の推進に関する法案を、今後国会に提出いたします」とある。raw_transcript.json seg2 whisper_segment id=9 のtextは「ポリエンカビフェニル廃棄物の適正な処理」と誤認識。一方、同じ法案を石原大臣が説明した seg1 (utterances seg1 utt2) では「ポリエチレン・ポリビニル廃棄物の適正な処理の推進に関する法案」と訂正されている。PCB（ポリ塩化ビフェニル）とPVC/ポリビニル廃棄物は別物の規制対象であり、LLMが whisper の「ポリエンカビフェニル」を「ポリ塩化ビフェニル」と近い既知語に誤訂正したと推定される。",
+      "estimated_cause": "LLM訂正が whisper の音韻的近似から「ポリ塩化ビフェニル（PCB）」という既存の規制物質名に引き寄せた。同じ法案の石原大臣発言との照合が行われなかった。segment単位の独立訂正の限界。",
+      "downstream_impact": ["utterances.json", "検索 (PCBで検索すると誤ヒットする可能性)"]
+    }
+  ],
+  "blindspots": [
+    "raw_transcript の全whisper_segmentsを逐字精査していない（segs 0-6の代表的な誤認識のみサンプリング）",
+    "外部の公式議事録（衆議院会議録システム）との照合は未実施",
+    "第221回国会との整合性: 2026年4月の開会中の国会回次が221回目かどうか外部確認未実施（現行データでは session_number=null のため確認不能）",
+    "topics.json related_speakers に宮路委員長が含まれていない点（委員長も震災復興に言及）は minor omissionとして記録したが深掘り未実施"
+  ],
+  "narrative": {
+    "overall": "このセッション（2026-04-03 環境委員会）は委員長挨拶・所信表明・予算説明のみの初回開会であり、質疑応答はなく qa_pairs.json が空なのは正常。最大の問題は音声クリップ分割の誤りにより辻清人の予算説明がseg3(青山繁晴)・seg4(友納理緒)に誤帰属された点で、実際の発言者と記録上の話者が異なるという重大な誤りを含む。また友納理緒のsegment冒頭にWhisperハルシネーションによる「高市内閣総理大臣」句が残留しており、出席していない人物の発言として誤解される恐れがある。Whisperの誤認識はLLM訂正でほぼ補正されているが「総務省の総務省と6」「市長をはじめとする」等4件の残留エラーがある。スキーマ面では role=質疑者 の誤分類、発話テキストへの話者名混入、metadata の空フィールド、summary↔topics 間のトピック名不一致など複数のパターン的問題が確認された。",
+    "top_findings": [
+      "seg3(青山繁晴)・seg4(友納理緒)が辻清人の予算説明の誤帰属: 音声クリップの話者境界ミスがspeaker_taggerに伝播し、実際の話者と記録話者が異なる重大誤り",
+      "友納理緒seg冒頭に「高市内閣総理大臣」ハルシネーション: avg_logprob=-0.743（セッション最低）の信頼性最低whisper_segがLLM訂正で本名変換されたが、出席していない人物名として残留",
+      "役割誤分類(role=質疑者)が4箇所: 副大臣・政務官・外部委員会委員長の説明発言が全て質疑者に誤分類されており、所信表明型セッションへの対応ロジック欠如が疑われる"
+    ]
+  }
+}

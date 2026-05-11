@@ -1,0 +1,201 @@
+{
+  "session_id": "sangiin/2026/04/27/8986_予算委員会",
+  "chamber": "sangiin",
+  "date": "2026-04-27",
+  "deli_id": "8986",
+  "committee": "予算委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T12:00:00Z",
+  "overall_quality": "medium",
+  "issue_count": {"high": 3, "medium": 5, "low": 3, "total": 11},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "schema_empty_field",
+      "secondary_categories": ["metadata_missing_speaker"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "答弁者5名の affiliation が空文字（PR26 未解消）",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[?(@.role=='答弁者' || @.role=='政府参考人')].affiliation"
+      },
+      "evidence": "高市早苗(答弁者) affiliation=\"\", 上野賢一郎(答弁者) affiliation=\"\", 赤澤亮正(答弁者) affiliation=\"\", 松本洋平(答弁者) affiliation=\"\", 小林寛一(政府参考人) affiliation=\"\". 一方、質疑者側は全員 affiliation が正しく設定されている（例: 三原じゅん子=\"自由民主党・無所属の会\"）。",
+      "estimated_cause": "PR26 で答弁者の affiliation 補完が実装されたが、本セッションでは未適用または LLM が省庁名・党派名を推定できなかった。政府側答弁者の affiliation を公開情報から補完するロジックが不完全な可能性が高い。",
+      "downstream_impact": ["summary.json", "topics.json", "site表示"]
+    },
+    {
+      "id": "F002",
+      "category": "timestamp_inconsistency",
+      "secondary_categories": ["schema_empty_field"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_006/023/031/040/054の video_url が前の質疑者段落の開始点を誤指示",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[?(@.id=='qa_006' || @.id=='qa_023' || @.id=='qa_031' || @.id=='qa_040' || @.id=='qa_054')].video_url"
+      },
+      "evidence": "qa_006(森本真治): video_url=...#2184.52 は三原じゅん子セグメント開始点。qa_023(上田清司): url=...#5135.85 は泉房穂セグメント開始点。qa_031(里見隆治): url=...#6629.59 は上田清司セグメント開始点。qa_040(片山大介): url=...#8608.27 は里見隆治セグメント開始点。qa_054(山添拓): url=...#11149.92 は大津力セグメント開始点。いずれも各質疑者の実際の質問開始時刻より数百〜数千秒前を指している。",
+      "estimated_cause": "PR23 では QA pair ごとの video_url 生成が実装されたが、各話者の最初の QA pair（前の段落の末尾に utterances が入り込む境界ケース）では、前段落のセグメント開始点が video_url として割り当てられるバグが残存している。セグメント境界を跨ぐ utterance の timestamp 推定の不具合と見られる。",
+      "downstream_impact": ["site動画リンク", "ユーザー体験（クリックしても正しいシーンに飛ばない）"]
+    },
+    {
+      "id": "F003",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["fact_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "大槌町（おおつちちょう）を「大津市町」と誤認識",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[1].utterances[1].text",
+        "segment_index": 1
+      },
+      "evidence": "utterances.json segment 1 高市答弁: 「4月22日、岩手県大津市町において発生した林野火災」。正しくは岩手県上閉伊郡大槌町（おおつちちょう）。同様の誤認識が segment 5（片山大介質問）でも「岩手県の大津市町の山林火災」と出現。raw_transcript の whisper_segments でも「大津市町」と記録されており、Whisper の誤認識が下流ファイルにそのまま伝播している。",
+      "estimated_cause": "Whisper large-v3-turbo が音声の「おおつちちょう」を漢字変換する際に、より一般的な「大津」「市町」に誤変換。地名固有名詞の補正辞書または後処理が未実装。",
+      "downstream_impact": ["qa_pairs.json", "summary.json", "topics.json", "site表示での地名誤記"]
+    },
+    {
+      "id": "F004",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metrics が null の QA pair が 8/58 件（13.8%）存在",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[?(@.metrics==null)].id"
+      },
+      "evidence": "null metrics を持つ pair: qa_002, qa_004, qa_006, qa_011, qa_031, qa_033, qa_039, qa_050。これらは他の pair と異なり qq1_clarity, as1_directness 等のスコアが全て欠落しており、ダッシュボードや集計処理で null 参照エラーを引き起こす可能性がある。",
+      "estimated_cause": "LLM による metrics 生成（structurer V4）が一部の QA pair で応答を返さなかった、またはタイムアウト・レート制限により処理がスキップされた。segment 境界付近の QA pair に集中しているパターンが見られる（qa_006, qa_031 等）。",
+      "downstream_impact": ["site dashboard", "集計スクリプト"]
+    },
+    {
+      "id": "F005",
+      "category": "schema_inconsistency",
+      "secondary_categories": ["schema_empty_field"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.json 全 speakers の start_time が空文字、duration_minutes が 0",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[*].start_time"
+      },
+      "evidence": "17名全 speaker エントリで start_time=\"\"、duration_minutes=0。例: 藤川政人(委員長) start_seconds=1854.48 なのに start_time=\"\"、duration_minutes=0。質疑者・答弁者問わず全員が同じ状態。",
+      "estimated_cause": "start_time（HH:MM:SS 形式）への変換処理および duration 計算処理が未実装または parser エラー。start_seconds は正しく設定されているため、変換ロジックのみ欠落している。",
+      "downstream_impact": ["site表示（質疑者一覧の時刻・時間表示が空）", "タイムライン機能"]
+    },
+    {
+      "id": "F006",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.json の duration/committee_id/session_number が null または空",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.duration"
+      },
+      "evidence": "duration=\"\"（空文字）、committee_id=null、session_number=null。hls_url も空文字。これらは参議院 API から取得可能な情報であり、スクレイパーが取得に失敗している可能性がある。",
+      "estimated_cause": "参議院 TV の detail.php から委員会 ID や総時間を抽出する scraper ロジックが未実装または正規表現不一致。",
+      "downstream_impact": ["site表示", "集計・フィルタ機能"]
+    },
+    {
+      "id": "F007",
+      "category": "timestamp_inconsistency",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_012/qa_013 の video_url タイムスタンプが segment_index の時間範囲外",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[?(@.id=='qa_012' || @.id=='qa_013')].video_url",
+        "segment_index": 2,
+        "qa_id": "qa_012"
+      },
+      "evidence": "qa_012(森本真治): segment_index=2（終端=5135.85秒）、video_url=...#5156.9（5135.85秒超過）。qa_013(泉房穂): segment_index=2（終端=5135.85秒）、video_url=...#5397.9（同様に超過）。segment_index=2 は 森本真治セグメント（3561.88〜5135.85秒）だが、両 url は次の泉房穂セグメントの時間帯を指している。",
+      "estimated_cause": "セグメント境界付近で、utterance が次のセグメントにまたがって生成された際に segment_index が正しく更新されなかった。PR23 の video_url 個別生成では修正されたが、segment_index の更新処理と video_url の timestamp 生成が同期していない。",
+      "downstream_impact": ["動画リンクの誤指示"]
+    },
+    {
+      "id": "F008",
+      "category": "role_label_error",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_004 answer.role が非標準値「大臣」、qa_009 が組織名をそのまま使用",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[?(@.id=='qa_004')].answer.role",
+        "qa_id": "qa_004"
+      },
+      "evidence": "qa_004: answer.speaker=\"子ども政策担当大臣\"、answer.role=\"大臣\"（標準は「答弁者」）。qa_009: answer.speaker=\"公正取引委員会事務総局官房審議官\"、answer.role=\"公正取引委員会事務総局官房審議官\"（組織名と同一、長大文字列）。通常の答弁者は全て role=\"答弁者\"、政府参考人は role=\"政府参考人\" が標準。",
+      "estimated_cause": "LLM が speaker 名が役職名そのもの（大臣・政府参考人等）の場合にスキーマの role 固定値（答弁者/政府参考人）を使わず、独自判断で role を設定。structurer の role 正規化処理が未徹底。",
+      "downstream_impact": ["フィルタ・集計処理での role ベースのクエリ異常", "site表示の role ラベル"]
+    },
+    {
+      "id": "F009",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "raw_transcript seg0 で「御一員」「作用を取り計らいます」等の誤変換",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[0].whisper_segments[0].text",
+        "segment_index": 0
+      },
+      "evidence": "raw_transcript whisper_segments[0].text: 「これを委員長に御一員願いたいと存じますが」（正: 一任）、「御異議ないと認め、作用を取り計らいます」（正: そういう取り計らいます）。corrected=true の raw_transcript.text では「一任」「そういう取り計らいます」と修正済み。",
+      "estimated_cause": "Whisper large-v3-turbo による議会定型句の誤認識。事後修正スクリプト (corrected=true) で上位ファイルは補正されているが、whisper_segments の生データは未修正のまま保持される設計。",
+      "downstream_impact": ["raw_transcript.json の whisper_segments（下流処理への影響は限定的）"]
+    },
+    {
+      "id": "F010",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers の答弁者全員で start_seconds=0.0",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[?(@.role=='答弁者')].start_seconds"
+      },
+      "evidence": "高市早苗(答弁者) start_seconds=0.0、上野賢一郎(答弁者) start_seconds=0.0、赤澤亮正(答弁者) start_seconds=0.0 等、答弁者・政府参考人 7名全員が start_seconds=0.0。質疑者は全員正しい値（例: 三原じゅん子=2184.52）が設定されている。",
+      "estimated_cause": "答弁者は複数の質疑者に対して答弁するため「最初の登場時刻」の定義が曖昧。scraper/structurer が答弁者の start_seconds を計算しない設計になっている可能性。",
+      "downstream_impact": ["タイムライン表示での答弁者ソート・時刻表示"]
+    },
+    {
+      "id": "F011",
+      "category": "summary_qa_divergence",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "session_specific",
+      "title": "summary の key_commitments qa_038 の speaker が実際の答弁者と齟齬の可能性",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments[2]",
+        "qa_id": "qa_038"
+      },
+      "evidence": "summary.key_commitments qa_038: speaker=\"高市早苗\"、topic=\"アジア・アジアパラ競技大会の警備予算\"、text=\"令和7年度補正予算で警備経費を含む大会開催支援経費として136億円を措置しており、関係機関と連携して警戒警備を徹底する\"。qa_pairs.json の qa_037では松本洋平文科大臣が大会の意義を答弁しており、qa_038 で高市が136億円について言及。高市の答弁内容は確かだが、実質的な主担当大臣（松本洋平）の名前が key_commitments から抜けている可能性。",
+      "estimated_cause": "LLM が summary 生成時に「136億円措置」という具体的数値を述べた高市を commitment の主体として採用したが、この案件の主管は文科大臣（松本洋平）であるため、利用者が混乱する可能性。",
+      "downstream_impact": ["summary.json の key_commitments 参照時の誤解"]
+    }
+  ],
+  "blindspots": [
+    "raw_transcript の全 whisper_segments を逐字確認していないため、他にも Whisper 誤認識が存在する可能性がある",
+    "topics.json の related_qa_ids が全 QA pair を正しく網羅しているか完全には検証していない",
+    "実際の動画を視聴して video_url タイムスタンプの正確さを確認していない（タイムスタンプの妥当性は推定による）",
+    "外部議員名簿との照合による speaker_misattribution の検証は未実施"
+  ]
+}

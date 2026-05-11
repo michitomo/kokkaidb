@@ -1,0 +1,351 @@
+{
+  "session_id": "shugiin/2026/04/02/56138_本会議",
+  "chamber": "shugiin",
+  "date": "2026-04-02",
+  "deli_id": "56138",
+  "committee": "本会議",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T10:00:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 6, "medium": 10, "low": 2, "total": 18},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "主要答弁者3名（高市早苗PM・赤澤亮正・上野賢一郎）がmetadata.speakersに未登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json の speakers リストは8名（議長・副議長・5人の質疑者・木原稔）のみ。utterances.json には高市早苗（内閣総理大臣）・赤澤亮正（経済産業大臣）・上野賢一郎（厚生労働大臣）が答弁者として登場し、qa_pairs.json でも qa_001〜qa_040 の大半（高市が30件）を占める。これら3名は topics.json related_speakers にも一切含まれない。",
+      "estimated_cause": "scraperがセッション一覧ページから取得できる「質疑者」の名前のみをspeakersに登録し、答弁者（閣僚）は国会TVのメタデータに含まれないため取り込み漏れと思われる。本会議特有の問題（委員会はより少人数で管理しやすい）かもしれないが、質疑者側の speaker_tagger が答弁者の識別を別途行う構造である限り全セッションに潜在する。",
+      "downstream_impact": ["topics.json", "summary.json", "qa_pairs.json"]
+    },
+    {
+      "id": "F002",
+      "category": "role_label_error",
+      "secondary_categories": ["speaker_misattribution"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "議長・森英介のroleが'質疑者'に誤分類（本来は議長・開会宣言）",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[0].utterances[0].role",
+        "segment_index": 0,
+        "qa_id": null
+      },
+      "evidence": "utterances.json segment_index=0: speaker=森英介, role='質疑者', text='これより会議を開きます。この際、内閣提出国家情報会議設置法案について、'。内容は開会宣言であり質疑ではない。metadata.json でも affiliation='衆議院議長' と記録されている。",
+      "estimated_cause": "LLM structurerが発言内容を文脈判断せず、segment_speaker（質疑者リードとして設定された最初の名前）のroleをそのまま '質疑者' にデフォルト設定した可能性。議長の開会発言が別roleに分類されない設計上の欠陥。",
+      "downstream_impact": ["qa_pairs.json"]
+    },
+    {
+      "id": "F003",
+      "category": "role_label_error",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "副議長・石井啓一の答弁がseg2で'その他'に誤分類",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[2].utterances[3].role",
+        "segment_index": 2,
+        "qa_id": null
+      },
+      "evidence": "utterances.json segment_index=2: speaker=石井啓一, role='その他', text='石井啓一君。名称を国家情報戦略とするかどうかは未定ですが…公表することを検討してまいります…'。実質的な法案答弁（qa_004, qa_005に対応）であり '答弁者' が正しい。一方 segment_index=6 では同人物が role='答弁者' と正しく分類されており矛盾が生じている。",
+      "estimated_cause": "木原稔の答弁が途切れた直後に石井啓一が割り込んで答弁するという非定型の議事進行をLLMが誤解し、同一セグメント内で話者交代を追えなかった可能性。",
+      "downstream_impact": ["qa_pairs.json"]
+    },
+    {
+      "id": "F004",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["role_label_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "segment_index=5 の発言テキストが 木原稔 に誤帰属（実際は石井啓一または書記）",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[5].utterances[0].speaker",
+        "segment_index": 5,
+        "qa_id": null
+      },
+      "evidence": "utterances.json segment_index=5: speaker='木原稔', role='答弁者', text='議長がお答えいたしました。'。しかし raw_transcript.json segment_index=5 の speaker_name='石井啓一' であり、Whisperが認識した音声も '議長がお答えいたしました' の7.8秒のみ。この発言は書記官または石井啓一副議長自身による手続き的アナウンスであり、木原稔（内閣官房長官）ではない。",
+      "estimated_cause": "raw_transcript の speaker_name='石井啓一' から utterances に変換する際、LLMが前のセグメントで発言していた木原稔を誤って引き継いで帰属させた可能性。非常に短い（7.8秒）セグメントで文脈判断が難しかったと思われる。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F005",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers.role が全8名で空文字列",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[*].role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json の speakers 配列8名すべてで role='' (空文字列)。affiliation には '衆議院議長', '内閣官房長官 沖縄基地負担軽減担当 拉致問題担当', '自由民主党・無所属の会' 等が入っているが、role（質疑者/答弁者/議長など）は一切未設定。",
+      "estimated_cause": "speaker_tagger がroleフィールドを設定する処理を実装していないか、scraperから取得した情報にroleが含まれていないためデフォルト空文字列のまま。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F006",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.duration が空文字列（null でなく ''）",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.duration",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json: duration='', session_number=null, committee_id=null。duration のみ空文字列で他フィールドはnull。session_number と committee_id は期待通り null だが、duration は数値型が期待されるフィールドにもかかわらず空文字列であり型不整合。実際の録画時間は start_seconds から推定すると約124分（吉川里奈の開始6689.9s+769s=7458.9s≒124分）。",
+      "estimated_cause": "衆議院TVのスクレイパーが duration をHTMLから取得できない場合のデフォルト値が null でなく '' になっている。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F007",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_pairs.answer.role フィールドの値が話者によって不一致（空文字列 vs 所属/役職）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "40ペア中: 高市早苗・上野賢一郎・赤澤亮正 の answer.role=''; 木原稔 の answer.role='内閣官房長官 沖縄基地負担軽減担当 拉致問題担当'（affiliation と同値）; 石井啓一 の answer.role='衆議院副議長'（役職）。同フィールドに空文字・affiliation相当・役職が混在しており一貫性がない。特に最も重要な答弁者である高市早苗（内閣総理大臣）のroleが空というのは利用者に誤解を与える。",
+      "estimated_cause": "LLM structurerがroleフィールドの意味定義（役職か所属か）を曖昧なまま生成した結果、各QA対で異なる解釈が適用された。プロンプト側でroleの定義を明確化していない可能性。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F008",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "固有名詞の系統的誤認識：高市→高井, 中東→中等, 議長→市長（複数箇所）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[3].whisper_segments",
+        "segment_index": 3,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json segment_index=3 複数箇所: ws[4]「高井総理」(×2)、ws[22]「高井総理」; ws[1]「中等情勢」、ws[63]「中等情勢」、ws[65]「中等情勢」; ws[68]「市長、石井啓一議員」(logprob=-1.035); seg2 ws[18]「市長、石井啓一議員」(logprob=-0.816); seg7 ws[3]「原油の中等依存度」。utterances.json では LLM が「高市」「中東」「議長」に修正しているが、raw_transcript には誤認識が残存。",
+      "estimated_cause": "Whisper large-v3-turbo の日本語固有名詞認識の弱点。'高市' と '高井' は音響的に類似。'中東' と '中等' も音響特徴が近い。'議長' が '市長' に化けるのは音声クオリティの低下時に発生しやすいパターン。全セッションで共通して起きている可能性が高い。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F009",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "人名・語句の誤認識：木原宇野・赤澤良成・指揮監督→市議監督など",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[2].whisper_segments[13]",
+        "segment_index": 2,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json: seg2 ws[14]「国務大臣、木原宇野君」（正: 木原稔）; seg3 ws[66]「赤澤良成君」（正: 赤澤亮正）; seg3 ws[62]「上野健一郎君」（正: 上野賢一郎）; seg2 ws[20]「所管の大臣の市議監督のもと」（正: 指揮監督）; seg3 ws[60]「35名の定員像」（正: 定員増）; seg3 ws[67]「石油備蓄の保湿」（正: 放出）。これらはutterances.jsonでLLMが概ね修正しているが修正精度は不完全。",
+      "estimated_cause": "Whisper の音響モデルが日本語大臣名・政治用語を正確に学習していない。特に '木原稔' は稀少な読みで誤りやすい。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F010",
+      "category": "whisper_hallucination_loop",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "seg3 ws[61]: 「福祉法、福祉法」の繰り返しハルシネーション",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[3].whisper_segments[60]",
+        "segment_index": 3,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json segment_index=3 ws[id=61] (logprob=-0.199): '福祉法、福祉法、国家情報局と関係省庁との人事交流については…'。前後の文脈（35名の定員増・人事交流）と無関係な「福祉法」が2回繰り返されており、音声上のノイズや話者の言い直しをWhisperがハルシネートした可能性が高い。utterances.json では高市早苗の答弁として本文が続くが、この繰り返し句は除去されている。",
+      "estimated_cause": "Whisper が音声の不明瞭な箇所（答弁者の言いよどみ・マイク距離変化等）をloopとして補完したもの。low logprob (-0.199) が低品質な認識を示している。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F011",
+      "category": "whisper_hallucination_loop",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "議長呼び出し文の繰り返し：「石井啓一議長 石井啓一議長」(seg6 ws[11])",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[6].whisper_segments[10]",
+        "segment_index": 6,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json segment_index=6 ws[id=11] (logprob=-0.539): '石井啓一議長 石井啓一議長'。同様のパターンが seg3 ws[17]「石井啓一議長、石井啓一議長。」(logprob=-0.693)、seg6 ws[47]「橋本幹彦議長、石井啓一議員」(logprob=-0.647)にも見られる。委員長/議長が議員を呼び出す短い発話でWhisperがループを生成している。",
+      "estimated_cause": "本会議の議事進行で議長が議員を指名する短い発話（「石井啓一君」等）の直後に次の長い発話が続くため、Whisperがその接続部分でループを生成する構造的問題。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F012",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "seg6複数箇所の誤認識：療法活動・慈悲に・民主主席統制・充実さ審査",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[6].whisper_segments",
+        "segment_index": 6,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json segment_index=6: ws[45]「各省庁が行う療法活動の基本方針」（正: 情報活動）; ws[48]「慈悲にかなった的確な情報」（正: 時宜にかなった）; ws[12]「国会による民主主席統制」（正: 民主的統制）; ws[14]「この充実さ審査に協力することはもちろんのこと、総裁として充実さ審査の実現を」（正: 充実した審議 等）。これらはutterances.jsonでLLM修正済み。",
+      "estimated_cause": "Whisper の音響的誤認識。'情報' は '療法' に、'時宜' は '慈悲' に、'民主的' は '民主主席' に化けるパターンは政治・外交語彙の学習不足を示す。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F013",
+      "category": "fact_error",
+      "secondary_categories": ["other"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "高市答弁に LLM が括弧注釈「（強化することが不可欠です）」を挿入",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[2].utterances[1].text",
+        "segment_index": 2,
+        "qa_id": "qa_001"
+      },
+      "evidence": "utterances.json segment_index=2, speaker=高市早苗: '…あらゆる面で日本の国力を（強化することが不可欠です）。本法案は…'。raw_transcript.json の同箇所 seg2 ws[11] は '…あらゆる面で日本の国力を' で終わり、次の ws では全く異なる文に飛ぶ（Whisperが認識できなかったギャップ）。LLMが欠落した音声を独自に補完して括弧内テキストを生成している。qa_pairs.json qa_001 の answer.full_text にもそのまま引用されている。",
+      "estimated_cause": "speaker_tagger またはstructurerが音声認識ギャップを補完する際にLLMがハルシネーションを起こした。括弧付き注釈は 'corrected=true' 処理中に挿入されたと思われる。補完テキスト自体は文脈的に整合しているが、実際に発言された内容かどうかは検証不能であり事実誤認リスクがある。",
+      "downstream_impact": ["qa_pairs.json"]
+    },
+    {
+      "id": "F014",
+      "category": "summary_qa_divergence",
+      "secondary_categories": ["fact_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.key_commitments の qa_004 speaker が '高市早苗' と誤記（実際は石井啓一）",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments[0].speaker",
+        "segment_index": 2,
+        "qa_id": "qa_004"
+      },
+      "evidence": "summary.json key_commitments[0]: speaker='高市早苗', qa_id='qa_004', text='国家情報会議において…公表することを検討する'。しかし qa_pairs.json qa_004: answer.speaker='石井啓一', answer.role='衆議院副議長', answer.full_text='名称を国家情報戦略とするかどうかは未定ですが…'。utterances.json でも segment_index=2の当該発言は石井啓一に帰属（role='その他'）。質問は木原官房長官に向けられたが副議長・石井啓一が代答した。summaryのLLMは誰が実際に答えたかを誤認している。",
+      "estimated_cause": "summary生成LLMが質問の宛先（木原官房長官→高市総理のセグメント脈絡）から誤って高市早苗を答弁者と推定。非定型な副議長代答を処理できなかった。",
+      "downstream_impact": ["summary.json"]
+    },
+    {
+      "id": "F015",
+      "category": "summary_qa_divergence",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.key_commitments は4件のみ、qa_pairs で has_commitment=True は12件（8件欠落）",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "qa_pairs.json の has_commitment=True: qa_004, qa_006, qa_007, qa_011, qa_012, qa_013, qa_016, qa_017, qa_018, qa_026, qa_033, qa_037 の12件。summary.json key_commitments: qa_004, qa_007, qa_013, qa_037 の4件のみ。欠落している8件にはqa_017「人事交流の積極実施」(高市)、qa_006「医療物資調査対象拡大」(上野賢一郎)、qa_018「司令塔強化で国民安全守る」(高市) 等、重要な約束が含まれる。",
+      "estimated_cause": "summary生成LLMが「最も重要なコミットメント」を主観的に選別する際に、40件のQAから4件に絞り込みすぎた。明確な選定基準がプロンプトに設定されていない可能性。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F016",
+      "category": "timestamp_inconsistency",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers の duration_minutes が 森英介・石井啓一 で '1分' と過大見積もり（実際は各7-8秒）",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[0].duration_minutes",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json: 森英介 duration_minutes=1, start_seconds=1305.2。次の木原稔 start_seconds=1312.8。差は7.6秒 = 0.13分。石井啓一も duration_minutes=1 だが、start_seconds=5227.2 vs 橋本幹彦 5235.7 の差は8.5秒 = 0.14分。duration_minutes=1 は最小値のデフォルト設定と思われ、実際の発話時間を反映していない。",
+      "estimated_cause": "speaker_tagger が duration_minutes を計算する際に最小値を1分として切り上げているか、または短い発話セグメントの計算ロジックのバグ。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F017",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": ["summary_qa_divergence"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "topics.related_speakers に答弁者（高市早苗ほか閣僚3名）が全件未記載",
+      "location": {
+        "file": "topics.json",
+        "json_path": "$.topics[*].related_speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "topics.json の6トピック全てで related_speakers は質疑者（鳩山二郎・後藤祐一・浦野靖人・橋本幹彦・吉川里奈）のみを列挙。40件のQAで最多答弁者である高市早苗（30件）、木原稔（3件）、赤澤亮正（1件）、上野賢一郎（1件）、石井啓一（6件）は1トピックにも含まれない。例えばトピック「安全保障環境への具体的対応と検証」で後藤祐一の質問に赤澤亮正と上野賢一郎が答弁しているが両者は未掲載。",
+      "estimated_cause": "topics生成LLMが related_speakers を '質疑者' のみで埋めるよう指示されているか、または答弁者の情報が生成時のコンテキストに含まれていなかった可能性（metadata.speakersに答弁者が未登録のためF001の連鎖影響）。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F018",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "seg3・seg4での追加誤認識：橋本では・赤澤重要物資安定確保担当大臣・上院の校長会など",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[3].whisper_segments",
+        "segment_index": 3,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json: seg3 ws[2]「赤澤重要物資安定確保担当大臣」（正: 赤澤経済産業大臣 – 大臣肩書が別の役職に化けた）; seg3 ws[22]「上院の校長会で国家情報長官が」（正: 上院情報特別委員会）; seg3 ws[67]「他方で橋本では一部で供給の偏り」（正: 他方で）; seg4 ws[6]「浦野靖人（日本維新の会議長。」（正: 浦野靖人（日本維新の会）.）; seg3 ws[5]「福祉党法案より」（正: 社会福祉法案 等）。",
+      "estimated_cause": "Whisper の日本語政治専門語・委員会名の認識弱点。特に複合語（委員会・担当大臣の正式名称）は誤認識が多い。",
+      "downstream_impact": ["utterances.json"]
+    }
+  ],
+  "blindspots": [
+    "raw_transcript の全 whisper_segments を逐字精査していない（サンプリングベース）。seg7（吉川里奈・約27セグメント）の誤認識詳細調査が不十分",
+    "qa_pairs の answer.full_text と utterances.json のテキストの一致確認を全40件は実施していない（主要なもののみ）",
+    "外部の衆議院議員名簿・官職名鑑との照合未実施のため、修正後テキスト（utterances.json）に残る誤認識を見落としている可能性がある",
+    "evasion_score の妥当性検証（LLM評価の一貫性）は未実施"
+  ],
+  "narrative": {
+    "overall": "本セッション（56138_本会議、国家情報会議設置法案の質疑）は、内容面では5人の質疑者から40件のQAペアが生成され、法案の主要論点を概ね網羅している点で中程度の品質を示す。しかし最重要の構造的問題として、主要答弁者である高市早苗内閣総理大臣・赤澤亮正経済産業大臣・上野賢一郎厚生労働大臣の3名がmetadata.speakersに一切登録されていないことが挙げられる。Whisper誤認識は段落3（後藤祐一・34分の長い質疑）に集中しており、LLMによるcorrectedフラグ処理で多くは修正されているが、括弧補完による創作テキスト挿入という新たな問題が生じている。summary.json の key_commitments は4件に過ぎず、12件確認された約束のうち8件が脱落していること、さらにqa_004の答弁者が高市早苗（誤）と記録されている事実誤認は、このファイルの信頼性を低下させる。",
+    "top_findings": [
+      "metadata.speakers に主要閣僚3名（高市早苗PM・赤澤亮正・上野賢一郎）が未登録（F001）：全セッションで再発している可能性が高く、スクレイパーの答弁者取得ロジック追加が必要",
+      "LLM による音声ギャップ補完でqa_001答弁に括弧注釈「（強化することが不可欠です）」が創作挿入（F013）：corrected=true 処理が事実改変リスクを持つことが判明し、補完箇所の明示マークが必要",
+      "summary.key_commitments の qa_004 答弁者が '高市早苗' と誤記（実際は石井啓一副議長）（F014）：非定型の副議長代答という特殊な議事進行をLLMが処理できない設計上の弱点"
+    ]
+  }
+}

@@ -65,6 +65,19 @@ speaker には必ず人物の実名（苗字＋名前）を使う。
   - 正: [{"start":0,"speaker":"坂本哲志","role":"委員長"}]
 - ラベル行と指名文が連続して同一話者（委員長）を示す場合も1 splitにまとめる
 
+## セグメント冒頭の境界ノイズ除去（PR25）
+音声録音の切り替えタイミングの都合で、このセグメントの先頭 1〜2文が
+**前のセグメントの末尾**に属する内容（委員長の指名文・前の答弁者の結語等）を
+含む場合がある。
+
+具体的には:
+- 「○○大臣。」「次に○○君。」のような委員長の指名文のみの行
+- 「以上です。」「ありがとうございました。」等の前の答弁者の締め発言
+
+これらがセグメントの先頭 (文番号 0〜1) に現れたときは、**start=0 の話者として
+セグメント主発言者 (segment_speaker) に帰属させ、その次の文から実際の内容を
+開始する**。指名文を別 speaker の split に切り出さない。
+
 ## 出力形式
 {"splits": [{"start": 0, "speaker": "発言者名", "role": "役割"}, ...]}
 start: 0始まりの文番号、昇順、最初は必ず0。
@@ -145,9 +158,28 @@ def tag_speakers(
 
     content = response.choices[0].message.content
     if not content:
-        raise ValueError("Empty response from LLM")
+        logger.warning(
+            "Empty response from LLM for segment speaker=%s; using whole text as single utterance",
+            segment_speaker.name,
+        )
+        return [Utterance(
+            speaker=segment_speaker.name,
+            role=segment_speaker.role or "質疑者",
+            text=raw_text,
+        )]
 
-    data = json.loads(content)
+    try:
+        data = json.loads(content)
+    except json.JSONDecodeError as e:
+        logger.error(
+            "Failed to parse LLM JSON for segment speaker=%s: %s; using whole text as single utterance",
+            segment_speaker.name, e,
+        )
+        return [Utterance(
+            speaker=segment_speaker.name,
+            role=segment_speaker.role or "質疑者",
+            text=raw_text,
+        )]
     splits = data.get("splits", [])
 
     if not splits:
@@ -205,7 +237,7 @@ def _build_video_url(chamber: str, session_id: str, start_seconds: float) -> str
         )
     elif chamber == "sangiin":
         return (
-            f"https://webtv.sangiin.go.jp/webtv/detail.php"
+            f"https://www.webtv.sangiin.go.jp/webtv/detail.php"
             f"?sid={session_id}#{start_seconds}"
         )
     return ""

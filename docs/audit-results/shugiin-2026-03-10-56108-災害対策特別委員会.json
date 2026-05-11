@@ -1,0 +1,171 @@
+{
+  "session_id": "shugiin/2026/03/10/56108_災害対策特別委員会",
+  "chamber": "shugiin",
+  "date": "2026-03-10",
+  "deli_id": "56108",
+  "committee": "災害対策特別委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T10:00:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 1, "medium": 4, "low": 3, "total": 8},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "role_label_error",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "津島淳・瀬戸隆一・古川直季の role が「質疑者」(正: 答弁者)",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[3].utterances[1].role",
+        "segment_index": 3,
+        "qa_id": null
+      },
+      "evidence": "utterances.json にて segment 3 の津島淳（内閣府副大臣、令和8年度防災関係予算説明）、segment 4 の瀬戸隆一（復興副大臣、就任挨拶）、segment 5 の古川直季（内閣府大臣政務官、就任挨拶）の role がいずれも「質疑者」。これに対し、同一セッションで所信表明を行ったあかま二郎（segment 1）・牧野たかお（segment 2）は「答弁者」と正しく設定されている。津島・瀬戸・古川の3名はいずれも政府側として予算説明・就任挨拶を行っており、質問者ではない。",
+      "estimated_cause": "speaker_tagger がセグメント内の発言種別（所信表明 vs 予算説明 vs 副大臣紹介）を区別できず、大臣クラスの所信表明と副大臣・政務官クラスの説明・挨拶に異なるルールを適用した。qa_pairs.json が空でQ&A構造が存在しないため、役割判定ロジックが混乱した可能性。",
+      "downstream_impact": ["qa_pairs.json", "summary.json"]
+    },
+    {
+      "id": "F002",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "utterances.json の text フィールドに話者ラベルが埋め込まれている",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[1].utterances[1].text",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "utterances.json 全セグメントで text フィールドに話者ラベルが残存している。例: segment 1 の関芳弘 utterance が '関芳弘委員長：あかま防災担当大臣及び...'、同 あかま二郎 utterance が 'あかま国務大臣。あかま二郎大臣：はい。...'、segment 3 の津島淳 utterance が '津島内閣府副大臣。津島淳：はい。...'。speaker フィールドに話者情報があるにもかかわらず、text フィールドに「話者名：」または「呼称。話者名：」の形式で発言者ラベルが二重に埋め込まれている。同様に raw_transcript.json の各 segment.text にも複数話者ラベルが混在。",
+      "estimated_cause": "LLM構造化ステージが Whisper の corrected text をそのまま text フィールドに設定し、話者ラベルのストリップ処理を行っていない。Whisper が字幕形式で出力したテキストをそのまま利用したため。",
+      "downstream_impact": ["qa_pairs.json"]
+    },
+    {
+      "id": "F003",
+      "category": "summary_qa_divergence",
+      "secondary_categories": ["schema_empty_field"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "topics.json が空だが summary.json に5つのキートピックあり",
+      "location": {
+        "file": "topics.json",
+        "json_path": "$.topics",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "topics.json の topics 配列が完全に空 ({\"topics\": []}) であるのに対し、summary.json には key_topics として ['防災庁の設置', '能登半島地震および奥能登豪雨の復旧・復興', '国土強靱化の推進', '令和8年度防災関係予算案', '大規模地震（南海トラフ・首都直下）への備え'] の5トピックが列挙されている。また summary.json の key_commitments に3件のコミットメントが記載されており、発言内容は十分に存在する。",
+      "estimated_cause": "所信表明セッション（Q&Aなし）のため qa_pairs.json が空となり、topics.json 生成処理が qa_pairs を前提としていた場合、入力不足でスキップまたは空出力になった可能性。structurer が所信表明型セッションに対応していない。",
+      "downstream_impact": ["サイトの検索・フィルタ機能でトピック軸の絞り込みが不可能"]
+    },
+    {
+      "id": "F004",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.json の複数フィールドが空/null（role, committee_id, session_number, duration）",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[*].role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json において以下フィールドが未設定: (1) speakers 配列の全6名の role フィールドが空文字列 (''); (2) committee_id が null; (3) session_number が null; (4) duration が空文字列 (''). utterances.json では関芳弘に role='委員長' が設定されているため、metadata と utterances で一貫性がない。duration は speaker の duration_minutes の合計（17分）や raw_transcript の start_seconds から計算可能（最終 segment の start_seconds=2152.1 + 約52秒 = 約36分）だが metadata には反映されていない。",
+      "estimated_cause": "スクレイパーが衆議院TV の詳細ページから committee_id・session_number を取得する仕組みが未実装または取得失敗。speaker.role は structurer が utterances.role と別に metadata に書き戻す処理がない。duration は後処理で計算・設定すべきだが未実装。",
+      "downstream_impact": ["フィルタ検索での委員会ID絞り込み不可", "再生時間表示ゼロ"]
+    },
+    {
+      "id": "F005",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "raw_transcript の Whisper 段階で多数の固有名詞・専門用語誤認識（大半は補正済み）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].whisper_segments[1].text",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "corrected=true で補正済みだが、以下の誤認識が raw whisper_segments に記録されている（すべて corrected text では修正済み）: (1) 段階1 あかま二郎: 赤間→あかま (人名カナ/漢字誤変換)、野田半島地震/野党半島地震→能登半島地震、相当の意→哀悼の意、奥野戸豪雨犠牲者対等式→奥能登豪雨犠牲者追悼式、政府業務計測計画→政府業務継続計画、ご便達→ご鞭撻; (2) 段階2 牧野たかお: 聴診→所信、野田半島地震→能登半島地震、南海トラブ地震→南海トラフ地震、令和8難度→令和8年度、危機管理統治→危機管理投資; (3) 段階3 津島淳: 地産事業/地水事業→治山事業/治水事業、ご便達→ご鞭撻; (4) 段階4 瀬戸隆一: 仲なられました→亡くなられました、責任長→委員長; (5) 段階5 古川直季: 古川直樹→古川直季（人名誤認識）。",
+      "estimated_cause": "Whisper large-v3-turbo の日本語固有名詞（能登、あかま等）と専門語彙（哀悼、鞭撻、治山、治水、継続計画）の認識精度限界。音響的類似性による同音異義語混同。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F006",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "国土強靱化（靱）と国土強靭化（靭）の表記ゆれが複数ファイルで混在",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[5].text",
+        "segment_index": 5,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json の corrected text で: segment 1（あかま二郎）は強靱化(靱)のみ使用; segment 2（牧野たかお）は大半が強靱化(靱)だが 'ライフラインの強靭化' (靭) が1箇所; segment 4（瀬戸隆一）は強靱化(靱); segment 5（古川直季）は '国土強靭化担当' と強靭化(靭)を使用。utterances.json でも同様（強靱化=8箇所、強靭化=1箇所）。政府公式表記は 国土強靱化（靱 U+9773）だが、Whisper が靭(U+977D)で出力した箇所を補正 LLM が見落とした可能性。",
+      "estimated_cause": "Whisper が音声を 強靭化(靭) と出力した箇所を、corrector LLM が一部修正し一部見落とした。ライフラインの強靭化（一般語）と 国土強靱化（固有プログラム名）の使い分けが混乱している可能性もあるが、段落内の表記統一は必要。",
+      "downstream_impact": ["全文検索で 強靱化 または 強靭化 で引っかかるキーワードが分散"]
+    },
+    {
+      "id": "F007",
+      "category": "other",
+      "secondary_categories": ["whisper_misrecognition"],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "session_specific",
+      "title": "瀬戸隆一セグメントの末尾に 0.66秒の ghost whisper segment「はい。」",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[4].whisper_segments[2]",
+        "segment_index": 4,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json segment 4（瀬戸隆一）の3番目 whisper_segment が {\"start\": 49.07, \"end\": 49.73, \"text\": \"はい。\"} と 0.66秒の極短セグメント。直前の ws[1] が start=18.70, end=45.71 で終わっており、49秒台に次話者（古川直季）の準備音 'はい' が漏れ込んだと推定される。corrected text には取り込まれていない（瀬戸の corrected text には「はい。」が前半のみ存在）。",
+      "estimated_cause": "音声クリップ切り出し時に次話者の発声開始を含んでしまい、Whisper がそれを拾った。音声分割の境界設定が甘い。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F008",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.json の key_commitments.qa_id が全件空文字列",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments[*].qa_id",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "summary.json の key_commitments 3件（あかま二郎、牧野たかお、津島淳）のいずれも qa_id が空文字列 ''。本セッションは所信表明のみで qa_pairs.json が空 ({\"pairs\": []}) のため、対応する qa_id が存在しないことは正常だが、qa_id の型が null でなく空文字列 '' となっている点で null/空文字の混在が生じている（他ファイルでは null を使用）。",
+      "estimated_cause": "structurer が所信表明セッション向けの null 処理を行わず、デフォルト値として空文字列を設定した。",
+      "downstream_impact": []
+    }
+  ],
+  "blindspots": [
+    "raw_transcript の whisper_segments の tokens 配列は精査していない（ループ検出は行っていない）",
+    "外部の議員名簿・官報・衆議院TV公式ページとの照合による所属・役職確認は未実施",
+    "予算額の各内訳（80億円、1兆78億円等）を財務省資料と照合していない",
+    "audio クリップ自体の聴取は不可のため、corrected text の精度を音声と直接比較できていない"
+  ],
+  "narrative": {
+    "overall": "本セッション（2026-03-10、災害対策特別委員会）は所信表明および予算説明のみのセッションであり、質疑応答が存在しないため qa_pairs.json が空となっているのは正常である。Whisper の誤認識（能登半島地震、あかま大臣、治山・治水事業等）は補正 LLM によって大半が修正されており、corrected text および utterances.json の実質的な内容品質は概ね良好である。しかし、副大臣・政務官クラス3名（津島、瀬戸、古川）の role が「質疑者」と誤分類されている点は、データ利用者が役割を誤解する可能性があるため高重要度の問題である。また topics.json が完全に空で summary との乖離があること、utterances.json の text フィールドに話者ラベルが埋め込まれていること、metadata の複数フィールドが未設定であることは、いずれもパイプライン設計上の横断的な課題として他セッションでも発生している可能性が高い。",
+    "top_findings": [
+      "役割誤分類（F001）: 津島淳・瀬戸隆一・古川直季の role が「質疑者」と誤設定されており、政府側の説明者であることが正しく伝わらない。同じセッション内のあかま二郎・牧野たかおは「答弁者」と正しく設定されており、一貫性のない分類は structurer の所信表明型セッションへの対応不足を示す。",
+      "topics.json 完全欠落（F003）: summary.json に5つのキートピックが明示されているにもかかわらず topics.json が空となっており、サイト上のトピック絞り込み機能が機能しない。structurer が qa_pairs の存在を前提としてトピック抽出を行っているため所信表明型セッションで空出力になる構造的問題。",
+      "text フィールドへの話者ラベル埋め込み（F002）: utterances.json の全発言で text フィールドに「関芳弘委員長：」「津島内閣府副大臣。津島淳：」等の話者識別子が混入しており、speaker フィールドと情報が重複・混在している。UI 表示や全文検索で話者名が本文テキストとして扱われるリスクがある。"
+    ]
+  }
+}

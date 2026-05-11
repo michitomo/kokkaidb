@@ -1,0 +1,220 @@
+{
+  "session_id": "shugiin/2026/04/14/56162_本会議",
+  "chamber": "shugiin",
+  "date": "2026-04-14",
+  "deli_id": "56162",
+  "committee": "本会議",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T14:00:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 4, "medium": 5, "low": 3, "total": 12},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "whisper_hallucination_loop",
+      "secondary_categories": ["content_missing"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "seg9 WS id=17: 「福祉法」44回ループ（29秒分の音声欠損）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[9].whisper_segments[17]",
+        "segment_index": 9
+      },
+      "evidence": "raw_transcript.json seg9 WS id=17 (start=475.6, end=504.6, 約29秒): text='福祉法、福祉法、福祉法、...（44回）' compression_ratio=18.96。当該区間の音声内容（川裕一郎質疑における高市総理の自治体支援答弁部分）が utterances.json では除去済みだが、約29秒分のコンテンツが失われている。",
+      "estimated_cause": "Whisper large-v3-turbo が当該音声区間でハルシネーション・ループを発生。音声的に似た短音節（「ふ・くし・ほう」音列）のトークンが増幅されて繰り返しループに陥った可能性。corrected=true ではあるが、ループそのものは raw_transcript に残存。",
+      "downstream_impact": ["utterances.json", "qa_pairs.json"]
+    },
+    {
+      "id": "F002",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["fact_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「副首都構想」→「福祉都構想/福祉と構想」誤認識がqa_pairsに伝播",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[15].question.full_text",
+        "qa_id": "qa_016"
+      },
+      "evidence": "qa_016 question.full_text: '次に福祉都との関係について伺います...自民維新の実務者協議では、福祉都を大規模災害時に首都中枢機能を代替し...' / qa_017 answer.full_text: '...また福祉と構想については、与党による協議会において精力的に...'。utterances.json seg6 黒田征樹発言には '副首都' と '福祉都' が混在（Whisper の認識ゆれ）。raw_transcript.json seg6 WS id=4: '大規模災害時に政府中枢機能を代替しよる福祉との設置を求めてきました。先月末、自民維新の実務者協議において福祉と法案の骨子案が合意され'。正しくは「副首都構想」",
+      "estimated_cause": "Whisper が「ふくしと」（副首都）を「福祉都」または「福祉と」として誤認識。音韻的類似（[ふ][く][し][と]）に起因。speaker_tagger/structurer が修正せずそのままqa_pairsに採用した。",
+      "downstream_impact": ["qa_pairs.json", "topics.json", "summary.json"]
+    },
+    {
+      "id": "F003",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["content_missing"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_026 answer が speaker 注入タグ「川裕一郎（参政党）」でスプリットされ内容欠損",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[25].answer.full_text",
+        "qa_id": "qa_026"
+      },
+      "evidence": "qa_026 answer.full_text: '...中山間地や離島の自治体を含め、人口減少や職員不足に直面する自治体の実情も踏まえつつ、平時から地域の防災力を川裕一郎（参政党）。' 文末が中途切れで '川裕一郎（参政党）' という話者タグが埋め込まれている。utterances.json seg9 utterances[2] (高市早苗) の text も同様に '...平時から地域の防災力を川裕一郎（参政党）。被災地を訪れさせていただきました...' という形でタグが挿入されており、本来は同一高市答弁の継続部分。正しい続きは qa_027/qa_028 に分散している。",
+      "estimated_cause": "speaker_tagger が高市早苗の答弁途中に「川裕一郎（参政党）」という誤った話者ラベルを挿入。これが utterances→structurer に伝播し、答弁が前後に分断された。おそらく Whisper が「次の質疑者名」を先行音声として捉えた際の誤認識またはspeaker_tagger の誤帰属。",
+      "downstream_impact": ["qa_pairs.json", "summary.json"]
+    },
+    {
+      "id": "F004",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "medium",
+      "systemic_signal": "likely_systemic",
+      "title": "「能登半島地震」→「野党半島地震」誤認識（raw_transcript 全5箇所）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[4].whisper_segments[4].text",
+        "segment_index": 4
+      },
+      "evidence": "raw_transcript.json で 'seg4 WS4: そのような中で、一昨年、元日に発生をいたしました野党半島地震においては...' など seg4,5,6,8,9 計7箇所で「野党半島地震」として誤認識。utterances.json および qa_pairs.json では修正済み（corrected=trueの効果）だが raw には残存。高市総理等の答弁でも複数回誤認識されており、utterances レベルでの修正が重要。",
+      "estimated_cause": "Whisper が「のとう（能登）」を「やとう（野党）」として誤認識。政治議論の文脈で「野党」が高頻度で出現するため誤バイアスが生じた可能性。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F005",
+      "category": "schema_empty_field",
+      "secondary_categories": ["metadata_missing_speaker"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers 高市早苗: affiliation空、start_seconds=0、duration_minutes=0",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[10]"
+      },
+      "evidence": "metadata.json: {'name': '高市早苗', 'affiliation': '', 'role': '答弁者', 'start_seconds': 0.0, 'start_time': '', 'duration_minutes': 0}。高市早苗は内閣総理大臣として qa_pairs 26件中で答弁しており（全31件の84%）、最も多い発言者。affiliation='内閣総理大臣' が欠落し、start_seconds/start_time/duration_minutes がすべてゼロ。",
+      "estimated_cause": "speaker_tagger が衆議院TV公式サイトの発言者リストから高市早苗をスクレイプできなかった（本会議での答弁者は事前に登録されない形式の可能性）か、scraper の parsing ロジックで答弁者の metadata 取得が不完全。",
+      "downstream_impact": ["summary.json", "topics.json"]
+    },
+    {
+      "id": "F006",
+      "category": "whisper_misrecognition",
+      "secondary_categories": ["fact_error"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「珠洲市」→「鈴市」誤認識が qa_027 答弁テキストに伝播",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[26].answer.full_text",
+        "qa_id": "qa_027"
+      },
+      "evidence": "qa_027 answer.full_text: '...例えば鈴市の応急仮設住宅や穴水町のスマイルマルシェの皆様からは...'。utterances.json seg9 高市早苗発言にも同様の表記。raw_transcript.json seg9 WS id=20: '鈴市の応急仮設住宅'。正しくは 珠洲市（すずし）。穴水町（あなみずまち）と併記される能登半島の被災地名として珠洲市が正解。",
+      "estimated_cause": "Whisper が「珠洲市（すず-し）」を音韻的に近い「鈴市（すず-し）」として誤認識。異字同訓の典型例。能登半島の地名として珠洲は Whisper のデータに少ない可能性。",
+      "downstream_impact": ["utterances.json", "qa_pairs.json"]
+    },
+    {
+      "id": "F007",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "medium",
+      "systemic_signal": "likely_systemic",
+      "title": "「昨年の能登での反省」→「昨年の都での反省」誤認識が qa_024 に伝播",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[23].question.full_text",
+        "qa_id": "qa_024"
+      },
+      "evidence": "qa_024 question.full_text: '...政府では昨年の都での反省を受け、新物資システムB-PROを改良したと聞いております...'。前後文脈は能登半島地震の物資支援失敗に関する議論であり、「昨年の都での反省」は不自然。'昨年の能登での反省' が正しい解釈。raw_transcript.json seg8 WS id=27: '政府では昨年の都での反省を受け'と同一テキスト。",
+      "estimated_cause": "Whisper が「のとう（能登）」を「と（都）」として誤認識。「昨年の都」は意味をなさないため LLM structurer が修正する機会があったが修正されなかった。",
+      "downstream_impact": ["qa_pairs.json"]
+    },
+    {
+      "id": "F008",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "高市早苗（総理大臣）の answerer_seniority が11件で 'bureaucrat' に誤分類",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[11].metrics.oc1_record_value.answerer_seniority",
+        "qa_id": "qa_012"
+      },
+      "evidence": "高市早苗（内閣総理大臣）が回答者の qa_pairs 26件のうち、qa_012,qa_014,qa_015,qa_016,qa_017,qa_018,qa_019,qa_020,qa_022,qa_023,qa_024 の11件で answerer_seniority='bureaucrat'。残り15件は 'minister' が割当。総理大臣は 'minister' 以上であり 'bureaucrat' は明確な誤分類。oc1_record_value.score が低く算出される副作用もある。",
+      "estimated_cause": "LLM structurer（metrics 計算時）が 高市早苗の役職名（「答弁者」または「内閣総理大臣」）の解釈を qa_pair ごとに不一致で処理。answer.role が '答弁者'（ラベルのみ）の場合に seniority 推定が degraded になる可能性。",
+      "downstream_impact": ["qa_pairs.json"]
+    },
+    {
+      "id": "F009",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "medium",
+      "systemic_signal": "unknown",
+      "title": "「SOBO-WEB / 総合防災情報ウェブ」→「総務ウェブ」誤認識が答弁テキストに混入",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[14].answer.full_text",
+        "qa_id": "qa_015"
+      },
+      "evidence": "qa_015 answer.full_text（高市早苗答弁）: '...国においては新総合防災情報システム、総務ウェブですとか、新物資システムB-PROを整備し...'。raw_transcript.json seg6 WS id=31: '...これ総募ウェブですとか...'（さらに誤認識）。'総務ウェブ' は実在しない名称。政府の防災情報共有システムのシステム名（SOBO-WEBまたは「そうごうぼうさいウェブ」等）が誤認識された可能性。",
+      "estimated_cause": "Whisper が専門的なシステム名（SOBO-WEB等）を音韻的に近い「総務ウェブ」として誤変換。カタカナ固有名詞の音韻近似による典型的な誤認識パターン。",
+      "downstream_impact": ["qa_pairs.json"]
+    },
+    {
+      "id": "F010",
+      "category": "role_label_error",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "石井啓一（衆議院副議長）の role が '委員長' に誤分類",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[7]"
+      },
+      "evidence": "metadata.json: {'name': '石井啓一', 'affiliation': '衆議院副議長', 'role': '委員長', ...}。衆議院副議長が本会議中に議長職を代行した際（議長交代アナウンス）、role='委員長' が割り当てられている。本会議の議長代行は '委員長' ではなく '議長'（または '副議長'）とすべき。utterances.json seg7 も role='委員長'で統一されているが誤り。",
+      "estimated_cause": "speaker_tagger が本会議の議長・副議長を委員会の '委員長' ロールにマッピングする統一ロジックを使用しているため、本会議特有の '議長'/'副議長' 区別ができていない。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F011",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_009,qa_013,qa_025 の metrics が null",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[8].metrics",
+        "qa_id": "qa_009"
+      },
+      "evidence": "全31件中 qa_009 (seg5), qa_013 (seg6), qa_025 (seg8) の3件で metrics=null。他28件は metrics 完備（schema_version='2.0', prompt_version='V4'）。null 件数は全体の9.7%。",
+      "estimated_cause": "LLM structurer が metrics 評価プロンプト実行時にタイムアウトまたはエラーが発生し、特定 QA ペアの metrics 生成がスキップされた。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F012",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata の duration,committee_id,session_number が空/null",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.duration"
+      },
+      "evidence": "metadata.json: duration='', committee_id=null, session_number=null。本会議の session_number は国会の会期・回次に基づいて特定可能だが欠落。duration は HLS から算出可能だが空文字列。committee_id は本会議特有の値で埋めるべき。",
+      "estimated_cause": "本会議はscraper が想定する委員会構造と異なるため、committee_id と session_number の抽出に失敗。duration は ffmpeg 実行後の記録ロジックが未対応か欠陥。",
+      "downstream_impact": []
+    }
+  ],
+  "blindspots": [
+    "raw_transcript の全226 whisper_segment を逐字検証していない（サンプリング中心）",
+    "外部の議員名簿・公式会議録との詳細照合は未実施",
+    "qa_026 answer の '川裕一郎（参政党）' injection 後の内容（qa_027~qa_031 に分散した高市答弁）が正しく再結合されているか詳細未確認",
+    "B-PRO を 'BP' と略した箇所が Whisper 起因か LLM structurer 起因かの確認が不完全"
+  ]
+}

@@ -1,7 +1,8 @@
 """LLM Q&Aペア生成・要約・トピック抽出 (DeepInfra DeepSeek V3.2)
 
 セグメント単位で並列にQ&Aペアを生成し、抜け漏れを防止する。
-LLMにはutterance_indicesと判断のみ返させ、full_textはコードで組み立てる。
+LLMには utterance_indices と判断のみ返させ、full_text はコードが
+utterance 全文を連結して組み立てる (docs/STRUCTURER_REWRITE.md §2.1 / Appendix A)。
 """
 
 from __future__ import annotations
@@ -10,6 +11,7 @@ import json
 import logging
 import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from dataclasses import dataclass
 from typing import Any
 
 from src.api_client import get_client as _get_client
@@ -35,49 +37,93 @@ from src.prompts import (
     QA_METRICS_V4_USER_TEMPLATE,
     QA_SEGMENT_SYSTEM_PROMPT,
     SESSION_SUMMARY_SYSTEM_PROMPT,
+    TOPICS_FROM_UTTERANCES_SYSTEM_PROMPT,
     TOPICS_SYSTEM_PROMPT,
 )
 from src.speaker_lookup import find_by_name
 
-# Step 6はgemma-4-31bを使用（ペア数抽出がV3.2より安定: 10/10 vs 6/10）
-STRUCTURER_MODEL = "google/gemma-4-31B-it"
+# Step 6 LLM: OpenRouter 経由 Gemma 4 31B-it
+STRUCTURER_MODEL = "google/gemma-4-31b-it"
 
-# 答弁本文がこの長さ未満かつ sentence_indices が空のペアは Q&A として成立していないため drop
+# QA ペア生成のみ高精度モデルを使う (split_anchor 指定の精度が重要)
+QA_MODEL = "google/gemini-3-flash-preview"
+
+# 答弁本文がこの長さ未満かつ utterance_indices が空のペアは Q&A として成立していないため drop
 MIN_ANSWER_LENGTH = 30
+
+# 長文 utterance 判定 (sentence sub-number `(sN)` を併記する閾値)
+# 代表質問・所信表明など共有 utterance 候補のみ対象。99% の utterance は素のテキストのみ
+_LONG_UTTERANCE_CHARS = 800
+_LONG_UTTERANCE_SENTENCES = 8
+
+# プロンプトが極端に長くなったときの警告閾値 (block 分割不足の検知用)
+_PROMPT_TEXT_WARN_THRESHOLD = 50000
 
 logger = logging.getLogger(__name__)
 
 
 def _split_sentences(text: str) -> list[str]:
     """テキストを文単位に分割する。句点・疑問符・感嘆符で分割。"""
-    # Split on sentence-ending punctuation, keeping the delimiter
     parts = re.split(r'(?<=[。？！])', text)
     result = [p.strip() for p in parts if p.strip()]
     return result if result else [text]
 
 
-def _build_sentence_map(seg: SegmentUtterances) -> tuple[str, list[str]]:
-    """セグメント全体の文にフラットな通し番号を振り、プロンプト用テキストと文リストを返す。
+@dataclass
+class _SegmentLayout:
+    """セグメント内の utterance / sentence マッピング情報。
 
-    Returns:
-        (prompt_text, sentences): 番号付きテキストと文のフラットリスト
+    LLM プロンプト構築 (`_build_utterance_map`) と full_text 組み立て
+    (`_assemble_full_text_for_pair`) の両方で参照する。
     """
-    lines: list[str] = []
-    lines.append(f"セグメント発言者: {seg.segment_speaker}（{seg.segment_affiliation}）")
-    lines.append("")
 
-    all_sentences: list[str] = []
-    sent_idx = 0
-    for u in seg.utterances:
-        lines.append(f"[{u.role}] {u.speaker}:")
-        sentences = _split_sentences(u.text)
-        for s in sentences:
-            lines.append(f"  ({sent_idx}) {s}")
-            all_sentences.append(s)
-            sent_idx += 1
+    per_utt_sentences: list[list[str]]  # [u_idx][local_sent_idx] -> sentence text
+    utt_global_starts: list[int]  # [u_idx] -> 最初の sentence の global index
+    total_sentences: int
+    is_long_utt: list[bool]  # [u_idx] -> sentence sub-number を出すか
+
+
+def _compute_segment_layout(seg: SegmentUtterances) -> _SegmentLayout:
+    per_utt: list[list[str]] = [_split_sentences(u.text) for u in seg.utterances]
+    starts: list[int] = []
+    is_long: list[bool] = []
+    cur = 0
+    for sentences, u in zip(per_utt, seg.utterances, strict=True):
+        starts.append(cur)
+        cur += len(sentences)
+        is_long.append(
+            len(u.text) >= _LONG_UTTERANCE_CHARS
+            or len(sentences) >= _LONG_UTTERANCE_SENTENCES
+        )
+    return _SegmentLayout(
+        per_utt_sentences=per_utt,
+        utt_global_starts=starts,
+        total_sentences=cur,
+        is_long_utt=is_long,
+    )
+
+
+def _build_utterance_map(seg: SegmentUtterances, layout: _SegmentLayout) -> str:
+    """セグメントを `[U0]`, `[U1]`, ... の番号付きテキストに整形する。
+
+    長文 utterance のみ sentence サブ番号 `(sN)` をグローバル通番で併記。
+    LLM はこの番号を `utterance_indices` / `split_anchor_sentence_idx` に
+    そのまま使う。
+    """
+    lines: list[str] = [
+        f"セグメント発言者: {seg.segment_speaker}（{seg.segment_affiliation}）",
+        "",
+    ]
+    for i, u in enumerate(seg.utterances):
+        lines.append(f"[U{i}] [{u.role}] {u.speaker}:")
+        if layout.is_long_utt[i]:
+            start = layout.utt_global_starts[i]
+            for j, s in enumerate(layout.per_utt_sentences[i]):
+                lines.append(f"  (s{start + j}) {s}")
+        else:
+            lines.append(f"  {u.text}")
         lines.append("")
-
-    return "\n".join(lines), all_sentences
+    return "\n".join(lines)
 
 
 def _format_segments_for_prompt(segments: list[SegmentUtterances]) -> str:
@@ -90,14 +136,140 @@ def _format_segments_for_prompt(segments: list[SegmentUtterances]) -> str:
     return "\n".join(lines)
 
 
-def _assemble_full_text_from_sentences(
-    all_sentences: list[str], indices: list[int],
+def _assemble_full_text_for_pair(
+    seg: SegmentUtterances,
+    layout: _SegmentLayout,
+    utterance_indices: list[int],
+    split_anchor_sentence_idx: int | None,
+    boundary_global_idx: int | None,
 ) -> str:
-    """sentence_indicesからfull_textを機械的に組み立てる。"""
-    valid = [i for i in indices if 0 <= i < len(all_sentences)]
-    if not valid:
+    """utterance_indices と anchor から full_text を機械的に組み立てる。
+
+    - `split_anchor_sentence_idx` が None: 全 utterance の text を改行連結 (99% のケース)
+    - anchor あり: 先頭 utterance を anchor で slice し、後続 utterance は丸ごと連結。
+      `boundary_global_idx` は同じ utterance を共有する次のペアの anchor (排他的境界)。
+    """
+    valid_uidx = [i for i in utterance_indices if 0 <= i < len(seg.utterances)]
+    if not valid_uidx:
         return ""
-    return "".join(all_sentences[i] for i in valid)
+
+    if split_anchor_sentence_idx is None:
+        return "\n".join(seg.utterances[i].text for i in valid_uidx)
+
+    head_uidx = valid_uidx[0]
+    sentences = layout.per_utt_sentences[head_uidx]
+    g_start = layout.utt_global_starts[head_uidx]
+
+    local_anchor = max(0, split_anchor_sentence_idx - g_start)
+    if local_anchor >= len(sentences):
+        # 範囲外 anchor は信頼できないので utterance 全文にフォールバック
+        head_text = "".join(sentences)
+    else:
+        if boundary_global_idx is not None:
+            local_end = max(local_anchor, boundary_global_idx - g_start)
+            local_end = min(local_end, len(sentences))
+        else:
+            local_end = len(sentences)
+        head_text = "".join(sentences[local_anchor:local_end])
+
+    if len(valid_uidx) == 1:
+        return head_text
+    rest = "\n".join(seg.utterances[i].text for i in valid_uidx[1:])
+    return f"{head_text}\n{rest}" if head_text else rest
+
+
+def _compute_share_boundaries(
+    parsed_pairs: list[dict[str, Any]],
+    side: str,
+    layout: _SegmentLayout,
+) -> list[int | None]:
+    """同一 head utterance を共有するペアの anchor 順序から境界を求める。
+
+    side: "q" or "a"。各ペアの (uidx_key, anchor_key) を見て、anchor を持つペアが
+    同じ head utterance に複数あれば anchor 昇順でソートし、各ペアの境界を
+    「次のペアの anchor」とする。最後のペアは None (utterance 末尾まで)。
+
+    PR28: 複数ペアが同一 head utterance を共有しているのに anchor が全/部分的に
+    null の場合 (代表質問など、LLM が anchor 指示を省略した場合)、その utterance の
+    sentence 数で均等分割した anchor を `parsed_pairs` に書き戻して duplicate
+    full_text を防ぐ。
+    """
+    uidx_key = f"{side}_uidx"
+    anchor_key = f"{side}_anchor"
+
+    # 1. head utterance ごとにペアをグループ化 (入力順 = 時系列)
+    head_groups: dict[int, list[int]] = {}
+    for i, p in enumerate(parsed_pairs):
+        uidx = p[uidx_key]
+        if not uidx:
+            continue
+        head_groups.setdefault(uidx[0], []).append(i)
+
+    # 2. 同一 head に N>=2 ペアあって anchor が欠けていれば均等補完 (PR28)
+    for head, pair_indices in head_groups.items():
+        if len(pair_indices) < 2:
+            continue
+        if head < 0 or head >= len(layout.per_utt_sentences):
+            continue
+        n_sent = len(layout.per_utt_sentences[head])
+        if n_sent < 2:
+            continue
+        g_start = layout.utt_global_starts[head]
+        n_pairs = len(pair_indices)
+
+        explicit = [
+            (j, parsed_pairs[i][anchor_key])
+            for j, i in enumerate(pair_indices)
+            if isinstance(parsed_pairs[i][anchor_key], int)
+        ]
+
+        if not explicit:
+            # 全 null: 入力順に均等分割
+            for j, pair_idx in enumerate(pair_indices):
+                local_anchor = (j * n_sent) // n_pairs
+                parsed_pairs[pair_idx][anchor_key] = g_start + local_anchor
+            logger.info(
+                "PR28 (%s): inferred even-split anchors for head U%d (n_sent=%d, n_pairs=%d)",
+                side, head, n_sent, n_pairs,
+            )
+            continue
+
+        # 部分的: null を前後 explicit anchor の中点で埋める
+        for j, pair_idx in enumerate(pair_indices):
+            if isinstance(parsed_pairs[pair_idx][anchor_key], int):
+                continue
+            prev_anchor = g_start
+            next_anchor = g_start + n_sent
+            for prev_j, prev_anc in explicit:
+                if prev_j < j:
+                    prev_anchor = max(prev_anchor, prev_anc)
+            for next_j, next_anc in explicit:
+                if next_j > j:
+                    next_anchor = min(next_anchor, next_anc)
+                    break
+            inferred = (prev_anchor + next_anchor) // 2
+            parsed_pairs[pair_idx][anchor_key] = max(
+                g_start, min(inferred, g_start + n_sent - 1)
+            )
+
+    # 3. anchor ベースで境界を計算 (既存ロジック)
+    shared: dict[int, list[tuple[int, int]]] = {}
+    for i, p in enumerate(parsed_pairs):
+        uidx = p[uidx_key]
+        anchor = p[anchor_key]
+        if not uidx or anchor is None or not isinstance(anchor, int):
+            continue
+        head = uidx[0]
+        shared.setdefault(head, []).append((i, anchor))
+
+    boundaries: list[int | None] = [None] * len(parsed_pairs)
+    for items in shared.values():
+        if len(items) <= 1:
+            continue
+        items.sort(key=lambda x: x[1])
+        for j, (pair_idx, _) in enumerate(items):
+            boundaries[pair_idx] = items[j + 1][1] if j + 1 < len(items) else None
+    return boundaries
 
 
 def _fuzzy_lookup(name: str, speakers_lookup: dict[str, SpeakerInfo]) -> SpeakerInfo | None:
@@ -105,31 +277,89 @@ def _fuzzy_lookup(name: str, speakers_lookup: dict[str, SpeakerInfo]) -> Speaker
     return find_by_name(name, speakers_lookup, allow_single_char=True)
 
 
-def _build_sentence_to_utterance_map(seg: SegmentUtterances) -> list[int]:
-    """各sentenceがどのutteranceに属するかのマッピングを返す。"""
-    mapping: list[int] = []
-    for u_idx, u in enumerate(seg.utterances):
-        n_sentences = len(_split_sentences(u.text))
-        mapping.extend([u_idx] * n_sentences)
-    return mapping
+# PR23: 日本語の平均発話速度 (政治家の演説で 200-260 char/min ≒ 4 char/sec) で
+# segment 内の utterance 開始秒を線形推定する。segment 起点固定よりは
+# 大幅にマシなジャンプ精度になる (誤差 ±10-30s 程度)。
+_AVG_CHARS_PER_SECOND = 4.0
 
 
-def _resolve_speaker_from_sentences(
+def _estimate_pair_offset_seconds(
     seg: SegmentUtterances,
-    sentence_indices: list[int],
-    sent_to_utt: list[int],
+    layout: _SegmentLayout,
+    utterance_indices: list[int],
+    split_anchor_sentence_idx: int | None = None,
+) -> float:
+    """質問先頭の発言開始秒を、segment 内の文字位置から推定する (PR23 + PR23.1)。
+
+    1. utterance 単位のオフセット: head utterance より前の utterances の総文字数 / 4
+    2. PR23.1: anchor が指定されていれば、head utterance 内で anchor sentence
+       より前の文字数も加算する。これにより同一 head_utt を共有する複数ペアの
+       video_url が pair ごとに異なる時刻を指す (代表質問・所信表明での頭出し)。
+
+    Returns: seg.start_seconds に加算するオフセット (秒)。先頭 utterance かつ
+    anchor が先頭または None なら 0。
+    """
+    valid = [i for i in utterance_indices if 0 <= i < len(seg.utterances)]
+    if not valid:
+        return 0.0
+    head = valid[0]
+    chars_before_head = sum(len(seg.utterances[j].text) for j in range(head))
+
+    chars_within_head = 0
+    if (
+        split_anchor_sentence_idx is not None
+        and isinstance(split_anchor_sentence_idx, int)
+        and 0 <= head < len(layout.per_utt_sentences)
+    ):
+        sentences = layout.per_utt_sentences[head]
+        g_start = layout.utt_global_starts[head]
+        local_anchor = max(0, split_anchor_sentence_idx - g_start)
+        if 0 < local_anchor < len(sentences):
+            chars_within_head = sum(len(sentences[k]) for k in range(local_anchor))
+
+    total_chars = chars_before_head + chars_within_head
+    if total_chars <= 0:
+        return 0.0
+    return total_chars / _AVG_CHARS_PER_SECOND
+
+
+_VIDEO_TIME_PARAM_RE = re.compile(r"time=[\d.]+")
+_VIDEO_HASH_TIME_RE = re.compile(r"#[\d.]+$")
+
+
+def _shift_video_url_time(video_url: str, new_start_seconds: float) -> str:
+    """既存 video_url の時刻部分 (`time=` パラメータ or `#` ハッシュ) を差し替える。
+
+    - shugiin: `?ex=VL&deli_id=XXX&time=1234.5` → `time=` を上書き
+    - sangiin: `detail.php?sid=XXX#1234.5` → `#` 後を上書き
+
+    パターンに合わない URL はそのまま返す。new_start_seconds は小数 1 桁に丸める
+    (URL 短縮のため)。
+    """
+    if not video_url:
+        return video_url
+    rounded = f"{max(0.0, new_start_seconds):.1f}"
+    if _VIDEO_TIME_PARAM_RE.search(video_url):
+        return _VIDEO_TIME_PARAM_RE.sub(f"time={rounded}", video_url)
+    if _VIDEO_HASH_TIME_RE.search(video_url):
+        return _VIDEO_HASH_TIME_RE.sub(f"#{rounded}", video_url)
+    return video_url
+
+
+def _resolve_speaker_from_utterances(
+    seg: SegmentUtterances,
+    utterance_indices: list[int],
     speakers_lookup: dict[str, SpeakerInfo],
 ) -> tuple[str, str]:
-    """sentence_indicesから質疑者のspeakerとparty(=affiliation)を取得する。"""
-    valid = [i for i in sentence_indices if 0 <= i < len(sent_to_utt)]
-    if valid:
-        u_idx = sent_to_utt[valid[0]]
-        name = seg.utterances[u_idx].speaker
-        info = _fuzzy_lookup(name, speakers_lookup)
-        if info:
-            return info.name, info.affiliation
-        return name, seg.segment_affiliation
-    return seg.segment_speaker, seg.segment_affiliation
+    """utterance_indices から質疑者の speaker と party(=affiliation) を取得する。"""
+    valid = [i for i in utterance_indices if 0 <= i < len(seg.utterances)]
+    if not valid:
+        return seg.segment_speaker, seg.segment_affiliation
+    name = seg.utterances[valid[0]].speaker
+    info = _fuzzy_lookup(name, speakers_lookup)
+    if info:
+        return info.name, info.affiliation
+    return name, seg.segment_affiliation
 
 
 # 政党名パターン: このいずれかが所属に含まれていれば議員（答弁者にはならない）
@@ -149,51 +379,66 @@ def _is_member_of_parliament(affiliation: str) -> bool:
     return any(p in affiliation for p in _PARTY_KEYWORDS)
 
 
-def _resolve_answerer_from_sentences(
+def _answerer_role_from_info(info: SpeakerInfo | None, fallback_utt_role: str) -> str:
+    """答弁者の role 文字列 (qa_pairs.answer.role) を info から取り出す。
+
+    PR35: utterances/metadata の機能名 (答弁者/政府参考人/参考人) と統一するため、
+    qa_pairs.answer.role も機能名カテゴリを返す。具体的な役職名 ("防衛大臣" 等) は
+    metadata.speakers.affiliation に保持し、answer.role には用いない。
+    優先順:
+        1. info.role (機能名カテゴリ、例 "答弁者" / "政府参考人" / "参考人")
+        2. fallback_utt_role (utterances 由来 role)
+    """
+    if info is None:
+        return fallback_utt_role
+    if info.role and info.role != "その他":
+        return info.role
+    return fallback_utt_role
+
+
+def _resolve_answerer_from_utterances(
     seg: SegmentUtterances,
-    sentence_indices: list[int],
-    sent_to_utt: list[int],
+    utterance_indices: list[int],
     speakers_lookup: dict[str, SpeakerInfo],
 ) -> tuple[str, str]:
-    """sentence_indicesから答弁者のspeakerとrole(=affiliation)を取得する。
+    """utterance_indices から答弁者の speaker と role(=affiliation/カテゴリ) を取得する。
 
-    議員が答弁者として選ばれた場合は、同じsentence範囲内で「答弁者」roleを持つ
-    別の発言者（大臣・政府参考人）を探す。見つからなければ議員のまま返す（ログで警告）。
+    議員が答弁者として選ばれた場合は、同じ utterance 範囲内で「議員でない」発言者
+    （大臣・政府参考人）を探す。見つからなければ議員のまま返す（ログで警告）。
     """
-    valid = [i for i in sentence_indices if 0 <= i < len(sent_to_utt)]
+    valid = [i for i in utterance_indices if 0 <= i < len(seg.utterances)]
     if not valid:
         return "", ""
 
-    # 最初のsentenceの発言者を候補に
-    u_idx = sent_to_utt[valid[0]]
-    name = seg.utterances[u_idx].speaker
+    head = valid[0]
+    name = seg.utterances[head].speaker
+    head_utt_role = seg.utterances[head].role
     info = _fuzzy_lookup(name, speakers_lookup)
     candidate_name = info.name if info else name
     candidate_aff = info.affiliation if info else ""
+    candidate_role = _answerer_role_from_info(info, head_utt_role)
 
-    # 議員でなければそのまま返す
     if not _is_member_of_parliament(candidate_aff):
-        return candidate_name, candidate_aff
+        return candidate_name, candidate_role
 
-    # 議員が答弁者に → 同範囲内で非議員の発言者を探す
-    seen_utt_indices = {sent_to_utt[i] for i in valid if 0 <= i < len(sent_to_utt)}
-    for ui in sorted(seen_utt_indices):
+    for ui in valid:
         alt_name = seg.utterances[ui].speaker
         alt_info = _fuzzy_lookup(alt_name, speakers_lookup)
         alt_aff = alt_info.affiliation if alt_info else ""
         if alt_name != candidate_name and not _is_member_of_parliament(alt_aff):
+            alt_role = _answerer_role_from_info(alt_info, seg.utterances[ui].role)
             logger.info(
                 "Corrected answerer: %s (%s) → %s (%s)",
-                candidate_name, candidate_aff, alt_info.name if alt_info else alt_name, alt_aff,
+                candidate_name, candidate_role,
+                alt_info.name if alt_info else alt_name, alt_role,
             )
-            return (alt_info.name if alt_info else alt_name), alt_aff
+            return (alt_info.name if alt_info else alt_name), alt_role
 
-    # 見つからない場合はそのまま返すが警告
     logger.warning(
-        "MP '%s' (%s) resolved as answerer but no non-MP alternative found in sentence range",
-        candidate_name, candidate_aff,
+        "MP '%s' (%s) resolved as answerer but no non-MP alternative found in utterance range",
+        candidate_name, candidate_role,
     )
-    return candidate_name, candidate_aff
+    return candidate_name, candidate_role
 
 
 # ---------------------------------------------------------------------------
@@ -328,10 +573,14 @@ _QA_DENSITY_RETRY_HINT = (
 def _extract_pairs_from_response(
     content: str | None,
     seg: SegmentUtterances,
-    all_sentences: list[str],
+    layout: _SegmentLayout,
     speakers_lookup: dict[str, SpeakerInfo],
 ) -> list[QAPair]:
-    """LLMレスポンスをパースしてQAPairリストを組み立てる。"""
+    """LLM レスポンスをパースして QAPair リストを組み立てる。
+
+    新スキーマ (utterance_indices + 任意 split_anchor_sentence_idx) を解釈し、
+    full_text は `_assemble_full_text_for_pair` がコード側で組み立てる。
+    """
     if not content:
         logger.warning("Empty response for segment %d", seg.segment_index)
         return []
@@ -341,55 +590,119 @@ def _extract_pairs_from_response(
     except json.JSONDecodeError as e:
         logger.error("Failed to parse LLM JSON for segment %d: %s", seg.segment_index, e)
         return []
-    raw_pairs = data.get("pairs", [])
+    raw_pairs = data.get("pairs", []) or []
 
-    sent_to_utt = _build_sentence_to_utterance_map(seg)
+    parsed_pairs: list[dict[str, Any]] = []
+    for p in raw_pairs:
+        q = p.get("question") or {}
+        a = p.get("answer") or {}
+        parsed_pairs.append({
+            "topic": p.get("topic", "") or "",
+            "q_uidx": [int(x) for x in (q.get("utterance_indices") or []) if isinstance(x, int)],
+            "q_anchor": q.get("split_anchor_sentence_idx"),
+            "q_summary": q.get("summary", "") or "",
+            "q_intent": q.get("intent", "other") or "other",
+            "a_uidx": [int(x) for x in (a.get("utterance_indices") or []) if isinstance(x, int)],
+            "a_anchor": a.get("split_anchor_sentence_idx"),
+            "a_summary": a.get("summary", "") or "",
+        })
+
+    q_boundaries = _compute_share_boundaries(parsed_pairs, "q", layout)
+    a_boundaries = _compute_share_boundaries(parsed_pairs, "a", layout)
+
+    n_utterances = len(seg.utterances)
+    indices_total = 0
+    indices_out_of_range = 0
+
     pairs: list[QAPair] = []
     dropped_short = 0
-    for p in raw_pairs:
-        q = p.get("question", {})
-        a = p.get("answer", {})
+    dropped_empty_q = 0
+    for i, p in enumerate(parsed_pairs):
+        # 範囲外 utterance_indices の比率を計測 (LLM hallucination 検知)
+        for side_uidx in (p["q_uidx"], p["a_uidx"]):
+            for idx in side_uidx:
+                indices_total += 1
+                if idx < 0 or idx >= n_utterances:
+                    indices_out_of_range += 1
 
-        q_indices = q.get("sentence_indices", [])
-        a_indices = a.get("sentence_indices", [])
-        q_full_text = _assemble_full_text_from_sentences(all_sentences, q_indices)
-        a_full_text = _assemble_full_text_from_sentences(all_sentences, a_indices)
+        q_full = _assemble_full_text_for_pair(
+            seg, layout, p["q_uidx"], p["q_anchor"], q_boundaries[i],
+        )
+        a_full = _assemble_full_text_for_pair(
+            seg, layout, p["a_uidx"], p["a_anchor"], a_boundaries[i],
+        )
 
-        if len(a_full_text) < MIN_ANSWER_LENGTH and not a_indices:
+        if len(a_full) < MIN_ANSWER_LENGTH and not p["a_uidx"]:
             dropped_short += 1
             continue
+        # 質問本文が空かつ utterance_indices も空なら Q&A として成立しない (PR10, ISSUES2 §1-2)
+        if not q_full and not p["q_uidx"]:
+            dropped_empty_q += 1
+            continue
 
-        q_speaker, q_party = _resolve_speaker_from_sentences(seg, q_indices, sent_to_utt, speakers_lookup)
-        a_speaker, a_role = _resolve_answerer_from_sentences(seg, a_indices, sent_to_utt, speakers_lookup)
+        q_speaker, q_party = _resolve_speaker_from_utterances(seg, p["q_uidx"], speakers_lookup)
+        a_speaker, a_role = _resolve_answerer_from_utterances(seg, p["a_uidx"], speakers_lookup)
+
+        # PR23 + PR23.1: 質問先頭 utterance + anchor sentence の文字位置から
+        # 開始秒を推定し video_url を補正。同一 head_utt を共有する複数ペアでも
+        # 異なる時刻を指せるようにする。q_anchor は PR28 で推定された anchor も
+        # 含む (parsed_pairs[i]["q_anchor"] は _compute_share_boundaries で更新済)。
+        offset = _estimate_pair_offset_seconds(
+            seg, layout, p["q_uidx"], p["q_anchor"]
+        )
+        if offset > 0.0:
+            pair_video_url = _shift_video_url_time(seg.video_url, seg.start_seconds + offset)
+        else:
+            pair_video_url = seg.video_url
 
         pairs.append(
             QAPair(
                 id="",  # 後でマージ時に付番
                 segment_index=seg.segment_index,
-                topic=p.get("topic", ""),
+                topic=p["topic"],
                 question=QuestionDetail(
                     speaker=q_speaker,
                     party=q_party,
-                    summary=q.get("summary", ""),
-                    full_text=q_full_text,
-                    intent=q.get("intent", "other"),
+                    summary=p["q_summary"],
+                    full_text=q_full,
+                    intent=p["q_intent"],
                 ),
                 answer=AnswerDetail(
                     speaker=a_speaker,
                     role=a_role,
-                    summary=a.get("summary", ""),
-                    full_text=a_full_text,
+                    summary=p["a_summary"],
+                    full_text=a_full,
                 ),
-                video_url=seg.video_url,
+                video_url=pair_video_url,
             )
         )
-    if dropped_short:
-        logger.info(
-            "Segment %d: dropped %d short-answer pair(s) (<%d chars + no indices)",
-            seg.segment_index,
-            dropped_short,
-            MIN_ANSWER_LENGTH,
-        )
+
+    # 範囲外 indices 比率が 50% 超なら LLM が utterance 番号を hallucinate している
+    # 可能性が高い (PR10, §2.10)
+    if indices_total > 0:
+        oor_ratio = indices_out_of_range / indices_total
+        if oor_ratio > 0.5:
+            logger.warning(
+                "Segment %d: %d/%d (%.0f%%) utterance_indices out of range — "
+                "LLM may have hallucinated indices",
+                seg.segment_index,
+                indices_out_of_range,
+                indices_total,
+                oor_ratio * 100,
+            )
+
+    # 受理/drop 統計サマリ (PR10, §2.10)
+    logger.info(
+        "Segment %d: parsed %d raw → kept %d pairs (drop_short=%d, drop_empty_q=%d, "
+        "oor_idx=%d/%d)",
+        seg.segment_index,
+        len(parsed_pairs),
+        len(pairs),
+        dropped_short,
+        dropped_empty_q,
+        indices_out_of_range,
+        indices_total,
+    )
     return pairs
 
 
@@ -398,34 +711,33 @@ def _generate_qa_for_segment(
     session_context: str,
     speakers_lookup: dict[str, SpeakerInfo],
 ) -> list[QAPair]:
-    """1セグメントからQ&Aペアを生成する。
+    """1セグメントから Q&A ペアを生成する。
 
-    LLMにはutterance_indicesと判断のみ返させ、full_textはコードで組み立てる。
-    QA密度が低い場合は1回リトライする。
+    LLM には utterance_indices と判断のみ返させ、full_text はコードで組み立てる。
+    QA 密度が低い場合は 1 回リトライする。
     """
     client = _get_client()
 
-    sentence_text, all_sentences = _build_sentence_map(seg)
+    layout = _compute_segment_layout(seg)
+    prompt_text = _build_utterance_map(seg, layout)
     total_chars = sum(len(u.text) for u in seg.utterances)
 
-    # 方向性4: 入力テキストが長すぎる場合は先頭20000文字で切り捨て（暫定措置）
-    # TODO: 将来的には _split_segment_into_blocks を利用して sub-block ごとに QA 生成してマージ
-    _INPUT_CHAR_LIMIT = 20000
-    if len(sentence_text) > _INPUT_CHAR_LIMIT:
+    if len(prompt_text) > _PROMPT_TEXT_WARN_THRESHOLD:
         logger.warning(
-            "Segment %d input text too long (%d chars), truncating to %d chars",
+            "Segment %d prompt text very large (%d chars). "
+            "Block-splitting may be insufficient — investigate.",
             seg.segment_index,
-            len(sentence_text),
-            _INPUT_CHAR_LIMIT,
+            len(prompt_text),
         )
-        sentence_text = sentence_text[:_INPUT_CHAR_LIMIT]
 
     base_user_prompt = (
         f"以下は国会質疑の1つの発言セグメントです。"
         f"この発言者の持ち時間で行われた質疑応答を**すべて**Q&Aペアとして抽出してください。\n"
-        f"sentence_indicesには入力の(N)の番号を使ってください。\n\n"
+        f"utterance_indices には入力の [Un] の番号を使ってください。"
+        f"split_anchor_sentence_idx は通常 null。1つの utterance を複数ペアで共有する場合のみ "
+        f"(sN) のグローバル番号を入れてください。\n\n"
         f"セッション情報: {session_context}\n\n"
-        f"{sentence_text}"
+        f"{prompt_text}"
     )
 
     logger.info(
@@ -438,7 +750,7 @@ def _generate_qa_for_segment(
 
     def _qa_call(prompt: str, tokens: int, temperature: float) -> Any:
         return with_retry(lambda: client.chat.completions.create(
-            model=STRUCTURER_MODEL,
+            model=QA_MODEL,
             messages=[
                 {"role": "system", "content": QA_SEGMENT_SYSTEM_PROMPT},
                 {"role": "user", "content": prompt},
@@ -457,10 +769,9 @@ def _generate_qa_for_segment(
         )
 
     pairs = _extract_pairs_from_response(
-        response.choices[0].message.content, seg, all_sentences, speakers_lookup,
+        response.choices[0].message.content, seg, layout, speakers_lookup,
     )
 
-    # QA密度チェック: 低密度ならリトライ（1回のみ）
     if total_chars >= 2000:
         density = len(pairs) / (total_chars / 1000)
         if density < _MIN_QA_DENSITY:
@@ -484,7 +795,7 @@ def _generate_qa_for_segment(
                 )
 
             retry_pairs = _extract_pairs_from_response(
-                retry_response.choices[0].message.content, seg, all_sentences, speakers_lookup,
+                retry_response.choices[0].message.content, seg, layout, speakers_lookup,
             )
 
             if len(retry_pairs) > len(pairs):
@@ -596,8 +907,32 @@ def generate_qa_pairs(
             pair.id = f"qa_{pair_counter:03d}"
             all_pairs.append(pair)
 
+    # PR13: follow_up_ids — 同一 segment 内で同一質疑者の連続ペアを連鎖
+    _assign_follow_up_ids(all_pairs)
+
     logger.info("Total Q&A pairs generated: %d (from %d blocks)", len(all_pairs), len(qa_blocks))
     return QAPairsOutput(pairs=all_pairs)
+
+
+def _assign_follow_up_ids(pairs: list[QAPair]) -> None:
+    """同一 segment 内で同一質疑者の qa_pairs が時系列で 2 件以上ある場合、
+    後続ペアの follow_up_ids に直前ペアの id を入れる (in-place)。
+
+    判定基準 (docs/STRUCTURER_REWRITE.md §6 Q):
+    - 同一 segment_index 内で時系列順 (= pairs リストの出現順) に走査
+    - question.speaker が同一 (空文字でない) なら、直前同一 speaker ペアの id を follow_up_ids 先頭に追加
+    - 別 segment や別 speaker は別質疑ブロック扱いで連鎖しない
+    """
+    last_id_by_key: dict[tuple[int, str], str] = {}
+    for p in pairs:
+        speaker = p.question.speaker.strip()
+        if not speaker:
+            continue
+        key = (p.segment_index, speaker)
+        prev_id = last_id_by_key.get(key)
+        if prev_id and prev_id not in p.follow_up_ids:
+            p.follow_up_ids = [prev_id, *p.follow_up_ids]
+        last_id_by_key[key] = p.id
 
 
 def _drop_leading_proposal_segments(
@@ -686,6 +1021,78 @@ def _call_structurer(
     return data
 
 
+# PR12: session_summary 内で「<人名>大臣」「<人名>議員」等の honorific-attached 人名を抽出する正規表現
+# qa_pairs に登場しない人名を要約が含むケース (summary_qa_divergence) を検出するために使う
+_SUMMARY_PERSON_REF_RE = re.compile(
+    r"([一-龥々ヶ]{1,8})"
+    r"(?:大臣|副大臣|総理|長官|次官|議員|委員長|議長|参考人|政務官|氏|君|さん)"
+)
+
+
+def _collect_known_speaker_names(qa_pairs: QAPairsOutput) -> set[str]:
+    """qa_pairs から既知 speaker 名 (question/answer 双方) を集める。"""
+    known: set[str] = set()
+    for p in qa_pairs.pairs:
+        if p.question.speaker:
+            known.add(p.question.speaker.strip())
+        if p.answer.speaker:
+            known.add(p.answer.speaker.strip())
+    return {n for n in known if n}
+
+
+def _validate_summary_person_refs(
+    summary: str,
+    qa_pairs: QAPairsOutput,
+) -> list[str]:
+    """summary 内の honorific-attached 人名で qa_pairs にないものを返す。
+
+    既知 speaker 名と部分一致 (どちらかが substring) すれば known 扱い。
+    qa_pairs が空の場合は検証しない (空リストを返す)。
+    """
+    if not qa_pairs.pairs:
+        return []
+    known = _collect_known_speaker_names(qa_pairs)
+    if not known:
+        return []
+    refs = {m.group(1) for m in _SUMMARY_PERSON_REF_RE.finditer(summary)}
+    unknown: list[str] = []
+    for ref in sorted(refs):
+        if any(ref in name or name in ref for name in known):
+            continue
+        unknown.append(ref)
+    return unknown
+
+
+_PLACEHOLDER_HEADER_PATTERNS = (
+    "委員会名不明",
+    "（委員会名不明）",
+    "(委員会名不明)",
+    "○○委員会",
+    "〇〇委員会",
+    "XX委員会",
+)
+
+
+def _has_placeholder_header(summary: str) -> bool:
+    """summary 冒頭付近に「委員会名不明」等のプレースホルダ表現が含まれているか判定。"""
+    head = summary[:120]
+    return any(pat in head for pat in _PLACEHOLDER_HEADER_PATTERNS)
+
+
+def _has_chamber_mismatch(summary: str, expected_chamber_ja: str) -> bool:
+    """冒頭で期待した院と異なる院名が現れたら True。
+
+    例: expected「参議院」だが summary 冒頭に「衆議院」が出てくるケースを検出。
+    """
+    if not expected_chamber_ja:
+        return False
+    head = summary[:80]
+    other = "衆議院" if expected_chamber_ja == "参議院" else "参議院"
+    if other in head and expected_chamber_ja not in head:
+        return True
+    return False
+
+
 def generate_session_summary(
     qa_pairs: QAPairsOutput,
     utterances: UtterancesOutput | None = None,
@@ -694,7 +1101,7 @@ def generate_session_summary(
     """セッション要約（3-5文）を生成する（Step 6b-1）。
 
     session_meta で院名・委員会名を渡すと冒頭の種別表記が正確になる。
-    使用可能なキー: chamber ("shugiin"|"sangiin"), committee, description (qa_pairs が空の場合のフォールバック)
+    使用可能なキー: chamber ("shugiin"|"sangiin"), committee, session_kind, description
     """
     if qa_pairs.pairs:
         body = "## Q&Aペア一覧\n" + _format_qa_pairs_for_prompt(qa_pairs)
@@ -706,19 +1113,21 @@ def generate_session_summary(
         return ""
 
     meta_prefix = ""
+    expected_chamber_ja = ""
+    expected_committee = ""
     if session_meta:
         chamber_raw = session_meta.get("chamber", "")
-        committee = session_meta.get("committee", "")
-        chamber_ja = (
+        expected_committee = session_meta.get("committee", "") or ""
+        expected_chamber_ja = (
             "衆議院" if chamber_raw == "shugiin"
             else "参議院" if chamber_raw == "sangiin"
-            else chamber_raw
+            else chamber_raw or ""
         )
         parts = []
-        if chamber_ja:
-            parts.append(f"院: {chamber_ja}")
-        if committee:
-            parts.append(f"委員会: {committee}")
+        if expected_chamber_ja:
+            parts.append(f"院: {expected_chamber_ja}")
+        if expected_committee:
+            parts.append(f"委員会: {expected_committee}")
         if parts:
             meta_prefix = "## セッション情報\n" + "\n".join(parts) + "\n\n"
 
@@ -727,7 +1136,82 @@ def generate_session_summary(
     summary = data.get("session_summary", "")
     if not isinstance(summary, str):
         return ""
-    return summary.strip()
+    summary = summary.strip()
+
+    # PR21: 冒頭にプレースホルダが残っている / 院が取り違えられている場合は 1 回リトライ
+    header_issue: str | None = None
+    if _has_placeholder_header(summary):
+        header_issue = (
+            "前回の要約の冒頭に「委員会名不明」等のプレースホルダ表現が残っていました。"
+        )
+    elif _has_chamber_mismatch(summary, expected_chamber_ja):
+        header_issue = (
+            f"前回の要約の冒頭が「{expected_chamber_ja}」ではない院を指していました。"
+        )
+    if header_issue and meta_prefix:
+        logger.warning("generate_session_summary: header issue detected — retrying once")
+        retry_prompt = (
+            user_prompt
+            + "\n\n## 注意（再生成）\n"
+            + header_issue
+            + f"冒頭の一文には「## セッション情報」の値（院: {expected_chamber_ja}"
+            + (f"、委員会: {expected_committee}" if expected_committee else "")
+            + "）をそのまま使い、プレースホルダや別の院名を出力しないでください。"
+        )
+        try:
+            retry_data = _call_structurer(
+                SESSION_SUMMARY_SYSTEM_PROMPT, retry_prompt, max_tokens=4096
+            )
+            retry_summary = retry_data.get("session_summary", "")
+            if isinstance(retry_summary, str) and retry_summary.strip():
+                retry_summary = retry_summary.strip()
+                if (
+                    not _has_placeholder_header(retry_summary)
+                    and not _has_chamber_mismatch(retry_summary, expected_chamber_ja)
+                ):
+                    summary = retry_summary
+                else:
+                    logger.warning(
+                        "generate_session_summary: header issue persisted after retry"
+                    )
+                    summary = retry_summary  # 元出力よりはマシなので採用
+        except Exception as e:
+            logger.warning("generate_session_summary header retry failed: %s", e)
+
+    # PR12: post-validation — qa_pairs にない人名が含まれていれば 1 回だけリトライ
+    unknown_refs = _validate_summary_person_refs(summary, qa_pairs)
+    if unknown_refs:
+        logger.warning(
+            "generate_session_summary: detected unknown person refs not in qa_pairs: %s — retrying once",
+            unknown_refs,
+        )
+        retry_prompt = (
+            user_prompt
+            + "\n\n## 注意（再生成）\n"
+            + "前回の要約に Q&A ペアに登場しない人名"
+            + f" ({', '.join(unknown_refs)}) が含まれていました。"
+            + "qa_pairs の `質問者:` および `回答者:` に登場する人物のみを言及し、"
+            + "推測による人名・法案名の補完を行わないでください。"
+        )
+        try:
+            retry_data = _call_structurer(
+                SESSION_SUMMARY_SYSTEM_PROMPT, retry_prompt, max_tokens=4096
+            )
+            retry_summary = retry_data.get("session_summary", "")
+            if isinstance(retry_summary, str) and retry_summary.strip():
+                retry_summary = retry_summary.strip()
+                still_unknown = _validate_summary_person_refs(retry_summary, qa_pairs)
+                if still_unknown:
+                    logger.warning(
+                        "generate_session_summary: retry still has unknown refs %s "
+                        "— using retry output anyway",
+                        still_unknown,
+                    )
+                summary = retry_summary
+        except Exception as e:
+            logger.warning("generate_session_summary retry failed: %s", e)
+
+    return summary
 
 
 def _parse_topics_data(
@@ -783,36 +1267,162 @@ def generate_topics_and_key_topics(
 
     return TopicsOutput(topics=topics_list), key_topics
 
-def generate_key_commitments(qa_pairs: QAPairsOutput) -> list[KeyCommitment]:
-    """key_commitments を生成する（Step 6b-3）。"""
-    if not qa_pairs.pairs:
-        return []
 
-    user_prompt = "## Q&Aペア一覧\n" + _format_qa_pairs_for_prompt(qa_pairs)
-    data = _call_structurer(COMMITMENTS_SYSTEM_PROMPT, user_prompt, max_tokens=8192)
+def generate_topics_without_qa(
+    utterances: UtterancesOutput,
+) -> tuple[TopicsOutput, list[str]]:
+    """utterances から直接 topics + key_topics を生成する (Step 6b-2 fallback)。
 
-    valid_qa_ids = {p.id for p in qa_pairs.pairs}
+    Q&A が抽出されない floor_speech / procedural セッション (所信表明・施政方針演説等)
+    でも topics を保持できるようにする。related_qa_ids は空 (QA が存在しないため)。
+
+    Args:
+        utterances: 話者タグ付き発言データ
+
+    Returns:
+        (topics, key_topics) のペア。utterances が空なら空タプル相当。
+    """
+    if not utterances.segments:
+        return TopicsOutput(topics=[]), []
+
+    user_prompt = (
+        "## 発言セグメント (連続発言・所信表明・施政方針演説・趣旨説明等)\n"
+        + _format_segments_for_prompt(utterances.segments)
+    )
+    data = _call_structurer(
+        TOPICS_FROM_UTTERANCES_SYSTEM_PROMPT,
+        user_prompt,
+        max_tokens=_MAX_TOKENS_CEILING,
+    )
+
+    topics_list: list[Topic] = []
+    for t in data.get("topics", []):
+        related_speakers = [
+            s for s in (t.get("related_speakers") or []) if isinstance(s, str)
+        ]
+        topics_list.append(
+            Topic(
+                name=t.get("name") or "",
+                description=t.get("description") or "",
+                related_qa_ids=[],
+                related_speakers=related_speakers,
+            )
+        )
+
+    valid_topic_names = {t.name for t in topics_list}
+    raw_key_topics = data.get("key_topics") or []
+    key_topics: list[str] = []
+    dropped: list[str] = []
+    for name in raw_key_topics:
+        if isinstance(name, str) and name in valid_topic_names:
+            key_topics.append(name)
+        else:
+            dropped.append(str(name))
+    if dropped:
+        logger.warning(
+            "generate_topics_without_qa: dropped %d key_topics not in topics[].name: %s",
+            len(dropped),
+            dropped,
+        )
+
+    return TopicsOutput(topics=topics_list), key_topics
+
+
+def _parse_commitments_payload(
+    raw: dict,
+    qa_pair_lookup: dict[str, QAPair],
+) -> tuple[list[KeyCommitment], int, int]:
+    """LLM 応答から key_commitments を構築 + (qa_id, speaker) 整合検証。
+
+    Returns:
+        (commitments, dropped_unknown_qa_id, dropped_speaker_mismatch)
+    """
     commitments: list[KeyCommitment] = []
-    dropped = 0
-    for c in data.get("key_commitments", []):
-        qa_id = c.get("qa_id") or ""
-        if qa_id and qa_id not in valid_qa_ids:
-            dropped += 1
+    dropped_qa_id = 0
+    dropped_speaker = 0
+    for c in raw.get("key_commitments", []) or []:
+        qa_id = (c.get("qa_id") or "").strip()
+        speaker = (c.get("speaker") or "").strip()
+        if qa_id and qa_id not in qa_pair_lookup:
+            dropped_qa_id += 1
             continue
+        # PR12: qa_id が指定されていれば speaker と回答者の整合を検証
+        if qa_id and speaker:
+            expected = qa_pair_lookup[qa_id].answer.speaker.strip()
+            if expected and not (speaker in expected or expected in speaker):
+                dropped_speaker += 1
+                continue
         commitments.append(
             KeyCommitment(
-                speaker=c.get("speaker") or "",
+                speaker=speaker,
                 role=c.get("role") or "",
                 text=c.get("text") or "",
                 topic=c.get("topic") or "",
                 qa_id=qa_id or None,
             )
         )
-    if dropped:
+    return commitments, dropped_qa_id, dropped_speaker
+
+
+def generate_key_commitments(qa_pairs: QAPairsOutput) -> list[KeyCommitment]:
+    """key_commitments を生成する（Step 6b-3）。
+
+    PR12: 各 commitment の (qa_id, speaker) ペアが qa_pairs と整合するか検証し、
+    不一致は drop。drop 率が高い (受理 0 件 + raw > 0) 場合は 1 回だけリトライする。
+    """
+    if not qa_pairs.pairs:
+        return []
+
+    qa_pair_lookup = {p.id: p for p in qa_pairs.pairs}
+
+    user_prompt = "## Q&Aペア一覧\n" + _format_qa_pairs_for_prompt(qa_pairs)
+    data = _call_structurer(COMMITMENTS_SYSTEM_PROMPT, user_prompt, max_tokens=8192)
+
+    raw_count = len(data.get("key_commitments", []) or [])
+    commitments, dropped_qa_id, dropped_speaker = _parse_commitments_payload(
+        data, qa_pair_lookup
+    )
+
+    if dropped_qa_id:
         logger.warning(
             "generate_key_commitments: dropped %d commitments referencing unknown qa_id",
-            dropped,
+            dropped_qa_id,
         )
+    if dropped_speaker:
+        logger.warning(
+            "generate_key_commitments: dropped %d commitments with speaker mismatched against qa_pair.answer.speaker",
+            dropped_speaker,
+        )
+
+    # PR12: raw が 0 でないのに全て drop されたら 1 回リトライ
+    if raw_count > 0 and not commitments:
+        logger.info(
+            "generate_key_commitments: all %d commitments dropped — retrying once with stronger guidance",
+            raw_count,
+        )
+        retry_prompt = (
+            user_prompt
+            + "\n\n## 注意（再生成）\n"
+            + "speakerは入力 Q&A 一覧の `回答者:` フィールドを正確に転記し、"
+            + "qa_id とその Q&A の回答者が必ず一致するようにしてください。"
+            + "回答者が不明確な発言からはコミットメントを抽出しないでください。"
+        )
+        try:
+            retry_data = _call_structurer(
+                COMMITMENTS_SYSTEM_PROMPT, retry_prompt, max_tokens=8192
+            )
+            commitments, dropped_qa_id_r, dropped_speaker_r = _parse_commitments_payload(
+                retry_data, qa_pair_lookup
+            )
+            if dropped_qa_id_r or dropped_speaker_r:
+                logger.warning(
+                    "generate_key_commitments retry: still dropped %d unknown_qa_id + %d speaker_mismatch",
+                    dropped_qa_id_r,
+                    dropped_speaker_r,
+                )
+        except Exception as e:
+            logger.warning("generate_key_commitments retry failed: %s", e)
+
     return commitments
 
 
@@ -885,8 +1495,8 @@ def build_summary_related_laws(qa_pairs: QAPairsOutput) -> list[RelatedLawTag]:
     ]
 
 
-# V4評価プロンプトはDeepSeek V3.1を使用
-_METRICS_MODEL = "google/gemma-4-31B-it"
+# V4 metrics LLM: OpenRouter 経由 Gemma 4 31B-it
+_METRICS_MODEL = "google/gemma-4-31b-it"
 
 
 def _score_one_pair(pair: QAPair) -> QAMetrics | None:

@@ -1,0 +1,298 @@
+{
+  "session_id": "shugiin/2026/03/11/56117_外務委員会",
+  "chamber": "shugiin",
+  "date": "2026-03-11",
+  "deli_id": "56117",
+  "committee": "外務委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T12:00:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 4, "medium": 6, "low": 5, "total": 15},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "whisper_hallucination_loop",
+      "secondary_categories": ["content_missing"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "午後セッション5セグメントが全てWhisperハルシネーション（「ご視聴ありがとうございました」15文字のみ）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[5..9].text",
+        "segment_index": 5,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript.json の segment_index 5〜9（國場幸之助 13791.5秒、金城泰邦 13796.3秒、近藤和也 15472.3秒、佐々木真琴 17198.4秒、谷浩一郎 19120.1秒）の text フィールドが全て「ご視聴ありがとうございました。」（15文字）のみ。utterances.json でも同5セグメントが同一テキスト1発話のみ。実際の発言内容（金城・近藤・佐々木・谷の午後質疑）は segment 4（横田光弘セグメント）内に全て収録されており、segment 5〜9 は空・あるいは無音の音声ファイルに対して Whisper が典型的な終了フレーズをハルシネーションしたと考えられる。",
+      "estimated_cause": "HLS セグメント分割時に午後セッション開始点のタイムスタンプで新セグメントが作られたが、実音声は横田光弘セグメント（segment 4）の大きな単一ファイルに全て含まれていたため、segment 5〜9 は無音または重複区間になった。Whisper は短い無音に対して「ご視聴ありがとうございました。」という終了パターンをハルシネーションする既知の挙動を示した。",
+      "downstream_impact": ["utterances.json", "qa_pairs.json", "metadata.json"]
+    },
+    {
+      "id": "F002",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["role_label_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_017 の質問者が 山本大臣官房参事官（答弁者）と誤帰属。実際は金城泰邦議員",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[16].question.speaker",
+        "segment_index": 4,
+        "qa_id": "qa_017"
+      },
+      "evidence": "qa_017 の question.speaker=「山本大臣官房参事官」、question.party=「日本維新の会」となっている。しかし utterances.json segment 4 の utterance[33]（speaker=山本大臣官房参事官 role=答弁者）のテキストを見ると、答弁の後半に「今、米軍による事故、そして事件等々について質問をいたしました。こういったことは、ずっとこの沖縄県内で起きているわけでございます。…具体的には、凶悪犯の起訴前身柄拘束を日米地位協定に明記することを検討していただいて…これについて茂木外務大臣の見解を伺いたいと思います。」と、質問文がそのまま含まれている。実際はこの質問は金城泰邦議員が行ったもので（party=中道改革連合・無所属）、山本参事官の答弁テキストに金城の次の質問が混入している。また party=「日本維新の会」は横田光弘の会派であり完全な誤り。",
+      "estimated_cause": "speaker_tagger が utterance[33]（山本参事官の答弁）の末尾に混入している金城の質問テキストを、山本参事官の発言と誤認識した。発言者切り替えの検出ミスにより答弁者が質問者として誤帰属された。party 情報は直前の横田光弘（日本維新の会）から誤って引き継いだと推定される。",
+      "downstream_impact": ["summary.json", "topics.json"]
+    },
+    {
+      "id": "F003",
+      "category": "content_missing",
+      "secondary_categories": ["summary_qa_divergence"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "segment 1（島田政務官の電話会談詳細答弁）が qa_pairs に完全欠落",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "utterances.json segment 1（segment_speaker=島田智明、start_seconds=1254.1）には、電話会談の詳細内容（「地域情勢の悪化に対する深刻な懸念、これを伝えた上で…イランによる周辺諸国等の民間施設等への攻撃…非難…核兵器開発、日本として一貫して反対…核問題を含むイランを巡る諸問題解決に向けて外交努力を行う旨を伝えた…邦人2名」）が記録されている。しかし qa_pairs.json には segment_index=1 に対応する qa_pair が存在しない。qa_001（segment_index=0）の answer.full_text は茂木大臣の短い一言（129文字）のみ。summary.json の key_commitments[0]（qa_id=qa_001）は「事態の早期沈静化に向けて国際社会と連携して外交努力を行う」と記載しているが、この文言は qa_001 の answer.full_text には存在せず、実際は segment 1（島田答弁）に由来するため qa_id=qa_001 の参照は誤り。",
+      "estimated_cause": "structurer が segment 1（島田の続き答弁）を単独の Q&A として構造化せず、segment 0 の qa_001 で処理を打ち切った。segment 1 はセグメント分割の都合上、質問のない答弁単体として存在しており、Q&A ペア化の対象外と判定された可能性がある。",
+      "downstream_impact": ["summary.json"]
+    },
+    {
+      "id": "F004",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "答弁者8名（茂木外務大臣・木原官房長・大臣官房長等）が metadata.speakers に未登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers に登録されているのは質問議員10名（國場幸之助が重複で2エントリ）のみ。qa_pairs.json の answer.speaker に出現する茂木外務大臣・木原稔・木原官房長・大臣官房長・山本大臣官房参事官・瀬戸美地方協力局次長・山田資源エネルギー政策統括調整官・外務大臣官房参事官の8名が全て metadata.speakers に未登録。また utterances.json のみに出現する「北郷」（北郷大臣官房参事官）も未登録。主要答弁者である外務大臣が speakers リストにないことは、検索・フィルタリング・UI表示に重大な欠落をもたらす。",
+      "estimated_cause": "pipeline が metadata.speakers を質問議員（衆議院TVのメタデータから取得できる話者リスト）のみで構成し、答弁者（政府参考人・大臣等）を自動追加しない設計になっている。答弁者情報は動的に変わるため事前取得が困難。",
+      "downstream_impact": ["site検索・フィルタリング機能"]
+    },
+    {
+      "id": "F005",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「子女教育手当」が「市場教育手当」「在学不認手当」「同行市場手当」等に複数誤認識",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[4].answer.full_text",
+        "segment_index": 2,
+        "qa_id": "qa_005"
+      },
+      "evidence": "qa_005 answer.full_text に「市場教育手当」（正：子女教育手当）・「在学不認手当」（正：子女教育手当または在外単身赴任手当の別称か）・「物価整形費」（正：物価生計費）の3箇所の誤認識。qa_012 answer.full_text に「同行市場手当」（正：同行子女手当）。qa_031 question.full_text に「同行子助手当」（正：同行子女手当）。raw_transcript の Whisper 出力から propagate している。utterances.json でも同様の誤認識が残存（island_002、island_004 の島田政務官・金城発言）。本セッションの主要審議法案（在外公館職員等勤務手当法）の正式名称が誤認識されており、法的正確性を損なう。",
+      "estimated_cause": "Whisper large-v3-turbo が「子女（しじょ）」の音声を「市場（いちば・しじょう）」と類似音で誤認識。外務省固有の法律用語・手当名称の専門語彙が学習データ不足。corrected フラグ（raw_transcript.json の corrected=true）が設定されているが、一部の誤認識は LLM 補正でも修正されなかった。",
+      "downstream_impact": ["utterances.json", "summary.json"]
+    },
+    {
+      "id": "F006",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "answer.role が全39件中25件（64%）で空文字",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[*].answer.role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "qa_pairs.json の全39件を集計すると、answer.role が空文字（\"\"）のものが25件（64%）。具体的には茂木外務大臣・外務大臣官房参事官・山本大臣官房参事官・木原稔・木原官房長・大臣官房長・瀬戸美地方協力局次長・山田資源エネルギー政策統括調整官の answer.role がすべて空。島田智明のみ role=\"外務大臣政務官\" が設定されている。qa_008 の answer.speaker も空文字（答弁なし扱い）。metadata.speakers の role フィールドも全10名が空文字。",
+      "estimated_cause": "structurer が answer.role を speaker 名のみから推定する際、肩書き情報（大臣・参事官・次長等）の抽出ロジックが不完全。島田智明については肩書き付き表記（「島田大臣政務官」）がテキスト中に明示的に現れたため設定できたが、他の答弁者は role 情報が取得できなかった。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F007",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata の必須フィールド（committee_id・session_number・duration・mediasp_hash）が null/空",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.committee_id",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json の committee_id=null、session_number=null、duration=\"\"（空文字）、mediasp_hash=\"\"（空文字）。committee_id と session_number は衆議院では取得困難な場合があるが、duration（会議の総時間）は HLS URL から計算可能なはずで空になっている。なお mediasp_hash は参議院固有フィールドのため衆議院で空なのは正常。duration 欠落はデータ利用者が会議の長さを把握できない問題。",
+      "estimated_cause": "duration フィールドが pipeline で計算・設定されていない。委員会 ID は shugiintv.go.jp のメタデータに標準化された形で存在しないため null になる。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F008",
+      "category": "duplicate",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers に 國場幸之助 が午前・午後で重複登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[0]",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers の index 0（start_seconds=1194.8、start_time=09:00）と index 5（start_seconds=13791.5、start_time=12:30）が共に name=「國場幸之助」、affiliation=「外務委員長」として登録されている。委員長が午前・午後セッションの再開を告げるため2エントリ存在するが、同一人物の重複であり、speakers リストのユニーク化が行われていない。",
+      "estimated_cause": "pipeline が各セグメントの segment_speaker を speakers リストに追加する際に重複チェックを行っていない。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F009",
+      "category": "summary_qa_divergence",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "summary.key_commitments の qa_001・qa_017 が has_commitment=False の qa_pair を参照",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments[0]",
+        "segment_index": null,
+        "qa_id": "qa_001"
+      },
+      "evidence": "summary.json の key_commitments[0]（qa_id=qa_001、「事態の早期沈静化に向けて国際社会と連携して引き続き必要な外交努力を行う」）と key_commitments[2]（qa_id=qa_017、「日米地位協定の在り方を不断に見直していく」）の2件について、対応する qa_pairs.json の pairs[0].answer.has_commitment=false・commitment_text=null、pairs[16].answer.has_commitment=false・commitment_text=null と矛盾している。qa_001 のコミットメント文言は実際には欠落した segment 1（島田答弁）に由来し、qa_017 は茂木大臣の「積み重ねることで不断に見直す」発言を commitment と見なすかどうかの判断に揺れがある。",
+      "estimated_cause": "summary.json 生成 LLM と qa_pairs.json の has_commitment 判定 LLM が独立して動作し、互いの判定を参照していない。summary LLM はより緩い基準でコミットメントを認識した可能性がある。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F010",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "video_url の time パラメータが qa_pairs 内で粗い（全32件が 3085.6 秒を指す）",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[8..38].video_url",
+        "segment_index": 4,
+        "qa_id": "qa_008"
+      },
+      "evidence": "qa_pairs.json の39件のうち32件（qa_008〜qa_039）の video_url が全て time=3085.6（segment 4 の開始時刻）を参照している。qa_008〜qa_039 は qa_008（09:31）から qa_039（終了直前）まで3時間以上に渡る質疑を含むが、全て同一の video_url（3085.6秒）を持つ。利用者が任意の qa_pair から動画の該当箇所に移動しようとしても、午前の横田光弘開始位置に誘導されるため、午後の発言（金城・近藤・佐々木・谷の質疑）に直接アクセスできない。",
+      "estimated_cause": "structurer が Q&A ペアごとに video_url の time を個別発言の start_seconds から算出せず、当該 segment の segment_start_seconds をそのまま使用している。segment 4 が横田（09:31）〜谷（14:17）まで6時間近くをカバーする巨大セグメントになっているため、全ての qa_pair が同一 timestamp を参照することになった。",
+      "downstream_impact": ["site UI"]
+    },
+    {
+      "id": "F011",
+      "category": "role_label_error",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "qa_001 の question.party が「外務委員長」（役職）で政党名になっていない",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[0].question.party",
+        "segment_index": 0,
+        "qa_id": "qa_001"
+      },
+      "evidence": "qa_001 の question.speaker=「國場幸之助」に対し question.party=「外務委員長」が設定されている。party フィールドは政党名（例：自由民主党・無所属の会）を格納するためのものだが、役職名が入っている。metadata.speakers でも affiliation=「外務委員長」となっており、議員の所属政党（自由民主党）情報が失われている。同様に utterances.json の 國場幸之助 も role に「質疑者」と「委員長」が混在している。",
+      "estimated_cause": "metadata スクレイパーが衆議院TVの話者リストから affiliation を取得する際、委員長などの役職は政党名ではなく役職名が記載されているため、そのまま party フィールドに設定された。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F012",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「北郷」の表記が utterances.json と topics.json で不一致（北郷 vs 北郷大臣官房参事官）",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[3].utterances[].speaker",
+        "segment_index": 3,
+        "qa_id": null
+      },
+      "evidence": "utterances.json では speaker=「北郷」（姓のみ）として記録されているが、topics.json の related_speakers では「北郷大臣官房参事官」と肩書き付きで記載されている。qa_pairs.json では answer.speaker=「外務大臣官房参事官」（役職のみ、氏名なし）で登録されており、同一人物が3種類の表記で参照されている。",
+      "estimated_cause": "Whisper が「北郷大臣官房参事官。」という発話冒頭テキストを speaker 名として抽出する際に、姓のみ「北郷」と短縮した。topics 生成 LLM は qa_pairs の answer.speaker を見て別途「北郷大臣官房参事官」と推定した。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F013",
+      "category": "content_missing",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "qa_006（危険地域処遇）・qa_026（女性大使割合）が topics のどのトピックにも関連付けられていない",
+      "location": {
+        "file": "topics.json",
+        "json_path": "$.topics[*].related_qa_ids",
+        "segment_index": null,
+        "qa_id": "qa_006"
+      },
+      "evidence": "topics.json の全5トピックの related_qa_ids を集計すると、qa_006（危険地域や厳しい在勤地で勤務する在外公館職員の安全確保や処遇）と qa_026（女性の大使・総領事の割合）の2件がどのトピックにも紐付けられていない。qa_006 は「在外公館職員の処遇改善と人材政策」トピックに、qa_026 は同トピックまたは新規トピックに含まれるべき内容。",
+      "estimated_cause": "topics 生成 LLM が qa_006 と qa_026 をトピック分類の対象から漏らした。qa_006 は「安全確保」という側面があり「沖縄における米軍問題」トピックとの境界が曖昧で分類が難しい。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F014",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "「アラグチ外務大臣」が一箇所「アラウチ外相」と表記ゆれ",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[4].utterances[41].text",
+        "segment_index": 4,
+        "qa_id": null
+      },
+      "evidence": "utterances.json segment 4 utterance[41]（近藤和也 質疑者）のテキストに「アラウチ外相」と記録されている。他のすべての箇所（qa_001、qa_037等）では「アラグチ」と正しく表記されており、1箇所のみ異なる。アラグチ外務大臣（Ali Bagheri Kani）の正式カタカナ表記は「アラグチ」または「バゲリ・カニ」。",
+      "estimated_cause": "近藤和也議員の発話音声が不鮮明だったか、Whisper が「アラグチ」を「アラウチ」と近似音で誤認識し、LLM 補正でも修正されなかった。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F015",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "qa_008 の answer.speaker が空（答弁なし）だが evasion_score=1.0 で矛盾",
+      "location": {
+        "file": "qa_pairs.json",
+        "json_path": "$.pairs[7].answer.speaker",
+        "segment_index": 4,
+        "qa_id": "qa_008"
+      },
+      "evidence": "qa_008（日韓大陸棚共同開発地域の協定終了について）の answer.speaker=\"\"（空）、answer.full_text=\"\"（空）、answer.summary=\"（このセグメント内では、当該質問に対する直接的な答弁は含まれていない）\"、answer.evasion_score=1.0。横田光弘の発言は政策意見表明（intent=policy_proposal）であり、直接の政府答弁を求めていない文脈だが、evasion_score=1.0（完全回避）は answer が空であることを前提とした自動設定と見られ、データ利用者に「政府が回避した」と誤解させる可能性がある。",
+      "estimated_cause": "structurer が答弁なし（発言者が質問だけで終了）の場合に evasion_score=1.0 を機械的に設定している。実際はこの qa_008 は政策提言であり答弁が存在しないのは正常な議事進行。",
+      "downstream_impact": []
+    }
+  ],
+  "blindspots": [
+    "raw_transcript.json の全セグメントを逐字精査していない（主要セグメントのサンプリング）。特に segment 4（37,022文字）の中間部を詳細検証していない",
+    "外部の議員名簿・政府参考人リストとの照合を実施していないため、答弁者の役職・氏名の正確性の完全検証は未実施",
+    "「同行市場手当」「在学不認手当」等の誤認識テキストが LLM 要約・分類に与えた意味論的影響の程度を定量評価していない",
+    "qa_pairs の evasion_score の妥当性を個別に検証していない（主要なもののみ確認）",
+    "関連法律（在外公館職員等勤務手当法）の条文との fact-check を実施していない"
+  ],
+  "narrative": {
+    "overall": "本セッション（2026年3月11日 外務委員会）は在外公館職員等勤務手当法改正とイラン情勢・沖縄米軍問題を審議した委員会であり、qa_pairs の構造化品質は概ね良好で、39件の Q&A ペアが適切に区別されており、全文テキストも概ね正確に転記されている。しかし、深刻な問題として（1）午後セッション5セグメントが Whisper のハルシネーションにより「ご視聴ありがとうございました」15文字のみに置き換えられた（実際のコンテンツは segment 4 に集約されている）、（2）qa_017 の質問者が答弁者の「山本大臣官房参事官」に誤帰属（実際は金城泰邦議員）、（3）segment 1（島田政務官の電話会談詳細答弁）が qa_pairs に完全欠落し、その内容に由来する summary のコミットメントが誤った qa_id を参照している、の3点が識別された。また、法案の中心的な手当名称（子女教育手当）が複数箇所で「市場教育手当」等に誤認識されていることも、法的文書データとしての信頼性を損なう。主要答弁者（茂木外務大臣等）が metadata.speakers に未登録である点はパイプラインの構造的な設計課題であり、全セッションに共通する可能性が高い。",
+    "top_findings": [
+      "午後セッション segment 5〜9 の Whisper ハルシネーション：金城・近藤・佐々木・谷の質疑が segment 4 に内包される一方、5つの独立セグメントには「ご視聴ありがとうございました」のみが記録され、qa_pairs にも segment 5〜9 の qa_pair が一切存在しない構造的問題",
+      "qa_017 の質問者誤帰属：答弁者「山本大臣官房参事官」が質問者として記録され、政党も「日本維新の会」（横田光弘の所属）と誤設定。実際の質問者は金城泰邦（中道改革連合・無所属）であり、日米地位協定改定要求の帰属が誤る",
+      "子女教育手当の Whisper 誤認識の連鎖：本セッションの主要審議対象である手当名称が「市場教育手当」「在学不認手当」「同行市場手当」「同行子助手当」等に複数箇所で誤認識され、qa_pairs.full_text に残留している"
+    ]
+  }
+}

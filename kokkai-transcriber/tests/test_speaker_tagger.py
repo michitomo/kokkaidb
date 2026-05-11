@@ -103,7 +103,7 @@ class TestTagSpeakers:
             mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_splits)
             mock_client_factory.return_value = mock_client
 
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 result = tag_speakers(raw_text, segment_speaker, all_speakers)
 
         assert len(result) == 3
@@ -135,7 +135,7 @@ class TestTagSpeakers:
             mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_splits)
             mock_client_factory.return_value = mock_client
 
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 result = tag_speakers(raw_text, segment_speaker, all_speakers)
 
         assert len(result) == 2
@@ -159,7 +159,7 @@ class TestTagSpeakers:
             mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_splits)
             mock_client_factory.return_value = mock_client
 
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 result = tag_speakers(raw_text, segment_speaker, all_speakers)
 
         assert len(result) == 1
@@ -179,7 +179,7 @@ class TestTagSpeakers:
             mock_client.chat.completions.create.return_value = _make_mock_llm_response([])
             mock_client_factory.return_value = mock_client
 
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 result = tag_speakers(raw_text, segment_speaker, all_speakers)
 
         assert len(result) == 1
@@ -202,7 +202,7 @@ class TestTagSpeakers:
             mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_splits)
             mock_client_factory.return_value = mock_client
 
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 result = tag_speakers(raw_text, segment_speaker, all_speakers)
 
         # 文0がsegment_speakerに割り当てられる
@@ -227,7 +227,7 @@ class TestTagSpeakers:
             mock_client.chat.completions.create.return_value = _make_mock_llm_response(mock_splits)
             mock_client_factory.return_value = mock_client
 
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 result = tag_speakers(raw_text, segment_speaker, all_speakers)
 
         assert all(isinstance(u, Utterance) for u in result)
@@ -247,7 +247,7 @@ class TestTagSpeakers:
             )
             mock_client_factory.return_value = mock_client
 
-            with patch.dict("os.environ", {"DEEPINFRA_API_KEY": "test-key"}):
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
                 tag_speakers(raw_text, segment_speaker, all_speakers)
 
         call_kwargs = mock_client.chat.completions.create.call_args.kwargs
@@ -259,12 +259,66 @@ class TestTagSpeakers:
         segment_speaker: SpeakerInfo,
         all_speakers: list[SpeakerInfo],
     ) -> None:
-        """DEEPINFRA_API_KEY が未設定の場合に EnvironmentError が送出されること。"""
+        """OPENROUTER_API_KEY が未設定の場合に EnvironmentError が送出されること。"""
         import os
-        env = {k: v for k, v in os.environ.items() if k != "DEEPINFRA_API_KEY"}
+        env = {k: v for k, v in os.environ.items() if k != "OPENROUTER_API_KEY"}
         with patch.dict("os.environ", env, clear=True):
             with pytest.raises(EnvironmentError):
                 tag_speakers("テスト。", segment_speaker, all_speakers)
+
+
+class TestMalformedJsonHandling:
+    """PR18: speaker_tagger の json.loads が malformed JSON / empty content で
+    例外を上位伝播せず、フォールバック (全文を 1 utterance) を返すことを検証。"""
+
+    def _make_raw_response(self, content: str | None) -> MagicMock:
+        mock_message = MagicMock()
+        mock_message.content = content
+        mock_choice = MagicMock()
+        mock_choice.message = mock_message
+        mock_response = MagicMock()
+        mock_response.choices = [mock_choice]
+        return mock_response
+
+    def test_malformed_json_falls_back_to_single_utterance(
+        self,
+        segment_speaker: SpeakerInfo,
+        all_speakers: list[SpeakerInfo],
+    ) -> None:
+        raw_text = "テスト発言です。"
+
+        with patch("src.speaker_tagger._get_client") as mock_client_factory:
+            mock_client = MagicMock()
+            mock_client.chat.completions.create.return_value = self._make_raw_response(
+                "this is not json {{{"
+            )
+            mock_client_factory.return_value = mock_client
+
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
+                result = tag_speakers(raw_text, segment_speaker, all_speakers)
+
+        assert len(result) == 1
+        assert result[0].speaker == segment_speaker.name
+        assert result[0].text == raw_text
+
+    def test_empty_content_falls_back_to_single_utterance(
+        self,
+        segment_speaker: SpeakerInfo,
+        all_speakers: list[SpeakerInfo],
+    ) -> None:
+        raw_text = "別のテスト。"
+
+        with patch("src.speaker_tagger._get_client") as mock_client_factory:
+            mock_client = MagicMock()
+            mock_client.chat.completions.create.return_value = self._make_raw_response(None)
+            mock_client_factory.return_value = mock_client
+
+            with patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}):
+                result = tag_speakers(raw_text, segment_speaker, all_speakers)
+
+        assert len(result) == 1
+        assert result[0].speaker == segment_speaker.name
+        assert result[0].text == raw_text
 
 
 class TestBuildVideoUrl:
@@ -276,7 +330,7 @@ class TestBuildVideoUrl:
 
     def test_sangiin_url(self) -> None:
         url = _build_video_url("sangiin", "7890", 180.5)
-        assert "webtv.sangiin.go.jp" in url
+        assert url.startswith("https://www.webtv.sangiin.go.jp/")
         assert "sid=7890" in url
         assert "#180.5" in url
 

@@ -1,0 +1,243 @@
+{
+  "session_id": "shugiin/2026/02/20/56080_消費者問題特別委員会",
+  "chamber": "shugiin",
+  "date": "2026-02-20",
+  "deli_id": "56080",
+  "committee": "消費者問題特別委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T10:00:00Z",
+  "overall_quality": "medium",
+  "issue_count": {"high": 3, "medium": 4, "low": 5, "total": 12},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["role_label_error"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "segment 0 発話者を笠浩史に誤帰属（実際は永岡桂子）",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[0].utterances[0].speaker",
+        "segment_index": 0,
+        "qa_id": null
+      },
+      "evidence": "utterances.json segments[0].segment_speaker=永岡桂子 なのに utterances[0].speaker=笠浩史。raw_transcript segment 0 の text は「これより会議を開きます。衆議院規則第101条第4項の規定によりまして、委員長が選任されるまで私が委員長の職務を行います」と明示されており、衆議院規則101条4項による臨時委員長は永岡桂子（年長委員）であることが法令上明確。笠浩史は選任前であり発言不能。",
+      "estimated_cause": "speaker_tagger が segment の segment_speaker（永岡桂子）を用いず、後続 segment の主要話者（笠浩史）を前倒しで帰属した。または「委員長」という役職ラベルを笠浩史に固定した後に逆引きした可能性がある。",
+      "downstream_impact": ["qa_pairs.json", "summary.json"]
+    },
+    {
+      "id": "F002",
+      "category": "speaker_misattribution",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "utterances[0][1] の発話者を小林文明に誤帰属（実際は永岡桂子）",
+      "location": {
+        "file": "utterances.json",
+        "json_path": "$.segments[0].utterances[1].speaker",
+        "segment_index": 0,
+        "qa_id": null
+      },
+      "evidence": "utterances.json segments[0].utterances[1] は speaker=小林文明、text=「委員長の小林文明君に本席を譲ります。」。しかし「委員長の○○君に本席を譲ります」は臨時委員長（永岡桂子）が述べる定型句であり、小林文明自身が自分を指名するセリフではない。発言者は永岡桂子が正しい。",
+      "estimated_cause": "speaker_tagger が「小林文明君」という固有名詞を発話者として誤認識した。自己言及を含む発言（第三者を指す「小林文明君」）を発話者本人と混同するパターン。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F003",
+      "category": "metadata_missing_speaker",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers に小林文明と8名の理事が未登録",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers には永岡桂子・笠浩史の2名のみ。しかし utterances.json に speaker=小林文明 が登場し、raw_transcript segment 1 には理事として安倍敏子、井原氏清志、勝銘康志、加藤亜佑子、小林文明、角田秀夫、鶴間常治、丹野みどりの8名が指名されたことが記録されている。小林文明は動議提出という実質的発言を行っており speakers 未登録は重大な欠落。",
+      "estimated_cause": "metadata 生成が HLS 先頭部分の話者検出に依存しており、短い委員会設置セッション（約93秒）でのみ音声が存在する参加者を捕捉できなかった。または speakers リストの上限が設定されている可能性。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F004",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "Whisper が「小林文明」を「劉博文」と誤認識",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[0].whisper_segments[0].text",
+        "segment_index": 0,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript segments[0].whisper_segments[0].text に「劉博文君を委員長に推薦いたします」と記録されており、直後の whisper_segments[1].text でも「龍博文君が委員長に御当選になりました…龍博文君に本席を譲ります」となっている。修正後テキスト（corrected=true）では正しく「小林文明君」に修正されているが、Whisper 生テキストが「劉博文」「龍博文」という実在しない人物名を生成した。",
+      "estimated_cause": "Whisper large-v3-turbo が日本語の珍しい人名「小林文明（こばやし ふみあき）」を音声から正確に認識できず、漢字2文字＋博文の近似音として中国語風の固有名詞を生成した。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F005",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「動議」を「同義」「農業」「同業」と繰り返し誤認識",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[0].whisper_segments[0].text",
+        "segment_index": 0,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript segments[0].whisper_segments[0].text=「委員長小林文明君同業を提出いたします」（動議→同業）、segments[1].whisper_segments[1].text=「農業を提出いたします」（動議→農業）、segments[1].whisper_segments[2].text=「同義にご異議ありませんか」（動議→同義）。「動議を提出」という議会定型句で 3 件の異なる誤認識が発生している。",
+      "estimated_cause": "「どうぎ」という音が Whisper に確率的に複数の漢字表記で認識されている。議会用語の語彙優先度が低いことが根本原因と推測される。corrected=true の補正処理で修正されているが、修正ロジックがないと問題が残る。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F006",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「委員各位」を「委員閣議」と誤認識",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].whisper_segments[0].text",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript segments[1].whisper_segments[0].text=「ただいま委員閣議のご推挙によりまして」「委員閣議のご指導とご協力を賜りまして」。正しくは「委員各位」。corrected=true の修正済みテキストでは「委員各位」に補正されているが、Whisper 生テキストは「閣議」という全く別の意味の語を生成している。",
+      "estimated_cause": "「かくい」（各位）と「かくぎ」（閣議）の音声類似性による誤認識。国会審議文脈では「閣議」は高頻度語のため Whisper の言語モデルが優先選択した可能性がある。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F007",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「理事の選任を行います」を「理事の御支援を行います」と誤認識",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].whisper_segments[1].text",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript segments[1].whisper_segments[1].text=「これより理事の御支援を行います」。正しくは「理事の選任を行います」。corrected=true の修正テキストでは正しく「選任」になっているが、Whisper は「せんにん」を「ごしえん」と全く異なる語として生成した。",
+      "estimated_cause": "「選任」（せんにん）という専門用語をWhisperが認識できず、音声的に近い「支援」（しえん）に誤変換し、前に「御」が付いたと推定。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F008",
+      "category": "content_missing",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "topics.json が空配列（summary.json の key_topics と乖離）",
+      "location": {
+        "file": "topics.json",
+        "json_path": "$.topics",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "topics.json = {\"topics\": []}（空配列）。一方 summary.json.key_topics には「委員長の選任」「理事の指名」「消費者問題特別委員会の運営方針」の3件が存在する。同じ LLM 処理パイプラインが生成しているはずなのに topics.json への書き込みが行われていない。",
+      "estimated_cause": "structurer.py の topics 生成ロジックが、qa_pairs.json が空の場合（pairs=[]）にスキップ or 空配列を返す分岐に入っている可能性。委員長選任のみで質疑なしのセッションでは topics 生成がトリガーされないと推測。",
+      "downstream_impact": ["site/browse.astro でのフィルタリング機能が無効化される"]
+    },
+    {
+      "id": "F009",
+      "category": "schema_empty_field",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata の複数フィールドが空文字列または null",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.committee_id, $.session_number, $.duration, $.mediasp_hash",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json: committee_id=null, session_number=null, duration=\"\"（空文字列）, mediasp_hash=\"\"（空文字列）。null と空文字列が混在しており（null vs \"\"）スキーマ一貫性がない。duration は衆議院セッションなので mediasp_hash は不要だが、null と \"\" の使い分けが一貫していない。",
+      "estimated_cause": "scraper または metadata 生成コードで、未取得フィールドに対して一部は null、一部は \"\" を設定する処理の不統一が原因と推測。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F010",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata.speakers の role フィールドが全件空文字列",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.speakers[*].role",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.speakers の全2件で role=\"\"（空文字列）。utterances.json では同じ話者に role=「委員長」が正しく設定されているにもかかわらず metadata 側は空のまま。",
+      "estimated_cause": "metadata 生成時点では話者の役職情報が未確定であり、structurer.py が utterances を解析した後に role を backfill する仕組みがない。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F011",
+      "category": "schema_inconsistency",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "summary.json key_commitments の qa_id が空文字列",
+      "location": {
+        "file": "summary.json",
+        "json_path": "$.key_commitments[0].qa_id",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "summary.json key_commitments[0].qa_id=\"\"（空文字列）。qa_pairs.json が pairs=[] であるため参照先が存在しないのは理解できるが、空文字列ではなく null が適切。また qa_id が存在しないコミットメントを key_commitments に含める設計の妥当性も疑問。",
+      "estimated_cause": "structurer.py が qa_pairs が空の場合でも key_commitments を生成しようとして、qa_id を空文字列でフォールバックしている。",
+      "downstream_impact": ["site でのコミットメントリンクが無効になる可能性"]
+    },
+    {
+      "id": "F012",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "Whisper が冒頭に「高生活」という不正テキストを付加",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].whisper_segments[1].text",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "raw_transcript segments[1].whisper_segments[1].text が「高生活円満な委員会運営に努めてまいりたいと存じます…」で始まる。前の whisper_segment[0] の末尾が「委員閣議のご指導とご協力を賜りまして」で終わっており、本来「円満な委員会運営に…」と続くべきところに「高生活」という余分な語が先頭に付加されている。avg_logprob=-0.1187 とやや低め。",
+      "estimated_cause": "Whisper のチャンク境界（seek=2632）付近での音声重複または無音区間をWhisperが誤認識し、前チャンクの最後の音節に引きずられて「高生活」を hallucinate した可能性。",
+      "downstream_impact": []
+    }
+  ],
+  "blindspots": [
+    "HLS URLの有効性（実際にアクセスして確認していない）",
+    "指名された8名の理事の実際の正確な氏名を議員名簿と照合していない（井原氏清志・勝銘康志・加藤亜佑子・角田秀夫・鶴間常治・丹野みどりの表記が正確かは未確認）",
+    "start_seconds の値（2216.3、2279.1）が実際の動画の発言タイムスタンプと一致しているかの動画アクセス確認は未実施",
+    "whisper_segments の seek 値（0, 2728, 2632, 5691, 8449）と start_seconds（2216.3、2279.1）の対応関係が正しいか詳細検証未実施"
+  ],
+  "narrative": {
+    "overall": "本セッションは消費者問題特別委員会の設置初日（委員長選任・理事指名のみ）という極めて短いセッション（約93秒の音声）であり、質疑応答は一切なく qa_pairs.json は正常に空である。主な問題は話者帰属の誤りと Whisper の固有名詞誤認識に集中しており、特に臨時委員長（永岡桂子）の発言が笠浩史または小林文明に誤帰属されている点が最も重大。Whisper 誤認識（劉博文、委員閣議、農業、御支援等）は corrected=true の補正処理でほぼ修正されているが、補正ロジックが存在しないと問題が残る構造的リスクがある。topics.json が空になる問題は qa_pairs が空のセッション全般で発生する可能性があり、パイプラインの条件分岐の見直しが必要。",
+    "top_findings": [
+      "臨時委員長（永岡桂子）の発言が笠浩史・小林文明に誤帰属：衆議院規則101条4項に基づく臨時委員長発言を speaker_tagger が正しく処理できておらず、発言者が完全に入れ替わっている（F001・F002）",
+      "metadata.speakers に小林文明と8名の理事が未登録：発言記録に登場する主要話者が metadata レベルで不可視になっており、データ利用者がセッション参加者を把握できない（F003）",
+      "Whisper が「小林文明」を「劉博文」「龍博文」と誤認識：実在しない中国語風人名を生成するほどの誤認識であり、補正処理がなければ誤情報として公開される（F004）"
+    ]
+  }
+}

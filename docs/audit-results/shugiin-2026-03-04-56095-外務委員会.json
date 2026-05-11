@@ -1,0 +1,244 @@
+{
+  "session_id": "shugiin/2026/03/04/56095_外務委員会",
+  "chamber": "shugiin",
+  "date": "2026-03-04",
+  "deli_id": "56095",
+  "committee": "外務委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-10T12:00:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 4, "medium": 5, "low": 3, "total": 12},
+  "findings": [
+    {
+      "id": "F001",
+      "category": "whisper_hallucination_loop",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "segment 0: 放映終了テロップ「ご視聴ありがとうございました」が5回繰り返し",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[0].text",
+        "segment_index": 0,
+        "qa_id": null
+      },
+      "evidence": "segments[0].text = 「ご視聴ありがとうございました。」×5回（75文字）。whisper_segments は id=1〜5, seek=0/3000/6000/9000/12000 と 30秒刻みで 5件。各 no_speech_prob=0.0、avg_logprob は −0.46〜−0.20 と比較的低信頼。開会前の放送終了テロップ画面（前番組のアウトロ画面）を Whisper が誤認識してループ生成したと考えられる。",
+      "estimated_cause": "HLS 音声抽出が映像開始から行われるため、本委員会開始前（460秒間）の放映終了画面の背景音（またはほぼ無音）を Whisper が処理し、画面上のテロップテキストを学習データから引用して繰り返しハルシネーションを起こした。これは HLS セグメント切り出しタイミングの問題であり、衆議院TVの放映前インターバルが長いセッションで再発する可能性が高い。",
+      "downstream_impact": ["utterances.json", "qa_pairs.json"]
+    },
+    {
+      "id": "F002",
+      "category": "speaker_misattribution",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "segment 1: 国場幸之助委員長の開会・所信表明冒頭が茂木敏充に誤帰属",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].speaker_name",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "segments[1].speaker_name=「茂木敏充」だが、text は「國場幸之助です。これより会議を開きます。この際、一言御挨拶を申し上げます。この度、引き続き外務委員長を務めることになりました、國場幸之助です。」から始まり、理事指名、国政調査承認要求まで全て国場委員長の発言。その後に「外務大臣、茂木敏充君。茂木敏充です。」で茂木の発言に切り替わる。utterances.json では segment[1] 内で正しく国場/茂木と分割されているが、raw_transcript の segment 単位では茂木に帰属している。",
+      "estimated_cause": "speaker_tagger が HLS の話者境界（speaker_name）を scraper 側のメタデータから割り当てているが、scraper の deli_id=56095 の話者番号が 茂木敏充（2番目の登場者）に紐付いているため、segment 1 全体が茂木に帰属された。実際には segment 1 の前半は国場委員長の発言で構成される。",
+      "downstream_impact": ["utterances.json", "qa_pairs.json"]
+    },
+    {
+      "id": "F003",
+      "category": "speaker_misattribution",
+      "secondary_categories": ["content_missing"],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "segment 2: 茂木外務大臣の経済外交説明終盤が国光あやのに誤帰属",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[2].speaker_name",
+        "segment_index": 2,
+        "qa_id": null
+      },
+      "evidence": "segments[1].text（茂木）は「経済外交については、日本の経済力強化のため、日本が優位性を持つ技術・課題解決力や、日本企業の海外展開、」で文章途中で途切れている。segments[2].text（国光）は「県外交面で後押しし、新規市場の開拓やイノベーションの創出に貢献してまいります。」と続いており、「日本企業の海外展開、県外交面で後押しし…」と接続することで茂木の発言が連続する。utterances.json でも segment[2] の最初の utterance が国光あやのに帰属されているが、この冒頭部分（茂木の経済外交説明の末尾）は実際には茂木の発言である。なお「県外交」は「民間外交」の Whisper 誤認識の可能性が高い。",
+      "estimated_cause": "HLS 音声の話者ラベル境界が茂木から国光に切り替わるタイミングと、実際の発言交代タイミングにズレがあり、茂木の発言末尾が国光のセグメントに含まれた。これは衆議院TV の HLS ストリームの話者タグ精度問題に起因する可能性が高い。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F004",
+      "category": "speaker_misattribution",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "segment 3→4: 堀井副大臣の予算説明「第1の柱は、」が英利アルフィヤに誤帰属",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[3].text",
+        "segment_index": 3,
+        "qa_id": null
+      },
+      "evidence": "segments[3].text（堀井）は「第1の柱は、」で文末・発言途中で途切れる。segments[4].text（英利アルフィヤ）は「日本にとって望ましい国際秩序の形成でございます。自由で開かれたインド太平洋…」で始まる。これは第1の柱の内容（国際秩序形成）の説明であり、実質的に堀井副大臣の発言の続きである。utterances.json では segment[4] の utterance が英利アルフィヤに帰属されている。",
+      "estimated_cause": "HLS 話者境界の切り替えが実際の発言交代より早く、堀井が「第1の柱」を紹介した直後に英利のセグメントに移行したため、第1の柱の内容説明が英利に帰属された。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F005",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "high",
+      "confidence": "high",
+      "systemic_signal": "session_specific",
+      "title": "理事名「深作へすす」：実在しない人名（Whisper誤認識）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].text",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "text 内「それでは理事に、石橋凜太郎君、小田原清志君、高木圭君、穂坂康志君、堀井巌君、近藤和也君、青柳ひとし君、及び深作へすす君とを指名いたします。」の「深作へすす」は実在しない人名。8名の理事名簿の最後の1名に当たり、外務委員会理事として報道されている実際の議員名（廣瀬めぐみ等）の Whisper 誤認識と考えられる。utterances.json にも同じ誤認識テキストが引き継がれている。",
+      "estimated_cause": "Whisper large-v3-turbo が珍しい外来語読みの議員名（カタカナ・ひらがな混じりの名前）を正確に認識できず、近い音の別テキストを生成した。委員会の理事名は公式サイトで確認可能であり、このような固有名詞はポスト補正が必要。",
+      "downstream_impact": ["utterances.json", "summary.json"]
+    },
+    {
+      "id": "F006",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「国勢調査承認要求」→「国政調査承認要求」、「本会議中」→「本会期中」",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].text",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "text 内「次に、国勢調査承認要求に関する件についてお諮りいたします。国際情勢に関する事項について、本会議中、国勢に関する調査を行うため、衆議院規則第94条以上の規定により」の「国勢調査」は「国政調査」の誤認識（国勢調査＝人口センサスとは別物）、「本会議中」は「本会期中」の誤認識（衆議院の正式手続き用語）。",
+      "estimated_cause": "Whisper が衆議院委員会の定型開会手続き文句を正確に認識できていない。「コクセイチョウサ」（国政調査）と「コクセイチョウサ」（国勢調査）は音が同じで区別困難。定型句辞書によるポスト補正が効果的。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F007",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "「衆議院規則第94条以上の規定」→「第94条の2の規定」（条文番号の誤認識）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].text",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "「衆議院規則第94条以上の規定により」は日本語として非標準。国政調査承認要求の根拠条文は衆議院規則の特定条文（第94条の2等）であり、「以上の規定」は「の2の規定」または「の規定」の Whisper 誤認識と考えられる。「94条以上」では意味が通じない（94条より上位の条文全部という意味になってしまう）。",
+      "estimated_cause": "「の二の」という音を「以上の」と誤認識。条文参照における枝番号の認識はWhisper が苦手とするパターン。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F008",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "likely_systemic",
+      "title": "「宣令により委員長において指名」→「先例（または慣例）により」",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].text",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "「その数を8名とし、宣令により委員長において指名することに御異議ありませんか。」の「宣令」は辞書的・法令的に存在しない語。衆議院委員会の慣行では「先例により」または「慣例により」が用いられる。「センレイ」「センレイ」の音混同の可能性。",
+      "estimated_cause": "定型の委員会開会手続き文句で Whisper が「センレイ（先例/慣例）」を「センレイ（宣令）」と誤認識。",
+      "downstream_impact": ["utterances.json"]
+    },
+    {
+      "id": "F009",
+      "category": "whisper_misrecognition",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "medium",
+      "systemic_signal": "likely_systemic",
+      "title": "「EUなどなど」：助詞「など」の重複（Whisper エコー現象）",
+      "location": {
+        "file": "raw_transcript.json",
+        "json_path": "$.segments[1].text",
+        "segment_index": 1,
+        "qa_id": null
+      },
+      "evidence": "「G7、ASEAN、豪州、インド、EUなどなどとの協力関係をさらに強化し」の「などなど」は不自然な重複。外交政策スピーチで「などなど」は通常使用されない。Whisper がリスト読み上げ終端の「など」を二重に出力するエコー現象と考えられる。",
+      "estimated_cause": "Whisper large-v3-turbo の列挙終端処理の軽微な問題。列挙の最後で「など」が聞き取れた際に同じトークンを重複生成する傾向がある可能性。",
+      "downstream_impact": []
+    },
+    {
+      "id": "F010",
+      "category": "other",
+      "secondary_categories": ["schema_inconsistency"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "session_kind=regular_qa が誤り：本セッションは所信表明のみ（質疑なし）",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.session_kind",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json の session_kind=「regular_qa」だが、当セッションは外務大臣・副大臣・政務官の所信表明と令和8年度予算概要説明のみで構成されており、議員からの質疑は一切ない。qa_pairs.json も {\"pairs\": []} で空。正しくは「所信表明」「statement」等のセッション種別を使うべき。",
+      "estimated_cause": "session_kind の自動分類ロジックが委員会種別・議事次第から正確に判定できていない。所信表明会や予算概要説明会は regular_qa とは異なるセッション構造だが、同じ種別ラベルが付与された可能性がある。",
+      "downstream_impact": ["qa_pairs.json", "summary.json"]
+    },
+    {
+      "id": "F011",
+      "category": "schema_empty_field",
+      "secondary_categories": ["summary_qa_divergence"],
+      "severity": "medium",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "topics.json が空、summary.key_topics/key_commitments/related_laws が全て空配列",
+      "location": {
+        "file": "topics.json",
+        "json_path": "$.topics",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "topics.json={\"topics\":[]}、summary.json.key_topics=[]、key_commitments=[]、related_laws=[]。一方 session_summary には茂木外務大臣のFOIP・日米同盟・イラン・北朝鮮・ウクライナ・ガザ・グローバルサウス・予算5本の柱などに関する記述がある。また segment[2].text に「今国会において、外務省から提出予定の法律案と条約について御審議のほどよろしくお願い申し上げます」と言及があり related_laws に相当する情報が存在するが、空配列になっている。",
+      "estimated_cause": "LLM 構造化ステップ（structurer.py）が所信表明形式のセッションに対して topics/key_topics/key_commitments/related_laws の抽出を正しく機能させられなかった。qa_pairs が空のため LLM への入力が不足した可能性がある（Q&A ペアから抽出するロジックに依存している場合）。",
+      "downstream_impact": ["summary.json"]
+    },
+    {
+      "id": "F012",
+      "category": "schema_empty_field",
+      "secondary_categories": [],
+      "severity": "low",
+      "confidence": "high",
+      "systemic_signal": "likely_systemic",
+      "title": "metadata: duration=\"\"、committee_id=null、session_number=null",
+      "location": {
+        "file": "metadata.json",
+        "json_path": "$.duration",
+        "segment_index": null,
+        "qa_id": null
+      },
+      "evidence": "metadata.json の duration=\"\"（空文字列）、committee_id=null、session_number=null。HLS ストリームと segments の情報から duration は計算可能（最終 segment の start_seconds + whisper_segments の end 値で推定）。committee_id は衆議院TV の委員会 ID に相当し、スクレイピング時に取得できるはず。",
+      "estimated_cause": "Scraper または pipeline の metadata 生成ステップで duration の計算・書き込みがスキップされた。committee_id と session_number は衆議院TV の HTML から抽出されていないか、対応フィールドが未実装のまま null になっている可能性がある。",
+      "downstream_impact": []
+    }
+  ],
+  "blindspots": [
+    "raw_transcript の全 whisper_segments を逐一精査していない（各セグメント先頭と末尾のサンプリングのみ）",
+    "理事名「深作へすす」の正確な実名を外部データベースで照合していない",
+    "HLS 音声の実際の時刻と start_time の対応が放映時刻基準か録画開始時刻基準かを外部ソースで確認していない",
+    "衆議院規則の正確な条文番号（94条の何条か）を一次ソースで検証していない",
+    "茂木外務大臣の所信表明内容と公式議事録（後日公開予定）との逐語照合は未実施"
+  ],
+  "narrative": {
+    "overall": "本セッション（外務委員会2026-03-04）は外務大臣・副大臣・政務官による所信表明と令和8年度予算概要説明のみで構成される特殊なセッションであり、Q&Aが存在しない。最も深刻な問題は HLS 話者境界とセグメント割り当ての不一致に起因する speaker_misattribution で、セグメント1（国場委員長の開会・所信表明が茂木に誤帰属）およびセグメント2（茂木の経済外交説明末尾が国光に誤帰属）で発生しており、utterances.json による修正も不完全である。また Whisper が開会前の放映終了テロップを繰り返しハルシネーションしたセグメント0、衆議院委員会定型句における複数の誤認識（国勢調査・第94条以上・宣令）、実在しない理事名「深作へすす」も重要な品質問題である。session_kind=regular_qa の誤分類および topics/key_topics の空配列も利用者体験に影響する。",
+    "top_findings": [
+      "HLS セグメント境界ズレによる speaker_misattribution（F002/F003）：国場委員長の開会発言と茂木外務大臣の経済外交説明末尾が別話者に帰属。これは衆議院TV の HLS 話者タグ精度が原因と考えられ、他セッションでも発生している可能性が高い構造的問題。",
+      "開会前テロップの Whisper ハルシネーションループ（F001）：委員会開始前 460 秒間の放映テロップ「ご視聴ありがとうございました」が 5 回繰り返しで生成。HLS の音声開始オフセットが正しく設定されていない場合に再発する likely_systemic 問題。",
+      "委員会定型句の Whisper 誤認識群（F005〜F008）：理事名「深作へすす」、「国勢調査」→「国政調査」、「第94条以上」→「第94条の2の」など、委員会開会手続きに特有の定型句で誤認識が集中している。定型句辞書または LLM ポスト補正の追加で改善できる可能性がある。"
+    ]
+  }
+}

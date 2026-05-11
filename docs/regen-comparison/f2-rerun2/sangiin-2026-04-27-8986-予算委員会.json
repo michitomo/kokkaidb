@@ -1,0 +1,155 @@
+{
+  "session_id": "sangiin/2026/04/27/8986_予算委員会",
+  "chamber": "sangiin",
+  "date": "2026-04-27",
+  "deli_id": "8986",
+  "committee": "予算委員会",
+  "auditor_model": "claude-sonnet-4-6",
+  "audit_at": "2026-05-11T00:00:00+09:00",
+  "overall_quality": "medium",
+  "issue_count": {"high": 4, "medium": 8, "low": 3, "total": 15},
+  "findings": [
+    {
+      "id": "F01",
+      "severity": "high",
+      "category": "whisper_misrecognition",
+      "location": "utterances.json / segments[1].utterances[2].text (高市早苗), segments[5].utterances[0].text (片山大介)",
+      "description": "岩手県の山林火災現場の地名「大津市町」は誤認識。正しくは「大槌町」(おおつちちょう、岩手県上閉伊郡)。「大津市」は滋賀県の都市であり全く別の地名。高市早苗・片山大介それぞれの発言で誤記が発生している。",
+      "evidence": "高市答弁: '4月22日、岩手県大津市町において発生した林野火災' / 片山発言: '岩手県の大津市町の山林火災' ",
+      "correction": "大津市町 → 大槌町"
+    },
+    {
+      "id": "F02",
+      "severity": "high",
+      "category": "whisper_misrecognition",
+      "location": "utterances.json / segments[6].utterances[8].text (片山大介), segments[6].utterances[14].text (高市早苗)",
+      "description": "皇室典範(こうしつてんぱん)が「公室典範」および「公室伝播」と二種類の誤認識で出現。片山大介発言で「公室典範の改正」、高市答弁で「公室伝播の改正」と表記されている。",
+      "evidence": "片山: '今国会での公室典範の改正を目指す考えを示しました' / 高市: '公室伝播の改正が必要なのか' ",
+      "correction": "公室典範 / 公室伝播 → 皇室典範"
+    },
+    {
+      "id": "F03",
+      "severity": "high",
+      "category": "whisper_misrecognition",
+      "location": "utterances.json / segments[2].utterances[5].text (高市早苗)",
+      "description": "「国家安全保障会議」(NSC)が「国間全保守法会議」と誤認識されている。武器輸出の運用指針改正に係る文脈で出現。",
+      "evidence": "'自衛隊法上の武器については、より厳格な審査と適正管理を確保することを前提として、国間全保守法会議で移転を認め得ると判断した場合' ",
+      "correction": "国間全保守法会議 → 国家安全保障会議"
+    },
+    {
+      "id": "F04",
+      "severity": "high",
+      "category": "speaker_misattribution",
+      "location": "qa_pairs.json / qa_034",
+      "description": "qa_034「食料品消費税0%の実現と低所得者支援」のquestion.speakerが「赤澤亮正」（party=「答弁者」）と記録されており、question.full_textには赤澤亮正の前問への答弁テキストが入っている。実際の質問者は里見隆治（公明党）。LLMが赤澤の答弁テキストを里見の次問の「質問」として誤って切り出した役割逆転バグ。",
+      "evidence": "qa_034.question.speaker='赤澤亮正', party='答弁者', full_text='今般の中東情勢においても、中小企業が事業継続できる環境を整えることは...(赤澤答弁テキスト)' ",
+      "correction": "question.speakerを里見隆治、partyを公明党に修正し、full_textを里見の実際の質問テキストに差し替える必要あり"
+    },
+    {
+      "id": "F05",
+      "severity": "medium",
+      "category": "whisper_misrecognition",
+      "location": "utterances.json / segments[1].utterances[0].text (三原じゅん子)",
+      "description": "セグメント0末尾（三原じゅん子のAZEC会議に関する発言）が '...FOIPとの関連性も含めて' で途切れ、セグメント1先頭が 'ただ手は起きない我が国の強靭性を表す政策であることを期待しております' と始まる。文脈的に 'ただ手は起きない' は 'たゆまない' または類似表現のWhisper誤認識と推定される。",
+      "evidence": "seg0最後: '...FOIP、自由で開かれたインド太平洋の展開との関連性も含めて' / seg1先頭: 'ただ手は起きない我が国の強靭性を...' ",
+      "correction": "正確な文言は音源確認が必要。おそらく「たゆまぬ」「絶えることなき」等"
+    },
+    {
+      "id": "F06",
+      "severity": "medium",
+      "category": "whisper_misrecognition",
+      "location": "utterances.json / segments[0].utterances[0].text (三原じゅん子)",
+      "description": "「非重大演習場での射撃訓練により亡くなられた隊員」とあるが、「非重大演習場」は実在しない施設名称で、Whisperが正式名称を誤認識した可能性が高い。実際の演習場名が消失している。",
+      "evidence": "'また、非重大演習場での射撃訓練により、亡くなられた隊員の方々に深く哀悼の意を表する' ",
+      "correction": "音源確認が必要。実際の演習場名（例：北富士演習場、矢臼別演習場等）に置換すべき"
+    },
+    {
+      "id": "F07",
+      "severity": "medium",
+      "category": "schema_inconsistency",
+      "location": "qa_pairs.json / qa_012, qa_013",
+      "description": "qa_012（武器輸出の国会関与）とqa_013（冤罪発生の理由と再審制度）のsegment_indexが2（森本真治セグメント、開始3561.88秒）と記録されているが、両ペアのvideo_url timestampはそれぞれ5156.6秒・5397.1秒であり、これらはセグメント3（泉房穂セグメント、開始5135.85秒）に属する。実際にqa_012の質問者は森本真治だが泉房穂セグメント内のタイムスタンプを持つ。",
+      "evidence": "qa_012: segment_index=2, video_url ts=5156.6 (>seg3 start 5135.85) / qa_013: segment_index=2, ts=5397.1",
+      "correction": "qa_012, qa_013のsegment_indexを3に修正"
+    },
+    {
+      "id": "F08",
+      "severity": "medium",
+      "category": "schema_empty_field",
+      "location": "metadata.json / speakers[*].duration_minutes",
+      "description": "metadata.json内の全17名のspeakersについてduration_minutesが0になっている。PR26.1での補完対象フィールドだが、セッション全体を通じて全員0のままであり、実際の発言時間が未計算。",
+      "evidence": "全speakerでduration_minutes=0",
+      "correction": "各speakerの実際の発言時間を計算して設定する必要あり"
+    },
+    {
+      "id": "F09",
+      "severity": "medium",
+      "category": "schema_empty_field",
+      "location": "metadata.json / duration, hls_url",
+      "description": "duration（セッション総時間）とhls_url（HLS配信URL）がともに空文字列。前者は動画の総尺が不明のまま、後者は音声抽出に使用されたHLS URLが保存されていない。",
+      "evidence": "duration: '' / hls_url: ''",
+      "correction": "durationはraw_transcriptの最終セグメントから推定可能（約3.5時間以上）。hls_urlはパイプライン実行時に記録すべき"
+    },
+    {
+      "id": "F10",
+      "severity": "medium",
+      "category": "speaker_misattribution",
+      "location": "utterances.json / segments[9].utterances[0]",
+      "description": "セグメント9（木村英子）の最初のutteranceがspeaker=木村英子/role=質疑者と記録されているが、テキスト内容は明らかに高市早苗の答弁の続き（'一方で、この3議員におきましては、バリアフリー化などと同様に...'）であり、末尾に木村の結語のみが含まれる複合テキスト。セグメント8末尾で高市の答弁が途切れており、セグメント境界をまたいで答弁が分断された結果、高市の答弁テキストが木村の発言として誤帰属されている。",
+      "evidence": "seg9 utterance[0]: speaker='木村英子', text='一方で、この3議員におきましては、バリアフリー化などと同様に、議員活動に必要な介助を提供するという考えにより...'（明らかに高市答弁）",
+      "correction": "テキスト前半（高市答弁部分）をspeaker=高市早苗として分離し、後半（'木村英子君。やはり...'）のみを木村英子のfollow-upとして記録すべき"
+    },
+    {
+      "id": "F11",
+      "severity": "medium",
+      "category": "whisper_misrecognition",
+      "location": "utterances.json / segments[8].utterances[2].text (木村英子)",
+      "description": "木村英子の質問テキスト中に文法的に非整合な文が含まれる。'重度訪問介護制度は、選挙への利用が禁止されている「告示の壁」があり、立候補できませんでした。そこで、2025年3月に石破前総理に...石破前総理は、選挙期間中の重度訪問介護を、先日私の友人が亡くなりました。' という文は複数の文が不完全につながっており、Whisperが文脈をつなぎ誤った可能性が高い。",
+      "evidence": "'石破前総理は、選挙期間中の重度訪問介護を、先日私の友人が亡くなりました。' — 文が途中で切れて異なる話題が接合されている",
+      "correction": "音源確認が必要。おそらく別々の文として正しく分割されるべき内容が連結された誤認識"
+    },
+    {
+      "id": "F12",
+      "severity": "low",
+      "category": "schema_inconsistency",
+      "location": "metadata.json / speakers（答弁者・大臣のaffiliation）",
+      "description": "高市早苗（内閣総理大臣）、上野賢一郎（厚生労働大臣）、赤澤亮正（経済産業大臣）、松本洋平（文部科学大臣）のaffiliationがいずれも「答弁者」となっており、ministerial titleや所属政党が記録されていない。role=「答弁者」と同一内容の重複。",
+      "evidence": "高市早苗: affiliation='答弁者', role='答弁者' / 上野賢一郎: affiliation='答弁者' / 赤澤亮正: affiliation='答弁者'",
+      "correction": "affiliationには閣僚肩書（例：'内閣総理大臣'、'厚生労働大臣'）または所属政党を設定すべき"
+    },
+    {
+      "id": "F13",
+      "severity": "low",
+      "category": "metadata_missing_speaker",
+      "location": "metadata.json / speakers / 子ども政策担当大臣",
+      "description": "「子ども政策担当大臣」というエントリが肩書のみで実名が記録されていない。speaker_taggerが実名を特定できなかったためと推定されるが、QAペアやトピックでも同じ肩書のみが使われている。",
+      "evidence": "metadata.speakers: name='子ども政策担当大臣', affiliation='大臣'",
+      "correction": "2026年4月時点の子ども政策担当大臣の実名を調査して設定すべき"
+    },
+    {
+      "id": "F14",
+      "severity": "low",
+      "category": "schema_empty_field",
+      "location": "metadata.json / speakers（質疑者全員）.start_time",
+      "description": "質疑者10名全員のstart_timeが空文字列。答弁者側（高市早苗等）は '00:30' 形式のstart_timeが入っているが、質疑者側は未入力。形式上の不統一であり、答弁者と質疑者で記録基準が異なっている。",
+      "evidence": "三原じゅん子: start_time='' / 森本真治: start_time='' （全質疑者）",
+      "correction": "質疑者のstart_timeも '00:36' 等の形式で統一して記録するか、全員を空にして統一すべき"
+    },
+    {
+      "id": "F15",
+      "severity": "low",
+      "category": "schema_inconsistency",
+      "location": "metadata.json / session_number, committee_id",
+      "description": "session_numberとcommittee_idがともにnull。参議院予算委員会の会議回次・委員会識別子が未設定。",
+      "evidence": "session_number: null / committee_id: null",
+      "correction": "参議院会議録等から該当会議の回次を取得して設定すべき"
+    }
+  ],
+  "blindspots": [
+    "PR21適用確認: metadata.chamberはsangiinで正確、summary冒頭は「参議院予算委員会において」で開始しており整合性OK。",
+    "PR26.1適用確認: 質疑者10名のaffiliationはすべて政党名で正常に補完済み。start_secondsも全員非ゼロで正常。duration_minutesは全員0で未計算（F08として記録）。",
+    "affiliation空欄問題: 過去セッションで報告されていたaffiliation全欠落は本セッションでは発生していない（質疑者側は全員補完済み）。",
+    "content_missing: セッション全体（174分の集中審議）のqa_pairsが60件と多く、主要な質疑はほぼ網羅されているように見えるが、各議員の発言時間配分（自民23分、立民49分等）と照合した網羅率の検証は実施していない。",
+    "fact_error詳細確認: 徳島県のランサムウェア被害病院（2021年）については実際に徳島県つるぎ町立半田病院での事案があり、事実として正確。石破前総理への要望（2025年3月）も時系列として整合的（高市が現総理なら石破は前任）。"
+  ]
+}
