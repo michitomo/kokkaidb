@@ -13,7 +13,6 @@ import random
 import resource
 import time
 from collections.abc import Callable
-from typing import TypeVar
 
 import openai
 
@@ -50,8 +49,6 @@ def ensure_fd_limit(minimum: int = 2048) -> None:
 
 logger = logging.getLogger(__name__)
 
-_T = TypeVar("_T")
-
 # 429 / 5xx に対するリトライ設定
 _MAX_RETRIES = 6
 _BASE_DELAY = 2.0   # 秒（指数バックオフのベース）
@@ -59,7 +56,7 @@ _MAX_DELAY = 120.0  # 秒（上限）
 _JITTER = 0.25      # ±25% のランダムジッター
 
 
-def with_retry(fn: Callable[[], _T]) -> _T:
+def with_retry[T](fn: Callable[[], T]) -> T:
     """429 (rate limit) と 5xx (server error) に対してリトライする。
 
     指数バックオフ + ジッター戦略:

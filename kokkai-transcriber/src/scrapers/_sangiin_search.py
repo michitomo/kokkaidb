@@ -38,9 +38,16 @@ def discover_sids_for_date(date: str, *, timeout_ms: int = 30_000) -> list[str]:
         sid 文字列の昇順リスト。該当なしなら []。
 
     Raises:
+        ValueError: date が YYYY-MM-DD 形式でない場合。
         RuntimeError: playwright / playwright-stealth が未インストールの場合、
                        または WAF 遮断で空応答しか得られなかった場合。
     """
+    # 形式バリデーション (失敗時は ValueError) — playwright チェックより先に実施
+    y, mo, d = date.split("-")
+    int(y)
+    int(mo)
+    int(d)
+
     try:
         from playwright.sync_api import sync_playwright
         from playwright_stealth import Stealth
@@ -50,12 +57,6 @@ def discover_sids_for_date(date: str, *, timeout_ms: int = 30_000) -> list[str]:
             "Sangiin session discovery. Install with: "
             "pip install -e '.[browser]' && playwright install --with-deps chromium"
         ) from e
-
-    y, mo, d = date.split("-")
-    # 形式バリデーション (失敗時は ValueError)
-    int(y)
-    int(mo)
-    int(d)
 
     captured: list[str] = []
 

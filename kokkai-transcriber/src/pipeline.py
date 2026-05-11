@@ -223,7 +223,9 @@ def run_pipeline(
     # Step 4.5: LLM 文字起こし修正（句読点補完・固有名詞修正）
     logger.info("=== Step 4.5: Correcting transcript with LLM ===")
     try:
-        raw_transcript = correct_transcript(raw_transcript, session_detail, max_workers=MAX_WORKERS_LLM)
+        raw_transcript = correct_transcript(
+            raw_transcript, session_detail, max_workers=MAX_WORKERS_LLM
+        )
     except Exception as e:
         logger.warning("Transcript correction failed (non-fatal, using original): %s", e)
 
@@ -249,7 +251,9 @@ def run_pipeline(
     # Step 5: LLM 話者タグ付け
     logger.info("=== Step 5: Tagging speakers with LLM ===")
     try:
-        utterances_output = tag_all_segments(raw_transcript, session_detail, max_workers=MAX_WORKERS_LLM)
+        utterances_output = tag_all_segments(
+            raw_transcript, session_detail, max_workers=MAX_WORKERS_LLM
+        )
     except Exception as e:
         raise RuntimeError(f"Step 5 (speaker tagging) failed: {e}") from e
 

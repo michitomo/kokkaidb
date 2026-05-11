@@ -160,14 +160,20 @@ def transcribe_segment(
             WhisperSegment(
                 id=seg.get("id", 0) if isinstance(seg, dict) else getattr(seg, "id", 0),
                 seek=seg.get("seek", 0) if isinstance(seg, dict) else getattr(seg, "seek", 0),
-                start=seg.get("start", 0.0) if isinstance(seg, dict) else getattr(seg, "start", 0.0),
+                start=(seg.get("start", 0.0) if isinstance(seg, dict)
+                       else getattr(seg, "start", 0.0)),
                 end=seg.get("end", 0.0) if isinstance(seg, dict) else getattr(seg, "end", 0.0),
                 text=seg.get("text", "") if isinstance(seg, dict) else getattr(seg, "text", ""),
-                tokens=seg.get("tokens", []) if isinstance(seg, dict) else list(getattr(seg, "tokens", [])),
-                temperature=seg.get("temperature", 0.0) if isinstance(seg, dict) else getattr(seg, "temperature", 0.0),
-                avg_logprob=seg.get("avg_logprob", 0.0) if isinstance(seg, dict) else getattr(seg, "avg_logprob", 0.0),
-                compression_ratio=seg.get("compression_ratio", 0.0) if isinstance(seg, dict) else getattr(seg, "compression_ratio", 0.0),
-                no_speech_prob=seg.get("no_speech_prob", 0.0) if isinstance(seg, dict) else getattr(seg, "no_speech_prob", 0.0),
+                tokens=(seg.get("tokens", []) if isinstance(seg, dict)
+                        else list(getattr(seg, "tokens", []))),
+                temperature=(seg.get("temperature", 0.0) if isinstance(seg, dict)
+                             else getattr(seg, "temperature", 0.0)),
+                avg_logprob=(seg.get("avg_logprob", 0.0) if isinstance(seg, dict)
+                             else getattr(seg, "avg_logprob", 0.0)),
+                compression_ratio=(seg.get("compression_ratio", 0.0) if isinstance(seg, dict)
+                                   else getattr(seg, "compression_ratio", 0.0)),
+                no_speech_prob=(seg.get("no_speech_prob", 0.0) if isinstance(seg, dict)
+                                else getattr(seg, "no_speech_prob", 0.0)),
             )
         )
 
