@@ -52,9 +52,13 @@ class StateManager:
             );
         """)
         # retry_count カラムの後付けマイグレーション
-        cols = {row[1] for row in self.conn.execute("PRAGMA table_info(processed_sessions)").fetchall()}
+        cols = {row[1] for row in self.conn.execute(
+            "PRAGMA table_info(processed_sessions)"
+        ).fetchall()}
         if "retry_count" not in cols:
-            self.conn.execute("ALTER TABLE processed_sessions ADD COLUMN retry_count INTEGER DEFAULT 0")
+            self.conn.execute(
+                "ALTER TABLE processed_sessions ADD COLUMN retry_count INTEGER DEFAULT 0"
+            )
         self.conn.commit()
 
     def is_processed(self, chamber: str, session_id: str) -> bool:

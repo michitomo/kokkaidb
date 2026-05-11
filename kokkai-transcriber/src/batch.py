@@ -228,7 +228,9 @@ def run_batch(
                 logger.info("OK    [%d/%d] %s %s: %s", done, len(all_sessions), chamber, sid, msg)
             elif msg.startswith("not ready"):
                 not_ready += 1
-                logger.warning("SKIP  [%d/%d] %s %s: %s", done, len(all_sessions), chamber, sid, msg)
+                logger.warning(
+                    "SKIP  [%d/%d] %s %s: %s", done, len(all_sessions), chamber, sid, msg
+                )
             else:
                 failed += 1
                 logger.error("ERR   [%d/%d] %s %s: %s", done, len(all_sessions), chamber, sid, msg)

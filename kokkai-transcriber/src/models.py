@@ -26,7 +26,9 @@ from pydantic import BaseModel, Field
 # docs/uiux-review/05-qa-quality-metrics.md 参照
 # ---------------------------------------------------------------------------
 
-CitedSourceType = Literal["number", "organization", "law", "date", "past_answer", "field_case", "other"]
+CitedSourceType = Literal[
+    "number", "organization", "law", "date", "past_answer", "field_case", "other"
+]
 ConcreteItemType = Literal["number", "proper_noun", "deadline", "evidence_citation"]
 StakeholderConcreteness = Literal["abstract", "mid", "concrete"]
 DirectnessLabel = Literal["directly", "partially", "tangentially", "not_at_all"]

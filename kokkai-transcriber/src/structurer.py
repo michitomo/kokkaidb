@@ -130,7 +130,9 @@ def _format_segments_for_prompt(segments: list[SegmentUtterances]) -> str:
     """全セグメントをLLMプロンプト用にテキスト化する。"""
     lines: list[str] = []
     for seg in segments:
-        lines.append(f"\n--- セグメント {seg.segment_index}: {seg.segment_speaker}（{seg.segment_affiliation}）---")
+        lines.append(
+            f"\n--- セグメント {seg.segment_index}: {seg.segment_speaker}（{seg.segment_affiliation}）---"  # noqa: E501
+        )
         for u in seg.utterances:
             lines.append(f"[{u.role}] {u.speaker}: {u.text}")
     return "\n".join(lines)
@@ -339,9 +341,9 @@ _JP_NAME_CHARS = r"[一-鿿ぁ-ゟァ-ヿ]"
 # PR47: カタカナ名前に対応（ラサール石井等）
 _TRAILING_SPEAKER_LABEL_RE = re.compile(
     r"(?:"
-    rf"\n+(?:[○◯])?{_JP_NAME_CHARS}{{2,10}}(?:（[^）]{{2,40}}）)?(?:委員長|議長|君|さん)?[。、]?"  # A
-    rf"|(?:[○◯])?{_JP_NAME_CHARS}{{2,10}}（[^）]{{2,40}}）(?:委員長|議長|君|さん)?[。、]?"          # B
-    rf"|(?:[○◯])?{_JP_NAME_CHARS}{{2,8}}(?:委員長|議長|君|さん)[。、]?"                             # C
+    rf"\n+(?:[○◯])?{_JP_NAME_CHARS}{{2,10}}(?:（[^）]{{2,40}}）)?(?:委員長|議長|君|さん)?[。、]?"  # noqa: E501  # A
+    rf"|(?:[○◯])?{_JP_NAME_CHARS}{{2,10}}（[^）]{{2,40}}）(?:委員長|議長|君|さん)?[。、]?"          # noqa: E501  # B
+    rf"|(?:[○◯])?{_JP_NAME_CHARS}{{2,8}}(?:委員長|議長|君|さん)[。、]?"  # noqa: E501              # C
     r")\s*$"
 )
 
@@ -355,7 +357,7 @@ _LEADING_SPEAKER_LABEL_RE = re.compile(
     rf"(?:"
     # 漢字・カタカナのみ (ひらがな不可) で 1〜20字 — 「林大臣。」等の1字姓にも対応。
     # ひらがなを除外することで「今朝の大臣。」等の誤 strip を防ぐ。
-    rf"^[一-鿿ァ-ヿ]{{1,20}}?(?:{'|'.join(re.escape(k) for k in _LEADING_ANSWER_LABEL_KEYWORDS)})[。、：]\s*"
+    rf"^[一-鿿ァ-ヿ]{{1,20}}?(?:{'|'.join(re.escape(k) for k in _LEADING_ANSWER_LABEL_KEYWORDS)})[。、：]\s*"  # noqa: E501
     rf"|^{_JP_NAME_CHARS}{{2,8}}君[。、]\s*"  # PR47: 「赤澤亮正君。」等（ひらがな名前も対象）
     rf")"
 )
@@ -365,9 +367,9 @@ _LEADING_SPEAKER_LABEL_RE = re.compile(
 # カタカナ名 (ラサール石井) にも対応。
 _LEADING_QUESTIONER_LABEL_RE = re.compile(
     rf"(?:"
-    rf"^{_JP_NAME_CHARS}{{2,10}}（[^）]{{2,40}}）(?:君|さん)?[。、：]\s*"  # name + (party)
+    rf"^{_JP_NAME_CHARS}{{2,10}}（[^）]{{2,40}}）(?:君|さん)?[。、：]\s*"  # noqa: E501  # name + (party)
     rf"|^{_JP_NAME_CHARS}{{2,8}}(?:君|さん)[。、：]\s*"                    # name + honorific
-    rf"|^{_JP_NAME_CHARS}{{2,8}}：\s*"                                     # bare name + fullwidth colon
+    rf"|^{_JP_NAME_CHARS}{{2,8}}：\s*"  # noqa: E501                        # bare name + fullwidth colon
     r")"
 )
 
@@ -568,7 +570,8 @@ def _split_segment_into_blocks(seg: SegmentUtterances) -> list[SegmentUtterances
     """
     # まず各 utterance の質疑者を特定するために、セグメント内の質疑者の変遷を追跡
     # 委員長指名の位置を検出
-    candidate_splits: list[tuple[int, str]] = []  # (utterance_index_after_nomination, nominated_name)
+    # (utterance_index_after_nomination, nominated_name)
+    candidate_splits: list[tuple[int, str]] = []
     for i, u in enumerate(seg.utterances):
         if u.role != "委員長":
             continue
@@ -1006,10 +1009,13 @@ def generate_qa_pairs(
         return QAPairsOutput(pairs=[])
 
     # ブロック単位で並列にLLM呼び出し
-    block_results: list[tuple[int, int, list[QAPair]]] = []  # (seg_index, block_order, pairs)
+    # (seg_index, block_order, pairs)
+    block_results: list[tuple[int, int, list[QAPair]]] = []
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
         futures = {
-            executor.submit(_generate_qa_for_segment, block, session_context, speakers_lookup): (i, block)
+            executor.submit(
+                _generate_qa_for_segment, block, session_context, speakers_lookup
+            ): (i, block)
             for i, block in enumerate(qa_blocks)
         }
         for future in as_completed(futures):
@@ -1090,7 +1096,8 @@ def _assign_follow_up_ids(pairs: list[QAPair]) -> None:
 
     判定基準 (docs/STRUCTURER_REWRITE.md §6 Q):
     - 同一 segment_index 内で時系列順 (= pairs リストの出現順) に走査
-    - question.speaker が同一 (空文字でない) なら、直前同一 speaker ペアの id を follow_up_ids 先頭に追加
+    - question.speaker が同一 (空文字でない) なら、直前同一 speaker ペアの id を
+      follow_up_ids 先頭に追加
     - 別 segment や別 speaker は別質疑ブロック扱いで連鎖しない
     """
     last_id_by_key: dict[tuple[int, str], str] = {}
@@ -1191,8 +1198,7 @@ def _call_structurer(
     return data
 
 
-# PR12: session_summary 内で「<人名>大臣」「<人名>議員」等の honorific-attached 人名を抽出する正規表現
-# qa_pairs に登場しない人名を要約が含むケース (summary_qa_divergence) を検出するために使う
+# PR12: honorific-attached 人名を抽出する正規表現 (summary_qa_divergence 検出用)
 _SUMMARY_PERSON_REF_RE = re.compile(
     r"([一-龥々ヶ]{1,8})"
     r"(?:大臣|副大臣|総理|長官|次官|議員|委員長|議長|参考人|政務官|氏|君|さん)"
@@ -1301,7 +1307,9 @@ def generate_session_summary(
         if parts:
             meta_prefix = "## セッション情報\n" + "\n".join(parts) + "\n\n"
 
-    user_prompt = "以下の国会セッションの内容から、概要を作成してください。\n\n" + meta_prefix + body
+    user_prompt = (
+        "以下の国会セッションの内容から、概要を作成してください。\n\n" + meta_prefix + body
+    )
     data = _call_structurer(SESSION_SUMMARY_SYSTEM_PROMPT, user_prompt, max_tokens=4096)
     summary = data.get("session_summary", "")
     if not isinstance(summary, str):
@@ -1352,7 +1360,8 @@ def generate_session_summary(
     unknown_refs = _validate_summary_person_refs(summary, qa_pairs)
     if unknown_refs:
         logger.warning(
-            "generate_session_summary: detected unknown person refs not in qa_pairs: %s — retrying once",
+            "generate_session_summary: detected unknown person refs not in qa_pairs: %s"
+            " — retrying once",
             unknown_refs,
         )
         retry_prompt = (
@@ -1560,14 +1569,16 @@ def generate_key_commitments(qa_pairs: QAPairsOutput) -> list[KeyCommitment]:
         )
     if dropped_speaker:
         logger.warning(
-            "generate_key_commitments: dropped %d commitments with speaker mismatched against qa_pair.answer.speaker",
+            "generate_key_commitments: dropped %d commitments with speaker"
+            " mismatched against qa_pair.answer.speaker",
             dropped_speaker,
         )
 
     # PR12: raw が 0 でないのに全て drop されたら 1 回リトライ
     if raw_count > 0 and not commitments:
         logger.info(
-            "generate_key_commitments: all %d commitments dropped — retrying once with stronger guidance",
+            "generate_key_commitments: all %d commitments dropped"
+            " — retrying once with stronger guidance",
             raw_count,
         )
         retry_prompt = (
@@ -1586,7 +1597,8 @@ def generate_key_commitments(qa_pairs: QAPairsOutput) -> list[KeyCommitment]:
             )
             if dropped_qa_id_r or dropped_speaker_r:
                 logger.warning(
-                    "generate_key_commitments retry: still dropped %d unknown_qa_id + %d speaker_mismatch",
+                    "generate_key_commitments retry: still dropped"
+                    " %d unknown_qa_id + %d speaker_mismatch",
                     dropped_qa_id_r,
                     dropped_speaker_r,
                 )
