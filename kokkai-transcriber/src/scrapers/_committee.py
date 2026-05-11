@@ -46,6 +46,10 @@ def find_committee_in_title(soup: BeautifulSoup) -> str:
     if not title_tag:
         return ""
     text = title_tag.get_text(strip=True)
+    # title タグは長くなるが「本会議」「○○委員会」等は文字数に関わらず抽出する。
+    # _scan_text の 30 字制限は誤検知防止のため本文段落向けに設けており title には不適切。
+    if "本会議" in text:
+        return "本会議"
     return _scan_text(text)
 
 
