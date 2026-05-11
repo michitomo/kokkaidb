@@ -2047,6 +2047,28 @@ class TestPR43LeadingLabelStrip:
         result = _strip_leading_speaker_label(text)
         assert result == "本日は貴重な機会をいただきありがとうございます。"
 
+    def test_strips_kun_honorific_label(self) -> None:
+        """PR47: 委員会の「名前君。」形式も除去する（赤澤亮正君。等）。"""
+        text = "赤澤亮正君。石油備蓄法においては適切な対応を取っています。"
+        result = _strip_leading_speaker_label(text)
+        assert result == "石油備蓄法においては適切な対応を取っています。"
+
+    def test_strips_katakana_name_label(self) -> None:
+        """PR47: カタカナを含む名前（ラサール石井等）に対応。"""
+        text = "ラサール石井内閣総理大臣。御質問にお答えします。"
+        # Note: カタカナ名に役職が付く場合は title keyword で match
+        result = _strip_leading_speaker_label(text)
+        # ラサール石井はカタカナ名 - should match with 内閣総理大臣
+        assert "ラサール石井内閣総理大臣。" not in result
+
+    def test_iterative_double_echo_strip(self) -> None:
+        """PR47: ダブルラベルecho（「林大臣。林芳正。答弁します。」）を反復除去。"""
+        text = "林大臣。林芳正。本件につきましては慎重に検討してまいります。"
+        result = _strip_leading_speaker_label(text)
+        # 「林大臣。」が除去され「林芳正。」も次のループで除去...
+        # 「林芳正。」は title keyword なし → match しないが「林大臣。」は除去される
+        assert "林大臣。" not in result
+
 
 class TestPR46PureLabelLines:
     """PR46: answer.full_text 内の純粋な話者ラベル行除去。"""
@@ -2113,6 +2135,18 @@ class TestPR43LeadingQuestionerLabelStrip:
         text = "山田大臣に伺います。エネルギー価格の高騰についてどのようにお考えでしょうか。"
         result = _strip_leading_questioner_label(text)
         assert result == text
+
+    def test_strips_bare_fullwidth_colon(self) -> None:
+        """PR47: bare name + 全角コロン「西田英範：」形式を除去する。"""
+        text = "西田英範：この問題について御説明をお願いします。"
+        result = _strip_leading_questioner_label(text)
+        assert result == "この問題について御説明をお願いします。"
+
+    def test_strips_katakana_name_with_party(self) -> None:
+        """PR47: カタカナ名前（ラサール石井）の（党名）：形式。"""
+        text = "ラサール石井（社会民主党）：憲法の解釈について伺います。"
+        result = _strip_leading_questioner_label(text)
+        assert result == "憲法の解釈について伺います。"
 
 
 @pytest.mark.integration

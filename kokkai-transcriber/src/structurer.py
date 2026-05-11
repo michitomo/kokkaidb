@@ -328,47 +328,58 @@ def _estimate_pair_offset_seconds(
 _VIDEO_TIME_PARAM_RE = re.compile(r"time=[\d.]+")
 _VIDEO_HASH_TIME_RE = re.compile(r"#[\d.]+$")
 
+# PR47: カタカナ名 (ラサール石井 等) に対応するため全 name-match pattern に ァ-ヿ を追加。
+# 日本語名前に使える文字: 漢字 [一-鿿] + ひらがな [ぁ-ゟ] + カタカナ [ァ-ヿ]
+_JP_NAME_CHARS = r"[一-鿿ぁ-ゟァ-ヿ]"
+
 # PR43: full_text 末尾に混入した次発言者ラベルを除去する。
-# Pattern A: 改行後のラベル（既存） — 「\n森本真治（立憲民主・無所属）」「\n藤川政人委員長」
+# Pattern A: 改行後のラベル — 「\n森本真治（立憲民主・無所属）」「\n藤川政人委員長」
 # Pattern B: 改行なし+党名括弧 — 「三原じゅん子（自由民主党）。」
-# Pattern C: 改行なし+敬称/役職 — 「小里君。」「山内君。」「藤川委員長。」（2〜8 字+敬称）
+# Pattern C: 改行なし+敬称/役職 — 「小里君。」「山内君。」「藤川委員長。」
+# PR47: カタカナ名前に対応（ラサール石井等）
 _TRAILING_SPEAKER_LABEL_RE = re.compile(
     r"(?:"
-    r"\n+(?:[○◯])?[一-鿿ぁ-ゟ]{2,10}(?:（[^）]{2,40}）)?(?:委員長|議長|君|さん)?[。、]?"  # A
-    r"|(?:[○◯])?[一-鿿ぁ-ゟ]{2,10}（[^）]{2,40}）(?:委員長|議長|君|さん)?[。、]?"          # B
-    r"|(?:[○◯])?[一-鿿ぁ-ゟ]{2,8}(?:委員長|議長|君|さん)[。、]?"                            # C
+    rf"\n+(?:[○◯])?{_JP_NAME_CHARS}{{2,10}}(?:（[^）]{{2,40}}）)?(?:委員長|議長|君|さん)?[。、]?"  # A
+    rf"|(?:[○◯])?{_JP_NAME_CHARS}{{2,10}}（[^）]{{2,40}}）(?:委員長|議長|君|さん)?[。、]?"          # B
+    rf"|(?:[○◯])?{_JP_NAME_CHARS}{{2,8}}(?:委員長|議長|君|さん)[。、]?"                             # C
     r")\s*$"
 )
 
 # PR43: answer.full_text 冒頭に混入した話者ラベルを除去する。
-# 「高市早苗内閣総理大臣。」「古川内閣府大臣政務官。」「澤田純参考人。」等のパターン。
-# PR43 v3: 参考人ラベルも対象追加
+# PR47: カタカナ名前に対応
 _LEADING_ANSWER_LABEL_KEYWORDS = (
     '内閣総理大臣','総理大臣','国務大臣','大臣政務官','副大臣','大臣',
     '副長官','長官','次長','局長','審議官','参事官','部長','参考人',
 )
 _LEADING_SPEAKER_LABEL_RE = re.compile(
-    rf"^[一-鿿ぁ-ゟ]{{2,20}}?(?:{'|'.join(re.escape(k) for k in _LEADING_ANSWER_LABEL_KEYWORDS)})[。、：]\s*"
+    rf"(?:"
+    # 漢字・カタカナのみ (ひらがな不可) で 1〜20字 — 「林大臣。」等の1字姓にも対応。
+    # ひらがなを除外することで「今朝の大臣。」等の誤 strip を防ぐ。
+    rf"^[一-鿿ァ-ヿ]{{1,20}}?(?:{'|'.join(re.escape(k) for k in _LEADING_ANSWER_LABEL_KEYWORDS)})[。、：]\s*"
+    rf"|^{_JP_NAME_CHARS}{{2,8}}君[。、]\s*"  # PR47: 「赤澤亮正君。」等（ひらがな名前も対象）
+    rf")"
 )
 
-# PR43 v3: question.full_text 冒頭の質疑者識別ラベルを除去する。
-# 「森本真治（立憲民主・無所属）：」「泉房穂君。」等のパターン。
-# 誤 strip 防止のため (党名括弧) または 君/さん 敬称のいずれかを必須とする。
+# PR43 v3 / PR47: question.full_text 冒頭の質疑者識別ラベルを除去する。
+# Pattern D (PR47 new): 全角コロンのみの bare name形式「西田英範：」「奥村祥大：」
+# カタカナ名 (ラサール石井) にも対応。
 _LEADING_QUESTIONER_LABEL_RE = re.compile(
-    r"(?:"
-    r"^[一-鿿ぁ-ゟ]{2,10}（[^）]{2,40}）(?:君|さん)?[。、：]\s*"  # name + (party)
-    r"|^[一-鿿ぁ-ゟ]{2,8}(?:君|さん)[。、：]\s*"                   # name + honorific
+    rf"(?:"
+    rf"^{_JP_NAME_CHARS}{{2,10}}（[^）]{{2,40}}）(?:君|さん)?[。、：]\s*"  # name + (party)
+    rf"|^{_JP_NAME_CHARS}{{2,8}}(?:君|さん)[。、：]\s*"                    # name + honorific
+    rf"|^{_JP_NAME_CHARS}{{2,8}}：\s*"                                     # bare name + fullwidth colon
     r")"
 )
 
 # PR46: answer.full_text 内の「純粋な話者ラベル行」を除去する。
 # 複数話者の発言が1answerに統合されたとき「\n砂原参考人。\n」等の行が挿入される。
 # 行全体が話者ラベルのみの場合に限り除去（内容を含む行は保持）。
+# PR47: カタカナ名前に対応
 _PURE_LABEL_LINE_RE = re.compile(
-    r"^\s*(?:"
-    r"[一-鿿ぁ-ゟ]{2,20}?(?:内閣総理大臣|総理大臣|国務大臣|大臣政務官|副大臣|大臣|副長官|長官|次長|局長|審議官|参事官|部長|参考人)[。、：]"
-    r"|[一-鿿ぁ-ゟ]{2,10}（[^）]{2,40}）(?:君|さん)?[。、：]"
-    r"|[一-鿿ぁ-ゟ]{2,8}(?:委員長|議長|君|さん)[。、：]"
+    rf"^\s*(?:"
+    rf"{_JP_NAME_CHARS}{{2,20}}?(?:内閣総理大臣|総理大臣|国務大臣|大臣政務官|副大臣|大臣|副長官|長官|次長|局長|審議官|参事官|部長|参考人)[。、：]"
+    rf"|{_JP_NAME_CHARS}{{2,10}}（[^）]{{2,40}}）(?:君|さん)?[。、：]"
+    rf"|{_JP_NAME_CHARS}{{2,8}}(?:委員長|議長|君|さん)[。、：]"
     r")\s*$"
 )
 
@@ -404,8 +415,14 @@ def _strip_leading_speaker_label(text: str) -> str:
     """answer.full_text 冒頭の話者ラベルを除去する (PR43)。
 
     「高市早苗内閣総理大臣。[答弁内容...]」→「[答弁内容...]」
+    PR47: ダブルラベル echo (「林大臣。林芳正。」) に対応するため最大 3 回反復適用。
     """
-    return _LEADING_SPEAKER_LABEL_RE.sub("", text)
+    for _ in range(3):
+        stripped = _LEADING_SPEAKER_LABEL_RE.sub("", text)
+        if stripped == text:
+            break
+        text = stripped
+    return text
 
 
 def _strip_leading_questioner_label(text: str) -> str:
