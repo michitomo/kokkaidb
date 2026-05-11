@@ -16,7 +16,7 @@ kokkai-db/                          # このリポジトリ
 ├── ARCH.md                         # 要件定義・アーキテクチャ設計書（読取専用）
 ├── .github/workflows/
 │   └── build-deploy.yml            # data/ push → Astro build → GitHub Pages
-├── data/                           # 処理済みJSON（Dockerがgit pushする）
+├── data/                           # 処理済みJSON（GitHub Actionsがgit pushする）
 │   ├── shugiin/YYYY/MM/DD/{deli_id}_{委員会名}/
 │   │   ├── metadata.json
 │   │   ├── raw_transcript.json
@@ -89,7 +89,7 @@ kokkai-db/                          # このリポジトリ
 
 ### データ収集パイプライン（kokkai-transcriber/）
 
-実行環境は venv（Dockerは廃止済み）。本番は GitHub Actions 上で動く（`.github/workflows/batch.yml`、`schedule` cron で毎時起動、`concurrency: kokkai-batch` で多重実行を構造的に排除）。
+実行環境は venv。本番は GitHub Actions 上で動く（`.github/workflows/batch.yml`、`schedule` cron で毎時起動）。
 
 ```bash
 cd kokkai-transcriber
@@ -204,21 +204,6 @@ npm run check
 環境変数は `kokkai-transcriber/.env`（gitignore済み）に配置。`DEEPINFRA_API_KEY` (Whisper) と `OPENROUTER_API_KEY` (LLM) の両方が必須。
 
 ---
-
-## 実装フェーズ
-
-現在のステータスは `ARCH.md` セクション9を正として扱う。
-
-| フェーズ | 内容 | ステータス |
-|---------|------|-----------|
-| Phase 1 | 衆議院パイプラインPoC（deli_id=56149） | ✅ 完了 |
-| Phase 2 | venv + GHA自動バッチ + Astroサイト基盤 + ShugiinScraper | ✅ 完了 |
-| Phase 3 | 参議院対応（mediasp.jp解決含む） | ✅ 完了 |
-| Phase 4 | フィルタ + TSVエクスポート | ✅ 完了 |
-| Phase 5 | ダッシュボード（ヒートマップ・約束トラッカー等） | ✅ 完了 |
-| Phase 6 | BYOK + OpenRouter連携 + 高度機能 | 🔄 着手中 |
-
-各フェーズの詳細チェックリストは `ARCH.md` §9 を参照。
 
 ---
 
