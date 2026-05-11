@@ -189,6 +189,7 @@ jobs:
       - name: Run pipeline
         env:
           DEEPINFRA_API_KEY: ${{ secrets.DEEPINFRA_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         working-directory: kokkai-transcriber
         run: ./.venv/bin/python -m src.pipeline \
             --chamber ${{ matrix.session.chamber }} \
