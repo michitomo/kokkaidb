@@ -30,7 +30,7 @@ OUTPUT_PATH = DATA_DIR / "search-index" / "search-index.json"
 
 MAX_INPUT_BYTES = 48000
 
-KEEP_POS = frozenset({"名詞", "動詞", "形容詞", "副詞", "形状詞", "接頭辞"})
+KEEP_POS = frozenset({"名詞", "動詞", "形容詞", "副詞", "形状詞", "接頭辞", "接尾辞"})
 
 
 def collect_session_dirs(data_dir: Path) -> list[Path]:
@@ -54,22 +54,32 @@ def collect_session_dirs(data_dir: Path) -> list[Path]:
     return dirs
 
 
-def tokenize_safe(tok, text: str, mode) -> list[str]:
+def tokenize_safe(tok, text: str, mode_c, mode_a) -> list[str]:
     """長すぎる入力をトランケートして tokenize。
-    SudachiPy の品詞体系: 大分類=0 が品詞名（名詞・動詞・形容詞・副詞・形状詞）。
-    dictionary_form() で活用形を辞書形に正規化（「行った」→「行う」）。
+    Mode C (長単位) + Mode A (短単位) の両方で分割し、重複除去して結合。
+    これにより「プッシュ型」のような複合語が「プッシュ」「型」でも検索可能になる。
     """
     encoded = text.encode("utf-8")
     if len(encoded) > MAX_INPUT_BYTES:
         text = encoded[:MAX_INPUT_BYTES].decode("utf-8", errors="replace")
     try:
         tokens: list[str] = []
-        for m in tok.tokenize(text, mode):
+        seen: set[str] = set()
+        for m in tok.tokenize(text, mode_c):
             pos_major = m.part_of_speech()[0]
             if pos_major not in KEEP_POS:
                 continue
             form = m.dictionary_form().strip()
-            if form:
+            if form and form not in seen:
+                seen.add(form)
+                tokens.append(form)
+        for m in tok.tokenize(text, mode_a):
+            pos_major = m.part_of_speech()[0]
+            if pos_major not in KEEP_POS:
+                continue
+            form = m.dictionary_form().strip()
+            if form and form not in seen:
+                seen.add(form)
                 tokens.append(form)
         return tokens
     except Exception as exc:
@@ -77,7 +87,7 @@ def tokenize_safe(tok, text: str, mode) -> list[str]:
         return list(text)
 
 
-def build_docs_from_session(tok, mode, session_dir: Path, data_dir: Path) -> list[dict]:
+def build_docs_from_session(tok, mode_c, mode_a, session_dir: Path, data_dir: Path) -> list[dict]:
     rel = session_dir.relative_to(data_dir)
     parts = rel.parts
     chamber = parts[0]
@@ -106,7 +116,7 @@ def build_docs_from_session(tok, mode, session_dir: Path, data_dir: Path) -> lis
                     a_summary = (a.get("summary") or "").strip()
                     text_for_index = f"{topic} {q_summary} {a_summary}"
                     text_for_display = (q_summary + " / " + a_summary) if (q_summary and a_summary) else (q_summary or a_summary)
-                    tokens = " ".join(tokenize_safe(tok, text_for_index, mode))
+                    tokens = " ".join(tokenize_safe(tok, text_for_index, mode_c, mode_a))
                     docs.append({
                         "id": f"{chamber}_{session_id}_{pair_id}",
                         "type": "qa",
@@ -144,7 +154,7 @@ def build_docs_from_session(tok, mode, session_dir: Path, data_dir: Path) -> lis
             if not text:
                 continue
             global_id = f"{chamber}_{session_id}_{seg_idx}_{utt_idx}"
-            tokens = " ".join(tokenize_safe(tok, text, mode))
+            tokens = " ".join(tokenize_safe(tok, text, mode_c, mode_a))
             docs.append({
                 "id": global_id,
                 "type": "utt",
@@ -169,15 +179,16 @@ def main() -> None:
 
     logger.info("Loading SudachiPy dictionary (core)...")
     tok = dictionary.Dictionary(dict="core").create()
-    mode = tokenizer.Tokenizer.SplitMode.C
-    logger.info("SudachiPy ready")
+    mode_c = tokenizer.Tokenizer.SplitMode.C
+    mode_a = tokenizer.Tokenizer.SplitMode.A
+    logger.info("SudachiPy ready (Mode C + Mode A)")
 
     session_dirs = collect_session_dirs(DATA_DIR)
     logger.info("Found %d session dirs", len(session_dirs))
 
     docs: list[dict] = []
     for sd in session_dirs:
-        docs.extend(build_docs_from_session(tok, mode, sd, DATA_DIR))
+        docs.extend(build_docs_from_session(tok, mode_c, mode_a, sd, DATA_DIR))
 
     qa_count = sum(1 for d in docs if d["type"] == "qa")
     utt_count = len(docs) - qa_count
