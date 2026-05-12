@@ -1,0 +1,668 @@
+{
+  "pairs": [
+    {
+      "id": "qa_001",
+      "segment_index": 4,
+      "topic": "メディアリテラシー向上に向けた国の役割",
+      "question": {
+        "speaker": "落合高幸",
+        "party": "衆議院選挙制度に関する協議会座長",
+        "summary": "- SNS対策の鍵となるメディアリテラシー向上について、自治体だけでなく国の責務として取り組む必要があると考えている\n- 国に何を望むか",
+        "full_text": "まず1つ、テーマ2のメディアリテラシーの向上というのは、私はSNS対策を考える上でも最終的な鍵になると思います。私も去年フィンランド等に、どうやってやっているのかということを見に行ったんですけれども、これは自治体のみならず国の責務において取り組む必要があると。国に何を望むかということを一問うかがえればと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "平井伸治",
+        "role": "全国知事会副会長 鳥取県知事（元衆議院選挙制度に関する調査会委員）",
+        "summary": "- AIの問題などの法的規制を含め、ルール作りや学校で教えるべき内容の標準を国に示してほしい\n- 外国勢力による情報操作への備えとして、若い世代への教育導入が必要である",
+        "full_text": "国全体で、例えば最近のAIの問題など法的規制がどうかということも海外でも議論されていますが、そうしたことも含めてルールを作ったり、それからどういうようなことを学校で教えるべきかなどもですね、一定程度やはり標準を示していただくことが大切ではないかなというふうに思っております。そういう意味で国にはですね、この問題、なかなかの表現の自由の問題などもあって踏み込みにくいことも重々わかりますけれども、ただ外国の勢力にひょっとすると国を奪われてしまうんではないかっていうほど情報操作もなされることも観測されてますので、我々としてですね、備えるべきは備える。そういう意味で若い世代、子どもたちへの教育にも導入すべきではないかというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56224&time=2302.5330000000004",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "メディアリテラシー向上に向け国に何を望むか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "フィンランド等に、どうやってやっているのかということを見に行った"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "AIの問題"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "若い世代、子どもたちへの教育にも導入すべきではないかというふうに考えております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "国への要望を問う抽象的な質問に対し、回答者も個人の見解に近い方向性を示すに留まっており、具体的な政策コミットメントは得られていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「何を望むか」というオープンクエスチョンであるため、回答者が具体策を提示せず精神論や方向性のみで回答することを許容してしまっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_002",
+      "segment_index": 4,
+      "topic": "被選挙権年齢の引き下げ",
+      "question": {
+        "speaker": "落合高幸",
+        "party": "衆議院選挙制度に関する協議会座長",
+        "summary": "- 被選挙権年齢の引き下げについて、具体的に何歳以上であれば知事の仕事を遂行できると考えるか",
+        "full_text": "2問目が被選挙権年齢の引き下げです。去年まで出ていた法案も議員立法も私が筆頭提出者で作成をしてまいりました。これ各党割と総論では一致をしていまして、しっかり議論をすれば前に進むと考えています。一方で反対の意見も、例えば知事のような重要な仕事を若い人ができるのかというような意見もあるんですが、分かりやすく率直に言って何歳以上だったら知事の仕事をできると思うというような意見がありましたら、2問目に伺えればと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "平井伸治",
+        "role": "全国知事会副会長 鳥取県知事（元衆議院選挙制度に関する調査会委員）",
+        "summary": "- 具体的な年齢は立法裁量であり、議員の判断に委ねるべきである\n- 選挙権年齢が18歳に引き下げられたため、被選挙権も少なくとも2歳分引き下げるのは自然な流れである\n- 若者が政治に参加できるよう、被選挙権年齢を再考すべきである",
+        "full_text": "被選挙権年齢につきましては、知事会でもだいぶ議論をしましたが、あえてこの年齢がいいということは示さずにおこうと、有識者と関係の知事で話し合いをさせていただきました。この点につきましては憲法上も43条で、選挙に出る人、それから選挙で選ばれる人、また選挙をする人の資格については法律で定める立法裁量とされています。従いまして、これについては全面的にですね、議員の皆様のお考えに委ねるべきだというふうに考えております。ですから、公職の中である程度経験を必要とするかどうかということは見定める必要あろうかと思いますが、ただ、選挙権年齢を20歳から18歳に引き下げたのであれば、その18歳に行った少なくとも2歳分は引き下げていくのは自然な流れではないかと思われますし、諸外国を見ますと結構18歳で今揃え始めていると、隣の韓国も含めてですね。そういう意味でもっと政治を国民に近づける意味で、被選挙権年齢、特に若者対策として再考すべきではないかと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56224&time=2302.5330000000004",
+      "metrics": null
+    },
+    {
+      "id": "qa_003",
+      "segment_index": 4,
+      "topic": "アダムズ方式による現行選挙制度の評価と課題",
+      "question": {
+        "speaker": "長谷川",
+        "party": "衆議院選挙制度に関する協議会座長",
+        "summary": "- アダムズ方式による現行の小選挙区制度について、現状の評価と認識している課題は何か",
+        "full_text": "私からはですね、まず、現行の小選挙区比例代表並立制の課題について。これはもう平井知事は旧実証で選挙制度の実務に長らく携わり、また増減のもととなりましたアダムズ方式による現行の小選挙区の制度の提言に当たりました調査会の委員を務められていたということで、いわゆる有識者としてお伺いしたいと思いますが、自民党としましては、やはり議員内閣制のもとでの衆議院選挙というのは政権選択選挙、民意の集約が基本であると、小選挙区制が基本であるというふうに考えているところでございます。一方で、今ほど大変お話ありましたように、人口減少等によって一票の格差是正で、区割りの問題、あるいは地方の議席の減少等々、いろいろな課題が生じているわけでございます。その課題を踏まえ、この元衆議院選挙制度に関する調査会では、アダムズ方式により、かつ大規模な国勢調査ごとに定数の見直しをするということで、かつ格差の是正と選挙制度の安定性の両立を図った結論を出されたわけですけれども、現状、増減が行われ、その上で2回の選挙が行われましたけれども、当時のこのアダムズ方式による現行の制度について、現状でどのように評価をされ、課題として認識されているかということと、もう一方、先ほど水谷市長から話がございました比例代表制の課題でございます。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "平井伸治",
+        "role": "全国知事会副会長 鳥取県知事（元衆議院選挙制度に関する調査会委員）",
+        "summary": "- アダムズ方式は地方部にも配慮した比例配分方式であり、安定的な制度設計として機能している\n- 課題として、調査のたびに定数が変動し、その都度区割りをやり直さなければならない不安定さがあり、改善の余地がある",
+        "full_text": "そういう意味で比例的に配分をするということで、当時もともと1を奇数として各都道府県に割り振った上で、その上にさらに比例的に載せるという、その議席配分方式を見直す中で、アダムズ方式、いわばその端数を切り上げることでの、そういう配分方式でございますが、これが採用されることになったわけであります。世界的に見てもこういうやり方が一つのあり方であって、それに対してサンラグやあるいはドント方式のところもございますが、このアダムズ方式はどちらかというと地方部にも一定程度配慮した比例配分の方式でありまして、これによって安定的な制度設計を望んだのが当時の考え方でありました。ある意味うまくいっているように見えるわけでありますが、ただ当時多分想定していなかったかもしれないのは、調査のたびにやはり定数をやり直すわけでありますけれども、一旦下げてまたすぐ上げるとか、制度の安定性からして選挙区によっては本当にギリギリのところで定数が1が2になったり、例えば配分が5になったのが6になったり5になったり、この境目のところみたいなところに張り付いたところは結局上行ったり下行ったりします。そのたびに区割りをやり直さなきゃいけない。で、議員数も変わるということがありまして、一定程度、そこのところ安定性という点でどうかなというのは、個人的にその後の総括的な見方をすると、まだ改善の余地はひょっとするとあるかもしれないなと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56224&time=2302.5330000000004",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "アダムズ方式による現行選挙制度の評価と課題",
+          "sub_asks": [
+            "アダムズ方式による現行制度の現状評価と課題",
+            "比例代表制の課題"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "アダムズ方式による現行の小選挙区の制度"
+            },
+            {
+              "type": "organization",
+              "excerpt": "衆議院選挙制度に関する調査会"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "平井知事",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "サンラグ"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ドント方式"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "アダムズ方式"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "安定性という点でどうかなというのは、個人的にその後の総括的な見方をすると、まだ改善の余地はひょっとするとあるかもしれないなと思います。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "有識者としての個人的な見解を問う形式であり、具体的な政府のコミットメントや法的解釈の確定には至っていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問の末尾で「比例代表制の課題」に触れているが、回答者がそこへの言及をほぼ省略しているため、問い方が分散している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_004",
+      "segment_index": 4,
+      "topic": "比例代表制における復活当選の現状と課題",
+      "question": {
+        "speaker": "長谷川",
+        "party": "衆議院選挙制度に関する協議会座長",
+        "summary": "- 比例代表制における復活当選の仕組み（分かりにくさ、低得票での当選、離党後の議席保持など）についての現状認識と課題は何か",
+        "full_text": "やはり政党への支持によって議席を反映する比例代表制であるにもかかわらず、小選挙区で落選した候補者が比例代表で復活する制度について、分かりにくいという声があるというご指摘がございました。その他にもやはり、低い得票率での復活当選の問題ですとか、あるいは比例当選された議員が離党した場合に無所属であっても議席としては保たれる問題ですとか、あと今般の解散総選挙では、比例候補者の名簿不足による他党に議席が回るという、こういった問題もありました。当時、平成の政治改革に関わられて、比例代表制、いわゆる復活当選の仕組みを含めて制度設計に携わった平井知事に有識者として、この比例代表制についての現状認識と課題についてお伺いしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "平井伸治",
+        "role": "全国知事会副会長 鳥取県知事（元衆議院選挙制度に関する調査会委員）",
+        "summary": "- 復活当選は中選挙区制からの移行時に安定性を考慮して妥協的に導入された仕組みである\n- ブロック単位であるため、選挙区で極めて低い得票数でも復活できてしまう点に課題がある",
+        "full_text": "それと併せまして比例代表についてでございますが、比例代表については復活当選というのは、最後に様々な議論の中で妥協的に出てきたのではないかなという感じがいたしております。ですから、ある程度の安定性を考えた上で、そういう復活当選というのを認める余地というのは十分あったかもしれないということだと思います。ただ、確かに先ほども市長会等でお話もございましたが、復活当選というのはブロック単位で考える仕組みになっていまして、かなり遠いところから復活してくるわけですね。ですから、そこの選挙区でかなり低い得票数であっても、復活が事実上できてしまうということもあります。この辺まで精査した上で立案したものではないかもしれません。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56224&time=2302.5330000000004",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "比例代表制の現状認識と課題について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "平成の政治改革"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "平井知事",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "復活当選というのは、最後に様々な議論の中で妥協的に出てきたのではないかなという感じがいたしております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "制度設計に関わった有識者への現状認識を問う質問であり、回答は当時の背景に関する主観的な回想に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "課題を列挙した上で、具体的にどう改善すべきかという方向性を問う形式にすれば、より建設的な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_005",
+      "segment_index": 4,
+      "topic": "人口減少社会における選挙制度の抜本的見直し",
+      "question": {
+        "speaker": "古川本久",
+        "party": "衆議院選挙制度に関する協議会座長",
+        "summary": "- 急速な人口減少と偏在により、現行制度では地方の民意が伝わりにくくなる限界に来ているのではないか\n- 現行制度を維持してよいか、また代わる制度のアイデアはあるか",
+        "full_text": "お三方に、ちょっと個人的な見解で結構でございますのでお伺いしたいんですが、今平井知事からお話があったように、現行制度は様々な工夫の中で来ているんですけれども、この協議会、その前身までも含めますと、要は、この選挙制度を入れた当時は、これほど急速な人口減少と、そして偏在っていうのは想定になかった。しかし、この選挙制度が基本に入ってから30年経ってですね、今本当にお三方のお地元はどこもかなり急速な人口減少で、しかも今後を見通せば、よりもっと減っていくという状況だと思います。その中で、今の選挙制度を続けていきますと、今の憲法の規定だと14条の1票の格差で判例も決まっておりますので、そこを守ってとなると、どんどん地域の代表は減っていく。国会議員は、地方議員の皆さんと違って、国土全体のことを考えるようになると、人がいないところも、ほとんど住んでいないところもやはり国土の一部ですから、そこをどう守っていくかとか、そういうことも大事なところであって、人がいないから代表がいなくていいかというと、必ずしもそうではないということではないかと。そういう意味で言うと、現行制度が今、日本の国が直面している急速な人口減少、特に人口の集中という中で、これを現行制度をそのまま基本的に続けていくというのは、かなり特に人口減少地域における民意といいますか、いろんな国がやらなきゃいけないこととか、そういうことの声が伝わりにくくなっていく、そういうかなり限界のところまで来ているんじゃないかというふうに私は認識をいたしておりまして、そういった視点から、やはりちゃんとそうした、人口は少ないかもしれないけれども、やはり国土を守っていくという視点で、必要なところにちゃんとそうした声が伝わってくるような、そういう人を出せるような選挙制度、となると、この現行制度を抜本的にやっぱり見直すということを考えていくときに来てるんじゃないかと、そのように考えます。皆さん、お三方ともですね、かなりやっぱり人口減少に直面しておられる首長でいらっしゃると思うんですけれども、そうした視点から見てですね、今の制度でこれから先も踏まえると、この制度を本当に続けていって、どんどんと、先ほど水谷市長からもお話がありましたけれども、今でも全国広いんですけど、たぶんますますこのまま行くともっと広くなっていくっていう、そういうことでいいのかどうかと、その辺についてですね、率直なところのご意見をお聞かせいただければというふうに思います。あと平井知事は、もしですね、じゃあ変えるんだったら、平井知事の場合はずっと役所でもこういったケースがあったんで、もし変えるんだったらこういう選挙制度がいいんじゃないかというアイデアがありましたら、ぜひアイデアマンの知事の、今の選挙制度に代わる選挙制度でご提案があれば教えていただければと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "平井伸治",
+        "role": "全国知事会副会長 鳥取県知事（元衆議院選挙制度に関する調査会委員）",
+        "summary": "- 地方や中山間地の声が切り捨てられる不安は強く、特に参議院の合区解消は重要な課題である\n- 代替案として、小選挙区（民意の集約）と比例代表（民意の反映）をうまく組み合わせるべきだが、世界的に正解は出ていない",
+        "full_text": "そういう意味で、漠然とした不安感が、我々首長も含めて地域にはあるのも事実でございまして、特に地方の声、中山間地の声が切り捨てられるんじゃないか。その象徴が参議院の合区問題だと思っております。その意味でぜひ合区解消というのは重要な課題だということをご認識いただけると大変にありがたいかなと思います。ですからこれをうまい塩梅で組み合わせていくということではないかと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56224&time=2302.5330000000004",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "人口減少下での選挙制度抜本見直しの是非と代替案",
+          "sub_asks": [
+            "現行の選挙制度を今後も続けてよいかという意見",
+            "平井知事による代替的な選挙制度のアイデア"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "憲法の規定だと14条の1票の格差"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "人口減少地域",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "参議院の合区問題"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "地方の声、中山間地の声が切り捨てられるんじゃないか。その象徴が参議院の合区問題だと思っております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "個人の見解を問う形式であり、回答も特定の制度（合区解消）への言及に留まっており、政府の公式見解や具体的コミットメントを記録する価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問が非常に長く、前提説明が多いため、核心となる問いが分散している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_006",
+      "segment_index": 4,
+      "topic": "一票の格差の許容基準について",
+      "question": {
+        "speaker": "金村龍奈",
+        "party": "衆議院選挙制度に関する協議会座長",
+        "summary": "- 一票の格差を「2倍以内」に抑え続ける現状について、個人的な見解を伺いたい",
+        "full_text": "いわゆる地方、大都市圏で、どうしても地方から議席が削られていて、大都市圏に集中しているという問題がやはり一番根深いと思うんですけれども、いわゆる一票の格差、2倍以内にずっと抑え続けると、この現象というのは一切変わらないと思うんですね。もちろん全国比例だけの選挙制度にすれば、一票の格差というのはなくなるのかもしれませんが、現状そこまで大きな転換というのがあまり現実的ではない中で、この一票の格差について、お三方が2倍以内という、最高裁の判例もありますから、2倍以内というものに対して、個人的な見解で構いませんので、どのようなお考えを持っているのか、お示しいただけますか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "平井伸治",
+        "role": "全国知事会副会長 鳥取県知事（元衆議院選挙制度に関する調査会委員）",
+        "summary": "- 単なる数値的な格差（1人1票）の追求は、恣意的な選挙区割（ゲリマンダー）を招く恐れがある\n- 地理的状況や社会的な実装、都道府県という政治的プロセスの重要性を見極めて判断すべきである",
+        "full_text": "完全にその一票の格差を2倍以内というように限定すれば、みんなハッピーかというと、これもともとはアメリカの定数訴訟が活発になされて、ワンパーソン、ワンボートという、そういう一つの価値基準ができたわけです。その1人1票というところからすると、2倍を超えるとおかしくなるはずだ、2倍にいくとおかしくなるはずだということで出てきたのが、19世紀のゲリマンダーです。今、アメリカで大問題になっていますけど、本当に1人1票というところでやろうということを追求し始めると、恣意的に、もう選挙区を分割せざるを得ない。ですから、数の問題だけでやるのではなくて、やはり地理的な状況だとか、社会的な実装とか、それから先ほど語句の問題で言えば、都道府県内、そうした単位が政治的プロセスとして重要なのか、この辺を見極めながらやっぱりやっていかないと、さまざまな弊害が起こるのではないかと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56224&time=2302.5330000000004",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "一票の格差「2倍以内」という基準への見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "past_answer",
+              "excerpt": "最高裁の判例もありますから、2倍以内というもの"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "アメリカの定数訴訟"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ゲリマンダー"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "数の問題だけでやるのではなくて、やはり地理的な状況だとか、社会的な実装とか、この辺を見極めながらやっていかないと、さまざまな弊害が起こるのではないか",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "一票の格差という抽象的な議論に対し、個人の見解を求めるやり取りであり、具体的な政策決定や法的拘束力のある回答は含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "個人の見解を問う形式であるため、政府としての公式な方針や具体的改善策を引き出す設計になっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_007",
+      "segment_index": 4,
+      "topic": "衆議院の定数削減の是非",
+      "question": {
+        "speaker": "和田正宗",
+        "party": "衆議院選挙制度に関する協議会座長",
+        "summary": "- 衆議院の定数削減をこれ以上進めることについてどう考えるか",
+        "full_text": "衆議院の定数削減をこれ以上行うことについてどうなのかということです。水谷綱走市長からお話が先ほどありましたので、平井知事と星下郷町長にお聞きをしたいというふうに思いますが、この衆議院の定数削減がこれ以上進むことについて、進めるとするならば、どのようにお考えかということを平井さんと星さんにお聞きをしたいということと、あと星さんにお聞きをしたいのは、私比例東北ブロック選出だというのもありまして、母方が会津にゆかりがありますので非常に会津に親近感もあるんですけれども、福島5区だったのが前々回の選挙から福島4区に変わってますよね。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "平井伸治",
+        "role": "全国知事会副会長 鳥取県知事（元衆議院選挙制度に関する調査会委員）",
+        "summary": "- 定数削減に賛成・反対の意見は分かれるが、諸外国と比較して日本の議員数は決して多くない\n- 地方にとって重要なパイプである国会議員を安易に減らすことへの懸念がある",
+        "full_text": "ただ参考までにちょっと申し上げると、共同通信さんが、我々頼んだわけじゃないんですが、アンケート調査を全国の首長にやってくださいまして、それによれば、定数削減に賛成する知事が5人いまして、反対する知事が2人いて、それで懸念を示す、反対に近いということで、それが12人というのが実態でございました。ただ感覚的に申し上げれば、諸外国と比べて日本の衆議院議員の数は多すぎるわけではないと思います。ですからそういう意味であまり大切な国会議員というパイプを安易に減らしていいのかどうかというのは、おそらく地方側では先ほど懸念の声が多かったというところはその辺が現れているのかもしれません。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56224&time=2302.5330000000004",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "衆議院定数削減のさらなる推進への考え",
+          "sub_asks": [
+            "定数削減が進むことへの考え（平井知事・星町長へ）",
+            "福島4区への変更に関する言及（星町長へ）"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "水谷綱走市長"
+            },
+            {
+              "type": "other",
+              "excerpt": "福島5区だったのが前々回の選挙から福島4区に変わってますよね"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "平井知事、星下郷町長",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "共同通信さん"
+            },
+            {
+              "type": "number",
+              "excerpt": "賛成する知事が5人いまして、反対する知事が2人いて、それで懸念を示す、反対に近いということで、それが12人"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "諸外国と比べて日本の衆議院議員の数は多すぎるわけではないと思います。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "定数削減に対する地方首長の傾向をアンケート結果で示しているが、具体的な政策的コミットメントはない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問の後半が単なる現状確認（区の変更）に留まっており、問いとしての構造が不十分である。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_008",
+      "segment_index": 4,
+      "topic": "小選挙区制の死票と民意の乖離",
+      "question": {
+        "speaker": "塩川哲也",
+        "party": "衆議院選挙制度に関する協議会座長",
+        "summary": "- 小選挙区制は死票が多く、多様な民意を切り捨てて民意と議席に乖離を生む制度ではないか。この課題や弊害をどう考えるか",
+        "full_text": "この2月の総選挙を見ましても、289の小選挙区で、候補者の得票のうち、議席に結びつかなかった死票、その割合が5割以上となった小選挙区というのが、全体の半数近い133に及んでおります。比較第一党に有利な仕組みということもありまして、自民党は小選挙区で得票率49.2%で86.2%もの議席となっております。私は小選挙区制は、多様な民意を切り捨て、多くの死票を生み出し、民意と議席に著しい乖離を生み出す、民意を歪める制度ではないかと考えておりますし、また小選挙区制では、頻繁な区割り変更というのは当然一票の格差是正の下で行われることによって、それ自身が現行の市町村の区画を尊重と言いながらも、度々の区画変更というのが結局地域分断にもつながっていくと、そういう問題もあるという点で、このような小選挙区制の課題、弊害についてどのようにお考えか。平井知事から若干お話もいただいたんですが、平井知事も含めてお三方にお尋ねをいたします。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "平井伸治",
+        "role": "全国知事会副会長 鳥取県知事（元衆議院選挙制度に関する調査会委員）",
+        "summary": "- 小選挙区制は政権選択という点で分かりやすく、政治の安定に寄与する面がある\n- 死票などの弊害については、比例代表制を併用することで是正を図っている",
+        "full_text": "そのポジティブな面を言えばですね、やはり国民がNOというふうに政権に突きつけることができる制度だということでありまして、選ぶという意味でわかりやすい制度であります。ただ、そこで失われる民意があるのではないかということで、比例代表選挙というものを併用しているのが、今の衆議院、あるいは参議院もそうかもしれません。そうした観点から言うと、小選挙区制における政権交代選挙であったり、そこの政治の安定、議席の安定というものが必要であるならば、やはりこの小選挙区制というのは、私は一定の評価がなされるべきものだと、このように思います。そこのこのデメリットがあるとする、その一つのクリアな形として、比例代表の併立性があるものと、このように私は思っておりますので、この件につきましては、ぜひ先生方の方でご協議をいただいて、あるべき姿をご議論いただければと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56224&time=2302.5330000000004",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "小選挙区制の課題や弊害についての考え",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "289の小選挙区"
+            },
+            {
+              "type": "number",
+              "excerpt": "133に及んでおります"
+            },
+            {
+              "type": "number",
+              "excerpt": "得票率49.2%で86.2%もの議席"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "小選挙区制における政権交代選挙であったり、そこの政治の安定、議席の安定というものが必要であるならば、やはりこの小選挙区制というのは、私は一定の評価がなされるべきものだ",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "小選挙区制の是非という抽象的な議論であり、回答者は個人の見解を述べるに留まっているため、記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "制度の課題を問うだけでなく、具体的な改善策や代替案についての見解を求める形式にすれば、より実効的な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    }
+  ],
+  "score_schema_version": "2.0",
+  "prompt_version": "V4"
+}
