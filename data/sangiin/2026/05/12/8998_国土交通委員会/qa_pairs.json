@@ -1,0 +1,4257 @@
+{
+  "pairs": [
+    {
+      "id": "qa_001",
+      "segment_index": 1,
+      "topic": "軽油の需給状況と政府の取組",
+      "question": {
+        "speaker": "見坂茂範",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 軽油の需給の現状と今後の見通しについて\n- 現場の混乱を避けるための政府の取組について",
+        "full_text": "トラック運送業の課題、これから順次触れさせていただきますけれども、何と言っても、最近の最も大きな課題は、イラン情勢の緊迫化に伴う燃料の問題でございます。こういった課題については、だいぶ関係者の皆さん方のご尽力によりまして、解決してきているというふうに聞いておりますが、しかし、今後本当に軽油は足りるのかどうか、やっぱりその辺を心配されている業界の方々が多いのも実情でございます。このトラック運送業になくてはならない軽油、その需給に関して現状と今後の見通し、そして現場の混乱を避けるための政府の取組について答弁をお願いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "金子国土交通大臣",
+        "role": "",
+        "summary": "- 石油備蓄の放出や代替調達により、日本全体として必要量は確保されている\n- 中東情勢に伴う供給動向の影響について、国交省と経産省が連携し適切に対応する",
+        "full_text": "先生から今ご質問ございましたけれども、軽油を含む燃料油につきましては、石油の備蓄の放出やホルムズ海峡を通らないルートによる代替調達などによって、日本全体として必要なる量が確保されているものと承知をしておるところでございます。その上で、今般の中東情勢に伴う軽油の供給の動向がトラック運送事業者に与える影響につきましては、国土交通省、経済産業省とも連携をしながら適切に対応してまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#1923.22",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "軽油の需給現状・見通しと政府の取組について",
+          "sub_asks": [
+            "軽油の需給の現状と今後の見通し",
+            "現場の混乱を避けるための政府の取組"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "イラン情勢の緊迫化"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "トラック運送業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "石油の備蓄"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ホルムズ海峡"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国土交通省"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "経済産業省"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "適切に対応してまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "石油の備蓄の放出やホルムズ海峡を通らないルートによる代替調達などによって、日本全体として必要なる量が確保されている",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "軽油の確保状況については具体的に言及しているが、今後の取組については抽象的な表現に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「政府の取組」を問う際、具体的にどのような対策（補助金や優先供給など）を想定しているか提示すれば、より具体的な答弁を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_002",
+      "segment_index": 1,
+      "topic": "トラック物流Gメンによる勧告実績",
+      "question": {
+        "speaker": "見坂茂範",
+        "party": "自由民主党・無所属の会",
+        "summary": "- トラック物流Gメンの監視調査において、勧告に至った例があるか\n- これまでに勧告したケースの数について",
+        "full_text": "こういった荷主優位の業界の構造を是正するために、国土交通省では令和5年7月にトラックGメンを創設されまして、物流業界の適正な取引を阻害する疑いのある荷主や元請事業者への監視を強化し、必要に応じて働きかけ、要請、勧告を行っておられると聞いております。このトラック物流Gメンによる監視調査で、勧告にまで至った例はあるのでしょうか。これまでに勧告したケースがあれば、その数をお答えください。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "岡野総括審議官",
+        "role": "",
+        "summary": "- 令和元年7月から令和8年3月末までに是正指導を2587件実施\n- そのうち、勧告に至ったケースは5件である",
+        "full_text": "トラック物流Gメンは、適正な取引を阻害する恐れがある荷主や元請事業者に対して、令和元年7月から令和8年3月末までに、貨物自動車運送事業法に基づく是正指導を2587件実施しており、その内訳としましては、働きかけが2385件、要請が197件。また、委員ご指摘の勧告が5件となってございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#1923.22",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "トラック物流Gメンによる勧告事例の有無と件数",
+          "sub_asks": [
+            "勧告にまで至った例はあるか",
+            "勧告したケースの数"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "令和5年7月"
+            },
+            {
+              "type": "organization",
+              "excerpt": "国土交通省"
+            },
+            {
+              "type": "other",
+              "excerpt": "トラックGメン"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "荷主や元請事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "2587件"
+            },
+            {
+              "type": "number",
+              "excerpt": "2385件"
+            },
+            {
+              "type": "number",
+              "excerpt": "197件"
+            },
+            {
+              "type": "number",
+              "excerpt": "5件"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "令和8年3月末まで"
+            },
+            {
+              "type": "evidence_citation",
+              "excerpt": "貨物自動車運送事業法"
+            }
+          ],
+          "score": 1.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "是正指導を2587件実施しており、その内訳としましては、働きかけが2385件、要請が197件。また、勧告が5件となってございます。",
+          "score": 0.9
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "トラック物流Gメンの活動実績について、具体的な数値（勧告件数5件など）が明確に回答されており、記録としての価値が高い。",
+        "would_be_referenced": "high",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_003",
+      "segment_index": 1,
+      "topic": "荷待ち・荷役時間の削減に向けた取組",
+      "question": {
+        "speaker": "見坂茂範",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 荷待ちや荷役に要する時間の削減に向けた政府の取組について",
+        "full_text": "さてもう一つ、このトラック運送業の大きな課題は、ドライバーの荷待ちの時間の問題でございます。この荷待ちや荷役に要する時間の削減に向けた政府の取組についてお伺いをいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "岡野総括審議官",
+        "role": "",
+        "summary": "- 荷主等に対する是正指導を約2600件実施している\n- 改正物流効率化法に基づき、着荷主を含む荷主等に荷待ち時間短縮の努力義務を課し、関係省庁と連携して執行している\n- 大手事業者への中長期計画作成や物流統括管理者の選任義務化により実効性を確保する",
+        "full_text": "荷待ち時間につきましては、2020年度と2024年度を比較すると、約3時間のまま横ばいとなっていることから、その短縮に向けた取組を進めることで、トラックドライバーの負担を軽減する必要があるというふうに考えてございます。このため、国土交通省では、荷待ち時間の短縮等に向けて、トラック物流業界による荷主等に対する公正取引委員会等とも連携した是正指導を行っているところでございまして、これまでに先ほど申し上げましたとおり、約2600件の法的措置を実施しているところでございます。また、昨年4月に施行されました改正物流効率化法に基づきまして、委員ご指摘の着荷主も含めた荷主等に対しまして、荷待ち時間の短縮などの努力義務を課しており、荷主を所管する経済産業省、農林水産省などの関係省庁と連携しながら、その着実な執行に取り組んでいるところでございます。さらに、改正物流効率化法が、今年4月から全面施行されたところでございまして、大手の事業者等に対して、中長期計画の作成や、物流統括管理者の選任などを義務づけることで、実効性の確保を図ってまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#1923.22",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "荷待ち・荷役時間削減に向けた政府の取組について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "ドライバー",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "約3時間のまま横ばい"
+            },
+            {
+              "type": "number",
+              "excerpt": "約2600件の法的措置"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "改正物流効率化法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "公正取引委員会"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "実効性の確保を図ってまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "荷待ち時間につきましては、2020年度と2024年度を比較すると、約3時間のまま横ばいとなっている",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "現状の数値（3時間）と実施済みの措置件数（2600件）が具体的に示されており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "取組の「具体的にどのような成果をいつまでに出すか」という目標設定を問う形式にすれば、より強いコミットメントを引き出せた。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_004",
+      "segment_index": 1,
+      "topic": "中継輸送導入における業界意見の聴取",
+      "question": {
+        "speaker": "見坂茂範",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 中継輸送を導入するにあたり、トラック運送業者の意見を聴取したか",
+        "full_text": "次に今回の法改正の主要項目でございます、中継輸送についてお伺いをしたいと思います。今回の法改正の主要項目であります、この中継輸送、これを導入するにあたりまして、トラック運送業の皆さん方の意見も聴取したのかについて、お答えをいただきたいと思います。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "岡野総括審議官",
+        "role": "",
+        "summary": "- 物流拠点の在り方に関する検討会に全日本トラック協会が参画し、施設整備の必要性等を取りまとめた\n- 全日本トラック協会への個別意見聴取や要望書の取りまとめなどの声を制度設計に踏まえている",
+        "full_text": "令和6年10月から翌年4月にかけまして、トラック輸送が変容する中での物流拠点の在り方について議論した、物流拠点の今後の在り方に関する検討会、こちらにおきまして、全日本トラック協会にオブザーバーとして参画いただき、中小の物流事業者も含め、不特定多数の者へ開放された施設整備の必要性等を取りまとめました。加えまして、全日本トラック協会におきましては、中継輸送拠点の全国展開や拠点への税制特例措置について、昨年、要望書が取りまとめられているほか、同年10月、また今年1月、2月に協会へ個別の意見聴取を実施した。本法案につきましては、こうした声も踏まえて制度設計を行うところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#1923.22",
+      "metrics": null
+    },
+    {
+      "id": "qa_005",
+      "segment_index": 1,
+      "topic": "トラック運送業の課題改善への決意とメッセージ",
+      "question": {
+        "speaker": "見坂茂範",
+        "party": "自由民主党・無所属の会",
+        "summary": "- トラック運送業が抱える課題の改善に向けた取組への決意について\n- 業界で働く人々への応援メッセージについて",
+        "full_text": "最後に、様々な課題を抱えるこのトラック運送業界。トラック運送業を所管する大臣として、トラック運送業が抱えるさまざまな課題に対するさらなる改善に向けた取組への決意と、トラック運送業で働く皆様方に対する力強い応援メッセージを金子大臣からよろしくお願いします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "金子国土交通大臣",
+        "role": "",
+        "summary": "- 適正運賃の確保や荷待ち時間短縮など、物流効率化と賃上げ環境の整備を推進する\n- 改正物流法や取引法、成果二法の施行に向けた準備を着実に進め、労働環境を改善する\n- ドライバーが誇りを持って働ける魅力的な産業となるよう全力を尽くす",
+        "full_text": "職場とすることが求められておりまして、そのためには、賃上げの原資となる適正運賃の確保やドライバーへの負荷の軽減につながる荷待ち時間の短縮等の物流の効率化が必要であると考えております。このため、国土交通省といたしましては、本年4月に全面施行されました改正物流法や、本年1月より施行された取引法に基づき、経済産業省等の荷主所管省庁や公正取引委員会といった関係省庁とも連携をしながら、取引環境の適正化や構造的な賃上げ環境の整備を進めております。加えて、トラック運送事業の適正化やドライバーの賃上げを目的として、昨年6月に成立をいたしました成果二法の施行に向けた準備を着実に進め、ドライバーのさらなる賃上げや労働環境の改善を目指してまいります。私自身が先頭に立ちまして、関係省庁や業界とも連携をしながら、これらの取り組みをしっかりと前に進め、トラックドライバーが誇りを持って働ける魅力的な産業となるよう、全力を尽くしてまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#1923.22",
+      "metrics": null
+    },
+    {
+      "id": "qa_006",
+      "segment_index": 2,
+      "topic": "物流危機の要因認識",
+      "question": {
+        "speaker": "羽田次郎",
+        "party": "立憲民主・無所属",
+        "summary": "- 物流の効率化による持続可能性確保に向け、現在直面している物流危機の根本的な要因をどう認識しているか",
+        "full_text": "政府は物流の効率化を推進することにより、持続可能性を確保することとしておりますが、現在直面している物流危機のそもそもの要因について、金子大臣はどのようにご認識されているかお示しください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "金子国土交通大臣",
+        "role": "",
+        "summary": "- 地方においても物流が途絶えることなく努力していきたい",
+        "full_text": "地方においてもしっかりと物流が途絶えることなく努力をしていきたいと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#2822.57",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "物流危機の要因に関する認識",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "not_at_all",
+          "topic_shift_detected": true,
+          "score": 0.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "努力をしていきたいと思っております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": null,
+          "score": 0.0
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "物流危機の要因を問う質問に対し、大臣は具体的な認識を示さず、地方物流への努力という抽象的な意向のみを述べており、回答として成立していない。",
+        "would_be_referenced": "low",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_007",
+      "segment_index": 2,
+      "topic": "中継輸送の普及阻害要因と法案による解消策",
+      "question": {
+        "speaker": "羽田次郎",
+        "party": "立憲民主・無所属",
+        "summary": "- 中継輸送の普及が進まなかった理由をどう分析しているか\n- 本法案によって、中小事業者が直面しているボトルネックがどのように解消されるのか",
+        "full_text": "資金に余裕のある大手の物流事業者等を中心に行われて、中小物流事業者まで行き渡っていないのが現状だと言われております。これまで中継輸送の普及が進まなかった理由について、国土交通省としてどのように整理・分析されているのでしょうか。また、提出された法案によって、こうしたボトルネックがどのように解消されるのか、御説明ください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "岡野総括審議官",
+        "role": "",
+        "summary": "- 中継輸送拠点の確保や協業相手の確保が課題であった\n- 拠点整備への課税特例や資金支援を講じ、自社だけでなく中小事業者も活用できる公益性の高い制度とする\n- 手引きや事例集の周知により普及を促進する",
+        "full_text": "令和3年度に実施したアンケートでは、中小トラック事業者においても、中継輸送の実施を希望する事業者は多いものの、中継輸送を実施するにあたっては、複数のトラックドライバーが相互に貨物の受け渡し等を行うための中継輸送拠点の確保や、協業相手の確保が課題となって、中継輸送の取組が進めない状況であると承知してございます。このため、中継輸送拠点の確保については、中継輸送拠点への整備に対し、課税の特例や必要な資金の出資及び貸付等、様々な支援措置を講ずることとしてございます。従いまして、本法案に基づく中継輸送拠点の整備については、自社だけではなく、資本力の弱い中小のトラック事業者も活用できるということになりますので、国民生活や経済活動を支える物流の維持に寄与する公益性の高い制度であるというふうに考えてございます。国土交通省といたしましては、中継輸送の実施の手引きや取組事例集、リーフレットなどの周知も図りつつ、中継輸送の仕組みが有効に活用されるよう、制度の普及促進に努めてまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#2822.57",
+      "metrics": null
+    },
+    {
+      "id": "qa_008",
+      "segment_index": 2,
+      "topic": "中継輸送におけるマッチング機能の導入",
+      "question": {
+        "speaker": "羽田次郎",
+        "party": "立憲民主・無所属",
+        "summary": "- 中継輸送の普及が進まない背景として、運行設計等の課題があるのではないか",
+        "full_text": "今の御説明ですと、私の認識としては、中継輸送の普及が進まない背景として、会社ごとに運行設計ですとか、岡野総括審議官。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "岡野総括審議官",
+        "role": "",
+        "summary": "- 拠点に相手型事業者を確保できるハブ機能（マッチング機能）を備えることが輸送管理の最適化に有効であると考えている\n- システム導入の促進を促していく",
+        "full_text": "今、委員から御指摘ございましたとおり、私どもとしましては、この中継輸送拠点において、相手型事業者を確保できるハブとしての機能を発揮して、トラック事業者同士のマッチングを行う機能、これが備われていることが、輸送管理を最適化する上で有効であるというふうに考えてございまして、先ほど申し上げましたとおり、国としてこういった施設へのマッチング機能を有するシステム導入の促進を促してまいりたいというふうに考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#2822.57",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中継輸送普及が進まない背景の確認",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "トラック事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "システム導入の促進を促してまいりたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "国としてこういった施設へのマッチング機能を有するシステム導入の促進を促してまいりたい",
+          "score": 0.3
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "質問が途切れており不完全ですが、回答側で中継輸送の最適化に向けた方向性（マッチング機能の促進）を述べています。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問文が途中で切れており、具体的な問いかけになっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_009",
+      "segment_index": 2,
+      "topic": "中小事業者のDX対応可能性と格差への懸念",
+      "question": {
+        "speaker": "羽田次郎",
+        "party": "立憲民主・無所属",
+        "summary": "- IT投資や業務改革が必要な中、資金的に困難な中小事業者の対応可能性をどう評価しているか\n- 本改正により中小事業者の対応に格差が生じ、淘汰が進む懸念についてどう考えるか",
+        "full_text": "マッチングシステムの導入とか、こうした取り組みを実施するにあたっては、IT投資ですとか業務改革というのが前提になると思います。資金等の問題から中小企業者にとって対応が困難なんじゃないかというようなご指摘もあります。国交省はマッチングシステムや物流DXに係る中小企業者の対応可能性をどう評価されているのか。また、本改正によって物流の効率化に対する中小事業者の対応に格差が生じて、淘汰が進んでいくんじゃないかという懸念も聞こえてまいりますが、その辺についていかがでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "岡野総括審議官",
+        "role": "",
+        "summary": "- 民間アプリ等のシステムが一定程度普及しており、認定拠点への導入を促すことで実効性を高める\n- DXに関しては従前より予算による支援措置があるため、これを活用してほしい",
+        "full_text": "先ほどご説明いたしましたマッチングシステム、これにつきましては、一例として、日本貨物運送共同組合連合会が開発したウェブキットなども挙げられておりまして、これに一定の会員事業者において活用が進んでいるものというふうに理解してございます。現時点でもトラック事業者同士のマッチング機能を有する民間事業者によるアプリ等のシステムが一定程度普及しているというところでございますが、この法案に基づく認定を受けて整備を行う中継輸送拠点につきましても、こうしたシステムの導入を促していくことで、実効性の高い中継輸送を促進していきたいというふうに考えてございます。またご指摘ございましたDX、こういったものにつきましても、従前より予算による支援措置というのはございますので、こういったこともしっかり活用してまいりたいというふうに考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#2822.57",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中小企業の物流DX対応可能性と淘汰への懸念",
+          "sub_asks": [
+            "中小企業者の対応可能性をどう評価しているか",
+            "効率化への対応格差による淘汰の懸念についてどう考えるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "中小企業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "日本貨物運送共同組合連合会"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ウェブキット"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "しっかり活用してまいりたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "日本貨物運送共同組合連合会が開発したウェブキットなども挙げられておりまして、これに一定の会員事業者において活用が進んでいる",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "中小企業の対応可能性と淘汰への懸念という2点について問うているが、回答は既存システムの例示と予算支援の活用という一般論に留まっており、核心的な評価や懸念への回答が不十分である。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どう評価しているか」という抽象的な問いではなく、具体的な支援策の不足や、淘汰を防ぐための具体的基準について問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_010",
+      "segment_index": 2,
+      "topic": "中継輸送事業の想定主体",
+      "question": {
+        "speaker": "羽田次郎",
+        "party": "立憲民主・無所属",
+        "summary": "- 本法案で想定している中継輸送事業の実施主体はどのような範囲か（運送会社以外に3PLやシステム開発会社も含まれるか）",
+        "full_text": "羽田次郎、本法案において、中継輸送事業を実施しようとする者というのは、どのような主体が想定されているのでしょうか。物流には、運送会社以外にも、中継輸送拠点の運営会社ですとか、3PL、サードパーティーロジスティックスですとか、荷主輸送システム開発会社等、様々な主体が関わっておりますが、どの範囲まで、これが入ることを想定されているのかご説明ください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "岡野総括審議官",
+        "role": "",
+        "summary": "- 2以上のトラック事業者の共同申請を要件とする\n- 拠点整備のノウハウを持つ者や全体調整を行う者、3PL事業者などの参画も想定している",
+        "full_text": "本法案における中継輸送事業を実施する場合には、少なくとも2以上のトラック事業者が共同で申請することを要件としてございます。その上で、中継輸送事業の実施に当たりましては、拠点整備・運営に関するノウハウを有する者や、貨物の輸送の全体調整を行う者の参画も想定され、例えば、走行事業者や、先ほど委員からもご指摘ございました3PL事業者、こういった様々な事業者も該当しているというふうに考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#2822.57",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中継輸送事業の想定主体の範囲",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "本法案において"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "中継輸送事業を実施しようとする者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "2以上のトラック事業者"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "3PL事業者"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "中継輸送事業を実施する場合には、少なくとも2以上のトラック事業者が共同で申請することを要件としてございます。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "法案における事業主体の定義と申請要件について明確な回答が得られており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_011",
+      "segment_index": 2,
+      "topic": "中継輸送の方式（コンテナ交換型か貨物積み替え型か）",
+      "question": {
+        "speaker": "羽田次郎",
+        "party": "立憲民主・無所属",
+        "summary": "- 本法案が主軸として想定しているのは、コンテナ交換型か、あるいは施設定義にある貨物積み替え型か\n- 本法案の狙いと今後の普及見通しについて説明を求める",
+        "full_text": "中継拠点でドライバーが交代する運転者、本法案の説明のポンチ絵で記載されているのは、コンテナ交換型のケースのように見受けられますが、これを行うにはコンテナ車との切り離しが可能なトラクター、牽引車が必要不可欠となります。この方は我が国の物流ではまだまだ主流とは言えない状況だと思いますが、物流トラックの多くは切り離しができない単車であるというのが私の認識です。本法案で、国交省が今後の主軸として想定しているのはコンテナ交換型で、この方式の普及を目指しているということなのかそう感じた一方で、本法案の第29条、第29条の2第1項では特定貨物自動車中継輸送施設の定義として、貨物を積み替えるまでの間、一時的に保管するための施設であると定められております。貨物の保管機能を有するということは、コンテナ交換型ではなくて、貨物積み替え型の中継輸送を主として想定されているとも捉えられますが、本法案の狙いと今後の普及見通しについて、ご説明をお願いします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "岡野総括審議官",
+        "role": "",
+        "summary": "- 保管機能を有する施設を活用した「貨物受け渡し型」の中継輸送を主に念頭に置いている\n- これによりドライバーの待ち合わせが不要となり、運行効率の向上が期待できる",
+        "full_text": "委員ご指摘のとおり、本法案による中継輸送施設につきましては、貨物の一時的な保管機能を有することを要件としてございまして、これを活用することによって、ドライバー同士の待ち合わせが不要となるとともに、あらかじめ保管していた貨物を効率的に積み込むことで、運行効率の一層の向上が期待されるというふうに考えてございます。このため、本法案においては、ドライバー交代方式、あるいはコンテナということよりも、むしろ、それも排除するものではございませんが、保管機能を有する施設を活用した貨物受け渡し型の中継輸送の実施を主に念頭においているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#2822.57",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中継輸送の想定方式と普及見通しの説明",
+          "sub_asks": [
+            "本法案の狙い（想定している輸送方式）",
+            "今後の普及見通し"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "本法案の第29条、第29条の2第1項"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "ドライバー",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.6
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "保管機能を有する施設を活用した貨物受け渡し型の中継輸送の実施を主に念頭においている",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "法案の定義に基づき、コンテナ交換型ではなく貨物受け渡し型を主眼としている点について政府の解釈が明確に示された。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "普及見通しについての具体的な問いが含まれていたが、回答で触れられていないため、再質問が必要な設計となっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_012",
+      "segment_index": 2,
+      "topic": "運送事業者への支援メニューの拡充",
+      "question": {
+        "speaker": "羽田次郎",
+        "party": "立憲民主・無所属",
+        "summary": "- 現行の支援策（課税特例等）は施設整備側にメリットが大きく、運行経費補助も初年度のみで継続性に欠けるのではないか\n- 今後、運送事業者への支援メニューを拡充する検討はあるか",
+        "full_text": "認定を受けた中継輸送事業に対する支援メニューとして、中継輸送施設に係る課税の特例ですとか、鉄道運輸機構からの出資融資、そして行政手続の一括化等が設けられておりますが、これらは貨物を運ぶ運送事業者というよりも、施設整備側の、施設を整備する側のメリットが大きいように私には受け止められます。運行経費の補助もありますが、初年度のみが対象ということで、課税特例等に比べて継続性があまりないんじゃないかなというふうにも感じますが、今後、運送事業者への支援メニューの拡充等は検討しているのか伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "岡野総括審議官",
+        "role": "",
+        "summary": "- 拠点整備への支援（課税特例・融資等）こそが、拠点確保に悩む中小事業者の支援に繋がる\n- 従来からテールゲートリフター等の導入支援を行っており、初年度の運行経費支援も実施する\n- 融資や出資については長期的な視点で行う必要があると考えている",
+        "full_text": "特に中小トラック事業者におきましては、中継輸送の実施を希望する事業者は多いものの、中継輸送を実施するにあたっては、複数のトラックドライバーが相互に貨物の受け渡し等を行うための中継輸送拠点の確保等が課題となって、なかなか中継輸送の取組が進んでいない状況であると承知してございます。このためご指摘ございましたとおり、中継輸送拠点への整備等に対し、課税の特例や必要な資金の出資及び貸付等の各種支援措置を講ずることが、中小を含めたトラック事業者における中継輸送の取組への支援にもなるというふうに考えているところでございます。また、トラック事業者に対しましては、これまでにも、貨物の積み替え作業の効率化や、荷役の負担軽減を図るため、テールゲートリフターやトラックに搭載するクレーンの導入など、こういったものへの支援を行ってきたところでございます。加えまして、委員からもご指摘ございましたが、認定された事業の初年度の運行経費の一部に対して支援を行い、事業開始直後におけるトラック事業者の負担軽減を図ることとしてございます。また、初年度だけではなく、継続的な支援ということでございますが、先ほど申し上げました、必要な資金の融資または出資といったものにつきましては、これはもう少し長期にわたって行うことが必要であるというふうになってございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#2822.57",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "運送事業者への支援メニュー拡充の検討状況",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "中継輸送施設に係る課税の特例"
+            },
+            {
+              "type": "organization",
+              "excerpt": "鉄道運輸機構からの出資融資"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "運送事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "テールゲートリフター"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "必要な資金の融資または出資といったものにつきましては、これはもう少し長期にわたって行うことが必要であるというふうになってございます。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "現状の支援策の正当性を説明し、融資等の長期化の必要性に触れているが、具体的な拡充策へのコミットメントはない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「拡充を検討しているか」というYes/Noで答えられる形式のため、政府が現状維持の論理で回答を回避しやすい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_013",
+      "segment_index": 2,
+      "topic": "中継輸送コストの荷主への転嫁",
+      "question": {
+        "speaker": "羽田次郎",
+        "party": "立憲民主・無所属",
+        "summary": "- 荷主への協力努力義務が定められているが、具体的にどのような協力を想定しているか\n- 中継輸送に伴うコストの分担（運賃への反映）について政府の見解を問う",
+        "full_text": "本法案第29条の4第2項では、荷主に対し、中継輸送の実施に協力するよう、努力義務が定められております。具体的にどのような協力を行うことが想定されているのか、また、中継輸送の実施に際し、必要な経費が発生した場合、当然運賃に反映されることが求められると思いますが、条文上はこの運賃の適正化については触れられていないと私は認識しておりますが、中継輸送を実現するためのこのコストの分担について、国土交通省のご見解を伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "坂井国土交通副大臣",
+        "role": "",
+        "summary": "- 荷主への努力義務を課すことで、コスト増加への理解を得る\n- 必要となるコストは荷主に適切に転嫁することが原則であると考えている",
+        "full_text": "トラック事業者が中継輸送を実施するにあたりまして、伴うコスト増加に対する理解等の観点から、荷主からの協力を得るために、本法案においては、荷主への努力義務を課すこととしております。その上で、中継輸送の実施に伴い必要となるコストにつきましては、荷主に適切に転嫁することが重要であるというふうに考えておるところでございます。基本的には必要なコストについては、荷主に転嫁をするということが原則であるというふうに考えているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#2822.57",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中継輸送における荷主の協力内容とコスト分担の見解",
+          "sub_asks": [
+            "想定される具体的な協力内容",
+            "コスト分担（運賃反映）に関する政府の見解"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "本法案第29条の4第2項"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "荷主",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "中継輸送の実施に伴い必要となるコストにつきましては、荷主に適切に転嫁することが重要であるというふうに考えておるところでございます。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な協力内容への回答が欠落しており、コスト分担についても原則論に留まっているため、記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「具体的にどのような協力」という問いを切り分けて、例示を求める形式にすればより具体的な回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_014",
+      "segment_index": 2,
+      "topic": "中継輸送施設の認定基準の具体性",
+      "question": {
+        "speaker": "羽田次郎",
+        "party": "立憲民主・無所属",
+        "summary": "- 施設認定における「立地・規模・構造・設備」の具体的判断基準は何か\n- 「基本方針に照らして適切」などの抽象的な表現について、具体的な判断基準を明確にしてほしい",
+        "full_text": "本法案第29条の第5項に、貨物自動車中継輸送実施計画の認定基準が定められております。第3号では、特定貨物自動車中継輸送施設の立地・規模・構造・設備が国土交通省令で定める基準に適合することが要件とされております。具体的にどのような点を注視して認定の判断がなされるのでしょうか。また第1号では基本方針に照らして適切なものであること、第2号では中継輸送事業を確実に遂行するため適切なものであることとありますが、いずれも抽象的な表現だという印象を持っております。こちらも具体的にどのような基準で認定を判断するのか、明確なご説明をお願いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "岡野総括審議官",
+        "role": "",
+        "summary": "- 貨物流通量のニーズ、地域実情、事業者の投資能力等を踏まえた規模とする\n- 詳細な要件はこれから検討するが、効率的な拠点に必須な機能や規模を盛り込む",
+        "full_text": "本法案はトラックドライバーの負担軽減及び乖離の確保によるトラックの運行効率の向上に資するため、中継輸送拠点の整備促進等を行うものとなってございます。実際に建設される中継移送拠点につきましては、貨物流通量のニーズや立地地域の実情、整備・運営主体となる事業者の投資能力等を踏まえた規模となるというふうに考えてございますし、またそれぞれの要件につきましても、これから詳細を検討していくということになってございますが、私どもとしましては、本法案の趣旨を踏まえて、効率的な中継移送拠点となるために必須と考えられる機能や規模などの要件を。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#2822.57",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中継輸送実施計画の認定基準の具体的内容",
+          "sub_asks": [
+            "第3号（省令基準）で具体的にどのような点を注視して判断するか",
+            "第1号（基本方針）および第2号（確実な遂行）の具体的な判断基準"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "本法案第29条の第5項"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "貨物流通量のニーズ"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "立地地域の実情"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "事業者の投資能力"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "これから詳細を検討していくということになってございます",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "それぞれの要件につきましても、これから詳細を検討していくということになってございます",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "法案の具体的な認定基準を問う質問に対し、政府側は「これから検討する」と回答しており、現時点での具体的基準は未定であることが記録された。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_015",
+      "segment_index": 2,
+      "topic": "中継輸送拠点の対象貨物",
+      "question": {
+        "speaker": "羽田次郎",
+        "party": "立憲民主・無所属",
+        "summary": "- 時間指定品や鮮度管理品なども中継輸送の対象として想定しているか",
+        "full_text": "どのようなものが対象となっているのかというところで、例えばこの時間指定品ですとか、鮮度の管理品とかというのは想定されているのでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "岡野総括審議官",
+        "role": "",
+        "summary": "- 特定の品目を決めているわけではなく、運営者がニーズに合わせて整備することを想定しており、地域課題に対応できるものを想定している",
+        "full_text": "というふうに考えてございますので、さまざまなものがあると思います。私どもの方で、こういったものというのは決めてございませんが、なるべく多くのニーズに応えられるような、特に地域課題に対応できるようなものを想定しているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#2822.57",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "対象品目に時間指定品や鮮度管理品が含まれるか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "ニーズに応えられるような、特に地域課題に対応できるようなものを想定している",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "私どもの方で、こういったものというのは決めてございませんが、なるべく多くのニーズに応えられるようなものを想定している",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な品目の指定があるかという問いに対し、政府側は「決めていない」と回答しており、不確定な状況が記録された。",
+        "would_be_referenced": "low",
+        "issue_in_design": "具体的にどの制度や事業の対象品目について問うているのか、前提条件を明示させるべきである。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_016",
+      "segment_index": 2,
+      "topic": "自動運転トラックの社会実装と施設要件",
+      "question": {
+        "speaker": "羽田次郎",
+        "party": "立憲民主・無所属",
+        "summary": "- 2030年の普及目標に向け、遠隔監視や点検機能などの仕様を早期に施設要件に織り込むべきではないか\n- 対応しないまま整備を進めると将来的に大規模な改修コストが発生するリスクを考慮しているか",
+        "full_text": "この規模を前提とした場合、個別車両単位での対応ではなく、複数車両を前提とした運行全体での安全性、運行管理、いわゆるフリート単位での運用が不可欠になると考えます。また、自動運転トラックの導入に当たっては、安全性確保と運行管理の一体的な設計が重要であるという点については、一定の整理が進んでいるものと認識しておりますが、今後の社会実装、自動運転トラックに関する遠隔監視との連携、帯電、点検機能等も盛り込む必要があると考えますが、2030年仙台を見据えた国土交通省のお考えをお示しください。2027年、来年ですけれども、来年にはレベル4が自動運転トラックでも実装されるんじゃないかというふうにも言われておりますが、一般的な物流倉庫の耐用年数というのは約30年となっておりますが、その時間軸で考えると、今準備する中継輸送施設が自動運転トラックと連携するタイミングが、そう遠くない将来に間違いなく来るというふうに思います。早い段階で自動運転トラックの発着ですとか、遠隔監視ですとか、有人運転との切り替えというような、あとはデータ連携というのを見据えた仕様を施設要件に織り込むべきではないかと私は考えております。この対応をしないままで施設整備が進むと、将来的に大規模な改修コストというのが発生するリスクがあるというふうに考えますが、その点については考慮されているのでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "岡野総括審議官",
+        "role": "",
+        "summary": "- 現時点では実証段階のため、直ちに認定要件に盛り込む予定はない\n- 一方で、新設した物流拠点・新入路の税制軽減制度などは自動運転に対応していると考えており、ハード面での支援を念頭に置いている",
+        "full_text": "現在、自動運転トラックにつきましては、実証需要段階にございますため、現時点において本法案に基づく中継輸送施設の認定要件等を直ちに自動運転トラックの導入を前提としたものにするということは予定してございません。また今般、公共性の高い新たな物流拠点及びこれと高速道路等と連絡するための新入路に対し固定資産税等を軽減する新たな制度を国として創設しており、当該物流拠点や新入路は自動運転トラックの乗り入れにも対応しているものであると考えてございます。繰り返しになりますが、現時点では自動運転トラックについては実証段階というふうになってございますので、この認定の要件として、これを盛り込んだものにはしていないというところでございますが、一方で先ほど申し上げましたとおり、公共性の高い新たな物流拠点と、これと高速道路と連絡するための進入路、こういったものに対する固定資産税等を軽減する新たな制度というのを創設してございます。こういったものは自動運転にとって非常に有効なものになってくるというふうに思っておりますので、そうしたハード面での支援ということは、今後とも念頭においていると。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#2822.57",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中継輸送施設の要件に自動運転対応を盛り込むべきか",
+          "sub_asks": [
+            "2030年を見据えた自動運転トラックの運用に関する国交省の考え",
+            "施設整備における将来的な改修コストリスクの考慮状況"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "2030年仙台"
+            },
+            {
+              "type": "date",
+              "excerpt": "2027年"
+            },
+            {
+              "type": "number",
+              "excerpt": "物流倉庫の耐用年数というのは約30年"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自動運転トラック",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "固定資産税等を軽減する新たな制度"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "ハード面での支援ということは、今後とも念頭においている",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "現時点において本法案に基づく中継輸送施設の認定要件等を直ちに自動運転トラックの導入を前提としたものにするということは予定してございません。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "自動運転対応を施設要件に盛り込むべきという提案に対し、現時点では予定していないという明確な否定回答が得られている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が冗長であり、複数の文脈（2030年、耐用年数、改修コスト）が混在しているため、焦点が分散している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_017",
+      "segment_index": 2,
+      "topic": "自動運転トラック活用の見解",
+      "question": {
+        "speaker": "羽田次郎",
+        "party": "立憲民主・無所属",
+        "summary": "- 物流の持続可能性に資する自動運転トラックの活用について、大臣の見解を伺いたい",
+        "full_text": "そう申し上げた上で、物流の持続可能性に資する自動運転トラックの活用について、金子大臣の御見解を伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "金子国土交通大臣",
+        "role": "",
+        "summary": "- 自動運転はドライバーの負担軽減や担い手不足解消の重要方策である\n- 2026年以降の早期社会実装を目指し、実証実験支援やインフラ整備を推進する\n- 本法案の中継輸送拠点が自動運転トラックの発着拠点として活用されることを期待している",
+        "full_text": "自動運転は、国内物流の大動脈を担うトラックドライバーの負担軽減や、担い手不足の解消等に向けた重要な方策の一つになると考えております。このため、本年3月31日に閣議決定されました総合物流施策大綱では、2030年度の輸送力不足の克服に向けた施策として、2026年以降の可能な限り早期に高速道路におけるレベル4自動運転トラックを社会実装することを掲げております。こうした自動運転トラックの社会実装に向けて、今後、物流大綱に基づき、自動運転トラックを活用した幹線輸送サービスの事業化に向けた実証実験に対する支援、自動運転車の走行の安全性、円滑性の向上に資する路車協調などのインフラ側の取組の推進といった施策を着実に講じてまいります。また、本法案に基づき整備された中継輸送拠点は、自動運転トラックの発着拠点としても活用されることが期待されており、自動運転トラックの導入促進につながるものと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#2822.57",
+      "metrics": null
+    },
+    {
+      "id": "qa_018",
+      "segment_index": 2,
+      "topic": "法改正による効果の検証（KPI）",
+      "question": {
+        "speaker": "羽田次郎",
+        "party": "立憲民主・無所属",
+        "summary": "- 本法改正による効果をどのように検証するのか",
+        "full_text": "担い手不足ですとか、働き方改革ですとか、さまざま物流に関わる諸問題に、改正案について様々ご説明をいただきましたが、最後は改正による効果の検証について伺いたいと思います。本法案は物流の効率化を目的としておりますが、本法改正によって、",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "岡野総括審議官",
+        "role": "",
+        "summary": "- 中継輸送拠点の計画認定件数20件をKPIとして設定している\n- 総合物流施策大綱に基づき、有識者や事業者を交えた政策評価の場で進捗管理と検証を行う",
+        "full_text": "本法案におきましては、トラックドライバーの負担軽減及び乖離の確保による輸送能力の増加を目的として、特定貨物自動車中継輸送拠点の整備に係る計画の認定件数、こちらを20件とすることをKPIとして設定しているところでございます。物流施策大綱につきましては、2026年度から2030年度計画期間としてございますが、KPIの達成状況や達成に向けた課題については、有識者や関係事業者等を交えた政策評価の場を設け、施策の進捗管理や検証を行うこととしてございまして、本法案に係るKPIにつきましても、こうした場を通じて適切に検証を行ってまいりたいというふうに考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#2822.57",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "法改正による効果の検証方法について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "20件"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "2026年度から2030年度"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "物流施策大綱"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "適切に検証を行ってまいりたいというふうに考えてございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "特定貨物自動車中継輸送拠点の整備に係る計画の認定件数、こちらを20件とすることをKPIとして設定している",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "法改正の効果検証について、具体的なKPI（20件）と検証の枠組み（物流施策大綱の政策評価の場）が明確に回答されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_019",
+      "segment_index": 2,
+      "topic": "地方の物流機能維持への財政支援",
+      "question": {
+        "speaker": "羽田次郎",
+        "party": "立憲民主・無所属",
+        "summary": "- 市場原理だけでは地方の物流維持は不可能であるため、重要社会インフラとしての財政支援のあり方と、法案成立による見通しを伺いたい",
+        "full_text": "医薬品、生活必需品等の供給を支える大切な社会インフラです。大都市間という市場原理のみでは、先ほど申し上げた地方を含めた物流機能の維持は不可能と思います。政府として重要社会インフラである物流に対する財政支援のあり方をお示しいただき、本法案成立による物流機能の発展に向けた見通しを、最後に大臣に伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "金子国土交通大臣",
+        "role": "",
+        "summary": "- 中継輸送の促進によりドライバーの環境改善や効率化を図り、荷主の利益向上に繋げたい\n- 計画認定制度による課税特例や資金支援を講じ、中継輸送を促進する\n- 大都市間だけでなく、地方自治体が民間と連携して整備するケースも想定し、各地で物流機能の維持・向上に努める",
+        "full_text": "あるいは風呂があったり、宿泊施設があったり、休憩施設があったり、本当にそういう意味ではドライバーの環境というのは非常に良くなるなと思っているし、また空車もなくなっていくという効率性もございますので、そういったことも含めて、荷主さんに対する利益がある程度上がっていくようにできるのではないかなというふうに思っております。こうした中で、中継輸送場トラックドライバーの日帰り勤務を、この法律案に基づき、中継輸送を促進するための計画認定制度を創設し、課税の特例や必要な資金の出資及び貸付等の各種支援措置を講ずることにより、中継輸送の取組を促進してまいりたいと考えております。また、中継輸送拠点の整備は輸送量が比較的多い大都市間での立地が先行すると思われますが、一方で大都市間に限られる幹線輸送と地域輸送等を接続するニーズや、地域の課題を解決すべく、地方自治体が民間事業者と連携をし、整備を立案するケースも想定されます。国土交通省としても、中継輸送の実施の手引きや、取組実例集なども周知しつつ、中継輸送拠点の整備の後押しを進め、各地において物流機能の維持、向上が図れるよう、しっかりと御意見も賜りながら、努めてまいりたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#2822.57",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "物流への財政支援のあり方と発展の見通しについて",
+          "sub_asks": [
+            "物流に対する財政支援のあり方",
+            "本法案成立による物流機能の発展に向けた見通し"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "本法案"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.2
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "中継輸送を促進するための計画認定制度"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "課税の特例"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "必要な資金の出資及び貸付"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "中継輸送の実施の手引き"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "取組実例集"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "努めてまいりたいと思います",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "中継輸送を促進するための計画認定制度を創設し、課税の特例や必要な資金の出資及び貸付等の各種支援措置を講ずることにより、中継輸送の取組を促進してまいりたい",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "財政支援の具体策として計画認定制度や課税特例、資金出資・貸付に言及しており、回答の具体性は高い。一方で、今後の行動は「努める」という意向表明に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「財政支援のあり方」という問いが広範であるため、より具体的な支援項目（補助金や税制など）を限定して問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_020",
+      "segment_index": 3,
+      "topic": "中継輸送に伴う保険費用負担の荷主転嫁",
+      "question": {
+        "speaker": "礒崎哲史",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 中継輸送での荷崩れや破損リスク回避のため損害保険に加入する場合、その費用負担を荷主に求めることができるか政府の認識を問う",
+        "full_text": "併せてこの荷物の入れ替えによって、荷物が荷崩れするなり、何か動かしてしまったことで破損するというリスクも新たに発生するとも思われますが、こうしたリスクを回避するために、損害保険に入るようなことも考えられると思います。そうした保険に入った場合の費用負担、これも荷主に求めることができるのか、この点政府の認識を確認させていただきたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "金子恭之",
+        "role": "",
+        "summary": "- 積み荷に関するコストは荷主に適切に転嫁することが必要である\n- 運送約款において、荷主が承諾した際は荷主負担で運送保険を締結する旨を定めている\n- 取引環境の適正化を強力に進め、コスト転嫁を可能にする",
+        "full_text": "中継輸送の実施に伴う積み荷に関するコストにつきましては、荷主に適切に転嫁することが必要であると思います。運送約款においては、荷主が承諾した際は、荷主の負担により運送保険を締結する旨を定めているところでございます。国土交通省といたしましては、中継輸送の実施に伴って増加するコストも含め、トラック事業者が荷主に対して転嫁できるよう、取引環境の適正化を引き続き、強力に進めてまいりたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#5226.48",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中継輸送の保険費用を荷主に請求できるか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "荷主",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "運送約款"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "取引環境の適正化を引き続き、強力に進めてまいりたいと思います",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "運送約款においては、荷主が承諾した際は、荷主の負担により運送保険を締結する旨を定めている",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "中継輸送に伴う保険費用の負担について、運送約款に基づき荷主への転嫁が可能であるという政府認識が明確に示されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_021",
+      "segment_index": 3,
+      "topic": "中継輸送拠点利用時の高速道路料金と割引の適用",
+      "question": {
+        "speaker": "礒崎哲史",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 中継輸送拠点が高速道路外にあるため、一旦降りて再入場する場合、長距離割引運賃がどう扱われるか確認する",
+        "full_text": "もう一つあるんですけれども、この中継輸送拠点を利用するためには、高速道路を一旦降りる必要があると思うんですね。この中継輸送のポイントというのは、高速道路内ではなくて、高速道路の外に設けることになると思いますので、高速道路を一旦降りることになると思います。この場合、これまで適用されていた高速道路の長距離割引の運賃、これを降りると、一体どういう扱いになってしまうのか、適用されるのかどうか、この点について確認をさせてください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "岡野",
+        "role": "",
+        "summary": "- 高速道路外に立地するため、再入場に伴いターミナルチャージが発生し、長距離低減も新たな利用として計算される\n- 高速道路料金の負担については、荷主と事業者が協議し、運賃料金として適切に収受すべきと考えている",
+        "full_text": "中継輸送施設はご指摘のとおり高速道路外に立地しているため、高速道路からの一時退出後の再入場に伴いターミナルチャージが再度発生し、料金の長距離低減についても新たな利用として計算して適用され、一般の高速道路利用者と同様に利用に応じた料金をお支払いいただく必要がございます。中継輸送施設を利用するために高速道路を一時退出再入場する場合の高速道路料金の負担については、荷主とトラック事業者の間で十分に協議を行い、あらかじめ書面等により明示した上で、荷主から運賃料金として適切に収受すべきであるというふうに考えており、国土交通省が定める標準的運賃においても、高速道路料金を運賃とは別に収受できることを明記しているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#5226.48",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中継輸送拠点利用時の高速料金割引の扱い",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "ターミナルチャージ"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "標準的運賃"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "高速道路からの一時退出後の再入場に伴いターミナルチャージが再度発生し、料金の長距離低減についても新たな利用として計算して適用され",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "中継輸送拠点利用に伴う高速料金の割引適用外となる点について、政府の明確な解釈が示されており、記録としての価値が高い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_022",
+      "segment_index": 3,
+      "topic": "中継輸送拠点の利用状況と課題",
+      "question": {
+        "speaker": "礒崎哲史",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 先行事例である「コネクトエリア」などの中継輸送拠点の具体的な利用状況と、把握している課題について問う",
+        "full_text": "続いてですが、既にこの中継輸送については先行事例があるということで、先ほどご質問の中でもありましたコネクトエリアということで、皆さんお手元に資料を配らせていただきましたけれども、ページ3になりますが、既にコネクトエリアということで、静岡県の中には浜松の中心に2カ所、それから静岡に今これから稼働するものがですね、1カ所ということで既にあります。具体的にどんなイメージかというと、4ページに実際に写真をお付けしましたけれども、高速道路のすぐ脇、ここは浜松のサービスエリアがございますので、すぐ横に付けられているというような、こういった施設に今なっております。お伺いしたいのは、実際にこの先行事例として動いております中継輸送拠点の利用状況というのは一体どういうふうになっているのか、併せて課題がもしつかめているようであれば、その点もお伺いしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "岡野",
+        "role": "",
+        "summary": "- コネクトエリア浜松では利用者台数が増加しており、令和6年度は約1万4000台である\n- 本法案に基づく制度運用の中で、引き続き課題の把握に努める",
+        "full_text": "委員からご指摘ございました、ネクスコ中日本と物流企業が新東名高速道路において共同整備するコネクトエリアのうち、平成30年9月より運用を開始しましたコネクトエリア浜松では年々利用者台数が増加しており、令和6年度の利用台数は約1万4000台となってございます。本法案に基づく制度を運用する中で、課題等の把握にも努めてまいりたいというふうに考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#5226.48",
+      "metrics": null
+    },
+    {
+      "id": "qa_023",
+      "segment_index": 3,
+      "topic": "中継輸送におけるマッチングシステムの利用状況と多重下請け構造の是正",
+      "question": {
+        "speaker": "礒崎哲史",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 既存のマッチングシステムの利用状況および課題について問うとともに、システムの活用による懸念点について確認する",
+        "full_text": "WebKit2の流れということで、これは実際に今使われているマッチングシステムでございまして、このシステムは下の方の出典のところに書きましたけれども、日本貨物運送共同組合連合会ということで、事業者間の連携の中で作られたものということで、既にかなり活用されているものというふうには認識をしております。絵に書かれているとおり、荷主側がマッチングシステムの中に送ってほしい荷物を登録をし、それを配車する側の事業者さんがチェックをした上で、「これはうちで運べそうだぞ」というときには最終的には電話でやり取りをして契約が成り立っていく、成約されていくという、こういう形になっていきます。確認したいんですけれども、こうしたいくつかのマッチングシステム、これ以外にも調べてみると三つ四つ大手さんでやはりやられているものがあるというふうに認識をしますけれども、現状こうしたいくつかのマッチングシステムはございますが、こうしたシステムの利用状況、使用状況及び課題について伺いたいと思います。併せて、ちょっと懸念点なんですけれども、こうしたシステムを活用する。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "金子恭之",
+        "role": "",
+        "summary": "- 民間システムが一定程度普及しており、是正に資するものと認識している\n- 中継輸送施設へのシステム導入を促すことで、多重取引構造の是正に取り組む",
+        "full_text": "現時点でもトラック事業者同士のマッチング機能を有する民間事業者によるシステムが一定程度、是正にも資するものであると認識をしておりまして、令和7年6月のトラック運送業における多重下請け構造検討会取りまとめにおいても、マッチングサービスが目指すべき方向性として、中継車による一定以上の再委託の禁止などが挙げられたところでございます。国土交通省といたしましては、トラック適正化2法に基づく委託回数の制限等のこれまでの取組に加えて、本法案に基づく中継輸送施設においてマッチングシステムの導入を促していくことで、引き続き多重取引構造の是正に取り組んでまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#5226.48",
+      "metrics": null
+    },
+    {
+      "id": "qa_024",
+      "segment_index": 3,
+      "topic": "中継輸送における契約形態と荷主の理解",
+      "question": {
+        "speaker": "礒崎哲史",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 中継輸送では配送業者が増え3社契約となるため、荷主の理解をどう得るか、また多重下請け化のリスクをどう考えるか問う",
+        "full_text": "もう一つ、このマッチングシステムに関してなんですけれども、この今、皆さんにお示ししましたWebKitに関しては荷主と配送業者という2社の契約になるわけですけれども、今回は中継していくわけですから、もう1社配送業者が加わるということで3社が契約をするということになります。そうすると、この中継輸送を行う場合、この荷主にとっては荷物を預けた業者と最終的に届ける業者が別になるということですから、やはり事前に荷主側の理解。だからこそ、信頼関係でやはり荷物を運ぶことになりますのでね、そこについてはしっかりと荷主、それから事業者側の信頼関係が結べるようなきちんとした契約、これが最終的に結べるようにしていただきたいというふうに思いますし、いろんな形態があるからこそ、さっき申し上げた多重下請けのようなものが残ってしまうリスクが同時に出てしまうと思うんですね。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "岡野",
+        "role": "",
+        "summary": "- 1社との契約後に事業者が再委託するケースや、荷主が複数事業者と直接契約するケースなど様々な形態が考えられる\n- 荷主の理解が不可欠であるため、本法案では荷主へも努力義務を課している",
+        "full_text": "中継輸送を実施する際の契約については、さまざまな形態が考えられますが、例えば、荷主とある1つのトラック運送事業者とが運送契約を締結した上で、当該トラック運送事業者が中継輸送の相手方となるトラック運送事業者と運送契約を締結するケース。それから、荷主が直接輸送分担する複数のトラック事業者と運送契約を締結するケース。また、荷主が貨物利用運送事業者と運送契約を締結し、当該貨物利用運送事業者が輸送分担する複数のトラック事業者と運送契約を締結するケース。いずれの場合であっても、荷主の理解を得るということが不可欠であろうというふうに考えてございまして、トラック事業者が中継輸送を実施するにあたっては、発注から納品までの間における十分なリードタイムの設定や、積み込み時間、着時間の調整、運転者の増加等に伴うコスト増に対する理解等の観点から、荷主からの協力を得るために、本法案においては、荷主へも努力義務を課すということにしているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#5226.48",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中継輸送における契約形態と信頼関係の構築について",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "WebKit"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "荷主、配送業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "本法案"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "荷主からの協力を得るために、本法案においては、荷主へも努力義務を課すということにしているところでございます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は要望に近い形式ですが、回答側で中継輸送における想定契約パターンを具体的に提示し、法案での荷主への努力義務について言及しており、記録としての価値があります。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "疑問文形式ではなく「～していただきたい」という要望形式であるため、政府の明確な回答を導き出しにくい設計になっています。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_025",
+      "segment_index": 3,
+      "topic": "生鮮食料品の中継輸送と設備要件",
+      "question": {
+        "speaker": "礒崎哲史",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 冷蔵・冷凍品などの生鮮食料品は中継輸送が難しいとの現場の声があるが、政府としてどのような取り組みや設備研究を行うか問う",
+        "full_text": "続いての質問ですけれども、ちょっと質問順番変えまして、これも先ほど質問の中にございましたが、生鮮食料品の輸送についてということで、一番最後にちょっと質問を作っていただいたんですけれども、今日農水省さんにも来ていただいておりますので、冷蔵、冷凍の商品ですとか、生鮮食料品においては正直中継輸送難しいんじゃないかなという現場の声も少し今聞かれているところではあるんですけれども、こうした点について今政府の方ではどのようなことを進めておられるのか、その点についてお伺いしたいと思います。実際に荷物の入れ替え等も発生しますので、やはり事業者としては本当にそういう状況で荷物を扱ってしまって大丈夫なのかどうか不安もあろうかと思います。ぜひ中継輸送拠点にそうした冷蔵冷凍ができるような倉庫、これも設けてもらうことはぜひ推進はしていただきたいのですが、併せて作業の工程を考えたときに、本当に現実的にそれができるのかどうかというのは、これは事業者の方とですね、よくよく意見交換もしていただいた上で、必要な設備の要件とは一体、作るのであればどういう設備が必要なのか、その点についてもぜひ研究をしていただきたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "農林水産省食品産業部長",
+        "role": "",
+        "summary": "- 生鮮品等の長距離輸送において中継輸送は極めて有効な手段であると考えている（※答弁途中で遮られたが、有効性の認識を表明）",
+        "full_text": "生化物ですとか、水産品等の生鮮品ですとか、冷蔵冷凍品につきましては、産地と消費地が離れている場合が多いということもありまして、どうしても長距離輸送にならざるを得ないという実態がございます。このため、こうした食料品の物流の効率化を図るためには、やはり中継輸送という手段が極めて有効であるとは考えておりますけれども、同時に鮮度ですとか品質を保持する。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#5226.48",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "生鮮食料品の中継輸送の現状と今後の対応について",
+          "sub_asks": [
+            "政府が現在どのようなことを進めているか",
+            "設備要件の研究および事業者との意見交換の要望"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "こうした食料品の物流の効率化を図るためには、やはり中継輸送という手段が極めて有効であるとは考えております",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的だが、回答が途中で切れているか、あるいは一般論に留まっており、具体的な施策やコミットメントが示されていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "要望事項（研究してほしい）と質問事項（何を進めているか）が混在しているため、回答者が一般論で逃げやすい構成になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_026",
+      "segment_index": 3,
+      "topic": "中継輸送におけるパレット標準化の推進",
+      "question": {
+        "speaker": "礒崎哲史",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 中継拠点での効率的な荷乗せ替えにはパレット積みの促進が不可欠であるとの認識について問う",
+        "full_text": "続いての質問ですけれども、今お話をした生鮮食料品とも深く関わるんですが、生鮮食料品はなかなか運ぶのが大変だというのが実は荷姿。荷姿がかなりいろいろな作物の種類によっても変わってくるということで、標準化するのがなかなか難しい世界であるというのがございました。今回まさにこの中継拠点で荷物の乗せ替えをしようとするとなると、そこがスピーディーにできるのかどうかというのが一つ問題になってくるかというふうに思います。特にトレーラーではなくトラックの場合、これは必ず必要になりますので、そうした点が一つ課題になると思います。そうしますと、パレット積みができるのかどうか、それともバラ積みになって手積みをしなければいけないのかどうかで、作業時間に大きな差が発生するということが、今から想定されるわけですけれども、やはりこの中継輸送拠点、これをしっかりと活用していくためには、パレット積みの促進が不可欠だとこのように考えますけれども、政府の認識をお伺いしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "金子恭之",
+        "role": "",
+        "summary": "- パレット化・標準化は共通の課題であると認識している\n- 2030年度時点でパレット標準化割合50%以上などの目標を定め、支援を行っている",
+        "full_text": "ですからパレット化をしていく、標準化をしていくというのが、我々の共通の課題でございます。パレットの標準化割合を2030年度時点で50%以上に、レンタルパレット保有数量に占める一次型パレットの割合を2030年度時点で約85%以上にすることを目標として定め、支援を行っているところでございます。国土交通省としては、本法案による中継輸送施設の整備を促していく中で、物流標準化にしっかりと取り組み、標準仕様を推進してまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#5226.48",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中継輸送拠点活用に向けたパレット積み促進の認識",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "2030年度時点で50%以上"
+            },
+            {
+              "type": "number",
+              "excerpt": "2030年度時点で約85%以上"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "標準仕様を推進してまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "パレットの標準化割合を2030年度時点で50%以上に、レンタルパレット保有数量に占める一次型パレットの割合を2030年度時点で約85%以上にすることを目標として定め",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "パレット化の必要性という認識への問いに対し、政府が設定している具体的な数値目標を提示して回答しており、記録価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "政府の認識を問う形式ではなく、具体的な促進策やスケジュールを問う形式にすれば、より高いコミットメントを引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_027",
+      "segment_index": 3,
+      "topic": "中継輸送施設の休憩機能とダブル連結トラックの駐車スペース",
+      "question": {
+        "speaker": "礒崎哲史",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 中継輸送施設を休憩施設として活用することへの考え方と、ダブル連結トラック（特大車）の駐車スペース不足への対策・計画を問う",
+        "full_text": "もう時間なくなってきましたので、次で、休憩施設としても使えるようにしてほしいということで、そういう施設の導入を今求められているところでもありますので、この点どのようにお考えになっているのかという点と合わせて、ダブル連結トラックですね。この特大車の駐車スペースの少なさを訴える声というのがやはり少なくありません。駐車スペースの少なさから結果として運用を控える、導入を控えるという声も今聞かれています。今後の特大車のこうした駐車スペースの拡大の計画と合わせてお話を伺いたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "金子恭之",
+        "role": "",
+        "summary": "- 中継輸送施設に疲労回復施設（入浴施設等）を併設することを認定要件としており、ドライバーの負担軽減に寄与させる\n- ダブル連結トラックの普及に向け、総合物流施策大綱に基づき車両の規格化・標準化等の課題に対応し、輸送力の確保に取り組む",
+        "full_text": "本法案においては、トラックドライバーの負担軽減を主な目的の一つとしていることから、中継輸送施設には、例えば入浴施設設備といった疲労回復施設が併設されていることが認定の要件とされています。当該中継輸送施設は、長距離ドライバーの休憩にも用いることも想定されることから、中継輸送に限らず、幅広くドライバーの皆様の負担軽減に寄与できると考えております。ダブル連結トラックの普及に当たっては車両の規格化、標準化等が課題となっております。国土交通省といたしましては物流大綱に基づきこうした課題に対応しつつ、ダブル連結トラックの利用拡大等による2030年度の輸送力の確保に向けてしっかり取り組んでまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#5226.48",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "休憩施設の導入と特大車の駐車スペース拡大について",
+          "sub_asks": [
+            "休憩施設として使える施設の導入に関する考え",
+            "ダブル連結トラックの駐車スペース拡大計画"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "ダブル連結トラックの利用者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "中継輸送施設"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "物流大綱"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "2030年度"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "しっかり取り組んでまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "中継輸送施設には、例えば入浴施設設備といった疲労回復施設が併設されていることが認定の要件とされています。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "休憩施設については認定要件という具体的回答があるが、駐車スペース拡大という核心的な問いに対しては抽象的な意欲表明に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "駐車スペースの「拡大計画」を具体的に問うているため、現状の計画の有無や数値目標を求める形式にすべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_028",
+      "segment_index": 4,
+      "topic": "PPバンド等の物流資材の供給不足への対応",
+      "question": {
+        "speaker": "三浦信祐",
+        "party": "公明党",
+        "summary": "- PPバンドが入手困難でトラックの稼働率が低下しているという切実な声がある\n- 国土交通省としても供給確保に向けて取り組んでほしい",
+        "full_text": "梱包用バンド、PPバンド、これが入手困難になっていて、1日で資材を運ぶトラック140台を稼働させることができるにもかかわらず、このPPバンドが入手できないゆえに、40台しか稼働できなかったという切実な声も伺いました。このPPバンドが入手できるように対応をお願いしたいという声、これだけではなくたくさん寄せられております。物資は経産省での対応であると承知をしておりますけれども、トラック事業者の困りごとであり、荷主も着荷主もおられる、その先に工程があるはずであります。ぜひ国交省としても対応していただきたいと思いますが、金子大臣、しっかり取り組んでいかないでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "金子敬",
+        "role": "",
+        "summary": "- 中東情勢を踏まえ、業界団体を通じて現状把握を進めている\n- 一部の事業者から供給不足の報告を受けており、速やかに働きかけを行いたい\n- 経済産業省や業界団体と連携し、物流機能の維持・確保を図る",
+        "full_text": "本当に現場の声、PPバンドですね、結束バンドのような荷物を固定するものについての、今ご指摘がございました。PPバンドも含めた物流資材のトラック事業者への供給状況については、今般の中東情勢を踏まえ、現在、業界団体を通じて現状把握を進めております。一部の事業者からPPバンドについて、これまでどおりの供給がなされていない等の報告が寄せられております。国土交通省関係事業者への働きかけを速やかに、早く行っていきたいと思っております。引き続き、中東情勢によるトラック運送業界への影響を注視しつつ、事業者の生の声にも丁寧に耳を傾けながら、経済産業省をはじめとする関係省庁や業界団体とも連携をし、物流機能の維持・確保を図ってまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#7061.92",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "PPバンド不足への国交省の対応要望",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "1日で資材を運ぶトラック140台"
+            },
+            {
+              "type": "number",
+              "excerpt": "40台しか稼働できなかった"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "トラック事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "中東情勢"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "業界団体"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "物流機能の維持・確保を図ってまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "中東情勢によるトラック運送業界への影響を注視しつつ、経済産業省をはじめとする関係省庁や業界団体とも連携をし、物流機能の維持・確保を図ってまいります。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "PPバンド不足という具体的な現場の課題に対し、大臣が現状把握に努める旨を回答している。具体的な解決策や期限の提示はないため、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「取り組んでいかないでしょうか」という閉じた問いかけのため、大臣が「取り組む」と答えるだけの形式的なやり取りになりやすい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_029",
+      "segment_index": 4,
+      "topic": "物流効率化法における中継輸送の申請手続きの簡素化",
+      "question": {
+        "speaker": "三浦信祐",
+        "party": "公明党",
+        "summary": "- 中継輸送の実施計画の申請手続きが複雑煩雑になると、事業者が導入を躊躇する可能性がある\n- 手続きを複雑にしないためにどのように対応するか",
+        "full_text": "物流効率化法の改正案について質問させていただきます。本内容について早く推進すべきであり、具体的な運用面について一つ一つ確認をさせていただきたいと思います。本法案では中継輸送実施に関する基本方針を国交大臣が策定されること、これに基づいて貨物自動車中継輸送実施計画が立てられて認定を受けることができるとしております。立案から運用まで多くの関係者が携わることになるゆえに、計画が複雑になることは容易に想定できますけれども、一方で申請手続きが、これが複雑煩雑であれば、事業者の皆さんにとってみれば、計画自体をそもそも考慮すること自体をどうしようかなと悩むことになってしまう可能性も十分あります。申請は複雑煩雑な内容にしてはならないと思いますけれども、金子大臣、どのように対応していただけますでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "金子敬",
+        "role": "",
+        "summary": "- 国土交通大臣として、中継輸送について分かりやすく示していく",
+        "full_text": "しっかり今の質問に対してでございますが、法案に基づく中継輸送、国土交通大臣として分かりやすく示してまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#7061.92",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中継輸送の申請手続きの簡素化への対応",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "物流効率化法の改正案"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "分かりやすく示してまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "法案に基づく中継輸送、国土交通大臣として分かりやすく示してまいります。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "申請手続きの簡素化を求める質問に対し、大臣が「分かりやすく示す」と答えたのみであり、具体性に欠ける。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのように対応するか」というオープンクエスチョンであるため、大臣が抽象的な回答で逃げる余地を与えている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_030",
+      "segment_index": 4,
+      "topic": "中継輸送認定における計画変更の柔軟性",
+      "question": {
+        "speaker": "三浦信祐",
+        "party": "公明党",
+        "summary": "- 運用開始後、荷主の変更や配送先の複線化など軽微な変更のたびに計画変更認定が必要になると生産性が低下する\n- 認定の運用に柔軟性を持たせる考えはあるか",
+        "full_text": "物流は生き物であり、携わる内容の変動は想定しなければならないと思います。本法律に基づいて、運用開始後、計画自体の骨格に変更はなかったとしても、荷主が変わる、あるいは中継地点以降の配送先の複線化によってさらに効率が向上する。また、荷物が集積しやすい、あるいは戻り便への荷物の充足率が上昇する等、プラスの効果が生じ得る可能性も十分にあります。根幹の計画に変更はなくとも、スモールスクラップ&ビルドが生じる際に、その度ごとに計画変更等を図っていては、生産性が低くなってしまうということが想定されます。ですので、運用上の変更柔軟性を確保するということが必要と考えます。認定自体の柔軟性はどう考えているか伺いたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "岡野総括審議官",
+        "role": "",
+        "summary": "- 計画の実施に大きな影響を与えない軽微な修正（代表者の住所変更など）については、変更認定を不要とする運用を想定している\n- 個々の計画ごとに相談を踏まえ適切に対応する",
+        "full_text": "認定を受けた計画の変更につきましては、申請事業者にとって過度な負担とならないよう、計画の実施に大きな影響を与えないような軽微な修正の場合、運用上、変更認定を不要とすることを想定しているところでございます。他方で委員からご指摘ございました、中継移送を実施する事業者などに変更がある場合、こういった場合には実施計画の変更認定を受ける必要がございますが、例えば代表者の住所が変更になったとか、こういった軽微なものにつきましては、変更認定を不要とするといった方向で検討しているところでございます。いずれにしましても、個々の計画ごとに事業者からの相談等を踏まえながら、適切に対応していきたいというふうに考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#7061.92",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "認定計画の運用上の変更柔軟性について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "本法律に基づいて"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "荷主",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "代表者の住所"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "変更認定を不要とするといった方向で検討している",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "計画の実施に大きな影響を与えないような軽微な修正の場合、運用上、変更認定を不要とすることを想定している",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "認定計画の変更手続きにおける「軽微な修正」の扱いについて、政府の運用方針が具体的に示された有益なやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_031",
+      "segment_index": 4,
+      "topic": "中継輸送拠点における疲労回復施設の設備想定",
+      "question": {
+        "speaker": "三浦信祐",
+        "party": "公明党",
+        "summary": "- 中継拠点に併設される入浴設備等の疲労回復施設について、具体的にどのような規模や設備を想定しているか",
+        "full_text": "本法案の29条の2において、中継拠点に求める設備として、入浴設備を備えた待機所その他の貨物自動車の運転の疲労回復するための施設が併設されと規定されています。先ほどの議論があります。ドライバーさんの負担軽減、疲労回復ということは重要なことであります。その上で、規模感、利用想定範囲等について具体的にどのような施設設備を想定をされているのでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "岡野総括審議官",
+        "role": "",
+        "summary": "- 認定要件の詳細は今後検討するが、目的を踏まえた機能を備えつつ、整備・運営事業者に過重な負担とならないよう具体化を進める",
+        "full_text": "本法案はトラックドライバーの負担軽減を主な目的の一つとしており、これを踏まえて中継輸送拠点には疲労を回復するための施設が併設されていること等も認定の要件としているところでございます。認定要件の詳細につきましては、今後検討していくこととなりますが、本法案の目的を踏まえ、中継輸送拠点として必要と考えられる機能などを備えつつも、整備、運営する事業者や当該拠点を利用する事業者にとって過重なものとならないよう、今後具体化の検討を進めていきたいというふうに考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#7061.92",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中継拠点の設備規模や利用想定範囲の具体的内容",
+          "sub_asks": [
+            "想定される施設の規模感",
+            "想定される利用範囲"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "本法案の29条の2"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "ドライバーさん",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "今後具体化の検討を進めていきたい",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "認定要件の詳細につきましては、今後検討していくこととなりますが、今後具体化の検討を進めていきたいと考えてございます。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な設備要件を問う質問に対し、政府側は「今後検討する」という回答に留まっており、実質的な情報は得られていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「規模感」や「利用想定範囲」など、回答者が具体的に答えざるを得ない指標をより細かく指定して問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_032",
+      "segment_index": 4,
+      "topic": "中継輸送に伴うコスト増の荷主への転嫁と協力体制",
+      "question": {
+        "speaker": "三浦信祐",
+        "party": "公明党",
+        "summary": "- 中継輸送の導入により人件費やインフラ投資コストが増加するため、荷主の理解と適切な価格設定が不可欠である\n- 法案にある荷主の努力義務について、具体的に何を求めているのか",
+        "full_text": "本改正における中継輸送事業を実施しようとする場合に、先ほど来ありますけれども、トラックドライバー人員と人件費の確保、走行建設等のインフラ投資分の回収コスト、そして倉庫管理に係る人件費や必要コストが当然上乗せをされていくということになっていくでしょう。その際の人件費アップも当然想定をされていくことになります。荷主の皆さんの理解なくして本取組を実行する計画を考える事業者というのは増えていかないのではないかということも容易に想像していかなければいけません。本法第29条の4に、ここでは荷主及び倉庫業者等は中継輸送の円滑な実施に協力するよう努めなければならないとしておりますけれども、ここは具体的に何を求めておられるのでしょうか。事業者が本法案に基づいた計画を策定するにあたって、どのように荷主に理解を得ていくのか、適切な価格設定等についてのアドバイスを国交省ができるようにするなど対処が必要だというふうに思います。要は荷主さんのことを抜きにして事業だけをやろうとすると、先ほど来あるようにコストが上がっちゃうので、それは駄目です。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "岡野総括審議官",
+        "role": "",
+        "summary": "- リードタイムの設定、積込・着時間の調整、コスト増への理解などの協力を得るため、荷主に努力義務を課している\n- 標準的運賃の周知や公正取引委員会と連携した監視体制の強化を通じて、適切な価格転嫁に取り組む",
+        "full_text": "トラック事業者が中継輸送を実施するに当たりましては、委員からご指摘ございましたように、荷主の理解が非常に重要でございます。このため、発注から納品までの間における十分なリードタイムの設定ですとか、積込時間、着時間の調整、そして運転者の増加等に伴うコスト増に対する理解、こういったものの観点から、荷主からの協力を得るために、本法案において先ほどご指摘ございました、荷主へも努力義務を課すというふうにしているところでございます。その上で中継輸送の実施に伴い必要となるコストにつきましては、荷主に適切に転嫁することが重要であるというふうに考えてございます。国土交通省ではトラック事業者が荷主に対して価格転嫁できるよう、標準的運賃の周知啓発や公正取引委員会とも連携したトラック物流事業面による荷主への監視体制の強化などを通じた取引環境の適正化に取り組んでおり、こうした取組を引き続き強力に進めていきたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#7061.92",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中継輸送における荷主の協力義務の具体的内容",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "本法第29条の4"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "荷主及び倉庫業者等",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "公正取引委員会"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "標準的運賃"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "こうした取組を引き続き強力に進めていきたいと考えてございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "中継輸送の実施に伴い必要となるコストにつきましては、荷主に適切に転嫁することが重要であるというふうに考えてございます。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "中継輸送における荷主の努力義務の具体的内容と、コスト転嫁への政府の考え方が明確に示されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問の後半が要望（アドバイスが必要だという意見）になっており、問いかけが分散している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_033",
+      "segment_index": 4,
+      "topic": "高速道路運賃の個別契約への明記と転嫁",
+      "question": {
+        "speaker": "三浦信祐",
+        "party": "公明党",
+        "summary": "- 時間短縮のために高速道路を利用する場合、運賃が契約に付加されていないケースがある\n- 個別契約の見直しを含め、現状どのような対策を講じているか",
+        "full_text": "現状、物流事業者が物品輸送を行うに際し、時間、距離、燃料費、人件費、物料等の要因を加味して運行コスト計算がなされていると承知をしております。インフラ投資によって、新たに高速道路や有料道路が開通し、またスマートインターの開通など、移動時間短縮効果が発現できる地域が着実に増えていると認識をしております。これによって、発荷主あるいは受け入り主が時間短縮を想定した発注をすることになることも当然考えていかなければいけません。しかし、この転換輸送を行う際に高速道路を使わないと時間内での配送が困難になるようなケースがある場合においても、高速道路運賃がこの運賃に付加されていないとか、実は下道契約になっているなど、契約自体を見直していかないといけないことであり、これをちゃんとやらないと本末転倒であるというふうに思います。個別の契約にこそ必要な改善が図られなければなりません。これらの対策は現状どのようになっているのか、坂井副大臣に伺います。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "坂井学",
+        "role": "",
+        "summary": "- コスト上昇分を適切に運賃に転嫁できる環境整備が必要である\n- 高速道路料金については、荷主と事業者が協議し、個別の契約において書面等で明示することが基本である",
+        "full_text": "お答えを申し上げます。トラック運送業においてコストの上昇分を適切に運賃料金に転嫁することが基本でありまして、トラック運送事業者が適正な運賃料金を収受できる環境の整備がまずは必要でございます。委員御指摘のとおり、高速道路料金につきましては、荷主とトラック事業者の間で十分に協議を行っていただいて、あらかじめ個別の契約において書面等によって明示した上で、荷主から三浦信祐君。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#7061.92",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "高速道路利用に伴う運賃転嫁の現状について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "物流事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "vice_minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "トラック運送業においてコストの上昇分を適切に運賃料金に転嫁することが基本でありまして",
+          "score": 0.3
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "現状の対策を問う質問に対し、あるべき論（基本原則）を述べるに留まっており、具体的な施策の提示がないため価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「現状どのようになっているのか」という漠然とした問いではなく、具体的なガイドラインの有無や是正措置の実施状況を問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_034",
+      "segment_index": 4,
+      "topic": "物流効率化法に基づく荷主への指導・助言の現状",
+      "question": {
+        "speaker": "三浦信祐",
+        "party": "公明党",
+        "summary": "- 物流効率化のための努力義務について、指導・助言・調査公表の現状はどうなっているか\n- 実質的に措置できていない事業者へどのように対応しているか",
+        "full_text": "さて、昨年4月に施行されている物流効率化法について伺います。これは法律がしょっちゅう変わるので、いつの話かということがよくわからなくなるときがあるんですけれども、荷主物流事業者に対して、物流効率化のために取り組むべき措置について、努力義務を課しております。取組状況について、指導、助言、調査公表を実施していると承知をしておりますが、現状どのようになっておりますでしょうか。努力義務であるがゆえに、実質的に措置できていない事業に対して、坂井副大臣、どのように対応しているんでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "坂井学",
+        "role": "",
+        "summary": "- アンケート調査を行い、600件の法的措置（調査等）を実施している\n- 取組不十分な荷主の情報は業界と共有し、是正指導をより一層強化していく",
+        "full_text": "ご指摘のとおりでございまして、2025年の4月から施行されました改正物流効率化法に基づいて、荷主物流事業者に対しまして、荷待ち時間短縮などの努力義務を課すとともに、必要があると認めるときは、調査、公表、指導、助言を行うこととしております。これを踏まえまして、現在、物流効率化に向けた荷主物流事業者の取組状況につきまして、アンケート調査を行い、600件の法的措置を実施しているところでございます。今回の調査によって取組が不十分であることが明らかとなった荷主等の情報につきましては、トラック物流業界とも共有をいたしまして、是正指導等より一層強化をしてまいりたいと存じます。国土交通省としてましても、引き続きトラック運送業の取引環境の適正化や物流の生産性向上に向けて、改正物流効率化法の着実な施行を進めてまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#7061.92",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "物流効率化法の努力義務への対応状況",
+          "sub_asks": [
+            "現状の取組状況はどうなっているか",
+            "実質的に措置できていない事業者へどう対応しているか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "昨年4月に施行されている物流効率化法"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "荷主物流事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "600件の法的措置"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "改正物流効率化法"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "是正指導等より一層強化をしてまいりたいと存じます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "vice_minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "アンケート調査を行い、600件の法的措置を実施しているところでございます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "現状の調査件数という具体的な数字が示されており、記録としての価値がある。ただし、今後の対応は精神論的な努力目標に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どのように対応しているか」という問いに対し、具体的な基準やフローを問う形式にすれば、より踏み込んだ回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_035",
+      "segment_index": 4,
+      "topic": "トラック適正化2法に基づく適正原価制度の策定スケジュール",
+      "question": {
+        "speaker": "三浦信祐",
+        "party": "公明党",
+        "summary": "- 適正原価調査の回答状況はどうなっているか\n- 2028年5月の施行に向けた具体的な策定プロセスと告示までのスケジュールはどうなっているか",
+        "full_text": "それに関連してですけれども、トラック適正化2法の一部が本年4月に施行されている状況です。その中で適正原価を下回る運賃及び料金の制限が課せられて、2028年5月までに施行することが定められています。全国のトラック事業者を対象とした適正原価調査の回答は義務化され、現状終了しているというふうに承知をしておりますが、回答状況はどのようになっていますか。また、その上で今後の具体的策定プロセス、告示までのスケジュールはどのようになっているのでしょうか。例えば1年間の周知期間、これを想定した場合には、仮に2028年4月の適正原価の施行とした場合には、2027年4月に告示となる。その前に原案を提案し取りまとめていくことが必要であれば、今年中の取り組みとなるはずであります。現場では一刻も早く公表を望む声もあるというのが現実です。どのような対応をするのか伺いたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "岡野総括審議官",
+        "role": "",
+        "summary": "- 令和10年6月までの施行に向け準備中であり、実態調査において半数を超える事業者から回答を得ている\n- 実態調査の結果を踏まえ、業界や有識者の意見を伺いながら、一定の周知期間を設けて告示内容を検討する",
+        "full_text": "昨年6月に成立したトラック適正化2法により導入される適正原価制度につきましては、同法の交付から3年以内、すなわち令和10年6月までに施行することとされており、現在施行に向けた準備を進めているところでございます。委員御指摘のとおり、適正原価の設定に当たっての参考とするため、本年1月から3月にかけて、トラック事業者を対象とした原価構造や運行形態等に関する実態調査を実施し、半数を超えるトラック事業者から回答を得ているところでございます。適正原価の告示に当たりましては、一定の周知期間を設け、時期を定める必要があるものと認識してございますが、実態調査の結果も踏まえつつ、今後、関係業界や有識者の御意見も丁寧に伺いながら、告示内容を含め検討を進めていきたいというふうに考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#7061.92",
+      "metrics": null
+    },
+    {
+      "id": "qa_036",
+      "segment_index": 5,
+      "topic": "中継輸送の普及定着に向けた実装策",
+      "question": {
+        "speaker": "石井めぐみ",
+        "party": "日本維新の会",
+        "summary": "- 中継輸送の実装には実務面の整理やデータ連携、運用ルール整備など多くの課題がある\n- 今後どのように普及定着を図り、実装へとつなげていくのか",
+        "full_text": "今回の法案には、共同輸送や中継輸送の促進、物流標準化に向けた取組など、物流効率化を進めるための施策が盛り込まれております。特に中継輸送は、ドライバー不足や働き方改革への対応に加え、限られた人員の中でも、物流機能を維持していく上で、重要な取り組みであると考えております。一方で、その実装に向けては、役割分担や責任分解といった実務面の整理に加え、データ連携や標準化、運用ルールの整備など、多くの課題も残されております。そこで、中継輸送については、今後どのように普及定着を図り、実装へとつなげていくのか、大臣のご所見をお伺いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "金子恭之",
+        "role": "",
+        "summary": "- 中継輸送施設の確保や協業相手の確保が課題となっていることを認識している\n- 実施の手引きや実例集、リーフレットの周知を図り、制度の普及促進に努める",
+        "full_text": "中継輸送の実施を希望するトラック事業者は多いものの、中継輸送を実施するに当たっては、中継輸送施設の確保、協業相手の確保などが課題となっており、中継輸送の取組が進んでいない状況と承知をしております。このため、中継輸送施設の確保につきましては、国土交通省といたしましては、中継輸送の実施の手引きや取組実例集、リーフレットなどの周知も図りつつ、中継輸送の仕組みが有効に活用されるよう、制度の普及促進に努めてまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#8285.75",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中継輸送の普及定着と実装への具体策",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "ドライバー",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "中継輸送の実施の手引き"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "取組実例集"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "リーフレット"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "制度の普及促進に努めてまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "中継輸送の実施の手引きや取組実例集、リーフレットなどの周知も図りつつ、制度の普及促進に努めてまいります。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "中継輸送の実装に向けた大臣の所見を問う質問に対し、周知活動による普及促進という一般的回答に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "役割分担や責任分解などの具体的課題を提示しているため、それらへの個別回答を求める形式にすればより実効的な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_037",
+      "segment_index": 5,
+      "topic": "中継輸送拠点の整備主体と中小事業者の参入",
+      "question": {
+        "speaker": "初鹿野裕樹",
+        "party": "参政党",
+        "summary": "- 中継拠点の整備は資金力のある大手やデベロッパーが中心となり、中小は利用のみに留まるのではないか\n- 国土交通省として、整備主体に中小事業者が関わるケースを見込んでいるか",
+        "full_text": "まず、中継拠点について、どのような事業者が整備することを想定しているのか伺いたいと思います。こうした拠点をつくるには、広い土地を確保し、施設や設備を整える必要があります。そう考えると、実際には資金力のある大手運送事業者や不動産デベロッパーなどが中心となって進めることになるのではないかと思います。実際に本案の概要で紹介されている京都府城陽市の施設も、三菱自動車による大規模な開発案件です。条文を見ますと、中小が整備に関わることが否定されているわけではありませんが、現実には、自ら拠点を作るというより、出来上がった拠点を利用するだけの立場に留まるのではないかという懸念がございます。そこで伺います。国土交通省として、中継拠点については、主に大手が整備することを想定しているのか、それとも中小が整備に関わるケースも一定程度見込んでいるのか、担い手像も含め見通しを伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "金子恭之",
+        "role": "",
+        "summary": "- 整備主体はトラック事業者、倉庫業者、不動産開発事業者等を想定\n- 中小事業者であっても、他社と協力することで整備が可能であると認識\n- 地方部において地元の中小倉庫事業者が主体となることも想定している",
+        "full_text": "中継輸送拠点の主な整備主体としては、トラック事業者、倉庫業者、トラックターミナル事業者、不動産開発事業者を想定をいたしております。中継輸送拠点については、何よりトラック事業者が、その拠点を中継輸送の実施に当たって使用できることが重要であると考えており、大手事業者が自ら整備するのみならず、単独での整備が困難な中小事業者についても、他のトラック事業者や倉庫事業者等と協力することで、中継輸送拠点の整備が可能となるものと認識をいたしております。中継輸送拠点の規模については、物流需要に応じたものとなることが想定され、例えば、地方部においても、地元の中小の倉庫事業者が拠点整備の主体となることも想定をいたしております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#8285.75",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中継拠点の整備主体の想定と担い手像について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "field_case",
+              "excerpt": "京都府城陽市の施設も、三菱自動車による大規模な開発案件"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "大手運送事業者や不動産デベロッパー",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": true,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "トラック事業者"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "倉庫業者"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "トラックターミナル事業者"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "不動産開発事業者"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "地方部においても、地元の中小の倉庫事業者が拠点整備の主体となることも想定をいたしております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "中継拠点の整備主体に関する政府の想定を明確に回答しており、中小事業者の参入可能性についても言及している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_038",
+      "segment_index": 5,
+      "topic": "中小事業者の拠点整備におけるハードルと支援策",
+      "question": {
+        "speaker": "初鹿野裕樹",
+        "party": "参政党",
+        "summary": "- 中小事業者が拠点整備を行う際の土地確保や資金調達等のハードルをどう認識しているか\n- ハードルを下げるための中小特化の支援策はあるか",
+        "full_text": "中小の事業者が中継拠点の整備に関わろうとする場合、土地の確保、設備投資、資金調達などの面で、どのようなハードルがあると認識しているのか伺います。また今回の法改正では、こうしたハードルを下げるために中小に特化した支援策は用意されているのか、併せて伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "岡野総括審議官",
+        "role": "",
+        "summary": "- 拠点確保が課題となり取組が進まない状況であると承知している\n- 中小特化ではないが、課税特例や出資・貸付等の各種支援措置を講じている\n- 多数の事業者が利用可能なスペースを設けることを要件とし、資本力の弱い中小でも活用可能とする",
+        "full_text": "中小トラック事業者においても中継輸送の実施を希望する事業者は多いものの、中継輸送を実施するにあたっては、複数のトラックドライバーが相互に貨物の受け渡し等を行うための中継輸送拠点の確保等が課題となって、中継輸送の取組が進めない状況であるというふうに承知してございます。中継輸送拠点の整備に当たりましては、その機能や規模等によりますが、一定程度の資金が必要になるものと考えてございます。このため、中小に特化しているものではございませんが、中継輸送拠点への整備等に対し、課税の特例や、必要な資金の出資及び貸付等の各種支援措置を講ずることとしているところでございます。中継輸送拠点の整備に当たりましては、課税の特例措置の適用を受ける場合、実施計画の申請者以外の多数のトラック事業者が使用可能なスペースを設けることを要件とすることを想定してございます。これによりまして、資本力の弱い中小のトラック事業者であっても、当該拠点を活用して中継輸送を行うことが可能となります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#8285.75",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中小事業者の中継拠点整備のハードルと支援策",
+          "sub_asks": [
+            "中継拠点整備におけるハードルの認識",
+            "中小に特化した支援策の有無"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "今回の法改正"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "中小の事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "課税の特例"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "資金の出資及び貸付"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "各種支援措置を講ずることとしているところでございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "中継輸送拠点への整備等に対し、課税の特例や、必要な資金の出資及び貸付等の各種支援措置を講ずることとしている",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "中小事業者が直面するハードルへの認識と、それに対する具体的（ただし中小特化ではない）支援策が明確に回答されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「中小に特化した」支援策があるかを問うているため、Yes/Noで答えさせる形式にすればより明確な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_039",
+      "segment_index": 5,
+      "topic": "中継拠点の施設要件の柔軟化",
+      "question": {
+        "speaker": "初鹿野裕樹",
+        "party": "参政党",
+        "summary": "- フルスペックの施設ではなく、地域の実情に応じた簡易な拠点も認めることで中小の参入を促すべきではないか\n- 入浴設備をシャワー程度にするなど、柔軟な施設要件を検討する考えはあるか",
+        "full_text": "さまざまな支援措置が講じられているとのことですが、中小の事業者に特化したものではないように受け止められます。この点、中継拠点については、全国一律にフルスペックの施設を前提とするのではなく、地域の実情や使い方に応じて、もう少し簡易な拠点も含めて認めていくことが、結果として利用の広がりや、中小の運送事業者の参入にもつながるのではないかと思います。そこで、こうした段階的柔軟な施設要件のあり方について、今後検討する考えはあるのか伺います。例えば、入浴設備については、本格的なものではなく、シャワー程度でも疲労軽減につながるという声もあります。こうした現場の声を受け止めて、柔軟に検討していただきたいと思いますが、大臣、いかがでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "金子恭之",
+        "role": "",
+        "summary": "- 疲労回復施設の併設は認定要件としている\n- 事業者にとって過重な負担とならないよう、具体的な機能について今後検討を進める\n- 全ての施設を備える必要はなく、拠点ごとの状況に応じた検討を行う",
+        "full_text": "本法案はトラックドライバーの負担軽減を主な目的の一つとしており、これを踏まえて中継輸送拠点には疲労回復するための施設が併設されていること等も認定の要件としております。認定要件の詳細については今後検討していくこととなりますが、本法案の目的を踏まえ、中継輸送拠点として必要と考えられる機能などを備えつつも、整備運営する事業者や、当該拠点を利用する事業者にとって過重なものとならないよう、今後具体化の検討を進めてまいります。仮眠施設、宿泊施設、あるいは入浴施設、休憩所等々ございました。それを全て備える必要はなくて、今おっしゃったように、それぞれの拠点によって、そして、疲労を回復するための施設はあり得るわけでございますので、今後、そういうことも含めて検討していただければと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#8285.75",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中継拠点の施設要件を段階的・柔軟に検討するか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "中小の運送事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "仮眠施設"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "宿泊施設"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "入浴施設"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "休憩所"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "今後具体化の検討を進めてまいります",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "整備運営する事業者や、当該拠点を利用する事業者にとって過重なものとならないよう、今後具体化の検討を進めてまいります。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "中継拠点の施設要件を柔軟にするという提案に対し、大臣が具体化の検討を行うことを明言したやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_040",
+      "segment_index": 5,
+      "topic": "公的支援の適正な配分と現場への還元",
+      "question": {
+        "speaker": "初鹿野裕樹",
+        "party": "参政党",
+        "summary": "- 公的支援が施設オーナーや投資家の利回り向上に偏り、現場の中小事業者やドライバーにしわ寄せが行く懸念がある\n- 支援が現場の負担軽減に直結することをどう担保しているか",
+        "full_text": "今回の改正では、中継輸送の実施計画の認定を受けた拠点について、固定資産税などの税制優遇や出資、長期低利貸付といった公的支援が用意されています。一方で物流拠点は物流系リートや外資系ファンドを含む機関投資家にとって安定した収益が見込める投資対象となっています。私が懸念しているのは、過労運転の防止やドライバーの負担軽減の名の下で行われる公的支援が、結果として施設オーナーや投資家の投資利回りを高める一方で、料金や拠点に合わせた運行のしわ寄せが現場の中小事業者やドライバーに及ぶのではないかという点でございます。本来の目的は過労運転を防ぎ、ドライバーの負担を軽くすることです。公的支援が施設オーナーや投資家に偏ることなく、現場の負担軽減にきちんとつながることを本法案ではどのように担保しているのか伺います。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "金子恭之",
+        "role": "",
+        "summary": "- 民間事業者の連携を後押しし、ドライバーの負担軽減と輸送効率向上の両立を図る\n- 支援措置を通じて多くの事業者が拠点を利用し、日帰り運行や休憩確保が可能になることで、中小事業者やドライバーに便益が及ぶと考えている",
+        "full_text": "委員のご指摘のとおり、公的支援の効果が中小トラック事業者やドライバーにも波及することが極めて重要であると考えており、本法案はトラック事業者等の民間事業者が連携して行う中継輸送の取組を後押しすることで、ドライバーの負担軽減や輸送効率の工場の両立を図ろうとするトラック事業者の選択肢を増やすものです。中継輸送拠点の整備に当たっては、その機能や規模等によって、これにより多くのトラック事業者が当該拠点を使用して中継輸送を行うとともに、ドライバーの日帰り運行や休憩施設の確保を可能とするものと考えております。こうした国の支援措置を通じて中継輸送を促進することで、中小のトラック事業者やそのドライバーにも便益が及ぶことと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#8285.75",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "公的支援が投資家ではなく現場の負担軽減に繋がる担保は何か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "今回の改正"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "中小事業者やドライバー",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "公的支援の効果が中小トラック事業者やドライバーにも波及することが極めて重要であると考えており",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "公的支援の便益が投資家に偏る懸念に対し、制度の趣旨を説明するに留まり、具体的な担保策（仕組み）への回答になっていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのように担保しているのか」という問いに対し、具体的な制度上の制約や条件を求める形式にすれば、より実効的な回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_041",
+      "segment_index": 5,
+      "topic": "中継輸送に伴うコスト負担の軽減策",
+      "question": {
+        "speaker": "初鹿野裕樹",
+        "party": "参政党",
+        "summary": "- 拠点利用料や高速道路料金などの「使う側」の負担を直接的に軽くする支援を検討すべきではないか",
+        "full_text": "ただいまの御答弁では、中小事業者やドライバーにとってのメリットは、拠点ができれば結果として及ぶという間接的なものにとどまっているのではないかと感じました。整備する側には税制優遇などの支援があり、一方で使う側には拠点利用料や高速道路料金などの負担が出てきます。中継輸送をしても、帰り荷が見つかるとは限りませんし、区間が分かれていることで運賃が下がる恐れもあります。価格転嫁を進めることは大事ですが、荷主との力関係を考えると、十分に転嫁できない事業者も出てくると思います。価格転嫁の取組以外に、拠点利用料や高速道路料金など、使う側の負担を直接軽くする支援についても検討の余地があると思いますが、この点について見解を伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "金子恭之",
+        "role": "",
+        "summary": "- コストは荷主に適切に転嫁することが重要であり、標準的運賃への上乗せを明記し、取引環境の適正化を進める\n- 認定事業の初年度運行経費の一部を支援し、開始直後の負担軽減を図る\n- 民間マッチングシステムの導入を促し、帰り荷の確保など実効性を高める",
+        "full_text": "委員御指摘の本法案に基づく中継輸送拠点を使用する際の利用料や高速道路料金などの中継輸送の実施に伴い必要となるコストについては、荷主に適切に転嫁することが重要であると考えております。このため、国土交通省で定めた標準的運賃においても、こうしたコストについては運賃とは別に上乗せすることを明記しているところであり、国土交通省としては、トラック事業者が荷主に対して転嫁できるよう、取引環境の適正化を引き続き極力に進めてまいります。その上で、中継輸送事業の実施に当たり、認定された事業の初年度の運行経費の一部に対して支援し、事業開始直後におけるトラック事業者の負担軽減を図ることといたしております。なお、委員御指摘の帰り荷の確保については、現時点でもトラック事業者同士のマッチング機能を有する民間事業者によるシステムが一定程度普及しているところですが、本法案に基づく認定を受けて整備を行う中継輸送拠点についても、このようなシステムの導入を促していくことで、実効性の高い中継輸送を促進してまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#8285.75",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中継輸送利用者の直接的な費用負担軽減策への見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "中小事業者やドライバー",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "標準的運賃"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国土交通省"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "取引環境の適正化を引き続き極力に進めてまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "認定された事業の初年度の運行経費の一部に対して支援し、事業開始直後におけるトラック事業者の負担軽減を図ることといたしております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "中継輸送のコスト負担軽減策について、標準的運賃への上乗せと初年度経費支援という具体的回答が得られている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_042",
+      "segment_index": 5,
+      "topic": "中継輸送の努力義務規定による不利益の有無",
+      "question": {
+        "speaker": "初鹿野裕樹",
+        "party": "参政党",
+        "summary": "- 法案で中継輸送の実施に努める責務が課されているが、積み替え困難な貨物等を扱う事業者が「努力不足」として不利益を被ることはないか",
+        "full_text": "中継輸送は義務ではなく、あくまで事業者の選択肢を増やすものだと説明されています。一方で、法案の29条の4では、一般貨物自動車運送事業者等に対して中継輸送を実施するよう努める責務が置かれています。しかし実際には、積み替えが難しい大型貨物やコスト面からの拠点の利用が難しいなど、中継輸送に馴染みにくいケースもあると思います。こうした事業者について、中継輸送を利用しない、あるいは利用できないことが努力不足と扱われることがないのか確認しておきたいと思います。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "岡野総括審議官",
+        "role": "",
+        "summary": "- 当該規定は努力義務であり、実施しないことで事業者に不利益が生じるものではない\n- 事業者の理解を促し、仕組みを有効活用させるための規定である",
+        "full_text": "このため、委員御指摘の責務規定につきましては、トラック事業者が過労運転の防止を図るとともに、他の事業者と連携、共同して中継輸送の取組を実施するよう努めなければならない旨を定めたものとなっております。この規定は努力義務規定でございますので、中継輸送を実施しない、または実施できない場合であっても、これにより事業者に対し不利益が生じるものではございませんが、国や地方公共団体の責務とともに事業者の責務を定めることにより、中継輸送に対する事業者の理解を広く促し、もってこの仕組みが有効に活用されるように規定したものでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#8285.75",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中継輸送の不利用が努力不足と扱われないか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "法案の29条の4"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "一般貨物自動車運送事業者等",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "この規定は努力義務規定でございますので、中継輸送を実施しない、または実施できない場合であっても、これにより事業者に対し不利益が生じるものではございません",
+          "score": 0.9
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "努力義務規定であるため不利益は生じないという法解釈を明確に回答しており、記録としての価値が高い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_043",
+      "segment_index": 5,
+      "topic": "ドライバーの休憩場所確保の環境整備",
+      "question": {
+        "speaker": "初鹿野裕樹",
+        "party": "参政党",
+        "summary": "- 事業者に過労運転防止の責務を課すのであれば、SA・PAの駐車場所不足などの現状を検証し、さらに環境整備を進めるべきではないか",
+        "full_text": "初鹿野裕樹君この責務規定における過労運転防止は、中継輸送を利用しない事業者にも広くかかるものだと思います。この点、いわゆる430規制について、党員アンケートでは、サービスエリア、パーキングエリアに止める場所がない、休憩を取りたくても取れない、運行が組みにくいといった声がかなり多く寄せられました。現場で大きな問題となっているように感じます。法文で、事業者に過労運転防止の責務を掲げるのであれば、休憩場所の確保について、今の取組だけで十分なのかを検証し、現場が実際に守れる環境整備をさらに進める必要があるのではないかと感じます。国交省の認識を伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "岡野総括審議官",
+        "role": "",
+        "summary": "- 中継輸送拠点の整備により、疲労回復施設の確保に資すると認識している\n- 高速道路においても、大型車駐車枠を令和7年度末までに拡充するなど、休憩場所の確保に取り組んでいる",
+        "full_text": "本法案により整備を推進する中継移送拠点につきましては、疲労を回復するための施設が併設されていることを認定の要件としており、トラックドライバーの休憩場所の確保に資するものであると認識してございます。なお、高速道路においても休憩施設における大型車駐車枠を平成29年度末の時点の約2万7000台から、令和7年度末に約3万1500台まで拡充するなど、トラックドライバーの休憩場所の確保に取り組んでいるところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#8285.75",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "休憩場所確保の環境整備の必要性に関する認識",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "党員アンケート"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "中継輸送を利用しない事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "平成29年度末の時点の約2万7000台"
+            },
+            {
+              "type": "number",
+              "excerpt": "令和7年度末に約3万1500台"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "休憩場所の確保に取り組んでいるところでございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "大型車駐車枠を平成29年度末の約2万7000台から、令和7年度末に約3万1500台まで拡充するなど、休憩場所の確保に取り組んでいる",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "休憩場所の不足という現場課題に対し、政府が具体的な駐車枠の拡充数値を提示して回答しており、事実記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「認識を伺います」という形式のため、今後の具体的な改善策や検証スケジュールを約束させる問いかけに不足していた。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_044",
+      "segment_index": 5,
+      "topic": "トラック物流改善員による是正指導の実績と実態把握",
+      "question": {
+        "speaker": "初鹿野裕樹",
+        "party": "参政党",
+        "summary": "- 荷待ち、付帯業務、運賃据え置きに関する是正指導の実績（割合）はどの程度か\n- 長時間の荷待ち・荷役の実態をどのように把握しているか",
+        "full_text": "トラック物流改善員による働きかけ、要請、勧告のうち、長時間の荷待ち、契約にない付帯業務、運賃の据え置きに関するこれまでの是正指導の実績は、全体のうちどの程度を占めるのか、また長時間の荷待ち、荷役の実態をどのように把握しているのか、伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "岡野総括審議官",
+        "role": "",
+        "summary": "- 法的措置約2600件のうち、荷待ち関係が約55%、付帯業務が約20%、運賃据え置きが約25%を占める\n- 物流効率化法に基づく調査により把握しており、荷待ち時間は2020年度から2024年度にかけて約3時間で横ばいである",
+        "full_text": "国土交通省では、令和8年3月までに、トラック物流改善員による勧告、要請及び働きかけといった法的措置を約2600件実施しており、このうち長時間の荷待ち関係は1470件で、全体の約55%。契約にない付帯業務関係は469件で、全体の約20%。運賃料金の不当な据え置き関係は663件で、全体の約25%となっております。また、委員ご指摘の2町200時間につきましては、国として物流効率化法に基づき、トラック事業者に対する調査を行う中で、その状況について把握しているところでございますが、2020年度と2024年度を比較すると、約3時間のまま横ばいとなってございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#8285.75",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "物流改善員による是正指導実績と荷待ち実態の把握方法",
+          "sub_asks": [
+            "是正指導の実績における各項目の割合",
+            "長時間の荷待ち・荷役の実態把握方法"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "トラック物流改善員",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "約2600件"
+            },
+            {
+              "type": "number",
+              "excerpt": "1470件で、全体の約55%"
+            },
+            {
+              "type": "number",
+              "excerpt": "469件で、全体の約20%"
+            },
+            {
+              "type": "number",
+              "excerpt": "663件で、全体の約25%"
+            },
+            {
+              "type": "number",
+              "excerpt": "約3時間のまま横ばい"
+            }
+          ],
+          "score": 1.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "長時間の荷待ち関係は1470件で、全体の約55%。契約にない付帯業務関係は469件で、全体の約20%。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "是正指導の具体的な件数と割合が明確に回答されており、統計的な記録価値が高い。",
+        "would_be_referenced": "high",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_045",
+      "segment_index": 5,
+      "topic": "中継輸送拠点における是正指導と体制強化",
+      "question": {
+        "speaker": "初鹿野裕樹",
+        "party": "参政党",
+        "summary": "- 中継拠点での荷待ちや価格転嫁問題も改善員の是正対象とするか\n- 拠点整備の進展に応じた改善員の体制強化をどう進めるか",
+        "full_text": "中継輸送拠点の整備が進めば、荷物や価格転換をめぐる問題が発生する現場も増える可能性があります。こうした問題についても、トラック物流改善員の把握、是正の対象としていくのか、また、拠点整備の進展に応じて、改善員の体制強化をどのように進めるのか、伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "岡野総括審議官",
+        "role": "",
+        "summary": "- 中継拠点における荷待ちや付帯業務等も是正指導の対象となる\n- 倉庫業者を情報収集対象に追加し、都道府県トラック協会と連携して約360名規模の体制を構築した\n- 外部委託によるアシスタント事務局を設置し、監視体制と是正指導を強化する",
+        "full_text": "中継輸送拠点における長時間の荷待ちや契約にない付帯業務等につきましても、トラック物流改善員の是正指導の対象となります。トラック物流改善員は、令和5年7月の設置以来、令和6年11月に、倉庫業者を情報収集対象に追加するとともに、トラック法の適正化事業実施機関である各都道府県のトラック協会に改善員調査員を設置し、国と合わせて約360名規模の連携体制のもと、情報収集を強化してきてございます。さらに令和7年9月からは収集された情報の調査分析を行うため、外部委託により改善員アシスタント事務局を新たに設置し、その成果を荷主等の違反原因行為の監視体制の強化や、効果的な是正指導に活用しているところでございます。国土交通省といたしましては、中継輸送拠点の普及など、今後の環境変化に対応し、実効性の高い情報収集や、監視、是正指導等を実施できるよう、引き続き、必要な体制の確保に努めてまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#8285.75",
+      "metrics": null
+    },
+    {
+      "id": "qa_046",
+      "segment_index": 5,
+      "topic": "中継輸送施設における疲労回復施設の具体的内容",
+      "question": {
+        "speaker": "木村英子",
+        "party": "れいわ新選組",
+        "summary": "- ドライバーが車内で仮眠せざるを得ない過酷な現状がある。疲労回復施設に、体を横にして十分に休めるスペースは含まれるのか",
+        "full_text": "その中でも深刻な課題の一つに、物流の要であるドライバーの健康維持が守られているかという問題があります。それによると、トラックドライバーの方は、長時間運転の場合、パーキングエリアなどに停車して、車の中で紙をしなければならない状態の方が多いと聞いています。長時間同じ姿勢で狭いスペースでの仮眠は、エコノミー症候群や血流が悪くなることでの脳梗塞などを起こすリスクも高まる恐れがあります。また、トラック部会のアンケートによると、睡眠休息場所の67%が主に車両内、ベッドとの結果もありますが、少ない賃金では宿泊施設を利用できず、十分に体を休めることが難しい状況となっています。しかし、ドライバーが仮眠を取るスペースなどは、実はこの計画の中には入っていません。ドライバーの健康が守らなければ、金子国土交通大臣。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "金子恭之",
+        "role": "",
+        "summary": "- 疲労回復施設の併設は認定要件であり、シャワー室に加え、体を横にして一時的に休憩できる施設も該当すると考えている\n- 省令等で定める認定要件に基づき、ドライバーの疲労回復の観点から適切な規模・内容であるかを見極めて認定し、整備を促す",
+        "full_text": "このため、本法案が対象といたします中継輸送施設にはトラックドライバーの疲労回復のための施設が併設されていることが認定の要件とされています。認定要件の詳細については今後検討していくこととなりますが、疲労回復施設の例としては、シャワー室などに加え、委員御指摘のように体を横にして、一時的に休憩できる施設も該当するものと考えております。疲労回復施設の具体的な設備については、事業者がドライバーのニーズなどを踏まえて、主体的に整備を進めていくものと考えておりますが、今後、省令等で定める認定要件に照らして、その規模、内容等がドライバーの疲労回復の観点から適切なものとなっているかを見極めた上で、認定を行うことで、委員御指摘のとおり十分に体を休めることができるような施設の整備を促してまいります。少なくともトラックの中で休憩をする以上に、疲労回復ができるような施設にしていかなければいけないと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#8285.75",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "ドライバーの仮眠・休息施設の整備について",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "トラック部会のアンケート"
+            },
+            {
+              "type": "number",
+              "excerpt": "睡眠休息場所の67%が主に車両内"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "トラックドライバー",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "中継輸送施設"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "シャワー室"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "認定要件の詳細については今後検討していくこととなります",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.5
+        },
+        "oc3_quotability": {
+          "quote_candidate": "少なくともトラックの中で休憩をする以上に、疲労回復ができるような施設にしていかなければいけないと思っております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問文が途切れているが、文脈からドライバーの休息施設整備を求める意図は明確。大臣は中継輸送施設の認定要件に疲労回復施設を盛り込む方針を回答しており、記録的価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問の最後が「金子国土交通大臣。」で終わっており、具体的な問いかけ（～してほしい、～か等）が欠落している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_047",
+      "segment_index": 5,
+      "topic": "中継輸送に伴うコスト増加への対策",
+      "question": {
+        "speaker": "木村英子",
+        "party": "れいわ新選組",
+        "summary": "- 施設利用料や積み替え業務によるコスト増、労働時間の評価について、ドライバーの不安を払拭する具体的な対策はあるか",
+        "full_text": "その際に、卸の場所代や、賃金費などの手数料が発生することで、中継輸送施設を利用することに懸念を抱く事業者もいます。ドライバーの方々からも、中継輸送施設を利用することで、追加コストが生じる場合、自分たちの運賃が削られてしまうのではないか、という心配の声が上がっています。荷物の積み替え、引き継ぎなど新たな業務が発生することで、その時間がきちんと労働時間として評価されるのかという不安も持たれています。今回の法案のように、具体的な仕組みが不十分な中で中継輸送施設を作ったとしても、経営体力の少ない事業者は利用できず、従来の労働環境を余儀なくされてしまいます。こうしたドライバーの不安に対して、国交省として中継輸送で増えるコストや労働時間への具体的な対策が、伝われているのでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "金子恭之",
+        "role": "",
+        "summary": "- 輸送コストの上昇分は荷主に適切に転嫁することが必要である\n- 標準的運賃において、施設利用料等を運賃とは別に実費として確保すべき費用と定めており、周知・啓発に取り組む\n- 公正取引委員会等と連携し、適正な転嫁を通じてドライバーの賃上げを図る",
+        "full_text": "いずれにいたしましても、中継輸送の実施による輸送コストの上昇分については、荷主に適切に転嫁することが必要であります。特に委員御指摘の施設利用料につきましては、令和6年3月に改定後の標準的運賃において、中継輸送における施設利用料、その他の費用として運賃とは別に実費として確保すべき費用と定めており、この内容も含め、標準的運賃の周知、啓発に取り組んでまいります。さらにトラック物流改善協議会による荷主等への監視体制の強化などを通じまして、公正取引委員会等とも連携しつつ、この法案に基づく中継輸送を実施する場合の輸送コスト上昇分を荷主等に適正に転嫁できるよう取り組み、ドライバーの賃上げを図ってまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#8285.75",
+      "metrics": null
+    },
+    {
+      "id": "qa_048",
+      "segment_index": 5,
+      "topic": "トラックドライバーの運転距離規制の導入検討",
+      "question": {
+        "speaker": "木村英子",
+        "party": "れいわ新選組",
+        "summary": "- 拘束時間や運転時間の基準があるが、運転距離に関する規制の導入について調査・検討してほしい",
+        "full_text": "次に、トラックドライバーの運転距離について質問します。トラックドライバーの拘束時間は、1日原則13時間以内、最長15時間、連続して運転する時間は4時間以内で、国交省として、アンケートなどを用いた調査を実施することを検討していただきたいと思いますが、大臣の見解を求めます。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "金子恭之",
+        "role": "",
+        "summary": "- 改善基準告示に基づき、違反事業者への行政処分等の監督を行っている\n- 運行距離に関する規制の導入も含め、引き続き業界団体や労働者団体から現場の声を伺いながら、安全確保を図る",
+        "full_text": "運転者の拘束時間や運転時間に関する基準は、いわゆる改善基準告示において定められておりまして、国土交通省においては、労働基準監督署等とも連携しながら、基準に対する違反が認められた事業者に対しては、行政処分を実施するなどの監督を行っているところでございます。国土交通省では、これまでもトラック事業者における過労運転の防止に関し、業界団体等の関係者の御意見を伺ってまいりましたが、委員御指摘の運行距離に関する規制の導入も含め、引き続き業界団体や労働者団体等の関係者の皆様を通じて、広く現場の声を伺いながら、輸送の安全確保を図ってまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#8285.75",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "運転距離に関する調査の実施検討",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "1日原則13時間以内"
+            },
+            {
+              "type": "number",
+              "excerpt": "最長15時間"
+            },
+            {
+              "type": "number",
+              "excerpt": "4時間以内"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "トラックドライバー",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "改善基準告示"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "労働基準監督署"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "輸送の安全確保を図ってまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "運行距離に関する規制の導入も含め、引き続き業界団体や労働者団体等の関係者の皆様を通じて、広く現場の声を伺いながら、輸送の安全確保を図ってまいります。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "運転距離の調査という具体的な提案に対し、大臣は既存の改善基準告示への言及と、今後の意見聴取という抽象的な回答に留まった。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「検討していただきたい」という要望形式のため、大臣が「検討する」か否かの明確な回答を回避しやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_049",
+      "segment_index": 5,
+      "topic": "燃料サーチャージ制度の導入率と中小事業者の現状",
+      "question": {
+        "speaker": "ながえ孝子",
+        "party": "各派に属しない議員",
+        "summary": "- 燃料サーチャージ制度の導入率はどの程度か。特に中小事業者の導入率は上がっているか",
+        "full_text": "それで、実際どれだけ導入率が上がったのか、今日は確認をさせていただきたいんです。特に運送業界、中小規模の事業者が多い中で、中小トラック事業者の導入率というのは上がっているんでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "岡野総括審議官",
+        "role": "",
+        "summary": "- 令和6年3月31日時点で、トラック事業者の約35%が導入している",
+        "full_text": "国土交通省が実施した調査によりますと、令和6年3月31日時点で、トラック事業者の約35%が燃料サーチャージ制度を導入しているというふうに承知しているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#8285.75",
+      "metrics": null
+    },
+    {
+      "id": "qa_050",
+      "segment_index": 5,
+      "topic": "燃料サーチャージ制度の法制化・制度的対応の必要性",
+      "question": {
+        "speaker": "ながえ孝子",
+        "party": "各派に属しない議員",
+        "summary": "- 荷主との力関係で交渉できない中小事業者が多い。任意の取組ではなく、法制化など一歩踏み込んだ制度的対応が必要ではないか",
+        "full_text": "交渉すらできていない理由については、「もう運賃に含んでいるよ」「運賃交渉したんだよ」「必要ないよ」という答えもあるんですけれども、「荷主が理解していない」、あるいは「これ言い出して仕事がなくなったら困る」といった理由が挙げられています。背景にはやっぱり荷主との力関係、長年の慣行、これがあるということですよね。そうするとやっぱり中小の業者を中心に、そもそも言い出せないんだよというお声がやっぱり大きいんですね。だからこの燃料サーチャージについては法制化を望むというお声も上がっています。大臣にお伺いしたいんですけれども、現状の任意の取組のままで本当に導入は進んでいくんでしょうか。よりちょっと一歩踏み込んだですね、制度的な対応が必要ではないかと考えるんですが、いかがでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "金子恭之",
+        "role": "",
+        "summary": "- 燃料価格上昇分を別立ての運賃とする新たな標準的運賃を告示し、導入促進に取り組んでいる\n- 公正取引委員会や中小企業庁と連携し、荷主団体に対して価格転嫁を徹底するよう文書で要請した",
+        "full_text": "このため、国土交通省といたしましては、燃料価格が高騰した場合であっても、燃料価格の上昇分を別立ての運賃として設定することによりまして、運賃への転嫁を円滑に進められるよう、令和6年3月に燃料サーチャージ制度を盛り込んだ新たな標準的運賃を告示するなど、制度の導入促進に取り組んでおります。さらに、今般の中東情勢の変化に伴う燃料価格の高騰を受けて、適正運賃法を所管する公正取引委員会及び中小企業庁との連携によりまして、燃料サーチャージ制度の導入や運賃改定等を通じて、今般の燃料価格の変動分も含めた価格転嫁が徹底されるよう、荷主団体に対して、本年3月27日付で文書による要請を行ったところであります。国土交通省としては、引き続き、標準的運賃の活用促進や関係省庁とも連携した周知要請等を通じて、燃料サーチャージ制度の導入促進にしっかりと取り組んでまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#8285.75",
+      "metrics": null
+    },
+    {
+      "id": "qa_051",
+      "segment_index": 5,
+      "topic": "適正原価告示の実現時期",
+      "question": {
+        "speaker": "ながえ孝子",
+        "party": "各派に属しない議員",
+        "summary": "- 荷主との交渉の根拠となる「適正原価の告示」を現場は強く望んでいる。いつ頃に実現する予定か",
+        "full_text": "午前中、三浦委員からも質問があったと思うんですけれども、やっぱり地元でお話を聞いても、この適正原価の告示、皆さんとっても期待してるんですね。やっぱり荷主との力関係でそもそも言い出せないところを、適正原価の告示がちゃんとなされると、その背中を押してくれるという期待が大きいです。なかなか答えにくいところはあろうかと思いますが、せめて姿勢というか、方向性だけでも、現場では早い実現を望んでいる声が大きいので、いつごろになりそうでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "岡野総括審議官",
+        "role": "",
+        "summary": "- トラック適正化法に基づき、令和10年6月までに施行することとされており、現在準備中である\n- 実態調査の結果を踏まえ、関係業界や有識者の意見を丁寧に伺いながら、なるべく早い段階で提示できるよう検討する",
+        "full_text": "昨年6月に成立しましたトラック適正化法により導入されます適正原価制度につきましては、公布から3年以内、すなわち令和10年6月までに施行することとされてございまして、現在準備を進めているというところでございます。それに当たりまして、本年1月から3月にかけてトラック事業者を対象とした原価構造や運行形態等に関する実態調査を実施し、現在その集計作業を進めているというところでございます。適正原価の告示に当たりましては、一定の周知期間が必要であると考えてございますので、なるべく早くというふうには思っているところでございますが、一方で実態調査の結果も踏まえつつ、運送業界だけでなく荷主業界も含めて、関係業界の方々のご意見、あるいは有識者の方々のご意見も丁寧に伺う必要があると考えてございますので、そういった丁寧な手続きを踏まえつつ、なるべく早い段階でお示しできるように検討を進めてまいりたいというふうに考えています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#8285.75",
+      "metrics": null
+    },
+    {
+      "id": "qa_052",
+      "segment_index": 5,
+      "topic": "中小事業者の原価計算支援",
+      "question": {
+        "speaker": "ながえ孝子",
+        "party": "各派に属しない議員",
+        "summary": "- 中小事業者は原価計算ができず交渉材料を作れない現状がある。この点への支援はあるか",
+        "full_text": "さらに中小トラック事業者では、社長が営業もやるし、配車もやるし、それから経理までになっていて、もう要は手が回らずに、経理がどんぶり勘定となっていることも指摘をされています。交渉したくても、原価計算そのものが十分にできていないんですね。ですから、交渉の前提であるデータがない、交渉材料を作れないというのが現実でもあります。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "岡野総括審議官",
+        "role": "",
+        "summary": "- 令和7年度補正予算を活用し、原価計算システムの導入に必要な経費の一部を支援している",
+        "full_text": "このため、国土交通省では、令和7年度補正予算を活用して、トラック事業者に対し原価計算を行うためのシステムの導入に必要な経費の一部、費用について支援を行っている。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#8285.75",
+      "metrics": null
+    },
+    {
+      "id": "qa_053",
+      "segment_index": 5,
+      "topic": "公共調達における燃料サーチャージ条項の導入",
+      "question": {
+        "speaker": "ながえ孝子",
+        "party": "各派に属しない議員",
+        "summary": "- 国や自治体が率先して契約書に燃料サーチャージ条項を入れる「公共調達ガイドライン」のようなものを提案したいが、考えはどうか",
+        "full_text": "そして市場全体を一気に変えるというのは大変なことだとは思うんですが、まず発注側の行動を変える鍵として、そして公共調達、これを利用することが非常に有効かと思っています。国、自治体が燃料サーチャージを導入する前にやっていることが、民間にも波及します。ですから国、自治体が運送、配送、あるいは物品調達、発注するときにですね、契約書にしっかり率先して燃料サーチャージ条項を入れる。これをしっかりやることが重要と思うので、公共調達ガイドラインと言ったらいいでしょうか。そういったものを提案させていただきたいんですが、これについてはいかがでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "岡野総括審議官",
+        "role": "",
+        "summary": "- 中小企業者に関する国等の契約の基本方針が存在している（※答弁途中で遮られている）",
+        "full_text": "国等が中小企業者との契約に当たり取り組むべき措置等を定めた令和8年度中小企業者に関する国等の契約の基本方針というものはございます。こちらの方針におきまして物品の運送を伴う役務に対する。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#8285.75",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "公共調達への燃料サーチャージ条項導入の提案",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国、自治体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "令和8年度中小企業者に関する国等の契約の基本方針"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": null,
+          "score": 0.0
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "回答が途中で切れており、提案に対する賛否や具体的な対応策が示されていないため、記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "提案形式の質問であるため、賛成か反対か、あるいは検討するかという明確な回答を求める形式にすべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_054",
+      "segment_index": 5,
+      "topic": "女性ドライバーのためのSA・PA設備拡充",
+      "question": {
+        "speaker": "ながえ孝子",
+        "party": "各派に属しない議員",
+        "summary": "- 女性ドライバーから、SA・PAのトイレ、更衣室、シャワー室が圧倒的に少ないという声がある。インフラ改善を行う考えはあるか",
+        "full_text": "現場の女性ドライバーの声なんですが、パーキングエリア、サービスエリアのトイレ、更衣室、シャワー室などが圧倒的に少ないという指摘があります。このインフラ改善が女性ドライバーの増加、ドライバー不足にも資すると思うんですけれども、これについてはいかがでしょう。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "靴掛け道路局長",
+        "role": "",
+        "summary": "- これまでに全国で女性専用ブースを74室整備してきた\n- 高速道路会社と連携し、誰もが安心して利用しやすいよう、引き続き必要な施設の充実に努める",
+        "full_text": "高速道路のSA・PAにおいては充実に努めているところであり、これまでに全国で260室、うち女性専用のブースを74室整備してきたところです。国土交通省としましては、高速道路会社と連携し、誰もが安心して利用しやすい高速道路を目指して、必要な施設の充実に引き続き努めてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#8285.75",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "SA・PAの女性向け設備拡充への見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "女性ドライバー",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "全国で260室"
+            },
+            {
+              "type": "number",
+              "excerpt": "女性専用のブースを74室"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "必要な施設の充実に引き続き努めてまいりたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "これまでに全国で260室、うち女性専用のブースを74室整備してきたところです。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "女性ドライバー向け設備の整備実績という具体的な数値が示されており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「いかがでしょう」という漠然とした問いかけのため、具体的な拡充計画や期限を約束させる機会を逃している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_055",
+      "segment_index": 5,
+      "topic": "大型・牽引免許取得費用の負担軽減",
+      "question": {
+        "speaker": "平山佐知子",
+        "party": "各派に属しない議員",
+        "summary": "- 免許取得費用が高額であり、人材確保の妨げとなっている。取得費用の負担を軽くする必要があるのではないか",
+        "full_text": "プロのドライバーとして、安全に運転、輸送を行ってもらうためには必要なことだとは思いますけれども、この大型免許の取得には、費用はおよそ35万円から45万円、20日から40日の通学が必要となるということ。今後、活用が期待されるダブル連結トラック、この運転には、牽引免許が必要になりますから、さらに15万円から20万円。この大型やトレーラーの人材確保していくためには免許取得の際の負担を少し軽くしていく必要があるんじゃないかなと。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "金子恭之",
+        "role": "",
+        "summary": "- 令和7年度補正予算を活用し、従業員の大型・牽引免許取得費用の一部を支援する取り組みを行っている\n- 厚生労働省の教育訓練給付金等の活用も可能であると認識している",
+        "full_text": "このため国土交通省としては令和7年度補正予算を活用いたしまして、トラック事業者に対し従業員の大型、牽引免許取得の一部費用について支援を行うなど、トラック事業者における人材確保、育成支援に取り組んでおります。また大型免許等を取得する場合には一定の要件を満たせば厚生労働省が所管しております教育訓練給付金等の支援制度の活用も可能と承知をしております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#8285.75",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "大型・牽引免許取得の費用負担軽減の必要性について",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "35万円から45万円"
+            },
+            {
+              "type": "number",
+              "excerpt": "20日から40日の通学"
+            },
+            {
+              "type": "number",
+              "excerpt": "15万円から20万円"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "プロのドライバー",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "deadline",
+              "excerpt": "令和7年度補正予算"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "教育訓練給付金"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 3,
+          "trigger_phrase": "令和7年度補正予算を活用いたしまして、トラック事業者に対し従業員の大型、牽引免許取得の一部費用について支援を行う",
+          "matched_pattern": "future-tense verb describing a CONCRETE government action with a named mechanism"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "令和7年度補正予算を活用いたしまして、トラック事業者に対し従業員の大型、牽引免許取得の一部費用について支援を行う",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は提案形式で曖昧だが、回答側が具体的な予算措置（令和7年度補正予算）と支援策を明示したため、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "疑問文形式ではなく、意見の提示に留まっているため、政府の明確な賛否や回答を強制する力が弱い。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_056",
+      "segment_index": 5,
+      "topic": "中継輸送施設の建設主体と候補地の選定",
+      "question": {
+        "speaker": "平山佐知子",
+        "party": "各派に属しない議員",
+        "summary": "- 特定貨物自動車中継輸送施設の建設計画は、どこが中心となって進める想定か\n- 候補地の公表による地価上昇の懸念はあるか。政府として候補地を念頭に置いているか",
+        "full_text": "今回、支援措置を予定している特定貨物自動車中継輸送施設の建設計画ですが、この建設計画はどこが中心となって進めていくことを想定していらっしゃるのか伺います。この特定貨物自動車中継輸送施設ですが、高速道路のインターチェンジとか、この幹線道路に近くなければ、効率的な中継地とはなりません。ですが、そういった公的地に都合よくというか、土地はあるのかどうかという疑問というか、そういう懸念も出てきます。政府としてそうした候補地をいくつか念頭に置いていらっしゃるのか。また逆に想定される場所をもし公表すればですね、この土地が確実に値上がりをしてしまって、整備費がかさむことも想定されますけれども、その点についてどう考えていらっしゃるのか伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "岡野総括審議官",
+        "role": "",
+        "summary": "- 高速道路出入口の近傍に立地することを要件とし、必要性が見込まれる20件の認定を目指している\n- 民間事業者が地方公共団体の理解を得て発意し建設するため、国として具体的な候補地を想定・公表することはない",
+        "full_text": "今回の貨物自動車中継輸送事業における特定貨物自動車中継輸送施設こちらにつきましては、トラックによる長距離輸送における運転者の日帰り勤務を可能とし、担い手確保に資するとともに、輸送効率の向上を図ることを目的としていることから、高速自動車国道等の出入口の近傍に立地することを要件として考えているところでございます。また中継輸送拠点の整備を含む計画につきましては、貨物流通量が多い発地圏、着地圏を抽出し、改善基準告示に基づく拘束時間の遵守の可否を踏まえるなど、一定の前提を置いた上で試算をして、特に中継輸送の拠点の必要性が見込まれるものとして、20件の認定を行うことを目指しているところでございます。なお当該施設の建設に当たっては、民間事業者が地方公共団体の理解を得てから、その発意に基づき建設が行われることから、国として具体的に建設候補地を想定しているものではなく、また公表するということでもないと考えているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5183"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=8998#8285.75",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "特定貨物自動車中継輸送施設の建設主体と候補地の考え方",
+          "sub_asks": [
+            "どこが中心となって進める想定か",
+            "政府として候補地を念頭に置いているか",
+            "候補地公表による地価上昇への考え方"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "20件の認定を行うことを目指している"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "20件の認定を行うことを目指している",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "民間事業者が地方公共団体の理解を得てから、その発意に基づき建設が行われることから、国として具体的に建設候補地を想定しているものではなく",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "建設主体が民間であること、国は候補地を特定していないことが明確に回答されており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が複数の懸念事項を盛り込んでいるため、個別の問いに分けることでより具体的な回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    }
+  ],
+  "score_schema_version": "2.0",
+  "prompt_version": "V4"
+}
