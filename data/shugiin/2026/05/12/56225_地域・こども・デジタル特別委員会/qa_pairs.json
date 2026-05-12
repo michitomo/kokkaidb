@@ -1,0 +1,4492 @@
+{
+  "pairs": [
+    {
+      "id": "qa_001",
+      "segment_index": 1,
+      "topic": "個人情報保護委員会のスタンスとAI時代の規制あり方",
+      "question": {
+        "speaker": "神田潤一",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 手塚委員長がAI時代の個人情報保護について、事前規制より事後処分の法体系が望ましいと述べた背景と考え方を問う",
+        "full_text": "まず一つ目になりますが、個人情報保護委員会の現在の手塚悟委員長は、昨年5月に委員長に就任した際のインタビューなどを拝読しますと、自らを法律家出身ではなくテクノロジー側だというふうに位置づけて、AI時代の個人情報保護は事前に厳しい規制を課すのではなく、事後的に処分などの措置を講じる法体系が望ましい、といった内容の発言をされていらっしゃいました。その発言の背景にある考え方について、これは今回は委員長ではなく事務方の方からということになると思いますが、少し詳しく教えていただければと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "佐垣",
+        "role": "",
+        "summary": "- 技術者としての知見からデータ利活用の重要性を認識している\n- データ利活用と個人の権利利益の保護は不可分であり、法を土台とした適正な利活用が必要という考えである\n- AI開発の進展状況を踏まえ、権利利益を適切に保護するための制度あり方として当該発言があった",
+        "full_text": "手塚委員長でございますが、委員長就任以前から技術者としての知識・経験を生かしまして、我が国のデータ利活用の基盤整備などに尽力されております。その一方で、データ利活用と個人の権利利益の保護は不可分一体の関係にありまして、個人情報保護法を土台とした上で、適正なデータ利活用が行われるべきだという考えと承知しております。その上で、特にAI開発などにつきましては、技術開発の進展の状況も鑑みながら、個人の権利利益を適切に保護していくための制度のあり方として、委員御指摘のような発言があったものというふうに生じております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=516.876",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "手塚委員長のAI規制に関する考え方の背景",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "昨年5月に委員長に就任した際のインタビュー"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "手塚悟委員長",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "データ利活用と個人の権利利益の保護は不可分一体の関係にありまして、個人情報保護法を土台とした上で、適正なデータ利活用が行われるべきだ",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "委員長の過去の発言の意図を問う質問に対し、事務方が一般的・抽象的な理念を述べるに留まっており、具体的な考え方の深掘りはなされていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「考え方を教えてほしい」というオープンクエスチョンであるため、回答者が抽象的な表現で逃げることが容易な設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_002",
+      "segment_index": 1,
+      "topic": "データ利活用と個人情報保護の両立策",
+      "question": {
+        "speaker": "神田潤一",
+        "party": "自由民主党・無所属の会",
+        "summary": "- AI開発を容易にする法改正の中で、データ利活用の推進と個人情報保護という難しいバランスを具体的にどう実現するかを問う",
+        "full_text": "さらに、この2つの法律の改正案につきまして、このタイミングで束ねて提出した背景には、昨年12月、高市総理から、日本を世界で最もAIを開発活用しやすい国を目指す法改正をしてくれという指示があったことがあるというふうに理解をしております。個人情報保護委員会としては、データ利活用しやすい制度が求められる一方で、個人情報の保護という本来の目的も遂行するという難しいバランスが求められているというふうに思いますが、今回の法改正では、このバランスを具体的にどのように実現しようとされているのでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "佐垣",
+        "role": "",
+        "summary": "- 適正なデータ利活用の推進と個人の権利利益保護の両立を図る措置を講じている\n- 具体例として、AI開発に用いるデータ収集を容易にするため、統計情報の作成等における本人同意要件の特例を創設する",
+        "full_text": "御指摘のとおり、本法案では、適正なデータ利活用の推進を図るとともに、個人の権利利益を適切に保護するための所要の措置を講じております。具体的に申しますと、例えば、我が国におけるAI開発を推進するために、AI開発に用いるための個人情報を含むデータの収集を容易にするものとして、統計情報の作成と整理できる場合の本人同意要件の特例を創設することとしておりますが、この特例につきましては、神田潤一君。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=516.876",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "法改正における利活用と保護のバランス実現策",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "昨年12月"
+            },
+            {
+              "type": "organization",
+              "excerpt": "個人情報保護委員会"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "個人情報保護委員会",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "統計情報の作成と整理できる場合の本人同意要件の特例"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "AI開発に用いるための個人情報を含むデータの収集を容易にするものとして、統計情報の作成と整理できる場合の本人同意要件の特例を創設することとしております",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "法改正の具体的手段（本人同意要件の特例創設）について言及されており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_003",
+      "segment_index": 1,
+      "topic": "下位法令・ガイドライン策定における透明性と合意形成",
+      "question": {
+        "speaker": "神田潤一",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 多くの重要事項が政令や委員会規則、ガイドラインに委任されている点について、多様なステークホルダーとのコミュニケーション確保や、予見可能性を高めるためのスケジュール発信をどう行うか問う",
+        "full_text": "今回の法律の改正案を見ますと、多くの重要な事項の具体的な内容が政令や委員会規則あるいはガイドラインに委任されているというふうに認識をしております。ほかにもこうした規則やガイドラインに委任されているものがたくさんありますが、そうした点を踏まえますと、今後検討されるこれらの施行令やガイドライン等の作成に当たっては、多様なステークホルダーとの間で、双方向の実質的なコミュニケーションを確保すること、また国民や事業者の双方が予見可能性を持てるような、スケジュールや検討状況の発信などにも、努めるべきではないかというふうに考えますが、個人情報保護委員会としては、どのようにこうした取組を確保していくか、お考えを伺えればと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "佐垣",
+        "role": "",
+        "summary": "- 幅広い属性の委員で構成される委員会で決定し、ステークホルダーから幅広く意見を伺いながら審査を進める\n- 検討スケジュールや議論資料を積極的に公表し、透明性を確保した立案決定に臨む",
+        "full_text": "これを踏まえまして、本法案につきまして、国会においてお認めいただけましたら、こういった施行令等の立案決定をしていくことになるわけでございますけれども、まずはそれを担います委員会につきましても、法律に基づきまして、個人情報保護の専門家から、民間企業、消費者の専門家、情報処理技術の専門家、さらには国地方の行政といったさまざまな属性の委員からなる委員会で決定することになってございますし、決定に先立ちましては、委員御指摘のとおり、関係するステークホルダーから幅広く意見を伺いながら、審査を進めていくことになろうかというふうに思ってございます。また、予見可能性ということは非常に大事だということでございまして、検討スケジュール、見通しがありますとか、委員会での議論の資料などについては、積極的に公表いたしまして、幅広い事業者や個人に対し、透明性を確保した形で、立案決定に臨んでいきたいというふうに思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=516.876",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "委任規定の具体化における合意形成と透明性の確保策",
+          "sub_asks": [
+            "多様なステークホルダーとの双方向コミュニケーションの確保策",
+            "スケジュールや検討状況の発信による予見可能性の確保策"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "今回の法律の改正案"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民や事業者",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "個人情報保護の専門家から、民間企業、消費者の専門家、情報処理技術の専門家、さらには国地方の行政といったさまざまな属性の委員"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "透明性を確保した形で、立案決定に臨んでいきたいというふうに思います",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "検討スケジュール、見通しがありますとか、委員会での議論の資料などについては、積極的に公表いたしまして、透明性を確保した形で、立案決定に臨んでいきたい",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "委任規定の具体化プロセスにおける透明性と対話のあり方を問う標準的なやり取りであり、回答も概論的な方針に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのように確保するか」という問いに対し、具体的な手法（パブリックコメントの回数や外部有識者の選定基準など）を求める形式にすれば、より実効性のある回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_004",
+      "segment_index": 1,
+      "topic": "課徴金制度における「相当の注意」の具体化",
+      "question": {
+        "speaker": "神田潤一",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 課徴金対象となる「相当の注意を怠った場合」の具体的な内容を、事業者の予見可能性確保のためにガイドライン等で示す検討があるか問う",
+        "full_text": "少し具体的な内容に入ってまいりますが、今回の法改正で導入される中で、非常に大きな項目として課徴金制度があると思います。この課徴金が、個人情報の取扱事業者がこの課徴金の対象行為を防止するための相当の注意を怠った場合に、課徴金が課されることになるということだと思いますが、この相当の注意の内容について、どういったものなのかを具体的に示すということが、事業者の予見可能性を確保したり、取扱いの底上げにつながるのではないかというふうに考えられますけれども、例えばガイドライン等の策定などを検討されているのか、個人情報保護委員会に伺えればと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "佐垣",
+        "role": "",
+        "summary": "- 個別事案に応じた判断となるが、予見可能性と納得感は重要である\n- 他の課徴金関連法令の施行令などを参照し、相当の注意にかかる考え方をガイドラインなどで適切に示したい",
+        "full_text": "最終的には、事業者の事業の規模及び性質、取り扱う個人情報の性質、それからその量、取扱い方法等を踏まえまして、個別具体的な事案に応じて判断するものではございますけれども、委員御指摘のとおり、事業者の予見可能性を確保しながら、納得感を持ってこの中で法令を遵守いただくことがとても大事でございますので、その観点から相当の注意にかかる考え方を、他の課徴金などに関連します法令で、予見可能性を高めるためにやっている施行令などを参照しながら、ガイドラインなどで適切に示していきたいと、そのように思ってございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=516.876",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "課徴金の「相当の注意」をガイドライン等で示すか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "今回の法改正で導入される中で、非常に大きな項目として課徴金制度がある"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "個人情報の取扱事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "ガイドラインなどで適切に示していきたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "相当の注意にかかる考え方を、ガイドラインなどで適切に示していきたいと、そのように思ってございます。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "課徴金制度における「相当の注意」の具体化を求める質問に対し、ガイドライン等で示す意向を回答している。具体的期限や策定手法への言及はなく、意向表明に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "ガイドライン策定の具体的なスケジュールや、参照すべき他法令の具体名を問うことで、より強いコミットメントを引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_005",
+      "segment_index": 1,
+      "topic": "子どもの個人情報保護における実効的な仕組み",
+      "question": {
+        "speaker": "神田潤一",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 子どものプライバシー保護において、形式的な同意手続きに陥らず、サービスの性質やリスクに応じたメリハリのある保護のあり方をガイドライン等で示す考えがあるか問う",
+        "full_text": "子どものプライバシーや個人情報を守ることにつきまして、今回の法改正で強化されたことも大変重要な論点になるというふうに考えております。真に子どもの権利利益を守るために、サービスの性質やリスクの程度に応じたメリハリのある保護の仕組みこそが実効的と考えられますけれども、そうした対応のあり方をガイドラインなどで示すような考え方はあるのでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "佐垣",
+        "role": "",
+        "summary": "- 事業形態や個人情報の状態により適切な方法は様々であるため、一律の基準は難しい\n- 考慮すべき要素や具体例をガイドラインなどで明確に示し、透明性の高い方法を検討する",
+        "full_text": "委員御指摘の年齢確認、それから法定代理人からの同意の取得の方法につきましては、様々な事業形態がございますので、事業の性質、それから取り扱う個人情報の状態に踏まえまして、個別具体的な事情に応じた方法、適切な方法は様々であろうと考えてございます。子どもの個人情報の取り扱いを伴うサービスの利用に際しての親や子どもの状況、それからそういったサービスのさまざまな具体例をよく勉強しながら、適切な方法を検討する際の一律の基準は難しいもので、どういったことに考慮しないといけないかという考慮要素でございますとか、具体例をガイドラインなどで明確に示していきたいと考えてございます。法案をお認めいただきましたが、法定代理人の関与を通じた子どもの権利利益が保護できますように、しっかりと透明性の高い示し方を検討してまいりたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=516.876",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "保護のあり方をガイドラインで示す考えはあるか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "今回の法改正"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "子ども",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "年齢確認"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "法定代理人からの同意の取得"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 3,
+          "trigger_phrase": "具体例をガイドラインなどで明確に示していきたいと考えてございます",
+          "matched_pattern": "future-tense verb describing a CONCRETE government action with a named mechanism"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "考慮要素でございますとか、具体例をガイドラインなどで明確に示していきたいと考えてございます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "ガイドラインによる具体例の提示という具体的なアクションへの言及があり、実効性のある回答となっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_006",
+      "segment_index": 2,
+      "topic": "法案施行に伴う体制整備と予算",
+      "question": {
+        "speaker": "長妻昭",
+        "party": "中道改革連合・無所属",
+        "summary": "- 命令要件の追加等で業務が増えると思われるが、体制規模や予算確保をどう考えているか",
+        "full_text": "命令要件の追加など、監視・監督などが必要になったり、非常に業務が増える面があると思いますが、必要となる体制の規模や予算確保の見込みなどについて、内閣官房と個人情報保護委員会、それぞれどのように考えているか伺いたいと思います。内閣官房山積審議官。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "山積審議官",
+        "role": "",
+        "summary": "- デジタル行政推進法：具体的な規模は困難だが、事務局機能のデジタル庁移管等を通じて体制整備に努める\n- 個人情報保護法：課徴金制度導入に伴う監視監督体制の強化、専門性向上、人員増加に取り組む",
+        "full_text": "まず、デジタル行政推進法の方から御答弁させていただきます。委員御指摘のとおり、本法案を認めいただいた暁には、本法案の施行を担いますデジタル事業所管省庁におきまして、施行に向けた指針の策定の準備ですとか、施行後における認定の関連の業務、新たな事務が生じるものと考えてございます。その執行体制につきまして、現時点で具体的な規模等をお答えすることは困難でございますが、今年の夏の目途にデジタル行政改革会議事務局の機能・業務が内閣官房からデジタル庁に移管されるということになっております中で、本法案の施行を適切に担える体制整備に努めてまいりたいと考えてございます。今回の個人情報保護法の改正案におきましては、課徴金制度の導入など、委員会の執行権限を大幅に強化することとしておりますので、まず同制度の適切な運用を行うための監視監督体制の強化が課題と思います。さらには、昨今の技術進歩は著しく利活用ニーズや新たなリスクを適切に把握すること、また諸外国との必要な交渉連携等を適時に実施することが一層重要となってまいります。さらにはデジタル庁との必要な調整などをしっかり行う必要もございますので、これらの業務を実施するための十分な体制の整備、具体的には人員の増加、専門性の強化を含む個々の職員の能力の向上などにより一層取り組んでまいりたいと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5280",
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=1498.6760000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "体制規模と予算確保の見込みについて",
+          "sub_asks": [
+            "内閣官房としての考え",
+            "個人情報保護委員会としての考え"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "内閣官房、個人情報保護委員会",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "deadline",
+              "excerpt": "今年の夏の目途に"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "デジタル行政改革会議事務局"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "体制整備に努めてまいりたいと考えてございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "現時点で具体的な規模等をお答えすることは困難でございますが、本法案の施行を適切に担える体制整備に努めてまいりたい",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "体制規模や予算という具体的な問いに対し、回答は「困難」として回避し、抽象的な努力目標に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "予算確保の「見込み」を問うているため、具体的な予算案や概算要求との関連を問う形式にすれば、より具体的な回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_007",
+      "segment_index": 2,
+      "topic": "答弁作成へのAI利用",
+      "question": {
+        "speaker": "長妻昭",
+        "party": "中道改革連合・無所属",
+        "summary": "- 今回の質問に対する答弁はAIで作られたのか",
+        "full_text": "まず今回の質疑、私の質問に対する答弁というのは、これAIで作られましたか。松本洋平大臣。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "松本洋平",
+        "role": "",
+        "summary": "- 法案審査という重要な内容であるため、AIに任せず作成していない",
+        "full_text": "おはようございます。今回は法案審査でございますので、非常に重要な内容ということで、まだちょっとAIに全部お任せするわけにはいけませんので、今回は作っておりません。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=1498.6760000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "答弁がAIで作られたか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "松本洋平大臣",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "非常に重要な内容ということで、まだちょっとAIに全部お任せするわけにはいけませんので、今回は作っておりません。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "答弁の作成手法に関する単純な確認であり、実質的な政策議論や法的解釈は含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "政策的な論点ではなく、答弁の作成プロセスという形式的な問いに留まっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_008",
+      "segment_index": 2,
+      "topic": "統計作成等における要配慮個人情報の取得（ケース1）",
+      "question": {
+        "speaker": "長妻昭",
+        "party": "中道改革連合・無所属",
+        "summary": "- 地方自治体が統計作成等で利用する場合、住民の公開されていない病歴等の要配慮個人情報を本人の同意なしに取得できるようになったのか",
+        "full_text": "1ページですけれども、ちょっと1つ1つお伺いしていきたいと思うんですが、まず1つ読み上げますと、地方自治体が統計作成等で利用する場合、当該自治体内の住民個人の公開されていない病歴情報、氏名入り病歴等の要配慮個人情報を取得すると。これは今回の改正案でできるようになったんでしょうか。これはもちろんですね、個人の同意なしで、大臣。同意なしでということですよね。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "松本洋平",
+        "role": "",
+        "summary": "- 基本的に地方自治体が統計作成に利用する場合、公開されていない病歴情報の取得は可能であり、本人の同意も不要である",
+        "full_text": "松本洋平大臣。ありがとうございます。ケース1について、そうなんですけれども、基本的に地方自治体が統計作成を利用する場合には、この住民情報の公開されていない病歴情報というのは取得が可能になります。松本洋平大臣。おっしゃるとおりです。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=1498.6760000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "改正案で自治体が同意なく病歴情報を取得可能か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "今回の改正案"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "地方自治体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "基本的に地方自治体が統計作成を利用する場合には、この住民情報の公開されていない病歴情報というのは取得が可能になります。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "改正案における個人情報取得の解釈について、大臣が明確に肯定したため、記録としての価値が高い。",
+        "would_be_referenced": "high",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_009",
+      "segment_index": 2,
+      "topic": "取得後の個人情報の取り扱いと削除の担保",
+      "question": {
+        "speaker": "長妻昭",
+        "party": "中道改革連合・無所属",
+        "summary": "- 名前付きで病歴等の情報を取得した後、不要な情報を削除することを法律でどう担保しているのか",
+        "full_text": "まずチラッと見るって言ったって、それを禁止できないですよね。名前付きで病歴が来るわけですから、それを名前付きのリストで見るということは、見てしまうということがあるわけですし、あるいはですね、名前を消すというふうな話がありますけれども、これ、法律に書いてあるんですか。つまり病歴、2番目は国も取得ができるということだと思いますがですね、これ、消す、つまり個人の名前と、おそらく保険種別と、ご住所、何番地まで、これが入ってくると思うんですね。それでどういうご病気かという病歴、それが渡ると。ただその渡った後にそれを必ず消しなさいと。つまり本名、住所、あるいは保険種別。それは消すというのはこの法律の中に書いてないと思うんですが、これはどうやって担保するんですか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "松本洋平",
+        "role": "",
+        "summary": "- 統計作成に不要なデータ（名前・住所等）が明らかになった場合、提供先が遅滞なく消去することが求められる\n- これは事業者が負う「安全管理義務」の中で担保されるものである",
+        "full_text": "松本国務大臣。これは今委員におっしゃったのは御懸念のとおりで、庁内でもその議論をしていたところなんですけれども、基本的に統計作成を行う上で必要のないデータということが明らかになった場合、いわゆる今の名前とか住所とか、そういうものは統計作成上必要ありませんから、それがはっきりしたときは、その項目については遅滞なく提供先が、いわゆるデータを利用する側が消去するということが求められるというふうになっています。これは事業者が負う安全管理義務というのがありますから、その中で安全管理ですから、そういったものは漏れないようにするということは当然ですので、漏れないようにするということは、そもそも取っておいてしまっておくんじゃなくて、必要なデータ以外のものは、ちゃんと消去してもらうということは、ちゃんと担保しなければいけないと思っていますし、この事業者が負う安全管理義務の中で、それは行われるものと承知しています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=1498.6760000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "個人情報の消去担保方法の確認",
+          "sub_asks": [
+            "個人情報を消すことが法律に書いてあるか",
+            "消去をどのように担保するのか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "事業者が負う安全管理義務"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "ちゃんと担保しなければいけないと思っています",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "事業者が負う安全管理義務の中で、必要なデータ以外のものは、ちゃんと消去してもらうということは、ちゃんと担保しなければいけないと思っています",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "個人情報の消去根拠について、法律の明文規定ではなく「事業者の安全管理義務」によって担保されるという政府の解釈が示された。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「法律に書いてあるか」というYes/No形式で問えば、より明確な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_010",
+      "segment_index": 2,
+      "topic": "統計作成等における要配慮個人情報の取得（ケース2〜4）",
+      "question": {
+        "speaker": "長妻昭",
+        "party": "中道改革連合・無所属",
+        "summary": "- 国、企業、個人事業主が統計作成等で利用する場合、要配慮個人情報を本人の同意なしに取得することは可能か",
+        "full_text": "ちょっとじゃあ先に進むとケース2ですね、読み上げます。国が統計作成等で利用する場合、国民一人一人の公開されていない病歴情報、氏名入り病歴等の要配慮個人情報を本人の同意なしに取得すると。これは可能ですか、ケース2。そうすると、ケース3は、これは国を企業と読み換えるわけですね。ケース4は個人事業主ですね。個人事業主。じゃあまとめて聞きましょう。ケース3、ケース4。主体が企業、取得する、主体が個人事業主、そして要配慮情報、本人の同意なし、これもOKということです。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "松本洋平",
+        "role": "",
+        "summary": "- ケース1から4まで、すべて統計作成等の特例の対象となり、第三者提供および行政機関への提供が可能である",
+        "full_text": "松本国務大臣。一つ一つお話になられておりますけれども、要配慮個人情報であっても、統計作成等の特例に基づいて第三者に提供することは可能。それはまた行政機関に対して提供することも可能であるということです。松本国務大臣。全てケース1から4まで、この特例の対象になるというふうに思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=1498.6760000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "統計作成等の特例による要配慮個人情報の同意なし取得の可否",
+          "sub_asks": [
+            "国による同意なし取得の可否（ケース2）",
+            "企業による同意なし取得の可否（ケース3）",
+            "個人事業主による同意なし取得の可否（ケース4）"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国、企業、個人事業主",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "統計作成等の特例"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "要配慮個人情報であっても、統計作成等の特例に基づいて第三者に提供することは可能。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "統計作成等の特例における要配慮個人情報の取り扱いについて、大臣が明確に肯定的な解釈を示したため、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "ケースを口頭で提示しているため、後で参照する際にケースの定義を別途確認する必要がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_011",
+      "segment_index": 2,
+      "topic": "提供側でのデータ削除の義務化",
+      "question": {
+        "speaker": "長妻昭",
+        "party": "中道改革連合・無所属",
+        "summary": "- 医療機関などの提供側が、名前や住所を削除して提供することを法律に明記すべきではないか",
+        "full_text": "だから私がちょっと申し上げたいのは、そもそもが問題なんですが、出す側ですね。出す側というのは病院だと医療機関だと思いますが、その側が、名前とか住所とか保険種別、百歩譲って年齢というのは分析に必要かもしれません。男女とかね。それ以外の個人の名前、住所、保険種別は出す側、医療機関が削除して、そして出すと。私はそれもいかがなものかと思いますが、一番最低限、百歩譲って、それは法律に書くべきじゃないですか。あるいは必ず担保できるということはあるんですか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "松本洋平",
+        "role": "",
+        "summary": "- 提供側の負担（データ抽出の工数）を考慮し、提供された側が不必要なデータを削除することを安全管理義務の中で担保すべきと考えている",
+        "full_text": "松本国務大臣。先ほど申しましたように、僕も病院でデータ扱ってたんで、そのデータを何か利用するから出してくれって言われたときに、きれいにデータが揃っているデータベースであれば、そこは削除して出すことは可能ですけども。バラバラのすごいモザイクになったようなデータで、今の名前とか住所を削除して出してくれると相当な負担になります。医療機関側の負担も考えなきゃ、提供する側の負担も考えなきゃいけないというふうに思いまして、そうなると逆に提供された側がちゃんと不必要なデータは削除するんだということを担保しなきゃいけないというふうに思います。その際は先ほど申しましたように、事業者が負う安全管理義務というのは、これは法律の中で決められていますから、この安全管理義務の中に不要なデータはちゃんと削除しなさいということをそこでちゃんと担保できるというふうに思います。ですから、その点において、今、委員がご指摘、ご懸念の部分というのは、解消されるのではないかというふうに思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5280"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=1498.6760000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "個人情報の削除義務を法律に明記すべきか",
+          "sub_asks": [
+            "個人情報の削除を法律に書くべきではないか",
+            "削除が必ず担保できる仕組みがあるのか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "医療機関",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "安全管理義務"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "事業者が負う安全管理義務というのは、これは法律の中で決められていますから、この安全管理義務の中に不要なデータはちゃんと削除しなさいということをそこでちゃんと担保できる",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "医療機関側の負担という実務的視点から、提供後の安全管理義務によって個人情報の削除を担保するという政府の解釈が示された。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「法律に書くべきか」という問いに対し、既存の法律（安全管理義務）で十分であるという回答に留まっており、新法への明記の是非を明確に切り分けて問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_012",
+      "segment_index": 2,
+      "topic": "不要データの削除判断基準",
+      "question": {
+        "speaker": "長妻昭",
+        "party": "中道改革連合・無所属",
+        "summary": "- 不要なデータを削除する際、「名前」が不要であることなどの例示はどこに記載されるのか",
+        "full_text": "そしたら確認しますよ。不要なデータを削除するの、不要の中に名前。まず名前というのは、それ入るというのはどこに、不要なところに例示で書くんですか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "松本洋平",
+        "role": "",
+        "summary": "- 利用目的（創薬など）に応じて利用者側が適宜判断することになるが、不十分であれば今後省令やガイドラインで定めることは可能である",
+        "full_text": "それはどういう目的で使うかということだと思います。ただ、今の話だと、例えば医療データをもって、それ用のデータを使って何かしら治療薬を創薬していくことに使おうとした場合に、長妻という名前は不要だと思いますから、そういった意味においては、その利用者側が適宜判断するということになろうと思いますが、それでもし足りないということであれば、今後、省令の規則で定める中で、そういったガイドラインをつくって、いちいち一つ一つ、そういったものは書き込むということは可能だろうと。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5280"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=1498.6760000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "不要データに名前が含まれるかの例示について",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "長妻"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "今後、省令の規則で定める中で、そういったガイドラインをつくって",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "今後、省令の規則で定める中で、そういったガイドラインをつくって、いちいち一つ一つ、そういったものは書き込むということは可能だろう。",
+          "score": 0.4
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "不要データの定義に名前を含めるかという問いに対し、利用者の判断に委ねつつ、将来的なガイドライン策定の可能性に言及した回答である。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問の文法が断片的であり、具体的にどの規定や文書の「例示」について問うているのかが不明確である。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_013",
+      "segment_index": 2,
+      "topic": "団体訴訟制度の導入",
+      "question": {
+        "speaker": "長妻昭",
+        "party": "中道改革連合・無所属",
+        "summary": "- 個人情報保護法において、適格消費者団体等による団体訴訟制度を復活させてほしい",
+        "full_text": "団体訴訟制度。団体訴訟制度。これは、先進7カ国調べました。国会図書館で。全ての国でありました。日本も、これ、個情委が2025年3月5日の作成資料で、個人情報保護法上の差し止め請求権を、適格消費者団体自身の権利として付与することが考えられると、こういう前向きのことを書いたと。ところが、その間の経緯、私もつぶさに調べましたが、業界団体の強い強い抵抗で、個情委もこうしきれずになって、条文には全くないと。こういう状況になってしまったんですね。個人情報保護委員会の皆さんと話しても、個情委というのは人も少ないし、人もの金が少ないんだと。だからこういう団体訴訟制度を入れれば団体がいろいろノウハウを蓄積して、そして個情委とタッグを組んでおかしな個人情報についてはチェックをして、そしてそれを摘発するようなそういう動きもできる手法を使ってチェックができるということで、個情委の方も自分たちの力を補うということで期待をされていたにもかかわらず、バサッと削れちゃったわけですね。政府のいろんな弁明はわかります。これは消費者契約法の団体だから、消費者団体は個人の利益とはちょっと違う利益だから。であればですね、新しい団体を作るようなスキームを一緒にセットして、そして団体訴訟制度を認めていくというようなことも私はあり得ると思うんですが、これ、大臣、団体訴訟制度、復活いただけませんかね。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "松本洋平",
+        "role": "",
+        "summary": "- 新しい団体の認定はあり得ないことではないが、専門性や実績の不足という課題がある\n- 個人の利益保護と消費者団体の利益保護の間で法的な整理が必要であり、それが先決である",
+        "full_text": "委員のご指摘の新しい認定制度とか新しい団体については、あり得るかあり得ないかといったら、あり得ないことはないとは思いますけれども、ただ現状ですね、例えばそういった団体を作ったとしても、今、適格消費者団体にとってもそういった専門家がいないということもございますし、実績がありませんから、どうやってそれを作っていくかということもありますので、結局新しいものを作ってもあまりその解決策にはならないだろうと。今、我々は何でこれをやらなかったか理由の中では、個人の利益を保護する個人情報保護法と、それから消費者団体、消費者の利益を保護する法律と、そういったところで齟齬はあるので、法的な整理が必要であるというふうに我々としても理由として述べていますから、法的な整理をまずしていくということが、まず先決ではないかなというふうに思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=1498.6760000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "個人情報保護法における団体訴訟制度の復活",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "国会図書館"
+            },
+            {
+              "type": "date",
+              "excerpt": "2025年3月5日の作成資料"
+            },
+            {
+              "type": "organization",
+              "excerpt": "個情委"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "適格消費者団体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": true,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "法的な整理をまずしていくということが、まず先決ではないかなというふうに思います",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "法的な整理をまずしていくということが、まず先決ではないかなというふうに思います。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "団体訴訟制度の復活という具体的な提案に対し、大臣は法的な整理が必要であるとして現状の否定的な見解を示した。具体的なアクションへのコミットメントは弱く、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_014",
+      "segment_index": 2,
+      "topic": "課徴金制度の対象範囲と金額の妥当性",
+      "question": {
+        "speaker": "長妻昭",
+        "party": "中道改革連合・無所属",
+        "summary": "- 目的外利用や要配慮個人情報の同意なし取得などが課徴金対象から外れた理由と、課徴金額が低すぎる理由を伺いたい",
+        "full_text": "そしてこの課徴金についても、これも残念ながら骨抜きになりました。今回一部は導入はされましたけれども、この3つの点が私重要だと思ってですね。これも考え方、同じような資料に出ております。まずは課徴金。課徴金納付命令の対象とすることが考えられるということで、3つ出したんですが、これ落ちちゃったんですね。入ってないんです。これ本丸です、3つが。まずは利用外、目的外利用。これ課徴金かけましょう。2番目が要配慮個人情報の取得による本人同意。これの違反かけましょう。これも落ちました。23条の違反。大規模な個人データの漏洩等の発生、これも落ちました。業界の意向です。これについて、課徴金についても金額が安すぎるんですね、日本は。結局、制裁金は入れられないということなんですが、ただ、公正取引委員会なんかは独禁法などで上乗せ課徴金をやっているわけですよ。これ、大臣、同時にお伺いしますが、まずこの3つが抜け落ちた理由と、課徴金が低すぎる理由、これについて御答弁いただければ。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "松本洋平",
+        "role": "",
+        "summary": "- 制度導入初年度のためスモールスタートとしたことや、日本の法体系（努力義務→勧告→罰金）との整合性を考慮した\n- 意図的な違反か過失かによる区別が必要なため、一律に高額な課徴金を課すことは困難であった\n- 金額については、削減コストの算定方法が不明確なため、得た利益分を回収する形に落ち着いた",
+        "full_text": "松本国務大臣。まず個人情報保護法では初めてこの課徴金制度というのを導入するということなので、まずスモールスタートにせざるを得なかったというふうなことがあると思います。基本的にこれは私個人の意見もあるんですけれども、我が国のいわゆる課徴金等々の法律としては、まずは法律のあり方として努力義務が義務になって、それから勧告や命令になって、それでもダメな時には罰金を取るとか、あるいは刑を課すとか、そういうふうな順番になっているんですね。ですから、それと整合性も合わせる必要もあるんでしょうけれども、やっぱり我が国の法律そのものがいきなりゴンと強く罰を与えるというような成り立ちになっていないことがまず一つ原因にあると、そういうふうに僕は個人的には感じています。その上で、今あったお話なんですけれども、例えばこの安全管理措置義務違反の累計なんかを考えたときに、うっかりやってしまったという、意図的に何か悪さをしようと思って義務違反をしたのと、うっかり結果的に義務違反になってしまった場合とありますから、そういったケースも含めると、いきなり10%など大きな課徴金を課すというわけにもいかないだろうというような議論もあったと聞いております。そういったことが非常に重要だと。2つ目は、金額が少ない。金額が少ないことについては、これは例えば安全管理措置を行ったことにより削減したコストの具体的な額の算定方法とか、どういうふうに額を算定するかというところがまだ明確ではないので、少なくとも得たものに関しては取りましょうというようなことに落ち着いたというふうに聞いています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=1498.6760000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "課徴金対象の限定理由と金額が低すぎる理由",
+          "sub_asks": [
+            "3つの項目（目的外利用、同意違反、大規模漏洩）が課徴金対象から抜け落ちた理由",
+            "課徴金の金額が低すぎる理由"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "独禁法"
+            },
+            {
+              "type": "other",
+              "excerpt": "同じような資料"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "個人情報保護法では初めてこの課徴金制度というのを導入するということなので、まずスモールスタートにせざるを得なかった",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "課徴金制度の設計思想（スモールスタート）と算定の困難さについて大臣が直接回答しており、制度導入時の背景を記録する価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「3つの点」の内容を具体的に提示しているが、それらがどの資料のどの案に基づいているかを明示すれば、より政府の回答を追い込みやすかった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_015",
+      "segment_index": 2,
+      "topic": "漏洩時の本人通知義務の緩和",
+      "question": {
+        "speaker": "長妻昭",
+        "party": "中道改革連合・無所属",
+        "summary": "- 漏洩時の通知において「本人への通知が困難な場合」という文言が削除され、代替措置（HP掲載等）で済むようになったのはなぜか",
+        "full_text": "しかも最後の質問にしますけれども、漏洩時の報告ということで、漏洩した場合、これまでは配布資料の3ページ目でございますけれども、漏洩した場合は本人に通知すると、お詫びの。ただし本人への通知が困難な場合については、これは百万人いたらなかなか困難かもしれない。困難な場合については、代替措置でいいよと。これが現行なんですね。ところが今度は、「本人への通知が困難な場合」というのが削除されて、代替措置でもいいよということになっているわけです。代替措置は何かと聞くと、いやホームページに一行書けばいいよと、漏れましたと。そんな馬鹿な話ないじゃないですか。確かに私も一千万人漏れたら一千万人全員に告知しろとは言いませんけれども、この「本人への通知が困難な場合」というのは、なぜこれ取っちゃっているんですか。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "松本洋平",
+        "role": "",
+        "summary": "- 本人の権利利益の保護に欠ける恐れが少ない場合に限定して、通知義務を緩和している",
+        "full_text": "松本デジタル大臣。漏洩等発生時の本人通知の義務の緩和というのは、本人の権利利益の保護に欠ける恐れが少ない場合というふうに、ちゃんと限定をしております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=1498.6760000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "本人通知困難時の除外規定を削除した理由",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "配布資料の3ページ目"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "本人",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "漏洩等発生時の本人通知の義務の緩和というのは、本人の権利利益の保護に欠ける恐れが少ない場合というふうに、ちゃんと限定をしております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "規定削除の理由を問う質問に対し、緩和条件の限定について回答しており、完全な回答ではないが解釈を提示している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_016",
+      "segment_index": 3,
+      "topic": "行政機関のガイドラインによる基準設定の妥当性",
+      "question": {
+        "speaker": "早稲田ゆき",
+        "party": "中道改革連合・無所属",
+        "summary": "- 行政機関のガイドラインや規則による基準設定は、恣意的な運用を招き、国会のチェックや説明責任を困難にするのではないか",
+        "full_text": "今の長妻委員の質疑を拝聴しておりましたけれども、やはり非常に個人情報、私たち一人一人の国民の権利、利益、こうしたものが保護という観点においては後退してしまうのではないかという懸念を拭えません。その上で質問したいと思いますが、まず今回の改正の前に2021年、この改正案を審議をされました。そのときに当時、立憲民主党は「相当の理由」という抽象的な概念が、行政の恣意的な運用を招きかねないという問題認識のもと、要件をより限定的かつ明確化することを求める修正案も出しました。またもちろん、付帯決議もつけまして、そして付帯決議の中の措置として措置済みとなっているんですけれども、それが資料につけましたガイドラインであります。このガイドラインをご覧いただきたいのですが、これですね、「相当の理由があるとき」これ行政機関等の恣意的な判断を許容するものではなく、少なくとも客観的に見て合理的な理由があると。そして最後は行政機関の長等が個別に判断する、その本人への影響の程度を総合的に勘案してと、そういう内容なんですね。これ何も明確にきちんと書かれていると到底思えないんですけれども、これがガイドラインで示すということ、それから個人情報保護委員会の規則で示すということであれば、全く明確な基準が示されていないのではないかと、私は非常に懸念をします。これはまだ行政機関ですからそうだけれども、今回は民間でありまして、そこに利益の享受というものも発生する中で、非常にこういう民間任せにしてはまずいのではないかということです。それで大臣に伺いますが、この5年前の改正ですけれども、こういうことがあった中で、このような立ち位置では、その国会審議の中でも、率に位置づけられていないわけですから。規則はこれからです。ガイドラインもこれから。しかもそれが非常に緩い、基準も明確ではない中でこうやってきたわけですね。この行政機関についても、まさにこれでは、国会によるチェックや国民への説明責任を確保することが困難であるのではないかと思いますが、大臣、御見解を伺います。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "松本大臣",
+        "role": "",
+        "summary": "- 技術進展（AI等）に迅速に対応するため、機動力のある規則やガイドラインで制限をかける手法は不可欠である",
+        "full_text": "一般論としてなんですけれども、専門的事項を定める必要は、技術の著しい進展に適時に対応した基準を必要としています。何を言いたかというと、AIがものすごい勢いで進歩していて、それに追随して法律を作っていくとなると、とてもじゃないけど間に合わない。それはどういう形でいろんな歯止めを効かせていくかとなると、これは今回の法律も再三出てきますが、個人情報保護委員会がやる規則でもって、ある程度サプレッションしていかなきゃいけないというふうには思います。ですから、そういう機動力のあるやり方というのは、個人情報保護委員会の規則をつくる、それからそれに基づいてガイドラインをつくっていく。そういった中において制限というもの、限定というものをかけていくということが、今の少なくともAIとかそういった技術の進歩には対応するためには、これはもういたしかたないというふうに思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=3647.576",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "個人情報保護の基準が不透明で説明責任を欠く点への見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "2021年"
+            },
+            {
+              "type": "organization",
+              "excerpt": "立憲民主党"
+            },
+            {
+              "type": "other",
+              "excerpt": "ガイドライン"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "個人情報保護委員会"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "AI"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "機動力のあるやり方というのは、個人情報保護委員会の規則をつくる、それからそれに基づいてガイドラインをつくっていく。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は過去の経緯に基づき基準の不透明さを具体的に指摘したが、大臣はAI等の技術進展への対応という一般論で返し、具体的な基準策定のあり方や説明責任への回答を避けた。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問が長く、文脈の説明に時間を割いているため、核心となる「説明責任をどう果たすか」という問いが埋没している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_017",
+      "segment_index": 3,
+      "topic": "統計作成等の特例における個人情報の取り扱いと安全管理措置",
+      "question": {
+        "speaker": "早稲田ゆき",
+        "party": "中道改革連合・無所属",
+        "summary": "- 統計作成等の特例において、生データ（名前・住所等）や機微情報（位置情報、病歴等）が含まれるか\n- 不要な個人情報を削除することを安全管理措置義務として規則に明記するか",
+        "full_text": "その上で次の質問に移りますが、30条の2であります。この統計と情報等の作成にのみ利用されることの担保、これ個人情報を保護委員会としてどのように確認をするのかということです。この240人体制の大変人数も増えていない中でですね。それで例えばその匿名確保でなく生データ、名前、住所、そうしたものが入るものを統計等を作成という中にはAIの開発も含まれるということでよろしいんですよねということ。それからじゃあ例えば具体的な事例として私が申し上げたいのは携帯位置情報、これ、名前、それから端末機の番号、緯度、経度、それから時刻なんかも入っていますよね。こういうものも含まれるのか。それからコロナの疫学調査、これも名前入り、地域、年齢、性別、そうしたものが全て含まれる病歴も、こういうものも含まれるのか、伺います。そうしますと、今申し上げた事例でいうと、名前、端末機番号、緯度経度とか、そういうものが入っているものも、もちろん含まれるということですよね。そしてコロナの疫学情報なんかも、疫学調査なんかもそうだということですから、先ほど長妻委員がおっしゃっているとおり、この統計等に必要でない名前の削除は事業者側にやってもらうんだということでありますけれど、これが安全管理措置義務の中にきちんと入れるということを、じゃあ規則でこれを書かれるということでよろしいでしょうか。名前など、例えば必要ないものはこれを削除すると、その安全管理義務を負うということを書かれるんですか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "佐々木事務局長",
+        "role": "",
+        "summary": "- 特定の個人の対応関係が排斥された統計情報を作成する場合、特例の対象となる\n- センシティブな情報の安全管理は必須であり、規則を中心に明示的な基準に盛り込みたい",
+        "full_text": "まず大前提といたしまして、現行法の下でも、事業者がまず一旦適正に取得した個人情報でありますと、あらかじめ利用目的で明示していなくても、統計作成といった個人と全く関係ない利用というのは、できることになっていることをまず申し述べたいと思います。今回の改正案におきましては、ある要件を満たす用途に限定する、用途を限定する場合には、本人の同意がなくても、第三者から個人情報などの提供を受けられることとするものでございまして、その用途の中には、先生ご指摘の場合につきましても、提供を受けた事業者が、特定の個人の対応関係が排斥された統計情報等を作成する場合であれば、特例の対象になるということでございます。データの種別、例えば今論点になりました要配慮個人情報というような、個人にとって大変センシティブなものにつきましては、漏れると、個人の権利利益への侵害のデータが多くございますので、安全管理措置を的確に行う上では必須のことだと思います。安全管理措置義務につきましては、既存の法律、現行の法律の中に条文で明記されておりますが、それの具体的な執行を行うための基準を私ども持ってございまして、規則であるかどうかにつきましては検討を要しますけれども、何らかの形で明示的な基準に盛り込みたいと思います。規則を原則にガイドラインも含めて整理していきたいと思います。今回提案しております法律に基づく規則を中心に、しっかり規則ガイドラインで定めていきたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=3647.576",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "統計作成目的の個人情報利用の担保と規則への明記",
+          "sub_asks": [
+            "個人情報保護委員会として利用目的の限定をどう確認するか",
+            "AI開発や携帯位置情報、コロナ疫学調査などの生データも対象に含まれるか",
+            "不要な名前の削除等の安全管理措置を規則に明記するか"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "30条の2"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "個人情報保護委員会",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.6
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "規則であるかどうかにつきましては検討を要しますけれども、何らかの形で明示的な基準に盛り込みたいと思います。",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "規則を原則にガイドラインも含めて整理していきたいと思います。今回提案しております法律に基づく規則を中心に、しっかり規則ガイドラインで定めていきたいと思います。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "複数の具体的なデータ例を挙げて確認を求めているが、回答は原則論と今後の検討方針に留まっている。安全管理措置の明文化については検討レベルのコミットメントである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が多岐にわたるため、個別のデータ種別（位置情報等）へのYes/No回答が曖昧になりやすい構成になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_018",
+      "segment_index": 3,
+      "topic": "統計作成等における再識別禁止規定の必要性",
+      "question": {
+        "speaker": "早稲田ゆき",
+        "party": "中道改革連合・無所属",
+        "summary": "- AI技術の進歩により再識別のリスクがあるため、統計作成等についても法律で再識別を禁止すべきではないか",
+        "full_text": "それででも、個人の権利利益を害する恐れの少ないものとして、規則で定めるというふうにもなるんでしょうけれども、AIの技術が非常に進歩が早いという中で、この統計情報、これから逆に個人情報が再識別される想定もかなりされると思うわけです。その上で匿名加工、これは45条、それから仮名加工情報、これについては41条の7項で、再識別禁止規定がありますけれども、なぜこの名前とか住所とか、そういう極めて機微な情報について、この再識別禁止規定、統計作成等についても、法律で禁止をすべきではないでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "佐々木事務局長",
+        "role": "",
+        "summary": "- 本特例では個人に関する情報に該当しない状態まで一般化するため、再識別リスクは極めて低い\n- 規則において復元防止のための適切措置を講じ、現行法で十分担保できる",
+        "full_text": "まず、統計作成等の特例における統計作成等でございますが、条文上明確に示しておりますけれども、大量の情報の傾向または性質に関する情報。警視に係る情報で、個人に関する情報に該当しないものを作成する行為でありまして、かつでございますが、個人の権利利益を害する恐れが少ないものとして、個人情報保護委員会規則で具体的に定めるものということでございます。そのため、本特例において、統計作成等の対応でございますけれども、大量の個人情報、個人に関する情報に当たらない状態にまで加工いたしますので、先生ご指摘の仮名情報や匿名加工情報の場合は、ある意味その人、その人の一名一名の、一行一行と申しますか、それぞれの現データの粒度を残す形で、個人、その他の名前を消すことによっても、仮名であったり、匿名であったりということができるわけでございますが、今回、特例を適用する場合には、それでも足りませんでして、さらなる一般化を丸めるということを求めるわけでございます。従いまして、本特例に基づいて作成される統計情報等につきましては、再識別等が行われるリスクは、仮名化、匿名化に比して、極めて低いものというふうに認識しております。また、本特例におきましては、個人の権利利益を害する恐れが少ないものに限定する観点から、委員会規則におきまして、個人情報等が復元されることを防止するために、必要かつ適切な措置を講ずることを決めていきたいというふうに思っております。このほか、本特例に基づいて作成された統計情報、本特例において識別禁止行為ということを、識別禁止義務を重ねて規定せずとも、現行の法律の条文の合わせ用の形で十分担保できるというふうに承知しております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=3647.576",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "統計作成等の特例における再識別禁止規定の法制化",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "45条"
+            },
+            {
+              "type": "law",
+              "excerpt": "41条の7項"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "委員会規則におきまして、個人情報等が復元されることを防止するために、必要かつ適切な措置を講ずることを決めていきたい",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "本特例に基づいて作成される統計情報等につきましては、再識別等が行われるリスクは、仮名化、匿名化に比して、極めて低いものというふうに認識しております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "統計作成特例における再識別リスクの認識と、法制化せずとも現行法で担保可能であるという政府見解が明確に記録されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_019",
+      "segment_index": 3,
+      "topic": "制度策定プロセスにおけるパブリックコメントの実施状況",
+      "question": {
+        "speaker": "早稲田ゆき",
+        "party": "中道改革連合・無所属",
+        "summary": "- 統計作成等の例外規定や要配慮個人情報の取得等について、明示的なパブリックコメントが行われていないのではないか",
+        "full_text": "このことにつきましても、パブコメということを聞きたいんですけれども、この例外規定が入る前にはパブコメされていますけどね。令和6年の6月。この例外として新設された統計等作成の例外規定、要配慮個人情報、病歴、犯罪歴の取得、それから本人同意なき個人データの第三者への提供については、きちんと明示的なこのパブコメを行っていません。そしてまた先ほど来、ステークホルダーの意見を聞いているとおっしゃっておりますが、もちろん聞いてはいらっしゃいますけれども、その中でこの平場ででもですね、平場の議論でも、19団体から聞いているうちにほとんどが、その19団体が経団連、新経連、それからまた日本IT団体連盟を中心とする、そういう事業者の利用する側です。そして一件だけが、この認定消費者団体から意見を聞いているんですね。だから消費者団体も、自分たちが要望をしていた団体訴訟ということのそれが入らないというのがわかったのがもう本当に前日だということが次の2枚目の資料に書かれております。その上で、パブコメについては、これを行われておりません。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "佐々木事務局長",
+        "role": "",
+        "summary": "- 中間整理の公表時に任意の意見募集を実施し、有識者や団体へのヒアリングを経て制度改正方針を決定したプロセスを経ている",
+        "full_text": "まず大前提といたしまして、いわゆる意見聴取手続き、行政手続きに基づきます意見聴取手続きが、行政に委ねられた執行基準などを作るときに行うということにされてございまして、私ども立案段階におきましては、ある意味任意のパブコメを随時行ってきたわけでございますが、委員ご指摘のとおり、中間整理を公表した際に、そのような任意の手続きの意見募集を実施いたしました。この中間整理におきましても、つぶさに見ていただければわかるのでありますけれども、AI開発や契約の履行に伴う個人情報の提供、公益性の高い分野における利活用と、本人同意を要しないデータ利活用とのあり方というような項目を設けておりまして、それについての意見募集を、そこの局面においてもしたということでございます。その意見募集の結果を踏まえまして、改めて、制度の基本的なあり方に立ち返った議論を行うということで、有識者11名、経産団体、消費者団体等17団体に対するヒアリングを私が実施いたしまして、令和7年1月に当該ヒアリングの結果を踏まえまして、中間整理を踏まえた、かつ中間整理の際に曖昧にしていた点を具体化した論点を再整理いたしました。本法案における統計作成等の特例をはじめとする、本人同意なき個人データの第三者提供に関する規定につきましては、中間整理において示した内容を、これらのヒアリングの結果を踏まえて、個人の権利利益への影響の有無という観点に着目し、再整理したという位置づけであると理解してございます。その論点につきまして、令和7年2月から3月にかけて、制度的課題に関する考え方として改めて公表し、有識者8名、経産団体、消費者団体など計29団体から御意見をお伺いいたしまして、本年の1月に制度改正方針として委員会として決定し、公表した次第でございます。本法案における統計作成等の特例をはじめとする、本人同意なき個人データの第三者提供に関する規定につきましては、今御説明したプロセスを経ながら進めてきたということについて、御理解いただければと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=3647.576",
+      "metrics": null
+    },
+    {
+      "id": "qa_020",
+      "segment_index": 3,
+      "topic": "第三者提供の例外規定と紛争解決手段",
+      "question": {
+        "speaker": "早稲田ゆき",
+        "party": "中道改革連合・無所属",
+        "summary": "- 契約履行に不可欠な場合等の同意不要規定が拡大解釈されるリスクに対し、どのような紛争解決手段があるか",
+        "full_text": "それでは18条の方に質問をいくつか飛ばしていきたいと思いますが、この個人データの第三者提供ですね。これにつきまして、例えば契約の履行のために不可欠なものや、取得の状況から見て本人の意思に反しないものと、これも個人情報保護委員会規則で定める場合、本人同意を不要とするということになっておりますけれども、この制度の趣旨に即した明確な基準を整理をするべきであり、これはしっかりとそのことを法律にも書き込むべきだと私は思いますが、その点について。それからまとめて質問いたしますけれども、必要不可欠なものというのが事業者にとって都合のいいように拡大解釈されてしまう、本人同意が形骸化されてしまうリスクがあると思われます。こうした場合に本人と事業者の間で意見が分かれた場合、どのような紛争解決の手段があるのでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "佐々木事務局長",
+        "role": "",
+        "summary": "- 規則で明確に定め、身勝手な運用は法令違反となる\n- 本人が利用停止等を請求できるほか、最終的には裁判による裁定という仕組みがある",
+        "full_text": "契約履行のために必要やむを得ないことは明らかである場合と、それから取得の状況から見て本人の意思に反しないため、本人の権利益を害しないことは明らかである場合として、規則で定める場合というふうにしてございます。その例外規定でございますが、本法案をお認めいただきましたら、事業者のみならず、個人がどう思うかということが肝要でございますので、さまざまな意見を聞きながら、法律にありますとおり、規則でしっかり定めていくということになろうかと思います。その点、規則で定めますので、事業者の身勝手な解釈で運用するということは、それは直ちに法令違反になるわけでございます。ガイドラインへの適合性につきまして、しっかり私ども監視監督をしてまいりますし、また仮に本人が本例外規定の要件に該当しないにもかかわらず、同意なく第三者提供を行われているといった場合には、利用停止、第三者提供の停止等を請求することができます。それにつきましては、私ども、日々本人からのさまざまなご相談やあっせんのご依頼を受けておりますので、そういった形で対応していきたいと思いますし、これにつきましては、最終的には裁判によって訴えることによりまして、事業者との裁定を図っていくという仕組みになってございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=3647.576",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "個人データの第三者提供における同意不要基準と紛争解決手段",
+          "sub_asks": [
+            "明確な基準を整理し法律に書き込むべきか",
+            "本人と事業者の間で意見が分かれた場合の紛争解決手段は何か"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "18条"
+            },
+            {
+              "type": "organization",
+              "excerpt": "個人情報保護委員会規則"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "利用停止、第三者提供の停止等を請求"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "裁判によって訴える"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "しっかり私ども監視監督をしてまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "本人が本例外規定の要件に該当しないにもかかわらず、同意なく第三者提供を行われているといった場合には、利用停止、第三者提供の停止等を請求することができます。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "個人データの第三者提供における例外規定の運用と、それに対する権利行使（停止請求や裁判）という具体的手段が明確に回答されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「法律に書き込むべき」という提案に対し、規則で定めることの正当性についての議論が不十分なまま回答が移行している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_021",
+      "segment_index": 3,
+      "topic": "目的外利用における要配慮個人情報の取り扱い",
+      "question": {
+        "speaker": "早稲田ゆき",
+        "party": "中道改革連合・無所属",
+        "summary": "- 本人同意なき目的外利用に要配慮個人情報が含まれるか、またホテル予約等の事例で病歴等が提供される可能性があるか",
+        "full_text": "その中で今の御答弁の中ですけれども、さらに第三者に提供される本人同意なく、個人情報の当初の目的外利用に、要配慮個人情報も含まれるわけだと思いますが、これでよろしいでしょうか。そうしますと事例としてちょっとお聞きしたいんですけれども、これネットでホテル予約するときに患者団体がされる場合、この患者さんのあるいはご家族の、そうした病歴とか、こうしたものも本人同意なく第三者に提供される場合があり得るということでよろしいですか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "佐々木事務局長",
+        "role": "",
+        "summary": "- 要配慮個人情報も含まれる\n- サービス享受に不可欠であると信じるに足りる十分な理由がある場合に限定されるが、個別の判断により適用対象となる可能性がある",
+        "full_text": "要配慮も含まれるものです。これはあくまでも、ご本人がその契約を通じたサービスを利用する際に、当然にその情報が提供されないと、サービスが享受できないと信じるに足りる十分な理由があることに限定されるわけでございます。むやみやたらにご本人のご家族、その他についての情報が提供されることはございませんが、例えば、療養先のようなそこに対し申し込む患者さんにしてみますと、それぞれの情報の提供ということが不可欠であるというふうに理解されているでありましょうから、そういった場合には本ケースにつきましての適用対象になる可能性はございますが、いずれにしても個別の判断になりますし、そこの妥当につきましては、最終的に私ども委員会でぜひを判断し、適切な執行を行っていくと、そういう構造になってございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=3647.576",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "目的外利用に要配慮個人情報が含まれ、第三者提供され得るか",
+          "sub_asks": [
+            "目的外利用に要配慮個人情報が含まれるか",
+            "ホテル予約等の事例で病歴等が本人同意なく第三者に提供され得るか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "患者団体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "委員会"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "適切な執行を行っていく",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "要配慮も含まれるものです。…ご本人がその契約を通じたサービスを利用する際に、当然にその情報が提供されないと、サービスが享受できないと信じるに足りる十分な理由があることに限定される",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "要配慮個人情報の目的外利用の範囲と、その適用要件（本人が信じるに足りる十分な理由）について政府の解釈が明確に示されたやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "具体例（ホテル予約）がやや曖昧なため、より具体的なサービス形態を提示すれば、より限定的な回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_022",
+      "segment_index": 3,
+      "topic": "課徴金制度の金額設定と団体訴訟制度の導入",
+      "question": {
+        "speaker": "早稲田ゆき",
+        "party": "中道改革連合・無所属",
+        "summary": "- 現行の課徴金制度は金額が低く、巨大企業への歯止めにならないため、1件あたりの制裁金方式にするべきではないか\n- 個人の権利保護のため、消費者団体による団体訴訟制度を導入すべきではないか",
+        "full_text": "その中で先ほども御質疑ありましたけれども、20年の改正時には参議院の附帯決議で、この課徴金制度を附帯をいたしました。それが一部はなりましたけれども、先ほど長妻先生の資料をお使いすると、千人規模ですよね。千人以上でないと、この課徴金の対象にならないし、制裁金ではないから、利益に対するものだけということで、マイナンバーの場合は一件からじゃないですか。何でこれ千人規模なんですか。また目的外利用、要配慮情報の不正取得、それから事業者の安全管理措置義務違反は対象外となって、非常に事業者に有利な規制となっております。こうした場合に、大臣も先ほどお答えになりました。はじめだからスモールスタートをするんだということだし、過失でそういうふうになった場合と、それから故意である場合と、いろいろあるからとおっしゃいましたけれども、これはじゃあ過失と故意で分ければいいだけのことですよ。実際にやっているじゃないですか、米国のカリフォルニア州も。データ1件について40万円。故意の違反の場合は120万円。これ、違反の1件あたりですからね。利益100万円とか200万円を、これを課徴金として課すという話ではございません。先ほど長妻委員のあれでもありましたとおり、Googleなんかにしてみたら、2兆円ものあれが課される可能性もあるということで、2000万ユーロ、約37億円というのが上限になっているわけで。こういうGAFAとか巨大企業に対して課徴金を課していくということが一つの歯止めになるのに、今回の日本の改正ではならなかったことは、大変歯止め規定も薄いと言わざるを得ません。それに加えまして、いや、だからそこのところはもっとやるべきではないかということを大臣にも伺いたいし、次の質問と重ねて伺いたいと思います。全国消費者団体連絡会が、制度導入を要望していました団体訴訟制度。これさっきも御説明、御答弁されました。でも、これは個人の権利保護、個人の権利利益を保護するという法律でありますから、消費者団体が擁護する利益というのは、消費者なんですね、ということは記者会見でもお答えになっていらっしゃいます。でも、他のEUの一般データ保護規則、GDPR何かのところが適用されているところは、これ、消費者団体訴訟指令というふうになっていて、消費者団体がこの団体訴訟になっていますよね。それから、他のところでも、各州の消費者法等によると、カナダでもなっています。結局、今はノウハウがないからといったら、こうやってどんどんAIの技術が進歩していくわけですから、それに対して、この消費者団体だって、しっかりとそういうノウハウを積んでいこうとするのは当然だと思います。だから、新しい団体でもいいけれども、消費者団体を軸としてやっていく、こういう団体訴訟がないと、とてもとても個人がこの巨大企業に対して何かを求める違反行為ではないかということを確認させるなんていうことはもう本当に皆無に近いと私は思います。ここが肝だったはずなんですね。これを事業者側は一番嫌がったはずです。これがないから日本は緩い。課徴金もそうだけれども、団体訴訟もない。本当に歯止めがない個人情報の保護の改正、こうしたものがいいのかという問題がございます。大臣にもう一度伺いたいのですが、課徴金について、それからこれがあまりにも低いということと、団体訴訟はもう一度考えていただくべきと思いますか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "松本大臣",
+        "role": "",
+        "summary": "- 課徴金は日本の法体系としてスモールスタートが必要であり、国内企業のビジネス形態とのバランスを考慮すべきである\n- 団体訴訟は法的な整理が必要だが、将来的にはあり得る。当面は消費者団体との連携強化や監督権限の行使で対応する",
+        "full_text": "まず課徴金の問題でございますけれども、先ほど申し上げましたように、スモールスタートをせざるを得ない日本の法体系というのはちょっと違うか、いわゆる法律の作り方の問題だろうというふうに思います。これは委員の皆さん全員共有していただければと思います。もうそこから変えてしまわないと、なかなかいきなり大きな罰を加えるということは厳しいかろうと思います。それともう一つ、GAFAのような大きな企業になりますと、確かに大きな課徴金を課するということは可能だと思いますが、基本的にアメリカなんかはハイリスク・ハイリターンで商売をしていると。我が国の企業はどちらかというと、ハイリスク・ハイリターンという考え方ではなくて、できるだけローリスク・ローリターンのような企業、商売の進め方、ビジネスの進め方をやっていますから、果たして我が国にそういう大きな課徴金を課すことが正しいかどうかということは、もう一回よく考えなきゃいけないと思います。これは別に経済団体の方を持っているわけではなくて、ビジネスのあり方として、それに見合った罰の与え方というのは、私はあってしかるべきだろうというふうに思っています。そうしないとやはりどちらかというとこのデータの利活用が逆に進まなくなってしまうということも十分考えなきゃいけないと思います。ただ課徴金とかがいらないと言っているわけでは決してありませんので、これはあくまでもバランスは必要だということは、前提でお話をさせていただいております。もう一つ、団体訴訟制度の問題ですけれども、これは先ほど長妻委員の質問でもお答えしたとおりなんですけれども、少なくとも、我々個人情報保護委員会としても、既存の適格消費者団体の活用を念頭に、この制度が作れないかということは、当然これまでも検討してまいりました。しかしながら、先ほど申しましたけれども、法的な整理がちゃんと必要だと。個人を扱っているのか、消費者を扱っているのか、似て非なるものですから、そこはちゃんとこれからもう一つ、法的な整理を進めていく中において、将来的にはそういったこともあり得ると思います。それまでの間と申しますが、一方で、個人の権利利益の保護は重要ですから、消費者団体との連携というのはこれまで以上に強化してまいるということ。それから一般の個人からの相談を受け付ける窓口の活用も当然促進するということ。あるいは適正な監督権限の行使をして違法な行為の抑制を図っていくということは、これは我々個人情報保護委員会としてもしっかりと進めていきたいというふうに思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=3647.576",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "課徴金制度の強化と団体訴訟制度の導入について",
+          "sub_asks": [
+            "課徴金の対象範囲や金額が低すぎる点についてどう考えるか",
+            "消費者団体による団体訴訟制度を再度検討すべきではないか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "20年の改正時には参議院の附帯決議"
+            },
+            {
+              "type": "field_case",
+              "excerpt": "米国のカリフォルニア州も。データ1件について40万円。故意の違反の場合は120万円"
+            },
+            {
+              "type": "organization",
+              "excerpt": "全国消費者団体連絡会"
+            },
+            {
+              "type": "law",
+              "excerpt": "EUの一般データ保護規則、GDPR"
+            },
+            {
+              "type": "other",
+              "excerpt": "カナダでもなっています"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.9
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "全国消費者団体連絡会",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "消費者団体との連携というのはこれまで以上に強化してまいるということ",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "法的な整理を進めていく中において、将来的にはそういったこともあり得ると思います。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "課徴金と団体訴訟という2点について具体的に質問し、大臣がそれぞれの現状認識と今後の方向性（検討の可能性）を回答している。ただし、具体的なアクションプランや期限は示されていない。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が非常に長く、複数の論点が混在しているため、個別の論点ごとに質疑を分けた方がより具体的な回答を引き出しやすかった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_023",
+      "segment_index": 3,
+      "topic": "子どもの個人情報保護と最善の利益",
+      "question": {
+        "speaker": "早稲田ゆき",
+        "party": "中道改革連合・無所属",
+        "summary": "- 同意が認められない場合等のガイドライン明示について、また教育現場でのビッグデータ利用による差別懸念への対応を求める",
+        "full_text": "文科省、それからこども家庭庁にも来ていただいていますので、これもちょっと時間の関係。早稲田委員、この同意ということが認められないことも含めてガイドラインにきちんと明示をすべきではないかと思いますが、こども家庭庁、それから文科省の方に伺いたいと思います。すみません。次の質問と一緒にお答えいただきたいんですけど、例えば、保護者の年収、虫歯の数、学力の相関などをはじめ、子どもの学習成績や保健統計に関わるビッグデータ、これが教育現場の方では、保護者の年収などをもとに子どもが差別される恐れがないかということも踏まえて、しっかりとこういう懸念を取り払っていただきたいと思うわけですけれども、その点について。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "水田審議官",
+        "role": "",
+        "summary": "- 運用判断は個人情報保護委員会が行う立場である\n- 子どもの意見を尊重しつつ、最善の利益が図られるよう個人情報保護委員会と連携して努める",
+        "full_text": "まず、個人情報保護法の解釈ですとか、ガイドライン作成等を含む運用に関する事項につきましては、法律を所管する個人情報保護委員会において判断すべきものでございます。こども家庭庁としてはお答えする立場でないということについては、まずご理解いただきたいと思います。その上で、ご指摘の子どもの最善の利益につきましては、一般論として子どもの意見が年齢発達段階に応じて積極的かつ適切に子ども政策に反映されるように取り組むことを政府全体の方針としております。一方、こども基本法の解釈におきましては、別の考慮要素と比較考慮をして合理的に判断した結果、子どもの意見が子どもにとって最善とは言い難いと認められる場合には、子どもの意見とは異なる結論が見出されることはあり得ると解釈しているところでございます。こども家庭庁としましては、こうした点について必要に応じ、個人情報保護委員会と連携し、子どもの最善の利益が図られるよう努めてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=3647.576",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "ビッグデータ活用時の差別懸念の払拭とガイドライン明示",
+          "sub_asks": [
+            "同意が認められない場合のガイドラインへの明示",
+            "保護者年収等による差別懸念の払拭"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "子ども",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "個人情報保護委員会"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "こども基本法"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "子どもの最善の利益が図られるよう努めてまいりたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "子どもの意見が子どもにとって最善とは言い難いと認められる場合には、子どもの意見とは異なる結論が見出されることはあり得ると解釈している",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者が提示した具体的な差別懸念（年収等）への回答を避け、管轄外であることとこども基本法の一般論に終始した回答である。",
+        "would_be_referenced": "low",
+        "issue_in_design": "複数の省庁にまたがる問いであり、かつ「懸念を取り払ってほしい」という抽象的な要望形式であるため、回答者が逃げ道を作りやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_024",
+      "segment_index": 4,
+      "topic": "国等データ活用事業指針におけるデジタル主権の確保",
+      "question": {
+        "speaker": "阿部司",
+        "party": "日本維新の会",
+        "summary": "- 国等データ活用事業指針にデータセキュリティ、事業者の安全管理、経済安全保障の観点を組み込むべきではないか\n- デジタル主権の確保に資する内容とすることへの見解を問う",
+        "full_text": "まず、情報通信技術活用推進法案について、デジタル主権の観点からお伺いをしてまいりたいと思います。先月16日の本委員会で、AI基本計画、ガバメントクラウド、半導体デジタル産業戦略を束ねる一体的な戦略文書の必要性についてお尋ねをしまして、大臣からは必要だろうと、官邸にもしっかり伝えていきたいと、前向きな御答弁をいただきました。本法案で、内閣総理大臣が新たに策定をする国等データ活用事業指針は、認定事業者が政府保有データを活用する制度の根幹となる文書となります。政府保有データを民間に開放して、イノベーションを促す仕組みは重要ですけれども、その裏返しとして、国の重要データが外部に流出するリスク、また、有事に国がコントロールを失ってしまうリスクと表裏一体でもあると思っております。100%国産にこだわるものではないにせよ、いざというときに、しっかりと国がコントロールできる状態にしておくことが、デジタル主権の本質と考えております。本指針において、データセキュリティ、事業者の安全管理、そして経済安全保障といった観点を組み込んで、デジタル主権の確保に資する内容とすべきと考えますけれども、大臣の御見解をお伺いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "松本尚",
+        "role": "",
+        "summary": "- 指針においてデータの安全管理方法等を定めることになっている\n- データセキュリティや経済安全保障の観点を念頭に、適切な取り扱いを行うべきと考えている",
+        "full_text": "松本尚大臣本法案に基づく国等データ活用事業に関する指針においても、データの安全管理の方法等の事項を定めるということになっています。委員御指摘のとおり、データセキュリティとか、それから経済安全保障等の観点も念頭に、このデータの適切な取扱いはしなければいけないと思っています。それについては、この指針をつくる上で、私自身も根本的に真ん中に置かなきゃいけないものだと。国のデータですから。当然それはもう念頭において作るべきだというふうに思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5280"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=5807.476",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "データ活用事業指針にデジタル主権の観点を盛り込むか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "情報通信技術活用推進法案"
+            },
+            {
+              "type": "past_answer",
+              "excerpt": "先月16日の本委員会で、AI基本計画、ガバメントクラウド、半導体デジタル産業戦略を束ねる一体的な戦略文書の必要性についてお尋ねをしまして"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "念頭において作るべきだというふうに思っております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "データセキュリティとか、それから経済安全保障等の観点も念頭に、このデータの適切な取扱いはしなければいけないと思っています。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "デジタル主権の観点を指針に盛り込むべきという提案に対し、大臣が同意を示したやり取りである。具体的アクションへの言及はないが、方向性の合意が記録されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「デジタル主権」の定義を具体的に提示して、どの項目を盛り込むべきか具体的に問えば、より拘束力のある答弁が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_025",
+      "segment_index": 4,
+      "topic": "データセンター立地をめぐる住民紛争と政府の把握状況・対応",
+      "question": {
+        "speaker": "阿部司",
+        "party": "日本維新の会",
+        "summary": "- 住民との合意形成をめぐり紛争に発展した大規模データセンター建設事例をどの程度把握しているか\n- 東京都の独自立地指針の策定状況や、事業者団体による地域共生ガイドラインの策定状況、および実効性の確保策を問う",
+        "full_text": "次に、データ活用の物理的な基盤についてお伺いをしてまいりたいと思います。本法案の施行によって、国等データの活用とベースレジストリの整備が進んだ場合、その物理基盤となるデータセンター、こちらの需要が拡大していくことも考えられます。一方で、立地をめぐる住民との摩擦というものが至るところで起きているともお伺いをしております。大臣、御地元の千葉県印西市、東京都日野市、柏市など各地でこうしたトラブル問題が発生しておりまして、電力消費、騒音、景観への影響などをめぐって行政不服審査請求ですとか訴訟まで提起される事態となっております。この事実関係をお伺いしたいということと、第一に、ここ数年で住民との合意形成をめぐって紛争に発展した大規模データセンター建設の事例を政府はどの程度把握をされているのか。二つ目に、東京都は国に先行する形で独自の立地指針の策定に動いていると承知をしておりますけれども、政府の取組の状況、また関係事業者団体による地域共生ガイドラインの策定状況についてお伺いします。また、これらの実効性をどのように確保していく考えなのか、総務省からお伺いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "吉田",
+        "role": "",
+        "summary": "- 景観や排熱等を心配する声があることは承知しており、事業者による丁寧な説明が重要と考えている\n- 官民懇談会の取りまとめに基づき、ガイドラインの運用状況を確認し、必要なサポートを行う",
+        "full_text": "我が国において、多くのデータセンターの新規建設が進められる一方で、委員御指摘のとおり、景観や排熱等を心配される声があるということは承知しております。データセンターの立地に際しては、地域との共生を図っていくことが大変重要であり、まずは事業者において地域住民に対する説明の機会を設けるなど、丁寧な対応を進めていただくことが重要と考えております。このような認識の下、総務省が経済産業省とともに開催しております、わが国ビット連携官民懇談会の取りまとめ1.0におきまして、データセンターの立地に当たっては、データセンター事業者が建設計画や周囲の環境影響について、立地地域に対して説明する機会を設けるなど、総務省といたしましては、経済産業省と連携し、今般取りまとめられたガイドラインの運用状況をしっかりと確認し、必要なサポートを行ってまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=5807.476",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "データセンター立地を巡る住民紛争の把握状況と対策",
+          "sub_asks": [
+            "住民との紛争に発展した大規模DC建設事例の把握状況",
+            "政府の取組状況および事業者団体のガイドライン策定状況",
+            "これらの実効性をどのように確保するか"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "千葉県印西市"
+            },
+            {
+              "type": "organization",
+              "excerpt": "東京都日野市"
+            },
+            {
+              "type": "organization",
+              "excerpt": "柏市"
+            },
+            {
+              "type": "organization",
+              "excerpt": "東京都"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "データセンター建設予定地の住民",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "わが国ビット連携官民懇談会の取りまとめ1.0"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "運用状況をしっかりと確認し、必要なサポートを行ってまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "データセンターの立地に際しては、地域との共生を図っていくことが大変重要であり、まずは事業者において地域住民に対する説明の機会を設けるなど、丁寧な対応を進めていただくことが重要と考えております。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的で多岐にわたるが、回答は一般論と既存の懇談会結果の言及に留まり、具体的な紛争事例の把握数や実効性確保の具体策への回答を避けている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "複数の問いを一度に投げかけているため、回答者が都合の良い部分（一般論）のみを抽出して回答しやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_026",
+      "segment_index": 4,
+      "topic": "データセンター立地ルールの国による整備",
+      "question": {
+        "speaker": "阿部司",
+        "party": "日本維新の会",
+        "summary": "- データセンターの社会的需要に対し、既存の取組の実効性確保とともに、必要に応じて国として立地ルールを整備すべきではないか",
+        "full_text": "そこで大臣にお伺いします。今の質問のとおり、住民紛争の発生、東京都の先行的な動き、業界団体のガイドラインの策定など、データセンターの立地をめぐる制度の整備は、緒についたばかりであります。データ活用の制度設計、そしてそれを支える物理的な基盤としてのデータセンターの社会的需要、これは車の両輪だと思います。本法案の施行と歩調を合わせまして、既存の取組の実効性確保にしっかりと努めるとともに、必要に応じて国としての立地ルール整備に取り組むべきではないかと思うんですけれども、大臣、御見解をお伺いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "松本尚",
+        "role": "",
+        "summary": "- 地元でもトラブルが発生しており、国交省に建築基準法のあり方について検討を依頼したことがある\n- データセンター協会が策定した地域共生ガイドラインにコミットすることが重要と考えている\n- 海上データセンターの実証実験などが、地域住民とのトラブル回避に寄与する可能性があると注目している",
+        "full_text": "委員御指摘のとおり、私の地元にでもデータセンター銀座というところがあるぐらいで、しかも住民等のトラブルも発生しておりまして、地元の議員としては頭の痛いところがあまり触れたくないんですけれども、データセンターが重要であることは間違いなくて。その意味で国交省に建築基準法どうなっているのか等々お話をしました。今建築基準法上データセンターは事務所もしくは倉庫ということになって、意外といろんなところにも建てられるという状況でございます。ここの辺りから少し法改正も含めてどうなんだということを国交省にもお願いをしたこともございます。一方で先ほど説明ありましたけれどもデータセンター地域共生ガイドラインというのがデータセンター協会の方で作られたと。まずはこれにしっかりとコミットしていくことは我々も大事だと思っています。データセンター協会の理事長には先般私が直接会ってデータセンターがこれから国にしっかり作られていくことは重要なことだからどうか住民の皆さんとうまくやってデータセンターを広めていただきたいということはお話をお願いをしたところです。一方で新聞報道なんかでも横浜港で日本郵船が海上データセンターの実証を今始めている。私、実は非常にそれに注目してまして、塩害とかいろんな理屈もあると思うんですが、障害もあると思うんですが、これを1年かけて実証するということは、我が国は海洋国家でございますから、そういった意味であれがうまくいくと、非常に地域住民とのトラブルというのも回避できるのではないかと。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=5807.476",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "データセンターの立地ルール整備への取り組みについて",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "業界団体のガイドライン"
+            },
+            {
+              "type": "organization",
+              "excerpt": "東京都の先行的な動き"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "データセンター事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.6
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "データセンター銀座"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "建築基準法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "データセンター地域共生ガイドライン"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "データセンター協会"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "日本郵船"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "まずはこれにしっかりとコミットしていくことは我々も大事だと思っています",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "今建築基準法上データセンターは事務所もしくは倉庫ということになって、意外といろんなところにも建てられるという状況でございます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "大臣が建築基準法上の現状（事務所・倉庫扱い）に言及しており、実務的な現状把握が記録されている点に価値があるが、具体的なルール整備への確約（Lv2以上）は得られていない。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「取り組むべきではないか」という抽象的な問いであるため、大臣が具体的な期限や手法を答えにくい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_027",
+      "segment_index": 4,
+      "topic": "課徴金制度導入による萎縮効果の防止策",
+      "question": {
+        "speaker": "阿部司",
+        "party": "日本維新の会",
+        "summary": "- 新設される課徴金制度のガイドライン整備や、今後の団体差し止め請求制度の検討において、表現の自由や事業者の経済活動、データ利活用への萎縮効果をどのように防止するか",
+        "full_text": "続きまして、個人情報保護法等改正における留意点についてお伺いいたします。本法案は課徴金制度を新設されます。また、団体による差し止め請求制度及び被害回復制度の導入は今回見送られましたけれども、今後検討課題になることも予想されます。我が党は、個人情報保護を重視する一方で、表現の自由、報道コンテンツ産業の活力、そして事業者の経済活動の自由を等しく尊重する立場であります。検討会報告書でも、データ利活用へのさらなる萎縮効果が懸念として示されておりまして、課徴金の運用次第では、我が国のAI産業全体が国際競争から取り残されかねません。新設される課徴金制度に関するガイドラインの整備、及び今後、団体差し止め請求制度等の検討が再開された場合の制度設計を通じて、表現の自由及び事業者の経済活動、データ利活用への萎縮効果の防止をどのように図っていくかお考えか、個人情報保護委員会にお伺いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "沢木",
+        "role": "",
+        "summary": "- （答弁が途中で遮られており、実質的な回答なし）",
+        "full_text": "課徴金の導入に伴う事業者、あるいは表現の自由の萎縮効果"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=5807.476",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "課徴金制度等による萎縮効果の防止策について",
+          "sub_asks": [
+            "課徴金制度のガイドライン整備での防止策",
+            "団体差し止め請求制度等の検討再開時の制度設計での防止策"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "個人情報保護法等改正"
+            },
+            {
+              "type": "other",
+              "excerpt": "検討会報告書"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "AI産業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "not_at_all",
+          "topic_shift_detected": false,
+          "score": 0.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": null,
+          "score": 0.0
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的で制度設計への配慮を求めているが、回答が途切れているか、単なる復唱に留まっており、実質的な回答がなされていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_028",
+      "segment_index": 5,
+      "topic": "子ども向けサービスの利便性と個人情報保護のバランス",
+      "question": {
+        "speaker": "谷浩一郎",
+        "party": "参政党",
+        "summary": "- 子ども向けサービスが停滞し、学習や成長の妨げになる懸念がある\n- 事業者が過度に制約を意識せず、適切にサービス提供できる対応を求める",
+        "full_text": "学習関連、おもちゃですとか、さまざまお子さん関連サービスというものが停滞していったというような報告があります。しっかりお子さんの保護をしていくことは重要なんですけれども、かえって学習ですとか育ちの妨げになるような事態も懸念点としてございますので、この点、しっかり事業者への対応というものを過度に意識をさせないようなご対応をお願いしたいと思っているんですけれども、こちらご見解をお伺いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "松本尚",
+        "role": "",
+        "summary": "- 利活用と個人情報保護のバランスを維持し、子どもの利益が損なわれないようにすることが重要である\n- 事業の性質や個人情報の取り扱いについて、個人情報保護委員会等と連携し、日本らしいあり方で進める",
+        "full_text": "松本尚大臣はい、もちろんいろんなものを利活用するのとデータを、あるいは個人情報を守るというのは上手にバランスを取らなきゃいけないのはもうおっしゃるとおりでございまして、その意味で、その間に子どもが入って子どもの利益が損ねられるのは、情報の利益を損なうのもよくないし、いろんな場面場面においていろんなものを利用するのが損ねられても困るというのは、委員ご指摘のとおりだと思っています。その意味で、そういったいろんな事業の性質とか、あるいは個人情報の取り扱い、例えば個人情報を用いて何をするか。アメリカなんかは何でもイノベーションが先になってますけど、日本は日本らしいあり方で進められるように、この子ども圏についてもですね、しっかりと個人情報保護委員会等々と情報を交換しながら進めていきたいというふうに思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=6705.6759999999995",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "事業者への過度な規制を避け、子供の成長を妨げない対応を求める",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "個人情報保護委員会"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "情報を交換しながら進めていきたいというふうに思います",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "個人情報保護委員会等々と情報を交換しながら進めていきたいというふうに思います。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "事業者の過度な意識（萎縮）への懸念に対し、大臣がバランスの重要性を認め、関係機関と連携して進める意向を示したやり取りである。",
+        "would_be_referenced": "low",
+        "issue_in_design": "具体的な規制内容や、どのガイドラインが事業者の負担になっているのかを特定して質問すれば、より具体的な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_029",
+      "segment_index": 5,
+      "topic": "国等データの提供範囲と個人情報の扱い",
+      "question": {
+        "speaker": "谷浩一郎",
+        "party": "参政党",
+        "summary": "- 国等データの提供において、具体的にどのような情報が想定されているか\n- 要配慮個人情報や法人情報、非公開行政情報などが含まれるか\n- 病歴やマイナンバー関連情報など、提供対象外となる情報の累計を明示する考えはあるか",
+        "full_text": "まずは本法案の改正で提供されることとなる国等データの範囲についてお伺いいたします。個人情報保護法改正案とデジタル行政推進法等改正案により、統計情報等の作成やAI開発等に利活用するため、政府は保有するデータを事業者に提供することができることとなる制度が創設されると承知をしています。ここには国が保有する個人情報も提供の対象として含まれており、本人の同意がなくても提供される場合もあるということですが、具体的にどのような情報を想定しているのでしょうか。例えば、要配慮個人情報を含む個人情報、個人関連情報などが含まれるのでしょうか。また、個人情報等以外にも、国が保有する法人情報、営業情報、非公開行政情報など、あらゆる情報が対象となっているのでしょうか。とりわけ、病歴、犯罪歴、税滞納の履歴、金融や信用に対する情報、教育情報、戸籍、住民基本台帳、そしてマイナンバーカード関連情報については、他の法令違反または公益侵害、事務遂行支障に当たるものとして、累計的に提供対象外となるのか、政府として対象外となる情報累計を明示する考えはあるのか、お伺いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "松本尚",
+        "role": "",
+        "summary": "- 個人情報の外部提供は法律で限定されており、適切に管理される\n- 特にマイナンバー法における特定個人情報の提供は厳格に制限されており、本法案で特例を設けるものではない",
+        "full_text": "松本尚大臣例えば個人情報について、個人情報保護法において外部へ提供できる場合というのは、これは限定をされております。これは法律の中でちゃんと決まっていますので、特に今委員おっしゃったマイナンバーの件をお話しされましたが、これはマイナンバー法令においてその内容に含む特定個人情報の提供については非常に厳しく厳格に制限をされているので、これにおいて特例を設けるものではない。本法令の特例の対象ではないというふうにお伝えをできるかなと思っています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5280"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=6705.6759999999995",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "国等データの提供範囲と対象外情報の明示について",
+          "sub_asks": [
+            "具体的にどのような情報を想定しているか",
+            "法人情報や非公開行政情報なども対象か",
+            "特定の機微情報が提供対象外となるか、またその累計を明示するか"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "個人情報保護法改正案"
+            },
+            {
+              "type": "law",
+              "excerpt": "デジタル行政推進法等改正案"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "マイナンバー法令"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "マイナンバー法令においてその内容に含む特定個人情報の提供については非常に厳しく厳格に制限をされているので、これにおいて特例を設けるものではない。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は多岐にわたるが、大臣の回答はマイナンバー情報の特例対象外である点にのみ限定されており、他の情報範囲への回答が欠落している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "一度に多くのサブクエスチョンを盛り込みすぎているため、回答者が一部のみを抽出して回答しやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_030",
+      "segment_index": 5,
+      "topic": "外国企業の認定事業者への適用",
+      "question": {
+        "speaker": "谷浩一郎",
+        "party": "参政党",
+        "summary": "- 外国企業や外資系企業も国等データの認定事業者になり得るか\n- 外国企業を対象に含めた理由を伺いたい",
+        "full_text": "続いて、外国企業も、国等データを取り扱う認定事業者になり得るのか、お伺いいたします。デジタル行政推進法等改正案の国等データ活用事業として申請できる事業者には、日本企業に限定する規定は見当たりません。海外に拠点を置く巨大プラットフォーム企業を含む外国企業や外資系企業も認定対象になり得るのかという理解でよろしいでしょうか。また、外国企業や外資系企業も認定事業者になり得るのであれば、なぜ外国企業も対象としたのか、その理由を伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "松本尚",
+        "role": "",
+        "summary": "- データ利活用促進の観点から、資本関係等で一律に特定の属性を排除していないため、外国企業も認定事業者になり得る\n- 安全保障やデータ保護の観点から、資本構成や計画の的確性について丁寧に審査を行う",
+        "full_text": "松本尚大臣本改正法案では、データ利活用を促進する観点から、資本関係等について、一律に特定の属性の事業者を認定対象から除くということはしておりません。ですから、今の御尋ねでいけば、外国企業も認定業者にはなり得るということになります。安全保障等の観点も念頭にして、データの保護というものをちゃんと考えなきゃいけませんから、そういった適切なバランスを図るため、この認定するにあたっては、安全管理の内容とか、あるいは当該事業者の資本構成といった点も含めて、その認定をする、あるいはどんな目的で何を使うかというような計画全般の的確性については、十分丁寧に審査を行うことが必要だということは、間違いございません。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5280"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=6705.6759999999995",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "外国企業の認定事業者への該当可否とその理由",
+          "sub_asks": [
+            "外国企業や外資系企業も認定対象になり得るか",
+            "外国企業を対象とした理由は何か"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "デジタル行政推進法等改正案"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "外国企業や外資系企業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.6
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "十分丁寧に審査を行うことが必要だということは、間違いございません",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "資本関係等について、一律に特定の属性の事業者を認定対象から除くということはしておりません。ですから、外国企業も認定業者にはなり得るということになります。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "外国企業の認定可能性について大臣が肯定的に回答しており、解釈を確定させた点で記録価値がある。ただし、理由についての回答は審査の重要性にすり替わっており不十分である。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「なぜ対象としたのか」という理由を問う部分を、具体的な懸念点（安全保障上のリスク等）と結びつけて問えば、より踏み込んだ回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_031",
+      "segment_index": 5,
+      "topic": "外国企業からの要望と制度への反映",
+      "question": {
+        "speaker": "谷浩一郎",
+        "party": "参政党",
+        "summary": "- 外国企業や団体（ACCJ等）からどのような要望があり、制度設計にどう反映されたか\n- 個人情報保護委員会がACCJをヒアリング対象に選定した理由は何か",
+        "full_text": "次に、データの市場開放と国内IT産業の保護について伺います。本法案の趣旨には、個人情報を含むデータの利活用に対する需要が高まっているという説明がありました。もちろん、この需要は国内の事業者や経団連などの団体からも声が上がっていることは承知をしておりますが、中にはAmazon Web Services Japan合同会社（AWSJ）や在日米国商工会議所（ACCJ）をはじめとする外国企業、団体からも個人情報保護委員会の方にパブリックコメントやヒアリングなどを通じて声が上がっているとも確認をしております。このような外国企業団体からどのような内容の要望があり、本法案や関連制度の設計にどのように反映されたのでしょうか。さらになぜ、個人情報保護委員会はACCJをヒアリング対象に選定したのでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "沢木",
+        "role": "",
+        "summary": "- 日本でサービス提供し法律の適用を受ける多様なステークホルダーとして意見を聴取した\n- リスクベースアプローチの導入など、国際基準との整合性を図るための知見を立案に活用した\n- 特定の団体に偏らず、幅広い関係者から意見を伺い検討した",
+        "full_text": "委員御存知かと思いますが、個人情報保護法は、日本のサービスを提供している限りにおいて、全世界の事業者、規制対象になります。その観点から、多様なステークホルダーの一つとして、国内サービス提供を行っており、我が国の法律の適用を受けることになります外国籍の企業団体からも意見を伺っておりまして、ACCJのほか、欧州ビジネス協議会などからも伺ってございますし、また国際整合性という観点からは、アジア各国の様々な当局でございますとか、G7の各国の当局でございますとか、そういった方々と様々な議論を通じて、立案にあたっての知見、経験をいただいたという経緯になってございます。聞いた主要な指摘としてましては、リスクベースアプローチを採用した上で、国際的な基準との関係で相互に運用可能であることを求めるというコメントがございまして、今回の同意を要する規律を因数分解した上で、適切な案外に再設計するということでございますとか、あるいは同意が不要な場合、あるいは漏洩報告の本人通知などもリスクベースの観点からも、そういったアプローチを今回導入してございますし、そういった形でもちろん、ACCJからの意見を取り入れたということではございませんが、さまざまなステークホルダーの意見の一環として聞きながら、立案に生かしてきたということでございます。見直しの過程におきましては、特定のものに偏ることなく、有識者、経産団体、消費者団体をはじめ、幅広いステークホルダーから意見を伺い、国際的にも整合性が取れる観点も含めまして、検討を進めてきたということでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=6705.6759999999995",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "外国企業等の要望内容と法案への反映、ACCJ選定理由",
+          "sub_asks": [
+            "外国企業団体からどのような要望があり、法案にどう反映されたか",
+            "なぜACCJをヒアリング対象に選定したのか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "Amazon Web Services Japan合同会社（AWSJ）"
+            },
+            {
+              "type": "organization",
+              "excerpt": "在日米国商工会議所（ACCJ）"
+            },
+            {
+              "type": "organization",
+              "excerpt": "経団連"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "Amazon Web Services Japan合同会社（AWSJ）、在日米国商工会議所（ACCJ）",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "欧州ビジネス協議会"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "G7"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "リスクベースアプローチ"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "リスクベースアプローチを採用した上で、国際的な基準との関係で相互に運用可能であることを求めるというコメントがございまして",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "外国企業からの要望内容（リスクベースアプローチ等）については具体的に回答しているが、ACCJを個別に選定した理由については「多様なステークホルダーの一つとして」という一般論に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「なぜACCJを選定したのか」という問いに対し、選定基準やプロセスを具体的に問う形式にすれば、より明確な回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_032",
+      "segment_index": 5,
+      "topic": "諸外国の制度との比較と相互主義",
+      "question": {
+        "speaker": "谷浩一郎",
+        "party": "参政党",
+        "summary": "- EU、米国、中国等の主要国において、政府保有の個人情報を民間事業者に同意なく提供する制度はどの程度存在するか\n- 日本企業が外国政府の同種データに同等条件でアクセスできる権利は保障されているか\n- 検討過程で相互主義は論点となったか",
+        "full_text": "続いて本法案の国際的な比較をしたいと思います。本法案は外国企業であっても統計作成やAI開発を目的とする場合には、政府が保有する個人情報に本人の同意を得ることなくアクセスが可能になるものと承知をしています。しかしこれに対して逆に日本企業が外国政府のデータにアクセスをする、そういった権利は保障されているのでしょうか。すなわちEU、米国、中国など主要国において政府保有の要配慮個人情報を含む個人情報を民間事業者のAI開発や統計作成等のために本人同意なく提供する制度はどの程度存在するのか。日本企業は外国政府の同種データに同等条件でアクセスできるのか。また、法案の検討過程で相互主義は論点となっていたのでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "沢木",
+        "role": "",
+        "summary": "- EUのデータガバナンス法のように、公的データにアクセスする制度は一部存在している\n- 諸外国の制度を参考にしつつ、安全管理を確保した制度設計を行ってきた",
+        "full_text": "諸外国の状況についてでございますけれども、もちろん国それぞれによって様々ではあるんですけれども、例えばEUにおけるデータガバナンス法例にとりましても、生きがい事業者を含む事業者が公的なデータにアクセスするための制度は一部存在するという承知をしてございます。本法案の検討過程におきましては、これらのものを含めまして、諸外国の関連し得る制度を参考としつつ、データの安全管理等を確保しながら、国の保有するデータが適切に利活用されるよう、制度設計を行ってまいりました。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5280"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=6705.6759999999995",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "外国政府データの日本企業への提供状況と相互主義の有無",
+          "sub_asks": [
+            "主要国に本人同意なく民間へデータ提供する制度があるか",
+            "日本企業が同等条件で外国政府データにアクセスできるか",
+            "法案検討過程で相互主義が論点となったか"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "EU、米国、中国など主要国"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "日本企業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "EUにおけるデータガバナンス法例"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "EUにおけるデータガバナンス法例にとりましても、事業者が公的なデータにアクセスするための制度は一部存在するという承知をしてございます。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "相互主義という重要な論点に対し、EUの例を一部挙げるのみで、具体的なアクセス可否や検討過程の有無への回答を避けている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問が多岐にわたるため、回答者が都合の良い部分（EUの例）だけを抽出して回答しやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_033",
+      "segment_index": 5,
+      "topic": "再委託先の審査と安全管理",
+      "question": {
+        "speaker": "谷浩一郎",
+        "party": "参政党",
+        "summary": "- 認定事業者がクラウド事業者や海外子会社等に処理を委託する場合、再委託や孫委託先まで審査対象となるか\n- 海外データセンターも含めて安全管理を審査するのか",
+        "full_text": "次に委託に関する審査と安全管理についてお伺いいたします。認定事業者がクラウド事業者、AI開発企業、データ分析会社、海外子会社、海外再委託先などに処理を委託する、そういった場合が考えられると思います。再委託や孫委託については、どこまでが審査の対象になるのでしょうか。認定事業者だけではなく、再委託先、クラウド基盤、海外データセンターも含めて、安全管理を審査するのでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "内閣官房デジタル行財政改革会議事務局審議官",
+        "role": "",
+        "summary": "- 必要であれば、計画の中心となる事業者に加え、委託先やデータセンター等についても審査を重ねる考えである\n- 詳細な審査内容は今後、有識者の意見を踏まえ検討し、問題がある場合は認定取り消し等の適切な運用を行う",
+        "full_text": "本法案に基づく認定制度におきましては、国とデータ活用事業の内容やデータの安全管理の内容等を審査いたしますのですが、その際、必要であれば計画の中心となる事業者に加えまして、先生がおっしゃいました、委託先ですとか、データセンター等についても、必要であれば審査を重ねるというふうに考えてございます。その具体的な審査の詳細につきましては、今後関係府省ですとか、有識者などのご意見も踏まえながら、懸念を払拭するために必要な審査がなされるよう、重々留意しながら検討してまいります。また、万が一、認定に関する問題が認定後に生じる場合には、報告聴取等を通じた迅速な指導監督を行い、それでも問題が改善しない場合には、認定の取り消しを行うなど、制度の適切な運用を行ってまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5280"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=6705.6759999999995",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "委託・再委託先の審査範囲について",
+          "sub_asks": [
+            "再委託や孫委託のどこまでが審査対象か",
+            "再委託先や海外DCも含めて安全管理を審査するか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "クラウド事業者、AI開発企業、データ分析会社、海外子会社、海外再委託先",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "必要な審査がなされるよう、重々留意しながら検討してまいります",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "必要であれば計画の中心となる事業者に加えまして、委託先ですとか、データセンター等についても、必要であれば審査を重ねるというふうに考えてございます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "委託先の審査範囲という具体的な問いに対し、必要に応じて審査を行う方針を回答している。ただし、具体的な審査基準は「検討」段階に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "審査の「範囲」を問うているため、「どのような基準で範囲を決定するか」まで踏み込んで質問すれば、より具体的な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_034",
+      "segment_index": 5,
+      "topic": "安全保障上の懸念があるデータの提供判断",
+      "question": {
+        "speaker": "谷浩一郎",
+        "party": "参政党",
+        "summary": "- 「公益を害する恐れ」に、サイバー攻撃や外国政府によるデータ取得リスクなどの安全保障事項が含まれるか\n- 含まれる場合、誰がどのような基準で判断するのか",
+        "full_text": "続きまして、安全保障上懸念のあるデータの提供について伺います。デジタル行政推進法第29条第2項第3号の公益を害し、または所掌事務、もしくは事業の遂行に支障を及ぼす恐れには、安全保障、経済安全保障に関わる事項が含まれていると考えますが、具体的には、重要インフラへのサイバー攻撃、情報戦や認知戦への対応、外国政府によるデータ取得リスクなども含まれるのか、含まれる場合、誰がどのような基準で判断をするのか、お伺いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "松本尚",
+        "role": "",
+        "summary": "- 安全保障等に関する懸念は含まれると考えている\n- 総理が策定する指針に担当部局と協議して内容を反映させ、個別の申請時にも部局と調整した上で、総理大臣を含む主務大臣が判断する",
+        "full_text": "今御指摘の本法律案の第29条第2項第3号、公益を害し、またはその所掌事務の遂行に支障を及ぼす恐れ、この中には安全保障等に関する懸念は含まれると考えております。より具体的な対応状況については、安全保障等を担当する各府省庁ありますので、この場で具体的にどういう場合、どういう場合ということを申し述べることはできませんけれども、各府省庁と連携しながらこれを示していきたいと思っています。具体的な手続きとしては、総理が国等データ活用事業に関して認定の基準となる指針を策定しますので、そのときに担当の部局と協議して内容に反映させる。それから個々の申請時にも具体的な事業内容に照らして懸念がないのかどうか、これもまた部局と意見を調整した中で認定の可否をして、総理大臣を含む主務大臣が判断するというような、そういう手順になります。したがって、いろいろとご懸念の件、安全保障上、おありだと思うんですけれども、そういったいくつかの歯止めをかけながら進めてまいりたいと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5280"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=6705.6759999999995",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "データ提供制限の具体的内容と判断基準について",
+          "sub_asks": [
+            "具体的にサイバー攻撃や外国政府のリスクが含まれるか",
+            "誰がどのような基準で判断するのか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "デジタル行政推進法第29条第2項第3号"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.6
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "総理が国等データ活用事業に関して認定の基準となる指針を策定"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "総理大臣を含む主務大臣が判断する"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "担当の部局と協議して内容に反映させる",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "総理が国等データ活用事業に関して認定の基準となる指針を策定しますので、そのときに担当の部局と協議して内容に反映させる。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "法条文の解釈（安全保障が含まれるか）と、判断主体（総理・主務大臣）およびプロセス（指針策定・部局協議）について明確な回答が得られている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_035",
+      "segment_index": 6,
+      "topic": "国等データ活用事業の認定制度と指針",
+      "question": {
+        "speaker": "日野紗里亜",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 認定制度の指針において、想定している重点分野（医療・介護・モビリティ等）の方向性はどうか\n- 安全管理事項の具体的内容と、企業側の負担軽減と安全性の確保のバランスをどう考えるか",
+        "full_text": "次に、デジタル行政推進法改正案における国等データ活用事業の認定制度についてお伺いします。法案第26条では、国等データ活用事業の認定制度の創設に関し、重点分野や安全管理その他事項を定めた指針を策定するとされております。この26条について、3点同時にお伺いさせていただきたいと思います。まず、この指針について法案成立後、実際に制度を活用する企業や現場のご協力をお願いすることになるかと思います。例えば、医療・介護・モビリティ・防災・教育・スマートシティなどを想定しているのか、現時点での方向性をお示しください。3点目。安全管理その他の事項とは、具体的にどのような内容を想定しているのでしょうか。特にセキュリティ対策やデータ管理体制について、企業側に過度な負担を課せば、制度があっても参入が進まない懸念があります。一方で、安全性が不十分では国民理解は得られません。このバランスをどのように考えているのでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "山添",
+        "role": "",
+        "summary": "- 指針策定にあたり、現場の意見を広く聞き、透明性を確保して丁寧に策定する\n- 重点分野として、自動運転車両の開発や建設現場の安全対策など、準公共分野や具体的ニーズのある分野を中心に検討する\n- 安全管理の確認は大前提としつつ、指針の平易化、グッドプラクティスの共有、事前相談の受付などにより、認定プロセスが煩雑にならないよう配慮する",
+        "full_text": "まず指針の策定プロセスでございますけれども、まだ具体的に積み切っているわけではございませんけれども、関係者や有識者の皆様から、当然先生御指摘がありました現場の方々の御意見なんかも広く伺いつつ、当然のことながら透明性を確保しながら丁寧にやってまいりたいと思っております。それから重点分野についての御質問でございましたけれども、法案の検討過程において事業者の方々からいろいろ伺った際には、例えばですが自動運転車両の開発ですとか建設現場の安全対策などについての具体的なニーズをお伺いしたところでございます。いずれにいたしましても準公共分野ですとか具体的なニーズのある分野などを中心に、改めて先ほど申しましたような有識者の意見などを踏まえまして、あるいは現場のニーズも踏まえまして、検討していきたいと思ってございます。それから認定プロセスが煩雑であると問題ではないかというようなご質問であったかと、最後の3点目を思っておりますが、認定に当たりましては、当然のことながら安全管理の内容をしっかり確認するということは大前提でございます。同時にそのために認定プロセスが煩雑になりすぎないということも重要であるというふうに考えてございまして、そのバランスを取る観点から、例えばですが国等データ活用事業指針を可能な限り平易な内容とするなど、あるいは制度の理解を促進するための文書ですとか、過去のグッドプラクティスなど、申請に当たって参考になる事項を積極的に共有させていただくですとか、申請前に前広に相談を受け付けていくと、寄り添うような形で対応できるというようなことを図ってまいりたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5280"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=7895.776",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "データ活用事業認定制度の指針策定について",
+          "sub_asks": [
+            "想定される重点分野の方向性",
+            "安全管理事項の具体的内容",
+            "企業の負担と安全性のバランスの考え方"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "デジタル行政推進法改正案"
+            },
+            {
+              "type": "law",
+              "excerpt": "法案第26条"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "企業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "自動運転車両の開発"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "建設現場の安全対策"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "有識者の意見などを踏まえまして、あるいは現場のニーズも踏まえまして、検討していきたいと思ってございます",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "認定プロセスが煩雑になりすぎないということも重要であるというふうに考えてございまして、そのバランスを取る観点から、例えばですが国等データ活用事業指針を可能な限り平易な内容とするなど",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "法案の具体的な条文に基づいた質問に対し、政府側が想定分野や運用の方向性を具体例を挙げて回答している。ただし、具体的な指針の内容は今後の検討事項として留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問者が「3点同時にお伺い」としたが、実際には2点目への言及が抜けており、構成に混乱がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_036",
+      "segment_index": 7,
+      "topic": "統計作成等の定義と再識別リスク",
+      "question": {
+        "speaker": "西岡義高",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 統計作成等の定義および、特定個人への活用や再識別に関する規定の想定について",
+        "full_text": "特命加工情報の作成等と同様の基準や考え方が必要ではないでしょうか。また、特定個人への活用を目的とした利用や、他情報との照合による再識別などについて、どのような規定を想定しているのか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "沢木事務局長",
+        "role": "",
+        "summary": "- 統計作成等は、大量の情報から個人に関する情報に該当しないものを抽出・解析し、個人の権利益を害する恐れが少ないものとして規則で定める行為と定義\n- AIモデル等の開発過程において、個人情報でありながらどの個人かわからないよう加工することが義務付けられており、再識別リスクは極めて低いと考えている\n- 委員会規則により復元防止のための適切かつ必要な措置を求める",
+        "full_text": "お尋ねの統計作成等の定義でございますけれども、条文に書いてございますが、統計の作成その他の大量の情報から当該情報を構成する要素に係る情報を抽出して分類比較その他の解析を行うことにより、その大量の情報の傾向または性質に係る情報で個人に関する情報に該当しないものを作成する行為のうち、個人の権利益を害する恐れが少ないものとして規則で定めるものということになってございます。再識別、あるいはその対象について、さらなるご質問がございましたけれども、具体的な対象といたしましては、特定の個人との対応関係が排斥されました統計情報で、先ほどの定義に該当するAIモデルが想定してございますが、この特例におきましては、大量の個人情報を、個人に関する情報に当たらない状態まで加工してしまうことが義務づけられておりますので、個人情報でありながらも、どの個人かわからないように加工するという趣旨であります。仮名加工情報や匿名加工情報のような、個人の区分を残した情報よりも、さらに一般化を要するものとご理解いただければと思いますので、その場合には、開発の過程におきまして、開発したモデルから再識別等を行われるリスクというのは極めて低いものというふうに考えてございます。個人の権利益を害する恐れが少ないものという観点から、さらに委員会規則におきましても、個人情報等の復元を防止するために必要かつ適切な措置を講ずることをしっかり求めていこうというふうに考えてございまして、この特例に関連いたします様々な義務規定もしっかり守らせることによりまして、国民の理解を得ていきたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=8867.276",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "統計作成等の基準と再識別防止規定について",
+          "sub_asks": [
+            "特命加工情報と同様の基準が必要ではないか",
+            "特定個人への活用や再識別に関する規定の想定"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "特命加工情報の作成等"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "仮名加工情報"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "匿名加工情報"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "委員会規則"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "必要かつ適切な措置を講ずることをしっかり求めていこうというふうに考えてございまして",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "個人情報でありながらも、どの個人かわからないように加工するという趣旨であります。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "統計作成等の定義と再識別リスクへの考え方が述べられており、法的な解釈を一部記録する価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「特命加工情報」という用語が一般的でない可能性があり、参照先を明確にするとより具体的になる。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_037",
+      "segment_index": 7,
+      "topic": "法改正が我が国のインテリジェンス機能に与える影響",
+      "question": {
+        "speaker": "西岡義高",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 今回の両法案が、我が国のインテリジェンス機能にどのような影響を与えるかという見解について",
+        "full_text": "まずは、今回の両法案につきまして、我が国のインテリジェンス機能について、どのような影響があるとお考えなのか、まずその御見解を伺いたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "松本尚",
+        "role": "",
+        "summary": "- 認定制度の創設により、認定時点で安全保障上の問題がないか関係府省庁とチェックし、計画の的確性を厳重に審査する\n- 個人情報保護法の改正により、特定の個人との対応関係を排斥した状態で統計情報等を作成することで、安全保障上の懸念を排除することにつながる",
+        "full_text": "デジタル行政推進法等改正案においては、認定制度を創設することによって、その認定をする時点で安全保障を含めた問題がないかということを、関係する府省庁とともにチェックをしていくということは、先ほど申し述べたとおりでございます。また計画全般の的確性についても厳重に丁寧に審査をするということ。それから個人情報の改正については、特定の個人との対応関係が排斥された状態で統計の情報等を作成をしていくということで、これもある意味安全保障上懸念のあることを排斥していくということにもつながろうかと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=8867.276",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "両法案がインテリジェンス機能に与える影響",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "デジタル行政推進法等改正案"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "認定制度を創設することによって、その認定をする時点で安全保障を含めた問題がないかということを、関係する府省庁とともにチェックをしていく",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "法案の影響という抽象的な問いに対し、具体的な審査手続きの説明で回答しており、記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのような影響があるか」という問いが広すぎるため、回答者が都合の良い部分のみを説明しやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_038",
+      "segment_index": 7,
+      "topic": "行政データの外国インテリジェンス機関による標的化対策",
+      "question": {
+        "speaker": "西岡義高",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 行政データが外国のインテリジェンス機関のターゲットとなるリスクに対し、具体的にどのような対策を講じているか",
+        "full_text": "行政の持つデータというのは重要なデータということで、当然外国のインテリジェンス機関にとってはターゲットとなってくると。いうようなリスクがあると考えられますけれども、この点については具体的にどのような対策が取られているのかを伺いたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "内閣官房参事官",
+        "role": "",
+        "summary": "- 認定制度の運用において、安全保障等の観点から適切な安全管理措置を講じ、他国の影響を受けない環境を整備する\n- 認定に際し、政府内部署と連携して事業者の資本構成や関連外国事業者などを丁寧に審査し、国益を害するインテリジェンス機関へのデータ提供を排除する",
+        "full_text": "先ほど大臣からの答弁にもございましたが、本法案に基づく認定制度の運用に当たりましては、インテリジェンスと安全保障等の観点も念頭に、適切な安全管理措置を講じること等により、他国の影響を受けることのない環境を整備するということが極めて重要だと考えてございます。実際の認定に当たりましては、安全保障を含め、他の分野を所掌する政府内の部署との十分な連携を図って、そのもとに、必要であれば当該事業者の資本構成ですとか、これまでの事業内容、関連する外国事業者などについても、丁寧な審査を行って、これにより我が国の国益を害する活動を行うような、いわゆるインテリジェンス機関へのデータ提供の排除を図ってまいります。これらの措置を併せて講じますことで、御指摘のリスクの対応を含めて、適切な制度の運用を図っていく所存でございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5280"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=8867.276",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "外国インテリジェンス機関へのデータ流出対策",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "外国のインテリジェンス機関",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "資本構成"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "事業内容"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "関連する外国事業者"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "排除を図ってまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "資本構成ですとか、これまでの事業内容、関連する外国事業者などについても、丁寧な審査を行って、インテリジェンス機関へのデータ提供の排除を図ってまいります。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "外国インテリジェンス機関によるリスクへの対策について、審査項目（資本構成等）を具体的に挙げて回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「具体的にどのような対策か」という問いに対し、審査基準の提示に留まっており、技術的な防御策への言及を求める構成にすればより具体的になった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_039",
+      "segment_index": 7,
+      "topic": "IPAによる認定事業者の調査・関与の具体的内容",
+      "question": {
+        "speaker": "西岡義高",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- IPA（情報処理推進機構）が、認定事業者に対して具体的にどのような形で関与し、機能強化を図るのか",
+        "full_text": "今回、IPA情報処理推進機構について、認定国等データ活用事業者への調査実施、また重大事態に対する調査実施等ということで、機能が強化されております。このことは、サイバー防御であったり、カウンターインテリジェンスについても、一定の役割を果たしてくるものだと認識しておりますけれども、具体的にどのような形で認定事業者に対して関与していくのかを伺いたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "内閣官房参事官",
+        "role": "",
+        "summary": "- 安全管理に関する情報提供、事業計画認定時の安全管理内容の調査、重大事態発生時の原因究明調査、地方公共団体への技術的助言などの協力を行う\n- IPAが持つ情報処理システムや適正管理に関する知見・ノウハウを活用し、認定事業の円滑な実施を図る",
+        "full_text": "具体的な支援内容というご質問でございましたが、例えば、認定事業者に対する情報セキュリティなどデータの安全管理に関する情報提供等の協力、主務大臣が行う事業計画の認定におけるデータの安全管理の内容等に関する調査、認定事業者に係る重大な事態の発生時における原因究明の調査、認定事業者によるデータ提供の求め等を受けた地方公共団体からの求めに応じた技術的助言等の協力などが行われると規定されてございます。IPAはこれまでも情報処理システムですとか、情報の適正な管理に関する最新かつ幅広い知見を有しておられまして、技術中立的な立場から、こうした先ほど申し上げましたような情報提供ですとか、調査等を実施するためのノウハウを有しているものと特に認識しておりまして、これらを活用しながら認定事業の円滑かつ確実な実施を図ってまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5280"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=8867.276",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "IPAの認定事業者への具体的な関与形態",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "IPA情報処理推進機構"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "認定国等データ活用事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "データの安全管理に関する情報提供等の協力"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "事業計画の認定におけるデータの安全管理の内容等に関する調査"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "重大な事態の発生時における原因究明の調査"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "地方公共団体からの求めに応じた技術的助言等の協力"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "認定事業の円滑かつ確実な実施を図ってまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "認定事業者に係る重大な事態の発生時における原因究明の調査、認定事業者によるデータ提供の求め等を受けた地方公共団体からの求めに応じた技術的助言等の協力などが行われる",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "IPAが認定事業者に対して具体的にどのような役割（情報提供、調査、助言）を担うのかが明確に回答されており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_040",
+      "segment_index": 7,
+      "topic": "外資系企業等による個人情報の収集とプロファイリング転用対策",
+      "question": {
+        "speaker": "西岡義高",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 外資系企業や外国政府のコントロール下にある事業者が、統計作成名目で収集した個人情報を本国のインテリジェンス活動やプロファイリングに転用するリスクへの対策について",
+        "full_text": "今回の改正では、AI開発を含む統計作成等の目的とする場合、個人データ等の第三者提供及び要配慮個人情報の取得について本人の同意が不要とされております。しかし、外資系企業であったり事実上外国政府のコントロール下にある事業者が、日本国内で統計作成の名目で大規模な個人情報を収集して、それを本国のインテリジェンス活動、特定の日本人のプロファイリング等に転用するということも考えられますけれども、この点の対策について十分とられているのか、お伺いしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "沢木事務局長",
+        "role": "",
+        "summary": "- 目的外利用および違法な第三者提供を禁止し、一定事項の公表を義務付けるとともに、委員会規則で適切な措置を定める\n- 違法行為があった場合は課徴金の対象とする\n- 事業者の規律遵守状況を適切に監視監督し、警察等とも連携して対処する",
+        "full_text": "本法律案におきましては、特例により取得された個人情報等につきまして、特定の個人との対応関係が排斥された統計情報等の作成のみに利用されることを担保するために、何に使うかなどといった一定の事項の公表を行うとともに、目的外利用および違法な第三者提供の禁止ということを規定することにしてございます。また、さらにそういった個人の権利益を害する恐れが少ないものとして、個人情報保護委員会規則で定めるものに限定いたしますので、規則の中に目的外利用および第三者提供を防止するために必要とされる適切な措置などをしっかり定めることを予定しておりますし、そういった違法行為があった場合につきましては課徴金の対象に当たります。本特例が導入された暁には、事業者の属性等にかかわらず、特例に基づく提供先の事業者による公表の把握などを通じまして、事業者の規律遵守状況について適切に監視監督を実施したいと思いますし、委員御指摘のような事実上外国の政府のコントロール下に置かれるということにつきましては、私ども各国の同僚の同じような立場の機関を伺うことながら、国内におきましても警察を含め、時と場合によりまして、さまざまな横の連携を密に執行してございますので、そういった知見を共有しながら対処してまいりたいと思ってございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=8867.276",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "AI開発等の統計作成目的の個人情報収集における安全対策",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "今回の改正では"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "外資系企業であったり事実上外国政府のコントロール下にある事業者",
+          "concreteness": "mid",
+          "score": 0.6
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "個人情報保護委員会規則"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "課徴金"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "対処してまいりたいと思ってございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "目的外利用および違法な第三者提供の禁止ということを規定することにしてございます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "改正法における統計作成目的の特例に伴うリスクに対し、公表義務や規則による制限、課徴金などの法的枠組みで対応する方針が明確に述べられている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「十分とられているか」というYes/No形式の問いであるため、政府が「十分である」と答えることで議論が完結しやすく、具体的なリスクシナリオへの個別回答を導き出しにくい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_041",
+      "segment_index": 7,
+      "topic": "統計作成特例が我が国のインテリジェンス活動に与える影響",
+      "question": {
+        "speaker": "西岡義高",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 統計名目で集められたデータを我が国のインテリジェンス機関が転用したい場合に、活動上の支障をきたすなど、具体的にどのような影響があるか",
+        "full_text": "では逆に、この統計名目で集められたデータを我が国のインテリジェンス機関が転用したいと、インテリジェンス活動に使いたいというようなことも想定されますけれども、そういった場合にインテリジェンス活動上に支障をきたすというような見方もできるかと思います。我が国のインテリジェンス活動について、具体的にどのような影響があると想定されているのか、この点を伺いたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "沢木事務局長",
+        "role": "",
+        "summary": "- 本特例は一定要件を満たす用途に同意不要の例外を追加するものであり、現行法で可能だったことができなくなるなどの変更は及ぼさない",
+        "full_text": "本法案による統計作成等の特例は、一定の要件を満たす用途に限定される場合に、本人の同意を不要とする例外規定を新たに追加するものでございまして、委員御指摘の御懸念等の関係で言いますと、現行の法律の規定によってできるできないということにつきましては、何ら変更を及ぼすものではございません。もちろん、その現行法令が適正に運用されているか、個人情報保護法を含めた法令に適切かどうかについては、私ども監視・監督しますけれども、現行法令でできることができなくなるということではございません。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=8867.276",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "統計データのインテリジェンス転用による影響",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "インテリジェンス機関",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "個人情報保護法"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "私ども監視・監督します",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "現行の法律の規定によってできるできないということにつきましては、何ら変更を及ぼすものではございません。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "インテリジェンス活動への具体的影響という問いに対し、法改正による現行権限への影響はないという形式的な回答に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どのような影響があるか」というオープンクエスチョンであるため、政府が「影響はない」と回答することを許容する設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_042",
+      "segment_index": 7,
+      "topic": "海外クラウド利用に伴う外国当局によるデータ強制接収リスク対策",
+      "question": {
+        "speaker": "西岡義高",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 海外企業のクラウド上で演算される過程で、外国当局にデータが強制接収されるリスクに対し、どのような対策を講じているか",
+        "full_text": "統計名目によって、日本国内で取得されたデータ、日本国内に保存されているデータであっても、海外企業のクラウド上で演算されるというような、そのような過程で、外国当局によって、データの強制接収などにさらされるリスクもあるのではないかと考えております。そこで外国の悪意あるデータの強制接収というもののリスクに対してどのような対策が取られているのかを具体的に伺いたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "沢木事務局長",
+        "role": "",
+        "summary": "- 現行法に基づき、越境移転先国の法律によるアクセスリスクを本人に情報提供して同意を得るか、責任ある管理（契約等）を義務付けており、特例導入後もこの取扱いは緩和されない\n- 漏洩防止等の安全管理措置が適切に講じられているか監督を行う",
+        "full_text": "現行の個人情報保護法におきまして、越境データ移転につきましては、越境先の国の法律によりましては外国の政府が移転先事業者にアクセスをすることがあったりするものですから、そのあたりを十分に情報提供した上で本人の同意をとる、あるいはそのリスクをしっかりコントロールできるような契約、委託、その他の提供を元の責任において管理できるかということを義務づけてございます。この取扱いにつきましては、今回の特例が入ったからといって何ら緩和されることになりませんので、しっかりそのあたりは対応をいただけるものだというふうに思ってございますし、統計作成の特例により取得された個人情報につきましては、漏洩の防止、その他の安全管理のための必要な措置もしっかり講じますので、そういったことが適切に措置されているかどうかというものをしっかり監督していくということになろうかと思ってございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=8867.276",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "外国当局によるデータ強制接収への対策",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "外国当局",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "個人情報保護法"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "しっかり監督していくということになろうかと思ってございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "越境先の国の法律によりましては外国の政府が移転先事業者にアクセスをすることがあったりするものですから、そのあたりを十分に情報提供した上で本人の同意をとる",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "外国当局によるデータアクセスリスクに対し、個人情報保護法に基づく同意取得や安全管理措置で対応するという政府の解釈が示されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「具体的に」と問うているが、具体的な対策事例ではなく法制度の一般論に留まっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_043",
+      "segment_index": 7,
+      "topic": "特定生体個人情報の利用停止請求による監視逃れのリスク",
+      "question": {
+        "speaker": "西岡義高",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 利用停止請求の要件が緩和されることで、外国工作員やテロ容疑者が監視から逃れるためにデータを消去させるなど、悪用される懸念はないか",
+        "full_text": "顔特徴データ等の特定生体個人情報に対する利用停止等請求の要件が、違法行為の有無を問わず可能になるということで緩和されることとなります。これ先ほど大臣からも少し御答弁の中でありましたけれども、これを無制限に認めてしまうようなことになれば、外国の工作員であったり、テロの容疑者が監視から逃れるために、自らのデータをシステムから消去するように要求してくると、そういった形で悪用される懸念が。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "沢木事務局長",
+        "role": "",
+        "summary": "- 正当な公益的利用を妨げないよう、利用停止請求の例外規定を設けている\n- 法令に基づく権限がある場合や、国の機関による事務遂行に協力して提供する場合などは例外となる",
+        "full_text": "まず本法案において、一般的には特定生体個人情報について、違法な行為がなくとも利用停止請求を行うことが可能といたしますが、議員がご指摘されているような正当な公益的な利用を妨げることがないよう、その場合につきましては利用停止請求の例外規定をしっかり設けてございます。例えば、法令に基づいて特定生体個人情報を取り扱うという法的権限がしっかりある場合、あるいは国の機関等による法令を定める事務の遂行に協力するために、国に対して提供する場合といったものにつきましては。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=8867.276",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "生体個人情報の利用停止請求緩和による悪用の懸念",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "外国の工作員、テロの容疑者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "利用停止請求の例外規定"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "正当な公益的な利用を妨げることがないよう、その場合につきましては利用停止請求の例外規定をしっかり設けてございます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は疑問符のない懸念表明形式だが、大臣は法案の例外規定という具体的な法的解釈で回答しており、記録価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "疑問文形式で具体的に何を問いたいのか（例：例外規定の内容や十分性）を明確にすべきである。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_044",
+      "segment_index": 7,
+      "topic": "顔特徴データ取得の周知義務とインテリジェンス活動の秘匿性",
+      "question": {
+        "speaker": "西岡義高",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 顔特徴データの取得時に周知が義務化されることで、ターゲットが監視をすり抜けるなど、インテリジェンス活動の秘匿性が阻害されるリスクへの対策について",
+        "full_text": "今回の本改正で、顔特徴等データを取得する際には、一定事項の周知が義務化となっております。しかし、カウンターインテリジェンスの活動において、特定のエリアで、密かにカメラなどを設置して、顔認証技術を用いて、ターゲットを監視しているというような際に、それがもう周知されてしまっていることによって、ターゲットがその監視をうまくすり抜けていくというようなことができるというようなリスクも考えられます。要するに、周知義務がインテリジェンス活動の秘匿性を阻害するリスクがあるのではないかという懸念点ですけれども、この点につきましては、どのように対策をされているのか伺いたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "沢木事務局長",
+        "role": "",
+        "summary": "- 周知することが適当でない場合や、他の権利利益の保護を優先すべき場合の例外規定を設けている\n- 国の機関等の事務遂行に支障を及ぼす恐れがある場合は周知を義務付けないこととし、具体的な対応方針はガイドライン等で示す",
+        "full_text": "一般原則といたしましては、顔特徴データ等について取扱いに関する一定事項の周知を義務づけることとしてございますが、法律上明確に周知することが適当でない場合、他の権利利益の保護を優先すべき場合に係る例外規定を設けてございます。その例外規定によりまして、例えば、周知を実施することが、ご指摘のような国の機関等の法令を定める事務の遂行に支障を及ぼす恐れがある場合につきましては、義務づけられないということになってございますが、具体例につきましては、事業者、国の業者も含めまして、具体的な対応方針が明確になるように、ガイドライン等で示していきたいと思います。もちろん、適正な範囲で、適法な範囲で、国等の事務が遂行されるということは重要でございますので、その点はしっかり監視監督いたしますけれども、適切な範囲で例外規定を設けていることになってございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=8867.276",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "周知義務がインテリジェンス活動の秘匿性を阻害しないか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "今回の本改正で、顔特徴等データを取得する際には、一定事項の周知が義務化となっております"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "カウンターインテリジェンス",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "ガイドライン等で示していきたいと思います",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "周知を実施することが、国の機関等の法令を定める事務の遂行に支障を及ぼす恐れがある場合につきましては、義務づけられないということになってございます",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "周知義務の例外規定について、インテリジェンス活動等の公務遂行への適用可能性を明確にした回答であり、記録価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_045",
+      "segment_index": 8,
+      "topic": "オプトアウト禁止によるインテリジェンス機関のデータ活用への影響",
+      "question": {
+        "speaker": "高山聡史",
+        "party": "チームみらい",
+        "summary": "- 民間監視カメラの顔認証データ収集においてオプトアウトが禁止されることへの懸念\n- インテリジェンス機関による捜査協力や情報提供での活用が困難になるのではないかという見解の問い合わせ",
+        "full_text": "オプトアウトによる第三者提供、これが禁止されることになっておりますけれども、民間の監視カメラなどで収集された顔認証データ、これを我が国のインテリジェンス機関が捜査協力であったり情報提供の形で活用していくというようなことが今後困難になってしまうのではないかという懸念がありますけれども、この点についてどのようにお考えなのか見解を伺いたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "佐々木",
+        "role": "",
+        "summary": "- 公益上の必要性がある場合は、オプトアウト制度によらずとも本人の同意なしに第三者提供が可能である\n- 法令に基づく場合や国の事務遂行に協力する必要がある場合などの例外規定は改正後も維持される\n- したがって、オプトアウト制度の利用を認めないことが適正な利活用を阻害する恐れはない",
+        "full_text": "今回提案しております顔特徴データの規律の中には、オプトアウト制度による利用を認めないことにしてございますが、現行法におきましても、公益上の必要性を優先すべき場合には、そもそもオプトアウト法制度によらずとも、例外として本人の同意を得ないで第三者に提供することが許容されておりまして、その規定は改正後にも維持されることになります。例えば、法令に基づく場合でありますとか、国の機関等による法令の定める事務の遂行に協力する必要がある場合であって、本人の同意を得ることにより事務の遂行に支障が及ぶ恐れがあるときということにつきましては、現行法におきまして、本人の同意を得ないで顔特徴データを第三者に提供することが可能でございますので、オプトアウト制度の利用を認めないことが、顔特徴データの適正な利活用を阻害する恐れはないと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=10092.476",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "顔認証データの提供禁止による捜査への影響",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "オプトアウトによる第三者提供"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "インテリジェンス機関",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "evidence_citation",
+              "excerpt": "法令に基づく場合"
+            },
+            {
+              "type": "evidence_citation",
+              "excerpt": "国の機関等による法令の定める事務の遂行に協力する必要がある場合"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "法令に基づく場合等、本人の同意を得ないで第三者に提供することが可能であり、利活用を阻害する恐れはない。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "オプトアウト禁止が捜査に与える影響について、現行法の例外規定（法令に基づく提供等）が維持されることで解消されるという明確な法的解釈が示されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_046",
+      "segment_index": 8,
+      "topic": "プライバシー強化技術（PETs）の活用と普及",
+      "question": {
+        "speaker": "高山聡史",
+        "party": "チームみらい",
+        "summary": "- AI開発等のデータ第三者提供特例において、PETs（差分プライバシー、秘密計算等）の活用が有効ではないか\n- 個人情報保護委員会としてPETsの有用性をどう評価し、周知・普及を進める考えか",
+        "full_text": "まず、今回の改正案では、AI開発などのためのデータ第三者提供について、本人の同意を不要とする新しい特例が設けられる予定です。この意義は大変理解できる一方で、特例を利用すると、事業者には相応の実務負担も見込まれると思います。特例を実効的に運用するためには、規律の遵守と利活用促進の両立にするような、例えばプライバシー強化技術、いわゆるPETsの活用が有効ではないかと考えます。差分プライバシー、秘密計算、合成データの活用など、ちょっと言葉だけでもややこしい感じしますが、こういった新しい技術、個人を特定しにくくしたままデータ分析を可能にする一連の技術が近年急速に発展しており、例えばシンガポールでは政府主導でこの技術、PETsのサンドボックスが整備をされ、企業、事業者が試行できる環境が整ってきております。そこで、個人情報保護委員会として、こういったプライバシー強化技術などの有用性をどのように評価をし、その周知・普及をどのように進めていくお考えか、まず伺いたいというふうに思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "佐々木",
+        "role": "",
+        "summary": "- PETsは海外当局との議論でも注目されるテーマであり、注目している\n- 特例を適正に活用できるよう、安全管理措置などの環境整備を進めたい",
+        "full_text": "プライバシー強化技術、いわゆるPETsにつきましては、この法律案検討の過程におきましても、ヒアリング、パブコメ、その他、様々な機会を通じまして、さまざまご意見をいただいてきたところでございますし、昨今、私どもプライバシー関係の海外の当局との議論の場でも、必ず出てくるテーマでございまして、注目しているところでございます。本法案の特例、統計作成等の特例におきまして、安全管理等のための必要かつ適切な措置を講ずること、スタートアップにおかれましても、特例を適正に活用いただけるような環境を整備していきたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=10092.476",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "PETsの有用性評価と周知・普及への考え方",
+          "sub_asks": [
+            "プライバシー強化技術（PETs）の有用性をどのように評価しているか",
+            "PETsの周知・普及をどのように進めていく考えか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "シンガポールでは政府主導でこの技術、PETsのサンドボックスが整備をされ"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "環境を整備していきたいと思います",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "プライバシー強化技術、いわゆるPETsにつきましては、注目しているところでございます。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "PETsの活用という具体的な提案に対し、政府側は「注目している」という抽象的な回答に留まっており、具体的な普及策や評価基準が示されなかった。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのように評価し」「どのように進めるか」というオープンクエスチョンであるため、回答者が抽象的な表現で逃げやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_047",
+      "segment_index": 8,
+      "topic": "子どもの個人情報保護における年齢確認の実効性",
+      "question": {
+        "speaker": "高山聡史",
+        "party": "チームみらい",
+        "summary": "- 子どもの個人情報取扱いで法定代理人の同意通知が明文化されるが、年齢確認が機能しなければ形骸化する\n- サービス内容に応じた年齢確認の基準やガイドライン策定について、どのような具体的措置を考えているか",
+        "full_text": "次に、子どもの個人情報の取扱いに関する規律について伺います。今回の個人情報保護法の改正案では、子どもの個人情報を取り扱う際に、保護者など法定代理人の同意通知を義務付けることが明文化されると、これ自体は大変重要な改正だというふうに考えます。ただ、実際の運用を考えますと、利用者がそもそも子どもに該当するかを判定する年齢確認のところがきちんと機能しなければ、せっかくの規律強化も形骸化しかねないというところです。確認の方法、これ自体はサービスの内容、リスクに応じて幅があってもよいのではないかということは、私もそのように考えますが、この上で年齢確認の実効性を担保するため、どういう種類のサービスについて、どの程度の年齢確認を求めるのか、ガイドラインの策定等、具体的な措置をどう考えておられるのか、個人情報保護委員会の見解を伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "佐々木",
+        "role": "",
+        "summary": "- サービスが多様であるため一律の義務化はせず、考慮すべき要素を具体的に示したガイドラインを整備する\n- 機微な内容や重大な影響がある場合に丁寧な方法を求めるなど、事業者が適切に判断できる基準を示す\n- 国際的なエイジベリフィケーションのベストプラクティスも提供し、適正な遵守を求める",
+        "full_text": "委員御指摘のとおり、子どもが使う可能性のあるデジタルサービスは、デジタルに限りませんけれども、サービスは非常に多様でございますので、一律の方法を義務づけることは実態に即さないわけでございまして、個別に具体的な事情に応じて適切な方法を求めていくということになるわけでございますが、その際に考慮すべき要素というものを具体的に示していくことによって、皆様方が守っていただけるような、ガイドラインを作っていきたいと思います。例えば、機微な内容の場合にはより丁寧な方法が求められますとか、重大な影響が及ぶ場合にはより丁寧な方法が求められますとか、取扱いの対応、影響の程度の予測のしやすさなどなど、具体的にどういった要素を勘案しながら、どの程度の年齢確認その他の方法を導入しないといけないのかということを事業者が適切に判断できるようなガイドラインをしっかり整備したいと思いますし、あと年齢確認につきましては、これも私どものプライバシーの関係の国際的な話題の一つの中心的な話題でございまして、そこではエイジベリフィケーションの手法などについてもいろんな意見交換ができますので、そういうこともベストプラクティスその他の形で提供することによって適正な遵守を求めていきたいというふうに思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=10092.476",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "子どもの年齢確認の実効性担保に向けた具体策",
+          "sub_asks": [
+            "どういう種類のサービスについて、どの程度の年齢確認を求めるのか",
+            "ガイドライン策定等の具体的な措置をどう考えているか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "個人情報保護法の改正案"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "子ども",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "エイジベリフィケーションの手法"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "ガイドラインをしっかり整備したいと思います",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "考慮すべき要素というものを具体的に示していくことによって、皆様方が守っていただけるような、ガイドラインを作っていきたいと思います。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "年齢確認の実効性確保という具体的な課題に対し、ガイドライン策定による対応という方向性が明確に示されたやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どの程度の年齢確認を求めるのか」という点について、より具体的な基準（例：公的証明書の要否など）を問う形式にすれば、より踏み込んだ回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_048",
+      "segment_index": 8,
+      "topic": "顔特徴データの規制範囲と画像データの差異",
+      "question": {
+        "speaker": "高山聡史",
+        "party": "チームみらい",
+        "summary": "- 特定個人の識別を目的としない正当な利用（人流可視化等）は、改正後も現行法通り問題ないという整理でよいか\n- 顔特徴データと顔を含む画像データで取扱いに差異があるか整理を示してほしい",
+        "full_text": "次に、顔特徴データの取扱いに関する規律について伺います。今回、顔特徴データについて、本人の関与を強める方向で規律が強化されます。一方で、顔特徴データというのは、例えば商業施設での混雑状況の把握であったりとか、あるいは公共の場での人流の可視化であったりとか、そういった文脈でのスマートシティ実証など、特定の個人を見分けることを目的としないデータの取り扱いということが、すでに広く存在するというふうに思います。ここで1点確認をさせていただきたいのですが、今回の改正によって、特定個人の識別を目的としない正当な利用が新たに規制をされるわけではなく、現行法通り本人を識別しないものであれば問題ないという整理でよろしいでしょうか。あわせて顔特徴データと顔を含む画像データそのもので取扱いが異なるのかということについても改めて整理を示していただきたいというふうに思います。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "佐々木",
+        "role": "",
+        "summary": "- 本人を識別することを目的としないものは顔特徴データに該当せず、現行法の一般的な個人情報規律（利用目的の特定・通知等）に従う\n- 顔特徴データについては、上記に加え、利用目的の周知義務化、利用停止請求の特別許可、オプトアウト制度の利用禁止というより厳しい規制が適用される",
+        "full_text": "今回規制を強化いたします対象である顔特徴データは、委員御指摘されたとおりでございますけれども、目、鼻、口などの位置及び形状等から抽出した特徴情報を本人を識別することを目的とした装置やソフトウェアにより、本人を識別することができるようにしたものでございまして、単なる顔写真が典型でございますけれども、そういったものは本人が識別できないものについては、該当しないということでございます。したがいまして、そういったものにつきましては、現行法に基づく基本的な個人情報の規律に服するということでございまして、利用目的をできる限り特定し、当該利用目的の範囲内で利用するでございますとか、利用目的を本人に通知するあるいは公表するでございますとか、偽りその他不正の手段により取得しないといったことの一般的な規律に服するということになりますが、顔特徴データにつきましては、これに加えまして、その取扱いに関する、よりわかりやすいより具体的な顔特徴データを何のために使うかということの周知を義務づけるとともに、違法行為の有無を問うことなく、利用停止等請求を特別に可能とする。それから、第三者提供に関する一般的な特例でございますオプトアウト制度の利用を認めないという取扱いになってございまして、差異があるということになります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=10092.476",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "顔特徴データの規制範囲と画像データとの差異",
+          "sub_asks": [
+            "個人識別を目的としない利用が新たに規制されるか",
+            "顔特徴データと顔画像データの取扱いの差異"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "オプトアウト制度"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "本人が識別できないものについては、該当しないということでございます。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "顔特徴データの定義と、それに基づいた規制の適用範囲（識別目的の有無）および画像データとの差異について明確な回答が得られている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_049",
+      "segment_index": 8,
+      "topic": "行政機関等匿名加工情報制度の現状と評価",
+      "question": {
+        "speaker": "高山聡史",
+        "party": "チームみらい",
+        "summary": "- 行政機関が保有するデータを匿名加工して民間に提供する「行政機関等匿名加工情報制度」の提案件数の推移と、成果に対する政府の認識を伺いたい",
+        "full_text": "一つ飛ばしまして、続いて行政機関が保有するデータの活用について伺いたいと思います。今回、国等データ活用事業の認定制度ということの創設があるわけですが、行政機関が保有するデータを特定の個人を識別できないよう、匿名加工した上で民間に提供する制度としては、行政機関等匿名加工情報制度というものもあるかと思います。この制度の提案件数の推移とこれまでの成果に対する評価について、政府のご認識を伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "佐々木",
+        "role": "",
+        "summary": "- 令和5年度は13件の提案中6件採択、令和6年度は30件の提案中10件採択となっている\n- 介護システムの開発や医療データに基づくサービス企画などに活用されている事例がある\n- 令和7年度に向けて、より良い事例や問題解決策を周知し、利用を促進する調査を実施する",
+        "full_text": "御存じのとおり、この行政機関等匿名加工情報でございますけれども、毎年度1回以上、行政機関等匿名加工情報、そのように活用して行う事業に関する提案というものを募集しているわけでございますが、私どもが行っております施行状況調査というものがございまして、直近のものは令和5年度実績でございますけれども、民間事業者から行政機関等に対し13件の提案がございまして、そのうち審査に採択したものが6件。令和6年度は30件の提案がありまして、審査に採択したものが10件というふうに承知してございます。具体的な事例でございますけれども、介護分野におけるシステムの開発や医療データに基づく関連サービスの企画などに活用される目的で、行政機関等から医療介護分野の情報が提供されているという事例があるものと承知してございます。令和7年度につきましても、当該制度に係る事務の実態を把握するために、より使っていただけるようになるように、当委員会として調査を実施いたしまして、さまざまな実際に匿名加工情報の募集などをするにあたっての、より良い事例でありますとか、困った問題点を解決する事例などもありましたものですから、それを周知することによって、さらに一層使われるように努力しているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5280"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=10092.476",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "行政機関等匿名加工情報制度の推移と成果評価",
+          "sub_asks": [
+            "提案件数の推移",
+            "成果に対する政府の評価"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "行政機関等匿名加工情報制度"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "令和5年度実績でございますけれども、民間事業者から行政機関等に対し13件の提案がございまして、そのうち審査に採択したものが6件"
+            },
+            {
+              "type": "number",
+              "excerpt": "令和6年度は30件の提案がありまして、審査に採択したものが10件"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "介護分野におけるシステムの開発や医療データに基づく関連サービスの企画"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "さらに一層使われるように努力しているところでございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "令和5年度実績で民間事業者から13件の提案があり6件採択、令和6年度は30件の提案があり10件採択。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "制度の利用実績について具体的な数値が示されており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "成果に対する「評価」を問うているが、回答が実績の列挙に留まっているため、評価軸を具体的に指定して問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_050",
+      "segment_index": 8,
+      "topic": "行政データの民間利活用の課題と方針",
+      "question": {
+        "speaker": "高山聡史",
+        "party": "チームみらい",
+        "summary": "- 国等データ活用事業の認定制度創設により利活用を進めるにあたり、行政データの民間利活用における課題と今後の取組方針は何か",
+        "full_text": "そこで松本大臣に伺いたいと思います。今回、国等データ活用事業の認定制度の創設、これによってデータ利活用をさらに進めていくということかと思いますが、行政データの民間利活用を進める上での課題と、それを踏まえた今後の取組方針について、大臣の御見解を伺いますでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "松本",
+        "role": "",
+        "summary": "- 適正な安全管理のあり方や、民間がデータを求めるための一般的ルールの策定が課題である\n- 国等データ活用事業指針によるデータの標準化や安全管理の方向性提示が必要である\n- 個人情報保護委員会と相談し、法上の適切性をクリアしながら丁寧にコンセンサスを得て進める",
+        "full_text": "まず、適正な安全管理のあり方というようなものとか、あるいは民間業者が行政機関にデータを求めるための枠組みだとか、そういった特定分野じゃなくて、一般的なルールとしてのあり方というのは、これからちゃんともう少し固めていかなきゃいけない点もあると思います。それから、国等データ活用事業指針というのがございますけど、この指針をきちんとデータの標準化とか安全管理について方向性を示していくということも課題だと思います。それからですね、あとはそうですね、適切性がどうなのかということも、これは個人情報保護委員会と一緒に相談をしていかなきゃいけません。法上の適切性がどうなのかというようなことも課題だというふうに思います。いずれにしてもですね、今委員がおっしゃったような課題をですね、きちんとクリアして、丁寧にコンセンサスを取っていくということかなと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5280"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56225&time=10092.476",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "行政データの民間利活用の課題と取組方針",
+          "sub_asks": [
+            "行政データの民間利活用を進める上での課題",
+            "それを踏まえた今後の取組方針"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "国等データ活用事業の認定制度"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "民間業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国等データ活用事業指針"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "個人情報保護委員会"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "丁寧にコンセンサスを取っていくということかなと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "minister",
+          "score": 0.5
+        },
+        "oc3_quotability": {
+          "quote_candidate": "一般的なルールとしてのあり方というのは、これからちゃんともう少し固めていかなきゃいけない点もあると思います。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "大臣が現状の課題（ルール整備、指針の方向性、法上の適切性）を具体的に列挙しており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「取組方針」を問うているが、回答が課題の列挙に留まっているため、より具体的なスケジュールや手法を問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    }
+  ],
+  "score_schema_version": "2.0",
+  "prompt_version": "V4"
+}
