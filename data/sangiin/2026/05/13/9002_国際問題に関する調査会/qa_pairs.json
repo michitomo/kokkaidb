@@ -1,0 +1,624 @@
+{
+  "pairs": [
+    {
+      "id": "qa_001",
+      "segment_index": 2,
+      "topic": "中国の台湾への武力行使の意図",
+      "question": {
+        "speaker": "原田英和",
+        "party": "参考人　東京大学名誉教授",
+        "summary": "- 中国指導部は状況が許せば武力による現状変更を選択する意思があるのか\n- 台湾が独立に向かわなければ武力行使の意図は乏しいと見てよいか",
+        "full_text": "まず、宮本参考人は、中国が武力行使に踏み切るのは、台湾が独立へ動く時であるという見解を示されていると理解しております。しかし、習近平政権が掲げる「中華民族の偉大なる復興」という文言、あるいは報じられる中国国内の政治力学などを踏まえ、台湾の出方にかかわらず、自らのタイムスケジュールに基づいて武力行使を選択するのではないかとの見方も増えているように思います。現在の中国指導部は、状況が許せば、武力による現状変更を選択する意思があるのか、あるいは現状が維持され、台湾が独立に向かわなければ、積極的に武力行使をする意図は乏しいと見てよいのか、参考人の最新の分析をお聞かせください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "宮本雄二",
+        "role": "参考人　元駐中国特命全権大使　公益財団法人日中友好会館会長",
+        "summary": "- 台湾問題は中国の内政問題であり、軍事力のみで決まる性質ではない\n- 国民が納得する大義名分がない限り、経済的打撃や国民の反発を招くため、武力出動には至らないと判断する",
+        "full_text": "台湾問題は、技術に関わって中国の内政問題です。すなわち台湾問題は、軍事力がここまで来たから行く、ここまで下がったから落ちるというそういう性質の問題ではないということです。その時は中国の中で通る大義名分、中国の当局と国民との間で通る大義名分がないと、私は中国の内政としてはそこで決着をしないだろうというふうに思っております。そうすると中国の今国内の経済状況ですし、したがって国民にどういう影響を及ぼすかということを考えていきますと、その時には国民が、自分は台湾の解放なんて望んでもいなかった、あなた自分の都合でそういうことをやってた結果、我々はこういうことですかということになると、不満が溜まってくるということなんです。そうすると国民の反応というのは非常に気になられる状況になっていて、国民が納得する大義名分がない限り、台湾に対する出動ということについては納得しないであろうと。やっぱり内政のロジックが大きいのかなというのが、私の現時点の判断であります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9002#3191.6",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中国の武力行使の意思と判断基準に関する分析",
+          "sub_asks": [
+            "状況が許せば武力による現状変更を選択する意思があるか",
+            "台湾が独立に向かわなければ武力行使の意図は乏しいと見てよいか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "「中華民族の偉大なる復興」"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "中国指導部",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": true,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.1
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "国民が納得する大義名分がない限り、台湾に対する出動ということについては納得しないであろう",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人による個人の分析を問う形式であり、具体的数値や政府の公式見解を確定させるものではないため、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_002",
+      "segment_index": 2,
+      "topic": "日中戦略的互恵関係の再構築プロセス",
+      "question": {
+        "speaker": "原田英和",
+        "party": "参考人　東京大学名誉教授",
+        "summary": "- 日中が戦略的互恵関係を再構築し、友好的な関係に進化させるためにはどのようなプロセスが必要か",
+        "full_text": "日中の対峙を前提として、軍事バランスの破綻を防ぐことも大事ですが、東アジアの安定のためには、日中が友好的な関係を深めていくことこそが究極的には双方の国益にかなうと私は考えています。我が国の安全保障は引き続き日米同盟を基軸でなければならないとは思いますが、単純に米国の関与が弱まる部分を日本が肩代わりして中国と対峙すべきかといえば、それは少し違うのではないかと考えております。しかし、台湾問題を別としても、先ほどお話いただきましたように、尖閣問題をはじめ、日中は東シナ海で対立を抱えています。第一列島線、第二列島線などという言葉がありますように、中国が海洋進出を進める中で、地政学的に日中は対立を生じやすい立ち位置にもあります。こうした中で、日中が戦略的互恵関係を再構築して、さらに進んで友好的な関係に進化させていくためには、どのようなプロセスが必要だとお考えでしょうか。第一線で日中関係を支えてこられました参考人のお考えをお聞かせください。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "宮本雄二",
+        "role": "参考人　元駐中国特命全権大使　公益財団法人日中友好会館会長",
+        "summary": "- 長期的視野から、地域の平和安定と経済発展という共通の国益を最終目標に据えるべき\n- 2008年の日中共同声明にある「戦略的互恵関係」の理念を思い出し、国際秩序を守るための協力を充実させるべき",
+        "full_text": "中国との関係構築というのが非常に必要になってくると思います。そうすると日本にとっても中国にとっても、この地域に平和と安定を確保して、経済の自律的発展を実現して、もって国民の幸せ追求を可能にすると。そうすると両国の政府は、これを最終目標として、それを実現するためにどうしたらいいかということを考えていく。私は、2008年福田総理と胡錦濤主席の間で署名もされました日中共同声明。ぜひ今日もそれをもう一回思い出して、両国政府に戦略的互恵関係に言い続けておりますので、その中身をそれに合ったものに充実させていただきたいと強く思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9002#3191.6",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "日中戦略的互恵関係の再構築に必要なプロセスは何か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "第一列島線、第二列島線"
+            },
+            {
+              "type": "field_case",
+              "excerpt": "尖閣問題"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "日中両国",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "2008年福田総理と胡錦濤主席の間で署名もされました日中共同声明"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "充実させていただきたいと強く思います",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "2008年福田総理と胡錦濤主席の間で署名もされました日中共同声明。その中身をそれに合ったものに充実させていただきたい",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "日中関係の改善プロセスを問う抽象的な質問に対し、参考人が過去の共同声明への回帰という方向性を示したやり取りである。具体的なプロセス（手順）までは提示されていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのようなプロセスが必要か」という問いに対し、具体的手段ではなく理念的な回答を許容する形式になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_003",
+      "segment_index": 2,
+      "topic": "東北アジア諸国連合（ONEAN）構想における日本の役割",
+      "question": {
+        "speaker": "和田春樹",
+        "party": "参考人　東京大学名誉教授",
+        "summary": "- 和田参考人が提案した東北アジア諸国連合（6カ国枠組み）の実現に向け、日本はどのような役割を果たすべきか",
+        "full_text": "先ほどのお話の中で和田参考人からは、ASEANに倣った東北アジア、これ6カ国、中国、ロシア、北朝鮮、韓国、日本、そしてアメリカの枠組みをご提案をいただいたわけでございますけれども、これ地理的にもアメリカを東北アジアに入れるというところがポイントになるのかなと思っておりますが、この新しい対話の場のご提案について宮本参考人はどのようにお考えなのか。また和田参考人には、ご提案いただきました東北アジア諸国連合の構想の実現を目指す際に、この6カ国の枠組みの中で日本はどのような役割を果たしていくべきとお考えなのか、その点についてそれぞれお伺いをさせていただきます。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "和田春樹",
+        "role": "参考人　東京大学名誉教授",
+        "summary": "- 日本が中心となって枠組みを進める意欲を持つことが不可欠である\n- その前提として、日朝国交正常化を実現し、北朝鮮の孤立を緩めて6カ国が集まれる土台を作ることが必要である",
+        "full_text": "ですから日本がこのことを中心になって進めていくというそういう気持ちにならないと、これはできないのじゃないかと思われます。で、日本がそれを進めていくのには、まず日朝国交正常化を何とかして実現して、北朝鮮が非常に孤立した状態で現在はロシアと一緒になっていますから、もっとしてるというようなことになってますけど、非常に北朝鮮の孤立緊張が続いていますので、ここをとにかく緩めていって、6カ国が集まれるような土台を作っていくということが必要じゃないかと思われます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9002#3191.6",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "東北アジア6カ国枠組みへの見解と日本の役割",
+          "sub_asks": [
+            "宮本参考人の新対話の場への考え",
+            "和田参考人が考える日本の果たすべき役割"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "ASEAN"
+            },
+            {
+              "type": "other",
+              "excerpt": "中国、ロシア、北朝鮮、韓国、日本、そしてアメリカ"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "東北アジア6カ国",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "日朝国交正常化"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "日朝国交正常化を何とかして実現して、6カ国が集まれるような土台を作っていくということが必要じゃないかと思われます。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人への意見聴取であり、具体的な政府のコミットメントや法的解釈を含むものではないため、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "2人の参考人に同時に問いかけているため、回答がどちらの視点に基づいているかが曖昧になりやすい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_004",
+      "segment_index": 2,
+      "topic": "日中関係向上に向けた具体的アプローチ",
+      "question": {
+        "speaker": "三上恵理",
+        "party": "参考人　東京大学名誉教授",
+        "summary": "- 日中間や日米間の関係を向上させるために、具体的にどうすればよいか",
+        "full_text": "宮本参考人は日中間には台湾問題、尖閣問題、安全保障問題など、構造的な課題がある一方で、いろいろ著書でも一定の枠組み了解があることもご指摘をされております。今お話の中で、国民同士の交流が大切だと強くおっしゃっておりました。この日中間、日米間、いろいろな関係の向上に向けて、今一度深く、そのお考え、どう向上させていくにはどうしたらいいかというお考えをお伺いできますでしょうか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "宮本雄二",
+        "role": "参考人　元駐中国特命全権大使　公益財団法人日中友好会館会長",
+        "summary": "- 訪日観光客の増加が対日理解を飛躍的に進めたように、国民同士の交流が関係を変える力を持つ\n- 独仏の相互ホームステイのような教育レベルでの交流を努力し、相手への温かい気持ちを植え付けることが最後の砦となる",
+        "full_text": "みんな自分の撮った写真撮ってこうだこうだってコメントして、それで日本のことがどんどんどんどん中国社会に入っていって、あっという間に想像を超えた割合で、中国の人の対日理解というのが進んだんですね。ですから直接交流というか、観光客でさえこれだけ大きな役割を果たすことができたということで、私は国民同士の交流で両国関係を変える力を持ち得るとその時感じたんです。そしてついに今回もう永久に和解をしようということで、いろんな合意がドイツとフランスの間に出来上がって、その中の一つが中学生とか高校生の中のですね、相互ホームステイなんですね。必ずまた開く時が来るとというふうに思っておりますので、だってそういうときに、国民同士の交流も含めて、もっともっと我々努力すればですね、国民同士の中の相手に対する温かい気持ちは植え付けることができるというふうに強く思っておりますし、これが最後、最後の砦といいますか、国民同士がそういうふうに思えばですね、国同士の動きも止めることができるというふうに最近は思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9002#3191.6",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "日中・日米関係向上のための考え方",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "いろいろ著書でも一定の枠組み了解があることもご指摘をされております"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "ドイツとフランス"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "中学生とか高校生の中のですね、相互ホームステイ"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "国民同士の交流で両国関係を変える力を持ち得るとその時感じたんです。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人の個人的な見解を問う抽象的なやり取りであり、政府の公式見解や具体的拘束力のある合意は含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "具体的な政策提言や政府の対応を求める形式ではなく、個人の感想を求める形式になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_005",
+      "segment_index": 2,
+      "topic": "対話と抑止のバランス",
+      "question": {
+        "speaker": "鈴木宗男",
+        "party": "国際問題に関する調査会長",
+        "summary": "- 中国や北朝鮮の軍事活動拡大に対し、対話と抑止のバランスをどのように考えるべきか",
+        "full_text": "鈴木宗男（国際問題に関する調査会長）和田参考人は東アジアで戦争を起こさないための最大限の努力の必要性、また、他国間の対話の重要性について述べていらっしゃいます。一方で、中国ですとか北朝鮮による軍事活動の拡大、そして現状変更への懸念が広がっているということも事実です。しかし、この対話と同時に一定の抑止力も必要だという考えもございます。和田参考人は、この対話と抑止のバランスをどのように考えていらっしゃいますでしょうか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "和田春樹",
+        "role": "参考人　東京大学名誉教授",
+        "summary": "- 自衛のための兵力増強などの安全保障上の措置は必要である\n- しかし、核保有国が隣接する現状では兵力のみで悲劇は避けられないため、それ以上に倍の外交的努力（国交正常化など）を払うべきである",
+        "full_text": "そして自衛隊が存在して日本の自衛のための兵力を備えておりますが、この面においてぬかりがあるならばですね、これに対してしかるべく増強を図るということは恐らく必要でしょう。しかし東北アジアのこの状況で向かい側に中国、ロシア、北朝鮮という核保有している国があってですね、それで日本には核武装している米軍の基地があるという状況ですから、ここで戦争が起きてしまえば、どれだけ兵力を日本が自前の兵力を用意したところで悲劇は避けられない状況だと思います。ですからその意味で言えば一定の安全保障上の措置というものを取ることは必要だと思いますが、それよりもさらにそれに倍するようなくらいの、やっぱり外交的な努力というものをしなければこの地域では危ないというふうに私は思っております。ですからそういう意味で、まず隣の国とは国交をもってですね、話し合いができるという状態を作るということがまず必要じゃないかというふうに思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9002#3191.6",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "対話と抑止のバランスについての考え",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "中国"
+            },
+            {
+              "type": "organization",
+              "excerpt": "北朝鮮"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "和田参考人",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "中国"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ロシア"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "北朝鮮"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "米軍"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "一定の安全保障上の措置というものを取ることは必要だと思いますが、それよりもさらにそれに倍するようなくらいの、やっぱり外交的な努力というものをしなければこの地域では危ない",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人の個人的な見解を問う形式であり、政府の公式見解や具体的コミットメントを導き出すものではないため、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_006",
+      "segment_index": 2,
+      "topic": "安全保障上の不信感の中での日本外交のあり方",
+      "question": {
+        "speaker": "鈴木宗男",
+        "party": "国際問題に関する調査会長",
+        "summary": "- 安全保障上の不信感が高まる中で、日本外交に求められるものは何か",
+        "full_text": "その辺り、宮本参考人もどのようなお考えか。こうした今お話があった難しい状況が続いている中で、安全保障上の不信感も高まっていて、その中で日本外交に今、求められているものというのは、どんなことがあるとお考えでしょうか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "宮本雄二",
+        "role": "参考人　元駐中国特命全権大使　公益財団法人日中友好会館会長",
+        "summary": "- 抑止力は否定しないが、それだけで終わらせず、相手と話し合える関係を構築することが重要\n- 共通の利益を冷静に見極めて協力分野を拡大し、現場レベルでの信頼関係を積み上げることが必要である",
+        "full_text": "ですから安全保障の観点から抑止が必要だということ、そのこと自体は私は否定するつもりはありません。それだけで物語が終わらなくてですね、そして相手との関係にどういう関係を作るのか、どこまで話し合える関係を作るのか。何よりもどれだけ多くの共通の利益を作り上げるのかということですね。そして協力をする分野を作る。現場で手を結んで一生懸命やったから何か一つ実現すると、その現場で信頼関係が生まれているんですね。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9002#3191.6",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "日本外交に求められる役割についての見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "日本外交",
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "抑止が必要だということ、そのこと自体は私は否定するつもりはありません。それだけで物語が終わらなくてですね",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人に対する抽象的な意見聴取であり、具体的な事実認定や政府のコミットメントを含むものではないため、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "具体的な外交施策や事例を提示して問う形式にすれば、より実効性のある回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_007",
+      "segment_index": 2,
+      "topic": "日中関係のデッドロック打開の可能性",
+      "question": {
+        "speaker": "久保田哲也",
+        "party": "参考人　東京大学名誉教授",
+        "summary": "- 現在の日中関係のデッドロック状態を打開するための「光」となるような兆しはあるか",
+        "full_text": "そういう中で、先ほどセカンドトラックというお話もされておりましたけれども、この今のデッドロック状態にある日中関係、この打開に向けて何らかの光がないのかなということを私も今探しているほどのこともないですけれども、強く望んでいるんですけれども、そうしたなんらかの、今、国内で少しでも光になるようなもの、そうしたものは先生は今、見ていらっしゃいますか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "宮本雄二",
+        "role": "参考人　元駐中国特命全権大使　公益財団法人日中友好会館会長",
+        "summary": "- 交流窓口の担当者は「停止」ではなく「延期」としており、現場レベルでは交流を続けたい意向がある\n- 中国側でも現状を打開したい動きが出始めており、高レベルでの交流を実現させることが突破口となる",
+        "full_text": "今回、交流を止めるというか、彼らは、交流の窓口にいる中国の人たちは、止めるとは言ってないんです。だから現場の人は止めたくないんです。したがって、今やっぱり今の状況の中ではいけない、何かしなきゃいけないという動きは最近私も感じ始めております。中国側にそういう動きが出始めたということであります。やっぱり高いレベルでの交流を実現しませんと、物事が動かないというのが今の仕掛け上そういうふうになっておりますので、ぜひご尽力賜りたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9002#3191.6",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "日中関係打開の兆しがあるか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "日中関係",
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "中国側にそういう動きが出始めたということであります。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "日中関係の現状に関する参考人の主観的な見解を問うやり取りであり、具体的な事実認定や政府の公約は含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問が抽象的であり、具体的な政策や事案への言及がないため、記録としての価値が低い。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    }
+  ],
+  "score_schema_version": "2.0",
+  "prompt_version": "V4"
+}
