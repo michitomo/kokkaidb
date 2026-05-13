@@ -1,0 +1,4717 @@
+{
+  "pairs": [
+    {
+      "id": "qa_001",
+      "segment_index": 1,
+      "topic": "医薬品供給不足の原因と対応",
+      "question": {
+        "speaker": "藤田洋司",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 後発医薬品を中心とした供給不足の現状と、薬価改定による収益構造の変化が影響しているとの認識について\n- 政府による供給不足の原因分析と、これまでどのような対応を行ったか",
+        "full_text": "まず、現在の医薬品供給不足についてお伺いします。後発医薬品を中心に、多くの医薬品で出荷調整や供給停止が続いており、現場では代替薬の確保や患者対応に追われています。これは、必要量が確保できないことや、患者が希望する薬剤を渡せないことなど、患者にとっての不利益につながっています。私は供給不足の背景には、毎年の薬価改定による収益構造の変化もあると考えています。製薬企業からは収益の減少により、創薬だけではなく既存薬品の安定供給や製造体制の維持にも影響が出ているとの声も聞いています。政府として現在の医薬品供給不足の原因をどのように分析し、どのように対応されたのか教えてください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "上野賢一郎",
+        "role": "厚生労働大臣",
+        "summary": "- 少量多品目生産という非効率な製造体制や薬機法違反、感染症流行などが要因であると分析\n- 増産体制整備への補助、最低薬価の引上げ、不採算品採算定などの支援を実施し、供給停止割合が減少するなど状況は改善傾向にある\n- 後発医薬品製造基盤整備基金を造成し、品目統合などの取組を支援し解消を目指す",
+        "full_text": "現下の医薬品の供給不安ですが、まず、後発医薬品産業の少量多品目生産といった非効率的な製造体制が背景にあると考えています。また、後発医薬品企業による薬機法違反を契機とした供給量の低下、感染症の流行などの様々な要因により承知してきたと考えております。こうした医薬品の供給不安に対しては、これまでも製薬企業による増産体制整備に対する補助や、最低薬価の引上げ、不採算品採算定の実施といった薬価の下支えなど、企業への支援を行ってまいりましたが、こうしたことによりまして、例えば、限定出荷・供給停止の割合につきましては、令和6年3月は19%でしたけれども、令和8年3月では10%に減少するなど、状況は改善してきたと考えております。この流れをより着実なものとすべく、令和7年の薬価改定によりまして、後発医薬品製造基盤整備基金を造成いたしましたが、これによる製薬企業間の品目統合などの取組を支援したり、さまざまな支援策によりまして、医薬品の供給不安の解消に向け、さらに取組を進めていきたいと考えています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=538.9949999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "医薬品供給不足の原因分析と政府の対応について",
+          "sub_asks": [
+            "供給不足の原因をどのように分析しているか",
+            "どのように対応したか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "製薬企業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "令和6年3月は19%"
+            },
+            {
+              "type": "number",
+              "excerpt": "令和8年3月では10%"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "後発医薬品製造基盤整備基金"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "医薬品の供給不安の解消に向け、さらに取組を進めていきたいと考えています",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "後発医薬品産業の少量多品目生産といった非効率的な製造体制が背景にあると考えています。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "供給不足の原因分析と具体的な数値を含む改善状況、および基金による支援策が明確に述べられており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "原因分析について、質問者が提示した「薬価改定による収益構造の変化」という仮説に対する肯定・否定を明確に問う形式にすれば、より踏み込んだ回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_002",
+      "segment_index": 1,
+      "topic": "医薬品流通（卸）への支援",
+      "question": {
+        "speaker": "藤田洋司",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 薬価低下や物流コスト増により、配送便の減便や納入遅延が発生し、患者に不利益が生じている現状について\n- 医薬品卸などの流通関係者への支援に関する政府の見解",
+        "full_text": "次に、医薬品などの流通についてお伺いします。現場では、薬価の低下による卸の利益減少、さらにエネルギー価格の高騰による物流コスト増により、配送便の減便、発注から納入までのタイムラグがあります。以前はお昼に発注したものが夕方には届いておりましたが、現在ではお昼に発注しても翌日の午後にしか納入されないような場合もあります。また、医療用麻薬の発注においても当日納入されていたものが、現在では翌々日の納入になり、医薬品自体の配送が土日祝日にはほぼ配送されていない状況があります。医薬品卸への過度な負担は避けるべきでしたが、こうした状況では治療が必要な患者さんへの負担が多く、場合によっては生命の危機に関わることもあります。そんな医薬品卸などの医薬品流通に関わる方々への支援も必要だと思いますが、政府のお考えを教えてください。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "森光恵子",
+        "role": "",
+        "summary": "- 医薬品卸を重要なインフラと認識し、経営環境の厳しさを承知している\n- 安定供給の適正化・強靭化、地域コスト削減、災害時の業務継続などの経費を補助事業により支援し、現在公募を実施している\n- 流通関係者間の連携やガイドラインの遵守徹底に不断に取り組む",
+        "full_text": "医薬品卸は、全国の医療機関や薬局に必要な医薬品を迅速、確実に供給する役割を担う重要なインフラと認識をしております。仕入れ原価や流通コストの上昇により、その経営環境がさらに厳しくなっているというふうに承知しております。そのような環境においても、医薬品を安定的に供給することが強く求められておりまして、その確保に取り組んでいる医薬品卸に対しまして、医薬品の安定供給の適正化、強靭化に向けた取組、地域における流通基盤の強靭化により、医療機関や薬局を含めた地域全体のコスト削減に向けた取組、災害時における業務継続に向けた取組、これらの経費を補助事業により支援することとしておりまして、現在、公募を実施しているという状況でございます。なお、流通上における諸課題については、引き続き、医薬品メーカー、医薬品卸、医療機関や薬局といった流通関係者との間で連携しながら、流通関係者が遵守すべきガイドラインの周知及び遵守の徹底や、望ましいやり方の検討に、不断に取り組んでまいりたいと考えておるところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=538.9949999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "医薬品流通に関わる方々への支援についての政府の見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "医薬品卸",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "evidence_citation",
+              "excerpt": "補助事業により支援することとしておりまして、現在、公募を実施している"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 3,
+          "trigger_phrase": "これらの経費を補助事業により支援することとしておりまして、現在、公募を実施している",
+          "matched_pattern": "future-tense verb describing a CONCRETE government action with a named mechanism"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "医薬品卸に対しまして、医薬品の安定供給の適正化、強靭化に向けた取組、これらの経費を補助事業により支援することとしておりまして、現在、公募を実施している",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "医薬品卸の経営環境悪化という具体的課題に対し、現在実施中の補助事業という具体的な支援策を提示しており、実効性のある回答となっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "現状の課題（配送遅延など）を具体的に述べているが、それに対する直接的な改善策を問うのではなく「支援」という包括的な言葉で問うているため、回答が補助金の話に終始しやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_003",
+      "segment_index": 1,
+      "topic": "医療消耗品の供給と物価上昇への対応",
+      "question": {
+        "speaker": "藤田洋司",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 軟膏壺や包装紙などの一般医薬品に関わる消耗品の単価が著しく上昇している現状について、政府の考えを問う",
+        "full_text": "また、現状情勢などをもとに、この厚生労働委員会でも、透析の資材についての議論は進んでいますが、透析だけではなく、一般の医薬品に関わる、例えば、軟膏壺や、一包化などをする包装紙などの製造や供給流通について、また流通しているものについて、単価が著しく上昇していることについて、政府はどのようにお考えかお聞かせください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "宮本直樹",
+        "role": "",
+        "summary": "- 経済産業省と連携し、個別の流通の目詰まりを順次解消している\n- 医療介護等支援パッケージによる支援や、令和8年調剤報酬改定での「調剤物価対応料」の新設により、物価上昇に対応する",
+        "full_text": "医療物資等の安定供給につきましては、医療において万が一の事態は絶対に許されないという強い問題意識のもと、情報収集対策検討体制の強化を図っておりまして、情報収集により得られた個別の流通の目詰まり等について、経済産業省と連携し、順次解消を行っているところでございます。また、薬局で必要となる消耗品等を含め、物価上昇の影響につきましては、医療介護等支援パッケージを措置し、必要な支援を実施しているほか、令和8年調剤報酬改定においては、今後の物価上昇に対応するため、調剤物価対応料を新設したところであり、引き続き必要な対応を行ってまいりたいと考えています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=538.9949999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "一般医薬品資材の価格上昇への政府の見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "軟膏壺や、一包化などをする包装紙"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "医療介護等支援パッケージ"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "令和8年調剤報酬改定"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "調剤物価対応料"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "引き続き必要な対応を行ってまいりたいと考えています",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "令和8年調剤報酬改定においては、今後の物価上昇に対応するため、調剤物価対応料を新設したところであり",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "医薬品資材の価格上昇という具体的な懸念に対し、調剤物価対応料の新設という具体的な制度的回答がなされている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どのようにお考えか」という抽象的な問い方であるため、より踏み込んだ具体的対策の確約を引き出しにくい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_004",
+      "segment_index": 1,
+      "topic": "セルフメディケーションの推進と安全確保",
+      "question": {
+        "speaker": "藤田洋司",
+        "party": "自由民主党・無所属の会",
+        "summary": "- セルフメディケーション推進の重要性と、一方で顕在化しているオーバードーズなどの安全面に関する課題について、政府の対応を問う",
+        "full_text": "続きまして、セルフメディケーションについてお伺いします。現在、セルフメディケーションの推進は、医療費の適正化や国民の健康意識の向上という観点からも重要な政策の柱となっています。実際に一般用医薬品の活用は、多くの国民にとって身近なものになっております。一方で、現場に目を向けますと、医薬品の適正使用の確保や、いわゆるオーバードーズの問題など、安全面に関する課題も顕在化しております。教えてください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "宮本直樹",
+        "role": "",
+        "summary": "- 薬剤師によるOTC薬品販売や健康相談の役割を期待し、「健康増進支援薬局」の認定制度を創設した\n- 登録販売者の継続的な研修に対して補助を実施し支援している\n- 資格者による適正使用の働きかけが進むよう、引き続き必要な対応を実施する",
+        "full_text": "薬剤師は処方箋に基づく調剤だけではなく、地域住民に向けたOTC薬品の販売や健康相談などの健康サポートの面でも役割を担うことが、今後ますます期待されていると考えています。薬剤師がこれらの重要性を認識するための取組を進めていくとともに、昨年成立しました改正薬機法では、地域住民から健康の維持増進に関する相談を幅広く受け付け、薬剤師がセルフケア、セルフメディケーションに関する助言や地域の関係機関に適切につなぐという対応を担っていくために、健康増進支援薬局の認定制度を創設したところでございます。また、登録販売者につきましても、店舗販売業者等は従事する登録販売者に研修を毎年度受講させなければならないということにしており、厚生労働省としても登録販売者の継続的な研修に対して補助を実施し支援をしているところでございます。OTC薬局の販売に関する薬剤師や登録販売者の関与は重要であると考えており、資格者によるOTC薬局への適正使用の働きかけがより一層進むよう、引き続き必要な対応を実施してまいりたいと考えています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=538.9949999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "セルフメディケーションの安全面に関する課題への対応",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "改正薬機法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "健康増進支援薬局の認定制度"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "引き続き必要な対応を実施してまいりたいと考えています",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "健康増進支援薬局の認定制度を創設したところでございます。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問が「教えてください」という極めて抽象的な形式であり、具体的な問いが欠如している。回答は制度説明に留まっており、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「教えてください」で終わらせず、オーバードーズ対策などの具体的課題に対してどのような措置を講じるか具体的に問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_005",
+      "segment_index": 1,
+      "topic": "医療・介護分野のDX導入支援",
+      "question": {
+        "speaker": "藤田洋司",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 薬局、訪問看護ステーション、介護事業者へのDX導入支援が不十分であるとの現場の声について\n- 医療機関と同様の、横断的かつ具体的な支援策についての考えを問う",
+        "full_text": "医療介護分野における業務効率化についてお伺いします。いわゆるDXの推進は、今や避けて通れない課題です。一方、現場におきましては、様々な対応が求められ、その都度多額の設備投資や運用コストが発生しています。設備投資に対しては、医療機関への一定の支援は盛り込まれているものの、薬局、訪問看護ステーション、介護事業者への支援は十分とは言えないという声を現場から多くいただいております。このような現状を踏まえ、業務効率化、DX導入の補助について、医療機関と同様の支援を、薬局、訪問看護、介護事業所を含めた横断的な具体的な支援策について、それぞれ端的にお考えをお聞かせください。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "宮本直樹",
+        "role": "",
+        "summary": "- 電子処方箋の導入費用補助や、中小企業庁のIT導入補助金などの活用がある\n- 服薬情報提供書等の電子化に向けた調査研究を行っており、これらを踏まえ業務効率化に資する支援策を検討する",
+        "full_text": "薬局における業務の効率化や高度化に資するDXの導入は重要な課題であると認識しております。これに対して、例えば電子処方箋の導入費用に係る補助を行ってきたほか、中小企業庁において中小企業におけるITツールの導入を支援するデジタル化IT導入補助金など、薬局が活用できるさまざまな支援があると承知しております。また、薬局DXについては、医療機関、薬局間で、FAX等でやりとりをされている服薬情報提供書等の電子化に向けた調査研究を行っており、これらの取組を踏まえまして、引き続き、薬局における業務の効率化に資する支援策を検討してまいりたいと考えています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5199"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=538.9949999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "薬局・訪問看護・介護へのDX支援策の考え方",
+          "sub_asks": [
+            "薬局への支援策",
+            "訪問看護への支援策",
+            "介護事業所への支援策"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "薬局、訪問看護ステーション、介護事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "電子処方箋"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "デジタル化IT導入補助金"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "薬局における業務の効率化に資する支援策を検討してまいりたいと考えています",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "引き続き、薬局における業務の効率化に資する支援策を検討してまいりたいと考えています。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は3つの業種への支援を求めたが、回答は薬局にのみ限定されており、不十分である。",
+        "would_be_referenced": "low",
+        "issue_in_design": "複数の業種をまとめて質問したため、回答者が一部の業種のみに絞って回答することを許してしまった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_006",
+      "segment_index": 2,
+      "topic": "理学療法士及び作業療法士法の改正",
+      "question": {
+        "speaker": "田野瀬太道",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 60年間改正されていない理学療法士及び作業療法士法を、時代の変化に合わせて改正すべきではないか\n- 名称独占だけでなく、業務の独占や罰則についても明記し、無資格者によるリハビリ実施を防止すべきではないか",
+        "full_text": "そこで政府に伺わせていただきます。理学療法士、作業療法士の役割や業務内容について法改正しませんか。60年ぶりですけれども。制度的にも、リハビリ関係職種を時代に即したものとすべきと考えております。いかがでございましょうか。併せて、現場におきまして、理学療法士や作業療法士に似通ったような紛らわしい名称で、無資格者がリハビリテーションを実施している事例というのも昨今、散見されているわけでございまして、その法律改正していただけるならば、ぜひ、この名称独占だけじゃなくて、業務の独占、そして罰則、この辺りもしっかりと明記した上で、整理すべきだと考えております。ぜひ、この法改正につきましてのお考えをよろしくお願いします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "森光一",
+        "role": "",
+        "summary": "- リハビリ専門職の役割の重要性は増しており、現在開催中の検討会での議論を踏まえ必要な検討を進めたい\n- 無資格者の名称使用については罰則があるが、実態把握を含め必要な対応を検討したい",
+        "full_text": "委員御指摘のようにリハビリテーション。これは疾患の診断治療の後に急性期、回復期、維持期、生活期まで一貫した流れで行われるということが重要でございまして、その専門職が果たしておる役割というのは、この数年にわたり、年代において変わってきておりますし、さらに重要性が増しておるというふうに考えているところでございます。また現在、医療関係職種の安定的な養成確保に関する検討会、これは5月の7日から開催をしておりまして、議論を開始したところでございます。の意見も踏まえながら必要な検討を進めていきたいというふうに考えておるところでございます。各資格付与の根拠法におきまして、資格を持たない者が紛らわしい名称を用いてはならないということとされておりまして、違反した者に対する罰則、これも設けられているというところでございます。一方、関係の団体から紛らわしい名称を使用している事例があるとそういうお声も伺っておることから、今後その実態把握も含めて必要な対応を検討していきたいというふうに考えているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=1427.1950000000002",
+      "metrics": null
+    },
+    {
+      "id": "qa_007",
+      "segment_index": 2,
+      "topic": "リハビリテーション統括専門部署の設置",
+      "question": {
+        "speaker": "田野瀬太道",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 縦割り行政の弊害をなくし国家戦略としてリハビリテーションを展開するため、厚労省内に統括専門部署（リハビリ課など）を早急に設置してほしい",
+        "full_text": "続きまして、リハビリテーション政策を統括する専門部署の設置についてお伺いいたします。現在、リハビリテーションの活動範囲は、先ほど申し上げておりますけれども、多岐にわたっております。医療、介護、障害福祉、教育分野等々、その活用分野は極めて広いものとなっているわけでございます。一方で、それぞれの縦割り行政による弊害において、リハビリテーション政策全体として向いている方向が一つにはなりにくいという、そんな側面もあるんじゃないのかなと考えております。つきましては、国家戦略としてのリハビリテーションを展開するためにも、政策を推進するための統括専門部署を厚生労働省内に早急に設置していただきたいと考えておりますが、それにつきましてのお考えをお聞かせ願いたいと思っておりますし、併せて先日開かれましたリハビリテーション自民党の議員連盟があるんですけれども、同様の質問をさせていただきましたら、厚生労働省からはチームを作りますというような回答があったわけでございますが、チームじゃなくて、やはり係でもなくて、担当課、リハビリ課、これが私はぜひ必要だと思っておりますので、そのあたりも含めて御回答をお願いしたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "上野賢一郎",
+        "role": "厚生労働大臣",
+        "summary": "- 分野横断的な対応が重要であると考え、「リハビリテーション統括調整室」を設置して体制を強化し、総合的な対策に取り組む",
+        "full_text": "リハビリテーション専門職の皆さんの活躍の場というのは、医療介護の現場にとどまらず、予防健康増進、そうした分野にも拡大をしておりまして、分野横断的な対応が重要だと考えております。私は就任してチームをつくるということでやってまいりましたが、さらに一歩進めて、今般、議員連盟からの要望もございますし、またこの委員会でもいろいろな御意見をいただきましたので、室を設置をしたいと思っております。リハビリテーション統括調整室を設置をいたしまして、体制を強化をして、総合的な対策に取り組んでまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=1427.1950000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "リハビリテーション統括専門部署の設置について",
+          "sub_asks": [
+            "統括専門部署を厚労省内に設置することへの考え",
+            "チームではなく担当課レベルでの設置の必要性への回答"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "リハビリテーション自民党の議員連盟"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "リハビリテーション統括調整室"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 3,
+          "trigger_phrase": "リハビリテーション統括調整室を設置をいたしまして",
+          "matched_pattern": "future-tense verb describing a CONCRETE government action with a named mechanism"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": true,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "リハビリテーション統括調整室を設置をいたしまして、体制を強化をして、総合的な対策に取り組んでまいります。",
+          "score": 0.9
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "リハビリテーション政策の統括部署設置という具体的な要望に対し、大臣が「統括調整室」の設置を明言したため、記録価値が非常に高い。",
+        "would_be_referenced": "high",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_008",
+      "segment_index": 2,
+      "topic": "リハビリ専門職の処遇改善",
+      "question": {
+        "speaker": "田野瀬太道",
+        "party": "自由民主党・無所属の会",
+        "summary": "- リハビリ専門職の賃金水準が低く、他産業への人材流出が起きている実態があるため、処遇改善に向けた見解を伺いたい",
+        "full_text": "続きまして、リハビリ専門職全体の処遇改善について問わせていただきます。高度な専門性と責任を担うリハビリ専門職でございますけれども、実は賃金水準は必ずしも十分とは言えません。全産業平均との差はですね、歴然としたものがあるわけでございます。リハビリ団体の皆さんから聞きますと、長くとも三十年以上は賃金がアップしていないというようなこともおっしゃっておられます。このままでは、他産業への人材流出、せっかく国家資格を取ったんですけど、稼げませんので、どんどんやめていくというのが実態でございます。これは、我が国のリハビリテーションの水準を保つことが厳しい、そんな状態になっているということでございます。処遇改善は、単なる労働問題ではなくて、国民が必要なリハビリを安定的に受けられるかどうかということに直結する問題であるかと思いますので、ぜひこの処遇改善に向けての厚労省の見解をお聞かせいただけたらと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "狭間",
+        "role": "",
+        "summary": "- 医療分野では令和7年度補正予算での賃上げ支援や、令和8年度診療修改定でのペースアップ措置を講じる\n- 介護・障害分野においても、経営状況を把握した上で物価や賃金上昇を適切に反映させる対応を実施する",
+        "full_text": "ただいま委員御指摘のリハビリ専門職も含めまして、医療介護障害福祉の現場で働く方々の人材確保や処遇改善は喫緊の課題であると、このように認識しております。まず、医療分野では、御案内のとおり、令和7年度補正予算で、賃上げに対する支援として、経営状況も踏まえつつ、医療機関がリハビリ専門職を含む従事者の賃金を3%分半年間引き上げる規模の措置を講じました。それに引き続きまして、本年6月に実施されます令和8年度診療修改定においては、リハビリ専門職を含む幅広い職種の方の賃上げに向けて、令和8年度、令和9年度、それぞれ3.2%のペースアップを実現するための措置を講じることとしているところでございます。また、介護障害分野におきましては、先ほど申し上げました通り、経営の安定、離職防止、人材確保を図る必要があるという認識のもとに、介護障害福祉サービス事業者の経営状況等を把握した上で、物価や賃金の上昇等を適切に反映するための対応を実施していくこととしております。こうした措置を通して、今後ともリハビリ専門職をはじめ、医療介護障害福祉の現場で働く方々の着実な賃上げにつなげていきたいと、このように考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5265"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=1427.1950000000002",
+      "metrics": null
+    },
+    {
+      "id": "qa_009",
+      "segment_index": 2,
+      "topic": "在留資格「医療」への言語聴覚士の追加",
+      "question": {
+        "speaker": "田野瀬太道",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 在留資格「医療」の対象に理学療法士や作業療法士は含まれているが、言語聴覚士が含まれていないため、追加してほしい",
+        "full_text": "外国人在留資格「医療」についてお聞きしたいと思います。法務省が外国人に対する上陸の審査許可の際に付与する資格であるんですけれども、その在留資格「医療」の中には、理学療法士や作業療法士などの業務に従事する活動は記載されております。これは記載されているんですけれども、もう一つ重要なリハビリ専門職、セラピストの一つであります言語聴覚士がなぜか入っていないということになっております。そこで法務省にお伺いします。ぜひ在留資格「医療」に言語聴覚士も加えていただきたいのですけれども、御回答よろしくお願いします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "磯部",
+        "role": "",
+        "summary": "- 受入れ対象の追加には、所管である厚生労働省の意見を十分に踏まえる必要がある\n- 現在、既に厚生労働省と協議を開始している",
+        "full_text": "在留資格「医療」につきましては、専門的・技術的分野の在留資格であり、我が国の産業及び国民生活に与える影響、その他の事情を勘案し、法務省令において受入れ対象となる資格を具体的に定めているところでございます。法務省令を改正し、在留資格「医療」の受入れ対象に言語聴覚士を追加するためには、追加の必要性や具体的要件等について、医療分野を所掌する厚生労働省の意見を十分に踏まえることが必要と考えております。現在、既に厚生労働省と協議を開始しているところでございまして、引き続き厚生労働省と"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=1427.1950000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "在留資格「医療」に言語聴覚士を追加してほしい",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "在留資格「医療」"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "言語聴覚士",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "厚生労働省"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "厚生労働省と協議を開始しているところでございまして",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "在留資格「医療」の受入れ対象に言語聴覚士を追加するためには、厚生労働省の意見を十分に踏まえることが必要と考えております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "言語聴覚士の在留資格追加という具体的要望に対し、厚労省と協議中であるという現状を回答しており、一定の記録価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "要望にとどまっており、追加しない場合の具体的デメリットや根拠を提示して追い込む形式にすればより強い回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_010",
+      "segment_index": 3,
+      "topic": "リハビリテーション専門職の役割と制度見直し",
+      "question": {
+        "speaker": "田野瀬太道",
+        "party": "自由民主党・無所属の会",
+        "summary": "- リハビリ専門職の活用による疾病予防や医療・介護費削減の推進を求める\n- 質疑を踏まえた大臣の見解を求める",
+        "full_text": "まとめに入らせていただこうと思いますが、リハビリの皆さんが本来業務を生き生きと全国で展開していただければいただくほど、国民の疾病の予防につながりますし、疾病を持っていらっしゃる方の重症化の予防につながりますし、もしくは手術が行われた方のその後の早期回復にもつながる。いわゆる医療費削減、介護費削減のいいことづくめなわけでございまして、総理が提唱します攻めの予防医療。これはもうリハビリの皆さんが元気になるかならないかに私はかかっているんじゃないのかな、こう言っても過言じゃないかと思っております。ぜひ仕組みを作っていただいた上で、どんどんとこれを政策を進めていただけたらと思っております。最後に今までの質疑応答を踏まえて、大臣から一言いただけたらと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "上野賢一郎",
+        "role": "厚生労働大臣",
+        "summary": "- 攻めの予防医療におけるリハビリ専門職の役割の大きさを認め、推進策を検討する\n- 医療関係職種の要請確保に取り組む\n- 時代の変化や予防医療への貢献を踏まえ、制度的な見直しについて検討する",
+        "full_text": "まず、攻めの予防医療に関しましては、高市内閣の重点政策でもございますが、リハビリテーション専門職の皆さんが果たす役割というのは非常に大きいと思いますので、どういった政策が推進できるか、しっかり検討していきたいと考えています。また、先ほど局長から答弁がありましたけれども、医療関係職種の要請確保、これについてもしっかり取り組んでいきたいと思います。昭和四十年にこの法律ができたということで、ちょうど私が生まれた年でございまして、その間、いろいろな状況変化をしていると思いますし、また今後、予防医療への貢献ということも期待をされるわけでありますので、これからのリハビリテーション専門職の皆さんの位置づけといいますか、役割といいますか、そうしたものも踏まえた上で、制度的な見直しというのが考えられるかどうか、これもしっかり検討していきたいと考えています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=2358.895",
+      "metrics": null
+    },
+    {
+      "id": "qa_011",
+      "segment_index": 3,
+      "topic": "イラン情勢に伴う医療機関への影響把握",
+      "question": {
+        "speaker": "沼崎満子",
+        "party": "中道改革連合・無所属",
+        "summary": "- イラン情勢に伴う医療機関への影響をどのように実態把握しているか\n- 現在把握している状況について伺いたい",
+        "full_text": "はじめにですが、厚生労働省としてこのイラン情勢に伴う医療機関への影響は、どのように今実態把握を行っているのか、インビス等を使っているというふうに承知しておりますが、そこの点の確認と、また現在の把握している状況についてお伺いをしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "森光一",
+        "role": "",
+        "summary": "- 情報提供窓口の設置やヒアリングに加え、インビスを用いたオンライン報告システムを運用\n- 5月8日時点で8,244事業者から相談があり、リスク分析を経て30件の供給不安を解消済み",
+        "full_text": "まず、厚生労働省では、医療機関や企業からの情報提供窓口の設置、それから製造・販売業者等への積極的なヒアリングに加えまして、4月10日よりインビスを用いた約1.3万の病院等からオンラインで随時報告可能なシステムの運用を開始するなど、さまざまなルートで情報収集を行っているところでございます。その結果、5月8日時点で8,244事業者、これはメーカー、卸、医療機関全部含めておりますが、からご相談をいただいているという状況でございます。いただいた情報につきまして、厚生労働省内の専門チームでリスク分析を行うなど精査をいたしまして、安定供給に影響があると判断されたもののうち、これまで、例えば低体重出生時の栄養補給に必要な、承認を仮定しているの、滅菌に必要な永住油や、その他の医療機器の滅菌に必要な酸化エチレンガス。また、人工透析用の血液浄化器、ダイアライザーの製造に用いる有機溶剤など、合計30件につきまして、供給不安の解消につなげることができたところでございます。日々いただいている相談内容について、順次精査しているところでございまして、引き続き安定供給に影響がある事例があれば、速やかに経済産業省等と共有し、対応を行ってまいりたいと考えているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=2358.895",
+      "metrics": null
+    },
+    {
+      "id": "qa_012",
+      "segment_index": 3,
+      "topic": "医療物資の供給不安件数の推移",
+      "question": {
+        "speaker": "沼崎満子",
+        "party": "中道改革連合・無所属",
+        "summary": "- 対応が必要な件数について、どのような推移があるか\n- 件数がどんどん上がっている状況にあるか確認したい",
+        "full_text": "この対応が一緒に、ちょっと追加になってしまいますが、対応が必要な件数というのは、上がって、どの程度数の推移というのがございますか。ちょっとそこの点も、どんどん上がっているのかどうかという状況を確認したいと思いますので、教えていただきたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "森光一",
+        "role": "",
+        "summary": "- 5月8日時点で安定供給に影響があると判断された品目数は73品目である\n- 相談受付やヒアリングの開始時と比べて、徐々に増えている状況にある",
+        "full_text": "相談件数につきましては、先ほど8,244事業者ということで、御報告させていただきましたけれども、そのうち重複等がございますので、対応安定供給に影響があると判断された、例えば項目というのは、その同じ5月8日時点では品目数で言いますと、73の品目となっております。この73の品目につきましても、相談の受付開始、それからヒアリングの開始から比べますと、徐々に増えてきておる。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=2358.895",
+      "metrics": null
+    },
+    {
+      "id": "qa_013",
+      "segment_index": 3,
+      "topic": "介護現場における物資確保状況",
+      "question": {
+        "speaker": "沼崎満子",
+        "party": "中道改革連合・無所属",
+        "summary": "- 介護現場で需要の多いビニール手袋、ポリ袋、おむつ等に影響が出ていないか",
+        "full_text": "今、医療機関、医薬メーカー等の状況を聞きましたけれども、今回のこのアンケートの調査の中で、介護の現場の方から使う量の多いビニール手袋、これも手に入らなくなるのではないか、あるいはポリ袋やおむつなどにも影響が。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "黒田",
+        "role": "",
+        "summary": "- 関係団体を通じて随時状況把握を行っており、不安の声は寄せられている\n- 現時点で介護サービスの提供に支障が生じている事例は把握していないが、引き続き注視し、必要に応じて関係省庁と連携して対応する",
+        "full_text": "高齢者施設等における手袋などの物資の確保状況につきましては、現在関係団体を通じまして随時状況把握を行っております。こうした状況把握の中で今後の推移についての不安の声というものは様々お聞きをしております。一方で現時点で介護サービスの提供に支障が生じるような事例があるというような話は聞いてはおりません。他方で先ほど伊勢局長からお話がありましたように今後の状況については大変注意深く見守っていく必要があるだろうというふうに考えております。引き続き関係団体と連携をしまして、状況は注視してまいりますし、介護サービスの提供に支障が生じるような状況が把握された場合には、関係省庁と連携をして、必要な対応を速やかに行ってまいる。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=2358.895",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "介護現場の物資不足の懸念について",
+          "sub_asks": [
+            "ビニール手袋等の確保への影響について"
+          ],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "介護の現場の方",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "状況は注視してまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "現時点で介護サービスの提供に支障が生じるような事例があるというような話は聞いてはおりません。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "介護現場の物資不足への懸念に対し、現状では支障はないとしつつ注視するという標準的な回答である。",
+        "would_be_referenced": "low",
+        "issue_in_design": "疑問文の形式になっておらず、懸念の提示に留まっているため、具体的な対策を問う形式にすべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_014",
+      "segment_index": 3,
+      "topic": "医療用手袋の備蓄放出の根拠と配布計画",
+      "question": {
+        "speaker": "沼崎満子",
+        "party": "中道改革連合・無所属",
+        "summary": "- 備蓄5000万枚の放出を決定した経緯と判断根拠、数量の根拠は何か\n- いつから、どのような対象施設に配布を行うのか",
+        "full_text": "そこでお伺いしますが、今回のグローブの放出を決定するに立った経緯、どういう情報を捉えて、どのように判断をして、5000万枚という数、どうしてこれを決めていたのか、その根拠と、またこれからいつからどういう対象施設に配布を行うのか、この点についてお答えをお願いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "森光一",
+        "role": "",
+        "summary": "- 相談の多くを医療用手袋が占め、全体的な不足はないが、一部の医療機関で確保が困難な「目詰まり」状態にあると判断した\n- パンデミック備蓄の余剰分から、確保困難な機関向けに約1か月分と想定される5000万枚を放出する",
+        "full_text": "そして手袋の関係でございますが、実はその相談のうち、かなり多くを、一番多く占めるのが、この医療用手袋でございました。その医療用手袋につきましては、主な販売業者において、1か月から2か月の備蓄はあるというふうに聞いておりまして、またメーカーにおいても現在通常どおりの製造を行っているということで、全体として直ちに供給が不足する状況ではないというふうに考えております。一方で流通の混乱を避けるために通常の発注量を超えるような発注については、調整を行っているという例がありましたし、また、一般のネット通販では取引を停止しているといったような例がございまして、結果として、歯科診療所など一部の医療機関において、手袋の確保が困難になっている、いわゆる目詰まりの状態にあると判断したものでございます。国においては、新型インフル特措法に基づきまして、パンデミックの発生に備え、個人防護具、これを備蓄しているところ、今般の状況を踏まえまして、備蓄している医療用手袋の余剰分のうち、確保が困難な医療機関に向けて、医療機関使用の約1か月分と想定されるような、まず5000万枚を放出するというものでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=2358.895",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "手袋放出の決定根拠と配布計画について",
+          "sub_asks": [
+            "放出を決定した経緯・情報・判断基準",
+            "5000万枚という数量の根拠",
+            "配布開始時期と対象施設"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "5000万枚"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.2
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "対象施設",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "1か月から2か月の備蓄"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "新型インフル特措法"
+            },
+            {
+              "type": "number",
+              "excerpt": "5000万枚"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "備蓄している医療用手袋の余剰分のうち、確保が困難な医療機関に向けて、医療機関使用の約1か月分と想定されるような、まず5000万枚を放出するというものでございます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "放出の根拠（目詰まり状態の解消）と数量の根拠（1か月分想定）は示されたが、配布時期と具体的な対象施設についての回答が欠落している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "配布時期と対象施設という具体的なスケジュールに関する問いを、根拠の問いと混ぜて一つの文章で尋ねたため、回答から漏れやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_015",
+      "segment_index": 3,
+      "topic": "医療用手袋の備蓄放出開始時期",
+      "question": {
+        "speaker": "沼崎満子",
+        "party": "中道改革連合・無所属",
+        "summary": "- 備蓄品の放出開始時期について伺いたい",
+        "full_text": "お答えいただいてなかったかなと思いますが、開始時期も教えていただいてよろしいですか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "森光一",
+        "role": "",
+        "summary": "- 医療機関からの要請を受け付けて放出する手順であり、速やかに準備を整えているところである",
+        "full_text": "手袋の備蓄品の放出に向けては、まず医療機関からの要請を受け付け、そして放出をするという手順になっておりまして、これにつきまして、今、速やかに準備を整えているというところでございまして、という状況でございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=2358.895",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "備蓄品放出の開始時期について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "手袋の備蓄品"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "速やかに準備を整えている",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "手袋の備蓄品の放出に向けては、まず医療機関からの要請を受け付け、そして放出をするという手順になっておりまして",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "開始時期という具体的な問いに対し、手順の説明と「準備中」という抽象的な回答に留まっており、価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「いつからか」という問いに対し、具体的な日付や月を答えるよう促す形式にするべきだった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_016",
+      "segment_index": 3,
+      "topic": "医療用手袋の供給「目詰まり」解消策",
+      "question": {
+        "speaker": "沼崎満子",
+        "party": "中道改革連合・無所属",
+        "summary": "- 供給はあるが現場に届かない「目詰まり」状態を解消するために、どのような対策を講じているか",
+        "full_text": "今のお話の中で、たびたび御答弁の中にも目詰まりという言葉が出てまいりますけれども、供給は垂れているんだけれども目詰まりが起きていて供給ができていない、そういうお答えが今ございました。これはやはりとは言っても現場に届かなければ非常に現場は困ってしまうわけですので、実際ではこの目詰まり自体を解消するための対策というのはどういったことを今やっていらっしゃるのか御答弁をお願いしたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "森光一",
+        "role": "",
+        "summary": "- 医療機関および供給業者団体へ適切な受注・発注への協力を依頼した\n- 日本歯科商工協会に対し、歯科診療所への適切供給への協力を依頼した\n- 5月18日の週より要請受付を開始し、5月下旬より順次配送予定である",
+        "full_text": "厚生労働省といたしましては、こうした目詰まりの解消に向けまして、3月の30日及び31日に、医療機関及び供給業者団体の双方に対して、医療用物資等について、必要量に見合う量の受注、発注、それから適切な対応への協力を依頼することをしております。また併せて4月の13日に日本歯科商工協会に対しまして、歯科診療の現場に必要な医療用手袋が適切に供給されるよう御協力いただきたい旨の依頼を行ったところでございます。特にこれは歯科診療所においてなかなか手袋を購入しづらいという御意見がありまして、これを行ったということでございます。また、目詰まりにより、医療用手袋の確保が困難な医療機関向けに、医療用手袋の備蓄を放出することにしておりまして、5月18日の週内より、予選の受付を開始しまして、その後、5月下旬のできるだけ速やかな時期に順次各医療機関に配送する予定としております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=2358.895",
+      "metrics": null
+    },
+    {
+      "id": "qa_017",
+      "segment_index": 3,
+      "topic": "医療物資の在庫情報の周知",
+      "question": {
+        "speaker": "沼崎満子",
+        "party": "中道改革連合・無所属",
+        "summary": "- 現場の不安解消のため、在庫状況などの情報を明確に周知し、現場に分かる形で示すべきではないか",
+        "full_text": "現場で一番やはり不安が大きくなってしまうのは、在庫があるのかないのか、やはりそこがわからないというところが一番強いと思います。実際、アンケートの声の中に、在庫についての情報が入らないので不安だ、あるいは卸しに聞いてもわからないといったお声もありました。今、さまざま解決したものも政府が対応していただいて解決した物品もあると思いますし、まだ解決していないものもあると思います。そこをしっかり明確に周知をしていただいて、現場に分かる形で示していただくのが、やはりここは一番重要かと思いますが、その点につきまして、どのように対応するか、御答弁をお願いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "上野賢一郎",
+        "role": "厚生労働大臣",
+        "summary": "- あらゆる手段で情報収集を徹底し、目詰まりがあるものはリスク評価の上で経産省と連携して解消に取り組む\n- 情報公開についても適宜適切に実施するが、不安が生じないよう配慮して取り組む",
+        "full_text": "先ほどから局長が申し上げておりますとおり、川上から川下まで、あらゆる手段、さまざまな手段を通じて、情報収集徹底をしております。その中で目詰まりがあるというものにつきましては、そのリスク評価をした上で、経産省と連携をして、しっかり解消に向けて取り組ませていただいているところであります。情報公開につきましても、適宜適切に実施をしていきたいと思います。ただ、目詰まりが解消する前の段階で情報公開をやります。不安が生じないように取り組んでいきたいと考えています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=2358.895",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "在庫状況の周知方法と対応策について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "アンケートの声の中に"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "現場",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "経産省"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "取り組んでいきたいと考えています",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "情報公開につきましても、適宜適切に実施をしていきたいと思います。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "在庫状況の周知を求める質問に対し、抽象的な取り組み方針を述べるに留まっており、具体的な周知方法や期限が示されていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのように対応するか」という問い方が広いため、具体策ではなく精神論的な回答を許容してしまっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_018",
+      "segment_index": 3,
+      "topic": "リハビリテーション専門職の業務範囲の見直し",
+      "question": {
+        "speaker": "沼崎満子",
+        "party": "中道改革連合・無所属",
+        "summary": "- 介護予防やスポーツ分野など、医療以外の場での活躍を広げるため、業務範囲の見直しを行うべきではないか\n- 政府の見解を伺いたい",
+        "full_text": "前の先生もおっしゃっていましたが、やはりリハビリテーション専門職の業務の範囲についてですけれども、今このリハビリテーション専門職というのは、もともとは医療現場で、さまざまな疾患の回復や維持を支える、そういう重要な役割を、医師の指示のもとで医療機関でやってきた、そういったところでありますけれども、今、一方で、現在のリハビリテーション専門職の専門性というのは、単に医療現場だけではなくて、健康寿命の延伸である介護予防であるとか、あるいはスポーツ分野においても非常に活用をされております。ですので、このリハビリテーション専門職の方というのは、この医療以外のところでの活躍というのが非常に期待されるところです。診療や治療として行われる医療行為としての一環として行われるリハビリテーションに関しては、当然この医師の医学的判断の下で安全に行われる必要性があるとは思いますけれども、その基本前提はありつつも、やはり様々な介護予防であったり、スポーツであったり、健康増進であったり、そういったところでもご活躍をするためには、やはりこの業務の見直しというのが必要になってくると思いますし、今このリハビリテーションのリハビリテーション専門職の方って、専門校の定員がどんどん割れて、人数が減ってきている状況があるので、業務範囲を見直して活躍の場を広げるということは、当然、リハビリテーション専門職の魅力につながるというふうに私は思っております。ですので、この点に関する政府の見解を、改めてもう一度お伺いをしたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "森光一",
+        "role": "",
+        "summary": "- 専門職が地域や介護予防事業などで活躍している現状を認識している\n- 5月7日より「医療関係職種の安定的な養成確保に関する検討会」を設置し、意見を踏まえ必要な検討を行いたい",
+        "full_text": "現行法、リハビリテーション専門職の業務というのは、身体に障害等のある者等に対して診療の補助として理学療法等を行うこととされておりますが、御指摘のように現在では介護予防事業などにおける、その入院に至る前からの役割など、地域の中でまさに活躍していただいているというふうに認識をしているところでございます。現在、医療関係職種の安定的な養成確保に関する検討会をまず設置し、開催を5月7日より始めております。議論を開始したところでございまして、引き続き関係者の皆様の意見も踏まえながら、必要な検討を行ってまいりたいと考えているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=2358.895",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "リハビリ専門職の業務範囲見直しに関する政府見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "リハビリテーション専門職",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "医療関係職種の安定的な養成確保に関する検討会"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "5月7日"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 3,
+          "trigger_phrase": "医療関係職種の安定的な養成確保に関する検討会をまず設置し、開催を5月7日より始めております",
+          "matched_pattern": "future-tense verb describing a CONCRETE government action with a named mechanism"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "医療関係職種の安定的な養成確保に関する検討会をまず設置し、開催を5月7日より始めております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "リハビリ専門職の業務範囲拡大という提案に対し、具体的に設置された検討会を挙げて回答しており、実効性のある回答となっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "政府の見解を問う抽象的な形式であるため、具体的な見直し案や期限を求める形式にすればより拘束力のある回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_019",
+      "segment_index": 3,
+      "topic": "リハビリテーション専門職の名称使用",
+      "question": {
+        "speaker": "沼崎満子",
+        "party": "中道改革連合・無所属",
+        "summary": "- 医療以外の場で活動する場合に、国家資格の名称を掲げて活動することができるか",
+        "full_text": "そこでですが、このリハビリテーション専門職の方が医療以外の場でさまざまお仕事をされた場合に、この国家資格の名称を掲げて活動ができるのかどうか。これは受ける側からすると、専門職の方が専門性の高い行為を行ってもらえるという判断基準にもなると思いますので、その国家資格の名称を掲げて活動することができるかどうかの確認をいたしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "森光一",
+        "role": "",
+        "summary": "- 平成25年の通知により、介護予防事業等において理学療法士等の名称を使用することが可能であり、診療の補助に該当しない業務は医師の指示不要であるとしている",
+        "full_text": "ですので、介護予防事業等の提供については、原則として通常は特別の資格なしに行うことができるという原則でございますが、リハビリテーション職種の方もご活躍をいただいているということでございますので、現場での解釈に混乱が生じないように、平成25年に介護予防事業等において、理学療法士等という名称を使用することが可能である、診療の補助に該当しない業務は医師の指示は不要であるという通知を出したところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=2358.895",
+      "metrics": null
+    },
+    {
+      "id": "qa_020",
+      "segment_index": 3,
+      "topic": "作業療法士・言語聴覚士の名称使用",
+      "question": {
+        "speaker": "沼崎満子",
+        "party": "中道改革連合・無所属",
+        "summary": "- 名称使用可能という通知は、作業療法士と言語聴覚士にも適用されるのか",
+        "full_text": "名称使用可能だっていうことでしたけれども、これは理学療法士に関することだと思うんですけれども、ちょっとこれ質問に入れてなかったんですが、通告してないんですが、作業療法士と言語聴覚士に関しては、ここにはまるのかどうかということも、ちょっと確認で教えていただきたいと思うんですが。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "森光一",
+        "role": "",
+        "summary": "- 平成25年の通知は理学療法士について出しているが、作業療法士や言語聴覚士についても介護予防事業の中で活躍を期待しているケースがある",
+        "full_text": "まず平成25年の通知中については、議員御指摘のように、理学療法士という名称を使用することについては何ら問題ないということで、平成25年に出させていただいております。作業療法士、言語聴覚士の方々にも、今、介護予防事業の中で、市町村によってはぜひ活躍をしていただきたいということで、お願いしているようなケースもあるかと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5265"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=2358.895",
+      "metrics": null
+    },
+    {
+      "id": "qa_021",
+      "segment_index": 3,
+      "topic": "リハビリテーションという名称の明確化と適正利用",
+      "question": {
+        "speaker": "沼崎満子",
+        "party": "中道改革連合・無所属",
+        "summary": "- 民間サービス等で「リハビリ」という言葉が汎用されており、専門職が行うものかどうかが不明確である。明確化する必要があるのではないか",
+        "full_text": "最後もちょっと重なってしまうんですけれども、やはり今、リハビリという言葉自体がかなり一般的になっておりまして、さまざまなところで何でもリハビリ、リハビリテーションということを使われているというふうに思います。医療だけではなくて、民間サービスも含めてリハビリ、リハビリテーションという言葉が使われています。ですけれども、一方で、やはりリハビリテーション専門職が行うリハビリテーションというのが明確になりづらい。医療の現場の中でも、リハビリテーション専門職でない人がやる医療行為に関しても、この言葉が使われるということもありますので、ここがしっかり専門職の方がやっているものなのか、それとも違うのかということが明確化する必要性があるのではないかと思いますが、ここに関する厚労省の御見解をお尋ねしたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "森光一",
+        "role": "",
+        "summary": "- 医療機関外での指導に資格を必須とはしていないが、資格を持たない者が紛らわしい名称を用いることは根拠法で禁止されており、罰則も設けている\n- 今後も必要な対応を検討したい",
+        "full_text": "先ほどの介護予防事業等のように、基本的には医療機関の外でそのような指導を行うということについては、資格を有することを求めるというものではないというふうに考えておりますけれども、ただそのような紛らわしいような名称を用いるといったようなことについては、先ほどご紹介しましたとおり、各資格の根拠法において、資格を持たないものが紛らわしい名称を用いてはならない。そうしておりまして、また違反したものに対する罰則、これも設けておるというところでございまして、必要な対応を今後も検討していきたいというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=2358.895",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "リハビリという言葉の定義と専門職による実施の明確化について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "リハビリテーション専門職",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "evidence_citation",
+              "excerpt": "各資格の根拠法において、資格を持たないものが紛らわしい名称を用いてはならない"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "必要な対応を今後も検討していきたい",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "各資格の根拠法において、資格を持たないものが紛らわしい名称を用いてはならない。そうしておりまして、また違反したものに対する罰則、これも設けておる",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "リハビリという用語の乱用に対し、根拠法による名称独占と罰則の存在を回答しており、一定の記録価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「明確化する必要性があるのではないか」という提案形式のため、政府の具体的な改善策を引き出す問いかけとしては弱い。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_022",
+      "segment_index": 4,
+      "topic": "アレルギー患者向け調査の結果と今後の方向性",
+      "question": {
+        "speaker": "原田直樹",
+        "party": "中道改革連合・無所属",
+        "summary": "- 令和7年度に予定していた患者向け調査の結果について\n- 調査結果を受けて今後どのような方向性で検討を進めるか",
+        "full_text": "厚生労働委員消費者特別委員会の方で私質問をさせていただいているんですけれども、その際には、患者向けの調査を行いますということを、令和7年度に患者向けの調査を行うというふうに御答弁をいただいて、その結果と今後それを受けて、どのような方向性で今後検討が進むのかについて、端的で結構ですので、御答弁をお願いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "井上審議官",
+        "role": "",
+        "summary": "- アレルギー患者団体を対象としたアンケート調査を実施し、先日公表した\n- 事業者の取り組みにより外食利用が可能になったとの声がある一方、対応不可という情報だけでも提供してほしい等の要望があった",
+        "full_text": "委員、今御指摘の昨年度に実施しました患者にとって有益な情報提供がどのようなものか把握するためのアレルギー患者団体を対象としたアンケート調査、これは先日公表したところでございます。調査結果としてはアレルギー患者、患者団体の声として、事業者による食物アレルギー対応の取り組みが広がった結果、外食など食用を利用できるようになったとの声があった一方で、食物アレルギー対応ができないといった情報だけでも提供してほしいとか、食物アレルギーに関する情報提供の。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=3892.395",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "患者向け調査の結果と今後の検討方向性について",
+          "sub_asks": [
+            "調査の結果はどうだったか",
+            "今後どのような方向性で検討が進むのか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "令和7年度"
+            },
+            {
+              "type": "past_answer",
+              "excerpt": "患者向けの調査を行いますということを、令和7年度に患者向けの調査を行うというふうに御答弁をいただいて"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "患者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "アレルギー患者団体を対象としたアンケート調査"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "事業者による食物アレルギー対応の取り組みが広がった結果、外食など食用を利用できるようになったとの声があった",
+          "score": 0.4
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "回答が途中で切れており、今後の方向性についての言及がないため、完結したQ&Aとしての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "今後の方向性について具体的にどのような点（制度改正かガイドライン策定か等）を問いたいのかを明確にすべき。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_023",
+      "segment_index": 4,
+      "topic": "iPS細胞由来再生医療製品アムシェプリの薬価と保険適用",
+      "question": {
+        "speaker": "原田直樹",
+        "party": "中道改革連合・無所属",
+        "summary": "- iPS細胞由来の製品として世界初の実用化となるアムシェプリの保険適用と、約5,530万円という高額な薬価設定についての大臣の所感はどうか",
+        "full_text": "今日の午前中に中央社会保険医療協議会、中医協の方で、iPS細胞を使ったパーキンソン病向けのスミトモファーマの再生医療製品アムシェプリを保険適用とすることが決定をされ、また患者1人当たりの薬価が、公定価格が5,530万6,737円にするということが、今日の午前中に決定をされたということであります。これは、iPS細胞由来の製品の実用化は世界初ということでありまして、この5,530万、一見すると高額な薬価が設定をされたものの、指定難病の医療費助成制度や、高額療養費制度などを活用することで、患者の実態の自己負担は抑えられるということであります。このアムシェプリにつきましては、現在、条件及び期限付き承認の状況でありますので、今後、本格承認がされた際には、さらに薬価が高額になることが見込まれていると、そうした内容を把握をしております。まずは冒頭、この件につきまして、薬価の5,530万円という価格も踏まえて、大臣のご所感をお伺いしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "上野賢一郎",
+        "role": "厚生労働大臣",
+        "summary": "- 中医協の算定ルールに基づき決定された適切な薬価であると認識している\n- 日本初の治療製品が世界で初めて実用化されたことは大変喜ばしく、世界中の患者の救いとなることを期待している",
+        "full_text": "今お話のあったとおり、本日、中医協におきまして、iPS細胞を用いた再生医療等製品のアムシェプリについて、5月20日届けで保険適用することが了承されました。薬価は約5,500万円ということでありますが、中医協において薬価の算定ルールに基づいて、薬価算定組織における審議を経て決定をされた適切な薬価であるというふうに認識をしております。これまで厚労省におきましても、研究開発を支援してまいりましたけれども、このiPS細胞をもとにした日本初の治療製品、これが世界で初めて実用化されたことは大変喜ばしく感じております。日本のみならず、世界中の患者の皆様の救いとなることを期待をしているところであります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=3892.395",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "アムシェプリの保険適用と薬価に関する大臣の所感",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "中央社会保険医療協議会、中医協"
+            },
+            {
+              "type": "number",
+              "excerpt": "5,530万6,737円"
+            },
+            {
+              "type": "other",
+              "excerpt": "アムシェプリ"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "パーキンソン病患者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "deadline",
+              "excerpt": "5月20日届け"
+            },
+            {
+              "type": "number",
+              "excerpt": "約5,500万円"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "中医協において薬価の算定ルールに基づいて、薬価算定組織における審議を経て決定をされた適切な薬価であるというふうに認識をしております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "世界初のiPS細胞由来製品の保険適用と薬価について、大臣が「適切である」と認めた記録として価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "所感のみを問う形式であるため、今後の薬価変動への対応など具体的な方針を問う構成にすればより価値が高まった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_024",
+      "segment_index": 4,
+      "topic": "指定難病対策全体の基本認識と充実の方向性",
+      "question": {
+        "speaker": "原田直樹",
+        "party": "中道改革連合・無所属",
+        "summary": "- パーキンソン病患者や家族が直面する、受給者証の更新手続き、地域間医療格差、就労・家族支援、研究開発などの課題に対し、今後どのような方向で充実させていくのか、大臣の基本認識を問う",
+        "full_text": "まず1点目ですが、パーキンソン病患者、家族の実情を踏まえた指定難病対策全体に対する基本認識について、上野厚生労働大臣にお伺いをいたします。パーキンソン病の患者さんやご家族からは、病気そのもののつらさに加えて、指定難病医療費助成に係る受給者証の毎年の更新手続きですとか、あるいは地域による医療格差、就労を続けることの困難さ、就労支援、家族支援、研究開発まで含めて、今後どのような方向で充実をさせていくのか、大臣の基本認識をお伺いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "上野賢一郎",
+        "role": "厚生労働大臣",
+        "summary": "- 難病法に基づき、良質かつ適切な医療の確保と療養生活の質の向上・維持を図るため、医療費助成、調査研究、生活・相談支援などの取組を進めている\n- 総合的な対策を着実に進め、中身を充実させていきたい",
+        "full_text": "パーキンソン病を含む指定難病につきましては、難病法に基づきまして、難病の患者に対する良質かつ適切な医療の確保、また療養生活の質の向上、質の維持向上、こうしたことを図ることを目的として、さまざまな取組を進めているところであります。今お示しをいただきましたとおり、医療費助成であったり、あるいは難病の診断、治療方法に関する調査研究の推進であったり、また患者の方々の療養生活に関する生活支援、相談支援であったり、そうした取組を進めております。やはりこれは総合的な対策を着実に進めることが大切だと考えておりますので、そうした観点からもしっかりその中身が充実したものになるように取り組んでいきたいと考えています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=3892.395",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "パーキンソン病対策の充実に関する基本認識",
+          "sub_asks": [
+            "受給者証更新手続きの改善",
+            "地域間医療格差の解消",
+            "就労支援の充実",
+            "家族支援の充実",
+            "研究開発の推進"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "パーキンソン病患者、家族",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "難病法"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "しっかりその中身が充実したものになるように取り組んでいきたいと考えています",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "総合的な対策を着実に進めることが大切だと考えておりますので、そうした観点からもしっかりその中身が充実したものになるように取り組んでいきたい",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者が複数の具体的な課題を提示したのに対し、大臣は概論的な回答に留まり、個別の課題への言及や具体的な改善策の提示がなかった。",
+        "would_be_referenced": "low",
+        "issue_in_design": "複数の課題を一つの質問に盛り込みすぎたため、回答者が包括的な（抽象的な）回答で逃げられる構成になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_025",
+      "segment_index": 4,
+      "topic": "受給者証の更新手続きおよび臨床調査個人票の提出負担軽減",
+      "question": {
+        "speaker": "原田直樹",
+        "party": "中道改革連合・無所属",
+        "summary": "- 進行性疾患であり状態が改善しない患者にとって、毎年の診断書取得や更新手続きの負担が非常に大きい。更新頻度を2〜3年に延ばすなどの見直しを行う考えはあるか",
+        "full_text": "続いて、受給者証の更新手続や臨床調査個人票の提出負担の軽減について伺います。患者さんが非常に切実に訴えておられたのは、このパーキンソン病は進行性の病気で、現時点では有効な治療法が確立されておらず、毎年良くなるわけでもないのに、毎年毎年診断書をなぜ取らなければならないかというお声であります。高齢の方や症状の重い方ほど、その負担は大きく、病気と向き合いながら、毎年制度上の手続きとも戦わされている、そうした実感があるわけでございます。具体的にお伺いをした中で、例えば地域によっても病院へのアクセスの差もあるということはお伺いしますけれども、この2時間かけていろいろと準備をしていって、待ち時間も長くて、5分だけ見てもらって終わりと。これは毎年毎年悪くなるしかないのに、どうしてこんな大変な思いをしてやらなければいけないのか。もう少しこの1年ではなくて、2年、3年に頻度を明けるということもできないのか。こんなお声も数多くお伺いをいたしております。厚労省としても、この臨床調査個人票の提出頻度の見直し、これは進めておられると。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "大坪健康生活衛生局長",
+        "role": "",
+        "summary": "- マイナポータルを活用した申請手続きのオンライン化による負担軽減を検討している\n- 難病情報データベースを用いて重症度分類の推移を検証し、手続きの簡素化・効率化に取り組みたい",
+        "full_text": "指定難病制度、先生お詳しいと思いますが、指定難病の患者様がまず重症度分類を満たしていること、また重症度分類を満たしていなかったとしても、申請月以前の12ヶ月以内で、医療費の総額が33,330円を超える月が3月以上あること、このいずれかに該当する場合には、医療費の助成を行わせていただいております。その助成に当たりましては、先生からも御指摘ありましたように、今、患者の申請手続の負担軽減を目的としたマイナポータルを活用した申請手続のオンライン化、この検討を鋭意進めているところでございます。また加えて更新期間についてのお尋ねもございましたが、今、難病情報データベースで各疾病の情報が取れますので、患者様の重症度分類の推移、全く良くならないのにというお話がありましたが、実際にその重症度分類がどのように推移していくのかということを検証を行うこととさせていただいております。今後とも少しでも利便性の向上に資するように、手続きの簡素化、効率化に取り組んでまいりたいと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=3892.395",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "難病の更新手続・個人票提出負担の軽減について",
+          "sub_asks": [
+            "診断書の提出頻度を1年から2〜3年に延ばせないか"
+          ],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "パーキンソン病患者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "33,330円"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "マイナポータル"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "難病情報データベース"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "重症度分類がどのように推移していくのかということを検証を行うこととさせていただいております",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "重症度分類がどのように推移していくのかということを検証を行うこととさせていただいております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "更新頻度の延長という具体的な提案に対し、現状の制度説明とデータベースによる検証という回答に留まっており、直接的な回答は得られていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問の末尾が「進めておられると」という確認形式で終わっており、明確な問いかけ（〜してほしい、〜できるか）として完結していない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_026",
+      "segment_index": 4,
+      "topic": "進行性・症状変動疾患における診断・判定の実態反映",
+      "question": {
+        "speaker": "原田直樹",
+        "party": "中道改革連合・無所属",
+        "summary": "- 病院での短時間の診察では、日々の症状変動や生活上の困難が十分に反映されず、実態と乖離する恐れがある。現行の仕組みで十分か、また本人報告や補足資料の活用を検討する考えはあるか",
+        "full_text": "続いて、少し今の点とも関連をしますけれども、進行性疾患や症状変動のある疾患における診断書や更新判定の実態反映のあり方についてお伺いをいたします。先ほど2時間かけていって5分で終わりという話もさせていただきましたが、患者さんからは長く待って、実際の診察は短時間で終わることも多いと。また、その限られた時間だけでは、日によって、あるいは時間帯によって変わる症状や、生活上の困りごとが十分に反映されないのではないかという不安の声も数多く頂戴をいたしました。このパーキンソン病に関しましても、その良い時と症状が比較的軽い時と重い時の差がかなり激しいという中で、やはり物理的に病院まで移動して受診をするためには、しっかりとこの薬を飲んで体調を整えて、ある意味一番症状が軽い、いい状態の時にお医者さんに見ていただいて、そこで診断をされている。ただ、実際には毎日毎日過ごす中では、もっと症状が重くて大変な時もあるんだと、そういったお声をお伺いをしております。こうした進行性の疾患、症状変動の大きい疾患では、制度上の病院での判定というのが、患者さんの日常の実態とずれてしまうという恐れがあると思います。現行の診断書様式や更新判定の仕組みで、進行性疾患や症状変動のある疾患の実態を十分に把握できていると考えておられるのでしょうか。また、患者本人の生活状況や日常の困難をより適切に反映をするために、本人報告や生活実態の記載、補足資料の活用など、今申し上げたのはあくまで例でありますけれども、こうした何らかの方法を活用する、検討するお考えがあるのかどうか、見解をお伺いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "大坪健康生活衛生局長",
+        "role": "",
+        "summary": "- 多くの疾患で症状の進行や変動が認められると考えている\n- パーキンソン病の重症度分類における臨床調査個人票の注意書き等により、患者の状態把握がなされていると考えている",
+        "full_text": "お答え申し上げます。パーキンソン病に限らないことでありますけれど、多くの疾患につきましては、症状の進行ですとか変動、これが認められる場合は多いものと考えております。こうした症状の特性も踏まえまして、例えばパーキンソン病の重症度分類につきましては、先生も先ほどおっしゃっていた臨床調査個人票というものが、各疾患ごとに示されているわけでありますけれど、その中の注意書きで、治療開始後における重症度分類、非常に患者様の状態を把握することがなされているのではないかというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=3892.395",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "進行性・変動性疾患の判定実態の把握と改善策について",
+          "sub_asks": [
+            "現行の診断書様式や更新判定の仕組みで実態を十分に把握できているか",
+            "本人報告や補足資料の活用など、実態を適切に反映させる方法を検討する考えがあるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "パーキンソン病"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "パーキンソン病患者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": true,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "臨床調査個人票"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "パーキンソン病の重症度分類につきましては、臨床調査個人票というものが、各疾患ごとに示されている",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は実態把握の不十分さと改善策の検討を求めたが、回答者は既存の調査票で把握できているという現状説明に留まり、改善へのコミットメントはなかった。",
+        "would_be_referenced": "low",
+        "issue_in_design": "検討の有無を問う形式だが、回答者が「現状で十分である」と判断すれば検討不要となるため、具体的な不備の事例を提示して改善を迫る構成が望ましい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_027",
+      "segment_index": 4,
+      "topic": "付随症病に係る医療費助成の周知と運用の標準化",
+      "question": {
+        "speaker": "原田直樹",
+        "party": "中道改革連合・無所属",
+        "summary": "- 制度があるにもかかわらず、患者や医師に周知されず助成を受けられない事例がある。付随症病の対象範囲をどう分かりやすく示し、判定フローやチェックリスト等で運用の標準化を進める考えはあるか",
+        "full_text": "続きまして、付随症病に係る医療費助成の周知徹底と現場運用の標準化についてお伺いをしたいと思います。今の受給者証の更新の話ありましたけれども、それは医療費助成を受けるためにその更新が必要というわけでありますけれども、制度上は助成の対象になり得るのにもかかわらず、患者さんご自身やまた一部の医師に制度が十分に周知されておらず、実際には助成が受けられていない、そうした事例が、実態が存在をしていると伺っております。私が直接お話をお伺いをしたある患者さんは、最初にこのパーキンソン病という診断を受けてから、8年間もの間、医療費助成の制度の存在自体を知らされずに、後々、パーキンソン病友の会という患者団体に入会をしてから、8年たって初めてそのことを知らされたというお話もございました。制度は整っているにしても、制度があるのにそれが届いていない。知っている人だけが救われて、知らなかった人が取り残される。これではせっかく制度があったとしても公平とは言えませんし、また不十分であると思います。パーキンソン病に関して言えば、特に足がうまく前に出なくて転倒してしまう、またそれで骨折をしてしまうなどの付随症病について、神経内科と整形外科の連携不足であるとか、また地方の医療機関での認知不足によって適応漏れが起きているのではないかという指摘がございます。この問題につきましても、私も348ある指定難病について、広く詳細に存じ上げているわけではございませんが、パーキンソン病以外の他の指定難病でも同じようなことは起こり得る問題であるのかなというふうに思っております。付随症病に係る助成の考え方や対象範囲を患者、家族、医療機関、自治体にどう分かりやすく示していくのか。また、例えばですけれども、判定フロー、チェックリスト、周知研修など、何かしらの方法で、現場での運用の標準化を進めるお考えがあるのか、見解をお伺いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "大坪健康生活衛生局長",
+        "role": "",
+        "summary": "- 医療費助成の対象は指定難病および付随して発生する症病と定められている\n- 付随症状か否かの判断は、症状の特性や発生原因を総合的に分析し医学的に判断する必要があり、個々に異なるため一律に標準的な提示をすることは難しい",
+        "full_text": "お答え申し上げます。指定難病の医療費助成の対象医療、これは難病法並びに施行規則におきまして、指定難病及び当該難病に付随して発生する症病と定められているところでございます。難病に付随した症状であるか否か、これを標準的にお示しはできないのかというお尋ねでありましたが、医療現場においては当該症状の特性やその発生原因等、やはり総合的に分析した上で、医学的に判断していく必要があり、個々にその状況というのは異なるであろうというふうに考えておりますため、一律にこういった症状であれば、付随疾患であるというふうに。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=3892.395",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "付随症病の周知徹底と運用標準化への見解",
+          "sub_asks": [
+            "助成の考え方や対象範囲をどう分かりやすく示すか",
+            "判定フローやチェックリスト等で運用の標準化を進める考えがあるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "パーキンソン病友の会"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "パーキンソン病患者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": true,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "難病法並びに施行規則"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "医療現場においては当該症状の特性やその発生原因等、やはり総合的に分析した上で、医学的に判断していく必要があり",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な運用標準化の提案に対し、医学的判断が必要であるとして一律の基準策定を否定する回答に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "周知方法についての問いが具体的でないため、政府側が「医学的判断」という一般論で逃げやすい構成になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_028",
+      "segment_index": 4,
+      "topic": "地域医療格差の解消と専門医療アクセスの強化",
+      "question": {
+        "speaker": "原田直樹",
+        "party": "中道改革連合・無所属",
+        "summary": "- 地方での専門医不足による通院負担や治療の遅れがある。専門医療機関と地域医療機関の役割分担をどう整理し、遠隔医療や交通支援など患者負担に即した改善を進める考えはあるか",
+        "full_text": "続いて、地域医療格差、専門医療アクセス、診療連携体制の強化についてお伺いいたします。地方では、神経内科の専門医が足りず、県外受診、また場合によっては、航空機を使って移動して通院しなければならない、そんな事例もあるということをお伺いいたしました。それだけでも、この移動の負担が、患者さんやご家族にとっては大変なことでありますけれども、加えて適切な専門医療にアクセスできないことで治療が十分でないまま症状が悪化をしてしまうそのようなことがあれば、地域によって命や生活の質に差が生じているということにもなり得てしまいます。パーキンソン病を含む指定難病について、専門医療機関と地域医療機関の役割分担をどのように整理をし、また、病診連携や在宅支援をどう強化をしていくのか。また、専門医の出張外来、遠隔医療、地域連携クリニック、交通支援など、患者負担の実感に即した改善を進めていくお考えがあるのか、見解をお伺いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "大坪健康生活衛生局長",
+        "role": "",
+        "summary": "- 難病診療連携拠点病院（47自治体88機関）や難病診療分野別拠点病院（28自治体88施設）を中心とした医療体制整備を進めている\n- 難病医療支援ネットワークと連携し、相談支援や診療連携、入院調整などを重層的に整備し、アクセスの確保と連携強化を図りたい",
+        "full_text": "お答え申し上げます。難病患者さんがどこに暮らしていらっしゃっても適切な医療を受けられるように、疾病の特性に応じて早期に正しい診断が受けられ、また身近な医療機関においては継続的に治療を受けられる体制、これが重要であるというふうに考えております。厚生労働省としては、都道府県が指定する難病診療連携拠点病院、これは地域全体の難病医療のネットワークの中心となる医療機関のことでございまして、これが47自治体に88医療機関すでにございます。また、難病診療分野別拠点病院、こちらは特定分野での高度専門的な医療を行う病院として、今現在28自治体に88施設置かれているというところでありまして、こういった医療機関を中心として、難病医療体制の整備、これを厚生労働省では進めているところであります。これらの拠点病院におきましては、さらに国立高度専門医療研究センター内の難病に関する高度な知見を有する専門医療機関から構成されます難病医療支援ネットワークと連携しながら、難病患者様に対する相談支援や診療連携、入院調整など行っているという形で重層的に整備をしているところであります。今後ともこうした取組を通じまして、専門医療のアクセスの確保や診療連携体制の強化を図ってまいりたいと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=3892.395",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "難病の専門医療アクセス確保と連携体制の強化策",
+          "sub_asks": [
+            "専門医療機関と地域医療機関の役割分担の整理と連携・在宅支援の強化策",
+            "出張外来や遠隔医療、交通支援など患者負担軽減策への考え方"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "パーキンソン病を含む指定難病患者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": true,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "47自治体に88医療機関"
+            },
+            {
+              "type": "number",
+              "excerpt": "28自治体に88施設"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "難病診療連携拠点病院"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "難病診療分野別拠点病院"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国立高度専門医療研究センター"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "診療連携体制の強化を図ってまいりたいと思っております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "難病患者さんがどこに暮らしていらっしゃっても適切な医療を受けられるように、疾病の特性に応じて早期に正しい診断が受けられ、また身近な医療機関においては継続的に治療を受けられる体制、これが重要であるというふうに考えております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "現状の拠点病院の数などの事実は提示されているが、質問者が求めた具体的な改善策（出張外来や交通支援等）への回答は回避されており、精神的な意向表明に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "具体的な改善策の提示を求める際、「～などの具体策を講じる考えがあるか」とYes/No形式で問えば、より明確な回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_029",
+      "segment_index": 4,
+      "topic": "難病患者の就労継続支援と合理的配慮の促進",
+      "question": {
+        "speaker": "原田直樹",
+        "party": "中道改革連合・無所属",
+        "summary": "- 若年性患者が職場での偏見や不当な人事異動などの不利益を被っている。企業向けガイドラインの充実や、職場理解の促進をどのように進めるか",
+        "full_text": "続きまして、若年性の患者を含む指定難病患者の就労継続支援、合理的配慮、そして偏見の解消について伺います。パーキンソン病といいますと、高齢者の病気というイメージを持たれがちであります。実際、高齢者の方の方が患者さん多くいらっしゃいますけれども、中には若くして発症される方もおられます。そうした方々は、治療を続けながら働こうとしても、病名を隠さざるを得ない状況にあったり、あるいは不当な人事や転勤、過度な締め切りの強要、周囲の無理解など、病気そのものに加えて偏見とも戦わなければならないという訴えがありました。病気それだけでも大変であることに加えて、職場での誤解や無理解まで背負わされるというのは、あまりにも過酷な話であるなとお話を伺いながら、私も感じました。直接伺った話でも、職場でパーキンソン病になったということを伝えたときに、通勤が現実的に難しいような遠方に、わざとといいますか、人事異動を転勤をさせられて、いわば退職に追い込まれるような、そうしたいじめといいますか、そうしたものもまだ一部では存在すると、そうしたお話を伺っております。指定難病患者の就労継続支援について、企業向けの合理的配慮のガイドライン、配置転換の考え方、柔軟な勤務や通院配慮のモデルなど、今後どのようにこうしたことを充実させていくのか。また、若年性患者の不利益を防ぎ、偏見や誤解を減らすために、職場理解の促進をどのように進めていくのか、政府の見解をお伺いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "森谷審議官",
+        "role": "",
+        "summary": "- 障害者雇用促進法に基づき、難病患者を含む障害のある労働者への合理的配慮の提供が事業主に義務付けられており、ハローワークによる指導も行っている\n- 引き続き就労支援を着実に実施し、事業主による合理的配慮の提供や理解促進に努める",
+        "full_text": "はい、お答えいたします。難病患者である労働者の就労環境についてということでございますけれども、まず障害者雇用促進法におきまして、障害のある労働者に対する合理的配慮の提供義務が事業主に課されておりますけれども、この合理的配慮を受ける対象には、年齢を問わず難病による心身機能障害によって長期にわたり職業生活に相当の制限が生じている方についても含まれてございます。従いまして、先ほど御指摘いただきました通勤事情といったようなものも含めまして、事業主は過重な負担でない限り障害特性に応じた職務の円滑な遂行に向けた配慮等の措置を講じなければならないということになってございます。またその実施に関しましても、ハローワークによる事業主への必要な指導等の対象となっているところでございます。加えまして、御指摘いただきましたとおり、事業主の理解を促すと。引き続きこうした取組を通じまして、難病患者の就労支援の取組を着実に実施いたしますとともに、事業主による合理的配慮の提供や理解の促進に努めてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=3892.395",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "難病患者の就労支援と偏見解消への取り組みについて",
+          "sub_asks": [
+            "合理的配慮ガイドラインや勤務モデル等の充実策",
+            "若年性患者の不利益防止と職場理解の促進策"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "指定難病患者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "障害者雇用促進法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ハローワーク"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "理解の促進に努めてまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "合理的配慮を受ける対象には、年齢を問わず難病による心身機能障害によって長期にわたり職業生活に相当の制限が生じている方についても含まれてございます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "現行法の適用範囲（難病患者も合理的配慮の対象であること）を明確にした点は記録価値があるが、具体的な新施策やガイドライン策定への言及はなく、回答は一般的である。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どのように充実させていくのか」という問いに対し、現状の制度説明で終わっているため、具体的に「新しく何を導入するか」を問う形式にすべきだった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_030",
+      "segment_index": 4,
+      "topic": "難病患者の家族介護者への支援充実",
+      "question": {
+        "speaker": "原田直樹",
+        "party": "中道改革連合・無所属",
+        "summary": "- 家族介護者の負担が大きく、支援が不十分である。相談支援、レスパイト、ピアサポート等をどう充実させ、家族支援を難病対策の中でどう位置づけるか",
+        "full_text": "続きまして、指定難病患者を支える家族介護者への支援の充実についてもお伺いをしたいと思います。患者さんご本人への支援が重要であることはもちろんそうでありますけれども、実際には通院の付き添い、日常生活の補助、将来不安の共有、家計への影響など、そうした多くの負担を引き受けているのはご家族であります。それにもかかわらず、家族や介護者に対する実効的な支援というものが、まだまだ十分ではないのではないかというお声もいただきました。支える側が疲れ切ってしまえば、これは患者さんご本人の生活も成り立たなくなってしまいます。指定難病患者を支える家族や介護者に対して、例えば相談支援、レスパイト、情報提供、ピアサポート等を今後どのように充実をさせていくのか。患者本人だけでなく、その暮らしを支えている家族も支えるという視点を難病対策の中でどう位置づけるのか、政府の見解をお伺いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "大坪健康生活衛生局長",
+        "role": "",
+        "summary": "- 家族への支援の必要性を十分に認識している\n- 療養生活環境整備事業として、難病相談支援センターでの家族相談の受付や、福祉関係機関と連携した対応への補助を行っている",
+        "full_text": "お答え申し上げます。難病患者の療養生活においては、ご本人のみならず、介護等を行っていらっしゃる患者のご家族に対しても支援が必要であるということは十分に認識をしております。このため、厚生労働省では、療養生活環境整備事業として、都道府県及び指定都市に設置をしております難病相談支援センターにおきまして、難病患者を支えるご家族からの相談なども受け付けるほか、必要に応じまして、福祉等の関係機関と連携した対応を行うことを事業として行っており、これらに対して補助をしております。今後ともよく患者会の皆様からもお話をしながら、こういった取組を通じて支援に努めてまいりたいと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=3892.395",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "難病患者の家族介護者への支援充実と位置づけについて",
+          "sub_asks": [
+            "相談支援やレスパイト等の充実をどう進めるか",
+            "家族を支える視点を難病対策の中でどう位置づけるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "指定難病患者を支える家族介護者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "療養生活環境整備事業"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "難病相談支援センター"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "支援に努めてまいりたいと思っております",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "難病相談支援センターにおきまして、難病患者を支えるご家族からの相談なども受け付けるほか、必要に応じまして、福祉等の関係機関と連携した対応を行うことを事業として行っており",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "家族介護者への支援という重要な視点への問いに対し、既存の相談センターの機能説明に留まり、今後の具体的な充実策や位置づけへの回答が不十分である。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのように充実させるか」という問いに対し、具体的にどのような施策（予算増額や新制度）を求めているのか選択肢を提示して問えば、より具体的な回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_031",
+      "segment_index": 5,
+      "topic": "AIモデル「Claude Muthos」への対応",
+      "question": {
+        "speaker": "古川あおい",
+        "party": "チームみらい",
+        "summary": "- AIモデル「Claude Muthos」の登場を受けた医療機関のサイバーセキュリティ対策への対応状況\n- 他省庁との横断的連携や業界団体との対話を含む今後の対応予定",
+        "full_text": "厚生労働省として、MITOSの登場を受けて、医療機関のサイバーセキュリティ対策について、どのような対応を行ったでしょうか。また、今後、他省庁との横断的な連携、及び医療機関や業界団体との対話を含め、どのような対応をしていく予定かお聞かせください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "上野賢一郎",
+        "role": "厚生労働大臣",
+        "summary": "- AIの悪用リスクを重要な課題と認識し、既存の医療関係団体との連携枠組みを活用して意見交換を図る\n- 閣僚懇談会での指示に基づき、関係省庁と連携して課題と施策を整理し適切に対応する",
+        "full_text": "クロード・ミュトスをはじめとして、AIがサイバー攻撃に悪用されるリスク、これをいかに回避するかという点におきましては、医療機関におきましても、金融機関等と同様に重要な課題だと認識しています。厚労省ではこれまで、医療機関におけるサイバーセキュリティの現状について、医療関係団体を含めた関係者との対話や調査を継続的に行ってきましたけれども、この事案、クロード・ミュトスに関しましても、医療関係団体との連携の枠組み、既にありますが、この枠組みを活用しながら密接に意見交換、これを図っていきたいと考えております。昨日の閣僚懇談会におきましても、総理の方から小野田紀美経済安全保障担当大臣に対し、政府全体での対応を早急に具体化をして、実施するよう指示があったところでありますので、厚労省といたしましても、関係省庁と連携をしながら、想定される課題や課題に対応する施策、これをしっかり整理をして、適切に対応していきたいと考えています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=5741.195",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "MITOS登場後の医療機関サイバー対策の現状と今後",
+          "sub_asks": [
+            "これまでの対応",
+            "今後の他省庁連携・業界団体との対話を含む対応予定"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "MITOS"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "医療機関や業界団体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "クロード・ミュトス"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "小野田紀美経済安全保障担当大臣"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "適切に対応していきたいと考えています",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "関係省庁と連携をしながら、想定される課題や課題に対応する施策、これをしっかり整理をして、適切に対応していきたいと考えています。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な過去の施策や今後の具体的ロードマップへの言及がなく、抽象的な意向表明に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのような対応を行ったか」という問いに対し、具体的な施策名や実施時期を求める形式にすれば、より実効的な回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_032",
+      "segment_index": 5,
+      "topic": "安全管理ガイドラインへの生成AI攻撃手法の反映",
+      "question": {
+        "speaker": "古川あおい",
+        "party": "チームみらい",
+        "summary": "- ガイドラインの次期改定作業において、生成AIを用いた新たな攻撃手法が議題となったか、または指摘があったか",
+        "full_text": "こちら、今、改定に向けた作業を進めていく中で、この改定作業班における議論の中で、生成AIを用いた新たな攻撃手法に関する論点というのは、議題となったのか、そういう指摘はあったのか、ということについてお伺いいたします。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "森光",
+        "role": "",
+        "summary": "- 現時点では具体的な対策方針が定まっていないため、検討事項としては取り上げていない\n- 国家サイバー統括室と連携して動向を注視し、実態分析を経て必要に応じて改定を検討する",
+        "full_text": "このガイドラインは、現在改定作業中でございますけれども、医療機関の管理者に義務付けられているサイバーセキュリティ確保のための措置として、具体的に準則すべき事項を示すものでございまして、具体的な対策に関する方針などが定まっていない現時点において、検討事項としては取り上げておりません。ご指摘いただきましたミトスを含む、生成AIを用いたサイバー攻撃への対応に関してでございますが、引き続き国家サイバー統括室とも連携しながら、最新の動向や知見を注視するとともに、実態や影響を分析した上で、各医療機関において実行可能な対策を整理し、必要に応じてガイドラインの改定について検討してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=5741.195",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "改定作業班で生成AI攻撃が議題となったか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "改定作業班"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国家サイバー統括室"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "必要に応じてガイドラインの改定について検討してまいりたい",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "具体的な対策に関する方針などが定まっていない現時点において、検討事項としては取り上げておりません。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "生成AI攻撃が現在の改定作業の議題に含まれていないことが明確に回答されており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_033",
+      "segment_index": 5,
+      "topic": "ガイドライン改定に要する期間",
+      "question": {
+        "speaker": "古川あおい",
+        "party": "チームみらい",
+        "summary": "- 厚生労働省が改定が必要と判断してから、実際に改定版が発出されるまでに要する期間",
+        "full_text": "ここでお伺いいたしますが、ガイドラインの改定が必要であると判断されてから、実際にそこから改定に向けた検討をスタートして、作業班を設置してというような作業を行われると思いますけれども、ガイドラインが必要であるというふうに厚生労働省で判断をされてから、実際に改定版のガイドラインが出来上がって発出されるまでというところには、どの程度の期間を要するのかということをお伺いできればと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "森光",
+        "role": "",
+        "summary": "- 改定規模により異なるが、直近の5.2版から6.0版への改定では作業班立ち上げから発出まで約10か月を要した",
+        "full_text": "このガイドラインにつきましてでございますけれども、ガイドラインの改定に要する期間ということでございますが、その改定の規模、それから内容によってその期間については異なりますけれども、例えば直近の5.2版から6.0版への改定の際には、改定作業班の立ち上げから発出まで約10か月を要したという状況でございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=5741.195",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "ガイドライン改定に要する期間の確認",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "厚生労働省",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "5.2版から6.0版への改定"
+            },
+            {
+              "type": "number",
+              "excerpt": "約10か月"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "直近の5.2版から6.0版への改定の際には、改定作業班の立ち上げから発出まで約10か月を要した",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "ガイドライン改定に要する期間について、過去の実績（約10か月）という具体的な数値で回答されており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_034",
+      "segment_index": 5,
+      "topic": "ガイドライン以外の迅速な注意喚起策",
+      "question": {
+        "speaker": "古川あおい",
+        "party": "チームみらい",
+        "summary": "- ガイドラインのフル改定以外に、Q&Aや事務連絡などの形式で迅速に注意喚起を行う仕組みを導入し、今回の事案に対応する予定があるか",
+        "full_text": "ただおっしゃるように、とはいえ、ミトスのような大きな脅威ですとか、大きな変化があった際には、必ずしもガイドラインによらないような形、Q&Aであるとか、事務連絡通知のような形で注意喚起を促すような仕組みも必要なのではないかと思いますけれども、例えばガイドラインについても部分改定のようなやり方であるとか、フルラインの改定にとどまらない医療機関に対する周知や注意喚起といったものも行うべきではないかと思いますけれども、今回のミトスの事案に対応して、そういったものを行う予定はありますでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "森光",
+        "role": "",
+        "summary": "- 脅威の内容に応じて一部注意喚起や速やかな改定を行う必要性を認識している\n- ミトスの件についても、事案の分析結果に基づき、医療機関で実行可能な対策を検討し対応する",
+        "full_text": "ご指摘のとおり、ガイドラインにつきましては、一定の期間を、今、5.2版から6.0版に関しては10か月という時間をかけておりますけれども、その都度、脅威の内容、それから課題として挙がったようなものの内容に応じて、適切に一部注意喚起で出したり、また、速やかな改定を行うといったようなことも、必要だというふうに考えておるところでございます。ご指摘のミトスの件でございますけれども、これにつきましても、発生した事案ですとか、それから分析の結果といったものを分析した上で、各医療機関において実行可能な対策、これを検討するということが非常に重要だと考えておりまして、その点についてはしっかり対応していきたいというふうに考えているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=5741.195",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "ミトス事案への注意喚起やガイドライン改定の予定",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "ミトスのような大きな脅威"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "医療機関",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "5.2版から6.0版に関しては10か月"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "しっかり対応していきたいというふうに考えている",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "ミトスの件につきましても、分析の結果といったものを分析した上で、各医療機関において実行可能な対策を検討することが非常に重要だと考えております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "ミトス事案への対応について問うているが、回答は「しっかり対応したい」という意向表明に留まっており、具体的なアクションプランは示されていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「行う予定はありますか」というYes/No形式ではなく、具体的にどのような手法でいつまでに周知を行うかという形式で問えば、より具体的な回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_035",
+      "segment_index": 5,
+      "topic": "ガイドライン改定のプロセス",
+      "question": {
+        "speaker": "古川あおい",
+        "party": "チームみらい",
+        "summary": "- 改定判断から発出まで（前回は約10か月）の具体的なプロセスについて",
+        "full_text": "ちょっと話が戻るんですけれども、改定について、通常ですと、前回ベースでいくと10ヶ月近くかかるというのは、結構、周知期間を別に取るにしても時間がかかるなというふうに認識しているんですけれども、この10ヶ月、厚労省が改定した方がいいんじゃないかというふうに決めてから、実際に改定が行われるまで、具体的にはどのようなプロセスがあるかということについて、もしお答えできる範囲で教えていただけますか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "上野賢一郎",
+        "role": "厚生労働大臣",
+        "summary": "- サイバー攻撃等の情報を収集・分析し、医療機関全体に対策を求める必要があると認識した段階で、ガイドラインの見直し手続きを行う",
+        "full_text": "基本的には、サイバーセキュリティに対する課題として私どもが認識をしたもの、例えば、医療機関に対するサイバー攻撃といったことがあり、それを私ども情報として受け取り、そしてそれを分析したところ、やはり医療機関全体にしっかりとした対策を求める必要があるということで認識したような場合、これにつきましてはその認識をもって今のサイバーセキュリティのガイドラインを見直したふうに出すというような段取りを踏んでおる、段取りというか手続きというか流れをとっておるというところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=5741.195",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "改定決定から実施までの具体的プロセスの提示",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "10ヶ月近くかかる"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "厚労省",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "サイバーセキュリティのガイドライン"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "サイバーセキュリティのガイドラインを見直したふうに出すというような段取りを踏んでおる",
+          "score": 0.2
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的なプロセス（工程表や期間の内訳）を問う質問に対し、概念的な流れを答えるにとどまっており、実効的な回答になっていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「お答えできる範囲で」という限定的な表現が、回答者に逃げ道を与えてしまっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_036",
+      "segment_index": 5,
+      "topic": "セキュリティ技術の義務化と格差への対応",
+      "question": {
+        "speaker": "古川あおい",
+        "party": "チームみらい",
+        "summary": "- 推奨にとどまる技術導入により医療機関間でセキュリティ水準に格差が生じるリスクをどう考えるか\n- 強制力を持たせることが難しい理由と、格差への対応策について",
+        "full_text": "こうした場合、結局は医療機関のこういった技術を採用するかどうかというところは医療機関の判断に委ねられることになり、対応できる医療機関と対応できない医療機関が生じてしまい、セキュリティ水準に格差が生じるリスクについて厚労省としてどのようにお考えかお聞かせください。なぜ推奨にとどまり強制力を持たせることが難しいのかという点と、それによって医療機関によってリスクに差が出てしまう点についてお聞かせください。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "森光",
+        "role": "",
+        "summary": "- 医療法に基づく立ち入り検査要項への位置づけなどで措置を講じている\n- 医療機関の規模や機能により適切な技術が異なるため、個別の技術の義務化には慎重な検討が必要である\n- 外部接続点が多い医療機関に対し、優先的に適正化支援を開始している",
+        "full_text": "私どもの厚生労働省においてまとめております、医療情報システムに関する安全管理ガイドライン、この策定につきましては、医療機関の周知に加えて、過去に医療機関において発生したランサムウェア感染の事案などを踏まえつつ、医療機関の管理者が準すべき事項としてサイバーセキュリティの確保のために必要な措置の省令への位置づけですとか、医療法に基づく医療機関への立ち入り検査の要項へのサイバーセキュリティ確保のための取組状況の位置づけなどの対応を行っているところでございます。これを受けまして厚生労働省といたしましては、令和8年度より多数の外部接続点が存在する医療機関に対して優先的にその適正化支援を開始したところでございます。議員が御指摘されました、例えばゼロトラストアーキテクチャーやEDR技術といったようなその導入についてなんですが、そういうものについては、その医療機関に対して真に適切なものであるかは、その医療機関の規模、機能等に応じて異なるため、個別の技術の義務化については、慎重な検討が必要と考えておるところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=5741.195",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "セキュリティ水準の格差リスクへの考えと強制化できない理由",
+          "sub_asks": [
+            "セキュリティ水準に格差が生じるリスクへの考え",
+            "推奨にとどまり強制力を持たせることが難しい理由"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "医療機関",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "医療情報システムに関する安全管理ガイドライン"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "令和8年度より"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ゼロトラストアーキテクチャー"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "EDR技術"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "個別の技術の義務化については、慎重な検討が必要と考えておるところでございます",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "個別の技術の義務化については、その医療機関の規模、機能等に応じて異なるため、慎重な検討が必要と考えておるところでございます。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "セキュリティ技術の義務化に慎重な姿勢（理由を含む）を明確に回答しており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_037",
+      "segment_index": 6,
+      "topic": "医療機関におけるサイバー攻撃の被害額把握",
+      "question": {
+        "speaker": "古川あおい",
+        "party": "日本維新の会",
+        "summary": "- ランサムウェアによる病院の被害額を把握しているか",
+        "full_text": "",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "森光",
+        "role": "",
+        "summary": "- 厚生労働省として現在、被害を受けた病院の被害額については把握していない",
+        "full_text": "まず被害の額の把握ということでございますけれども、厚生労働省として現在ランサムウェアによって被害を受けた病院の被害額ということについては把握をしておりません。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=6738.094999999999",
+      "metrics": null
+    },
+    {
+      "id": "qa_038",
+      "segment_index": 6,
+      "topic": "医療機関のサイバーセキュリティ対策と支援",
+      "question": {
+        "speaker": "古川あおい",
+        "party": "日本維新の会",
+        "summary": "- 医療機関におけるサイバーセキュリティ対策の現状と今後の支援策について",
+        "full_text": "",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "上野賢一郎",
+        "role": "厚生労働大臣",
+        "summary": "- 管理者への措置義務付けや研修提供、ネットワーク安全性検証等の支援を実施している\n- 今年度は外部接続点の適正化・維持管理費用への補助などの財政的支援を実施している\n- 令和8年度診療報酬改定で、安全管理責任者の配置等を要件とした加算を新設する\n- 医療DX推進に向け、さらなる支援のあり方を十分検討していく",
+        "full_text": "厚労省ではこれまでも医療機関におけるサイバーセキュリティ対策として、管理者にサイバーセキュリティ確保のための措置を義務付けるとともに、具体的な措置をお示しをして実施していただいております。その措置の実施を促すために、医療機関向けの研修の提供であったり、あるいは病院におけるネットワークの安全性の検証等の支援を行ってきております。その上で今年度ですけれども、さらなるサイバーセキュリティの確保のため、医療機関におけるネットワークの外部接続点の適正化や維持管理に要する費用への補助により、財政的な支援も実施をしているところでありますし、さらに令和8年度の診療報酬改定においては、非常時に備えたサイバーセキュリティ対策等の整備に係る評価として、専任の医療情報システム安全管理責任者の配置等を要件とした電子的診療情報連携体制整備加算を新設をしております。医療DXを進めていく中で、委員からも再三ご指摘のあるように、この分野は非常に重要になってまいりますので、それをどういった形で支援をしていくか、今申し上げたのは一例だと思いますので、さらにどうした支援が必要かということは十分検討していかなければいけないと考えています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=6738.094999999999",
+      "metrics": null
+    },
+    {
+      "id": "qa_039",
+      "segment_index": 6,
+      "topic": "戦没者追悼・拝礼の対象範囲",
+      "question": {
+        "speaker": "阿部圭史",
+        "party": "日本維新の会",
+        "summary": "- 満州事変から支那事変までの戦死者のうち、千鳥ヶ淵戦没者墓苑に納骨されていない人々が、国の追悼・拝礼の対象から漏れているのではないか",
+        "full_text": "本日は先月4月10日に厚生労働委員会において行わせていただきました政府の慰霊対象ということと戦死自衛官の取扱いについて改めてまたお伺いをしたいというふうに思っております。4月10日の厚生労働委員会における大臣答弁に基づきまして、また改めてお伺いをしたいと思いますが、その際に全国戦没者追悼式の追悼対象は日中戦争、いわゆる1937年7月7日の盧溝橋事件に始まる支那事変以降の戦争による死没者が対象になっているということでございます。一方で、千鳥ヶ淵戦没者墓苑は、支那事変以前の1931年9月18日の柳条湖事件から始まる満州事変におけるご遺骨も納骨されているということで、今月行われます千鳥ヶ淵戦没者墓苑拝礼式の拝礼対象は、まさにこの墓苑に収められているご遺骨に対して行うとされているとのことでございます。それを考えますと、柳条湖事件から盧溝橋事件に至る過程、満州事変から支那事変まで、この過程で戦死し、千鳥ヶ淵戦没者墓苑に納骨されていない方々、この英霊に対しては、国として、この拝礼式においても、全国戦没者追悼式においても対象となっていない。すなわち国として、慰霊、追悼、拝礼、顕彰等を行っていないということになるのではないかということで、先月の答弁から拝察をいたしましたけれども、厚生労働大臣の見解はいかがでしょうか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "上野賢一郎",
+        "role": "厚生労働大臣",
+        "summary": "- 千鳥ヶ淵戦没者墓苑は閣議決定に基づき、太平洋戦争の海外戦没者や行政機関が仮安置していた遺骨を納める施設であり、満州事変等の遺骨も含まれる\n- 全国戦没者追悼式の対象は、昭和38年の閣議決定により支那事変以降の死没者とされており、政府として追悼を行っているのは日中戦争以降の死没者である",
+        "full_text": "まず、千鳥ヶ淵戦没者墓苑につきましては、昭和28年の閣議決定に基づいて、太平洋戦争による海外戦没者のご遺骨及び当時、すでに行政機関において仮安置していたご遺骨であってご遺族に引き渡すことができないものについて、これを納めるための施設として建立されたものであります。日中戦争以前の満州事変等におけるご遺骨も納められております。その上で千鳥ヶ淵の戦没者墓苑拝礼式については、海外で新たに収容したご遺骨のうち身元が判明せず、ご遺族に引き渡すことができないものの納骨を行うとともに、墓苑に収められているご遺骨に対して、拝礼を行う趣旨のもと、実施をしているものであります。一方、全国戦没者追悼式の戦没者の範囲については、昭和38年5月14日の閣議決定において、支那事変以降の戦争による死没者とし、日中戦争以降の戦争による死没者を対象としています。このため、政府として追悼を行っているのは、日中戦争以降の戦争による死没者となります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=6738.094999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "満州事変から支那事変までの戦死者が国の慰霊対象外か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "4月10日の厚生労働委員会"
+            },
+            {
+              "type": "date",
+              "excerpt": "1937年7月7日の盧溝橋事件"
+            },
+            {
+              "type": "date",
+              "excerpt": "1931年9月18日の柳条湖事件"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "満州事変から支那事変までで戦死し千鳥ヶ淵に納骨されていない方々",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "昭和28年の閣議決定"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "昭和38年5月14日の閣議決定"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "政府として追悼を行っているのは、日中戦争以降の戦争による死没者となります。",
+          "score": 0.9
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "閣議決定に基づき、政府の追悼対象が日中戦争以降であるという公式見解を明確に記録した価値のあるやり取りである。",
+        "would_be_referenced": "high",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_040",
+      "segment_index": 6,
+      "topic": "慰霊・追悼・拝礼・顕彰の文言の定義",
+      "question": {
+        "speaker": "阿部圭史",
+        "party": "日本維新の会",
+        "summary": "- 「慰霊」「追悼」「拝礼」「顕彰」という各文言の使い分けや意味の違いについて政府の見解を問う",
+        "full_text": "その上でお伺いしたいと思いますが、戦没者慰霊事業というものがあります。慰霊ですね。全国戦没者追悼式というものがあります。追悼であります。千鳥ヶ淵戦没者墓苑拝礼式。拝礼というものがございます。洋島戦没者慰霊追悼顕彰式。ここには慰霊追悼顕彰ということになっておりまして、顕彰という新しい文言が出てきますが、この慰霊、追悼、拝礼、顕彰、この文言の使い分けについては、政府としてどのようにお考えになっているんでしょうか。この各文言の意味の違いについて、厚生労働大臣から、もしくは参考人からお答えをいただきたいと思いますが、いかがでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "伊沢",
+        "role": "",
+        "summary": "- 法令上の定義はないが、一般的な意味で用いている\n- 慰霊は死者の霊魂を慰めること（慰霊巡礼等）、追悼は死者を偲び悲しむこと（全国戦没者追悼式）、拝礼は頭を下げて礼をすること（墓苑拝礼式）を指す\n- 顕彰は功績を称える意味だが、厚労省の慰霊追悼事業では用いていない",
+        "full_text": "お尋ねの慰霊、追悼、拝礼、顕彰といった文言につきましては、それぞれの意味を定める法令上の定義はございませんが、厚生労働省では、これらの文言を一般的な意味として用いております。その上で、広辞苑によりますと、慰霊については、死者の霊魂を慰めることを意味するものと承知しており、厚生労働省では、旧主要戦域等を訪れる慰霊巡礼や、管理などの際に慰霊という言葉を用いております。追悼につきましては、同じく死者を偲び、痛み、悲しむことを意味するものと承知しておりまして、厚生労働省では、ご指摘いただきました全国戦没者追悼式において、先の大戦において亡くなられた方々を追悼し、平和を祈念する際に追悼という言葉を用いております。拝礼につきましては同じく、頭を下げて礼をすること、また拝むことを意味するものと承知しておりまして、厚生労働省では、千鳥ヶ淵戦没者墓苑式におきまして、納骨を行う際に行っておりまして、墓苑に収められているご遺骨に対して、拝礼を行う際に拝礼という言葉を使っております。なお、顕彰につきましては、一般的に功績などを明らかにし、称えることを意味するものと承知しておりますけれども、厚生労働省が行っております慰霊追悼事業においては、顕彰という言葉は用いておりません。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=6738.094999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "慰霊・追悼・拝礼・顕彰の文言の使い分けについて",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "全国戦没者追悼式"
+            },
+            {
+              "type": "other",
+              "excerpt": "千鳥ヶ淵戦没者墓苑拝礼式"
+            },
+            {
+              "type": "other",
+              "excerpt": "洋島戦没者慰霊追悼顕彰式"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "広辞苑"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "全国戦没者追悼式"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "千鳥ヶ淵戦没者墓苑式"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "それぞれの意味を定める法令上の定義はございませんが、厚生労働省では、これらの文言を一般的な意味として用いております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "用語の定義に関する質問に対し、法令上の定義がないことを明示した上で、省としての運用基準を具体的に回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_041",
+      "segment_index": 6,
+      "topic": "「顕彰」という文言の使用主体",
+      "question": {
+        "speaker": "阿部圭史",
+        "party": "日本維新の会",
+        "summary": "- 内閣ホームページにある「洋島等戦没者慰霊追悼顕彰式」という文言は、具体的にどの主体が使用しているのか",
+        "full_text": "ありがとうございます。さらなる問いになりますけれども、この洋島等戦没者慰霊追悼顕彰式というものは、内閣のホームページに載っている文言でございますが、これは具体的にどういう主体が使っているんでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "伊沢",
+        "role": "",
+        "summary": "- 民間団体である洋島協会が主催しているものであり、政府は参列しているに過ぎない",
+        "full_text": "今ご指摘いただきました顕彰を使っているものにつきましては、洋島協会という民間の団体が主催者として開催しているものでございまして、政府も呼ばれて参列はしております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=6738.094999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "洋島等戦没者慰霊追悼顕彰式の主体はどこか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "内閣のホームページに載っている文言"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "洋島等戦没者慰霊追悼顕彰式",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "洋島協会"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "洋島協会という民間の団体が主催者として開催しているものでございまして、政府も呼ばれて参列はしております。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "特定の行事の主催者が民間団体（洋島協会）であることを明確に回答しており、事実関係の記録として有用である。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_042",
+      "segment_index": 6,
+      "topic": "政府における「顕彰」の概念",
+      "question": {
+        "speaker": "阿部圭史",
+        "party": "日本維新の会",
+        "summary": "- 政府の中に「顕彰」という概念は存在しないのか",
+        "full_text": "ありがとうございます。そうしますと政府の中に顕彰という概念はないということなんでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "伊沢",
+        "role": "",
+        "summary": "- 厚生労働省が行っている事業の中では、「顕彰」という言葉は用いていない",
+        "full_text": "ちょっと概念というふうに聞かれてしまいますと、答弁がしづらいんですが、先ほど申し上げましたように、厚生労働省が行っている事業の中では、顕彰という形での言葉はございません。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=6738.094999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "政府内に顕彰という概念があるか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "政府",
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "厚生労働省"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "厚生労働省が行っている事業の中では、顕彰という形での言葉はございません。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "政府（厚労省）の事業において「顕彰」という用語を用いていないという事実を確認したやり取りである。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「概念」という抽象的な問い方であるため、回答者が定義の曖昧さを理由に回避しやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_043",
+      "segment_index": 6,
+      "topic": "靖国神社合祀事務協力要項の目的",
+      "question": {
+        "speaker": "阿部圭史",
+        "party": "日本維新の会",
+        "summary": "- 厚生労働省が発出した「靖国神社合祀事務協力要項」の目的は何か",
+        "full_text": "次にお伺いいたしますが、先ほど申し上げたとおり、穴が開いているということだと思います。柳城湖事件から六王京事件に至る過程で戦死し、千鳥ヶ淵戦没者墓苑に合祀されていない英霊を含めて、全体に対して慰霊及び顕彰等を行っているのは、政府に穴が開いているということですので、靖国神社及び全国の護国神社が、まさにこの穴を含めて、全体を慰霊顕彰しているのではないかと思います。厚生労働省は、昭和31年4月19日に、靖国神社合祀事務協力要項を発出しておりまして、これに基づきまして、基本理念として、靖国神社の合祀事務の推進に協力をしておられます。この政府が、靖国神社合祀事務協力要項を発出した目的は、どのようなことになっているんでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "上野賢一郎",
+        "role": "厚生労働大臣",
+        "summary": "- 旧陸海軍の軍人軍属の身上記録を保有しており、遺族等への情報提供の一環として靖国神社からの調査依頼に回答していた\n- 当該要項は、その事務を遂行するために発出されたものである",
+        "full_text": "厚労省では、旧陸海軍の軍人軍属の身上記録を保有しております。これは遺族などから調査依頼があった場合には、戦没者に関する情報提供、これを行っているところであります。当時、靖国神社から受けた調査依頼に対しても、この一般的な情報提供の一環として、回答を行っていたものであります。ご指摘の要項は、その事務を遂行するために発出されたものだと承知をしております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=6738.094999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "靖国神社合祀事務協力要項の発出目的について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "昭和31年4月19日"
+            },
+            {
+              "type": "other",
+              "excerpt": "靖国神社合祀事務協力要項"
+            },
+            {
+              "type": "other",
+              "excerpt": "柳城湖事件"
+            },
+            {
+              "type": "other",
+              "excerpt": "六王京事件"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "靖国神社及び全国の護国神社",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "旧陸海軍の軍人軍属の身上記録"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "ご指摘の要項は、その事務を遂行するために発出されたものだと承知をしております。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "過去の要項の発出目的という事実確認の質問に対し、事務的な回答がなされている。記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問の導入部が長く、結論としての問いが最後の一文に集約されているため、論点が分散している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_044",
+      "segment_index": 6,
+      "topic": "「支那事変」と「日中戦争」の呼称について",
+      "question": {
+        "speaker": "阿部圭史",
+        "party": "日本維新の会",
+        "summary": "- 昭和27年の閣議決定では「支那事変」とされているが、行政上の文言として「支那事変」が適切ではないか。またその法的根拠を問う",
+        "full_text": "次にお伺いいたしますが、4月10日の厚生労働委員会で大臣は、日中戦争という文言を使用されておられます。一方で、全国戦没者追悼式の実施に関する件、これ昭和27年の閣議決定でございますが、ここでは、支那事変という文言が使用されております。行政上の文言としては、この閣議決定にある支那事変が適切であるとも考えられますが、厚生労働省の見解はいかがでしょうか。法的根拠も含めてお伺いしたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "上野賢一郎",
+        "role": "厚生労働大臣",
+        "summary": "- 現在の行政文書において「支那事変」を用いるべきとされているとは承知していない\n- 「日中戦争」という表現は、一般に用いられている表現として使用したものであり、法的根拠はない",
+        "full_text": "昭和27年の閣議決定においては、支那事変という文言が用いられていますが、現在、行政上の文書において、支那事変を用いるべきものとされているとは承知はしておりません。私が本年4月10日の厚労委員会において、日中戦争と申し上げたのは、昭和12年の7月7日に始まる事変について、現在一般に用いられている表現として申し上げたものであります。ご質問いただきました、法的という観点で申し上げますと、法的なものはないということでございまして、大臣の方から一般的、今一番使われている言葉として、お答え申し上げたということでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=6738.094999999999",
+      "metrics": null
+    },
+    {
+      "id": "qa_045",
+      "segment_index": 6,
+      "topic": "「先の大戦」の定義",
+      "question": {
+        "speaker": "阿部圭史",
+        "party": "日本維新の会",
+        "summary": "- 大臣が使用した「先の大戦」とは、具体的にどの期間、どの地域で行われた戦争を指すのか",
+        "full_text": "ありがとうございます。同様に先月の厚生労働委員会で、大臣は先の大戦という文言を使用されていますが、この先の大戦とは具体的に、どの期間において、どの地域で行われた戦争を指すのでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "上野賢一郎",
+        "role": "厚生労働大臣",
+        "summary": "- 法令上の定義はないが、昭和57年の全国戦没者追悼式に関する閣議決定の趣旨（8月15日の追悼式実施）に基づき用いたものである",
+        "full_text": "一般的に先の大戦という用語については、その時期、周期、または対象地域を法令上定めたものはないと承知をしております。その上で、私が本年4月10日の厚労委員会において、先の大戦と申し上げたのは、昭和57年の全国戦没者追悼式に関する閣議決定において、先の大戦において亡くなられた方々を追悼し、平和を祈念するため、戦没者を追悼し、平和を祈念する日を設け、当該日に全国、8月15日ですが、全国戦没者追悼式を実施するとされており、この閣議決定と同様の趣旨で用いたものであります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=6738.094999999999",
+      "metrics": null
+    },
+    {
+      "id": "qa_046",
+      "segment_index": 6,
+      "topic": "「太平洋戦争」の定義と納骨遺骨の関係",
+      "question": {
+        "speaker": "阿部圭史",
+        "party": "日本維新の会",
+        "summary": "- 千鳥ヶ淵戦没者墓苑に満州事変の遺骨が納骨されていることを踏まえ、「太平洋戦争」とは満州事変以降の戦争を指すのか",
+        "full_text": "この時期、周期ともに決まっていないということについては、太平洋戦争も同様だと思いまして、それにつきましても、先月の委員会で御答弁をいただきました。この太平洋戦争は千鳥ヶ淵戦没者墓苑の建立を定めた閣議決定に用いられておりますけれども、この墓苑は日中戦争以前の満州事変におけるご遺骨が納骨されているとのことでございますが、それを考えた場合、太平洋戦争とは満州事変以降の戦争のことを指すのでしょうか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "伊沢",
+        "role": "",
+        "summary": "- 墓苑には太平洋戦争による海外戦没者のほか、設立当時に政府が保管し遺族に引き渡せなかった遺骨も納めることになっていたため、日中戦争以前の遺骨も含まれている",
+        "full_text": "お答えいたします。今、委員からご質問がございました、千鳥ヶ淵の方でございますけれども、こちらはご指摘いただきました、太平洋戦争による海外戦没者の遺骨でありまして、ご遺族に引き渡すことができないご遺骨だけではなく、当該閣議決定がございまして、墓苑の設立当時に政府において保管していた遺骨で、ご遺族に引き渡すことができなかったものも、納めることになっておりまして、このような経過がございまして、後段があるものですから、千鳥ヶ淵の戦没者墓苑には、日中戦争以前のご遺骨も納骨されている、こういうことでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=6738.094999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "太平洋戦争の定義に満州事変以降が含まれるか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "千鳥ヶ淵戦没者墓苑"
+            },
+            {
+              "type": "other",
+              "excerpt": "閣議決定"
+            },
+            {
+              "type": "other",
+              "excerpt": "満州事変"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "千鳥ヶ淵戦没者墓苑",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "千鳥ヶ淵"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "閣議決定"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "千鳥ヶ淵の戦没者墓苑には、日中戦争以前のご遺骨も納骨されている、こういうことでございます。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "太平洋戦争の定義という核心的な問いに対し、墓苑の運用実態という事実関係のみで回答しており、定義への直接的な回答を避けている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「～を指すのでしょうか」という定義の確認を、具体的な墓苑の事例と結びつけすぎたため、回答者が事例の説明に逃げる余地を与えてしまった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_047",
+      "segment_index": 6,
+      "topic": "「大東亜戦争」という文言の法的正当性",
+      "question": {
+        "speaker": "阿部圭史",
+        "party": "日本維新の会",
+        "summary": "- GHQによる使用禁止命令は既に執行されており、法的には「大東亜戦争」や「英霊」という文言は妥当であり、期間・地域を定めた法的正当性のある文言ではないか",
+        "full_text": "またもう一問お伺いいたしますが、先月の厚生労働委員会でお伺いしましたとおり、ポツダム宣言の受諾に伴い発する命令に関する件の廃止に関する法律、これ1952年の法律ですが、これによってGHQによって禁止されていた大東亜戦争及び英霊等の文言は法的に執行したと。要するにこのGHQの命令は既に執行しているので、法的には大東亜戦争、英霊、そういった文言は全くもって法的に妥当であるということだというふうに私の方で申し上げましたけれども、この大東亜戦争が日本政府として、期間及び地域等を唯一定めた法的正当性のある文言ではないかというふうに思いますけれども、政府の法的整理はいかがでしょうか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "上野賢一郎",
+        "role": "厚生労働大臣",
+        "summary": "- 昭和16年に閣議決定されたが、その後GHQにより使用停止が命令され、サンフランシスコ講和条約発効時に執行されたと認識している\n- 現在、大東亜戦争という用語の定義を定める法令は存在しない",
+        "full_text": "大東亜戦争については、昭和16年12月に閣議決定をされていますが、昭和20年12月には大東亜戦争という用語の使用の停止を命令する旨の連合国総司令部覚書が発されたものと承知をしています。この連合国総司令部覚書の内容については、サンフランシスコ講和条約が発効した昭和27年4月に執行していると認識をしていますが、他方で現在御指摘の大東亜戦争という用語の定義を定める法令はなく、一般に政府として、"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=6738.094999999999",
+      "metrics": null
+    },
+    {
+      "id": "qa_048",
+      "segment_index": 7,
+      "topic": "戦死自衛官の死亡認定に関する法的担保と検討状況",
+      "question": {
+        "speaker": "阿部圭史",
+        "party": "日本維新の会",
+        "summary": "- 戦死自衛官の死亡認定を部隊指揮官が行うなどの法的担保について、前回の答弁から1ヶ月経過した現状を問う\n- 結論を出すまでの論点の内容と数、および結論を出す期限を明確にするよう求める",
+        "full_text": "戦死自衛官の取扱いについてでございます。先月の厚生労働委員会で以下の5点の確認をいたしました。死亡の判断について定めた法律はないこと。1つ目。2つ目は死亡の法的定義はないこと。三つ目は、死の判定にも法的定義はないこと。四つ目は、自衛隊員が死亡の判断を行うことは、医師法に違反しないこと。五つ目として、旧陸軍留守業務規定では、戦闘等による死亡者、いわゆるKIA（Killed In Action）や、生死不明者、いわゆるMIA（Missing In Action）については、当該軍人の所属部隊の部隊長が、軍の人事担当部署に連絡するということを確認をいたしました。この5点を踏まえた上で、今後有事が発生し、とある戦地で自衛官が戦死した場合、当該戦地において、医師または医官はおろか、看護官等の衛生職種さえ不在であることが想定される。従って部隊指揮官が死亡認定を行うなどの対処を法的に担保する必要があるのではないかと私から問うたところ、吉田政務官から、防衛省としてはこの指摘を踏まえながら、今後早急に関係省庁と連携をして、どのような措置が可能なのかということを対応してまいりたいという御答弁をいただきました。その後1ヶ月が経過しましたが、結論を出すまでの論点が何で、いくつ、どのようなものがあって、いつまでに結論を出すのか、明確にお答えいただきたいと思いますが、いかがでしょうか。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "吉田（実名不明）",
+        "role": "",
+        "summary": "- 現場での確認事項、判断手順・記録の在り方、戸籍法等に基づく手続きの3点を検討中である\n- 本年秋ごろを目途に対応の大枠をまとめる予定である",
+        "full_text": "はい、論点ということでありますが、先の委員会でも検討していくというふうに答弁申し上げたところでありますが、現在関係省庁と連携をしつつ、隊員の死亡及び行方不明に関する現場での確認事項、それから判断手順及び記録の在り方、そして戸籍法等に基づく手続き、主にこの3点について検討しているところでありますが、これらにつきましては、実際の運用において困ることのないように、運用の観点に留意をしながら整理を進めまして、本年秋ごろを目途として対応の大枠をまとめるべく取り組んでまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=7705.995000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "戦死認定の結論を出すための論点と期限の明確化",
+          "sub_asks": [
+            "結論を出すまでの論点は何か（何個、どのようなものか）",
+            "いつまでに結論を出すのか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "past_answer",
+              "excerpt": "先月の厚生労働委員会で以下の5点の確認をいたしました"
+            },
+            {
+              "type": "law",
+              "excerpt": "医師法"
+            },
+            {
+              "type": "other",
+              "excerpt": "旧陸軍留守業務規定"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "戦死自衛官",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "戸籍法"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "本年秋ごろ"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 4,
+          "trigger_phrase": "本年秋ごろを目途として対応の大枠をまとめるべく取り組んでまいります",
+          "matched_pattern": "Lv3 + an explicit time anchor"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "本年秋ごろを目途として対応の大枠をまとめるべく取り組んでまいります。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "過去の答弁を踏まえた具体的な追及に対し、政府側が検討すべき3つの論点を提示し、期限（秋頃）を明示した価値の高いやり取りである。",
+        "would_be_referenced": "high",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_049",
+      "segment_index": 7,
+      "topic": "パーキンソン病治療薬（ドパコール配合剤）の安定供給",
+      "question": {
+        "speaker": "岡野純子",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- ドパコール配合剤の製造原価と薬価の関係、および現在の供給状況をどう把握しているか\n- 先発品販売中止による需要集中への対応を含め、どのような確認や対応を進めているか",
+        "full_text": "そこで伺います。厚生労働省としてドパコール配合剤の製造原価と薬価の関係、現在の供給状況、先発品の販売中止によって一社に需要が集中する可能性など、どのように把握をしているのか。また、私どもと同じ会派の長友慎二議員が、予算委員会の場所で、この内容と同じような質問をさせていただきました。その中で、それに対する答弁の後、厚生労働省として、どのような確認や対応を進めてくださっているのか、進捗も併せて伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "上野賢一郎",
+        "role": "厚生労働大臣",
+        "summary": "- 製造販売業者へのヒアリングを実施し、製造原価の詳細を把握した\n- 現在の供給状況に問題はなく、先発品販売中止後の需要増にも対応でき、安定供給に影響はない見込みである\n- 安定供給に必要な医薬品への補助金についても説明し、今後も企業とコミュニケーションを図る",
+        "full_text": "御指摘のパーキンソン病治療薬については、この薬を供給されている製造販売業者に対し、ヒアリングを実施しております。今、委員からも御指摘がありましたが、製造原価の詳細についても把握をさせていただきました。その上で、現在供給状況には問題はないということ。また、今後、先発品が販売中止、今年の12月に販売中止の予定ですが、販売中止になった後も、本剤への需要増にも対応でき、安定供給に影響は生じない見込みであることについて、確認をし、情報を把握をしているところであります。またヒアリングを行わせていただく際に安定供給が必要な医薬品に対する補助金についても私どもの方から御説明をさせていただいたところでございますが、いずれにしましても今後とも当該企業と必要なコミュニケーションをとっていきたいと考えています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=7705.995000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "ドパコール配合剤の供給状況把握と対応進捗",
+          "sub_asks": [
+            "製造原価・薬価・供給状況・需要集中の把握状況",
+            "長友議員の質問後の確認・対応の進捗"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "長友慎二議員が、予算委員会の場所で、この内容と同じような質問をさせていただきました"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "ドパコール配合剤の製造販売業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "deadline",
+              "excerpt": "今年の12月に販売中止の予定"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "今後とも当該企業と必要なコミュニケーションをとっていきたいと考えています",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "販売中止になった後も、本剤への需要増にも対応でき、安定供給に影響は生じない見込みであることについて、確認をし、情報を把握をしている",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "特定の医薬品の供給不安に対し、政府が製造業者へヒアリングを行い、安定供給の見込みを得たことを記録したやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どのように把握しているか」という問いに対し、把握した結果のみを答えており、把握の手法（プロセス）への言及が不十分である。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_050",
+      "segment_index": 7,
+      "topic": "指定難病の付随する疾病への医療費助成の運用",
+      "question": {
+        "speaker": "岡野純子",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 現場の医師が判断をためらい、制度活用にばらつきが生じている可能性を把握しているか\n- 本来使える制度を適切に利用してもらうためにどのような方法が考えられるか",
+        "full_text": "そこで伺いたいんですけれども、まずは現場の医師が判断をためらって、制度の活用にばらつきが生じている可能性というものをまずは把握をされているのか、またその場合、この状況、本来であれば使える制度を適切に利用してもらうべきと思いますが、どのような方法が考えられるのか、改めて伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "大坪（実名不明）",
+        "role": "",
+        "summary": "- 付随する症病も助成対象であることを受給者証やホームページで周知している\n- 都道府県指定都市で実施している難病指定医の養成研修において、資材に改めて書き込むことで周知を図りたい",
+        "full_text": "その上で我々といたしましては付随する症病も医療費の助成の対象であるということをいろいろなところでお示しをしていると。その1つが自治体が発行する指定難病の受給者証に記載しているということであります。また難病情報センターのホームページにおいても周知をさせていただいております。新しいことといたしましては難病指定医の養成というものを都道府県指定都市で行っていただいております。その研修の中で資材にも改めて書き込んで周知を図ってまいりたいというふうに思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=7705.995000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "制度活用のばらつきの把握と改善策について",
+          "sub_asks": [
+            "現場の医師が判断をためらい制度活用にばらつきが生じている可能性を把握しているか",
+            "適切に利用してもらうためのどのような方法が考えられるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "現場の医師",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "指定難病の受給者証"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "難病情報センターのホームページ"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "難病指定医の養成"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "周知を図ってまいりたいというふうに思っております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "研修の中で資材にも改めて書き込んで周知を図ってまいりたいというふうに思っております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "制度活用のばらつきという現状把握への回答を避け、既存の周知策と今後の研修での周知意向に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「把握しているか」というYes/No形式の問いに対し、具体的な統計や根拠を求める形式にすれば、より逃げにくい回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_051",
+      "segment_index": 7,
+      "topic": "パーキンソン病の重症度認定における実態把握",
+      "question": {
+        "speaker": "岡野純子",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 症状変動が激しい疾患において、診察時の状態（調子が良い時）が重視され、実態より軽く評価される恐れはないか\n- 臨床調査個人票の「直近6ヶ月で最も悪い状態」という仕組みが現場で機能しているか、医師による判断の差はないか",
+        "full_text": "ということは、つまりお医者さんの目の前にいる患者さんというのは、その1日の中で最も調子がいい状態であることが少なくなくて、たまたま動けている姿を重視すれば、もしかすると実態よりも軽く評価をされてしまうのではないか、そういった恐れがあるのかなと思います。一方で、先ほども出ました臨床調査個人票で、直近6ヶ月間の最も悪い状態を記載する、つまりは患者さんの自己申告をそこに書くということですが、これは症状変動が大きい疾患に対して非常に重要な仕組みだとは思いますが、これが本当に現場で機能をしているのかというところを確認したいと思います。パーキンソン病の指定難病医療費助成、これはホーエンやある重症度、これに関わったお医者さんの名前をとったようなんですが、ホーエン・ヤール重症度分類の3以上、かつ生活機能障害度2以上が基準とされておりますが、症状変動の大きい疾患におきまして、お医者さんによって診察時点の所見と、そしてもう1つ、患者の日常生活上の申告、どちらをどの程度重要視するかというところに差が出てくる可能性は。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "上野賢一郎",
+        "role": "厚生労働大臣",
+        "summary": "- 医療現場では主訴や既往歴、経過、身体検査などを総合的に判断するのが基本である\n- 臨床調査個人票の注意書きに、適切な医学的管理下での直近6ヶ月間で最も悪い状態を記載するよう明記している",
+        "full_text": "これもそもそも論の医療の現場においてでありますけれど、患者様を見るに当たりましては、まず主訴をよく聞き、既往歴や経過をお話を伺った上で、現在の症状・身体検査を行い、総合的に判断をしている、これが医療の現場だと思っております。したがいまして、この難病の診断に限らず、そういった患者様からのお話、家ではこうであるとか、お付き添いの方からのお話、こういったものを総合的に判断して、医療は進められているというのがまず基本にあると思っております。その上で、この難病の臨床調査個人票につきましては、注意書きに書いてありますように、治療開始後における重症度分類については、適切な医学的管理の下で治療が行われている状態で、直近6ヶ月間で最も悪い状態を記載してくださいというふうに記載をさせていただいております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=7705.995000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "医師による診察所見と患者申告の重視度の差の可能性",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "パーキンソン病の指定難病医療費助成"
+            },
+            {
+              "type": "other",
+              "excerpt": "ホーエン・ヤール重症度分類の3以上、かつ生活機能障害度2以上"
+            },
+            {
+              "type": "other",
+              "excerpt": "臨床調査個人票"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "パーキンソン病患者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "evidence_citation",
+              "excerpt": "臨床調査個人票につきましては、注意書きに書いてありますように"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "直近6ヶ月間で最も悪い状態を記載してくださいというふうに記載をさせていただいております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "医師による判断のばらつきという問いに対し、医療の一般論と書類の注意書きを説明することで回答を回避しており、具体的な制度改善や現状分析への言及はない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「差が出る可能性は（あるか）」という問い方であるため、回答者が「一般論として総合的に判断している」と答えることで逃げ道を与えてしまっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_052",
+      "segment_index": 7,
+      "topic": "身体障害者手帳の認定における症状変動への対応",
+      "question": {
+        "speaker": "岡野純子",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 症状変動が大きいパーキンソン病において、身体障害者認定は適切に行われているか\n- 認定における課題をどのように把握しているか",
+        "full_text": "だからこそ伺いたいんですが、こうした症状変動の大きい特性がある難病の身体障害者認定は適切に行われているのでしょうか。認定における課題はどのように把握されているのか伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "野村（実名不明）",
+        "role": "",
+        "summary": "- 服薬によって状態が変化する場合、原則としてコントロールされている状態で判定するが、1日の大半でコントロールできない場合は認定対象となることを疑義解釈で示している\n- 障害福祉サービスの認定（障害支援区分）においては、審査マニュアルで最も支援が必要な状態を想定して判定するよう留意点を示している",
+        "full_text": "一方で手帳の認定に際してでございますけれども、これはやはりパーキンソン病の方を含めまして、例えばその御指摘のまさに服薬の状態、服薬とそのときの状態の見極めとの関係とか、そういったところでやはり留意が必要なケースもあるというふうに承知をしておりまして、疑義解釈などの中では、このパーキンソン病の方を含めて服薬によって状態が変化するような方の場合には、原則として服薬によってコントロールされている状態をもって評価を判定をしてもらいたいんだけれども、1日の大半でコントロールができないという状態が続いている場合には認定対象になるということをお示しするなど、こういった疑義解釈などにおいてお示しを一定程度しております。そちらの方の審査マニュアルの方では、こういった難病患者の方は症状が変化するなどの特徴もあるので、市町村審査会では、そうした特徴も十分理解した上で、最も支援が必要な状態を想定して、審査判定を行っていただきたいといった留意点を示しております。このように手帳は手帳、そして福祉サービスの福祉のサービスの方で、それぞれの局面局面で、認定の仕方、疑義解釈であるとかマニュアルとかを示しておりますが、こうしたことに取り組むことを通じまして、引き続き適切な運用が図られるように取り組んでまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=7705.995000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "難病の身体障害者認定の適切性と課題について",
+          "sub_asks": [
+            "認定が適切に行われているか",
+            "認定における課題をどう把握しているか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "難病の身体障害者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "パーキンソン病"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "疑義解釈"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "審査マニュアル"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "市町村審査会"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "引き続き適切な運用が図られるように取り組んでまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "服薬によって状態が変化するような方の場合には、原則として服薬によってコントロールされている状態をもって評価を判定をしてもらいたい",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "難病（特にパーキンソン病）の認定基準における服薬状態の扱いについて、政府の解釈（疑義解釈・マニュアル）が具体的に示されており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「適切に行われているか」という問いが抽象的なため、具体的な不適切事例を提示して問うことで、より踏み込んだ回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_053",
+      "segment_index": 7,
+      "topic": "指定難病の患者数要件（0.1%）と将来的な支援の継続性",
+      "question": {
+        "speaker": "岡野純子",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 高齢化で患者数が増え、人口比0.1%の要件を超えて支援対象から外れる不安があるが、国としてどう答えられるか",
+        "full_text": "当然、指定難病制度には制度としての考え方があって、要件があることも理解はいたしますけれども、自分たちの病気が制度上どのように位置づけられていくのか、そしてその将来も支援が続くのかという患者さんの不安に対しまして、厚生労働省としてどのように答えられるのか伺いたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "大坪（実名不明）",
+        "role": "",
+        "summary": "- 希少性の要件（おおむね0.1%）は、症例を効率的に集積し治療研究を推進する目的で設定されている\n- 既存の指定難病の要件該当性については、研究の進捗状況などを確認し、指定難病検討委員会において総合的に判断している",
+        "full_text": "難病法による医療費助成、これは先生ご案内のとおり、要件がございまして、症例が比較的少ない難病について医療費助成を行うことで、難病患者の症例を効率的に集積して治療研究を推進する、こういう目的のもとで行われております。それに付随しまして、難病の患者様の療養生活の質の維持・向上等を図るために、効率的な治療方法が確立するために、指定難病の要件はいくつかございますが、この目的を踏まえまして設定をされておりまして、その1つであります希少性、ここにつきましては難病法施行規則の中で人口のおおむね0.1%と明記をさせていただいております。既存の指定難病が指定難病の要件に該当するかどうかにつきましては、こうした法律の制度の趣旨を踏まえまして、指定難病に関する研究の進捗状況などを確認した上で、指定難病検討委員会において総合的に判断することとしております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=7705.995000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "指定難病の今後の位置づけと支援継続への回答",
+          "sub_asks": [
+            "制度上の位置づけについてどう答えられるか",
+            "将来的な支援の継続についてどう答えられるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "患者さん",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "人口のおおむね0.1%"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "指定難病検討委員会"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "既存の指定難病が指定難病の要件に該当するかどうかにつきましては、指定難病検討委員会において総合的に判断することとしております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "患者の不安に対する具体的回答を求めた問いに対し、制度の一般的説明と判断プロセスを回答したにとどまっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どのように答えられるか」という抽象的な問い方であるため、政府側が制度説明のみで回答を完結させやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_054",
+      "segment_index": 7,
+      "topic": "安全な運動環境へのアクセス支援（駐車場利用等）",
+      "question": {
+        "speaker": "岡野純子",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 身体障害者手帳を持たない軽症の指定難病患者等が、安全に運動できる施設や駐車場を安価に利用できるよう、国交省や自治体と連携した仕組みを検討すべきではないか",
+        "full_text": "医療費助成の認定基準を満たさない、つまりは軽症者の疾病を、パーキンソン病をはじめ、医学的にも運動療法が重要とされる指定難病において、かつ体を自由に動かしにくい症状がある患者さんに対しまして、厚生労働省として、例えば国交省や自治体と連携をして、公園や体育施設、駐車場等の利用支援や減免、あるいは自治体の好事例の横展開など、安全に運動できる環境へのアクセスを支える仕組みを検討すべきと考えますが、いかがでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "大坪（実名不明）",
+        "role": "",
+        "summary": "- 令和6年4月施行の登録者証制度により、福祉・就労支援の円滑な利用を図っている\n- 市営公共施設の無料入場など、自治体の利活用好事例を周知し、地域の実情に合わせた利活用を促している",
+        "full_text": "先生ご指摘のように、体が不自由な方であったり高齢者の方であったり、そういった方々に対する生活上の支援ですとか、公園でのリハビリをするとか、そういったことはもう難病に限った話ではございませんので、もう少し広いご質問かなというふうには思いましたが、私の方では難病の中に限ってどういったことが行われているかということをお答え申し上げますと、先生からご指摘いただきましたように、令和6年4月1日に施行いたしました登録者証、この発行は、この法改正を難病法及び児童福祉法の改正によりまして福祉就労等の各種支援を円滑に利用できるようにするために、自治体等が患者の申請に基づき、指定難病に罹患していることなどを確認し、登録者証を発行する事業、これが創設されたところであります。これにつきましては、指定難病に罹患している者の医療費助成の対象とならない軽症者の方の情報、こういったことも難病の研究に活用することができますので、国としても、市営公共施設の無料入場など、こういったことに活用している自治体の利活用好事例、こういったものを周知をしておりましたりですとか、また、登録者証が利用可能な障害福祉就労支援サービスの一覧について、都道府県等に情報提供するなど、国としては、そういった好事例の展開を行っているところでございます。都道府県に対しましては、今後も登録者証の発行事業、この実施を促すとともに、各自治体において地域の実情に合わせて利活用を図っていただきたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=7705.995000000001",
+      "metrics": null
+    },
+    {
+      "id": "qa_055",
+      "segment_index": 7,
+      "topic": "パーキンソン病の身体症状（不随意運動等）への啓発",
+      "question": {
+        "speaker": "岡野純子",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- ジスキネジアやオンオフ現象など、社会で誤解や偏見が生じやすい身体症状について、どのような啓発強化を考えているか",
+        "full_text": "そこで伺いますが、厚生労働省としてパーキンソン病の身体症状、特にジスキネジアやオンオフ現象という社会で誤解や偏見が生じやすい特徴について、啓発強化をどのように考えていらっしゃるか、考えや手段について伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "大坪（実名不明）",
+        "role": "",
+        "summary": "- 患者が誤解や偏見を受けることなく尊厳を持って生きられる社会は大変重要であると考えている\n- 正しい知識の普及啓発を図り、国民の理解を深める取り組みを進めることは国の重要な役割であると考えている",
+        "full_text": "難病の患者様が社会で誤解や偏見を受けることなく、地域で尊厳を持って生きていかれるような社会、これは大変重要だと思っております。また、難病に対する正しい知識の普及啓発を図り、難病に関する国民の理解が深まるよう取り組みを進めることは、国としても重要な役割だと思っています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=7705.995000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "パーキンソン病の啓発強化の考えと手段",
+          "sub_asks": [
+            "啓発強化の考え方",
+            "啓発強化の具体的な手段"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "ジスキネジアやオンオフ現象"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "パーキンソン病患者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "取り組みを進めることは、国としても重要な役割だと思っています",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "難病に対する正しい知識の普及啓発を図り、難病に関する国民の理解が深まるよう取り組みを進めることは、国としても重要な役割だと思っています。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な手段を問う質問に対し、重要性への同意という抽象的な回答に留まっており、記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「考えや手段」と幅広く問うのではなく、具体的な啓発媒体や予算措置の有無など、限定的な選択肢を提示すべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_056",
+      "segment_index": 8,
+      "topic": "パーキンソン病等の難病に関する周知啓発の強化",
+      "question": {
+        "speaker": "岡野純子",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 一般の人にリーチしやすい具体的な周知啓発の実施\n- 症状に伴う誤解や苦しみを社会が理解し、患者が安心して暮らせる環境整備の推進",
+        "full_text": "今いろいろとご説明いただいた中には、割とマニアックなものというか、一般の人に決してリーチしづらいものもあるのかなというふうに思いました。やっぱり周知啓発というのは知ってもらってなんぼだと思いますし、社会の側が知って、我々が学ぶことで防げるトラブル、減らせる苦しさあると思います。ぜひ具体的に、皆さんが病気を抱えていても外に出られる、誤解を恐れずに社会で暮らせる、そういう環境をつくるのも厚生労働行政のすごく大切なお仕事だと思いますので、ぜひ症状に即した、どういうふうな誤解がされるのか、どういうふうに苦しんでいらっしゃるのかというところを知ってもらえるような啓発の強化ということをお願いを申し上げまして、今日の質問を終わりたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "上野賢一郎",
+        "role": "厚生労働大臣",
+        "summary": "- 難病情報センターでの解説やサポート事業への補助を実施\n- 研究班と患者会の協力による就労・療養パンフレットの作成\n- 学会ホームページ等での情報発信との連携を検討",
+        "full_text": "現在、厚生労働省で行っていることを申し上げますと、難病情報センターにおいては、一般利用者向けに分かりやすい言葉で病気の解説を行うとともに、また、難病患者サポート事業というものを行っておりまして、難病患者様の状況を多くの方に知ってもらう機会とするために、日本難病疾病団体協議会が開催する一般国民向けのシンポジウム、これに補助を行っております。また、厚労省におきましても、難病の研究班において、患者会とも協力をして、難病患者の就労や療養に関するパンフレット、このようなものを作成させていただいております。また加えまして、国を離れて申し上げますと、パーキンソン病に係る症状や治療方法などについては、パーキンソン病に関連する学会、例えば日本神経学会ですとか、神経治療学会、また日本定位機能神経外科学会、こういった学会のホームページにおいて、一般の方向けに患者以外の方への情報発信、こういったものが行われております。先生、ご指摘のパーキンソン病に特化した啓発につきましては、厚生労働省だけではなく、学会の力も借りながら、連携してどのような対応が可能か、検討してまいりたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=9908.095000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "難病患者への誤解を解く啓発活動の強化要望",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "病気を抱えている方",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "難病情報センター"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "難病患者サポート事業"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "日本難病疾病団体協議会"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "日本神経学会"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "神経治療学会"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "日本定位機能神経外科学会"
+            }
+          ],
+          "score": 0.9
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "連携してどのような対応が可能か、検討してまいりたいと思います",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "学会の力も借りながら、連携してどのような対応が可能か、検討してまいりたいと思います。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "要望形式の質問に対し、現状の施策を具体的に列挙した上で、今後の検討に言及した標準的な回答である。",
+        "would_be_referenced": "low",
+        "issue_in_design": "具体的な啓発手法や目標を提示せず「強化してほしい」という抽象的な要望に留まっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_057",
+      "segment_index": 8,
+      "topic": "邦人保護に関する協力覚書の活用と拡大",
+      "question": {
+        "speaker": "豊田真由子",
+        "party": "参政党",
+        "summary": "- 英国での邦人保護において、日英間の自国民保護に関する協力覚書が有効に機能したと認識している\n- 感染症等の事態に備え、同様の覚書の署名国を増やし、邦人保護に万全を期してほしい",
+        "full_text": "今回、邦人保護について、外務省にお伺いをしたいと思っております。今回、クルーズ船に乗船していた邦人の方が1名いらっしゃいまして、現地時間の5月10日に、英国政府手配のチャーター機の余席提供を受けまして、英国に到着をされて、健康状態に問題はないということでございますが、今後は英国において、現地保健当局による最大45日間の健康観察などを受けるというふうに伺っております。今回、実は先月の4月20日に英国との間で署名をいたしました自国民保護に関する協力覚書というものが大変有効に機能したというふうに理解をいたしております。これは現在4カ国としか結んでおりませんで、韓国、オーストラリア、カナダ、英国でございますが、今回のケースも鑑みまして、こうした覚書の署名国を増やしていただいて、感染症をはじめとする様々な事態における邦人保護に万全を期していただきたいというふうに思います。今回の下船した邦人に対する保護には引き続き取り組むとともに、今後様々な事態が想定されますので、日本国として総力を挙げて邦人保護に取り組むということでお伺いをいたしたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "三前良次",
+        "role": "",
+        "summary": "- 英国での邦人対応は、本年4月に署名した協力覚書を踏まえた初の協力案件となった\n- 今後もさらなる署名国の増加を目指して積極的に検討していく考えである",
+        "full_text": "ハンタウイルスへの感染が発生したクルーズ船、本流ス号でありますけれども、委員の方からも言及ございましたように、これを下船された邦人については、この方の健康状態には問題はないということでありますけれども、WHOの推奨等に基づいて、英国において現地保健当局による最大45日間の健康観察等を受ける予定であります。邦人保護及び感染拡大防止の観点から、外務省及び在外公館職員が、この邦人の方と緊密に連絡を行って、内閣感染症危機管理統括庁、そして厚生労働省、英国政府等と。連携し、法人の方への支援を実施してきておりまして、引き続き適切に対応してきます。今回、英国側による協力は、まさに委員の方からご指摘ございましたように、日英間で本年4月に署名された海外における自国民保護に関する協力覚書を踏まえたものでありまして、この覚書署名後初の協力案件ということになりました。これまで同様の覚書を韓国政府とも署名しておりますけれども、今後もさらなる署名国の増加を目指して積極的に検討していく考えでございます。海外法人の安全の確保は外務省にとって最も重要な責任の一つである。引き続き法人保護に万全を期すべく努めてまいる所存でございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=9908.095000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "邦人保護協力覚書の署名国拡大と保護体制の強化について",
+          "sub_asks": [
+            "自国民保護に関する協力覚書の署名国を増やしてほしい",
+            "総力を挙げて邦人保護に取り組むか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "現地時間の5月10日"
+            },
+            {
+              "type": "law",
+              "excerpt": "4月20日に英国との間で署名をいたしました自国民保護に関する協力覚書"
+            },
+            {
+              "type": "organization",
+              "excerpt": "韓国、オーストラリア、カナダ、英国"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "クルーズ船に乗船していた邦人",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "本流ス号"
+            },
+            {
+              "type": "number",
+              "excerpt": "最大45日間の健康観察"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "内閣感染症危機管理統括庁"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "厚生労働省"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "今後もさらなる署名国の増加を目指して積極的に検討していく考えでございます",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "今後もさらなる署名国の増加を目指して積極的に検討していく考えでございます。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な事例（クルーズ船の邦人保護）に基づき、協力覚書の有効性と今後の拡大について質疑が行われており、政府側も前向きな検討を回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "要望形式の問いかけであるため、具体的な拡大目標数や優先国を問う形式にすれば、より拘束力のある回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_058",
+      "segment_index": 8,
+      "topic": "児童虐待の予防と早期介入",
+      "question": {
+        "speaker": "豊田真由子",
+        "party": "参政党",
+        "summary": "- 児童虐待、特に実母の交際相手による虐待などの痛ましい事件が起きている\n- 子どもや親からのSOSをキャッチし、虐待発生前の予防や早期の危機介入を強化してほしい\n- 国としてどのように取り組むのか見解を求める",
+        "full_text": "次に、児童虐待についてお伺いをしたいと思います。今回、京都府の南丹市におきまして、11歳の小学生の男の子が母親の再婚相手に殺害されるという痛ましい事件が発生いたしました。これちょっとデータ的なことを申し上げますと、昨年9月に公表された政府の報告書によりますと、令和5年度の虐待による子どもの死亡事例65人のうち、主たる加害者が誰かということを見ますと、実母が39.6%、実母及び実父が14.6%、そして実母と実母の交際相手というのが4.2%ございます。子どもが実際誰と暮らしているかということの割合の比較で言えば、実母及び実母の交際相手が4.2%というのは、これは決して少ない数字ではないというふうに私は思います。なので、本当に思うんですけれども、子どもにとっては、家庭か学校、保育園だったり幼稚園だったり、その居場所がすべてでございますので、家庭が地獄であるということは、本当に生活そのもの、人生そのものが地獄であるという状況にございます。なので、そこからいかに見つけて助けてあげるかということを、周りの大人が本当に真剣にならないといけない。以前に比べますと、虐待を許さない、すぐ通報する、子どもを守るという認識が、社会において広く共有されてきたことというふうには思いますけれども、やはりこの瞬間もどこかで、声を上げられずに、声を上げることすら知らない、声の上げ方もわからないたくさんの子どもが苦しんでいるということを思わないわけにはいられません。今回のこの11歳の小学生の男の子も、新しいお父さんとうまくいっていないということを周囲に漏らしていたということでございますが、まさかそれがこんな事件になってしまうとは周囲の人たちも思わなかったんだと思いますし、何かしてあげられることはなかったのかというふうに、きっと皆さん非常に悔やんでいらっしゃるのではないかというふうに思います。そうした中で、何がどのようにできるかということを考えれば、児童虐待の問題をめぐりましては、いろいろな場面での体制整備、人的な資源の不足であったり、連携とか介入の方法とか、これまでもたくさん議論がございました。しかし、一つ一つ、法律も含めて前進をしてきたと思いますが、やはりまずは見つけるということが主眼になってまいります。そのときに、子どもが家庭でつらいことがあるとか、暴力を受けているといったことをもし話してくれたとしたら、あるいはそういう兆候が子どものけがだったり状態から見られたとしたら、保育園、幼稚園、学校の方というのが適切かつ迅速にきちんと対応する。そしてまた、これはジェンダーの差はちょっと勘案しまして、お母さんがもし自分の交際相手が自分のお子さんにつらく当たっている、暴力を振るっているということがありましたら、それを身近にすぐに相談できる、助けを求める場所があるのかといった、それは親族であったり公的機関であったりだと思いますけれども、そういったことが非常に重要になってくるんだというふうに思います。こうしたことを踏まえまして、子どもやまた親からのSOSとか危険なサインをしっかりとキャッチし、虐待が発生する前の予防、伴走支援、そして早期の危機介入が極めて重要であると考えます。今後、現在も含めて国としてどのように取り組んでいかれるのか、これは子ども家庭庁さんと文科省さんと大串正樹委員長、双方の御見解を伺いたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "上野賢一郎",
+        "role": "厚生労働大臣",
+        "summary": "- 悩みや困難を早期に相談できる環境づくりと、関係機関がリスクサインに気づき連携して支援につなげる体制が重要である\n- 相談ダイヤル189の広報、子ども家庭センターの全市町村設置、児童相談所の体制強化（増員や処遇向上）に取り組んでいる\n- 学校教職員による早期発見と通告の重要性を認識し、チェックリスト付きの手引きや研修教材の周知、スクールカウンセラー等の配置を推進している",
+        "full_text": "事案について捜査中でございますので、答弁は差し控えたいと思いますが、一般論として子ども家庭庁の見解を申し上げてまいります。当庁とすれば、いかに申し上げます点について、総合的に取り組んでいくことが重要と考えております。まず第一に、子どもや虐待等に気づいた実親等がその抱える悩みや困難な状況を早期に相談できる環境をつくること。第二に、学校をはじめとした子どもに関わるさまざまな関係機関が子どもの変化やリスクサインに気づき、連携して必要な支援につなぐことで児童虐待を予防するとともに、発生が疑われる場合、介入が必要と判断される場合には特に、迅速かつ的確に必要な対応を行い、親子の支援を継続的に行うこと。これが重要だと考えております。そのため、当庁においては、家庭に関して悩み、さまざまな困難を抱える子どもや親が安心して相談できるよう、児童相談所虐待防止相談ダイヤル189ですね、親子のための相談ラインへの相談を呼びかける広報ポスターの全国での掲示を行う。あるいは、文部科学省さんのご協力のもと、学校を通じ、子どもたちへの虐待の認識を深めるリーフレットの配布等の広報に取り組んでおります。また、妊娠産婦や子育て家庭とつながり、その悩みや困難に寄り添い、必要な支援を提供するための地域の中核機関として子ども家庭センターの設置及び機能強化を進め、今年度中の全市町村での設置を目指し、運営補助を含め様々な支援を行っております。さらに、介入が必要と判断される場合に、迅速かつ的確に対応するためには、児童相談所の体制強化が不可欠でございます。このため、令和4年12月に、新たな児童虐待防止対策体制強化プランを策定しました。その下で、毎年度計画的な増員を図り、児童相談所職員の人材定着や処遇向上、業務効率化に向けた自治体への支援等にも取り組んでおります。児童虐待を防ぎ、子どもの命を守るためには、子ども家庭センターや児童相談所だけでなく、さまざまな関係機関や地域資源による多分野連携によりまして、子どもや家庭の状況をしっかりと把握し、総合的な支援をすることが必要です。引き続き、関係機関や関係省庁と十分な連携を図りつつ、社会全体で子どもたちを、子どもの命を守るために取り組んでまいります。児童虐待防止法におきまして、学校の教職員は、児童虐待を発見しやすい立場にあることを自覚し、児童虐待の早期発見に努めなければならないとされておりまして、児童虐待を受けたと思われる児童を発見した者は、速やかにこれを福祉事務所、または児童相談所に通告しなければならないとされておりますので、学校関係者は、虐待の発見対応にあたり重要な役割を果たしていると認識しております。文部科学省におきましては、こうした虐待の対応に当たっての学校教職員の役割、あるいは虐待リスクのチェックリスト、衣服が汚れている、衛生状態が良くないとか、食事があまり家でできていないから痩せているとか、こういったチェックリスト等について示した手引きを作成するとともに、具体的な虐待対応のケースを取り上げて必要な対応のポイント等を解説した教師用の研修教材、こういったものを作成の上、全国の教育委員会に周知しております。また、スクールカウンセラー、スクールソーシャルワーカーの配置による教育相談体制の充実にも取り組んでおります。今後とも、子ども家庭庁をはじめとする関係省庁と連絡しながら、引き続きこれらの取り組みを進めてまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=9908.095000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "児童虐待の予防・早期介入への国の取り組みについて",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "field_case",
+              "excerpt": "京都府の南丹市におきまして、11歳の小学生の男の子が母親の再婚相手に殺害されるという痛ましい事件"
+            },
+            {
+              "type": "organization",
+              "excerpt": "昨年9月に公表された政府の報告書"
+            },
+            {
+              "type": "number",
+              "excerpt": "令和5年度の虐待による子どもの死亡事例65人のうち、主たる加害者が誰かということを見ますと、実母が39.6%、実母及び実父が14.6%、そして実母と実母の交際相手というのが4.2%"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.9
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "南丹市の11歳小学生の男の子",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "児童相談所虐待防止相談ダイヤル189"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "今年度中の全市町村での設置を目指し"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "令和4年12月に、新たな児童虐待防止対策体制強化プランを策定"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "スクールカウンセラー、スクールソーシャルワーカー"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 3,
+          "trigger_phrase": "子ども家庭センターの設置及び機能強化を進め、今年度中の全市町村での設置を目指し",
+          "matched_pattern": "Lv3: future-tense verb describing a CONCRETE government action with a named mechanism"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "子ども家庭センターの設置及び機能強化を進め、今年度中の全市町村での設置を目指し、運営補助を含め様々な支援を行っております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な事件と統計に基づいた質問に対し、政府側が現在実施している具体的施策（189、子ども家庭センター、体制強化プラン等）を網羅的に回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_059",
+      "segment_index": 8,
+      "topic": "病院の老朽化対策と補助金",
+      "question": {
+        "speaker": "豊田真由子",
+        "party": "参政党",
+        "summary": "- 40年以上の病棟を持つ病院が多く、雨漏りや設備不足などハード面の老朽化が深刻である\n- 現行の補助金制度では不十分であり、地域に必要な病院の建て替え・回収のための新たな補助金創設などの具体的方策を求める",
+        "full_text": "次に病院の老朽化の問題に行きたいと思います。これにつきましては、昨今も非常に報道も多くなされておりまして、認識が広まっているわけですが、実際に冷静に考えますと、この病院の老朽化問題に対して、基本的な解決策というのが、今少なくとも私が聞いた限り、調べた限りでは、施設整備の補助みたいな形では、多様な策がないという状況だというふうに認識をしております。と申しますのは、例えば、令和7年度の補正予算で、地域医療介護総合確保基金や整備費補助金の対象となった施設整備につきまして、補助単価を足元の建設単価に合わせてかさ上げをするという措置が行われております。ただ、この基金と申しますのは、地域医療構想の推進に必要な施設整備というのが建前でございますし、整備費補助金は、適地や災害医療など政策医療が対象になっております。今回人件費とか物価高騰に対応するということで非常に診療報酬改定、また昨年の補正でおきましても非常に手当てをしたというふうに言われておりますが、これはあくまでもこれまでの不足分に対して厚生労働大臣、40年以上の病棟を持つ病院というのは1568カ所。そしてまた50年以上は547箇所という結果でございまして、本当に報道、私も見ておりますけれども、ボロボロで雨漏りがしますとか、あるいは設備とか、いろんな手術の機械なども新しくできませんと。やはり命を守るというときに、ハード面とソフト面、両方大事だと思いますので、この機械があれば助かった命が助からないかもしれないというところで、どこにお住まいか、あるいは病院がどこにかかるかによって、大事な国民の命が左右されるようなことがあって、本当にいけないというふうに思っていまして。これにつきまして、私、例えば、財務省さんとの調整が必要だとは思いますけれども、この建て替え回収のための新たな補助金を、もちろん必要な範囲で創設をするとか、もちろん人口減少もございますので、何でもかんでも今までどおりというわけにはもちろんいきませんけれども、その機能や規模を見直しつつも、地域に必要な病院の建て替えができなければ、その地域に空白が生じますので、非常に私は危機的状況だと思っておりまして。これにつきまして、どうにもならなくなっている病院にどうしろということなのか、具体的な見通しも含めて、御見解を伺いたいと思いますし、何か今後の新たな方策のようなものがありましたら、ぜひお聞かせいただきたいというふうに思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "上野賢一郎",
+        "role": "厚生労働大臣",
+        "summary": "- 物価高騰により施設整備が困難なケースがあることを承知している\n- 令和7年度補正予算において、補助単価を上回る建築資材の高騰分を補助する措置を講じており、これを十分に活用してほしい",
+        "full_text": "上野厚生労働大臣、建設単価の高騰を含む物価高騰、また経済状況の変化によりまして、医療機関の施設整備が困難なケースもあるというふうに承知をしておりまして、こうした中、7年度補正予算におきまして、委員からも御紹介のありました補助単価を上回る建築資材の高騰分、これは補助をするということをしております。これにつきましては、速やかに支援を届けていきたいというふうに考えております。まずはこうした方策を十分活用していただけるように促していきたいと考えています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=9908.095000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "病院老朽化対策の具体的見通しと新方策の有無",
+          "sub_asks": [
+            "どうにもならなくなっている病院への具体的見通し",
+            "今後の新たな方策の有無"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "令和7年度の補正予算"
+            },
+            {
+              "type": "organization",
+              "excerpt": "地域医療介護総合確保基金"
+            },
+            {
+              "type": "number",
+              "excerpt": "40年以上の病棟を持つ病院というのは1568カ所"
+            },
+            {
+              "type": "number",
+              "excerpt": "50年以上は547箇所"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "病院",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "deadline",
+              "excerpt": "7年度補正予算"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "速やかに支援を届けていきたいというふうに考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "7年度補正予算におきまして、補助単価を上回る建築資材の高騰分、これは補助をするということをしております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は具体的な新制度の創設を求めたが、大臣は既存の補正予算措置の活用を促すにとどまっており、実質的な回答になっていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「具体的な見通し」と「新たな方策」を同時に問うているため、大臣が既存策の説明に逃げる余地を与えている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_060",
+      "segment_index": 9,
+      "topic": "公的医療・介護保険制度における不正・過剰請求の防止策",
+      "question": {
+        "speaker": "辰巳孝太郎",
+        "party": "日本共産党",
+        "summary": "- 公的財源による医療・介護サービスの不正や過剰利用を防ぐための制度的担保が必要である\n- 内部告発で発覚したケースは氷山の一角であると考えられ、適正な運用を確保するための政府の見解を求める",
+        "full_text": "これ、問題を複雑にしてますのは、やはりご自身がそれがきちんとサービスが提供されているかどうか、あるいは設定されているサービスがどれで今がどれかということが緻密にお分かりにならない場合も多くございますし、また非常に私も現場も見ていて思うんですけれども、こうした重篤な疾病や支援が必要な方の場合、ご家族から見ると「ホームで見てくれているなら助かるよ」ということであったり、あるいは公費負担医療制度の対象なので、ご家族とかご自身の負担は割と低めで、サービスが手厚くてよかったみたいな、なかなか複雑な状況にございまして、本当にだからその方自身がひどい目にあっているわけでもないので、なかなかどういうふうに介入するかみたいな話があるんですが、ただ一番ここでポイントなのは、この公的な医療あるいは介護の保険制度でございますね。これは国民の大事な保険料や税といった公的財源によって賄われている。それが不正、過剰に使われているということのマイナスを私どもは考えなければならないということでございますので。内部告発でわかってきたケースがいくつかございますが、ということはまだまだこれは氷山の一角だろうというふうに思います。こうしたことにつきまして、もちろんサービスを必要とする方に効率的で質の高いサービスを届けるということと、国民の財源を守るということで、制度的な担保をしないといけないと思います。これがやれないようにしていけないと思っていまして、この点について、御見解を伺いたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "上野賢一郎",
+        "role": "厚生労働大臣",
+        "summary": "- 令和8年度の診療報酬改定において、訪問介護の報酬体系を1回あたりから1日あたりへ変更するフォーカス報酬の仕組みを新設した\n- 今後も適正化を図るための見直しを継続的に行う努力をする",
+        "full_text": "上野賢一郎厚生労働大臣：御指摘の点、非常に重要な観点だと考えておりまして、令和8年度の診療報酬改定におきましても、例えば訪問介護の時間、これを1回あたりではなくて、1日あたり、フォーカス報酬の仕組みを新設するなどを行いました。今後とも、こうした見直し、着実にあって、適正化を図れるように努力していきたいと考えています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5199",
+        "clb-5265"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=11197.495",
+      "metrics": null
+    },
+    {
+      "id": "qa_061",
+      "segment_index": 9,
+      "topic": "通院在宅精神療法の診療報酬改定内容",
+      "question": {
+        "speaker": "辰巳孝太郎",
+        "party": "日本共産党",
+        "summary": "- 通院在宅精神療法の診療報酬改定の内容について説明を求める",
+        "full_text": "来月から、通院在宅精神療法の診療報酬が、精神保健指定医でなければ、4割も減算されることが、今年2月に明らかになり、関係者に衝撃を与えております。まず、その診療報酬の改定内容を紹介していただけますか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "狭間",
+        "role": "",
+        "summary": "- 児童思春期の精神疾患患者の受入体制確保のため、児童思春期支援指導加算の点数引き上げと対象医療機関の拡大を行う予定である",
+        "full_text": "通院在宅精神療法は、精神科を担当する医師が行う専門的な治療についての評価でございます。令和8年度診療報酬改定におきましては、大きく2点改定をする予定をしております。1つは、児童思春期の精神疾患患者の受入体制をさらに確保する観点から、受入体制の整った医療機関への評価である児童思春期支援指導加算の点数を引き上げるとともに、その対象を、前回改定では対象とした月平均8人以上の初診を行う医療機関に加えまして、月平均4人以上の初診を行う医療機関に拡大をすると。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5199"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=11197.495",
+      "metrics": null
+    },
+    {
+      "id": "qa_062",
+      "segment_index": 9,
+      "topic": "診療報酬の要件厳格化の理由",
+      "question": {
+        "speaker": "辰巳孝太郎",
+        "party": "日本共産党",
+        "summary": "- 非指定医の点数が大幅に減算されることへの懸念を提示し、要件を厳しくする理由を問う",
+        "full_text": "辰巳孝太郎：つまり今おっしゃっていただいた要件を満たさない非指定医は、これまでと同じ診療をしながら点数は従来の550点から4割減の330点にされてしまうということなんですね。医師からはあまりにもドラスティックな改定だと、診療所の経営が厳しくなるなどの戸惑いの声が相次いでおります。私も実際に医師の話を聞きましたけれども、収入が激減する見込みで経営が苦しくなって人員カットに踏み切らざるを得ないという声もありました。神奈川県精神神経科診療所協会の実施をした緊急のアンケートでも、実際の診療能力と評価が一致していない、外来精神療法の本質と乖離した改定、不合理、いわゆるチェーンクリニック対策にはならない、閉院を考える診療所が多数ある、患者の受診機会が減る、患者の不利益が大きい改定などの厳しい声が続出をしております。確認しますけれども、そもそも今回この要件を厳しくする、その理由は何なんでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "狭間",
+        "role": "",
+        "summary": "- 精神医療の質を適切に評価することを趣旨とし、精神保健指定医や専門的な精神医療を担う医療機関に勤務する医師による治療を評価するよう見直す",
+        "full_text": "通院在宅精神療法は、精神科を標榜する保健医療機関において、精神科を担当する医師が、精神疾患の患者に一定の治療計画の下に、危機介入、対人関係の改善、社会適応能力の向上を図るための指示、助言などの働きかけを継続的に行う治療方法でございます。こうした治療を実施するためには、精神医療に関する一定の知識・技術が必要であることから、精神医療の質を適切に評価することを主な趣旨としまして、精神保健指定医による治療、あるいは精神保健指定医でない場合も、専門的な精神医療を担う医療機関に勤務する医師や、精神医療に関わって一定の業務を行っている医師を中心とした治療を評価するよう見直すこととしております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5199"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=11197.495",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "要件厳格化の理由についての確認",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "神奈川県精神神経科診療所協会"
+            },
+            {
+              "type": "number",
+              "excerpt": "550点から4割減の330点"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "神奈川県精神神経科診療所協会",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "精神医療の質を適切に評価することを主な趣旨としまして、精神保健指定医による治療、あるいは精神保健指定医でない場合も、専門的な精神医療を担う医療機関に勤務する医師や、精神医療に関わって一定の業務を行っている医師を中心とした治療を評価するよう見直すこととしております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "診療報酬改定の理由を問う質問に対し、政府側が「質の評価」という趣旨を回答した標準的なやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_063",
+      "segment_index": 9,
+      "topic": "診療報酬改定による児童精神科・小児科への影響と見直し",
+      "question": {
+        "speaker": "辰巳孝太郎",
+        "party": "日本共産党",
+        "summary": "- 指定医を持たない児童精神科医や小児科医の報酬がカットされることで、発達障害児の診療体制の崩壊や初診待機解消への逆行を招く懸念があるとし、改定の見直しを求める",
+        "full_text": "今、報酬改定で甚大な影響を受けると考えられているのが、児童精神科領域及び小児科なんですね。この精神保健指定医というのは、今少しありましたけれども、患者の意思によらない強制的な入院や隔離、身体拘束といった行動制限を判定して実施するための法的な権限を持つことができるものなんですけれども、そもそも発達障害児などを見る児童精神科医には、その必要性の有無の観点や、この人権上の観点からですね、あえて指定医を取得されていない方もたくさんおられるんですね。同様に小児科で発達障害児を見ている方も、指定医を取得している人はほとんどいないとされています。これら現場で活躍をされている医師に対する診療報酬が、これね、4割もカットされると。つまりこの分野からの撤退ということがね、大臣、これ現実味を帯びてくる話になると思うんですよ。大臣ね、この度の診療報酬の改定で、この小児科からの撤退が進むということになれば、これ発達障害を見る先生が減ってしまうのではないかと。これはですね、この間国が進める発達障害児の初診待機解消ですね。待機時間が非常に長い。これにも逆行することになると思うんですよ。こういう診療報酬の改定の見直しは、私は見直すべきだと思うんですけれども、いかがですか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "上野賢一郎",
+        "role": "厚生労働大臣",
+        "summary": "- 待機問題は認識しており、診療体制の充実が重要と考えている\n- 児童思春期の受入体制が整った医療機関への評価を充実させる\n- 小児科医による発達障害診療には「小児特定疾患カウンセリング料」という別の評価があるため、これを活用できると考えている",
+        "full_text": "小児の発達障害や児童精神科領域においては、初診までの待機等の問題、今ご指摘がありました待機等の問題があることを認識しておりまして、これに対し一定の診療の質を確保しつつ、診療体制の充実を図っていくことが重要であると考えております。こうした考えのもと、令和8年度診療報酬改定では、児童思春期の精神疾患患者の受入体制の整った医療機関への診療報酬の評価の充実も図ることとしております。先ほどお話のありました通院在宅精神療法は、精神疾患の患者に精神科を担当する医師が専門的な治療を行う場合の評価でありますが、一方で小児科の医師が発達障害等の診療を行うに当たっては、別に小児特定疾患カウンセリング料として評価を行っており、小児科の医師にはこうした点数を活用いただくこともできると考えています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5199"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=11197.495",
+      "metrics": null
+    },
+    {
+      "id": "qa_064",
+      "segment_index": 10,
+      "topic": "発達障害児の診療体制の確保",
+      "question": {
+        "speaker": "藤田洋司",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 6月からの診療報酬改定後、発達障害児が診療を受けられない事態にならないよう対応を検討してほしい",
+        "full_text": "大臣、6月から、来月からの診療報酬改定ですからね。これ、やるんだという話かもしれませんけれども、やはり、とりわけです。もちろん、成人もそうですけれども、とりわけ、発達障害児が診療を受けられない。こういうことがないような対応を、6月以降、検討していただきたい。いかがですか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "狭間保健局長",
+        "role": "",
+        "summary": "- 小児特定疾患カウンセリング料の活用を推進する\n- 改定の影響について関係者から実情を把握し、診療体制の確保に向けて引き続き検討し適切に対応する",
+        "full_text": "質の高い精神医療あるいは小児の発達障害の診断を行っていくということは非常に重要なことだというふうに思っています。その意味で、委員も先ほど改めて言及いただきましたけれども、小児科の先生は特に、小児特定疾患カウンセリング料というのをご活用いただけるということでございます。その上で、今後、今回の改定の影響については、いろいろ関係者の方からも実情をお伺いするとともに、先進医療の質の向上と診療体制の確保の両面からも、今後も引き続き検討し、必要に応じて適切に対応したいとこのように考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56233&time=11850.095000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "発達障害児の診療確保への対応検討",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "6月から、来月からの診療報酬改定"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "発達障害児",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "小児特定疾患カウンセリング料"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "今後も引き続き検討し、必要に応じて適切に対応したい",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "今回の改定の影響については、関係者の方からも実情をお伺いするとともに、今後も引き続き検討し、必要に応じて適切に対応したい",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "診療報酬改定に伴う発達障害児の診療体制確保について、大臣が検討を約束したやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「検討していただきたい」という要望形式のため、具体的な改善策や期限を求める問い方にすればより拘束力のある回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    }
+  ],
+  "score_schema_version": "2.0",
+  "prompt_version": "V4"
+}
