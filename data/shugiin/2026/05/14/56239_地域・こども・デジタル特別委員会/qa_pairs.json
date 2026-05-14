@@ -1,0 +1,3040 @@
+{
+  "pairs": [
+    {
+      "id": "qa_001",
+      "segment_index": 5,
+      "topic": "自動運転AI開発への損保データの活用",
+      "question": {
+        "speaker": "斉木武志",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 損保会社が持つ事故データ（テレマティクスデータ等）を、これまでどのように自動車メーカー等のAI開発に提供してきたか\n- 提供が進んでいない場合、何が障壁となっているか",
+        "full_text": "まず村上参考人にお聞きをしたいと思います。どうやって実効性のある自動運転AIを開発するか。それには、村上さんは損保ジャパンの役員もなさっておりますけれども、まさにその損保会社で持っていらっしゃる事故データ。ドライブレコーダーが今の車は大体搭載されておりますので、いわゆるテレマティクスデータといわれる、どのような気象条件のときにどのような事故が起こったか、どのような傾斜のところ、どのような路面状況、どのような時間帯、こういうときに事故が起きやすいか。こういったことを霞ヶ関や車メーカーの方にお聞きしたんですけれども、損保会社の持っている事故データというのは、いわゆる金の泉というか、どうやったらその事故を避けることができるかという自動運転にとって最大の追求目標ですね。それが御社が持っているようなデータであると認識されております。ただ残念ながら日本においては、その損保会社が持っているようなデータがしっかり自動運転のAI開発に活かせていないとも聞いております。どのようにこれまで車メーカーをはじめとした自動運転ソフトの開発に情報提供されているのか否か。進んでいないとすれば何が障壁になってきたのかお聞かせください。村上参考人。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "村上明子",
+        "role": "参考人 独立行政法人情報処理推進機構AIセーフティ・インスティテュート所長",
+        "summary": "- 現状、走行データは主に事故時の責任分解点の解明や事故多発地点の把握に限定的に活用されており、自動運転等の安全性向上への提供は限定的である\n- 個別の同意取得という高いハードルが障壁となっており、本法案でこれが取り除かれれば、迅速に大量の学習データにアクセスでき研究開発サイクルが短縮されると期待される",
+        "full_text": "お答えいたします。まず今、事故のデータ等を活用しているかどうかというご質問に関してなんですけれども、損害保険の会社といたしましては、事故に関連するデータ、特にドライブレコーダーと呼ばれる走行時のデータに関して取得をしておりますけれども、これは主には事故があったときの責任分解点の解明のために使っているというのが現状でございまして、ではそれはもう少し活用するとなると、例えばどこで事故が起きたのかというところで、事故多発地点等を当社のみではなく損害保険協会というところで事故データを集めて使っているというのが現状でございます。ご指摘されたような、例えば自動運転であるとか、今後のところ、安全性向上につながるデータの提供というのは、現時点では限定的というふうに言えると思います。ただ、AI特例に伴って、損保会社がデータを提供できることになりますと、特に安全性向上につながるデータ、通常の運転時よりは、やはりヒヤリハットであるとか、事故のデータというのが非常に困難なリアルデータとして、AIの安全性向上に不可欠な学習データとして提供できるのではないかと思います。また、開発スピードという観点で申し上げますと、やはり今、個別の同意取得という高いハードルがございますので、それが本法案によって取り除かれることで、迅速に大量の学習データにアクセスができるようになって、研究開発のサイクルが大幅に短縮できるのではないかと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5280"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56239&time=3247.4429999999998",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "損保の事故データの自動運転AI開発への提供状況と障壁",
+          "sub_asks": [
+            "これまで車メーカー等に情報提供しているか否か",
+            "進んでいない場合、何が障壁になっているか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "損保ジャパン"
+            },
+            {
+              "type": "other",
+              "excerpt": "テレマティクスデータ"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "損保ジャパン",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "損害保険協会"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "個別の同意取得という高いハードルがございますので、それが本法案によって取り除かれることで、迅速に大量の学習データにアクセスができる",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "損保会社が持つ事故データの活用現状と、法改正による期待（同意取得のハードル解消）について具体的に回答されており、実務的な障壁が明確になった。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_002",
+      "segment_index": 5,
+      "topic": "現行法での自動運転開発の可否",
+      "question": {
+        "speaker": "斉木武志",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 自動運転を強化（エンハンス）することは、現行法では不可能ということか",
+        "full_text": "斉木武志追加でお聞きしますけれども、それはそうした自動運転をエンハンスしていくためには、現行法では不可能ということでしょうか。村上参考人",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "村上明子",
+        "role": "参考人 独立行政法人情報処理推進機構AIセーフティ・インスティテュート所長",
+        "summary": "- 今回の法改正に基づき、匿名的に本人の同意なしに統計情報として得られるようになれば可能になると考えている",
+        "full_text": "私、今回の法改正に基づいて、その匿名的に本人の同意なしに統計情報ということで得られるようになれば可能なのではないかというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5280"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56239&time=3247.4429999999998",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "自動運転の強化が現行法で不可能か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "今回の法改正に基づいて、その匿名的に本人の同意なしに統計情報ということで得られるようになれば可能なのではないか",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "現行法での可否について、法改正による解決策を提示して回答している。具体的数値はないが、法解釈の方向性を示す記録として価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_003",
+      "segment_index": 5,
+      "topic": "自動運転開発の切迫性と日本の競争力",
+      "question": {
+        "speaker": "斉木武志",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 世界市場で日本車のシェアが低下し、中国勢に先行されている現状において、自動運転分野を失うことは致命的であると考えているが、開発の切迫性をどう考えるか",
+        "full_text": "実は私、この世界に入ったのが2009年でして、当時日産のリーフが発売された年でした。でもそれから17年経って残念ながら、今例えば世界市場を見ても日本車のシェアというのは落ちてきております。例えば直近でオーストラリアを例にとりますと、中国車が3年前ですかね、1%だったシェアが今もう18%まで急速に伸びてきていて、タイなどはトヨタを中国がどんどん席巻しつつある。世界市場を見ても、今の東京のマーケットを見てもですね、日経平均はこれだけ半導体バブルで爆上がりしているのに、トヨタも日産もホンダも日本の自動車メーカーは株価がずっと下がってきていて低迷している。まさにこれは日本の自動車メーカーが、これからも稼げるのかということに対して、マーケットが非常に疑問符を投げかけているのではないかなというふうに非常に危惧をしております。今、経団連の役員もやってらっしゃると思いますけれども、産業界の立場から見て、やはり今、私はノルカソルカの分岐点に立たされていると思います。EVである程度中国勢に先行されて、やはり自動運転の分野まで失ってしまうと、これはやはり日本の立ち直れないような痛手を私は受けると思っております。今、この自動運転を開発しなければいけない切迫性というか、そのあたりはどのようにお考えでしょうか。村上参考人",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "村上明子",
+        "role": "参考人 独立行政法人情報処理推進機構AIセーフティ・インスティテュート所長",
+        "summary": "- 世界の最先端技術を日本に取り込むことは重要であり、その鍵となるデータの取得と活用を本法案で進めることで、世界に対峙できる技術を保持できると考える",
+        "full_text": "ありがとうございます。自動運転に限らず、世界で行われている最先端の技術というのをしっかりと日本で取り込んでいくことというのは重要だというふうに考えております。その際に、やはり肝になるのはデータだというふうに考えておりまして、本法案を中心としましたデータの取得と、そしてその活用というところをしっかりしていくことで、世界に対峙する技術というものを日本がしっかり持っているようになるのではないかと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56239&time=3247.4429999999998",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "自動運転開発の切迫性に関する考え",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "2009年"
+            },
+            {
+              "type": "organization",
+              "excerpt": "日産"
+            },
+            {
+              "type": "organization",
+              "excerpt": "トヨタ"
+            },
+            {
+              "type": "organization",
+              "excerpt": "ホンダ"
+            },
+            {
+              "type": "other",
+              "excerpt": "オーストラリア"
+            },
+            {
+              "type": "number",
+              "excerpt": "1%だったシェアが今もう18%"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "日本の自動車メーカー",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "本法案を中心としましたデータの取得と、そしてその活用というところをしっかりしていくことで、世界に対峙する技術というものを日本がしっかり持っているようになる",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は具体的な市場データを用いて切迫性を問いかけているが、参考人の回答は抽象的な方針に留まっており、具体的なアクションや数値への言及がない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのようにお考えでしょうか」というオープンクエスチョンであるため、回答者が抽象的な精神論や一般論で逃げることが可能になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_004",
+      "segment_index": 5,
+      "topic": "運用面での個人情報保護の可能性",
+      "question": {
+        "speaker": "斉木武志",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 適格者がデータを扱うなどの運用上の留意によって、本法案の体裁で個人情報を守ることが可能か",
+        "full_text": "斉木武志（自由民主党・無所属の会）：森田先生にもお伺いしたいと思います。今、村上参考人からも、まさにそういった適格者というか、そういうことをできる者を、デジタルであったり、上位であったりが選んでいくことによって達成できるのではないかというご発言だと思いますけれども、こうした運用面、本法案の今の体裁に、そうしたまさに運用面での留意によって個人情報を守ることが可能であるとお考えでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "森田朗",
+        "role": "参考人 東京大学名誉教授 一般社団法人次世代基盤政策研究所代表理事",
+        "summary": "- 100%ではないが、かなり可能であると考える",
+        "full_text": "森田朗（参考人）：お答えいたします。結論から言えば可能だと思います。100%かどうかは分かりませんけれども、かなり可能ではないかなというふうに思いますが。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56239&time=3247.4429999999998",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "運用面の留意で個人情報保護が可能か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "村上参考人からも"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "結論から言えば可能だと思います。100%かどうかは分かりませんけれども、かなり可能ではないかなというふうに思いますが。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "運用による個人情報保護の可能性について問うシンプルなやり取りであり、回答は主観的な見解に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「可能か」というYes/No形式の問いであるため、具体的な手法や条件を提示させる問い方にすればより有益な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_005",
+      "segment_index": 5,
+      "topic": "データ利活用のリスク管理手法",
+      "question": {
+        "speaker": "斉木武志",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 個人情報を守ることが可能であると考える背景や理屈を教えたい",
+        "full_text": "斉木武志（自由民主党・無所属の会）：その背景というか理屈もちょっと教えていただけると思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "森田朗",
+        "role": "参考人 東京大学名誉教授 一般社団法人次世代基盤政策研究所代表理事",
+        "summary": "- 従来の「入り口規制（同意取得）」ではなく、誰がどのような目的で使うかを規制する「出口規制」の考え方を導入すべきである\n- PETsなどの新技術でリスクを下げ、安全に使える人・企業をコントロールし、透明性を持って監視する仕組みを作ることで、メリットを最大化できる",
+        "full_text": "森田朗（参考人）：一つの考え方ですけれども、これまでのところはデータを出す段階でリスクがある場合には、例えば同意を取るとか、そうでない場合にはデータを取らないというやり方をしておりましたけれども、現在と言いましょうか、この私どもの方の説明いたしましたデジタル行政推進法の考え方になれば、データをむしろ使う、そのメリットというのを生かすべきであると。リスクとどうバランスを取るかということだと思います。そういうこともあり、いわゆる入り口規制という形ではなくて、出口規制と言っておりますけれども、データはきちっと提出していただいて利活用するけれども、その使う時に誰がどのような目的で、そしてどういう形のデータを使うかということについてきちっと規制をしていくと。それによってデータが持っている力と言いましょうか、それのメリットは享受しながら、なおかつコントロールをして安全に使えるようにするべきではないかと。データを取ってしまいますと、ちょっとこういう言い方をしますと、誤解を招くと困るんですけれども、なんとなく個人情報に関する議論を聞いておりますと、データを出してしまうと、必ずとは言いませんけれども、かなりの確率でそれが漏えいしてしまうリスクがあるというふうに、皆さん受け止めていらっしゃるかなというふうに思いますけれども、今村上参考人のご発言でもございましたけれども、いわゆる新しい技術、PETSとかそういう技術を使うことによって、かなりそのリスクというものは下げることができるのではないか。その場合にきちっとした形でリスクを下げるような、誰がどういうふうに使うのか。先ほど今もお話ございましたけれども、そうした安全に使うことができる人、企業なり、それをきちんとコントロールしていくということと、どういうふうに使うかということについて、透明性をもってそれを監視していくと。そういう仕組みを作ることによって、むしろデータを持っている、使うことによるメリットというものを引き出すということが、これからの社会のあり方ではないかというふうに考えているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5280",
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56239&time=3247.4429999999998",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "デジタル行政推進法の考え方の背景・理屈の教示",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "デジタル行政推進法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "PETS"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "入り口規制という形ではなくて、出口規制と言っておりますけれども、データはきちっと提出していただいて利活用するけれども、その使う時に誰がどのような目的で、そしてどういう形のデータを使うかということについてきちっと規制をしていく",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "デジタル行政推進法における「出口規制」の考え方について、参考人が具体的に論理を説明しており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が非常に簡潔であるため、文脈がないと具体的にどの部分の理屈を問うているかが不明確である。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_006",
+      "segment_index": 5,
+      "topic": "医療・創薬分野におけるデータ活用の効果",
+      "question": {
+        "speaker": "斉木武志",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 国民皆保険制度による良質な医療データが蓄積されている日本において、本法案のようなデータ活用が医療や薬業分野にどのような効果をもたらすか",
+        "full_text": "斉木武志（自由民主党・無所属の会）：森田先生は、確か中医協にも関わってらっしゃって、医療分野にも知見をお持ちだと思います。そのメリットとして、私は新薬であるとか、新たな医療の方法の開発、日本に大きな潜在力があるなと思っております。それがやはり日本は国民皆保険制度が敷かれておりますので、諸外国に比べると、所得階層的にもならされたデータといいますか、非常に多くの方が国民皆保険制度によって良質なデータが医療機関側にも蓄積をされているというふうに思います。これを活用していくことがやはり創薬であるとかの分野には、私は非常に可能性を開くのではないかなと思いますが、医療分野やこの薬業の分野において、どのような効果がもたらされるとお考えでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "森田朗",
+        "role": "参考人 東京大学名誉教授 一般社団法人次世代基盤政策研究所代表理事",
+        "summary": "- 創薬や医学研究に大きく貢献するが、現状の日本はデータ量はあるものの、活用可能な制度整備（システム化）が欧米に比べ遅れている\n- コロナ禍で露呈した迅速な状況把握システムの欠如を解消し、仕組みを構築することで、創薬や医療資源の効率的な配分に結びつくと考える",
+        "full_text": "森田朗（参考人）：お答えいたします。医療分野において、創薬であるとか医学研究ですね。それにこのデータが大変貢献するということは、申し上げるまでもないと思います。ただ、データに関して申し上げますと、確かに皆保険制度で、いわゆる医療保険に関するデータはありますけれども、健康状態、国民がどういう状態であるかということにつきましては、そうした大規模なデータというものは、量としては存在しているのかもしれませんけれども、それを使えるような形になっているかといいますと、我が国ではまだその制度として、それができていないと。これはヨーロッパに比べても、アメリカとか先進国に比べても、遅れているというのが現状ではないかと思います。その一辺が現れたのが、まさにCOVID-19のコロナの時の対応です。いかに迅速に感染状況、広がり、あるいは感染者の状態、またワクチンの効果というものを早く把握して、そして次の対策を遅れることなく打っていくという、そういう形でのシステムというのがまだ存在していないということだと思います。そういう仕組みができて初めて、創薬であるとか、あるいは医療資源の適正効率的な配分というものにも結びついてくるのかなと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5199"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56239&time=3247.4429999999998",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "国民皆保険データの活用が医療・薬業にもたらす効果",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "国民皆保険制度"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "COVID-19"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "量としては存在しているのかもしれませんけれども、それを使えるような形になっているかといいますと、我が国ではまだその制度として、それができていない",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人による現状分析であり、具体的な政策コミットメントや法的解釈を含むものではないため、記録価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのような効果があるか」という抽象的な問いであるため、回答も一般論に留まっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_007",
+      "segment_index": 6,
+      "topic": "個人情報保護の理念と利活用のバランス",
+      "question": {
+        "speaker": "山崎正恭",
+        "party": "中道改革連合・無所属",
+        "summary": "- 個人情報保護を基本的人権として認識すべきという大前提について、見解を問う",
+        "full_text": "そこでまずはじめに、個人情報保護の理念をどう考えるかについてお聞きしたいというふうに思います。先ほど先生からもお話がありましたけれども、僕も今日村上先生の話の中で、AIがここまで技術的にさまざまやれるというのはすごいなというふうに思ったところであるんですけれども、ただデータに関する個人情報保護は、基本的人権として認識しているということが大前提でなければならないと思いますが、その点について村上参考人と森参考人にお伺いしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "山崎正恭",
+        "role": "中道改革連合・無所属",
+        "summary": "- プライバシーと人権の保護は非常に重要である\n- 国際競争力の維持のためデータ活用も重要であり、技術と制度の両面で保護することが重要である",
+        "full_text": "私が今日ご紹介させていただきました技術のほんの一部でございますけれども、やはりですね、その個人のきちんとしたプライバシー、それから基本的に人権を守るということは非常に重要だというふうに考えております。一方でそのAIというものが、日本以外の国でもですね、このデータを活用して技術が進化してきている、この国際社会において日本が競争力を持ち続けるということも重要でございます。そういったことを使うことが前提にはなっておりますけれども、使うことができない、あるいは使う能力を持たない、あるいは意図して使わないといったこと、そういった事業者に関しては、しっかり指導をするということも重要でございますので、そういった制度と組み合わせて技術と制度というところで、しっかりお守りいただくということが重要なのではないかなというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56239&time=4348.943",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "個人情報保護の理念についての考え",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "村上先生の話"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "個人のきちんとしたプライバシー、それから基本的に人権を守るということは非常に重要だというふうに考えております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "理念を問う抽象的な質問に対し、一般的・概論的な回答がなされており、具体的な事実や制度的拘束力のある記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "理念の確認に留まっており、具体的な運用基準や法的解釈を問う形式になっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_008",
+      "segment_index": 6,
+      "topic": "個人情報保護の理念と利活用のバランス",
+      "question": {
+        "speaker": "山崎正恭",
+        "party": "中道改革連合・無所属",
+        "summary": "- 個人情報保護の理念と利活用のバランスについて、見解を問う",
+        "full_text": "そこでまずはじめに、個人情報保護の理念をどう考えるかについてお聞きしたいというふうに思います。先ほど先生からもお話がありましたけれども、僕も今日村上先生の話の中で、AIがここまで技術的にさまざまやれるというのはすごいなというふうに思ったところであるんですけれども、ただデータに関する個人情報保護は、基本的人権として認識しているということが大前提でなければならないと思いますが、その点について村上参考人と森参考人にお伺いしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "山崎正恭",
+        "role": "中道改革連合・無所属",
+        "summary": "- 保護と利活用の両立は重要だが、分野（特に医療分野）によって優先順位が異なるべきである\n- 一般法である個人情報保護法においては、名称の通り「保護」が一歩優先されるべきである",
+        "full_text": "個人情報保護法が今回改正されるということで議論をされているわけですけれども、重要なことは、他方で利活用が極めて重要である、特にAIを中心とした技術について、データを、個人情報を使っていかなければいけないというのも、非常に重要なことでございまして、両者が並び立たなければいけないということが重要なわけですけれども、私が一つ申し上げたいのは、個人情報保護法というのは、それは一般法なわけでございまして、ありとあらゆる分野に適用されるということです。他方で、先ほど森田参考人からお話になりました、医療分野というようなことになりますと、これは人の生命というのは、やはり何より大切なものということになりますので、ここにおいては、利活用が優先する。ですので、保護を全体としては重視しつつ、重要な部分について利活用を先行させる、そういう考え方ですね。抽象的に保護と利活用が両立すべきであるというのではなくて、分野別に考えるということは、これは結構重要なのではないかと思います。有用性に配慮しつつ、保護を目的とするということですので、これはやはり両方書かれているとは言いながら、保護が中心なのではないかと思います。また、法令のタイトル自体も、個人情報保護及び利活用法とか、個人情報取扱法ではなくて、個人情報保護法でありますので、この一般法においては、保護が一歩優先するのではないかと思います。しかしながら、個別の分野において、特に医療のような分野において、利活用を優先させるということは、これは全く合理的なことですので、そのような法律間のバランスをお考えいただいて、議論していただくのがいいのではないかと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56239&time=4348.943",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "個人情報保護の理念についての考え方",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "個人情報保護法"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "保護を全体としては重視しつつ、重要な部分について利活用を先行させる、そういう考え方ですね。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "個人情報保護の理念という抽象的な問いに対し、一般法としての保護優先と個別分野（医療等）での利活用優先という解釈を提示している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "理念を問う形式であるため、具体的な制度設計や法的拘束力のある回答を引き出しにくい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_009",
+      "segment_index": 6,
+      "topic": "医療データの匿名化処理の主体",
+      "question": {
+        "speaker": "山崎正恭",
+        "party": "中道改革連合・無所属",
+        "summary": "- 医療データの提供において、受け取り側ではなく提供側が名前や住所を削除（匿名化）すべきではないかという点について見解を問う",
+        "full_text": "ただですね、やっぱり僕も思ったのは、病歴とか健康診断の情報とか、要配慮個人情報というのは、本人の名前付きでいくというのは、すごく嫌なんじゃないかなというふうに思います。ただですね、僕は素人なんでよく思うんですけど、例えば医療データだったとしても、名前と住所もですね、例えば高知市までだったら必要かなと思うんですけども、その先の住所なんていらないんじゃないかなと。だからデータがきちっとあれば、名前と住所ぐらいはやっぱりですね、出す側がしっかり削除してくれたら、出された側の判断でというのは非常に曖昧なんで危険だなというふうに思うんです。それをですね、先ほどちょっと森先生なんかは、やはり提供する側が削除することが大事なんじゃないか、もらった側も直後にという話もあったんですけれども、私はやっぱり渡す側が削除するということが非常に重要ではないかと思いますけれども、この点についてのご見解を森参考人からお伺いしたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "森亮二",
+        "role": "参考人 弁護士法人英知法律事務所弁護士",
+        "summary": "- 構造化データ（データベース化された情報）であれば、項目が決まっているため匿名化は比較的簡単である\n- 非構造化データ（自由記述欄など）の削除は難しいが、構造化部分を匿名化するルール作りは可能であり、提供元での匿名化は非現実的ではない",
+        "full_text": "健康保険法等の一部を改正する法律案でね、これをなくすということなんですけれども、データベース化されている個人情報、構造化データというようなことも言いますけれども、この場合は、これはどこに何が書いてあるかということが項目によって決まっている。ここに氏名が書いています、ここに年齢が書いています、ここに住所が書いていますということですので、この場合は、匿名化は比較的簡単なのではないかというふうに思います。ですので、第三者提供のときに、提供元で匿名化するということは、そんなに手間のかかる話ではない。電子カルテなんかまさにそうだと思いますが、この場合、非構造化部分をデータベース化されていないところの個人情報、それは名前が書いてあるかもしれませんし、名前を推測させるほかの事情が、何年何月、どこの小学校の何組を卒業しました、そんなことが書いてあるかもしれません。これ削除できるかというと、これは難しいわけですけれども、その場合であっても、データベース化されている部分、構造化の部分を匿名化しなさいというようなルールを作ることもできるかと思いますので、私は提供元で匿名化するということが、非現実的なことだとは思わないわけでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5199"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56239&time=4348.943",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "医療データの提供元での匿名化の是非について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "健康保険法等の一部を改正する法律案"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "提供元で匿名化するということが、非現実的なことだとは思わないわけでございます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人による専門的な見解を問うやり取りであり、提供元での匿名化の現実性について明確な回答が得られている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が口語的で冗長なため、論点が「提供元での削除の重要性」という一点に絞られるまで時間がかかっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_010",
+      "segment_index": 6,
+      "topic": "団体訴訟制度の必要性",
+      "question": {
+        "speaker": "山崎正恭",
+        "party": "中道改革連合・無所属",
+        "summary": "- 個人が巨大企業に立ち向かうのは困難であり、G7諸国のように団体訴訟制度を整備することのメリットや必要性について見解を問う",
+        "full_text": "次に、これも今回の方が重要なポイントだと思いますけれども、団体訴訟制度についてお伺いしたいと思います。これも長妻議員から言及がありましたけれども、小泉委員が作った2025年3月5日の作成資料では、差し止め請求権を適格消費者団体自身の権利として付与することが考えられるというふうな前向きなことだったんですけれども、今回法案が提出されたときには、この部分がすべて削除されていました。制度があれば、団体がいろいろノウハウを蓄積して、個人情報保護委員会とタッグを組んで、さまざまチェックすることもできたのではないかなと。先日の答弁では、そういった専門家がいない、実績がない、消費者契約法の団体と個人の利益が違うとの答弁がありましたけれども、そもそも今までにないことをするのに専門家がいないのはある意味当然だと思いますし、先日の委員会で和裁委員からもあったように、EUの一般データ保護規則、GDPRなんかが提供されているところは、消費者団体が団体訴訟を行っています。どう考えても個人で巨大企業に立ち向かっていくというのは無理だと思うんですが、そこでG7の他の国では全て整備されているのに、今回の法案にはない団体訴訟制度、これがあった場合にはどういうメリットがあるのか、逆にそれはなかった場合のデメリットにもなると思うんですけれども、団体訴訟制度の必要性について森参考人の見解をお願いします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "森亮二",
+        "role": "参考人 弁護士法人英知法律事務所弁護士",
+        "summary": "- 個人情報保護委員会の法執行リソースには限界があるため、別の形での権利侵害防止や回復手段となるメリットがある\n- 当初はノウハウがなくても、運用を通じて培うことができ、委員会と情報を共有することで問題を克服できる",
+        "full_text": "団体訴訟のメリットとデメリットということかと思いますけれども、そのメリットにつきましては、先ほど私も報告でご説明をさせていただきましたが、やはり個人情報保護委員会に法執行のリソースが限られている、限界があるという中で、それを別の形で権利侵害を防ぐ、あるいは侵害された権利を回復していくと。今お話にありましたノウハウが十分ではないということですが、これはもちろんこれからやるわけでございます。これまで差し止め請求ですね、景表法とか食品表示法とか特商法とか、そういったものに規定されていると思いますけれども、もちろん始まるときは最初の一歩ですから、ノウハウはないわけですけれども、それを培っていくことはできる。個人情報保護委員会の法執行によって得られた情報を、これを団体訴訟の主体、適格消費者団体と共有するということも考えられると思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56239&time=4348.943",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "団体訴訟制度の必要性に関する見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "2025年3月5日の作成資料"
+            },
+            {
+              "type": "law",
+              "excerpt": "EUの一般データ保護規則、GDPR"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "適格消費者団体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "景表法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "食品表示法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "特商法"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "個人情報保護委員会の法執行によって得られた情報を、これを団体訴訟の主体、適格消費者団体と共有するということも考えられると思います。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "団体訴訟制度の必要性について参考人が肯定的な見解を示したやり取りである。具体的な制度導入の約束（コミットメント）はないが、方向性は示されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_011",
+      "segment_index": 6,
+      "topic": "課徴金の金額と対象範囲",
+      "question": {
+        "speaker": "山崎正恭",
+        "party": "中道改革連合・無所属",
+        "summary": "- 課徴金額が少額である点について、故意と過失で金額を変えるべきではないか\n- 目的外利用や要配慮個人情報の取得違反などが対象から抜け落ちていることで、実効性や抑止効果が損なわれるのではないかという点について見解を問う",
+        "full_text": "次に、これも大きなポイント、課徴金についてお伺いしたいと思います。やはり額が非常に少額なんじゃないかということがあって、大臣から先日の答弁では、やはり過失の場合もあるし、故意の場合もあるという答弁がありましたけれども、これは単純に和裁委員からも紹介があったように、アメリカのカリフォルニア州みたいに、故意と過失でその金額を変えればいいんじゃないかなというふうに思うんですけれども。その辺のことについてと、もう1点は先ほど森参考人からお話の中でもありましたように、やはりですね、課徴金の項目にあった、そもそもあった目的外利用とか、要配慮個人情報の取得による本人同意とか、違反大規模な個人データの漏洩等の発生の、この3点が抜け落ちてしまっているというふうな形に思うんですけれども、そういったところについて、やはりそこが抜け落ちることで、この法律そのものの実効性や抑止効果が大きく損なわれるのではないかなというふうな心配もあるんですけれども、その点について森参考人の見解をお願いします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "森亮二",
+        "role": "参考人 弁護士法人英知法律事務所弁護士",
+        "summary": "- 課徴金自体がもともと重大事案を想定したものである\n- 過失であってもかなり重い過失を想定している",
+        "full_text": "若干繰り返しになるかもしれませんけれども、まず金額につきましては、これは軽微な事案については軽くということですけれども、もともと課徴金自体が重大事案を想定しているということですね。そして当然のことながら、過失といってもかなり重い過失だと思うんですけれども、そうであります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56239&time=4348.943",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "課徴金額の区分と適用項目の不足について",
+          "sub_asks": [
+            "故意と過失で課徴金額を変えるべきではないか",
+            "目的外利用等の3項目が抜けていることによる実効性低下への見解"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "アメリカのカリフォルニア州"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "もともと課徴金自体が重大事案を想定しているということですね。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "2つの具体的な提案・懸念を提示しているが、回答者は金額の考え方にのみ触れ、項目の抜け落ちについては回答していない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "複数の論点を一つの発言に盛り込んでいるため、回答者が一部を無視しやすい構成になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_012",
+      "segment_index": 7,
+      "topic": "個人情報保護法改正案の評価",
+      "question": {
+        "speaker": "原山大亮",
+        "party": "日本維新の会",
+        "summary": "- AI時代のデータガバナンスの観点から、今回の改正案で特に評価できる点について\n- 今後の運用や見直しで補う必要がある点について",
+        "full_text": "そこで村上参考人にお伺いいたします。AI時代のデータガバナンスという観点から見て今回の改正案について特に評価できる点をお聞きしたいと思います。また今回の改正を前向きに受け止めつつも今後の運用や次の見直しの中で補っていく必要があるとお考えの点があれば、まず総論としてお聞かせいただきたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "村上明子",
+        "role": "参考人 独立行政法人情報処理推進機構AIセーフティ・インスティテュート所長",
+        "summary": "- 統計等を用いてプライバシーを侵害しない範囲でデータ活用ができる点は非常に評価できる\n- 技術進化に合わせた法律改正は評価できるが、悪用や放置に対する罰則等の措置を検討することが必要",
+        "full_text": "そういったところが統計等を用いて個人のプライバシーを侵害しない範囲でデータの活用ができるといったことは非常に評価ができるというふうに思います。一方で私が意見陳述の中で申し上げたように技術は非常に高速に進化しておりまして、こういったプライバシーを保護するということが技術的に可能にもなってきております。こういったことをしっかり鑑みた法律改正というところで評価もできますけれども、一方でですね、やはりこういった措置を講じないで悪用する、あるいはですね、放置するといったようなところがあった場合に、きちんとですね、罰則等を考えるということも必要な措置ではないかなというふうに思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56239&time=5507.543",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "改正案の評価点と今後の課題について",
+          "sub_asks": [
+            "改正案について特に評価できる点",
+            "今後の運用や見直しで補うべき点"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "措置を講じないで悪用する、あるいは放置するといったようなところがあった場合に、きちんと罰則等を考えるということも必要な措置ではないか",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人への意見聴取であり、抽象的な評価と個人的な見解に留まっているため、記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「評価できる点」や「補うべき点」を具体的にどの条文や制度に紐づけて問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_013",
+      "segment_index": 7,
+      "topic": "AI開発・データ利活用の実務面",
+      "question": {
+        "speaker": "原山大亮",
+        "party": "日本維新の会",
+        "summary": "- 改正により、企業がAI開発やデータ利活用を以前より安心して進めやすくなる場面はどこか\n- 実務感覚から見て、ガイドラインや運用でさらなる明確化が必要な領域はあるか",
+        "full_text": "そこでお伺いいたします。今回の改正によって企業がAI開発やデータ利活用を進める上で、以前よりも安心して進めやすくなると考えられる場面はどういったものがあるとお考えでしょうか。一方で現場の実務感覚から見て、なおガイドラインや運用の中でさらなる明確化が必要と考えられる領域があれば、ご教示いただけますと。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "村上明子",
+        "role": "参考人 独立行政法人情報処理推進機構AIセーフティ・インスティテュート所長",
+        "summary": "- 保険会社の事故データ活用による安全社会の実現や、医療現場での治療方法の確立など、データ活用による飛躍的な進歩が期待できる\n- 規則がないまま漏洩時の責任だけを問われる状況では企業の躊躇が生まれるため、明確なルールが必要",
+        "full_text": "例えば私がおります保険会社でも、事故のデータというのをたくさん保有しておりますので、そういった事故のデータから、今後の事故が起こり得ないような、そういった安心・安全な社会をつくるということにつなげるということも可能でございますし、また先ほどから話題になっております医療の現場では、例えば、小泉医学であるとか、治療方法の確立といったようなことが、このデータを使うことによって、飛躍的に進歩するのではないかというふうに思います。一方で、何の規則もないまま、漏えいしたときの責任はあなたにあります。でも、これは使っていいですということになってしまうと、やはり業者という、企業の観点から言いますと、使うことに対しての躊躇というのが生まれてしまいます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5280"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56239&time=5507.543",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "AI開発・データ利活用の改善点と明確化が必要な領域",
+          "sub_asks": [
+            "改正により安心して進めやすくなる場面",
+            "ガイドライン等でさらなる明確化が必要な領域"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "企業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "保険会社"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "医療の現場"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "何の規則もないまま、漏えいしたときの責任はあなたにありますということになってしまうと、企業の観点から言いますと、使うことに対しての躊躇というのが生まれてしまいます。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人による主観的な見解の提示に留まっており、政府としての公式な解釈や具体的なコミットメントは含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「考えられる場面」という抽象的な問いであるため、回答者が具体例を挙げるだけの主観的な回答になりやすい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_014",
+      "segment_index": 7,
+      "topic": "個人情報保護法の今後の見直し課題",
+      "question": {
+        "speaker": "原山大亮",
+        "party": "日本維新の会",
+        "summary": "- 今後の制度改正に向けた課題について",
+        "full_text": "最後に、今後の見直しに向けた課題についてお伺いいたします。個人情報保護法はいわゆる3年ごとの見直しの枠組みの下で、継続的に制度改正が行われており、個人情報保護委員会が公表した制度改正方針においても、適正なデータ利活用の推進、リスクに適切に対応した規律、不適正利用等の防止、規律遵守の実効性確保という4つの柱が示されています。また、個人情報保護政策に関する懇談会では、事業者等の自主的取組とそれへのインセンティブも議題として掲げられております。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "村上明子",
+        "role": "参考人 独立行政法人情報処理推進機構AIセーフティ・インスティテュート所長",
+        "summary": "- 法律で規定すべき内容や技術動向を適切に議論し盛り込むこと\n- 国境のないAIビジネスにおいて、他国の規制動向や技術活用情報を収集し、国際的な連携を図ること\n- リスクをゼロにできないことを前提に、国民が安心・安全と感じられる配慮を行うこと",
+        "full_text": "法律で何を規定するべきなのか、あるいは技術的にどういう動向があって、どういった要項を盛り込めばいいのかというのをしっかり議論していくこと。2つ目でございますけれども、2つ目は国際的な連携でございます。やはりAI含めましたビジネスというのは国境がございませんので、そういったところ、例えば日本だけが理不尽な規制をするであるとか、あるいは他国がリスクをきちんと鑑みて規制をしているのに日本がしないということがあってはいけませんので、他国がどういった動向でそういった規制をしているのか、あるいは規制をしていないのかといったところ、あるいはどういった技術を活用しているのかということ、これをしっかりと情報として仕入れ、しっかりそこを盛り込んでいくということが重要なのではないかと思います。3個目でございますけれども、やはり一番大事なのは国民の生活の安全というところでございます。こういったところの安全性を政への配慮というところ、私はよく外部の講演で安心と安全という言葉を使わせていただいております。この安全というのは、リスクをゼロにすることはできない、あるいはリスクベースで考えないと世の中の進化についていけないというところは、私の意見陳述で申し上げましたけれども、このリスクをゼロにできないというところ、これを国民の皆さまがとって非常に不安になってしまいますと、行動の制約にもつながりますし、また安心。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56239&time=5507.543",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "個人情報保護法の今後の見直しに向けた課題は何か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "個人情報保護法"
+            },
+            {
+              "type": "organization",
+              "excerpt": "個人情報保護委員会"
+            },
+            {
+              "type": "other",
+              "excerpt": "個人情報保護政策に関する懇談会"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "事業者等",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "AI"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "他国がどういった動向でそういった規制をしているのか、あるいは規制をしていないのかといったところ、これをしっかりと情報として仕入れ、しっかりそこを盛り込んでいくということが重要",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は明確だが、回答は個人の見解（意見陳述）に近い抽象的な方向性の提示に留まっており、具体的な政府のコミットメントや法的解釈は含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "課題を「お伺いする」というオープンクエスチョンであるため、回答者が抽象的な論評に逃げやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_015",
+      "segment_index": 7,
+      "topic": "行政デジタル化法案の位置づけ",
+      "question": {
+        "speaker": "原山大亮",
+        "party": "日本維新の会",
+        "summary": "- クラウド活用や公的基礎情報データベース整備を目指す本法案を、日本の行政デジタル化の中でどのように位置づけているか",
+        "full_text": "まず本法案全体についての御評価を伺います。本法案はクラウド活用や公的基礎情報データベースの整備を通じて、行政の効率化と国民の利便性向上を目指すものと承知をしておりますが、森田参考人はこの法案を日本の行政デジタル化の中でどのように位置づけておられるのか、総論的にお聞かせください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "森田朗",
+        "role": "参考人 東京大学名誉教授 一般社団法人次世代基盤政策研究所代表理事",
+        "summary": "- 整理されていなかった行政情報を整理し、民間も含めた利活用による利便性向上を図るもの\n- 煩雑な手続きを指針に基づいた事業認定によって簡素化し、利活用の道を開くものである",
+        "full_text": "特にいわば政府関係の情報、行政関係の情報というのはしっかりしたものがございますけれども、それがきちっと整理されていなかったという中で、今回この法律によってそれを非常に民間の方もそうですけれども、利用することによって利便性を高めていくと。特にその情報を使うときのいろいろな手続きが非常に煩雑であったわけですけれども、そうしたことについて一定の指針に従って事業を認定するということによって、そういう人たちがそのデータを活用していくと。それはまさにその利活用の道を開くというものだというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5280"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56239&time=5507.543",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "本法案の行政デジタル化における位置づけ",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "一定の指針に従って事業を認定することによって、そういう人たちがそのデータを活用していく。それはまさにその利活用の道を開くというものだ",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "法案の総論的な位置づけを問う抽象的な質問であり、回答も概念的な説明に留まっているため、記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「総論的に」という問い方が曖昧なため、具体的で検証可能な回答を引き出しにくい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_016",
+      "segment_index": 7,
+      "topic": "地方自治体へのデジタル化支援",
+      "question": {
+        "speaker": "原山大亮",
+        "party": "日本維新の会",
+        "summary": "- 中小自治体にとってのクラウド化・標準化の利点と課題をどう見ているか\n- 自治体職員が前向きに取り組めるよう、国にどのような支援（人材育成・財政措置等）を求めるか",
+        "full_text": "次に、地方自治体、とりわけ中小自治体への支援について伺います。クラウド化や標準化は中長期的には効率化につながる一方、移行期には人材不足や財政負担が先に立つとの懸念もあります。そこで、こうした自治体にとっての利点と課題をどのように見ておられるのでしょうか。また、自治体職員が前向きにデジタル化に進められるよう、国…にはどのような搬送支援、人材育成、財政措置を求められるか、御所見をお伺いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "森田朗",
+        "role": "参考人 東京大学名誉教授 一般社団法人次世代基盤政策研究所代表理事",
+        "summary": "- 人口減少で職員が減る中、AI等のデジタル化で質を落とさず効率的に業務遂行できるメリットがある\n- 自治体ごとに規格が異なり調整に手間がかかっているため、全国統一規格による情報共有のメリットを理解してもらうことが重要\n- 財政的に困難な自治体へのサポートを迅速に進める必要がある",
+        "full_text": "ただいま御存じのとおり、人口減少が進んで、地方では行政職員もだんだん少なくなってきましたし、その意味で言いますと、これから行政能力、きちっとした住民サービスを維持していくことが懸念されるような状態になっているかなと思っております。事務的な作業、これまで情報処理する形で人間がやっていた事務というものを、これをいわばAIなり何なりのデジタル化を使って置き換えていくということは非常に効率的に、しかも質を落とさずに自治体の業務というものが遂行できる。これはこれからだんだん人口減少が予想されるような地域にとっては、住民の方にとって大変重要なことになるのではないかと思っております。そこでなかなかそれぞれの自治体の規格と、他の自治体の規格と合わない。今、国でガバメントクラウドもそうですけれども、統一することを勧めているわけですけれども、なかなかそこの調整に手間が出ているのかなというふうに思います。ただ、諸外国を見ましても、こうした情報インフラといいますのは、例えば交通で言いますと、線路の幅なんかと同じなんですし、電力のヘルツ、周波数も同じですけれども、全国統一することによって、統一の規格によって、情報の共有が可能になる。それをどういう形でするかということを今進めているわけですけれども、それにより非常に、例えば財政的に苦労されているところにおきましては、サポートをするということ、今でも行われておりますけれども、それを早く進めるということが必要なのかと思っております。何よりも、そうした共通のシステムで動かしていくということが、それぞれの自治体もそうですし、全国的にも大変メリットが大きいということを理解していただくということが重要ではないかと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5239"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56239&time=5507.543",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中小自治体のクラウド化・標準化への支援策について",
+          "sub_asks": [
+            "自治体にとっての利点と課題をどう見ているか",
+            "どのような伴走支援、人材育成、財政措置が必要か"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "中小自治体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "ガバメントクラウド"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "other",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "共通のシステムで動かしていくということが、それぞれの自治体もそうですし、全国的にも大変メリットが大きいということを理解していただくということが重要",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的だが、回答は一般論（人口減少や規格統一の重要性）に終始しており、具体的な支援策への言及やコミットメントがない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのような支援を求められるか」という問いに対し、回答者が「所見」として逃げ道があるため、具体的な施策案を提示させる形式にするべきだった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_017",
+      "segment_index": 7,
+      "topic": "行政デジタル化における国民の信頼確保",
+      "question": {
+        "speaker": "原山大亮",
+        "party": "日本維新の会",
+        "summary": "- 障害や漏洩への不安に対し、政府・自治体は平時にどのような説明や情報発信を行うべきか\n- 万一の障害・漏洩発生時に、信頼回復につながる初動対応や原因検証のプロセスはどうあるべきか",
+        "full_text": "次に国民の信頼確保について伺います。行政デジタル化は利便性を高める一方、障害や情報漏洩があれば、国民の不安や不信を強める恐れがあると思います。政府や自治体は、平時からどのような説明や情報発信を行うべきでしょうか。また、万一、障害や情報漏洩が発生した場合、どのような初動対応、情報開示、原因検証、再発防止のプロセスがあれば、信頼回復につながると。ご提言をお願いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "森田朗",
+        "role": "参考人 東京大学名誉教授 一般社団法人次世代基盤政策研究所代表理事",
+        "summary": "- 具体的なユースケースを紹介し、デジタル化によるメリットを国民に納得してもらうことが必要\n- 北欧諸国のように、個人情報へのアクセスログを記録し、本人が確認できる仕組みを構築して責任を明確にすることが重要",
+        "full_text": "まず国民の信頼を得るためには何が必要かと言いますと、やはりこのシステムと言いますか、デジタル化しデータを使うことによってどういうメリットがあるのか、それをできるだけ具体的なユースケースを紹介しながら国民に納得していただくというのが必要ではないかなと思っております。それをどういう形できちっと理解していただくように進めていくかというのが大変重要ではないかなというふうに思っております。このデジタルシステムが進んでおりますと、例えば北欧諸国の場合ですと、個人情報に対して誰がアクセスしたかというアクセスログをきちっと取っておいて、そしてアクセスした人に対して、された側が不信がある場合にはきちっと問い正して、それで責任を問うというような仕組みにしている。そういう意味で言いますと、どういう形で情報が使われているかということについて、ご本人がきちんと確認できるような仕組みを作っておくということが、まず重要ではないかなと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5280"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56239&time=5507.543",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "デジタル化における信頼確保と障害時の対応策",
+          "sub_asks": [
+            "平時の説明や情報発信のあり方",
+            "障害・漏洩発生時の初動・開示・検証・再発防止プロセス"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "北欧諸国"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "どういう形で情報が使われているかということについて、ご本人がきちんと確認できるような仕組みを作っておくということが、まず重要ではないかなと思います。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "提言を求める抽象的な質問に対し、回答者も一般論と北欧の事例を挙げた概念的な回答に留まっており、具体的な政府のコミットメントや記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのようなプロセスがあれば」という問いを、「政府として具体的にどのような運用ルールを策定するか」という形式にすれば、より拘束力のある回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_018",
+      "segment_index": 8,
+      "topic": "ベース・レジストリーの重要性と優先すべきユースケース",
+      "question": {
+        "speaker": "西岡義高",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 利便性に直結させるために最も重要な点は何か\n- 成果が見えやすい優先的なユースケースについての見解",
+        "full_text": "利便に直結する仕組みとして機能させるために、何が最も重要でしょうか。また、成果が見やすい分野として、どのようなユースケースから優先すべきか、ご所見をお願いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "森田朗",
+        "role": "参考人 東京大学名誉教授 一般社団法人次世代基盤政策研究所代表理事",
+        "summary": "- 公的に保証されたベース・レジストリー（基本データ）を整備し、データを使えるようにすることの重要性\n- 唯一無二のIDによる確実な本人確認と情報連携により、年金申請等の書類提出の手間を省くワンストップ化の実現",
+        "full_text": "ベース・レジストリーといいますのは、国、行政で所有しております我々の基本的なデータ、個人情報もそうですけれども、戸籍も入りますし、医療関係も入るかもしれませんが、いろんなそういう情報ですし、それ以外の、例えば交通であるとか、土地の利用状況であるとか、そういうものも入るかと思います。そうしたものを公的にきちっと保証するような形で、データを使えるようにしておく。そのことが持つ意義というのは大変重要かと思っております。これは確かにもらうためには必要なのかもしれませんし、それで確認することによって事務が進むんですけれども、今の技術を使えば、一回何かをそこで登録すれば、全部自動的にそこで情報がつながるという仕組みがあれば、どれほど便利になるか。現在マイナポータルでかなりそれが進んできているとは思いますけれども、実際ワンストップにしましても、一箇所で入れる。それを避けるためには、現在もそうですけれども、唯一無二で普遍であり、非代替性があって、お一人一つのIDというようなもの、これは他の国では、そうしたものを使うことによって、確実な本人確認と情報の連携を図っているというところでございまして、我が国の場合には、それのリスクもございますけれども、それも含めて利便性とともに、きちっと議論をして評価をしていく必要があるのではないかなと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5280"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56239&time=6752.943",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "利便性向上の重要点と優先ユースケース",
+          "sub_asks": [
+            "利便性に直結させるために何が最も重要か",
+            "優先すべきユースケースは何か"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "ベース・レジストリー"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "マイナポータル"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "利便性とともに、きちっと議論をして評価をしていく必要があるのではないかなと思います",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "唯一無二で普遍であり、非代替性があって、お一人一つのIDというようなもの、これは他の国では、そうしたものを使うことによって、確実な本人確認と情報の連携を図っている",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は2点あるが、回答はベースレジストリやIDの重要性の一般論に終始しており、具体的な優先ユースケースへの言及がないため、十分な回答となっていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「何が重要か」という抽象的な問いではなく、具体的な候補を提示して選択させる形式にすれば、より具体的な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_019",
+      "segment_index": 8,
+      "topic": "法改正による安全保障への影響",
+      "question": {
+        "speaker": "西岡義高",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 法改正による安全保障上の評価と影響を伺いたい",
+        "full_text": "まず安全保障の観点から、皆さんのご評価を伺いたいと思っております。今回の法改正では、行政データにアクセスできる認定事業者の中に、外国の情報機関とつながりがある事業者が巧みに入り込んでしまうリスクであったり、特定個人情報に対する利用停止請求の要件が緩和されることによりまして、外国の工作員やテロ容疑者が監視可能であるために、自らのデータのシステムから消去させるよう要求するなど、悪用される懸念があるですとか、さまざまな安全保障上の懸念点が指摘されている部分もあるかと思います。今回の法改正によってカウンターインテリジェンスに与える影響、データの利活用が進んで、インテリジェンス機能が強化されるなどのプラスの部分もあるかと思います。安全保障に対して、どのように皆さんは評価され、影響があるとお考えになっているのか、順にご意見いただけるかと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小原成朗",
+        "role": "参考人 日本労働組合総連合会総合政策推進局長",
+        "summary": "- 個人情報を匿名化して個別に管理することで、外国人がデータを書き換えたとしても国が持つデータへの影響は別問題であり、適正に管理できると考える",
+        "full_text": "その上でこれを外国、それから民間企業を含めて共同利用するということであれば、先ほど申し上げたとおり、個人情報は匿名化していただきたいと思いますし、匿名化して別に管理していただく。外国人から何か、外国人ばかりを責めるわけではございませんけれども、何かあって、こちらのデータを書き換えたとしても、国が持っているデータを書き換えるのは別の話ではないかというふうに考えてございます。マイナンバーと同じように、個別に管理していただくのは適正かと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5280"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56239&time=6752.943",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "法改正が安全保障に与える影響の評価",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "今回の法改正"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "外国の情報機関、工作員、テロ容疑者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "マイナンバー"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "個人情報は匿名化していただきたいと思いますし、匿名化して別に管理していただく。",
+          "score": 0.2
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "安全保障上のリスクという広範な問いに対し、回答者がデータの匿名化や管理方法という限定的な技術論に終始しており、実質的な回答になっていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "具体的リスク（認定事業者の審査基準など）を絞って質問すれば、より具体的な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_020",
+      "segment_index": 8,
+      "topic": "子どもの権利保護と規制",
+      "question": {
+        "speaker": "西岡義高",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 子どもの権利を守るための具体的な規制の必要性や、どのような手段を講じるべきか大枠の考えを伺いたい",
+        "full_text": "では次に、今回、個人情報法の方にも、子どもにとっての最善の利益というような文言が盛り込まれております。昨今、急速なデジタル化やAIの進化、インターネットやSNSの普及によって、子どもの権利というものが脅かされる場面というのも増えているかと認識しております。例えば、私の子どもの頃の顔写真で、49歳の今の顔が検索できてしまうというようなこともございますので、例えば子どもが今撮られた写真が将来どのような使われ方をしていくのか、そういったリスクもあるかと思います。子どもの権利を守るという見地から、本当に大枠の話になってしまうんですけれども、具体的な規制の必要性であったり、この分野における子どもの権利を守っていくということに対して、どのような手段をやっていけばいいのか、ちょっと大枠の考えなんですけれども、皆さんの御意見を伺えればと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "森田朗",
+        "role": "参考人 東京大学名誉教授 一般社団法人次世代基盤政策研究所代表理事",
+        "summary": "- 商業目的の利用は保護を優先すべきであり、国民の多くは子どもの保護を優先して考えるべきと考えている\n- 状況の悪い子どもを助ける政策にデータを使うことは権利保護に繋がる。禁止するよりも正しい使い方の指導（教育）などの工夫が必要である",
+        "full_text": "それに対して、例えば広告のような商業目的ということであれば、これはやはり保護を優先していただくということになろうかと思います。なので、いろんな意見がある中なんですが、やはりこれは国民の多くの皆様が子どものデータなんだから、それは子どもの保護を優先に考えました。非常に難しいところで、私自身、そこを専門としておりませんけれども、いわゆる大人と違って、自身で判断をしたり、自分で権利を主張するということができない子どもたちをどう保護するか。むしろその状況の悪い子どもたちをどうやって助けていくか、そのための政策に使うということはむしろ子どもの権利を保護することになるのではないかと思います。むしろ正しいバイクの乗り方、それを指導することによって事故を減らそうとした。そうした意味でのやり方の工夫というのが必要なのではないかなと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56239&time=6752.943",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "子どもの権利保護に向けた具体的規制や手段の考え方",
+          "sub_asks": [
+            "具体的な規制の必要性についての考え",
+            "子どもの権利を守るための手段についての考え"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "個人情報法"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "子ども",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "商業目的ということであれば、これはやはり保護を優先していただくということになろうかと思います。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問が抽象的であり、回答も個人の見解や比喩（バイクの乗り方）に留まっており、具体的施策や法的拘束力のある言及がないため記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「大枠の考え」を問う形式であるため、回答者が具体策を回避しやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_021",
+      "segment_index": 8,
+      "topic": "日本におけるAI規制のあり方",
+      "question": {
+        "speaker": "西岡義高",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 日本においてAI規制はどのような形であるべきか考えを伺いたい",
+        "full_text": "AIの規制全般について伺いたいんですけれども、昨年流行ったのが、写真をジブリ風のものに加工してというものが流行ったときに、クリエイターの権利をどうするんだと、AI学習において、そういった議論がなされたと記憶しております。今、この法改正の議論が進む中でも、EU並みの厳しいAI規制が必要だという意見もあれば、そのギャップもしっかりというところで、皆様ご自身がお考えになる、そのAI規制のあり方、我が国において、AI規制というのはどのような形であるべきかというところを、皆さんそれぞれのお考えをまた伺いたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "村上明子",
+        "role": "参考人 独立行政法人情報処理推進機構AIセーフティ・インスティテュート所長",
+        "summary": "- ガイドライン（ソフトロー）を用いて「やっていいこと」と「やってはいけないこと（ブルーライン）」を明確に示すことで、事業者の萎縮を防ぎイノベーションを加速させることができる",
+        "full_text": "諸外国と比べますと、ほとんど規制のないアメリカ、そしてきちんと規制をあって確立しようとしているEU、これの間の、言ってしまえばいいとこどりである、ハードローを用いてソフトローであるガイドライン等を規定するという、この日本の法律というのは世界的に見てもかなり評価されているというふうに考えられます。先ほどもお話しありましたように、何か規制があったら技術が進まないか、イノベーションが進まないかというと、この技術、イノベーションを阻害してしまうような固い規制というのは推奨できないんですけれども、何をやってはいけないかということが明確にないまま、日本の事業者に任せてしまうと逆に萎縮してしまうということが起こります。そのために国はこういうことをやっていいよ、こういうことはやらないよということをハードローではなくてガイドラインで示すと、日本の事業者もしっかりそれを用いてイノベーションを加速させるということができるのではないかと思います。そのために何がやってはいけなくて法律で禁止されている、それから何はここはやっていいという安全地帯であるというブルーラインをしっかり示すことが必要です。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56239&time=6752.943",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "日本におけるAI規制のあり方についての考え",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "写真をジブリ風のものに加工して"
+            },
+            {
+              "type": "organization",
+              "excerpt": "EU並みの厳しいAI規制"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "クリエイター",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "アメリカ"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "EU"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "ハードローを用いてソフトローであるガイドライン等を規定するという、この日本の法律というのは世界的に見てもかなり評価されている",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "AI規制の方向性について個人の見解を問う質問に対し、ガイドラインによる方向付けの重要性を説く回答となっている。具体的なコミットメントや法的拘束力のある解釈は含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「お考えを伺いたい」という抽象的な問いであるため、政府としての公式見解や具体的なアクションを引き出す形式になっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_022",
+      "segment_index": 9,
+      "topic": "行政機関によるデータクレンジングの負担と能力",
+      "question": {
+        "speaker": "谷浩一郎",
+        "party": "参政党",
+        "summary": "- 行政機関が提供前に個人情報の削除・加工（クレンジング）を行う場合の事務負担の程度について\n- 行政側に当該作業を適切に行うための人員、専門性、技術的能力が十分にあるか",
+        "full_text": "国等データを認定事業者に提供するにあたり、提供元である行政機関側があらかじめ必要な情報だけを抽出し、そして不要な個人情報を削除・加工すると、いわゆるクレンジングを行うとすれば、相当な事務負担が生じるかと考えています。国や自治体が提供前に生データを確認し、必要最小限に加工する作業になる場合、どの程度負担が発生するとお考えでしょうか。また、現在の行政側にその作業を適切に行うだけの人員や専門性、技術的能力が十分にあると考えるか、そのあたりご意見を伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "森田朗",
+        "role": "参考人 東京大学名誉教授 一般社団法人次世代基盤政策研究所代表理事",
+        "summary": "- 具体的な事務負担の程度については現段階で回答困難である\n- 委託・委任の仕組みを構築し、行政が適切に監督する形でデータを利用させることになるのではないか",
+        "full_text": "具体的にどれくらいの事務負担が発生するかということについては、まだ現段階で私は何ともお答えしかねるところでございます。いずれにいたしましても、行政が全部それをやると言いましょうか、きちっとした形で委託委任をするという、そういう仕組みになっていたかと思いますが、その限りできちっとそれを監督するという形でデータを利用させるということになるのではないかなと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5280"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56239&time=8156.642999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "データ提供時のクレンジングに伴う行政負担と能力について",
+          "sub_asks": [
+            "クレンジング作業による負担の程度",
+            "行政側の人員・専門性・技術的能力の十分性"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "行政機関",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "具体的にどれくらいの事務負担が発生するかということについては、まだ現段階で私は何ともお答えしかねるところでございます。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "行政側の負担と能力という具体的な懸念に対し、回答者が「答えかねる」としており、実質的な回答が得られていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "負担の程度を問うのではなく、負担を軽減するための具体的な仕組み（委託など）の有無を問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_023",
+      "segment_index": 9,
+      "topic": "事業者への生データ提供による個人情報漏洩リスク",
+      "question": {
+        "speaker": "谷浩一郎",
+        "party": "参政党",
+        "summary": "- 提供側で削除せず、一旦事業者側にデータを渡して不要な部分を削除させる運用では、不要な個人情報まで一時的に事業者が確認できることにならないか",
+        "full_text": "火曜日、委員会質疑がございまして、そして統計作成等で利用する場合、国や企業、個人事業主までもが、氏名、住所、病歴などの個人情報を本人同意なく取得し得るという答弁がございました。さらに、提供側で氏名等を削除してから出すのは負担が大きいため、一旦データを活用したい側に渡して、そして必要のない部分を事業者側で削除するという趣旨の答弁もあったんです。しかし、事業者側に生データを渡してしまえば、その事業に不要な個人情報まで一時的にせよ事業者が確認できることになると。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "森亮二",
+        "role": "参考人 弁護士法人英知法律事務所弁護士",
+        "summary": "- 提供元で一定の匿名化が可能と考えている\n- 統計特例の対象はデータベース化された個人情報の提供であるため、現状では統計作成等の困難さはそれほど大きくないと考えている",
+        "full_text": "先ほどのこととも若干重複いたしますけれども、やはり私は提供元で一定の匿名化をしてもらえるのではないかと思っておりまして、申し上げましたように、特に今、統計等特例で前提とされているのは、第三者提供の場面ですので、その場合、統計特例の対象となるのは、これはデータベース化された個人情報の提供ということになります。ですので、このもしかしたら制限というのもあるかもしれず、今のところ統計作成等困難というのもそれほど大きくないのかなと現時点では考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5280"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56239&time=8156.642999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "個人情報の提供方法とリスクへの懸念",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "past_answer",
+              "excerpt": "統計作成等で利用する場合、国や企業、個人事業主までもが、氏名、住所、病歴などの個人情報を本人同意なく取得し得るという答弁がございました"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国や企業、個人事業主",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "統計等特例"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "提供元で一定の匿名化をしてもらえるのではないかと思っておりまして",
+          "score": 0.2
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者が疑問を呈しているが、明確な問い（～か？）がなく、回答者も個人の見解を述べるに留まっているため、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "現状の懸念を述べるだけでなく、政府の認識や改善策を問う具体的な質問形式にするべきである。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_024",
+      "segment_index": 9,
+      "topic": "個人情報の悪用リスクと実務上の懸念",
+      "question": {
+        "speaker": "谷浩一郎",
+        "party": "参政党",
+        "summary": "- 事業者の安全管理義務があっても、悪意ある事業者や内部不正、再委託先からの流出リスクは排除できないのではないか\n- 本人同意なく取得提供される情報が広がることで、実務上どのような悪用が考えられるか",
+        "full_text": "データを受け取る事業者側に安全管理義務や削除義務があるとしても、悪意をもって設立された事業者、経営難に陥った事業者、内部者による不正、再委託先からの流出などのこういったリスクは完全には排除できないと考えています。例えば病歴情報には保険、雇用、金融、信用判断などに悪用される可能性があります。また、名簿業者、特殊詐欺グループ、無登録金融業者などに流れれば、犯罪に使われる恐れもあります。個人情報は取得されるだけで、どの程度悪用可能なのでしょうか。本人同意なく取得提供される情報が広がることで、実務上どのような悪用が考えられるのか、これに関して御見解を伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "森亮二",
+        "role": "参考人 弁護士法人英知法律事務所弁護士",
+        "summary": "- 誰でもデータを取得できるようになれば危険であるという指摘に同意する\n- 悪用については様々なことが考えられる（※発言が途切れている）",
+        "full_text": "誰でも手を挙げることになると危険というのは、全くご指摘のとおりでございます。その悪用につきましては、これはさまざまなことが考えられますが、特に私の方から申し上げたいのは、もちろん統計作成者の下で大きくなったデータ、これは単に量が多いということだけではなくて、1人についてさまざまなデータを持つ、その都合をして、1人についてありとあり。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56239&time=8156.642999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "個人情報の取得による実務上の悪用可能性についての見解",
+          "sub_asks": [
+            "個人情報は取得されるだけでどの程度悪用可能か",
+            "本人同意なく提供される情報が広がった際の実務上の悪用想定"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "名簿業者、特殊詐欺グループ、無登録金融業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "other",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": null,
+          "score": 0.0
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "質問は具体的だが、回答が途切れているか、あるいは極めて抽象的な記述に留まっており、実質的な回答になっていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "悪用の具体例を問うているため、想定されるリスクシナリオを提示させる形式にすればより実効的な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_025",
+      "segment_index": 9,
+      "topic": "要配慮個人情報の保護と救済制度",
+      "question": {
+        "speaker": "谷浩一郎",
+        "party": "参政党",
+        "summary": "- 病歴や信用情報などが本人の知らないところで分析され、サービスに影響することへの不安に対し、どのような説明責任や救済制度が必要か",
+        "full_text": "データ利用される国民の立場から見た場合、病歴、信用、家族構成、居住地域などの情報が本人の知らないところで分析をされ、そしてそういった保険とか金融福祉サービス等に影響することへの不安は大きいと思います。個人情報と、それも特に要配慮個人情報を守る観点から、どのような説明責任とか救済制度、こういったものが必要とお考えでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "小原成朗",
+        "role": "参考人 日本労働組合総連合会総合政策推進局長",
+        "summary": "- 救済制度よりも、そもそも漏らさないことが重要である\n- 公表されていない要配慮個人情報については、規制を緩めないでほしいと考えている",
+        "full_text": "救済制度よりもやはり漏れないようにすることが大事かと思っています。ですので法の立て付け上はすでに公表されている要配慮個人情報と公表されていない要配慮個人情報は違う立て付けだと思っていますので要配慮個人情報、隠されている要配慮個人情報については本当に規制を緩めないでいただきたいというふうに考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56239&time=8156.642999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "要配慮個人情報の保護に必要な説明責任や救済制度について",
+          "sub_asks": [
+            "どのような説明責任が必要か",
+            "どのような救済制度が必要か"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": true,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "other",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "救済制度よりもやはり漏れないようにすることが大事かと思っています。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な救済制度や説明責任についての問いに対し、漏洩防止の重要性を説くにとどまっており、実効的な回答になっていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのような」というオープンクエスチョンであるため、回答者が抽象的な論点ずらしを行いやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_026",
+      "segment_index": 9,
+      "topic": "AI等による個人の再識別リスクと対策",
+      "question": {
+        "speaker": "谷浩一郎",
+        "party": "参政党",
+        "summary": "- 匿名化してもAIや他のビッグデータと照合することで個人が再識別されることが技術的に可能である点について、見解を伺いたい",
+        "full_text": "今回の改正では、統計作成、AI開発の目的で、本人同意なく個人情報が取得提供される場面が広がると理解しています。仮に一度、氏名や住所を削除し、黒塗りや匿名化したとしても、AIや他のビッグデータ、公開情報と照合することで、個人が再識別されるということ、技術的に可能だと思っております。こういったこと、特に病歴、教育情報、税情報、地域情報、家族構成などは、組み合わせによって個人が推定される可能性があると思うんですけれども、この辺りの御見解をお伺いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "村上明子",
+        "role": "参考人 独立行政法人情報処理推進機構AIセーフティ・インスティテュート所長",
+        "summary": "- 技術的に再識別が可能であることは認める\n- 対策として、事業者が最新技術を導入することを推奨すること、および取り扱いのガバナンスに関する透明性を高めることの2点が重要である",
+        "full_text": "まさにおっしゃられるとおり、匿名で、例えば氏名を黒塗りにしたとしても、その後、他のデータを組み合わせることで本人を特定するということは技術的には可能だと考えております。そのためには2点必要なものがあると思っておりまして、まず1点目は、やはり最新の技術というのをしっかりと、個人情報を取り扱う業者というものにしっかり持っていただくということをきちんと推奨するということ。そして2点目は、個人情報を扱う事業者に対して、どのようにそれを取り扱っているのか、ガバナンスしているのかということを透明性高くしていただくということ、この2点が重要ではないかというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56239&time=8156.642999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "個人情報の再識別可能性への見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "今回の改正"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "匿名で、例えば氏名を黒塗りにしたとしても、その後、他のデータを組み合わせることで本人を特定するということは技術的には可能だと考えております。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "再識別可能性という技術的リスクについて政府側が肯定した点は記録価値があるが、対策が抽象的なため具体的コミットメントには至っていない。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "再識別リスクを認めた後、具体的にどのような法的・技術的制約を設けるべきかまで踏み込んで問えば、より価値の高い回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_027",
+      "segment_index": 9,
+      "topic": "再識別の防止基準（GDPRとの比較）",
+      "question": {
+        "speaker": "谷浩一郎",
+        "party": "参政党",
+        "summary": "- 日本でも、GDPRのように「再識別が合理的に不可能であること」という厳格な基準を設けるべきではないか",
+        "full_text": "EUの一般データ保護規則、いわゆるGDPRでは、匿名化データについて、再識別が合理的に不可能であるということが重視されていると理解しております。日本でも本人同意なく行政データを提供する場合には、国民の権利利益を害する恐れがないという抽象的な基準にとどめず、再識別が合理的に不可能と言えるような厳格な基準を設けるべきではないかと思っておるのですが、そのあたり御見解を伺いたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "森亮二",
+        "role": "参考人 弁護士法人英知法律事務所弁護士",
+        "summary": "- 指摘の通りであり、AI等で再識別できてしまうような統計はそもそも不適切である\n- 公的統計と同様の安全性（十分な人数が確保され、個人が特定されない状態）が必要である",
+        "full_text": "今のご質問は全く先生のおっしゃる通りだと思っておりまして、私としましてはやはり統計を作るときに、それはさまざまなデータと突合し、あるいはAIを使えば再識別できてしまうというような統計ではそもそも駄目ではないかと思っておりまして、先ほども申し上げましたけれども、公的統計と同じような安全性があるということですね。同じ属性を持っている人がかなりの人数確保されていると、どこまで行っても一人にならないと。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56239&time=8156.642999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "行政データの匿名化基準にGDPR並みの厳格な基準を設けるべきか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "EUの一般データ保護規則、いわゆるGDPR"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "other",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "統計を作るときに、それはさまざまなデータと突合し、あるいはAIを使えば再識別できてしまうというような統計ではそもそも駄目ではないか",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "GDPRを例に挙げた具体的な提案に対し、回答者は同意を示しているが、具体的な制度設計や今後のアクションへの言及はなく、個人的見解に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「見解を伺いたい」という形式のため、回答者が同意するだけで終わってしまい、具体的な制度変更の約束を引き出せていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_028",
+      "segment_index": 9,
+      "topic": "個人情報保護法における課徴金の抑止力",
+      "question": {
+        "speaker": "谷浩一郎",
+        "party": "参政党",
+        "summary": "- 違法行為で得た額を算定根拠とする課徴金では抑止力が低いため、海外のような売上高連動制の制裁などを導入すべきではないか",
+        "full_text": "個人情報保護法の改正のことに関してなんですけど、課徴金に関して先ほどいただいた資料の中にも書いておられましたが、これは非常に先ほどのこちらの中でも違法行為によって得られた額になっているという算定方法ということでありますから、課徴金に本来期待される抑止力がないという点、これは私も非常に問題だと思っております。こういったことによって、得られた利益だけを吐き出せば済むというのであれば、違法行為を思いとどませる効果は極めて低いというべきだと、全く同じ私も認識でございまして、例えばこのあたり、海外では売上高連動の制裁とか、そういったことがあるかと思うんですが、これに関してどういう認識でありましょうか。課徴金に関しても、どの程度のものに設定をした方がいいとか、そういった御意見がありましたら、いただけたらと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "森亮二",
+        "role": "参考人 弁護士法人英知法律事務所弁護士",
+        "summary": "- 指摘の通りであり、違法行為で得た額のみを基準とするのは不適切である\n- EUのように全世界の売上高の一定割合とするなど、違法行為から切り離した絶対的な金額や売上高連動制を検討すべきである",
+        "full_text": "まさにこの点もご指摘のとおりでございまして、違法行為で得られた額というのは、それはちょっと論外ではないかとは思っておりまして、EUのようにGDPRだけではありませんけれども、全世界の売上高の何%とか、そういった当該違法行為とは切り離した金額、絶対的な金額を決めていたり、売上高連動でいくらいくらい、いずれか高い方。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56239&time=8156.642999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "課徴金の算定方法と売上高連動制裁の認識について",
+          "sub_asks": [
+            "海外の売上高連動制裁に関する認識",
+            "課徴金の設定額に関する意見"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "個人情報保護法"
+            },
+            {
+              "type": "other",
+              "excerpt": "先ほどいただいた資料"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "EU"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "GDPR"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "違法行為で得られた額というのは、それはちょっと論外ではないかとは思っておりまして",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "現状の算定方法への不満と海外事例への認識を問うやり取りであり、回答者は同意を示しているが、具体的な制度変更へのコミットメントはない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「御意見がありましたら」という形式的な問いかけになっており、具体的な検討を迫る形式になっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_029",
+      "segment_index": 10,
+      "topic": "デジ業法における団体訴訟制度の導入",
+      "question": {
+        "speaker": "谷浩一郎",
+        "party": "参政党",
+        "summary": "- 個人情報漏洩等の際、個人での差し止めや損害回復請求は困難である\n- ビッグデータ扱う分野において団体訴訟制度が必要ではないか",
+        "full_text": "今回の検討過程、法案の検討過程では違反行為の迅速な差し止めや被害回復を個人に代わって消費者団体が行える団体訴訟制度というのが検討されていたと承知しています。しかし今回の法案では見送られたということ。個人情報が漏洩したり不適切に利用されたりした場合、個人が一人で違法性を把握し、事業者と争い、差し止めや損害回復を求めるのは非常に困難かと考えています。ビッグデータを扱う以上、事故が起きれば多くの国民に影響が及びかねないというわけです。この分野においても団体訴訟制度が必要ではないかと考えますが、御見解を伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "森亮二",
+        "role": "参考人 弁護士法人英知法律事務所弁護士",
+        "summary": "- 団体訴訟は権利利益の侵害防止・回復において重要な価値を持つ\n- 立法的課題として改めて検討すべきである",
+        "full_text": "先ほどのことと若干重複しますが、団体訴訟は非常に重要なものとして、今回の改正でも当初は入ることが予定されていたわけでございますので、そしてまた、個人情報保護委員会の方針、リソースが限られている中でですね、権利利益の侵害を防止する、あるいはその受けた権利利益の侵害を回復するという点で重要な価値を持っていると思いますので、団体訴訟もその立法的課題として改めてご確認をいただきたいというふうに思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56239&time=9356.242999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "個人情報保護法への団体訴訟制度導入の是非",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "今回の検討過程、法案の検討過程では"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "消費者団体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "個人情報保護委員会"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "立法的課題として改めてご確認をいただきたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "団体訴訟もその立法的課題として改めてご確認をいただきたいというふうに思います。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "団体訴訟制度の必要性について問う質問に対し、重要性を認めつつも具体的な導入時期や手法に踏み込まない抽象的な回答に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「御見解を伺います」という形式のため、政府に逃げ道を与えており、具体的な検討スケジュールを問う形式にすべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_030",
+      "segment_index": 10,
+      "topic": "AI開発等のデータ第三者提供における特例とガバナンス",
+      "question": {
+        "speaker": "武藤かず子",
+        "party": "チームみらい",
+        "summary": "- 本改正案で新設される統計作成等の特例（本人同意不要）が、利活用を起点としたガバナンス再設計の方向性に沿うものか\n- 特例運用においてAISIが果たすべき役割について",
+        "full_text": "本改正案においては、AI開発などのためのデータ第三者提供について、本人同意を不要とする統計作成等の特例が新設されます。村上さんは、経団連の改正論議の中で、利活用を起点としたガバナンス再設計を提唱されておられました。本特例は、その方向性に沿うものと評価されていらっしゃいますでしょうか。また、特例の運用にあたって、AIモデルの評価や安全性の検証など、ガバナンスを整える側として、AISIが果たすべき役割をどうお考えかお伺いしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "村上明子",
+        "role": "参考人 独立行政法人情報処理推進機構AIセーフティ・インスティテュート所長",
+        "summary": "- 利活用を促進するものと考えるが、それに伴うリスクへの対応が必要\n- データガバナンスの浸透が安全な利活用の必須条件である\n- AISIとしてデータ品質のガイドラインやガイドブックを出し、活動を後押しする所存である",
+        "full_text": "利活用が加速するということを促進するものではないかというふうに思っております。一方で、やはりそれに伴うリスクというものをしっかり考えなくてはいけないと思っております。このようなデータガバナンスというものが、企業あるいはですね、国の中で浸透していくということが、このデータの利活用を安全に進めるということの必須条件ではないかというふうに思っております。そういった点でもですね、私どもAIセーフティ・インスティテュートでは、このデータガバナンスに対するデータ品質のガイドラインというもの、あるいはガイドブックというものを出させていただいておりまして、このような活動の後押しというのをしていくということを所存でございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56239&time=9356.242999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "改正案の特例評価とAISIの役割について",
+          "sub_asks": [
+            "本特例が利活用起点ガバナンスの方向性に沿うか",
+            "特例運用におけるAISIが果たすべき役割"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "経団連"
+            },
+            {
+              "type": "organization",
+              "excerpt": "AISI"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "AISI",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "AIセーフティ・インスティテュート"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "データ品質のガイドライン"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ガイドブック"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "このような活動の後押しというのをしていくということを所存でございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "AIセーフティ・インスティテュートでは、このデータガバナンスに対するデータ品質のガイドラインというもの、あるいはガイドブックというものを出させていただいておりまして、このような活動の後押しというのをしていくということを所存でございます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人による一般的見解と、既存のガイドライン提供という活動内容の提示に留まっており、具体的な新たなコミットメントや法的解釈の確定はなされていない。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "AISIの役割について、より具体的な検証手法や評価基準の策定を求める形式にすれば、より実効性のある回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_031",
+      "segment_index": 10,
+      "topic": "PETS等の支援ツールの有効性と制度的後押し",
+      "question": {
+        "speaker": "武藤かず子",
+        "party": "チームみらい",
+        "summary": "- PETSやAI評価ツールが、スタートアップを含む事業者の実装を支える上でどの程度有効か\n- 事業者が安心して実装に進むために、日本としてどのような制度的後押しが必要か",
+        "full_text": "シンガポールでは、今日のご説明の中でもご紹介がありましたPETS。このPETSのサンドボックスやAIベリファイなど、事業者が安心して実装できる支援ツールが政府主導で整備されております。村上参考人は、AI安全性と企業データ活用の双方を実務として担われていらっしゃいますが、PETSですとか、AIの評価ツールをスタートアップを含む事業会社、事業者が実装を支える上で、どの程度有効か、また日本としてどのような制度的後押しがあると、安心して事業者が実装に進められることができるか、というところ2点、ご見解をお伺いしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "村上明子",
+        "role": "参考人 独立行政法人情報処理推進機構AIセーフティ・インスティテュート所長",
+        "summary": "- 事業者が個別に評価を行うことは厳しく、特に中小企業にとって投資は困難である\n- 国としてどこまでサポートするかが課題である",
+        "full_text": "先ほどシンガポールのPETSのサンドボックスの例を出していただきましたけれども、やはり事業者が個別に自分たちだけでこのような評価を行っていくということはかなり厳しい。特に中小のサイズの企業体では、そのようなところをその部分に投資をするということはかなり難しいということは認識をしております。やはりその部分をどこまで国としてサポートするか。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56239&time=9356.242999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "PETS等の有効性と日本での制度的後押しについて",
+          "sub_asks": [
+            "PETSやAI評価ツールの事業者への有効性",
+            "事業者が安心して実装するための制度的後押し"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "シンガポール"
+            },
+            {
+              "type": "other",
+              "excerpt": "PETSのサンドボックスやAIベリファイ"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "スタートアップを含む事業会社、事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "事業者が個別に自分たちだけでこのような評価を行っていくということはかなり厳しい。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的だが、回答者が参考人であるため、制度的な具体策への言及がなく、現状認識に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "参考人に対し、政府の制度設計という権限外の回答を求めている点。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_032",
+      "segment_index": 10,
+      "topic": "課徴金制度の諸外国との比較と実効性",
+      "question": {
+        "speaker": "武藤かず子",
+        "party": "チームみらい",
+        "summary": "- 日本の課徴金制度（利益剥奪型、大規模事案対象）を、EU GDPRや米国CCPA等の諸外国の制度と比較してどう評価するか\n- 抑制力として実効的に機能させるために最低限必要な要件は何か",
+        "full_text": "今回の改正で導入される課徴金制度についてでございます。EU GDPRでは全世界売上高の最大4%、米国カリフォルニア州CCPAでは違反1件あたり最大750ドルの消費者への損害賠償が認められております。日本の今回の課徴金制度、利益剥奪型、また千人を超える大規模な事案が対象であるなど、これらが今回の制度の中身となっておりますけれども、諸外国と比較をしてどのように評価されておられますでしょうか。また、抑制力として実効的に機能させるために最低限必要な要件は何か、ご見解をお聞かせください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "森亮二",
+        "role": "参考人 弁護士法人英知法律事務所弁護士",
+        "summary": "- 諸外国の制裁金と比較して額が極めて低く、効力・抑止力ともに弱い\n- 単なる利益剥奪では「試しにやってみる」ことになり抑止力が低いため、違法行為によって損をする（得られた額を超える額を徴収される）と感じさせる仕組みが抑止力の出発点となる",
+        "full_text": "諸外国との比較ということですけれども、諸外国の制裁金と比較した場合に額が低いということは、もう極めて明白ではないかと思っておりまして、そういう意味では、効力についても当然弱いということになろうと思いますし、その効力をしっかりしたものにしていただく、これはその抑止力を持たせて、権利利益の侵害を防ぐ違法効力。森亮二：もちろんこれはやはりどんなものであるべきかということですけれども、今、違法行為をやったらそれで得られた額を返すということですと、それは非常に抑止力が低い。それはちょっと試しにやってみるかという話になりますので、非常に抑止力が低いわけでございます。やはり得られた額を超える部分を取られちゃうんじゃないかと。つまり、この違法行為を私がやることによって、もしかしたら損をするんじゃないかというふうに、違法行為をやったら、行為を、要かもしれない行為を考えている事業者に思っていただくということが、その抑止力の出発点と言えるのではないかと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56239&time=9356.242999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "新課徴金制度の諸外国比での評価と実効的要件",
+          "sub_asks": [
+            "諸外国と比較してどのように評価しているか",
+            "抑制力として実効的に機能させるための最低限必要な要件は何か"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "EU GDPR"
+            },
+            {
+              "type": "law",
+              "excerpt": "米国カリフォルニア州CCPA"
+            },
+            {
+              "type": "number",
+              "excerpt": "全世界売上高の最大4%"
+            },
+            {
+              "type": "number",
+              "excerpt": "違反1件あたり最大750ドル"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "諸外国の制裁金と比較した場合に額が低いということは、もう極めて明白ではないかと思っておりまして、そういう意味では、効力についても当然弱いということになろうと思います",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人が現行制度の抑止力の低さを率直に認めており、議論の記録としての価値はあるが、具体的な改善策や政府のコミットメントは含まれていない。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_033",
+      "segment_index": 10,
+      "topic": "データ利活用の入口規制と出口規制",
+      "question": {
+        "speaker": "武藤かず子",
+        "party": "チームみらい",
+        "summary": "- データ利活用において、入口最優先に整備すべき条件は何か",
+        "full_text": "最後になりますが、森田参考人に2点お伺いをいたします。武藤かず子：森田参考人は、かねてより入り口最優先に整備すべき条件は何と考えでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "森田朗",
+        "role": "参考人 東京大学名誉教授 一般社団法人次世代基盤政策研究所代表理事",
+        "summary": "- バイアスのない十分なサンプルを確保し、データの価値を最大限に引き出すことが重要である\n- 入口で制限しすぎるとデータが集まらず資源を損なうため、基本は同意なしでも使える可能性をベースとしつつ、権利義務に関わる特定分野のみ法律で制限を設けるべきである",
+        "full_text": "入口規制から出口規制といいますのは、医療関係の情報で私が主張しているところでございますけれども、一般的な問題といたしまして、今回のデータが利用について、デジタル行政推進法の方になりますけれども、少なくともAIにせよ、その他の目的にせよ、なるべくサンプルが十分なサンプルで、バイアスのないような形で、たくさんのサンプルが使えるようにする。それがデータの持っている価値を引き出す最大の要因ではないかと思っております。それが入り口でデータを出す出さないとやりますと、そもそもデータが集まりませんので、それは、ある意味で保護になるのかもしれませんけれども、我々の社会が持っている大きな資源というものの、ある意味でますと、使い方としていかがなものかということになっております。で、個人情報保護法の統計の話にもありますけれども、少なくとも同意なしでも使えるような可能性をベースとしておいたということで、やはりここはどうしても同意が必要だという分野があれば、それについてはそうした形での規制と言いましょうか、制限を、これはできれば国民の権利義務に関わることですから、きちっとした法律の形で制定していくことが重要ではないかと思っておりますし、私の最初の図でお示ししましたように、東北の場合には、ああいう基本的な横串方法と言いましょうか、分野横断的な法制度をきちっと作った上で、個別分野についての特徴がある、それぞれの法律を作っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5280"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56239&time=9356.242999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "入り口最優先に整備すべき条件についての見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "デジタル行政推進法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "個人情報保護法"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "なるべくサンプルが十分なサンプルで、バイアスのないような形で、たくさんのサンプルが使えるようにする。それがデータの持っている価値を引き出す最大の要因ではないか",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人としての個人的な見解を問う質問であり、それに対する概論的な回答であるため、記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「2点お伺い」としながら実際には1点しか質問していない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_034",
+      "segment_index": 10,
+      "topic": "GDPRの原則と統計作成特例の整合性および日本独自の制度設計",
+      "question": {
+        "speaker": "武藤かず子",
+        "party": "チームみらい",
+        "summary": "- 統計作成等の特例が、GDPRの「目的限定原則」および「データ最小化原則」とどのように整合しているか\n- GDPRと調和しつつ日本社会に適した制度を設計する上で、本法案で特に重要な点は何か",
+        "full_text": "2点目の質問でございます。EUのGDPRは性質が少し異なるのかなというふうに理解をしております。と申しますのも、目的限定の原則とデータ最小限の原則というところを中心に据えた設計になっていると認識をしております。今回の統計作成等の特例については、これらの原則とどのように整合しているのか、もしお考えがあればお聞かせいただきたいと思っております。また、このGDPRとの調和を図りながら、今後、日本社会により適した制度設計をしていく上で、今回の法案の中で特に重要な点というのが何か、ぜひ見解をお聞かせいただければと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "森田朗",
+        "role": "参考人 東京大学名誉教授 一般社団法人次世代基盤政策研究所代表理事",
+        "summary": "- 個人情報保護法の詳細な点については答えかねるが、医療分野のように同意取得が困難な場合は、同意不要とした方が患者のためになる考え方がある\n- 何が「最小」かは難しいが、比例原則に基づき、領域（分野）ごとに応じた制度の在り方を考えていくことが重要である",
+        "full_text": "ご質問の趣旨は分かりましたが、実は私自身はデジタル行政推進法の方で関わっておりまして、それについて今日も意見を申し上げたので、個人情報保護法について細かい点につきましては、ちょっと私自身は答えかねるところがございます。ただ、日本の個人情報保護法とGDPRが別な意味で共通のところはもちろんかなりございますし、違うところも、例えば医療分野なんかでも先ほど出ましたけれども、生命財産公衆衛生例外の場合の同意が不要というところでも、同意を取ることが困難な場合というのが非常に、例えば医療になりますけれども、医療の場では大きな問題になっておりました。そこはもう取らなくていいというふうにした方が、患者さんのためになるのではないかと。そういう考え方もあり得るところだと思いますし、どういう情報をどれくらい取るかということについては、まさにこれはGDPRと共通しているところだと思いますけど、比例原則であるだろう。ただ、何が最小かというのは、なかなか難しいところかなというふうに思っております。いずれにいたしましても、個人情報保護法にしましても、一般原則を定めているので、そのまま適用していくということについては、十分に注意をして、できることならば、先ほど申し上げましたように、領域ごとに応じた形での制度の在り方というものを考えていくのが、我が国の将来にとってデータを活用していく上で重要ではないかと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5281"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56239&time=9356.242999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "統計作成特例とGDPRの整合性および重要点",
+          "sub_asks": [
+            "統計作成等の特例とGDPRの原則との整合性",
+            "日本に適した制度設計における本法案の重要点"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "EUのGDPR"
+            },
+            {
+              "type": "law",
+              "excerpt": "統計作成等の特例"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.2
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "デジタル行政推進法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "個人情報保護法"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "reference",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "領域ごとに応じた形での制度の在り方というものを考えていくのが、我が国の将来にとってデータを活用していく上で重要ではないか",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "回答者が自身の担当範囲外であることを理由に具体的な回答を避けており、抽象的な見解に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "具体的な整合性の根拠を問うているため、担当大臣や主務省の官僚に直接問うべき設計であった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    }
+  ],
+  "score_schema_version": "2.0",
+  "prompt_version": "V4"
+}

@@ -1,0 +1,3098 @@
+{
+  "pairs": [
+    {
+      "id": "qa_001",
+      "segment_index": 5,
+      "topic": "改正案の国際情勢への対応力",
+      "question": {
+        "speaker": "長谷川淳二",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 改正案が中東情勢の緊迫化など国際情勢の急激な変化に対応できる仕組みになっているか",
+        "full_text": "先ほど、今回の改正案につきまして、全体として賛同するものであるという御見解をいただいたところでありますが、もう一段掘り下げまして、今回の改正案が、今般の中東情勢の緊迫化など、国際情勢の急激な変化に対して、対応できる仕組みとなっているのかどうかについて、御見解をお伺いしたいと思います。従いまして、今回の制度の拡充と相まって、国際情勢の急変を受けて、先を見越した対応はより可能になっているものではないかと考えているところでございますが、今回の改正案による制度の拡充と相まって、今般の中東情勢あるいはさらに今後想定される今後の国際情勢の急激な変化にも機動的に対応することができる仕組みがより強化されているのではないかと考えますが、御見解を伺いたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "原一郎",
+        "role": "参考人 一般社団法人日本経済団体連合会常務理事",
+        "summary": "- 国際情勢を完全に先読みすることは困難だが、基本方針を情勢に合わせて変更できる仕組みである\n- 特定重要物資の指定は政令で可能であり、要件を満たせば機動的に追加できるため、指定後の不足防止は可能である",
+        "full_text": "今、先生からございました中東情勢含めて、様々な国際情勢の変化に、この法制度が十分対応可能なものかどうかについてでございますけれども、先ほど他の参考人の方からもありましたが、なかなか不安定で複雑な国際情勢を読み切って先回りをするということは、そもそも非常に難しい問題だというふうに思っておりまして、この制度以前の問題かと思います。これも国際情勢に合わせて変更可能という仕組みになっておりますので、逐次この国際情勢に合わせて、若干後追いになるにしても、対応は可能だというふうに考えております。また具体的に申し上げましても、特定重要物資、この指定は政令で可能でございまして、4要件に当てはまれば閣議決定をして政令で定めることによりまして、新たな物資を追加することができるという仕組みになっておりますので。未然にというのはなかなか難しい問題ではありますけれども、指定した以降のいろいろな不足分については、未然に防止ができる仕組みになっているかと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5209"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56242&time=2775.932",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "改正案が国際情勢の急変に機動的に対応可能か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "今般の中東情勢の緊迫化"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "特定重要物資"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "政令"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "閣議決定"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "reference",
+          "score": 0.65
+        },
+        "oc3_quotability": {
+          "quote_candidate": "特定重要物資、この指定は政令で可能でございまして、4要件に当てはまれば閣議決定をして政令で定めることによりまして、新たな物資を追加することができるという仕組みになっております",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "改正案の運用メカニズム（政令による物資追加）について具体的に言及しており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問文が冗長であり、同じ趣旨の繰り返しが多いため、より簡潔に問うことが可能であった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_002",
+      "segment_index": 5,
+      "topic": "経済安全保障と自由貿易の整合性",
+      "question": {
+        "speaker": "長谷川淳二",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 経済安全保障に基づく自立性・不可欠性の確保と、ルールに基づく自由で開かれた国際経済秩序との関係について見解を伺いたい",
+        "full_text": "重要ではないかというふうに思いますが、この経済安全保障に基づく自立性、不可欠性の確保と、自由で開かれたルールに基づく国際経済秩序との関係について、鈴木参考人の御見解を賜りたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "鈴木一人",
+        "role": "参考人 東京大学公共政策大学院教授 国際文化会館地経学研究所長",
+        "summary": "- 経済安全保障と自由貿易の維持は、根本的な矛盾（ジレンマ）であると考えている\n- 特に小規模な国にとって自由貿易は不可欠な方策である",
+        "full_text": "これはまさにですね、経済安全保障が抱える根本的な矛盾というか、ジレンマであるというふうに考えております。現在、我が国も含め、多くの国が自由貿易から利益を得て、そして自由貿易を維持することによって、この経済活動を可能にするという国が多々あります。これは我が国だけでなく、より小さな国々であればなおのこと自由貿易は不可欠な方策ではないかというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5209"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56242&time=2775.932",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "経済安保の確保と国際経済秩序との関係について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "経済安全保障に基づく自立性、不可欠性の確保"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "経済安全保障が抱える根本的な矛盾というか、ジレンマであるというふうに考えております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "抽象的な見解を求める質問に対し、概念的な回答がなされており、具体的な事実や約束は含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "見解を問う形式であるため、具体的アクションや解釈を導き出すための制約条件が不足している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_003",
+      "segment_index": 5,
+      "topic": "経済安全保障シンクタンクの人材確保",
+      "question": {
+        "speaker": "長谷川淳二",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 総合的な経済安全保障シンクタンクに優秀な人材を確保するため、待遇や官民交流、研究体制、海外発信体制などどのような整備が必要か",
+        "full_text": "この経済安全保障シンクタンクについては、調査研究、政策提言に限らず、我が国に好ましいシナリオベースでの戦略策定ですとか、海外への発信も必要だという御提言もいただきましたが、そうなりますとやはり専門的な知識や経験を要する優秀な人材の確保が不可欠ではないかと考えます。そこで、国際社会経済研究所の特別研究主幹としても、まさにシンクタンクの運営に携わっておられる布施参考人、この総合的な経済安全保障シンクタンクに優秀な人材を確保するために、待遇面をはじめ、官民の人材交流ですとか、あるいは研究体制の確保、さらに先ほど言いました海外発信等々の体制の整備を含めて、どのような人材確保のための体制を確保する必要があるか、布施参考人の御見解を伺いたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "布施哲",
+        "role": "参考人 国際社会経済研究所特別研究主幹",
+        "summary": "- 技術と政策を繋げ、文理融合的に捉え、戦略的コミュニケーションや海外ネットワーク形成ができる高度人材が必要である\n- 独立行政法人の報酬体系を超えた高待遇を提示しなければ、こうした高度人材を引き付けるのは難しいと危惧している",
+        "full_text": "という意味においては、技術と政策をつなげられる思考力を持っている人材、あるいは文系と理系をある種横断的、融合的に捉えて、しかも政策というのはインプリケーションまで含めてアウトプットができる、しかもアカデミックなディシプリンに基づいて知的生産物をまとめられる、かつ戦略的コミュニケーションを担うという観点でいえば、まさに委員御指摘のとおり、海外における発信力、海外におけるネットワーク形成力、こういったものが求められるわけですね。私が承知している範囲では、シンクタンクは民間企業の出向組と各省庁からの出向組等を主にメインにチームにしながら、準備作業が今進んでいるというふうに聞き及んでおりますけれども、そういった各種の分野の知見を持っている人たちの上で、さらに文理融合や政策と技術をつなげられる知見を持ったプロデューサー役、司会役のような高度人材がいて、いろいろな分野の知見を引き出しながら、政策的なニーズにも応えて、かつ海外とも連携していくということが必要になります。私ちょっと危惧しているのは、今のリエティという独立行政法人の報酬体系の外に抜け出すような高待遇を提示しないと、このような高度人材をなかなか引き付けるのは難しいんじゃないかなというところを一番心配しております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5209"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56242&time=2775.932",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "経済安保シンクタンクの人材確保体制への見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "国際社会経済研究所"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "布施参考人",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "リエティ"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "今のリエティという独立行政法人の報酬体系の外に抜け出すような高待遇を提示しないと、このような高度人材をなかなか引き付けるのは難しい",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人への見解を問う形式であり、現状の報酬体系への懸念という具体的な指摘が含まれている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_004",
+      "segment_index": 5,
+      "topic": "海底ケーブル敷設役務への政府支援の具体策",
+      "question": {
+        "speaker": "長谷川淳二",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 海底ケーブルの設備投資、陸揚げ局との協調、高度人材育成など、政府への具体的な支援要望を伺いたい",
+        "full_text": "その中で、企業経営として、先ほど申し上げいただいたように、敷設船の取得など、事業継続性を確保しつつ、こうした経済安全保障上の観点から、海底ケーブルの防護強靭化や、あるいは複線化などの対策が求められているわけではございますが、そんな中で、今回本法案に盛り込まれた支援策について、期待の御提言をいただきましたが、最後、政府への支援要望ということで、ざっと御説明をされたところでございますが、せっかくの機会でございますので、この政府の支援要望ですね、設備投資、あるいは陸揚げ局との協調、高度人材育成のための参款国など、もう少し具体的に政府に対する御要望をいただければ幸いでございます。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "植松智則",
+        "role": "参考人 日本電気株式会社 Corporate SVP 兼 海洋システム事業部門長",
+        "summary": "- 物理的切断を防ぐため、より深く・早く埋設できる能力を持つ敷設船への支援を要望する\n- 切断箇所の特定時間を24時間から1時間へ短縮する技術開発への支援を継続してほしい\n- 安定供給のため、単なる隻数だけでなく、冬季敷設能力や積載能力を向上させた設備投資への支援を求める",
+        "full_text": "ただしこれを広範囲に設置しようとすると、やはり敷設船の能力が必要になってきます。ですので、この船、敷設船をご支援いただけるようであれば、そういった敷設の能力、具体的には埋設、この能力も向上するというような検討も進めていきたいと思います。先ほど申し上げた非意図的な切断箇所の特定を、現状ですと本数によるんですけれども24時間程度かかっているものを1時間程度まで短縮しようというような技術開発は、これも既に政府の御支援も一部いただきながら進めているところでございます。安定供給のための設備投資というのは、まずは第一に敷設船。これは冬季の敷設能力であったり、あとは積載能力であったり。従来使っているものより、さらに上回る埋設、積載、そういった種を。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5209"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56242&time=2775.932",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "政府への具体的な支援要望の提示",
+          "sub_asks": [
+            "設備投資に関する要望",
+            "陸揚げ局との協調に関する要望",
+            "高度人材育成のための参款国に関する要望"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "本法案に盛り込まれた支援策"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.2
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "企業経営",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.6
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "24時間程度かかっているものを1時間程度まで短縮"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "敷設船"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "非意図的な切断箇所の特定を、現状ですと24時間程度かかっているものを1時間程度まで短縮しようというような技術開発は、既に政府の御支援も一部いただきながら進めている",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人が政府への要望を具体化した回答であり、特に技術開発の目標数値（24時間→1時間）に具体性がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問者が参考人に要望を促す形式であるため、政府の答弁としての拘束力やコミットメントは発生しない構造になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_005",
+      "segment_index": 6,
+      "topic": "経済安全保障推進法における官民協議会および特定重要物資の定義と柔軟性",
+      "question": {
+        "speaker": "後藤祐一",
+        "party": "中道改革連合・無所属",
+        "summary": "- 中東情勢によるナフサ不足やAIの進展など、法案準備時に想定外の事態への対応が可能か\n- 官民協議会の目的が「未然に防止」に限定されており、既に発生している事態への対応に不十分ではないか\n- 条文をより広く解釈し、柔軟に物資指定や協議会開催ができるよう工夫すべきではないか",
+        "full_text": "まず原参考人と鈴木参考人に伺いますが、今申し上げましたが、この中東情勢に伴うナフサ不足ですとか、AIへの対応ですとか、これが今回の法改正で十分なんでしょうかという観点です。ちょっと条文を読み上げて恐縮なんですが、官民協議会、今回設置されますけれども、この官民協議会は、経済活動に関して行われる国家及び国民の安全を害する行為を未然に防止するため、官民の連携による当該行為の防止のための情報共有対策に関する協議会となっていて、その行為を未然に防止するために定義されちゃっているんですね。ですが、今回の例えばナフサ不足みたいなことは、ホルムズ海峡を封鎖したという行為が問題なのではなくて、その結果として起きているナフサ不足、あるいはこれに由来する物資の不足が経済安全保障上問題なのであって、未然だとか行為というよりは、事態としてこのナフサ不足が起きてしまっているという事態に対して対応するという必要があるんじゃないかと思うんです。ですから、この官民協議会の書き方をもうちょっと広くした方がいいんじゃないか。事態を未然に防止するためとあって、ここは特定重要物資の方は事態という言葉があるのでまだいいかと思うんですが、ただやはり未然に防止するためとなっていて、未然に防止するのは難しいじゃないかという御指摘、原さんからもございました。ここはあまり限定的にするよりは、実際の指定だとかはもちろん厳格な要件に従ってやればいいと思うんですけれども、法律上は官民協議会はいろんな形で開ければいいし、今回のナフサ不足を踏まえて開けるようにもした方がいいと思いますし、特定重要物資も法律の条文上はいろんな形で、例えば今回ナフサを指定するというべきじゃないですかと、昨日私聞いたら、それは否定しきらない可能性としては残す答弁を昨日政府からもいただきました。とすると、未然に防止というのはもうなおさら厳に不足しているわけですから、ちょっと条文をより解釈しやすくするための工夫をすべきじゃないかと思いますが、原参考人と鈴木参考人の御見解をいただければと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "原一郎",
+        "role": "参考人 一般社団法人日本経済団体連合会常務理事",
+        "summary": "- シンクタンクの創設により知見を集めてリスクを予測し、有事のアクションを早めることで未然防止を図る",
+        "full_text": "いかに未然に防止するかというところは、私は今回シンクタンクが創設されることによって、ある程度知見を集めていろんなものを予測する、先ほどシナリオというようなお話もありましたが、シナリオ作り、あるいはサプライチェーンのいろんなリスクがどこにあるのか、これを未然にいろいろ調べて、いざというときにアクションが早く取れるようにすると。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5209"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56242&time=3851.332",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "官民協議会の設置目的（未然防止）の定義を広げるべきか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "官民協議会、今回設置されますけれども"
+            },
+            {
+              "type": "field_case",
+              "excerpt": "中東情勢に伴うナフサ不足"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "原参考人、鈴木参考人",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "シンクタンク"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "シンクタンクが創設されることによって、ある程度知見を集めていろんなものを予測する",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "条文の定義を広げるべきという具体的な提案に対し、参考人はシンクタンクによる予測の重要性を述べるにとどまり、直接的な回答になっていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問が冗長であり、結論としての「見解を伺いたい」点に至るまでの論理構成が複雑である。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_006",
+      "segment_index": 6,
+      "topic": "経済安全保障推進法における官民協議会および特定重要物資の定義と柔軟性",
+      "question": {
+        "speaker": "後藤祐一",
+        "party": "中道改革連合・無所属",
+        "summary": "- 中東情勢によるナフサ不足やAIの進展など、法案準備時に想定外の事態への対応が可能か\n- 官民協議会の目的が「未然に防止」に限定されており、既に発生している事態への対応に不十分ではないか\n- 条文をより広く解釈し、柔軟に物資指定や協議会開催ができるよう工夫すべきではないか",
+        "full_text": "まず原参考人と鈴木参考人に伺いますが、今申し上げましたが、この中東情勢に伴うナフサ不足ですとか、AIへの対応ですとか、これが今回の法改正で十分なんでしょうかという観点です。ちょっと条文を読み上げて恐縮なんですが、官民協議会、今回設置されますけれども、この官民協議会は、経済活動に関して行われる国家及び国民の安全を害する行為を未然に防止するため、官民の連携による当該行為の防止のための情報共有対策に関する協議会となっていて、その行為を未然に防止するために定義されちゃっているんですね。ですが、今回の例えばナフサ不足みたいなことは、ホルムズ海峡を封鎖したという行為が問題なのではなくて、その結果として起きているナフサ不足、あるいはこれに由来する物資の不足が経済安全保障上問題なのであって、未然だとか行為というよりは、事態としてこのナフサ不足が起きてしまっているという事態に対して対応するという必要があるんじゃないかと思うんです。ですから、この官民協議会の書き方をもうちょっと広くした方がいいんじゃないか。事態を未然に防止するためとあって、ここは特定重要物資の方は事態という言葉があるのでまだいいかと思うんですが、ただやはり未然に防止するためとなっていて、未然に防止するのは難しいじゃないかという御指摘、原さんからもございました。ここはあまり限定的にするよりは、実際の指定だとかはもちろん厳格な要件に従ってやればいいと思うんですけれども、法律上は官民協議会はいろんな形で開ければいいし、今回のナフサ不足を踏まえて開けるようにもした方がいいと思いますし、特定重要物資も法律の条文上はいろんな形で、例えば今回ナフサを指定するというべきじゃないですかと、昨日私聞いたら、それは否定しきらない可能性としては残す答弁を昨日政府からもいただきました。とすると、未然に防止というのはもうなおさら厳に不足しているわけですから、ちょっと条文をより解釈しやすくするための工夫をすべきじゃないかと思いますが、原参考人と鈴木参考人の御見解をいただければと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "鈴木一人",
+        "role": "参考人 東京大学公共政策大学院教授 国際文化会館地経学研究所長",
+        "summary": "- 石油および石油製品に関しては、別途「石油備蓄法」が存在している",
+        "full_text": "今回の事案において、ナフサが指定されていないのではないかということなんですが、この経済安全保障推進法の設立の経緯から考えますと、もともと石油並びに石油製品に関するものは、これは別途、石油備蓄法。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5209"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56242&time=3851.332",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "官民協議会の設置目的の条文を広げるべきか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "field_case",
+              "excerpt": "中東情勢に伴うナフサ不足"
+            },
+            {
+              "type": "law",
+              "excerpt": "官民協議会、今回設置されますけれども"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "原参考人、鈴木参考人",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "石油備蓄法"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": null,
+          "score": 0.0
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は条文の定義（未然に防止）が狭すぎる点を指摘し、解釈の工夫を求めたが、回答者はナフサの指定可否と石油備蓄法の関係に話をすり替えており、完結していない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問が冗長であり、条文修正の提案とナフサ指定の要望が混在しているため、回答者が論点を絞り込みにくくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_007",
+      "segment_index": 6,
+      "topic": "攻めの経済安全保障と抑止力の確保に向けた法体系",
+      "question": {
+        "speaker": "後藤祐一",
+        "party": "中道改革連合・無所属",
+        "summary": "- 日本が他国にとって不可欠な技術・物資を持つことで抑止力とする「攻めの経済安保」が現行法体系で可能か\n- 不可能である場合、どのような改善や検討を行うべきか",
+        "full_text": "現行の、今回の改正も含めてですね、この経済安保法、あるいは他の外為法とかそういったものを含めて、今の日本の法体系で、この不可欠性の観点から、あるいは攻めの経済安保の観点から、今の法体系で攻めができるんでしょうか。というようなオプションは外為法、例えば四十八条を使えば、論理的にはできるのかもしれませんが、現実には難しいのではないかと思うんですけれども、この現行の法体系の中で、この攻めの経済安保はできるのでしょうか。できないとしたら、どういったところを改善、検討していくべきでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "鈴木一人",
+        "role": "参考人 東京大学公共政策大学院教授 国際文化会館地経学研究所長",
+        "summary": "- 不可欠性を持つだけでは不十分であり、威圧を受けた際に具体的に対抗措置（関税、輸出・投資規制等）を取れる別の法体系（反威圧措置）を持つことが抑止力になる",
+        "full_text": "まさにおっしゃるとおり、不可欠性は、ある意味、この不可欠性を持っているだけでは、十分な抑止力にはならないというふうには、私は理解しております。これが抑止力として機能し、他国が日本に対して威圧をかけないようにするために、こちらも何らかの形での対抗措置が取れるということを見せるためには、やはりこの抑止力を進めるための法体系が必要だと。反威圧措置ということで、威圧を受けたときにはこういうことができるというような、広範なこの措置をとれる、例えば関税を上げるですとか、それ以外にも輸出規制、投資規制等のこの措置をとるようなことが可能とする別の法体系を持っていて、そういったものがですね、この不可欠性をある意味担保としてこの抑止力になるという、こういう法体系を持っておりますので、そういったものを参考に御検討いただければいいのではないかなというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5209"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56242&time=3851.332",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "現行法体系で攻めの経済安保は可能か",
+          "sub_asks": [
+            "現行法体系で攻めの経済安保ができるか",
+            "できない場合、どこを改善・検討すべきか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "経済安保法"
+            },
+            {
+              "type": "law",
+              "excerpt": "外為法"
+            },
+            {
+              "type": "law",
+              "excerpt": "四十八条"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "反威圧措置"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "関税を上げる"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "輸出規制"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "投資規制"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "不可欠性を持っているだけでは、十分な抑止力にはならないというふうには、私は理解しております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "現行法での可否という問いに対し、回答者は自身の理解と一般論的な対抗措置の必要性を述べるに留まっており、具体的な法解釈や政府としてのコミットメントは示されていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「攻めの経済安保」という定義が曖昧なため、回答者が概念的な議論に逃げやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_008",
+      "segment_index": 6,
+      "topic": "攻めの経済安全保障と抑止力の確保に向けた法体系",
+      "question": {
+        "speaker": "後藤祐一",
+        "party": "中道改革連合・無所属",
+        "summary": "- 日本が他国にとって不可欠な技術・物資を持つことで抑止力とする「攻めの経済安保」が現行法体系で可能か\n- 不可能である場合、どのような改善や検討を行うべきか",
+        "full_text": "現行の、今回の改正も含めてですね、この経済安保法、あるいは他の外為法とかそういったものを含めて、今の日本の法体系で、この不可欠性の観点から、あるいは攻めの経済安保の観点から、今の法体系で攻めができるんでしょうか。というようなオプションは外為法、例えば四十八条を使えば、論理的にはできるのかもしれませんが、現実には難しいのではないかと思うんですけれども、この現行の法体系の中で、この攻めの経済安保はできるのでしょうか。できないとしたら、どういったところを改善、検討していくべきでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "布施哲",
+        "role": "参考人 国際社会経済研究所特別研究主幹",
+        "summary": "- 現行体系でも、シンクタンクが日本の強みや他国の依存状況をデータで実証したレポートを発表することで、相手へのシグナリング（抑止）になり得る",
+        "full_text": "現法体系との整合性、実現可能性については、鈴木参考人の御説明に尽きるというふうに理解をしておりますが、一方で、現法体系の中においてもできることがあるということが。例えば経済安保シンクタンクの所属している研究者がシンクタンクレポートを発表することで日本の強み、場合によっては他国がその日本の強みの技術に依存している状況をデータに基づいて実証的にまとめたレポートを発表するといったことも相手に対するシグナリングになり得るというふうに私は理解しています。さっき今年の2月にヨーロッパにエコノミックセキュリティタスクフォースというグループ、研究者グループがあるんですけれども、彼らが出したレポートがまさにそうした趣旨でして、EUが持っている不可欠性の技術は何なのか、その技術を日本の技術と掛け合わせると、中国とアメリカに対してどのぐらいの交渉力が発揮できるのかといったレポートを後藤祐一より、日本の製品やサービスに取り込んでもらう、あるいは依存してもらうというところも、その過程を通じた日本の不可欠性を認識するということにもつながるのではないかなというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5209"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56242&time=3851.332",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "現行法体系で「攻めの経済安保」は可能か",
+          "sub_asks": [
+            "現行法体系で攻めの経済安保ができるか",
+            "できない場合、どこを改善・検討すべきか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "経済安保法"
+            },
+            {
+              "type": "law",
+              "excerpt": "外為法"
+            },
+            {
+              "type": "law",
+              "excerpt": "四十八条"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "エコノミックセキュリティタスクフォース"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "研究者がシンクタンクレポートを発表することで日本の強み...を実証的にまとめたレポートを発表するといったことも相手に対するシグナリングになり得る",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "現行法での可能性を問う質問に対し、回答者は法的な解釈ではなくシンクタンクのレポート等のソフトパワーによるアプローチを提示しており、直接的な回答になっていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「攻めの経済安保」という定義が曖昧なため、回答者が法制度ではなく戦略的な手法（シグナリング等）に逃げることが可能になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_009",
+      "segment_index": 7,
+      "topic": "改正法の検討規定の期間について",
+      "question": {
+        "speaker": "後藤祐一",
+        "party": "中道改革連合・無所属",
+        "summary": "- 施行後3年を目途とする検討規定は遅すぎるのではないか\n- 成立後すぐにでも次の改正に向けて検討すべきではないか",
+        "full_text": "検討規定というのがあるんですけれども、これは今回の改正の施行の状況を勘案して検討するというのが、施行後3年を目途として、ちょっとこれ遅すぎだと思うんです。もう今回の改正部分以外も含めて、もっと大きなことが起きていますので、この法律成立したら、もうすぐにでも次の改正に向けて検討すべきじゃないかと思いますが、鈴木参考人いかがでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "鈴木一人",
+        "role": "参考人 東京大学公共政策大学院教授 国際文化会館地経学研究所長",
+        "summary": "- 国際情勢の変化が速いため、常に柔軟な対応が可能な法制度であるべき\n- 3年と限定せず、将来的に適宜法改正を進められる柔軟な制度が望ましい",
+        "full_text": "まさに今、国際情勢が極めて早いスピードで動いていて、大きな変化が我々が想定しないスピード感で起きていますので、その意味では常に柔軟な対応が可能になるような法制度であるべきだというのが一般原則だと思っております。その意味では、法改正が本当に必要なのかどうかも含めて検討されるべきだと思いますが、あえて3年とこういうふうに限定をする必要もなく、将来において適宜この法改正を進めていくということが可能になるような柔軟な制度であるということが望ましいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56242&time=4773.832",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "検討規定の3年という期間を早めるべきか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "検討規定"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "将来において適宜この法改正を進めていくということが可能になるような柔軟な制度であるということが望ましい",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "検討規定の期間設定に関する意見交換であり、参考人が柔軟な対応の必要性に同意しているが、具体的な制度変更の約束はない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「すぐにでも検討すべき」という提案に対し、具体的な検討開始時期や手法を問う形にすれば、より拘束力のある回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_010",
+      "segment_index": 7,
+      "topic": "経済安保法改正に伴う民間企業の懸念点",
+      "question": {
+        "speaker": "後藤祐一",
+        "party": "中道改革連合・無所属",
+        "summary": "- 民間企業の視点から、運用上の困りごとや配慮してほしい点があるか",
+        "full_text": "最後、植松参考人に伺いたいと思いますが、これまでの経済安保法、そして今回の改正で、民間企業としてこういう運用されると困るとか迷惑だとか、こういうことにちゃんと配慮してほしいっていうところがございましたら、最後にお願いしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "植松智則",
+        "role": "参考人 日本電気株式会社 Corporate SVP 兼 海洋システム事業部門長",
+        "summary": "- 特段のお願いや懸念点はない\n- 支援対象の幅が広がり、深化することはありがたいと考えている",
+        "full_text": "特にありません。今までなかったものを作っていただいただけでも非常にありがたくて、ご支援いただける対象の幅が広がり、さらに深くもなるということであれば、関係省庁の方々との相談は都度させていただくところではございますけれども、特段この法改正について、こちらからのお願い等はございません。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5209"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56242&time=4773.832",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "法改正に伴う民間企業の懸念点や要望の確認",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "経済安保法"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "植松参考人",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "特段この法改正について、こちらからのお願い等はございません。",
+          "score": 0.2
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人への要望確認という形式的な質問であり、回答も「特にない」という内容のため、記録としての価値は極めて低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "具体的な懸念事項を提示して是非を問う形式にすれば、より実質的な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_011",
+      "segment_index": 7,
+      "topic": "経済の武器化の定義と現状",
+      "question": {
+        "speaker": "浦野靖人",
+        "party": "日本維新の会",
+        "summary": "- 経済の武器化について、知見を詳しく伺いたい",
+        "full_text": "生命の経済安保というお話、先ほど後藤委員の質問にもありましたけれども、私もこの部分を少しお聞きしたかったんですけれども、先ほどお話をされていましたので、経済の武器化について少しお伺いをしたいと思っています。これは米中が経済の武器化というものを対応するわけですけれども、実際今イランにおいてもおそらくホルムズ海峡の封鎖というのはそういうことだと私は認識をしているんです。今起こっているこの経済安保の課題というものは、そういうことが起こらなければおそらくそこまで問題にならない出来事ばかりなんじゃないかと。要は世界中が今グローバリズムから自国中心にシフトして、その煽りを受けて経済を武器化して、そのさらに煽りを受けて、今グローバル経済をつくってきた地球全体が今バランスを崩していっていると。そういう意味では、この経済の武器化というのは全ての原因の一つになっていると思うんですけれども、この部分についてもう少し詳しく知見をお話しいただけたらと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "布施哲",
+        "role": "参考人 国際社会経済研究所特別研究主幹",
+        "summary": "- 経済的手段を用いて安全保障・戦略上の目標を達成しようとする試みである\n- 武力行使よりハードルが低いため横行しており、特に社会インフラへのインパクトが最大のリスクである",
+        "full_text": "そうですね、経済の武器化ということですけれども、私が理解していますのは、経済的手段を使って安全保障上あるいは戦略上の目標を達成しようとする試みだというふうに経済安保を定義するのであれば、まさに経済の武器化というのは経済を武器に使って自国の戦略目標を達成する、本来であれば場合によっては武力行使も含めて戦争の形態を取る形で政治目標を達成する代わりにですね、経済的手段があるので、それを使って自国のやりたいことをやり遂げていくというところで、手段のハードルが下がっている。より武力行使よりも圧倒的に経済的手段を使った目的の達成の方がハードルが低いので、そこが経済の武器化を横行させる一つの敷居の低さにもつながってしまっているというふうに理解をしております。経済の武器化の典型的な、最もリスクで、今最も注目しているのは、やはり社会インフラに対するインパクトだと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5209"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56242&time=4773.832",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "経済の武器化に関する知見の提示",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "ホルムズ海峡の封鎖"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "米中",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "社会インフラ"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "経済の武器化というのは経済を武器に使って自国の戦略目標を達成する、本来であれば武力行使も含めて戦争の形態を取る形で政治目標を達成する代わりに、経済的手段を使うということ",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "経済の武器化という概念的な定義についてのやり取りであり、具体的な政策決定や数値の確定は含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「知見をお話しいただきたい」という抽象的な問いであるため、回答も概念的な説明に留まっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_012",
+      "segment_index": 7,
+      "topic": "経済安全保障と企業の利益のバランス",
+      "question": {
+        "speaker": "浦野靖人",
+        "party": "日本維新の会",
+        "summary": "- 経済安全保障が企業の利益と相反する場合があるが、そのリスクと安全保障のバランスをどう考えるか",
+        "full_text": "そうだとするならば、経済を担っている日本の多くの企業の皆さんも、経済戦争であればその戦争というカテゴリの中に知らずに引き込まれていくということになると思うんです。経済安全保障というのは企業の利益と相反する部分というものが、おそらく出てくると、時と場合によっては出てくると思うんですけれども、そういったリスクと経済安全保障のバランスについて、どのようなお考えがあるのかを原参考人にお伺いしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "原一郎",
+        "role": "参考人 一般社団法人日本経済団体連合会常務理事",
+        "summary": "- 国際ルールに基づく自由な経済活動が理想だが、経済安保の重要性が高まっている現実に即したルール作りが必要である\n- 日本は資源・食料を海外に依存しているため自由貿易の旗は下ろすべきではない\n- CPTPPなどの同志国との協力やWTO改革を通じて、日本がルール作りで重要な役割を果たすべきである",
+        "full_text": "まさにそれは経済安全保障と自由な経済活動、これをいかにバランスをとるかという問題だろうと思っていますが、先ほど国際ルールとの関係もございましたが、まさにバランスを取らないといけないんですけれども、やはり企業といたしましては、国際的に自由な経済活動がルールに基づいて行われる、これが一番理想的な世界だと思っています。ただ現実が、経済安全保障の重要性がますます高まってきているというのが現状で。したがって国際ルールに基づく自由な経済活動においても、そういった現実を踏まえたルールづくり、これが必要になると思います。ただ日本は資源にいたしましても、エネルギーにしましても、食料にしても、海外から買ってこないと成り立たない国でございますので、自由貿易、ルールに基づく自由貿易の旗は、決して下ろさない方がいいというふうに考えております。ただ、じゃあいかにこの現実を踏まえてルールを変えていくか、これが重要だと思っておりまして、そのルール作りにおいて、日本が、あるいは日本の経済界が、重要な役割を果たしていくこと自体が、諸外国からの評価を高めることにもなり、これが仲間づくりにも資するものだというふうに思っております。ただEUと比べた場合に、EUは5億人の市場がございますけれども、日本は1億ちょっとということで、だいぶ規模が違いますので、日本の場合、例えばCPTPPですね、これのLike-minded countriesと協力をしながら、そういったルールづくりを進めるですとか、あるいはWTO改革、今行われておりますので、その改革の一環としてですね。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56242&time=4773.832",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "経済安保と企業利益のバランスに関する考え",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "日本の多くの企業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "CPTPP"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "WTO改革"
+            },
+            {
+              "type": "number",
+              "excerpt": "5億人の市場"
+            },
+            {
+              "type": "number",
+              "excerpt": "1億ちょっと"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "自由貿易、ルールに基づく自由貿易の旗は、決して下ろさない方がいいというふうに考えております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "経済安全保障と自由貿易のバランスという抽象的な問いに対し、参考人が自身の見解を述べている。具体的な政府のコミットメントや法的解釈の確定はないため、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのようなお考えがあるか」というオープンクエスチョンであるため、回答が抽象的な持論に留まりやすく、具体的な政策変更や約束を引き出しにくい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_013",
+      "segment_index": 7,
+      "topic": "重要インフラへのサイバー攻撃への対応",
+      "question": {
+        "speaker": "浦野靖人",
+        "party": "日本維新の会",
+        "summary": "- 中国によるサイバー攻撃等のインフラ攻撃に対し、今回の経済安全保障法案で対応可能か",
+        "full_text": "もう切っても切れないものに、やっと日本も位置づけられたというふうに思うんですけれども、先ほどの布施参考人のお話にありました、インフラ等への攻撃というのもあります。資料に載っておりますけれども、FBIの長官のお話、中国によるサイバー攻撃で、いろんな機関への攻撃をされているのが発覚しているとかですね。少し話が変わるかもしれないですけれども、ついこの間ニュースでもやってましたけれども、アメリカのどこかの市長さんが中国のスパイだったと。この経済安全保障がどこから崩されていくのか非常に私も心配をしております。このインフラについてのこういった攻撃に対して、今回のこの経済安全保障のこの法案はそれなりに対応できるのかということを布施参考人からお聞かせいただけたらと思います。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "布施哲",
+        "role": "参考人 国際社会経済研究所特別研究主幹",
+        "summary": "- 中国由来のグループによる潜伏型アプローチなど、攻撃手法の変化に注目すべきである\n- 攻撃の背景にある意図やシナリオをイメージすることが重要である\n- 官民協議会での情報交換で解像度を上げ、それを重要インフラ事業者の審査制度に反映させるなど、施策の一気通貫した連携が求められる",
+        "full_text": "重要インフラに対するリスク、脅威というところですけれども、私、やはり注目をしているのは、ボルト台風というサイバーセキュリティの世界では、中国由来のAPTグループによる米国の重要インフラに対する攻撃というのが報じられているところではありますけれども、サイバーセキュリティの世界において注目されているのは、そこにある種中国のアプローチの変化があるのではないかという議論がございます。それは、それまでは米国企業を中心とした外国企業のシステムに入り込んで技術情報を摂取して、それをある種軍民融合の政策に活用できるような形で入り込んで潜伏するという、あるいは潜伏型のアプローチが顕著になっているというふうに言われています。先ほどから私はシナリオベースというふうに申し上げておりますけれども、まさにそうしたサイバー攻撃、単純にどんなリスクやダメージがあるのかというのみならず、そこを超えて、そのサイバー攻撃の背景にある意図は何なのか、狙っているシナリオは一体何なのかというところをイメージしていくということが非常に重要だと考えております。それを踏まえますと、官民協議会における様々なリスク情報、事案発生時の情報交換、そういったものを踏まえて官民における情報の解像度を上げて、かつそれを重要インフラ事業者の審査制度にもひいては反映させていく。そういった各施策の連携、先ほど体系的な連携が必要だと申し上げておりますけれども、まさに各施策が一気通貫につながっていく連携というのが求められているんじゃないかなというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5209"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56242&time=4773.832",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "経済安保法案はインフラ攻撃に対応可能か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "FBIの長官のお話"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "重要インフラ",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.6
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "ボルト台風"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "APTグループ"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "官民における情報の解像度を上げて、かつそれを重要インフラ事業者の審査制度にもひいては反映させていく。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は明確だが、回答は具体的な法案の条文や機能への言及ではなく、一般的なサイバー攻撃の傾向と連携の必要性の説明に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「対応できるのか」というYes/No形式の問いであるため、回答者が抽象的な論評で逃げやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_014",
+      "segment_index": 7,
+      "topic": "経済安全保障による産業成長の可能性",
+      "question": {
+        "speaker": "浦野靖人",
+        "party": "日本維新の会",
+        "summary": "- 米国のように、日本でも経済安全保障を産業成長の機会として発展させていく方向性についてどう考えるか",
+        "full_text": "最後に少ししか時間がありませんので、アメリカなどでは経済安保を産業といいますか、経済の大きな成長の一つとして今発展をしております。日本でもそういったことが想定はされると思うんですけれども、それについて原参考人、鈴木参考人、そういう方向性に日本もなっていくとは私は思うんですけれども、それの部分についてお考えがあればお聞かせいただけたらと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "原一郎",
+        "role": "参考人 一般社団法人日本経済団体連合会常務理事",
+        "summary": "- 経済安全保障の推進が重要な課題であることは間違いない",
+        "full_text": "ご質問のご趣旨をうまく正確に理解できたかどうかはちょっと不安でございますけれども、経済安全保障推進ということが重要な課題であることは、これも間違いない。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56242&time=4773.832",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "経済安保を成長戦略とする方向性への考え",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "アメリカなどでは経済安保を産業といいますか、経済の大きな成長の一つとして今発展をしております"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "経済安全保障推進ということが重要な課題であることは、これも間違いない。",
+          "score": 0.2
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "抽象的な意見を求める質問に対し、重要性に同意するのみの形式的な回答に留まっており、記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「お考えがあれば」という形式的な問いかけのため、回答者が具体的に答えにくい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_015",
+      "segment_index": 8,
+      "topic": "海底ケーブル敷設事業への法改正の効果と国の関与",
+      "question": {
+        "speaker": "野村美穂",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 法改正によって海底ケーブル敷設事業にどのような具体的効果が見込まれるか\n- 敷設船の自社保有や海外基地設置、研究開発に法改正がどう寄与するか\n- 財政・技術開発・外交面など、国に期待する具体的な関与は何か",
+        "full_text": "まず、この法改正によって、海底ケーブル敷設事業にどのような具体的な効果が見込まれるとお考えでしょうか。特に今後5年間で1000億円超の投資を計画されているとのことですが、敷設船の自社保有や海外保管基地の設置、研究開発等において、法改正がどのように寄与するとお考えでしょうか。財政に限らず、経済安全保障上、国による関与として期待されることは何でしょうか。財政支援、技術開発支援、外交面での支援など、具体的にお話しいただけたらと思います」",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "植松智則",
+        "role": "参考人 日本電気株式会社 Corporate SVP 兼 海洋システム事業部門長",
+        "summary": "- 敷設能力向上による受注機会の創出と、チャーター船依存からの脱却による収益改善が見込まれる\n- 収益性改善により、自社保有等の高額投資計画の策定が可能となる\n- 資金面での補助に加え、造船の混雑状況を考慮した適時な援助執行を期待する",
+        "full_text": "敷設船にご支援いただけるという形になった、そしてその効果と政府への期待というところですけれども、まずは敷設船とあとナレッジ、人材ですけれども、これがセットのもの。敷設能力が上がるということは、より多くのケーブルも敷けますので、受注機会も創出できるかと、そういう効果も期待できます。これまではチャーター船に依存していましたので、ある意味、その船の分の利益が外に出ていたわけですけれども、それも中に残りますので、そういったところで収益の改善、さらには敷設船の老朽化も進みますので、敷設船、あるいは敷設能力そのものの市場価値も上がると思っています。したがいまして、このような収益性の改善によって、高額な投資ではあるんですけれども、社内でもビジネスプラン等を試算しておりまして、改修の計画は立つものと見込んでおります。政府への要望としましては簡潔に申し上げますと、やはり資金面での補助というものはもちろんでございますけれども、もう1つ付け加えさせていただけるとすると、適時の援助の執行というところでございましょうか。やはりこの造船上の込み具合を考えますと、タイミングを逃すと船ができる時期もずっと後ろに行ってしまうということもありますので、やはりタイミングを逃さないように資金援助をいただけるようなところもできればお願いしたいかなというふうには思います」"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5209"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56242&time=5753.432000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "法改正による海底ケーブル事業への効果と国への期待",
+          "sub_asks": [
+            "法改正が敷設船保有や研究開発等にどう寄与するか",
+            "経済安全保障上の国による関与（財政・技術・外交支援）への期待"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "今後5年間で1000億円超の投資"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "海底ケーブル敷設事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "チャーター船"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "タイミングを逃さないように資金援助をいただけるようなところもできればお願いしたい",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人による現状分析と要望であり、政府の公式な回答やコミットメントを含むものではないため、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問が広範であるため、回答が要望の羅列になりやすく、具体的な制度設計への言及を引き出しにくい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_016",
+      "segment_index": 8,
+      "topic": "官民連携のバランスと国の関与のあり方",
+      "question": {
+        "speaker": "野村美穂",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 民間事業者の自立性・機動性確保のため、国が関与を控えるべき領域はあるか\n- 過度な規制や手続きの煩雑化など、控えてほしい国の関与はあるか\n- 海外競合他社と競争する上で、足枷とならないために配慮が必要な点は何か",
+        "full_text": "事業の自立性確保のために、控えてほしいと思う国の関与があるのではないかというふうにも考えます。民間事業者の自立性、機動性を確保する観点から、国の関与については慎重であるべき領域もあるのではないでしょうか。事業運営において過度な規制や手続の煩雑化など、控えてほしい国の関与があればお聞かせください。特にグローバル市場で競合するアメリカのサブコムやフランスアルカテルと競争していく上で、日本特有の規制が足枷にならないよう、どのような点に配慮が必要だとお考えでしょうか」",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "原一郎",
+        "role": "参考人 一般社団法人日本経済団体連合会常務理事",
+        "summary": "- 一般論として規制は少ない方が良く、特に基幹インフラ制度の事前届出は企業にとって負担が重い\n- 負担に見合う経済安全保障の向上を実感できる仕組みが必要である\n- 関係者への協力・努力義務については、努力義務に留めることが合理的である\n- 海底ケーブル事業に関しては、現状、法律に起因するやりづらさは感じていない",
+        "full_text": "原一郎「まず、経済安全保障にかかわらず、一般論で申し上げますと、規制はですね、できるだけ少ない方がいい。それから、導入しなければいけない場合でも、支援措置と、この2つに分かれるわけでございますけれども、特に規制措置、具体的に申し上げますと、基幹インフラの制度ですね。これは重要設備を特定して、それを導入する場合には、あるいは外部に委託する場合にはですね、事前届出が必要という制度でございますが、これはかなり企業にとっては負担の重い制度でございます」事業者、対象となる事業者、あるいはそれを納入するベンダーですね、よく十分に話をしていただいた上で、重要設備というのをできるだけ絞り込んでいただきたいというふうに言ってまいりまして、そのような作業が行われた上で、法律が施行されているという状況でございます。ただ、負担だから嫌だということではなくて、自分たちが負った負担によって日本の経済安全保障がどの程度高まったのか、これがもう少し実感できるようにしていただけると、よりこの制度の実効性というのは上がってくるのではないかというふうに思っておりまして、今からの期待としてそのような形で申し上げたいと思います。それから冒頭の陳述におきまして私が申し上げたのは、関係者への協力義務、努力義務、あるいは要請といった今回新しく入った制度でございますが、これは最終的にいわゆる政府がどうしようもなくて乗り出していった、野村美穂の手前で行われるものでありますので、努力義務が適当だというふうに思っております。それ以上の強化というのは、必ずしも制度全体で見た場合に合理的ではないのではないかというふうに思っておりますので、今回ご提案のある改正については賛成をしております。植松智則参考人法制度でのやりづらさとかしがらみとかというようなご質問だとするとですね、海底ケーブルに限って申し上げますと特段ございません。弊社の場合、私自身もそうですけれども、航空宇宙防衛を30年やっていますけれども、いわゆる社会インフラの事業は、少なからず多からず、国の関与、法律の中での仕事ということになっておりますけれども、これもこれまでのところ、法律に起因するようなやりづらさというものは感じたことはございません。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5209"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56242&time=5753.432000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "民間事業者の自立性を妨げる国の過度な関与の有無",
+          "sub_asks": [
+            "控えてほしい国の関与があるか",
+            "グローバル競争において配慮が必要な規制上の点"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "アメリカのサブコム"
+            },
+            {
+              "type": "organization",
+              "excerpt": "フランスアルカテル"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "民間事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "基幹インフラの制度"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "事前届出"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "基幹インフラの制度…事前届出が必要という制度でございますが、これはかなり企業にとっては負担の重い制度でございます",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人が基幹インフラ制度の負担について具体的に言及しており、実務的な視点からの回答が得られている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どのような点に配慮が必要か」という問いに対し、具体的な改善策ではなく現状の負担感の吐露に留まっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_017",
+      "segment_index": 9,
+      "topic": "経済安全保障上の最重要課題",
+      "question": {
+        "speaker": "川裕一郎",
+        "party": "参政党",
+        "summary": "- 日本の経済安全保障における最重要課題は何か\n- 具体例を挙げて回答されたい",
+        "full_text": "経済安全保障上の最重要課題は何であるのか。我が国の経済安保上の最重要課題、これ1点で構いませんので、具体例を挙げてお聞きしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "原一郎",
+        "role": "参考人 一般社団法人日本経済団体連合会常務理事",
+        "summary": "- 官民連携が最重要である\n- 民間が措置を講じた結果、安保が高まった実感を持ち、制裁等のリスク時に国がどう守るかという具体的回答を用意することが連携推進に繋がる",
+        "full_text": "どれか1つを経済安保上の課題として挙げるのは非常に難しいところでございます。ただ先ほどからも繰り返しておりますけれども、また先生方からもご質問ありましたが、官民連携、これが一番重要だと思っております。この民間と官が連携、特に民間の立場から申し上げますと、官と連携をして経済安全保障上の措置を講じてきた結果、我が国の経済安全保障がいかに高まっているのか、これがもう少し実感できると、将来的にもより官民連携が強まっていく方向に作用するのではないかというふうに思いますし、また究極の世界を想定しますと、企業が経済安全保障上必要だということで求められ、あるいは期待されたことをやった結果、特定の国から制裁の対象になったり、あるいは嫌がらせを受けたり、そうした場合に日本という国がどういう立場でその企業を、もちろん守っていただけるんだろうと思いますけれども、どういう措置を講じていただけるのか、これに対する具体的なお答えを用意していただくことが今後の官民連携のさらなる推進に役に立つんだろうというふうに思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56242&time=6507.1320000000005",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "経済安全保障上の最重要課題は何か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "官民連携、これが一番重要だと思っております。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "最重要課題を1点挙げるよう求めたが、回答者は官民連携という抽象的な方向性に留まり、具体的な課題の特定を避けた。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「具体例を挙げて」と指示しているが、回答者が逃げやすいオープンクエスチョン形式である。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_018",
+      "segment_index": 9,
+      "topic": "経済安全保障上の最重要課題",
+      "question": {
+        "speaker": "川裕一郎",
+        "party": "参政党",
+        "summary": "- 日本の経済安全保障における最重要課題は何か\n- 具体例を挙げて回答されたい",
+        "full_text": "経済安全保障上の最重要課題は何であるのか。我が国の経済安保上の最重要課題、これ1点で構いませんので、具体例を挙げてお聞きしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "鈴木一人",
+        "role": "参考人 東京大学公共政策大学院教授 国際文化会館地経学研究所長",
+        "summary": "- 抑止力となる手段を持つことが最重要課題である\n- これまで守り中心であったが、威圧措置に対する抑止力を持つ必要がある",
+        "full_text": "鈴木一人非常に難しい問題で、何か一つ最重要な課題を挙げるとするならば、冒頭の陳述のところでも申したとおり、我が国の経済安全保障、先ほど原参考人もおっしゃっていましたが、これまでやはり守りが中心であったと。威圧措置に関して、こうしたような何らかの抑止力になるような手段を持つこと、これが最重要課題なのではないかなというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56242&time=6507.1320000000005",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "経済安全保障上の最重要課題は何か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "威圧措置に関して、こうしたような何らかの抑止力になるような手段を持つこと、これが最重要課題なのではないかなというふうに考えております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "経済安保の最重要課題について直接的な回答が得られているが、具体例や具体的手段の提示はなく、抽象的な見解に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「具体例を挙げて」と求めているが、回答者が主観的な見解を述べる形式になっているため、具体的な施策を引き出す問いかけが不足している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_019",
+      "segment_index": 9,
+      "topic": "経済安全保障上の最重要課題",
+      "question": {
+        "speaker": "川裕一郎",
+        "party": "参政党",
+        "summary": "- 日本の経済安全保障における最重要課題は何か\n- 具体例を挙げて回答されたい",
+        "full_text": "経済安全保障上の最重要課題は何であるのか。我が国の経済安保上の最重要課題、これ1点で構いませんので、具体例を挙げてお聞きしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "布施哲",
+        "role": "参考人 国際社会経済研究所特別研究主幹",
+        "summary": "- 先端AIを日本の安全保障を毀損せず、経済的繁栄に繋げる形で社会実装すること\n- 外国由来AIへの依存リスクを最小化する技術の確保や、戦略的不可欠性をアピールして先端AIへのアクセスを確保することが重要である",
+        "full_text": "経済安保の重要テーマは種々多々ございますけれども、あえて一つ挙げるとするならば、クロード・ミトスの話題もありますけれども、やはり先端AIをいかに日本の安全保障を毀損せずに、でも同時に日本の経済的繁栄につなげる形で社会実装できるのかというところが、今、日本にとっての大きなチャレンジでもあります。特に米中が基盤モデル開発競争を繰り上げる中で、日本の価値は一体どこなのかというところは、AI戦略の重大テーマでありますけれども、同時にそういった外国由来のAI技術に依存することに伴うリスクやデメリット、副作用というのもありますので、そういったものを最小化する技術というのは一体何なのかというところは、一つ日本の自立性につながっていく上での重要技術は何なのかという経済安保的な命題にもなれると思います。世界におけるAIエコシステムにおいて日本が必要とされる存在になって、どういわゆる先端AIのアクセスを確保していくのかというところは、重要な経済安保のいわゆる戦略的不可欠性を考える上での重要な命題にもつながるというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56242&time=6507.1320000000005",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "経済安全保障上の最重要課題は何か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "先端AI"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "米中"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "先端AIをいかに日本の安全保障を毀損せずに、でも同時に日本の経済的繁栄につなげる形で社会実装できるのかというところが、今、日本にとっての大きなチャレンジでもあります。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "経済安保の最重要課題として「先端AIの社会実装と自立性の確保」を具体的に挙げており、回答の直接性は高い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_020",
+      "segment_index": 9,
+      "topic": "経済安全保障上の最重要課題",
+      "question": {
+        "speaker": "川裕一郎",
+        "party": "参政党",
+        "summary": "- 日本の経済安全保障における最重要課題は何か\n- 具体例を挙げて回答されたい",
+        "full_text": "経済安全保障上の最重要課題は何であるのか。我が国の経済安保上の最重要課題、これ1点で構いませんので、具体例を挙げてお聞きしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "植松智則",
+        "role": "参考人 日本電気株式会社 Corporate SVP 兼 海洋システム事業部門長",
+        "summary": "- 技術で勝負できる産業を持つこと、および人材の確保が重要である\n- 技術の空洞化を避けるため、産官学連携による人材育成・確保を早急に行う必要がある",
+        "full_text": "経済安全保障を担保する産業の一員として申し上げるとすると、やはり技術で勝負する、そういった産業を持つべきだと日本国において、というふうには思っております。やはり一つ挙げるとすると、まずは人ですかね。ただ人間もどんどん年を取って、自然減として企業からも抜けていきますけれども、やはりその一番怖いのが技術の空洞化なんですね。そのためにも官民連携プラス学の部分も、これまでこういった議論はあまり広くはしておりませんでしたけれども、今やはり技術の空洞化を避けるためにも、そこまでの人材育成、人材確保というものを早いうちからしなければならないかなというふうに思う次第でございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56242&time=6507.1320000000005",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "経済安全保障上の最重要課題と具体例",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "一番怖いのが技術の空洞化なんですね。そのためにも官民連携プラス学の部分も、人材育成、人材確保というものを早いうちからしなければならない",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は明確だが、回答は参考人としての個人的見解に留まっており、政府としての公式見解や具体的なコミットメントは含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「1点で構わない」と限定したため、包括的な政府方針ではなく個人の主観的な優先順位を引き出す結果となった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_021",
+      "segment_index": 9,
+      "topic": "守るべき重要データの範囲と優先順位",
+      "question": {
+        "speaker": "川裕一郎",
+        "party": "参政党",
+        "summary": "- 海外クラウド事業者への依存が進む中、日本が守るべき重要データの範囲と優先順位はどう考えるか",
+        "full_text": "経済保障の観点からデータ主権の確立というのは、もはや避けて通れない課題であると考えております。我が国の行政や重要インフラのデータがどこの国の法制度と企業のガバナンスのもとに置かれているのかという点は、国家主権そのものであると思っております。現在、ガバメントクラウドや自治体情報システムも含め、海外クラウド事業者への依存が急速に進んでおります。このままではサイバー攻撃、情報収集活動を通じて、我が国の重要なデータベースへのアクセスを許すリスクが高まっていくのではないかというふうに危惧をしております。こうした現状認識であるんですけれども、まず守るべき重要データ、この日本における守るべき重要データの範囲と優先順位、ここ、参考人の主観で構いませんので、教えていただければと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "布施哲",
+        "role": "参考人 国際社会経済研究所特別研究主幹",
+        "summary": "- 日本のAI戦略の中核となるフィジカルAI（産業ロボット、工場AI等）や、領域特化型のバーティカルAI（金融、医療、サイエンス等）に関連するデータが重要である",
+        "full_text": "その上で、日本にとっての戦略的物資としてのデータとは一体何なのかというところのご質問だと理解をしておりますけれども、私は日本の今後のAI戦略の中核であるフィジカルAI、あるいは領域特化型のバーティカルAIというのが今後の大きな勝ち筋というふうに位置づけられております。フィジカルAIでいえば産業ロボット、工場AIといったものになりますし、バーティカルAIとなれば領域特化型ですので、金融、あるいは医療。サイエンスへのAIの応用ということになります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56242&time=6507.1320000000005",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "日本が守るべき重要データの範囲と優先順位",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "ガバメントクラウドや自治体情報システム"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": true,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "フィジカルAI"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "バーティカルAI"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "産業ロボット"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "工場AI"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "日本の今後のAI戦略の中核であるフィジカルAI、あるいは領域特化型のバーティカルAIというのが今後の大きな勝ち筋",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "重要データの範囲という問いに対し、AI戦略の観点から「勝ち筋」となるデータ領域を提示しており、完全な回答ではないが参考人の見解が示されている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「主観で構わない」という問い方が、政府としての公式な定義や基準を引き出す機会を損なっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_022",
+      "segment_index": 10,
+      "topic": "フィジカルAI・バーティカルAI推進のための政府の役割",
+      "question": {
+        "speaker": "高山聡史",
+        "party": "チームみらい",
+        "summary": "- フィジカルAIやバーティカルAIを進めるために、政府が取り組むべきことは何か",
+        "full_text": "これらの今ほどお話があったフィジカルAI、バーティカルAIを進めるために政府としてやらなくちゃいけないということはどういう部分だとお考えでしょうかね。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "布施哲",
+        "role": "参考人 国際社会経済研究所特別研究主幹",
+        "summary": "- 現場の非構造化データをAIが学習可能な形式にする「データの構造化」を各企業が取り組むことを政府が後押しすること",
+        "full_text": "つまりAIが学習できる形にまだ規格化されていないデータが大半だというふうに言われていますので、まずは現場におけるこの暗黙知を含めたデータをですね、AIが学習できるような規格にしていくデータの構造化と言われるプロセスですけれども、まずデータの構造化を各企業が現場で取り組んでいく。政府としてはそれを後押ししていくというところが、まさにAI戦略のまず第一歩、データ戦略の第一歩になるのではないかというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56242&time=7383.832",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "フィジカル/バーティカルAI推進に向けた政府の役割",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "データの構造化"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "政府としてはそれを後押ししていく",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "データの構造化を各企業が現場で取り組んでいく。政府としてはそれを後押ししていくというところが、まさにAI戦略のまず第一歩",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "政府の方向性（データの構造化の後押し）は示されたが、具体的な施策や期限などのコミットメントは含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どういう部分か」という抽象的な問いであるため、回答も概念的なレベルに留まっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_023",
+      "segment_index": 10,
+      "topic": "基幹インフラ制度における審査の透明性と予見可能性の向上",
+      "question": {
+        "speaker": "高山聡史",
+        "party": "チームみらい",
+        "summary": "- 基幹インフラ制度の事前審査において、透明性や予見可能性を高めるために政府に求める具体的な取り組みや制度的対話は何か",
+        "full_text": "事前審査において審査基準が不透明なまま運用された場合、企業の設備投資計画であったりとか、外部委託、そういったものに対しても支障が生じるというリスクもあるかと思います。審査の透明性であったりとか、予見可能性を高めるために、政府に対して具体的にどのような取り組みであるとか、制度的な対話、こういったものを求めますでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "原一郎",
+        "role": "参考人 一般社団法人日本経済団体連合会常務理事",
+        "summary": "- 経済安全保障の向上を実感できる情報の開示努力を求める\n- 届出手続きのシステム化などの改善努力を継続的に行うことを求める",
+        "full_text": "ただ今後負担が重たい制度でございますので、一つには先ほど申し上げましたが、これによってどの程度日本の経済安全保障が高まっているのか、これがもう少し実感できると。もちろん開示できる情報は限られると思いますけれども、そのような努力を政府にはお願いをしたいということでありますし、これは冒頭の陳述でも申し上げましたが、届出のシステム化ですね。こういった改善努力をですね、今後も引き続き行っていただきたいというふうに思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5209"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56242&time=7383.832",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "審査の透明性・予見可能性を高める具体的取り組みの要望",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "企業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "届出のシステム化"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "届出のシステム化ですね。こういった改善努力をですね、今後も引き続き行っていただきたい",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は政府への要望を問うているが、回答者は参考人（または外部有識者）であり、政府に努力を求める形にとどまっているため、政府のコミットメントは発生していない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "回答者が政府担当者ではないため、制度改善の確約を得られない構造になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_024",
+      "segment_index": 10,
+      "topic": "官民協議会の機能定義（未然防止から多層的な対応へ）",
+      "question": {
+        "speaker": "高山聡史",
+        "party": "チームみらい",
+        "summary": "- 官民協議会の機能を「未然防止」に限定せず、平時のマッピング、危機発生時の情報共有・対応、事後の制度改善など多層的に設計すべきではないか",
+        "full_text": "今回新設される官民協議会は、国家及び国民の安全を害する行為を未然に防止するものとされていますが、向き合うべきは突発的に発生する事象であり、また、行為を未然に防止するという整理は、先生が論じてこられた事柄の性質とも概念的に整合しないのではないかと考えるわけでございます。平時からサプライチェーン上のチョークポイントを把握、マッピングする営み、これは未然防止に近いと思うんですが、また、危機が顕在化したときの情報共有対応調整、そして事後の制度改善など、より今の整理よりも多層的に担う器として設計されるべきとも思うのですが、いかがでしょうか。官民協議会の機能を未然防止に限定的に整理することの是非についてです。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "鈴木一人",
+        "role": "参考人 東京大学公共政策大学院教授 国際文化会館地経学研究所長",
+        "summary": "- 未然防止だけではポテンシャルを十分に発揮できない\n- 宇宙分野などの他事例と同様に、事態発生後の対処や情報共有、事後処理の協議機能を持たせることが望ましい",
+        "full_text": "今ご質問の点に関しては、まさに冒頭陳述で申しましたとおり、未然に防ぐというだけでは、必ずしも官民協議会のポテンシャルが十分に発揮されないのではないかというふうに理解をしております。とりわけ、私は内閣府の宇宙政策委員というのも拝命しておりますけれども、その中でも官民協議会、宇宙の分野でも官民協議会というのはございまして、それはまさに事態が突発的に発生した際に、この官民協議会で情報共有がなされ、そしてそれによって適切な対処を行うということが前提になっている、そういう仕組みでございます。それらを見ても、やはりいずれも事態の発生後の対処、そしてそれに対する情報共有ですとか、その後の事後処理の問題等についての協議の場というふうに、そういった機能を付与されていますので、今回もこの経済安保の官民協議会もそうした機能が持たされるのが望ましいのではないかというふうに思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5209"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56242&time=7383.832",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "官民協議会の機能を未然防止に限定することの是非",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "官民協議会",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "内閣府の宇宙政策委員"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "宇宙の分野でも官民協議会"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "未然に防ぐというだけでは、必ずしも官民協議会のポテンシャルが十分に発揮されないのではないかというふうに理解をしております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は機能の多層化を提案し、回答者は宇宙分野の事例を挙げつつ、未然防止に限定せず事後対処機能を持たせるべきとの認識で一致している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_025",
+      "segment_index": 10,
+      "topic": "攻めの経済安保への転換と戦略的不可欠性の運用",
+      "question": {
+        "speaker": "高山聡史",
+        "party": "チームみらい",
+        "summary": "- 今回の法改正が「攻めの経済安保」への転換として十分か\n- 戦略的不可欠性を抑止力として機能させるために、運用上どのような具体策が必要か",
+        "full_text": "布施参考人は先ほども守りの経済安保からより能動的な攻めの経済安保への転換ということをおっしゃっておられますが、今回の法改正ですね、その転換に向けた一歩として十分なものであるというふうに評価されますでしょうか。特に戦略的不可欠性を実際抑止力として機能させるために、今回の法制度の改正に加えて運用上どういったことが必要になるのか。先ほど戦略的コミュニケーションであったりとかシグナリングというキーワードもございましたが、ぜひ具体的にお聞かせください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "布施哲",
+        "role": "参考人 国際社会経済研究所特別研究主幹",
+        "summary": "- 具体的な課題解決をシナリオに引き付けて考える発想が重要\n- 安全保障上の課題を明確にし、それに対する打ち手のオプションを幅広く揃えて政策サイドに提言するサイクルを期待する",
+        "full_text": "先ほど私、シナリオベースで考えることが重要だということを申し上げまいりましたが、まさに今、日本の経済安保政策に求められるものがあるとすれば、具体的なこういう課題を解決するんだと、それをシナリオに引き付けて考えて打ち手を考えていくという発想ではないかというふうに考えております。ですので、やはり明確な安全保障上の課題はこれなんだと、その解決に資する技術というのはこれであり、いろんなシナリオに基づいて議論をし、打ち手のオプションなんかを幅広く揃える。それを政策サイドに提言をして、政策サイドはその時点において最良のものを選び取っていくというようなサイクル。これが今後のまさにこの法改正を踏まえた次の日本の経済安保のフェーズで期待しているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5209"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56242&time=7383.832",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "法改正の評価と運用上の必要事項について",
+          "sub_asks": [
+            "法改正が攻めの経済安保への転換として十分か",
+            "戦略的不可欠性を抑止力とするための運用上の必要事項"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "今回の法改正"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "具体的なこういう課題を解決するんだと、それをシナリオに引き付けて考えて打ち手を考えていくという発想ではないか",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "法改正の評価と具体的な運用策を問うているが、回答は「シナリオベースで考えるべき」という抽象的な概念論に留まっており、実効的な情報は得られていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「具体的にお聞かせください」と促しているが、回答者が参考人であるため、政府としての公式な運用方針を強制させる形式になっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_026",
+      "segment_index": 10,
+      "topic": "経済安保におけるシナリオプランニングの時間軸",
+      "question": {
+        "speaker": "高山聡史",
+        "party": "チームみらい",
+        "summary": "- 変化の激しい時代において、シナリオ検討はどのような時間軸（短期・長期など）で行うことが重要か",
+        "full_text": "このシナリオベースといったときに、短期といいますか、数ヶ月から1年のシナリオもあれば、3年から5年、より長期のシナリオもそれぞれあると思うのですが、どういう時間軸で考えることが今重要なのか。これ論点によってもそれぞれあるとは思うんですが、例えばこの経済安保推進法がどういう時間軸で動いているかみたいなところで言うと、法案は3年の見直しみたいなところがあったり、あるいは特定重要物資においては毎年見直しが入る、検討が入るというところがあると思いますが、この変化の激しい時代において、より1年、2年でシナリオを検討すべきことがあれば、ぜひ教えていただきたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "布施哲",
+        "role": "参考人 国際社会経済研究所特別研究主幹",
+        "summary": "- 数字で期限を区切るのではなく、状況に応じてフレキシブルに行うことが有効\n- 経済安保シンクタンクなどが時間軸に縛られず、日々の動きに応じて内容を更新し検討し続けることを期待する",
+        "full_text": "具体的な1年あるいは2年3年といった期限を数字で区切ってシナリオプランニングをやるというのは、やはり私ちょっと適当ではないというふうに考えておりまして、AIの進化も含めて我々側の予測を超える動きがございますので、それはもう状況に対応しながら随時フレキシブルに行うということが最も有効なのかなというふうに考えております。そういう観点においては重ね合わせになりますけれども、経済安保シンクタンクが時間軸に縛られずにシナリオベースで日々動きに応じて内容を更新する形で検討作業をやって、知恵袋になっていくというところを期待したいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5209"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56242&time=7383.832",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "シナリオ検討における重要な時間軸について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "経済安保推進法"
+            },
+            {
+              "type": "number",
+              "excerpt": "法案は3年の見直し"
+            },
+            {
+              "type": "number",
+              "excerpt": "特定重要物資においては毎年見直し"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "経済安保シンクタンク"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "other",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "状況に対応しながら随時フレキシブルに行うということが最も有効なのかなというふうに考えております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "時間軸の指定を求める質問に対し、フレキシブルな対応が必要であるという方針を回答している。具体的なコミットメントや数値的合意はない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「教えていただきたい」という形式であり、政府に具体的な時間軸の策定を迫る形式になっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_027",
+      "segment_index": 10,
+      "topic": "海底ケーブル敷設船取得への政府支援",
+      "question": {
+        "speaker": "高山聡史",
+        "party": "チームみらい",
+        "summary": "- 自社敷設船の取得を含む補助について、今回の法改正によって支援の可能性が開かれ、制度的に期待できるものになったか",
+        "full_text": "もちろん個別の設備投資補助の判断について、この場で論じるわけではございませんが、先ほどのお話の中でも、政府に最も求めたい支援は、この自社敷設船の取得を含む補助であるというところでしたが、これに対して、今回の法改正によって、必要な支援の可能性が開かれる、少なくとも制度としては期待できるものになっているというご認識でしょうか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "植松智則",
+        "role": "参考人 日本電気株式会社 Corporate SVP 兼 海洋システム事業部門長",
+        "summary": "- 本法案は海底ケーブル事業にとって追い風である\n- 費用面だけでなくソフト面も含め、これまで支援されなかった領域への政府支援が期待でき、重要インフラの安定供給につながる",
+        "full_text": "もちろん本法案、かなり追い風というか、海底ケーブル事業に対しても追い風になっているものと認識しております。これまでご支援いただけなかったようなものを支援いただける、先ほども幅も広がったというところを申し上げましたけれども、民間企業で負担していたものを、費用面だけではなく、それ以外のソフト面も含めてですけれども、政府からご支援いただけるというのは大変ありがたい話でありますし、経済安全保障、本案ももちろんそうですけれども、重要インフラの安定供給というものも、弊社としても責任を全うできるというところにつながると考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5209"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56242&time=7383.832",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "法改正で自社敷設船等の支援可能性が開かれたか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "今回の法改正"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自社敷設船の取得を希望する事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "海底ケーブル事業"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "経済安全保障"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "本法案、かなり追い風というか、海底ケーブル事業に対しても追い風になっているものと認識しております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "法改正による支援可能性についての認識を問うシンプルなやり取りであり、参考人が肯定的に回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "具体的な補助要件や対象範囲を問う形式にすれば、より記録価値の高い回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_028",
+      "segment_index": 11,
+      "topic": "海底ケーブルの需要変動の可能性",
+      "question": {
+        "speaker": "塩川鉄也",
+        "party": "日本共産党",
+        "summary": "- 技術革新（エッジコンピューティングやデータ圧縮等）により海底ケーブルの需要が大きく変わる可能性について具体的に伺いたい",
+        "full_text": "海底ケーブルをお話しいただきました。同時に植松参考人のメディア等でのご発言などを拝見していますと、将来、例えばエッジコンピューティングやデータ圧縮といった大容量通信を必要としない技術革新が進めば、海底ケーブルの需要も変わる可能性があると述べておられます。このような海底ケーブルの需要が大きく変わる可能性について、具体的に少し教えていただけないでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "植松智則",
+        "role": "参考人 日本電気株式会社 Corporate SVP 兼 海洋システム事業部門長",
+        "summary": "- 当面の間、通信容量に代わる技術は簡単に出ないと考えている\n- AIバブル崩壊などのリスクはあるが、既存ケーブルの老朽化に伴う敷き直し需要が発生する\n- 5〜6年先までは予測可能だが、それ以降はデータを収集しながら事業計画を立てる方針である",
+        "full_text": "可能性としては、その2つ、3つに限らず、ほかにもあると思うんですけれども、海底ケーブルに代わる何か技術について申し上げると、10年、20年、30年、50年先はわかりませんけれども、当面の間はないと思います。ですので、ここまでデータ通信に依存する社会、スマホ一つ取っても、企業のソフトは何にしろなってしまうと、この通信容量に代わるものというのは、そう簡単には出てこないと思うんですね。今後も別の言い方をするのであれば、今AIクラウドでドーンとハイパースケールを中心に伸びていますけれども、AIバブルが崩壊というようなところというのももちろん想定はしなくてはならないんですけれども、一方で海底ケーブルって一般的には25年運用するんですけれども、最初に敷いたケーブルがもう既に老朽の、運用期間を過ぎた年に迎えつつありますので、新たに敷き直すというような需要も市場もまたそこに入ってきますので、突然差があるということは。何に変わるのかというと、今、調査会社等のデータ様々なものを基に分析はしていますけれども、向こう5、6年までは見えてもその先というのはまだなかなか見えないので、頻繁に各所からデータを取って予測しながら事業計画立てていくかなというようなところで考えています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5209"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56242&time=8395.732",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "海底ケーブル需要が大きく変わる可能性について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "植松参考人のメディア等でのご発言"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "10年、20年、30年、50年先"
+            },
+            {
+              "type": "number",
+              "excerpt": "25年運用する"
+            },
+            {
+              "type": "number",
+              "excerpt": "向こう5、6年まで"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "reference",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "海底ケーブルって一般的には25年運用するんですけれども、最初に敷いたケーブルがもう既に老朽の、運用期間を過ぎた年に迎えつつあります",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人の個人的な見解と現状分析を問うやり取りであり、具体的な政府のコミットメントはないが、ケーブルの耐用年数などの事実関係が含まれている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_029",
+      "segment_index": 11,
+      "topic": "衛星通信システムへの国からの支援",
+      "question": {
+        "speaker": "塩川鉄也",
+        "party": "日本共産党",
+        "summary": "- NECが取り組む光通信衛星コンステレーション事業に対し、これまでどのような国の支援が行われてきたか\n- 今回の法改正によってどのような事業が支援対象となるケースが想定されるか",
+        "full_text": "今、衛星通信の話も関連してありましたけれども、植松参考人、航空宇宙関係の事業も担当されておられたということで、今回重要な海外事業の促進に関する支援措置法改正で設けられる中で、支援対象として衛星通信システムの地上設備も挙げられているところであります。NECとして光通信衛星コンステレーションの実現に向けた取組を行っておられるということで、現行NECの取り組んでいる事業に対して、どのような国の支援が行われてきたのか。また、今回の法改正によって支援対象となるような事業は、どのようなケースが想定されるのか。この点について、衛星通信システムの話ではあるんですけれども、お考えのところを教えていただけないでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "植松智則",
+        "role": "参考人 日本電気株式会社 Corporate SVP 兼 海洋システム事業部門長",
+        "summary": "- 本日は海底ケーブルの分野の参考人として出席しているため、詳細については担当部署に確認してほしい",
+        "full_text": "大変恐縮ではございますけれども、私は海底ケーブルの分野で本日参考人として参っておりますので、当然弊社の中では今おっしゃったような内容も事業としては持っております。必要とあれば担当の部署の者が対応させていただきたいと思いますので、本日詳細についてはご容赦いただければと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5245"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56242&time=8395.732",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "衛星通信事業への国支援の実績と法改正後の想定ケース",
+          "sub_asks": [
+            "現行のNECの取組に対しどのような国の支援が行われてきたか",
+            "法改正によって支援対象となるのはどのようなケースか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "海外事業の促進に関する支援措置法改正"
+            },
+            {
+              "type": "organization",
+              "excerpt": "NEC"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "NEC",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "not_at_all",
+          "topic_shift_detected": true,
+          "score": 0.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": null,
+          "score": 0.0
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人が専門外であることを理由に回答を拒否しており、実質的な情報が得られていないため、記録としての価値は極めて低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "参考人の専門領域（海底ケーブル）と質問内容（衛星通信）の不一致があるため、適切な回答者を指名して質問すべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_030",
+      "segment_index": 11,
+      "topic": "海底ケーブル技術開発への補助金",
+      "question": {
+        "speaker": "塩川鉄也",
+        "party": "日本共産党",
+        "summary": "- これまでどのような開発費用補助を受けてきたのか具体的に説明してほしい",
+        "full_text": "もう1問戻りまして、今回の海底ケーブルの件で政府への支援要望が冒頭の陳述のところでも述べておられました。技術開発への支援については継続ということで書かれておりまして、これまで受けてきたということであります。これまでどのような開発費用補助を受けてきたのかについて、ご説明いただけますか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "植松智則",
+        "role": "参考人 日本電気株式会社 Corporate SVP 兼 海洋システム事業部門長",
+        "summary": "- 深海用の外装ケーブルの開発費用や、切断箇所の早期探知などの支援を受けている",
+        "full_text": "深海用の外装ケーブルの開発費用であるとか、あとはこれも触れましたけれども、切断箇所の早期探知、そういったところで支援をいただいております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5209"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56242&time=8395.732",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "海底ケーブル開発の費用補助実績の説明",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "冒頭の陳述"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "政府",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "深海用の外装ケーブルの開発費用"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "切断箇所の早期探知"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "深海用の外装ケーブルの開発費用であるとか、切断箇所の早期探知、そういったところで支援をいただいております。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "過去の支援実績に関する具体的な項目が挙げられており、事実確認として機能している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "具体的な補助金額や期間を問う形式にすれば、より記録価値の高い回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_031",
+      "segment_index": 11,
+      "topic": "官民協議会における民間企業の課題と情報保護",
+      "question": {
+        "speaker": "塩川鉄也",
+        "party": "日本共産党",
+        "summary": "- 資料提供義務がある中で、民間事業者サイドとして官民協議会に参加することにどのような困りごとや課題があると考えているか",
+        "full_text": "次に、原参考人と布施参考人に官民協議会の関係でお尋ねいたします。原参考人、冒頭の陳述の中で、この官民協議会において、民間人の守秘義務の規定を盛り込んだ、この官民協議会についての必要な措置というお話しされました。同時に、資料提供義務については、よく理解できるような、そういう基本指針で示していただきたいというお話がございました。やはり官民協議会で情報資料提供義務、これは義務ということなので拒めないと。拒むということであれば協議会に入れないとかという、そういう矛盾もあるのかなと思うんですが、その点で民間サイド、事業者サイドとして、官民協議会に係る問題について困ることというのはあるのではないだろうかということをお聞きしたいのと、布施参考人につきましてもシナリオベースの話としての官民協議会の例も挙げておられたと承知をしております。この民間側にとってのこの官民協議会に係る課題等についてお考えがあれば教えていただけないでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "原一郎",
+        "role": "参考人 一般社団法人日本経済団体連合会常務理事",
+        "summary": "- 事前に基本指針の段階で、義務や期待される役割を十分に理解して判断できる材料を提供してほしい（原参考人）\n- 脆弱性や技術ロードマップなどの機微情報を安心して共有できるよう、外部に漏らさない保護措置・仕組みづくりが重要である（布施参考人）",
+        "full_text": "それから今先生がご指摘のとおり、私も申し上げましたが、入ってからですね、あれこれ相当と違ったということにならないようにですね、事前に基本指針の段階で、これは入った場合に何が求められるのか、義務付けられるのか、それからどういうことが期待されているのか、よく理解した上で判断できるような材料を基本指針の中で提供していただきたいということでありまして、それ以上は新しく設置されるものでございますので、その後の協議会のあり方を逐次フォローしていきながら、また必要に応じてご意見申し上げたいというふうに思います。官民協議会についてですけれども、リスク対応やさまざまなシナリオを官民で議論する場ということであるのであれば、やはり脆弱性の情報も含めて、情報を持っている、脆弱性の情報や技術を持っているのは企業の側ですので、いかに企業の側が安心して、機微な情報も含めて官民協議会においてシェアできるのか、あるいはシェアをしようと思えるのかというところの保護措置、仕組みづくりが重要なのではないかなというふうに考えております。自社のシステムの脆弱性の情報だったりとか、あるいはサプライチェーン上の課題、最新の技術ロードマップみたいな機密を自社の情報を共有する形で議論を進めるということになるとすれば、そういった情報がきちっと保護されて不必要に外部に晒されるようなことがないような仕組みづくりなんかも必要になってくる。そういった仕組みづくりがあって初めて企業は任意で参加をしたいというようなインセンティブが働いてくるということになると思いますので、保護の仕組みづくりは非常に重要だと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5209"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56242&time=8395.732",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "官民協議会における民間側の課題と懸念点",
+          "sub_asks": [
+            "原参考人：事業者サイドとして困ることはあるか",
+            "布施参考人：民間側にとっての課題についての考え"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "past_answer",
+              "excerpt": "冒頭の陳述の中で"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "事業者サイド",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "基本指針"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "脆弱性の情報"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "サプライチェーン上の課題"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "最新の技術ロードマップ"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "必要に応じてご意見申し上げたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "いかに企業の側が安心して、機微な情報も含めて官民協議会においてシェアできるのかというところの保護措置、仕組みづくりが重要",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人による民間視点からの課題提示であり、機密情報保護の重要性が具体的に述べられている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "二人の参考人に同時に問いかけているため、回答の主体が混在しやすい構成になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_032",
+      "segment_index": 11,
+      "topic": "経済安全保障と保護主義のリスク",
+      "question": {
+        "speaker": "塩川鉄也",
+        "party": "日本共産党",
+        "summary": "- 経済安全保障が政治的目的で乱用され、保護主義の手段として使われるリスクについてどう考えるか",
+        "full_text": "次には、鈴木参考人にお尋ねいたします。鈴木参考人が、この間メディア等で発言しておられるのを拝見しておりまして、例えば、経済安全保障と産業政策は、一歩間違えれば、自国の利益や選挙目的を含む、政治的な目的のために乱用される可能性を含んでおり、保護主義の手段として使われるリスクを抱えていると。鈴木さん。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "鈴木一人",
+        "role": "参考人 東京大学公共政策大学院教授 国際文化会館地経学研究所長",
+        "summary": "- 守るべき範囲と自由で開かれた範囲のバランスが重要である\n- 特定戦略物資を法律で限定し、かつ友好国・同志国との連携を組み込むことで、自立性と開放性のバランスを図っている",
+        "full_text": "この経済安全保障という概念は、自国の自立性を高めるということが一つの目的。この長谷川議員の方からのご質問にもありましたけれども、このバランス、つまりどこまでを守って、どこまでは自由で開かれたものにするのかということのバランスが大事なんだと思います。この経済安全保障推進法の優れたところは、特定戦略物資という、ある一定の物資を法律の中できちんと明記し、そしてそれを限定することによって、この部分は一定の保護、ないしは自立性を高めるということを目指しつつ、この自立性も必ずしも全て国産、内製化をするというわけではなく、友好国、同志国との間の連携が当初からこの法律の中には埋め込まれているというふうに理解をしております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5209"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56242&time=8395.732",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "経済安保の政治的乱用・保護主義リスクへの見解",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "メディア等で発言しておられるのを拝見しておりまして"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "経済安全保障推進法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "特定戦略物資"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "この経済安全保障推進法の優れたところは、特定戦略物資という、ある一定の物資を法律の中できちんと明記し、そしてそれを限定することによって、この部分は一定の保護、ないしは自立性を高めるということを目指しつつ",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問が疑問符のない提示に留まっており、回答も法制度の一般論的な説明に終始しているため、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「～と。」で終わっており、具体的に何を問いたいのか（同意か、対策か、現状分析か）を明確にする必要がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_033",
+      "segment_index": 11,
+      "topic": "経済の武器化を防ぐための日本の取り組み",
+      "question": {
+        "speaker": "塩川鉄也",
+        "party": "日本共産党",
+        "summary": "- CPTPPのような枠組みを例に、経済を武器にするのをやめるという働きかけを日本としてどのように行うべきか",
+        "full_text": "続けて鈴木参考人にお尋ねいたします。新聞報道のインタビューにおきまして、CPTPPを例に挙げまして、経済を武器にするのはやめようという取り決めであり、この枠組みの中に入る国をできるだけ増やすことが国際市場の安定に寄与するのではないかと述べておられました。この経済を武器にするのはやめようという働きかけを、日本としてどのように行っていくことが必要なのか、この点についてのお考えをお聞かせください。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "鈴木一人",
+        "role": "参考人 東京大学公共政策大学院教授 国際文化会館地経学研究所長",
+        "summary": "- CPTPPのような高い水準の自由貿易ルール（関税や投資規制の規定）を遵守することで、加盟国内での武器化を防ぐことができる\n- こうしたルールに属さない国々に対しても、ルールの有効性を広げていくことが重要である",
+        "full_text": "CPTPPはこの自由貿易の関税を下げる、いわゆる最低国体群の度合いが90%を超えるという、極めて高い水準の自由貿易体制であるということでありますので、他国に対して経済を武器化する、つまりそのための手段である、例えば関税ですとか、投資規制、そういったものはこのルールによって規定をされているので、この武器化するための手段がこのCPTPPの加盟国内では実施されないということが、このルールを守っている限り約束されているというふうに私は理解をしています。逆にこうしたルールに属さないそういった国々が、こうしたルールを飛び越えた形で、今特に、されないということが約束されるのではないかというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56242&time=8395.732",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "経済の武器化を防ぐための日本の働きかけについて",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "新聞報道のインタビュー"
+            },
+            {
+              "type": "organization",
+              "excerpt": "CPTPP"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "90%を超える"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "CPTPP"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "CPTPPの加盟国内では実施されないということが、このルールを守っている限り約束されているというふうに私は理解をしています。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人の過去の発言に基づいた抽象的な見解を問う質問であり、回答もCPTPPの仕組みの解説に留まっており、具体的な今後のアクションへの言及はない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのように行っていくことが必要か」という具体的な方策を問う形式にすれば、より実効性のある回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_034",
+      "segment_index": 11,
+      "topic": "日中関係における外交的資産と再構築",
+      "question": {
+        "speaker": "塩川鉄也",
+        "party": "日本共産党",
+        "summary": "- 日中間に、互いに大事な相手であることを認め合うための共通の土台となる外交的な資産はあるか",
+        "full_text": "最後にもう1問、鈴木参考人にお尋ねいたします。同じインタビュー記事の中で、中国との関係について述べておられました。「最初から喧嘩越しで向き合う必要はない。互いに大事な相手であることを認め、うまく付き合っていくことが本来あるべき姿だ」と述べておられます。日中間に互いに大事な相手であることを認め合うような外交的な資産など、この共通の土台というものというのは何らかあるのか、その点について教えていただけますでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "鈴木一人",
+        "role": "参考人 東京大学公共政策大学院教授 国際文化会館地経学研究所長",
+        "summary": "- 「4つの文書」や「戦略的互恵関係」というコンセプトなどの外交的資産は依然として生きている\n- 深い相互依存関係を損なうことなく、ハイレベルなコンタクトを通じて戦略的互恵関係を再構築することが望ましい",
+        "full_text": "日中関係、現在かなり厳しい状況であることは確かだと思うんですけれども、日中間の間にはですね、4つの文書と言われる、日中関係を含めた外交的な資産はこれまでもございますし、また、戦略的互恵関係というコンセプトで、相互に、お互いに互恵関係にあるということは、相互に確認されるべきだと。このところ残念ながら中国とのハイレベルの接触がなかなか難しいので、それを確認するという機会はなかなか得られておりませんけれども、こうした戦略的互恵関係のような外交的資産はまだ十分生きていると思いますし、またこれを基に日本は今後中国との関係をまた再構築していくということが望ましいというふうに考えております。この経済安全保障の観点からも、やはり日本と中国の相互依存関係、これは非常に深いものがありますので、これを損なうことなく、戦略的にまさに互恵関係でいられるという状況を、この日中間のハイレベルのコンタクトを通じて、一刻も早くそれが再構築されることを望んでおります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56242&time=8395.732",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "日中間に共通の外交的資産はあるか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "同じインタビュー記事の中で"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "中国",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "4つの文書"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "戦略的互恵関係"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "再構築されることを望んでおります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "日中間の間にはですね、4つの文書と言われる、日中関係を含めた外交的な資産はこれまでもございます",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人の過去の発言に基づいた具体的な問いに対し、外交的資産（4つの文書、戦略的互恵関係）を挙げて明確に回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    }
+  ],
+  "score_schema_version": "2.0",
+  "prompt_version": "V4"
+}
