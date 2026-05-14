@@ -1,0 +1,4751 @@
+{
+  "pairs": [
+    {
+      "id": "qa_001",
+      "segment_index": 1,
+      "topic": "地方環境事務所の地方環境局への名称変更の背景と目的",
+      "question": {
+        "speaker": "吉井章",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 地方環境事務所を地方環境局に名称変更する背景と目的について伺いたい",
+        "full_text": "環境省の地方支分部局である地方環境事務所ですね。平成17年に設置されてから20年が経過ということであります。この間20年ということで、地方環境事務所に求められるその役割ですね、本当に大きくなってきたというふうに思っております。設置法の改正案では、事務所を地方環境局に名称変更するということであります。まずこの背景、そして目的、お答えください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "畑",
+        "role": "",
+        "summary": "- 時代の要請に合わせ業務・規模を拡大してきた\n- ブロック単位の支分部局である実態が理解されづらく支障があったため、名称を改め体制を強化する\n- 自治体支援機能を含め、より効果的な機能発揮を促進する",
+        "full_text": "環境省の地方支分部局でございます地方環境事務所、設置から20年が経過する中で、環境行政に対する時代の要請に合わせまして、その業務や規模を拡大してまいったところでございます。一般に地方ブロック単位の支分部局は局、都道府県単位の支分部局が事務所とされておりますことから、地方環境事務所が地方ブロック単位の支分部局であるということが、なかなか理解されづらく、支障が生じる場合もございました。これを解消するために、今回、さらなる体制強化と併せまして、ブロック単位とする地方支分部局にふさわしい地方環境局という名称に改めることとさせていただきます。本改正を通じまして、自治体の支援機能を含め、地方支分部局として、より効果的な機能発揮を促進してまいりたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5185"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#1937.73",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "地方環境事務所の名称変更の背景と目的",
+          "sub_asks": [
+            "名称変更の背景",
+            "名称変更の目的"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "平成17年に設置されてから20年"
+            },
+            {
+              "type": "law",
+              "excerpt": "設置法の改正案"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "地方環境事務所",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "地方環境局"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "より効果的な機能発揮を促進してまいりたいと考えてございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "地方環境事務所が地方ブロック単位の支分部局であるということが、なかなか理解されづらく、支障が生じる場合もございました。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "名称変更という形式的な変更の理由を問うやり取りであり、行政上の整理（名称の整合性）についての説明に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "名称変更の目的を問うだけでなく、具体的にどのような「支障」が生じていたのかを問えば、より実質的な記録となった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_002",
+      "segment_index": 1,
+      "topic": "名称変更に伴う具体的な支障の内容",
+      "question": {
+        "speaker": "吉井章",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 地方環境事務所という名称であったことで、具体的にどのような問題や支障が生じていたのか伺いたい",
+        "full_text": "今、地方環境事務所という名称ですね、これによって、ある部分も理解されなかったりとか、問題が、また支障がということでありました。具体的に、その問題がとか支障がとか、その部分はどういったところにあったのか、お答えください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "畑",
+        "role": "",
+        "summary": "- 地方事務所長が都道府県知事や市町村長にアポ取りをする際、面会予約が取りづらいことがあった\n- 報道機関に県単位の事務所と誤認され、ブロック内の他県に情報が伝わらない支障があった",
+        "full_text": "具体的に申し上げますと、例えば、都道府県知事や市町村長に対して、地方事務所長がアポ取りをしようとしても、なかなか面会の予約が取りづらかったといったようなことがございました。また、地方環境事務所が記者発表や記者会見等を行った際に、報道機関側から県単位の1事務所というような認識をされてしまい、同じブロック内の他の県において報道がなされないと。情報が他県に伝わっていかなかったといったような支障が生じる場合がございました。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5185"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#1937.73",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "地方環境事務所という名称による具体的な支障は何か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "地方環境事務所",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "都道府県知事や市町村長"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "報道機関"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "地方環境事務所が記者発表等を行った際に、報道機関側から県単位の1事務所という認識をされ、情報が他県に伝わっていかなかった。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "名称に起因する実務上の支障（知事への面会困難や報道の限定性）について具体的に回答されており、事実関係の記録として価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_003",
+      "segment_index": 1,
+      "topic": "局への名称変更のタイミング",
+      "question": {
+        "speaker": "吉井章",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 設置から時間が経過しているが、もっと早く局にするタイミングがあったのではないか",
+        "full_text": "設置されてからですね、ある意味こう長い年月が経っているというふうに思います。逆にもっと早く局にするタイミングがあったんではないかなというふうに思うんですけど、そのあたりいかがですか。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "畑",
+        "role": "",
+        "summary": "- 設置から20年で業務規模が拡大し、定員が設立当時の約3倍（1,208人）に増加した\n- 災害廃棄物処理やクマ対策、外来生物対策などの喫緊の課題に対応するため体制を強化している",
+        "full_text": "地方環境事務所は、設置から20年が経過する中で、先生からもご紹介ございましたように、業務規模を拡大してきたところでございます。具体的に申し上げますと、平成17年の設立当時はですね、全体で369名だった定員がですね、平成28年度末には、その3倍強の1,208人と、あれは28年ですね、失礼いたしました。1,208人となってございます。この度、災害廃棄物の処理対策ですとか、あるいは近年都民に課題になってございますクマ対策ですね。これを含めまして、攻撃的な野生動物の管理ですとか、あるいは外来生物対策、地域での資源循環、こういった喫緊の課題に対しまして、63名。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5185"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#1937.73",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "局への昇格タイミングの妥当性について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "平成17年の設立当時はですね、全体で369名"
+            },
+            {
+              "type": "number",
+              "excerpt": "平成28年度末には、その3倍強の1,208人"
+            },
+            {
+              "type": "number",
+              "excerpt": "63名"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "平成17年の設立当時はですね、全体で369名だった定員がですね、平成28年度末には、その3倍強の1,208人となってございます。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問はタイミングへの主観的な問いであり、回答は定員数の推移という事実提示に留まっており、直接的な回答になっていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「いかがですか」という抽象的な問い方であるため、政府側が事実説明のみで逃げられる設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_004",
+      "segment_index": 1,
+      "topic": "自治体からの要望と改正案の整合性",
+      "question": {
+        "speaker": "吉井章",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 地方環境局に求められる役割が増大する中、自治体からどのような要望を受けているか\n- 今回の改正案は自治体の要望に沿ったものか伺いたい",
+        "full_text": "次に、自治体からの要望についてであります。地域脱炭素、そしてまた災害廃棄物対策等、地方での環境課題が本当に山積するという状況で、自治体から地方環境局に求められる役割というのは、本当に増大していくものというふうに思います。地方環境局の支援が本当に必須、期待されるというふうに思いますし、環境局については、これまで自治体から何らかの要望を受けているのか、そしてまた今回の改正案は自治体の要望に沿ったものなのか、その辺りいかがですか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "畑",
+        "role": "",
+        "summary": "- 都道府県域を超えた広域処理体制の構築支援や、地域脱炭素化のための広域的な仕組み構築の要望を受けている\n- これらの要望を踏まえ、体制強化を通じて広域的な連携を図りたい",
+        "full_text": "地方公共団体からは、大規模災害の発生やその後の対応に備えるために、都道府県域を超えたさらなる広域処理体制を構築支援してほしいといったようなご要望ですとか。あるいは地域の脱炭素化のために、広域的なまとまりの中で、関係主体が相互に補完し、相乗効果をより一層高められるような仕組みを構築してほしいと。このような要望をいただいておるところでございます。こうした要望を踏まえまして、地方支分部局としての機能を発揮し、各地方公共団体の管轄する、それぞれの区域を超えた、より広域的な連携を図っていくためにも、環境事務所の体制強化を図ってまいりたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5185"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#1937.73",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "地方環境局への要望と改正案の整合性について",
+          "sub_asks": [
+            "自治体からどのような要望を受けているか",
+            "今回の改正案は自治体の要望に沿ったものか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自治体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "都道府県域を超えたさらなる広域処理体制"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "地域の脱炭素化"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "環境事務所の体制強化を図ってまいりたいと考えてございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "都道府県域を超えたさらなる広域処理体制を構築支援してほしいといったようなご要望をいただいておるところでございます。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "自治体からの要望内容については具体的に回答しているが、改正案が要望に沿っているかという点への直接的な回答が欠けている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「改正案が要望に沿っているか」というYes/Noで答えられる問いを混ぜず、具体的にどの条文がどの要望に対応しているかを問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_005",
+      "segment_index": 1,
+      "topic": "災害廃棄物処理対策における地方環境局の役割",
+      "question": {
+        "speaker": "吉井章",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 大規模地震や激甚化する気象災害に備え、迅速に災害廃棄物を処理するための体制整備において、地方環境局はどのような役割を担うのか",
+        "full_text": "次に災害廃棄物対策についてであります。今後発生する、発生するであろうと予想される南海トラフ地震、そしてまた大規模な地震、また気候変動による激甚化頻発化する気象災害等に備えて、迅速に災害廃棄物を処理できる体制を整備する必要があるわけでありますけれども、地方環境局。災害廃棄物処理対策の強化に向けて、どのような役割を担うのか、その点についてお答えください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "畑",
+        "role": "",
+        "summary": "- 平時の地域ブロック協議会における連携強化と、発災時の広域連携の調整を行う体制を確保する\n- 法改正と体制整備を通じて、自治体に寄り添った支援体制の充実を図る",
+        "full_text": "これまで地方環境事務所では、平時には地域ブロック協議会の場を活用し、計画の策定支援や研修訓練等の自治体の災害廃棄物対策の支援を行うとともに、発災時には被災自治体へ職員を派遣するなどの支援を実施してまいりました。他方、自治体のマンパワー不足、知見の不足などへの懸念や、今後起こり得る大規模災害等も想定し、平時、発災時の両面で各自治体に寄り添ったさらなる支援が必要な状況でございます。これを踏まえまして、今回の法改正やこれに伴う体制整備を通じ、地方環境局の災害廃棄物処理の支援体制の充実を図っていきたいと考えています。具体的に、期待される役割としましては、平時の地域ブロック協議会における関係者の連携の強化、発災時における地域ブロックでの広域連携の調整などを十分に実施できる体制を確保することで、災害廃棄物対策の強化を図っていきたいと考えています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5185",
+        "clb-5295"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#1937.73",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "地方環境局の災害廃棄物処理対策における役割",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "南海トラフ地震"
+            },
+            {
+              "type": "other",
+              "excerpt": "気候変動による激甚化頻発化する気象災害"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "地方環境局",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "地域ブロック協議会"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "災害廃棄物対策の強化を図っていきたいと考えています",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "平時の地域ブロック協議会における関係者の連携の強化、発災時における地域ブロックでの広域連携の調整などを十分に実施できる体制を確保することで、災害廃棄物対策の強化を図っていきたい",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "地方環境局の役割について問われ、現状の支援内容と今後の方向性が具体的に述べられているが、具体的な数値目標や期限などの強いコミットメントはない。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どのような役割を担うのか」という抽象的な問いであるため、回答も方向性の提示に留まっている。具体的な体制整備の期限や人員数を問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_006",
+      "segment_index": 1,
+      "topic": "災害廃棄物処理の具体的取組と体制拡充",
+      "question": {
+        "speaker": "吉井章",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 平時からの準備（広域連携策定や民間協定締結）が重要であると考え、地方環境局による具体的な働きかけや取組について伺いたい",
+        "full_text": "廃棄物対策における広域連携についてなんですけれども、円滑に災害廃棄物を処理するためには、とりわけ平時から事前の準備が重要であるというふうに思います。近隣自治体との広域連携の策定、また民間団体との災害協定の締結、地方環境局の積極的な働きかけが重要になると思いますし、そのあたり具体的な取組、そのあたり聞かせてください。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "環境大臣政務官",
+        "role": "",
+        "summary": "- 廃棄物処理法等の改正により、協定締結の努力義務や計画策定義務を盛り込んだ\n- 設置法改正で「資源循環災害廃棄物対策課」を設け、定員を29名増員する\n- 協定雛形の提供や自治体間のマッチング支援を推進し、迅速な処理体制を構築する",
+        "full_text": "議員ご指摘のとおり、災害廃棄物を円滑に処理するためには、平時から民間団体との協定の締結や、仮置き場の確保等を含む災害廃棄物処理計画の策定など、事前の準備が重要であると考えております。令和6年度末時点で各市町村における災害支援協定の締結率は約81%、災害廃棄物処理計画の策定率は約90%まで進んでいるところでございます。一方で、発災時に実際に機能する体制とするためには、仮置き場の具体的な確保ですとか、広域処理の手順、民間事業者との役割分担など、計画内容のさらなる具体化による実効性の向上が課題となっています。このため、今国会に提出しております廃棄物処理法等の改正法案では、自治体間や自治体と民間事業者等との協定締結に係る努力義務や、市町村に対する仮置き場の確保等を含む、災害廃棄物処理に係る計画の策定義務を盛り込んでいるところでございます。今回ご審議いただいております設置法改正案では、地方環境事務所がより効果的に機能を発揮できるように、地方環境事務所を地方環境局に改称し、併せて地方環境事務所の資源循環課を、資源循環災害廃棄物対策課とするとともに、災害廃棄物対策の定員を全国で29名増員するなど、体制の拡充を図ることとしております。この人員を活用して、協定の雛形や協定締結の事例等の提供、広域処理を含む自治体間のマッチング支援などの取組をより一層推進し、発災時の円滑かつ迅速な災害廃棄物処理支援体制の構築に取り組んでまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5185",
+        "clb-5295"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#1937.73",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "災害廃棄物処理の広域連携等の具体的取組について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "民間団体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "災害支援協定の締結率は約81%"
+            },
+            {
+              "type": "number",
+              "excerpt": "災害廃棄物処理計画の策定率は約90%"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "廃棄物処理法等の改正法案"
+            },
+            {
+              "type": "number",
+              "excerpt": "定員を全国で29名増員"
+            }
+          ],
+          "score": 1.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "構築に取り組んでまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "災害支援協定の締結率は約81%、災害廃棄物処理計画の策定率は約90%まで進んでいるところでございます。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "現状の策定率という具体的な数値と、法改正による体制拡充（増員）という具体的施策が示されており、記録価値が高い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「具体的な取組」という包括的な問い方であるため、回答者が都合の良い実績を列挙しやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_007",
+      "segment_index": 1,
+      "topic": "地域脱炭素の推進と今後の取り組み",
+      "question": {
+        "speaker": "吉井章",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 地域脱炭素創生室による伴走支援を今後どのように取り組み、加速させていくのか伺いたい",
+        "full_text": "次に地域脱炭素についてであります。この取組を推進するためには、地域の自治体と直接接する地方環境局の役割、当然重要であります。令和4年には各地方環境事務所に地域脱炭素創生室を設置し、地方公共団体への伴走支援体制を強化してこられましたが、今後どのように取り組んでいくか。おつもりの中、また加速していくのか、その辺りいかがですか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "中尾",
+        "role": "",
+        "summary": "- 名称変更により首長等との連絡調整が円滑になり、庁内横断的な取組の推進につながる\n- 脱炭素先行地域の実現に向けた伴走支援を継続し、都道府県等と連携して取組を横展開させる",
+        "full_text": "議員ご指摘のとおり、地域脱炭素の実現に向けた、地方支分部局による積極的な支援を可能とするため、令和4年度に各地方環境事務所に地域脱炭素創生室を新設いたしまして、各地方自治体への伴走支援を行う体制を強化してきたところでございます。本改正による事務所から局への名称変更などを通じまして、首長などとのトップレベルを含む自治体との連絡調整がより円滑となることで、自治体での分野、庁内横断的な取組の推進につながると考えております。今後は脱炭素先行地域などの先行的な取組の実現に向けた伴走支援を引き続き行うということが大きな課題となっております。また、さらに取組のさらなる横展開が課題となっておりまして、その展開に当たりましては、広域自治体としての都道府県などとの連携もこれまで以上に重要となるところであります。引き続き自治体とよく連携を図りながら、地域脱炭素の取組の加速化を図ってまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5185"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#1937.73",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "地域脱炭素に向けた地方環境局の今後の取り組み",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "令和4年"
+            },
+            {
+              "type": "organization",
+              "excerpt": "地域脱炭素創生室"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "地方環境局",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "地域脱炭素創生室"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "脱炭素先行地域"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "地域脱炭素の取組の加速化を図ってまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "引き続き自治体とよく連携を図りながら、地域脱炭素の取組の加速化を図ってまいりたいと考えております。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "地域脱炭素における地方組織の役割についての一般的な方向性の確認に留まっており、具体的な新施策や期限などのコミットメントは得られていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのように取り組むか」という抽象的な問いであるため、回答も抽象的な方針表明に終始している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_008",
+      "segment_index": 1,
+      "topic": "鳥獣対策の体制強化と広域的な対策",
+      "question": {
+        "speaker": "吉井章",
+        "party": "自由民主党・無所属の会",
+        "summary": "- クマ等の鳥獣対策における地方環境局の役割は重要であり、組織体制を具体的にどう強化し、自治体を超えた広域的な対策をどう進めるのか",
+        "full_text": "次にクマを含む鳥獣対策についてであります。昨年も地元でもクマの出没が相次ぎました。クマ、シカ、イノシシ等、鳥獣対策における地方環境局の役割、大変重要であると考えます。組織の体制、具体的にどのように強化されていくのか。また、熊等の野生長寿の分布は都道府県、県境とは関係なく、自治体を超えた広域的な対策が求められるというふうに思います。どのように進めていかれるのかお答えください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "堀上",
+        "role": "",
+        "summary": "- 熊対策専門官および広域野生長寿対策専門官を新たに配置・拡充し、体制を強化した\n- 都道府県の境界を超えた管理指針の検討支援や、広域的な対策を検討する協議会を推進する",
+        "full_text": "環境省では、今年の4月に各地方環境事務所等に、熊対策専門官、それから広域野生長寿対策専門官をそれぞれ新たに配置または拡充し、野生長寿対策を行うための体制強化を図ったところでございます。これらの専門官は、都道府県の境界を超えて、広域的な野生長寿対策を行うための管理指針の検討の支援、都道府県と連携した広域的な野生長寿対策を検討する協議会、"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5185"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#1937.73",
+      "metrics": null
+    },
+    {
+      "id": "qa_009",
+      "segment_index": 1,
+      "topic": "地方環境課題解決への意気込みと地域連携",
+      "question": {
+        "speaker": "吉井章",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 名称変更により、地方の環境課題解決に向けて自治体や利用者に寄り添い、連携して取り組む意気込みを伺いたい",
+        "full_text": "最後に大臣になんですけれども、今回の改正によってですね、環境事務所が環境局になるということによって、地方の環境課題の解決に向けて、自治体、そして利用者、これまでよりもさらに寄り添いながら、また連携をして取り組んでいただきたいというふうに思うんですけれども、最後に意気込みをお答えください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "石原",
+        "role": "",
+        "summary": "- 環境課題の現場は地域にあり、地方環境局が地域のプレイヤーと密に連携することが重要である\n- 体制強化により、これまで以上に地域に寄り添った政策推進を行い、課題解決に全力で取り組む",
+        "full_text": "環境課題の現場は地域にあります。地方環境事務所は、各地域において、自治体をはじめとする地域のプレイヤーと密に連携しながら、環境政策の推進に取り組む役割を担っているところであります。今般の法改正を通じて、地方環境局への名称を変更する、また災害廃棄物処理、熊対策を含む広域的な野生長寿の管理等について、体制強化を行っているところでありますが、これにより、これまで以上にしっかりと地域に寄り添った政策の推進が可能となり、地域における環境課題の解決に全力で私が率先して取り組んでまいりたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5185"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#1937.73",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "環境局への名称変更に伴う意気込み",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "今回の改正"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自治体、利用者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "地方環境局"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "災害廃棄物処理"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "熊対策を含む広域的な野生長寿の管理"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "地域における環境課題の解決に全力で私が率先して取り組んでまいりたいと思います",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "地域における環境課題の解決に全力で私が率先して取り組んでまいりたいと思います。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "意気込みを問う形式的なやり取りであり、具体的な政策コミットメントや新たな事実認定は含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "具体的な行動計画や期限を問う形式にすれば、より記録価値の高い回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_010",
+      "segment_index": 1,
+      "topic": "地域の実情に即した体制構築の要望",
+      "question": {
+        "speaker": "吉井章",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 地域への負担が増え続ける中、常に地域の実情を把握し、先手先手で体制強化と自治体連携を図ってほしい",
+        "full_text": "だからやっぱり負担はこれからも多分増え続けるというふうに思います。今後も先ほどから答弁いただきましたけれども、やっぱり地域に寄り添って、やっぱり先手先手で、やっぱり体制強化も含めて進めていっていただきたいし、そのためにはやっぱりそれぞれの地方の自治体と連携を常に図っていただくと。ここがやっぱり非常に重要であり、常に地域の実情を分かっていただける、その体制を国としても取っていただきたいというふうに思います。そのあたり、大臣、もう一言お願いできたらと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "石原",
+        "role": "",
+        "summary": "- 大臣自身も地方へ足を運び意見を聞く努力をする\n- 地方環境局が地域の声を聞き、問題解決に寄り添い共に目指していくことを法改正の中で進める",
+        "full_text": "大臣は一人なもんですから、私も全ての地域に足を運ぶことはできないんですが、なるべくやっぱり私自身もですね、いろんな地方の方に足を運ばさせていただいて、ご意見を聞かせていただければと思います。ただやはり、この地方の環境局が、しっかりとその地域の声を聞いて、そしてその地域の問題解決に、本当に寄り添って、共に解決を目指していく。そういうことを、今回の法改正の中で、しっかりと進めてまいりたいというふうに思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5185"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#1937.73",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "地域の実情に寄り添った体制構築への要望",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "地方の自治体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "地方の環境局"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "しっかりと進めてまいりたいというふうに思います",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "地方の環境局が、しっかりとその地域の声を聞いて、そしてその地域の問題解決に、本当に寄り添って、共に解決を目指していく。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問が具体的な問いではなく要望に留まっており、答弁も精神論的な意向表明に終始しているため、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「もう一言お願い」という形式ではなく、具体的にどのような体制強化を求めるのかを明確に問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_011",
+      "segment_index": 2,
+      "topic": "地方環境事務所の名称変更の目的",
+      "question": {
+        "speaker": "三上えり",
+        "party": "立憲民主・無所属",
+        "summary": "- 地方環境事務所を地方環境局に名称変更することで、具体的に何を変えようとしているのか",
+        "full_text": "はじめに石原環境大臣に、環境省の地方支分部局である地方環境事務所の名称を地方環境局に改める件です。今回の法改正では、事務所が地方環境局へと変わるということですけれども、名称変更そのものに、もちろん異論があるわけではありません。しかし、国民の皆様から見れば、問われるのは看板の掛け替えではなくて、何が実際に変わるのかということでございます。名称を変える理由は、今ご説明いただきましたけれども、これによりまして、何を変えようとしているのか、何を変えようと掲げているのか、ご説明ください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "石原良司",
+        "role": "",
+        "summary": "- 業務規模の拡大に対し「事務所」という名称では地方ブロック単位の支分部局であることが理解されにくく、連携調整に支障があったため名称を変更した\n- 体制強化と合わせて名称を改めることで、自治体支援を含めより効果的な機能発揮を促進する",
+        "full_text": "環境省の地方支分部局である地方環境事務所は、設置から20年が経過する中で、時代の要請に合わせてその業務規模も拡大してきたところであります。一方で、その名称が事務所であることにより、地方ブロック単位の支分部局であることが対外的に理解されづらく、地方公共団体等の円滑な連携調整に支障が生ずる場面もありました。これを解消するため、今回、さらなる体制強化と合わせて、地方ブロック単位の支分部局にふさわしい地方環境局という名称に改めることをしたところであります。本改正を通じて、自治体の支援機能を含め、地方分部局として、より効果的な機能発揮を促進してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5185"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#3054.11",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "地方環境局への名称変更で何を変えようとしているか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "今回の法改正"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "設置から20年"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "より効果的な機能発揮を促進してまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "地方ブロック単位の支分部局にふさわしい地方環境局という名称に改めることをしたところであります。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "名称変更の目的について大臣が回答しているが、具体的な機能変更の内容は抽象的な表現に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「何を変えるのか」という問いに対し、具体的な業務内容や権限の変更点を具体的に問う形式にすれば、より実効的な回答が得られた。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_012",
+      "segment_index": 2,
+      "topic": "地方環境事務所の人員・予算の充足状況",
+      "question": {
+        "speaker": "三上えり",
+        "party": "立憲民主・無所属",
+        "summary": "- 地方の現場では課題が年々増大しており、現状の予算や人員配置が不十分ではないか",
+        "full_text": "地方の現場では、気候変動による豪雨災害、そして災害廃棄物への対応、国立公園の保全と観光振興、外来種対策、鳥獣被害、PFASなどなど、さらに地域脱炭素の推進、環境行政への期待という課題というのは年々大きくなっております。一方で、地方環境事務所というのは、人員体制が十分とは言えないとよく聞いております。自治体からも「相談しても手が回っていない」「専門人材が足りない」という声があります。地域との相談窓口となる地方環境事務所は、今後ますます重要な存在となります。その重要性と比較して見ると、現状の予算とか人員配置が十分ではないかと考えられるのですけれども、いかがでしょうか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "石原良司",
+        "role": "",
+        "summary": "- 定員数を拡充し、令和8年末には発足時の3倍強の1,208人まで増員し、予算も計上している\n- 本省プロパーの配置や地方採用、任期付き職員の採用により確保を図っている\n- 不足しているとの指摘もあるため、今後も予算・定員・人材確保にしっかり取り組む",
+        "full_text": "地方環境事務所につきましては、定員数をずっと拡充してきておりまして、令和8年の末の定員につきましては、発足時の3倍強の1,208人まで増員をしてまいっております。こうした定員に合わせまして、地方環境事務所が事務処理を行うための予算も計上してきているところでございます。人員につきましては、環境省といたしまして、本省採用プロパーの職員を地方に配置する、あるいは地方環境事務所によるプロパー職員の採用、地方採用でございますね。こういったことや、あるいは任期付き職員の採用等により、業務遂行に必要な職員の確保を図ってきたところでございます。ただ、ご指摘のように十分足りていないのではないかといったようなこともございますので、今後とも環境行政に関する地域からのニーズにお答えできますように、事務所が機能を発揮するための予算、定員、人材確保にしっかり取り組んでまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5185"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#3054.11",
+      "metrics": null
+    },
+    {
+      "id": "qa_013",
+      "segment_index": 2,
+      "topic": "地方環境局の体制整備と予算措置",
+      "question": {
+        "speaker": "三上えり",
+        "party": "立憲民主・無所属",
+        "summary": "- 名称変更に伴い次長職が設置されるが、予算を組んで人材確保や地域アプローチを含む抜本的な改革を行うべきではないか",
+        "full_text": "政府は今回の法律案においても、地方環境事務所の名称の変更に合わせて、次長という役職がまた設置されると聞いております。まずご説明いただきましたように、内部組織を法令で定めるものとすることによって、地方支分部局としての効果的な機能発揮を促進するということになります。また、これらの改正のためには、特段費用は要していないと聞いております。しっかり予算を組んで、人材確保や地域の方々へのアプローチを含めた活動等に関する抜本的な改革を行うことも重要ではないかと考えます。大臣の認識を伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "石原良司",
+        "role": "",
+        "summary": "- 法改正に合わせて、災害廃棄物対策や鳥獣保護管理などの職員を合計63名増員するなど必要な体制を実施している\n- 今後も機能発揮に必要な定員・人材・予算をしっかりと確保する",
+        "full_text": "本改正は、災害廃棄物対策、広域的な鳥獣保護管理、外来生物対策、地域の資源循環等の施策を担当する職員の定員を、本改正に加え、それらの施策を行う職員を合計で63名増員するなど、必要な体制をこの法改正と合わせて実施しているところであります。今後とも、地方環境局が機能を発揮するために必要な定員と人材と予算をしっかりと確保してまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5185"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#3054.11",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "地方環境事務所の改革と予算確保への認識",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "地域の方々",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "合計で63名増員"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "しっかりと確保してまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "職員を合計で63名増員するなど、必要な体制をこの法改正と合わせて実施している",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "予算・人員確保の必要性という抽象的な問いに対し、具体的な増員数（63名）を提示して回答しており、記録的価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「認識を伺う」という形式のため、具体的な予算額や期限を約束させる問い方ではなかった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_014",
+      "segment_index": 2,
+      "topic": "防災庁設置後の災害廃棄物処理の役割分担",
+      "question": {
+        "speaker": "三上えり",
+        "party": "立憲民主・無所属",
+        "summary": "- 防災庁（および防災局）が設置された際、環境省（および地方環境局）との災害廃棄物処理などの役割分担はどうなるのか",
+        "full_text": "これに関して、政府が設置を目指している防災庁についてです。現在、災害廃棄物処理などを担っている環境省とのこの役割分担がどのように変わるかという点です。特に防災庁の地方支分部局となる防災局と、環境省の地方環境局の役割分担、これはどうなっているんでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "住倉正",
+        "role": "",
+        "summary": "- 基本方針に基づき、専門性・整合性の観点から、災害廃棄物の処理等は引き続き環境省が所管する\n- 初動の被害把握や現地支援チーム派遣、自治体間マッチングなどの環境省の役割を維持しつつ、防災庁・防災局と緊密に連携する",
+        "full_text": "令和7年12月に閣議決定されました防災立国の推進に向けた基本方針におきましては、個々の行政分野における防災対策については、専門性、整合性等の観点から防災庁設置後も所管する各府省庁において実施することが示されているところでございまして、災害廃棄物の処理等は引き続き環境省が所管することとされます。その一方で環境省の役割といたしましては、災害廃棄物処理の観点では、初動時における被害実態の把握、関係団体等を含む発災直後の現地支援チームの派遣、広域処理を含む自治体間のマッチング支援などを行ってきているところでございまして、今後より適正かつ円滑で迅速な災害廃棄物処理を行うためにも、防災庁、そして防災庁の支分部局となる防災局を含め、緊密に連携をしてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5185",
+        "clb-5295"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#3054.11",
+      "metrics": null
+    },
+    {
+      "id": "qa_015",
+      "segment_index": 2,
+      "topic": "地方環境事務所による環境問題の情報発信",
+      "question": {
+        "speaker": "三上えり",
+        "party": "立憲民主・無所属",
+        "summary": "- リチウムイオン電池の廃棄など国民の意識改善が必要な課題に対し、地方環境事務所は現在どのように情報を発信しており、今後どう届けるのか",
+        "full_text": "また環境省は環境問題について国民の皆様へもっと広くアプローチして積極的に知ってもらうということも必要だと思います。例えば地球温暖化対策、そして今発火が問題となっていますリチウムイオン電池。この正しい廃棄は国民の皆様の意識一つで大きく変わるものです。自治体によってこの回収の問題もさまざまとなっております。そのためにも環境省の活動をより広く国民の皆様に周知していく必要があると感じております。その点におきまして、地域に近い立場である地方環境事務所においては現在、どのように環境問題の取組を発信しているのか、今後より多くの方々に情報を届けるために、その取組を教えてください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "畑真由美",
+        "role": "",
+        "summary": "- 連絡会議や協議の場を活用し、クマ対策や外来生物対策、災害廃棄物対策などの情報共有・提供を行ってきた\n- 今後は報道機関・メディアとの連携強化に加え、ウェブサイトの構成工夫などにより、より多くの方が必要な情報にアクセスできるよう取り組む",
+        "full_text": "具体的にはクマ対策ですとか、あるいは特定外来生物、ナガイグマの譲渡とか、クビアカカミキリとか、大変話題になってございますけれども、こういった外来生物対策、それから先ほど議論になっております災害廃棄物対策、また今ご紹介のありましたリチウムイオン電池への対応などですね、地域ごとに関心や緊急性の高い分野それぞれございます。こういった中で自治体や関係団体、専門家等が参画する連絡会議や協議の場を活用し、情報共有や情報提供を進めてまいりました。今後もこれを一層進めてまいります。また、報道機関と各種メディアとの連携を一層強化するとともに、地方環境局のウェブサイトにつきましても、より多くの方々が必要な情報にアクセスできますよう、随時の情報提供はもちろんのこと、掲載内容や構成の工夫などにも改めて取り組んでまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5185"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#3054.11",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "地方環境事務所による環境問題の情報発信状況と今後の取組",
+          "sub_asks": [
+            "現在どのように環境問題の取組を発信しているのか",
+            "今後より多くの方々に情報を届けるための取組"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "リチウムイオン電池"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.2
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "クマ対策"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ナガイグマ"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "クビアカカミキリ"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "災害廃棄物対策"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "リチウムイオン電池"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "改めて取り組んでまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "自治体や関係団体、専門家等が参画する連絡会議や協議の場を活用し、情報共有や情報提供を進めてまいりました。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "地方環境事務所の現状と今後の方向性について具体例を挙げて回答しているが、具体的な数値目標や期限はなく、記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「取組を教えてください」というオープンクエスチョンであるため、回答が抽象的な方針に留まりやすい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_016",
+      "segment_index": 2,
+      "topic": "国立公園内施設の管理不備と改善策",
+      "question": {
+        "speaker": "三上えり",
+        "party": "立憲民主・無所属",
+        "summary": "- 国立公園内の建物や橋の所在・所有者が不明であった事態の背景と、どのように改善しているのか",
+        "full_text": "まず、地方環境事務所の前身となります、自然保護事務所の頃から行われています、国立公園。この国立公園の管理と長寿対策を取り上げます。地方環境事務所は、管轄区域の国立公園の管理を担っていますけれども、会計検査院から、国立公園にある建物や橋などの施設の所在、また所有者が不明になっていたことが指摘されました。私の地元である広島県を含む瀬戸内海国立公園の橋も、環境省が所有者を把握していなかったと報じられました。こうした国立公園にある建物や橋などの施設の所在、そして所有者が不明になる事態が発生した背景、そしてどのように改善をされているのか。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "畑真由美",
+        "role": "",
+        "summary": "- 管理が不十分であったことを真摯に受け止め、所在の特定と国有財産台帳への紐付けを速やかに進めている\n- 所在不明財産の約7割、所有者不明財産の約9割の特定確認を終えており、特に安全に関わる橋などは優先的に対応済みである\n- 省内事務マニュアルの見直しを行い、再発防止に取り組む",
+        "full_text": "会計検査院からの指摘につきましては、国立公園における施設の管理が必ずしも十分ではなかったという点を含め、真摯に受け止めておるところでございます。国有財産の適正管理及び利用者の安全確保の観点から、是正改善に取り組んでおるところでございます。今回の指摘を踏まえまして、施設の重要度も鑑みながら、不明な国有財産については、所在を特定し、国有財産台帳との紐付けを速やかに進めておるところでございます。また、所有者が不明な財産につきましては、所有者の特定を進めておりまして、特定できたものから、関係者との協議を行っております。具体的には現時点で所在が不明な国有財産につきましては約7割、所有者が不明な財産については約9割について特定確認作業を終えているところでございます。とりわけ橋など利用者の安全が関わるような施設については優先的に対応しておりまして、現状こういった安全性に関わるような施設については、安全性の確認をしたところでございます。さらに今後につきましては、この度の反省を踏まえまして、国有財産の省内事務マニュアルの見直しなどを行いまして、再発防止に取り組んでまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#3054.11",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "国立公園内施設の所在・所有者不明の背景と改善策",
+          "sub_asks": [
+            "所在・所有者が不明になった背景",
+            "どのように改善されているか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "会計検査院"
+            },
+            {
+              "type": "field_case",
+              "excerpt": "瀬戸内海国立公園の橋"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "瀬戸内海国立公園",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.6
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "所在が不明な国有財産につきましては約7割"
+            },
+            {
+              "type": "number",
+              "excerpt": "所有者が不明な財産については約9割"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "再発防止に取り組んでまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "所在が不明な国有財産につきましては約7割、所有者が不明な財産については約9割について特定確認作業を終えている",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "会計検査院の指摘に基づき、具体的な特定進捗率（7割、9割）が示された点で記録価値がある。一方で、発生背景への直接的な回答は不十分である。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「背景」と「改善策」を一つの文章で問うているため、回答者が背景の説明を省略しやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_017",
+      "segment_index": 2,
+      "topic": "国立公園管理の改善スケジュール",
+      "question": {
+        "speaker": "三上えり",
+        "party": "立憲民主・無所属",
+        "summary": "- 施設管理の改善目標は来年度までと考えてよいか",
+        "full_text": "では、この改善というのはスケジュール的には来年度までということでよかったでしょうか。目標は。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 点検については今年度内の作業完了を目指して進めている",
+        "full_text": "一応、点検につきまして、今年度内の作業完了を目指して進めておるところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#3054.11",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "改善目標のスケジュール確認",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "来年度まで"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": true,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "deadline",
+              "excerpt": "今年度内"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "作業完了を目指して進めておるところでございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "点検につきまして、今年度内の作業完了を目指して進めておるところでございます。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "スケジュールの確認に対する直接的な回答であり、完了目標時期が明確に示されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_018",
+      "segment_index": 2,
+      "topic": "国立公園の管理人員の充足状況",
+      "question": {
+        "speaker": "三上えり",
+        "party": "立憲民主・無所属",
+        "summary": "- 広大な国立公園を管理する体制が不十分であることが施設管理の不備につながっているのではないか。人員は十分確保されているか",
+        "full_text": "その国立公園ですけれども、全国に35公園ございます。面積がおよそ245万ヘクタールといって、どれだけ広いかと言いますと岩手県と青森県を合わせた面積とほぼ同じでございます。ここを安全に皆さんが利用するための管理というのは本当に大変なことだと思うんですけれども、人員も含めて。山岳地や海域、湿原など広大、また多様な風景地を管理するということで、その体制が十分でないことも、こうした指摘につながっているのではないでしょうか。地方環境事務所全体として国立公園の管理を担う人員、十分確保されているんでしょうか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "堀上正和",
+        "role": "",
+        "summary": "- 現場事務所に国立公園管理官やレンジャーを配置している\n- 令和8年度には定員1名だった6つの事務所に各1名増員し、全体で222名の体制で充実を図っている",
+        "full_text": "環境省では各国立公園に国立公園管理事務所等の現場事務所を設置しまして、国立公園管理官や自然保護官、通称レンジャーというふうに言ってますけれども、そういった職員が国立公園の現地管理に関する業務を行っております。国立公園の管理体制の充実、委員ご指摘のとおり重要な課題と認識しておりまして、令和8年度はこれまで定員が1名のみとなっていた6つの国立公園管理事務所、そこに各1名の、計6名になりますが、増員をいたしまして、全体として合計222名の体制で、その充実を図ってきている。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#3054.11",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "国立公園管理の人員は十分確保されているか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "全国に35公園"
+            },
+            {
+              "type": "number",
+              "excerpt": "面積がおよそ245万ヘクタール"
+            }
+          ],
+          "translates_big_number_to_daily_life": true,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "地方環境事務所",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "deadline",
+              "excerpt": "令和8年度"
+            },
+            {
+              "type": "number",
+              "excerpt": "6つの国立公園管理事務所"
+            },
+            {
+              "type": "number",
+              "excerpt": "計6名"
+            },
+            {
+              "type": "number",
+              "excerpt": "合計222名"
+            }
+          ],
+          "score": 1.0
+        },
+        "as4_commitment": {
+          "level": 3,
+          "trigger_phrase": "令和8年度は...増員をいたしまして",
+          "matched_pattern": "future-tense verb describing a CONCRETE government action with a named mechanism"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "令和8年度はこれまで定員が1名のみとなっていた6つの国立公園管理事務所に各1名、計6名を増員し、合計222名の体制で充実を図る。",
+          "score": 0.9
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "人員不足という指摘に対し、具体的な増員数と令和8年度の合計人員数を明示した回答であり、記録価値が高い。",
+        "would_be_referenced": "high",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_019",
+      "segment_index": 2,
+      "topic": "国立公園における具体的課題の改善事例",
+      "question": {
+        "speaker": "三上えり",
+        "party": "立憲民主・無所属",
+        "summary": "- 35の国立公園の中で、具体的にどのような課題があり、どう改善している事例があるか",
+        "full_text": "何分広すぎて、この222人が適当かどうかというのは、私も分かりかねるんですけれども、この35の国立公園の中で、では具体的に問題や課題があって、こういうふうに実際に改善しているんだというような例はありますでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "堀上正和",
+        "role": "",
+        "summary": "- 地域により鹿の被害や登山道の荒廃など課題は多様であり、多様な主体と連携して対応している\n- 例として、富士山での過度な混雑に対し、山梨県・静岡県による入山料徴収や時間制限、環境省によるモニタリング等の機関連携対策を実施している",
+        "full_text": "まず国立公園、日本の国立公園の場合には、国が管理を進めていきますけれども、環境省だけじゃなくて、地域関係者、土地所有者、地方自治体、それから関係行政機関、多様な主体と連携して取り組みを進めているということがあります。そこは特に重要だということでございまして、またさらに国立公園の課題自体が、地域によってさまざまありまして、鹿による植生被害、あるいは外来種の侵入。そういった問題のほかにも、登山道の荒廃、あるいは廃屋の増加、そういう公園利用上の課題なども多岐にわたっています。そういう中で、地域地域でそれぞれ課題に対応しているわけですが、例えば、富士箱根伊豆国立公園にあります富士山、そこへ登山する人が非常に多くなっていた。過度な混雑が問題となっておりましたけれども、山梨県と静岡県が入山料の徴収、あるいは入山時間の制限の実施、それから環境省も利用者モニタリング、普及啓発、そういったことをやって、各機関連携して対策を行っているというところであります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#3054.11",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "国立公園の課題改善の具体例はあるか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "222人"
+            },
+            {
+              "type": "number",
+              "excerpt": "35の国立公園"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国立公園",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "富士箱根伊豆国立公園"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "富士山"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "山梨県"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "静岡県"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "富士山では、山梨県と静岡県が入山料の徴収、あるいは入山時間の制限の実施、それから環境省も利用者モニタリング、普及啓発を行い対策を行っている。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体例を求める質問に対し、富士山の事例を挙げて具体的に回答している。記録としての価値は低いが、回答の充足度は高い。",
+        "would_be_referenced": "low",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_020",
+      "segment_index": 2,
+      "topic": "国立公園満喫プロジェクトの内容と成果",
+      "question": {
+        "speaker": "三上えり",
+        "party": "立憲民主・無所属",
+        "summary": "- 「国立公園満喫プロジェクト」について詳しく教えてほしい",
+        "full_text": "国として今、この国立公園をブランド化しようという動きがあると聞きました。名称がですね、国立公園満喫プロジェクトという名前だそうです。詳しくこれを教えていただけますでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "堀上正和",
+        "role": "",
+        "summary": "- 保護と利用の好循環による地域経済活性化を目的とし、2016年から推進している\n- 体制づくり、景観改善（廃屋撤去）、多言語解説の整備、プロモーション強化などを実施した\n- 成果として、2025年の訪日外国人利用者は988万人となり、2019年の約1.5倍に増加した",
+        "full_text": "今ご指摘がありました国立公園満喫プロジェクトでございますが、国立公園の魅力、ブランド力を高めるということで、国内外の利用者が満喫できる、実際に満喫できるような環境を整えるということで、地域経済を活性化して、自然環境保全への再投資も通じて、保護と利用の好循環を実現することを目的としております。これはもう10年前ですね、2016年から国立公園満喫プロジェクトとして取り組みを推進してきています。具体的には地域協議会など様々な主体が協働するための体制づくり、それから景観改善、先ほどもちょっと言いましたが、廃屋区が増えているというところもありますので、廃屋区の撤去、あるいは海外から来られる方向けに多言語解説、そういった受入れ環境の磨き上げ、さらにプロモーション強化、そういったところを進めてきたところであります。その効果として、2025年の訪日外国人の国立公園利用者数、988万人となっております。これは、新型コロナウイルスの影響を受ける前の、2019年の約1.5倍に増加をしてきているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#3054.11",
+      "metrics": null
+    },
+    {
+      "id": "qa_021",
+      "segment_index": 2,
+      "topic": "クマ対策専門官の任期付き雇用理由",
+      "question": {
+        "speaker": "三上えり",
+        "party": "立憲民主・無所属",
+        "summary": "- クマ対策専門官の公募条件が高すぎるが、なぜ任期付きとしたのか",
+        "full_text": "この公募のために、実務経験が4年以上必要である上に、任期も3年と決まっています。処遇の割に求める条件が高すぎるとの話もございます。どうしてこれを任期付きとしたのか、御説明をお願いします。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "三上えり",
+        "role": "立憲民主・無所属",
+        "summary": "- 国民の生命・身体への被害防止は喫緊の課題であるため、即戦力を確保する観点から任期付き職員として雇用している",
+        "full_text": "昨今のクマ被害の対策ということで、まず国民の生命、身体への被害を未然に防止する観点で、喫緊の課題ということで認識しています。このために環境省では、各地域でクマ被害対策に関する体制構築を集中的に支援する。そういう観点で、クマ対策専門家について、即戦力をまず任期付き職員として雇用するというところで、今やっているということでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#3054.11",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "公募職員を任期付きとした理由の説明",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "実務経験が4年以上"
+            },
+            {
+              "type": "number",
+              "excerpt": "任期も3年"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "公募職員（クマ対策専門家）",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "環境省"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "クマ対策専門家について、即戦力をまず任期付き職員として雇用するというところで、今やっているということでございます。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "任期付きとした理由について「即戦力の確保」という明確な回答が得られているが、処遇の妥当性への言及はなく、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "処遇が高すぎるという指摘を盛り込んでいるが、それに対する判断を問う形式になっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_022",
+      "segment_index": 2,
+      "topic": "クマ対策専門人材の確保と自治体への派遣",
+      "question": {
+        "speaker": "三上えり",
+        "party": "立憲民主・無所属",
+        "summary": "- 専門人材の奪い合いが起きている中、必要に応じて地方公共団体に派遣する選択肢はあるか",
+        "full_text": "報道によりますと、熊対策の専門人材の確保に、地方公共団体が一斉に取り組みを始めて、人材の奪い合いになっていると聞きます。これは必要に応じて、地方公共団体に派遣をするという選択肢もあるんじゃないでしょうか。どうでしょう。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "三上えり",
+        "role": "立憲民主・無所属",
+        "summary": "- 令和7年度補正予算にて、環境省の交付金で自治体が専門人材を配置できるよう支援対象に追加した\n- 国の専門官配置とあわせて、国と自治体が密に連携して一体的に人材の確保・育成に取り組む",
+        "full_text": "御指摘のとおり、現状、熊対策を担う専門的な技術知見を有する人員に限られてございます。そのために国と自治体をうまく連携しながら、そういった専門人材の育成確保を進めるということが重要でございますが、令和7年度の補正予算で、熊対策を担う専門人材を自治体において配置できるような措置をしました。環境省の交付金で支援対象として追加したというところでありまして、各自治体で随時配置が進んでいるところでございます。環境省においても、先ほどお話しした熊対策専門家、あるいは広域鳥獣対策専門官を新たに配置するということを今年やってきておりまして、こういったことで、国と自治体が密に連携を取って、熊対策に必要な専門人材の確保育成に向けて、一体的な取組を進めると、まずはそこからやっていきたいというふうに考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#3054.11",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "地方公共団体への専門人材派遣の検討",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "報道によりますと"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "地方公共団体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": true,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": true,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "deadline",
+              "excerpt": "令和7年度の補正予算"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "環境省の交付金"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "広域鳥獣対策専門官"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "一体的な取組を進めると、まずはそこからやっていきたいというふうに考えてございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "令和7年度の補正予算で、熊対策を担う専門人材を自治体において配置できるような措置をしました。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "派遣という具体的な提案に対し、予算措置による配置支援という代替案で回答しており、直接的な回答は避けているが、具体的な予算措置の事実は記録されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どうでしょう」という問いかけが曖昧なため、政府側がYes/Noを避け、現状の説明に終始しやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_023",
+      "segment_index": 3,
+      "topic": "環境省の予算水準について",
+      "question": {
+        "speaker": "浜野喜史",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 令和8年度予算が前年度比で増額となっているが、環境政策を推進する上で十分な水準であるか、大臣の見解を問う",
+        "full_text": "今回の法改正により、災害廃棄物処理対策に係る地方公共団体支援機能の強化、クマ対策を含む広域的野生鳥獣保護管理、外来生物対策、地域の資源循環などの体制強化を行うこととされております。この体制強化につきましては、地方環境事務所経費に関する予算を9億円程度増額し、対応するということとなっております。それも含めて、環境省における一般会計予算全体としては、令和7年度予算1467億円に対して、令和8年度予算では1570億円と、103億円の増額予算となっております。予算をつけて対応していくべきと考えておりますけれども、今年度予算は環境政策を進めていくにあたって、十分な水準となっているのか、大臣の率直な見解をお伺いいたします。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "石原良司",
+        "role": "",
+        "summary": "- 循環型社会等の実現に向けた取組や、鳥獣被害対策、地方環境事務所の体制強化に必要な予算は十分に確保していると認識している",
+        "full_text": "環境省における一般会計予算は、循環型社会、脱炭素社会、自然共生社会の3社会の実現を目指す環境政策を推進し、環境経済、社会課題を同時解決する取組や、人の命と環境を守る基盤的取組のために経費を織り込んでいるものであります。環境省としては、金属資源等の再資源化に対する投資促進支援、クマ等の鳥獣被害対策に加え、地方環境事務所の体制強化に必要な人件費など、全体的に必要な予算は十分に確保しているというふうに認識しております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#4597.19",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "今年度予算は十分な水準か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "9億円程度増額"
+            },
+            {
+              "type": "number",
+              "excerpt": "令和7年度予算1467億円"
+            },
+            {
+              "type": "number",
+              "excerpt": "令和8年度予算では1570億円"
+            },
+            {
+              "type": "number",
+              "excerpt": "103億円の増額予算"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "循環型社会、脱炭素社会、自然共生社会"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "金属資源等の再資源化に対する投資促進支援"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "クマ等の鳥獣被害対策"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "地方環境事務所の体制強化に必要な人件費"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "全体的に必要な予算は十分に確保しているというふうに認識しております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "予算の十分性について問われ、大臣が「十分である」と明確に回答したやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「十分か」という主観的な問いであるため、具体的な不足箇所を提示して問う形式にすれば、より実効的な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_024",
+      "segment_index": 3,
+      "topic": "環境省増額予算の財源確保について",
+      "question": {
+        "speaker": "浜野喜史",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 環境省への増額予算の財源をどのように確保しているのか説明を求める",
+        "full_text": "その上で財務省にお伺いをいたします。環境省への増額予算の財源については、どのように確保することとなっているのか、説明をお願いしたいと思います。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "人松次郎",
+        "role": "",
+        "summary": "- 歳出歳入両面からの改革努力により予算全体のメリハリ付けを行う中で確保している\n- 具体的に環境省では、エネルギー対策特別会計の地域脱炭素推進交付金を減額し、一般会計からの繰り入れを減らすなどの措置を講じている",
+        "full_text": "予算編成全体について、まず申し上げれば、財政健全化目標との整合性の確保の観点や、市場からの信任の確保のために、通年の国債発行額をどのようにコントロールするかといった観点から、歳出歳入両面からの改革努力を行うことが、予算編成の前提となっております。こうした改革努力を講じることをもって財源を確保しつつ、経済物価動向や重要施策に対応することが、予算編成全体の基本的な立て付けとなっておりまして、令和8年度予算においても同様となっております。お尋ねの環境省の令和8年度一般会計予算の前年度比からの増額につきましては、公務員人件費の増17億円や、重要金属等の再資源化に対する投資促進支援の増60億円といった経済物価動向への対応、さらには重要施策の推進に必要な確保を手当てさせていただいているものでございます。その財源につきましては、環境省予算に限らず、先ほど申し上げた令和8年度予算編成全体の中で、歳出歳入両面からの改革を推進し、予算全体のメリハリ付けを行う中で確保しているものでございます。その際、環境省予算におきましても、例えばエネルギー対策特別会計におきまして、地域脱炭素推進交付金を対前年度比で減額を行い、これに伴いまして、一般会計からエネルギー対策特別会計への繰り入れを減額を行うなど、メリハリある予算編成を行っているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#4597.19",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "環境省増額予算の財源確保策について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "財務省"
+            },
+            {
+              "type": "organization",
+              "excerpt": "環境省"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "環境省",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "公務員人件費の増17億円"
+            },
+            {
+              "type": "number",
+              "excerpt": "重要金属等の再資源化に対する投資促進支援の増60億円"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "エネルギー対策特別会計"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "地域脱炭素推進交付金"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "地域脱炭素推進交付金を対前年度比で減額を行い、これに伴いまして、一般会計からエネルギー対策特別会計への繰り入れを減額を行うなど、メリハリある予算編成を行っている",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "予算の増減額という具体的な数字と、特会での調整という具体的な財源確保の手法が示されており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_025",
+      "segment_index": 3,
+      "topic": "デコカツにおけるペーパーレス化の環境保全効果について",
+      "question": {
+        "speaker": "浜野喜史",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 国民運動「デコカツ」において、ペーパーレス化が環境保全や脱炭素化に寄与する取組として発信してきたか見解を問う",
+        "full_text": "環境省設置法におきましては、環境省は地球環境保全、公害の防止、自然環境の保護及び整備その他の環境の保全を図ることを任務とすると明記されております。脱炭素化などの環境政策への世の中の関心が高まる中で、環境省が発信する情報には非常に重みがあるというふうに考えております。その上で伺います。環境省が推進する脱炭素につながる、新しい豊かな暮らしをつくる国民運動であるデコカツにおきましては、ペーパーレス化の推進が環境保全や脱炭素化に寄与する取組として、多くの企業から情報を発信してきたことがあるのではないかと考えておりますけれども、見解をお伺いいたします。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "白石統括官",
+        "role": "",
+        "summary": "- 2018年の報道発表等において、テレワークやペーパーレス化がCO2排出削減や紙資源の節約などの環境保全につながることを発信してきた",
+        "full_text": "環境省におきましては、国民一人ひとりの暮らし方や働き方に気づきを与えまして、その行動変容につなげることで、資源の節約、それからCO2の削減など、環境保全を図っていくことが重要であるとの観点から、これまでもデコカツをはじめ、さまざまな普及啓発の取組を進めてきたところでございます。議員御指摘の2018年の7月の環境省からの報道発表につきましても、テレワークやウェブ会議など、企業における働き方改革を推進することが、移動に伴うCO2排出の削減やペーパーレス化による紙資源の節約、あるいはゴミの発生量の抑制といった環境保全につながることについて発信したものでございます。また、2018年の報道発表にとどまらず、当時定めました第5次の環境基本計画、あるいは脱炭素化等につきましても、同様の趣旨の発信を行っているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#4597.19",
+      "metrics": null
+    },
+    {
+      "id": "qa_026",
+      "segment_index": 3,
+      "topic": "ペーパーレス化の定量評価と森林管理への影響について",
+      "question": {
+        "speaker": "浜野喜史",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 紙の消費減少が森林管理の不備や緑化への逆効果を招く可能性や、電力使用量増大の懸念があるため、ペーパーレス化の環境保全効果の定量評価は困難ではないか",
+        "full_text": "さらに関連してお伺いいたしますけれども、紙の消費は、適切な森林整備や、再造林の循環を支える側面があり、消費量が減少すれば、森林管理が行き届かなくなり、結果として森林の健全な維持や緑化の推進に逆効果となる可能性もあると考えております。加えて、ペーパーレス化の促進は電力使用量の増大にもつながるため、ペーパーレス化の促進が環境保全や脱炭素化につながるといった定量評価は難しいのではないかと考えておりますけれども、見解をお伺いいたします。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "白石統括官",
+        "role": "",
+        "summary": "- ペーパーレス化は紙資源節約やゴミ抑制につながるが、CO2削減等の定量評価は、森林管理の状況や再生可能エネルギーの導入状況、社会システムの変化等により困難である",
+        "full_text": "まずペーパーレス化自身は紙資源の節約、それからゴミの発生量の抑制にはつながるだろうというふうには考えてございます。さらにそれ以外の議員ご指摘のCO2削減等も含めた効果の意義づけでございますけれども、まず紙の生産消費と森林管理の関係につきましては、紙の原料となる木材がどのような森林管理の下で生産されたものなのかということなどによりまして、CO2吸収量あるいは生物多様性の保全の観点から、それは見方が大きく変わり得るものだというふうに認識をしてございます。またペーパーレス化によりまして業務の電子化が進むことになりますけれども、電力使用量のみに環境負荷がかかるということではなくて、同時に省エネの推進、再生可能エネルギーの導入の状況等によりまして、電力消費量やCO2排出量への影響も異なってくるだろうというふうに考えます。さらに、かつて印刷物がメディアコミュニケーションの主体であった社会から、ITデジタル化が進展して、今やデジタル抜きでは業務生活が成り立たない社会になっていくわけでございますけれども、そういうことを考えますと、ペーパーレス化による環境への影響という観点に関しまして、経済社会システムの大きな変化というものを含めて、それを捉えて定量的な評価を行うことはとても難しいことだというふうに考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#4597.19",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "ペーパーレス化の環境保全・脱炭素効果の定量評価の可否",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "ペーパーレス化による環境への影響という観点に関しまして、それを捉えて定量的な評価を行うことはとても難しいことだというふうに考えてございます。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "ペーパーレス化の定量評価が困難であるという政府側の見解を明確に引き出しており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_027",
+      "segment_index": 3,
+      "topic": "ペーパーレス化の発信と製紙業界の努力について",
+      "question": {
+        "speaker": "浜野喜史",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 定量評価が困難であるにもかかわらず、ペーパーレスが自然環境保護につながる等の発信を行ってきたことについて問う",
+        "full_text": "定量的評価はなかなか難しいという御説明だったと受け取りました。その上でお伺いするんですけれども、そのペーパーレスの効果についてですね、定量評価が難しいにもかかわらず、環境省の発信によって、ペーパーレスが自然環境保護や森林破壊の抑制につながる、紙の消費がCO2排出の主要因の一つなどといった、",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "石原良司",
+        "role": "",
+        "summary": "- 製紙業界においても持続可能な森林管理による生物多様性保全やCO2吸収の努力がなされており、そうした業界の努力についても適切に発信していきたい",
+        "full_text": "ペーパーレス化による環境保全効果については、先ほど統括官から答弁したとおりなんですが、ぜひ強調しておきたいことは、実は、製紙業界においては、例えば、自然共生サイトに多くの製紙メーカーの森が認定をされております。また、持続可能な森林管理による生物多様性の保全や、CO2の吸収、すみません。議員ご指摘のように、もし間違ったメッセージを広げているようなことがあれば、この製紙業界がこのような努力をしていることもしっかりと発信をしてまいりたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#4597.19",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "ペーパーレス発信の妥当性について",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "環境省",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "自然共生サイト"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "しっかりと発信をしてまいりたいと思います",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "製紙業界がこのような努力をしていることもしっかりと発信をしてまいりたいと思います。",
+          "score": 0.4
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "質問が途切れている（または不完全な）状態で回答が始まっており、論点が噛み合っていない。回答は製紙業界の努力を強調する方向にすり替わっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問文が完結しておらず、何を問いたいのか（妥当性の確認か、修正の要求か）が不明確である。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_028",
+      "segment_index": 3,
+      "topic": "紙パルプ産業のバイオリファイナリー転換への国の関与について",
+      "question": {
+        "speaker": "浜野喜史",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 分野別投資戦略に基づき、2033年までに官民で1兆円規模の投資を進めるとしているが、具体的に国がどのように関与するのか説明を求める",
+        "full_text": "経済産業省にお伺いいたします。紙パルプ紙加工産業において脱炭素化に大きく寄与するバイオリファイナリー産業への転換を図ることが重要であると考えております。昨年12月に改定された政府の分野別投資戦略において、国益回収ボイラーやバイオマス素材生産設備、産業用ヒートポンプなどに対して、2033年までに官民で1兆円規模の投資を進めていくこととされております。画期的な取組であり、確実に進めていただきたいと考えております。困難な脱炭素化は民間任せにはできません。官民で1兆円規模の投資を進めていくということでありますけれども、具体的に国がどのように関与していくのか説明をお願いいたします。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "田中審議官",
+        "role": "",
+        "summary": "- 燃料転換やバイオリファイナリー産業への転換を支援し、GX経済移行債を活用した予算措置等を行っている\n- 具体的に「エネルギー製造プロセス転換支援事業」において紙パルプ産業のプロジェクトを採択し推進している",
+        "full_text": "議員ご指摘の紙パルプに関する分野別投資戦略におきましては、国による先行投資支援として企業のコミットメントや、制度的措置と一体で、まず石炭などを活用した自家発電設備などの将来の脱炭素エネルギーへの転換を見越した燃料転換、さらには化石由来製品などの代替素材としてパルプを活用したバイオリファイナリー産業への転換、こういったことに関する取組を支援するなどの方針を示しております。この方針に基づきまして、国による支援と民間投資を合わせて、2033年までに1兆円以上の投資を目指し、紙パルプ産業におけるGXを進めていくこととしております。その実現のため、政府といたしましては、GX経済移行債を活用した予算措置などを行っております。例えば、排出削減が困難な産業におけるエネルギー製造プロセス転換支援事業、この事業におきましては、紙パルプ産業に関連する2つのプロジェクトを採択推進しているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#4597.19",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "分野別投資戦略における国の具体的な関与方法",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "昨年12月に改定された"
+            },
+            {
+              "type": "organization",
+              "excerpt": "政府の分野別投資戦略"
+            },
+            {
+              "type": "number",
+              "excerpt": "2033年までに官民で1兆円規模の投資"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "紙パルプ紙加工産業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "GX経済移行債"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "エネルギー製造プロセス転換支援事業"
+            },
+            {
+              "type": "number",
+              "excerpt": "2033年までに1兆円以上の投資"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 3,
+          "trigger_phrase": "GX経済移行債を活用した予算措置などを行っております",
+          "matched_pattern": "future-tense verb describing a CONCRETE government action with a named mechanism"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "GX経済移行債を活用した予算措置などを行っております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "投資戦略の具体策について問い、政府がGX経済移行債や特定の支援事業という具体的な手段を挙げて回答しているため、実効性のあるやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_029",
+      "segment_index": 4,
+      "topic": "災害廃棄物処理の体制強化",
+      "question": {
+        "speaker": "原田大二郎",
+        "party": "公明党",
+        "summary": "- 能登半島地震で現行体制が十分に機能しなかった面があるのではないか\n- 大規模災害を見据え、平時から仮置き場確保や広域処理の調整を強める必要があるのではないか",
+        "full_text": "まず災害廃棄物処理について伺います。先ほど吉井委員もありましたけれども、環境省はこれまでも地域ブロックごとに地方環境事務所を中心に、モデル事業の紹介や自治体間のマッチング、地域ブロック協議会の運営などを進めてこられたと承知しております。ただ、能登半島地震におきましては、現行体制だけでは十分に機能しきれなかった面もあったのではないかと思います。南海トラフ地震のような大規模災害を見据えると、仮置き場の確保や広域処理、県境を超えた事前調整を平時から強める必要があると思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "堀上",
+        "role": "",
+        "summary": "- 地方環境事務所を地方環境局に改称し、災害廃棄物対策の定員を29名増員して体制を拡充する\n- ガイドラインによる技術的助言、モデル事業による仮置き場確保支援、現地チーム派遣による初動支援などを推進する",
+        "full_text": "災害廃棄物の円滑な処理を進めていくためには、平時から民間団体等の協定締結や仮置き場の確保等を含む災害廃棄物処理計画の策定による事前の準備が重要でございます。今回の法改正を通じて、国がよりリーダーシップを発揮できるよう、地方環境事務所を地方環境局に改称し、資源循環課を資源循環災害廃棄物対策課とするとともに、災害廃棄物対策の定員を全国で29名増員するなど、体制の拡充を図ることとしております。こうした体制強化によりまして、広域処理を含む自治体間のマッチング支援のほか、災害廃棄物に係る協定の雛形や協定締結事例等を充実したガイドラインによる技術的な助言、さらには災害廃棄物処理計画の策定を支援するモデル事業等による仮置き場の確保の支援、そして公費解体、撤去マニュアル等を活用した研修訓練の強化、そして関係団体等を含む発災直後の現地チームの派遣による初動支援の強化などの取り組みをより一層推進してまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5185",
+        "clb-5295"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#5591.72",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "災害廃棄物処理の平時からの体制強化について",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "field_case",
+              "excerpt": "能登半島地震"
+            },
+            {
+              "type": "field_case",
+              "excerpt": "南海トラフ地震"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "地方環境局"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "資源循環災害廃棄物対策課"
+            },
+            {
+              "type": "number",
+              "excerpt": "全国で29名増員"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "取り組みをより一層推進してまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "地方環境事務所を地方環境局に改称し、災害廃棄物対策の定員を全国で29名増員するなど、体制の拡充を図ることとしております。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は疑問符のない意見表明に近い形式ですが、回答側で組織改編や増員数という具体的な体制強化策を提示しており、記録としての価値があります。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "具体的な問い（～はどう考えるか、～をどう改善するか）を明示せず、現状分析と要望で終わっているため、回答を誘導する形になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_030",
+      "segment_index": 4,
+      "topic": "野生鳥獣（クマ）対策の支援体制",
+      "question": {
+        "speaker": "原田大二郎",
+        "party": "公明党",
+        "summary": "- 対策専門官を全国で15名増員することによる具体的な役割と支援内容について伺いたい",
+        "full_text": "次にクマなどの鳥獣対策について伺います。近年クマの出没や人身被害の不安が広がっております。その中で環境省の役割は捕獲そのものをしっかりと担っていくというよりも、自治体が現場対策チームを組めるように、交付金や専門家による伴走支援を行うことであると理解をしております。今回、対策専門官を全国で15名増員すると。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "堀上",
+        "role": "",
+        "summary": "- 熊対策・広域鳥獣対策専門官を配置し、自治体の初動対応訓練やマニュアル作成への助言、広域協議会の運営支援を行う\n- 自治体のニーズに応じた技術的助言や交付金運用を通じて、住民の安全確保に取り組む",
+        "full_text": "環境省では、本年4月に各地方環境事務所等に、熊対策専門官、広域鳥獣対策専門官、それぞれ新たに配置、または拡充し、体制強化を図ったところでございます。これらの専門官は、自治体が行う熊出没時の初動対応に係る訓練、マニュアル作成における助言、都道府県と連携した広域協議会等の設立運営、他地域の事例の紹介等の技術的助言や交付金の運用等を通じて、現場での熊対策の実行役である自治体のニーズを伺いながら、それぞれの状況に応じて支援する、そういった役割を担っているところでございます。環境省といたしましては、今回の法改正を契機として、より一層各自治体との連携を図って、熊を含む野生鳥獣対策を広域的に進めることにより、住民の安全が確保されるように取り組んでまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#5591.72",
+      "metrics": null
+    },
+    {
+      "id": "qa_031",
+      "segment_index": 4,
+      "topic": "地域脱炭素における自治体連携の強化",
+      "question": {
+        "speaker": "原田大二郎",
+        "party": "公明党",
+        "summary": "- 地方環境局化により局長・次長体制が整うことで、停滞している脱炭素先行地域の状況をどう打破し、どのような対策を打つのか",
+        "full_text": "次に地域脱炭素と自治体連携についてお伺いいたします。地域脱炭素につきましては、すでに各地方環境事務所に地域脱炭素創生室が置かれ、一定の体制が整えられてきたと承知をしております。その上で、今回地方環境事務所が地方環境局となることで、地域ブロックの代表機関としての位置づけがより明確になり、自治体との連携強化が期待されているのだと思います。局長・次長体制が整うことで、進捗が3割にとどまる脱炭素先行地域の停滞打破など、そのためにどのような対策を打っていくのかお答えください。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "中尾",
+        "role": "",
+        "summary": "- 局長・次長の新設により、首長や部長クラスなどのトップレベルでの連絡調整を円滑化させる\n- 自治体内の庁内横断的な取り組みや、地域の関係者との連携を強化し、脱炭素の取組を推進する",
+        "full_text": "地域脱炭素化の取組を進めるに当たりましては、地域の事業者、金融機関などの多くの関係者の協力が必要でございます。特に自治体におきましても、環境部局ならず、庁内横断的な取組が重要であります。そのためには、首長を含めたトップレベルでの調整というものが非常に重要となって、リーダーシップが鍵となってくるところでございます。地域脱炭素の取組の開始以降、地方環境事務所による首長等との面会を、数多くこれまでも行ってきたところでございますけれども、本改正で地方環境局への名称の変更や、自庁職の新設が行われることによりまして、首長、副首長、さらには県でいいますと部長クラスなどとのトップレベルでの調整を含めて、連絡調整の一層の円滑化が進み、まして、地域におけるダスタンスの取組の推進につながることが期待されるところでございます。自治体を含め、はじめ、地域の関係者との連携を強化してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5185"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#5591.72",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "地方環境局化による脱炭素先行地域の停滞打破策",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "進捗が3割にとどまる脱炭素先行地域"
+            },
+            {
+              "type": "organization",
+              "excerpt": "地方環境事務所"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "脱炭素先行地域",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "地方環境局"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "地域の関係者との連携を強化してまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "地方環境局への名称の変更や、自庁職の新設が行われることによりまして、首長、副首長、さらには県でいいますと部長クラスなどとのトップレベルでの調整を含めて、連絡調整の一層の円滑化が進み",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な停滞打破の「対策」を問うているが、回答は組織変更による調整の円滑化という期待感に留まっており、実効的な具体策が示されていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのような対策を打つか」という問いに対し、組織体制の変更という前提条件を提示しているため、回答者が体制論に逃げやすい構造になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_032",
+      "segment_index": 4,
+      "topic": "災害廃棄物の海上輸送を含む広域処理支援",
+      "question": {
+        "speaker": "原田大二郎",
+        "party": "公明党",
+        "summary": "- 海上輸送を含む広域処理について、現在どのように自治体を支援しているか\n- 地方環境局化を契機に、平時からの備えをどう進める機運を作るのか",
+        "full_text": "続きまして、海上輸送を含む広域処理についてお伺いいたします。南海トラフ地震のような大規模災害を考えますと、災害廃棄物の海上輸送は極めて重要です。能登半島地震でも、石川県の災害廃棄物処理計画では、海上輸送が検討対象となり、実際にも県産業廃棄物協会、環境省など関係者が調整に入って進めたと承知をしております。ただ、海上輸送は国土交通省との調整も必要ですし、実際に動くのは県、市町村、処理業者です。そうであれば、発災後ではなく、平時から計画や協定の中に位置づけておくことが重要だと思います。実際に海岸の隆起や護岸の損壊によって港の利用制限が生じるなど、過酷な現実にも直面をいたしております。現在、環境省として、海上輸送を含む広域処理について、どのように自治体を支援しているのか、また、今回の地方環境局化を契機に、自治体に対して、防災災害廃棄物処理の備えをさらに進める機運をどう作っていくのか、御説明ください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "中尾",
+        "role": "",
+        "summary": "- 局長が自治体の意思決定権者と日頃から意思疎通を図り、次長が関係省庁や事業者とハイレベルな調整を行う体制を構築する\n- 地域ブロック協議会の枠組みを活用し、平時・発災時ともに調整機能を向上させ、迅速な広域処理体制を構築する",
+        "full_text": "こうした対応から得られた教訓といたしましては、発災時に災害廃棄物処理を地方環境局という名称に改めるとともに、局長自ら自治体の市長などの意思決定権者と日頃の意思疎通を図ってまいりたいと考えております。また、局長を支える次長が分担して、関係省庁や関係事業者等とのハイレベルでの調整を普段から密に行ってまいりたいと考えております。こうした体制強化に加えまして、既存の地域ブロック協議会での枠組みも活用し、平時及び発災時における関係者との調整機能を向上させることで、発災時における迅速かつ円滑な廃棄物の広域処理体制を構築してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5185",
+        "clb-5295"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#5591.72",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "海上輸送を含む広域処理の支援策と備えの機運醸成について",
+          "sub_asks": [
+            "海上輸送を含む広域処理についてどのように自治体を支援しているか",
+            "地方環境局化を契機に、防災災害廃棄物処理の備えを進める機運をどう作るか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "field_case",
+              "excerpt": "能登半島地震"
+            },
+            {
+              "type": "organization",
+              "excerpt": "石川県の災害廃棄物処理計画"
+            },
+            {
+              "type": "organization",
+              "excerpt": "県産業廃棄物協会"
+            },
+            {
+              "type": "organization",
+              "excerpt": "環境省"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自治体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "地方環境局"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "地域ブロック協議会"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "意思疎通を図ってまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "地方環境局という名称に改めるとともに、局長自ら自治体の市長などの意思決定権者と日頃の意思疎通を図ってまいりたい",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的で根拠があるが、回答は地方環境局の体制強化という抽象的な方針に留まっており、海上輸送への具体的支援策への言及が欠けている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのように支援しているか」という現状確認と「どう機運を作るか」という将来策を同時に問うているため、回答が後者の体制論に偏りやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_033",
+      "segment_index": 4,
+      "topic": "公費解体と空き家問題への平時からの備え",
+      "question": {
+        "speaker": "原田大二郎",
+        "party": "公明党",
+        "summary": "- 公費解体や空き家問題について、平時からどのような準備を自治体に促し、計画の実効性を高めるのか\n- 地方環境局の職員がどのようにノウハウを伝え、計画に反映させるのか",
+        "full_text": "最後に、公費解体と空き家問題について伺います。能登半島地震では、所有者不明の建物などへの対応が大きな課題となりました。これに対し、環境省は法務省とも連携をし、公費解体に関する手引きやガイドラインを整備してきたこと、また、今年3月にはガイドラインを改定したことは大変重要だと思います。ただ、災害が起こってから、申請様式や手順を整えるのでは遅く、平時から備えておくことが欠かせません。また、空き家は通常時には財産権の対象であり、災害で建物性を失った場合に初めて公費解体の対象となり得るという点も、住民や自治体にとって分かりにくい面があります。今回の地方環境局化を契機に、公費解体や空き家問題について、平時からどのような準備を自治体に促し、どのように計画の中身を実効性のあるもので高めていくのか、ご説明をください。地方環境局の職員がノウハウを自治体に伝え、申請手続き、庁内連携、法務部局との連携などを災害廃棄物処理計画等にどう反映させていくのか、その点をお伺いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "住倉",
+        "role": "",
+        "summary": "- 改定した公費解体撤去マニュアルに基づき、平時からの研修や周知、発災時の技術的助言を充実させる\n- 廃棄物処理法改正に伴う専門支援機関により、発注契約業務などの実務支援を強化し、復興のスピードアップを図る",
+        "full_text": "環境省では、本年3月に公費解体撤去マニュアルを改定し、申請様式のひな形の追加、申請受付から解体完了までの市町村における進捗管理や現地調査等の進め方の明確化、そして関係者の同意に関する手順や所有者不明建物管理制度等の既存制度の活用の在り方の整理など、自治体が発災後、速やかに公費解体の受付を開始し、効率的に事務を行うために参考となる内容を充実させてきたところでございます。ただ、その一方で、こうしたマニュアルを整備、充実するとともに、この内容がしっかりと各地方公共団体、さらには関係者の皆様方に周知をされ、これがいざ発災時に速やかに動くようにしていくことは、これは極めて重要な課題でございます。このため、今回の法改正を通じ、地方環境局の体制強化を図ることで、公費解体撤去マニュアルについて、平時からの研修等による周知や発災時の丁寧な技術的助言等の、こうした取組を一層充実強化をしてまいりたいと考えております。このほか、今国会に提出いたしました廃棄物処理法等の改正法案により措置することとしております専門支援機関により、公費解体等の発注契約業務などの自治体の実務支援の強化も図りたいと考えております。こうした取組を通じまして、公費解体撤去に係る自治体の事務の円滑化、迅速化を図り、平時からの備えを十分にすることによって、発災時における復興のスピードアップにつなげてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5185",
+        "clb-5295"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#5591.72",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "公費解体・空き家問題への平時の備えと地方環境局の役割",
+          "sub_asks": [
+            "平時からどのような準備を自治体に促し、計画の実効性を高めるか",
+            "地方環境局の職員がノウハウをどう計画に反映させるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "field_case",
+              "excerpt": "能登半島地震"
+            },
+            {
+              "type": "organization",
+              "excerpt": "環境省"
+            },
+            {
+              "type": "organization",
+              "excerpt": "法務省"
+            },
+            {
+              "type": "date",
+              "excerpt": "今年3月"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自治体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "公費解体撤去マニュアル"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "所有者不明建物管理制度"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "廃棄物処理法等の改正法案"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "専門支援機関"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "取組を一層充実強化をしてまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "地方環境局の体制強化を図ることで、公費解体撤去マニュアルについて、平時からの研修等による周知や発災時の丁寧な技術的助言等の、こうした取組を一層充実強化をしてまいりたい",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "平時の備えという重要な視点からの質問に対し、マニュアルの改定内容と地方環境局による周知・支援という方向性で回答している。具体的アクションへの言及はあるが、コミットメントレベルは意向表明に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どのように計画の中身を実効性のあるもので高めていくのか」という問いに対し、具体的な指標や手法ではなく「周知」や「助言」という抽象的な回答を許す形式になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_034",
+      "segment_index": 5,
+      "topic": "地方環境事務所の分局格上げによる調整機能の強化",
+      "question": {
+        "speaker": "串田誠一",
+        "party": "日本維新の会",
+        "summary": "- 再生可能エネルギー導入に伴う環境破壊や地元とのトラブルへの対応について\n- 設置法の改正により、地方環境事務所が地方分局となることで調整能力が高まるか",
+        "full_text": "名称が地方環境事務所から環境局という名称になることは、採用においても非常に重要だということ、逆に言えばそれだけ重みを感じているということでございますので、環境省としての一般国民からの期待というのも高まるのかなというふうに思っているんですが、地球温暖化に関する脱炭素に関して地方自治体の役割って非常に重要なわけで、そこに環境省がどうやってコミットしていくのかということも期待されているわけでございますけれども、これまで青山副大臣には、この再生可能エネルギーと環境との地方とのトラブルとかということに関しても、何度か質問させていただいたわけでございます。再生可能エネルギーは非常に大事なんですけれども、例えばメガソーラーだとか風力発電が環境を破壊しているんじゃないかということで、地元からの反対意見というのも非常に出ている。そういうところに対して環境省というものがしっかりと調整をしていかなければならないのではないかなと思うんですが、今回の設置法の改正において、この調整能力が高まると考えてよろしいでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "青山環境副大臣",
+        "role": "",
+        "summary": "- 地方分局への格上げにより、調整機能ははっきりと高まると考えている\n- 局長が知事や市長などの首長に直接会えるようになるため、実効性のある調整が可能になる\n- 人員の増員（災害廃棄物対策や野生動物保護管理など）により、機能強化と調整機能の充実につながる",
+        "full_text": "結論から申しますと、地方分局に格上げされることによって、調整機能は高まると、はっきり高まると考えております。これで調整すると言ってもですね、事務所長が会えるのは部長や局長止まりであれば、結局最後の意思決定が明確でありませんから、それが今回、地方分局になりますと、局長は間違いなく知事や市長に直接会うことができます。したがって、業者の問題も含めた、この再生可能エネルギーと環境の調和というのが、いわばやっと本物の調整ができるようになると、私自身も現場を見て上での判断として考えております。それからもう一つ大きなことは、地方分局になることによって、人員の増員が実現します。そのうち例えば熊対策で言えば1ブロックあたり4人から5人の増員でありますから、実際の機能強化につながり、これも大きく言えば、調整機能全体の充実につながっていくと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5185"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#6516.28",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "設置法改正による地方分局化で調整能力が高まるか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "今回の設置法の改正"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "地元",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "1ブロックあたり4人から5人の増員"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "vice_minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "地方分局に格上げされることによって、調整機能は高まると、はっきり高まると考えております。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "地方分局化による調整能力の向上について、副大臣が明確に肯定し、増員数という具体的な根拠を提示しているため、記録価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_035",
+      "segment_index": 5,
+      "topic": "里山対策と林野庁との連携",
+      "question": {
+        "speaker": "串田誠一",
+        "party": "日本維新の会",
+        "summary": "- 里山の放置により自然林化し、熊が人里に出る状況がある\n- 里山対策として、環境省と林野庁との連携を強めてほしい",
+        "full_text": "青山副大臣にそのような答弁をしていただけると大変期待をしたいなというふうに思っておりますが、先ほど熊対策という話がありまして、緊急搬送というのも非常にそういう対策ということで取り上げられているんだろうとは思うんですが、一方で里山が放置されてしまっていて、従来の森が、人工林が非常に多いわけなんですけれども、里山が非常に放置されてしまって、逆に里山に果樹が生え茂ってしまって、自然林になってしまい、熊が森から里山を通じて人里に出ているという、そういうような状況もございます。そういう意味では里山対策というのも非常に大事だと思うんですが、これに対して環境省、林野庁との連携を強めていただきたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "栗上局長",
+        "role": "",
+        "summary": "- 森林の多面的な機能と重要性を認識しており、林野庁や地方自治体と連携して保全・管理を行っている\n- 「自然共生サイト」の認定を通じて、里山林や人工林を含む保全活動を促進している\n- 法改正を契機に、引き続き地方自治体や地域の関係者との連携を深めていく",
+        "full_text": "環境省では自然環境保全の観点から森林を含めて国立公園などの保護地域の指定を行って、林野庁をはじめですね、あるいは地方自治体とも連携して保全及び管理を行っているところでございます。また里山というお話もありましたが、特に民間等の取組によって生物多様性の保全が図られている区域、こちらを自然共生サイトとして認定する取組を進めております。今後も保護地域の指定、それから自然共生サイトの認定によりまして、森林の保全が図られるように、今回の法改正も契機に、地方自治体、地域の関係者等と引き続き連携を深めていきたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#6516.28",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "里山対策における環境省・林野庁の連携強化の要望",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "自然共生サイト"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "引き続き連携を深めていきたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "vice_minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "自然共生サイトの認定によりまして、森林の保全が図られるように、地方自治体、地域の関係者等と引き続き連携を深めていきたい",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "要望形式の質問に対し、既存の制度（自然共生サイト等）の説明と抽象的な連携意欲で回答しており、具体的な新策や期限はない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "要望に留まっており、具体的な連携策の有無や現状の課題を問う形式にすれば、より実効性のある答弁を引き出せた。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_036",
+      "segment_index": 5,
+      "topic": "動物愛護管理行政の組織体制（室から課への格上げ）",
+      "question": {
+        "speaker": "串田誠一",
+        "party": "日本維新の会",
+        "summary": "- 犬猫の飼育数が増え、家族の一員としての認識が高まっている\n- 動物愛護管理行政の重要性を鑑み、組織上の位置づけを「室」から「課」へ格上げすることを検討してほしい",
+        "full_text": "次に設置法に関連しての組織に関して、ぜひとも環境大臣にお願いをしたいんですが、日本ではですね、民間の2025年の調査によると、日本の家庭での犬猫の飼育数は、犬が682万頭、猫が885万頭で、合計で1567万頭と、非常にたくさんの家庭がですね、犬や猫を家族同然に迎え入れているわけでございます。ところが環境省の組織図ではですね、動物愛護管理室ということで、環境省の自然環境局。犬や猫などのペットが家族の一員ともいえる今、動物愛護管理行政は国民から関心が高く、課題も多岐にわたると認識しております。環境省では、その重要性をしっかりと認識をして、必要な体制が室から課に上げるという組織図にぐらいは出てくる必要があるんじゃないかなと思いますので、ぜひご検討いただきたいと思うんですけれども。8割が置いては避難できないということで、以前の環境大臣もご自身も置いてはいけないという答えをいただきましたし、各総理にも私も質問をしてきたわけなんですけれども、そういう意味で非常に家族同然という位置づけという意味では、それを扱っていくときには環境省としてもしっかりと体制をつくっていかなきゃいけない。なのであれば、やはり室ではなくて、課に上げていこうではありませんか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "石原環境大臣",
+        "role": "",
+        "summary": "- 動物愛護管理法に基づき、殺処分のない社会を目指して保護に取り組んでいる\n- ペットが伴侶動物として生活に欠かせない存在であるとの認識を前提に、普及啓発を進めていく",
+        "full_text": "石原環境大臣「動物愛護管理法では、犬や猫については特別の規定が設けられ、自治体に引き取られる際には殺処分がなくなることを目指して、保護等に取り組むこととされております。また、同法に基づき、環境省が策定している基本指針では、ペットは伴侶動物として生活に欠かせない存在になっている。これらの認識を前提としながら国民の皆様に関心や理解を深めていただき、動物の愛護と管理に関する普及啓発を進めてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#6516.28",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "動物愛護管理室を「課」へ昇格させる検討の要望",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "2025年の調査によると、日本の家庭での犬猫の飼育数は、犬が682万頭、猫が885万頭で、合計で1567万頭"
+            },
+            {
+              "type": "organization",
+              "excerpt": "環境省の自然環境局"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "犬猫の飼い主",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "動物愛護管理法"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "普及啓発を進めてまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "ペットは伴侶動物として生活に欠かせない存在になっている。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "組織改編（室から課へ）という具体的な要望に対し、大臣は一般論と普及啓発の意向で回答しており、実質的な回答を避けている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "要望形式（～ではないか）であるため、大臣が「検討する」か否かの明確な回答を回避しやすい構成になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_037",
+      "segment_index": 6,
+      "topic": "環境省設置法改正による地方環境局への名称変更のメリット",
+      "question": {
+        "speaker": "梅村みずほ",
+        "party": "参政党",
+        "summary": "- 地方環境事務所を地方環境局へ名称変更し、体制をリニューアルすることによるメリットは何か",
+        "full_text": "そこでまず最初の質問なんですけれども、すいません、後半に置いていた質問を先にさせていただきたいんですけれども、地域で起きていることをより一層解像度高く確認し、きめ細かく対応し、必要な政策の推進へと反映させるために、この法案というのがどういうメリットがあるのか、大臣からお聞かせいただいてもよろしいでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "石原宏高",
+        "role": "",
+        "summary": "- 地方環境局への名称変更と局長職の設置を行う\n- 災害廃棄物対策、広域的な自然保護管理、外来生物対策、地域の資源循環をより円滑かつスピーディーに行えるメリットがある",
+        "full_text": "石原宏高大臣「地方環境事務所は、地域において自治体をはじめとするステークホルダーと密に連携しながら、環境政策の推進に取り組む役割を担っております。本改正により、地方環境事務所を地方環境局へ名称変更するとともに、局長職を設置いたします。また、災害廃棄物対策、広域的な自然保護管理、外来生物対策、地域の資源循環を、これまで以上に円滑かつスピーディーに行えるというメリットが」"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5185"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#7243.82",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "本法案による地域対応のメリットは何か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "地方環境事務所"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "地方環境局"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "局長職"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "本改正により、地方環境事務所を地方環境局へ名称変更するとともに、局長職を設置いたします。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "法案のメリットについて大臣が具体的に組織変更（局への昇格）と期待される効果を回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_038",
+      "segment_index": 6,
+      "topic": "生物多様性・種の保存における法案改正のメリット",
+      "question": {
+        "speaker": "梅村みずほ",
+        "party": "参政党",
+        "summary": "- 生物多様性の保全や種の保存という観点から、本法案を可決することでどのような利点があるか",
+        "full_text": "この法案が可決した先にどういったメリットがあるのかというのを網羅的にご説明をいただきましたけれども、それでは次に、先だっての質疑で私が再三申し上げていました種の保存、そして生物多様性、これをしっかり地方で守っていってほしいんだというような訴えなんですけれども、特に生物多様性や種の保存という観点から、この法案を可決したら、どんなよいことがあるのか、ここにフォーカスしてお答えいただけますか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "石原宏高",
+        "role": "",
+        "summary": "- 体制整備を通じて地方環境事務所の体制を強化し、より実効的な種の保存法の施行が可能になる\n- 関係者との連携強化や地域でのプレゼンス向上に取り組む",
+        "full_text": "石原宏高大臣「地方環境事務所の主要な業務の一つが、地域の希少野生動植物や生物多様性の保全であります。そのため、従来から国立公園の適切な維持管理や種の保存法に基づく保護増殖や開発規制、重要種への助言指導等を行ってきたところであります。本改正案やこれに伴う体制整備を通じて、地方環境事務所の体制を強化して、より実効的な種の保存法の施行が行えるというメリットが生まれると考えております。改正を機に関係者との連携強化や地域でのプレゼンスの向上に積極的に取り組んでまいりたいと考えております」"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5185"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#7243.82",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "法案可決による生物多様性・種の保存へのメリット",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "地方環境事務所"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "種の保存法"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "積極的に取り組んでまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "地方環境事務所の体制を強化して、より実効的な種の保存法の施行が行えるというメリットが生まれると考えております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "生物多様性と種の保存という特定の観点からメリットを問う明確な質問に対し、大臣が地方環境事務所の体制強化という具体的手段を挙げて回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "メリットを「網羅的に」ではなく、より具体的な数値目標や具体的種名に踏み込んで問えば、より記録価値の高い回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_039",
+      "segment_index": 6,
+      "topic": "環境影響評価法の対象規模の見直し",
+      "question": {
+        "speaker": "梅村みずほ",
+        "party": "参政党",
+        "summary": "- 小規模な事業による環境破壊を防ぐため、環境アセスメントの対象（網の目）をより細かくする必要性について見解を伺いたい",
+        "full_text": "大臣にもお伺いしたいんですが、この網の目をできるだけ細かにする必要性について、大臣から一言いただければと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "石原宏高",
+        "role": "",
+        "summary": "- メガソーラー対策パッケージにおいて、環境影響評価法の対象規模の見直しを検討中である\n- 法と条例の役割分担を議論しつつ、ガイドラインによる環境配慮の促進や、問題を起こした事業者からの電気を買わない等の対策を講じている",
+        "full_text": "今、メガソーラーに関する対策パッケージで、環境影響評価法に基づく環境アセスメントの対象となる太陽光発電事業の規模を見直すこととしているところであります。本年1月から有識者検討会を立ち上げ、自治体や事業者団体など様々な関係者の意見も聞きながら検討を進めているところであります。検討に当たっては、環境影響評価法は規模が大きく、環境影響の程度が著しいものとなる恐れがある事業を対象としていること、また法と条例の役割分担、条例によって色々なケースがありますけれども、条例で4000、3000とか3000キロワット、それよりも低いものを条例で規制している、もしくは面積で規制しているような条例もありますので、法の対象とならない規模の事業については、自治体の判断によって条例で対象とすることも可能である、こういう現状もありますので、そういうことも含めて議論を進めているところであります。法や条例の対象とならない規模の事業については、環境省において太陽光発電の環境配慮ガイドラインを作成し、事業者による環境配慮も促しているところであります。あとは、委員の言われていることは非常に大事なところで、だからこそ私も色々な記者会見でも言っているんですが、小さく1000キロ、2000キロのものを条例で自治体もやるかどうかというのはなかなか微妙なところがあって、国がそこまで、さっきも言ったそもそもの環境アセスの考え方というのはありますから、大きなもので環境に大きな影響を与えるものという法の考え方もあります。その中でパッケージの中でも、国がそういう問題を起こした事業者から電気を買わないというようなことを、またそれで色々な金融機関なんかにもそういうお願いもさせていただいております。そしてさらには森林法違反なんかも開示がされるようになりましたし、国土交通省の問題を起こした事例に関しては、先ほど委員が言われたような企業も問題を起こしたことは国土交通省のホームページで確認もすることができます。ですから、やはり民間の企業がそういうものを買わないでいただくということも一つの対策になっていくのではないかと考えているところであります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#7243.82",
+      "metrics": null
+    },
+    {
+      "id": "qa_040",
+      "segment_index": 6,
+      "topic": "電気事業法における地元自治体の同意要件化と規制強化",
+      "question": {
+        "speaker": "梅村みずほ",
+        "party": "参政党",
+        "summary": "- 電気事業法において地元自治体の同意を要件とする法整備や、合意のない事業者への事業保留・一時停止命令などの規制を導入すべきではないか",
+        "full_text": "だからそれがグローバルビジネスになっていないかというところで、今後も私ども追求するんですけれども、今日のところの質問としては、鳥取県の平井知事からもありました、電気事業法において地元自治体の同意を要件とするような法整備を行うとともに、地元自治体の要請に真摯に向き合わずに事業を合意に進めようとする事業者に対しては、対象事業の保留だとか一時停止を命ずることのできるような規制が必要じゃないかということで、大臣に伺いたいところなんですけれども、環境委員会ということで、法案審議でもありますので、副大臣いかがでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "井上経済産業副大臣",
+        "role": "",
+        "summary": "- 現在は電気事業法等の法定性に基づき、国と自治体の役割分担のもとで必要な規制がなされている\n- メガソーラー対策パッケージを通じて規制の強化と自治体との連携を図り、地域との共生関係を確保する",
+        "full_text": "太陽光発電を含め、発電事業については、現在、電気事業法によった法定性としておりますが、先ほど石原大臣の答弁にありましたとおり、自然環境や安全性、景観などの観点から関係法令、条例等において、国と自治体の適切な役割分担のもとで必要な規制がなされているものと承知しております。その上で、昨年末に関係閣僚会議において取りまとめたメガソーラー対策パッケージでは、関係規制の強化に加え、規制を運用する自治体との連携強化を図ることとしております。こういった取組を通じて、関係省庁の自治体との連携の下で、規制を効果的に機能させ、再エネ導入に当たって、地域との共生関係の配慮がきちんと確保されるように取り組んでまいりたいと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#7243.82",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "電気事業法への自治体同意要件導入と停止命令規制の是非",
+          "sub_asks": [
+            "地元自治体の同意を要件とする法整備の必要性",
+            "不誠実な事業者への事業保留・一時停止命令規制の必要性"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "鳥取県の平井知事"
+            },
+            {
+              "type": "law",
+              "excerpt": "電気事業法"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "地元自治体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "メガソーラー対策パッケージ"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "地域との共生関係の配慮がきちんと確保されるように取り組んでまいりたいと思っております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "vice_minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "メガソーラー対策パッケージでは、関係規制の強化に加え、規制を運用する自治体との連携強化を図ることとしております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "法整備という具体的な提案に対し、既存のパッケージや連携強化という抽象的な回答に留まっており、実効的な合意は得られていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "法整備の是非を問うているため、Yes/Noで答えさせる形式にすれば、政府の拒絶または検討の意思を明確に記録できた。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_041",
+      "segment_index": 6,
+      "topic": "地方環境事務所の名称変更の目的と効果",
+      "question": {
+        "speaker": "奥田ふみよ",
+        "party": "れいわ新選組",
+        "summary": "- 地方環境事務所を地方環境局へ名称変更することが、本当に国民のためになるのか\n- 名称変更だけで信頼が生まれ、職員の暮らしや処遇が改善されるのか\n- 名称変更に伴い、権限や予算が増えるのか、あるいは単なる看板の掛け替えなのか",
+        "full_text": "環境省設置法の改正案、これは何をやろうとしているのか。一言で言うと、地方環境事務所という名前を地方環境局に変える。大臣、これ、本当に国民のためになるんでしょうか。でもちょっと待っていただきたいのが、看板を塗り替えただけで信頼というのが生まれるのでしょうかという点です。名称変更だけで地方環境事務所で働く職員の皆さんの安定した暮らし、憲法25条保障、充実されるのでしょうか。名称変更によってですね、具体的にその点何が変わりますか。権限増えるんでしょうか。予算増えるのでしょうか。それとも本当に看板だけなのでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "石原宏高",
+        "role": "",
+        "summary": "- 地方環境局への名称変更とともに、災害廃棄物処理や野生鳥獣管理の体制強化を図る\n- 他省庁の出先機関（財務局や整備局等）と名称を横並びにすることで、地域での効果を発揮できると確信している",
+        "full_text": "今般の法改正を通じてですね、環境局への名称を変更することとともに、加えて災害廃棄物処理、クマ対策を含む攻撃的な野生鳥獣の管理等について、体制の強化も図ってまいります。ご存知のように財務省の地方財務局も財務局でありますし、国土交通省の地方整備局と運輸局と、全て局という名前がついておりますけれども、やはり慣れ親しんだ地域の各省の出先機関ということで横並びになって、それなりに効果を発揮できるものというふうに確信しております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5185"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#7243.82",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "環境省設置法改正による名称変更の具体的効果",
+          "sub_asks": [
+            "名称変更で職員の暮らしや保障が充実するか",
+            "権限が増えるのか",
+            "予算が増えるのか",
+            "単なる看板の掛け替えなのか"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "環境省設置法の改正案"
+            },
+            {
+              "type": "law",
+              "excerpt": "憲法25条"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "地方環境事務所で働く職員",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "災害廃棄物処理"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "クマ対策を含む攻撃的な野生鳥獣の管理"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "財務省の地方財務局"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国土交通省の地方整備局と運輸局"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "体制の強化も図ってまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "環境局への名称を変更することとともに、加えて災害廃棄物処理、クマ対策を含む攻撃的な野生鳥獣の管理等について、体制の強化も図ってまいります。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "名称変更の目的について、他省庁との整合性と体制強化という抽象的な回答に留まっており、予算や権限の具体的変更への回答は回避されている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問が感情的な表現に寄っており、予算や権限の有無を個別に問う形式にすれば、より明確な回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_042",
+      "segment_index": 6,
+      "topic": "地方環境局における次長職の新設と人件費・専任化",
+      "question": {
+        "speaker": "奥田ふみよ",
+        "party": "れいわ新選組",
+        "summary": "- 次長職の新設にあたり、来年度以降に幹部職員の増員や賃金引き上げなどの対応を考えているか",
+        "full_text": "今回の法案で、次長という役職を新しく新設されるということです。全国は47都道府県あるのですが、それを大きく8ブロックに分けて、その8カ所全てに次長が置かれたとしましたら、幹部職員が8人、新たに増えるわけです。でも、この次長は当て職だという説明がありました。つまり、今いる統括環境保全保全企画官という役職の職員の方が、この次長も兼務するために、今回の改正法の施行に伴う人件費の増額はありませんということでした。でも今年はそうしたとしても、来年度以降はどうなるんでしょうか。新たに幹部職員を増やそうとか、賃金が上がるだとか、そういった対応は考えていらっしゃいますか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 当面は統括環境保全企画官等が兼務することで円滑な移行を図る\n- 施行後の実情を踏まえ、次長としての専任化を検討したい",
+        "full_text": "このため当面は地方環境事務所の職務に精通しております統括環境保全企画官等をまずは兼務いたしまして、これにより既存の業務を踏まえながら、局長や自治体等との局内外との関係者との緊密な連携の下で新たな業務を担っていくということで、円滑な移行が可能になるのではないかと考えております。そして御指摘のように法案が成立して施行されれば、その後の実情を踏まえつつ、次長として専任化することを検討してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5185"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#7243.82",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "次長新設後の来年度以降の人件費・人員体制",
+          "sub_asks": [
+            "来年度以降の幹部職員の増員予定",
+            "賃金上昇などの対応の有無"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "47都道府県"
+            },
+            {
+              "type": "number",
+              "excerpt": "8ブロック"
+            },
+            {
+              "type": "organization",
+              "excerpt": "統括環境保全保全企画官"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "次長",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "地方環境事務所"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "統括環境保全企画官"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "次長として専任化することを検討してまいりたいと考えております",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "法案が成立して施行されれば、その後の実情を踏まえつつ、次長として専任化することを検討してまいりたいと考えております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "次長の兼務から専任化への移行を検討するという政府の方向性が明確に示されており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_043",
+      "segment_index": 6,
+      "topic": "地方環境事務所の専門職の人員数",
+      "question": {
+        "speaker": "梅村みずほ",
+        "party": "参政党",
+        "summary": "- 地方環境事務所に専門職がどれくらい配置されているか",
+        "full_text": "幹部職員ももちろん増やしてほしいんですけれども、もっと増やしていただきたいのが、幹部専門職です。今、地方環境事務所には専門職の方、どれぐらいいらっしゃるのでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 総務部門を除き、幅広く捉えて1018名の専門職が配置されている",
+        "full_text": "何をもって専門性があるかというのはなかなか定義は難しいんですが、幅広く捉えれば、総務部門を除きますとですね、1018名、専門職の方がいらっしゃるということが分かりました。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5185"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#7243.82",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "地方環境事務所の専門職の人数",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "地方環境事務所の専門職",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "1018名"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "総務部門を除きますとですね、1018名、専門職の方がいらっしゃるということが分かりました。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "地方環境事務所における専門職の人数という具体的な数値が回答されており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_044",
+      "segment_index": 6,
+      "topic": "地方環境事務所の人員配置の妥当性と体制整備",
+      "question": {
+        "speaker": "木原稔",
+        "party": "参政党",
+        "summary": "- 自治体の専門人材不足を補うため、現在の地方環境事務所の人員配置で十分か\n- 業務増と自治体職員の減少を考慮した職員増員措置を規定すべきではないか",
+        "full_text": "この少ない専門人材を補うのが、地方環境事務所の専門知識を有する人材かと思いますが、今の人数で本当に足りているのでしょうかと、私は聞いていて、ちょっと疑問に思いました。地方環境事務所は、自治体の環境担当職員の減少を補えるだけの十分な人員配置をしているのでしょうか。現在の地方環境事務所の問題は、名称の変更ではなく、むしろ多様な業務が増えて、それにより自治体職員が減少していくことを考慮せずに、地方事務所の職員を増やす措置を規定していないということが問題なのではないでしょうか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 大規模災害時は他事務所や本省から専門人材を派遣して支援している\n- 引き続き専門的人材の確保を含めた体制整備に努める",
+        "full_text": "御指摘のように、やはり大規模災害が起きたような場合には、管轄する地方事務所の職員だけでは対応するのは難しいということで、他の地方事務所からの人員派遣に加えて、本省からも現地の方に専門的人材を派遣して、自治体の支援を行っております。そういうことをやるんですけれども、一方で常日頃からですね、人員の確保を図っていくということも重要でございまして、先ほど専門的人材ということでお答えもさせていただきましたけれども、引き続きですね、専門的な人材の確保を含めて、体制の整備に努めてまいる所存でございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5185"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#7243.82",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "地方環境事務所の人員配置は十分か",
+          "sub_asks": [
+            "地方環境事務所の人員は自治体の減少分を補える十分な数か",
+            "職員を増やす措置を規定していないことが問題ではないか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "地方環境事務所",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "体制の整備に努めてまいる所存でございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "専門的な人材の確保を含めて、体制の整備に努めてまいる所存でございます。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "人員不足の指摘に対し、災害時の派遣対応という個別事例で回答し、根本的な人員配置の是非については努力目標に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「十分な人員配置をしているか」というYes/No形式ではなく、具体的に何名不足しているか等の数値的根拠を求める形式にすべきだった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_045",
+      "segment_index": 6,
+      "topic": "熊対策専用職員の雇用形態",
+      "question": {
+        "speaker": "梅村みずほ",
+        "party": "参政党",
+        "summary": "- 熊対策のために公募されている3年間の任期付き職員は、正規雇用か非正規雇用か",
+        "full_text": "このほか、捕獲作業などに従事する自治体職員を現在の3倍の2500人、そして捕獲用の箱罠は2倍の1万機、熊撃退スプレーは3倍の2万本に、それぞれ増やす目標を掲げていらっしゃいますが、私この中でちょっと一つ気になるのがですね、午前中にも質問あったんですけれども、熊対策専用の職員が公募されています。これが3年間の任期付き職員という制限かけられていますが、これは正規雇用なのか、非正規雇用なのか、お答えください。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "堀上局長",
+        "role": "",
+        "summary": "- 任期雇用であるが、正職員と同じ扱いである",
+        "full_text": "今お尋ねのありました熊対策の環境省の地方環境事務所で採用する職員だということだと思いますけれども、この職員につきましては、任期雇用ということで、職員と同じ扱いをしております。正職員と同じ扱いということになります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#7243.82",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "熊対策専用職員の雇用形態について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "3倍の2500人"
+            },
+            {
+              "type": "number",
+              "excerpt": "2倍の1万機"
+            },
+            {
+              "type": "number",
+              "excerpt": "3倍の2万本"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "熊対策専用の職員",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "環境省の地方環境事務所"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "この職員につきましては、任期雇用ということで、正職員と同じ扱いということになります。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "雇用形態という具体的な問いに対し、正職員扱いであるという明確な回答が得られている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_046",
+      "segment_index": 6,
+      "topic": "熊対策専用職員の任期設定",
+      "question": {
+        "speaker": "梅村みずほ",
+        "party": "参政党",
+        "summary": "- 当該職員の任期に期限がついているか",
+        "full_text": "その任期が、期限がついているということで間違いないですか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "堀上局長",
+        "role": "",
+        "summary": "- 任期付きとして3年や5年などの期限をつけて採用している",
+        "full_text": "そうですね。任期付きの中で3年とか5年とか、そういう期限をつけて採用するということにしております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#7243.82",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "任期に期限があるかの確認",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "3年とか5年とか"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "任期付きの中で3年とか5年とか、そういう期限をつけて採用するということにしております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "任期の有無という単純な事実確認であり、回答も直接的である。記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_047",
+      "segment_index": 6,
+      "topic": "地方環境事務所の局への名称変更に伴う連携方針",
+      "question": {
+        "speaker": "高良沙哉",
+        "party": "沖縄の風",
+        "summary": "- 局への名称変更後、地方自治体や他省庁の地方支分部局とどのように連携していく方針か\n- 当初地域や広域的に業務を行う場合の連携はどう考えるか",
+        "full_text": "本法案提出の背景には、現在事務所であることから都道府県知事や市町村長に面会を求めると、地方ブロック機関の長であることが認識されにくいというそういう不都合があったというふうに午前中からも聞いていますが、地方公共団体や他の地方支分部局との連携が必要な業務について、今後局になることによって、その地域の地方自治体や他省庁の地方支分部局とどのように連携していく方針なのでしょうか。また、当初地域や広域的に業務を行う場合の連携についてはどうでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "石原宏高",
+        "role": "",
+        "summary": "- 名称変更や局長職の新設による体制強化で、自治体や他省支分部局との連携調整の円滑化を期待している\n- 脱炭素や資源循環等の各分野で、広域的視点と地域に寄り添った政策を推進し連携を強化する\n- 指定管理鳥獣等に関する交付金業務を本省から移管し、自治体とのより緊密な連携体制を構築する",
+        "full_text": "はい、地方環境事務所はですね、各地域において、自治体をはじめとする地域のプレイヤーと密に連携しながら、環境政策の推進に取り組んできたところであります。本改正による事務所から局への名称変更や、局長職の新設、これと合わせた体制強化によりですね、自治体や他省の地方支分部局とのですね、連携調整等がですね、より円滑に進むことが期待されるところであります。こうした体制整備等を活用し、脱炭素、資源循環、災害廃棄物対策、国立公園管理、野生鳥獣の保護管理等のですね、各分野において、これまで以上にですね、広域的な視点に立ちつつ、当初地域も含めてですね、地域に寄り添った政策を推進してまいりたいと考えております。これによりですね、自治体や他省の地方支分部局とのですね、連携を強化してまいりたいというふうに思っています。また、事務所から局に名称変更することに伴い、事務所の所掌や職責には変更はないんですが、今後、指定管理鳥獣等に関する自治体への交付金に関する業務を本省から移管し、自治体とのより緊密な連携体制の下で対策に当たるというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5185"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#7243.82",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "局への名称変更後の地方自治体等との連携方針",
+          "sub_asks": [
+            "地方自治体や他省庁地方支分部局との連携方針",
+            "当初地域や広域的な業務を行う場合の連携方針"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "地方公共団体、他省庁の地方支分部局",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "脱炭素、資源循環、災害廃棄物対策、国立公園管理、野生鳥獣の保護管理"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "指定管理鳥獣等に関する自治体への交付金に関する業務"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 3,
+          "trigger_phrase": "指定管理鳥獣等に関する自治体への交付金に関する業務を本省から移管し",
+          "matched_pattern": "future-tense verb describing a CONCRETE government action with a named mechanism"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "指定管理鳥獣等に関する自治体への交付金に関する業務を本省から移管し、自治体とのより緊密な連携体制の下で対策に当たる",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "名称変更に伴う連携方針という抽象的な問いに対し、具体的な業務移管（指定管理鳥獣交付金）に言及しており、実効性のある回答となっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_048",
+      "segment_index": 6,
+      "topic": "地方環境局の役割と存在意義",
+      "question": {
+        "speaker": "高良沙哉",
+        "party": "沖縄の風",
+        "summary": "- 地域の特有な環境課題（米軍関連の汚染・騒音・悪臭、災害廃棄物、原発等）への対応について\n- 本法律案成立後、地方環境局としてどのような役割を担い、存在意義を発揮していくのか",
+        "full_text": "午前中からですね、地域の課題ということがやはり環境の問題では非常に大きく取り上げられてきたかなというふうに思いますが、地域にはそれぞれやはり特有の環境課題があります。例えば、世界自然遺産に登録されている沖縄の北部地域の森では、米軍がかつての訓練の際に放置した薬莢が、いまだに度々発見をされて、特有の環境問題になっています。そのほか、今、この委員会でもたびたび取り上げていますが、PFASの汚染の問題や、軍事機による騒音、また悪臭の問題、悪臭に関しては、本日も沖縄県内では報道されていますが、米軍機がエンジンをかけたまま給油を行うことによって、非常に悪臭があって、地域の住民が大変困っているという問題もございます。災害廃棄物の処理、原発に関する課題など、県域をまたぐ課題も多くあります。そこで本法律案が成立した場合、それぞれの地域の課題解決のために、地方環境局としてどのような役割を担い、存在意義をこれまで以上に発揮していきたいと考えているのでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "石原宏高",
+        "role": "",
+        "summary": "- 名称変更と体制拡充を生かし、自治体を効果的に支援する\n- 自治体、関係行政機関、事業者等の調整機能を高め、地域の環境問題解決に貢献する",
+        "full_text": "石原環境大臣、地方環境事務所は、今回の名称変更、体制拡充を生かし、自治体を効果的に支援するとともに、自治体、関係行政機関、事業者等の調整機能を高めてまいります。これにより、これまで以上に地域の環境問題の解決に貢献してまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5185"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#7243.82",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "地方環境局の役割と存在意義について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "field_case",
+              "excerpt": "沖縄の北部地域の森では、米軍がかつての訓練の際に放置した薬莢が、いまだに度々発見をされて"
+            },
+            {
+              "type": "field_case",
+              "excerpt": "PFASの汚染の問題"
+            },
+            {
+              "type": "field_case",
+              "excerpt": "軍事機による騒音"
+            },
+            {
+              "type": "field_case",
+              "excerpt": "米軍機がエンジンをかけたまま給油を行うことによって、非常に悪臭があって"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "沖縄の北部地域の住民",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "地域の環境問題の解決に貢献してまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "地方環境事務所は、今回の名称変更、体制拡充を生かし、自治体を効果的に支援するとともに、自治体、関係行政機関、事業者等の調整機能を高めてまいります。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は沖縄の具体例を挙げて地方環境局の役割を問うたが、大臣の回答は抽象的な方針表明に留まっており、実質的な情報量は少ない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "具体的な役割を問う際、「どのような具体的施策を講じるか」という形式にすれば、より具体的な回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_049",
+      "segment_index": 6,
+      "topic": "地方環境事務所の予算増額の内訳",
+      "question": {
+        "speaker": "尾辻朋実",
+        "party": "チームみらい・無所属の会",
+        "summary": "- 地方環境事務所の予算のうち、一般行政に必要な経費が約8億円増額されている中身を教示すること",
+        "full_text": "環境委員会調査室が事前に配布してくれました参考資料によりますと、地方環境事務所の予算が、昨年度の当初予算からおよそ9億6千万円増額になっており、そしてまたその中でも一般行政に必要な経費、これのみに焦点を当てましても、およそ8億円弱、昨年度よりも本年度の予算案で増額されております。これ、企業会計でいうとこの一般管理費ではないかと思いますが、この8億円の増額の中身をちょっと教えていただければありがたいです。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 常勤職員の人件費、通信運搬費、職員料費、非常勤職員の賃金などの管理的経費全般が含まれる",
+        "full_text": "ご指摘の地方環境事務所の一般行政に必要な経費の内訳といたしましては、常勤職員の人件費に加えまして、いわゆる調費、通信運搬費などでございます。それから職員料費や非常勤職員の賃金、こういったものが含まれ、事務所運営に必要な管理的経費全般を含むものとなっております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5185"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#7243.82",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "地方環境事務所の一般行政経費増額の中身",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "環境委員会調査室が事前に配布してくれました参考資料"
+            },
+            {
+              "type": "number",
+              "excerpt": "およそ9億6千万円増額"
+            },
+            {
+              "type": "number",
+              "excerpt": "およそ8億円弱"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "地方環境事務所",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "常勤職員の人件費"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "通信運搬費"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "職員料費"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "非常勤職員の賃金"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "地方環境事務所の一般行政に必要な経費の内訳といたしましては、常勤職員の人件費に加えまして、いわゆる調費、通信運搬費などでございます。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "予算増額の内訳を問うシンプルな質問に対し、項目を列挙して回答している。ただし、具体的な金額の内訳までは示されていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「8億円の増額分」の具体的な内訳（どの項目がいくら増えたか）を問う形式にすれば、より記録価値が高まった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_050",
+      "segment_index": 6,
+      "topic": "地方環境事務所の予算増額における人件費の割合",
+      "question": {
+        "speaker": "尾辻朋実",
+        "party": "チームみらい・無所属の会",
+        "summary": "- 予算増額分において、人件費に厚く配分されているという理解でよいか確認すること",
+        "full_text": "そうするとやっぱり多少人件費は分厚く当てているという理解でよろしいでしょうか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 増額分約8億円のうち、人件費が約6億円（定員増に伴う増が3億円、人事院勧告による給与引上げが3億円）である\n- その他、事務用品費・通信運搬費に約1億円、庁舎借り上げ等の管理経費に約1億円を計上している",
+        "full_text": "もう少し内訳について詳しくご説明をさせていただきますと、地方環境事務所の一般行政に必要な経費、これは約8億円弱純増ということでございますけれども、人件費が約6億円でございます。これは定員増に伴う人件費の増が約3億円。そして人事院勧告を踏まえて、既存職員の給与水準引上げ、これが約3億円、合わせて約6億円というものでございます。それから2点目に、調費と申し上げましたけれども、事務用品費ですとか、あるいは通信運搬費、これで約1億円でございます。3点目に、庁舎等の借り上げあるいは移転、その他の様々な管理経費、これらも合わせて1億円ということで、合計約8億円ということでございます。こうした形で、環境局の体制強化のために必要な経費というのを計上させていただいております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5185"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#7243.82",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "人件費に厚く予算を配分しているかの確認",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "約8億円弱純増"
+            },
+            {
+              "type": "number",
+              "excerpt": "人件費が約6億円"
+            },
+            {
+              "type": "number",
+              "excerpt": "定員増に伴う人件費の増が約3億円"
+            },
+            {
+              "type": "number",
+              "excerpt": "既存職員の給与水準引上げ、これが約3億円"
+            },
+            {
+              "type": "number",
+              "excerpt": "事務用品費ですとか、あるいは通信運搬費、これで約1億円"
+            },
+            {
+              "type": "number",
+              "excerpt": "庁舎等の借り上げあるいは移転、その他の様々な管理経費、これらも合わせて1億円"
+            }
+          ],
+          "score": 1.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "地方環境事務所の一般行政に必要な経費、これは約8億円弱純増ということでございますけれども、人件費が約6億円でございます。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "予算の内訳について非常に具体的かつ定量的な回答が得られており、記録としての価値が高い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_051",
+      "segment_index": 6,
+      "topic": "地方環境局における人材確保の方針",
+      "question": {
+        "speaker": "尾辻朋実",
+        "party": "チームみらい・無所属の会",
+        "summary": "- 自治体職員の減少や専門職・技術職の採用難がある中で、地方環境局としての今後の採用方針や目標を教示すること",
+        "full_text": "やっぱりお金と人というのはセットで必要なものでございますので、そういう観点から次の質問もするんですけれども、自治体の職員の皆さんの働く環境というのは、非常に心配なスパイラルに入ってしまっていると思います。限られた人員の中でこれまでのサービスを守るためには、やはりものすごく頑張らなければいけない。そうすると仕事が大変になり、そうすると募集をかけても、それに応じてくださる方が減ってしまう。なお一層人手が足りなくなっていくという、こういう状況でございまして。特に深刻なのが専門職と技術職であります。地方自治体でも採用がなかなか難しい中で、今後、せっかく地方環境局になるということで、今後の採用方針、目標などあれば教えていただければと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 本省で採用したプロパー職員の配置替えや、地方採用でのプロパー職員採用を開始している\n- 専門性の高い人材をターゲットとした任期付き職員の採用を行い、人材確保に努める",
+        "full_text": "私ども、そういった意味で専門的な職員につきまして、本省で採用したプロパー職員を現地の方に配置替えをするとか、それからここ2年ほど行っておりますが、地方環境事務所においても地方採用でプロパー職員の採用を始めてございます。また、任期付き職員、これは特に専門性の高い方をターゲットにやっておりますけれども、こういったことで、地域に根ざした環境保全のための人材の確保に、今後とも努めてまいっていく所存でございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5185"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#7243.82",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "地方環境局の今後の採用方針・目標について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自治体の職員（特に専門職と技術職）",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "本省で採用したプロパー職員"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "地方環境事務所"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "任期付き職員"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "人材の確保に、今後とも努めてまいっていく所存でございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "地方環境事務所においても地方採用でプロパー職員の採用を始めてございます。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "地方環境局の採用方針について具体的に回答しているが、今後の目標数値などの定量的な言及はなく、コミットメントレベルは低い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "具体的な採用目標数や期限を問う形式にすれば、より拘束力のある回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_052",
+      "segment_index": 6,
+      "topic": "名称変更に伴う所掌・職責の変更と体制強化の両立",
+      "question": {
+        "speaker": "尾辻朋実",
+        "party": "チームみらい・無所属の会",
+        "summary": "- 事務所から局への名称変更で所掌や職責に変更がないとする一方で、体制を強化し「看板だけではない」とする点について補足説明を求めること",
+        "full_text": "それで実は先ほど聞いておって、やっぱりこれは分からないと思ったので、また改めて基本的なことをお尋ねをしたいんですが、大臣からも、事務所から局への名称変更に伴って所掌や職責に変更はないということを、先ほど別の委員のご質問に対してご答弁ありましたけれども、そしてまた職務権限を変更等することなく名称変更のみのためというような説明ぶりもあるので、その通りなんだろうと思うんです。一方でやはり体制は強化したい、せっかく名前を変えたのだから看板だけではないという議論も県中から繰り返されているので、そこのところを、すみません、分かりやすくちょっと補足説明いただけませんでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "石原宏高",
+        "role": "",
+        "summary": "- 法的に所掌や職責が直接変更されるわけではない\n- しかし、名称変更を機に体制や予算の充実強化を図ることが本質である",
+        "full_text": "石原宏高大臣、先ほどからご指摘いただいておりますけれども、局への名称変更に伴いまして、法的にですね、所掌や職責が変更されるというもので直接的にはございません。ただし、ここでもずっとご議論いただいておりますとおりですね、ただ単に名前を変えるということではなくて、やはりこれを機にですね、より一層の体制なり、それを裏打ちする予算なりの充実強化を図っていくということが、ある種本質であります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5185"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#7243.82",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "名称変更に伴う体制強化の具体的内容",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "past_answer",
+              "excerpt": "大臣からも、事務所から局への名称変更に伴って所掌や職責に変更はないということを、先ほど別の委員のご質問に対してご答弁ありました"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "県",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.6
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "充実強化を図っていくということが、ある種本質であります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "局への名称変更に伴いまして、法的にですね、所掌や職責が変更されるというもので直接的にはございません。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "名称変更による法的権限の不変性と、実質的な体制強化の意向を大臣が述べたやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "体制強化の「具体的にどのような手段で」行うのかを問う形式にすれば、より実効性のある答弁が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_053",
+      "segment_index": 6,
+      "topic": "政令職としての次長の役割と資料記載について",
+      "question": {
+        "speaker": "梅村みずほ",
+        "party": "参政党",
+        "summary": "- 訓令で既に設置されていた次長について、法案資料に記載しなかった理由を問うこと\n- 新たに政令職として置かれる次長の業務や役割がどう変わるか説明を求めること",
+        "full_text": "ですから、ちょっと次長のところで少し視点を変えて、幹部職員として次長を置くことができると、地方局の内部組織を現行の環境省令から政令で定めるものに変更するとあります。次長につきましては、すでに訓令によって設置をされています。一方で法案の説明資料には、既に置かれている役職の根拠を変更するというその内容の記載がなく、現状とそこからどのように変わるかというのが分かりにくくなっています。資料に訓令について記載しなかった理由を御説明願います。また、新たに幹部職員として置かれる次長の業務、役割がどう変わるかについても御説明をいただきたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 従来の訓令職は所内内部管理目的であったため資料に記載しなかった\n- 新たな政令職の次長は、局長を助け、対外的に自治体や関係機関との調整・関係構築を行い、政策調整力を向上させる役割を担う",
+        "full_text": "地方環境事務所における所内の内部管理のために、これは訓令という形ではございますが、次長というのを設けさせていただいておりました。今回新設する政令職としての次長につきましては、局長を助け、局の事務を整理するものとして、対外的にも対応していくといったような役割を担っていただこうと思っております。このため、所内の内部管理にとどまらず、地方環境局を代表して、自治体や関係行政機関、関係団体、それから関係事業者等の実務責任者との調整や関係構築を行うことによりまして、地方環境局の政策調整力の向上を期待するというものでございます。法案資料において、訓令職の次長を記載しなかったというのは、訓令であるということと、あと、所内の内部管理のために設置したというその性質上、そこまでの記載はさせていただいておりませんでした。いずれにいたしましても、政令職としての次長の対外調整の機能を使って、地方環境事務所の政策調整力を高めてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5185"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#7243.82",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "次長の根拠変更の記載漏れ理由と役割の変化について",
+          "sub_asks": [
+            "資料に訓令について記載しなかった理由",
+            "新たに置かれる次長の業務・役割がどう変わるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "現行の環境省令"
+            },
+            {
+              "type": "other",
+              "excerpt": "法案の説明資料"
+            },
+            {
+              "type": "other",
+              "excerpt": "訓令"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "次長",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "地方環境事務所"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "政令職としての次長"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "政策調整力を高めてまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "政令職としての次長につきましては、局長を助け、局の事務を整理するものとして、対外的にも対応していくといったような役割を担っていただこうと思っております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "訓令から政令への根拠変更に伴う役割の変化（内部管理から対外調整へ）が明確に回答されており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_054",
+      "segment_index": 6,
+      "topic": "災害廃棄物処理対策における自治体支援",
+      "question": {
+        "speaker": "梅村みずほ",
+        "party": "参政党",
+        "summary": "- 市町村の研修訓練実施率が目標値を大きく下回っている現状を踏まえ、目標実現に向けた具体的なサポート策を問うこと",
+        "full_text": "次に災害廃棄物処理についてということで、強化されることの一つに災害廃棄物処理対策が挙げられています。各地方環境事務所では廃棄物処理対策について自治体の支援を行っているというふうに聞いております。これに関連しまして、近畿地方環境事務所では令和8年に行った調査がございます。これは災害廃棄物対策の実効性を確保するために、災害廃棄物処理に関する調査を行ったり研修会を開催して関係者の対応能力の向上に資するもの、こういったことを目的にした調査です。この調査結果の一例をご紹介しますと、災害廃棄物処理に関する研修訓練を定期的に実施する市町村の割合が、目標値60%に対しまして、近畿全体では21%という低い値となっています。市町村も予算、費用と時間が限られる中、精一杯対応していると思いますが、目標値には至らない現実がございます。しっかり自治体の事情を聞いていただきまして、目標実現に向けたサポートをお願いしたいというふうに思いますが、どういったことが考えられるかお聞かせください。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "住倉局長",
+        "role": "",
+        "summary": "- マンパワー不足やノウハウ不足が背景にあることを認識しており、しっかりとサポートしてまいりたい",
+        "full_text": "ただいまご指摘いただきましたとおり、災害廃棄物処理に関する研修訓練を定期的に実施する市町村の割合でございますが、令和6年度末時点で全国では約24%、近畿ブロックでは約21%となってございます。この背景といたしましては、マンパワー不足や研修訓練を実施するためのノウハウがないといった理由を伺っているところです。しっかりとサポートしてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#7243.82",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "災害廃棄物処理の目標達成に向けた支援策",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "近畿地方環境事務所"
+            },
+            {
+              "type": "date",
+              "excerpt": "令和8年"
+            },
+            {
+              "type": "number",
+              "excerpt": "目標値60%に対しまして、近畿全体では21%"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "市町村",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "全国では約24%"
+            },
+            {
+              "type": "number",
+              "excerpt": "近畿ブロックでは約21%"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "令和6年度末時点"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "しっかりとサポートしてまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "災害廃棄物処理に関する研修訓練を定期的に実施する市町村の割合でございますが、令和6年度末時点で全国では約24%、近畿ブロックでは約21%となってございます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "現状の数値（全国・近畿）を明確にした点は価値があるが、具体的な支援策の提示はなく、精神的な意欲表明に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どういったことが考えられるか」というオープンクエスチョンであるため、政府側が具体策を提示せず抽象的な回答で逃げることが可能になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_055",
+      "segment_index": 6,
+      "topic": "アクティブレンジャーの配置人数",
+      "question": {
+        "speaker": "梅村みずほ",
+        "party": "参政党",
+        "summary": "- 各地の国立公園管理事務所や自然保護事務所に、アクティブレンジャーがそれぞれ何名程度配置されているか教示すること",
+        "full_text": "6番目のアクティブレンジャーの規模についてお伺いいたします。レンジャーについて大臣からもご答弁がありましたが、私からは地元和歌山県に、奈良、三重と三県にまたがるですね、吉野熊野国立公園がございまして、今年は国立公園として90周年というそんな節目を迎えております。この長い間皆様から愛され守られてきた90周年、これらに関しまして地方環境事務所が所管しているアクティブレンジャーの募集と業務についてをお伺いしたいというふうに思います。各地の国立公園においてレンジャー、全体の人数、各国立公園管理事務所や自然保護事務所にそれぞれ何名程度配置されているのか伺いたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "堀上局長",
+        "role": "",
+        "summary": "- 令和8年度の総数は132名であり、現場事務所ごとに1名から3名程度配置されている",
+        "full_text": "令和8年度で全体の総数が132名で、国立公園管理事務所等の現場事務所それぞれに1名から3名程度配置されているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#7243.82",
+      "metrics": null
+    },
+    {
+      "id": "qa_056",
+      "segment_index": 6,
+      "topic": "アクティブレンジャーの待遇改善",
+      "question": {
+        "speaker": "梅村みずほ",
+        "party": "参政党",
+        "summary": "- 業務内容が多岐にわたり多忙である一方、非常勤・日給制・短期間の雇用であるため、待遇が見合っていないのではないか。雇用安定性や給与面の改善を検討しているか問うこと",
+        "full_text": "この雇用についてですが、アクティブレンジャーの業務について、公園内の巡視や外来種対策の実施、補助、ホームページ、SNS等を通じた情報発信と、その内容は多岐にわたるほか、勤務日、勤務時間も基本的には月曜日から金曜日のフルタイムとなっており、仕事の幅や量は一般的な常勤の公務員と比較しても決して楽ではないものというふうに思います。が、立場としては先ほど申し上げたとおり、非常勤で日給制、雇用期間は2年程度となっており、多様かつ多忙な業務に対してその立場や待遇は見合っていないのではないかと思うんですが、環境省として適当だとお考えなのか、雇用の安定性や給与の面で条件の改善を検討していませんでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "堀上局長",
+        "role": "",
+        "summary": "- 人事院通知を踏まえ、類似職務の常勤職員の俸給に留意し決定している\n- 適性のある人材の継続任用が可能であり、直近では看護・介護休暇を有給化するなどの措置を行っている\n- 引き続き意欲的に取り組めるよう改善に努める",
+        "full_text": "アクティブレンジャーの待遇につきましては、人事院通知などを踏まえまして、類似する職務に従事する常勤職員の俸給月額に留意しながら、職務内容や必要となる知識、技術、職務経験などを考慮して決定をしているところでございます。また、任期につきましては、原則として単年度の雇用になりますけれども、高い適性を有する人材の継続した任用も可能になってございます。雇用条件の改善につきましても、直近で今年4月ですけれども、特別休暇関係の見直しを行いまして、看護等休暇、あるいは短期介護休暇などを有給にする、そういった措置も行っているところでございます。アクティブレンジャー、自然保護官補佐には、志や専門性が高い職員も多く、国立公園等のパトロール、自然の解説など、様々な場面で活躍いただいていると認識しております。その待遇については、休暇取得等の規定を見直すなど、改善に努めているところでありますが、引き続き、アクティブレンジャーがそれぞれの国立公園の現場において、意欲を持って業務に取り組んでもらえるように努めてまいりたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9010#7243.82",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "アクティブレンジャーの待遇・雇用条件の改善について",
+          "sub_asks": [
+            "現状の待遇が適当だと考えているか",
+            "雇用安定性や給与面の改善を検討しているか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "アクティブレンジャー",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "人事院通知"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "今年4月"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "看護等休暇、あるいは短期介護休暇"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "意欲を持って業務に取り組んでもらえるように努めてまいりたいと思います",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "今年4月ですけれども、特別休暇関係の見直しを行いまして、看護等休暇、あるいは短期介護休暇などを有給にする、そういった措置も行っている",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "待遇改善の具体例（休暇の有給化）が示された点は有益だが、給与や雇用期間という核心的な問いへの回答は概論に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「適当だと考えているか」という主観的な問いよりも、具体的な給与水準の根拠や改善のロードマップを問う形式にすれば、より拘束力のある回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    }
+  ],
+  "score_schema_version": "2.0",
+  "prompt_version": "V4"
+}
