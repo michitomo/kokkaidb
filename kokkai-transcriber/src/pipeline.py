@@ -233,13 +233,55 @@ def run_pipeline(
         raw_transcript.corrected,
     )
 
-    # バリデーション: 文字起こし結果が極端に少ないセッションは異常
+    # バリデーション: 文字起こし結果が極端に少ないセッションは Step 5-6 をスキップして
+    # metadata + raw_transcript のみ「議事録」として残す。
+    # 党首討論 (国家基本政策委員会) のように衆議院TV が委員長 1 名しか
+    # speaker として掲載しない & 該当 time= 区間が無音だったケースで発生する。
     total_chars = sum(len(s.text) for s in raw_transcript.segments)
     if total_chars < 100:
-        raise RuntimeError(
-            f"Transcript too short ({total_chars} chars). "
-            f"Audio extraction or Whisper may have failed."
+        logger.warning(
+            "Transcript too short (%d chars); skipping Steps 5-6 and writing empty "
+            "downstream files. Audio extraction or Whisper may have produced little "
+            "content for this session.",
+            total_chars,
         )
+        (output_dir / "utterances.json").write_text(
+            UtterancesOutput(segments=[]).model_dump_json(indent=2, ensure_ascii=False),
+            encoding="utf-8",
+        )
+        (output_dir / "qa_pairs.json").write_text(
+            QAPairsOutput(pairs=[]).model_dump_json(indent=2, ensure_ascii=False),
+            encoding="utf-8",
+        )
+        (output_dir / "summary.json").write_text(
+            SummaryOutput(
+                session_summary="",
+                key_topics=[],
+                key_commitments=[],
+                related_laws=[],
+            ).model_dump_json(indent=2, ensure_ascii=False),
+            encoding="utf-8",
+        )
+        (output_dir / "topics.json").write_text(
+            TopicsOutput(topics=[]).model_dump_json(indent=2, ensure_ascii=False),
+            encoding="utf-8",
+        )
+        logger.info(
+            "=== Pipeline complete (short-transcript path). Output: %s ===", output_dir
+        )
+        if not no_push:
+            logger.info("=== Publishing: git commit + push ===")
+            try:
+                publish_session(
+                    output_dir=output_dir,
+                    chamber=chamber,
+                    session_id=session_id,
+                    date=session_detail.date,
+                    committee=session_detail.committee,
+                )
+            except Exception as e:
+                logger.warning("Publish failed (non-fatal): %s", e)
+        return
 
     # Step 5: LLM 話者タグ付け
     logger.info("=== Step 5: Tagging speakers with LLM ===")
