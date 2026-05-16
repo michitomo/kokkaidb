@@ -26,6 +26,8 @@ import tempfile
 from datetime import date as date_type
 from pathlib import Path
 
+from pydantic import BaseModel
+
 try:
     from dotenv import load_dotenv
     load_dotenv()
@@ -238,49 +240,29 @@ def run_pipeline(
     # 党首討論 (国家基本政策委員会) のように衆議院TV が委員長 1 名しか
     # speaker として掲載しない & 該当 time= 区間が無音だったケースで発生する。
     total_chars = sum(len(s.text) for s in raw_transcript.segments)
-    if total_chars < 100:
+    if total_chars < MIN_TRANSCRIPT_CHARS:
         logger.warning(
             "Transcript too short (%d chars); skipping Steps 5-6 and writing empty "
             "downstream files. Audio extraction or Whisper may have produced little "
             "content for this session.",
             total_chars,
         )
-        (output_dir / "utterances.json").write_text(
-            UtterancesOutput(segments=[]).model_dump_json(indent=2, ensure_ascii=False),
-            encoding="utf-8",
-        )
-        (output_dir / "qa_pairs.json").write_text(
-            QAPairsOutput(pairs=[]).model_dump_json(indent=2, ensure_ascii=False),
-            encoding="utf-8",
-        )
-        (output_dir / "summary.json").write_text(
+        _write_model(output_dir / "utterances.json", UtterancesOutput(segments=[]))
+        _write_model(output_dir / "qa_pairs.json", QAPairsOutput(pairs=[]))
+        _write_model(
+            output_dir / "summary.json",
             SummaryOutput(
                 session_summary="",
                 key_topics=[],
                 key_commitments=[],
                 related_laws=[],
-            ).model_dump_json(indent=2, ensure_ascii=False),
-            encoding="utf-8",
+            ),
         )
-        (output_dir / "topics.json").write_text(
-            TopicsOutput(topics=[]).model_dump_json(indent=2, ensure_ascii=False),
-            encoding="utf-8",
-        )
+        _write_model(output_dir / "topics.json", TopicsOutput(topics=[]))
         logger.info(
             "=== Pipeline complete (short-transcript path). Output: %s ===", output_dir
         )
-        if not no_push:
-            logger.info("=== Publishing: git commit + push ===")
-            try:
-                publish_session(
-                    output_dir=output_dir,
-                    chamber=chamber,
-                    session_id=session_id,
-                    date=session_detail.date,
-                    committee=session_detail.committee,
-                )
-            except Exception as e:
-                logger.warning("Publish failed (non-fatal): %s", e)
+        _publish_or_log(no_push, output_dir, chamber, session_id, session_detail)
         return
 
     # Step 5: LLM 話者タグ付け
@@ -337,19 +319,43 @@ def run_pipeline(
         size = f.stat().st_size
         logger.info("  %s (%d bytes)", f.name, size)
 
-    # git push
-    if not no_push:
-        logger.info("=== Publishing: git commit + push ===")
-        try:
-            publish_session(
-                output_dir=output_dir,
-                chamber=chamber,
-                session_id=session_id,
-                date=session_detail.date,
-                committee=session_detail.committee,
-            )
-        except Exception as e:
-            logger.warning("Publish failed (non-fatal): %s", e)
+    _publish_or_log(no_push, output_dir, chamber, session_id, session_detail)
+
+
+# Step 4.5 後の transcript validation 閾値。これ未満は Step 5-6 をスキップして
+# metadata + raw_transcript のみ「議事録」として保存する (党首討論ケース等)。
+MIN_TRANSCRIPT_CHARS = 100
+
+
+def _write_model(path: Path, model: BaseModel) -> None:
+    """Pydantic モデルを indent=2 / 日本語そのままで JSON 出力する。"""
+    path.write_text(
+        model.model_dump_json(indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+
+
+def _publish_or_log(
+    no_push: bool,
+    output_dir: Path,
+    chamber: str,
+    session_id: str,
+    session_detail: SessionDetail,
+) -> None:
+    """`--no-push` でなければ publish_session を呼ぶ。失敗は non-fatal の warning。"""
+    if no_push:
+        return
+    logger.info("=== Publishing: git commit + push ===")
+    try:
+        publish_session(
+            output_dir=output_dir,
+            chamber=chamber,
+            session_id=session_id,
+            date=session_detail.date,
+            committee=session_detail.committee,
+        )
+    except Exception as e:
+        logger.warning("Publish failed (non-fatal): %s", e)
 
 
 _FLOOR_LIKE_KINDS = frozenset(("floor_speech", "procedural"))

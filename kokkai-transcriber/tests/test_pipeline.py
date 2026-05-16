@@ -414,6 +414,9 @@ class TestRunPipeline:
             (output_dir / "summary.json").read_text(encoding="utf-8")
         )
         assert summary.session_summary == ""
+        assert summary.key_topics == []
+        assert summary.key_commitments == []
+        assert summary.related_laws == []
         topics = TopicsOutput.model_validate_json(
             (output_dir / "topics.json").read_text(encoding="utf-8")
         )
