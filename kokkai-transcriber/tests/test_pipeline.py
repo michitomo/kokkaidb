@@ -341,6 +341,88 @@ class TestRunPipeline:
             mock_publish.assert_not_called()
 
 
+    def test_short_transcript_skips_steps_5_6_without_raising(
+        self,
+        tmp_path: Path,
+        mock_session_detail: SessionDetail,
+    ) -> None:
+        """文字起こしが極端に短い場合に raise せず、metadata + raw_transcript を
+        保存し、utterances/qa_pairs/summary/topics は空ファイルで保存されること。
+        党首討論 (委員長 1 名のみ & 無音区間) ケース対応。
+        """
+        short_transcript = RawTranscript(
+            session_id="56149",
+            segments=[
+                SegmentTranscript(
+                    segment_index=0,
+                    speaker_name="柴山昌彦",
+                    start_seconds=472.9,
+                    text="お答えします。",  # < 100 chars
+                    whisper_segments=[
+                        WhisperSegment(
+                            id=0, seek=0, start=472.9, end=475.0,
+                            text="お答えします。",
+                        )
+                    ],
+                )
+            ],
+        )
+        output_dir = tmp_path / "output"
+
+        scrape_patch = patch(
+            "src.pipeline.ShugiinScraper.get_session_detail",
+            return_value=mock_session_detail,
+        )
+        with (
+            scrape_patch,
+            patch("src.pipeline.download_full_audio"),
+            patch("src.pipeline.detect_leading_silence", return_value=0.0),
+            patch("src.pipeline.split_segments", return_value=[tmp_path / "seg_000.wav"]),
+            patch("src.pipeline.transcribe_all_segments", return_value=short_transcript),
+            patch("src.pipeline.correct_transcript", return_value=short_transcript),
+            patch("src.pipeline.tag_all_segments") as mock_tag,
+            patch("src.pipeline._run_step6") as mock_step6,
+            patch("src.pipeline.publish_session"),
+        ):
+            run_pipeline("shugiin", "56149", output_dir, no_push=True)
+            mock_tag.assert_not_called()
+            mock_step6.assert_not_called()
+
+        # 全 6 ファイル生成 + raw_transcript には実データ + downstream は空
+        file_names = {f.name for f in output_dir.glob("*.json")}
+        assert file_names == {
+            "metadata.json",
+            "raw_transcript.json",
+            "utterances.json",
+            "qa_pairs.json",
+            "summary.json",
+            "topics.json",
+        }
+        raw = RawTranscript.model_validate_json(
+            (output_dir / "raw_transcript.json").read_text(encoding="utf-8")
+        )
+        assert raw.segments[0].text == "お答えします。"
+        utt = UtterancesOutput.model_validate_json(
+            (output_dir / "utterances.json").read_text(encoding="utf-8")
+        )
+        assert utt.segments == []
+        qa = QAPairsOutput.model_validate_json(
+            (output_dir / "qa_pairs.json").read_text(encoding="utf-8")
+        )
+        assert qa.pairs == []
+        summary = SummaryOutput.model_validate_json(
+            (output_dir / "summary.json").read_text(encoding="utf-8")
+        )
+        assert summary.session_summary == ""
+        assert summary.key_topics == []
+        assert summary.key_commitments == []
+        assert summary.related_laws == []
+        topics = TopicsOutput.model_validate_json(
+            (output_dir / "topics.json").read_text(encoding="utf-8")
+        )
+        assert topics.topics == []
+
+
 class TestGetScraper:
     def test_shugiin_scraper(self) -> None:
         scraper = _get_scraper("shugiin")
