@@ -11,8 +11,21 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from src.models import RawTranscript, SegmentTranscript, SpeakerInfo, Utterance, UtterancesOutput
-from src.speaker_tagger import _build_video_url, _split_sentences, tag_speakers, tag_all_segments
+from src.models import (
+    RawTranscript,
+    SegmentTranscript,
+    SegmentUtterances,
+    SpeakerInfo,
+    Utterance,
+    UtterancesOutput,
+)
+from src.speaker_tagger import (
+    _build_video_url,
+    _merge_overflow_into_previous,
+    _split_sentences,
+    tag_all_segments,
+    tag_speakers,
+)
 
 
 @pytest.fixture
@@ -283,6 +296,137 @@ class TestBuildVideoUrl:
     def test_unknown_chamber_returns_empty(self) -> None:
         url = _build_video_url("unknown", "123", 0.0)
         assert url == ""
+
+
+def _make_seg(idx: int, speaker: str, utts: list[tuple[str, str, str]]) -> SegmentUtterances:
+    """テスト用ヘルパー: (role, speaker, text) のリストから SegmentUtterances を作る。"""
+    return SegmentUtterances(
+        segment_index=idx,
+        segment_speaker=speaker,
+        segment_affiliation="",
+        start_seconds=float(idx * 1000),
+        video_url=f"https://example.com/?t={idx * 1000}",
+        utterances=[Utterance(role=r, speaker=s, text=t) for r, s, t in utts],
+    )
+
+
+class TestMergeOverflowIntoPrevious:
+    """衆議院TV 公開 `time=` の前倒し起因の文中切れを境界補正する後処理のテスト。"""
+
+    def test_merges_overflow_question_with_speaker_correction(self) -> None:
+        """56248 型: 前 seg が文中で終わり、次 seg の先頭 utterance が
+        前話者の質問続きを誤った speaker 名で tag されている。"""
+        prev = _make_seg(2, "古川あおい", [
+            ("質疑者", "古川あおい", "ICT等のテクノロジーを導入して、"),
+        ])
+        curr = _make_seg(3, "梅村聡", [
+            # 古川の続き、誤 tag された先頭
+            ("質疑者", "梅村聡", "生産性を向上させることが不可欠だと考えます。"),
+            ("委員長", "大串正樹", "老健局長。"),
+            ("政府参考人", "黒田", "お答え申し上げます..."),
+            ("委員長", "大串正樹", "古川あおい君。"),
+            ("質疑者", "古川あおい", "ありがとうございます..."),
+            ("委員長", "大串正樹", "次に梅村聡君。"),  # ← ここで梅村が初登場
+            ("質疑者", "梅村聡", "日本維新の会の梅村聡です..."),
+        ])
+
+        _merge_overflow_into_previous([prev, curr])
+
+        # u[0..4] が prev にマージされる
+        assert len(prev.utterances) == 1 + 5
+        # 誤 tag されていた先頭 utterance は前 seg の speaker (古川あおい) に修正される
+        moved_head = prev.utterances[1]
+        assert moved_head.speaker == "古川あおい"
+        assert moved_head.role == "質疑者"
+        assert "生産性を向上" in moved_head.text
+        # その他の utterance の speaker/role は維持される
+        assert prev.utterances[2].role == "委員長"
+        assert prev.utterances[3].speaker == "黒田"
+        assert prev.utterances[5].speaker == "古川あおい"
+
+        # curr は委員長指名行から始まる
+        assert len(curr.utterances) == 2
+        assert curr.utterances[0].role == "委員長"
+        assert "次に梅村聡君" in curr.utterances[0].text
+        assert curr.utterances[1].speaker == "梅村聡"
+
+    def test_skips_when_prev_ends_with_sentence_punct(self) -> None:
+        """前 seg が句点で綺麗に終わっていれば何もしない。"""
+        prev = _make_seg(0, "A", [("質疑者", "A", "質問は以上です。")])
+        curr = _make_seg(1, "B", [
+            ("質疑者", "B", "おはようございます。"),
+            ("委員長", "X", "次にB君。"),
+        ])
+        before_prev = len(prev.utterances)
+        before_curr = len(curr.utterances)
+        _merge_overflow_into_previous([prev, curr])
+        assert len(prev.utterances) == before_prev
+        assert len(curr.utterances) == before_curr
+
+    def test_skips_when_no_chair_nomination_of_current_speaker(self) -> None:
+        """現 seg 内に current segment_speaker を指名する委員長行が無ければ
+        過剰マージを避けるため何もしない。"""
+        prev = _make_seg(0, "A", [("質疑者", "A", "途中で切れる")])
+        curr = _make_seg(1, "B", [
+            ("質疑者", "B", "Bさんの発言"),
+            ("委員長", "X", "別の人を呼ぶ"),  # B を指名していない
+        ])
+        before_curr = len(curr.utterances)
+        _merge_overflow_into_previous([prev, curr])
+        assert len(curr.utterances) == before_curr
+
+    def test_skips_when_first_utterance_is_chair(self) -> None:
+        """現 seg の先頭が委員長行なら overflow とみなさない (nominate_idx == 0)。"""
+        prev = _make_seg(0, "A", [("質疑者", "A", "途中で切れる")])
+        curr = _make_seg(1, "B", [
+            ("委員長", "X", "次にB君。"),
+            ("質疑者", "B", "Bさんの発言"),
+        ])
+        before_curr = len(curr.utterances)
+        _merge_overflow_into_previous([prev, curr])
+        assert len(curr.utterances) == before_curr
+
+    def test_merges_answer_continuation_without_speaker_correction(self) -> None:
+        """先頭 utterance が 答弁者 (== current segment_speaker ではない) のケースでは
+        speaker 修正は行わず、utterances のみマージする。"""
+        prev = _make_seg(0, "大森江里子", [("質疑者", "大森江里子", "質問の途中で切れる")])
+        curr = _make_seg(1, "犬飼明佳", [
+            ("答弁者", "松本尚", "答弁の続きです..."),
+            ("委員長", "丹羽秀樹", "次に犬飼明佳君。"),
+            ("質疑者", "犬飼明佳", "犬飼の発言"),
+        ])
+        _merge_overflow_into_previous([prev, curr])
+        assert len(prev.utterances) == 2
+        # 答弁者 utterance はそのまま (speaker 修正なし)
+        assert prev.utterances[1].speaker == "松本尚"
+        assert prev.utterances[1].role == "答弁者"
+        assert len(curr.utterances) == 2
+
+    def test_speaker_key_matches_by_family_name_prefix(self) -> None:
+        """委員長指名行で苗字のみ (短縮形) のときも先頭3字で部分一致する。"""
+        prev = _make_seg(0, "A", [("質疑者", "A", "途中で切れる")])
+        curr = _make_seg(1, "近藤雅彦", [
+            ("答弁者", "尾形", "答弁..."),
+            ("委員長", "武村", "武村委員長。次に近藤雅彦君。近藤君。"),
+            ("質疑者", "近藤雅彦", "近藤の発言"),
+        ])
+        _merge_overflow_into_previous([prev, curr])
+        assert len(prev.utterances) == 2
+        assert prev.utterances[1].speaker == "尾形"
+        assert len(curr.utterances) == 2
+
+    def test_empty_segments_handled_gracefully(self) -> None:
+        """空の segment があっても落ちない。"""
+        prev = _make_seg(0, "A", [])
+        curr = _make_seg(1, "B", [("質疑者", "B", "test")])
+        _merge_overflow_into_previous([prev, curr])
+        # no-op
+
+    def test_single_segment_no_crash(self) -> None:
+        """segment が 1 つだけでも落ちない。"""
+        seg = _make_seg(0, "A", [("質疑者", "A", "途中で切れる")])
+        _merge_overflow_into_previous([seg])
+        assert len(seg.utterances) == 1
 
 
 @pytest.mark.integration

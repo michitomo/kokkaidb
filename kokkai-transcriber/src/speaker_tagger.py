@@ -255,4 +255,71 @@ def tag_all_segments(
             results.append(future.result())
 
     results.sort(key=lambda s: s.segment_index)
+    _merge_overflow_into_previous(results)
     return UtterancesOutput(segments=results)
+
+
+# セグメント境界 mid-sentence overflow を補正する終端句点集合
+_SENTENCE_END_PUNCT = "。．.!?！？"
+
+
+def _merge_overflow_into_previous(segments: list[SegmentUtterances]) -> None:
+    """衆議院TV/参議院TV 公開の `time=` が実際の話者交代より早く打たれている問題に対応する後処理。
+
+    各セグメントの冒頭が「前話者の発言の途中から」始まっているケースを検出し、
+    現セグメント内で当該セグメントの主発言者を初めて指名する委員長行より前の
+    utterances を前セグメントへ移動する。
+
+    検出条件 (どちらも満たすこと):
+      1. 前セグメントの最終 utterance が句点 `。．.!?！？` で終わっていない
+      2. 現セグメント内に segment_speaker の苗字（先頭2-3字）を含む 委員長 role の
+         utterance が存在する
+
+    マージ内容:
+      - 委員長指名行より前の utterances を前セグメントの末尾に追加
+      - 先頭 utterance が `role=質疑者` かつ `speaker == 現セグメント主発言者名` の
+        場合は、LLM が main_speaker 名をデフォルトで埋めた誤帰属とみなして
+        前セグメントの主発言者名に修正する
+    """
+    for i in range(1, len(segments)):
+        prev = segments[i - 1]
+        curr = segments[i]
+        if not prev.utterances or not curr.utterances:
+            continue
+
+        prev_tail = prev.utterances[-1].text.rstrip()
+        if not prev_tail or prev_tail[-1] in _SENTENCE_END_PUNCT:
+            continue
+
+        speaker = curr.segment_speaker
+        if not speaker:
+            continue
+        speaker_key = speaker[:3] if len(speaker) >= 3 else speaker
+
+        nominate_idx: int | None = None
+        for j, u in enumerate(curr.utterances):
+            if u.role != "委員長":
+                continue
+            if speaker_key in u.text:
+                nominate_idx = j
+                break
+
+        if nominate_idx is None or nominate_idx == 0:
+            continue
+
+        overflow = curr.utterances[:nominate_idx]
+        # 先頭 utterance が 質疑者 として現セグメント主発言者名で tag されていれば、
+        # 前セグメントの主発言者名に修正する (LLM のデフォルト埋めによる誤帰属)
+        if overflow and overflow[0].role == "質疑者" and overflow[0].speaker == speaker:
+            overflow[0].speaker = prev.segment_speaker
+
+        prev.utterances.extend(overflow)
+        curr.utterances = curr.utterances[nominate_idx:]
+        logger.info(
+            "Merged %d overflow utterance(s) from seg %d (%s) into seg %d (%s)",
+            len(overflow),
+            curr.segment_index,
+            curr.segment_speaker,
+            prev.segment_index,
+            prev.segment_speaker,
+        )
