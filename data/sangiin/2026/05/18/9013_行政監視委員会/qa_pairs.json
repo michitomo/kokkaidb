@@ -1,0 +1,3433 @@
+{
+  "pairs": [
+    {
+      "id": "qa_001",
+      "segment_index": 2,
+      "topic": "養護・経費老人ホームの措置費および施設整備補助の改善",
+      "question": {
+        "speaker": "上月良祐",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 三位一体の改革以降、養護・経費老人ホームの措置費や補助金が適切に改定されておらず、物価高騰の中で運営や賃上げが困難な状況にある\n- 消費税転嫁の不徹底や、建て替え補助の一般財源化による不足などの実態がある\n- 総務省としてどのように対応するのか、大臣の見解を問う",
+        "full_text": "養護老人ホームというのは、その重要性はあまり分かっている人は少ないんだろうと思います。どんどん壊れている。これ、総務省としてどのように対応していかれるのか、大臣の御見解をお聞きしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "林芳正",
+        "role": "総務大臣",
+        "summary": "- 地方財源での対応を前提に地方交付税措置などを講じてきた\n- 交付税単価の増額や、自治体への適切な改定要請を行っている\n- 厚生労働省と連携し、都道府県が単価改定のモデルを示す事業を実施し、横展開を図る",
+        "full_text": "林芳正（総務大臣）今委員から御指摘がございましたように、この養護・経費老人ホームに係る国庫補助負担金、三位一体の改革におきまして、地方6団体からの提案を踏まえて、国から地方へ税源移譲を前提に、これらを廃止して地方財源で対応すべきと、こういうふうになったわけでございます。養護老人ホーム、今お話があったように、居宅での生活が困難な高齢者に対する受け皿として重要な役割を果たすと、そういうふうに認識をしておりますので、引き続き適切に対応してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#2520.67",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "養護老人ホームの現状への対応策",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "養護老人ホーム",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "三位一体の改革"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国庫補助負担金"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "引き続き適切に対応してまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "居宅での生活が困難な高齢者に対する受け皿として重要な役割を果たすと、そういうふうに認識をしております",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "養護老人ホームの重要性への認識と、三位一体の改革による財源移譲の経緯が述べられているが、具体的な今後のアクションは提示されていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのように対応していくか」という問いが抽象的なため、大臣が一般論や過去の経緯を述べるだけで完結してしまっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_002",
+      "segment_index": 2,
+      "topic": "官公庁における価格転嫁の状況と対策",
+      "question": {
+        "speaker": "上月良祐",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 中小企業庁の調査で、官公庁の価格転嫁率が低下傾向にある\n- 経済産業省としてこの状況をどう考えているか問う",
+        "full_text": "これ、中小企業庁が年に2回、3月、9月調査をしてくれています。これ、中小企業庁としてはどんなふうに考えてらっしゃるか教えてください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "経済産業副大臣",
+        "role": "",
+        "summary": "- 官公庁の価格転嫁率が微減していることを認識している\n- 国等の契約の基本方針に必要措置を盛り込み、地方自治体へ実施を促している\n- 令和9年度末までに最新の実勢価格を踏まえた予定価格の作成や基準改定を目指す",
+        "full_text": "はい。いずれにしても、環境省と連携して、適正価格の転嫁、取引適正化に取り組んでまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#2520.67",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中小企業庁の調査結果に対する考え方",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "中小企業庁"
+            },
+            {
+              "type": "date",
+              "excerpt": "年に2回、3月、9月調査"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "中小企業庁",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "環境省"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "取り組んでまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "環境省と連携して、適正価格の転嫁、取引適正化に取り組んでまいります。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な調査結果への見解を問う質問に対し、定型的な意欲表明のみで回答しており、実質的な情報価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どんなふうに考えているか」という問い方が抽象的なため、回答者が逃げやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_003",
+      "segment_index": 2,
+      "topic": "地方創生臨時交付金（重点支援交付金）による物価対応",
+      "question": {
+        "speaker": "上月良祐",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 物価対応に充てた事例が極めて少なく、請負業者の賃金上昇等への対応が不十分である\n- 大臣はこの状況をどう評価し、どう対応するのか問う",
+        "full_text": "で、その次の質問でありますが、地方創生臨時交付金、重点支援交付金があります。このことについてですね、これ大臣どんなふうに評価分析されて、どういうふうにご対応していくつもりか教えてください。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "林芳正",
+        "role": "総務大臣",
+        "summary": "- 価格転嫁を推進し、事業者が賃上げできる環境整備が重要であると認識している\n- 活用事例が少ないという実感があり、一層活用すべきと考えている\n- 首長や財政担当者への働きかけや、有効な取組事例の周知を図る",
+        "full_text": "林総務大臣。我々としては、会議、面会等々、あらゆる機会を通じて、自治体の首長、そして財政担当者等に働きかけるとともに、有効な取組事例の周知、これをしっかりと図ってまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#2520.67",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "地方創生臨時交付金等の評価分析と今後の対応",
+          "sub_asks": [
+            "交付金の評価分析はどうなっているか",
+            "今後どういうふうにご対応していくつもりか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "地方創生臨時交付金、重点支援交付金"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "自治体の首長"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "財政担当者"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "周知、これをしっかりと図ってまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "自治体の首長、そして財政担当者等に働きかけるとともに、有効な取組事例の周知、これをしっかりと図ってまいりたい",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "評価分析についての回答が欠落しており、今後の対応についても抽象的な努力目標に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「評価分析」について具体的にどの指標や期間を問うているのかを明確にすべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_004",
+      "segment_index": 2,
+      "topic": "普通交付税における価格転嫁分の算定方法",
+      "question": {
+        "speaker": "上月良祐",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 交付税の算定において、単に制度を導入しているだけでなく、実際に適用され財政需要があるところに適切に配分すべきである\n- 総務省の考え方を問う",
+        "full_text": "交付税で今回、結構コペペティション的な対応をしていただいていて、前はトップランナー方式で削ったら交付税を増やしますみたいなことをやってたんですが、今回はきちんとした発注をしたら、価格転嫁分ということで配りますということになってます。林芳正大臣。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "総務省自治財政局長",
+        "role": "",
+        "summary": "- 地域経済創造事業費に価格転嫁分を創設し、1000億円程度を算定予定である\n- 制度の導入に加え、実際に適用され実効的な価格転嫁につながった場合に算定に反映する方向で検討している",
+        "full_text": "お答えいたします。算定方法の詳細につきましては、今後取りまとめられます調査の結果を踏まえながら、今年夏の概算決定に向けまして検討を進めてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5156"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#2520.67",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "交付税による価格転嫁対応の確認",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "トップランナー方式"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "deadline",
+              "excerpt": "今年夏の概算決定"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "検討を進めてまいりたいと考えております",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "今年夏の概算決定に向けまして検討を進めてまいりたいと考えております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問が疑問文の形式をとっておらず、事実確認に近い独白形式であるため、明確性が低い。回答は今後の検討予定に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "疑問符を用いた具体的な問いかけにすることで、政府から明確な肯定・否定や詳細な回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_005",
+      "segment_index": 2,
+      "topic": "地方支分部局や独立行政法人等における適切な発注と予算措置",
+      "question": {
+        "speaker": "上月良祐",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 地方の支分部局や独法、国立大学法人等では効率化目標などの制約があり、適切な予算措置と発注が行われにくい実態がある\n- 財務省としてどのように考えるか問う",
+        "full_text": "それから山本次長おいでいただいてますので、ぜひちょっとお聞きしたいことがあります。財務省中山次長。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "中山次長",
+        "role": "",
+        "summary": "- 府省庁等申し合わせに基づき、低入札価格調査基準の見直しなどの取組を地方支分部局や独法へ要請している\n- 運営費交付金の算定において物価動向を適切に反映し、必要な予算を措置している",
+        "full_text": "お答えします。引き続き、関係省庁と連携しつつ、予算執行の両面から、地方支部局や独法等における適切な価格転嫁を進めてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#2520.67",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "質問内容が記載されていない",
+          "sub_asks": [],
+          "score": 0.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "not_at_all",
+          "topic_shift_detected": true,
+          "score": 0.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "地方支部局"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "独法等"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "適切な価格転嫁を進めてまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "予算執行の両面から、地方支部局や独法等における適切な価格転嫁を進めてまいりたいと考えております。",
+          "score": 0.2
+        },
+        "scoring_confidence": "low",
+        "evaluation_note": "質問文に具体的な問いが含まれておらず、指名のみとなっているため、評価不能なペアである。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問者が問いを投げかける前に回答が始まっているか、テキストの欠落がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_006",
+      "segment_index": 2,
+      "topic": "低入札価格調査基準の他業種への拡大",
+      "question": {
+        "speaker": "上月良祐",
+        "party": "自由民主党・無所属の会",
+        "summary": "- ビルメンテナンス・警備業の基準引き上げは評価するが、依然として赤字水準である\n- 建築・土木のようにデータに基づき、他業種にも的確に基準を広げるべきではないか、財務省の考えを問う",
+        "full_text": "もう一つ、中山次長に。財務省中山次長。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "中山次長",
+        "role": "",
+        "summary": "- 客観的なデータに基づき、所管官庁が適切な積算基準を整備することが重要と考えている\n- 印刷等の他業種についても、所管官庁による適切な積算基準の整備に積極的に協力し取り組む",
+        "full_text": "低入札価格調査基準の作成に当たりましては、適切な価格転嫁を推進するため、各業種の所管官庁において、業務の内容を踏まえつつ、客観的なデータに基づき、適切な積算基準などを整備することが重要と考えております。財務省といたしましても、各業種の所管官庁における検討に積極的に協力するなど、しっかり取り組んでまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#2520.67",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "質問内容が記載されていない",
+          "sub_asks": [],
+          "score": 0.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "not_at_all",
+          "topic_shift_detected": true,
+          "score": 0.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "低入札価格調査基準"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "しっかり取り組んでまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "各業種の所管官庁において、客観的なデータに基づき、適切な積算基準などを整備することが重要と考えております。",
+          "score": 0.3
+        },
+        "scoring_confidence": "low",
+        "evaluation_note": "質問文が指名のみで内容が欠落しているため、評価不能なペアである。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問内容が具体的に記載されていないため、回答との整合性が検証できない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_007",
+      "segment_index": 3,
+      "topic": "行政評価のテーマ選定基準",
+      "question": {
+        "speaker": "田島麻衣子",
+        "party": "立憲民主・無所属",
+        "summary": "- 行政評価のテーマ選定において、これまでどのような基準で決定してきたか",
+        "full_text": "こうした努力を続けてこられた総務省、それから職員の方々に深い敬意の気持ちをお伝えしたいと思うんですが、この政策評価、行政評価のテーマ設定について伺いたいと思います。フォローアップはいいですので、行政評価のテーマの選定につきまして、これまで総務省はどのような基準をもとに決定してきたのか、林総務大臣。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "林芳正",
+        "role": "総務大臣",
+        "summary": "- 行政運営改善調査のテーマについて、フォローアップを除いた範囲で回答する（※具体的な基準への言及はなく、回答を切り上げている）",
+        "full_text": "林芳正大臣、総務省が実施する行政運営改善調査のテーマでございますが、また、フォローアップはよろしいということでしたので、とりあえずそこで切らせていただきます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#4314.25",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "行政評価のテーマ選定基準について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "総務省",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "not_at_all",
+          "topic_shift_detected": false,
+          "score": 0.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": null,
+          "score": 0.0
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は明確に基準を問うているが、大臣の回答は前提の確認のみで実質的な回答がなされていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_008",
+      "segment_index": 3,
+      "topic": "困難を抱える妊娠産婦への支援と周知",
+      "question": {
+        "speaker": "田島麻衣子",
+        "party": "立憲民主・無所属",
+        "summary": "- 困難を抱える妊娠産婦への相談窓口などの存在を、今後どのように政策に生かし、周知していくか",
+        "full_text": "次に行政運営改善調査の結果の中の1つに、困難を抱える妊娠産婦の支援に関する調査があります。これについて、子課長の担当者の方、伺いたいと思うんですが、私も子どもを日本で産んだときに、こうした相談員がいらっしゃるということを知る、どのように今後政策に生かしていくかお答えいただきたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "政府参考人",
+        "role": "",
+        "summary": "- 「思いがけない妊娠の相談窓口サイト」を開設し、SNS広告やQRコード付きカードの配布等で周知を強化する\n- 市町村の連携事例を収集し、担当者へ情報提供することで相互理解を図る",
+        "full_text": "困難を抱える妊娠産婦に対して、妊娠SOS相談窓口や生徒健康の相談センター事業、妊産婦等生活援助事業を活用した相談窓口等の相談支援機関の存在や、その役割を周知することは、円滑に必要な支援を提供するため、非常に重要であると認識してございます。そのため、子ども家庭庁では、様々な困難を抱える女性が妊娠・葛藤を相談できる全国の相談窓口を簡便に検索できる形でまとめた「思いがけない妊娠の相談窓口サイト」を本年3月に開設したところでございます。また、こうした相談窓口を支援が必要な女性にしっかりと周知できるよう、妊娠の悩み相談広報強化事業を創設し、今年度中にSNSやインターネットを活用した広告の掲出、サイトのQRコードを掲載したカードの作成と全国配布、ショート動画等の広報物の作成等を実施し、相談窓口の周知を強化するほか、相談窓口と市町村の連携が充実している事例や、市町村が広報周知や相談体制を強化した事例を収集した上で、各市町村の担当者や相談窓口に対し、情報提供を行うことにより、相互理解を図ることとしております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#4314.25",
+      "metrics": null
+    },
+    {
+      "id": "qa_009",
+      "segment_index": 3,
+      "topic": "政府SNS動画の著作権表示（Cマーク）の妥当性",
+      "question": {
+        "speaker": "田島麻衣子",
+        "party": "立憲民主・無所属",
+        "summary": "- 首相官邸SNS等の動画にCマーク（著作権表示）を付している理由と妥当性は何か",
+        "full_text": "質疑通告8番にさせていただきたいというふうに思うんですが、このテーマはですね、政府が広報の一環として発信しておられるSNSに関しまして、最近、著作権マークが設定されているものと、されていないものがあるということで、国民の中に疑問や、これをもっと理解したいという声が高まっているように感じます。今日は副長官にお越しいただいているというふうに思うんですが、まずこのCマーク、著作権が設定されているこの理由、それから妥当性について伺いたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "佐藤内閣官房副長官",
+        "role": "",
+        "summary": "- 著作権は創作時に自動発生するが、Cマークを付すことで出典記載の手間を省き、円滑な利用を促す目的がある\n- 情報共有や批判的検証を制限する意図はなく、適切かつ円滑な利用に向け改善に取り組む",
+        "full_text": "一般に著作権は著作物を創作した時点で自動的に発生するものとされておりますが、そこで内閣官房が作成し、首相官邸ホームページや首相官邸SNS等において公開している動画コンテンツ等についても、いわゆるCマーク等の表示による著作権を示しているところであります。出典の記載については利用者の手間を要することとなりますので、動画利用の際の出典記載に変えて、円滑な利用に資することなどを目的として、以前より御指摘のCマーク等を付してきていると、そういったことがございます。このため、当該表示に、国民の皆様による情報共有や批判的検証を制限するといった意図は当然ございませんし、むしろ、出典記載の手間を省くことにより、円滑なご利用を促すものでございます。政府の発信するコンテンツが、国民の皆様にも適切かつ円滑にご利用いただけるよう、今後も改善に取り組んでまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#4314.25",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "政府SNSのCマーク設定の理由と妥当性について",
+          "sub_asks": [
+            "Cマークが設定されている理由",
+            "その妥当性"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "政府が広報の一環として発信しておられるSNS"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "内閣官房"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "首相官邸ホームページ"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "首相官邸SNS"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "今後も改善に取り組んでまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "vice_minister",
+          "score": 0.5
+        },
+        "oc3_quotability": {
+          "quote_candidate": "出典記載の手間を省くことにより、円滑なご利用を促すものでございます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "政府SNSにおける著作権表示の目的（出典記載の簡略化）について明確な回答が得られており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「妥当性」という抽象的な問いではなく、具体的な利用規約との整合性を問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_010",
+      "segment_index": 3,
+      "topic": "政府コンテンツの著作権法第13条（権利の目的とならないもの）への該当性",
+      "question": {
+        "speaker": "田島麻衣子",
+        "party": "立憲民主・無所属",
+        "summary": "- 首相官邸SNS等のコンテンツは、著作権法第13条第2号（国等が発する告示・訓令等）に該当し、著作権の目的とならないのではないか",
+        "full_text": "田島麻衣子（立憲民主・無所属）批判的な表明というものを抑える意図というのはないというふうにご答弁いただきましたが、著作権法第13条では、この目的となることができないことと挙げまして、第2号、国、省略しますが、発する告示、訓令、通達、その他、これらに類するものというのは、著作権法以外ということが書かれていますが、これには当たらないということでしょうか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "佐藤内閣官房副長官",
+        "role": "",
+        "summary": "- 首相官邸ホームページやSNSで発信している動画コンテンツ等は、同条に規定されるものには該当しないと考えている",
+        "full_text": "そして、この同法第13条第2号において、権利の目的とならないものとして、少し長いですが、国もしくは地方公共団体の機関、独立行政法人、または地方独立行政法人が発する国事、訓令、通達その他のこれらに類するものが規定されておりますが、一般的には首相官邸ホームページや首相官邸SNSで掲載発信している動画コンテンツ等は、このいずれにも該当しないものと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#4314.25",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "官邸動画が著作権法13条2号に該当するか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "著作権法第13条"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "首相官邸ホームページ"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "首相官邸SNS"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "首相官邸ホームページや首相官邸SNSで掲載発信している動画コンテンツ等は、このいずれにも該当しないものと考えております。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "著作権法13条の適用範囲について、政府の具体的解釈（官邸動画は非該当）を明確に記録した価値のあるやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_011",
+      "segment_index": 3,
+      "topic": "政府コンテンツの著作権侵害を理由とした削除の可能性",
+      "question": {
+        "speaker": "田島麻衣子",
+        "party": "立憲民主・無所属",
+        "summary": "- 政府が著作権侵害を理由に、国民が利用している素材を削除する心配はないか",
+        "full_text": "著作権法の例外規定に当たらないというご答弁をいただきましたが、例えばNHKさんはですね、著作権侵害を理由に申し立てるだけで削除をしているということは、もう事実としてあるというふうに感じるんですけれども、例えば政府がですね、著作権を侵害されたということを理由に、今、公開されていて、国民の皆さんが使っているような素材というのを削除する、このような心配はないということでよろしいですか。質問は、削除されるといったような心配というのは抱く必要はないですね。削除されるといったようなことはないですよね。著作権を理由に削除をするというようなことというのは、心配する必要はないですよね。意図はないと言われたので、削除されないということでよろしいですか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "原内閣審議官",
+        "role": "",
+        "summary": "- Cマークは円滑な利用を促すためのものであり、情報共有や批判的検証を制限する意図はない\n- 著作権を理由に削除する意図はなく、削除されない",
+        "full_text": "先ほどの副長官からも御答弁申し上げましたけれども、このCマークにつきましては、出典を記載する場合については利用者の手間を要することとなることから、動画利用の際の出典記載を簡略化し、円滑な利用に資することなどを目的として以前より付しているものでございます。このため、当該表示に国民の皆様による情報共有や批判的検証を制限するといった意図はなく、むしろ出典記載の手間を省くことにより、円滑な利用を促すものでございます。繰り返しになって恐縮でございますけれども、このCマークを付していることによりまして、当該表示によって、国民の皆様による情報共有や批判的検証を我々として制限する、そういった意図はなく、むしろ出典記載の手間を省くことにより、円滑な利用を促すものと考えております。繰り返しになって恐縮でございますけれども、国民の皆様による情報共有ですとか、批判的な検証、そういったものを、我々として、政府としまして、制限するといった意図で、こういったCマークをつけているものではございません。そういう意図はございません。おっしゃるとおりでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#4314.25",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "政府が著作権を理由に素材を削除する心配はないか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "NHKさん"
+            },
+            {
+              "type": "law",
+              "excerpt": "著作権法"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "Cマーク"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "国民の皆様による情報共有や批判的検証を我々として制限する、そういった意図はなく、むしろ出典記載の手間を省くことにより、円滑な利用を促すものと考えております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "政府が著作権を理由に素材を削除する意図がないことを明確に答弁しており、一定の記録価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "同じ質問を繰り返し述べているため、冗長である。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_012",
+      "segment_index": 3,
+      "topic": "交通事故で胎児に障害が生じた場合の処罰規定",
+      "question": {
+        "speaker": "田島麻衣子",
+        "party": "立憲民主・無所属",
+        "summary": "- 妊娠中の女性が交通事故に遭い胎児が障害を負った場合、現行法上の処罰規定はどうなっているか",
+        "full_text": "担当副大臣に伺いたいと思うんですけれど、現在、妊娠中の女性が交通事故で亡くなった場合、この胎児が負った障害に対して、現行法上では処罰規定というのは、どのようになっているんでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "林芳正",
+        "role": "総務大臣",
+        "summary": "- 刑法等では一般に胎児は母体の一部と解されるため、胎児に障害が生じた場合は母体に被害が生じたものと捉えられる",
+        "full_text": "刑法等におきましては、一般に胎児は人そのものではなく、母体の一部を構成するものと解されております。従いまして、母体に対する有権力の行使によりまして胎児に障害結果が生じた場合には、胎児ではなく母体に被害が生じたものと捉えられているというふうに承知をしております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#4314.25",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "妊婦の交通事故死に伴う胎児の障害への処罰規定",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "妊娠中の女性",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "刑法等"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "vice_minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "胎児は人そのものではなく、母体の一部を構成するものと解されております。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "胎児の法的地位に関する政府（副大臣）の解釈が明確に示されており、記録としての価値が高い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_013",
+      "segment_index": 3,
+      "topic": "自動車事故で出生前に障害を負った被害者への支援",
+      "question": {
+        "speaker": "田島麻衣子",
+        "party": "立憲民主・無所属",
+        "summary": "- 自動車事故により出生前に障害を負った当事者や家族への支援体制はどうなっているか",
+        "full_text": "母体の一部ということで特別な処罰ということはないということなんですが、現在もこの赤ちゃん、重度障害で意識不明のままだということで、このお子さんが将来どのような人生を歩んでいくか、それに対する支援、またご家族のご負担に対する支援ということ、これは我々しっかりとやっていく必要があるというふうに思うんですよね。次の質問ですけれども、この当事者や家族への支援体制のあり方について、国の考え方を教えてください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "石原物流自動車局長",
+        "role": "",
+        "summary": "- 自賠責保険による保険金支払や被害者支援事業を実施している\n- 障害程度に応じた介護料支給や、自動車事故対策機構による訪問支援、交通遺児への生活資金貸付や給付金支給を行っている",
+        "full_text": "自動車事故による事故被害者に対しましては、自賠責保険制度により、人身損害に対して保険金が支払われるほか、被害者支援事業を実施しているところでございます。自動車事故により出生前に障害を負った被害者への支援についても、出生後の被害者と同様でありまして、障害の程度に応じて介護用品の購入や介護サービスに充てる介護料の支給や、独立行政法人自動車事故対策機構による訪問支援などを実施しております。その場合、小学校から中学校卒業までの生活資金の無利子貸付を受けることや、公益財団法人交通遺児等育成基金から学業等への支援として、育成給付金の支給を受けることが可能となっております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#4314.25",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "当事者や家族への支援体制のあり方についての国の考え",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "当事者や家族",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "自賠責保険制度"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "独立行政法人自動車事故対策機構"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "公益財団法人交通遺児等育成基金"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "自動車事故により出生前に障害を負った被害者への支援についても、出生後の被害者と同様でありまして",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "既存の支援制度の提示に留まっており、新たなコミットメントはないが、出生前障害への適用範囲を明確にしている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「あり方」という抽象的な問いであるため、現状の制度説明で完結してしまっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_014",
+      "segment_index": 3,
+      "topic": "自動車事故被害者支援の周知徹底",
+      "question": {
+        "speaker": "田島麻衣子",
+        "party": "立憲民主・無所属",
+        "summary": "- 支援制度を当事者が十分に理解できていないため、プッシュ型の支援と周知徹底に努めてほしい",
+        "full_text": "この週末も地元に帰っていろいろな方と話をしたんですが、今、説明していただいたようなことを必ずしも関係者お一人お一人が理解されているわけではなくて、やっぱり当事者の方々というのはもういっぱいいっぱいだと思うんですよね。こうした場合にも、私は先ほど困難を抱える妊婦さんの話でもしましたが、国のプッシュ型の支援ということ、それから周知徹底が大事であるというふうに思うんです。ちょっと答弁いただきたいんですが、周知徹底に努めてまいるというお言葉をいただけますでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "石原物流自動車局長",
+        "role": "",
+        "summary": "- 当事者の気持ちに寄り添い、プッシュ型の支援に努めたい",
+        "full_text": "当事者の気持ちにもなってしっかりとプッシュ型の支援をよろしくお願いしたいというふうに思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#4314.25",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "周知徹底に努めるかどうかの確認",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "困難を抱える妊婦さん",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "other",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": null,
+          "score": 0.0
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "周知徹底への言及を求めた問いに対し、答弁者が「お願いしたい」という形式で返しており、政府としてのコミットメントになっていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「お言葉をいただけますでしょうか」という形式的な確認に留まっており、具体的な周知手法や期限を問う構成になっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_015",
+      "segment_index": 3,
+      "topic": "シングルマザー向け支援の所得算定方法",
+      "question": {
+        "speaker": "田島麻衣子",
+        "party": "立憲民主・無所属",
+        "summary": "- シングルマザーへの支援において、同居親族を含めて世帯として所得審査を行う現状を再考すべきではないか",
+        "full_text": "この所得の算定方法として、世帯としてカウントするシングルマザーの場合にも、生計を同じくする世帯として審査をするということについて、これ少し考え直す必要があるんではないでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "政府参考人",
+        "role": "",
+        "summary": "- 扶養義務者がいる場合はその事情を踏まえるのが適当という考えで現行制限を設けている\n- ただし、客観的な証明があれば同居していても生計を異にするとみなすなど、実態に即した認定を可能としている",
+        "full_text": "このため、受給者と生計を同じくする一定以上の所得を有する扶養義務者がいらっしゃる場合には、当該事情を踏まえた支援をすることが適当であるという考え方に基づいて、現行所得制限を設けておるものでございます。一方で、お尋ねのケースを含め、同居していても生計を異にするという事実について、客観的な証明がある場合には、生計同一関係にないとみなすことを可能とするなど、個々の実態に即した認定も可能としております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#4314.25",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "シングルマザー世帯の所得算定方法の再検討",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "シングルマザー",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "同居していても生計を異にするという事実について、客観的な証明がある場合には、生計同一関係にないとみなすことを可能とする",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "制度の運用基準（客観的証明があれば生計同一とみなさない）について明確な回答が得られており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「考え直す必要があるのではないか」という提案形式のため、政府に明確な回答義務を課す問い方になっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_016",
+      "segment_index": 3,
+      "topic": "シングルマザーの「生計を異にする」証明方法",
+      "question": {
+        "speaker": "田島麻衣子",
+        "party": "立憲民主・無所属",
+        "summary": "- シングルマザーが「生計を異にする」ことを証明するために、具体的にどのような書類を提出すればよいか",
+        "full_text": "生計を異にする証明があった場合とおっしゃいましたが、具体的にシングルマザーはどのようなものを出せば、それが証明されるようになりますか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "現下審議官",
+        "role": "",
+        "summary": "- 税法上の扶養親族の状況、住民票の分離、公共料金の支払い、健康保険の扶養状況、家賃の第三者契約などを総合的に勘案して認定する",
+        "full_text": "生計を異にするかどうかの判断につきましては、例えば受給資格者が生計を異にする客観的な証明として、税法上の扶養親族、住民票の分離、公共料金、生活の共用部分、健康保険の扶養、家賃の第三者を介した契約などが考えられておりまして、個々の実態に即して総合的に勘案し認定しているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5154",
+        "shugiin-221-sanhou-4"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#4314.25",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "シングルマザーが生計を異にする証明に提示すべき具体例",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "シングルマザー",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "税法上の扶養親族"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "住民票の分離"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "公共料金"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "生活の共用部分"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "健康保険の扶養"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "家賃の第三者を介した契約"
+            }
+          ],
+          "score": 1.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "生計を異にする客観的な証明として、税法上の扶養親族、住民票の分離、公共料金、生活の共用部分、健康保険の扶養、家賃の第三者を介した契約などが考えられており",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "生計を異にする証明の具体例について、政府側が明確な判断基準（例示）を提示しており、記録としての価値が高い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_017",
+      "segment_index": 3,
+      "topic": "クマスプレーの購入判断基準と性能基準の策定",
+      "question": {
+        "speaker": "田島麻衣子",
+        "party": "立憲民主・無所属",
+        "summary": "- 粗悪品が多く判断が困難なため、国民がクマスプレーを購入する際の科学的な判断基準はどうあるべきか",
+        "full_text": "この観点から、クマスプレーについて伺いたいんですが、これ、いろいろな品質のものがたくさん今、ネットでも出てまして、我々素人には、何が一体、本当にクマを現場で撃退できるスプレーなのかということの判断が非常につきづらいと思います。唐辛子成分のこのカプサイシン、これがどのくらい入っていればいいのか、飛ぶ距離はどのくらいなのか、持続して噴射できる時間はどのくらいなのか、こういったこと何もわからない中で、みんな「いいね」がついている数を頼りに買うという状況は、やはりもっともっと科学的なエビデンスがあった上で購入していくことの方が健全であるというふうに思うんですよね。こうした観点から環境副大臣に伺いたいと思いますけれど、国民はどのようなものを判断基準に、このクマスプレーというものを購入すればいいんでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "青山環境副大臣",
+        "role": "",
+        "summary": "- 噴射距離5メートル以上、噴射時間8秒以上、重量300g前後、十分な唐辛子成分を含むことなどの基準を検討中である\n- 専門家の意見を聞きながら早期に基準をまとめ、消費者庁と連携して周知したい",
+        "full_text": "その中にこのスプレーの基準をどうするかということも盛り込まれていますので、今実は作っている途中、基準を作っている途中なんですけれども、まず成分で言えば唐辛子、委員御指摘の唐辛子が十分含まれていれば、今までの生還例から考えても効果はあります。問題はむしろその後で、噴射距離は5メートルは最低ないと、熊がもしスピードを上げて迫ってくれば、一番速い熊ですと50キロ以上のスピードですから、ウサイン・ボルトで40何キロですから、だからあっという間に目の前に迫ってきてしまうので、どんなに短くても5メートル以上はないといけないと、今のところ環境省としては考えております。それから噴射できる時間も最低8秒はないと、熊の目や鼻に十分な効果を与えることができません。それからこのスプレー缶というのは、あえて言えばご高齢の方から子どもたちに至るまで持つことができなきゃいけないので、いたずらに大きい、重いと持つことができませんから、だいたいおおむね300グラム前後に抑えなきゃいけません。こういう環境省が今仮に考えていることで、本当に正しいかどうかということを実際、政官令なども照らし合わせて専門意見を聞きながら、とにかく1日も早く基準がまとまるようにして、その後は消費者庁と連携をして、それがちゃんと皆さんの手に行き当たるようにしたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#4314.25",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "クマスプレーの購入判断基準について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "5メートルは最低ないと"
+            },
+            {
+              "type": "number",
+              "excerpt": "最低8秒はないと"
+            },
+            {
+              "type": "number",
+              "excerpt": "おおむね300グラム前後に抑えなきゃいけません"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "1日も早く基準がまとまるようにして",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "vice_minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "噴射距離は5メートルは最低ないと、噴射できる時間も最低8秒はないと、熊の目や鼻に十分な効果を与えることができません。",
+          "score": 0.9
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "環境省が内部的に検討しているクマスプレーの具体的性能基準（距離・時間・重量）が明示されており、記録としての価値が高い。",
+        "would_be_referenced": "high",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_018",
+      "segment_index": 3,
+      "topic": "子どものオンラインゲーム利用規制と環境整備",
+      "question": {
+        "speaker": "田島麻衣子",
+        "party": "立憲民主・無所属",
+        "summary": "- 子どものオンラインゲーム利用について、保護者の不安を解消するための規制や対策はどうなっているか",
+        "full_text": "次に質疑通告5番、子どものオンラインゲームの利用と規制について伺いたいと思います。で、確かにオンラインゲームするということは、将来天才的なオンラインのプログラマーやゲーマーが生まれるかもしれないということがある一方で、本当にこれをやらせていて大丈夫なのかっていう心配っていうのは、この子どもたちの親御さんたち、保護者の皆さんたちの心配というのはあるというふうに思うんですよね。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "経済産業副大臣",
+        "role": "",
+        "summary": "- 業界団体が保護者と子どものルール作りを促す機能導入やガイドライン（安心・安全宣言）の周知を進めており、国はそれを支援する\n- 子ども家庭庁では有識者会議にて、プラットフォーム事業者の役割分担や規制のあり方について議論を進めている",
+        "full_text": "未成年者がオンラインゲームを利用する場合については、まずは、利用時間や利用方法など、ルールについて、未成年者が保護者と相談して主体的に作ることを促す取り組みや、決められたルールを保護者が管理するための機能の導入などが、業界によって進められているものと承知しております。その上で、業界において、オンラインゲーム安心・安全宣言が作成されており、経済産業省としては、国がガイドラインを一律に策定するのではなく、業界団体が作成したガイドラインの周知徹底を通じて、安全なゲーム利用の環境を整えていきたいと考えております。子ども家庭庁としては本年1月に設置した有識者会議において、青少年が年齢や発達段階に応じて安全に安心してインターネットを利用できるよう、現行において義務が課されている携帯電話事業者と、それ以外のSNSやゲームなどのプラットフォーム事業者を含むステークホルダーが、青少年の保護について具体的な方策を講じるよう、事業者の役割分担のリバランスを図ることなどの規制のあり方などについて議論を進めております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#4314.25",
+      "metrics": null
+    },
+    {
+      "id": "qa_019",
+      "segment_index": 3,
+      "topic": "選挙期間中のネット広告における候補者情報の掲載",
+      "question": {
+        "speaker": "田島麻衣子",
+        "party": "立憲民主・無所属",
+        "summary": "- 政党等のネット広告の冒頭に候補者の写真・名前・選挙区を掲載することは、公職選挙法上許されるのか",
+        "full_text": "合法的に許されているものは、選挙期間中というのは、政党に類するもののネット広告というのは許されているものの、広告というのは本人が出てはいけないということであるという趣旨として私は理解しているんですけれど、今、選挙期間中に県連、総支部、連合会の県連の主催のネット広告の一番最初の部分に、候補者が名前と選挙区を言うという写真を入れたものがあったということが指摘されているんですが、これを総務省に伺いたいと思いますが、公職選挙法上、こうしたことは許されるんでしょうか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "林芳正",
+        "role": "総務大臣",
+        "summary": "- 候補者本人の有料ネット広告は禁止されているが、政党等が自社サイトに直接リンクした有料広告を掲載することは認められている",
+        "full_text": "これによりまして、候補者については、同条第1項から第3項までの規定により、選挙運動期間中は有料インターネット広告を掲載することが禁止されております。一方、政党などについては、同条第4項において、第2項及び第3項の規定に関わらず、選挙運動期間中、当該政党等の選挙運動用ウェブサイト等に直接リンクした有料広告を掲載することが認められているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#4314.25",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "候補者が登場する政党等のネット広告の適法性",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "公職選挙法"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "県連、総支部、連合会の県連",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "evidence_citation",
+              "excerpt": "同条第1項から第3項までの規定"
+            },
+            {
+              "type": "evidence_citation",
+              "excerpt": "同条第4項"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "候補者については、選挙運動期間中は有料インターネット広告を掲載することが禁止されております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "公職選挙法の条文に基づいた一般的解釈を回答しており、具体的な事例への適否（Yes/No）までは踏み込んでいないが、法的根拠は明確である。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "具体的な広告内容（写真の有無等）が適法か否かという点について、明確な肯定・否定を求める形式にすればより価値が高まった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_020",
+      "segment_index": 4,
+      "topic": "一時保護中の児童の教育保障責任",
+      "question": {
+        "speaker": "水野孝一",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 一時保護中の児童について、最終的に誰が学びを保障する責任を負うのか",
+        "full_text": "続いてその学びの責任について伺います。一方で現場からは、誰が最終的に学びを保障するのかと。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "林芳正",
+        "role": "総務大臣",
+        "summary": "- 学校教育法に基づき、保護者（または未成年後見人）が9年の普通教育を受けさせる義務を負う\n- 児童福祉法に基づき、児童相談所長は児童の福祉のため必要な措置を講じることができ、学習機会の確保に努める\n- 子ども家庭庁として、人件費や交通費、学習環境整備などの費用補助を行っている",
+        "full_text": "林芳正教育を受けさせる義務は誰が持つことになるのかという点でございます。引き続き関係省庁と連携しながら、一時保護中の子どもの学習機会が十分確保されるようにしっかりと取り組んでまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#6110.0",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "学びを保障する最終的な責任者は誰か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "現場",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "しっかりと取り組んでまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "一時保護中の子どもの学習機会が十分確保されるようにしっかりと取り組んでまいります。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "責任の所在という具体的な問いに対し、抽象的な努力目標で回答しており、実質的な回答になっていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「誰が」という主語を明確に答えさせる形式（Yes/Noや選択肢の提示）にすべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_021",
+      "segment_index": 4,
+      "topic": "一時保護中の児童の教育を受ける権利と保障責任",
+      "question": {
+        "speaker": "水野孝一",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 学校側の消極的な姿勢で学びが止まっている実態がある中、一時保護中の児童の教育を受ける権利と、国・自治体の保障責任をどう捉えているか",
+        "full_text": "それでは文部科学省中村副大臣にお伺いをしたいと思います。個々様々な事情はありますけれども、一時保護中の児童の教育を受ける権利と、国や自治体の学びを保障する責任について、どのように捉えているのか、見解を伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "中村",
+        "role": "",
+        "summary": "- 児童虐待防止法に基づき、国および地方公共団体は十分な教育が受けられるよう必要な施策を講じる義務がある\n- 文科省として、児童相談所・教育委員会・学校の連携や、適切な情報引き継ぎの重要性を示している\n- 周知徹底により、適切な教育が受けられるよう取り組む",
+        "full_text": "中村副大臣一時保護が行われている児童生徒であっても、学習機会が確保されることは重要でありまして、児童虐待の防止等に関する法律においても、国及び地方公共団体は、児童虐待を受けた児童が、その年齢及び能力に応じ、十分な教育が受けられるようにするため、教育の内容及び方法の改善及び充実を図る等、必要な施策を講じなければならないとされているところです。文部科学大臣においては、こういった様々な考え方の周知徹底に努めることにより、一時保護が行われている児童生徒が、学校等において適切な教育が受けられるように取り組んでまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#6110.0",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "一時保護児童の教育権と保障責任への見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "一時保護中の児童",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "児童虐待の防止等に関する法律"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "取り組んでまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "vice_minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "一時保護が行われている児童生徒であっても、学習機会が確保されることは重要でありまして",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "一般的・抽象的な見解を問う質問に対し、法律を引用して答えた標準的なやり取りである。",
+        "would_be_referenced": "low",
+        "issue_in_design": "見解を問うのみに留まっており、現状の課題や具体的な改善策を求める形式にすればより価値が高まった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_022",
+      "segment_index": 5,
+      "topic": "盛土規制法の運用状況と今後の課題",
+      "question": {
+        "speaker": "竹内真二",
+        "party": "公明党",
+        "summary": "- 令和7年度から本格運用が開始されている盛土規制法について、これまでの運用状況と今後の課題についての見解を伺いたい",
+        "full_text": "そして最後になりますが、盛土規制法全体の運用状況についても伺います。盛土規制法は、令和5年の施行後、経過措置期間を経て、令和7年度から先ほども言いましたように本格運用始まっておりますが、この規制区域指定や許可制度の運用が各地で開始をされております。これまでの盛土規制法の運用状況、そして今後の課題について改めて見解を伺いたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "服部",
+        "role": "",
+        "summary": "- 令和8年4月時点でほぼ全ての都道府県等で規制区域の指定が完了し、本格運用が開始された\n- 許可申請件数は令和6年度に約400件であり、今後本格的に増加すると見込んでいる\n- 基礎調査の実態を踏まえ、不法危険盛土等の安全対策が進むよう、引き続き円滑な運用を支援する",
+        "full_text": "令和5年5月の盛土規制法の施行以降、令和7年4月時点では法の規制区域を指定していたのは約半数の都道府県等でございましたが、都道府県等の対応が進んだ結果、令和8年4月時点ではほぼ全ての都道府県等において規制区域の指定が完了し、全国において本格的な運用が開始をされたところでございます。許可申請件数については、約2割の都道府県等において運用が開始をされた令和6年度では約400件となっており、今後本格的に増加をしていくものと考えてございます。既存盛土等に対しては盛土規制法に基づく基礎調査が都道府県等において実施されているところであり、実態を踏まえ、不法危険盛土等に対する安全対策が進むよう取り組んでまいります。国土交通省としては盛土等の災害から国民の安全安心を確保することが重要であり、引き続き盛土規制法の円滑な運用が図られるよう支援をしてまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#7671.39",
+      "metrics": null
+    },
+    {
+      "id": "qa_023",
+      "segment_index": 6,
+      "topic": "電子署名基盤（HPKI）とデジタル資格者証の連携",
+      "question": {
+        "speaker": "猪瀬直樹",
+        "party": "日本維新の会",
+        "summary": "- 電子処方箋等で利用されているHPKI（ヘルスケアパブリックキーインフラストラクチャー）の具体的な仕組みは何か\n- デジタル資格者証を使う予定や連携する予定はあるか",
+        "full_text": "最後になりますが、栗原政務官に伺いますけれども、電子処方箋、電子カルテを記載する際に、医師等の電子署名が必要になりますけれども、この電子署名に、HPKI、ヘルスケアパブリックキーインフラストラクチャー、HPKI認証基盤が利用されていると聞いてますけれども、これは具体的にどのような仕組みなんでしょうか。デジタル資格者証を使う予定や連携する予定はありますでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "栗原",
+        "role": "",
+        "summary": "- HPKIは国家資格保有情報を含む電子証明書を用いて認証や電子署名を付与する仕組みである\n- デジタル資格者証には電子署名機能がないため現状はHPKIを活用しているが、動向を注視し基盤の改善を図りたい",
+        "full_text": "HPKIは医師、そして歯科医師、薬剤師など保健医療福祉分野の国家資格保有情報を含んだ電子証明書を用いて利用者の認証や電子証明の付与を可能とする仕組みでございます。例えば紙の処方箋では医師の記名押印、ご指摘のデジタル資格者証には、電子署名機能はないと承知をしております。電子処方箋等では、医師等の電子署名が必要となることから、HPKIが併せて活用されているところでございまして、デジタル資格者証の動向も注視しつつ、今後とも電子署名基盤の改善を図ってまいりたいと、そのように考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#8584.28",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "HPKIの仕組みとデジタル資格者証の連携について",
+          "sub_asks": [
+            "HPKIの具体的な仕組み",
+            "デジタル資格者証を使う予定や連携する予定の有無"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "HPKI、ヘルスケアパブリックキーインフラストラクチャー"
+            },
+            {
+              "type": "other",
+              "excerpt": "デジタル資格者証"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "医師等",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "HPKI"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "デジタル資格者証"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "電子署名基盤の改善を図ってまいりたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "デジタル資格者証には、電子署名機能はないと承知をしております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "HPKIの定義とデジタル資格者証に署名機能がないという事実関係が明確に回答されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_024",
+      "segment_index": 7,
+      "topic": "無縁改葬の実態調査と支援",
+      "question": {
+        "speaker": "杉本純子",
+        "party": "参政党",
+        "summary": "- 無縁改葬に関する現状把握の実態調査が行われているか\n- 実施されていない場合、その必要性をどう考えるか",
+        "full_text": "無縁改葬に関して日本の現状把握として実態調査はされていますでしょうか。またされていないとするならば、実施の必要性についてどうお考えかお聞かせください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "榊原審議官",
+        "role": "",
+        "summary": "- 総務省による公営墓地の無縁墳墓調査の結果を踏まえ、令和6年度に厚生労働科学研究で公営・一部民営墓地の調査を実施した\n- 令和7年には縁故者情報の事前把握の有効性や、墓石の取扱いに関する考え方を自治体に周知した",
+        "full_text": "令和4年から令和5年にかけて総務省において墓地行政に関する調査として公営墓地における無縁墳墓の調査が行われ、その中で縁故者に係る情報を事前に把握している事例を整理し提供する。これを受けまして、令和6年度、厚生労働科学研究において、公営墓地及び一定の民営墓地を対象に、縁故者に係る情報を事前に把握している事例や、無縁改葬後の墓石の取扱い等について調査を行いました。この結果も踏まえまして、令和7年には各自治体に対して、無縁墳墓発生抑制のためには、墓地使用者以外の縁故者に係る情報を事前に把握しておく等の取組が有効であること等を周知するとともに、無縁改葬後の墓石の取扱いについて、関係省庁と協議の上、その考え方を整理して周知したところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#9347.2",
+      "metrics": null
+    },
+    {
+      "id": "qa_025",
+      "segment_index": 7,
+      "topic": "公営墓地の無縁墳墓解消の現状と課題",
+      "question": {
+        "speaker": "杉本純子",
+        "party": "参政党",
+        "summary": "- 総務省の調査に無縁改葬に関する内容が含まれていたか\n- 無縁墳墓解消におけるハードル（課題）をどう認識しているか",
+        "full_text": "この調査に無縁改葬に関する内容は入っていましたでしょうか。また同問題に関して無縁墳墓の解消の中でハードルとなっていることはないかという点につきましても、併せて認識をお聞かせください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "菅原行政評価局長",
+        "role": "",
+        "summary": "- 調査に無縁改葬の内容は含まれており、平成28〜令和2年度に改葬・撤去に着手した市町村は6.1%に留まっている\n- 課題として、縁故者調査の範囲・周期の不明確さや、改葬後の墓石の取り扱いの不透明さが挙げられている",
+        "full_text": "ご指摘の調査は人口減少社会の進展や家族形態の多様化等に伴い、管理する者がいなくなった墳墓等が増加し、十分な管理がなされていないことによる支障が懸念されることから、公営墓地における無縁墳墓等の発生状況や、その解消のための課題を調査したものです。無縁墳墓を解消するためには、埋葬された骨壺を他の合葬墓等に移す改葬をした上で、残された墓石を撤去する必要がございまして、本調査においても無縁改葬に係る内容が含まれてございます。本調査の結果、公営墓地、納骨堂を有する市町村のうち、平成28年度から令和2年度までの5年間に、無縁墳墓等の骨壺の遺骨の移管や墓石の撤去に着手した市町村は、全体の6.1%となってございます。また、これまで無縁墳墓等を解消した実績がない市町村からは、無縁改葬を行うにあたって必要なプロセスである縁故者調査の範囲や周期が分からないこと、無縁改葬後の墓石の取り扱いが明確にされていないことなどが懸念事項として挙げられたところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#9347.2",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "無縁改葬の調査内容と解消のハードルについて",
+          "sub_asks": [
+            "調査に無縁改葬に関する内容が入っていたか",
+            "無縁墳墓の解消におけるハードルについての認識"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "平成28年度から令和2年度までの5年間"
+            },
+            {
+              "type": "number",
+              "excerpt": "全体の6.1%"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "無縁墳墓等の骨壺の遺骨の移管や墓石の撤去に着手した市町村は、全体の6.1%となってございます。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "調査結果に基づく具体的な数値（6.1%）と、自治体が抱える具体的な懸念事項が示されており、記録としての価値が高い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「この調査」が具体的にどの調査を指すのかを明示すれば、より客観的な記録となる。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_026",
+      "segment_index": 7,
+      "topic": "墓地管理に関するアンケートの目的と公開",
+      "question": {
+        "speaker": "杉本純子",
+        "party": "参政党",
+        "summary": "- 今年5月に実施された墓地管理に関するアンケートの目的は何か\n- 結果や質問事項、回答全文はどのように公開されるのか",
+        "full_text": "今年5月3日に政府が全国を対象に墓地管理に関する条例の内容と土葬を含む埋葬方式の現状等についてのアンケートを実施されました。これらアンケートは何を目的としてされたのか、またその結果に関してどのように公開され、特に質問事項や回答の全文が公開されるのかも含めてお聞かせください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "林芳正",
+        "role": "総務大臣",
+        "summary": "- 外国人が信仰する宗教に沿った土葬墓地の新設に伴う懸念を受け、自治体の実情を調査したものである\n- 現在精査中であり、取りまとめ次第、自治体への周知および公表を行う予定である",
+        "full_text": "他方で、昨今、外国人が信仰する宗教に沿った土葬墓地の新設をめぐる動きがあり、これについて様々な懸念が示されていることとしています。これを受けました対応として、本年1月、地方公共団体に墓地経営の許可の事務等における実情の調査を行い、その結果を踏まえ、墓地経営の許可事務等が滞りなく行われる観点から、参考となる他地域の条例を周知するなど、必要な整理検討を行っているところでございます。調整結果につきましては、現在、精査中でございますが、取りまとめ次第、自治体に周知し、公表する予定でございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#9347.2",
+      "metrics": null
+    },
+    {
+      "id": "qa_027",
+      "segment_index": 7,
+      "topic": "土葬された無縁墳墓の改葬検討",
+      "question": {
+        "speaker": "杉本純子",
+        "party": "参政党",
+        "summary": "- 土葬された墳墓が将来的に無縁化する可能性や、その場合の改葬についても検討しているか",
+        "full_text": "ここでは土葬された墳墓が将来的に無縁化する可能性や、その場合の改葬という問題も含めて検討はされているのでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "林芳正",
+        "role": "総務大臣",
+        "summary": "- 外国人の共生策として土葬の実情調査と整理検討を行っている\n- 無縁墳墓については、縁故者情報の把握や墓石の取扱いについて調査し、自治体へ周知・対応している",
+        "full_text": "外国人の受け入れ、秩序ある共生のための総合的対応策において、土葬について、自治体の実情の調査を行い、調査結果を踏まえて、現在必要な整理検討を行っているところでございます。無縁墳墓については、総務省の墓地行政に関する調査として、公営墓地における無縁墳墓の調査を受けて、令和6年度厚生労働科学研究において、公営墓地及び一定の民営墓地を対象に、援護者に係る情報を事前に把握している事例や、無縁改葬後の墓石の取扱い等について調査を行いました。この結果も踏まえまして、令和7年に各自治体に対して無縁墳墓発生抑制のためには、墓地使用者以外の援護者に係る情報を事前に把握しておく等の取組が有効であること等を周知しますとともに、無縁改葬後の墓石の取扱いについて関係省庁と協議の上、その考え方を整理し周知したところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#9347.2",
+      "metrics": null
+    },
+    {
+      "id": "qa_028",
+      "segment_index": 7,
+      "topic": "土葬の実施を可能にする意図の有無",
+      "question": {
+        "speaker": "杉本純子",
+        "party": "参政党",
+        "summary": "- 総合的対策に土葬が取り上げられていることは、日本において土葬の実施を可能にしていく意図を含むものか",
+        "full_text": "「外国人の受け入れ、秩序ある共生社会実現に関する総合的対策」の1つに土葬が取り上げられているということは、日本において土葬の実施を可能にしていくという意図を含むものなのでしょうか。お聞かせください。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "林芳正",
+        "role": "総務大臣",
+        "summary": "- 自治体の実情調査に基づき、参考となる他地域条例の周知など必要な整理検討を行っている\n- 各自治体において墓地経営の許可事務等が滞りなく行われることが重要と考えており、適切に対応する",
+        "full_text": "先ほど、審議官の方から御答弁させていただいたところでございますけれども、「外国人の受け入れ、秩序ある共生のための総合的対策」の土葬に関する現状と問題点においては、御説明申し上げたところであります。そういったことを受けた対応といたしまして、地方公共団体に墓地経営の許可の事務等における実情の調査を行い、その結果を踏まえ、参考となる他地域の条例を周知することなど、必要な整理検討を行っているところでございまして、厚生労働省といたしましては、各自治体において、墓地経営の許可事務等が滞りなく行われることが重要であると考えておりまして、こうした対応を進めるとともに、自治体からの相談がございましたら、それに応じるなど適切に対応してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#9347.2",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "総合的対策に土葬が含まれるのは土葬を可能にする意図か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "「外国人の受け入れ、秩序ある共生社会実現に関する総合的対策」"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "厚生労働省"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "適切に対応してまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "自治体からの相談がございましたら、それに応じるなど適切に対応してまいりたいと考えております。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "土葬を可能にする意図があるかという核心的な問いに対し、現状の事務的な対応（調査や周知）の説明に終始しており、直接的な回答を避けている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「意図を含むか」というYes/No形式の問いに対し、政府が「はい/いいえ」で答えにくい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_029",
+      "segment_index": 7,
+      "topic": "多文化共生と日本の未来・ルールへの認識",
+      "question": {
+        "speaker": "杉本純子",
+        "party": "参政党",
+        "summary": "- 伝統的な日本の墓文化が変わりつつある中、政府として社会問題をどう捉えているか\n- 多文化共生を推進した場合の日本の未来について、大臣の認識を示してほしい",
+        "full_text": "家が代々受け継がれ、永続していくとされてきた日本の今までの形が変わりつつある中、政府として、または社会問題としてどう捉えていくのか。地域の国際化の推進や多文化共生のさらなる推進に向け、取組を進めていきますという日本の今の姿勢と、そうして進めた場合の日本の未来に関して、大臣の認識をぜひお示しください。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "林芳正",
+        "role": "総務大臣",
+        "summary": "- 多文化共生推進プランの提示や地方財政措置を行い、法やルールの中で国民と外国人が安全安心に生活できる社会を目指している\n- 令和8年度から日本語指導経費などの特別交付税措置を講じるなど、自治体の施策を支援していく",
+        "full_text": "総務省におきましては、地方自治体が地域の実情に応じて行う外国人との共生施策に資するよう、地域における多文化共生推進プランを示し、自治体の取組事例の全国的な周知を行うとともに、取組に対する地方財政措置を行ってまいりました。そして本年1月に、外国人の受け入れ、秩序ある共生社会実現に関する関係閣僚会議におきまして、我が国の法やルールの中で国民と外国人の双方が安全安心に生活し、共に繁栄する社会の実現を目指す観点から、外国人の受け入れ、秩序ある共生のための総合的対応策が取りまとめられたところでございます。これを受けまして、総務省では、地方自治体からの要望も踏まえて、地域社会のルール等の習熟や、そのために必要な日本語指導に要する経費等について、令和8年度から特別交付税措置を講ずることとするなど、総合的対応策の下で、地方自治体の施策への支援を行っていくこととしておるところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#9347.2",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "多文化共生推進への認識と日本の未来像",
+          "sub_asks": [
+            "政府・社会問題としての捉え方",
+            "多文化共生を推進した際の日本の未来に関する認識"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "外国人の受け入れ、秩序ある共生社会実現に関する関係閣僚会議"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "令和8年度から"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "特別交付税措置"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 3,
+          "trigger_phrase": "令和8年度から特別交付税措置を講ずることとする",
+          "matched_pattern": "future-tense verb describing a CONCRETE government action with a named mechanism"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "令和8年度から特別交付税措置を講ずることとするなど、地方自治体の施策への支援を行っていくこととしておるところでございます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "抽象的な問いに対し、大臣は具体的な財政措置（特別交付税）という実務的な回答で返しており、記録としての価値は財政措置の明言にある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "問いが抽象的（認識を問う形式）であるため、大臣が具体的な施策の列挙に逃げやすく、未来像への直接的な回答が得られにくい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_030",
+      "segment_index": 7,
+      "topic": "東日本大震災における災害援護資金の貸付・滞納状況",
+      "question": {
+        "speaker": "岩渕友",
+        "party": "日本共産党",
+        "summary": "- 東日本大震災で貸し付けられた災害援護資金の件数と金額の提示を求める\n- 直近の滞納額および滞納率について回答を求める",
+        "full_text": "そこで要望があった災害援護資金について質問をしていきます。災害援護資金は災害で負傷、住宅や火災が被災した被災者に市町村が最大で350万円を貸し付ける制度です。県、市は国が3分の2、県が3分の1を負担し、市町村が窓口になって、貸し付けや償還金の回収なども行います。被災された方々の生活再建に役立っていると同時に、滞納が問題になっています。東日本大震災で貸し付けられた災害援護資金の件数と金額、直近の滞納額と滞納率について教えてください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "川井審議官",
+        "role": "",
+        "summary": "- 令和6年9月30日時点で貸付総件数は2万9726件、貸付総金額は525億3334万円である\n- 滞納件数は1万25件である",
+        "full_text": "東日本大震災における災害援護資金の状況については、内閣府において被災自治体の協力を得て調査を行っており、直近の令和6年9月30日時点において、貸付の総件数が2万9726件、貸付総金額が525億3334万円。うち、滞納の件数が1万25件。滞納の金額"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#9347.2",
+      "metrics": null
+    },
+    {
+      "id": "qa_031",
+      "segment_index": 8,
+      "topic": "災害援護資金の滞納額増加の原因",
+      "question": {
+        "speaker": "岩渕友",
+        "party": "日本共産党",
+        "summary": "- 宮城県などの事例を挙げ、滞納額や滞納率が高い現状を指摘\n- 滞納額がここまで多い理由と政府の認識を問う",
+        "full_text": "全体の滞納額は3年間で30億円も増えているんですね。話を伺った宮城県では約2万4000件に409億円が貸し付けられました。24年9月末時点の滞納額は仙台市が約33億円で滞納率が36%。仙台市を除く宮城県全体が28億円超で滞納率は4割にもなるんですね。滞納額がなぜここまで多いのか、どう認識しているでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "川井審議官",
+        "role": "",
+        "summary": "- 貸付は生活立て直しを目的としているが、経済事情の変化や病気など個々の事情により返済が困難な方がいると認識している",
+        "full_text": "災害援護資金の貸し付けは、一定の所得額を満たさない世帯に対して、生活の立て直しに資するために行われるものでございまして、貸し付けを受けたあとに、経済事情の変化や病気になられるなど、個々の事情により返済が厳しくなっている方がおられるものと承知しております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#10284.71",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "滞納額が増加している理由と認識",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "3年間で30億円も増えている"
+            },
+            {
+              "type": "organization",
+              "excerpt": "宮城県"
+            },
+            {
+              "type": "number",
+              "excerpt": "約2万4000件に409億円"
+            },
+            {
+              "type": "organization",
+              "excerpt": "仙台市"
+            },
+            {
+              "type": "number",
+              "excerpt": "約33億円で滞納率が36%"
+            },
+            {
+              "type": "number",
+              "excerpt": "28億円超で滞納率は4割"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 1.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "宮城県、仙台市",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "経済事情の変化や病気になられるなど、個々の事情により返済が厳しくなっている方がおられるものと承知しております。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は具体的な数値を用いて鋭く問い詰めているが、回答者は一般的な理由を述べるに留まり、具体的な分析や対策への言及がない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どう認識しているか」という抽象的な問いではなく、滞納率上昇の具体的要因の分析を求める形式にすれば、より実効的な回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_032",
+      "segment_index": 8,
+      "topic": "災害援護資金の償還免除要件の緩和",
+      "question": {
+        "speaker": "岩渕友",
+        "party": "日本共産党",
+        "summary": "- 宮城県市長会が償還期限の延長や免除要件の緩和を求めていることを指摘\n- 現行の免除条件が厳しいため、条件を広げるべきではないかと問う",
+        "full_text": "宮城県市長会は、期間が経過しても依然として生活困窮の状況から抜け出せず、償還困難な方がいるとして、相当期間の償還期限の延長と、回収困難な事例に対する償還免除の要件緩和を求める決議を、復興大臣宛てに提出をしています。援護資金の免除制度は特例はありますけれども、死亡、破産、精神、身体への著しい障害等々、条件が厳しくなっているんですね。これ、免除の条件を広げるべきではないでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "田島麻衣子",
+        "role": "立憲民主・無所属",
+        "summary": "- 返済を前提とした制度であり、完済した被災者との公平性の観点から、まずは返済努力をいただくことが原則である\n- 著しい障害や破産、東日本大震災の特例法による無資力要件を満たす場合は免除可能であり、状況に応じて活用してほしい",
+        "full_text": "様々なご事情により返済が困難となっている被災者がいらっしゃることは把握をしてございます。災害援護資金制度は返済を前提とした貸付制度でございます。そういう中で、既に返済されている被災者の方も多くいらっしゃるということを踏まえて、まずは返済に向けてご努力をいただくということが原則となってまいります。その上で、貸付を受けた方が著しい障害を受けた場合や破産手続を開始した場合などの償還免除に加えて、東日本大震災については特例法により一定の無資力要件を満たす場合にも償還免除できることとされております。いずれにしましても、被災された方の状況に応じてこうした制度をご活用いただきたいと考えておるところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5151"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#10284.71",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "援護資金の免除条件を緩和すべきか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "宮城県市長会"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "宮城県市長会",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "東日本大震災"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "特例法"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "災害援護資金制度は返済を前提とした貸付制度でございます。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な団体名を出して制度緩和を求めているが、回答は原則論に終始しており、新たなコミットメントや事実の提示はない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「広げるべきではないか」という抽象的な問いではなく、具体的にどの要件をどう緩和すべきかという提案形式にすれば、より踏み込んだ回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_033",
+      "segment_index": 8,
+      "topic": "無資力状態における返済免除の可否",
+      "question": {
+        "speaker": "岩渕友",
+        "party": "日本共産党",
+        "summary": "- 返済期限の猶予が行われた経緯に触れ、期限から10年過ぎても無資力状態である場合の免除について問う",
+        "full_text": "東日本大震災では本来10年の返済期限が13年とされました。それでも返済できずに昨年返済期限の猶予が行われて、市町村から国への返済も延長できるというふうにされました。今、無資力状態の免除の話もあったんですけれども、その場合も返済免除なるんだけれども、返済期限から10年過ぎても無資力状態の。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "田島麻衣子",
+        "role": "立憲民主・無所属",
+        "summary": "- 返済前提の制度であることや、完済者との公平性の観点から、直ちに免除を行うことは難しいと考えている\n- 個別の状況に応じて既存の償還免除制度を活用してほしい",
+        "full_text": "この災害援護資金制度は、先ほども御答弁したとおり返済を前提とした貸し付け制度であること、それから既に返済されている方、完済されている方も含めてそういう方が被災者の中にもいらっしゃいます。そういった方との公平性の観点から、直ちに免除を行うことは難しいのではないかと考えております。いずれにしましても、被災された方の個別の状況に応じて償還免除の制度をご活用いただきたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#10284.71",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "無資力状態における返済免除の適用可否",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "10年の返済期限が13年とされました"
+            },
+            {
+              "type": "date",
+              "excerpt": "昨年返済期限の猶予が行われて"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "無資力状態の被災者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "災害援護資金制度"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "完済されている方も含めてそういう方が被災者の中にもいらっしゃいます。そういった方との公平性の観点から、直ちに免除を行うことは難しい",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "無資力状態での免除という具体的な問いに対し、公平性の観点から困難であるという政府の基本的スタンスが明確に示されたやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問文の末尾が途切れており、文法的に不完全な形式となっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_034",
+      "segment_index": 8,
+      "topic": "自治体が債権放棄した場合の国による債権免除",
+      "question": {
+        "speaker": "岩渕友",
+        "party": "日本共産党",
+        "summary": "- 自治体が困窮被災者に返済を求める訴訟が相次いでいる現状を指摘\n- 自治体が債権を免除・放棄した場合に、国も自治体への債権を免除する規定を整備すべきではないかと問う",
+        "full_text": "努力してもね、やっぱり大変だから滞納になっているわけですよね。返済が免除されても、県、市町村は国への返還を行わなければなりません。だから自治体が困窮をしている被災者に返済を求めて訴訟が相次いでいます。全国知事会は、各自治体が貸付金に係る債権を免除または放棄することが適当であると判断する場合には、国においても自治体への債権を免除する規定を整備することを提言しています。自治体が債権を免除または放棄した場合は、国も自治体への債権を免除するべきではないでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "田島麻衣子",
+        "role": "立憲民主・無所属",
+        "summary": "- 法律に基づく償還免除（著しい障害、破産、一定の無資力要件）を行った場合は、国への償還も免除される\n- それ以外の要件を満たさない市町村独自の判断による債権放棄については、国の債権免除は難しい",
+        "full_text": "この災害援護資金については、貸付を受けた方が著しい障害を受けた場合、破産手続きを開始した場合、あるいは一定の無資力要件を満たす場合にであって、市町村が法律に基づく償還免除を行った場合には、その財源を貸しつけている国への償還も免除することとされているところでございます。一方で、こうした要件を満たさない場合で、市町村の独自のご判断として債権放棄を行う場合については、国の債権の免除というのは難しいものと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#10284.71",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "自治体が債権免除した際、国も免除すべきか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "全国知事会"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "困窮をしている被災者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "災害援護資金"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "市町村の独自のご判断として債権放棄を行う場合については、国の債権の免除というのは難しいものと考えております。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "自治体による独自債権放棄に対する国の対応について、明確に否定的な見解（法的解釈）が示されており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_035",
+      "segment_index": 8,
+      "topic": "災害援護資金の債権管理コストの負担",
+      "question": {
+        "speaker": "岩渕友",
+        "party": "日本共産党",
+        "summary": "- 阪神淡路大震災の事例を挙げ、自治体に管理・回収コストの負担が重くのしかかっていることを指摘\n- 管理コストを国が負担すべきではないか、または負担軽減措置が必要ではないかと問う",
+        "full_text": "阪神淡路大震災では兵庫県も関係自治体も返済免除、債権放棄を決定しましたけれども、国の免除はその一部にとどまっていて、自治体の負担が残り続けている状態なんですよね。自治体には管理や回収の人員やコストの負担も重くのしかかっています。全国市議会議長会や知事などから、債権回収に向けてかかる経費に助成措置を求める要望が出されています。これ、管理コストは国が負担するべきじゃないでしょうか。少なくとも負担軽減のための措置が何らか必要なんじゃないでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "田島麻衣子",
+        "role": "立憲民主・無所属",
+        "summary": "- 債権管理は市町村が行う「自治事務」であるため、まずは自治体において適切に対応すべきと考えている\n- ただし、制度運用上の相談があれば丁寧に対応したい",
+        "full_text": "その上で、この災害援護資金については、市町村において貸し付けを行うことができるとされている自治事務とされております。再建管理が必要となる業務となりますので、まずは自治体において適切にご対応いただくものと考えておるところでございます。ただし、国としては自治体から制度運用上のご相談などがあれば、丁寧に対応していきたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#10284.71",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "債権管理コストの国負担の是非",
+          "sub_asks": [
+            "管理コストを国が負担すべきではないか",
+            "負担軽減のための措置が必要ではないか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "阪神淡路大震災"
+            },
+            {
+              "type": "organization",
+              "excerpt": "全国市議会議長会"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "全国市議会議長会や知事",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "災害援護資金"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "自治事務"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "丁寧に対応していきたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "災害援護資金については、市町村において貸し付けを行うことができるとされている自治事務とされております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "災害援護資金の管理が「自治事務」であるという政府の解釈を明確に示した点に記録価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「負担軽減措置」の内容を具体的に提示して問えば、より踏み込んだ回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_036",
+      "segment_index": 8,
+      "topic": "水俣病患者の障害福祉サービス継続利用に関する大臣の対応",
+      "question": {
+        "speaker": "岩渕友",
+        "party": "日本共産党",
+        "summary": "- 水俣病患者が65歳以降も介護保険ではなく障害者サービスを継続利用できるよう、市長が認めるべきであるとの見解を提示\n- 石原大臣が水俣市長に対し、具体的にどのような伝え方をしたのかを問う",
+        "full_text": "一般的な障害者の皆さんは、65になると介護保険の方でそういうサービスを受けると、これは理解するんですよ。しかしね、水俣病と明らかにそこで被害を受けた障害を持った人が、その一般的な障害者と同じような制度に移管をしていくっていうのは、これはちょっとね、私は。で、また水俣の場合は特にね、今回石原大臣がね、本来なら大臣に聞かなきゃいけないんだけれど、その金子さんにね、その話を聞いて、水俣市長が特別に認めればね、まあほかの市町村でもそうやって首長が認めれば障害者サービスをそのまま受けられるようになってる制度なんだから、特に水俣の関係においてはね、それをちゃんと認めてね。金子さんは障害者サービスで引き続きね、訪問入浴介護サービスを受けたいと本人が言ってるんだから、そのまましてあげればいいというのが私の見解。そしてまた石原さんもそれを聞いてね、大臣も水俣市長にそういうことをお伝えしようというふうに言っただろうけれども、なんかそれが交代したとね。だから大臣はね、水俣市長にね、どういうことを伝えたのか、どういう言い方したのか。私だったら、「いやいや市長とあなたね、水俣病で障害を負った人を一般の障害者と同じように介護に移行するということじゃなくて、あなたの考え、決断でそのまま障害者サービスで行けることができるんだから、そうしてあげたら」っていうふうに、私だったらそういうふうに言うんだけれど、どういう言い方したのか教えてください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "辻環境副大臣",
+        "role": "",
+        "summary": "- 医療福祉の充実は重要課題と認識しており、金子さんの要望は水俣市の判断事項であると認識している\n- 大臣は要望を市長に伝えたが、後の会見で言及しなかったことは言葉足らずであったとし、事務方を通じて経緯を丁寧に説明している",
+        "full_text": "あの、環境省としてもですね、水俣病患者、また水俣病の被害者の皆様の多くが高齢期を迎えられる中、水俣病の被害を受けた地域の医療福祉の充実を図ることは重要な課題であると認識しています。障害福祉サービス及び介護保険サービスについては、各自治体において対実性患者を含む住民全体の福祉の増進を図る観点から、当該制度の在り方を定めていると理解していまして、金子さんのご要望についても水俣市の判断事項であると認識しています。こうしたことから、大臣はいただいたご要望について、5月1日の記者会見の前に水俣市長にお伝えされたものだと承知しています。また大臣は5月12日の会見において、5月1日の会見の場において市長にお伝えしたことに言及しなかったことについては、言葉足らずだったと申していまして、そのためその後すぐに事務方を向かわせて、経緯等を丁寧に説明をしています。事務方からは、その場において大臣の発言が誤解や不安を与えているとの指摘があったとの報告を受けまして、今後とも経緯等を丁寧に説明するよう事務方に指示をしたとお話をされたと承知しています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#10284.71",
+      "metrics": null
+    },
+    {
+      "id": "qa_037",
+      "segment_index": 8,
+      "topic": "水俣地域の地域振興と環境省の取り組み",
+      "question": {
+        "speaker": "大島九州男",
+        "party": "れいわ新選組",
+        "summary": "- 国の責任を認め、小規模な予算ではなく大々的なプロジェクトで水俣を復活させ、利益を被害保障に充てるべきだと主張\n- 環境省内でどのような議論を行っているか問う",
+        "full_text": "何が言いたいかと、これはね、先生方にもね、ぜひね、ご理解いただきたいのは、水俣病で障害を負った人が、今回65歳になったから、介護保険じゃなくて、そのまま障害サービスで行ったということを見てね、「いやいや、自分も障害者サービスを受けたいのに、じゃあ、それを介護保険で行かない、おら、障害者サービスがいいんだ」って言って、市町村にね、言う人はたまにいるかもしれないけど、水俣病なんだから、ここはね、水俣病って明らかに公害被害者なんだから、そこで受けた障害をしっかりとそのまま障害サービスでね、望んでいる人にそれを提供するってことは必要だと思うので、ぜひね、先生方もそういう後押しをしていただきたいなと。だから市長がその判断をすればできるってなってるんだし、いろんな諸事情で市町村で認めてそのまま移行してる人もいるんだから、なんでそこが水俣がね、市長がそこまでこだわるのかが私は理解できないと。これはちょっと決算委員会でも言ったんですけど、結局窒素とかが加害者責任ということで、自分たちの利益からこのいろんな被害のお金を出していかなきゃいけないと。窒素もなかなか業績が悪いと。だから窒素に任せるんじゃなくて、裁判で国の責任も十分認められたわけですから、北俣とか水俣地域の地域振興をしっかりやるって言ってる行政はね、年間6000万ぐらいのお金をちまちま出すんではなくてね、もっと大々的なこういうプロジェクトをやって、水俣をもっと復活させるようなことをやって、そこにそういう企業も入れて、その利益を地域に還元する、また被害保障に充てていくぐらいのね、積極的なことを環境省はね、やるべきだと思うんですけど、そこらへん、省内どういう議論をしてるんですか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "辻環境副大臣",
+        "role": "",
+        "summary": "- 地域振興は重要課題と認識し、地域のニーズに応じた取り組みを進めている\n- 「環境首都水俣創造事業」による約40億円の補助や、国立水俣病総合研究センター、水俣環境アカデミアの設置運営支援などを実施している",
+        "full_text": "水俣病被害者特措法において、政府は地域において事業会社が事業を継続することなどにより、地域の振興及び雇用の確保が図れるように努めるものと規定されています。地域振興は環境省としても重要な課題であると認識しています。これを踏まえて環境省としては地域のニーズをお伺いしながら取り組みを進めています。具体的には地域の幅広い関係者と連携協力しながら、平成24年度に環境首都水俣創造事業を立ち上げ、JNCを含む地域の企業などとの各種のプロジェクトに、これまで約40億円補助するなど、水俣病発生地域における地域の再生、融和、振興に取り組んできている次第でございます。さらに水俣市に設置した国立水俣病総合研究センターによる水俣病や水銀に関する総合的な調査研究、情報の収集整理研究成果や情報の国内外への提供、また水俣市が環境モデル都市づくり等を通じた地域振興を図るための高等教育研究教育開発拠点施設として開学した水俣環境アカデミアの設置運営に関する支援などの取り組みを実施しているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#10284.71",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "水俣地域の振興と被害保障への積極的施策に関する議論状況",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "決算委員会でも言った"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "水俣病で障害を負った人",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "水俣病被害者特措法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "環境首都水俣創造事業"
+            },
+            {
+              "type": "number",
+              "excerpt": "約40億円補助"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国立水俣病総合研究センター"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "水俣環境アカデミア"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "取り組みを進めています",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "環境首都水俣創造事業を立ち上げ、JNCを含む地域の企業などとの各種のプロジェクトに、これまで約40億円補助するなど、水俣病発生地域における地域の再生、融和、振興に取り組んできている",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問の前半は介護保険に関する要望であり、後半の環境省への問いかけが主眼。回答は具体的な事業名と予算額を挙げて実績を述べており、情報密度は高いが、今後の新たな議論については具体的に触れていない。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "介護保険の運用に関する不満と、環境省の地域振興策という異なるレイヤーの話が混在しており、焦点が分散している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_038",
+      "segment_index": 9,
+      "topic": "中国への臓器移植ツーリズムの実態調査",
+      "question": {
+        "speaker": "北村晴男",
+        "party": "日本保守党",
+        "summary": "- 中国における臓器移植の実態について調査を行っているか\n- 日本人による中国への移植ツーリズムの実態について調査を行っているか",
+        "full_text": "この問題についてまずお聞きしますが、厚労省は最新の中国における臓器移植の実態や日本人による中国への移植ツーリズムの実態について調査を行っているのでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "林芳正",
+        "role": "総務大臣",
+        "summary": "- 網羅的な調査は行っていないが、令和5年に研究班や学会と連携し、海外渡航移植を受けた患者の実態調査を実施した\n- 調査の結果、令和5年3月31日時点で中国で渡航移植を受けた患者は175名であった",
+        "full_text": "中国における臓器移植の実態について、網羅的に調査を行っているわけではございませんが、令和5年に厚生労働科学研究費補助金による研究班や関係学会等と連携し、臓器移植後患者の外来診療を実施している移植実施施設を対象に、中国を含む海外で渡航移植を受けた患者の実態調査を実施したところでございます。当該調査によりますと、令和5年3月31日時点における移植後の外来通院患者3万1684名のうち、中国で渡航移植を受けた患者は175名でございました。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#10894.26",
+      "metrics": null
+    },
+    {
+      "id": "qa_039",
+      "segment_index": 11,
+      "topic": "普天間飛行場の外来機増加への対応",
+      "question": {
+        "speaker": "伊波洋一",
+        "party": "沖縄の風",
+        "summary": "- 普天間飛行場における外来機のジェット戦闘機などの離発着回数増加について政府はどう考えているか\n- 外来機の飛行中止を米軍に働きかけるべきではないか",
+        "full_text": "防衛副大臣、危険性除去を掲げる日本政府として、普天間飛行場の離発着回数の増加、特に外来機のジェット戦闘機などの増加について、どのように考えているのでしょうか。外来機の飛行中止を米軍に働きかけるべきではありませんか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "宮崎副大臣",
+        "role": "",
+        "summary": "- 航空機運用による騒音等で周辺住民に負担をかけていることは申し訳なく思っている\n- 日米安全保障条約の目的達成のため、住民生活とのバランスを取りつつ必要な運用が行われていると認識している\n- 日米合意を遵守し、影響を最小限にとどめるよう引き続き申し入れを行い、安全確保に協力していく",
+        "full_text": "このように普天間飛行場における航空機の運用によって、航空機騒音も含めて、周辺住民の皆様にご負担をかけていることについては、正直に申し訳ないことだと思っております。我が国が戦後最も厳しく複雑な安全保障環境に直面する中で、アメリカ軍は日米安全保障条約の目的を達成するために、周辺地域の安全確保を大前提として、住民生活とのバランスを取りながら、アメリカ軍機の必要な運用を行っているものと認識をしております。防衛省としましては、アメリカ側との間において、普天間飛行場の航空機の運用に関し、日米間の合意を遵守し、安全面に最大限の配慮をしつつ、周辺地域に与える影響を最小限にとどめるよう、引き続きしっかりと申し入れをして、地域住民の方々の安全確保に向けて、緊密に協力をしてまいりたいと思っております。しっかり遵守するように申し入れもしていきたいと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#12090.41",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "普天間飛行場の外来機増加への考えと対応",
+          "sub_asks": [
+            "外来機の増加についてどう考えているか",
+            "外来機の飛行中止を米軍に働きかけるべきではないか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "普天間飛行場の離発着回数の増加"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "普天間飛行場周辺住民",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "日米安全保障条約"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "緊密に協力をしてまいりたいと思っております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "vice_minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "周辺地域に与える影響を最小限にとどめるよう、引き続きしっかりと申し入れをして、地域住民の方々の安全確保に向けて、緊密に協力をしてまいりたい",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "外来機の飛行中止という具体的な提案に対し、抽象的な「申し入れ」と「協力」という回答に留まっており、実効的な合意や具体的措置は示されていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「働きかけるべきではないか」というYes/No形式ではなく、具体的にどのような条件で制限を求めるべきかという踏み込んだ問い方が望ましい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_040",
+      "segment_index": 11,
+      "topic": "辺野古新基地建設の地盤改良工法の妥当性",
+      "question": {
+        "speaker": "伊波洋一",
+        "party": "沖縄の風",
+        "summary": "- 辺野古大浦湾の海底は起伏が激しく軟弱地盤が堆積しているが、羽田・関空・那覇空港などの実績ある工法で耐震性が確保できるという根拠があるか\n- 有識者の技術検討会において、他空港の海底構造と比較して議論し、お墨付きを得たことがあるか",
+        "full_text": "政府は辺野古移設新基地建設が条件だと繰り返しますが、辺野古大浦湾の海底には軟弱地盤が広がり、完成の見通しは立っていません。防衛省は羽田や関空、那覇空港などで実績のある地盤改良工法により、港湾の基準に基づく耐震性も確保できると繰り返しています。しかし、羽田や関空の埋立区域が比較的均質な地層構造であるのに対し、辺野古大浦湾は配布資料3のように地層埋没谷が何本も走る起伏の激しい海底に軟弱地盤が堆積しています。大浦湾のB27地点には水面下30メートルから90メートルまで軟弱地盤が堆積しています。また、那覇空港の埋め立て区域は水深5メートル以下が大半です。防衛省が相談した有識者の技術検討会では、羽田、関空、那覇空港などと、辺野古大浦湾の埋め立て区域の海底の構造について議論したり、お墨付きをもらったことがありますか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "奥田審議官",
+        "role": "",
+        "summary": "- 一般的で実績豊富な工法を採用しており、国交省監修の基準に基づき最大70mまで砂杭を打設することで安定性を確保できると結論づけている\n- 技術検討会において、大浦湾の海底地形を前提とした工法の採用や改良範囲について確認を得ている",
+        "full_text": "羽田空港等の多くの海上埋め立て空港でも用いられている一般的で施工実績が豊富な工法が採用されております。また、本事業における地盤改良等の設計につきましては、大浦湾側の海底地形を前提としまして、国土交通省が監修した基準に基づいて行われており、海面下最大70メートルまで砂杭を打設し、必要な地盤改良をすべて行うことで、構造物等の安定性を十分に確保できると結論が得られていると承知しております。なお、有識者で構成される技術検討会におきましては、大浦湾側の海底地形を前提として、その地盤改良工法を採用することや、その改良範囲等についてご確認いただいていると承知しております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#12090.41",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "技術検討会で他空港との海底構造の比較議論や承認があったか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "配布資料3"
+            },
+            {
+              "type": "field_case",
+              "excerpt": "羽田や関空、那覇空港"
+            },
+            {
+              "type": "field_case",
+              "excerpt": "大浦湾のB27地点"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "有識者の技術検討会",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.6
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "海面下最大70メートル"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国土交通省が監修した基準"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "海面下最大70メートルまで砂杭を打設し、必要な地盤改良をすべて行うことで、構造物等の安定性を十分に確保できると結論が得られている",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "他空港との構造比較という具体的な問いに対し、政府側は「一般的工法であること」と「大浦湾の地形を前提に検討したこと」を述べるに留まり、直接的な比較議論の有無への回答を避けている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_041",
+      "segment_index": 11,
+      "topic": "辺野古新基地の完成時期と普天間返還の見通し",
+      "question": {
+        "speaker": "伊波洋一",
+        "party": "沖縄の風",
+        "summary": "- 辺野古埋立が実現し、新基地がいつまでに提供できると考えているか\n- 普天間基地の危険性除去（返還）について、沖縄県民はいつまで待てばよいのか",
+        "full_text": "防衛大臣、辺野古埋立が実現し、新基地がいつまでに提供できると考えているのでしょうか。普天間返還、普天間基地の危険性の除去について、沖縄県民はいつまで待てばいいのでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "宮崎副大臣",
+        "role": "",
+        "summary": "- 変更後の計画に基づく工事着手から完了まで9年3ヶ月を要する説明をしている\n- 具体的な返還時期は完成後の部隊移転プロセスを経て決定されるが、提供手続き完了後に早期返還が実現できるよう米軍と連携する",
+        "full_text": "次に普天間飛行場の返還について、沖縄県民いつまで待てばよいのかというお尋ねでありますが、まず普天間飛行場代替施設建設の事業につきまして、この後期については、変更後の計画に基づく工事に着手してから、工事完了までに9年3ヶ月を要する旨の説明をさせていただいているところでございます。その上で、普天間飛行場の具体的な返還時期については、完成後における部隊の移転などのプロセスを考慮した上で決定されるものですが、提供手続きの完了後に早期に普天間飛行場の全面返還が実現できるように、引き続きアメリカと緊密に連携をしていきたいと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#12090.41",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "新基地の提供時期と普天間返還の時期について",
+          "sub_asks": [
+            "新基地がいつまでに提供できるか",
+            "普天間返還まで沖縄県民はいつまで待てばいいか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "沖縄県民",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "9年3ヶ月"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "引き続きアメリカと緊密に連携をしていきたいと思っております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "変更後の計画に基づく工事に着手してから、工事完了までに9年3ヶ月を要する旨の説明をさせていただいている",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "工事期間という具体的な数字は出ているが、返還時期という核心的な問いに対しては抽象的な回答に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「いつまで待てばいいのか」という感情的な問いではなく、具体的な返還期限の確約を求める形式にすべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_042",
+      "segment_index": 12,
+      "topic": "大垣警察署事件の問題点",
+      "question": {
+        "speaker": "福島みずほ",
+        "party": "社会民主党",
+        "summary": "- 大垣警察署事件において具体的に何が問題だったのか",
+        "full_text": "じゃあ、大垣警察署事件は具体的に何が問題だったんですか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "鈴木審議官",
+        "role": "",
+        "summary": "- 控訴審において原告が主張する事実の多くが認定されたと認識している\n- 個別の情報収集活動について改めて論述することは適切ではない",
+        "full_text": "本件の原審及び控訴審におきましては、警察の情報収集活動ということからの性質上、岐阜県警察からその目的、対応などを明らかにすることができなかったところ、控訴審において、原告の主張する事実の多くが認定されたものと認識をしているところでございます。警察としてお尋ねの判決を重く受け止めているところでありまして、そうした中で大垣署員による個別の情報収集活動について改めて論述をすることは適切ではないと考えていることをご理解いただければと存じます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#12758.94",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "大垣警察署事件の具体的な問題点",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "field_case",
+              "excerpt": "大垣警察署事件"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "大垣警察署",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "岐阜県警察"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "控訴審において、原告の主張する事実の多くが認定されたものと認識をしている",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な問題点の回答を避け、判決を重く受け止めているという抽象的な回答に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「何が問題だったか」というオープンクエスチョンであるため、回答者が詳細を回避しやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_043",
+      "segment_index": 12,
+      "topic": "大垣警察署事件の問題点（再質問）",
+      "question": {
+        "speaker": "福島みずほ",
+        "party": "社会民主党",
+        "summary": "- 何が問題だったのか（再度の問いかけ）",
+        "full_text": "何が問題だったんですか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "鈴木審議官",
+        "role": "",
+        "summary": "- 警察の情報収集活動の性質上、目的や対応を明らかにできなかったが、控訴審で原告の主張する事実の多くが認定されたと認識している",
+        "full_text": "繰り返しになって恐縮でございますけれども、本件の原審及び控訴審におきまして、警察の情報収集活動という事柄の性質上、岐阜県警察からその目的、対応などを明らかにすることができなかったところ、控訴審において、原告の主張する事実の多くが認定されたものと認識しているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#12758.94",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "問題点についての問い",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "岐阜県警察"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "岐阜県警察からその目的、対応などを明らかにすることができなかったところ、控訴審において、原告の主張する事実の多くが認定された",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問が極めて簡潔であるため具体性に欠けるが、回答側が裁判での認定事実に触れており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "何が問題だったのかという問いが抽象的すぎるため、具体的な論点を指定して質問すべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_044",
+      "segment_index": 12,
+      "topic": "国家情報会議設置法案の内容と制限",
+      "question": {
+        "speaker": "福島みずほ",
+        "party": "社会民主党",
+        "summary": "- 収集すべき情報や収集してはならない情報の定義、制限、監視体制が法案にないのではないか",
+        "full_text": "で、現在、内閣委員会で国家情報会議設置法案が審議中です。今の法案、何を収集し何を収集しないか一切ないんですよ。制限もないんですよ。監視もないんですよ。削除もできないんですよ。問題じゃないですか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "蒲谷内閣審議官",
+        "role": "",
+        "summary": "- 第2条で重要情報活動（安全保障、テロ防止、国政運営に資する情報収集等）を規定している\n- 外国情報活動への対処について規定している\n- 内閣官房に国家情報局を置き、情報の集約などを行う",
+        "full_text": "委員のご指摘ございました国家情報会議設置法案でございますけれども、こちら第2条におきまして重要情報活動、これは安全保障の確保、テロリズムの発生の防止、緊急の事態への対処、その他の我が国の重要な国政の運営に資する情報の収集調査に係る活動と規定されております。また、外国情報活動への対処が、公になっていない情報のうち、その漏洩が重要国政運営に支障を与える恐れがあるものを取得するための活動であって、外国の利益を図る目的で行われるものへの対処と。総合調整などを担う組織として、内閣官房に国家情報局を置くということが規定されておりまして、国家情報会議及び国家情報局におきましては、こうしたそれぞれの所掌事務を遂行するために必要な情報の集約などを行うということになってございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5197"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#12758.94",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "国家情報会議設置法案の制限・監視の欠如への見解",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "国家情報会議設置法案"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "第2条"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "重要情報活動"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "外国情報活動への対処"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国家情報局"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "第2条におきまして重要情報活動、これは安全保障の確保、テロリズムの発生の防止、緊急の事態への対処、その他の我が国の重要な国政の運営に資する情報の収集調査に係る活動と規定されております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は批判的な意見表明に近く、具体的問いが不明確。回答は法案の条文説明に終始しており、制限や監視の欠如という懸念への直接的な回答は避けている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「問題じゃないですか」という情緒的な問いではなく、具体的にどのような制限や監視措置を求めるかを明示して問うべきである。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_045",
+      "segment_index": 12,
+      "topic": "国家情報会議設置法案の欠陥と政治的中立性",
+      "question": {
+        "speaker": "福島みずほ",
+        "party": "社会民主党",
+        "summary": "- 政治的中立義務やプライバシー侵害禁止、位置情報追跡禁止などの具体的な規定がなく、欠陥法案ではないか",
+        "full_text": "こういう規定すらないじゃない。政治的中立義務もない、何にも書いてありません。政治的中立性の条文も、プライバシーを侵害してはならないという条文も、さっき言った位置情報を追跡してはならないという条文も、何にもないんですよ。これは本当に欠陥法案だと思いますがいかがですか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "蒲谷内閣審議官",
+        "role": "",
+        "summary": "- 国家情報局の職員には憲法および国家公務員法の服務規定が適用される\n- 公務員は全体の奉仕者として公共の利益のために勤務しなければならないと規定されており、これを逸脱してはならない",
+        "full_text": "国家情報局の職員につきましては、憲法及び国家公務員法の服務に関する規定が適用されます。憲法第15条第2項におきまして、全て公務員は全体の奉仕者であって一部の奉仕者ではない。国家公務員法第96条第1項におきまして、全て職員は国民全体の奉仕者として、公共の利益のために勤務しなければならない。職務を遂行するに当たりまして、これらの規定を逸脱することがあってはならないということは当然だと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5197"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9013#12758.94",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "法案に中立性等の規定がなく欠陥ではないか",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "憲法第15条第2項"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国家公務員法第96条第1項"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "国家情報局の職員につきましては、憲法及び国家公務員法の服務に関する規定が適用されます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "法案の不備を指摘する問いに対し、既存の憲法および国家公務員法が適用されるという法的解釈で回答しており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「欠陥法案だと思うがいかがか」という主観的な問いではなく、具体的にどの条文を盛り込むべきかという提案形式にすれば、より具体的な回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    }
+  ],
+  "score_schema_version": "2.0",
+  "prompt_version": "V4"
+}
