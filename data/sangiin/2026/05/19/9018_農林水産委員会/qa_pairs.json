@@ -1,0 +1,1425 @@
+{
+  "pairs": [
+    {
+      "id": "qa_001",
+      "segment_index": 2,
+      "topic": "第4次食育推進基本計画の目標達成状況",
+      "question": {
+        "speaker": "石垣のりこ",
+        "party": "立憲民主・無所属",
+        "summary": "- 第4次食育推進基本計画の目標のうち、令和6年度時点で達成したものが2項目にとどまっている理由を問う",
+        "full_text": "それでは質疑に移ってまいりますが、まずは令和3年3月に策定されました第4次食育推進基本計画には、令和7年度までの具体的な目標値16目標24項目が設定されています。これは令和6年度時点において、目標を達成したものは2項目にとどまっていることについて、その理由をどのように分析しているか、農林水産省からご紹介をお願いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "農林水産省消費・安全局長",
+        "role": "",
+        "summary": "- 行政主導の目標は上昇傾向にあるが、国民の意識・行動に関わる目標は横ばいまたは減少している\n- 新型コロナウイルス感染拡大や物価高騰の影響を大きく受けていると分析している",
+        "full_text": "現行の第4次の食育推進基本計画で定められている目標につきましては、行政が主導して実施する目標に関しましては、上昇しているものが多い一方で、国民の意識や行動に関係が大きい目標に関しましては、横ばいまたは減少しているものが多くなっているというふうに分析しております。過去5年間の第4次食育推進基本計画の計画期間内には、新型コロナウイルス感染症の感染拡大や食料品等の物価高騰といった事態が生じておりまして、これらの影響を大きく受けているというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9018#2125.82",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "食育推進基本計画の目標達成率の低さの分析",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "第4次食育推進基本計画"
+            },
+            {
+              "type": "date",
+              "excerpt": "令和3年3月"
+            },
+            {
+              "type": "number",
+              "excerpt": "16目標24項目"
+            },
+            {
+              "type": "number",
+              "excerpt": "2項目にとどまっている"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 1.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "農林水産省",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "新型コロナウイルス感染症"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "食料品等の物価高騰"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "行政が主導して実施する目標に関しましては、上昇しているものが多い一方で、国民の意識や行動に関係が大きい目標に関しましては、横ばいまたは減少している",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な数値に基づいた質問に対し、政府側が現状の分析（行政主導vs国民行動）と外部要因を明確に回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_002",
+      "segment_index": 2,
+      "topic": "食育の定義",
+      "question": {
+        "speaker": "石垣のりこ",
+        "party": "立憲民主・無所属",
+        "summary": "- 食育の定義について改めて伺いたい",
+        "full_text": "もともとこの食育の概念というのは多岐にわたっていると思いますが、あらゆることが食育に通じるとすら考えられる内容になっていると私自身も考えるんですが、食育の定義について改めて伺いたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "藤木眞也",
+        "role": "農林水産委員長",
+        "summary": "- 法案に定義規定はないが、前文に基本考え方を記載している\n- 食育とは、生きる上の基本であり知育・徳育・体育の基礎となるものであり、経験を通じて知識と選択力を習得し、健全な食生活を実践できる人間を育てることである",
+        "full_text": "確かにこの法案では定義の規定は置いてございません。特に前文の第2段落において、その内容について規定をしておりますけれども、すなわち、食育は生きるうえでの基本であって、知育、徳育、および体育の基礎となるべきものであるとともに、さまざまな経験を通じて、食に関する知識と食を選択する力を習得し、健全な食生活を実践することができる人間を育てていくことであるとしているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9018#2125.82",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "食育の定義についての確認",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "前文の第2段落"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "食育は生きるうえでの基本であって、知育、徳育、および体育の基礎となるべきものであるとともに、さまざまな経験を通じて、食に関する知識と食を選択する力を習得し、健全な食生活を実践することができる人間を育てていくことである",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "食育の定義という基本的かつ重要な概念について、法案の前文に基づいた政府の解釈が明確に記録されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_003",
+      "segment_index": 2,
+      "topic": "食育における感謝の念のあり方",
+      "question": {
+        "speaker": "石垣のりこ",
+        "party": "立憲民主・無所属",
+        "summary": "- 感謝は学びや経験の結果として自然に沸き起こるものであるべきだが、目標として掲げることについてどう考えるか",
+        "full_text": "この前文にはですね、そのほかにも、食に関わる人々のさまざまな活動への感謝の念や理解を深めつつと、感謝を深めるということが目標として掲げられているんですね。感謝そのものは非常に重要なものであると私も思うんですが、本来、感謝というのは、食についてのあらゆる学びを通して、経験を通して、その結果、自然に沸き起こり、深まるものではないかと考えますが、このあたりのお考えについてお聞かせください。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "藤木眞也",
+        "role": "農林水産委員長",
+        "summary": "- 農林漁業への理解醸成は食育の根幹であり、基本法制定時から前文や第3条に配慮事項として記載されている\n- 学校給食法や道徳科の学習指導要領においても、食に関わる人々への理解や感謝の念を養うことが目標として位置づけられている",
+        "full_text": "広く国民の農林漁業の現場への理解を醸成すると。食育基本法においてまさに肝の部分、食育が目指す根幹の部分なのだろうと考えておりまして、食育基本法の制定時から前文に記載があるとともに、第3条において、食育の推進に当たっては感謝の念や理解が深まるよう配慮されなければならないとされています。実際に学校現場においても、教育はこのことを明確に意識して行われているわけでありまして、例えば、学校給食法においては、第2条で、学校給食を実施するにあたっては、次に掲げる目標が達成されるよう努めなければならないとして、目標の一つに、食生活が食に関わる人々の様々な活動に支えられていることについての理解を深め、勤労を重んずる態度を養うこととされています。また、道徳科の科目においても、目標の一つに感謝というものがありまして、学習指導要領において、身近な人々から見えないところで日々の生活を支えてくれる人々まで、成長とともに尊敬と感謝の念が広がっていくよう指導することが大切になるという記載がなされているところであります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9018#2125.82",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "食育における「感謝」のあり方に関する考え",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "この前文"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "食に関わる人々",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.6
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "食育基本法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "学校給食法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "学習指導要領"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "食育基本法の制定時から前文に記載があるとともに、第3条において、食育の推進に当たっては感謝の念や理解が深まるよう配慮されなければならないとされています。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は感謝の「自然な発生」という哲学的な問いを投げかけたが、回答者は既存の法律や指導要領の根拠を列挙して制度的な正当性を説明した。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「お考えをお聞かせください」という抽象的な問いであるため、回答者が法的な根拠の提示に逃げることが容易な設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_004",
+      "segment_index": 3,
+      "topic": "農林漁業体験の減少と改善策",
+      "question": {
+        "speaker": "舟山康江",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 食育推進基本計画において農林漁業体験の目標が未達であり、数値が大きく減少している現状がある\n- 今回の法改正によって、農林水産省としてこの状況を改善し、さらに力を入れていく考えがあるか",
+        "full_text": "その上で、本法について少し確認していきたいと思いますけれども、まず先ほど石垣議員から質問がありましたとおり、食育推進基本計画の目標が多くの項目で未達となっているというのは大変残念だと思っております。その中で農林漁業体験の促進に関しては相当大きく下落しておりますよね。この農林漁業体験は、食や農林水産業についての意義や理解を深めてもらうことに寄与すると農林水産省としては分析している中で、この意識調査を見ても、体験に参加したことで多くの人が自然の恩恵や生産者への感謝を感じられるようになった。まさに石垣さんが指摘したように、やはり体験の中で自然にいろんな感謝の思いとか重要性が感じられるようになっていると思います。この数値が大きく減少していることに対して、今回法改正で農林水産省としては改善できると、こういったことをさらに力を入れていきたいということがあるんでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "食料安全保障局長",
+        "role": "",
+        "summary": "- 農林漁業体験の割合は目標の70%以上に対し、現状57.1%と下回っている\n- コロナ禍による接触制限が大きく影響したと考えている\n- モデル的な取組の構築を支援し、目標値の底上げに努めたい",
+        "full_text": "農林漁業体験を経験した国民の割合、これにつきましては、第4次基本計画の目標の1つとなっておりまして、基本計画作成時に65.7%であった割合を目標値として70%以上に引き上げることを目標としておりました。残念ながら現状におきましては、その目標、さらには基本計画作成時の値を下回る57.1%という状況になっているところでございます。これにつきましては、この計画期間中に人との接触が制限されるようなコロナのような事態があったということも大きく影響しているかというふうに思っております。このような事態に対応するために農林水産省といたしましても、まさにその農林漁業の体験について、ぜひモデル的な取組が構築できるようなそういったものについて支援をしてまいりたいというふうに考えておりまして、このような取組に通じまして、目標値の底上げに努めてまいりたいというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9018#2703.11",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "法改正で農林漁業体験の減少を改善し、注力する意向か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "農林水産省"
+            },
+            {
+              "type": "other",
+              "excerpt": "食育推進基本計画"
+            },
+            {
+              "type": "other",
+              "excerpt": "意識調査"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "65.7%"
+            },
+            {
+              "type": "number",
+              "excerpt": "70%以上"
+            },
+            {
+              "type": "number",
+              "excerpt": "57.1%"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "目標値の底上げに努めてまいりたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "基本計画作成時の値を下回る57.1%という状況になっているところでございます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "農林漁業体験の実施率が目標を大幅に下回っているという具体的数値が記録されており、資料的価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "法改正のどの条文や仕組みが具体的に改善に寄与するのかを問う形式にすれば、より具体的な回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_005",
+      "segment_index": 3,
+      "topic": "学校における農林漁業教育の推進と学校側の協力",
+      "question": {
+        "speaker": "舟山康江",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 学校における直接体験活動は非常に重要であり、法改正でも農林漁業教育の推進が盛り込まれている\n- 学校側の理解と協力が不可欠であるため、文部科学省としてどのように推進しようとしているか",
+        "full_text": "その中でやはり学校における直接体験活動、こういった農林水産の活動等は非常に重要だと思います。法改正でも農林漁業教育の推進が盛り込まれていますけれども、学校側のさらなる理解と協力、これ不可欠だと思っております。健全な育成に重要、教育効果も高いという中で、学校側としてこの農林漁業教育、農林漁業体験をどのように推進しようとしているのか、理解と協力に関してお答えください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "学習基盤審議官",
+        "role": "",
+        "summary": "- 体験活動は人間性や社会性を育む上で重要と考えている\n- 実施率は上昇傾向にある一方、受入先との調整や教員の負担が課題となっている\n- コーディネーター経費の支援などを継続し、関係機関と連携して学校側の理解と協力を得ながら体験活動の充実に努める",
+        "full_text": "議員ご指摘のとおり、自然体験活動等の体験活動は、豊かな人間性や社会性、主体性等を育む上で大変重要なものと考えております。令和6年度に内閣官房と文部科学省が合同で実施した調査によれば、いずれかの学年で農林漁村体験活動を実施した学校は、小学校47.2%、中学校31.3%となっておりまして、3年前の調査時点と比べて、全ての校種で実施率が上昇したという一方で、受入先との事前調整や宿泊を伴うことによる教員の負担が大きいなどの課題も確認ができたところでございます。文部科学省におきましては、従前より小中高等学校における体験活動の取組を推進するために、農山漁村体験などの学校が行う宿泊体験活動に対して、こういった調整を行うコーディネーターの経費も含めた支援を行っておりまして、この中で漁業、農業、林業などの各種活動が行われております。文部科学省としては、今回の法律改正案の趣旨も踏まえまして、関係機関とも連携しながら、こうした取組の周知等を通じまして、学校側のさらなる理解と協力を得ながら、子どもたちの健全な育成に欠かせない体験活動の充実に努めてまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9018#2703.11",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "農林漁業教育の推進に向けた学校側の理解と協力の得方",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "法改正でも農林漁業教育の推進が盛り込まれています"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "学校側",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.6
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "小学校47.2%"
+            },
+            {
+              "type": "number",
+              "excerpt": "中学校31.3%"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "内閣官房と文部科学省"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "体験活動の充実に努めてまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "農林漁村体験活動を実施した学校は、小学校47.2%、中学校31.3%となっておりまして、3年前の調査時点と比べて、全ての校種で実施率が上昇した",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "現状の実施率という具体的数値は示されたが、今後の具体的な推進策については抽象的な努力目標に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どのように推進しようとしているのか」という問いに対し、具体的な施策案を提示させる形式（例：具体的にどのような支援策を講じるか）にすれば、より踏み込んだ回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_006",
+      "segment_index": 3,
+      "topic": "学校給食会の現在の役割と地産地消への貢献",
+      "question": {
+        "speaker": "舟山康江",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 学校給食における地場産物の活用は重要である\n- 現代における学校給食会の役割は何であり、地産地消に貢献する組織になり得るのか、文科省の見解を問う",
+        "full_text": "最後となりますけれども、学校での食育に当たって学校給食、特に地場産物を生きた教材として指導に活用することは大変重要だと考えております。そういった観点から学校給食会、これは食料不足下では相当大きな食材調達、提供、大きな役割があったと思いますけれども、現在における学校給食会の役割は一体何なのか。逆に今、地場産の供給のネックになっているんじゃないかという指摘も耳にすることがあります。現在的な学校給食会の役割は何なのか。地産地消に対する貢献する組織になり得るのか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "上山文部科学戦略官",
+        "role": "",
+        "summary": "- 現在は主食原料の安定供給や食育推進、衛生管理研修などを主に行っている\n- 設立当初のような国調達物資の流通役割はなく、多様な主体が食材納入に参画している\n- 生産者団体と協力し地産地消を推進している事例もあり、地域の実情に応じて貢献できるよう自治体に適切に助言したい",
+        "full_text": "各都道府県の学校給食会は、昭和29年から昭和34年頃にかけ、国が調達した学校給食用物資を都道府県内において適正かつ円滑に流通させること等を目的に設立され、現在は公益財団法人として、主に米、小麦などの主食原料の安定供給に加え、食育推進や衛生管理の充実に関する研修などを行っていると承知しております。一方、現在の学校給食会に設立当初のような国が調達した物資の円滑な流通という役割はございませんで、給食用の食材の納入には農業協同組合や地域の卸事業者など多様な主体が参画をしている状況でございます。学校給食会の中には、生産者団体との直接的な協力関係により、地域の実情等に応じた地産地消の推進や、食育の充実につなげている事例もあると承知をしてございます。文部科学省といたしましても、地域の実情に応じ、学校給食会が地産地消の推進や、食育のさらなる発展に貢献する組織として機能するよう、各自治体に対し、適切に助言等を行っていきたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9018#2703.11",
+      "metrics": null
+    },
+    {
+      "id": "qa_007",
+      "segment_index": 3,
+      "topic": "米飯給食の現状と推進",
+      "question": {
+        "speaker": "舟山康江",
+        "party": "国民民主党・新緑風会",
+        "summary": "- 米価上昇の中での米飯給食の現状について問う",
+        "full_text": "また、米価上昇の中で給食の要である米飯給食。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "山下農林水産副大臣",
+        "role": "",
+        "summary": "- 米飯給食の回数は増加傾向にあり、令和5年には週3.6回まで増加している\n- 関係省庁と連携し、日本型食生活の魅力発信と米飯給食の推進定着に努める",
+        "full_text": "また、委員御指摘の米飯給食におきましては、実施改正について申し上げますと、昭和61年以降、昭和61年というのは提案者の柳内委員と私が小学校に入ったところなんですけれども、その頃以降は週2回台でありました。平成20年以降というのは週3回台で推移しております。令和5年には週3.6回まで増加しているところであります。今後とも米飯を中心とした日本型食生活の魅力や各地域の多様な取組事例を小中学校の関係者にとどまらず幅広く発信するとともに関係省庁とも連携し米飯給食の推進定着に努めてまいりたいというふうに思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9018#2703.11",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "米飯給食に関する現状や要望（問いが不完全）",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "米飯給食",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "昭和61年以降"
+            },
+            {
+              "type": "number",
+              "excerpt": "週2回台"
+            },
+            {
+              "type": "number",
+              "excerpt": "平成20年以降というのは週3回台"
+            },
+            {
+              "type": "number",
+              "excerpt": "令和5年には週3.6回"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "米飯給食の推進定着に努めてまいりたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "令和5年には週3.6回まで増加しているところであります。",
+          "score": 0.6
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "質問文が体言止めで完結しておらず問いが不明確だが、回答側で米飯給食の回数推移という具体的な統計数値を提示しているため、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が文章として完結しておらず、何を求めているのか（現状確認か、対策要望か）が不明確である。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_008",
+      "segment_index": 4,
+      "topic": "職場における食育の場としての位置づけと狙い",
+      "question": {
+        "speaker": "高橋光男",
+        "party": "公明党",
+        "summary": "- 職場を食育の場として法律に明記した狙いについて\n- 健康づくり以外に、労働効率向上やコミュニケーション活性化などの考えが含まれているか",
+        "full_text": "今回の改正では食育の場として職場が法律に明記されました。まず提出者に、今回職場を食育の場として位置づけた狙いはどこにあるのか。健康づくりだけではなく、労働効率の向上、コミュニケーションの活発化なども含め、どのような考えで規定を設けたのでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "柳内委員長代理",
+        "role": "",
+        "summary": "- 食への関心低下や栄養バランスの乱れ、消費者と生産者の関係希薄化などの課題に対応し、大人の食育を推進するため\n- 民間企業を巻き込んだ食環境づくりを実現し、消費行動の変容につなげる趣旨である\n- 官民連携職域プラットフォームを通じて、企業の取組発信や連携促進、食生活改善の活性化を図る",
+        "full_text": "昨今、食に対する関心の低下、食の簡便化、栄養バランスの乱れが顕著になっていること。また、農の現場の実情に触れる機会の減少等に起因して、消費者と生産者の関係が希薄化しているなど、食を取り巻く様々な課題が生じているため、子どもだけでなく、大人の食育に関する取組をより一層推進していく必要があるとの認識に立ち、大人の食育を新たな運動として掲げ、民間企業を巻き込んで、消費行動の変容につながる食環境づくりを実現していこうと、こういった趣旨によりまして、食育の場として、職場の文言を明記したところであります。具体的な取組としましては、先に上谷議員の方から先ほどご紹介申し上げましたけれども、既に官民の幅広い関係者が連携する場として、官民連携職域プラットフォームが立ち上げられておりまして、会員企業の様々な食育活動を全国に発信していく。また、会員交流会や勉強会などを通じて、食育活動の高度化や様々な主体による新たな連携を促進していく。そして、課題を決めて連携をして、新たな食育に挑戦するプロジェクトを実施していくなどの取組が行われています。こうした活動を通じて、食生活の改善に資する企業の取組を奨励することで、職場内での食生活改善の取組の活性化が図られたり、あるいは有用な取組の横展開を通じて、より多くの企業が従業員等の健康に配慮した食生活の実践に取り組むようになることなどが期待をされています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9018#3413.08",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "職場を食育の場として位置づけた狙い",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "今回の改正では食育の場として職場が法律に明記されました"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "職場",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "官民連携職域プラットフォーム"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "大人の食育を新たな運動として掲げ、民間企業を巻き込んで、消費行動の変容につながる食環境づくりを実現していこうと、こういった趣旨によりまして、食育の場として、職場の文言を明記したところであります。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "法改正の趣旨について明確に回答しており、具体的なプラットフォーム名も挙げられているため、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_009",
+      "segment_index": 4,
+      "topic": "中小企業の共同食堂や地域飲食店連携への支援",
+      "question": {
+        "speaker": "高橋光男",
+        "party": "公明党",
+        "summary": "- 中小企業が共同利用できる食堂や地域飲食店との連携を支援してほしい\n- こうした事例を横展開してほしい",
+        "full_text": "一方で社食は中小企業では単独で設置することが難しいです。また、物価高や人件費上昇で既存の社食を維持することも厳しいというお声もあります。そうした中で同じオフィスビルに入る複数企業が共同で食堂を設置するような事例も出てきております。食事補助の引き上げや今回の法改正を機に、中小企業が共同で利用できる食堂や地域飲食店との連携をぜひ支援していただきたいと思います。同時に、こうした事例を横展開しながら。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "山下農林水産副大臣",
+        "role": "",
+        "summary": "- 食育実践優良法人認定制度を創設し、300名以下の小規模企業でも置き型社食などの取組が行われている\n- 経産省、厚労省、民間企業等と連携し、職場における食の環境整備を通じて大人の食育推進に積極的に取り組む",
+        "full_text": "今、柳内委員がお触れになられました官民連携食育プラットフォームにおきましては、経済産業省の健康経営優良法人認定制度と連携し、従業員に対して食生活の改善に資する取組を行う企業を認定いたします。食育実践優良法人認定制度を昨年度創設したところであります。そのうち約4割は従業員の数が300名以下の企業でありまして、健康的なお弁当の提供でありますとか、置き型社食サービスの導入などの取組が行われているというふうに承知しております。今後とも経済産業省でありますとか、厚生労働省や民間企業などとの連携の上、職場における食の環境整備等を通じて、大人の食育の推進に積極的に農林水産省としても取り組んでまいりたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9018#3413.08",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中小企業の共同食堂や地域飲食店連携への支援要望",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "中小企業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "官民連携食育プラットフォーム"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "健康経営優良法人認定制度"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "食育実践優良法人認定制度"
+            },
+            {
+              "type": "number",
+              "excerpt": "約4割は従業員の数が300名以下の企業"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "大人の食育の推進に積極的に農林水産省としても取り組んでまいりたいと思います",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "食育実践優良法人認定制度の認定企業の約4割は従業員の数が300名以下の企業であり、置き型社食サービスの導入などの取組が行われている。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的な支援要望であるのに対し、回答は既存の認定制度の紹介に留まっており、直接的な回答になっていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "要望形式の記述で終わっており、政府に「Yes/No」や「具体的な支援策の有無」を問う形式になっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_010",
+      "segment_index": 5,
+      "topic": "食育基本法における「食についての意識」の定義",
+      "question": {
+        "speaker": "杉本純子",
+        "party": "参政党",
+        "summary": "- 食育基本法の前文にある「食についての意識」には、単なる消費者視点だけでなく、生産者側の視点も含まれているか",
+        "full_text": "最初に、食育基本法の現行条文の前文には、「国民一人ひとりが食について改めて意識を高め」とあり、この考え方は改正後にも変わることなく受け継がれております。この食についての意識、これは単に消費者側としてお腹を満たすとか、健康のための栄養だけではなく、例えば誰がどのように作ったのか、日本には四季もあり、地域ごとに食文化もあります。旬を味わうとか、地産地消で地元の農産物を大切にすることなど、食を単なる消費ではなく、国を支えるものと考えます。こうした生産者側という意識も含まれていると考えますが、いかがでしょうか。お聞かせください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "藤木眞也",
+        "role": "農林水産委員長",
+        "summary": "- 現行法においても、生産者と消費者との信頼関係構築や生産に関わる人々の活動への理解を深める取組を進めており、生産の視点が含まれている",
+        "full_text": "現行法においても、この前文に、食に関する生産者と消費者との信頼関係の構築など、農林漁業者等の食の生産に関わる人々の様々な活動に対し、理解を深めることができるよう取組を進めてきたところでありまして、食についての意識には、この生産の視点というものも、現行からも含まれているところであります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9018#4080.12",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "食育基本法の「食についての意識」に生産者側の視点が含まれるか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "食育基本法の現行条文の前文"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "生産者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "農林漁業者等"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "食についての意識には、この生産の視点というものも、現行からも含まれているところであります。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "食育基本法の解釈について、生産者の視点が含まれることを政府が認めたやり取りであり、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_011",
+      "segment_index": 5,
+      "topic": "将来の農業生産者を育成するための食育の取組",
+      "question": {
+        "speaker": "杉本純子",
+        "party": "参政党",
+        "summary": "- 将来の農業生産者を育てるため、国民が「つくる側」の意識を持つためのこれまでの取組と今後の考え方について",
+        "full_text": "次に農林水産省にお聞きします。食育基本法に基づく現在までの取組において、将来の農業生産者を育てるため、国民が食料生産というつくる側についてもっと意識を持つためにどのような取組がなされてきたのか、また今後どのように考えていくのか、併せてお聞かせください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "森英介",
+        "role": "",
+        "summary": "- 第4次食育推進基本計画に基づき、地域での農林漁業体験の提供や学校給食での地場産物活用を推進してきた\n- 第5次計画では、学校での学びの充実、大人の食育推進、生産現場との距離を縮める取組を盛り込み、行動変容につなげたい",
+        "full_text": "委員御指摘のとおり、国民の中で食に関する関心そのものの低下、また、食と農との現場との距離の広がり、こういった状況から生産現場の実態を知らない国民の方々が増えているということが伺えます。このような中で、食育の取組といたしまして、食や農林水産業への理解を一層国民の皆様に深めていただくような、そういった政策が重要であるというふうに捉えております。農林水産省におきましては、現行の第4次食育推進基本計画に基づきまして、関係省庁と連携の上で地域での農林漁業体験の提供、学校給食における地場産物の活用などの取組について推進してきたところでございます。このような取組は、国民の皆様がより身近に実感を持って農業の生産現場の実態や地域の食や食文化に関する理解や関心を深め、ひいては将来の農業を担う人材育成につながるような重要な取組であるというふうに捉えております。このため、現在検討中の第5次食育推進基本計画におきましても、現在御審議いただいております食育基本法の一部を改正する法律案の趣旨も踏まえまして、学校などでの食や農に関する学びの充実、健全な食生活の実践に向けた大人の食育の推進、国民の食卓と生産現場の距離を縮める取組の拡大などの施策を盛り込み推進していくことによりまして、食や農への理解増進と行動変容につながるように取り組んでまいりたいというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9018#4080.12",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "食料生産への意識向上と将来の生産者育成の取組",
+          "sub_asks": [
+            "現在までどのような取組がなされてきたか",
+            "今後どのように考えていくのか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "食育基本法"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "第4次食育推進基本計画"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "第5次食育推進基本計画"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "食育基本法の一部を改正する法律案"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "取り組んでまいりたいというふうに考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "第5次食育推進基本計画におきましても、国民の食卓と生産現場の距離を縮める取組の拡大などの施策を盛り込み推進していく",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "現状の取組と今後の方向性について概括的に回答されており、整合性は高いが、具体的な数値目標や期限などの強いコミットメントは含まれていない。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どのような取組」という問いが広範であるため、回答が計画名などの抽象的な記述に留まりやすい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_012",
+      "segment_index": 5,
+      "topic": "日本の食の未来における食育のあるべき姿",
+      "question": {
+        "speaker": "杉本純子",
+        "party": "参政党",
+        "summary": "- 効率や時短が優先され食が商品としてのみ見られがちな現状において、日本の食の未来を守るための食育はどうあるべきか",
+        "full_text": "最後に、現代は共稼ぎの家庭が多く、女性が働きながら子育てをするという大変な時代です。よって便利さや時短、効率が求められ、優先されすぎてはいないでしょうか。確かに非常に便利ですごくありがたいとは思うんですけれども、そうすると食べ物が商品としてだけ見られているように感じます。生産者の方々が土を耕し、汗を流して作ってくれたという、そういう人たちがいるという存在を感じることで、感謝の心が生まれると思います。そんな食育を考えたときに、食のあるべき姿、日本の食の未来を守るために、どうあるべきだとお考えでしょうか。お聞かせください。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "藤木眞也",
+        "role": "農林水産委員長",
+        "summary": "- 国民が生産現場を理解し、行動変容に結びつけることが法改正の重要点である\n- 体験活動を通じて生産現場の現状への理解と関心を高め、消費を通じて生産現場を支える意識を醸成し、担い手の育成や食料安全保障の確保につなげたい",
+        "full_text": "今回の法改正の大きな柱として、消費者が、国民がやはり生産現場をしっかりと理解をして、そして行動変容にまで結びつけること、ここがこの法改正の最も重要なところであると思います。具体的には、例えば学校等における食育の推進において、農林漁業教育を規定し、体験活動を通じて農林漁業者と交流を図ることにより、農林漁業の生産現場の現状などについて理解と関心が高まり、農林漁業に従事されている方々を、食料消費などの日々の生活を通じて支えていこうという意識が醸成されることが期待をされます。そして、生産現場に関心を持って理解する消費者が増えていく。食料消費を通じて生産現場を支えていく。食料の生産に従事される方々の苦労や尊さを理解して、感謝や尊敬の念を抱くといったことは、農林水産業を志す人々を新たに生み出して、担い手の育成や確保にもつながるなど、農林漁業の現場を後押しすることとなり、良質で安定的な農林水産物の生産、それによる食料安全保障の確保、国民一人一人の健全な食生活の実施。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9018#4080.12",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "日本の食の未来と食育のあるべき姿について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "生産者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "農林漁業教育"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "消費者が、国民がやはり生産現場をしっかりと理解をして、そして行動変容にまで結びつけること、ここがこの法改正の最も重要なところである",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "抽象的な問いに対し、法改正の趣旨と食育の方向性で回答しているが、具体的な数値や期限などのコミットメントは含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どうあるべきか」という抽象的な問いであるため、回答も理念的な内容に留まりやすく、具体的な政策変更を導き出しにくい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_013",
+      "segment_index": 5,
+      "topic": "食糧難の歴史を教える食育の重要性",
+      "question": {
+        "speaker": "杉本純子",
+        "party": "参政党",
+        "summary": "- 食料安全保障の観点から、日本と世界が経験した食糧難の歴史を教科書で教えることが重要ではないか",
+        "full_text": "20年余り、この間に食をめぐる環境は大きく変化をしてきました。その一つが、世界的な干ばつ、日本でも災害が相次いで、ウクライナ戦争やイラン戦争など、食料危機のリスクが高まっているということです。こうした状況を受けて、超党派の会議の中では、ヨーロッパでは、幾度の戦争を経て、食糧難に苦労した経験から、食糧難の歴史について、教科書に詳細に記載をして、授業で教えていることが、食糧や農業、農村への理解を促しているということを紹介しました。併せて、食糧自給率の向上、食糧安全保障の観点からも、日本と世界で経験をした食糧難の歴史を教えることが重要だということ。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "鈴木憲和",
+        "role": "",
+        "summary": "- 学習指導要領に基づき、戦中戦後の食料難や世界の食料問題について教科書で具体的に取り上げられている\n- 基本計画に特定の指導内容を位置づけることは想定していないが、改正法案の「食料安全保障に資する食育の推進」を踏まえ、効果的な推進に努める",
+        "full_text": "学校での食育において、児童生徒が日々の食事や自らが食べる食料に関心を持ち、我が国の食料自給率の現状や食料生産の重要性について学ぶことは重要であると考えてございます。これらについては現在でも、例えば小学校学習指導要領で生産物の種類や分布、生産量の変化、輸入など外国との関わりなどに着目して、食料生産が国民生活に果たす役割を考えること等について指導することとしておりまして、これを踏まえた教科書でも、かつての戦中戦後の食料難の歴史や世界の食料問題、食料安全保障の重要性について、写真やデータを交えて具体的に取り上げられているところでございます。食育推進基本計画は、食育の推進に関する施策についての基本的な方針等について定めるものであるため、特定の指導内容を位置づけることは想定しておりませんが、ご審議いただいている改正法案では、食料安全保障に資する食育の推進が規定されており、各学校においてその趣旨を踏まえた食育が効果的に推進されるよう、必要な取組を進めてまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5271"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9018#4080.12",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "食糧難の歴史を教科書で教えることの重要性の提示",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "ヨーロッパでは、幾度の戦争を経て、食糧難に苦労した経験から、食糧難の歴史について、教科書に詳細に記載をして、授業で教えている"
+            },
+            {
+              "type": "other",
+              "excerpt": "ウクライナ戦争やイラン戦争"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "小学校学習指導要領"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "食育推進基本計画"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "必要な取組を進めてまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "小学校学習指導要領で生産物の種類や分布、生産量の変化、輸入など外国との関わりなどに着目して、食料生産が国民生活に果たす役割を考えること等について指導することとしており",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者が疑問符を用いず提案に留まったため、明確な問いとしての形式を欠いている。回答は現状の学習指導要領での対応を説明し、今後の推進に触れるにとどまっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "提案で終わらず、「教科書への記載を強化すべきか」などの具体的な問いに変換すべきである。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_014",
+      "segment_index": 6,
+      "topic": "超加工食品の健康リスクに関する評価",
+      "question": {
+        "speaker": "岩渕友",
+        "party": "日本共産党",
+        "summary": "- 超加工食品の摂取増加が慢性疾患や死亡リスクを高めているとするランセットの論文内容をどう評価しているか",
+        "full_text": "そしてもう一つ、超加工食品について聞いていきます。超加工食品は加工食品より加工度が高く、すぐに食べることができるようになっている製品のことで、大量生産された菓子パンやインスタント食品など、私たちの周りにあふれています。先日質問をした人工甘味料もここに含まれているんですね。超加工食品について世界各国で研究が進められてきました。フランスでは独自に行った調査結果を受けて、政府が2021年までに超加工食品の消費量を20%削減する目標を掲げました。昨年12月、世界有数の医学雑誌であるランセットに超加工食品に関する3つの論文が掲載をされました。第1論文では、大量の広報と研究などを統合して、超加工食品の摂取増加が、慢性疾患や死亡リスクを高めているという事実を示しています。この内容をどう評価しているでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "坂木原",
+        "role": "",
+        "summary": "- 厚生労働省はリスク評価機関ではなく、政府としての正式な見解を出すのは難しい立場である\n- バランスの良い食事の重要性を認識し、普及啓発に努めている\n- 国際的な動向について引き続き注視したい",
+        "full_text": "岩渕友議員、国際的にも様々な意見があると承知しております。厚生労働省は、食品の安全に関するリスク評価機関ではなく、超加工食品の肥満や非感染性疾患等への影響について、政府としての正式な見解を出すのは難しい立場にございます。厚生労働省としましては、まずはバランスの良い食事が重要と認識しておりまして、その普及啓発に努めております。超加工食品に関する国際的な動向についても、関係省庁等と連携して、引き続き注視してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9018#4716.05",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "超加工食品のリスクに関する論文の評価",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "フランス"
+            },
+            {
+              "type": "date",
+              "excerpt": "2021年まで"
+            },
+            {
+              "type": "other",
+              "excerpt": "ランセットに超加工食品に関する3つの論文"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "引き続き注視してまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "超加工食品の肥満や非感染性疾患等への影響について、政府としての正式な見解を出すのは難しい立場にございます。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な論文の評価を求めた問いに対し、政府としての見解を出すことが困難であると回答を回避している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "評価を問う形式ではなく、政府としてどのような対策を講じるべきかという具体的アクションを問う形式にすべきだった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_015",
+      "segment_index": 6,
+      "topic": "超加工食品の食育推進基本計画への位置づけ",
+      "question": {
+        "speaker": "岩渕友",
+        "party": "日本共産党",
+        "summary": "- 海外で超加工食品の指針やガイドラインが策定されている現状を踏まえ、日本でも評価を行い、食育推進基本計画に位置づけるべきではないか",
+        "full_text": "ベルギーとかブラジルとかカナダなどでは各国で超加工食品に対する指針が発表されているんですね。WHOでも超加工食品の摂取に関するガイドライン策定のために専門家を集めて2年後の策定を目指しています。アメリカでも昨年政府が定める食生活指針に初めて超加工食品を位置づけました。ところが日本では食生活指針にも前回の食育推進基本計画にも採用をされていません。超加工食品について評価をして、その問題について、食育推進基本計画に位置づけるべきだと思うんですけど、いかがですか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "坂本哲志",
+        "role": "",
+        "summary": "- 定義が定まっていないため、国際的な動向を注視すべき状況である\n- 最新の科学知見に基づく客観的な情報の提供が不可欠である\n- 情報提供の取り組みを次期第5次食育推進基本計画に適切に位置づけ、関係省庁と連携して取り組みたい",
+        "full_text": "お答え申し上げます。超加工食品に関する検討につきましては、先ほど厚生労働省からの御答弁があったとおり、まだ定義も定まっておらず、国際的な動向について引き続き注視していくべき状況であるというふうに理解をしております。その上で、健全な食生活を実践していくためには、国民一人一人の皆様が、食生活や健康に関する正しい知識を持っていただいて、自ら食を選択していくというような形を作っていくことが必要であると考えております。このため、国際的な研究を含めた最新の科学知見に基づく客観的な情報の提供が不可欠であると考えております。関係団体などとの連携を深めながら、国内外の調査研究情報の提供等がなされるよう取り組んでいるところでございます。このような情報提供の取り組みを、現在検討中の次期第5次の食育推進基本計画にも適切に位置づけた上で、厚生労働省をはじめとする関係省庁と連携して取り組んでまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9018#4716.05",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "超加工食品を食育推進基本計画に位置づけるべきか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "ベルギーとかブラジルとかカナダ"
+            },
+            {
+              "type": "organization",
+              "excerpt": "WHO"
+            },
+            {
+              "type": "organization",
+              "excerpt": "アメリカ"
+            },
+            {
+              "type": "law",
+              "excerpt": "食育推進基本計画"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "次期第5次の食育推進基本計画"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 3,
+          "trigger_phrase": "このような情報提供の取り組みを、現在検討中の次期第5次の食育推進基本計画にも適切に位置づけた上で",
+          "matched_pattern": "future-tense verb describing a CONCRETE government action with a named mechanism"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "情報提供の取り組みを、現在検討中の次期第5次の食育推進基本計画にも適切に位置づけた上で、取り組んでまいりたい",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "超加工食品の定義が未確定であるという現状認識を示しつつ、次期計画への位置づけという具体的なアクションを約束した回答である。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_016",
+      "segment_index": 6,
+      "topic": "経済的事情による超加工食品への依存と基本計画への反映",
+      "question": {
+        "speaker": "岩渕友",
+        "party": "日本共産党",
+        "summary": "- 経済的事情や貧困により超加工食品を選択せざるを得ない構造がある\n- 食育推進基本計画に、超加工食品と食をめぐる現状をしっかり位置づける必要があるのではないか",
+        "full_text": "この超加工食品の概念は掲載されていないんですけれども、この概念を掲載して、その危険性について具体的に警告することが必要だというふうに思います。ランセットの第3論文は、超加工食品の普及をもたらしている商業的決定要因について言及をしています。企業の行うロビー活動などによって、人々の健康に影響を与えるという問題よりも、企業による利益の追求が優先をされて、規制が妨害をされているということなんですよね。だから、超加工食品がこんなに広がっているということです。九州大学の磯田博史名誉教授が、私たちの食生活での選択は、個々人の自律的な選択のように見えてそうではないと書いているものを読みました。これがどういうことなのか。1人親のお母さんから聞いた話がまさにこれだというふうに思ったのでちょっと紹介をしたいんですが、ギリギリ働いても生活は楽にならず、超加工食品に頼らざるを得ないという声なんですよね。そういう話なんです。超加工食品を選択せざるを得ないというのが実態だということです。しかも超加工食品は遠くから運ばれてきた生鮮品よりも安い価格で売っている。手軽に手の届くものとなっています。超党派の会議の中で食育の議論をする前提として、経済的事情や貧困などによってそもそも食べることがままならない人たちがいるという問題について考える必要があるんじゃないかという問題提起がされました。私もそうだというふうに思います。そこで大臣に伺うんですけれども、食育推進基本計画に、超加工食品と食をめぐるこの現状について、しっかり位置づける必要があるんじゃないでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "鈴木憲和",
+        "role": "",
+        "summary": "- 指摘の論文の概要を拝見した\n- 国民の健康保護が最も重要であるとの基本的認識の下、悪影響を未然に防ぐことが重要である",
+        "full_text": "はい、お答え申し上げます。先生から御指摘の論文については、私も概要などを、今、拝見をさせていただいたところであります。この超加工食品も見てみると、炭酸飲料とか。国民の健康保護が最も重要であるとの基本的認識の下で、国民の健康への悪影響が未然に。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9018#4716.05",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "食育推進基本計画に超加工食品の現状を位置づけるべきか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "ランセットの第3論文"
+            },
+            {
+              "type": "organization",
+              "excerpt": "九州大学の磯田博史名誉教授"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "1人親のお母さん",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "not_at_all",
+          "topic_shift_detected": true,
+          "score": 0.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "炭酸飲料"
+            }
+          ],
+          "score": 0.1
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": null,
+          "score": 0.0
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的で根拠もあるが、回答が途中で切れているか、あるいは極めて不十分であり、実質的な回答になっていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    }
+  ],
+  "score_schema_version": "2.0",
+  "prompt_version": "V4"
+}
