@@ -1,0 +1,777 @@
+{
+  "pairs": [
+    {
+      "id": "qa_001",
+      "segment_index": 2,
+      "topic": "ミニマム税の税収拡大策",
+      "question": {
+        "speaker": "釜谷智",
+        "party": "参考人　京都大学公共政策大学院院長",
+        "summary": "- 現状、規模が小さすぎるミニマム税の税収を増やすための工夫や手立ては何か",
+        "full_text": "それでは次に、諸富先生にお伺いを申し上げます。今日の指摘の中で、今後、社会保険料に、特に社会保障の中で、特に医療介護はそうでありますけれども、社会保険料にあまり過度に依存しない形で税収を新たに確保するということはぜひ必要だろうと思って、今日のお示しいただいた一つの例も非常に参考になるなと思いながら拝見をしたのですけれども、一方、現状においては非常に先ほど先生がおっしゃった規模感があまりにも小さすぎるんですけれども、これを今後、ある程度のボリュームに増やしていくためには、どういう工夫や手立てが必要だというふうにお考えでしょうか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "諸富徹",
+        "role": "参考人　京都大学公共政策大学院院長",
+        "summary": "- 税率（現状22.5%）を引き上げること\n- 特別控除額（現状3.3億円）を低く設定し、課税対象範囲を広げること",
+        "full_text": "スライドの、もう一度そちらで言いますとですね、28万円、もう出ないですね、28万円、お手元を見ていただければと思いますが、一つはこの22.5%というこの税率を引き上げるという方法がございます。これ、かなりえいやと決めたような感じでして、45%の半分という根拠であまりそれ以上の根拠がないですね。あと特別控除額、なぜ3.3億円かも問題でして、これを3.3億円でなくてもう少し左の方へ寄せていくというような形でやればですね、この差分面積が広がりますので、そういう形で税収増を図っていくことはできるのかなというふうに思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5152"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9024#3126.68",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "税収を増やすための工夫や手立ては何か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "22.5%というこの税率"
+            },
+            {
+              "type": "number",
+              "excerpt": "3.3億円"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "税率を引き上げるという方法がございます。あと特別控除額をもう少し左の方へ寄せていくというような形でやれば、税収増を図っていくことはできる",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "専門家（参考人）に対する手法の問いに対し、具体的な数値（税率や控除額）を挙げて回答している。政府のコミットメントではないため記録価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_002",
+      "segment_index": 2,
+      "topic": "目的税の目的限定の実効性",
+      "question": {
+        "speaker": "亀田敏",
+        "party": "参考人　京都大学公共政策大学院院長",
+        "summary": "- 社会保障目的の税を設ける際、諸外国において目的の限定は適切に達成されているか",
+        "full_text": "亀田敏君。それで、今お示しいただいたところと、それから、諸外国の様子も比較して、社会保障に目的を限った形で、税を定めるということは、大変理にかなっているとは思うんですけれども、私どもは消費税が福祉目的税と言われていながら、ちっともそうなっていないという経験があるので、ちょっとそのあたりは抵抗があるんですけれども、しっかり目的を限定するということは、諸外国においてはきちっと達成されていることと認識してよろしいのでしょうか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "諸富徹",
+        "role": "参考人　京都大学公共政策大学院院長",
+        "summary": "- フランスやアメリカのケースでも、負担増に対する国民の反発があるため、還元を約束する仕組みとして議論が進んでいる",
+        "full_text": "そうですね。フランスのケースにおいても、アメリカのケースにおいても、もうこれは税。やはり現在の増税に対する、負担増に対する国民の非常に大きな反発を考慮しますと、これをこういう形で国民に還元するという約束をしないことには、なかなか負担増の話は難しいのかなというふうに思いまして、こういう議論に対しては少し傾いているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9024#3126.68",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "諸外国で目的税の限定が達成されているか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "フランス"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "アメリカ"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "国民に還元するという約束をしないことには、なかなか負担増の話は難しいのかなというふうに思いまして",
+          "score": 0.2
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "諸外国での目的税の達成状況という問いに対し、回答者は自身の見解（還元への約束の必要性）に終始しており、事実関係の回答になっていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「認識してよろしいのでしょうか」という形式のため、Yes/Noの回答を促し、具体的な事例提示を求める構成にすべきだった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_003",
+      "segment_index": 2,
+      "topic": "金融所得課税導入の懸念点",
+      "question": {
+        "speaker": "川内里",
+        "party": "参考人　京都大学公共政策大学院院長",
+        "summary": "- フランスのような金融所得への課税を日本に導入する場合、懸念すべき事項や注意点は何か",
+        "full_text": "川内里君。医療、介護、また福祉は、国民が生きていくためにもうなくてはならない社会基盤だと思いますので、何とかそれを維持継続していかなければいけないと強く思うんですけれども、一方で財源がなくなってくるとほころびが出てくるし、また我が国においては人口構成が今後ますます大きく変わりますから、地域によってはなかなかそれぞれの地域全てに医療・介護・福祉を十分にみんなの手当てするというのは難しいだろうなというふうにずっと日々考えているんですけれども、その中で何とか持続可能性を担保する意味で、この24ページでお示しいただいた、これはフランスの例だと思いますが、これまでの実績で社会保険料がこんなに下がったんだというのを私自身はこれを初めて知りまして、非常に驚いた次第です。ですからこのような形での取り組みをすれば、幅広い会派の皆さんもきっと賛同していただけるんだろうなと思いながら、この表を見たんですけれども、さらにこれを我が国において導入する上において、何か懸念すべき事項とか、あるいは注意しなければならないことというのがありましたら、ご教示いただきたいと思います。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "諸富徹",
+        "role": "参考人　京都大学公共政策大学院院長",
+        "summary": "- 金融所得を得ている層からの強い反発が予想されること\n- その層をどのように説得し、納得させるかがクリティカルなポイントとなること",
+        "full_text": "一番問題は負担増となる金融所得を得ている人の反発ではないかなと。なので企業の国際競争力を引き上げるという意味でも、企業さんにとってもプラスだったんですが、唯一マイナスになるのは、金融所得を得ている人たちが負担増になるということですね。そこをどういうふうに説得していくかというところがクリティカルなポイントかなというふうに思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9024#3126.68",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "フランスの社会保険料削減策を日本に導入する際の懸念点",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "24ページでお示しいただいた、これはフランスの例"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "金融所得を得ている人"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "一番問題は負担増となる金融所得を得ている人の反発ではないかなと。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "フランスの事例を日本に適用する際の懸念点について、金融所得者の反発という具体的な視点が示されたやり取りである。",
+        "would_be_referenced": "low",
+        "issue_in_design": "導入に向けた具体的な制度設計や法的ハードルではなく、政治的な反発という主観的な懸念に留まっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_004",
+      "segment_index": 2,
+      "topic": "消費税増税の可能性と条件",
+      "question": {
+        "speaker": "小島智子",
+        "party": "参考人　京都大学公共政策大学院院長",
+        "summary": "- 消費税への反発が強い中、社会保障財源としての消費税率引き上げは今後も難しいと考えているか",
+        "full_text": "二者択一ではということで、諸富さん、やっぱり第三の何か方法がいるんじゃないかっていうことでの、フランスのCSGだったのかなというふうに捉えさせていただいたんです。お二方にお伺いをしたいんですけれども、やっぱり消費税は反発が大変あるので、社会保障等の財源としても引き上げるのは、これから先も非常に難しいというふうにお思いですか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "小塩隆士",
+        "role": "参考人　一橋大学社会科学高等研究院特任教授",
+        "summary": "- 2040年に向けて5%程度の引き上げが必要な試算であり、消費税なしで賄うのは困難である\n- ただし、実質賃金が持続的にプラスとなる経済運営が達成されることが、増税を受け入れる条件となる",
+        "full_text": "あれを見ますと、私は大まかな計算ですけど、2040年に向けて社会保障財源としては、消費税率5%ポイントぐらいの引上げが必要かと思っています。それを消費税なしで賄うということは、かなりきついんじゃないかなというのは正直なところです。なので消費税を上げられる、私は消費税否定論者ではなくて、消費税を使う必要はあると思っているんですけれども、その条件があって、それは実質賃金がプラスに持続的に、そういう経済運営を行うことではないかなというふうに思っています。それが達成されない限り、実際には難しいだろうな。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9024#3126.68",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "消費税率の引き上げは今後も困難か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "フランスのCSG"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "2040年に向けて"
+            },
+            {
+              "type": "number",
+              "excerpt": "消費税率5%ポイントぐらいの引上げ"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "2040年に向けて社会保障財源としては、消費税率5%ポイントぐらいの引上げが必要かと思っています。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人の個人的な見解を問う形式であり、具体的な政府のコミットメントは得られていないが、必要とされる増税幅の試算が示された。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「お思いですか」という主観的な問いであるため、公式な政府見解としての拘束力を持たせにくい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_005",
+      "segment_index": 2,
+      "topic": "ベーシックサービスの考え方",
+      "question": {
+        "speaker": "小島智子",
+        "party": "参考人　京都大学公共政策大学院院長",
+        "summary": "- 消費税の逆進性対策として、特定のサービスを無償提供する「ベーシックサービス」についてどう考えるか",
+        "full_text": "ただ、あの時にベーシックインカムの話が少し出てきて、そしてそれはあまりにも規模が大きすぎて実質的ではないということで、ベーシックサービスの考え方が出てきたというふうに思っています。先生方、ベーシックサービスについてはいかがお考えでしょうか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "小塩隆士",
+        "role": "参考人　一橋大学社会科学高等研究院特任教授",
+        "summary": "- 生活形態に関わらず一定のサービスが得られるため、逆進性問題を軽減する有効なアイデアである\n- 低所得者層に手厚い支出を行うことで、所得階層ごとのネットの負担を累進的にし、国民の確信を得ることが重要である",
+        "full_text": "私もそれは非常に重要なお考え方ではないかなと思います。どのような生活形態をしていても一定のサービスが得られるということは、消費税の逆進性などの問題を軽減する大きな一つの方法ではないかなと思います。現状でもですね、社会保障の支出の受け手がどれだけ給付やサービスを受けているかということと、それからどれだけ税金や社会保険料で払っているかということのプラスマイナスをですね、ネット、つまり差し引きで計算したら、受け取り、あるいはその出の方が多い人もいるんですけども、それをその所得階層ごとに見たときに、ちゃんと累進的といいますか。先生のお話に伺っていると、ベーシックサービスというのはそれをもっと拡充して、消費税の負担は仮に逆進的かもしれないけれども、同様に支出の方もきちっと、むしろ低所得者層に手厚くいくはずだから、プラマイでやってみるとむしろ低所得者の方にとってはプラスになるよというお話だというふうに伺いました。自分のところに確実にそのサービスが充実して生活が下支えされるという確信を持てればですね、イエスと言えるんじゃないかなと思うんですね。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9024#3126.68",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "ベーシックサービスへの考え方",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "どのような生活形態をしていても一定のサービスが得られるということは、消費税の逆進性などの問題を軽減する大きな一つの方法ではないかなと思います。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "概念的な意見交換に留まっており、具体的な事実認定や政府のコミットメントは含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "具体的な制度設計や導入の是非を問う形式ではなく、抽象的な「考え」を問うているため、回答が主観的な感想に留まっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_006",
+      "segment_index": 2,
+      "topic": "外国人労働者の社会保険への影響",
+      "question": {
+        "speaker": "鹿児島昭雄",
+        "party": "参考人　京都大学公共政策大学院院長",
+        "summary": "- 外国人労働者の増加が日本の社会保険制度にどのような影響を与えているか",
+        "full_text": "社会的扶養力だったかな、ちょっと細かい文言を忘れたんですが、そういった形で日本全体として見てみたときに、高齢者の方々も働きやすくなっている、働きたい人も増えている中において、必ずしも危機感に駆られていただけではないというところで一点光明を見たなという気もしているんですが、そんな中で2点お伺いしたいことが、まず1点として、高齢者の影響もあると思うんですが、やはり今、外国人労働者の方々も増えていると思います。この外国人労働者の方々が日本の社会保険制度に与えている影響について、まずお伺いをしてもよろしいでしょうか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "小塩隆士",
+        "role": "参考人　一橋大学社会科学高等研究院特任教授",
+        "summary": "- 具体的なインパクトの数値は把握していないが、国籍に関わらず平等に提供する国民皆保険が原則である\n- 今後、彼らにどう対応していくかが重要な政策課題となる",
+        "full_text": "私も具体的にどれぐらいのインパクトがあるかというのは承知しておりません。ただ、日本の制度は国籍に関係なく平等に、国民皆保険を提供されるというのが原則ですので。ただ、これからその人たちをどういうふうに対応していくのかというのが重要な政策課題になるというのは承知していますけれども。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9024#3126.68",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "外国人労働者が社会保険制度に与える影響について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "外国人労働者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "other",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "日本の制度は国籍に関係なく平等に、国民皆保険を提供されるというのが原則ですので。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は明確ですが、回答者は具体的な影響を把握していないと述べており、原則論に留まっています。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「お伺いしてもよろしいでしょうか」という形式的な問いかけになっており、具体的にどのような指標（財政影響など）を知りたいのかを明示すべきでした。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_007",
+      "segment_index": 2,
+      "topic": "高齢者の就業実態と社会保障への寄与",
+      "question": {
+        "speaker": "鹿児島昭雄",
+        "party": "参考人　京都大学公共政策大学院院長",
+        "summary": "- 高齢者の就業率が上がっても、一人ひとりの労働時間が短ければ社会保障の厚みにならないのではないか。実態はどうなっているか",
+        "full_text": "もう一つですね、この就業率についてなんですが、全体的な就業者数ってあると思うんですけれども、この就業者数ってある意味、私の中で横軸みたいなイメージだろうなというふうに思っておりまして、その一人一人がどれくらい働くかによって、当然社会保障の厚みって変わってくると思うんですね。そうした中、この高齢者の方々が、例えば一人一人一日一時間しか働いていませんでは、やっぱり社会保障の厚みのプラスにはならないわけでありますから、このあたり高齢者の方々で、先生把握の中でですね、どういったこの働き方の実態といいますか、具体的にこの人数は人数でいるけれども本当に厚みになっているのか、という部分についてご見解があればお伺いできればと思います。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "小塩隆士",
+        "role": "参考人　一橋大学社会科学高等研究院特任教授",
+        "summary": "- 実際にはパートタイムが多く、若年層のフルタイムに比べると寄与度は低い\n- 経済的視点では不足しているが、ウェルビーイングや多様な生活スタイルの観点からは肯定的に捉えるべきという議論がある",
+        "full_text": "先生ご指摘のところは非常に重要でして、実は今日お見せしたグラフは働いている、働いていないの二分法でしかお見せしていないんですけど、実際には高齢者の人たちが働くようになったといっても、かなりの部分はフルタイムじゃなくてパートタイムということですので、先ほどの先生のご言葉です。縦の部分、垂直の部分の働き方という点については、やはり若くてフルタイムで働いている人に比べると薄いなというふうなところがあります。一つは、いや、高齢者は働いてるって言っても、若い人に比べるとそんなに働いていないんじゃないかっていう見方ができます。例えば週の3日ぐらいは働いて、残りは地元で町内会に活用する、あるいはもうお孫さんの世話を見るとかいう組み合わせもあっていいじゃないか。もう少し広い立場から言うと、多様な生活スタイルがあっていいんじゃないかなっていうふうになります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9024#3126.68",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "高齢者の就業実態が社会保障の厚みに寄与しているか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "高齢者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "高齢者の人たちが働くようになったといっても、かなりの部分はフルタイムじゃなくてパートタイムということですので",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "高齢者の就業形態（パートタイム中心）という実態についての見解を問うやり取りであり、回答は概ね直接的だが、定量的な根拠や具体的なコミットメントは含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「ご見解があれば」という抽象的な問い方であるため、回答者が主観的な意見に終始しやすく、客観的なデータ提示を求める形式にすべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_008",
+      "segment_index": 2,
+      "topic": "社会保険と公費負担の比率変化の背景",
+      "question": {
+        "speaker": "鹿児島昭雄",
+        "party": "参考人　京都大学公共政策大学院院長",
+        "summary": "- 社会保険料と税（公費）の割合が近づいているが、社会保険の「保険」としての本質はどうなっているのか",
+        "full_text": "ちょっといくつかあるので時間の許す限りお伺いをしていきたいと思うんですけれども、まずこの税と社会保障について、先生の資料の中でも15ページの部分で、一番左端の1979年と比べて今は社会保障財源の中における社会保険料と公費負担、つまり税金の割合というものが近づいてきていると思います。そうした中で、ただこうやって税金との割合が狭まってきてしまうと、そもそも社会保険の保険たる所以は何だったかと、いうようなことを私はこのグラフを見て感じてしまったんですが、先生、どのようにお感じになられますか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "諸富徹",
+        "role": "参考人　京都大学公共政策大学院院長",
+        "summary": "- 保険に入れない人を回避し、多くの人に恩恵を届ける「普遍的な仕組み」を目指した結果、公費投入が増えた\n- 保険料のみの仕組みでは避けられない課題を、公費による補完や調整交付金で解決しており、よくできた仕組みであると理解している",
+        "full_text": "そうですね、一つは、社会保険と税が近づいてきたことの一つの原因は、社会保障制度のこの間の改革があって、純然たる社会保険システム、ビスマルクモデルとも言われるですね、保険料と保険だけで仕組みを動かしてきたところから、だんだんと、なんていうんですかね、広井先生、私のかつての同僚であって、かつての厚生官僚でもいらっしゃったんですね。つまり保険に入った人だけじゃなくて、保険に入れない人をなるべく回避する、なるべく多くの人を保険の中に入れるために、公費を入れることによって社会保険料の負担を抑えたり、例えば年金の場合、基礎年金は半分は消費税、かつて3分の1だったのを2分の1まで引き上げてきたりとか。半分公費を入れることによって、保険料の弊害と言ったら、ちょっと言い過ぎなんですけれども、ギリギリ50%は保険料で収入を保つことによって、かろうじて保険システムとしての形を取りながら、でも保険だけで一挙した場合の様々な課題を避けるために半分公費を入れると。しかも、保険者といった市町村間で財政力の格差があるので、それを慣らすための調整交付金まで入れているという、非常に便利な作用があった。こういった国民皆保険、あるいはできる限り多くの人に恩恵が行き渡るような普遍的な仕組みを目指したゆえに、税金が補完的に入れられざるを得なかったというふうに私は理解をしております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5199"
+      ],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9024#3126.68",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "社会保障財源における税と保険料の比率接近への見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "先生の資料の中でも15ページの部分"
+            },
+            {
+              "type": "date",
+              "excerpt": "1979年"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "ビスマルクモデル"
+            },
+            {
+              "type": "number",
+              "excerpt": "基礎年金は半分は消費税"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "調整交付金"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "国民皆保険、あるいはできる限り多くの人に恩恵が行き渡るような普遍的な仕組みを目指したゆえに、税金が補完的に入れられざるを得なかった",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "専門家（参考人）に対する制度論的な見解を問うやり取りであり、回答は社会保障制度の変遷を論理的に説明している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "具体的な政策変更を求める問いではなく、感想や見解を問う形式であるため、政治的なコミットメントを引き出す設計にはなっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_009",
+      "segment_index": 2,
+      "topic": "GPIF積立金の現役世代負担軽減への活用",
+      "question": {
+        "speaker": "鹿児島昭雄",
+        "party": "参考人　京都大学公共政策大学院院長",
+        "summary": "- 少子高齢化で支え手が急減する今のしんどい時期に、GPIFの積立金を使って現役世代の社会保険料を下げるべきではないか",
+        "full_text": "そうした中で、もう1個あるだろうなと思っているのは、これまでの方々が積み立ててこられた積立金です。高齢者の方々が増えていく割に支え手の数が増えていかないと。そうした中で、こういう時こそGPIFの積み立て金なりを使って、現役世代の社会保険料を下げていくべきなのかどうか、というところについて、先生へのご見解があれば、お伺いしたいなと思います。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "諸富徹",
+        "role": "参考人　京都大学公共政策大学院院長",
+        "summary": "- GPIFの資産収入が重要な支え手になっていることは間違いない（※答弁途中で終了）",
+        "full_text": "ご指摘のとおりで、これはGPIFの収入を、大体この、今ご指摘いただいたページ15枚目のところでいうと、グレーのラインで、この資産収入というのは、まさにそこからの収入を意味していまして、重要な支え手になっていることは間違いないというふうに思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9024#3126.68",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "GPIF積立金による社会保険料軽減の是非",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "GPIF"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "現役世代",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "GPIF"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "資産収入というのは、まさにそこからの収入を意味していまして、重要な支え手になっていることは間違いない",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "GPIFの活用による保険料軽減という具体的な提案に対し、回答者は現状の資産収入の重要性を述べるに留まり、是非についての見解を避けている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「ご見解があれば」という緩い問い方であるため、回答者が具体策への賛否を回避しやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    }
+  ],
+  "score_schema_version": "2.0",
+  "prompt_version": "V4"
+}

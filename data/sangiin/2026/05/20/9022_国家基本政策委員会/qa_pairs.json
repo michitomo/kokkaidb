@@ -1,0 +1,1661 @@
+{
+  "pairs": [
+    {
+      "id": "qa_001",
+      "segment_index": 2,
+      "topic": "補正予算の編成方針",
+      "question": {
+        "speaker": "玉木雄一郎",
+        "party": "衆議院議員　国民民主党・無所属クラブ",
+        "summary": "- ガソリン代補助の延長や電気・ガス代対策のため、3兆円程度の補正予算を速やかに編成すべきではないか\n- 高市内閣の補正予算編成に向けた方針を伺いたい",
+        "full_text": "ガソリン代の補助の延長、あるいは夏場の電気代・ガス代対策など、3兆円程度の補正予算を速やかに編成すべきだと思いますが、高市内閣の補正予算編成に向けた方針を伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "高市早苗",
+        "role": "内閣総理大臣",
+        "summary": "- リスク最小化の観点から、国民生活と経済活動を守るための補正予算編成を含めた資金調達を指示済みである\n- 具体的な規模や内容は現段階では言えないが、中東情勢等への対応を主眼に検討したい",
+        "full_text": "私はリスクの最小化という観点から、国民の皆様の生活、そして経済活動に万が一のことがあってもいけないということで、補正予算の編成を含めた資金調達を指示いたしました。具体的には、大型連休前に事務的には検討を指示し、そして先週、片山大臣に正式に指示をいたしました。ちょっと規模感、そしてまた具体的な内容については、まだ申し上げる段階にはございません。予備費もございますが、こういったもので万が一対応ができなくなった時に備えて、主に現在の中東情勢等に対応する、そういった形の補正予算案を検討したいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9022#1346.76",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "補正予算編成に向けた方針について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "3兆円程度"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "片山大臣"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "補正予算案を検討したいと考えております",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "補正予算の編成を含めた資金調達を指示いたしました。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "補正予算の編成指示という事実は示されたが、具体的な規模や内容については回答を避けている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "予算額（3兆円）を提示しているが、その根拠となる具体的内訳を問う形式にすればより実効的な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_002",
+      "segment_index": 2,
+      "topic": "補正予算の財源と給付付き税額控除",
+      "question": {
+        "speaker": "玉木雄一郎",
+        "party": "衆議院議員　国民民主党・無所属クラブ",
+        "summary": "- ガソリン補助の延長に際し、段階的な引き上げなどの出口戦略をセットにすべきではないか\n- 新規国債に頼らず、為替介入による実現益などの税外収入を財源に充てることを検討してほしい\n- 中低所得の勤労者を対象とした1人5万円程度の給付措置を講じ、将来の給付付き税額控除へ円滑につなげてはどうか\n- 総理が考える給付付き税額控除の対象と政策目的について伺いたい",
+        "full_text": "1つは、ガソリン代の補助は一定程度延長すべきだと思うんですが、同時に出口戦略も示すことが重要ではないかなと思います。もちろん無限に続けばいいんですけれども、長期化の恐れもありますから、ある程度、例えば補助の発動水準を段階的に引き上げていくなど、こういった出口戦略とセットで延長を、ぜひ補正の中に入れていただきたいということが1点です。今、直近利が上がっていますので、できるだけ新規の国債発行に頼らない補正予算にすべきだと思います。新年度の実現益を利用するのは一本法律が必要なんですけれども、過去にも例があるので、この債券市場が非常に微妙な段階にありますから、新規の国債に頼らずに税外収入でこれをしっかり賄っていくということは可能だと思いますので、ここも併せてぜひご検討いただきたい。これはどうせやるなら、今与野党でほぼ合意ができつつある給付付き税額控除、これは総理も導入すべきだという立場だと理解しておりますが、その給付部分を前倒しする形で今回困っている人に給付を行えば、将来の給付付き税額控除にも整合的につながっていくので、単なる今までやってきた住民税非課税世帯に配るとかではなくて、例えば私どもは選挙のときも、今インフレで困っていると同時に、高い社会保険料負担に勤労者の多くは困っています。その意味でも今回、1人5万円程度の、主に中低所得の勤労者にこういった給付を行ってはどうかと考えます。それは総理がお考えになっている将来的な給付付き税額控除の、その給付の対象と政策目的について、総理としてどういうお考えなのかお聞かせください。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "高市早苗",
+        "role": "内閣総理大臣",
+        "summary": "- ガソリン価格の抑制については共感しており、財源確保については決算剰余金などの活用を含め大丈夫と考えている\n- 給付付き税額控除については、できるだけ早く制度設計したいと考えており、低・中所得者の税や社会保険料負担への対応を議論したい",
+        "full_text": "玉木代表はガソリンの暫定税率を廃止するということで、これはとても共感をしまして、一緒にやってきた仲間でございます。ちょっとまだ今の段階では言いにくいのですが、来月、再来月までには、決算剰余金なども出てまいりますので、そんなに大きな形で国債を発行しなくても、国債を当然今年度の予算ですから発行するということで、即座に予算編成をしたいとは考えていますが、実際に発行するかどうかというのはこれから時間軸もありますので、それは分かりませんが、財源の確保については大丈夫だと考えております。何と言っても本丸は給付付き税額控除にできるだけ早く制度設計をしたいんです。ただ対象、これもやはり国民会議でしっかり議論をしていただいて、やはり低所得、中所得の方々が税や社会保険料の負担。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9022#1346.76",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "給付付き税額控除の対象と目的についての考え",
+          "sub_asks": [
+            "ガソリン補助の出口戦略をセットにした延長の要望",
+            "新規国債に頼らない補正予算編成の要望",
+            "中低所得勤労者への給付を給付付き税額控除の前倒しとして行う提案への考え"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "中低所得の勤労者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "deadline",
+              "excerpt": "来月、再来月までには"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "給付付き税額控除にできるだけ早く制度設計をしたい",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "本丸は給付付き税額控除にできるだけ早く制度設計をしたいんです。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者が複数の要望と提案を盛り込んだため焦点が分散しており、回答も各点への明確な答弁というよりは方向性の提示に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "ガソリン補助、財源、給付付き税額控除という3つの異なる論点を1つの発言に詰め込みすぎている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_003",
+      "segment_index": 2,
+      "topic": "食料品消費税ゼロの実施時期",
+      "question": {
+        "speaker": "玉木雄一郎",
+        "party": "衆議院議員　国民民主党・無所属クラブ",
+        "summary": "- 選挙中に「来年3月31日までの実施を目指す」と述べていたが、情勢の変化を踏まえ、現在の実施時期に関する考えを伺いたい",
+        "full_text": "選挙中に食料品消費税ゼロについてですけれども、実施時期なんですが、今年度中、もっと正確に言うと来年3月31日までに実施を目指したいということを、討論会か何かでおっしゃったことを覚えているんですが、ただその後ですね、イラン情勢、あるいは近隣の緊張、さまざまな新しい状況も生じていますので、ここは少し柔軟に考えてはどうかなと思うんですが、この実施時期については、今、総理としては、どのようなお考えなのかお聞かせください。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "高市早苗",
+        "role": "内閣総理大臣",
+        "summary": "- 政権公約に掲げた通り、スピード感が重要であり、できるだけ早く実施したいと考えている",
+        "full_text": "選挙中、自民党の政権公約にも書かせていただきましたので、できるだけ早くと、やはりスピード感も重要。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9022#1346.76",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "食料品消費税ゼロの実施時期に関する考え",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "来年3月31日まで"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "自民党の政権公約"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "できるだけ早く",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "選挙中、自民党の政権公約にも書かせていただきましたので、できるだけ早くと、やはりスピード感も重要。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な実施時期の問いに対し、「できるだけ早く」という抽象的な回答に留まっており、記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「柔軟に考えてはどうかな」という提案形式が含まれているため、回答者が具体的に答えずとも逃げ道を与えてしまっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_004",
+      "segment_index": 3,
+      "topic": "経済対策の指示タイミング",
+      "question": {
+        "speaker": "小川淳也",
+        "party": "衆議院議員　中道改革連合・無所属",
+        "summary": "- 経済対策の指示が遅れたのではないかという認識を問う",
+        "full_text": "国民生活は今不安の最中にあります。そしてこの経済対策の指示は若干遅れたのではないかと私は感じておりますが、その点についてまず総理の認識を伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "高市早苗",
+        "role": "内閣総理大臣",
+        "summary": "- 指示が遅れたとは考えていない\n- 昨年度の補正予算や予備費による物価高対策を優先し、情勢を見ながらベストな対応を検討していた",
+        "full_text": "私は指示が遅れたとは思っておりません。非常にタイトな日程の中でご苦労をいただきまして、そして3月13日に衆議院を通していただき、4月7日に参議院で成立を見て、大変これは皆様スピーディーに対応していただいたんですけれども、まずは昨年の令和7年度の補正予算で手当てをした物価高対策、これがまだまだ執行中なんです。そして昨年度の予備費、これも中東情勢がこうなってからですね、すぐ年度末までに基金に繰り入れて、今ガソリン、重油、軽油、そして灯油などに使わせていただいています。その後、情勢を見ながら考えていくということで、割と早くから、これは対応、ベストな対応を考えておりました。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9022#2016.8099999999997",
+      "metrics": null
+    },
+    {
+      "id": "qa_005",
+      "segment_index": 3,
+      "topic": "経済対策の判断の遅れと答弁の誠実性",
+      "question": {
+        "speaker": "小川淳也",
+        "party": "衆議院議員　中道改革連合・無所属",
+        "summary": "- 11日に可能性を否定しながら18日に本意とした点など、判断の遅れや揺らぎがあるのではないか\n- 事務方に指示を出していたのであれば、国会での答弁が不誠実だったのではないか",
+        "full_text": "2月提出予算は12月に編成したもの。こういう状況下で総理は先週11日になってもその可能性を否定していたんですね。18日になって本意しているんです。指示をしていたなら11日にその可能性を否定する必要はなかったですよね。答弁が不誠実だったんじゃありませんか。その点についてお答えいただきたいと思います。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "高市早苗",
+        "role": "内閣総理大臣",
+        "summary": "- 当初予算の審議中に予算組み替えの提案はあったが、執行遅延などの影響を懸念し、次の補正予算とする方針を十分に持っていた",
+        "full_text": "当初予算の審議をしている間から、さらに中途対策で予算を組み替えるべきじゃないかというご提案は各党からいただいておりました。しかしながらあの時はそれで令和8年度予算の執行が遅れますと、予備費も当然使えないし、令和8年度の予算に組み込んでさまざまな施策が止まってしまう。だからその審議中に次の補正予算ということ。これは十分に私も腹にとめておりました。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9022#2016.8099999999997",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "答弁の不誠実さへの見解",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "2月提出予算"
+            },
+            {
+              "type": "date",
+              "excerpt": "12月に編成"
+            },
+            {
+              "type": "date",
+              "excerpt": "先週11日"
+            },
+            {
+              "type": "date",
+              "excerpt": "18日"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "総理",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "令和8年度予算"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "予備費"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "審議中に次の補正予算ということ。これは十分に私も腹にとめておりました。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "答弁の不誠実さを問う政治的な追及であり、回答者は予算編成の論理で正当化を試みており、具体的な合意や事実確定に至っていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「不誠実だったのではないか」という主観的な問いであるため、相手が肯定する可能性が低く、実効的な回答を得にくい設計である。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_006",
+      "segment_index": 3,
+      "topic": "供給サイドへの支援策",
+      "question": {
+        "speaker": "小川淳也",
+        "party": "衆議院議員　中道改革連合・無所属",
+        "summary": "- 建設、医療、農業などの供給サイドで資材高騰や人件費上昇による苦境がある\n- 予備費でやり過ごすのではなく、精査した上での十分な支援を行う認識か",
+        "full_text": "しかし今回極めて重要なのは、建設や医療現場、農業をはじめとした供給サイド。これは資材の入手困難、価格高騰、納期の遅れ、資金繰りの悪化、人件費の高騰、あらゆることで苦しんでいますから。ここに対して正確な手を、十分な手を打つ必要があると思いますが、まさか予備費を適当に積んで、今回のこの局面をやり過ごそうということではありませんよね。きちんと精査をして供給サイドを支援することが極めて重要であると。その総理の認識を確認しておきたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "高市早苗",
+        "role": "内閣総理大臣",
+        "summary": "- 危機だからこそ供給力を強める方針であり、金融公庫の支援や民間金融機関への協力要請を行っている\n- 現場の目詰まり状況を把握しており、地方整備局や地方公共団体等と連携し、現場の声に基づいた対応に取り組む",
+        "full_text": "高市早苗：今のような危機だからこそ供給力を強くすると申し上げております。今供給サイドを強くするために国民生活金融公庫の支援も含めてやっておりますし、また民間の金融機関にも協力を要請しております。そういった状況も十分に把握をしております。本当に現場のお店であったり、一人親方の工務店であったり、こういったところに目が行き届かなきゃいけないということで、地方の整備局であったり、計算法局であったり、あと地方公共団体であったり、そういった方々のお力もお借りして、現場の声をもっともっと届けていただく。そして担当大臣である赤澤さんを中心に、しっかりとその対応に取り組んでまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9022#2016.8099999999997",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "供給サイドへの支援の認識確認",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "建設や医療現場、農業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国民生活金融公庫"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "地方の整備局"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "計算法局"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "赤澤さん"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "しっかりとその対応に取り組んでまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "今のような危機だからこそ供給力を強くすると申し上げております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "供給サイド支援の必要性という認識確認に対し、具体的な支援機関を挙げて回答している。ただし、今後の具体的な新施策へのコミットメントはLv1に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「認識を確認したい」という形式のため、具体的な支援策の提示や期限を設けた回答を引き出しにくい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_007",
+      "segment_index": 3,
+      "topic": "補正予算の財源確保（基金の活用）",
+      "question": {
+        "speaker": "小川淳也",
+        "party": "衆議院議員　中道改革連合・無所属",
+        "summary": "- 赤字国債に頼らず、不要不急の基金を取り崩して補正予算を編成すべきではないか",
+        "full_text": "それから先ほど財源についても議論になりましたが、これも3党共通して、赤字国債に頼ることは今ある意味ですよ。こういう状況下で、赤字国債に頼る補正は適切ではないという趣旨のことをおっしゃったと今受けとめています。取り崩して補正を編成すべきだという主張を提案していますが、その点についていかがですか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "高市早苗",
+        "role": "内閣総理大臣",
+        "summary": "- 基金の見直し、補助金、税外収入などの不断の見直しを行っていく\n- 昨年度の決算剰余金についても、確定次第対応を検討する",
+        "full_text": "すでに片山大臣を中心に基金の見直し、そして補助金、そして税外収入、これはもともとは消費税をゼロ税率にしようということで検討しているんですが、そういった不断の見直しを行ってまいります。それから昨年度の決算ですね。もう正式に確定したもの、この決算剰余金が出てくるのが少し先になりますけれども、来月には見通しがたって、再来月には正式に。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9022#2016.8099999999997",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "赤字国債ではなく基金等の取り崩しで補正予算を編成すべきか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "片山大臣"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "不断の見直しを行ってまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "片山大臣を中心に基金の見直し、そして補助金、そして税外収入、そういった不断の見直しを行ってまいります。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "赤字国債への依存を避けるべきという提案に対し、基金等の見直しを行うという一般的回答に留まっており、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「いかがですか」というオープンな問いかけであるため、政府側が具体的に「Yes/No」で答えず、抽象的な方針論で逃げる余地を与えている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_008",
+      "segment_index": 4,
+      "topic": "米中会談と日本の国益",
+      "question": {
+        "speaker": "水岡俊一",
+        "party": "立憲民主・無所属",
+        "summary": "- 米中会談が日本外交に持つ意味と評価について\n- 日本の利益が置き去りにされる懸念はないか",
+        "full_text": "その上で申し上げたいのでありますけれども、日米同盟を重視することと、米国任せの外交になることは違うと考えています。歴史を振り返ってみますと、1998年6月、ビル・クリントン大統領が日本を素通りをして中国を訪問しました。日本政府は大きな衝撃を受けたと聞いております。いわゆるジャパンパッシングですね。総理もご存知だというふうに思います。今回を直ちに同じだと決めつけるつもりはありませんが、米中が日本の頭越しに重要な取引を進める可能性は、外交の歴史が繰り返し繰り返し警告してきたことであります。その昔には、朝会の悪夢という言葉もありました。一方、中国と日本は、昨年の総理発言以降、関係がかなり冷え込んでおります。中国は1月に日本への軍民両用項目の輸出規制を設けましたし、レアアースの技術厳格化を含め、日本企業は大打撃を受けておりますことを含めて、さまざまな分野で先行きが見えない中、対応に追われている状況です。そこで総理にお尋ねをいたします。このような背景の中で行われた米中会談について、日本外交にとってどのような意味を持つと、総理は評価をされておられるでしょうか。そして同時に日本の利益が置き去りにされる懸念はないとお考えでしょうか。総理の見解をお聞かせください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "高市早苗",
+        "role": "内閣総理大臣",
+        "summary": "- 米中が意思疎通し地域の平和が保たれることは良い形である\n- 日中関係は対話をオープンに続けており、国益最大化のため冷静に対応する",
+        "full_text": "まず米中会談の評価についてお尋ねがございました。私は米国と中国が意思疎通をして、この地域の平和が保たれると。トランプさんが就任される直前にベッセントさんも日本に送っていただきまして、様々なお話をいたしました。就任直後にもトランプ大統領からこのエアフォースワンの中からですね、特に日本の関心事項について詳細な説明をいただきました。非常にいい形であると思います。それから日中関係についてもお尋ねがございました。この日中関係に関しましては、日本側の対話は常にオープンですし、今も各レベルでの対話は続けております。ただ私は、これはしっかり日本は国益を最大化するために冷静に対応しなければならない。このように考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9022#2630.8",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "米中会談の評価と日本利益の毀損懸念について",
+          "sub_asks": [
+            "米中会談が日本外交にとってどのような意味を持つか",
+            "日本の利益が置き去りにされる懸念はないか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "1998年6月"
+            },
+            {
+              "type": "other",
+              "excerpt": "ビル・クリントン大統領が日本を素通りをして中国を訪問"
+            },
+            {
+              "type": "other",
+              "excerpt": "中国は1月に日本への軍民両用項目の輸出規制を設けました"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "日本企業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "ベッセントさん"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "エアフォースワン"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "冷静に対応しなければならない",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "日本は国益を最大化するために冷静に対応しなければならない。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "歴史的背景を提示した具体的な質問に対し、総理は抽象的な精神論と個人的な接触事例で回答しており、実質的な懸念への回答は不十分である。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「意味を持つか」「懸念はないか」という主観的な見解を問う形式のため、回答者が抽象的な表現で逃げることが容易な設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_009",
+      "segment_index": 4,
+      "topic": "米国のイラン攻撃に対する国際法上の評価",
+      "question": {
+        "speaker": "水岡俊一",
+        "party": "立憲民主・無所属",
+        "summary": "- 米国の行動にのみ法的評価を避ける姿勢は、国際社会で法の支配を語る資格を失うのではないか\n- 同盟国・隣国・対立国に同じ基準で国際法遵守を求めるべきではないか",
+        "full_text": "米国とイスラエルによるイラン攻撃について、総理は国際法上の法的評価を差し控えるという趣旨の発言をされておられます。総理、これは本当に日本の外交として正しい姿勢でしょうか。中国やロシアの国際法違反は批判をする。しかし同盟国である米国の行動については法的評価を避ける。それでは国際法ではなくて手前勝手な論理で物を言っていると受け取られかねないというふうに思います。少なくとも国際法の観点から検証し、必要であれば同盟国にも言うべきことは言う。その姿勢がなければ日本は国際社会で法の支配を語る資格を失います。国際法は大国を縛るためだけにあるのではありません。日本のような国が力ではなくルールで生きていくための命綱ではないでしょうか。だからこそ同盟国にも隣国にも対立する国にも同じ基準で国際法遵守を求めるべきではありませんか。総理の御見解を伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "高市早苗",
+        "role": "内閣総理大臣",
+        "summary": "- 中東情勢に関し米国の法的評価を行う国は少なく、専門家の間でも意見が分かれている\n- 法的評価を明らかにすることが国益に資するとは考えにくい状況である\n- 中東の安定や航行の自由、世界経済への影響についてはトランプ大統領に伝えている",
+        "full_text": "現在の中東情勢に関して、アメリカに関して国際法上の法的評価を行っている国は非常に少ない。専門家の間でも意見が分かれている。各国ともに、もう今、アメリカの国際法上の評価について明らかにすることというのが国益に資するものではないと考えている節がありまして、今はG7などでもそうですけれども、この国際法的な評価についてはほぼ取り上げられない状況でございます。私はあくまでも国益を最大化したいと考えております。必要なことは申し上げますし、トランプ大統領にも中東の安定がどれほど大事か、ホルムズ海峡の自由な航行を確保することがどれほど。今回のことでどれほど世界経済の影響が出ているか、こういったことはしっかりと申し上げてきております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9022#2630.8",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "同盟国にも同様の基準で国際法遵守を求めるべきか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "米国とイスラエルによるイラン攻撃"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "米国",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "G7"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "トランプ大統領"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ホルムズ海峡"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "各国ともに、もう今、アメリカの国際法上の評価について明らかにすることというのが国益に資するものではないと考えている節がありまして",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "国際法遵守の基準に関する問いに対し、国益の観点から法的評価を避ける現状を説明した回答である。具体的な約束はないが、政府の現状認識が示されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_010",
+      "segment_index": 5,
+      "topic": "軍事費と平和への提言",
+      "question": {
+        "speaker": "神谷宗幣",
+        "party": "参政党",
+        "summary": "- 軍事費を抑え、平和に向けた国際社会を構築するための提言を行うべきではないか",
+        "full_text": "これについて総理は、もうこの軍事費を抑えて平和に向けた国際的な社会をつくっていこうではないか、こういう提言をされるべきだと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "高市早苗",
+        "role": "内閣総理大臣",
+        "summary": "- 日本は戦後一貫して平和国家として貢献してきた\n- 専守防衛の基本方針は今後も変わらない",
+        "full_text": "日本は戦後一貫して平和国家として世界に向けて貢献をしてまいりました。これからもその思いは変わりませんし、そして専守防衛の国であるというこの基本も変わりません。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9022#3226.79",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "軍事費抑制と平和的社会構築の提言を求める",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "日本は戦後一貫して平和国家として世界に向けて貢献をしてまいりました。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的な問いではなく意見表明に留まっており、回答も抽象的な理念の再確認に終始しているため、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「～されるべきだと思います」という意見提示ではなく、「～する考えがあるか」という問いの形式にするべきである。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_011",
+      "segment_index": 5,
+      "topic": "言論封殺と演説妨害への対応",
+      "question": {
+        "speaker": "神谷宗幣",
+        "party": "参政党",
+        "summary": "- 爆破予告や騒音による演説妨害などの言論封殺が起きている現状をどう考えるか\n- これらを防止するための策はあるか",
+        "full_text": "言論封殺の危機についてということで、5月16日に東大で予定されていた私の講演がですね、爆破予告、殺害予告と、それから入り口には座り込みといったもので開催できない時代になってしまって、16日は東大の学園祭自体が中止ということになってしまいました。我が党は2022年の参院選のときから度重なる街頭演説に嫌がらせを受けてきまして、ひどいときには鉄錠も体に巻いて体当たりされたり、スモークをたかれたり、今でも拡声器をいくつも持ってきて騒音だし、演説を聞けなくするという妨害を受け続けています。しかし現行法でなかなか対応が難しい面があり、妨害者の行動がどんどんエスカレートしてきて、今回に至っていると我々は感じています。演説を妨害する、講演を中止させるといったことは、完全な言論封殺であり、民主主義の根幹を脅かす行為だと思います。総理はこういった事態をどのように感じておられるか、防止策についてのお考えがあるか、お聞かせいただきたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "高市早苗",
+        "role": "内閣総理大臣",
+        "summary": "- 自由な選挙活動を妨害する行為であり、公職選挙法の自由妨害罪等に抵触する\n- 規制強化は民主主義や表現の自由に関わるため、国会での議論が必要\n- 現状を調査し、法的な対応が必要な場合は国会からの提案を求める",
+        "full_text": "高市早苗総理大臣やはり例えば選挙のときにスモークを焚いたり、演説をしているときにすごい騒音を出したり、これは本当に自由な選挙活動を妨害するものです。現在の公職選挙法でも自由妨害罪がございます。それからまた虚偽の発信をするといったことも公職選挙法に抵触するというものでございます。この規制をさらに強くするかどうかということなんですけれども、これはやはり民主主義のあり方に関することですから、国会で各党各会派の御議論もいただかなければなりません。表現の自由との関係もあります。ただ、日本国憲法に公共の福祉に反しない限りといった文言もございますので、様々な現状を調査した上で、法的な対応が必要なときには、これはぜひ国会から御提案をいただきたいと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9022#3226.79",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "言論封殺・演説妨害への認識と防止策について",
+          "sub_asks": [
+            "事態をどのように感じているか",
+            "防止策についてのお考えがあるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "5月16日"
+            },
+            {
+              "type": "organization",
+              "excerpt": "東大"
+            },
+            {
+              "type": "date",
+              "excerpt": "2022年の参院選"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "質問者（および所属政党）",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "公職選挙法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "自由妨害罪"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "日本国憲法"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "法的な対応が必要なときには、これはぜひ国会から御提案をいただきたいと思っております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な被害事例に基づいた質問に対し、現行法の言及はあるが、今後の対応については国会への提案を求めるにとどまっており、政府としての具体的コミットメントは低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「防止策」について具体的にどのような法的・行政的手段を想定しているか選択肢を提示して問えば、より踏み込んだ回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_012",
+      "segment_index": 5,
+      "topic": "外国人労働者の受入れ上限と移民国家化への懸念",
+      "question": {
+        "speaker": "神谷宗幣",
+        "party": "参政党",
+        "summary": "- 国全体で外国人労働者や家族の受入れ上限が決まっていないため、日本が移民国家になる懸念があるのではないか",
+        "full_text": "次にですね、日本が移民国家になっていくことの危機についてお聞きしたいと思います。これまでの国会のやりとりで、政府側からですね、育成就労など個別の制度の人数枠というものは作っているんだということですけれども、国全体でですね、外国人の労働者やその家族の受入れの上限は決めていないというふうに考えています。少子化に歯止めかからず、毎年90万人人口が減っている現状の中ですね、上限なく外国人を受け入れていくと、日本が移民国家になってしまうんではないかという声を国民からたくさん聞きとして。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "高市早苗",
+        "role": "内閣総理大臣",
+        "summary": "- 国民の不安や不公平感を理解しており、担当大臣による具体策を検討中である\n- 育成就労や特定技能1号には受入れ上限を設けている",
+        "full_text": "高市早苗総理大臣確かに国民の皆様の中に不安ですとか不公平感が生じているということをよく理解していまして、外国人の受入れの在り方に関して検討が必要ということで、小野田大臣を担当大臣にして、今、鋭意、具体策が検討されています。現在も育成就労とか特定技能1号、これには受入れ制限、受入れ上限を設けております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9022#3226.79",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "外国人受入れ上限の不在による移民国家化への懸念",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "毎年90万人人口が減っている"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "小野田大臣"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "育成就労"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "特定技能1号"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "具体策が検討されています",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "外国人の受入れの在り方に関して検討が必要ということで、小野田大臣を担当大臣にして、今、鋭意、具体策が検討されています。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問が疑問符のない懸念表明に留まっており、回答も具体策の検討中という定型的な内容であるため、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「～ではないかという声を国民からたくさん聞く」という形式ではなく、上限設定の有無や方針について明確に問うべきである。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_013",
+      "segment_index": 5,
+      "topic": "特定技能2号の上限設定",
+      "question": {
+        "speaker": "神谷宗幣",
+        "party": "参政党",
+        "summary": "- 特定技能2号には受入れ上限が設けられていないのではないか",
+        "full_text": "神谷宗幣御党の場合はおそらく特定技能2号に上限がない。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "高市早苗",
+        "role": "内閣総理大臣",
+        "summary": "- 法務や教育を含む諸課題を整理し、在留管理の適正化や在留資格の在り方を検討し対応策を策定する",
+        "full_text": "高市早苗総理大臣法務や教育も含む諸課題を整理した上で、しっかりと対応策をつくってまいります。特に在留管理の適正化、それから在留資格の在り方、ここはしっかりと検討させていただきます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9022#3226.79",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "特定技能2号の上限に関する確認",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "特定技能2号",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.2
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "ここはしっかりと検討させていただきます",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "在留管理の適正化、それから在留資格の在り方、ここはしっかりと検討させていただきます。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問が断定的な陳述に留まっており、回答も具体性に欠ける抽象的な検討表明に終始している。",
+        "would_be_referenced": "low",
+        "issue_in_design": "疑問文形式ではなく、相手にYes/Noを求める明確な問いかけにするべきである。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_014",
+      "segment_index": 5,
+      "topic": "外国勢力による影響工作への対策と公開制度",
+      "question": {
+        "speaker": "神谷宗幣",
+        "party": "参政党",
+        "summary": "- 権限を持つ政治家が外国政府等から資金提供や報酬を受けていないか、届出と公開の制度を検討すべきではないか\n- スパイ防止法等の検討を含め、帰化歴などの情報を有権者の判断材料とすることについてどう考えるか",
+        "full_text": "最後になるかと思いますけれども、外国勢力の影響工作の危機についていきたいと思います。カリフォルニア州のアルケイディア市というところで、アイリン・ワン市長という方がですね、中国の違法な代理人として活動したということで、アメリカ司法省から訴追され、有罪を認めたという発表がありました。外国勢力による影響工作というのは国政だけでなくて、政治にも影響を及ぼしているという一つの例ではないかというふうに思います。政治家というのは我々権限力を担う立場でありますから、候補者に立候補のときにしっかりと背景を伝えていく必要もあるんだろうというふうに考えています。総理に伺いたいのは、国会議員、首長、地方議員など権限力を担う者が外国政府や外国政府系団体との資金関係がないか、報酬等を受け取っていないか。顧問契約がないか、便宜供与などの有無がないか、一定の届出と公開の制度を検討していくべきではないかと考えています。スパイ防止法等で検討いただきたいと思うんですね。また、過去に外国籍を持っていたことや、帰化についても、有権者の判断材料と有権者の判断材料とプライバシーの保護ですね。このバランスを取りながら、ぜひ検討を始めていただきたいと思いますけれども、総理の見解をお聞かせください。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "高市早苗",
+        "role": "内閣総理大臣",
+        "summary": "- 外国人からの寄付は現在も禁止されている\n- 帰化歴の公開については、法の下の平等の観点から慎重に考える必要がある\n- 帰化された方は日本人であり、選挙権・被選挙権を有している",
+        "full_text": "現在でも外国人から寄付を受けることは禁止をされています。それから、帰化歴を選挙のときに出すかどうかということなんですが、これは私たちでしたら、氏名、そして年齢、そして党派などを届けて、そしてそれを選挙管理委員会が告示をしますよね。だけれども、じゃあ帰化歴があって、今日本人であるという方に、その帰化歴を届け出て、そしてそれを公にされるということは、法の下の平等の観点からも慎重に考える必要があると思っております。帰化された方は日本人ですから、選挙権を持った、被選挙権も持っておられます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9022#3226.79",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "外国勢力の影響工作防止策と帰化歴公開の検討について",
+          "sub_asks": [
+            "権限力を担う者の外国政府等との関係の届出・公開制度の検討",
+            "過去の外国籍や帰化歴の有権者への提示の検討"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "field_case",
+              "excerpt": "カリフォルニア州のアルケイディア市というところで、アイリン・ワン市長という方がですね、中国の違法な代理人として活動したということで、アメリカ司法省から訴追され、有罪を認めた"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "アイリン・ワン市長",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "帰化歴を届け出て、そしてそれを公にされるということは、法の下の平等の観点からも慎重に考える必要があると思っております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な海外事例を挙げた提案に対し、総理は現状の制度説明と、帰化歴公開に対する慎重な姿勢（否定的な見解）を示すに留まった。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "届出制度の検討と帰化歴の公開という、性質の異なる二つの提案を同時に投げかけているため、回答が分散している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_015",
+      "segment_index": 6,
+      "topic": "物価高騰に伴う子どもの貧困対策",
+      "question": {
+        "speaker": "竹谷とし子",
+        "party": "公明党",
+        "summary": "- 物価上昇による消費抑制やエンゲル係数の上昇など、国民生活への深刻な影響への認識を問う\n- 夏休みの給食停止による子どもの栄養不足を防ぐための具体的な支援策を求める",
+        "full_text": "早速ですが、イラン情勢の影響、国民生活に深刻な影響を与えつつあります。私たち公明党は立憲、そして中道改革連合3党で、全国的なアンケート、先ほど川田君もおっしゃられておりましたけれども、1万2千を超える声を頂戴し、そして政府に緊急提言も出させていただきました。お忙しいかと思いますけれども、その中で個人の方が、9割以上の方が物価上昇を実感し、そして消費を控えているというふうに回答をされております。昨年は45年ぶりにエンゲル係数が高くなったという報道もあります。今年は6月にさらに多くのものが値上がりをするという報道もされております。またおむつや生理用品も大きく値上がりするというふうに報道されております。そうした中で子どもの貧困解消のために活動する団体の方々から夏休みを前にして本当に切実なお声を、毎年の声でありますが、夏休みで学校給食がなくなると痩せてしまう子どもがいるという、そういう悲しい現実であります。今年はもっと深刻な状況になるということを危惧しております。総理の思い、受けとめ、そして何とかこれを乗り切っていただくための政府の具体的な支援策をどうお考えになっているか、この2点をまず伺いたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "高市早苗",
+        "role": "内閣総理大臣",
+        "summary": "- 物価高子育て応援手当（子ども1人当たり2万円）を含む経済対策を講じている\n- 令和7年度補正予算などの支援策について、早期かつ着実な執行を図る",
+        "full_text": "まず今夏休みのお子さんに関して、給付金の支給など支援をすべきというお考えだと思います。政府としましては、お子さん1人当たり2万円の物価高子育て応援手当を含めて、1世帯、夫婦、お子さん2人であれば標準的に年間8万円を超える支援を盛り込んだ経済対策、令和7年度の補正予算、これは全部まだ行き渡っていませんので、まずは早期執行、これを着実に。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9022#3642.5699999999997",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "物価高騰による子どもへの具体的支援策について",
+          "sub_asks": [
+            "総理の思い",
+            "政府の具体的な支援策"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "1万2千を超える声"
+            },
+            {
+              "type": "other",
+              "excerpt": "45年ぶりにエンゲル係数が高くなったという報道"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "子どもの貧困解消のために活動する団体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "お子さん1人当たり2万円"
+            },
+            {
+              "type": "number",
+              "excerpt": "年間8万円を超える支援"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "物価高子育て応援手当"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "早期執行、これを着実に",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "お子さん1人当たり2万円の物価高子育て応援手当を含めて、1世帯、夫婦、お子さん2人であれば標準的に年間8万円を超える支援を盛り込んだ経済対策",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "物価高騰による子どもへの影響という具体的課題に対し、政府が実施している手当の金額を明示した回答である。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「総理の思い」という主観的な問いが含まれているため、回答が具体策に集中しにくい構成になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_016",
+      "segment_index": 6,
+      "topic": "中東情勢に伴う中小企業支援",
+      "question": {
+        "speaker": "竹谷とし子",
+        "party": "公明党",
+        "summary": "- 中小企業の資金繰り支援や雇用調整助成金の助成率引上げなどの拡充を求める\n- コロナ禍のような「中東情勢特別枠」を新設し、中小企業を支えるべきか問う",
+        "full_text": "中小企業は、担う大事な存在であります。中小企業が何とかこの難局を乗り切っていくために、資金繰りはもとより、雇用調整助成金の助成率の引上げなど、拡充をするべきであると思います。ぜひとも、コロナのときのように、中東情勢特別枠というようなものをつくって、中小企業を支えていただきたいと思います。いかがでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "高市早苗",
+        "role": "内閣総理大臣",
+        "summary": "- ウクライナ情勢、原油高、米国関税、新型コロナ対応などの措置を整理しつつ検討している",
+        "full_text": "現在、ウクライナ、また原油高対応、また米国関税で講じた措置、そして新型コロナ対応で講じた措置、これを整理しながら、"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9022#3642.5699999999997",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中小企業支援の拡充と特別枠の設置について",
+          "sub_asks": [
+            "雇用調整助成金の助成率引上げ等の拡充",
+            "中東情勢特別枠のような支援策の設置"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "past_answer",
+              "excerpt": "コロナのときのように"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "中小企業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.2
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "ウクライナ"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "原油高対応"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "米国関税"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "新型コロナ対応"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": null,
+          "score": 0.0
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的だが、回答が途中で切れているか、あるいは現状の整理に留まっており、具体的な回答やコミットメントが得られていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「いかがでしょうか」という包括的な問いかけではなく、具体的に「設置する意思があるか」を問う形式にすべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_017",
+      "segment_index": 7,
+      "topic": "総理のAI活用状況",
+      "question": {
+        "speaker": "安野貴博",
+        "party": "チームみらい・無所属の会",
+        "summary": "- 総理が日々AIをどの程度活用しているか",
+        "full_text": "1つ目は、総理は日々AIをどれだけ活用しておられるか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "高市早苗",
+        "role": "内閣総理大臣",
+        "summary": "- 主に検索や翻訳などの用途で活用している",
+        "full_text": "まずAIですが、日々、私は主に検索ですとか、翻訳ですとか、いろんなことで助けてもらっております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9022#3974.5299999999997",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "総理のAI活用状況について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "総理",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "検索"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "翻訳"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "日々、私は主に検索ですとか、翻訳ですとか、いろんなことで助けてもらっております。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "総理個人のAI利用習慣に関する単純な質疑であり、記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "具体的な活用事例や業務への導入状況を問う形式にすれば、より価値のある回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_018",
+      "segment_index": 7,
+      "topic": "AIの政治的重要性の認識",
+      "question": {
+        "speaker": "安野貴博",
+        "party": "チームみらい・無所属の会",
+        "summary": "- AIを政治的にどの程度重要な課題として捉えているか",
+        "full_text": "2つ目は、総理はこのAIというものをどれだけ重要な政治的課題と捉えておられるか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "高市早苗",
+        "role": "内閣総理大臣",
+        "summary": "- 非常に重要であると認識している\n- 使い倒すことが発展に不可欠であると考えている\n- 自動運転や医療支援などの活用と、リスクへの対応（国家サイバー統括室等での連携）を並行して進めている",
+        "full_text": "それからもう一つ、どれほど重要か。非常に重要です。これは使い倒さなければ発展はない。おそらく自動運転の分野ですとか、医療の支援の分野などは、安全性などがきちっと確認された上で活用できる分野です。一方でリスクもある。国の最小化に向かって、4月の冒頭から、日本政府は国家サイバー統括室において、各国政府とも情報交換をし、アメリカのビッグテックとも情報交換をしながら対応しています。5月には、松本大臣、いろいろな役所がこれをやっていますので、担当大臣にいたしました。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9022#3974.5299999999997",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "AIを政治的課題としてどう捉えているか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国家サイバー統括室"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "アメリカのビッグテック"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "松本大臣"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "非常に重要です。これは使い倒さなければ発展はない。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "AIに対する総理の認識を問うシンプルな質問に対し、重要性と現在の対応体制について直接的に回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "認識を問う抽象的な質問であるため、具体的な政策目標や期限を盛り込んだ問い方にすればより価値が高まった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_019",
+      "segment_index": 7,
+      "topic": "AIの家庭教師としての提案",
+      "question": {
+        "speaker": "安野貴博",
+        "party": "チームみらい・無所属の会",
+        "summary": "- 必要であれば安野氏がAIの家庭教師として指導することを提案し、意向を問う",
+        "full_text": "私はこのような実際に手を動かしながら体感するということ、これを高市総理にもぜひお願いしたいと考えております。いきなりはなかなか難しいかもしれませんが、必要があれば私いつでも家庭教師に参りますので、ぜひ検討いただければと思います。3つ目は、安野が、必要があれば家庭教師に参りますがいかがですか、というこの3つをお願いします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "高市早苗",
+        "role": "内閣総理大臣",
+        "summary": "- 家庭教師の提案について、ぜひお願いしたいと回答した",
+        "full_text": "3つ目、家庭教師、ぜひお願いいたします。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://webtv.sangiin.go.jp/webtv/detail.php?sid=9022#3974.5299999999997",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "家庭教師としての指導の提案",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "高市総理",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "other",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "3つ目、家庭教師、ぜひお願いいたします。",
+          "score": 0.2
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "個人的な指導の申し出に対する社交的な同意であり、政策的な記録価値はない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "国会審議としての形式をなしておらず、個人的な提案に留まっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    }
+  ],
+  "score_schema_version": "2.0",
+  "prompt_version": "V4"
+}
