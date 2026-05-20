@@ -1,0 +1,2265 @@
+{
+  "pairs": [
+    {
+      "id": "qa_001",
+      "segment_index": 5,
+      "topic": "令和の米騒動の受け止めと国産米調達",
+      "question": {
+        "speaker": "西山尚利",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 令和の米騒動をどのように受け止めたか\n- 全量国産米の調達における苦労について伺いたい",
+        "full_text": "そこでこの令和の米騒動、全商ホールディングさんとしては、どのように受け止められたのか。また、全量国産米をご使用いただいているというふうにお伺いいたしておりますが、その調達にあたってのご苦労等々ございましたら、ご発言願いたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小川洋平",
+        "role": "参考人 株式会社ゼンショーホールディングス代表取締役社長兼CEO",
+        "summary": "- 量の確保に大きな問題はなかったが、調達コストが倍増し経営上の大きな問題となった\n- 価格転嫁を最小限に抑えるため、商品設計や生産性の向上に努めている\n- 多くの事業者が輸入米に切り替える中、顧客のこだわりに応えるため日本産米にこだわり、生産者と安定的な調達関係を構築している",
+        "full_text": "私どもといたしましては、いわゆるレバーの米騒動に当たりまして、お米の確保そのものに非常に苦労するという状況では幸いございませんで、私ども平時からグループ内に米卸しの会社を持っているということもございまして、直接政策者さんと契約を結ぶとして、直接収穫をしているという部分が多くございますので、量の確保には、そこまで大きな問題はございませんでした。他方で、やはり価格に関しましては、これは非常に大きな影響がございまして、1年足らずの間で、文字通りお米の調達コストが倍増、倍以上に増えましたので、これは冒頭申し上げましたけれども、お米は私どもにとって主要食材ですので、主要食材のコストが倍になるということは、経営上は非常に大きな問題でございました。その中で、やはりお客様に対して、一部は価格という形で転嫁をせざるを得ないところはございましたけれども、我々の責任としては、いかにこの転嫁を最小限に抑えていくかというところが責任と考えておりますので。ここでもやはり生産性という言葉が重要になりますけれども、これを挙げて、いわゆる減価のコストの増分を最終価格に転嫁する分を極力抑えていくと。その中で日本産米にこだわってということもございましたけれども、これは率直に申し上げて、多くの外食の事業者さんは外国産米に切り替えざるを得ないと。むしろそちらの方が多数派だと思いますけれども、私どもとしては一つの経営判断として、やはり日本産米にこだわると。やはり日本産米を安定的に調達するという意味では、生産者さんとの継続的な関係というのが大事だと思っておりますので、安定的な量をきちんと私どもで仕入れさせていただくと。その代わり価格に関してはおおむねこういう水準でというコミュニケーションをしっかりやって、安定的に調達をさせていただくということが大事なのかなというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5271"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56258&time=4174.306",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "令和の米騒動の受け止めと調達の苦労について",
+          "sub_asks": [
+            "令和の米騒動をどのように受け止めたか",
+            "国産米調達にあたっての苦労があったか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "令和の米騒動"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "全商ホールディング",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "グループ内に米卸しの会社"
+            },
+            {
+              "type": "number",
+              "excerpt": "調達コストが倍増、倍以上に増えました"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "お米の調達コストが倍増、倍以上に増えましたので、経営上は非常に大きな問題でございました。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人（民間事業者）による実情報告であり、調達コストの倍増という具体的な経営影響が述べられている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_002",
+      "segment_index": 5,
+      "topic": "食糧法改正に伴う在庫報告義務化への見解",
+      "question": {
+        "speaker": "西山尚利",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 届出事業者への追加および報告義務化をどのように受け止めているか\n- 政府に望む点はあるか",
+        "full_text": "お話はございましたが、御社として、この届出事業者への追加ですとか報告の義務をどのように受け止めていらっしゃるのかということと、またそれに当たって政府に望むようなところがあれば、もう少し詳しく教えていただきたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小川洋平",
+        "role": "参考人 株式会社ゼンショーホールディングス代表取締役社長兼CEO",
+        "summary": "- 規模的に報告対象となることは想定しており、月次の報告対応は可能である\n- 買い付け価格などの営業秘密に関しては、完全な保秘が担保されない限り出しにくい\n- 小規模事業者への事務負担を軽減するため、報告内容の簡素化や頻度の調整を検討してほしい",
+        "full_text": "在庫の届出ということに関しましては、ある程度企業の規模に応じてという規定だというふうに承知してはおりますけれども、私どもの規模であれば、当然報告対象になるものと想定はしております。先ほどある程度の規模の事業者であれば負担感はそこまで大きくないということを申しましたけれども、基本的には例えば毎月在庫の報告をするということも私どもとしては対応可能だというふうに考えております。小売でいうと「いくらで売っているんでしょう」というようなところになってまいりますと、やはり私どもとしてはかなりためらいが出てくるところで、少なくともそこは完全な保秘というものが担保されないと、なかなか私どもとしては情報としては出しがたいという部分はございます。私どもに限らずということで申し上げますと、これも意見陳述の中で申し上げましたけれども、やはり規模の小さい事業者さんですと、一定頻度で正確な在庫を出してそれを報告するという事務作業にも負担感があるというふうに聞いておりますので、ここに関しましては、報告内容の簡素化なのか、頻度を下げるのか、業界団体ともぜひ意見を交わしていただきながら、具体的な詳細を設計していただければというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5271"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56258&time=4174.306",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "届出・報告義務への見解と政府への要望",
+          "sub_asks": [
+            "届出事業者への追加や報告義務をどう受け止めているか",
+            "政府に望む点はあるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "御社（参考人企業）",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "完全な保秘というものが担保されないと、なかなか私どもとしては情報としては出しがたいという部分はございます。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人（企業）が報告義務への許容範囲と、機密保持および小規模事業者の負担軽減に関する要望を述べたやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が「詳しく教えていただきたい」というオープンエンドな形式であるため、具体的な制度設計への言及を促す制約がなかった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_003",
+      "segment_index": 5,
+      "topic": "備蓄の見直しと民間備蓄の創設",
+      "question": {
+        "speaker": "西山尚利",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 需要量に応じた備蓄放出や民間備蓄の創設など、備蓄の見直し改正について思うところを伺いたい",
+        "full_text": "改定備蓄という言葉もいただきましたが、この備蓄の見直し改正について思うところがあればお述べいただきたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "齋藤一志",
+        "role": "参考人 公益社団法人日本農業法人協会会長",
+        "summary": "- 従来の「毎年10万トンずつ需要が下がる」という前提での生産数量決定には間違いがあったと感じる",
+        "full_text": "備蓄に関しましては、やはり需要量というのは毎年毎年実は違うと思うんです。今まで国の方は「毎年10万トンずつ需要が下がる」という文言一つで我々生産数量を決めながらやってきたところに間違いがあったのではないかなと感じておりますので、例えばインバウンドが非常に多くなって需要が増え"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5271"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56258&time=4174.306",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "備蓄の見直し改正に関する見解",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "毎年10万トンずつ需要が下がる"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "reference",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "「毎年10万トンずつ需要が下がる」という文言一つで我々生産数量を決めながらやってきたところに間違いがあったのではないか",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "備蓄計画の算定根拠に対する疑問を呈しており、過去の運用の不備を認める記録として価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「思うところがあれば」という抽象的な問いかけのため、具体的な改善策の提示まで至っていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_004",
+      "segment_index": 5,
+      "topic": "米のコスト指標（2万5百円）への所見",
+      "question": {
+        "speaker": "西山尚利",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 玄米60キロあたり2万5百円というコスト指標について、生産者の視点から所見を伺いたい",
+        "full_text": "この質問は改正案と直接関係はございませんけれども、生産者のモチベーションは、やはり価格、所得というところにあると思います。このコスト指標につきましてのご所見を、ちょっと頂戴できればと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "齋藤一志",
+        "role": "参考人 公益社団法人日本農業法人協会会長",
+        "summary": "- 大規模法人としてはコストがさらに低いため、この指標は経営拡大やインフラ整備に活用できるありがたい金額である\n- 小規模農家にとっても資産を守れる水準であり、肯定的に捉えている",
+        "full_text": "我々法人は先ほど説明したとおり、70ヘクタールが平均の650社がやっておりますけれども、そちらの方はもっとコストが下がっておりますので、はっきり申して非常にありがたいです。このぐらいの金額の提示をしていただきながら、経営拡大をやる時期にちょうど入っておりますので、インフラ整備のために入れられる価格だろうと思います。そのコスト、さらに規模の小さい方もそこまで上がっていれば、自分の資産を守ることができるということなので、私としては大変ありがたい筋です。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5271"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56258&time=4174.306",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "コスト指標に対する所見の提示",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "生産者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "70ヘクタール"
+            },
+            {
+              "type": "number",
+              "excerpt": "650社"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "このぐらいの金額の提示をしていただきながら、経営拡大をやる時期にちょうど入っております",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人による主観的な所見の提示であり、政府の公式見解や具体的コミットメントを含むものではないため、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「所見を頂戴したい」という抽象的な問いであるため、具体的な回答や約束を引き出す設計になっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_005",
+      "segment_index": 5,
+      "topic": "米のコスト指標（2万5百円）への所見（北海道視点）",
+      "question": {
+        "speaker": "西山尚利",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 玄米60キロあたり2万5百円というコスト指標について、生産者の視点から所見を伺いたい",
+        "full_text": "この質問は改正案と直接関係はございませんけれども、生産者のモチベーションは、やはり価格、所得というところにあると思います。このコスト指標につきましてのご所見を、ちょっと頂戴できればと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "山口浩幸",
+        "role": "参考人 北海道農民連盟書記長",
+        "summary": "- 北海道では農地取得（売買）の再投資コストが見えないコストとして算入されていない\n- 中山間地域や日当たりの悪い農地では収穫量が得られず、一概に妥当とは言い切れない側面がある",
+        "full_text": "2万5百円につきましては、北海道におきましては、実は農地の取得につきましては、府県と違って賃貸はあるんですけれども、基本どうしても売買が中心となりますので、そうなれば、2万5百円の中に売買価格が含まれているのかということと、あとやっぱりどうしても規模を拡大していくと、農作業ってある程度決まった期間で決まった時期に、1週間なり10日の中で、例えば播種作業をこなさなきゃならない、収穫作業をこなさなきゃならないということになります。である程度規模が増えていくと、今度は例えば農業機械の馬力をもう一つ上げなきゃならないとか、作業機の幅をもっと広いものにしないと、その限られた期間の中で作業が完了しないということになると、どうしても再投資をどんどんしていかなければなりません。今、国の方で大規模化というのを推奨しているんですけれども、その辺の、要は確定申告を行うと、どうしても農地を取得すると、あくまで資産なんで、それに対する売買の支払いというのは、どうしても経費算入できる状況にないので、それを考えると、1から3ヘクタールという条件はありますけれども、果たして本当にそれでコストが成立しているのかというのは、非常に北海道としては、確かに大規模化しているので見た目のコストについては、確かにそんなに2万もかかってないだろうという見方をされる場合があるんですけれども、実は見えないコストっていうのが非常に算入されていない部分があるので、やはり我々としては、やっぱり再生産というよりも再投資できる価格ということで、あくまで今回の2万円についてはコスト指標なんで、その上に利益っていうのが当然載ってないっていう部分があるので、そこをどうしても踏まえると、そしてやはり平場であれば確かに2万円でもペイっていうか、逆にお釣りが来るぐらい儲かるよねですけども、やはりある程度中山間とか、中山間だけでなく、やはり場合によってはちょっと日当たりが悪いような農地を持たれている方っていうのは、どうしても思ったような収穫量が得られないと、一概にその2万500円が妥当だっていうのは言い切れない部分があるので、それについてやっぱりそれぞれの個々の生産者がどのように受け止めているのかというのは当然あるので、一概に2万500円が妥当な高い安いというのは、私の口からちょっと言える状況にはないということはご理解願えればと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5271"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56258&time=4174.306",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "コスト指標に対する所見の提示",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "生産者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "2万5百円"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "北海道"
+            },
+            {
+              "type": "number",
+              "excerpt": "1から3ヘクタール"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "reference",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "一概に2万500円が妥当な高い安いというのは、私の口からちょっと言える状況にはない",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "コスト指標の妥当性について問われたが、回答者は北海道の特殊性や再投資の必要性を述べつつ、最終的に妥当性の判断を避けた。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「所見を頂戴したい」という抽象的な問いであるため、回答者が主観的な説明に終始し、明確な結論を避けやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_006",
+      "segment_index": 5,
+      "topic": "日本産米の輸出促進と課題",
+      "question": {
+        "speaker": "藤井比早之",
+        "party": "農林水産委員長",
+        "summary": "- 海外展開における日本産米の輸出について、所見を伺いたい",
+        "full_text": "少し時間が迫ってきておりますので、輸出について最後、小川参考人と柴田参考人にご所見を一言ずつお伺いできないかと思います。海外展開されているという意味を含めた。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小川洋平",
+        "role": "参考人 株式会社ゼンショーホールディングス代表取締役社長兼CEO",
+        "summary": "- 現地産米の方がコストを抑えられ、現地の消費者の愛着も強いため、実際には日本産米の利用は一部に限られている\n- 輸出促進には国内の生産コストを抑え、手頃な価格で提供できる仕組み作りが不可欠である",
+        "full_text": "お米の輸出に関してということで申し上げますと、私どもおっしゃっていただいたように、海外でも外食の店舗、それから持ち帰りのお寿司の店舗などをいろいろ運営させていただいておりますけれども、これも率直に申し上げますと、その中で日本産のお米を使っているというのは、ごく一部に限られるという現状がございまして、この要因としては、一つはやはりコストはあります。現実的に申し上げますと、コストで考えた場合に日本からの輸出で持っていった場合と現地産米と比べますと、現地産米の方がやはりお客様に手頃な価格で商品をお届けできるということはございますので、そういった形でやらせていただいております。加えて、やはりアメリカのスーパーマーケットでこのお寿司を売ろうとなると、アメリカのスーパーはぜひ国産米、アメリカ産米でやってほしいということもございますので、やはりその国々でその国産というところは大きな愛着があるというふうに思っています。ですので、やはり日本産米の輸出を促進していこうということになりますと、やはり大きくはこの価格コストの要素というのは、正直言って無視できないというか大きなところだと思っております。やはり国内の生産コスト、まさに先ほどコストのお話もありましたけれども、いろいろな資材の価格の高騰ですとか、農家さんも当然ですけれども所得を上げていかなければいけない、人を雇う場合は賃金を上げていかなければいけないというのは当然ございますけれども、そこの中でいかに生産コストを抑えていって、日本のお客様にとっても手頃な価格で提供できるし、それがひいては輸出にもつながるという形をいかにつくっていくかということが大事ではないかと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56258&time=4174.306",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "米の輸出と海外展開に関する所見の提示",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "アメリカのスーパーマーケット"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "日本産米の輸出を促進していこうということになりますと、やはり大きくはこの価格コストの要素というのは、正直言って無視できない",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人による現状分析と所見の提示であり、具体的な政策コミットメントや法的解釈は含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "具体的な課題や解決策を問うのではなく「所見を一言」という形式のため、回答が一般的・抽象的な感想に留まりやすい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_007",
+      "segment_index": 6,
+      "topic": "米の過剰生産時の対応策",
+      "question": {
+        "speaker": "野間健",
+        "party": "中道改革連合・無所属",
+        "summary": "- 生産者が安心して生産できるための需要拡大は正しいが、作りすぎてしまった場合の具体的な考え方について伺いたい",
+        "full_text": "ここの残された課題の中で、生産者が安心して生産できるための需要の拡大は正しいが、それでも作りすぎてしまった場合の考え方。これは当然、今年価格が暴落するんじゃないか先ほどもご意見あったんですが、そういう中でこの考え方が必要ということなんですが、具体的にどんなことを思われていますでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小川洋平",
+        "role": "参考人 株式会社ゼンショーホールディングス代表取締役社長兼CEO",
+        "summary": "- 輸出への転換に対する政府支援、加工用への転換時の差額補填、備蓄米への充当、輸入量の調整による国内過剰分の吸収などが考えられる\n- 税金を使う以上、最も効果の高いところに集中して行うべきであり、コスト削減なき輸出拡大への補助金は健全ではないため、効果的な制度設計が必要である",
+        "full_text": "生産しすぎてしまった場合にどのような対応をするかということでございますけれども、やはり何らかの形でそれがきちんとした形でお金に変わるようにというのが、やはり作り手としての考え方かなと思いますので、生産者さんの代表の方、他にも3名いらっしゃいますので、私から申し上げるのは限定的にとどめたいと思いますけれども、例えば先ほども申し上げましたけれども、その分を輸出に回すのであれば、輸出に対しては政府としてはこうした支援ができますですとか、あるいは加工用に回す場合は、加工用ですとやはり金額としては下がってくるというところもあると思いますので、その差額分をこういう形で補填しましょうですとか、あるいは備蓄米にどう充当するのかということはあるのかなと思いますし、じゃあ、その輸入米の方の分量をこれだけ調整して、国内の過剰生産分をこういうふうに吸収しましょうですとかいうことはあり得るのかなというふうに思います。ただ他方で、政府として支援をしていただくということは当然ですけれども、税金を使うということですので、これは納税者のお金を使ってやる以上は、できるだけ限られた最も効果の高いところに集中して行うべきではないかというふうには考えます。その輸出の面で申し上げますと、先ほども申し上げましたが、コストが下がっていないのにこの輸出を拡大しようとする、これに税金を付けましょうというのは、やはりあまり健全ではないとは思っております。一時の補助金が切れてしまったら、その商売としては繋がらなくなってしまうわけですし、そういったお金の使い方というのはいかがなものかという思いはございますので、そういった税金の使い方として効果はどうなのかという観点も含めて、制度を考えていただくべきところではないかと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5271"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56258&time=5700.006",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "過剰生産時の具体的な対応策についての考え",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "生産者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "輸出"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "加工用"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "備蓄米"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "輸入米"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "納税者のお金を使ってやる以上は、できるだけ限られた最も効果の高いところに集中して行うべきではないか",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人による個人的な見解やアイデアの提示に留まっており、政府としての公式な方針や具体的コミットメントは含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「具体的にどんなことを思われていますか」という主観的な問いであるため、制度的な回答を引き出しにくい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_008",
+      "segment_index": 6,
+      "topic": "中小規模農家の経営維持と安心できる生産体制",
+      "question": {
+        "speaker": "野間健",
+        "party": "中道改革連合・無所属",
+        "summary": "- 中山間地などの中小規模農家は長年赤字でボランティア的に維持してきた背景があり、価格暴落への不安も強い\n- 自然相手で需要に応じた生産が難しい中、どうすれば安心して生産でき、後継者が継いでいけると考えているか",
+        "full_text": "この最後の3本の矢のところで、生産者の手取りの確保と生産基盤の維持というのが、これもやはり私たちもどうしてもやるべきことだと思うんですが、その辺ちょっといささかお考えが違うかと思うんですが、やはり大規模なところばかりではありません。農家、やはり中小規模のところ、農村についてお聞かせいただきたいと思うんですが、齋藤参考人、柴田参考人は非常に大規模な経営をされているということと違って、中規模で生産されているわけですけれども。私も地元は鹿児島県でありまして、中山間地が多くて、そんなに大規模でやっているところはありません。皆さんに聞くと、この30年来、ずっと赤字だったと、米作りは。なんとかですね、人件費とかそういうことはもう全く無視した、度外視した形で、先祖伝来の田んぼをなんとか耕して、できたものを親戚や地域の方に配って、そんなに高くないけれども買ってもらって、なんとかかんとか維持してきた。半分ボランティア的にですね、やってきた。ようやくこの2年ほど価格が上がったんで一息ついているんだけれども、いつまで続くんだろうか、ましてこれから暴落するんじゃないかという不安があるんですが。そこで先ほどお話にもありましたけれども、需要に応じた生産といっても、なかなか自然は変わってきますからね。取れるときもあれば、取れないときもあれば、そういう中で、なかなか需要に応じた生産をしなさいと言われても難しいですよと、さっきもおっしゃってました。そしてそのまた価格もそれにつれて収入があったりなかったり、こういうふうに政府の方針も猫の目ですし、なかなかこの自然相手でそんな大規模でない場合、厳しいというのは今のお話でも十分わかるんですけれども、やはりこれに対処するにはどうしたらいいんだと。やはり先ほどちょっと申し上げましたように、ある程度、政治が、政府が、行政が、これも食料ですからね。何か工業製品のように原料を入れればその数量ができるというものではないと思うんですけれども、どうであれば安心して生産できる。また、息子さんも後継者でやられているようですけれども、それから後を継いでやっていけるか、いかがお考えでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "山口浩幸",
+        "role": "参考人 北海道農民連盟書記長",
+        "summary": "- 現状の収入減少緩和措置や収入保険では、コストに対する適正な農産物価格が実現していないため、所得確保まで至っていない\n- 子育て世帯などが生活できる所得の確保が必要である\n- 国内生産を確保した上で、輸入量で調整を行うことが、国内農産物の適正な価格調整に繋がると考える",
+        "full_text": "そういったことであるとなかなか今の我々もやっぱりコスト、農家のコストが非常に高くなっているので、それに対して農産物価格がなかなか追いついてこないので、それに合わせたようなセーフティーネットをお願いしますというふうに農水省なりにお願いすると、やはり収入減少緩和という、俗に言うならしと収入保険が措置されているので、それで何とかなるんじゃないですかみたいなことを言われていますけれども。今の農産物はすべてにおいて、やはりコストに対して適正な農産物価格でないので、それに対する収入が計算されると、非常に多少のコストの補填にはなっても、その所得まで及ばないというのが現状であります。やはり今後、法人化も一つの手でありますけれども、家族経営でやっていく分には、せめて二世帯とは言わないまでも、子育て世帯と、これから子育て世帯に向かう二世帯がある程度生活できるような所得というのは、農業者にとって必要ではないのかなと思っております。輸入のことを言えば、他の産業においてどうしても輸入量が確定してしまうと、国内の需要の部分は最終的に国内の生産で調整が入ってしまいます。その場合、例えば今、生産が余り気味だから生産調整してくださいという話になってしまうので、本来であればある程度国内生産を確保した上で、輸入分で調整していただけるのが、国内の農産物の価格調整には一番適正だと、私、現場としては考えています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56258&time=5700.006",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中小規模農家が安心して生産を継続できる方策は何か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "この最後の3本の矢"
+            },
+            {
+              "type": "organization",
+              "excerpt": "鹿児島県"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "中小規模の農家",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "収入減少緩和"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ならし"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "収入保険"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "本来であればある程度国内生産を確保した上で、輸入分で調整していただけるのが、国内の農産物の価格調整には一番適正だと、私、現場としては考えています。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人による現場視点からの意見表明であり、政府のコミットメントを導き出すものではないが、現状のセーフティーネットの不十分さが記録されている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問が情緒的なエピソードに時間を割いており、政府への具体的な要求事項（制度改正など）への絞り込みが弱いため、回答が個人の見解に留まっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_009",
+      "segment_index": 6,
+      "topic": "大規模農業法人における人材確保の手法",
+      "question": {
+        "speaker": "野間健",
+        "party": "中道改革連合・無所属",
+        "summary": "- 大規模化や統合を進める中で、どのように人材を確保しているのか",
+        "full_text": "非常に大規模、300ヘクタールぐらいが平均というお話でありましたので、この法人協会さんは大規模な形でやられているんですけれども、今、そうやって大規模化して、あるいは高齢化したところをどんどん吸収して統合してやっていかれていると思います。先ほどもお話が出ましたが、売り先も自分でどんどん開拓して見つけてやられている。この人材の確保ですね、これはどういうやり方でやって。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "齋藤一志",
+        "role": "参考人 公益社団法人日本農業法人協会会長",
+        "summary": "- 新卒採用に加え、地方での生活を希望する中途採用者が大きな力となっている\n- 社会保険への加入や賃金引き上げを行い、一般企業と同等の待遇を目指している\n- ICTやAI搭載ドローンなどの活用により少人数で大面積を管理する体制を構築している",
+        "full_text": "ただ、我々は2050社のうち、平均売上げが4億5千万円ありまして、社員の採用につきましては一般の会社とほぼ同じで、全社員、社会保険にも加入しております。今、賃金もどんどん上げていかないと、もう他に逃げられてしまいますので。そういうこともありまして、人材の方は新卒の採用から、それから中途の方が逆に我々農業界には一番入ってくれているようなんですけれども、やはり地方で生活をして、さまざまな会社で経験された方が「農業もいいよね」ということで、全く技術もなく、そういう方が逆に我々にとっては一番の力になっております。地方で住んで子どもを育てて、作物を栽培しながらの生活というのもありということで、そして少人数で大面積をしないと駄目なものですから、さまざまな知見を持った社員が入ってくれることで経営が成り立っているということだろうと思います。あと、今までは手作業が非常に多くございましたけれども、最近はさまざまなICTを活用した機械ですとか、本当にAI搭載のさまざまなドローンなども出てきておりますので。少人数化して大面積をやるというのは、これを実際やらないと、今後出てくる農地を守るわけにはいかないと。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56258&time=5700.006",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "大規模農業法人の人材確保の手法について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "300ヘクタールぐらいが平均"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "法人協会",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "2050社のうち"
+            },
+            {
+              "type": "number",
+              "excerpt": "平均売上げが4億5千万円"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "中途の方が逆に我々農業界には一番入ってくれているようなんですけれども、やはり地方で生活をして、さまざまな会社で経験された方が「農業もいいよね」ということで",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "大規模農業法人の実務的な人材確保策（中途採用やICT活用）に関する具体的な回答が得られている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_010",
+      "segment_index": 7,
+      "topic": "食料法改正と減反政策への批判について",
+      "question": {
+        "speaker": "柏倉祐司",
+        "party": "日本維新の会",
+        "summary": "- 食料法改正における「需要に応じた生産」が、実質的な第2、第3の減反政策ではないかという批判があるが、どう考えるか\n- このような側面が、実際の農業経営に影響を与えると考えているか",
+        "full_text": "早速ですが、今回ですね、もうこの食料法の改正というところをさまざまな、実は批判的な論調も多い。我々政権与党は一角担わせていただいておりますので、これはもう原則、賛成という立場ではありますが、さまざまな批判的な意見、論調も多くて、その最たるものが、今回のこの政策は、需要に応じた生産というところ、結局のところ第2、第3の減反政策じゃないのかというような、そういった指摘がやはり強いわけでございます。当然この減反政策的な意味合いが万が一あったとしても、私は影響されませんという方もかなり多くいらっしゃると思うんですね。この正確な評価はともかく、減反政策というような形で批判されてしまう、そういう性質側面は、もしあったとしても、あまり自分たちの経営には影響はないんだというようにお考えになっているかどうか。この実質的な減反政策の維持というような批判も踏まえてご意見を伺わせていただければと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "山口浩幸",
+        "role": "参考人 北海道農民連盟書記長",
+        "summary": "- ある程度の生産調整は必要であり、需要見通しがないと農家が潰れる懸念があるため、国による一定の指導や詰めが必要である\n- 需要者に売れるものを作るのは当たり前であり、行き先のないものを作ることこそ問題である\n- 実際の現場では需要があるため作付けを増やしている事例もあり、経営判断として需要に応じた生産を実践している",
+        "full_text": "私としてはやっぱりある程度の生産調整は確かに必要なのかなというふうには思っております。現在さっきの水田活用の直接支払交付金の見直しの中で、水張り要件とか田舎部要件とかあった中で、やはり実際に水を、今まで麦大豆を生産していたんですけれども、そういった補助において水張りが可能だということになれば、当然稲作の作付けも可能でありますし、今のところ、飼料用米とか加工用米、これについては一部、市場の状況によっては現時点ではすぐ市役を前に、次の政策においては専用品種でなければダメみたいなそういう政策が出てくるというふうに聞いておりますので、そうなれば今年撒いたものに対して飼料用米であれば、主食用に回すことは不可能ですけれども、来年においては、もし市場において、主食用米が不足するようなことがあれば、主食用に転換することは可能などで、それをまだ、いずれは農業者が減って、現状の需要よりも供給が、もし作ってもいいですよってなったら、供給が多くなると、非常にそれこそ今年も暴落するんじゃないかということで、それについて、令和5年3万円のとき、通常、確か私の記憶ではJAの会社の経営会社、1万6千円か7千円だったのが、通常年明けを起こすと、値段は若干下がるのに、逆に2万円という値段がついて、生産者にちょっと業者が回ったみたいな話も聞いてたんで、そこからもうすでに米が足りなくなり始めてるのかなということで、業者間で何か、場合によっては4万円の取引みたいな話も聞いてたんですけども、そういった中で、やはりある程度、時給見通しっていうのがないと、やはり潰れる農家は潰れていって、じゃあ基本計画の理念っていうのが本当に守られるのかっていう部分が非常に懸念している部分でありますので、そういった意味合いでは、やはり確かに中にはいくらでも作りたいという方もおられますけれども、やはり私のところでも個人で70兆、80兆を抱えている方もおられます。けれどもやはり全面積、やっぱり米っていう話じゃなくて、そのうちの20兆、30兆を水稲で、あとは麦、大豆で、添削作物で賄って経営しているところが多いのかなというふうには感じておりますし、やはり規模拡大すると、どうしても作り方が隅々に目が通らないっていう非常に懸念が出てきて、実際に農水省のデータの中でも、最近、それぞれの農産物の単収が下がっていますよね、っていうような、確かデータを持っていると聞いてますので、それを考えると、やはり確かに規模拡大してそのコストを下げるっていうのも重要かもしれませんけども、そういった中ではやっぱり、また需要に応じた、ただそれはあくまでどっちが主体になるかによってやっぱり変わってくるのかなというふうに考えています。あくまで生産者の判断に任せるのか、国のある程度指導によるものなのかによって、やはりもし先ほど私の話の中であった通り、生産者の判断に任せるのであれば、「あなたたちが自分たちが決めたんだから、国は責任持ちませんよ」となったら、やっぱりこれ農業政策非常に困るので、やはりそれについては、やっぱりそこを踏まえた上で、今後の詰めというのは必要ではないかなというふうには考えております。齋藤一志今の添削の問題ですけれども、報道の方で「増産から減産へ」、そして「需要に応じた生産」ということで、「生産調整、減反に戻るんじゃ」ということで報道されたのが、すごく印象深いというか、驚きました。需要に応じた生産は、これは当たり前のことですので、我々は本当に農畜産物を扱って商売しておりますので、需要者に売ることで作れる、これは当たり前なんです。そういう需要もありますので、国の方は様々なそういうメニューを準備していただいて、現場ではそれぞれの取引先との需要と、それから我々供給側との話し合いを持って、それがバランス取れたときに、適正バランスだろうと思うんです。行き先のないものを作ること自体が、やっぱりその方が問題で、過剰なったときは本当に怖いと思いますので、大暴落だけは、規模が大きくなったときの暴落って、もう本当に影響が大きすぎますので、今後の拡大が止まるということになりますので、ぜひ、この需要に応じた生産の新たな需要を開拓することへの支援の方、ぜひお願いしたいと思います。柴田為英需要に応じた生産ということですが、私の方はそれを実践してやっておりますし、先ほどちょっとしゃべったかなと思っていますけれども、今年は昨年比で15%増し付け、米の作付けを増やす予定で、その分単価が減るということで、何でよというか、これも市役所の方に行かさいなどと話をしたんですけれども、「いや、需要があるので作れます」と。「もっと作ってもこちらの方で引き取れますよ」というのは、どういう、米余っているどういう図も、寿司、8年3年向けでそう言っているのかは分かりませんけれども、まず私が使っている集荷業者、卸しも含みでありますけれども、取り付ける数量は違いますけれども、「いらないという、現状並みにしてください」とか、「作付けを減らしてください」という業者は一人もいません。いや、経営としてみればそれが当たり前のことで、重要な、先ほど齋藤さんも言ったけれども、需要がないところにつくっては、それはないと言うや。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5271"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56258&time=7236.206",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "食料法改正の「需要に応じた生産」は実質的な減反政策か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "食料法の改正"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "農業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "令和5年3万円"
+            },
+            {
+              "type": "number",
+              "excerpt": "1万6千円か7千円"
+            },
+            {
+              "type": "number",
+              "excerpt": "15%増し付け"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "需要に応じた生産は、これは当たり前のことですので、我々は本当に農畜産物を扱って商売しておりますので、需要者に売ることで作れる、これは当たり前なんです。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人による現場視点からの意見表明であり、政府の公式見解や具体的コミットメントを導き出すものではないため、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問が「～とお考えになっているかどうか」という個人の主観を問う形式であるため、制度的な回答を得にくい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_011",
+      "segment_index": 7,
+      "topic": "若年層の米離れ対策について",
+      "question": {
+        "speaker": "柏倉祐司",
+        "party": "日本維新の会",
+        "summary": "- 若者世代の米離れが進んでいると考えているが、この状況に対する対策や考えがあるか",
+        "full_text": "次は国内需要、米の国内需要ですね。これどうしても落ち込んでしまう。ただ一つ確実に言えることは、だんだん若者世代、米離れを起こしているというのは間違いないと思います。朝パンで、昼は学校行ってもパンが多い。学校給食ではあまりお米が出ない。夜もお米を御膳に盛っても半分しか食べないで、パンを自分たちで食べてしまうというような、実は家も結構多いと聞きます。私としては非常にこの若者のお米離れと、これをやはりお米に回帰してもらうですね。そういう工夫というのを何とかしていかなければいけないんだというふうに考えておりますが、この若年層の米離れに対する対策ですね。もし今までお考えになっているようなことがございましたら、お教え願いたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "小川洋平",
+        "role": "参考人 株式会社ゼンショーホールディングス代表取締役社長兼CEO",
+        "summary": "- 外食事業の実感としては、若年層が必ずしも米離れしているとは感じておらず、むしろ支持は根強いのではないか\n- まずは政府が正確なファクトを把握した上で政策を検討すべきである\n- 米食振興には賛成だが、まずは足元の需要を満たす生産を担保することが先決である",
+        "full_text": "若年層の米離れというお話もございましたけれども、私ども外食事業としてやらせていただいている実感で言いますと、必ずしも若年層が米離れしているとも感じていないというのが正直なところでして、私どもお米を中心にした業態を多くやらせていただいております。ここでご飯を選ぶ比率っていうのは、実はずっと9割ご飯なんですよね。私も実はパンもこだわっておいしいパンを出しているつもりですけれども、ここはやはり9割はお米を選ばれるということもございまして、お米に対する支持というのは基本的には根強いのではないかという気もしております。また朝食もパンというお話もあったんですけれども、これも私が拝見したデータによると必ずしもそうでもないという話も聞いたことがございまして、朝食でパンかご飯かという選択肢で、実はパンが多数派なのは50代とか60代で、20代30代は実はご飯の方が多数派というデータも見たことがございまして、この長いトレンドで戦後に食事が西洋化していってお米からパンに移っていったというトレンドはもうそこを打っているのではないかなというのが肌感覚としてはございます。ただ完全に統計的に事実を把握できているわけではございませんので、これはぜひ政府の方でもまずファクトはどうなのかということを押さえていただいて、じゃあ政策としてどうしていくということを考えていただくべきなのかなと思います。米食を振興するということそのものは、これは全く私どもとしては賛成でございますので。ただ振興する以前に、今ある米に対する需要を満たせていないというのがこの1年間の状況ですので、本当はお米を食べたいんだけどねと言いながら、やっぱりパスタを買っていかれるとかいうことが実際に起きてしまっているというのが一番の問題だというふうには思っておりますので、まずは足元の需要をきっちり満たす生産を担保しながら、その上で米の需要の振興も図っていくということがあるべきではないかと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56258&time=7236.206",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "若年層の米離れに対する対策について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "若年層",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "9割ご飯"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "まずは足元の需要をきっちり満たす生産を担保しながら、その上で米の需要の振興も図っていくということがあるべきではないか",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人による実体験ベースの回答であり、政府の公式見解や具体的コミットメントを含むものではないため、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「お考えになっていることがあれば」というオープンな問いかけであるため、回答者が主観的な意見に終始しやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_012",
+      "segment_index": 8,
+      "topic": "販路拡大の克服方法",
+      "question": {
+        "speaker": "柏倉祐司",
+        "party": "日本維新の会",
+        "summary": "- 国内外への販路拡大において、どのような苦労があり、それをどう克服したか",
+        "full_text": "これは販路拡大で国内、そして海外、それで一番ご苦労なされていたところをどうやって克服したかについてご教授いただければと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "齋藤一志",
+        "role": "参考人 公益社団法人日本農業法人協会会長",
+        "summary": "- 特別な努力をした記憶はなく、外部へ意見を明確に発信し続けたことで同調者が集まり、販路が拡大した",
+        "full_text": "全く努力した覚えもなく、どんどんうまくお客さんから来てくれるので、やはりさまざまな意見をはっきり外に発信することで、同調した方からお付き合いしていただいて、販路が伸びてきたという、多分それだけだと思います。これからもまた発信し続けたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56258&time=8483.506000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "販路拡大における困難の克服方法について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "これからもまた発信し続けたいと思います",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "さまざまな意見をはっきり外に発信することで、同調した方からお付き合いしていただいて、販路が伸びてきた",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人による個人の経験談であり、公的な記録としての価値や政府のコミットメントは低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "具体的な事例や手法を問う形式ではなく、抽象的な「ご教授」という依頼に留まっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_013",
+      "segment_index": 8,
+      "topic": "農業政策の区分けと若手の意欲向上",
+      "question": {
+        "speaker": "村岡敏英",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 大規模農家と中山間地の小規模農家で政策を分けるべきではないか\n- 政策を分けることが若い農業経営者の意欲向上につながるか",
+        "full_text": "これは両方とも今、農地を支えるという意味では大変大切なことではありますが、やはり政策的に販路をしっかり持って市場を開拓している方々と、そして中産官地で農地を守る方々の政策があまりにもしっかりと分けてこれが農林水産省から発表されていない。そのことによって農家の人たちも不安になるし、消費者の人たちも、何か全て農家が交付金だけ頼って努力していないように見られている。それが本当に若い人たちの農業に経営者として参画していくところに弊害になっていると思っております。その中で、先ほど二つの政策を分けた方がいいという柴田参考人のお話でしたが、やはりこの政策を分けていくことが若い人たちの意欲にもつながるということをもう一度教えていただければと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "柴田為英",
+        "role": "参考人 株式会社やまだアグリサービス代表取締役",
+        "summary": "- 農業の姿が激変しており、若い人が「やってよかった」と実感できる仕組みが必要\n- 低コスト生産を実現し、世界に売れる仕組みを作ることが重要\n- 政策的に区分して考えなければ、国民から「交付金頼み」と見られ、意欲を削ぐことになる",
+        "full_text": "長年、私は20代から農業をやっていて思うんですけれども、確かに今の農業の姿はもう50年前と様変わりしたような感じがしておりますし、若い人がなかなかそれにはついていけない。何を言うんだというと、やはり「やってよかった」というその実感が、若い人は感じられないような農業の生産から販売までの現場で見ると、何かそれを、私が50何年やってきた反省として思っているわけで。では、そのときに、なぜかと言ったら、じゃあ、原炭側というか、米を思い切って作れないということではなく、私は低コストであります。全世界で、山田アグリが作った米が全世界に売れるような仕組みを作ってもらえれば。そういうのはさっき何回も言ったけれども、やはり政策として別個で考えてもらいたいなという形で、でないといつまでたっても他の人から見て「おめでとうございます。国民から金もらっていいな」となる。一般の国民から、あるいは農家以外から見るとよく言われるんだけれども、そこらへんの見るはりの通った政策的なこと、あるいは農家の定義を持つ方も、やっぱり考えてみるべきではないのかな。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56258&time=8483.506000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "政策を分けることが若手の意欲に繋がるか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "柴田参考人のお話"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "若い人たちの農業に経営者として参画していくところ",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "山田アグリ"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "政策として別個で考えてもらいたいなという形で、でないといつまでたっても他の人から見て「国民から金もらっていいな」となる。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人による個人的な経験と持論に基づく回答であり、政府としての公式見解や具体的なコミットメントは含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問が参考人の意見を再確認する形式になっており、政府の具体的方針を問う形になっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_014",
+      "segment_index": 8,
+      "topic": "米の輸出拡大に必要な政府政策",
+      "question": {
+        "speaker": "村岡敏英",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 安価な輸入米が大量に入ってくる状況にある\n- 今後、米の輸出を増やしていくためにどのような政府政策が必要か",
+        "full_text": "そこで大きくやられている参考人にもお聞きいたします。輸出もやっているということですけれども、実は今回SBS前10万トンすべて入札されました。そしてさらには枠外の関税1kgあたり341円。これでも10万トン。合わせて20万トン、25年入ってきました。これだけ価格差が日本のお米とあります。そのときに、今後輸出を増やしていくためには、どのような政府の政策が必要だと考えているのか、ご教授お願いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "齋藤一志",
+        "role": "参考人 公益社団法人日本農業法人協会会長",
+        "summary": "- 細かなメニュー別の補助ではなく、市場価格を下げた上で「直接支払い（不足払い制度）」を導入すべき\n- これにより安定的な経営が可能となり、輸出拡大に向けた大きなチャンスが生まれる",
+        "full_text": "農林水産省の不足払い制度、1万円を我々に直接出していただければ、2万円で2万500円程度のものさえあれば多分回ると思うんですよ。次の世代の若い人たちが大規模で戦っていくためには、政府から、主食用米、輸出用米、飼料用米、加工用米、さまざまな米粉用米、さまざまなメニューの補助を細かくいただくのではなくて、市場そのものを下げてしまって、あとは直接支払いの不足払いをやっていただければ、安定的な経営と、それから輸出拡大に向けた大きなチャンスが出てくると思いますので、そういう検討も将来お願いしたいと思っています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56258&time=8483.506000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "輸出拡大に必要な政府政策について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "SBS前10万トン"
+            },
+            {
+              "type": "number",
+              "excerpt": "関税1kgあたり341円"
+            },
+            {
+              "type": "number",
+              "excerpt": "合わせて20万トン"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "参考人",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "1万円"
+            },
+            {
+              "type": "number",
+              "excerpt": "2万円"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "市場そのものを下げてしまって、あとは直接支払いの不足払いをやっていただければ、安定的な経営と、それから輸出拡大に向けた大きなチャンスが出てくる",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人による具体的な政策提言（直接支払いへの移行）がなされており、質疑としての整合性は高い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_015",
+      "segment_index": 8,
+      "topic": "農業者の確保と農村の活性化",
+      "question": {
+        "speaker": "村岡敏英",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 主食用米への直接支払いを検討すべき時期に来ているのではないか\n- 農業者の減少という危機感に対し、どのように考えるか",
+        "full_text": "我々国民民主党も、やはり消費者に手頃な価格で、そして生産者が再生産でき所得を確保できるとすれば、やはり直接支払い、主食は考えるべきだと思っています。やはり直接支払いをしっかりと主食に関しては考えるべきじゃない。私もそこの部分を検討する時期に来ているとこう思っています。生産力ある農家がしっかりいるうちにやらないと、生産力がどんどん下がってきて、もう全ての米がもうやる人がいなくなってしまうというような状況の危機感を持たなければなりません。たったこの10年間で稲作を含む他の農業者もですけれども、74万人も農業者が減りました。そして計画の中ではまだ農地としてどのように使うか決まっていないのが30%を超えています。もうこれがどんどん増えていく可能性があるときに、しっかりと主食を支えるという政策を今考えないともう5年このままでいれば、本当に農家が少なくなるという危機感を持っています。そこで次に山口さんにお聞きしたいんですが、その点はどのように考えていらっしゃるでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "山口浩幸",
+        "role": "参考人 北海道農民連盟書記長",
+        "summary": "- 農産物価格も重要だが、それ以上に農村全体の活性化（結婚や生活環境の整備）が不可欠である\n- 土地利用型の大規模農業ではスタート資金やJAとの取引関係が課題となっている\n- 農業者を守るだけでなく、農村社会を同時に活性化させる政策を求める",
+        "full_text": "私としては、特に北海道において、必ずしも親子継承、親元就農するにあたって、確かに農産物価格というのが重要な部分もあるのかもしれませんけど、親元就農して息子が農し始めましたって言っても、やはりどうしても周りに、こう、俗に言う限界集落的に周りが人いなくなると、お嫁さんも来ない、結婚もできない。農業には確かに魅力があって、やりたくても、でも自分の人生考えると結局自分の代で終わってしまうよねってなったときに、やはり農村がやっぱり元気でないとなかなか今度やっぱりそれを考えたときに自分が農業をやってでも、この後自分の人生ってどうなるのかなと、非常にそこは考えさせられるところがあるのかなと考えております。また、どうしても同じ農業においても、施設園芸であれば新規参入とは比較的しやすい部分もあるんですけども、どうしても土地利用型の大規模になるとなかなか定着しないという部分においては、スタートの資金力の関係もありますし、どうしても北海道においてはJAの力が強いという部分で、そういった中でうまく取引ができるのかなというのが、それなりに問題になってくると思います。ですので、まず農業者を守ると同時に、やっぱり農村をいかに活性化させるかというのが同時進行でないと、先ほど言ったとおり、旦那だけが北海道にいて、雪が溶けたら現場に向かって単身赴任するというのは、決していい状況ではないと思っていますので、その辺を踏まえた政策というのを国民には求めていきたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56258&time=8483.506000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "主食への直接支払い導入についてどう考えるか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "74万人も農業者が減りました"
+            },
+            {
+              "type": "number",
+              "excerpt": "決まっていないのが30%を超えています"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "生産力ある農家",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "北海道"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "JA"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "農業者を守ると同時に、やっぱり農村をいかに活性化させるかというのが同時進行でないと",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は主食への直接支払いという具体的な政策手段を問うているが、回答者は北海道の農村社会の現状や定着の困難さという一般的・状況的な課題に終始しており、政策的な回答になっていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問の末尾が「どのように考えていらっしゃるか」という抽象的な問いであるため、回答者が論点をずらして自身の所感を述べる余地を与えてしまっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_016",
+      "segment_index": 8,
+      "topic": "食料企業と農家の連携による食文化の発展",
+      "question": {
+        "speaker": "村岡敏英",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 農林中金法改正による投資拡充を踏まえ、農業者と食関連企業のコラボが必要ではないか\n- 大手食料企業として、農家との連携による食文化の発展をどう考えているか",
+        "full_text": "農林中金法改正が行われました。農林水産業に向けて直接投資や出資を拡充していく。そういう意味で、農業者本人と食を扱っている企業とのコラボというのが必要になってくると思います。その意味で、食で非常に大きな企業として、日本食全体に影響を与えているゼンショーさんだと思うので、農家とのこれから連携によって、この食文化はどうしていこうかとは考えでいらっしゃるでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小川洋平",
+        "role": "参考人 株式会社ゼンショーホールディングス代表取締役社長兼CEO",
+        "summary": "- 食農企業として農家との共存発展は非常に重要な課題である\n- ドローン提供による施肥・農薬散布などの技術支援を行い、生産性を向上させつつ安定的に仕入れる取り組みを推進している\n- 民間企業が生産するのではなく、農家の領域を尊重した協力関係を構築したい",
+        "full_text": "私どもはまさに食農企業ですので、この食、原材料の部分を生産していただいている農家さんとどういった関係を築いていくか、どうともに発展していって日本国民の食、あるいは世界中の人々の食を豊かにしていくかということは、おっしゃるとおり非常に大事な課題だというふうに考えております。例えば、私どもの方でドローンを持たせていただいて、このドローンを提供して、農家さんに対して施肥、あるいは農薬散布、あるいは生育状況の判断というようなところをサービスとして提供させていただいて、当然、それは最終的には生産したお米は私どもの方で仕入れさせていただくというような取り組みも行っております。要は、先ほど生産性をいかに上げていくかということを申し上げていますけれども、当然今回いらっしゃるような大きな経営規模の生産者さんは、ご自身の力でいろいろな技術革新に取り組んでおられると思いますけれども、そこまでの規模でない生産者さんも多くおられますので、そういった方々とは私どものようなある程度の規模のある企業の側から「一緒にこういう形で技術を入れてみませんか」というようなお話をして技術革新を進めていただくと、それによって生産者さんも経営上もメリットがありますし、私どもとしても安定した価格で仕入れができるようになるというふうに考えております。民間企業自身が生産を行うということは、私は本筋だとは思っておりません。やはり農業は農家さん、生産者さんの領域であるというふうに思っておりますので、そことどういう協力関係をつくるかという観点で取り組んでまいりたいと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5205"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56258&time=8483.506000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "ゼンショーの農家連携による食文化の方向性について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "農林中金法改正"
+            },
+            {
+              "type": "organization",
+              "excerpt": "ゼンショーさん"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "ゼンショー",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "ドローン"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "施肥、あるいは農薬散布、あるいは生育状況の判断"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "協力関係をつくるかという観点で取り組んでまいりたいと思っております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "民間企業自身が生産を行うということは、私は本筋だとは思っておりません。やはり農業は農家さん、生産者さんの領域である",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人（ゼンショー社）による民間企業の視点からの回答であり、ドローン提供などの具体例は出ているが、政府の公的な記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問が「どう考えていらっしゃるか」という抽象的な問いであるため、具体的な約束や数値目標を引き出す構成になっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_017",
+      "segment_index": 8,
+      "topic": "主食用米への直接支払いへの見解",
+      "question": {
+        "speaker": "村岡敏英",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 主食用米に対する直接支払いについてどう考えるか",
+        "full_text": "最後に、先ほど聞かなかったんですが、柴田参考人に、この直接支払い、食用米に関して、これはどう思われるか、最後に聞いて終わりにしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "柴田為英",
+        "role": "参考人 株式会社やまだアグリサービス代表取締役",
+        "summary": "- 直接支払いは必要であると考えている\n- ただし、枠組み次第では経営としての成長（原価を確保した経営）を阻害する懸念がある",
+        "full_text": "私は直接支払いが必要だと思っています。どこまでやるか、あれはどういう枠組みでやるかがあるけれども、果たしてそれで原価がつく経営として伸びていくかなと思うと、一回もらっちゃうと。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56258&time=8483.506000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "食用米への直接支払いに関する見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "食用米生産者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "私は直接支払いが必要だと思っています。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人の個人的な見解を問う質問であり、回答も主観的な意見に留まっているため、記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "具体的な制度設計や条件を問う形式ではなく、単なる感想を求める問いになっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_018",
+      "segment_index": 9,
+      "topic": "米価上昇に伴う消費行動の変化",
+      "question": {
+        "speaker": "木下敏之",
+        "party": "参政党",
+        "summary": "- 米価上昇により消費者が小麦製品へ需要をシフトさせたか\n- 来店回数の減少や低価格帯への移行など、現場でどのような変化があったか",
+        "full_text": "我々は7年、米の価格が非常に上昇したわけでございますが、米の価格が上がったことによって、私は小麦の方に需要がシフトしたのではないかという疑念を持っておったわけですね。ところが農林省の担当者の話では、データ上は小麦にシフトした形跡が見られないというようなことを言うわけですが、一方で三菱総研の方のコラムなんか見ると、やはり明らかに小麦にシフトしているんだということも言っておりました。そこで小川参考人にお伺いしたいんですが、いろいろお米を出されている中で、価格を上げられるものもあれば、上げられなかったものもあったと思うんですけども、消費者は米の値上がりに対して、どのような反応をしたのか。本社は細かくデータで見られていると思いますので、来店回数を減らして消費を減らしていく方向だったのか、それとも来店回数は変わらないんだけれども、より低価格帯のものに変わっていったのか、いろいろな変化があると思いますが、現場でどのような変化があったのかを教えていただけますか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小川洋平",
+        "role": "参考人 株式会社ゼンショーホールディングス代表取締役社長兼CEO",
+        "summary": "- 外食業態においては、価格転嫁を抑える努力により顧客離れや小麦への明確なシフトは感じていない\n- 一方でスーパーマーケットの惣菜では、米商品から麺類等へ流れるミクロ的な傾向が見られる",
+        "full_text": "私どもお米を主体とした業態を多くやっておりますけれども、お米以外の例えばパスタですとかラーメンですとかいった業態もやらせていただいております。ただ我々の企業努力として、それの価格に対する転嫁を抑えるということを同時にできるだけやらせていただいております。そうなりますとやはりお客様としては相対的な比較で判断をされますので、お米を取り扱っている外食業者さんのうち、このお店はこれだけ値上がりしたけれども、このお店ではそこまででもないなというふうに考えていただければ、やはりこちらのお店を選んでいただくという、その米を扱っている業態同士での競争環境というのもございますので、そういった意味では、いえ、お手盛りにはなれますけれども、私どもとしては価格に対する転嫁を抑えさせていただいて、ある程度私どもの業態に対する支持は継続していただけているのかなという感触は感じております。ですので、米の高騰を理由として、米の業態でお客様離れがあったということは、私どもとしてはあまり感じておりません。お米から小麦の業態に流れたということは、私どもの事業の範囲内ではあまり明確には感じておりません。ですので、ただ、私ども一部スーパーマーケットもやらせていただいておりますけれども、ここではやはりお米のお惣菜から麺類ですとか、お米を使わないものに流れたというのは、ミクロ的な観察としては、これはやはりお店からは聞いております。お客様がお米の商品を買っていただくのをためらうようになりましたね、というような観察は聞いておりますけれども、そこまで特に外食の業態においては、明確に数字として小麦に流れたという感触は持っておりません。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56258&time=9744.006000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "米の値上がりに対する消費者の反応と行動変化",
+          "sub_asks": [
+            "来店回数を減らして消費を減らしたか",
+            "低価格帯の商品へシフトしたか",
+            "現場でどのような変化があったか"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "三菱総研の方のコラム"
+            },
+            {
+              "type": "organization",
+              "excerpt": "農林省の担当者の話"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "消費者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": true,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "パスタ"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ラーメン"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "スーパーマーケット"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "外食の業態においては、明確に数字として小麦に流れたという感触は持っておりません。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人の実体験に基づく現場感覚を問うやり取りであり、外食と小売（スーパー）での反応の差が示されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が具体的だが、回答者が個別の企業の代表であるため、業界全体の傾向として一般化するには限界がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_019",
+      "segment_index": 9,
+      "topic": "米価上昇の許容限界と価格転嫁",
+      "question": {
+        "speaker": "木下敏之",
+        "party": "参政党",
+        "summary": "- 消費者が許容できる米価上昇の限界はどの程度か\n- 限界を超えた場合に価格転嫁が困難になり、消費が減少すると考えるか",
+        "full_text": "生産現場ではようやく昨年の価格で一息つけた、もしくは大規模農家は、これは福岡の話ですが、かなり利益が上がったので、新しいトラクターに買い替えるとか、そんな話は聞いておるわけですが、一方で消費者はやはりお米の価格が高すぎる、困っているという話も聞きます。国内産のお米を今、小川さんに提供されているわけですけれども、大体どのあたりまでの価格上昇が、5キロあたりでも1キロでも結構なんですけれども、ある程度限界なのかなと。そこを超えると、なかなか価格転嫁はしにくい、価格転嫁をして、消費が減ってしまうなということをお考えでしょうか。大体の感覚的なことで結構です。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小川洋平",
+        "role": "参考人 株式会社ゼンショーホールディングス代表取締役社長兼CEO",
+        "summary": "- 物価上昇による「値上げ疲れ」があり、価格転嫁には慎重にならざるを得ない状況である\n- 1俵3万円を超える水準は経営的に非常に苦しく、数十億円単位のマイナス影響が出ている",
+        "full_text": "これはお答えするのがやはりだいぶ難しいなというところはございまして、これは一概にいくらだったらというよりは、まず原価の上昇として私どもがどこまで耐えられるかという問題と、それを価格に転嫁していくときにお客様がどこまで受け入れていただけるかという2段階あると思います。お客様に関しては、やはり足元の状況で申し上げると、かなり値上げに対する見る目は厳しくなっているということはあると思います。ここはもう2年、3年近くになると思いますけれども、物価上昇の流れというのが定着してきて、いろいろなところでいろいろなものの値段が上がっておりますので、やはり値上げ疲れというようなものはあるんだろうと思っております。そういう意味では、より私どもとしては価格転嫁に慎重にならざるを得ないという状況がございます。その食材のコストの方は、お米に関しては、やはりこの令和7年産の価格の水準ですと、経営としては非常に苦しいというのが正直なところでございます。1俵で3万円を超えてくるような水準だと、これはやはり一定の価格転嫁はさせていただいておりますし、先ほど申し上げたような生産性を上げて吸収する努力というのもしておりますけれども、やはり利益に対するマイナスの影響というのは私どもで言えば数十億円単位で生じているというのが現状でございますので、足元やや落ち着いてきた状況ではございますけれども、やはり本来の相場感でいうとまだずいぶん米の価格は高いなという、我々の経営としては相当苦しいなという感触は持っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5271"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56258&time=9744.006000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "米の価格転嫁の限界点についての見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "福岡の話ですが"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "大規模農家",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.6
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "1俵で3万円を超えてくるような水準"
+            },
+            {
+              "type": "number",
+              "excerpt": "数十億円単位で生じている"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "1俵で3万円を超えてくるような水準だと、利益に対するマイナスの影響というのは私どもで言えば数十億円単位で生じている",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "価格転嫁の限界点という感覚的な問いに対し、具体的なコスト負担額（数十億円）を挙げて回答しており、実務的な状況が記録されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「大体の感覚的なことで結構です」という表現が、回答者に曖昧な回答を許容させる設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_020",
+      "segment_index": 9,
+      "topic": "生産者と外食業者の価格差に対する公的支援",
+      "question": {
+        "speaker": "木下敏之",
+        "party": "参政党",
+        "summary": "- 生産者が求める価格と外食業者が支払える価格の差を公的に埋める場合、どのような仕組みが望ましいか",
+        "full_text": "昨日からずっと御社の決算資料だとか株主総会の資料を見ておりましたけれども、非常に厳しいと言いながらも立派に利益を上げられておられるので、それを他のことで見事に吸収されたんだなと思って、感心してお話を聞いておりました。ただ、1俵3万円ということで、生産者が求める価格との差がやはりどうしても出てくると思うんですが、その差を公的に埋めるとしたら、どのような仕組みがいいかというのは、外食産業の側としてどのようなお考えをお持ちでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "小川洋平",
+        "role": "参考人 株式会社ゼンショーホールディングス代表取締役社長兼CEO",
+        "summary": "- 基本は需給バランスによる価格収束を待つべきであり、公的支援の前提には慎重である\n- 農業全体の生産性向上による大規模化を推進しつつ、農村環境維持などの政策目的での中小農家支援はあり得ると考える",
+        "full_text": "公的に埋めるという前提がやはり私としては少しいかがなものかということは考えておりまして、基本的には需給のアンバランスでここまで高騰してしまったということだというふうに考えておりますので、需要に対して安定した供給、十分な供給がなされれば、必然的に妥当な範囲にある程度価格は収束していくのではないかというふうには思っております。私の私見を申し述べさせていただくと、やはり日本の農業全体として生産性は上げていかなくてはお手頃な価格で食材が消費者の手元に届かないというふうに思っていますので、日本の農業全体としてはやはり大規模化していって生産性を上げていって、ある程度お手頃な価格で提供してもきちんと農家としての収支経営が成り立つという形を目指していくべきだと思っておりますが、その中で中小の農家さんでやはりその価格水準では生活が成り立たないという方はいらっしゃると思います。そこに対して先ほど出ているように、農村の農地の維持であったりとか、農村の環境の維持であったり、農村振興という観点で公的な支援をするかしないかというのは、これは農業そのものとは少し違う政策目的になるのかなと思いますので。そこはあり得る判断だろうというふうには考えます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56258&time=9744.006000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "生産者価格との差を公的に埋める仕組みへの考え",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "1俵3万円"
+            },
+            {
+              "type": "other",
+              "excerpt": "御社の決算資料だとか株主総会の資料"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "外食産業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "農村の農地の維持であったりとか、農村振興という観点で公的な支援をするかしないかというのは、あり得る判断だろう",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人による私見の提示に留まっており、政府としての公式見解や具体的な制度設計へのコミットメントは含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのような仕組みがいいか」というオープンクエスチョンであるため、回答者が抽象的な持論を展開しやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_021",
+      "segment_index": 9,
+      "topic": "インバウンド需要による米消費への影響",
+      "question": {
+        "speaker": "木下敏之",
+        "party": "参政党",
+        "summary": "- コロナ収束後の3年間で、インバウンド客の消費量はどの程度増加したか\n- インバウンド客は日本産米に対してどの程度のプレミアムを支払うか",
+        "full_text": "そこで御質問なんですが、まず御社の場合、インバウンドの客かどうかを個別にデータ収集されていらっしゃると思うんですけれども、コロナの収束後のこの3年間で、特に浜寿司がいいのか中外がいいのか、御社の業態の中で、インバウンドのお客の消費量というのは、どれぐらい増えてきているものなんでしょうか。それからですね、インバウンドのお客さんは日本産というものに対してどれぐらいプレミアムをお支払いになるのか、これも感覚的なことで結構ですので、ご存知の可能な範囲でお答えいただきたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小川洋平",
+        "role": "参考人 株式会社ゼンショーホールディングス代表取締役社長兼CEO",
+        "summary": "- インバウンド客を定量的に把握する仕組みはなく、経営方針として特化した店作りもしていないため影響は限定的である\n- 訪日客数から計算しても住民換算でのインパクトは小さく、需要増の主因とは言い切れない",
+        "full_text": "まず私どものお客様の中でインバウンドの方とそうでない方を定量的に把握しているかということで申し上げますと、残念ながらそこまではできておりません。インバウンドの影響がどの程度かということで申し上げると、私どもとしては実はだいぶ限定的だというふうには見ておりまして、これは私どものお店のコンセプトにも原因があると思いまして、私どもは基本的にインバウンドのお客様に特化したようなお店づくりというのはしないというのは、これは経営の方針としてそういう判断をしております。ここは少し価格に差をつけさせていただくということは行っておりますが、インバウンドのお客様だからこれぐらいはいただくということは私どもはやっておりません。1週間から10日というお話もありましたけれども、4000万人の方でも、1週間から10日というと、1年50週と考えると、1年の50分の1とか、あるいは10日だったら40分の1しかいないわけですね。ですので、インバウンドの方が、40名いらっしゃって、住民1人分の消費量のはずだと思うんですけれども、そうすると4000万人と言ってますけれども、住民にすると100万人分のインパクトしかないはずではないかなと思うんですよね。そうすると日本の人口は1億2000万人おりますので、1%以下のインパクトですので、これは本当に需要増の主因なんだろうかというところは、私はちょっと踏み切れないなというふうには思っていますので、ここもきちっとデータファクトに基づいた議論が必要ではないかというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56258&time=9744.006000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "業態別のインバウンド消費増と日本産へのプレミアム支払額",
+          "sub_asks": [
+            "業態別のインバウンド客の消費量の増加状況",
+            "日本産に対するプレミアム支払額の感覚的な把握状況"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "浜寿司"
+            },
+            {
+              "type": "organization",
+              "excerpt": "中外"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "インバウンドのお客さん",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "4000万人"
+            },
+            {
+              "type": "number",
+              "excerpt": "1億2000万人"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "インバウンドのお客様に特化したようなお店づくりというのはしないというのは、これは経営の方針としてそういう判断をしております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人が定量的なデータを持っていないことを認め、経営方針としての考え方を述べた回答である。具体的な数値回答は得られていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "相手がデータを持っていない可能性を考慮せず、前提として「データ収集されていらっしゃると思う」と限定して質問している点。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_022",
+      "segment_index": 9,
+      "topic": "米の需要予測の手法",
+      "question": {
+        "speaker": "木下敏之",
+        "party": "参政党",
+        "summary": "- 年間の米消費量を予測し発注する際、どのような計算方式やデータを用いているか",
+        "full_text": "インバウンドを取りに行っていないというお答え、大変意外でしたけれども、まさに計算方法をおっしゃるとおりでして、私も農林省の説明で、インバウンドの増加分で、需要予測が誤ったというのはですね、計算してみるとちょっとおかしいところが多々あって、その点はまた後で農林省にいろいろ問いただきたいと思うんですが、それで毎年年度で計画立てるときに1年分のお米の消費量を予想されて発注されると思うんですけども、その需要の予測というのはですね、どのような計算方式でやってらっしゃるのか、特に世代別の消費量を見たり、いろんなデータをお持ちで、組み入れて予測されているのではないかと思うんですけども、その点について教えていただけないでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "小川洋平",
+        "role": "参考人 株式会社ゼンショーホールディングス代表取締役社長兼CEO",
+        "summary": "- マクロ経済的な動向ではなく、自社が抱える各業態の入客トレンドなどの内部数値に基づいた推計を行っている",
+        "full_text": "私どものお米の消費量の予測というのは、やはりあくまで私どものお客様の中の動態の予測にはなりますので、あまりマクロ経済的に日本全体の消費動向がどうだからというところまではやっていないというのが正直なところでございまして、私どものそれぞれの多数の業態を私どもも抱えておりますので、それぞれの業態の今の入客のトレンドを勘案して、今年これぐらいのビルとするとこれぐらいの米が必要だという、あくまでその内部の数値に基づいた推計をしておりますので、外部環境に関してはあまり考慮に入れていないというのが正直なところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56258&time=9744.006000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "米の需要予測の計算方式について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "農林省の説明"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "それぞれの業態の今の入客のトレンドを勘案して、あくまでその内部の数値に基づいた推計をしております",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "需要予測の手法について具体的に問われ、内部数値に基づく推計であるという回答が得られた。実務的な実態が明らかになった点に価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "計算方式の具体例（世代別データ等）を提示して問うているが、回答を誘導する形になっており、よりオープンな問い方が望ましい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_023",
+      "segment_index": 9,
+      "topic": "農業従事者の処遇と後継者問題",
+      "question": {
+        "speaker": "木下敏之",
+        "party": "参政党",
+        "summary": "- 若手就農者の初任給、30歳時点の手取り額、退職金制度などの実際の処遇はどうなっているか",
+        "full_text": "やはり後継者が出てこないというのは、私はちょっと前まで大学の教授しておりまして、学生の就職の話なんかを面倒見ていたんですが、やはり若い人たちが言うのは「手取りいくらぐらいですかね」とか「30歳になったら年収どれぐらいですかね」とか「福利厚生どうですか」ということを聞いてくるわけですね。それでお三方にお伺いしたいのは、大体ですね、初任給であるとどれぐらいなのか、30歳で大体手取りどれぐらいでやりたいのか、それから退職の手当の制度としてどんなものを想定されているのか。山口さんのところは家族労働者、家族労働でやっていると聞いていますので、そうすると齋藤さんと柴田さんの2人にはお伺いすることになると思うんですが、その実際の処遇、どのようにお考えなのかお答えください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "齋藤一志",
+        "role": "参考人 公益社団法人日本農業法人協会会長",
+        "summary": "- 一般的に新卒18万円程度からスタートし、中退協による退職金積み立てを行うなど一般企業に近い体系である\n- 個別事例として大卒初任給25万円、年3ヶ月分のボーナスを支給し、変形労働時間制で休日を確保するなどの努力をしている",
+        "full_text": "参考までですけれども、地方の給与体系を参考にして、ほとんどの会社が決めていまして、大体新卒で入ったのが大体18万ぐらいからスタートで、毎年給料は上がっていきますし、ボーナスも1か月、2か月とか、経営の良い、去年みたいなときはすごいところですけれども、ボーナスをドーンと出したところもございます。退職金の方ですけれども、中退協に加入して、毎月それを積み立てやっているところが多いと聞いております。私のところでは、私の後継者が子会社の社長でやってもらっていますけれども、そこは全部合わせてやっていまして、初任給は大学卒で25万という形で詰めています。ボーナスは、年3ヶ月分は支払うような形で組んでいます。で、お若手は年齢が25歳ですので、それぐらいにしておかないと、人が来ないのかなという形で。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56258&time=9744.006000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "後継者の処遇（初任給・30歳年収・退職金）について",
+          "sub_asks": [
+            "初任給はどれくらいか",
+            "30歳時点の手取りはどれくらいか",
+            "退職手当の制度はどう想定しているか"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "齋藤さん、柴田さん",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "大体新卒で入ったのが大体18万ぐらいからスタート"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "中退協に加入して"
+            },
+            {
+              "type": "number",
+              "excerpt": "初任給は大学卒で25万"
+            },
+            {
+              "type": "number",
+              "excerpt": "ボーナスは、年3ヶ月分"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "大体新卒で入ったのが大体18万ぐらいからスタートで、毎年給料は上がっていきます",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人による具体的な給与水準の回答であり、実態把握としては有用だが、政府の公式見解や制度的拘束力はない。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問者が自身の経験談を長く述べており、問いの核心に到達するまで時間がかかっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_024",
+      "segment_index": 10,
+      "topic": "民間備蓄創設の実効性",
+      "question": {
+        "speaker": "林拓海",
+        "party": "チームみらい",
+        "summary": "- 民間備蓄（回転備蓄）の創設に関する意見を伺いたい",
+        "full_text": "そういったお話について、もう少し深掘りしてお伺いできればというふうに思っておりまして、山口参考人と小川参考人、先ほどこの棚上げ方式、回転方式みたいなお話もあったかと思うんですが、この民間備蓄の創設というところに関してのご意見をお伺いできればと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "山口浩幸",
+        "role": "参考人 北海道農民連盟書記長",
+        "summary": "- 回転備蓄では市場隔離的な意味はあまりなく、供給不足時に備蓄自体が可能かという根本的な疑問がある\n- 実効性は制度設計次第であり、通常の在庫にプラスして積み増す形式であれば高いが、事業者のコスト負担が増える\n- 通常の販売分を転用する形式では、単なる需要の付け替えとなり備蓄機能は弱まる",
+        "full_text": "民間備蓄については、おそらく回転備蓄ということなので、一時的にスタートの段階では、一時的な備蓄の量だけは一時的に増えるのかなと思いますけれども、ただ、回転なんで最終的には、農民主党もあるんで、要は市場隔離的な意味っていうのはあまりないのかなというふうには思っております。ただそれを踏まえて、今の段階で果たしてこういうシステムを改定まで今進める段階にあるのかなというのは、非常に私としては疑問に思っております。民間備蓄の実効性ということで申し上げると、これはここから先、どのような具体的な制度設計、運用方法にするかによりけりなのかだというふうに考えております。通常の事業上必要な在庫に対して、完全にプラスアルファでこれだけ備蓄用として積み増してくださいという話であれば、備蓄としての実効性は高いと思いますけれども、事業者にとっては追加的な負担、コスト含めですね。要は通常の事業ですでに販売先がある程度紐づいてしまっているようなものを、「これはでも備蓄として約束したのでしょうがないから備蓄米として放出しましょう」ということになると、単にこっちの需要から剥がしてこっちの需要に持っていきましたということになってしまいますので、備蓄米のいざという時の備えとしての機能は弱まる。ただ追加的なコストは少なくなるとということだと思いますので、このバランスをとりながらどういう具体的な運用を設計されるか次第なのかなというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5271"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56258&time=11096.506000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "民間備蓄の創設に関する意見の聴取",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "棚上げ方式、回転方式"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "民間備蓄の創設に関わる事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "通常の事業上必要な在庫に対して、完全にプラスアルファでこれだけ備蓄用として積み増してくださいという話であれば、備蓄としての実効性は高い",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人による制度設計上の懸念点（実効性とコストのトレードオフ）に関する個人的見解の陳述であり、政府の公式見解や具体的約束ではない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "具体的な制度案を提示して賛否や改善策を問う形式にすれば、より実効性のある回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_025",
+      "segment_index": 10,
+      "topic": "新規就農者を増やすための魅力付けと課題",
+      "question": {
+        "speaker": "林拓海",
+        "party": "チームみらい",
+        "summary": "- 若手を含む新規就農者を増やすために、どのようなことがあれば農業という仕事に魅力を感じてもらえるか、現場の意見を伺いたい",
+        "full_text": "せっかくこういった機会でお聞きできるところでもあるので、ぜひ現場の柴田参考人、齋藤参考人、山口参考人にもお伺いしたいのが、今後、この需要にしっかり応える供給体制というか、供給ができるような現場の皆さんにも引き続き就農いただいたり、あるいは新しい方に就農いただくにあたって、若い方、必ずしも若い必要がないかもしれないんですが、新規就農者を増やすということに関して、どういったことがあれば、より農業という仕事に魅力を感じてもらえるかという現場の皆さんのご意見をぜひお聞きしたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "柴田為英",
+        "role": "参考人 株式会社やまだアグリサービス代表取締役",
+        "summary": "- 地域おこし協力隊や親元就農などの現行制度では定着や覚悟に欠ける面があり、十分な答えは出ていない\n- 機械設備が高額すぎて再生産が困難であり、リスクを背負った経営には総合的な対策が必要である\n- 経験のない参入者は技術的ノウハウがなく、資金調達も困難であるため、所得に結びつくまでの手厚い支援が重要である",
+        "full_text": "任期が2年ということで、2年やるとまた別のところに行くような形で、何かこう、身が入っていないような感じがして。親元就農はちょっとあまり制度的には良くないのかなと。そこで何か改善があるかなと思っては見ているんだけれども、今のところ私も見ていて、これだという答えは正直言って出せません。相場が今高いので、去年、一昨年と2年続けて若い人たちが就農して、今新しい機械に乗っていますけれども、トラクターが1000万、田植機700万、コンバイン2500万、乾燥調整施設は3億です。これ全部借り入れでやって、そのリスクを背負って経営をするということは、なかなか難しいと思うので、何らか総合的な対策が必要かと思います。先ほど参考人の皆さんから言われた通り、やはりコストがなかなかかかるので、新規参入も難しいといった状況の中で、特に親元就農でない限り、新たに本当に今まで農業経験がない方が参入されても、じゃあこういった天候の場合にどういう技術が必要なのかっていうのはなかなかノウハウとしてもないですし、先ほども言ったとおりなかなか資金調達も難しいと。そういった中で、なかなか所得に結びつくような、特に土地利用型の農業においては、所得に結びつくような段階まで行くのは、既存の農業者でさえ大変なのに、新規就農をされる方が本当にできるかといったら、本当のひと握りというか、数パーセントしかいないのかなというふうには思っておりますので、そこを踏まえてやはり支援というのが重要になってくるのかなというふうには思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56258&time=11096.506000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "新規就農者を増やすための魅力付けに関する意見",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "新規就農者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "トラクターが1000万"
+            },
+            {
+              "type": "number",
+              "excerpt": "田植機700万"
+            },
+            {
+              "type": "number",
+              "excerpt": "コンバイン2500万"
+            },
+            {
+              "type": "number",
+              "excerpt": "乾燥調整施設は3億"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "トラクターが1000万、田植機700万、コンバイン2500万、乾燥調整施設は3億です。これ全部借り入れでやって、そのリスクを背負って経営をするということは、なかなか難しい",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "現場の参考人が、新規就農における設備投資の具体的金額を挙げて、資金調達とリスクの壁を具体的に証言している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    }
+  ],
+  "score_schema_version": "2.0",
+  "prompt_version": "V4"
+}

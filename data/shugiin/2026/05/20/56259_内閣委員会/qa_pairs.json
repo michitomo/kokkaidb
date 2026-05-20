@@ -1,0 +1,4559 @@
+{
+  "pairs": [
+    {
+      "id": "qa_001",
+      "segment_index": 1,
+      "topic": "自転車の幼児用座席の同乗範囲拡大に関する警察庁の対応",
+      "question": {
+        "speaker": "泉健太",
+        "party": "中道改革連合・無所属",
+        "summary": "- 国家公安委員長から警察庁への指導を受け、内部で検討を行うのか",
+        "full_text": "今、大臣から言いましたね。警察庁を指導していくと。このご指示を受けて、内部で検討されるということでよろしいですか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "草川裕一郎",
+        "role": "",
+        "summary": "- 指導に従い、安全基準を定める団体への接触や、体重による走行安定性の実験検討を既に開始している",
+        "full_text": "今、大臣が申し上げたとおり、大臣から私、指導を受けておりますので、大臣の指導に従いまして、既に幼児用座席の安全基準を定める団体と、もう接触を始めたところでございまして、あと、それから、お子様を乗せたときに、お子様の体重による走行の安定性、これについての実験をどうやってやっていくかというようなところも、既に検討を始めたところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=507.9630000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "大臣の指示を受け内部検討するか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "past_answer",
+              "excerpt": "今、大臣から言いましたね。警察庁を指導していくと。"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "警察庁",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "幼児用座席の安全基準を定める団体"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "検討を始めたところでございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "幼児用座席の安全基準を定める団体と、もう接触を始めたところでございまして",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "大臣の指示に対する具体的アクション（団体への接触、実験の検討）が回答されており、事実関係が明確である。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "Yes/No形式の質問であるため、回答者が詳細を述べなければ確認のみで終わるリスクがある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_002",
+      "segment_index": 1,
+      "topic": "自転車の幼児用座席の同乗範囲拡大に関する経産省の連携",
+      "question": {
+        "speaker": "泉健太",
+        "party": "中道改革連合・無所属",
+        "summary": "- 製品に関連するため、経済産業省も同様の認識で取り組むのか",
+        "full_text": "経産省がこういう動きをしているということで、当然ながら製品という意味では大きく関連をしていくと思います。同じような認識で、ともに取り組むということはよろしいですか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "田中大臣",
+        "role": "",
+        "summary": "- 経済産業省と連携して対応する",
+        "full_text": "委員のご指摘のとおり、経済産業省と連携をとって対応させていただきます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=507.9630000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "経産省と連携して取り組むか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "経産省"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "経済産業省",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "経済産業省"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "連携をとって対応させていただきます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "経済産業省と連携をとって対応させていただきます。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "単なる連携の合意のみであり、具体的なアクションや期限が含まれていないため、記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「取り組むことはよろしいですか」というYes/No形式の問いであるため、形式的な肯定回答しか引き出せていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_003",
+      "segment_index": 1,
+      "topic": "自転車のJIS規格における基準体重の改定",
+      "question": {
+        "speaker": "泉健太",
+        "party": "中道改革連合・無所属",
+        "summary": "- 現行のJIS規格の基準体重（65kg）は1986年以来で実態に合っておらず、平均体重の増加が見られる\n- 基準体重を70kgに改定すべきではないか",
+        "full_text": "JIS規格というのがあるわけですね。このJIS規格が、今自転車の例えば耐荷重というのは100キロだったり120キロだったり150キロだったり丈夫なものもあるわけなんですけれども、今、人間の基準体重が何キロになっているかというと、65キロになっております。どの世代においても、例えば1988年ぐらいから、左のグラフの折れ線グラフを見ていただいても、体重というのはかなり増えていて、5キロ以上平均体重が増えてきているという現状がございます。いくらバッファーがあるとしても、なぜこれが必要かというと、そこに例えば後部座席にシートを乗せる、あるいは子どもを何キロまで乗せるという、いわゆるトータルの重量というものを考えなければいけないときに、平均体重をどう持って、そして基準体重をどう設定するかということによって、それ以外にどれぐらいのものを乗せられるかということが決まってくるものですから。平均体重を70という形にした上で、それなりの耐荷重の強度の自転車を作っていくという考えにするべきだと思うんですが、こちらの方をお答えいただきたいと思います。70キロに改定すべきではないか、いかがでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "田中大臣",
+        "role": "",
+        "summary": "- 現行規格が65kgであることは認識している\n- 今後の見直しの際、平均体重が適切に反映されるよう、民間の原案作成委員会の議論をフォローする",
+        "full_text": "委員御指摘のとおり、自転車の実規格、これは車種を設計する上での乗員の標準的な体重を参考と指定しておりますが、現行規格では65キロとなっております。この規格は、事業者や専門家などで構成される民間の原案作成委員会が主導で発案し、改定を行ってきているところでございますが、委員の問題意識も踏まえまして、今後の見直しの際には平均体重が適切に反映されますよう、引き続き同委員会での議論をフォローしてまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=507.9630000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "自転車JIS規格の基準体重を70kgに改定すべきか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "JIS規格"
+            },
+            {
+              "type": "number",
+              "excerpt": "65キロ"
+            },
+            {
+              "type": "date",
+              "excerpt": "1988年ぐらいから"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "65キロ"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "民間の原案作成委員会"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "今後の見直しの際には平均体重が適切に反映されますよう、引き続き同委員会での議論をフォローしてまいります",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "現行規格では65キロとなっております。今後の見直しの際には平均体重が適切に反映されますよう、引き続き同委員会での議論をフォローしてまいります。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "JIS規格の基準体重という具体的な数値に関する質疑であり、政府側が現状の数値（65kg）を認め、今後の議論をフォローすることを約束したため、一定の記録価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_004",
+      "segment_index": 1,
+      "topic": "自転車の積載上限規定の根拠と見直し",
+      "question": {
+        "speaker": "泉健太",
+        "party": "中道改革連合・無所属",
+        "summary": "- 自転車の積載上限が30kgとされている趣旨や理由を伺いたい",
+        "full_text": "続いて自転車そのものの、これは人ではなくものなんですが、積載上限というものがあるんですね。皆さん何キロぐらいだと自転車に乗せていいというふうに思われるかというと、これ実際には30キロであります。この30キロである趣旨、理由を教えてください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "草川裕一郎",
+        "role": "",
+        "summary": "- 昭和35年当時の規定から続いており、上限を30kgとした具体的な趣旨の記録は残っていない\n- 一般論として、車体の耐久性や走行の安定性を勘案して定められていると考える",
+        "full_text": "自転車の積載に係る規定、委員御指摘のとおりでございまして、各都道府県公安委員会規則に定められているものでございます。各都道府県公安委員会規則の制定時期とか趣旨、これは網羅的に把握しているものではございませんが、先ほど委員御指摘になったのは多分東京都だと思われますが、これにつきましては旧東京都道路交通規則が制定された昭和35年当時から規定されているものであります。その上限を30kgとした趣旨については記録が残っておらず明確ではないということでございます。ただし一般論として申し上げれば、自転車の積載の上限というのは車体の耐久性でありますとか走行の安定性とか、こういったものを勘案して定められるものであると考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=507.9630000000002",
+      "metrics": null
+    },
+    {
+      "id": "qa_005",
+      "segment_index": 1,
+      "topic": "自転車の同乗基準の方向性（年齢制限撤廃か基準緩和か）",
+      "question": {
+        "speaker": "泉健太",
+        "party": "中道改革連合・無所属",
+        "summary": "- 同乗基準について、「年齢制限のみを撤廃し現行の体重・身長基準を維持する」のか、「製品の向上に合わせて体重・身長の上限自体を緩和する」のか、どちらを想定しているか",
+        "full_text": "その意味で大臣、大臣の御指示いただいたこの御指導の中で言えば、二つの方向性があるんだと思います。一つは今ほどお話をした時数規格やSG基準というものを、現行のまま、要は24キロ以下とか120センチ以下というものは維持しつつ、しかし、いわゆる年齢制限的なものを撤廃して乗れる人は乗せていいよというふうにやっていく方法が一つあると思うんですね。もう一つは、私ができればやはり今の自転車の技術の向上、製品の向上という観点からいけば、メーカーは十分に対応したものを作る力があるというふうに思っておりますので、ぜひその意味ではいわゆる耐久性を向上させて、安全性が認められた自転車についてはですね、この身長・体重の上限そのものも緩和をしていくということは、あって然るべきだというふうに思っております。改めて大臣、現在の想定はどちらを今想定されているでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "あかま二郎",
+        "role": "国家公安委員会委員長 領土問題担当 内閣府特命担当大臣（防災 海洋政策）",
+        "summary": "- 現段階で特定のパターンを定めているわけではない\n- 地域特性や安全性の観点、自転車の耐久性・安定性を踏まえ、いかなる形が最適か検討していく",
+        "full_text": "選択で指導したという中にあって、どの形、どのパターン、これがいいのかというのは、現段階では今、見定めているわけではありません。とはいえ先ほど申し上げたとおり、先ほど先生も都市部と地方部だと交通事情だとか地域特性が違うんで、どのような形がいいのか、いわゆる安全性の観点から、もちろんそれは先生がおっしゃっていた、自転車の耐久性だとか安定性というものを、これも加味しなきゃいけないし、それらを踏まえて、いかなる形で最大公約数をとっていくか、ここがこれからだというふうに認識しております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=507.9630000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "自転車の規格緩和の方向性の想定について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "24キロ以下"
+            },
+            {
+              "type": "number",
+              "excerpt": "120センチ以下"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "メーカー",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": true,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "どの形、どのパターン、これがいいのかというのは、現段階では今、見定めているわけではありません。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者が2つの選択肢を提示して方向性を問うたが、大臣は現時点では未定であると回答した。政府の不確定性が記録された点に価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_006",
+      "segment_index": 1,
+      "topic": "幼児二人同乗用自転車の開発スキームの適用",
+      "question": {
+        "speaker": "泉健太",
+        "party": "中道改革連合・無所属",
+        "summary": "- かつて幼児二人同乗用自転車を実現させた「経産省・警察庁・メーカーが連携して試作品の安全性を審査するスキーム」を用いて検討を進めることは可能か",
+        "full_text": "さて資料にはないんですが、まさに平成21年から22年頃、幼児二人同乗用自転車というものがニーズが高まって、それが認められていった時代経緯がありました。その時にはですね、経産省のもとにあるというか、経産省の管轄である財団法人自転車産業振興協会がですね、幼児二人同乗用自転車を試しに作る、この施策のプロジェクトを行って、そして経産省、そして警察庁、関係団体、メーカーと議論をして、最終的には警察庁の委員会に、その施策品をどれが安全かというものを審査した上で、案として送るということを、素晴らしいことをやっているわけなんですね。このスキームを使って、当時は、例えば有名な、例えばといっても社名アゲンのもあれですから、有名な自転車メーカーさんも次々と試作品をつくって、その試作品の安全性を確かめて、さらに改良点を協議して、実現につなげたという取組があったわけですね。このスキームで検討を進めていくということは、大臣、可能だと考えますか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "あかま二郎",
+        "role": "国家公安委員会委員長 領土問題担当 内閣府特命担当大臣（防災 海洋政策）",
+        "summary": "- メーカーの努力で安定性が向上した事例があるため、そうした形もなくはないと考える\n- どのような形が適切かを含め、警察庁にて検討されると理解している",
+        "full_text": "あかま国家公安委員長今、委員がメーカー名は挙げられないけれどという話で、平成20年度に検討会をと言って、フレームが太くて下の方についていて、前と後ろに幼児を乗っけて、それでも極めて安定な走行ができるという自転車を指しておられて、当時、あの時代よりも前というのはああいう自転車がなくて、おそらくママチャリの後ろにこういうのをくっつけて乗っていた時代からすれば、メーカー側のいろんな努力、工夫、また安定性、耐久性の向上によって実現したんだということを考えれば、そういった形というものもなくはないんだろうとは思っておりますが、いかなる形が利用者、また交通安全、また他のさまざまな要件に合致するのか。先ほど申し上げましたけれども、先だって私の方で警察庁指導をということでありましたので、どのような形がいいのかも含めて、これから検討なされるというふうに理解しています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=507.9630000000002",
+      "metrics": null
+    },
+    {
+      "id": "qa_007",
+      "segment_index": 1,
+      "topic": "三輪自転車の乗車装置に関する規定の解釈",
+      "question": {
+        "speaker": "泉健太",
+        "party": "中道改革連合・無所属",
+        "summary": "- 東京都の道路交通規則では、三輪自転車の乗車装置に応じた人員であれば年齢制限なく乗せられると読めるが、この理解でよいか\n- また、その「乗車装置」に具体的な基準はあるのか",
+        "full_text": "これはルール的には今OKなわけですが、ここがもしシートが2つではなく1つになり、小学生を乗せると現時点ではなかなか認められないというような話になっているんですが、一方ではですね、東京都の道路交通規則第10条括弧1へというですね、今日は添付はしておりませんが、それによるとですね、三輪の自転車にその乗車装置に応じた人員までを乗車させるときは、年齢制限なく人を乗せることができるというふうに書かれているように読める規則がございます。ですから三輪の自転車にちゃんとしたシートを乗せれば大人でも乗っていいという解釈になる文章があるわけですが、交通局長、そういう理解でよろしいですか。乗車装置とは何か審査を受ける必要があるんですか。それとも、これが乗車装置ですよと、三輪自転車の保有者が言えばいいんですか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "草川裕一郎",
+        "role": "",
+        "summary": "- 乗車装置とは乗車のために設けられた座席を指し、1人用であれば1人の乗車が認められる\n- 道路交通法令上の具体的な基準は決まっていないが、業界の自主基準があれば安全に資すると考える",
+        "full_text": "ご指摘の東京都道路交通規則の規定でございますけれども、これにつきましては、乗車装置ですね。これは、どこにも同意の乗車装置という規定がありますので、これは乗車するための、乗車のために設けられた座席を意味しまして、それに乗車装置に応じた人員、例えば1人用の乗車装置であれば、1人を乗車させることが認められることとなります。道路交通法令上はもう乗車のために設けられた座席のことを言いまして、何らの基準が具体的に決まっているとかそういうものではございません。他方で、例えば業界でそういう自主的な基準があれば、より安全に資するものであるなというふうに考えている次第でございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=507.9630000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "三輪自転車の乗車装置の解釈と審査の要否",
+          "sub_asks": [
+            "東京都道路交通規則第10条の解釈（大人でも乗車可能か）",
+            "乗車装置の定義に審査が必要か",
+            "保有者の申告で十分か"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "東京都の道路交通規則第10条括弧1へ"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "三輪自転車の保有者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "東京都道路交通規則"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "道路交通法令上はもう乗車のために設けられた座席のことを言いまして、何らの基準が具体的に決まっているとかそういうものではございません。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "三輪自転車の「乗車装置」に具体的な法的基準がないことを明確に回答しており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が複数の論点（解釈、審査の要否、申告の可否）に分かれているため、回答が包括的になりすぎている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_008",
+      "segment_index": 1,
+      "topic": "キャリアサイクルの規格づくり",
+      "question": {
+        "speaker": "泉健太",
+        "party": "中道改革連合・無所属",
+        "summary": "- 三輪自転車の基準が曖昧な現状があるため、人を乗せることを目的とした「キャリアサイクル」の規格づくりを検討してほしい",
+        "full_text": "その意味で、この3ページ目の写真に載っている自転車を開発をしている自転車問題に取り組んでいる中原さんという方がおられて、この方がキャリアサイクルという概念の規格をちゃんとつくるべきだという話をしています。人を乗せることを目的としたキャリアサイクルの規格づくりということをぜひやるべきじゃないのか。そういう中で、東京都はすでに人を乗せてもいいですよというルールになっているのであれば、むしろそれは全国の各都道府県の公安委員会でも共有をしていただいて、このキャリアサイクルという考え方をですね、ぜひ検討していただきたいと思いますが、大臣いかがでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "あかま二郎",
+        "role": "国家公安委員会委員長 領土問題担当 内閣府特命担当大臣（防災 海洋政策）",
+        "summary": "- 自転車の性能は日々進化しており、国民生活の向上に資するのであれば、ルール作りについて検討を加えてまいりたい",
+        "full_text": "他方で委員がおっしゃるとおり、いかにこの便利な乗り物というものが後方に使われることによって、いわゆる国民生活、これがより向上するということであれば、それを阻害するものではありません。その意味では、ぜひそういったことも踏まえながら、いかなる形のルール作りができるのか、踏まえて検討を加えてまいりたい。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=507.9630000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "キャリアサイクルの規格策定と全国展開の検討",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "3ページ目の写真"
+            },
+            {
+              "type": "organization",
+              "excerpt": "東京都"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "中原さん",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "検討を加えてまいりたい",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "いかなる形のルール作りができるのか、踏まえて検討を加えてまいりたい。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "特定の個人（中原氏）の提案に基づいた具体的な規格策定を求めているが、大臣の回答は抽象的な検討に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「東京都はすでに人を乗せてもいいルールになっている」という前提の真偽を先に確認させる構成にすれば、より逃げ道のない回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_009",
+      "segment_index": 2,
+      "topic": "不登校から引きこもり・8050/9060問題への構造的認識",
+      "question": {
+        "speaker": "川裕一郎",
+        "party": "参政党",
+        "summary": "- 不登校から引きこもり、8050・9060問題に至る流れを一つの連続した社会課題としてどう認識しているか\n- 地方の実態を含めた構造的危機として、どの程度の規模と深刻さで捉えているか、具体的なデータや分析を提示せよ",
+        "full_text": "まず、不登校から大人の引きこもり、そして8050、9060問題へと至る連続した課題としての認識について伺います。石川県では、小中高生合わせて9,000人の子ども、若者が年間30日以上、学校に通えていません。全国でも不登校の小中学生は35万人を超え、小学生は10年前の約5.5倍、中学生はおよそ2.2倍に増加をしています。これは単に学校現場だけの問題ではなく、将来の就労、地域社会、さらには社会保障財政にまで影響を及ぼす長期的かつ構造的な課題です。若い頃の不登校や学校不適応が、その後の就労困難、人間関係の孤立につながり、一部は大人の引きこもり状態へと移行しています。そしてその延長上に、子どもとともに親子ともに高齢化し、支え合うことすら困難になった8050・9060問題があります。そこで伺います。政府として、不登校から引きこもり、8050・9060問題に至るまでを一つの連続した社会課題としてどのように認識をしているのか。また、それを単なる個別の問題ではなく、地方の実態も含めた構造的危機として、どの程度の規模と深刻さで捉えているのか、可能な限り具体的なデータや分析を交えてお示しください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "成松（推定）",
+        "role": "",
+        "summary": "- 生きづらさを抱え引きこもりに至る方がいると推察し、孤独・孤立のリスクがあるため予防的な幅広い支援が必要と考えている\n- 文科省や厚労省でライフステージに応じた支援を行い、内閣府の孤独・孤立対策重点計画にも引きこもり支援を盛り込み政府全体で推進している",
+        "full_text": "委員ご指摘の不登校などを契機として引きこもりに至っている方々、先ほど先生からもデータ、いろいろとご指摘いただきましたけれども、そういった方々の背景、心情は当事者ごとに様々であると思いますけれども、こうした方々の中には何らかの生きづらさを抱え、引きこもり状態に至っている方もいらっしゃるというふうに推察しています。引きこもり状態の方には、孤独・孤立状態に至るリスクもあるほか、また孤独・孤立状態に至ることで抱えている問題を深刻化させてしまう恐れがあり、予防的な観点を踏まえた幅広い支援が必要だというふうに考えています。こうした認識に立ちまして、文科省あるいは厚労省などの関係省庁におきまして、不登校になっている方々の福祉分野へとの連携した支援、引きこもりの方々へのライフステージに応じた支援など、さまざまな取組が進められていると承知しております。また、内閣府におきましても政府を挙げて、先ほど申し上げた孤独・孤立の予防に取り組んでいく観点から、孤独・孤立対策の重点計画に引きこもりの方の支援施策も盛り込むなど、関連する取組を政府全体として推進していくということにしております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=2525.263",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "不登校から8050問題への連続的な課題認識について",
+          "sub_asks": [
+            "不登校から8050・9060問題までを連続した社会課題としてどう認識しているか",
+            "構造的危機としてどの程度の規模と深刻さで捉えているか（具体的データ・分析の提示）"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "石川県では、小中高生合わせて9,000人の子ども、若者が年間30日以上、学校に通えていません"
+            },
+            {
+              "type": "number",
+              "excerpt": "全国でも不登校の小中学生は35万人を超え"
+            },
+            {
+              "type": "number",
+              "excerpt": "小学生は10年前の約5.5倍、中学生はおよそ2.2倍に増加"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "不登校・引きこもり当事者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "孤独・孤立対策の重点計画"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "関連する取組を政府全体として推進していくということにしております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "孤独・孤立対策の重点計画に引きこもりの方の支援施策も盛り込むなど、関連する取組を政府全体として推進していく",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は具体的な数値を用いて構造的な課題認識を問うたが、回答者は抽象的な認識論と既存の計画への言及に留まり、求められた具体的データや分析を提示しなかった。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どの程度の規模と深刻さで捉えているか」という問いに対し、回答者が「認識」という言葉で逃げられる余地があるため、具体的な指標の提示を求める形式にすべきだった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_010",
+      "segment_index": 2,
+      "topic": "若年層の引きこもり支援の可視化と制度化",
+      "question": {
+        "speaker": "川裕一郎",
+        "party": "参政党",
+        "summary": "- 支援機関につながっている人数および、そこから就労・社会参加に至った人数をどの程度把握しているか\n- 相談から就労・定着まで切れ目なく支える「ステップアップ型支援」を全国標準の制度として整備し、財政措置を講じる考えはあるか",
+        "full_text": "若年層の引きこもりについて質問させていただきます。内閣府の調査では15歳から64歳の広義の引きこもりは146万人と推計されていますが、そのうち国や自治体の支援機関につながっている人は一部にとどまります。さらにその中で実際に就労や社会参加に至った人数や割合について、国として十分に可視化されているとは言い難い状況であると思います。そこでお伺いします。現在、国や自治体の支援機関につながっている人数、そのうち就労、社会参加に至った人数を政府はどの程度把握をしているのか。また、相談、居場所、訓練、就労、定着支援まで切れ目なく支えるステップアップ型支援を全国標準として整備をする考えはあるのか。モデル事業や時限的な補助金にとどめるものではなく、制度としてしっかりと位置づけるために、どのような財政措置と制度設計を考えているのか、成果指標も併せてお示しください。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "伊沢（推定）",
+        "role": "",
+        "summary": "- 就労・社会参加に至った人数を網羅的に把握はしていないが、引きこもり地域支援センターの相談件数は延べ約25万件、実人数は約4万人で増加傾向にある\n- 市町村プラットフォームによるオーダーメイド支援や、地域若者サポートステーションでの就労支援に取り組んでおり、引き続き切れ目のない支援体制構築に努める",
+        "full_text": "ご指摘の支援機関につながっている引きこもりの方の人数や、そのうち就労、社会参加に至った人数について、網羅的に把握はしていないところでございますけれども、相談窓口の一つであり、引きこもり支援に特化した支援機関であります引きこもり地域支援センター等における令和6年度の相談件数は延べで約25万件、それから相談の実人数は約4万人でありまして、自治体における相談環境の整備を進めておりますけれども、これに伴いまして近年増加傾向にはございます。引きこもり支援の対象の方は、社会的に孤立、孤独を感じたり、さまざまな生活上の困難を抱え、家族を含む他者との交流が限定的でもあるという状況であることから、幅広い支援が必要だと我々も考えております。このため、引きこもり地域支援センター等において、相談支援、居場所づくりや地域のネットワークづくりなどを関係機関と協力して実施しているほか、各自治体におきまして、引きこもり支援担当部局が中心となって、教育機関や就労支援機関など地域の多様な関係機関と連携する市町村プラットフォームを設置し、一人ひとりの状況に応じたオーダーメイドの支援を行う仕組みを推進しております。令和6年度末時点で1354自治体が設置済みとなっております。無業の状態にある若者等に対しては、全国179カ所に設置している地域若者サポートステーションを拠点として、職業的自立に向けた就労支援に取り組んでおります。引き続き関係機関と連携しながら、切れ目のない支援体制の構築にしっかり取り組んでまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=2525.263",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "引きこもり支援の現状把握と制度化への考え",
+          "sub_asks": [
+            "支援機関への接続数および就労・社会参加に至った人数の把握状況",
+            "ステップアップ型支援を全国標準として整備する考えがあるか",
+            "制度化に向けた財政措置、制度設計、成果指標の内容"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "内閣府の調査"
+            },
+            {
+              "type": "number",
+              "excerpt": "15歳から64歳の広義の引きこもりは146万人"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "若年層の引きこもり",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "令和6年度の相談件数は延べで約25万件"
+            },
+            {
+              "type": "number",
+              "excerpt": "相談の実人数は約4万人"
+            },
+            {
+              "type": "number",
+              "excerpt": "1354自治体が設置済み"
+            },
+            {
+              "type": "number",
+              "excerpt": "全国179カ所に設置している地域若者サポートステーション"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "切れ目のない支援体制の構築にしっかり取り組んでまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.65
+        },
+        "oc3_quotability": {
+          "quote_candidate": "支援機関につながっている引きこもりの方の人数や、そのうち就労、社会参加に至った人数について、網羅的に把握はしていない",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "政府が就労・社会参加に至った人数を網羅的に把握していないことを認めた点に記録的価値がある。一方で、制度化や財政措置に関する具体的な回答は回避され、現状の説明に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "財政措置や成果指標など複数の具体的要求を一つの質問に盛り込んでいるため、回答者が個別の項目を回避しやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_011",
+      "segment_index": 2,
+      "topic": "中高年引きこもり・8050/9060世帯への包括的支援",
+      "question": {
+        "speaker": "川裕一郎",
+        "party": "参政党",
+        "summary": "- 複合的な困難を抱える世帯を救済するため、「重層的支援体制整備事業」を任意事業から全国市町村での義務的実施へ格上げし、財政・人員基準を明確に定めるべきではないか\n- 生活保護に至る前段階からの家計・住まい支援や、親なき後を見据えた支援パッケージの中長期的なビジョンと制度設計を示せ",
+        "full_text": "次に、中高年の引きこもりと、8050・9060世帯への包括的な支援についてまいります。これらの世帯では、親の介護や医療、子どもの長期の引きこもり、生活困窮、住まいの老朽化、親なき後への不安など、複数の問題が同時かつ長期に発生をしています。従来の縦割り行政では対応しきれずに、どこに相談してよいかわからない、相談してもたらい回しにされるという過程も少なくありません。こうした複合的な課題に対応するために創設されたのが、いわゆる断らない相談支援を掲げる重層的支援体制整備事業であります。しかし、その自治体は未だ全国市町村の約2割にとどまっています。制度はあるが、しかし広まっていない。これが現状であると思います。ここでお伺いをします。福祉、医療、介護、住まい、就労、法律相談まで一体的に扱う包括的相談体制を国として本気で機能させるのであれば、8050、9060世帯のような複合的な困難を抱える世帯を救済するために、重層的支援体制整備事業を現在の任意事業から全国市町村で義務的実施へと格上げをし、必要な財政措置と人員配置と基準を国として明確に定めるべきと考えますが、所見を伺います。併せて、生活保護に至る前段階から家計支援や住まいの支援、さらには親なき後を見据えたグループホーム、公営住宅、成年後見人制度などを組み合わせた支援パッケージをどのように構築をしていくのか、中長期的なビジョンと具体的な制度設計の方向性をお示しください。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "伊沢（推定）",
+        "role": "",
+        "summary": "- 重層的支援体制整備事業は、地域住民や関係者との共通認識醸成が必須であるため、現段階では市町村が要否を検討する任意事業とすることが適当である\n- 小規模市町村の人員不足等の課題はあるが、生活困窮者自立支援制度の活用や、現在国会で議論中の小規模市町村向け新事業などを通じ、2040年までに全市町村で包括的支援体制を整備したい",
+        "full_text": "御指摘いただきました重層的支援体制整備事業は、各分野の制度、機関の対応力の強化と制度、機関間の連携強化促進事業でございまして、市町村、地域住民、支援関係者などの間で十分な議論を行いまして、丁寧に共通認識の醸成を図ることが、事業の円滑かつ効果的な実施のために必須のプロセスであると考えておりまして、そういった観点から実施の準備が整った市町村から事業を開始する仕組みとしております。また、御指摘も頂戴しましたけれども、重層的支援体制整備事業の実施状況でございますけれども、令和7年度にきまして、特に人口1万人未満の自治体で9.2%、それから1万人以上3万人未満で17.9%といった状況になっておりまして、やはり小規模市町村において実施率が低く、また自治体へのアンケート調査を行いましたが、事業を実施できていない理由として、約7割の自治体が実施するための人員が不足していると、こういう回答をいただいております。こうした状況を踏まえますと、この重層事業ですけれども、引き続き市町村が地域の実情に応じて、まずは実施の要否を検討するといった形の任意事業とすることが現段階では適当ではないかと考えているところでございます。一方で、委員御指摘いただきました生活保護に至る前段階からの支援につきましては、福祉事務所設置自治体に実施義務のある生活困窮者自立支援制度では、生活にお困りの方からの相談を包括的に受けとめまして、住まいに関する支援や家計改善、就労支援など状況に合わせたきめ細やかな支援を行う仕組みを構築しているところでございます。厚生労働省としましては、地域の実情に応じたさまざまな手法を提示することが大事だと考えておりまして、先ほど申し上げました既存の生活困窮者自立支援制度、介護保険制度などの既存制度の対応力強化、連携強化はもちろんのこと、御指摘の重層的支援体制事業に加えまして、現在国会で御議論いただいております法案で新たに小規模市町村向けの事業を創設することとしておりますので、これらも活用いただきまして、2040年までに全ての市町村において包括的な支援体制が整備されるように、引き続き必要な取組を進めてまいりたいと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=2525.263",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "重層的支援体制整備事業の義務化と包括的支援の構築について",
+          "sub_asks": [
+            "重層的支援体制整備事業を任意から義務的実施へ格上げすべきか",
+            "生活保護前段階からの支援パッケージの中長期ビジョンと制度設計の方向性"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "重層的支援体制整備事業"
+            },
+            {
+              "type": "other",
+              "excerpt": "全国市町村の約2割"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "8050・9060世帯",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "人口1万人未満の自治体で9.2%"
+            },
+            {
+              "type": "number",
+              "excerpt": "1万人以上3万人未満で17.9%"
+            },
+            {
+              "type": "number",
+              "excerpt": "約7割の自治体が実施するための人員が不足"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "2040年までに"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "引き続き必要な取組を進めてまいりたいと思っております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "2040年までに全ての市町村において包括的な支援体制が整備されるように、引き続き必要な取組を進めてまいりたい",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "義務化への提案に対し、人員不足という具体的根拠を挙げて否定しつつ、2040年という目標年を提示して回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "支援パッケージの「具体的な制度設計」を求めているが、回答が既存制度の活用に留まっているため、より具体的な項目（グループホーム等）への言及を迫るべきだった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_012",
+      "segment_index": 2,
+      "topic": "省庁横断的な人生トータル支援ラインの構築",
+      "question": {
+        "speaker": "川裕一郎",
+        "party": "参政党",
+        "summary": "- 不登校から8050/9060問題までを一貫した「人生トータル支援ライン」と捉え、省庁横断で支援情報を連携する仕組みを構築する考えはあるか\n- 本人同意のもと支援履歴を引き継ぐ「縦串型支援」の具体的な枠組みについて、検討状況と方向性を示せ",
+        "full_text": "最後に縦割りを超えた支援体制について、大臣にお聞きします。現在、不登校は文部科学行政、若者支援は子ども家庭庁、中高年の引きこもりは厚生労働行政というライフステージごとに支援が分断されています。その結果、本人の人生という連続した時間軸から見ると支援が途中で切れてしまい、子どもの頃の情報や支援履歴が大人になってから生かされていないという問題が起きています。そこでお伺いをします。政府として不登校の段階から大人の引きこもり、川裕一郎（参政党）：0歳から9歳、65歳問題に至るまでを一貫した人生トータル支援ラインとして捉え直し、省庁横断で支援情報を連携する仕組みを構築する考えはあるのか。個人情報保護に十分配慮した上で、本人同意のもと支援履歴を引き継ぐ縦串型支援の具体的な枠組みについて、現在の検討状況と今後の方向性をお示しください。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "あかま二郎",
+        "role": "国家公安委員会委員長 領土問題担当 内閣府特命担当大臣（防災 海洋政策）",
+        "summary": "- 当事者の課題に応じた必要な情報共有やオーダーメイドの支援が、年齢を問わず切れ目なく行われていると承知している\n- 孤独・孤立対策重点計画に不登校や引きこもりへの支援策を位置づけており、引き続き省庁横断的に取組を推進する",
+        "full_text": "不登校などの契機として引きこもりに至っている方については、切れ目なく支援につなげていく観点から、当事者の抱える課題に応じた必要な情報共有や支援が行われているものと承知をしております。当事者の一人一人の状況に応じたオーダーメイドの支援が年齢を問わず行われるなど、切れ目のない情報共有や支援がなされているものと承知をしております。内閣府においては、例えば不登校や引きこもりの方の孤独・孤立の予防等の観点から、孤独孤立対策重点計画において不登校や引きこもりの方への支援策を孤独孤立対策の重点施策の1つとして位置づけております。引き続き、この重点計画に則りまして、省庁横断的に関連する取組を推進してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=2525.263",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "省庁横断的な人生トータル支援ラインの構築について",
+          "sub_asks": [
+            "省庁横断で支援情報を連携する仕組みを構築する考えがあるか",
+            "支援履歴を引き継ぐ縦串型支援の具体的枠組みの検討状況と方向性"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "文部科学行政"
+            },
+            {
+              "type": "organization",
+              "excerpt": "子ども家庭庁"
+            },
+            {
+              "type": "organization",
+              "excerpt": "厚生労働行政"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "不登校・引きこもり当事者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "孤独孤立対策重点計画"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "省庁横断的に関連する取組を推進してまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "孤独孤立対策重点計画において不登校や引きこもりの方への支援策を孤独孤立対策の重点施策の1つとして位置づけております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "省庁横断的な情報連携という具体的な仕組みへの問いに対し、既存の重点計画に則り推進するという抽象的な回答に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「考えはあるか」というYes/No形式の問いにしているため、大臣が「ある」と答えた後の具体策をさらに追及する構成にするべきだった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_013",
+      "segment_index": 3,
+      "topic": "サイバーセキュリティ対策のスピード感と特例措置",
+      "question": {
+        "speaker": "高山聡史",
+        "party": "チームみらい",
+        "summary": "- 数ヶ月単位で進化するAI脅威と、年単位の政府計画プロセスの時間軸の乖離（非対称性）をどう認識しているか\n- 予備費枠の設置、人材採用の特例、計算基盤調達の特例などの必要性について見解を伺いたい",
+        "full_text": "政府としてもご認識いただいていると思いますが、クロードミトス相当の品質のオープンモデルの登場、つまり、悪意のある主体、悪意のある外国勢力がこれまでにないサイバー攻撃能力を保有する事態が生じるまで、早ければ数ヶ月程度という予測もございます。本日、冒頭申し上げたG7の議題にもあるように、国家のサイバーセキュリティは今、大きな脅威に直面しています。一方でこれに相対する、例えば政府においても予算編成、人事採用、調達手続きなどは、いずれも通常年単位のサイクルが基本であると承知しています。クロードミトスの登場以来、サイバー攻撃の脅威が増すスピードと、もちろん柔軟に対応いただいていると思いますが、政府や民間の対応スピードとのギャップが、サイバー対処能力構築の最大のボトルネックとなる懸念があります。数ヶ月単位で進化していく脅威と、年単位の政府の通常の計画プロセスの時間軸、これが非対称であることについて、政府としてどのように認識しておられますでしょうか。また、サイバー領域における緊急的・機動的な予備費枠の設置、サイバー専門人材の通年、あるいは交代群の採用など、人材採用における特例、計算基盤や評価用リソースに係る調達に関する特例など、そういった必要性について大臣の見解をお聞かせください。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "松本大臣",
+        "role": "",
+        "summary": "- 最新のAIモデル（ミトス等）の問題については、NISCや米ビッグテックと緊密に連携し、総理指示のもと「プロジェクトヤタシールド」を発表した\n- 発表に留まらず、頻繁に実施状況を追跡していく必要があると考えている",
+        "full_text": "今般のミトスの問題については、これは7月7日だったと思うんですが、公開直後からNISCと相談をしながら、NISCは実際に各国の政府、あるいは米国のビッグテックも含めて、水面下で緊密にやりとりをした上で、総理の指示のもとに今般プロジェクトヤタシールドを発表したところでございます。発表しただけではなくて、頻繁に実施状況について追っかけていかなきゃいけないということも思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=3737.1629999999996",
+      "metrics": null
+    },
+    {
+      "id": "qa_014",
+      "segment_index": 4,
+      "topic": "若年層の性暴力被害予防月間の取組",
+      "question": {
+        "speaker": "野村美穂",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 今年の4月の予防月間で実施した具体的な啓発活動（対象年齢層や媒体など）について\n- 予防月間の開始時期を、環境変化が予想される3月から前倒しすべきではないかという提案",
+        "full_text": "今年の4月の予防月間では、具体的にどのような啓発活動を実施されたのでしょうか。対象とした年齢層や、使用した媒体など、できるだけ詳しく教えてください。また、環境が変わることの多い4月の時期に行っているようですが、環境が変わることが予想できる時期である3月から始めたほうがよいのではないかと思いますが、いかがでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "あかま二郎",
+        "role": "国家公安委員会委員長 領土問題担当 内閣府特命担当大臣（防災 海洋政策）",
+        "summary": "- 4月を予防月間とし、ウェブサイトへのポスター掲載やSNS発信等を通じて、同意のない行為は性暴力であるとの認識を共有する啓発を推進した",
+        "full_text": "政府では、入学・就職等に伴い、若年層の生活環境が大きく変わり、被害に遭うリスクが高まると考えられる4月を、若年層の性暴力被害予防月間と定め、性暴力防止の啓発や相談先の周知などに取り組むこととしております。今年度の本月間では、若年層が身近な関係性の中で、無自覚に加害行為をしてしまったり、性暴力被害に遭ったりすることについて注意喚起し、本月間が開始する前から、ウェブサイトへのポスター等の掲載や、SNS等による発信等を行っており、本月間などを通じて、性犯罪・性暴力が重大な人権侵害であること、同意のない性的な行為は性暴力であるという認識が社会全体で共有されるよう、啓発を推進しているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=4669.163",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "4月の予防月間の活動内容と実施時期の妥当性",
+          "sub_asks": [
+            "4月の啓発活動の具体的内容（年齢層・媒体等）",
+            "実施時期を3月から前倒しすべきではないかという提案"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "今年の4月の予防月間"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "若年層の性暴力被害予防月間"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ウェブサイトへのポスター等の掲載"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "SNS等による発信"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "啓発を推進しているところでございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "同意のない性的な行為は性暴力であるという認識が社会全体で共有されるよう、啓発を推進している",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "活動内容への回答は概括的であり、3月への前倒し提案に対する明確な賛否や検討の言及がないため、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「3月から始めたほうがよいのではないか」という問いに対し、Yes/Noや検討の有無を明確に答えさせる形式にすべきだった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_015",
+      "segment_index": 4,
+      "topic": "精査医学に基づく健康支援の定義",
+      "question": {
+        "speaker": "野村美穂",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 「精査医学に基づく健康を支援すること」とは具体的にどのような内容を指すのか",
+        "full_text": "精査医学に基づく健康とは、具体的にどのようなものを指すのでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "岡田",
+        "role": "",
+        "summary": "- 性差を考慮する医学に基づき、年代や月経、妊娠、閉経等に伴う心身の状態の変化に応じて、長期的・包括的に健康増進を支援すること",
+        "full_text": "私どもは、精査を考慮する医学に基づいて行う健康に関する支援と考えてございます。例えば、第6次の男女共同参画基本計画では、女性については、その心身の状態が年代や月経、妊娠、閉経等に伴う内部物質環境の変化に応じて大きく変化するという特性から、長期的、継続的かつ包括的な観点に立って、健康の増進を支援する。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=4669.163",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "精査医学に基づく健康の具体的定義",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "第6次の男女共同参画基本計画"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "精査を考慮する医学に基づいて行う健康に関する支援と考えてございます。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "用語の定義を問うシンプルな質問に対し、政府の解釈と具体例（基本計画）を提示して回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_016",
+      "segment_index": 4,
+      "topic": "精査医学に基づく健康課題解決の必要性",
+      "question": {
+        "speaker": "野村美穂",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- なぜ精査医学に基づく健康課題を解決しなければならないのか\n- 労働生産性や経済的損失など、社会全体にどのような影響があると考えているか",
+        "full_text": "なぜ精査医学に基づく健康課題を解決をしなければならないのかお尋ねします。前回、課題があることはご答弁いただきましたが、なぜその課題を解決しなければならないとお考えなのでしょうか。個人の健康問題にとどまらず、社会全体にどのような影響があるのか。労働生産性、経済的損失、社会保障費への影響など、どのような問題意識を持って取り組もうとされているのか、お聞かせください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "岡田",
+        "role": "",
+        "summary": "- 男女で異なる疾患罹患状況や社会的決定要因に鑑み、的確な保健医療を受けることが必要であるため\n- 女性特有の健康課題による社会全体の経済損失が3.4兆円とする試算があるため",
+        "full_text": "生涯を通じた健康の保持のためには、疾患の罹患状況や健康の社会的決定要因とその影響が男女で異なることなどに鑑みて、精査に応じた的確な保健医療を受けることが必要であると考えております。また、先ほど委員にご指摘になられましたけれども、女性特有の健康課題による社会全体の経済損失が3.4兆円とする試算もあるところでございまして、精査医学に基づく健康課題に取り組む必要があると。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=4669.163",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "精査医学に基づく健康課題解決の必要性と社会への影響",
+          "sub_asks": [
+            "なぜ課題を解決しなければならないのか",
+            "社会全体にどのような影響があるのか（労働生産性、経済損失、社会保障費等）"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "社会全体",
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "3.4兆円"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "女性特有の健康課題による社会全体の経済損失が3.4兆円とする試算もあるところでございまして、精査医学に基づく健康課題に取り組む必要がある",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "精査医学の必要性について、経済損失の具体的数値（3.4兆円）を挙げて回答しており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「精査医学」という用語の定義を明確にした上で質問すれば、より具体的な施策への言及を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_017",
+      "segment_index": 4,
+      "topic": "更年期症状の労働損失把握と国民的健康課題としての位置づけ",
+      "question": {
+        "speaker": "野村美穂",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 更年期症状による労働損失の実態をどのように把握しているか（男女共に）\n- 更年期症状を「国民的健康課題」と位置づけるべきではないか\n- 自治体や企業への周知をどのように行うか",
+        "full_text": "政府は更年期症状による労働損失について、どのように実態を把握をしているのでしょうか。女性だけでなく、男性の更年期についてもお答えいただければと思います。また、更年期症状を国民的健康課題と位置づける必要があるのではないかと考えておりますが、いかがでしょうか。どのように周知をしていかれるのでしょうか。その際には通知だけでなく対面での説明や検討を一緒に進めていただき、温度感を大切にしていただきたいと思いますが、大臣のお考えをお聞かせください。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "あかま二郎",
+        "role": "国家公安委員会委員長 領土問題担当 内閣府特命担当大臣（防災 海洋政策）",
+        "summary": "- 経済損失は女性1.9兆円、男性1.2兆円との試算を承知しており、対応は重要であると認識している\n- 関係省庁が連携し、ウェブサイト等を通じて国民に分かりやすく情報提供に努める\n- 男性も含め、国民共通に正しい理解をすることが大切であり、主体的に取り組むべき重要なテーマと捉えている",
+        "full_text": "更年期症状による社会全体の経済損失は、年間で女性では1.9兆円、男性では1.2兆円と推計されるとの試算があると承知をしております。更年期の男女は職場や社会において多くの役割を担う年代でありまして、更年期障害への対応をしっかりと進めていくことは重要であると認識しております。更年期障害をはじめ、精査に由来する健康課題への対応については、攻めの予防医療に向けた精査に由来するヘルスケアに関する副大臣等会議での議論も踏まえつつ、関係省庁が連携して、政府全体で国民の皆様に対し、分かりやすくお知らせするよう努めていくものと考えております。さらに国民への周知方法ということについては、例えば厚生労働省においては、働く女性の心と体の応援サイトにおいて、女性が高年期に離職することなく働き続けるための情報発信を行っております。また、ウェブサイト、女性の健康推進室、ヘルスケアラボにおいて、高年期の体や心に関する情報を簡易に調べ、情報を得ることができるようにしていると承知をしております。こうした情報を効果的に国民の皆様にお伝えしていけるよう、関係省庁が連携して政府全体で情報の提供に努めるものと考えております。そして男性の高年期についてでございますが、徐々にその認識は広まっているというふうに思っておりますが、先ほど委員がお話ししたように、やはり国民共通に正しい理解をしていくことが大切だというふうに思っております。国民一人ひとりが主体的に取り組んでいくべき重要なテーマとして捉えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=4669.163",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "更年期症状による労働損失の実態把握と周知策について",
+          "sub_asks": [
+            "男女それぞれの更年期による労働損失の実態把握状況",
+            "更年期症状を国民的健康課題と位置づけるべきか",
+            "今後の周知方法と対面での検討の実施について"
+          ],
+          "score": 0.4
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "更年期の男女",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.6
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "女性では1.9兆円"
+            },
+            {
+              "type": "number",
+              "excerpt": "男性では1.2兆円"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "攻めの予防医療に向けた精査に由来するヘルスケアに関する副大臣等会議"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "働く女性の心と体の応援サイト"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "政府全体で国民の皆様に対し、分かりやすくお知らせするよう努めていくものと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "更年期症状による社会全体の経済損失は、年間で女性では1.9兆円、男性では1.2兆円と推計されるとの試算があると承知をしております。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "労働損失の具体的な推計額を大臣が認めた点に記録価値がある。周知方法については既存のサイト紹介に留まり、具体的な新施策へのコミットメントは低い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「対面での説明や検討」という具体的な手法への要望が含まれているが、回答が一般論に終始しているため、Yes/Noで答えさせる形式にするべきだった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_018",
+      "segment_index": 4,
+      "topic": "更年期症状の国民的健康課題としての認識確認",
+      "question": {
+        "speaker": "野村美穂",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 更年期症状を「国民的健康課題」と位置づけていく方向で認識しているか",
+        "full_text": "ということは、大臣もこの高年期症状を国民的健康課題と位置づけていくという方向での認識ということでよろしいでしょうか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "あかま二郎",
+        "role": "国家公安委員会委員長 領土問題担当 内閣府特命担当大臣（防災 海洋政策）",
+        "summary": "- 広く国民が認識していくべき課題であると考えている\n- 男女共同参画の観点から、特に女性の高年期への理解を深め、男性も含め互いに働きやすい社会にしたい",
+        "full_text": "高年期の問題については、やはり広く国民が認識していく課題だというふうに思っております。特に私は女性活躍大臣であり、男女共同参画担当大臣でございますので、先ほど議論になっておりますが、やはり女性、どちらかというとやはり女性の方がいろんな病気のホルモンのバランスによって、障害的に患う可能性が高いというデータがございますので、やはり男女共同参画の観点からはまず女性の高年期、これをやはりしっかりと理解してもらう。そして男性もある、そういう障害が高年期があるんだよということも理解した上で、男女共々そういう問題を乗り越えてお互いが住みよい社会、また共同で働きやすい社会にしていきたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=4669.163",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "高年期症状を国民的健康課題と位置づけるか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "社会にしていきたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "高年期の問題については、やはり広く国民が認識していく課題だというふうに思っております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "大臣が高年期症状を国民的課題として認識していることを確認したやり取りであり、政治的な方向性は示されたが、具体的な施策への言及はない。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「位置づける」という言葉を使い、単なる認識か、政府としての公式な定義（位置づけ）かを明確に区別させる問い方であれば、より強い記録価値が得られた。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_019",
+      "segment_index": 4,
+      "topic": "地方自治体と連携した更年期相談体制",
+      "question": {
+        "speaker": "野村美穂",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 自治体における相談窓口の設置状況をどのように把握しているか\n- 相談体制が不十分な自治体に対してどのような支援を行っているか",
+        "full_text": "地方自治体と連携した相談体制について、相談窓口の設置状況をどのように把握されているのでしょうか。また、相談体制が不十分な自治体に対して、どのような支援を行っているのでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "厚生労働省参事官",
+        "role": "",
+        "summary": "- 市町村が健康増進事業として健康相談を行う場合に、補助の対象とすることを可能としている",
+        "full_text": "厚生労働省では男性も含め高年期症状の知識等について国民への普及啓発を行っておりますほか、市町村が健康増進事業として健康相談を行う場合に補助の対象とするということを可能としているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=4669.163",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "自治体の相談体制の把握状況と支援策",
+          "sub_asks": [
+            "相談窓口の設置状況の把握方法",
+            "不十分な自治体への支援内容"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "地方自治体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "厚生労働省"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "市町村が健康増進事業として健康相談を行う場合に補助の対象とするということを可能としている",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "把握状況についての回答が欠落しており、支援策についても補助金の可能性に触れるのみで具体性に欠ける。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「把握状況」と「支援策」を分けて問うているが、回答者が一方を無視しやすいため、より具体的に把握方法を問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_020",
+      "segment_index": 4,
+      "topic": "職場環境整備と企業への支援（健康経営）",
+      "question": {
+        "speaker": "野村美穂",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 中小企業が従業員の健康課題（特に女性の高年期症状等）に対処できるよう、経済産業省としてどのような支援を行っているか",
+        "full_text": "経済産業省として企業が従業員の健康課題を積極的に対策するようにどのような支援を行っているのでしょうか。特に女性の健康課題や高年期症状対策などの取組について、柔軟な勤務形態の導入支援、企業向けガイドラインの策定、好事例の共有などお尋ねします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "経済産業省",
+        "role": "",
+        "summary": "- 健康経営優良法人の認定において、男女の高年期症状への取組を評価対象としている\n- 中小企業に対しては、セミナー開催、事例集作成、補助金審査における加点措置などのインセンティブを提供している",
+        "full_text": "健康経営優良法人の認定に当たりましては、女性だけでなく男性の健康課題も含めて、職場における実態に基づく取組を評価対象としているところでございます。まず女性の特有の健康課題の対応に関しましては、従来より、高年期症状の改善に向けた支援の実施状況を評価対象にしているところでございます。さらに昨年度からは、男性も含む高年期症状について、セミナー等を通じた従業員の理解促進や健康意識の向上に図る取組を評価対象として追加したところでございます。中小企業の健康経営の中小企業への拡大は非常に重要なテーマでございまして、セミナーの開催や事例集の作成などによる周知や、認定企業に対する補助金審査における加点措置、こういったインセンティブ付けの措置を行ってきたところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=4669.163",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "従業員の健康課題対策への支援内容",
+          "sub_asks": [
+            "女性の健康課題や高年期症状対策の取組",
+            "柔軟な勤務形態の導入支援",
+            "企業向けガイドラインの策定",
+            "好事例の共有"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "従業員",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.6
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "健康経営優良法人の認定"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "補助金審査における加点措置"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "健康経営優良法人の認定に当たりましては、女性だけでなく男性の健康課題も含めて、職場における実態に基づく取組を評価対象としている",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的だが複数の要素を含んでおり、回答は「健康経営優良法人」の認定基準という特定の枠組みでの説明に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "複数の支援策（勤務形態、ガイドライン、事例共有）を一度に問うているため、回答が網羅的にならず、特定の制度の説明に偏った。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_021",
+      "segment_index": 5,
+      "topic": "高年期症状への省庁横断的な取組",
+      "question": {
+        "speaker": "森ようすけ",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 高年期症状への対応における省庁間の連携不足と地域格差の解消が必要である\n- 政府全体の司令塔として、高年期症状という国民的健康課題に対する大臣の見解を問う",
+        "full_text": "多くの省庁にまたがる課題ゆえに、省庁間の連携が十分だとは言えません。また、医療体制の整備と省庁横断的な取組について、高年期症状に対応できる医療体制は、地域によっても大きな格差があると考えられます。また、高年期医療の質を向上させ、全国どこでも適切な医療を受けられる体制を整備することも重要だと思います。政府全体を俯瞰する立場から、省庁横断的な取組の司令塔として、あかま大臣には、ぜひこの高年期症状という国民的健康課題を大臣の御見解をお尋ねします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "あかま二郎",
+        "role": "国家公安委員会委員長 領土問題担当 内閣府特命担当大臣（防災 海洋政策）",
+        "summary": "- 厚労省による普及啓発、経産省による健康経営、AMEDによる研究開発、女性の健康総合センターによる診療拠点整備などを実施している\n- 政府全体で連携して取組を進めることが重要であり、政府としての役割を果たしたい",
+        "full_text": "高年期障害への対応については、厚生労働省において、高年期症状についての普及啓発や医療領域を横断した考え方を整理するほか、経済産業省において企業による健康経営の推進、日本医療研究開発機構AMEDにおいて精査を考慮した研究開発の推進、女性の健康総合センターにおいて女性特有の疾患の診療拠点の整備や研究、女性特有の疾患への理解を促進する情報発信などを行っているところでございます。引き続き、政府全体で、この高年期障害への対応をしっかりと連携して取組を進めていくことが重要であると考えまして、政府としての役割を果たしてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=5910.763",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "高年期症状への省庁横断的取組に関する見解",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "厚生労働省"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "経済産業省"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "日本医療研究開発機構AMED"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "女性の健康総合センター"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "政府としての役割を果たしてまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "政府全体で、この高年期障害への対応をしっかりと連携して取組を進めていくことが重要であると考えまして、政府としての役割を果たしてまいりたい",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "現状の省庁別の取り組みを列挙した回答であり、具体的な新施策や期限付きの約束は含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「見解を尋ねる」という抽象的な問い方であるため、政府の具体的なコミットメントを引き出しにくい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_022",
+      "segment_index": 5,
+      "topic": "中型・大型免許へのAT免許導入の理由とMT免許試験の見直し",
+      "question": {
+        "speaker": "森ようすけ",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 中型・大型免許にAT免許を導入した理由について\n- MT免許の技能試験方法を見直した理由について",
+        "full_text": "こうした方向性素晴らしいと思うので、何でこうしたAT免許の導入を行うのかというところの理由をまずお伺いさせていただきたいのと、この免許の広げることと合わせてですね、MT免許の技能試験の方法の見直しというのも行っております。これまでは全てMT車両でやらないといけなかったところを、クラッチとギア操作だけをMTの普通車でやれば、通常の公衆についてはATの大型車両、中型車両でやればMT免許が取れるといったこうした見直しも行われているわけでありますけれども、それぞれ何で見直しを行ったのか、その点理由をお伺いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "草川",
+        "role": "",
+        "summary": "- トラック・バスのAT車普及や職業ドライバー不足への対応として導入した\n- 教習所のMT車両整備負担を軽減するため、一部項目をMT普通車で、その他をAT車両で実施するよう見直した",
+        "full_text": "お尋ねのAT免許につきましては、これまで普通免許に限られていたAT免許を大型免許等にも導入するよう、令和6年6月に関係法令を改正し、委員御指摘のとおり、本年4月から順次施行しているところでありますが、本改正はトラックやバスのAT車の普及が進んでいる状況や、職業ドライバー不足といった近年の状況を踏まえて行ったものであります。また、新たなAT免許の導入に合わせ、教習所等のMT車両等の整備の負担を軽減するため、MT免許の試験や教習については、クラッチギア操作に係る項目については、MT普通車を用いる一方で、その他の試験教習については、AT車両を用いるよう見直しを行ったものであります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=5910.763",
+      "metrics": null
+    },
+    {
+      "id": "qa_023",
+      "segment_index": 5,
+      "topic": "AT教習車両の改造における現場の困難さと政府の把握状況",
+      "question": {
+        "speaker": "森ようすけ",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- AT免許導入に伴い、既存車両の改造や新車購入後の教習仕様への改造が必要だが、ディーラーが受注を拒否している現状があるか\n- 政府としてこの実態を把握しているか",
+        "full_text": "現状、このAT免許が出てくると、教習所においてはMT車両を持っているわけなんですね。なので、それをAT免許に対応するようにすると、既存のMT車両はもうそのままにして、新しいATのトラックであったりとか、ATのバスを購入をして、それを改造しないといけないんですね、教習所用に。というのは、例えばトラックの場合だと、助手席に補助ブレーキを置いたりとか、バスがもっと大変なんですが、バスは補助席がそもそもないので、助手席を作って、その上で補助ブレーキをつけるということで、既存の教習所で持っている車両だけだと対応ができないので、既存のAT車両をMTに変えるというのは、これは技術的にも金銭的にも極めてしんどいので、ATのトラック、ATのバスを買ってきて、中古でもいいんですが、買ってきて、それを教習所仕様に改造するということが必要になってくるんですが、現場の声を聞いていると、こういった中型、大型含めてなんですけれども、改造してほしいというふうにディーラーにお願いしても、なかなかもう受け付けないというか、今、都道府県の試験場が優先して受注をしているので、一般の教習所がそういう注文をしても、見積もりすら出してくれないといった現状があるそうです。なので、こうした運輸産業の担い手確保に向けた方向性は素晴らしいんですが、現場としては、そうしたATのトラック、バスを買ってきたとしても、それを教習仕様に改造がそもそもできないと。大型は来年4月なんでまだいいかもしれないんですが、今年4月から施行されている中型トラックにおいても、この補助ブレーキをつける改造をお願いしてもやってくれないといった声が実際に届いているんですが、そうした現状を政府としても把握しているのかをお伺いしたく、国土交通省、警察庁それぞれお願いいたします。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "草川",
+        "role": "",
+        "summary": "- 警察庁：新車の納車に時間を要する事例は把握しているが、改造に関する具体的な把握はない\n- 国土交通省：メーカーやディーラーが改造に対応していない実態については把握していない",
+        "full_text": "その中で、各教習所がAT車両を新規購入しようとする場合に、ディーラーからの納車に時間を要する旨の回答を受けている事例については把握しておりますが、議員ご指摘のようなところについては、ちょっと具体的な把握はございません。先ほど警察庁からもご回答がありましたが、国交省におきましても、そのようなオートマチックミッションへの改造、オートマチックミッションを改造するといったような話、さらにマニュアルトランスミッションをさらにオートマに改造するといった、そういった改造に関して、メーカーやディーラーが対応していないという実態については、現在把握していないという状況でございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=5910.763",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "AT免許導入に伴う教習車改造の受注拒否の実態把握",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "今年4月から施行されている中型トラック"
+            },
+            {
+              "type": "date",
+              "excerpt": "大型は来年4月"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "教習所",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "メーカーやディーラーが対応していないという実態については、現在把握していないという状況でございます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "教習所の車両改造におけるディーラーの受注拒否という具体的課題に対し、政府が「把握していない」と明確に回答した記録として価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "現状の説明が非常に長く、核心となる問い（把握しているか）が最後に配置されているため、簡潔に問うことが望ましい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_024",
+      "segment_index": 5,
+      "topic": "AT教習車両の確保状況の調査と購入支援の要望",
+      "question": {
+        "speaker": "森ようすけ",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 警察庁主体となって全国の教習所の車両確保状況を把握してほしい\n- AT車両の購入に関する支援を検討してほしい",
+        "full_text": "現状の把握がまだなかなかできていないということなので、ぜひ警察庁主体となって、全国の教習所に対して、そもそもこの車両の確保が追いついているんですかといった状況把握をぜひしていただきたいと思います。加えて、やはり新しくATのトラック、バスを購入しないといけないわけですから、経営大変なので、そうした購入についての何らかの支援も含めてぜひご検討いただきたいんですが、この2点についていかがでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "あかま二郎",
+        "role": "国家公安委員会委員長 領土問題担当 内閣府特命担当大臣（防災 海洋政策）",
+        "summary": "- 警察において整備計画や状況の調査、関係団体との意見交換は実施している\n- 切迫した状況を踏まえ、意見交換を通じて詳細に把握し、関係省庁と連携して必要な支援を検討する",
+        "full_text": "今調査、さらに支援をということでございますけれども、警察において各都道府県の教習所、ここにおけるオートマ車両の整備計画であるとか、計画に基づく整備状況を調査はしております。また、自動車教習所の関係団体とも、オートマ車両の整備に関して、意見交換なども実施をしているところではあります。ただ、より今切迫した状況、またそういった声があるということを踏まえれば、しっかりとそういった意見交換の場にあって、つぶさに拾うこと、これは大事だろうというふうに思っています。それらを踏まえて各教習所における教習車両の整備状況これに応じて関係省庁と連携しながら、いかなる必要な支援というものが取り得るのか検討をするというふうになるんだというふうに思っておりますので、よろしくお願いします。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=5910.763",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "教習所のAT車両確保状況の把握と購入支援の要望",
+          "sub_asks": [
+            "全国の教習所への車両確保状況の把握",
+            "AT車両購入への支援の検討"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "教習所",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "関係省庁と連携しながら、いかなる必要な支援というものが取り得るのか検討をする",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "関係省庁と連携しながら、いかなる必要な支援というものが取り得るのか検討をするというふうに思っております",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "教習所のAT化に伴う現状把握と支援策について問うており、政府側は現状の調査状況を説明した上で、今後の支援策について検討する意向を示した。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "支援の具体的内容（補助金、税制優遇など）を提示して問えば、より踏み込んだ回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_025",
+      "segment_index": 5,
+      "topic": "教育訓練給付金における一般教育と特定一般教育の指定状況の差",
+      "question": {
+        "speaker": "森ようすけ",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 免許教習において、給付率の高い「特定一般教育」ではなく、低い「一般教育」に指定が偏っている理由をどう捉えているか",
+        "full_text": "この運転免許関係の講座指定については、専門実践というのは認められていなくて、一般教育と特定一般教育訓練の2つ指定することができるんですが、一般教育の方は6,800講座、特定一般の方は500講座しか指定されていないんですね。両方を選べる中で、普通であれば給付率の高い特定一般を選ぶはずなんですが、現状としては20%の給付率の一般教育の方にかなり免許の教習については偏っている現状があります。そうした差が生じていることについての理由をどういうふうに捉えているのかを政府にお伺いしたいんですが、いかがですか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "中田井",
+        "role": "",
+        "summary": "- 特定一般教育は、再就職やキャリア形成に資する高い効果が認められる講座を指定している\n- 要件を満たさない講座は一般教育として指定している",
+        "full_text": "ご指摘の特定一般教育訓練につきましては、特に労働者の速やかな再就職及び早期のキャリア形成に資するものとして、一般教育訓練に比して高い給付率50%を設定し、講座目標資格等に係る受験の状況、その結果、訓練終了後の就職等の状況から見て、十分な効果がある訓練であると認められる講座を指定しております。こうした要件を満たさない講座につきましては、一般教育訓練として指定したところであります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=5910.763",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "免許講座が一般教育訓練に偏っている理由",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "6,800講座"
+            },
+            {
+              "type": "number",
+              "excerpt": "500講座"
+            },
+            {
+              "type": "number",
+              "excerpt": "20%の給付率"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "運転免許関係の講座受講者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "50%"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "こうした要件を満たさない講座につきましては、一般教育訓練として指定したところであります。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "現状の統計に基づいた具体的な質問に対し、制度上の要件という観点から明確に回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_026",
+      "segment_index": 5,
+      "topic": "教育訓練給付金における1つの講座への重複指定の可否",
+      "question": {
+        "speaker": "森ようすけ",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 特定一般教育の要件（キャリアコンサルティング等）が受講者のハードルとなり、教習所が一般教育を選択している現状がある\n- 1つの講座を「特定一般」と「一般教育」の両方で指定できるようにしてほしい",
+        "full_text": "これは1つありましたが、キャリアコンサルティングというのが、特定一般の方には要件になっているんですね。これ実際に声を聞いてみると、このキャリアコンサルを要件にしていると、どうしても受講者の裾野が減ってしまうわけじゃないですか。なので教習所は本来であれば50%給付の特定一般でやりたいんだけれども、こうしたキャリアコンサルという前提があると裾野が減ってしまって、お客さんが減ってしまうのが怖くて、あえて一般教育を選んでいるといった背景があるそうなんです。次の質問に移るんですが、であれば、今というのは、1つの教習の講座を、特定一般と一般教育の両方で指定することができないんです。これを両方指定することができれば、みんなハッピーになるような気がするんですが、現状において、なぜ両方の指定を受けることができないのか。その点、理由をお願いいたします。厚労大臣にお伺いしたいのですが、今の話を含めて、ぜひ1つの講座を特定一般と一般教育、両方の指定を受けることができれば、教習所もハッピーですし、受講者もハッピーだと思うんです。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "中田井",
+        "role": "",
+        "summary": "- 仕組み上、同じ講座を同時に特定一般と一般教育として指定することはできない\n- 特定一般の指定を受けていれば、給付率の低い一般教育の指定を重ねて受ける必要はないと考えている",
+        "full_text": "このため、同じ講座が同時に特定一般と一般教育訓練を同時に受けることができないという仕組みでございます。また、訓練施設にとっては特定一般教育訓練の指定を受けた講座であれば、給付率が低い一般教育訓練の指定を重ねて受ける必要がないものと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=5910.763",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "1つの講座を特定一般と一般教育の両方で指定できない理由",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "キャリアコンサルティングというのが、特定一般の方には要件になっている"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "教習所",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "同じ講座が同時に特定一般と一般教育訓練を同時に受けることができないという仕組みでございます。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "制度上の制約（二重指定不可）について大臣が明確に回答しており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "現状の理由を問うだけでなく、制度変更の可能性について具体的に問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_027",
+      "segment_index": 6,
+      "topic": "教育訓練給付金の運用改善",
+      "question": {
+        "speaker": "黒田征樹",
+        "party": "日本維新の会",
+        "summary": "- 給付率の差が制度の障壁となり、効果的な訓練への誘導を妨げているのではないか\n- 現状の課題を踏まえた前向きな検討を求める",
+        "full_text": "大臣と指定するので給付率50%だから、フォークリフトいらなくてもこっち受けたらいいよみたいな、そういうことを運用としてしているそうなんです。これって極めてもったいないですし、この制度が障壁となって誰も得しない仕組みになっているような気がするんですが、ぜひこの今の私の課題感も含めて前向きにぜひご検討いただきたいんですが、最後改めていかがでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "政府参考人",
+        "role": "",
+        "summary": "- 給付率の差は受講者の選択に影響するが、キャリアコンサルティングを通じて効果的な訓練へ誘導している\n- 労働者の主体的なキャリア形成を支援するため、特定一般教育訓練の指定などの検討を深めていく",
+        "full_text": "先生、ご指摘の部分につきまして、特定一般の場合は就職の実績、過去3年分を見まして、過去3年からいずれかの年度に、その3つの要件を満たしているかどうかというのを見るものでございます。受講者から見ますと、やはり給付率というのは結構大きいございまして、2割補助が出るのか最大5割出るのかということですので、おそらく受講者の選択としては5割の方を選ぶというのが通常でございまして、確かにキャリアコンサルティングが必要になっているということがあるかもしれませんが、もともと雇用保険の趣旨は雇用の安定と就職の促進というものでございますので、そういった観点からキャリアコンサルティングをしてより効果の高い訓練の方に誘導しているものでございます。いずれにいたしましても、労働者の速やかな再就職及び早期のキャリア形成に十分な効果があると認められる講座については、特定一般教育訓練として指定し、効率給付の対象となることにより、労働者の主体的なキャリア形成をしっかり支援してまいりたいと考えておりますので、委員のご指摘については、また検討を深めていきたいと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=7051.163",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "給付率の差による制度の弊害の改善検討",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "給付率50%"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "過去3年分"
+            },
+            {
+              "type": "number",
+              "excerpt": "2割補助"
+            },
+            {
+              "type": "number",
+              "excerpt": "最大5割"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "委員のご指摘については、また検討を深めていきたいと思っております",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "労働者の主体的なキャリア形成をしっかり支援してまいりたいと考えておりますので、委員のご指摘については、また検討を深めていきたいと思っております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "制度の運用上の課題に対する改善要望に対し、現状の仕組みを説明した上で検討を約束する標準的なやり取りである。",
+        "would_be_referenced": "low",
+        "issue_in_design": "具体的な事例（どの講座が障壁になっているか等）を提示して質問すれば、より具体的な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_028",
+      "segment_index": 6,
+      "topic": "ナフサ等の石油化学製品の供給状況と根拠",
+      "question": {
+        "speaker": "黒田征樹",
+        "party": "日本維新の会",
+        "summary": "- 日本全体で供給量は確保されているとされるが、客観的な根拠が乏しく現場に不安がある\n- 流通の目詰まりが生じた要因と、政府が供給確保と判断した具体的根拠を求める",
+        "full_text": "現時点で政府は日本全体で必要供給量は確保されているという発信がなされていますが、客観的な根拠が乏しく、現場では非常に不安が残っております。この目詰まりというのはなぜ生じたのか。川中の在庫出荷情報の把握の状況ですね。状況と政府の供給確保の根拠、これを具体的にまずお示しいただきたいというふうに思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "政府参考人",
+        "role": "",
+        "summary": "- 一部で流通の目詰まりが発生したが、関係者への情報共有や要請を通じて解消を図っている\n- 石油化学工業協会の統計データ（川中在庫量や出荷量の増加）に基づき、安定供給が可能であると判断している",
+        "full_text": "まず原油や石油製品については日本全体として必要となる量を確保できておりますけれども、一部で供給の偏りや目詰まり、流通の目詰まりが発生しているという状況でございます。その要因ですけれども、まず一つには一部、上流のメーカーなどが今後の原材料などの調達の見通しを保守的に見積もり、また供給量を閣僚級情報提供窓口のここに寄せられた情報を集約をしまして、目詰まりの箇所、これを各論として具体的に特定をしております。またその上で、当該サプライチェーンの関係者に対しまして、原料の供給見通し、これを共有したり、情報提供をしたりをしまして、さらには供給を実際に制限する前に、経産省に相談をするように要請をしたりですとか、また需要側にも業界団体を通じて前年同月比同量の購入を維持するように要請する。石油化学製品の国内の在庫量、また出荷量につきましては、産業界及び政府より統計情報を定期的に公表をしております。例えばですけれども、石油化学工業協会が公表した最新のデータによれば、例えば川中在庫と呼んでいるものにつきましては、今年3月末時点でポリプロピレンは約3.2ヶ月、ポリスチレンで言いますと約1.7ヶ月の川中在庫がある。また、出荷量で申しますと、こうした汎用樹脂につきましては、足元で増加をしている。こういうことが数値をもって公表されておりまして、既存の在庫も活用しながら、安定的に化学品を供給することが可能になっていること、また、その根拠も示しているというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=7051.163",
+      "metrics": null
+    },
+    {
+      "id": "qa_029",
+      "segment_index": 6,
+      "topic": "国内流通の可視化プラットフォームの構築",
+      "question": {
+        "speaker": "黒田征樹",
+        "party": "日本維新の会",
+        "summary": "- 供給不安によるパニックを防ぐため、個別企業の機微情報を除いた国内流通総量や需給状況を平時から可視化するプラットフォームの構築を検討すべきではないか",
+        "full_text": "ですから私が言いたいのは、そういう、この前の連合審査のときにも情報の開示みたいな話は出てましたけれども、個別企業の機微情報は対象外としたとしても、国内の流通の総量、需給の状況を定期的に平時から見える、そういうプラットフォームを構築する必要があるんじゃないかなと。それだけで、ここに経産省さんが出していただいた資料にある石油化学メーカー、商社以下の心理的な部分というのはかなり解消されると思いますけれども、その検討もしくは取組についてお聞かせをいただきたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "政府参考人",
+        "role": "",
+        "summary": "- 不安解消のため、ホームページでの業界団体データへのリンク提供やSNS、ブリーフィングによる情報発信に努めている\n- 引き続きさらなる情報発信に努めていく",
+        "full_text": "一部繰り返しになりまして恐縮ですけれども、ご指摘いただいたような、各サプライチェーン上で皆様がなるべく不安にならないようにということで、根拠を持って全体必要量が足りているということをお示ししたいと。ホームページがございまして、このホームページから今申し上げた業界団体への数字が出ているところへのリンクを貼って、わかりやすくたどり着けるようにというふうに努めているところでございます。これに加えまして、こういうことで把握をした状況についてですね、SNSですとか毎日のブリーフィングで発信に努めているところでございますけれども、引き続き不安を解消すべく、さらなる情報発信に努めてまいりたいというふうに思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=7051.163",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "需給状況可視化プラットフォーム構築の検討状況",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "経産省さんが出していただいた資料にある石油化学メーカー、商社"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "石油化学メーカー、商社",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "ホームページ"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "SNS"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "さらなる情報発信に努めてまいりたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "引き続き不安を解消すべく、さらなる情報発信に努めてまいりたいというふうに思っております。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "プラットフォーム構築という具体的な提案に対し、既存のHPやSNSでの発信という一般論で回答しており、実質的な前進は見られない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「検討もしくは取組」という二択の問い方であるため、政府が「検討はしていないが既存の取組がある」と回答して逃げる余地を与えている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_030",
+      "segment_index": 6,
+      "topic": "国内流通の経済安全保障への位置付け",
+      "question": {
+        "speaker": "黒田征樹",
+        "party": "日本維新の会",
+        "summary": "- 調達（入り口）だけでなく、国内の流通についても経済安全保障の範囲に位置づけて取り組むべきではないか",
+        "full_text": "黒田征樹（日本維新の会）これは経済安全保障の観点で調達、いわゆる入り口を確保していくというのは当然大事でありますけれども、このような状況に陥るのであれば、国内の流通というものも経済安全保障、海底ケーブルとかにおいては役務もその範囲に含めていったということもありますので、そういう流通についても経済安全保障として位置づけていくことも必要じゃないかなというふうに考えますけれども、お考えを伺いたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "戸木審議官",
+        "role": "",
+        "summary": "- 重要物資のサプライチェーン強靭化は既に経済安全保障上の重要課題として位置づけている\n- サプライチェーン全体のリスク把握は重要だが、国内流通の全面的な可視化は脆弱性を露呈させる恐れがあり、さらなる検討が必要である",
+        "full_text": "内閣官房戸木審議官お尋ねの点でございますが、政府といたしましては、国民生活、経済活動を支える重要な物資に関するサプライチェーンの強靭化について、これまでも経済安全保障上の重要な課題として位置づけてきているところでございまして、サプライチェーン上のリスクの点検や重要物資の安定供給確保などに取り組んでまいったところでございます。また、重要物資の安定供給を図る上では、川上、川中、川下の各段階の物資を個別に捉えるのではなく、一連のサプライチェーンのリスクを把握した上で、適切な措置を講ずることが重要であるというところ、まさにご指摘のとおりであると認識をしているところでございます。なお、ご指摘の国内流通の全面的な可視化ということにつきましては、我が国のサプライチェーンの脆弱性を明らかにする恐れもあるといったことをどのように考えていくのかといったような課題などについて、さらなる検討が必要になっていくのではないかと考えているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5209"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=7051.163",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "国内流通を経済安保に位置づけるべきか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "海底ケーブルとかにおいては役務もその範囲に含めていった"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "さらなる検討が必要になっていくのではないかと考えている",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "国内流通の全面的な可視化ということにつきましては、我が国のサプライチェーンの脆弱性を明らかにする恐れもあるといったことをどのように考えていくのかといったような課題などについて、さらなる検討が必要になっていく",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "国内流通の経済安全保障への組み込みについて、政府が脆弱性の露呈という懸念から慎重な姿勢（検討が必要）を示した記録として価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「お考えを伺いたい」という抽象的な問い方であるため、具体的な制度設計や期限を伴う回答を引き出しにくい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_031",
+      "segment_index": 6,
+      "topic": "循環経済行動計画と投資目標",
+      "question": {
+        "speaker": "黒田征樹",
+        "party": "日本維新の会",
+        "summary": "- 循環経済行動計画における2030年度目標と、官民1兆円投資の関係について説明を求める",
+        "full_text": "現在政府として、日本の都市鉱山において使用済みの電子機器の中の金属資源が世界有数の規模であるということを踏まえまして、循環経済行動計画における2030年度目標と、官民1兆円投資の関係、これについてまずお聞かせいただきたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "成田審議官",
+        "role": "",
+        "summary": "- メタルリサイクル推進戦略により2030年に向けた再生材供給目標を策定している\n- 予算・金融面等の支援スキームを構築し、2030年までに官民で約1兆円の投資を目指している",
+        "full_text": "御指摘の循環経済行動計画でございますが、再生資源を供給するサプライチェーンの強靭化は、環境保全にとどまらない経済安全保障のための喫緊の課題であるとの認識のもと、本年4月に循環経済に関する関係閣僚会議において決定されたものでございます。鉄、アルミ、銅、永久磁石につきまして、メタルリサイクル推進戦略という形で取りまとめまして、2030年に向けて野心的な再生材供給目標を定めているところでございます。また、こうした目標の実現を含めまして、金属資源、プラスチックなどの再生資源供給サプライチェーンの強靭化に対する投資を促進するために、予算面、金融面等の多角的な支援スキームを構築し、2030年までに官民で約1兆円の投資を目指すこととしているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=7051.163",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "循環経済行動計画の目標と官民1兆円投資の関係",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "政府"
+            },
+            {
+              "type": "other",
+              "excerpt": "循環経済行動計画"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "循環経済に関する関係閣僚会議"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "メタルリサイクル推進戦略"
+            },
+            {
+              "type": "number",
+              "excerpt": "2030年"
+            },
+            {
+              "type": "number",
+              "excerpt": "約1兆円"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "2030年までに官民で約1兆円の投資を目指すこととしている",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "再生資源供給サプライチェーンの強靭化に対する投資を促進するために、2030年までに官民で約1兆円の投資を目指すこととしている。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "政府の計画における目標数値と投資規模の関係について、明確な回答が得られている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_032",
+      "segment_index": 6,
+      "topic": "障害者施設による小型家電リサイクルの位置付け",
+      "question": {
+        "speaker": "黒田征樹",
+        "party": "日本維新の会",
+        "summary": "- 正規ルート外で流出・廃棄されるレアメタルを回収するため、障害者施設による解体分別の取り組みを循環型社会形成の一翼として位置づけるべきではないか",
+        "full_text": "先日も述べさせていただきましたけれども、正規ルート以外のところで出ている焼却をして埋め立てをしたりとかですね、あとは海外に流出をしてしまっているという部分がかなり数字として大きいということも指摘をさせていただきました。要は一度日本に入ってきたこのレアメタルがまた海外に流出したり埋められたりをするということは、非常に日本の国益上損失になっているのではないかということで、今そこをいわゆる正規ルートで回っているところはそんなに問題ないと思っています。ただ漏れている以外のおよそ僕が把握している数字ですと7割ぐらいある中で、その7割をいかに拾っていくかという観点で、今実際に取り組んでおられる障害者施設において小型家電を解体分別をして国内循環をしていると、これが今日本中にネットワークを組んでまさに総量も頑張って上げていっていただいているというような現状がありますけれども、そういう活動というか、そういう取組の事例も含めて、こういう循環型社会形成に向けた一翼を担っていく、そういう位置づけも必要じゃないかなというふうに思いますけれども、そういった見解についてお聞かせいただきたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "成田審議官",
+        "role": "",
+        "summary": "- 環境福祉連携は持続可能な社会に重要であり、第6次環境基本計画の理念に包含されると考えている\n- 支援スキームの具体化において、障害者就労支援施設等でのビジネスモデル構築支援を検討する\n- 事例集で連携事例を紹介するなど、取り組みの横展開を図っている",
+        "full_text": "環境分野の課題と福祉分野の課題を同時に解決することを目的とする、いわゆる環境福祉連携につきましては、持続可能な社会を実現するために重要な考え方であると認識しているところでございます。御指摘の循環経済行動計画には、環境福祉連携についての直接的な言及はございませんが、政府全体の環境保全に関する基本方針を定める第6次環境基本計画におきましては、現在及び将来の国民一人一人のウェルビーイング、高い生活の質を目的に掲げるとともに、環境経済社会の統合的向上が理念として掲げられているところでございます。環境福祉連携の考え方もこれに包含されるものと考えているところでございます。循環経済行動計画に付けられました経済的支援スキームにつきましては、今後具体化を進めていくこととしておりますが、障害者就労支援施設等における循環型ビジネスのモデルの構築に向けた支援につきましても、検討の過程で何ができるか考えてまいりたいと考えているところでございます。また環境省におきましては、これは先週15日の党委員会でも御答弁申し上げたところでございますが、今年3月に公表いたしました小型家電リサイクル制度を活用した関係主体の連携事例集におきまして、障害者雇用施設との連携事例も紹介するなど、取組の横展開を図っているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=7051.163",
+      "metrics": null
+    },
+    {
+      "id": "qa_033",
+      "segment_index": 7,
+      "topic": "事業者団体からの要望内容",
+      "question": {
+        "speaker": "塩川鉄也",
+        "party": "日本共産党",
+        "summary": "- 個人情報保護法の見直しに際し、事業者8団体からどのような要望が出されたか",
+        "full_text": "個人情報保護委員会にお尋ねしますが、今回の見直しは23年11月頃から委員会において検討が始まりましたが、その過程で事業者団体から様々な要求が突きつけられたところであります。24年4月24日の委員会において、事業者8団体が合同で、個人情報保護法の3年後と見直しに対する意見という文書をヒアリングの資料として提出しております。8団体というのは、日本経済団体連合会、日本商工会議所、経済同友会、新経済連盟、日本IT団体連盟、フィンテック協会、シェアリングエコノミー協会、プライバシーテック協会であります。これはどのような要望が出されたのか、簡単で結構ですが、ご説明ください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "沢木事務局長",
+        "role": "",
+        "summary": "- 個人データ等の定義の整理明確化\n- 3年ごと見直しの機械的な実施の再検討\n- 漏洩報告等の負担軽減\n- 本人同意によらない第三者提供の在り方の検討\n- 課徴金制度および団体訴訟制度の導入への反対",
+        "full_text": "具体的な項目5つございまして、個人データ等の複数の定義の整理明確化。2つ目は法改正ある期で機械的に3年ごと見直しを行うことについての再検討。3つ目に漏洩等報告等の負担の軽減。4つ目に本人同意によらない方法での第三者提供等の在り方の検討。そして5つ目は課徴金制度及び団体訴訟制度の導入反対でございました。これらに加えまして、個人情報保護法の見直しに当たって広範なステークホルダーとの双方かつ丁寧なコミュニケーションを行うべき旨も併せて要望をいただいております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=8290.063",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "事業者8団体から出された要望内容の説明",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "24年4月24日"
+            },
+            {
+              "type": "organization",
+              "excerpt": "日本経済団体連合会、日本商工会議所、経済同友会、新経済連盟、日本IT団体連盟、フィンテック協会、シェアリングエコノミー協会、プライバシーテック協会"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "事業者8団体",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "個人データ等の複数の定義の整理明確化"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "3年ごと見直しを行うことについての再検討"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "漏洩等報告等の負担の軽減"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "本人同意によらない方法での第三者提供等の在り方の検討"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "課徴金制度及び団体訴訟制度の導入反対"
+            }
+          ],
+          "score": 0.9
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "具体的な項目5つございまして、個人データ等の複数の定義の整理明確化。…そして5つ目は課徴金制度及び団体訴訟制度の導入反対でございました。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "事業者団体から提出された具体的な要望内容を政府が公式に認めた記録であり、事実関係の整理として価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_034",
+      "segment_index": 7,
+      "topic": "第三者提供における本人同意の原則と特例",
+      "question": {
+        "speaker": "塩川鉄也",
+        "party": "日本共産党",
+        "summary": "- 第三者提供や要配慮個人情報の取得に本人同意を得ることは大原則ではないか",
+        "full_text": "重ねてお尋ねしますが、この事業者団体の意見、本人同意を要しない第三者提供、利活用に基づき、今回の法改正では、個人データの第三者提供及び公開されている要配慮個人情報の取得について、統計情報等の作成、AI開発を含むにのみ利用される場合は、本人同意を不要としたところです。しかしながら、個人情報保護において、第三者提供、目的を得るよう、要配慮個人情報の取得の際には、本人同意を得るというのは大原則ではありませんか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "沢木事務局長",
+        "role": "",
+        "summary": "- 本人同意を求める基本的な考え方に変更はない\n- ただし、統計作成等で個人との対応関係が排斥され、リスクに見合った技術が導入される場合は、権利利益を害する恐れが少ないため同意不要とする特例を提案している",
+        "full_text": "個人情報保護法では、個人データの第三者提供などの場合には、原則として本人同意を求めることとされておりまして、法案成立後におきましても、この基本的な考え方に変更はございません。他方、現行法におきましても、一定の公益性が認められる場合などには、その例外として同意が不要となるケースも定められております。一方で、現行法で定められておりますこれらの原則や例外につきましては、基本的に個人データを個人との対応関係を残しながら取り扱うことを前提として定めておられるところでございますが、本法案で提案する統計作成等の場合の特例につきましては、この前提とは異なりまして、個人との対応関係が残らない取扱いに着目し、そのリスクに見合った新たな技術を導入しようとするものでございます。すなわち統計作成等におきましては、大量のデータを個人との対応関係が排斥された形に加工する場合であって、かつそれ以外の目的で利用されないことや安全管理措置等が講じられることが担保されている場合であれば、個人の権利利益を害する恐れが少ないことから、第三者提供等の場合に本人同意を不要とするとということとして提案しているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5280"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=8290.063",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "個人情報保護における本人同意の原則性の確認",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "今回の法改正"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "事業者団体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.6
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "個人情報保護法"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "個人データの第三者提供などの場合には、原則として本人同意を求めることとされておりまして、法案成立後におきましても、この基本的な考え方に変更はございません。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "本人同意という大原則を確認し、法改正による特例がどのような論理（個人との対応関係の排斥）に基づいているかを明確に説明している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_035",
+      "segment_index": 7,
+      "topic": "AI開発用データの匿名化要件",
+      "question": {
+        "speaker": "塩川鉄也",
+        "party": "日本共産党",
+        "summary": "- AI開発のための学習用個人データは、提供時に匿名化されているのか",
+        "full_text": "お尋ねしますが、今回の法案においてAI開発のための学習用の個人データというのは、提供されるときに匿名化がされているものなんでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "沢木事務局長",
+        "role": "",
+        "summary": "- 提供に際して匿名化や特定項目の削除を要件とはしていない\n- 理由は、大量のデータから個人情報を抽出することが困難な場合や、提供元で必要項目を判断することが容易でない場合があるため\n- ただし、規則で不要なデータ項目を削除する措置を求めるほか、安全管理措置義務として不要な氏名等の削除を求めている",
+        "full_text": "AI開発等におきましては、大量の文章を学習する場合など、個人情報が氏名や住所などの項目ごとに整理されていなくて、個人情報を抽出することは困難な場合も想定されるわけでございます。また、大量のデータに含まれる個々の項目が、提供先が行おうとするAI開発等との関係で必要か否かについて、必ずしも提供元が判断することが容易でない場合も想定されるものでございますから、今回の特例におきましては、提供に際しては匿名化することや特定の項目を削除することを要件とはしてございません。もっとも、特例の対象となります統計作成等におきましては、法律上、改正法案上、個人の権利利益を害する恐れが少ないものとして規則で定めるものに限定しておりまして、その規則におきまして、提供先では不要なデータ項目を削除するというために必要かつ適切な措置を講ずることを要件として求めることとしてございます。また、提供先が漏えいした場合のリスクなどが大きい場合におきましては、そのリスクに応じて不要な氏名などを削除することが、もともと安全管理措置義務として求められておりますので、本特例におきましては、提供先においては氏名や詳細な住民の住所等の不要なデータがいたずらに保持されすぎることもなかろうかと思ってございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5280"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=8290.063",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "AI学習用個人データの匿名化要件の有無",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "今回の法案"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "安全管理措置義務"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "今回の特例におきましては、提供に際しては匿名化することや特定の項目を削除することを要件とはしてございません。",
+          "score": 0.9
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "法案における匿名化要件の有無について、政府が明確に「要件としていない」と回答しており、記録としての価値が高い。",
+        "would_be_referenced": "high",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_036",
+      "segment_index": 7,
+      "topic": "デジタル行政推進法における国の応答義務",
+      "question": {
+        "speaker": "塩川鉄也",
+        "party": "日本共産党",
+        "summary": "- 事業者が国にデータ提供を求め、国に回答義務を課している他の法律はあるか",
+        "full_text": "認定国等データ活用事業者は国の行政機関等に対し、自らが必要とするデータの提供を求めることができ、それに対し国は必ず回答しなければならないという応答義務が課されております。このような国等に応答義務を課している他の法律というのは、具体的にはどんなのがあるんでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "山添審議官",
+        "role": "",
+        "summary": "- 国家戦略特区法に同様の規定がある\n- 生産性向上特措法にもあったが、令和3年に廃止されている",
+        "full_text": "議員ご指摘のように、国から認定を受けた事業主体が国の行政機関等に対してデータの提供を求めることができ、当該求めに対する国の行政機関等の回答が規定されている法律といたしましては、国家戦略特区法があると承知してございます。この法律は、同法に基づく認定を受けた区域計画における事業の実施主体が、当該区域に関するデータの提供を求めることができると規定されていると承知してございます。また、このほか、生産性向上特措法にもこのような制度がございましたが、同法は令和3年に廃止されていると承知しております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5280"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=8290.063",
+      "metrics": null
+    },
+    {
+      "id": "qa_037",
+      "segment_index": 7,
+      "topic": "デジタル行政推進法の目的と個人情報提供",
+      "question": {
+        "speaker": "塩川鉄也",
+        "party": "日本共産党",
+        "summary": "- 国が保有する個人情報の提供を念頭に置いたスキームであり、他にならぬ理由でここまで行うのはなぜか",
+        "full_text": "そして法案では、国のデータに個人情報が含まれるときは個人情報保護委員会と協議しなければならないとあります。ですから、国が保有する個人情報の提供を念頭に置いている、こういう取組スキームのものということでよろしいでしょうか。そこまでやるというのは、他にはほとんど例がないということでもありますので、何でそこまでやるのかということについてご説明いただけますか。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "山添審議官",
+        "role": "",
+        "summary": "- データ利活用を推進する観点から前例を踏まえ制度化した\n- ただし、個人情報保護法等の他法令に違反する場合や公益を害する恐れがある場合は提供しないこととしている",
+        "full_text": "お答え申し上げます。データ利活用を推進するという観点から、このような制度、前例も見ながら作ったところでございますが、先ほど必ずという委員のご指摘がございましたが、答弁でも申し上げましたように、個人情報保護法を含めました他法令に違反する場合、あるいはその他公益を害する恐れがある場合等々には提供しないということとしてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5280"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=8290.063",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "個人情報提供スキームの意図と必要性の説明",
+          "sub_asks": [
+            "個人情報の提供を念頭に置いたスキームであるかの確認",
+            "前例が少ない中でそこまで行う理由の説明"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "法案では、国のデータに個人情報が含まれるときは個人情報保護委員会と協議しなければならない"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "個人情報保護委員会",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "個人情報保護法"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "個人情報保護法を含めました他法令に違反する場合、あるいはその他公益を害する恐れがある場合等々には提供しない",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は制度の必要性と意図を問うているが、回答者は提供しない条件（除外規定）の説明に終始しており、核心的な理由への回答になっていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「何でそこまでやるのか」という理由を問う部分を、より具体的に（例：どのような便益があるのか等）切り分けて質問すべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_038",
+      "segment_index": 7,
+      "topic": "地方公共団体へのデータ提供要請",
+      "question": {
+        "speaker": "塩川鉄也",
+        "party": "日本共産党",
+        "summary": "- 事業者は地方自治体に対しても個人情報を含むデータの提供を求めることができるか、また何を想定しているか",
+        "full_text": "重ねて内閣官房にお尋ねしますが、この事業者は地方自治体に対しても個人情報を含むデータの提供を求めることができるんでしょうか。これは具体的に自治体にどういうことを求めていくということを想定しているものなんでしょうか。自治体が保有する膨大な個人情報も視野に入れている、そういう取組と考えてよろしいでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "山添審議官",
+        "role": "",
+        "summary": "- 必要と認められるときは、地方公共団体等に対しデータの提供を含め必要な協力を求めることができる\n- 実際に提供するか否かは、当該地方公共団体が総合的に判断する",
+        "full_text": "改正法案におきましては、認定された国等データ活用事業の実施に関しまして必要があると認められるときには、活用事業者は地方公共団体等の庁に対し、当該地方公共団体等の保有するデータの提供を含め必要な協力を求めることができるとされております。重ねてで恐縮でございますが、当該地方公共団体等の保有するデータの提供を含め必要な協力ということです。地方公共団体がそのような求めを受けた場合におきましては、データを実際に提供するか否かについては、当該地方公共団体において、総合的に判断されるというふうに承知してございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5280"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=8290.063",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "事業者の自治体へのデータ提供請求の可否と想定",
+          "sub_asks": [
+            "地方自治体に対しても個人情報を含むデータの提供を求めることができるか",
+            "具体的に自治体にどういうことを求めていく想定か",
+            "自治体が保有する膨大な個人情報も視野に入れているか"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "地方自治体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "改正法案"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "認定された国等データ活用事業"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "データを実際に提供するか否かについては、当該地方公共団体において、総合的に判断されるというふうに承知してございます。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "法案に基づくデータ提供請求の仕組みと、自治体側の判断権限について明確に回答されており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "3つの問いを一度に投げているため、回答が包括的になり個別の詳細（具体的に何を求めるか）への言及が薄くなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_039",
+      "segment_index": 7,
+      "topic": "課徴金制度の対象範囲（安全管理措置義務違反）",
+      "question": {
+        "speaker": "塩川鉄也",
+        "party": "日本共産党",
+        "summary": "- 検討会報告書では安全管理措置義務違反も課徴金対象となっていたが、なぜ法案では除外されたのか",
+        "full_text": "個人情報保護委員会にお尋ねしますが、この検討会報告書では、課徴金納付命令の対象となる違反行為の範囲について、第三者提供規制等違反だけでなく、安全管理措置義務違反も対象となっていたのではありませんか。検討会報告では、第三者提供規制度違反だけじゃなくて、安全管理措置義務違反も対象だったのに、何で安全管理措置義務違反は落ちてしまったんでしょうか。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "沢木事務局長",
+        "role": "",
+        "summary": "- 迅速機動的な対応を確保するため、勧告命令の実績がある重要な規律（第三者提供違反等）を優先した\n- 安全管理措置義務違反は、積極的な行為がなくても違反となる可能性があり予見可能性の確保が必要な点や、算定方法に課題があるため慎重な検討が必要と判断し、今回は対象外とした",
+        "full_text": "今回導入する課徴金制度におきましては、違反行為の抑止の必要性がより高い事案に対しまして、迅速機動的な対応を確保する観点から、現行法上の命令の対象となっている重要な規律に違反する行為類型のうち、個人情報保護委員会において、勧告命令の実績のある規律の違反行為類型を対象とするという整理を最終的に行いました。議員ご指摘の第三者提供違反でございますとか、今回導入する統計等作成等特例の義務違反などについて想定してございます。一方、議論になっております安全管理措置義務違反につきましては、検討しました結果、これらの不正取得あるいは第三者提供違反のような積極的な行為がなくても違反する可能性があるため、事業者の予見可能性を十分に確保するべくより慎重な検討が必要であること、そして安全管理措置を怠ったことにより削減したコスト、これは課徴金の算定基礎になるわけでございますが、その具体的な額の算定方法についてより慎重な検討が必要であることなどの課題があると認識に至ったために対象外とすることとしたわけでございますが、引き続き我々の措置命令その他の執行を続けていく中で、その状況を見ながら課徴金制度の対象の範囲につきましては、当然ながら今後の検討を深めていく所存でございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=8290.063",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "安全管理措置義務違反が課徴金対象から外れた理由",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "この検討会報告書"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "第三者提供違反"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "統計等作成等特例の義務違反"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "安全管理措置義務違反"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "今後の検討を深めていく所存でございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "事業者の予見可能性を十分に確保するべくより慎重な検討が必要であること、そして安全管理措置を怠ったことにより削減したコストの具体的な額の算定方法についてより慎重な検討が必要であることなどの課題があると認識に至った",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "課徴金制度の対象範囲から安全管理措置義務違反を除外した具体的理由（予見可能性と算定方法の困難さ）が明確に回答されており、記録としての価値が高い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_040",
+      "segment_index": 7,
+      "topic": "団体訴訟制度の導入見送り",
+      "question": {
+        "speaker": "塩川鉄也",
+        "party": "日本共産党",
+        "summary": "- 団体訴訟制度の導入はどうなったのか",
+        "full_text": "あと団体訴訟についてはどうなったんでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "沢木事務局長",
+        "role": "",
+        "summary": "- 適格消費者団体による利益擁護の範囲（消費者か個人か）の法制的な整理が必要な点や、実務上の事実関係把握が困難であるという意見を踏まえ、導入は見送った\n- 代わりに消費者団体との連携強化や相談窓口の活用、監視監督の行使で権利救済に対応する",
+        "full_text": "個人情報保護委員会におきましては、既存の適格消費者団体の活用を念頭に団体訴訟の導入を検討してまいりました。検討の結果、個人情報保護法は個人の権利利益を保護するものである一方で、既存の適格消費者団体が利益を擁護するのは消費者でございまして、団体訴訟制度の対象となり得る違法な個人情報の取扱いの範囲につきまして、引き続き法制的な整理が必要であること、それから消費者団体などからは、個人情報の取扱いの対応などが、消費者契約その他を扱う消費者問題との比較におきまして、外部から明らかではないため、事実関係の把握が容易でない場合も多いといった、実務上の課題に対処する必要性を指摘する意見もございました。これらを踏まえまして、団体訴訟制度の導入について、では見送ることといたしましたが、個人の権利利益の保護を図る上では、委員会におきまして、消費者団体などとの連携の強化、それから一般の個人からの相談を受け付ける窓口の活用の促進、そして適正な監視監督の行使ということを通じまして、権利利益の救済には抜かりなく対応する所存でございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=8290.063",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "団体訴訟の導入状況について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "適格消費者団体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "個人情報保護委員会"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "適格消費者団体"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "個人情報保護法"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "権利利益の救済には抜かりなく対応する所存でございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "団体訴訟制度の導入について、では見送ることといたしましたが、個人の権利利益の保護を図る上では、委員会におきまして、消費者団体などとの連携の強化（中略）を通じて、権利利益の救済には抜かりなく対応する所存でございます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "団体訴訟の導入を見送ったという明確な結論と、その理由（法制的な整理の必要性と実務上の課題）が述べられており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が非常に簡潔であるため、どのような文脈での団体訴訟を想定しているかが不明確である。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_041",
+      "segment_index": 7,
+      "topic": "事業者団体の要望による個人情報保護の後退",
+      "question": {
+        "speaker": "塩川鉄也",
+        "party": "日本共産党",
+        "summary": "- 課徴金や団体訴訟の導入見送りなど、財界の要求によって個人情報保護の取り組みが後退しているのではないか",
+        "full_text": "つらつら法案の議論をしてまいりましたけれども、このように当初の検討状況から個人情報保護の取組については残念ながら後退していると言わざるを得ません。そういった事業者団体の課徴金及び団体訴訟制度の導入に強く反対という要求に沿ったものとなっております。それを業界団体、財界の要求によって曲げられているのではないのか。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "松本大臣",
+        "role": "",
+        "summary": "- 法案審議にあたり、個人情報保護が十分かどうかについて様々な意見を伺っている",
+        "full_text": "この法案の審議に当たっては、個人情報保護が十分かどうかというようなことを、再三にわたっていろいろなところから御意見を伺っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=8290.063",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "業界団体の要求で個人情報保護策が後退したか",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "事業者団体、財界",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.25
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.2
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": null,
+          "score": 0.0
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "業界団体の影響で法案内容が後退したかという問いに対し、意見を聴取したという事実のみを述べており、回答を回避している。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「曲げられているのではないか」という問い方ではなく、具体的にどの団体のどの要求がどう反映されたかを問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_042",
+      "segment_index": 8,
+      "topic": "補正予算の編成プロセス",
+      "question": {
+        "speaker": "後藤祐一",
+        "party": "中道改革連合・無所属",
+        "summary": "- 通常の補正予算編成は与党でのまとめと閣議決定を経て指示が出るが、今回はなぜその過程をたどらなかったのか\n- ガソリン・電気ガス代の引き下げに限定したかったためか",
+        "full_text": "補正予算の編成指示が総理から出されましたけれども、これまで補正予算というのは、まず経済対策を与党でまとめるなどして、それを閣議決定して、それで補正予算の編成の指示があってという順番をたどるんですが、通常は。今回なぜこの過程をたどらなかったのでしょうか。本予算成立してまだ1ヶ月半ぐらいしか経っていなくて、あれもこれも盛り込む本予算じゃなくて、今回はガソリンなど燃料価格、あるいは電気ガス代の引き下げ、これに限定したかったからでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 中東情勢への対応として国民生活と経済活動を守るため、与党からの柔軟な対応という提言に基づき、タイムリーに対応する必要があったため",
+        "full_text": "木原稔中東情勢というものが発生し、その対応について国民の皆様の生活と経済活動を守り抜くという観点から、燃料価格の下限緩和措置など様々な支援策を講じているところでありますが、今回そういった中において、与党から提言をいただきました。与党からは引き続き中東情勢、価格動向、支援策の持続可能性を勘案しつつ、政府として柔軟に対応すべきとの提言でございました。そういった観点から、経済活動や国民の皆様の暮らしに支障が生じないよう適切に判断し、必要に応じてタイムリーに対応するという観点から、今回の状況になったと、総理からの指示だというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=9651.363000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "補正予算編成プロセスの異例さの理由",
+          "sub_asks": [
+            "なぜ通常の閣議決定後の指示という過程をたどらなかったのか",
+            "燃料価格等の引き下げに限定したかったためか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "本予算成立してまだ1ヶ月半ぐらいしか経っていなくて"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": true,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "中東情勢"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "燃料価格の下限緩和措置"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "中東情勢というものが発生し、その対応について国民の皆様の生活と経済活動を守り抜くという観点から、燃料価格の下限緩和措置など様々な支援策を講じている",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "予算編成プロセスの異例性という具体的な問いに対し、中東情勢という外部要因を挙げて説明しているが、手続き上の正当性や理由への直接的な回答は不十分である。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「限定したかったからか」という誘導的な二択形式ではなく、手続きの変更点について具体的に問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_043",
+      "segment_index": 8,
+      "topic": "補正予算の財政法適合性と予見可能性",
+      "question": {
+        "speaker": "後藤祐一",
+        "party": "中道改革連合・無所属",
+        "summary": "- 本予算の編成替え要求で既に出ている内容であり、財政法29条の「予算作成後に生じた事情」に当たらないのではないか\n- 本予算審議の段階で予見可能だったのではないか",
+        "full_text": "後藤祐一タイムリーに対応するのであれば、配布資料1ページ目、2ページ目、これが本予算の予算委員会での質疑に際しての編成替えを求める中道改革連合からの同意です。これは私、同意の提出者ですけれども、ガソリン等燃料価格の引き下げと電気ガス料金の引き下げ、農業なんかも含めてですけれども、もう本予算の編成替え要求で既に出ているわけで、しかもガソリンをどの程度下げるかとかこういったことはもう額もかなり予想ができるわけで、本予算の段階で予想できたという意味においては全然タイムリーじゃないですよ。それで資料3ページ目財政法ですけれども、財政法29条では補正予算というのは、これは予算作成後に生じた事情に基づき、特に必要となった経費の支出について作成できるとされていて、これは本予算作成前に既にこの事情は生じていますよ。ガソリン、電気ガスは。これ本予算の審議の段階で予見可能だったんじゃないですか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- 中東情勢が経済に与える影響は予算作成時点では予断をもって判断することが困難であり、影響を見極めて編成したため、財政法29条の観点から問題ない",
+        "full_text": "木原稔今回の補正予算の指示でありますが、御指摘のとおり、これまでも補正予算というのは、財政法第29条の規定に則り、予算作成後に生じた事情に基づき、特に必要となった経費の支出に充てるために編成をしてまいりました。その上で、今般の中東情勢が経済に与える影響については、予算の作成時点において予断をもって判断することが困難な状況であったところであり、その影響を見極めて経済活動や国民生活の皆様の暮らしに支障が生じないように必要に応じて補正予算を編成することになったことであり、今回は財政法の29条の観点から言うと問題ないものと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=9651.363000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "本予算段階で予見可能だったか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "中道改革連合"
+            },
+            {
+              "type": "law",
+              "excerpt": "財政法29条"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "evidence_citation",
+              "excerpt": "財政法第29条"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "今般の中東情勢が経済に与える影響については、予算の作成時点において予断をもって判断することが困難な状況であった",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "補正予算の編成根拠（財政法29条）に関する解釈を問う質疑であり、大臣が政府としての判断を明確に回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_044",
+      "segment_index": 8,
+      "topic": "予備費の活用と財政民主主義",
+      "question": {
+        "speaker": "後藤祐一",
+        "party": "中道改革連合・無所属",
+        "summary": "- 予見可能な燃料・電気ガス代の引き下げに、予見しがたい不足に充てるべき予備費（名前付き予備費含む）を充てることはできないのではないか\n- このような予算運用は財政民主主義の観点から問題があるのではないか",
+        "full_text": "ここは予算委員会で引き続きやりたいと思いますが、一部の噂として、予備費だけみたいな補正予算の可能性もちらちら聞こえます。今日財務省の三田園政務官をお越しいただいておりますけれども、この同じ資料3ページ目に、財政法24条で予備費については、予見しがたい予算の不足に充てるためということになっているわけですけれども、仮にこの補正予算が予備費だけ、あるいは何か名前のついた予備費、例えば中東情勢対策等予備費みたいな、コロナのときありましたよね。そういった名前付き予備費といったものを、例えば燃料価格だとか電気ガス代の引き下げに充てるというのは、もうこれ今申し上げたように予見可能ですから。この燃料油と電気ガス代は、予備費使えないんじゃないですか。補正予算に予備費だけ、予備費で何でも使えます。財政民主主義としてどう考えているんですか、官房長官。官房長官、この財政民主主義との関係、どう考えていますか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "木原稔",
+        "role": "",
+        "summary": "- リスク最小化の観点から資金面の手当を検討中であり、現在のプロセスに則って行っているため、財政民主主義の観点からも問題ない",
+        "full_text": "政府としましては、これは総理も発言がありましたが、リスクの最小化という観点から万全の備えをとるべく、補正予算の編成を含めて資金面の手当を検討することとしておるわけですが、現在総理からの指示を受け、先ほど財務省政務官から発言がありましたように、今財務省の中で検討を行っている段階であり、私の方からその中身についてはいろいろなことを申し上げることは控えますが、財政民主主義という観点から、今こういうプロセスに則ってやっているということで問題はないというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=9651.363000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "燃料・光熱費対策に予備費を充てることの是非",
+          "sub_asks": [
+            "燃料・電気ガス代に予備費は使えないのではないか",
+            "財政民主主義の観点からどう考えているか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "財政法24条"
+            },
+            {
+              "type": "other",
+              "excerpt": "資料3ページ目"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "補正予算の編成を含めて資金面の手当を検討することとしておる",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "財政民主主義という観点から、今こういうプロセスに則ってやっているということで問題はないというふうに考えております。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "予備費の適法性と財政民主主義に関する問いに対し、官房長官は具体的な法的判断を避け、プロセスに問題ないとする抽象的な回答に留まった。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「予備費は使えないのではないか」という点について、財務省の担当者に直接法的見解を求める構成にすれば、より具体的な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_045",
+      "segment_index": 8,
+      "topic": "塗料シンナーの供給状況",
+      "question": {
+        "speaker": "後藤祐一",
+        "party": "中道改革連合・無所属",
+        "summary": "- シンナーの川上段階での生産量および川中（卸・小売）での販売量、過剰在庫の状況はどうなっているか",
+        "full_text": "なので、総量は足りているからそれでいいという話はないですよね、ということを今日は議論をしたいと思いますが、まず赤澤大臣に確認しますが、シンナーについてです。その4ページ目の資料の、シンナーは石油化学メーカー、その原料を商社が買って、商社がシンナーメーカーに行って、この辺りが川上ですよね。この出来上がったシンナーを卸しだとか、小売りだとかというところに、この辺が川中ですよね、ということですが、この川上段階での生産量は、対前年同月でどうなっているんでしょうか。また、川中卸、あるいは小売の置かない前の段階での販売量は、対前年同月でどうなっているんでしょうか。また、過剰在庫というのはないんでしょうか。この川上、川中での状況について御説明ください。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "赤澤亮正",
+        "role": "",
+        "summary": "- 生産量は前年同月比113%と把握している\n- 卸の量や過剰在庫については、サプライチェーンが多岐にわたり統計がないため把握できていない",
+        "full_text": "それでですね、シンナーについてでありますが、まず私どもでわかっていることで言うと、生産量について言いますと、33,700トンといったことで、前年同月比で言うと、113%の生産は行われているということを数字として把握をしております。卸の量とか過剰在庫の点については、これは残念ながら、他のものについてもそうなんですが、サプライチェーンが多岐にわたり、関連する統計がございませんので、なかなか把握ができないところがございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=9651.363000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "シンナーの川上・川中における需給状況の確認",
+          "sub_asks": [
+            "川上段階での生産量の前年同月比",
+            "川中段階での販売量の前年同月比",
+            "過剰在庫の有無"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "4ページ目の資料"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "シンナーメーカー、商社、卸、小売",
+          "concreteness": "mid",
+          "score": 0.6
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "33,700トン"
+            },
+            {
+              "type": "number",
+              "excerpt": "113%"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "minister",
+          "score": 0.6
+        },
+        "oc3_quotability": {
+          "quote_candidate": "生産量について言いますと、33,700トンといったことで、前年同月比で言うと、113%の生産は行われている",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "生産量という具体的な数字を提示した一方で、流通段階の把握が困難であるという政府の限界（不確実性）が明確になったやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が複数の項目に分かれているため、回答者が一部の項目（在庫等）を切り捨てやすい構造になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_046",
+      "segment_index": 8,
+      "topic": "建築資材（コーキング材・塩ビ管）の供給状況",
+      "question": {
+        "speaker": "後藤祐一",
+        "party": "中道改革連合・無所属",
+        "summary": "- コーキング材と塩ビ管のメーカー段階での生産量、卸段階での販売量、および過剰在庫の状況はどうなっているか",
+        "full_text": "一つ一つ聞いていきたいと思いますが、次のページ5ページ目、建築資材について伺いたいと思いますが、特にコーキング材と塩ビ管、これが非常に現場逼迫しているという状況でございますが、これも同じように業者によってかなり差があるようでございまして、先ほどシンナーについては、川中の状況を把握できていないということでしたが、このコーキング材と塩ビ管について、メーカー段階での同じように生産量がどうなっているか、その卸の段階での販売量、あるいは過剰在庫どうなっているか、お答えください。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "赤澤亮正",
+        "role": "",
+        "summary": "- コーキング材の全体生産量は前年同月比96.7%だが、戸建て用は109%である\n- 塩ビ管の生産量は前年同月比115%である\n- 卸の販売量や過剰在庫については統計がなく答えられない",
+        "full_text": "はい、御指摘のコーキング材でございますが、これについてはですね、生産量は1万7000、単位をすれば600キロリットルということでありますが、戸建て用とちょっと分けて議論した方がいいようでありますので、委員にはそういうふうに分けてお話しますが、生産量全体は前年同月比で96.7%となっておりますが、戸建て量についてはですね、0.5万キロリットル生産されていて、前年同月比で109%ということのようであります。そういう意味で、コーキング材についても、川上の方もどこに需要が集中するか考えて、多少前年同月比と比べて全体では生産量減っているんだけど、戸建は増やしているというようなことは、どうも民間の判断でやっているようでございます。先ほど申し上げたつもりだったんですが、シンナー以外についてもサプライチェーンが多岐にわたり関連する統計がないので、卸の販売量とか、卸が過剰在庫を抱えているかについては申し訳ございませんが、ちょっとお答えできないところでございます。塩ビ管については、生産量は17,700トンと理解をしておりまして、前年同月比でいうと115%の生産になっています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=9651.363000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "コーキング材と塩ビ管の生産量・販売量・在庫状況",
+          "sub_asks": [
+            "コーキング材のメーカー生産量",
+            "コーキング材の卸販売量・過剰在庫状況",
+            "塩ビ管のメーカー生産量",
+            "塩ビ管の卸販売量・過剰在庫状況"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "5ページ目"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.2
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.6
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "生産量全体は前年同月比で96.7%"
+            },
+            {
+              "type": "number",
+              "excerpt": "戸建て量についてはですね、0.5万キロリットル生産されていて、前年同月比で109%"
+            },
+            {
+              "type": "number",
+              "excerpt": "塩ビ管については、生産量は17,700トンと理解をしておりまして、前年同月比でいうと115%"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.6
+        },
+        "oc3_quotability": {
+          "quote_candidate": "塩ビ管については、生産量は17,700トンと理解をしておりまして、前年同月比でいうと115%の生産になっています。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な生産統計数値が提示されており、記録としての価値が高い。一方で卸段階の在庫状況については把握していないことが明確になった。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "複数の資材について生産量と在庫量の両方を一度に問うているため、回答が分散しやすい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_047",
+      "segment_index": 8,
+      "topic": "潤滑油・アドブルーの供給状況",
+      "question": {
+        "speaker": "後藤祐一",
+        "party": "中道改革連合・無所属",
+        "summary": "- 潤滑油およびアドブルーのメーカー生産量、川中での販売量、過剰在庫の状況はどうなっているか",
+        "full_text": "6ページ目が、潤滑油、特にディーゼルエンジンのディーゼルオイル、これがとっても足りないと聞いています。もちろん工作機械向けの機械油なんかも足りないと伺っておりますが、あとはディーゼル車のNOx対策として必要な7ページ目ですけど、日本素水、アドブルーという商品名で流通している場合が多いようですが、この潤滑油、アドブルーについては、メーカーでの生産量、あるいはその先の川中での販売量、過剰在庫の状況はいかがでしょうか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "赤澤亮正",
+        "role": "",
+        "summary": "- 潤滑油の生産量は前年同月比99%だが、輸入量は144%に増えている\n- アドブルーの生産量は前年同月比109%で増やしている",
+        "full_text": "まず、潤滑油について申し上げると、前年同月比で生産は99%となり、1%も減っております。ただ、これも業界がいろいろ考えている、やっているようで、輸入量について言うと、前年同月比144%に増えているということがあります。それから、御指摘のアドブルーですが、これちょっと数字については出さないでくれという会社からの要請があったようでありますので、前年同月比だけ申し上げますが、109%ということで生産を増やしているということを情報として我々入手をしております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=9651.363000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "潤滑油およびアドブルーの需給・在庫状況について",
+          "sub_asks": [
+            "潤滑油の生産量・販売量・在庫状況",
+            "アドブルーの生産量・販売量・在庫状況"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "6ページ目"
+            },
+            {
+              "type": "other",
+              "excerpt": "7ページ目"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "生産は99%"
+            },
+            {
+              "type": "number",
+              "excerpt": "輸入量について言うと、前年同月比144%"
+            },
+            {
+              "type": "number",
+              "excerpt": "109%ということで生産を増やしている"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "アドブルーですが、前年同月比109%ということで生産を増やしているということを情報として我々入手をしております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "潤滑油とアドブルーの生産・輸入状況について具体的な数値が示されており、事実関係の記録として価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "在庫状況についての問いに対し、生産・輸入量のみの回答となっており、在庫への言及が漏れている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_048",
+      "segment_index": 8,
+      "topic": "物資不足の現場認識と原因",
+      "question": {
+        "speaker": "後藤祐一",
+        "party": "中道改革連合・無所属",
+        "summary": "- シンナー、コーキング材、塩ビ管、潤滑油、アドブルー等の川下（現場）での不足状況をどう認識しているか\n- 過剰発注が原因であるという状況についてどう考えるか",
+        "full_text": "こういった業界でのシンナー、コーキング材、塩ビ管、潤滑油、アドブルー、現場ベース、つまり川下ではどのような不足状況だと認識しているでしょうか。そしてこれらの原因として過剰発注の問題もあると言われます。念のためたくさん取っておくかということで。平時に比べるとたくさん逆に買ってしまっている業者もおられると思いますが、その状況について、国交省からご説明ください。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "金子国土交通大臣",
+        "role": "",
+        "summary": "- 日本全体では必要量は確保されているが、一部で供給不安の声があり、供給の偏りや流通の目詰まりを解消することが重要と認識している\n- 相談窓口の設置や地方機関との連携により、供給の安定化に取り組んでいる",
+        "full_text": "今ほどご指摘をいただきました、自動車整備関係のシンナー、建築・管工事関係のシンナー、コーキング材、塩ビ管、トラック関係の潤滑油、アドブルーといった物資についてはいずれも日本全体としてみたら必要な量は確保されているというものと承知をしております。一方で一部の事業者の方々から供給不安の声が寄せられており、供給の偏りや流通の目詰まりを解消することが重要であるというふうに認識をしております。国土交通省では業界団体等を通じた聞き取りやホームページに相談窓口を設けるなどの対応に加え、産業局や地方整備局、地方運輸局などの地方機関の連携を含め、プッシュ型で丁寧に供給状況を把握するなど、所管の業界等における仕入れ状況や価格高騰の状況把握を積極的に行っております。その上で、関係省庁との連携協力により、供給の偏りや流通の目詰まり解消事例などの情報提供、供給の各段階における個別の調整、工事の施工予定に見合った適切な調達の呼びかけといった取組を通じて供給の安定化に取り組んでおります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=9651.363000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "特定資材の不足状況と過剰発注の現状について",
+          "sub_asks": [
+            "川下における資材の不足状況の認識",
+            "過剰発注による状況について"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "シンナー、コーキング材、塩ビ管、潤滑油、アドブルー、現場ベース"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "産業局"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "地方整備局"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "地方運輸局"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "供給の安定化に取り組んでおります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "日本全体としてみたら必要な量は確保されているというものと承知をしております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "資材不足の現状について政府の認識（全体では確保されているが偏りがある）が明確に示されており、一定の記録価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "過剰発注の有無という具体的な問いに対し、回答が「供給の安定化への取り組み」という一般論に終始している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_049",
+      "segment_index": 8,
+      "topic": "農業資材の供給状況",
+      "question": {
+        "speaker": "後藤祐一",
+        "party": "中道改革連合・無所属",
+        "summary": "- 農業現場におけるマルチや肥料の不足状況、および過剰発注の発生状況はどうなっているか",
+        "full_text": "根本副大臣、農業においてもマルチが足りないですとか、肥料はそこまでまだ爆発していないという声もありますが、全世界的に言うと肥料が一番やばいんじゃないかという説もあって。価格の問題も含めて農業の現場からこれが足りない、あるいは逆に過剰発注が発生しちゃっている。どうですか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "根本農林水産副大臣",
+        "role": "",
+        "summary": "- 農業用マルチについて製造事業者にヒアリングしたところ、当面はおおむね前年実績の供給が可能であると確認した\n- 前年実績を超える発注があるとの情報を得たため、受発注の平準化を要請している",
+        "full_text": "今、農業用資材、さらに肥料等々のお話がありましたが、農業資材でいきますと、農業用マルチ、これは先生、ご案内のとおり、野菜等の安定生産に欠かせない農業資材でありますけれども、この野菜マルチの供給懸念の声を受けまして、農林水産省においても、製造事業者の皆さんからヒアリングをさせていただきました。製造の原料の供給状況等を直接聞いたところ、当面おおむね前年実績の供給が可能であると、こういった声を確認したところであります。その際、前年実績を超える発注等があるよと、こういう情報もいただいたところであります。そういったことを受けまして、製造流通業者に対して、調達指標があった際には関係者と協議してください、さらには農水省へ相談してください、さらには受発注の平準化、これもしっかりやってくださいということを4月24日付で要請をそれぞれの生産者に行ったところであります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=9651.363000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "農業資材（マルチ・肥料）の供給状況について",
+          "sub_asks": [
+            "肥料の世界的不足の懸念について",
+            "現場での資材不足や過剰発注の有無について"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "農業の現場",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.6
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "deadline",
+              "excerpt": "4月24日付"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "vice_minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "製造流通業者に対して、受発注の平準化、これもしっかりやってくださいということを4月24日付で要請をそれぞれの生産者に行ったところであります。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は漠然としているが、回答側でマルチの供給状況に関するヒアリング結果と、業者への要請という具体的な行政対応を提示している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どうですか」というオープンクエスチョンであるため、回答者が都合の良い範囲で答えることが可能になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_050",
+      "segment_index": 8,
+      "topic": "川中事業者の在庫把握と制度改革",
+      "question": {
+        "speaker": "後藤祐一",
+        "party": "中道改革連合・無所属",
+        "summary": "- 卸段階での買い占めやため込みを把握できないと、国民生活安定緊急措置法などの発動判断ができないのではないか\n- 川中事業者を調査できる権限や立入検査権限などの制度改正が必要ではないか",
+        "full_text": "あるいは対前年比、少しむしろ増えていますといっても、まあ、過剰発注したり、どこかが貯めたりすれば足りなくなっちゃうわけですから、特にその卸し段階で貯めてる人がいるかどうかって極めて問題だと思うんですよね。ところが先ほどに把握できないとおっしゃっていましたが、やはりこの川中卸に対しては、どのぐらいため込んでいるか、あるいは出荷しているかというのが把握できないとすると、例えば国民生活安定緊急措置法や、買い占め売料収入法を発動するかしないかという判断ができないじゃないですか。場合によっては制度改正して、川中事業者を中心にどうなっているかということを調査できる権限、場合によっては立入検査まで含めてですね、そういう権限が必要じゃないですか。どうやって把握するつもりですか。制度改革について。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "赤澤亮正",
+        "role": "",
+        "summary": "- 情報提供窓口を通じて端緒をつかみ、サプライチェーンを遡ることで解消事例が増えており、現時点では有効な手段を打てている\n- 卸や小売の状況は窓口を通じて集約・把握しており、引き続き精力的に情報を収集し対応する",
+        "full_text": "赤澤亮正はい、まず私どもが情報提供窓口を持っておりますので、しかもこれ、我々熱心に周知をしているつもりで、必要な情報をいただいて、それについて手を打っていくということが、現在それなり有効に働いていると私どもは判断しています。現に後藤委員に前回質問していただいたときに、私どもがそうやって一つ一つ端緒をつかんで、一個一個サプライチェーンを遡ってやった解消問題の件数が、ご質問いただいたとき50件だったんですけど、5月に入ってからで大体250件ぐらいにもなっておりますので、相当解消していっている。我々がお願いをして発動するような仕組みもつくったので、そういう意味では現時点において、今おっしゃったような問題について、かなり有効な手は打ててきているというふうには思っています。ただ、先ほど答弁したとおりで、卸や小売など川中における各物資の販売量や在庫状況については、情報提供窓口を通じて、5社から情報を得た上で、サプライチェーンの情報として集約、把握しているというやり方になっていて、1つ1つ供給の方よりは4つの目、つまり解消しつつあるとは思っておりますが、ただこのやり方をもちろんこれまで以上に精力的に続けていくということに加えて、今まさに委員の御指摘があったような、さらにいろいろ問題の御指摘があり、国土交通省、農水省も頑張ってくれていますが、まだ認識が足りないという御指摘もありますので、さらに情報を収集する、そしてしっかり対応していくということを努めてまいりたいというふうに思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=9651.363000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "川中事業者の在庫把握のための制度改革の必要性と手法",
+          "sub_asks": [
+            "制度改正による調査権限や立入検査権限の必要性について",
+            "制度改革を通じてどう把握するつもりか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "国民生活安定緊急措置法"
+            },
+            {
+              "type": "law",
+              "excerpt": "買い占め売料収入法"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "川中事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "50件"
+            },
+            {
+              "type": "number",
+              "excerpt": "250件ぐらい"
+            },
+            {
+              "type": "number",
+              "excerpt": "5社"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "さらに情報を収集する、そしてしっかり対応していくということを努めてまいりたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "情報提供窓口を通じて、5社から情報を得た上で、サプライチェーンの情報として集約、把握している",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "制度改革という踏み込んだ提案に対し、現状の窓口運用の実績を強調して回避し、最終的に努力目標に留めた回答である。",
+        "would_be_referenced": "low",
+        "issue_in_design": "制度改正の是非を問う質問に対し、具体的な代替案や現状の法的限界を問う形式にすれば、より明確な回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_051",
+      "segment_index": 8,
+      "topic": "卸事業者の実態調査権限",
+      "question": {
+        "speaker": "後藤祐一",
+        "party": "中道改革連合・無所属",
+        "summary": "- 地方経産局が卸に入って在庫を直接確認できる権限があるのか",
+        "full_text": "経産局あるんですから、各地方経産局で調べたらいいじゃないですか。実際どうなってるかって卸に経産局が入って「ちょっと見せろ」とできるんですか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "赤澤亮正",
+        "role": "",
+        "summary": "- 特別な権限があるわけではないが、業界ごとの卸社数が限られているため、問題があればサプライチェーンを遡って確認しており、指導などの実務範囲内で対応している",
+        "full_text": "その上で今委員がおっしゃったようなことは、何か権限があったりということでやっているのではありませんが、各業界ごとにさすがに私どももしっきり取り組んでおりますので、大体ここの世界だと卸が何社あるか、後藤祐一君が「これ何とかしてくれ」と来たときに、我々がサプライチェーンを一つ一つ遡り始めるときには必ず確認をして、おっしゃるように数がそんなに多くないと。どんなに多くても大体3、4社で卸をやっていたり、メーカーも10社とかそれぐらいだったりするようなことが多いので、そういうところについては一つ問題があれば同じようなことをしていないかというようなことは我々は当たるようにはしておりますので、その辺は我々の持っている権限というか指導とかそういった実情、やっている仕事の範囲内で、できる範囲のことはやっているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=9651.363000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "地方経産局による卸への実態調査の可否",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "各地方経産局"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "卸",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "大体3、4社"
+            },
+            {
+              "type": "number",
+              "excerpt": "メーカーも10社とか"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "できる範囲のことはやっているところでございます",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "権限があったりということでやっているのではありませんが、できる範囲のことはやっているところでございます。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "地方経産局に強制的な調査権限はないが、実務上の指導範囲で対応しているという現状回答に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「調べたらいいじゃないですか」という提案形式のため、具体的な制度改善や期限を設けた回答を引き出しにくい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_052",
+      "segment_index": 8,
+      "topic": "卸事業者のヒアリング状況",
+      "question": {
+        "speaker": "後藤祐一",
+        "party": "中道改革連合・無所属",
+        "summary": "- 実際に卸に対して在庫状況を直接聞いたり、現場に行ったりしているのか",
+        "full_text": "実際卸に、経産省として、あるいは政府として、どのぐらい在庫を抱えているかといったことを直接聞いたり、あるいは実際現場に行ったりしているんですか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "赤澤亮正",
+        "role": "",
+        "summary": "- 各都道府県の上位3社の卸については、直接話を聞いて状況を把握し対処するようにしている",
+        "full_text": "今のご質問について言うと、まず、経産局でヒアリングをやるようにしているのは、各県の上位3社の卸については、例えばシンナーで問題があり、あるいは公検査があれば、各都道府県ごとに、上位3社については、とにかく話を直接聞いて、どんな状況かということを把握し、対処するようにしています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=9651.363000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "卸の在庫状況の把握方法と実態調査の有無",
+          "sub_asks": [
+            "卸に直接在庫状況を聞いているか",
+            "現場に直接行っているか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "卸",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "上位3社"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "経産局"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "各県の上位3社の卸については、とにかく話を直接聞いて、どんな状況かということを把握し、対処するようにしています。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "政府が卸の在庫状況をどのように把握しているかという具体的な運用（上位3社へのヒアリング）が明らかになったやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「現場に行っているか」という点への直接的な回答が不足している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_053",
+      "segment_index": 8,
+      "topic": "増産要請による過剰発注の抑制",
+      "question": {
+        "speaker": "後藤祐一",
+        "party": "中道改革連合・無所属",
+        "summary": "- 生産量が前年比で増えていることを具体的に示せば過剰発注は減るため、当面の間、前年プラスの生産をメーカーに要請すべきではないか",
+        "full_text": "過剰発注が起きちゃうのは、ある程度良くないことですが、一番の需要価格に近い事業者としては、起きてしまうのは現実だと思いますが、これについては、先ほど赤澤大臣が、一つ一つの物資について、対前年比でむしろ100%を超えて生産しているような物資も、いくつかあったじゃないですか。過剰発注がなぜ起きるかというと、この先どうも来ないらしいと思うから過剰発注するんであって、いやいや対前年比で、例えば110%で生産していますと、信頼についてはこう生産していますとか、いうことを一つ一つ示していけば、過剰発注って減っていくんじゃないですか。ですから、そのメーカーに対して、土地のサプライチェーンがどの程度対応できるか、いろいろあると思いますけれども、今挙げたような物資については、対前年同月でよしとせず、当面の間、そんな長い間である必要ないですよ。過剰発注が起きなくなるまででいいんだから。当面の間、対前年プラスで生産いただけないかということを政府として要請すべきじゃないですか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "赤澤亮正",
+        "role": "",
+        "summary": "- 需要側へは前年同量注文の呼びかけを行っている\n- 増産は民間の判断となるが、現状でも前年同月比を多くしている業界が多い。状況を見ながら今後の対応を考える",
+        "full_text": "今業界が努力しているような、ちょっと1割2割増産するだけで追いつくかというと、なかなかなので、やっぱり需要側にも今ホームセンターとかにもポスターを貼り出してですね、「前年同月に同量を注文するようにお願いします」みたいなことを書き、「不安があれば計算局に御相談どうぞ」みたいなことをやっております。そういう努力と併せて、今委員御指摘のとおり、各業界が生産量を通常より増やすということはしていただけるとありがたいんですが、ただこれはやはり民間の判断として、実際につくった在庫がはけるかとか、そういうことも判断しながらやっておられるので、現状においては、事実上、前年同月比多くしてくださっている業界が多いように見受けられますので、私どもとしてはその状況をしっかり見ながら今後の対応を考えていきたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=9651.363000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "物資の対前年増産を政府として要請すべきか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "past_answer",
+              "excerpt": "先ほど赤澤大臣が、一つ一つの物資について、対前年比でむしろ100%を超えて生産しているような物資も、いくつかあった"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "メーカー",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "ホームセンター"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "その状況をしっかり見ながら今後の対応を考えていきたいと思います",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "現状においては、事実上、前年同月比多くしてくださっている業界が多いように見受けられます",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "政府への要請を求める質問に対し、現状の民間努力と状況注視で回答しており、具体的な新たなコミットメントは得られていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「要請すべきではないか」という誘導的な問いかけであるため、回答者が「検討する」という形式的な回答に逃げやすい構造になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_054",
+      "segment_index": 8,
+      "topic": "業界間での情報共有による増産促進",
+      "question": {
+        "speaker": "後藤祐一",
+        "party": "中道改革連合・無所属",
+        "summary": "- 政治判断として、メーカーにさらなる増産をお願いできないか",
+        "full_text": "もちろん強制はできませんよ。ですが、もう少しお願いできませんかということを、これ政治判断って言っていただけないですか、大臣。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "赤澤亮正",
+        "role": "",
+        "summary": "- 数字を精緻に把握し、「他業界は前年比115%で作っている」といった情報を共有することで、増産を促していきたい",
+        "full_text": "委員の御指摘は大変重要な点だと思いますので、数字についてももうちょっと精緻にきちっと我々の中で把握をし、業界ごとに他の業界の状況を教えるだけでも多分いいと思うので、「他の業界は前年同月比115%をつくっていますが」みたいなことも含めて、情報共有をする中で促せることは促していきたいというふうに思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=9651.363000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "政治判断として協力を促せないか",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "前年同月比115%"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "促せることは促していきたいというふうに思います",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "情報共有をする中で促せることは促していきたいというふうに思います。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "政治判断による働きかけを求める問いに対し、大臣は情報共有による促進という抽象的な方針で回答しており、具体的な拘束力のある約束はない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "問いが「お願い」の形式になっており、政府の明確な見解や責任を問う形式になっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_055",
+      "segment_index": 8,
+      "topic": "医療用手袋の放出と入手方法",
+      "question": {
+        "speaker": "後藤祐一",
+        "party": "中道改革連合・無所属",
+        "summary": "- G-MISに登録していない小規模クリニックや薬局などの事業者が、放出された医療用手袋を入手する方法はあるのか",
+        "full_text": "大きい医療機関はいいんですが、小規模のクリニック、歯医者さん、薬局、介護事業者、これらも入手可能らしいんですが、本当に実際そういう形で発注されているんでしょうか。地道につながっていない事業者は入手する方法はあるんでしょうか。入手できるようにすべきじゃないでしょうか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "赤澤亮正",
+        "role": "",
+        "summary": "- 確保が困難な医療機関向けに5千万枚を放出済みで、G-MISを通じて要請し販売事業者経由で入手する流れとなっている\n- 医療関係機関は基本的にG-MISに登録されている認識だが、それ以外にニーズがあるか確認する",
+        "full_text": "こうした状況を踏まえて、備蓄している医療用手袋の余剰分のうち、確保が困難な医療機関向けに、具体的には病院、歯科を含む診療所、訪問看護事業所、薬局、そして助産所を対象に、まず5千万枚放出をいたしました。配付の方法としては、まずは医療機関等において手袋が不足している場合に、委員御指摘のG-MISを活用して、必要事項を入力の上、物資の要請を行っていただくということで、要請内容を国等において確認の上、販売事業者を通じて医療機関に手袋を販売するという流れとなっております。私自身の理解としては、基本的に医療関係の機関はもう、例えば有償であるか無償であるかとか問わず、G-MISには基本的に全て登録されていたかと思うので、ちょっと今、G-MIS以外でというご指摘だったんですが、実際にそこにニーズがあるのか、ちょっと確認をさせていただきたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56259&time=9651.363000000001",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "小規模医療機関等の物資入手可能性と改善策",
+          "sub_asks": [
+            "小規模事業者が実際に発注できているか",
+            "繋がっていない事業者の入手方法があるか",
+            "入手できるようにすべきではないか"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "小規模のクリニック、歯医者さん、薬局、介護事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.6
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "5千万枚放出"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "G-MIS"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "実際にそこにニーズがあるのか、ちょっと確認をさせていただきたいと思います",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.65
+        },
+        "oc3_quotability": {
+          "quote_candidate": "確保が困難な医療機関向けに、具体的には病院、歯科を含む診療所、訪問看護事業所、薬局、そして助産所を対象に、まず5千万枚放出をいたしました。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "小規模事業者の物資入手という具体的課題に対し、放出枚数やG-MISという具体的手段を提示して回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が「～ではないでしょうか」という情緒的な問いかけに終始しており、具体的な制度上の不備を突く形式になっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    }
+  ],
+  "score_schema_version": "2.0",
+  "prompt_version": "V4"
+}
