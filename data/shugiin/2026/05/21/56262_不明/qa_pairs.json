@@ -1,0 +1,876 @@
+{
+  "pairs": [
+    {
+      "id": "qa_001",
+      "segment_index": 3,
+      "topic": "議員定数のあり方と削減への見解",
+      "question": {
+        "speaker": "鈴木馨祐",
+        "party": "衆議院選挙制度に関する協議会座長",
+        "summary": "- 議員定数削減の提案（比例区のみ45削減など）についてどう考えるか",
+        "full_text": "お二方にちょっとそれぞれ違う質問をしたいんですけれども、竹中先生から議員定数の件についてのご発言をいただきました。中北先生の方は議員定数のあるべき姿でありますとか、今、確かに議員定数削減というふうな提案を出している党もいらっしゃるわけであります。例えば比例区のみを45削減するみたいなお話もあるわけでありますけれども、こうした点についてどうお考えかというのが中北先生。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "中北浩爾",
+        "role": "中央大学法学部教授",
+        "summary": "- 定数削減を一方的に進めることは望ましくない\n- 国際比較や歴史的に見ても日本の議員定数は少ない\n- 身を切る改革が必要なら、定数ではなく歳費や政党交付金の削減が望ましい\n- 定数削減のみを先行させると選挙制度の性格が変わるため慎重な対応が必要",
+        "full_text": "竹中参考人とは考えが違うことがしばしばあるんですけれども、今回比較的一致している部分がございまして、やはり現状の最大の問題は政党、政治家と有権者の間の接点が少なくなってきていることから、政党政治が非常に流動化して不安定化しているという、ここをどうしていくのかということが問題、関心点が重要だという点を共有している。その点から言えば、竹中参考人が主張されたように、定数削減を一方的に進めていくということは、あまり望ましくないということだと思います。これは国際比較上も歴史的に見ても、やはり議員定数は少ないと言わざるを得ない。またもう一つ、身を切る改革ということが国民の理解を得る上で必要であれば、歳費や研究旅費、さらには政党交付金を削減するという方が望ましいのではないかなと考えております。いずれにいたしましても、定数だけ考えるというのは、やはり視野が狭いわけですので、選挙制度全体をどう変えていくか、その中で定数をどうしていくかということ、こういうアプローチで少なくとも言っていただきたいので、定数削減だけ先行させると、仮に比例だけ削減した場合は、もう選挙制度の性格が変わってきてしまいますので、ぜひここは慎重にご対応いただきたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56262&time=2225.7919999999995",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "議員定数のあるべき姿と削減案への見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "比例区のみを45削減するみたいな"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "歳費や研究旅費、さらには政党交付金"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "定数削減を一方的に進めていくということは、あまり望ましくないということだと思います。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人への意見聴取であり、具体的な政府のコミットメントや事実認定を伴わないため、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "具体的な削減案（比例45削減）に対する賛否を明確に問う形式にすれば、より踏み込んだ回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_002",
+      "segment_index": 3,
+      "topic": "衆議院と参議院の役割分担と選挙制度",
+      "question": {
+        "speaker": "鈴木馨祐",
+        "party": "衆議院選挙制度に関する協議会座長",
+        "summary": "- 衆参の選挙制度をセットで考えるべきか\n- それぞれの議員が果たすべき役割についてどう考えるか",
+        "full_text": "そして竹中先生の方には、衆参のそれぞれの選挙制度について、やはりセットで考えるべきだというお考えかということで拝置をいたしました。そうしますと、今、衆議院、参議院のそれぞれ、議員の果たす選挙制度をこうすると考えると、おそらく役割というか、それぞれの議員がどういう役割を果たすべきなのかというところも、おそらく論点になってこようかと思いますけれども、そうした点について、どういうお考えがあるかということを、さらに深掘りして教えていただければと思います。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "竹中治堅",
+        "role": "政策研究大学院大学教授",
+        "summary": "- 衆議院は政権選択を行い、内閣と一体となって政策を提案する役割を担う\n- 参議院は衆議院の決定を多様な観点から再考・修正する役割を担う\n- 参議院では年齢別選挙区の導入など、世代別の声を反映させる多様性の確保を検討すべき",
+        "full_text": "衆議院と参議院の役割をどう考えるかということですけれども、衆議院はやはり政権選択を行う場であろうと。そしてですね、やはり政策の起点となる、要は議院内閣制、日本は憲法上、議院内閣制を採用していると考えられておりますけれども、その一体性が強いのは内閣と衆議院でございますので、やはり衆議院をコントロールする政党が内閣をつくってですね、そこで内閣が、案内のとおり、内閣がいろんな法案を提案するわけですから、基本的に政策を提案する役割が内閣と一体化している衆議院が担うと。そしてですね、参議院はそこを受け止めて、再考すると。その場合にどういう観点から再考修正するかといえば、それは多様性で、衆議院は当然政権選択で、小選挙区制ということになるとですね、やはりそこで拾いきれない国民の声というのがあるので、そちらは参議院の方で反映して、必要な修正を加えていくという。参議院の多様性というのは、もちろん地方というのは一つの考え方となると思いますけれども、これは日本は少子化が進むという、これは各国とも抱えている問題ですけれども、多分先進民主主義国の中で最先端を切っている国で、民主主義というのは基本的に高齢者の方が少なくて若い人たちが多いということを前提にできていると思うんですけれども、それを経験しない領域に日本の民主主義は入ってきているので、例えば年齢別選挙区を設けて、世代別に声を参議院に反映させるなんてことも考えられると思いますし、他にも様々な形で多様性を反映させることが考えられると思うので、そういう形で参議院は多様な意見を反映させる場というふうにすべきではないかと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56262&time=2225.7919999999995",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "衆参両院の役割分担に関する考え方",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "議院内閣制"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "年齢別選挙区"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "年齢別選挙区を設けて、世代別に声を参議院に反映させるなんてことも考えられると思います",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人による制度論的な見解の提示であり、具体的な政府のコミットメントや事実認定を含むものではない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問が「深掘りして教えてほしい」という抽象的な依頼に留まっており、具体的な制度案への賛否を問う形式ではない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_003",
+      "segment_index": 3,
+      "topic": "中選挙区比例代表制のリスクと有権者との距離",
+      "question": {
+        "speaker": "長谷川淳",
+        "party": "衆議院選挙制度に関する協議会座長",
+        "summary": "- 比例要素を入れることで、選挙結果と実際の政権が国民の意図と乖離するリスクをどう考えるか\n- 中選挙区化により選挙区が広がり、有権者との接点が物理的に遠くなる懸念をどう考えるか",
+        "full_text": "そうなりますと、やはり政権選択選挙、そうした決められる政治への期待ということを考えると、やはり小選挙区制、民意の集約が鍵になってくるのではないかと思いますけれども、その中で中選挙区の比例代表というのをあえて提案されるということでありますが、やはり比例代表という要素を入れますと、どうしても選挙結果と実際の政権が国民の意図したものと違う可能性が出てくるわけでございます。そのリスクをどう考えるか。不安定な、要は欧米、ヨーロッパに見られるように、選挙結果を踏まえて政権が決まるまでに期間を要するようなそういった状況も、比例代表ということを中選挙区といえども入れることによる可能性も広がってまいりますし、先ほど先生がおっしゃいましたように、やはり有権者の国会議員へのアクセス、国会議員からすれば有権者との接点が大事な中で、やはり小選挙区から中選挙区にしますとより選挙区が広がるという、逆に有権者との接点が物理的に広がってしまうということもあるわけでございます。その政権選択という観点からするこの比例という要素を入れる問題点とか課題に対する指摘と、有権者との距離が遠くなってしまうということの懸念に対するお考えを聞かせていただきたいと思います。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "中北浩爾",
+        "role": "中央大学法学部教授",
+        "summary": "- 現行の小選挙区制でも野党が分散しており、実質的な「政権選択」が有権者に与えられていないため、抜本的な見直しが必要\n- 中選挙区比例代表制でも、選挙区定数を絞れば比較的安定した連立政権の構築は可能\n- 人口当たりの議員数は変わらないため、有権者との距離が遠くなる懸念は少ない",
+        "full_text": "しかし現状を今見ると、政権選択選挙になっているのかと。従って今、小選挙区中心とする選挙制度を採用しているメリットというのが、発揮できていないという現状があるからこそ、あまりそこに重きを置かずに、選挙制度を抜本的に考えてもいいのではないかというのが、御提案の趣旨です。連立でも二党連立になるということぐらいだと思いますので、政権が不安定化するのかというと、そうではないのではないか。現実にヨーロッパの先進国では、比較的安定した政権の枠組みができているわけで、今は多党分裂になっても、政権を構成する数がどんどん増えてきているので問題ですけれども、やはり選挙区定数を絞れば、比較的安定政権、連立ですけれども作るということは可能ではないかというふうに考えております。もう一つ、距離が遠くなるのではないかと御指摘ですけれども、確かにそうした懸念というのはないわけではないですけれども、しかし人口当たりの議員数というのは変わりませんので、基本的にはですね、そういう懸念もないのではないか。また実際、中選挙区制のときに有権者と議員の間の距離が今よりも大きかったという議論もあまり聞きませんので、この点については御懸念に及ばないのではないかと。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56262&time=2225.7919999999995",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中選挙区比例代表制導入のリスクと課題への見解",
+          "sub_asks": [
+            "比例要素導入による政権不安定化のリスクをどう考えるか",
+            "選挙区拡大による有権者と議員の距離が遠くなる懸念をどう考えるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "選挙区定数を絞れば、比較的安定政権、連立ですけれども作るということは可能ではないか",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "選挙制度に関する学術的・政治的な見解のやり取りであり、具体的な事実認定や政府の公約を導き出すものではないため、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "具体的な制度案（定数や配分）を提示して問えば、より具体的な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_004",
+      "segment_index": 3,
+      "topic": "人口減少社会における議員定数の適正化",
+      "question": {
+        "speaker": "長谷川淳",
+        "party": "衆議院選挙制度に関する協議会座長",
+        "summary": "- 人口減少に伴い、国民の数に合わせて国会議員の数も適正化（削減）すべきではないか\n- 地方議員が削減されている現状や国民世論の削減支持をどう考えるか",
+        "full_text": "竹中先生にはですね、定数削減について、国際比較的に見ると、我が国の国会議員数は人口比例で少ないという、1人当たりの人口は多いということでございますけれども、やはり日本は今人口減少社会に突入しております。国民、国会議員が全国民の代表である以上は、国民の数が減ってくるんであれば、その国民の数が減ったのに応じて、国会議員の数も適正化すべきという考え方もあると思うんです。一方で国会議員については平成28年以降定数削減がなされていないということを考えますと、国際比較の点では確かに国会議員の数は少ないでありますけれども、人口減少を踏まえた国会議員の数の適正化ですとか、あるいは地方議員の削減なども踏まえた、これは底辺にはやはり国民の世論があると思います。先生も国民世論調査ではやはり削減に支持が多いということでありますけれども、そうした人口規模に照らした適正化ですとか、地方議員が減らしているその背景には国民の意識もあるということのお考えを聞かせていただきたいと思います。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "竹中治堅",
+        "role": "政策研究大学院大学教授",
+        "summary": "- 人口減少で1人当たり代表人口が減る指摘は正しいが、急激な減少ではないため、国際比較や歴史的に見て現状でも十分少ない\n- 議員数を減らすと、首相や閣僚候補となる人材プールが減ることになり、国民にとっても不利益となる",
+        "full_text": "まず、人口が日本は減っていると言いましても、というのは、ご指摘のとおりだと思います。というご指摘はそのとおりだと思うんですが、さらにながら、今、5.9万というオーダーからという数字が、ドラスティックにこれが一気に人口、来年、再来年ということで、これが22万とか20万とかいう形で急に減少していくわけではないと思うので、やはり各国と比較した場合はもちろん、日本の歴史を振り返った場合にも、やはり今の議員数というのは十分少ないのではないかというので、これ以上減らさない方がいいのではないかというふうに私は考えております。それからもちろんご指摘されたとおり、地方議会の定数を削減というのは話が進んでいると思うんですけれども、これは別の分析が必要だと思うんですが、私がもう一つ先ほど時間の関係で申し上げられなかったのは、衆議院の場合はやはり何といっても首相や閣僚は衆議院、参議院からももちろん首相閣僚になれますけれども、首相候補やあるいは大臣候補でいらっしゃるわけですよね。やはり日本はもう首相は絶対国会議員じゃなきゃなれませんし、閣僚も半分以上は国会議員じゃなければならないということを規定されておりますので、そうするとやはり候補者のプールを減らしちゃうということは、やはりそこでちょっと私が言うのもなんですけど、議員の方々がいろんな議論を重ねていく中で、この方がやはり大臣や総理にふさわしいということも、やはり議員の方々考えていらっしゃると思うんですね。そのプールを減らしちゃうというのは、やはり国民にとっても残念なことではないかというふうに私は考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56262&time=2225.7919999999995",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "人口減少に伴う国会議員数の適正化への考え",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "平成28年以降"
+            },
+            {
+              "type": "other",
+              "excerpt": "国民世論調査"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "5.9万"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "各国と比較した場合はもちろん、日本の歴史を振り返った場合にも、やはり今の議員数というのは十分少ないのではないか",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "人口減少に伴う定数削減の是非について、参考人が自身の見解を述べたやり取りである。具体的な政策コミットメントや法的解釈の確定はなく、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「お考えを聞かせていただきたい」という主観的な問いであるため、客観的な事実や具体的公約を引き出す設計になっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_005",
+      "segment_index": 3,
+      "topic": "政治風土と選挙制度の整合性",
+      "question": {
+        "speaker": "古川幹事",
+        "party": "衆議院選挙制度に関する協議会座長",
+        "summary": "- 日本の「個人を選びたい」という政治風土と、政党本位の制度による政治不信の乖離をどう考えるか\n- 社会の変化や人々の意識の変化に合わせた選挙制度の見直しについてどう考えるか",
+        "full_text": "今日の話は今日の話としてお伺いしたんですが、ちょっと今日はせっかく先生お二人いらっしゃっているのでお伺いしたいのはですね、政治家と有権者との距離が離れたというところ、ここはですね、これ私も長く議員らせていただいて感じるのはですね、日本のこれやっぱりこう、選挙制度って実はやっぱり、その国々の風土にもやはり影響があるんじゃないかと。ここのやはり政治の学者の視点から見ると、政党本位というのは政党がまとまるとそこで政策もはっきりしてるし政権選択になるしというのは、それは理屈上はそうなんですけど、それが多くの国民の、日本の国民の皆さん方の選べたいというか政治家に求めているというか、そこと何かですね、そのやっぱりずれがあるような、私はずっとこの間、自分でやってきて、そういう感じがずっとしてるんですね。このことがやはり、政治不信みたいなものにね、つながってきている部分っていうのは、あるのではないかと。やっぱり社会の変化に応じた、そういう選挙制度の見直しというか、その政治の側からじゃなくて社会の側の変化や人々の意識の変化に合わせた選挙制度の見直しというか、そういう議論もしていかなきゃいけないんじゃないかなと私は個人的にも考えているんですが、先生方のご意見はいかがでしょうか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "中北浩爾",
+        "role": "中央大学法学部教授",
+        "summary": "- 制度の設計的な移植ではなく、制度補完性の観点から日本の状況に整合させる必要がある\n- 政党本位（チームとしての機能）と政治家本位（個人の能力）の両方が必要\n- 中選挙区での非拘束名簿式比例代表制が、その両者の折り合いをつけるポイントになる",
+        "full_text": "この制度補完性みたいな観点がなくして、一気にどんどん設計的に移植すればうまく機能するだろうみたいな発想が非常に強かったんですけど、こういった考えは私は反対してきたつもりでございます。ですから、トータルに欧米の状況を参考にすることは必要ですけれども、日本の状況と、またさらにどういう形で整合的にできるかということを考えないといけないということだと思います。先ほどの政党本位と政治家本位の部分でございますけれども、私は基本的に両方必要だと考えています。優れた政治家がきちんと働いていただく必要があると思う一方で、一人では政治できませんので、やはりチーム、派閥もそうかもしれませんが、政党という単位をつくって、チームとして機能させていただかないといけないという部分もございます。したがって私は、比例代表制を中選挙区で、しかも非拘束名簿式であるというのが、まさにそこの折り合いをつけるポイントではないかというふうに考えて主張したつもりでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56262&time=2225.7919999999995",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "社会の変化に合わせた選挙制度見直しの是非",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "比例代表制を中選挙区で、しかも非拘束名簿式"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "比例代表制を中選挙区で、しかも非拘束名簿式であるというのが、まさにそこの折り合いをつけるポイントではないか",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "専門家（参考人）に対する意見聴取であり、具体的な制度案（非拘束名簿式など）への言及はあるが、政府のコミットメントを導くものではない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問が個人の感想や抽象的な議論に終始しており、具体的な制度上の課題を特定して問う形式にすればより価値のある回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_006",
+      "segment_index": 3,
+      "topic": "政党規律と有権者との接触",
+      "question": {
+        "speaker": "古川幹事",
+        "party": "衆議院選挙制度に関する協議会座長",
+        "summary": "- (古川幹事の問いかけに対し) 選挙制度と有権者との距離、および政治風土についてどう考えるか",
+        "full_text": "今日の話は今日の話としてお伺いしたんですが、ちょっと今日はせっかく先生お二人いらっしゃっているのでお伺いしたいのはですね、政治家と有権者との距離が離れたというところ、ここはですね、これ私も長く議員らせていただいて感じるのはですね、日本のこれやっぱりこう、選挙制度って実はやっぱり、その国々の風土にもやはり影響があるんじゃないかと。やっぱりそういう視点で、日本の政治風土、ぜひそこは学者の先生方にも、そういう国民性とかそういうところも目を受けた上での選挙制度というのも考えていただくことがいただけると、より我々としても、そこは実感にあったような、そういうお話になるんじゃないのかなという感じがしております。やっぱり社会の変化に応じた、そういう選挙制度の見直しというか、その政治の側からじゃなくて社会の側の変化や人々の意識の変化に合わせた選挙制度の見直しというか、そういう議論もしていかなきゃいけないんじゃないかなと私は個人的にも考えているんですが、先生方のご意見はいかがでしょうか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "竹中治堅",
+        "role": "政策研究大学院大学教授",
+        "summary": "- 中選挙区制は有権者との接触は強いが、政党規律が弱まり政権が不安定になる弊害があった\n- 小選挙区制でも、密着型の活動を行う議員は存在しており、有権者との接触を保つことは十分可能\n- 党の政務調査会などを通じて、議員が有権者の声を政策に反映させる仕組みは機能している",
+        "full_text": "中選挙区制度に戻せばいいかというと、やはり中選挙区制度は政党規律の上で重要な問題をはらんでおりまして、いざとなれば無所属として当選できるぐらいの強い後援会をつくってしまえば、首相の言うことも聞かなくて本会議で造反してもペナルティは大したことがないということになって、そして派閥というのができて、中選挙区制の時代のやはり自民党政権は1970年代、非常に不安定でした。なので有権者との接触ももちろん大事なんですけれども、やはりある程度政党規律が働くような選挙制度が、やはり日本をマネージするという意味では重要だと、それはもう私は堅く信じております。それで小選挙区制度の下で有権者との接触がおろそかになっているのかといえば、それはやはり一部の、一応選挙に強い先生方は非常に密着型の政治活動をされていると私は理解しておりますので、そういう活動をする余地はお前は何か実際の政治の活動もしたことがない、そういうことを言うなというご叱責を受けそうですけれども、でも実際のそういうお話を伺っている方は、やはり後援会をちゃんとつくって活動されている方々もいらっしゃるので、今の選挙制度だって有権者との接触を十分保ちながら、そしてやはり自民党を見ておりますと、やはり政務調査会はかなりしっかり機能しているので、そこで議員の先生がこういう政策はどうかと思うと、それは結構かなり政策として実現しているなと。内閣側が全て政策を決めているのではなくて、党側の意見で一部の議員の先生が、それこそ有権者の接触を通じて提案されるような政策が実現している例もあると思うので、別に小選挙区制度だって十分そういうことは可能なのではないかと。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56262&time=2225.7919999999995",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "社会の変化に合わせた選挙制度見直しの是非",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "中選挙区制度"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "小選挙区制度"
+            },
+            {
+              "type": "number",
+              "excerpt": "1970年代"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "自民党"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "ある程度政党規律が働くような選挙制度が、やはり日本をマネージするという意味では重要だと、それはもう私は堅く信じております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "学識経験者への意見聴取であり、制度論に関する個人的見解のやり取りであるため、行政的な記録価値や拘束力はない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "具体的な制度案を提示せず「ご意見はいかがでしょうか」という抽象的な問いに留まっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_007",
+      "segment_index": 3,
+      "topic": "SNS時代の多党化傾向と選挙制度",
+      "question": {
+        "speaker": "金村",
+        "party": "衆議院選挙制度に関する協議会座長",
+        "summary": "- SNSの影響で多党化の流れが強まっている中、中選挙区比例代表制という提案は、この多党化の流れを止められないという結論に基づいているのか",
+        "full_text": "まず中北先生にお伺いしたいのが、この今のSNSと政治というのは、私は相性があまり良くないなと思っているんですけれども、その中で、多党化の流れがより強化されていくように私は思っていたんですね。その中で、中北先生が、この中選挙区比例代表制という、まさにその中選挙区の部分と、衆議院の比例代表の部分をうまく掛け合わせたようなものを提示されているということは、一定やっぱりこの多党化の流れというのは、もう制度を何に変えてもこの流れは止められないんじゃないかという一定の結論があるんじゃないかなと思ったものですから、この多党化についての考え方を少しお示しいただけたらなと思います。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "竹中治堅",
+        "role": "政策研究大学院大学教授",
+        "summary": "- 多党化傾向を強めない制度を考えるべきである\n- 中選挙区比例代表制にすれば、現在の比例ブロックよりも選挙区が絞られるため、極小政党は生き残れなくなり、政党数はむしろ減る\n- 巨大政党と小政党の二極化ではなく、中規模政党が適度に存在する形になり、小政党は連合を組む方向へ集約される",
+        "full_text": "したがって私はどちらかというと、この多党化傾向を強めるのではない形の制度を、ある程度考えていかなければならないと。それに比べると中選挙区比例代表制にした場合は、最大選挙区が5か6ということになりますので、はっきり言えば少数政党で小さなところは生き残れなくなるというふうに思います。政党の数はかなり減ってくるのではないかと。それに対して私のこの中選挙区比例代表制にした場合というのは、100議席から80議席ぐらいのものが3から4とかですね。ですから、大きな政党が、もう300議席超えるような政党が出にくくはなると思う反面で、例えば数議席しかないような、10議席未満の政党というのはなかなか成り立たなくなってくるのではないかと。スペインの選挙制度は都道府県単位の比例代表制というのに近いと思いますけれども、そういう効果があるわけで、そういう形で、いろんな形で集約というのも一定程度進んでくるのではないかと想定されますので、私は多党化の流れを食い止めるためにも、こういう提案をさせていただいたということでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56262&time=2225.7919999999995",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "多党化の流れに対する考え方について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "中選挙区比例代表制"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "最大選挙区が5か6"
+            },
+            {
+              "type": "number",
+              "excerpt": "100議席から80議席ぐらいのものが3から4"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "スペインの選挙制度"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "多党化の流れを食い止めるためにも、こういう提案をさせていただいたということでございます。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "参考人に対する制度論的な見解を問うやり取りであり、学術的な見解が明確に述べられている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が自身の推測（多党化は止められないのではないか）に基づいた誘導的な形式になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_008",
+      "segment_index": 3,
+      "topic": "衆参合わせた議員定数の考え方",
+      "question": {
+        "speaker": "金村",
+        "party": "衆議院選挙制度に関する協議会座長",
+        "summary": "- 衆議院だけでなく、参議院も含めた国会議員全体の数で見た場合、定数削減を掲げる考え方をどう考えるか",
+        "full_text": "衆参両方の議員を、国民で見るべきだと思っているんですね。衆議院だけで見ると少ない、他国と比較すると少ないんですけど、衆参ある程度同権を持って、同じ、似たような選挙制度の下でやっているという意味では、私は議員定数というのは、衆議院だけで物を語るべきじゃないし、参議院の方もしっかり考慮していくべきだと思っていて、この議員定数削減というものを掲げているということは、ご理解いただきたいなと思いまして、ここで意見をお伝えさせていただきました。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "竹中治堅",
+        "role": "政策研究大学院大学教授",
+        "summary": "- 参議院を含めても、イギリスなどの他国と比較すれば、1人当たりの代表人口は多く、議員数は少ない\n- 上院（参議院）を含めた比較をしても、日本の議員数は依然として少ないと理解している",
+        "full_text": "竹中治堅（政策研究大学院大学教授）いや、もちろん上院を入れるべきだという議論は予想されるところなんですが、しかし、それで、そうするとですね、確かに日本は17万人ぐらいになります。なのでそういう意味でやはり我々が何かと意識するイギリスと比べたら、やはり議員の数は少ないだろうということになるのが一つ。なので上院を入れた場合には、他の国の1人当たりの国会議員が代表する人口というのはさらに少なくなるので、やはりその上院を入れた場合だったとしても、日本はやはり人口が、要は議員の数が代表する人口は多いですし、議員の数は少ないのではないかというふうに理解しております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56262&time=2225.7919999999995",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "議員定数削減議論に参議院を含めるべきとの意見表明",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国民",
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.7
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "17万人ぐらい"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "イギリス"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "上院を入れた場合だったとしても、日本はやはり人口が、要は議員の数が代表する人口は多いですし、議員の数は少ないのではないか",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者が意見を述べるにとどまっており、具体的な問いがないため、記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "意見の表明に終始しており、回答者に何を求めているのか（賛否や具体的数値など）を明確にする問いかけが必要。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_009",
+      "segment_index": 3,
+      "topic": "比例復活の条件と民意の反映",
+      "question": {
+        "speaker": "峰島",
+        "party": "衆議院選挙制度に関する協議会座長",
+        "summary": "- 比例復活の得票率条件を厳しくすることが、民意の反映を難しくする可能性はないか\n- 条件を上げた場合、小選挙区で敗れたが比例で復活して成長する議員という新陳代謝が滞るリスクはないか",
+        "full_text": "私自身もこの問題を考えるときに、非常に悩む点がありまして、まず一つ目に、民意をどう反映するかというときにですね、比例復活は当然得票率であるとか得票率というものがどの程度であるべきかというものはあるものの、一定小選挙区でその方の名前で民意を一度問うているという話がありますが、仮にこれが得票率をより押し上げて得票率も高いものを求めてとしたときに、おそらく比例単独になる方が多くなってきて、そうすると比例単独だともはやその方に対する民意を問うという声はなくなっていくだろうと予想される中で、逆にそうやって得票率であるとか得票率の条件を厳しくしていくことが、その民意の反映を難しくするという可能性がないのかというところがまず一つ。あと二つ目にですね、今ここにいらっしゃるような議員の先生方の中にも、最初の一回目の選挙は比例復活でしたという方々はたくさんいらっしゃるというふうに思ってまして、やはりそういった方が最初は小選挙区にチャレンジして負けてしまったけど比例復活して国会議員として活躍する中で、だんだんとその地域を担っていく議員になっていくという新陳代謝はあると思っていまして、仮にそういった得票率の条件を上げていったときに、そのような新陳代謝が滞るリスクがないのかという2点について、ぜひお二人のお考えをお伺いできればと思っております。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "中北浩爾",
+        "role": "中央大学法学部教授",
+        "summary": "- 比例代表も立派な民意であり、比例単独候補による議席獲得は制度本来のあり方である\n- ただし、小選挙区で決定的にダメ出し（低得票）された議員を排除する機能は必要であり、一定の得票率を条件とすることは合理的である",
+        "full_text": "民意とは何ぞや、どういう形で表示されるのかという問題だと思いますけれども、私は比例代表の方も立派な民意だというふうに考えております。逆に比例復活の場合でも、著しくやはり得票率が低い議員が選ばれてしまうと、何でだというふうな率直な疑念がやはり生まれますし、あと小選挙区の場合というのは、やはり選ぶ選挙だけど落とす選挙でもあるので、決定的にダメ出しをされた議員をやはり排除できるという部分というのがやはり残らないといけないですから。比例復活を求めるということは、私は合理的ではないのかというふうに思います。ですから、確かに小選挙区から入り口にという場合というのはあるかもしれませんけれども、しかしそこは否定できないものの、比例単独できちんと寄りしていくと、特になかなか小選挙区では勝てない政党が必要な議員を生み出すために比例を使っていくということは何ら問題がないというか、それは制度が本来予定した使い方ではないかというふうに考えておりますので、個人的には得票率という高めの条件を比例復活の条件にしていくということは肯定されるべきではないかなと考えている次第でございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56262&time=2225.7919999999995",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "比例復活の得票率条件厳格化による影響について",
+          "sub_asks": [
+            "得票率条件の厳格化が民意の反映を難しくする可能性はないか",
+            "得票率条件の引き上げが議員の新陳代謝を滞らせるリスクはないか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "比例復活した議員",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "個人的には得票率という高めの条件を比例復活の条件にしていくということは肯定されるべきではないかなと考えている",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "比例復活の条件に関する個人の見解を問うやり取りであり、具体的な制度変更の約束や事実認定は含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "具体的な数値案（例：得票率○%以上）を提示して問えば、より具体的な議論が可能であった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_010",
+      "segment_index": 3,
+      "topic": "比例復活の趣旨と多様性の確保",
+      "question": {
+        "speaker": "峰島",
+        "party": "衆議院選挙制度に関する協議会座長",
+        "summary": "- (峰島議員の問いに対し) 比例復活の条件厳格化と新陳代謝についてどう考えるか",
+        "full_text": "私自身もこの問題を考えるときに、非常に悩む点がありまして、まず一つ目に、民意をどう反映するかというときにですね、比例復活は当然得票率であるとか得票率というものがどの程度であるべきかというものはあるものの、一定小選挙区でその方の名前で民意を一度問うているという話がありますが、仮にこれが得票率をより押し上げて得票率も高いものを求めてとしたときに、おそらく比例単独になる方が多くなってきて、そうすると比例単独だともはやその方に対する民意を問うという声はなくなっていくだろうと予想される中で、逆にそうやって得票率であるとか得票率の条件を厳しくしていくことが、その民意の反映を難しくするという可能性がないのかというところがまず一つ。あと二つ目にですね、今ここにいらっしゃるような議員の先生方の中にも、最初の一回目の選挙は比例復活でしたという方々はたくさんいらっしゃるというふうに思ってまして、やはりそういった方が最初は小選挙区にチャレンジして負けてしまったけど比例復活して国会議員として活躍する中で、だんだんとその地域を担っていく議員になっていくという新陳代謝はあると思っていまして、仮にそういった得票率の条件を上げていったときに、そのような新陳代謝が滞るリスクがないのかという2点について、ぜひお二人のお考えをお伺いできればと思っております。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "竹中治堅",
+        "role": "政策研究大学院大学教授",
+        "summary": "- 比例復活の本来の趣旨は、十分な得票を得ながら惜しくも落選した人を救済することにある\n- 中小政党が多様な意見を反映させたい場合は、比例復活ではなく、最初から比例代表として出馬することが制度の狙いに合致している",
+        "full_text": "確かにご指摘の問題は非常に悩ましい問題で、確かに復活して、そしてその後小選挙区で当選するということももちろんあると思うんですけれども、ただやはり小選挙区というのは人を選ぶというのが、人というか政党に所属している人を選ぶという選挙制度なので、そこでやはりちょっとかなり落ちた方、得票の低い方がやはり当選してしまうというのは、やはり小選挙区というものの本来の機能からするとかけ離れているのではないかと思わず思います。それでやはり先ほどの死票との関係で、得票率が90%でかなり得票が35%、40%の人を落としちゃうのは気の毒だから、そういう人には復活を認めましょうというのが本来の趣旨ではないかと思うのですね。申し訳ないですけれども、やはり中規模、小規模の政党で、小選挙区ではなかなかよほどのことがあればやはり個人のパワーで当選できるかもしれないけど、そうじゃない方はやはり比例の方でですね。その比例というのはまさに、それはなぜ選挙制度改革をやったときの議論では多様な意見を衆議院でも反映させようということの狙いで比例を入れているので、比例でご出馬いただくというのが本来のその狙いなのではないかなというふうに私は考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56262&time=2225.7919999999995",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "比例復活の得票率条件厳格化による影響について",
+          "sub_asks": [
+            "得票率条件の厳格化が民意の反映を難しくする可能性はないか",
+            "得票率条件の引き上げが議員の新陳代謝を滞らせるリスクはないか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "比例復活した議員",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "得票率が90%"
+            },
+            {
+              "type": "number",
+              "excerpt": "35%、40%"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "多様な意見を衆議院でも反映させようということの狙いで比例を入れているので、比例でご出馬いただくというのが本来のその狙いなのではないか",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "比例復活制度のあり方に関する個人の見解を問うやり取りであり、具体的な政策決定や法的解釈の確定には至っていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "個人の「考え」を問う形式であるため、政府としての公式見解や具体的な制度変更のコミットメントを引き出しにくい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    }
+  ],
+  "score_schema_version": "2.0",
+  "prompt_version": "V4"
+}
