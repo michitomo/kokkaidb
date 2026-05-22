@@ -1,0 +1,2574 @@
+{
+  "pairs": [
+    {
+      "id": "qa_001",
+      "segment_index": 1,
+      "topic": "地域の学校に通う医療的ケア児の人数推移と背景",
+      "question": {
+        "speaker": "河井昭成",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 地域の小中高等学校等に在籍する医療的ケア児の人数の推移について\n- 人数が増加している背景についての文部科学省の分析",
+        "full_text": "そこでまず最初に、地域の小中高等学校等に在籍する医療的ケア児の人数の推移、その増加の背景について、文部科学省の分析をお伺いしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "餅月忠",
+        "role": "",
+        "summary": "- 令和元年度の1,231名から令和6年度は2,342名へと年々増加傾向にある\n- 国の支援に加え、法律の改正等により地域での受け入れ体制が整ってきたことが背景にある",
+        "full_text": "小学校、中学校、高等学校に在籍する医療的ケア児の数でございますけれども、5年の分析をしてみますと、令和元年度1,231名のところ、令和6年度2,342名と、年々増加傾向にございます。これは国からの支援とともに、地域における医療的ケア児に対する体制等も、徐々に法律の改正の制定等によりまして整ってきたものも背景にあると考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56267&time=504.96400000000006",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "医療的ケア児の人数推移と増加背景の分析",
+          "sub_asks": [
+            "医療的ケア児の人数の推移",
+            "増加の背景についての分析"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "医療的ケア児",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "令和元年度1,231名"
+            },
+            {
+              "type": "number",
+              "excerpt": "令和6年度2,342名"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "令和元年度1,231名のところ、令和6年度2,342名と、年々増加傾向にございます。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "医療的ケア児の在籍数という具体的な数値が提示されており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_002",
+      "segment_index": 1,
+      "topic": "医療的ケア児の通学支援における課題と今後の整備",
+      "question": {
+        "speaker": "河井昭成",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 地域の学校に通う医療的ケア児の通学状況について、国としてどのような課題認識を持っているか\n- 今後どのように支援体制を整備していくのか",
+        "full_text": "そこで、医療的ケア児が地域の学校に通う際の通学の状況について、国としてどのような課題認識を持っているのか。また、医療的ケア児の教育環境の整備として、今後どのように支援体制を整備していくのか、見解をお伺いしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "餅月忠",
+        "role": "",
+        "summary": "- 保護者が付き添わなければならないケースが多いことを地方公共団体と共に課題として認識している\n- 医療的ケア看護職員の配置に係る経費を補助し、保護者の付き添いは真に必要な場合に限り求めるよう教育委員会に通知している\n- 引き続き予算事業を含め必要な支援を行いたい",
+        "full_text": "その上で今の御質問でございますけれども、河合委員御指摘のように、登校時に保護者が付き添いをしなければならないケースが多いということにつきましては、地方公共団体、そして私どもも課題認識を持ってございます。その上で令和3年に成立しました医療的ケア児及びその家族に対する支援に関する法律の趣旨を踏まえまして、医療的ケア児が保護者の付き添いがなくても適切な医療的ケアを受けられるようにするために、教育委員会等に対しまして登校時の車両への同乗を含む医療的ケア看護職員の配置に係る経費を補助してございます。この保護者の付き添いにつきましては、真に必要と考えられる場合に限り協力を求めるべきであること、やむを得ず協力を求める場合には、真に必要と考える理由や付き添いが不要になるまでの見通しについて保護者に丁寧に説明をすることなどを教育委員会等に通知いたしまして、教育委員会の担当者が集まる会議においても、その旨周知を図っているところでございます。教育委員会等が医療的ケア児支援法の趣旨を踏まえた対応ができるように、文部科学省としては引き続き予算事業も含めまして、必要な支援を行ってまいりたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56267&time=504.96400000000006",
+      "metrics": null
+    },
+    {
+      "id": "qa_003",
+      "segment_index": 1,
+      "topic": "高等学校における医療的ケア児の看護師確保と支援",
+      "question": {
+        "speaker": "河井昭成",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 高等学校における医療的ケア児の看護師確保の現状と課題をどう認識しているか\n- 今後どのように対応していくのか",
+        "full_text": "高等学校における医療的ケア児の支援について、現在の看護師確保の状況と課題をどのように認識しているのか、またその課題に今後どのように対応していくのかを伺いたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "餅月忠",
+        "role": "",
+        "summary": "- 高等学校に在籍する医療的ケア児は78名と小中学校に比べ非常に少ない状況にある\n- 教育委員会と連携し、看護職員配置の補助事業の対象とすることや、人材確保の取組事例を周知することで支援したい",
+        "full_text": "先生御指摘のとおり、その中で高等学校に在籍する医療的ケア児の数は78名でございまして、小学校の1949名、中学校の315名と比べますと非常に少ない状況にございます。小中学校と同じく医療的ケア児が安心、安全に高等学校生活を送ることができるように、教育委員会とも連携しながら、適切な支援体制を整備していく必要があると考えているところでございます。文部科学省におきましては、小中学校と同じように、高等学校についても、教育委員会等による医療的ケア看護職員の配置に係る補助事業の対象にするとともに、学校が看護師を一人一人探して回ることがなかなか難しい場面もやはりあるわけでございますから、そうした医療的ケア看護職員の人材固定着に関する自治体などの取組、あるいは福祉関係機関との連携などの取組の事例を周知しているところでございます。引き続き、高等学校を含む各学校における医療的ケアの実施体制の整備につきまして、しっかり支援をしてまいりたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56267&time=504.96400000000006",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "高校の医療的ケア児支援の現状と今後の対応",
+          "sub_asks": [
+            "看護師確保の状況と課題の認識",
+            "課題への今後の対応策"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "医療的ケア児",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "高等学校に在籍する医療的ケア児の数は78名"
+            },
+            {
+              "type": "number",
+              "excerpt": "小学校の1949名"
+            },
+            {
+              "type": "number",
+              "excerpt": "中学校の315名"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "しっかり支援をしてまいりたいと考えてございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "高等学校に在籍する医療的ケア児の数は78名でございまして、小学校の1949名、中学校の315名と比べますと非常に少ない状況にございます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "高校における医療的ケア児の具体的な在籍数が示されており、記録としての価値がある。一方で、今後の対応策は抽象的な支援表明に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どのように対応していくのか」という問いに対し、具体的な期限や数値目標を求める形式にすれば、より実効性のある回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_004",
+      "segment_index": 1,
+      "topic": "医療的ケア児の高校進学に向けた受入体制の構築と周知",
+      "question": {
+        "speaker": "河井昭成",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 入試時の合理的配慮、施設整備、人的支援などの受入体制を今後どのように構築するか\n- その内容を本人や保護者へわかりやすく周知する必要性についての大臣の見解",
+        "full_text": "河井昭成（国民民主党・無所属クラブ）入試時の合理的配慮、施設整備、看護師配置や通学支援を含む人的支援などについて、今後どのように受入体制を構築していくのか、またその内容を本人や保護者へわかりやすく周知をすることも必要なのではないかと考えますが、この件について大臣にお伺いをしたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "松本洋平",
+        "role": "",
+        "summary": "- 合理的配慮の参考資料提供、看護職員配置への財政支援、バリアフリー化の推進などを促している\n- どの学校でどこまで体制が整っているか事前にわかることが大切であり、各教育委員会と相談したい",
+        "full_text": "文部科学省におきましては、各都道府県教育委員会などに対しまして、高等学校入学者選抜で障害のある生徒へ合理的配慮を提供する際に参考となる資料の提供、高等学校への医療的ケア看護職員配置に係る財政的支援のほか、学校施設のバリアフリー化の一層の推進などを促しているところであります。文部科学省としては、医療的ケア児が高等学校においても適切な支援を受けられるよう、必要な対応を行ってまいりたいと考えているところでありますし、実際にそういう体制というのがどの学校がどこまで整っているのかということが事前にわかることが大切だというお話かと思います。この点に関しましても、各教育委員会とよく相談をしてみたいそのように思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56267&time=504.96400000000006",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "障害のある生徒の受入体制構築と周知について",
+          "sub_asks": [
+            "受入体制を今後どのように構築していくのか",
+            "本人や保護者への周知が必要ではないか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "本人や保護者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "各都道府県教育委員会"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "高等学校入学者選抜"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "各教育委員会とよく相談をしてみたい",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "医療的ケア児が高等学校においても適切な支援を受けられるよう、必要な対応を行ってまいりたいと考えている",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "現状の取り組みの説明と、周知に関する今後の相談意向が示された標準的なやり取りである。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのように構築していくのか」という問いに対し、具体策ではなく現状の「促している」という説明に留まっているため、より具体的なロードマップを問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_005",
+      "segment_index": 1,
+      "topic": "部活動の地域展開における指導者の処遇と課題",
+      "question": {
+        "speaker": "河井昭成",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 先行事例における指導者の処遇の現状認識について\n- 文部科学省として把握している課題について",
+        "full_text": "そこで、部活動の地域展開に関する先行事例において、現在指導者の処遇はどのような状況にあると認識をされているのか、また文部科学省としてどのような課題を把握しているのか、お答えをください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "松本洋平",
+        "role": "",
+        "summary": "- 国として一律の謝金単価は設定していないが、適切な謝金が支払われることが必要と考えている\n- 指導者の役割や内容に応じて謝金が設定されており、今年度から創設した補助金で必要な経費を支援している",
+        "full_text": "地域クラブ活動の指導者の謝金につきましては、国として一律に謝金単価等の設定は行っておりませんが、部活動の地域展開による地域クラブ活動が持続可能なものとなっていくためには、スポーツや文化芸術活動の指導に対する対価として、指導者に適切な謝金が支払われることが必要であると考えております。また、すでに部活動の地域展開に取り組んでいる自治体におきましては、部活動の外部指導者への謝金と同水準を支払うようなケースも見受けられますが、競技力の向上を目指す地域クラブや、レクリエーション的な活動に取り組む地域クラブなど、多様な形態の地域クラブ活動が実施されており、指導者への謝金につきましては、それぞれの指導者の役割や指導内容等に応じて設定されております。文部科学省におきましては、今年度から、部活動の地域展開等を推進するため、新たに補助金を創設し、地域クラブ活動に係る指導者の謝金も含めた、必要な経費を補助しております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56267&time=504.96400000000006",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "地域展開における指導者の処遇と課題について",
+          "sub_asks": [
+            "指導者の処遇の現状認識",
+            "文部科学省が把握している課題"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "指導者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.6
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "補助金を創設"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "指導者に適切な謝金が支払われることが必要であると考えております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "現状の認識と補助金の創設については述べているが、具体的な「課題」への回答が不十分である。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのような課題を把握しているか」という問いに対し、具体的にどのような項目を挙げてほしいか（例：単価の格差、確保の困難さ等）を限定するとより具体的な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_006",
+      "segment_index": 1,
+      "topic": "地域クラブ活動指導者に求められる人材像と資質能力",
+      "question": {
+        "speaker": "河井昭成",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- どのような人材を指導者として想定しているか\n- 指導者にどのような能力や資質が求められると考えているか",
+        "full_text": "そこで、この部活動の地域展開において、どのような人材を指導者として想定しているのか、またその指導者にはどのような能力や資質が求められると考えているのか、これを大臣にお伺いをしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "松本洋平",
+        "role": "",
+        "summary": "- 地域のスポーツ・文化団体指導者、兼職希望の教職員、実業団選手など多様な人材を想定している\n- 技術的指導力に加え、倫理観、責任感、コミュニケーション能力、安全管理能力が必要である\n- 認定制度を通じた研修受講や日本スポーツ協会の資格活用などで資質能力を担保したい",
+        "full_text": "地域クラブ活動を円滑に実施をするためには、地域のスポーツ、文化、芸術団体の指導者や、兼職、兼業を希望する教職員、企業の実業団の選手など、多様な方々にご協力をいただくことを想定しているところであります。このため、指導者には技術的な指導力に加えまして、倫理観や責任感を有するとともに、生徒、保護者とのコミュニケーションや、安全管理なども含めまして、指導者としての資質能力が必要となるものと考えているところであります。昨年12月に策定したガイドラインでは、指導者の資質能力を担保するため、地域クラブ活動に関する認定制度におきまして、指導者が市町村などが定めます研修を受講することとしておりまして、例えば、日本スポーツ協会の公認スポーツ指導者の資格取得を活用することなどが考えられます。文部科学省としては、スポーツ指導者の養成や資格の認定を行っております日本スポーツ協会とも連携をしながら、地域クラブ活動の指導者の確保に向けまして、取り組んでまいりたい。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56267&time=504.96400000000006",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "地域展開における指導者の想定と求められる資質",
+          "sub_asks": [
+            "どのような人材を指導者として想定しているか",
+            "どのような能力や資質が求められると考えているか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "指導者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "日本スポーツ協会"
+            },
+            {
+              "type": "evidence_citation",
+              "excerpt": "昨年12月に策定したガイドライン"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "地域クラブ活動の指導者の確保に向けまして、取り組んでまいりたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "地域のスポーツ、文化、芸術団体の指導者や、兼職、兼業を希望する教職員、企業の実業団の選手など、多様な方々にご協力をいただくことを想定している",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "想定される人材と資質について具体的に回答されており、ガイドラインや外部団体との連携にも言及しているため、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_007",
+      "segment_index": 1,
+      "topic": "部活動の地域展開における事故発生時の責任所在",
+      "question": {
+        "speaker": "河井昭成",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 事故やトラブル発生時の責任について、学校、自治体、地域クラブ、指導者の役割をどう整理しているか\n- 現場の不安を解消するために今後どのような対応を進めるか",
+        "full_text": "部活動の地域展開において、事故やトラブルが発生した際の責任について、学校、自治体、地域クラブ、指導者、それぞれの役割や責任をどのように整理をしているのか、また、現場の不安を解消するため、今後どのような対応を進めるのか、お答えをいただきたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "松本洋平",
+        "role": "",
+        "summary": "- ガイドラインに基づき、認定を受けた運営団体・実施主体に安全確保の責任があると考えている\n- 個別の責任関係は原因に応じて異なるため一概には言えないが、引き続きガイドラインの周知に努め、混乱がないよう対応したい",
+        "full_text": "このため、昨年12月に策定をいたしました部活動改革に関するガイドラインにおきまして、地域クラブ活動に関する認定制度等を通じて、安全安心の確保を求めておりまして、市区町村などによる認定を受けた地域クラブ活動の運営団体、実施主体には活動の安全確保を図る責任がある。その上で、個別の事故の責任関係については、当該事故に至る経緯でありますとか、その原因などに応じて異なることとなりますので、一概に申し上げられないというところがあります。文部科学省としては、引き続きガイドラインをしっかりと周知を図ってまいりたいと思っております。地域クラブ活動における生徒の安全安心の確保はもとよりでありますけれども、そうした実際にこうした活動に携わってくださっている皆様方に混乱が生じたりすることがないように、我々としても努めてまいりたい、そのように考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56267&time=504.96400000000006",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "部活動地域展開時の責任整理と今後の対応",
+          "sub_asks": [
+            "役割や責任をどのように整理しているか",
+            "現場の不安解消のため今後どのような対応を進めるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "学校、自治体、地域クラブ、指導者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "部活動改革に関するガイドライン"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "努めてまいりたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "認定を受けた地域クラブ活動の運営団体、実施主体には活動の安全確保を図る責任がある。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "責任の所在についてガイドラインに言及しているが、個別ケースへの回答を避けており、今後の対応も精神論に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "責任の整理について、具体的にどのような基準（例：過失責任の所在）を求めているのかを明確に問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_008",
+      "segment_index": 1,
+      "topic": "地域クラブ活動指導者の持続可能な処遇と財政支援",
+      "question": {
+        "speaker": "河井昭成",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 指導者を安定的に確保するため、報酬や研修体制などどのような処遇が必要か、国としてどう支援するか\n- 職責に見合った処遇を確保するための国による財政措置についての見解",
+        "full_text": "今後地域クラブ活動の指導者を安定的に確保していくため、報酬やほかにも研修体制、継続的に活動できる環境の整備なども含めて、どのような処遇が必要だと考えているのか、また国としてどのように支援を進めていこうとしているのか、大臣にお伺いをしたいと思います。ここをしっかりと支えるならば、やはり国で財政の措置をする必要があると考えますが、改めて大臣に見解をお伺いしたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "松本洋平",
+        "role": "",
+        "summary": "- 適切な処遇の確保は重要であり、新設の補助金で指導者への謝金を含む活動費を支援している\n- 補助金水準が十分か、実施状況はどうなっているかを注視し、予算の見直しの中で必要な施策を行いたい",
+        "full_text": "今御指摘をいただいたとおり、地域クラブ活動の実施に当たりまして十分な資質能力を有する指導者を確保するということは大変大事なことでありますし、そのために指導者に対する適切な処遇の確保をするということは大変重要であるというふうに私どもも考えているところであります。今年度から新たに創設した補助金におきましては、市町村に認定された地域クラブ活動を対象にいたしまして、指導者への謝金を含む活動費等を支援しております。一方で、この水準が実際に十分なものであるのかとか、実際にそうした制度というものが活用されて、地域クラブ活動というものの実施状況がどのような状況であるのかとか、そうしたものに関しましては、我々としてもしっかりと現状の姿というものを注視をしながら、これからさらなる地域クラブ活動の展開に向けて、そしてこれらが子どもたちの地域クラブ活動の部活動、運動のスポーツや文化活動等にどのように結びついていくのか、その点をしっかりと注視をしながら、我々として、また必要な施策というものを、予算の見直しの中で行ってまいりたい、そのように考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56267&time=504.96400000000006",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "地域クラブ活動指導者の処遇改善と国の支援策について",
+          "sub_asks": [
+            "どのような処遇が必要と考えているか",
+            "国としてどのように支援を進めるか",
+            "財政措置を行うべきかという見解"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "地域クラブ活動の指導者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "今年度から新たに創設した補助金"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "必要な施策というものを、予算の見直しの中で行ってまいりたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "今年度から新たに創設した補助金におきましては、市町村に認定された地域クラブ活動を対象にいたしまして、指導者への謝金を含む活動費等を支援しております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "現状の補助金制度への言及はあるが、今後の具体的な処遇改善策や財政措置への明確な回答は避けられており、抽象的な意向表明に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのような処遇が必要か」という具体的提案を求める問いに対し、大臣が一般論で答えられる構成になっているため、具体的な項目（時給や社会保険等）を提示して問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_009",
+      "segment_index": 2,
+      "topic": "高専の学位付与と国際通用性",
+      "question": {
+        "speaker": "小竹凱",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 高専の本科卒業時に学位（準学士）が付与される点について、政府の認識を確認したい",
+        "full_text": "まず確認いたしますが、この高専は学校教育法上、5年間の一貫教育を行う高等教育機関であり、高専機構の説明でも本科卒業時には準学士という称号が付与されるというふうにされています。この点について理解よろしいか確認をお願いします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "大田高等教育局長",
+        "role": "",
+        "summary": "- 商船学科（5年6ヶ月）以外は、指摘通り5年の一貫教育を行う高等教育機関であると認識している",
+        "full_text": "修業年限につきましては、商船に関する学科については5年6ヶ月でございますが、それ以外につきましては、先生、御指摘のとおりでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56267&time=2356.5640000000003",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "高専の教育期間と称号の理解確認",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "学校教育法上"
+            },
+            {
+              "type": "organization",
+              "excerpt": "高専機構の説明"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "高専",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "5年6ヶ月"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.5
+        },
+        "oc3_quotability": {
+          "quote_candidate": "修業年限につきましては、商船に関する学科については5年6ヶ月でございますが、それ以外につきましては、先生、御指摘のとおりでございます。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "制度の前提確認に関するやり取りであり、商船学科という例外的な修業年限が明確にされた点で記録的価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_010",
+      "segment_index": 2,
+      "topic": "学位と称号の違い",
+      "question": {
+        "speaker": "小竹凱",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 「学位」と「称号」の違いについて説明を求める",
+        "full_text": "ここで学位と称号、この違いはお説明いただけますでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "大田高等教育局長",
+        "role": "",
+        "summary": "- 学位は大学等の教育修了時に知識能力の証明として授与されるものであり、国際的な原則となっている",
+        "full_text": "学位とは、学術の中心として、自律的に高度の教育研究を行う大学における教育修了に当たって、その知識能力の証明として授与するものでございまして、大学による学位授与が国際的にも確立された原則となってございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56267&time=2356.5640000000003",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "学位と称号の違いについての説明",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "学位とは、学術の中心として、自律的に高度の教育研究を行う大学における教育修了に当たって、その知識能力の証明として授与するもの",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "学位の定義については回答しているが、質問の核心である「称号との違い」については言及しておらず、不十分な回答である。",
+        "would_be_referenced": "low",
+        "issue_in_design": "比較対象（称号）についての言及を求める形式であるため、回答者が一方のみを説明して終えるリスクがある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_011",
+      "segment_index": 2,
+      "topic": "準学士称号導入の経緯",
+      "question": {
+        "speaker": "小竹凱",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 1991年の準学士称号創設時、国際化への対応や関係者の要望に応えたという政府答弁があったか確認したい",
+        "full_text": "今御答弁の中にもありましたが、その経緯をちょっと確認していきたいと思いますが、1991年の国会審議の際に短期大学と高専の卒業者について、新たに準学士を称することができるように変更されております。その際の政府の答弁としては、国際、今ちょっと触れていましたが、国際化の進展に対応し、また関係者の要望に応えというふうに説明をされております。これ、一応御確認できますでしょうか。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "大田高等教育局長",
+        "role": "",
+        "summary": "- 当時の文部大臣が、国際化の進展への対応および関係者の要請に応え、準学士を称することができるとした旨の説明をしており、政府の正式な説明である",
+        "full_text": "平成3年3月13日の衆議院の文教委員会における当時の井上豊文部大臣の学校教育法等の一部を改正する法律案の提案理由及び概要の説明におきまして、準学士の称号の創設につきましては、国際化の進展に対応し、また関係者の要請に応え、短期大学及び高等専門学校の卒業者について新たに準学士を称することができることとするものでありますとの説明がなされており、これは政府の正式な説明でございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56267&time=2356.5640000000003",
+      "metrics": null
+    },
+    {
+      "id": "qa_012",
+      "segment_index": 2,
+      "topic": "短期大学の学位化と高専の差異",
+      "question": {
+        "speaker": "小竹凱",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 2005年に短期大学が「短期大学士」という学位に移行した理由と、高専が同様の措置を取らなかった理由を問う",
+        "full_text": "この2005年には短期大学については、これまでの準学士、高専と同等であったものから、2005年に短期大学士という学位に移行されました。その理由についてお答えをお願いします。であれば、この高専の本科卒業生についても、1991年には同様に引き上げられたのに、2005年の際には、片手落ちというか置き去りになってしまったということに関して、同じような問題が起こり得るという認識は持つべきというふうに考えますが、当時の議論でなぜそうならなかったのか理由をお答えください。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "大田高等教育局長",
+        "role": "",
+        "summary": "- 短大は学校教育法上大学の一種であり、中教審答申を踏まえ学位授与が適切と判断された。高専については、当時は現在ほどグローバル化が進んでおらず、資格の国際通用性が強く意識されていなかった背景がある",
+        "full_text": "先ほど申し上げましたように、学位とは学術の中心として、自律的に高度の研究を行う機関が授与するものとの考え方が国際的にも原則とされてございます。短期大学につきましては、教育研究を行う学術機関であり、教授科用区など、実質的な運営を行うこととされてございまして、学校教育法上大学の一種とされているところ、御指摘のございました2005年、平成17年1月の中央教育審議会の答申「我が国の高等教育の将来像」におきまして、短期大学について、新時代にふさわしい位置づけが期待され、短期大学の課程の積極的な改革が期待される。そのことにつきましては、2005年当時におきましては、現在ほど人や技術、情報、資本のグローバル化が進んでいなかったと同時に、国外における高専に対する関心が今ほどは高くなかった状況の中で、高専本科卒業生の資格の国際的通用性が現在ほど強く意識されていなかったという背景があるものと認識してございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56267&time=2356.5640000000003",
+      "metrics": null
+    },
+    {
+      "id": "qa_013",
+      "segment_index": 2,
+      "topic": "学位不在による具体的支障の把握",
+      "question": {
+        "speaker": "小竹凱",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 学位がないことで海外進学や就職ビザ申請において不利益が生じている実態を、文科省として個別に把握しているか",
+        "full_text": "そして現場での具体的支障について伺いたいと思いますが、学位がないために海外進学であったり就職ビザ申請、海外赴任などであらゆる不利益が生じているという指摘があります。いただいた声の一部を紹介したいと思いますが、この進学の場面では追加の確認手続きを求められることであったり、適切な学年配置がなされないということであったり、高専で取得した単位が学位でないため、ある種認められないというようなことであったり。海外に赴任する際においては、日経新聞が高専特集を組んでいただいたんですけれども、そこの中では、高専卒の社員が海外勤務が決まったのに、ビザの取得の関係が難しくて、別の社員が代わりに赴任したという、こんな例まで紹介されています。文科省はこのような具体的支障を、国際的に活動する際の支障、今ご答弁いただいたと思いますが、個別に把握されているものはあるでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "大田高等教育局長",
+        "role": "",
+        "summary": "- 準学士の称号が海外で十分理解されず、実務上の不利益が生じている例を把握している。対策として、教育資格枠組みの策定公表や卒業証書の英語表記統一などを進めている",
+        "full_text": "我が国の学校制度の多様化、複線化に伴い、高等専門学校卒業者に準学士の称号が付与される仕組み自体はあっても、それが海外において十分理解されず、実務上の不利益が生じている例というのは、私ども把握をいたしてございます。こうした点を踏まえまして、我が国においては、大学改革支援・学位授与機構におきまして、国内外における我が国の学位、資格の透明性や比較可能性、国際的通用性を高め、国際的な人材流動を促進するため、レベル別に各教育資格を整理した教育資格枠組みを令和7年、2025年に策定公表いたしました。また、国立高等専門学校機構におきましても、各高専の卒業証書の英語表記の統一を推進するなど、高専卒業者、本科卒業者の海外進学等において不利益を回避するための取組を推進してございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56267&time=2356.5640000000003",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "高専卒の海外活動における具体的支障を個別に把握しているか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "日経新聞が高専特集を組んでいただいた"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "高専卒の社員",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "大学改革支援・学位授与機構"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "令和7年、2025年に策定公表いたしました"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国立高等専門学校機構"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "取組を推進してございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "高等専門学校卒業者に準学士の称号が付与される仕組み自体はあっても、それが海外において十分理解されず、実務上の不利益が生じている例というのは、私ども把握をいたしてございます。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "高専卒の海外での不利益という具体的課題に対し、政府がそれを認識していることを認め、具体的な対策（教育資格枠組みの策定や英語表記の統一）を提示した有益なやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_014",
+      "segment_index": 2,
+      "topic": "資格表示の妥当性と経歴詐称の懸念",
+      "question": {
+        "speaker": "小竹凱",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 文科省が準学士と短期大学士を同等レベル（レベル5）と発信している状況で、本人が海外でアソシエイトディグリーと同水準と説明した場合、経歴詐称に当たるのか",
+        "full_text": "今ご紹介もいただきました配布資料の裏側の2の方ですけれども、学位授与機構が公表している教育機関のレベル別表のようなものがありますけれども、ここでは今言われたようにレベル5のところで、準学士という称号と短期大学士という学位が同等レベルだというふうに読めます。その際に国際的な通用性という観点から説明をすると、欧米などのアソシエイトディグリーと同水準であるということですね。これを説明した際、また向こうが受け取った際、これは厳密には学位の有無がありますので、正確には違うんですけれども、こういった場合には経歴詐称に当たるのでしょうか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "大田高等教育局長",
+        "role": "",
+        "summary": "- 文部科学省として、学位である短期大学士と称号である準学士はいずれも同一水準であると責任を持って情報発信している",
+        "full_text": "先ほど申し上げたとおり、大学改革支援・学位授与機構におきまして、レベル5ということで、準学士と短期大学士が同等であるということを発信しているところでございます。このように、私どもとしては、この学位である短期大学士と称号である準学士はいずれも同一水準であるということを、文部科学省として責任を持って、海外大学など国内外に対して情報発信を行っている。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56267&time=2356.5640000000003",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "準学士を学位と同等と説明して経歴詐称になるか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "学位授与機構"
+            },
+            {
+              "type": "other",
+              "excerpt": "配布資料の裏側の2の方"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "大学改革支援・学位授与機構"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "文部科学省"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "学位である短期大学士と称号である準学士はいずれも同一水準であるということを、文部科学省として責任を持って、海外大学など国内外に対して情報発信を行っている。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "経歴詐称に当たるかという具体的な法的・倫理的問いに対し、政府は「同一水準であると発信している」という現状説明に留まり、直接的な回答を避けている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「経歴詐称に当たるか」という問いに対し、行政が判断しにくい領域であるため、具体的な運用基準やガイドラインの有無を問う形式にすべきだった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_015",
+      "segment_index": 2,
+      "topic": "高専の国際展開との矛盾",
+      "question": {
+        "speaker": "小竹凱",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- モンゴルやタイなどの海外展開先では学位が授与されている一方、本家である日本で学位が出ないのは国際整合性に欠け、日本が劣っていると受け取られないか",
+        "full_text": "そして、先ほどの少し前の答弁にも戻りますけれども、国際的に通用する資格というところにおいて、極めて象徴的な問題だと思うのが、高専の国際展開との矛盾であります。高専という日本独自のモデルは、モンゴルやタイなど海外にも展開をしていることはご存じかと思いますが、それらの国では、5年本科卒業時にモンゴル、タイであったり、その国では各国の枠組みに基づいて、準学士相当の学位が授与されるんですね。一方で本家である日本が学位が出ないというようなことにもなっております。これは高専教育ということが当時は国際展開していなかったので議論にはならなかったかもしれませんけれども、今海外に輸出しておきながら、その資格表示を国際整合性が欠いている。見方によっては日本が一番劣っているというふうに受け取ることもあるんじゃないかというふうに思いますが、この点についていかがでしょうか。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "大田高等教育局長",
+        "role": "",
+        "summary": "- 各国で独自の学位仕組みが整備されていることは承知しており、課題があるとの認識。引き続き国際的通用性の確保に努める",
+        "full_text": "今、先生からお話がございましたように、我が国の高等専門学校をモデルといたしまして、モンゴルですとかタイなどの国において独自の学校種が展開されており、それぞれの独自の学位が授与されていることは承知いたしてございまして、各国の教育、学校教育体系の中で学位等の仕組みが整備されているものと承知をしてございます。先ほど来申し上げておりますように、私どもとしては、学位である短期大学士と同一水準にある準学士について国内外に発信をしてございますが、ご指摘いただいておりますように、なお課題があるというふうに認識をしてございます。文部科学省といたしましては、引き続き教育機関とも連携しながら、高専を含め日本の高等教育資格の国際的通用性の確保に努めてまいりたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56267&time=2356.5640000000003",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "高専の学位授与における国際整合性の欠如への見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "モンゴルやタイなど海外にも展開をしている"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "高専卒業生",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "モンゴルですとかタイなどの国"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "短期大学士"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "国際的通用性の確保に努めてまいりたいと考えてございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "高専を含め日本の高等教育資格の国際的通用性の確保に努めてまいりたいと考えてございます。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "高専の学位授与に関する国際的な矛盾を指摘し、政府が課題として認識していることを確認したやり取りである。回答は一般的であり、具体的な改善策への言及はない。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「いかがでしょうか」というオープンクエスチョンであるため、政府が「いつまでに」「どのような方法で」改善するかという具体的な約束を引き出しにくい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_016",
+      "segment_index": 2,
+      "topic": "高専への学位付与制度の検討",
+      "question": {
+        "speaker": "小竹凱",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 時代に合わせて「高専学士」などの学位を付与する制度改正を検討すべきではないか。また、実態把握に基づいた検討の場を設置してほしい",
+        "full_text": "であれば、この課題をぜひ高専に理解のある大臣が取っ払っていただき、例えば仮称ですけれども、高専学士であったりとか、こういった学位を付与するという制度を、改正に検討することを始めていただきたいと思いますが、ここまでの議論を含めて大臣の見解をお願いいたします。単純に不可能なんですというこの門前払いではなくて、検討の余地がある、さまざまな制度課題があるということを踏まえた上で、ぜひ検討を始めていただきたいというふうに思います。まずは特に海外における、どのような支障が起きているのか、実態を政府にもさらに理解していただきたいというふうに思いますし、今答弁いただいたように、本科卒業時の資格表示のあり方について、法改正も含めて関係者の意見を聞きながら、制度検討の場をぜひ立ち上げていただきたいというふうに思いますが、改めて大臣の答弁をお願いします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "松本洋平",
+        "role": "",
+        "summary": "- 現在、事務方による校長への聞き取りなど実態把握を開始している。今後の議論を踏まえ、検討の場の設置などの点についても受け止めたい",
+        "full_text": "現在、文部科学省の事務方によって、高専の校長からグローバル化が進展する中における、高専卒業者の海外大学への編入学などに係る課題につきまして、聞き取りを行うなどの実態把握を開始をしているところであります。現在進めております聞き取りでありますとか、また、公選関係者の意見、また与党の公選関係会議での議論、そして今日、小竹委員からも、こうして具体的にご指摘、ご要望をいただいているところでありますが、こうした議論も踏まえまして、委員ご指摘の検討の場の設置などの点につきましても、我々としてお受け止めをさせていただきたい、そのように考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56267&time=2356.5640000000003",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "高専への学位付与制度の検討および検討の場の設置",
+          "sub_asks": [
+            "高専学士などの学位付与制度の改正検討",
+            "海外での支障の実態把握",
+            "資格表示のあり方に関する制度検討の場の設置"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "高専卒業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "文部科学省の事務方"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "与党の公選関係会議"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "検討の場の設置などの点につきましても、我々としてお受け止めをさせていただきたい",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "検討の場の設置などの点につきましても、我々としてお受け止めをさせていただきたい、そのように考えております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "高専の学位付与という具体的な制度提案に対し、大臣が検討の場の設置について前向きな意向（お受け止め）を示したため、一定の記録価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "複数の要望（学位付与、実態把握、検討の場）が混在しているため、個別の回答を明確にさせる問い方が望ましい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_017",
+      "segment_index": 2,
+      "topic": "大学授業料無償化における「三浪の壁」",
+      "question": {
+        "speaker": "小竹凱",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 大学の授業料無償化制度において、三浪以上の学生が対象外となる「三浪の壁」について、該当する学生の数を確認したい",
+        "full_text": "いわゆる三浪の壁について伺います。この三浪の壁とは、大学の授業料無償化制度において、三浪以上している学生は対象、",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "大田高等教育局長",
+        "role": "",
+        "summary": "- 学校基本調査の推測では、21歳から23歳で入学した方が約9,996人存在する",
+        "full_text": "あくまでも推定、推測でございますが、学校基本調査におきましては、21歳から23歳、三浪四浪ということになるかと存じますが、これらの年齢で入学した方が、9,996人ということでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56267&time=2356.5640000000003",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "三浪の壁（授業料無償化の対象外）について",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "三浪以上している学生",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "学校基本調査"
+            },
+            {
+              "type": "number",
+              "excerpt": "9,996人"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.6
+        },
+        "oc3_quotability": {
+          "quote_candidate": "学校基本調査におきましては、21歳から23歳…これらの年齢で入学した方が、9,996人ということでございます。",
+          "score": 0.5
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "質問が途切れていますが、回答側で学校基本調査に基づく具体的な人数を提示しており、記録としての価値があります。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問文が途中で切れており、具体的な問い（Yes/Noや制度の確認）に至っていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_018",
+      "segment_index": 2,
+      "topic": "就学支援新制度の対象要件",
+      "question": {
+        "speaker": "小竹凱",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 少子化対策としての性質を持つ制度において、なぜ「高校卒業後2年以内」という要件があるのか、その整合性を問う",
+        "full_text": "その上、政策目的との整合性について改めて伺いたいと思いますが、昨年から始まった多子世帯支援、低所得者対策だけではなくて、高等教育費の負担軽減を通じて、理想の子どもの数を持てない現状を不足するであったりとか、家計支援、少子化対策の性質も持つものだと思います。本来重視されるのであれば、家庭にどれだけの教育負担が生じているか、",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "小泉教育長",
+        "role": "",
+        "summary": "- 少子化対策を目的としているが、公費支援であるため、高校卒業後2年以内という要件を定めている",
+        "full_text": "高等教育の就学支援新制度、財源は消費税収入でございますので、今、御指摘のとおり、少子化対策を目的と実施するものでございます。同時に、このように本制度は公費での支援ということになりますので、対象となる要件の一つに、高等学校等を卒業してから2年以内と定めてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5163"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56267&time=2356.5640000000003",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "高等教育費負担軽減と少子化対策の整合性について",
+          "sub_asks": [],
+          "score": 0.5
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "昨年から始まった"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "多子世帯・低所得者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "高等教育の就学支援新制度"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "消費税収入"
+            },
+            {
+              "type": "number",
+              "excerpt": "2年以内"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "高等教育の就学支援新制度、財源は消費税収入でございますので、今、御指摘のとおり、少子化対策を目的と実施するものでございます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "medium",
+        "evaluation_note": "質問文が途切れているが、回答側で制度の目的（少子化対策）と財源を明確に認めており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "質問が文末まで完結しておらず、問いかけの形式になっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_019",
+      "segment_index": 3,
+      "topic": "学習指導要領の法的拘束力",
+      "question": {
+        "speaker": "渡辺藍理",
+        "party": "参政党",
+        "summary": "- 学習指導要領が全国の学校に対して法的拘束力を持つという考えか確認したい",
+        "full_text": "まずはじめに学習指導要領の法的な位置づけについて確認をさせていただきます。文部科学省は現在においても学習指導要領は全国の学校に対して法的拘束力を持つというお考えでしょうか。松本洋平文部科学大臣にお伺いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "松本洋平",
+        "role": "",
+        "summary": "- 学習指導要領は法規としての性質を有しており、各学校はこれに基づき教育課程を編成することが求められている",
+        "full_text": "松本洋平文部科学大臣：学習指導要領は、学校教育法等の法令の規定に基づきまして、教育の機会均等と全国的な一定水準の維持のために、文部科学大臣が定める教育課程の大綱的な基準であり、法規としての性質を有するものであります。そのため、各学校におきましては、学習指導要領に基づき、教育課程を編成することが求められております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56267&time=3997.0640000000003",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "学習指導要領の法的拘束力の有無",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "学校教育法"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "学習指導要領は、教育課程の大綱的な基準であり、法規としての性質を有するものであります。",
+          "score": 0.9
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "学習指導要領の法的性質について大臣が明確に定義しており、記録としての価値が高い。",
+        "would_be_referenced": "high",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_020",
+      "segment_index": 3,
+      "topic": "学習指導要領にない内容の教科書検定合格",
+      "question": {
+        "speaker": "渡辺藍理",
+        "party": "参政党",
+        "summary": "- 学習指導要領に性の多様性に関する規定がないにもかかわらず、関連記述のある教科書が検定を通過している理由は何か\n- 逸脱かどうかの判断基準を具体的に示してほしい",
+        "full_text": "では、その法的拘束力のある学習指導要領の下で、現実に何が起きているか、具体的な事実をお示しいたします。その学習指導要領に根拠のない内容が書かれている教科書を、文部科学省が検定で合格とされておりますが、法的拘束力のある学習指導要領に定めのない内容が、なぜ検定を通過するのか。仮に対抗的基準だから問題ないというのであれば、何が逸脱に値するのか、その判断基準を松本文部科学大臣に具体的にお示しいただきたいと思います。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "松本洋平",
+        "role": "",
+        "summary": "- 学習指導要領の「個々の児童生徒の多様な実態を踏まえた指導」に基づき、性の多様性に関する指導は可能である\n- 具体的な記述内容は民間発行者の判断に委ねられており、検定の結果、不適切とは判断されなかった",
+        "full_text": "松本文部科学大臣、学習指導要領には性の多様性に直接関連する記載はありませんが、早速におきまして、児童生徒の発達を支える指導の充実といたしまして、個々の児童生徒の多様な実態を踏まえ、一人一人が抱える問題に個別に対応した指導を行うことなどを明記をしておりまして、児童生徒の実態に応じて、一人一人に性の多様性に関する指導を行うことを可能としているところであります。こうした学習指導要領に示す内容を具体的に学習するため、教科書においてどのような事項を取り上げ、どのように記述をするかについては、民間の発行者の判断に委ねられており、現行の教科書において御指摘のような性の多様性や性自認に触れた記述もあるところであります。教科書検定におきましては、検定基準といたしまして、学習指導要領の内容等に照らして、不適切なところはないことなどを定め、これらの基準に基づき、教科書検定調査審議会において、専門的学術的な調査審議を行っており、その結果として、現行の教科書記述については、不適切とは判断されなかったものであります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56267&time=3997.0640000000003",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "学習指導要領にない内容が検定を通過する判断基準は何か",
+          "sub_asks": [
+            "なぜ指導要領に定めのない内容が検定を通過するのか",
+            "何が逸脱に値するのかという判断基準を具体的に示せ"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "法的拘束力のある学習指導要領"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "教科書検定調査審議会"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "教科書においてどのような事項を取り上げ、どのように記述をするかについては、民間の発行者の判断に委ねられており",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "学習指導要領と教科書検定の関係性について、大臣が「民間発行者の判断に委ねられている」という解釈を明確に示した点に記録価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「何が逸脱に値するのか」という具体的基準の提示を求めているが、回答は一般的基準の説明に留まっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_021",
+      "segment_index": 3,
+      "topic": "性同一性障害に係る通知の目的",
+      "question": {
+        "speaker": "渡辺藍理",
+        "party": "参政党",
+        "summary": "- 平成27年の「性同一性障害に係る児童生徒に対するきめ細やかな対応の実施について」という通知は、全クラスを対象とした集団教育を求めるものか",
+        "full_text": "学習指導要領と並んで、現場で根拠として引用されるもう1つの文書について確認いたします。それが後ほど申し上げる倉敷市や宝塚市の事例にもつながっていると考えておりますが、この通知は小学校の全クラスを対象とした集団教育を学校に求めるものなのかどうか、文部科学省としての公式見解を明確にお示しください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "松本洋平",
+        "role": "",
+        "summary": "- 当該通知は、特定の児童生徒への支援事例や相談体制の充実などを示したものであり、全クラスを対象とした授業の実施を求めるものではない",
+        "full_text": "お答えいたします。具体的な内容としまして、性同一性障害に係る児童生徒についての特有の支援としまして、学校生活の各場面における支援の事例、性同一性障害に係る児童生徒や、性的マイノリティとされる児童生徒に対する相談体制の充実などの配慮事項をお示しをしてございまして、この通知をもとに、小学校全クラスを対象とした性自認、ジェンダーに関する授業の実施を求めるものではございません。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56267&time=3997.0640000000003",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "通知が全クラスへの集団教育を求めるものか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "倉敷市や宝塚市の事例"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "倉敷市や宝塚市",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "性同一性障害"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "性的マイノリティ"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "この通知をもとに、小学校全クラスを対象とした性自認、ジェンダーに関する授業の実施を求めるものではございません。",
+          "score": 1.0
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "通知の解釈について政府の公式見解を明確に否定しており、記録としての価値が高い。",
+        "would_be_referenced": "high",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_022",
+      "segment_index": 3,
+      "topic": "LGBT関連教育の実施実態の把握",
+      "question": {
+        "speaker": "渡辺藍理",
+        "party": "参政党",
+        "summary": "- 全国の幼稚園・小中学校で、どの外部団体が具体的に何校でLGBT関連の授業を行っているか把握しているか\n- 教育委員会が独自にパンフレットを配布したり、幼稚園段階から教育を実施したりすることは適切か",
+        "full_text": "続きまして、今度は政府参考人にお伺いいたします。それ以前に基本的な生活習慣を整えることだったりとか、あとは生き物等を含め、思いやりの教育の方が優先されるべきでないかなというふうに考えておりますが、話を戻しまして、文部科学省は現在、全国の幼稚園また小中学校において、どの外部団体が具体的に何校LGBT関連の授業を行っているのかという把握はされているでしょうか。また、倉敷市、宝塚市のような事例、例えば教育委員会が独自にパンフレットを配布していたり、幼稚園の段階からLGBT教育を実施していることについて、これは学習指導要領の趣旨に照らしても適切と考えるでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "初等中等教育局長",
+        "role": "",
+        "summary": "- 個々の教育活動について網羅的に把握はしていない。教育課程の編成権限は学校にあるため\n- 一部の事業報告では外部団体による講演事例があるが、個別の事例については多面的な見方になるよう工夫して実施されていると承知している",
+        "full_text": "お答えいたします。LGBT関連の授業を全国で行っている状況をどのように把握しているかというご質問かと存じますが、文部科学省では全国の幼稚園、小学校、中学校において、一つ一つの教育活動がどのように行われているかということに関して、そしてこの中ではLGBTに関する授業がどのように行われているかについて、網羅的に把握をしているものではございません。教育課程の編成の権限は、これは学校にございまして、一つ一つの教育活動についての把握はしてございません。一方、文部科学省が実施をしています人権教育研究推進事業の令和7年度の事業報告書を見ますと、性的マイノリティに関する課題に取り組んだ35校の指定校のうち11校において外部団体等の講演が行われてございまして、例えば小学校5年生において、当事者の方を講師に招いて、実際に周りから受けた差別や偏見の経験談を講演いただいている事業、あるいは中学校において助産師会の方を講師に招いて、生理について相談したりされたりした際の対応の仕方などについて講義いただく事業などが行われているものと承知しております。委員から御指摘いただきました個別の倉敷市等の事例、私もあまり十分承知をしてございませんけれども、それぞれの教育活動の目的、そしてそれが多面的な見方、考え方になるような工夫も含めまして、学校において実施をされているものと承知をしているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56267&time=3997.0640000000003",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "LGBT関連授業の把握状況と特定事例の適切性",
+          "sub_asks": [
+            "外部団体が何校でLGBT関連授業を行っているか把握しているか",
+            "倉敷市・宝塚市の事例は学習指導要領の趣旨に照らして適切か"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "倉敷市、宝塚市"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "倉敷市、宝塚市",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "35校の指定校のうち11校"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "人権教育研究推進事業"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "助産師会"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "文部科学省では全国の幼稚園、小学校、中学校において、LGBTに関する授業がどのように行われているかについて、網羅的に把握をしているものではございません。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "政府が全国的なLGBT教育の実施状況を網羅的に把握していないことを明確に認めた点に記録的価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「適切と考えるか」という問いが抽象的なため、回答者が「工夫して実施されている」という形式的な回答で逃げることが可能になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_023",
+      "segment_index": 3,
+      "topic": "学習指導要領外の内容を指導する妥当性",
+      "question": {
+        "speaker": "渡辺藍理",
+        "party": "参政党",
+        "summary": "- 学習指導要領に根拠のない内容が教科書や現場で広がっている現状に対し、検定や指導の段階でより慎重に判断すべきではないか",
+        "full_text": "またここで実際に2024年度から使われている教科書の記述を具体的にご紹介いたします。教科書の検定段階、そして教材採択の段階、さらに実際の授業や指導その段階、それぞれの段階で慎重に判断すべきではないでしょうかと思いますが、松本文部科学大臣の御見解をお願いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "松本洋平",
+        "role": "",
+        "summary": "- 学習指導要領は限定的な列挙ではなく、目標を逸脱せず特に必要がある場合は、示されていない内容を加えて指導することが可能である\n- 特定の見方や偏った取扱いに留意し、適切な指導を行うよう努める。教科書検定でも不適切な記載がないか確認を続ける",
+        "full_text": "学習指導要領は教育課程の基準でありますが、指導可能な事項を限定的に列挙したものではなくて、各教科等の目標や内容の趣旨を逸脱したり、児童生徒の過重負担とならず、特に必要がある場合、学習指導要領に示していない内容を加えて指導することが可能であります。各学校におきまして、多様な見方や考え方のできる事柄等を取り上げる場合には、特定の見方や偏った取扱いにより、生徒の主体的な考えや判断を妨げないよう留意しつつ、学習指導要領を踏まえた創意工夫ある教育課程を編成し、適切な指導をいただきたいと考えております。なお教科書につきましては、民間発行者の創意工夫によりまして、学習指導要領に示す資質能力の育成に効果的な教科書編集を期待しておりますが、学習指導要領に照らして不適切なものとなっていないか、事実に基づかない記載や偏った記載になっていないかなど、検定を通じてしっかりと確認をしてまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56267&time=3997.0640000000003",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "教科書の検定・採択・指導の各段階での慎重な判断の是非",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "2024年度から使われている教科書"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "学習指導要領"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "検定を通じてしっかりと確認をしてまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "学習指導要領に照らして不適切なものとなっていないか、事実に基づかない記載や偏った記載になっていないかなど、検定を通じてしっかりと確認をしてまいります。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "教科書の記述に関する慎重な判断を求める問いに対し、大臣が検定での確認方針を回答した標準的なやり取りである。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「具体的にご紹介いたします」と述べながら、実際の記述内容が提示されていないため、議論の具体性に欠ける。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_024",
+      "segment_index": 3,
+      "topic": "次期学習指導要領での対応",
+      "question": {
+        "speaker": "渡辺藍理",
+        "party": "参政党",
+        "summary": "- ジェンダー教育について、次期学習指導要領で内容や対象学年を明確に定めるのか、あるいは記載しない場合にどう混乱を防ぐのか、今後の考えを伺いたい",
+        "full_text": "ではここまでの以上の議論を踏まえて、今後の対応についてお伺いいたします。ジェンダーに関する教育内容について、今後の対応にはどのように考えられているでしょうか。文部科学省は、次期学習指導要領の改定において、例えば記載するのであれば、その内容や対象学年、取扱う範囲を明確に定めること、もし記載されないのであれば、現場の状況をどのように把握して、そして自治体ごとに差があることで起きるその現場の混乱を防ぐためにどうするべきか等を明確にして、現場における通知についても慎重に行うことなど含め、どのように現状をお考えでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "松本洋平",
+        "role": "",
+        "summary": "- 学習指導要領に記載の有無にかかわらず、偏った取扱いにならないよう留意し、その趣旨を徹底させる\n- 次期学習指導要領に向けて、現在中教審で検討を行っている",
+        "full_text": "繰り返しになりますけれども、学習指導要領は指導可能な事項を限定的に列挙したものではなくて、各教科などの目標や内容の趣旨を逸脱したり、児童生徒の過重負担とならず、特に必要がある場合、学習指導要領に示していない内容を加えて指導することが可能であります。その上で、学習指導要領における記載の有無にかかわらず、多様な見方や考え方のできる事柄等を取り上げる場合には、特定の見方や偏った取扱いにより、生徒の主体的な考えや判断を妨げないよう、留意が必要なことは言うまでもなく、こうした趣旨がきちんと徹底されるように努めてまいりたい、そのように考えております。お尋ねの学習指導要領についてでありますけれども、まさに次期学習指導要領に向けて、現在中教審で発達の段階を踏まえ、さまざまな分野の"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56267&time=3997.0640000000003",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "ジェンダー教育の今後の対応について",
+          "sub_asks": [
+            "次期学習指導要領への記載内容・範囲の考え方",
+            "記載しない場合の現場混乱への対策と通知のあり方"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "次期学習指導要領の改定"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "現場",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": true,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "中教審"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "こうした趣旨がきちんと徹底されるように努めてまいりたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "特定の見方や偏った取扱いにより、生徒の主体的な考えや判断を妨げないよう、留意が必要なことは言うまでもなく",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "学習指導要領の一般的解釈に終始しており、具体的な記載の有無や混乱防止策への明確な回答は得られていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「記載する場合」と「しない場合」の二択を提示しているが、回答者が一般論で逃げられる構成になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_025",
+      "segment_index": 3,
+      "topic": "LGBT理解増進法に基づく実態調査の必要性",
+      "question": {
+        "speaker": "渡辺藍理",
+        "party": "参政党",
+        "summary": "- 理解増進法の見直しにあたり、幼稚園からの教育や独自パンフレット配布などの実態把握が必要ではないか\n- 詳細な実態調査を実施していないのであれば、なぜ行わないのか",
+        "full_text": "そして次になりますが、LGBT理解増進法というのは、2023年6月に施行されました。文部科学省は実際、学校教育の分野でどの程度の実態調査を実施しているのか、またこれから実施しようとしているのか。もしこのような詳細な調査を実施していないのであれば、見直し期限が迫る中でなぜ行わないのか。その実態を把握しないままの見直しというのは、形骸化したものになるのではと考えますが、大臣のお考えを明確にお示しください。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "松本洋平",
+        "role": "",
+        "summary": "- 個別の指導は学校の判断であり、現場の負担もあるため、実態調査については慎重に検討する必要がある\n- 理解増進法は包括的な法律であるため、政府全体の整理の中で必要な対応をとる",
+        "full_text": "学習指導要領には、個々の児童・生徒の多様な実態を踏まえ、一人一人が抱える問題に個別に対応した指導を行うことなどを明記しておりまして、児童生徒の実態に応じて一人一人に性の多様性に関する指導を行うことができるようにしているところであります。その上で学校現場に対する実態調査については、教育課程の編成は各学校において判断されるものであること、回答する学校現場の負担などを踏まえまして、慎重に検討をする必要があると考えております。また同時に、この理解増進法に関してでありますけれども、これは学校に限らず大きな大変話というか、そうした包括した法律だというふうに承知をしているところでもありまして、そうした意味におきまして、そうした政府全体の整理の中で、我々として必要な対応というものをとってまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56267&time=3997.0640000000003",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "LGBT理解増進法に伴う学校教育の実態調査の有無と今後",
+          "sub_asks": [
+            "実態調査をどの程度実施したか、また今後実施するか",
+            "調査を実施していないのであれば、なぜ行わないのか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "LGBT理解増進法"
+            },
+            {
+              "type": "date",
+              "excerpt": "2023年6月に施行"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "学校教育",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "学習指導要領"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "慎重に検討をする必要があると考えております",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "学校現場に対する実態調査については、回答する学校現場の負担などを踏まえまして、慎重に検討をする必要があると考えております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "実態調査の有無という具体的な問いに対し、学習指導要領の一般論と「慎重に検討」という定型句で回答しており、実質的な情報は少ない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「実施しているか」というYes/Noで答えられる問いを混ぜることで、回答者が曖昧な表現で逃げる余地を与えている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_026",
+      "segment_index": 4,
+      "topic": "平和学習及び校外学習の実態把握",
+      "question": {
+        "speaker": "河合道雄",
+        "party": "チームみらい",
+        "summary": "- 平和教育や修学旅行の実態把握に向けた全国的な実態調査の検討状況について伺いたい",
+        "full_text": "まず、平和学習及び校外学習の実態把握についてお伺いいたします。平和学習については、定義そのものが曖昧であり、全国的な実態把握が進んでいるとは言い難い現状にあると承知しております。また、修学旅行をはじめとする校外活動について、公立学校は教育委員会への届出等が求められている一方、私立学校では届出や報告義務はない状況と認識しております。平和教育や修学旅行の実態把握について、全国実態調査の実施の検討状況についてお聞かせください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "西条科学技術学術政策局長",
+        "role": "",
+        "summary": "- 同志社国際高等学校の事故調査結果を踏まえ、安全確保や適切な教育活動の実施に向けたフォローアップ調査を近く実施したい",
+        "full_text": "3月に発生いたしました同志社国際高等学校の研修旅行中の事故を受けまして、文部科学省におきましては、小学校である京都府と連携しつつ、4月24日の現地調査の実施を含めまして、事実確認を進めてまいりました。本日、これまでの把握事項と文部科学省としての見解を取りまとめたところでございます。現時点で把握した事項からは、同志社国際高等学校における研修旅行につきましては、安全管理、事前の計画や当日の対応、教育活動の状況などの面で、著しく不適切だったと考えているところでございます。その上で、今回の取りまとめを踏まえまして、全国の学校における安全確保や、適切な教育活動の実施に向けまして、4月7日に文部科学省から発出した通知への各学校設置者の対応状況等に関わるフォローアップ調査につきましては、近く実施をしたいと考えているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56267&time=5777.8640000000005",
+      "metrics": null
+    },
+    {
+      "id": "qa_027",
+      "segment_index": 4,
+      "topic": "校外活動の情報公開",
+      "question": {
+        "speaker": "河合道雄",
+        "party": "チームみらい",
+        "summary": "- 高校の教育内容として重要な校外活動を含め、情報公開制度の検討をどのように進めるか見解を伺いたい",
+        "full_text": "次に校外活動の情報公開についてお伺いをいたします。先般可決されました高校無償化に係る法律ですね。高等学校等就学支援金の支給に関する法律の一部を改正する法律案の附帯決議では、各高校の教育方針や教育環境等についての情報提供の促進が求められております。また、高校教育改革に関する基本方針、いわゆるグランドデザインにおいても、学校選択や生徒、保護者の学校理解促進のため、一定の要件、基準による積極的な情報公開の促進を図り、高校教育の質の向上を確保する仕組みづくりを検討するとあり、高校教育についての情報公開の仕組みづくりを進める方針が示されております。これらに校外活動を含む学校行事が含まれるかどうかは明示されておらず、グランドデザイン等の情報公開項目の例においては、修学旅行等の活動内容は含まれていないと承知しております。しかし、児童生徒の方々や保護者の方々が学校を選ぶにあたって、教育の中身である校外活動の内容は重要な情報と考えられます。今回の事故も踏まえ、校外活動を含め、高校の情報公開の制度の検討、こちらどのように進めていくか、御見解をお伺いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "松本洋平",
+        "role": "",
+        "summary": "- 学校の適切かつ積極的な情報公開は極めて重要と考えている\n- 先導拠点の取組を広げつつ、校外学習を含めた学習活動を適切に情報公開し、保護者の判断に資するあり方を考えていきたい",
+        "full_text": "文部科学省といたしましても、生徒や保護者が教育活動の目的、また内容につきまして、十分に理解、そして納得をした上で、学校を選択をしていただくためにも、学校の適切かつ積極的な情報公開は極めて重要だというふうに考えております。グランドデザインに則った高校教育改革促進基金の先導拠点におきましては、スクールポリシーに基づく学校運営でありますとか、教育活動の具体化を図るとともに、生徒の学びの成果や課題の把握と教育活動の改善への反映、そしてこれらを公表する仕組みの構築、学校選択や生徒保護者の学校理解に資する情報公開の促進に取り組むこと、これ要件とさせていただいているところであります。先導拠点の優れた取組を広げていただくことは重要でありまして、ぜひ先導拠点以外の学校におきましても、校外学習も含めた生徒の学習活動などを適切に情報公開をいただき、生徒や保護者に広く御理解をいただくことが大切であるというふうに考えておりますし、また今回の基金での各都道府県の取組というものも踏まえつつ、生徒や保護者の判断に資する情報公開のあり方、これについて考えてまいりたい。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56267&time=5777.8640000000005",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "校外活動を含む高校の情報公開制度の検討方針について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "高等学校等就学支援金の支給に関する法律の一部を改正する法律案の附帯決議"
+            },
+            {
+              "type": "other",
+              "excerpt": "高校教育改革に関する基本方針、いわゆるグランドデザイン"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "児童生徒の方々や保護者の方々",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "高校教育改革促進基金の先導拠点"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "情報公開のあり方、これについて考えてまいりたい",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "先導拠点以外の学校におきましても、校外学習も含めた生徒の学習活動などを適切に情報公開をいただき、生徒や保護者に広く御理解をいただくことが大切である",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "校外活動の情報公開という具体的な論点に対し、政府側がその重要性を認め、今後のあり方を検討する意向を示したやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どのように進めていくか」という問いに対し、具体的なスケジュールや手法を求める形式にすれば、より拘束力のある回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_028",
+      "segment_index": 4,
+      "topic": "国際科学技術コンテスト支援事業の採択基準",
+      "question": {
+        "speaker": "河合道雄",
+        "party": "チームみらい",
+        "summary": "- JSTの支援事業における採択基準について伺いたい\n- 科目単位の基準では教科横断的な分野が漏れる可能性があるが、見解を伺いたい",
+        "full_text": "続きまして、国際科学技術コンテスト支援事業についてお伺いいたします。JSTが実施する本事業は、理数系の意欲・能力が高い中高生のために、教科系のコンテスト支援や国際大会への日本代表生徒の派遣を支援する事業です。私は先日、こちらの支援事業にはまだ採択されていないんですけれども、国際人工知能オリンピックという2024年に第1回が開催された新しいコンテストの方からお話をお伺いいたしました。これは5年ごとに採択されるということもありまして、本支援事業の採択時期と重なっていないことから、国際人工知能オリンピックはまだ支援対象となっていないというお話だったんですけれども、実際にこちらのオリンピックの方、2回目に当たる昨年2025年の大会では、日本代表4名全員がメダルを獲得したりですとか、国別の順位では8位に入る高成績を収めているとお伺いしております。実際に大会に参加された方からも、事前の合宿を含めた日本の生徒との切磋琢磨ですとか、海外の参加者との交流から大いに刺激を受けたというお話もお伺いしております。ただ、JSTの支援事業について、採択基準におきまして、学習指導要領で定まる教科科目に関連するものが対象とされるため、今後、新しい募集のタイミングでも、国際人工知能オリンピックが採択されるかは不透明であるというふうにもお伺いしております。こういった科目を基準とする運用については、今後新しい学問分野ですとか、それに基づいて科目についても単元が広がり得ることですとか、教科横断的なコンテストが現れた際に柔軟に対応しづらいのではないかという課題も考えられます。JSTの国際科学技術コンテスト支援事業につきまして、支援対象はどのような基準で決まっているのでしょうか。また、科目単位で支援を決める基準は、振興、教科横断的な分野が構造的に漏れる可能性が指摘でき得ると考えますが、見解をお伺いいたします。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "西条科学技術学術政策局長",
+        "role": "",
+        "summary": "- 中等教育課程の教科科目を題材とした理数系コンテストを基準としているが、教科横断的な分野を一律に排除するものではなく、審査で個別に判断している\n- 令和9年度以降の公募のあり方や支援基準については今後検討する",
+        "full_text": "先生御指摘いただきました国際科学技術コンテスト支援事業、この支援対象となる科学オリンピックにつきましては、直近で実施いたしました公募の要項では、中等教育課程における教科科目を題材とし、生徒への研鑽及び社会への波及効果を備えた理数系コンテストで、国際大会として国際科学オリンピックへ参加するものと定めております。この基準は学校教育との関連が深く、より多くの生徒が関わる分野のコンテストこれに支援を行うことによりまして、事業効果の最大効果を図るためのものではございますけれども、御指摘の進行、強化、横断的な分野のコンテストを一律に排除するものではなく、基準に該当するか否かは、提案内容を踏まえまして、審査の中で個別に判断されるもの、というように考えてございます。なお、本事業の令和9年度以降の支援対象に係る公募のあり方については、現時点では未定であり、その支援基準を含めまして、今後検討を進めてまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56267&time=5777.8640000000005",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "国際科学技術コンテスト支援事業の採択基準と運用について",
+          "sub_asks": [
+            "支援対象はどのような基準で決まっているか",
+            "科目単位の基準で教科横断的分野が漏れる可能性への見解"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "JST"
+            },
+            {
+              "type": "other",
+              "excerpt": "国際人工知能オリンピック"
+            },
+            {
+              "type": "date",
+              "excerpt": "2024年に第1回が開催された"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国際人工知能オリンピック",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "evidence_citation",
+              "excerpt": "中等教育課程における教科科目を題材とし、生徒への研鑽及び社会への波及効果を備えた理数系コンテスト"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "令和9年度以降"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "その支援基準を含めまして、今後検討を進めてまいります",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "教科横断的な分野のコンテストを一律に排除するものではなく、基準に該当するか否かは、提案内容を踏まえまして、審査の中で個別に判断される",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的なコンテスト名を挙げて基準の硬直性を指摘し、政府から「個別判断する」という運用方針と今後の検討への言及を引き出した有意義なやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_029",
+      "segment_index": 4,
+      "topic": "理数系・先端領域を学ぶ児童生徒への支援策",
+      "question": {
+        "speaker": "河合道雄",
+        "party": "チームみらい",
+        "summary": "- 支援対象外の国際大会への支援を含め、理数系や先端領域を学ぶ意欲ある児童生徒を支える現行の仕組みと今後の拡充予定について伺いたい",
+        "full_text": "続きまして、このような支援の対象にならない国際大会への参加や、あるいはそういったコンテストに参加される方に触発されたことで、どんどんいろいろな方がこういった領域に興味を持った際の多様な支援の受け皿を創出していくことの重要性を考えた際にお伺いをさせていただきます。支援対象外の国際大会への支援を含め、理数系や先端領域を学ぶ意欲ある児童生徒を支える仕組みとして、現行でどういったものがあり、今後どう拡充していくおつもりか、政府参考人にお伺いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "西条科学技術学術政策局長",
+        "role": "",
+        "summary": "- スーパーサイエンスハイスクール(SSH)や次世代科学技術チャレンジプログラム(ステラ)を実施している\n- 科学技術学術審議会の人材委員会での検討を踏まえ、来月報告書を取りまとめる予定であり、幅広い取組を積極的に推進したい",
+        "full_text": "文部科学省におきましては、先進的な理数系教育に取り組む高等学校等を支援するスーパーサイエンスハイスクール支援事業を実施しておりまして、御指摘のような科学オリンピック国際大会への出場に関しましても、指定校の生徒であれば、学校に措置される予算を通じて支援が可能となってございます。また、大学等が教育プログラムや研究指導を提供し、理数系に優れた意欲、能力を持つ児童生徒のさらなる能力伸長を目指す次世代科学技術チャレンジプログラム、これステラと呼んでございますけれども、これも実施しているところでございます。これらの事業につきましては、科学技術学術審議会人材委員会において、事業の一層の強化に向けた検討を進めてきたところでございまして、来月には新たな科学技術人材に関する基本政策として報告書を取りまとめる予定としてございます。当該報告書等を踏まえまして、より多くの意欲ある児童生徒を支援できるよう、引き続き次世代の科学技術人材の育成に向けた幅広い取組を積極的に推進してまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56267&time=5777.8640000000005",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "理数系児童生徒への支援策の現状と拡充案",
+          "sub_asks": [
+            "現行でどういった仕組みがあるか",
+            "今後どう拡充していくつもりか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "理数系や先端領域を学ぶ意欲ある児童生徒",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "スーパーサイエンスハイスクール支援事業"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "次世代科学技術チャレンジプログラム"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ステラ"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "科学技術学術審議会人材委員会"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "来月には新たな科学技術人材に関する基本政策として報告書を取りまとめる予定"
+            }
+          ],
+          "score": 0.9
+        },
+        "as4_commitment": {
+          "level": 3,
+          "trigger_phrase": "来月には新たな科学技術人材に関する基本政策として報告書を取りまとめる予定としてございます",
+          "matched_pattern": "future-tense verb describing a CONCRETE government action with a named mechanism"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "来月には新たな科学技術人材に関する基本政策として報告書を取りまとめる予定としてございます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "現行制度の具体名と、来月の報告書取りまとめという具体的なアクションが示されており、有益な回答である。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「支援対象外の国際大会への支援」という点について、具体的にどう拡充するのかという踏み込んだ問い方ができればより価値が高まった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_030",
+      "segment_index": 4,
+      "topic": "教員養成課程における障害の社会モデルの導入",
+      "question": {
+        "speaker": "河合道雄",
+        "party": "チームみらい",
+        "summary": "- 教職課程コアカリキュラムに「障害の社会モデル」を反映させる検討の方向性について、大臣はどう考えるか",
+        "full_text": "続きまして、教員養成課程における障害の社会モデルを学ぶ意義についてお伺いをいたします。教員養成部会の特別支援教育作業部会において、ICFの考え方に基づき、障害の社会モデルを教職課程コアカリキュラムに反映する方向で審議が進んでいるところと承知しております。これにより、広く障害の社会モデル、社会の側に障害があるという考え方でございますけれども、この考え方を教員が学ぶこととなります。この検討の方向性の意義について、大臣がどうお考えか、御見解をお聞かせください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "松本洋平",
+        "role": "",
+        "summary": "- 多様性の包摂を基本とし、ICFの考え方や障害の社会モデル、合理的配慮への理解を深めるための検討を行っていく",
+        "full_text": "中央教育審議会におきましては、次期学習指導要領に向けまして、多様性の包摂を基本的な考え方の一つとして議論をしておりまして、障害のある子どもたちの学習活動に当たりましては、多様な子どもたちが通常の学級に在籍していることを前提といたしました学級づくり、授業づくりの重要性について御議論をいただいているところであります。特別支援教育に関する教職課程の内容の充実に当たりましては、御指摘のWHOが定めますICFの考え方も踏まえまして、障害の社会モデルや合理的配慮の提供に対する理解、多様な子どもたちが通常の学級に在籍していることを踏まえた授業づくり、学級づくりなどを取り扱うことについて、御検討をいただいているところであります。文部科学省として、今後の中央教育審議会における議論も踏まえまして、教職課程において、教師を目指す学生が社会モデルの考え方の理解も含めまして、特別支援教育についての理解を深めることができるよう、必要な検討を行ってまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56267&time=5777.8640000000005",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "教職課程に障害の社会モデルを反映させる意義への見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "教員養成部会の特別支援教育作業部会"
+            },
+            {
+              "type": "other",
+              "excerpt": "ICFの考え方"
+            },
+            {
+              "type": "other",
+              "excerpt": "教職課程コアカリキュラム"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "教員",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.6
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "中央教育審議会"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "WHOが定めますICFの考え方"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "必要な検討を行ってまいります",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "教師を目指す学生が社会モデルの考え方の理解も含めまして、特別支援教育についての理解を深めることができるよう、必要な検討を行ってまいります。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "大臣による一般的・抽象的な回答であり、具体的な「意義」への深い見解というよりは、検討を進めるという手続き的な回答に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「意義についてどう考えるか」という主観的な問いであるため、回答が抽象的な精神論や手続き論に逃げやすくなっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_031",
+      "segment_index": 4,
+      "topic": "特別活動における多様性・包摂性の検討意図",
+      "question": {
+        "speaker": "河合道雄",
+        "party": "チームみらい",
+        "summary": "- 特別活動を重層的支援構造の第一層支援の核として位置づける検討について、どのような意図で進めているか伺いたい",
+        "full_text": "続いて特別活動での多様性、包摂性についてお伺いをいたします。早速評価特別部会では特別支援教育側のワークグループの議論を踏まえ、特別活動を重層的支援構造の第一層支援の核として位置づける提案がなされました。第一層支援とは発達支持的生徒指導ということで、全ての児童生徒を対象とした生徒指導の基盤でございます。これはいわゆるUDLの考え方を踏まえて、特別活動が多様性、包摂性を尊重した学校生活づくりの起点となることだと理解をしております。今回の特別活動における検討について、どのような意図を持って進められているのか、お伺いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "東中等教育局長",
+        "role": "",
+        "summary": "- 特別活動を多様な他者との対話により共生社会を実現する基盤として位置づけを明確化したい\n- 特に学級活動は、学校における多様性・包摂性の実現に向けた重要な役割を果たすと考えている",
+        "full_text": "学習指導要領の改定に向けまして、昨年9月に中央教育審議会が取りまとめた論点整理、ここで多様性の包摂を次期学習指導に向けた基本的な考え方の一つと位置づけております。その中で特別活動を身近な社会である学級・学校で多様な他者との対話や共同により確かな民主主義の担い手を育み、共生社会を実現する基盤を提供する領域として、その位置づけを明確化することとしてございます。とりわけ特別活動のうち学級活動につきましては、基礎的な生活コミュニティである学級における生活づくりなどを対象としてございまして、御指摘のとおり、学校における多様性、包摂性の実現に向け、教育課程上重要な役割を果たすものと考えてございまして、現在、そうした方向での議論は進んでいるところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56267&time=5777.8640000000005",
+      "metrics": null
+    },
+    {
+      "id": "qa_032",
+      "segment_index": 4,
+      "topic": "現職教員への障害の社会モデルの普及策",
+      "question": {
+        "speaker": "河合道雄",
+        "party": "チームみらい",
+        "summary": "- 多忙な教員の時間を確保しつつ、現職教員へICFに基づく障害の社会モデルの考え方をどのように広げていくか伺いたい",
+        "full_text": "その観点から現職教員へのこの考え方の伝達・定着についてお伺いいたします。この障害の社会モデルが教職課程コアカリキュラムへの反映がされるというのは重要な一歩でございますけれども、これだけでは現在学校現場にいらっしゃる教員には届ききるとは言い難いです。現職教員の意識が変わらなければ、なかなか新しく入る教員だけでは現場を変えていくことは難しいと感じます。多忙な教員の時間をどう確保しながら、現職教員へこのICFに基づく障害の社会モデルの考え方を広げていくお考えかお伺いをいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "松本洋平",
+        "role": "",
+        "summary": "- 採用後10年以内の特別支援教育経験などの人事上の配慮や、研修動画の公開による専門性向上に努めている\n- 働き方改革の観点に配慮しつつ、専門研修や動画の活用を促し、理解促進を図りたい",
+        "full_text": "特別な教育的支援が必要な子どもたちが増加をしている現状を踏まえまして、全ての教師が社会モデルの考え方も含めまして特別支援教育に関する専門性を身につけること、大変重要であると考えているところであります。文部科学省としては都道府県教育委員会等に対しまして、全ての教員が採用後10年以内に特別支援教育を複数年経験するなどの人事上の配慮や研修の充実を求めるとともに、国立特別支援教育総合研究所におきまして、地域の中核を担う指導者養成研修の実施や、広く教師が視聴可能な研修動画を公開するなど、都道府県などにおける取組の支援を通じまして、教師の専門性向上に努めているところであります。引き続き、各種会議等の機会をとらえ、専門研修や研修動画の積極的な活用を促すことをはじめ、教師の皆さんの働き方改革の観点、そして日々多忙な業務に従事をしていただいているというそうした観点にも考慮をしつつ、全ての教師の理解促進及び専門性向上に資するように我々としても努めてまいりたいそういうふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56267&time=5777.8640000000005",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "現職教員への障害の社会モデルの普及策について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "教職課程コアカリキュラム"
+            },
+            {
+              "type": "other",
+              "excerpt": "ICFに基づく障害の社会モデル"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "現職教員",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国立特別支援教育総合研究所"
+            },
+            {
+              "type": "number",
+              "excerpt": "採用後10年以内に特別支援教育を複数年経験"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "全ての教師の理解促進及び専門性向上に資するように我々としても努めてまいりたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "全ての教員が採用後10年以内に特別支援教育を複数年経験するなどの人事上の配慮や研修の充実を求めている",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "現職教員への普及策という問いに対し、既存の研修体制や人事上の配慮について具体的に回答しているが、今後の新たなコミットメントは精神論に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「時間をどう確保しながら」というリソース確保の具体策を問うているが、回答は既存の研修周知に留まっており、問いをより具体的に（例：予算や制度の変更）絞り込む余地がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    }
+  ],
+  "score_schema_version": "2.0",
+  "prompt_version": "V4"
+}

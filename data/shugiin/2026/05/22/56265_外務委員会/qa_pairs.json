@@ -1,0 +1,4063 @@
+{
+  "pairs": [
+    {
+      "id": "qa_001",
+      "segment_index": 1,
+      "topic": "安全保障分野におけるODAの増額",
+      "question": {
+        "speaker": "山田基靖",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 安全保障戦略などの3文書改定にあたり、地域の安全保障経費としてODAの増額を主導してほしい",
+        "full_text": "大臣、ぜひ3文書の改定の中で、このODA、OSAと両輪になる形で、地域の安全保障の経費として、ぜひ大臣に引っ張っていただいて、増額につなげていただきたいと思うんです。大臣、御所見いただければと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- ODAによる巡視船供与やインフラ整備は、シーレーンの安定や望ましい安全保障環境の創出に資する\n- OSAとともに安全保障分野のODAを強化し、FOIPの戦略的深化に貢献することが重要である\n- 3文書の改定を踏まえ、安全保障への貢献の重要性を考慮した予算あり方について関係省庁と調整する",
+        "full_text": "ODAを通じて国際社会の平和と安定に貢献すること、これは我が国の平和と安定にもつながるものだと考えております。例えばODAによります巡視船の供与であったりとか、人材育成など、海保法執行機関の能力強化は、我が国の安全保障にとって重要なシーレーンの安定にも資すると考えております。また、港湾であったり、空港など同志国の戦略的に重要なインフラを整備することは、相手国のみならず、我が国にとっても望ましい安全保障環境を創出していく、さらに経済活動の発展にも資するものだと考えております。国際情勢の厳しさの中、OSAとともに、安全保障分野におけるODAを強化していくことで、地域の平和と安定のための連携拡大を通じて、FOIPの戦略的な深化にも一層貢献していくことが重要だと考えております。新たな安全保障戦略をはじめとする3文書、今年今改定する予定でありますが、それを踏まえて今後の予算のあり方については、こうしたODAの安全保障への貢献の重要性を踏まえたものとなるように、関係省庁とも調整をしてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=504.8359999999999",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "安全保障経費としてのODA増額への見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "3文書の改定"
+            },
+            {
+              "type": "other",
+              "excerpt": "ODA、OSA"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "巡視船の供与"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "海保法執行機関"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "FOIP"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "関係省庁とも調整をしてまいりたいと考えております",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "安全保障分野におけるODAを強化していくことで、地域の平和と安定のための連携拡大を通じて、FOIPの戦略的な深化にも一層貢献していくことが重要だと考えております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "ODAの安全保障上の意義を具体的に述べた上で、予算調整への意欲を示した標準的な答弁である。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "増額の是非について「Yes/No」を明確に問う形式にすれば、より強いコミットメントを引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_002",
+      "segment_index": 2,
+      "topic": "ホルムズ海峡における通行料徴収の国際法上の評価",
+      "question": {
+        "speaker": "金城泰邦",
+        "party": "中道改革連合・無所属",
+        "summary": "- ホルムズ海峡が通過通行制度の適用される国際海峡であるとの認識に立った場合、イラン政府が通行料を求める運用は国際法上どう評価されるか\n- 海洋法条約および慣習法上の観点からの見解を求める",
+        "full_text": "前回の外務委員会で大臣の方から、ホルムズ海峡は通過通行制度が適用される国際海峡であるとご認識いただいたと思います。この点でイラン政府は、今まで通行料を支払ったら通ってもいいといったようなことを述べてみたり、一部運用が開始されているとの報道も散見されましたけれども、このイラン政府がこのような通行料を求める運用というのは、同海峡が通過通行制度が適用される国際海峡であるとの認識に立つと、国際法上どのように評価されるのか。海洋法条約に加えて慣習法上の観点からも御答弁をお願いしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "中村",
+        "role": "",
+        "summary": "- 国際法上、通過通行制度が適用される国際海峡において、沿岸国が通行のみを理由に外国船舶へ通行料を課すことは認められない\n- ただし、イラン政府の具体的な運用目的や手段が判然としないため、日本政府として確定的な見解を述べることは困難である",
+        "full_text": "国連海洋法条約に規定しますところの通過通行制度というのは、その制度は適用される海峡におきまして、全ての船舶による航行の自由、そして全ての航空機による上空飛行の自由が、継続的かつ迅速な通過のためにのみ保障される、これを中核とする制度でございます。イランは国連海洋法条約を締結していないわけでございますが、今般の政府の精査の結果、近年の国家実行の集積、学説の発展も踏まえますと、その国連海洋法条約に規定する通過通行制度の中核的内容につきましては、慣習国際法化していると、こういう認識に至ったものでございます。その上で、御質問の通行料についてお答えいたしますと、一般論になりますが、国際法上通過通行制度が適用される国際海峡におきまして、沿岸国は通行のみを理由として、外国船舶に対して通行料を課すことは認められないということでございます。その上で、ただイラン政府が実際に具体的にホルムズ海峡の通過通行に関する通行料をどう運用しているか、こういうことにつきましては、その目的、あるいはどういう手段で行っているかということが具体的に判然としませんので、日本政府として確定的な見解を述べることは困難であることでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=1483.136",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "ホルムズ海峡での通行料徴収の国際法上の評価",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "海洋法条約"
+            },
+            {
+              "type": "past_answer",
+              "excerpt": "前回の外務委員会で大臣の方から、ホルムズ海峡は通過通行制度が適用される国際海峡であるとご認識いただいた"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "イラン政府",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国連海洋法条約"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "慣習国際法"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.65
+        },
+        "oc3_quotability": {
+          "quote_candidate": "国際法上通過通行制度が適用される国際海峡におきまして、沿岸国は通行のみを理由として、外国船舶に対して通行料を課すことは認められない",
+          "score": 0.9
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "国際法上の一般論として通行料徴収が認められないことを明言しており、記録としての価値が高い。",
+        "would_be_referenced": "high",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_003",
+      "segment_index": 2,
+      "topic": "日韓首脳会談の成果",
+      "question": {
+        "speaker": "金城泰邦",
+        "party": "中道改革連合・無所属",
+        "summary": "- 今月19日に開催された日韓首脳会談の成果について伺いたい",
+        "full_text": "はじめに、質問に入りますが、日韓首脳会談について伺いたいと思います。今月19日、韓国の南東部、安東で、高市総理とイ・ジェミョン大統領による日韓首脳会談が開催されました。緊迫する中東情勢を踏まえ、原油や石油製品、液化天然ガスの相互融通を含む日韓のエネルギー安全保障の強化で一致したと報道されております。インド太平洋地域の石油備蓄を含む供給安定化に向けた協力拡大も確認をし、具体策を協議する産業通商政策対話の創設で合意でき、会談の成果を盛り込んだ共同文書が発表されました。この日韓首脳会談の成果について、茂木外務大臣に伺いたいと思います。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 日韓関係の戦略的重要性について認識を共有し、良好な関係の基調を維持・強化することで一致した\n- インド太平洋地域の平和と安定のため、日米同盟・米韓同盟の戦略的連携による抑止力・対処力の維持強化に主体的に取り組む重要性を共有した\n- シャトル外交の積極的な実施を含め、緊密に疎通を続けていくことで一致した",
+        "full_text": "今般の日韓首脳会談においては、日韓関係全般及び中東情勢も踏まえたインド太平洋地域情勢について率直な意見交換が行われたところであります。両首脳の日韓関係の戦略的重要性について、今回も認識を共有し、良好な日韓関係の基調を維持、強化していくこと等で一致をいたしました。また、現下の国際情勢を踏まえて、インド太平洋地域の平和と安定を促進するために、日米同盟、また米韓同盟、そしてその戦略的連携によります抑止力、対処力の維持強化を含めて、日韓が主体的に取り組んでいくことの重要性について、認識を共有をしたところであります。また、両首脳は今後もシャトル外交の積極的な実施を含めて、日韓両政府間で緊密に卒を続けていくことで一致をいたしました。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=1483.136",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "日韓首脳会談の成果について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "今月19日"
+            },
+            {
+              "type": "organization",
+              "excerpt": "日韓首脳会談"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "日韓首脳",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "良好な日韓関係の基調を維持、強化していくこと等で一致をいたしました",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "良好な日韓関係の基調を維持、強化していくこと等で一致をいたしました。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "首脳会談の成果を問う抽象的な質問に対し、大臣が概括的な外交方針を回答した形式的なやり取りである。",
+        "would_be_referenced": "low",
+        "issue_in_design": "エネルギー安全保障や産業通商政策対話など具体的な合意事項に言及しているため、それらの具体策について問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_004",
+      "segment_index": 2,
+      "topic": "パワーアジア枠組みにおける韓国との協力可能性",
+      "question": {
+        "speaker": "金城泰邦",
+        "party": "中道改革連合・無所属",
+        "summary": "- アジアエネルギー資源供給力強靭化パートナーシップ（パワーアジア）の枠組みにおいて、韓国と取り組む可能性や具体的な内容について伺いたい",
+        "full_text": "続きまして、このホルムズ海峡が封鎖をされ、日韓両国とも原油や石油製品の確保、これが急務となっております。高市内閣は、先月、アジア全体でエネルギー確保を設けることを決めた、アジアエネルギー資源供給力強靭化パートナーシップ、通称パワーアジア、これを発表いたしました。具体的には、政府系機関を通じて、アジア各国の製油所に保険を提供して、代金回収を補償することで、中東からの原油調達を支援。それによってアジアから医療物資などの石油製品を円滑に調達できるようにする狙いがあり、将来的にはアジア全体で原油の備蓄に取り組むことも想定しているものと承知をしており、大変重要な取り組みであると思っております。今回の日韓首脳会談を受けて、通称パワーアジア、この枠組みでの韓国との取り組みの可能性など、具体的な内容について伺いたいと思いますが、御答弁よろしくお願いします。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "山田基靖",
+        "role": "自由民主党・無所属の会",
+        "summary": "- 日韓首脳会談での共同プレスリリースを踏まえ、パワーアジア等の取組を通じて、備蓄を含む分野でアジアのエネルギー供給強靭化に向けた協力の可能性を検討していく\n- 具体化に向けて韓国側と密に連携してまいりたい",
+        "full_text": "5月19日の日韓首脳会談におきまして、韓国の産業通商資源部と経済産業省の連名で、エネルギー安全保障及びサプライチェーン強靭化に関する協力についての共同プレスリリースを発表いたしております。今後、首脳会談の成果を踏まえまして、パワーアジア等の取組を通じて、備蓄を含む分野において、アジアにおけるエネルギー供給強靭化に向けた協力の可能性を検討していくこととしてございます。今後、さらなる具体化に向けて、韓国側と密に連携をしてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=1483.136",
+      "metrics": null
+    },
+    {
+      "id": "qa_005",
+      "segment_index": 2,
+      "topic": "日中関係における協議内容",
+      "question": {
+        "speaker": "金城泰邦",
+        "party": "中道改革連合・無所属",
+        "summary": "- 日韓首脳会談において、日中間の関係についてどのような協議が行われたか説明を求める",
+        "full_text": "続きまして、尹大統領は共同発表で日中間の関係に言及をし、北東アジア地域の平和と安定のため、日中間が互いに尊重協力して、共通の利益を模索することが重要という趣旨の発言をされたように報道されております。中国とも協力をして共通の利益を追求していくことが必要であり、それがアジアの真の安定と日本の国益にもつながっていくことであると考えております。今回の会談で日中間の関係についてどのような協議であったのか、これを外務省より説明をいただきたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "大臣官房参事官",
+        "role": "",
+        "summary": "- 尹大統領から日中間の協力の重要性について言及があった\n- 日中韓3カ国で率直な対話を行い、未来志向の交流と協力を推進することは共通の利益であり重要であると考える",
+        "full_text": "今般の会談におきまして、両首脳は日韓関係全般、それから中東情勢も踏まえたインド太平洋の地域情勢について率直な意見交換を行ったところでございますけれども、その中で尹大統領から日中間の協力の重要性についても言及があったところでございます。日中韓3カ国の間で様々な課題について率直な対話を行い、未来志向の交流と協力を推進することは、3カ国の共通の利益でございまして、地域、そして国際社会の平和と繁栄にとっても重要であると考えているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=1483.136",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "日中関係に関する会談での協議内容の説明",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "尹大統領は共同発表で日中間の関係に言及をし"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "中国",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "日韓関係全般"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "中東情勢"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "インド太平洋の地域情勢"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "日中韓3カ国の間で様々な課題について率直な対話を行い、未来志向の交流と協力を推進することは、3カ国の共通の利益でございまして",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "会談内容についての説明を求める質問に対し、概括的な回答がなされている。具体的な合意事項や詳細な協議内容は含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのような協議であったか」というオープンクエスチョンであるため、回答者が抽象的な表現で逃げやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_006",
+      "segment_index": 2,
+      "topic": "中国による渡航自粛および輸出規制への認識",
+      "question": {
+        "speaker": "金城泰邦",
+        "party": "中道改革連合・無所属",
+        "summary": "- 中国による日本への渡航自粛要請およびレアアース等の輸出規制強化に対する政府の現状認識と受け止めを問う",
+        "full_text": "日中関係の改善に向けてでありますが、現在日中関係は政治、経済、安全保障などのあらゆる面で深刻な冷え込みを見せております。転換点となったのは、昨年11月7日の衆議院予算委員会における高市総理の「台湾有事は日本の存立危機事態になり得る」旨の国会答弁であり、これに対して中国は猛反発をし、自国民に日本への渡航自粛を呼びかけました。その結果、日本国内のホテルで中国人によるキャンセルが相次ぎ、訪日旅行消費額が2兆円に上る中国人観光客が激減したことで、日本経済に深刻な影響を及ぼしております。また、日本はレアアースの約7割を中国から輸入しておりますが、本年1月、中国はレアアースを含む軍民共用の品目の対日輸出規制を強化すると発表し、現状では自動車や部品メーカーが一定量のレアアースを在庫として抱えており、生産への影響が出ていないものの、長期化すれば影響はあるであろう、などとの不安の声もあり、問題が長期化した場合には、日本の経済成長を下押しする懸念もあります。そこで、日中関係がかつてないレベルで悪化しつつありますが、中国による渡航自粛やレアアースの対日輸出規制などについて、外務省の現状認識、受け止めを聞きたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 渡航自粛要請は、戦略的互恵関係の推進や建設的・安定的な関係構築という方向性と相いれないものである\n- 日本のみをターゲットとした輸出管理措置は国際慣行と異なり許容できず、強く抗議し撤回を求めている\n- 経済安全保障の観点から特定国への依存度を減らし、サプライチェーンの多角化・強靭化を加速させる",
+        "full_text": "中国による2国間の人的交流を萎縮させるかのような渡航自粛要請につきましては、日中両国で確認しております戦略的互恵関係の包括的な推進や建設的かつ安定的な関係の構築という大きな方向性と相いれないものと考えております。また、委員からご指摘ございました、我が国のみをターゲットとした一連の輸出管理措置でございますけれども、国際的な慣行とも大きく異なり、決して許容できないものでございまして、強く抗議をするとともに、措置の撤回を求めているところでございます。その上で一般論として申し上げますれば、経済安全保障の観点から、特定国への依存度を減らすことは非常に重要でございまして、政府としてもサプライチェーンの多角化、強靭化を含め、関係国とも緊密に連携しつつ、必要な取組を加速化していきたいと考えているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=1483.136",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "日中関係悪化に伴う渡航自粛と輸出規制への認識",
+          "sub_asks": [
+            "中国による渡航自粛への現状認識・受け止め",
+            "レアアース等の対日輸出規制への現状認識・受け止め"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "昨年11月7日"
+            },
+            {
+              "type": "past_answer",
+              "excerpt": "衆議院予算委員会における高市総理の「台湾有事は日本の存立危機事態になり得る」旨の国会答弁"
+            },
+            {
+              "type": "number",
+              "excerpt": "訪日旅行消費額が2兆円"
+            },
+            {
+              "type": "number",
+              "excerpt": "レアアースの約7割を中国から輸入"
+            },
+            {
+              "type": "date",
+              "excerpt": "本年1月"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.9
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自動車や部品メーカー",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "必要な取組を加速化していきたいと考えている",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "我が国のみをターゲットとした一連の輸出管理措置でございますけれども、国際的な慣行とも大きく異なり、決して許容できないものでございまして、強く抗議をするとともに、措置の撤回を求めている",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的数値や過去の答弁に基づいた詳細な構成であるが、回答は外交的な一般論と抗議の表明に留まっており、具体的な対策や期限などのコミットメントは低い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "現状認識を問う形式であるため、回答者が「許容できない」等の抽象的な表現で逃げる余地を与えている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_007",
+      "segment_index": 2,
+      "topic": "超射程ミサイル配備に対する中国の警戒への見解",
+      "question": {
+        "speaker": "金城泰邦",
+        "party": "中道改革連合・無所属",
+        "summary": "- 日本の超射程ミサイル配備に対し中国側が警戒を強めていることへの政府の受け止めと見解を問う",
+        "full_text": "さらに安全保障面では、反撃能力、敵基地攻撃能力のある超射程ミサイル、スタンドオフミサイルの配備に対して、中国側が反発を強めております。本年3月、富士駐屯地や県軍駐屯地に射程千キロを超える超射程ミサイルを運用する部隊が配備をされました。日本側はこれを軍事的圧力を強める中国を念頭に抑止力の強化と説明をしておりますが、中国側は自国の安全保障上の脅威として警戒をしております。このような状況の中、政府は年内に安全保障関連3文書、国家安全保障戦略、国家防衛戦略、防衛力整備計画、この3文書の改定を予定しておりますが、政府与党内では国家安全保障戦略において、中国をこれまでの深刻な懸念事項や最大の戦略的な挑戦から脅威と格上げする、そういった議論があり、さらなる対立の激化が懸念されるところであります。日本側の超射程ミサイル配備等について、中国側は警戒を強めていることへの政府の受け止め、見解を伺いたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 防衛政策は特定の国を脅威とみなし軍事的に対抗する発想ではなく、専守防衛の基本方針に従い平和国家としての歩みを変えない\n- スタンドオフ・ミサイルを含む防衛力は、武力攻撃を受けた場合にのみ行使される自衛のための必要最小限のものである\n- 抑止力・対処力強化のため、配備を着実に進める",
+        "full_text": "我が国の防衛政策や防衛力整備は、特定の国や地域を脅威とみなし、これに軍事的に対抗していくという発想に立っているものではございません。我が国は、戦後一貫して、日本国憲法の下、専守防衛に徹し、他国に脅威を与えるような軍事大国にはならないとの基本方針に従い、平和国家としての道を歩んでまいりました。そして、スタンドオフ・ミサイルを含め、我が国が保有する防衛力が、相手から武力攻撃を受けた場合に初めて行使される、自衛のための必要最小限の防衛力であることにも変わりはございません。いずれにいたしましても、我が国としては今後とも、こうした平和国家としての歩みを決して変えることはございませんし、また、引き続き我が国の抑止力、対処力を強化するため、スタンドオフ・ミサイルの配備を着実に進めてまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=1483.136",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "超射程ミサイル配備への中国の警戒に対する政府の見解",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "本年3月"
+            },
+            {
+              "type": "organization",
+              "excerpt": "富士駐屯地や県軍駐屯地"
+            },
+            {
+              "type": "law",
+              "excerpt": "安全保障関連3文書、国家安全保障戦略、国家防衛戦略、防衛力整備計画"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "中国",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "日本国憲法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "専守防衛"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "スタンドオフ・ミサイルの配備を着実に進めてまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "我が国の防衛政策や防衛力整備は、特定の国や地域を脅威とみなし、これに軍事的に対抗していくという発想に立っているものではございません。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "政府の基本的立場（専守防衛）を再確認する定型的な回答であり、新たな事実や具体的なコミットメントは含まれていない。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "政府の見解を問う形式であるため、回答が原則論に終始しやすく、具体的な外交的対応策を問う形式にすべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_008",
+      "segment_index": 2,
+      "topic": "日中間の学術・民間交流の現状と対応",
+      "question": {
+        "speaker": "金城泰邦",
+        "party": "中道改革連合・無所属",
+        "summary": "- 中国の主要大学で日本への交換留学等が取りやめられている事態を把握しているか\n- 民間交流を絶やさないための政府の見解を問う",
+        "full_text": "これまで政治的な対立の中でも、日中の相互理解を支えていた民間交流すらも、かつてない後退にさらされております。昨年発言以降、両国の大学間の協定に基づく留学プログラムが一部で停止をしております。報道によりますと、中国の複数の主要大学で、日本への交換留学などを取りやめたことが判明しておりますが、政府はこの事態を把握しているのでしょうか。我が国としては、交換留学や学術交流などを含めて、日中間の民間交流を絶やさず、継続的なアプローチが必要であると考えますが、文科省、外務省、それぞれ見解を伺いたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "松浦",
+        "role": "",
+        "summary": "- 一部の大学で交換留学や学術交流の取りやめが発生している事実は把握している\n- 多様な国からの留学生受け入れは教育研究の質向上や中長期的な日中関係の安定に資するため、引き続き状況を注視する\n- 民間交流は重要であり、安全確保に万全を期しながら相互理解の深化に努める",
+        "full_text": "委員御指摘のとおり、一部の大学におきまして、中国と日本の交換留学や学術交流の取りやめが発生しているという事実は、我々どもも把握しているところであります。文部科学省といたしましては、中国を含め、多様な国及び地域から優秀な外国人留学生等を受け入れることは、大学等における教育研究活動の質や国際競争力の向上に資するものと考えております。また、若年層の相互理解を促進し、中長期的な日中関係の安定に資する人材を育成していく上で、大学における多様な国及び地域との相互交流は重要であると考えておりまして、引き続き状況を注視してまいります。日中間には様々な懸案と課題があるからこそ、委員御指摘の交換留学などを含めまして、民間交流も重要であると考えているところでございます。引き続き、法人の安全確保にも万全を期しながら、国民レベルでの相互理解の深化と相互信頼の醸成に努めていきたいと、外務省としても考えているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=1483.136",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "日中大学間留学停止の把握状況と今後の見解",
+          "sub_asks": [
+            "政府は留学プログラム停止の事態を把握しているか",
+            "民間交流継続への文科省・外務省の見解"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "報道によりますと"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "中国の複数の主要大学",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "相互信頼の醸成に努めていきたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "一部の大学におきまして、中国と日本の交換留学や学術交流の取りやめが発生しているという事実は、我々どもも把握しているところであります。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "政府が留学停止の事実を認めた点は記録として価値があるが、今後の対応は抽象的な努力目標に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "見解を問う形式であるため、具体的な再開策や期限を求める問い方にすればより実効的な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_009",
+      "segment_index": 2,
+      "topic": "中国との外交正常化に向けた対話の方針",
+      "question": {
+        "speaker": "金城泰邦",
+        "party": "中道改革連合・無所属",
+        "summary": "- 台湾有事等の緊張を緩和し建設的な関係を再構築するため、中国との外交正常化に向けて積極的に対話すべきと考えるが、現在の取組状況と今後の方針を問う",
+        "full_text": "台湾有事ですね。しかしながら、偶発的な衝突を避け、この平和的な日中関係を維持するためには、互いの意思疎通は不可欠であります。今、政府の方で、先島諸島の5市町村において、有事の際に一定期間滞在可能な特定臨時避難施設、地下シェルターの整備を進めたり、台湾有事を想定し、先島諸島の住民、観光客約12万人を航空機や船舶を用いて、6日間で九州山口の8県に避難させる計画の具体化を進めております。その中で住民の皆様からいただいた声としては、避難の計画も確かに大事ではありますが、政府においては何よりも避難しないでいいようにしてもらいたいという強い要望をたくさん受けてまいりました。現在の緊張を緩和し、建設的な関係を再構築するためにも、中国との外交正常化に向けて積極的に対話をすべきと考えますが、政府の現在の取組状況と今後の方針について伺いたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 戦略的互恵関係の包括的推進および建設的・安定的な関係構築の方針は一貫している\n- 隣国として様々な懸案があるからこそ一層対話が重要であり、中国との対話にオープンである\n- 事態をエスカレーションさせる意図はなく、鎮静化に向けた取組を進めたい",
+        "full_text": "日本として中国との間で戦略的互恵関係、これを包括的に推進をし、また建設的安定的な関係を構築していく。日中間、こういった様々な懸案と課題があるからこそ、一層対話が重要でありまして、これは金城議員御指摘のとおりだと思っておりまして、日本として中国との対話についてオープンであります。先週から今週にかけまして、事態をエスカレーションしよう、こういう思いはありません。鎮静化できるように、さまざまな取組を進めていければと、こんなふうに思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=1483.136",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中国との外交正常化に向けた対話の取組状況と方針",
+          "sub_asks": [
+            "現在の取組状況",
+            "今後の方針"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "先島諸島の5市町村"
+            },
+            {
+              "type": "number",
+              "excerpt": "住民、観光客約12万人"
+            },
+            {
+              "type": "number",
+              "excerpt": "6日間で九州山口の8県に避難させる計画"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "先島諸島の住民",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "さまざまな取組を進めていければと、こんなふうに思っております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "日本として中国との対話についてオープンであります。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的で根拠があるが、回答は抽象的な外交方針の繰り返しに留まっており、具体的な取組状況や方針が示されていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「取組状況」と「今後の方針」を分けて具体的に問う形式にすれば、より逃げにくい回答を誘導できた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_010",
+      "segment_index": 2,
+      "topic": "国連における日本のコミットメント",
+      "question": {
+        "speaker": "金城泰邦",
+        "party": "中道改革連合・無所属",
+        "summary": "- 日本が国連で果たしてきたコミットメントの重要事項について具体的に説明を求める",
+        "full_text": "そこで伺いたいと思います。茂木外務大臣は国連大学でのシンポジウムにおける基調講演の冒頭で、日本と国連の協力の歴史は多国間主義に対する日本の揺るぎないコミットメントの歴史であるとの趣旨を述べられました。日本が国連で果たしてきたコミットメントの重要事項を具体的に説明いただければと思いますが、よろしくお願いしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 平和と安全、開発、人権・人道分野で多国間協力を推進してきた\n- 特に「人間の安全保障に基づく平和構築・紛争予防」「法の支配」「国連改革」の3点を重視し貢献してきた\n- 国際社会の実態を反映した国連改革は極めて重要であり、今後も多国間主義にコミットし改革を推進する",
+        "full_text": "茂木敏充大臣：我が国は1956年の国連に加盟して以来、国連の活動の三本柱であります、国際の平和と安全、そして開発、さらに人権・人道分野におきまして、多国間協力を通じた政策目的の実現を図ってきたところであります。1つは、人間の安全保障の考え方のもとでの平和構築、紛争の防止・予防。そして2つ目に、自由で開かれた国際秩序を維持・強化する上で重要な法の支配。3つ目に、国連がその機能を十分に発揮するための国連改革等を重視しておりまして、こうした分野で国連における議論に貢献してまいりました。そういった国際社会の実態、これをしっかりと反映した国連改革というのは極めて重要だと、こんなふうに考えているところであります。今後も日本として、包容力と力強さ、これを兼ね備えた外交を通じて国連を中核とする多国間主義にコミットし、国連とともに平和を築き、法の支配を守り、そして改革、それを推進していきたいと、こんなふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=1483.136",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "国連における日本のコミットメント重要事項の説明",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "茂木外務大臣は国連大学でのシンポジウムにおける基調講演"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "日本",
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "1956年"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "人間の安全保障"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "法の支配"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "改革、それを推進していきたいと、こんなふうに考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "包容力と力強さを兼ね備えた外交を通じて国連を中核とする多国間主義にコミットし、国連とともに平和を築き、法の支配を守り、そして改革を推進していきたい",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "大臣による概論的な回答であり、具体的な成果や数値などの詳細な事実は少ないが、政府の基本的方向性は示されている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「重要事項を具体的に」と求めているが、範囲が広すぎるため、回答が抽象的な列挙に留まりやすい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_011",
+      "segment_index": 2,
+      "topic": "米国の国際機関離脱・資金停止への影響と対応",
+      "question": {
+        "speaker": "金城泰邦",
+        "party": "中道改革連合・無所属",
+        "summary": "- 第2期トランプ政権下で離脱または離脱を表明した国際機関の把握状況を問う",
+        "full_text": "次は、米国の国際機関への対応について関連して質問したいと思いますが、日本が多国間主義でのアプローチを重視する、先ほど答弁におかれましたように、重視する一方で、マルチラテラリズムに基づく国際協調の枠組みを否定するトランプ米大統領は、本年1月7日、66の国際機関からの脱退、または資金拠出の停止、これを支持する大統領覚書を発表しました。米国のウォルツー国連大使は、国連機関からの脱退や資金拠出停止について対象を検討していく考えを示しております。第2期トランプ政権下において、離脱した、または離脱を表明した国際機関についての把握状況を外務省に伺いたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "貝原",
+        "role": "",
+        "summary": "- トランプ大統領が66の国際機関から離脱する旨を表明したことを把握している\n- 資金拠出を行っていた機関においては、財政面で一定の影響を受けていると認識している",
+        "full_text": "委員御指摘のとおり、トランプ米国大統領は、米国時間本年1月7日、66の国際機関から米国が離脱する旨、表明をいたしております。その影響は国際機関によって異なるため、一概に申し上げることは困難ではございますけれども、例えばこれまで米国が資金拠出を行っていた国際機関、そういった機関においては、例えば財政面で一定の影響等を受けているものというふうに認識しております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=1483.136",
+      "metrics": null
+    },
+    {
+      "id": "qa_012",
+      "segment_index": 2,
+      "topic": "国連予算削減および人員削減への対応",
+      "question": {
+        "speaker": "金城泰邦",
+        "party": "中道改革連合・無所属",
+        "summary": "- 米国の圧力による国連予算の削減や大幅な人員削減に対する外務省の対応状況を問う",
+        "full_text": "金城泰邦：国連総会は昨年12月30日、協議が難航していた2026年の通常予算案を議場の総意により無投票で採択しました。米国の圧力により予算を前年比で1割近く減らし、人員も2600人以上削減をしました。また大幅な人員削減も行われているようでありますが、外務省の対応状況を伺いたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "貝原",
+        "role": "",
+        "summary": "- 国連は多国間主義の中核であり、今後も国連を支え協力を深める考えである\n- 人員・予算削減は国連主導の改革構想（UNAT）の一環として行われており、一部で影響が出ていることを認識している\n- 日本人職員の雇用機会確保に向けて最大限努力し、国連事務総長にも採用・昇進への配慮を依頼した",
+        "full_text": "我が国も国連はより強靭で実効性のある組織となるよう改革が必要であるとの考えではありますが、その上で国連は多様な分野における国際社会の課題に取り組んでおり、多国間主義の中核を成す重要な役割を担っておりますことから、我が国としては今後とも国連を支え、かつしっかりと協力を深め、日本としての政策目的の実現を図ってまいる考えでございます。その上でお尋ねの人員削減の関連でございますけれども、グテーレス国連事務総長は、昨年3月、国連の効率性と実効性を高めるために、UNATという改革構想を発表しております。この国連主導の国連改革の一環として、人員ですとか、予算の削減というものが行われておりまして、その結果として法人職員等の勤務に一定の影響が生じる事案も一部に発生しているということは認識しております。ただ、その上で外務省としましては、従来から国際機関における法人職員の増強というのを非常に重視しておりますので、今後とも法人職員の雇用機会の確保等に向けて、最大限努力を図ってまいりたいと思っております。今週も、グテーレス事務総長が訪日した機会も捉えまして、茂木大臣から法人職員の採用、昇進に配慮をお願いする旨、お伝えした次第でございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=1483.136",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "国連の人員削減に対する外務省の対応状況",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "昨年12月30日"
+            },
+            {
+              "type": "number",
+              "excerpt": "予算を前年比で1割近く減らし"
+            },
+            {
+              "type": "number",
+              "excerpt": "人員も2600人以上削減"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "外務省",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "UNATという改革構想"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "グテーレス国連事務総長"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "茂木大臣"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "最大限努力を図ってまいりたいと思っております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "法人職員の雇用機会の確保等に向けて、最大限努力を図ってまいりたいと思っております。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "国連の人員削減という具体的事実に基づいた質問に対し、政府側は改革構想（UNAT）への言及と、日本人職員の確保に努めるという一般的回答で応じている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_013",
+      "segment_index": 3,
+      "topic": "NPT成果文書の採択に向けた外務大臣の決意",
+      "question": {
+        "speaker": "原田直樹",
+        "party": "中道改革連合・無所属",
+        "summary": "- 成果文書採択に向けた外務大臣の決意についての確認",
+        "full_text": "原田直樹（中道改革連合・無所属）市長が主張してきたこと及び文書採択に向けての外務大臣の決意を伺えればと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 成果文書をまとめる強い思いを共有している\n- 議長の最大限の支援、NPT体制維持・強化への機運醸成、被爆実相への理解促進の3点を指示\n- 副大臣や政務官の派遣を含め、外交努力を最大限に払い調整を主導している\n- 残り期間、最善を尽くして取り組む",
+        "full_text": "茂木敏充（外務大臣）これまで2回にわたって成果文書をまとめることができなかった今回、成果文書をどうしてもまとめなければいけない、そういう強い思いを共有いたしております。NPT運用検討会議と現在大詰めの状況にありますが、全てのNPT契約国で見解させることはなかなか容易ではない、こういう状況がついております。事前に私から、会議の成功のために議長を最大限支援すること、これが1つ目であります。そして2つ目に、日本が主導する多国間グループ等を活用して、NPT体制の維持・強化に向けた機運醸成に全力を挙げること。さらに3つ目として、被爆の実相への国際社会の理解の促進に努めること等について指示を出しておりまして、これに基づきまして、我が国の代表団は外交努力を最大限を払っているところでありまして、3つの委員会といいますか、グループにおきましても、それぞれの大使を張り付けて協議に臨んでいるところであります。さらには、会議冒頭には国光外務副大臣、そして今週には衆議院外務大臣政務官を派遣いたしまして、議長であったり各国代表と直接やり取りを行いまして、関係国間の意見が一致できる点を見出すべく、調整を主導してきたところであります。会議の推進、猶予を許さない状況にあるわけでありますが、残り1日、最後まで最善を尽くしてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=3550.4359999999997",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "原田市長の主張と外相の文書採択への決意",
+          "sub_asks": [
+            "原田直樹市長が主張してきたこと",
+            "文書採択に向けての外務大臣の決意"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "原田直樹（中道改革連合・無所属）市長"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "原田直樹市長",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "NPT運用検討会議"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国光外務副大臣"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "衆議院外務大臣政務官"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "最後まで最善を尽くしてまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "成果文書をどうしてもまとめなければいけない、そういう強い思いを共有いたしております。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問の半分（原田市長の主張）への回答が欠落しており、決意についても精神論的な回答に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「市長が主張してきたこと」という他者の主張の確認と、「大臣の決意」という主観的な問いを同時に投げているため、回答が分散しやすい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_014",
+      "segment_index": 3,
+      "topic": "米中首脳会談の受け止め",
+      "question": {
+        "speaker": "原田直樹",
+        "party": "中道改革連合・無所属",
+        "summary": "- 米中首脳会談について日本政府が注目した点と受け止めはどのようなものか\n- 日本にとって評価できる点と期待通りでなかった点はどこか",
+        "full_text": "そこで大臣にお伺いいたします。日本政府として、今回の米中首脳会談について、どのような点に注目し、その結果をどのように受け止めているのでしょうか。日本にとって評価できる点はどこであり、逆に期待したとおりでなかった点は、どういったところにあるのでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 米中関係の安定は国際社会の安定に資するため非常に重要であり、高い関心を持って注視した\n- イラン情勢や貿易投資など幅広い分野で意見交換がなされたと承知している\n- 米国との強固な信頼関係のもと、中国に責任ある行動を働きかけ、課題を一つずつ解決する姿勢が必要と考えている",
+        "full_text": "茂木敏充（外務大臣）米中関係が日本を含みます国際社会の安定に資するものとなることは重要である。当然、アメリカと中国、経済面におきましても、技術面におきましても、さまざまな面で超大国であるということは間違いないわけでありまして、この関係が安定をすることは非常に重要であると考えておりまして、今般の首脳会談についても高い関心を持って注視をしてきたところであります。今回の米中首脳会談におきましては、今後の米中関係の方向性に加えまして、イラン情勢であったりとか、貿易投資と幅広い分野について意見が行われたと、このように承知をいたしております。引き続き、我が国に対する影響も含めて、さらに情報収集を進めて、適切に対応していきたいと思っております。いずれにしても、政府として引き続き、同盟国である米国との強固な信頼関係のもと、中国に対してその立場にふさわしい責任を果たすように働きかけていくことが長い目で見て、国際社会のあり方、また日本外交のあり方というのを考えながら、当面、今直面している課題を一つ一つ解決していく。こういう姿勢が私は必要なんじゃないかなと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=3550.4359999999997",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "米中首脳会談への注目点と評価・課題",
+          "sub_asks": [
+            "注目点と受け止め",
+            "評価できる点",
+            "期待通りでなかった点"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "今回の米中首脳会談"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.2
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "日本政府",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "イラン情勢"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "適切に対応していきたいと思っております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "同盟国である米国との強固な信頼関係のもと、中国に対してその立場にふさわしい責任を果たすように働きかけていく",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な評価点や期待外れの点という問いに対し、一般論的な外交姿勢を述べるにとどまっており、実質的な回答になっていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「評価できる点」と「期待通りでない点」を分けて具体的に問う形式にすれば、より逃げにくい質問になった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_015",
+      "segment_index": 3,
+      "topic": "米中関係の安定と日本の役割",
+      "question": {
+        "speaker": "原田直樹",
+        "party": "中道改革連合・無所属",
+        "summary": "- 米中双方が発表した「建設的な戦略的安定関係」を日本政府はどう定義し、国際社会にどのような影響を及ぼすと見ているか\n- 「世界の真ん中で咲き誇る日本外交」の実現に向け、日本はどのような役割を果たすべきか",
+        "full_text": "そうした問題意識を踏まえてお伺いをいたします。米中双方が発表した建設的な戦略的安定関係とは、どのような状態を指すと日本政府としては考えており、またそれが日本や国際社会にどのような影響を及ぼし得ると見ていらっしゃるのでしょうか。また高市総理は、世界の真ん中で咲き誇る日本外交を取り戻すと述べておられますが、その実現のために、日本はこれからどのような役割を積極的に果たしていくべきとお考えなのでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 米中両国の発表にある「建設的な戦略的安定関係」について、日本政府として具体的にコメントする立場にはない\n- 米中関係が国際社会の安定に資することが重要であり、米国との強い同盟関係のもとで課題のすり合わせを進めている",
+        "full_text": "御指摘の点について、米国のファクトシート、これを見てみますと、米国と中国が公平性と相互性を基盤として建設的な戦略的安定関係を構築するべきであるということで一致したと。このように米国のファクトシートでは発表がされております。また中国側の発表にも、米中の建設的な戦略的安定関係を米中関係の新たな位置づけとする旨の記載があるところであります。その意味するところということでありますけれど、二国間関係について、建設的という言葉であったりとか、戦略的という言葉であったりとか、安定、これは原田委員も御案内のとおり、いろんな形で使われておりますし、また、これは日本とどこかの関係であれば、こういう関係だと説明できますけれど、多国間のやりとりでありまして、日本政府として、こういうことなんだということについてコメントする立場にはありませんが、いずれにしましても、米中関係が日本を含みます国際社会の安定に資するものとなることが重要であると考えておりますし、米国との間では同盟関係があるわけであります。この強い同盟関係のもと、さまざまな課題について、意見のすり合わせというのはしっかりと進めております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=3550.4359999999997",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "米中戦略的安定関係の定義と日本の役割について",
+          "sub_asks": [
+            "建設的な戦略的安定関係の定義と影響",
+            "日本が積極的に果たすべき役割"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "世界の真ん中で咲き誇る日本外交を取り戻す"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "日本政府",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "米国のファクトシート"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "意見のすり合わせというのはしっかりと進めております",
+          "matched_pattern": "Lv1: aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "米中関係が日本を含みます国際社会の安定に資するものとなることが重要であると考えております",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的だが、回答者は「コメントする立場にない」として定義への回答を回避しており、実質的な情報提供が少ない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "抽象的な「役割」を問うのではなく、具体的な政策手段や優先順位を問う形式にすべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_016",
+      "segment_index": 3,
+      "topic": "クアッド（日米豪印）の連携と首脳会合",
+      "question": {
+        "speaker": "原田直樹",
+        "party": "中道改革連合・無所属",
+        "summary": "- 来週のクアッド外相会合において、どのような問題意識でどのような論点を議論する考えか\n- クアッド首脳会合を開催させるべく働きかける考えはあるか",
+        "full_text": "そこでお伺いをいたします。先ほど山田委員の質疑の中でもありましたけれども、来週、インドで日米豪印、いわゆるクアッドの外相会合が開催をされ、茂木外務大臣も出席をされるとのことでありますが、その場ではどういった問題意識で、どのような論点を議論するお考えでしょうか。このクアッドの枠組みについては、アメリカがバイデン政権であったときには、首脳会合も開催をされておりましたが、トランプ政権になって以降は、まだ首脳会合が開かれておりません。私は日本として、ぜひこのクアッドの首脳会合を開催するべく、働きかけていくべきだと考えておりますけれども、大臣のお考えをお聞かせください。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 外相会合では国際情勢の構造的変化について戦略的かつ率直な意見交換を行い、「自由で開かれたインド太平洋」へのコミットを再確認する\n- 首脳会合の開催も見据えて外相間でコミュニケーションを取り、地域の同志国ネットワークを強化したい\n- 医療分野などの具体的な実績を出し、途上国へ新たな選択肢を提供することが重要と考えている",
+        "full_text": "今回の外相会合におきましては、国際情勢の構造的な変化に直面をする中、国際情勢について、外相間で戦略的かつ率直な意見交換を行いたいと考えております。また、自由で開かれたインド太平洋の実現へのコミット。これを再確認し、さらに今後のあるべき具体的な協力について議論するということを、今回のクアッドにおいては想定をしております。また、今般の外相会合においては、あるべき首脳会合も見据え、外相間でしっかりコミュニケーションを取りたい、このように考えております。その上で、日米豪印を含みます地域の同志国のネットワークを強化していくことの重要性は、日米間を含め、各国の首脳外相レベルで累次にわたって確認をしてきているところであります。我が国としては引き続き、日米豪印の協力を一層進化させ、地域の国々に真に比肩する取り組み、力強く推進をしていきたいと思っております。かなりこのクアッドの枠組みでの協力、例えばコロナの頃は医療分野での協力を強化するとか、そういった協力の幅というのも広がっているところでありまして、そういった中で一つ一つ具体的な実績を出していく。また、他国が提示する様々な支援とは異なる新たな選択肢を日米豪印が途上国等に提供していく。こういったことは極めて重要だと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=3550.4359999999997",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "クアッド外相会合の論点と首脳会合開催への考え",
+          "sub_asks": [
+            "外相会合でどのような論点を議論するか",
+            "クアッド首脳会合を開催させるべく働きかける考えがあるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "日米豪印、いわゆるクアッド"
+            },
+            {
+              "type": "other",
+              "excerpt": "山田委員の質疑"
+            },
+            {
+              "type": "other",
+              "excerpt": "バイデン政権"
+            },
+            {
+              "type": "other",
+              "excerpt": "トランプ政権"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "日米豪印",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "自由で開かれたインド太平洋"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "力強く推進をしていきたいと思っております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "他国が提示する様々な支援とは異なる新たな選択肢を日米豪印が途上国等に提供していく。こういったことは極めて重要だと考えております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "クアッドの枠組みに関する大臣の一般的方針を確認したやり取りであり、具体的な新策や期限付きの約束は含まれていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "首脳会合の開催について「働きかけるか否か」というYes/No形式で問えば、より明確な答弁を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_017",
+      "segment_index": 3,
+      "topic": "対中外交と首脳会談の可能性",
+      "question": {
+        "speaker": "原田直樹",
+        "party": "中道改革連合・無所属",
+        "summary": "- APECやG20などの多国間枠組みの機会を活用し、日中首脳会談の糸口を見出す考えはあるか",
+        "full_text": "そこでお伺いをいたします。日本政府としては対中国という意味ですけれども、この多国間の枠組みの機会、APECやG20、今言及しましたけれども、こうした機会も生かしながら、日中首脳会談の対話の糸口を何とか見出していっていただきたい、このように思いますけれども、大臣の御所見をお伺いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 戦略的互恵関係を包括的に推進し、建設的かつ安定的な関係を構築する方針は一貫している\n- 懸案があるからこそ対話が重要であり、トップレベルを含む様々なレベルでオープンである\n- APEC関連会合への大臣級派遣など、様々なチャンネルを活用して国益の観点から適切に対応する",
+        "full_text": "そうすると私として金城委員にお答えしたのと全く違うお答えをするというわけにいかないということはぜひご理解いただきたいと思いますが、日本として中国との間で戦略的互恵関係を包括的に推進をし、建設的かつ安定的な関係を構築していく、こういった方針は一貫いたしております。そして別にもう1回、不服戦争の話をするつもりはありませんけれど、我が国としては、中国との間で様々な懸案と課題があるからこそ、一層の対話が重要であって、中国との対話について、これトップレベルはもちろんでありますけれど、様々なレベルにおいてオープンであります。ですから、先週から今週にかけて、APECの関連会合に出席するために、木原男女共同参画担当大臣、赤澤大臣、そして堀井副大臣が訪日しているところであります。こうした様々なチャンネルや機会を活用して、国益の観点から引き続き、冷静かつ適切に対応していきたいと思っております。そういった国際会議をやったときに、今申し上げたように、日本がどこの国だから出席をしない、こういう立場を取っているわけではないということは、ぜひご理解いただければと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=3550.4359999999997",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "日中首脳会談の対話の糸口を見出す考えか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "APECやG20"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "中国",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.6
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "木原男女共同参画担当大臣"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "赤澤大臣"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "堀井副大臣"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "冷静かつ適切に対応していきたいと思っております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "中国との間で様々な懸案と課題があるからこそ、一層の対話が重要であって、中国との対話について、これトップレベルはもちろんでありますけれど、様々なレベルにおいてオープンであります。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "日中関係における対話の重要性とオープンな姿勢を再確認した内容であり、具体的なコミットメントまでは至っていない。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「御所見をお伺いいたします」という形式的な問いかけであるため、政府の具体的な行動計画を引き出すには不十分である。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_018",
+      "segment_index": 3,
+      "topic": "台湾海峡の情勢と米国のコミットメント",
+      "question": {
+        "speaker": "原田直樹",
+        "party": "中道改革連合・無所属",
+        "summary": "- 米国による東アジアの安全保障へのコミットメントを確かなものにするため、トランプ政権にどのような働きかけを行うか",
+        "full_text": "そこでお伺いをいたします。アメリカによる東アジアの安全保障へのコミットメントを確かなものとしていくために、日本政府としてトランプ政権に対し、どのような働きかけを行っていく考えでしょうか。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 米国の国家安全保障戦略において、インド太平洋での紛争抑止や台湾海峡での一方的な現状変更への不支持が明確に記載されている\n- 厳しさを増す情勢の中、自国の外交力強化とともに、強固な日米同盟や同志国との連携により東アジアの平和と安定を確保する",
+        "full_text": "これは御案内のとおり、国家安全保障戦略というのが基本になるわけでありますが、米国政府が公表しました国家安全保障戦略においては、インド太平洋地域における紛争を抑止するために、同盟国等との協力をすることや、台湾海峡をめぐる一方的な現状変更は支持をしないこと、さらに共通の目標であります、自由で開かれたインド太平洋についてのコミットメント、これが明確に記載をされているところであります。こうした厳しさを増す国際情勢において、我が国自身の様々な外交力の強化に取り組むとともに、強固な日米同盟や、同志国との連携によりまして、東アジアの平和と安定をしっかり確保していきたい、このように考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=3550.4359999999997",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "トランプ政権への働きかけの考え方",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "トランプ政権",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国家安全保障戦略"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "自由で開かれたインド太平洋"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "東アジアの平和と安定をしっかり確保していきたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "強固な日米同盟や、同志国との連携によりまして、東アジアの平和と安定をしっかり確保していきたい",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な働きかけの手法を問う質問に対し、既存の戦略の引用と精神論的な回答に留まっており、実質的な成果は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのような働きかけ」というオープンな問いであるため、回答者が抽象的な表現で逃げることが可能になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_019",
+      "segment_index": 3,
+      "topic": "国際公共財・国際保健への取り組み継続",
+      "question": {
+        "speaker": "原田直樹",
+        "party": "中道改革連合・無所属",
+        "summary": "- 新たな国家安全保障戦略において、国際保健をはじめとする国際公共財への取り組みを継続する方針は堅持されるか",
+        "full_text": "こうした問題意識を踏まえてお伺いをいたします。今月の2日、高市総理は進化した国家安全保障戦略を発表されました。昨今の国際情勢を踏まえて、資源・エネルギー等のサプライチェーンの強靭化に焦点が当たっております。一方で、従来からの国際保健をはじめとする国際公共財への取り組み、こういったものを継続をする方針は、これは堅持されるものであると理解をしておりますが、この点について確認をさせていただきたく、大臣の御答弁をお願いいたします。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 国際保健は経済・社会・安全保障上のリスクに関わる重要課題であり、日本の安定と発展のためにも重要であると認識している\n- 国際保健を外交の柱の一つとし、UHC（ユニバーサルヘルスカバレッジ）達成に向けた多角的な取り組みを継続する方針である",
+        "full_text": "茂木敏充外務大臣：国際保健は、委員がおっしゃるように、単に医療の分野にとどまらず、経済、社会、安全保障上のリスクにも関わる重要な課題でありまして、国際社会のみならず、我が国の安定と発展のためにも国際的な取り組みを進めていくことが重要であると認識をいたしております。この認識のもと、我が国は国際保健を外交の柱の一つとして位置づけ、ユニバーサルヘルスカバレッジ達成に向けて、二国間支援であったりとか、国際保健機関、WHO等の国際機関を通じて、総合的な支援を進めてきておりまして、これらの取組はこれまで高く評価をされてきたところであります。引き続き日本として、国際社会において、国際保健に係る議論を主導し、ユニバーサルヘルスカバレッジ達成に向けて、日本らしい顔の見える協力を含めて、国際保健分野における多角的な取組を継続する方針であります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=3550.4359999999997",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "国際公共財への取り組み継続方針の確認",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "今月の2日"
+            },
+            {
+              "type": "other",
+              "excerpt": "進化した国家安全保障戦略"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "ユニバーサルヘルスカバレッジ"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "WHO"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "多角的な取組を継続する方針であります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "国際保健分野における多角的な取組を継続する方針であります。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "国際保健への取り組みを継続するという政府の方針を大臣が明確に答弁した標準的なやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "確認事項が「理解しておりますが、この点について確認をさせていただきたい」という形式であり、より踏み込んだ具体策を問う構成にできた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_020",
+      "segment_index": 3,
+      "topic": "保健分野におけるODAオファー型協力の進捗",
+      "question": {
+        "speaker": "原田直樹",
+        "party": "中道改革連合・無所属",
+        "summary": "- 保健分野におけるODAオファー型協力案件の進捗状況はどうか",
+        "full_text": "続いて少し各論に入っていきますけれども、ODAのオファー型協力についてお伺いをいたします。日本の強みを生かした協力メニューを途上国に積極的に提案をしていくオファー型協力の枠組みにおいて、日本政府は昨年の8月に保健をその新たな柱として位置づけました。保健医療分野における日本の優れた技術や知見を外交政策と連動させながらグローバルサウスに提供していくことは、現地の課題解決に資するだけではなく、日本企業の国際展開や官民連携の促進にもつながる重要な取組であると考えております。そうした点を踏まえてお伺いをしますが、昨年8月の保健が柱に入った発表から間もなく1年となりますが、保健分野におけるODAのオファー型協力案件の進捗状況についてお伺いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "森英介",
+        "role": "",
+        "summary": "- 戦略分野に保健を追加し、TICAD9において保健投資促進パッケージを立ち上げている\n- 現時点で公表済みの案件はないが、案件形成に向けて各省や企業と協議中である",
+        "full_text": "委員御指摘のとおり、昨年8月、オファー型協力の戦略分野に保健を追加しました。また、具体的な取組として、TICAD9において、政策パッケージ、有利化保健投資促進パッケージを立ち上げております。現時点において、保健分野において、公表済みのオファー型協力の案件はございませんが、案件形成に向け、各省、企業などと、今、協議中でございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=3550.4359999999997",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "保健分野のODAオファー型協力の進捗状況",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "昨年の8月"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "グローバルサウス",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "TICAD9"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "有利化保健投資促進パッケージ"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "案件形成に向け、各省、企業などと、今、協議中でございます",
+          "matched_pattern": "Lv1: aspirational verb only / no specific mechanism named"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "現時点において、保健分野において、公表済みのオファー型協力の案件はございませんが、案件形成に向け、各省、企業などと、今、協議中でございます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "保健分野のオファー型協力について、現時点で公表案件がないという事実が明確に記録された。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "進捗状況を問うだけでなく、具体的にどのような案件を想定しているかまで踏み込めばより有益だった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_021",
+      "segment_index": 3,
+      "topic": "UHCナレッジハブの発展",
+      "question": {
+        "speaker": "原田直樹",
+        "party": "中道改革連合・無所属",
+        "summary": "- 2030年に向け、UHCナレッジハブの取り組みをどのように後押しし、発展させていく考えか",
+        "full_text": "そこでお伺いをいたします。2030年に向けて、このUHCユニバーサルヘルスカバレッジを国際社会でさらに前進をさせるために、政府として、UHCナレッジハブの取組をどのように後押しし、さらに発展をさせていく考えか、御答弁をお願いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "秋山和也",
+        "role": "",
+        "summary": "- 世界銀行やWHOと連携し、途上国の保健財政強化のための能力構築支援（研修等）や、UHCハイレベルフォーラムの開催を推進している\n- 日本の知見を活用し、財務保健連携を通じた制度立案実行を支援することでUHC達成に貢献したい",
+        "full_text": "委員御指摘のとおり、日本政府は、2030年までのユニバーサルヘルスカバレッジの実現に向けまして、世界銀行、WHOと連携をして、開発途上国におけるUHC達成のための知見共有や人材育成を行う世界的な拠点として、UHCナレッジハブを昨年設置いたしまして、その取組を推進してございます。UHCナレッジハブの主な活動は2つございます。1つは開発途上国における保健財政の強化のために、各国の保健省・財務省の政策立案者に対する能力構築支援を行ってございます。UHC達成に向けた機運のさらなる醸成のために、UHCを推進する国及び組織のリーダーなどを集めまして、UHCハイレベルフォーラム2025を昨年12月に開催をいたしまして、24カ国約200名が参加をいたしました。本年もこのUHCハイレベルフォーラムは開催する予定でございますし、引き続き、UHCナレッジハブの取り組みを通じまして、日本の知見も活用して、財務保健連携などを通じた保健財政制度の立案実行を支援し、開発途上国におけるUHCの達成に貢献していきたいと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=3550.4359999999997",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "UHCナレッジハブの今後の後押しと発展策について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "2030年"
+            },
+            {
+              "type": "organization",
+              "excerpt": "UHCナレッジハブ"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "UHCナレッジハブ",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "世界銀行"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "WHO"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "UHCハイレベルフォーラム2025"
+            },
+            {
+              "type": "number",
+              "excerpt": "24カ国約200名"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "開発途上国におけるUHCの達成に貢献していきたいと思っております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "UHCナレッジハブの取り組みを通じまして、日本の知見も活用して、財務保健連携などを通じた保健財政制度の立案実行を支援し、開発途上国におけるUHCの達成に貢献していきたい",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "UHCナレッジハブの活動実績と方向性についての標準的な質疑応答であり、具体的な数値（参加国数等）が含まれているが、今後の具体的な新施策へのコミットメントは弱い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どのように後押しし、発展させるか」という問いに対し、現状の活動報告に終始しているため、具体的な新計画や予算措置を問う形式にすればより実効的な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_022",
+      "segment_index": 3,
+      "topic": "国際保健機関への拠出方針",
+      "question": {
+        "speaker": "原田直樹",
+        "party": "中道改革連合・無所属",
+        "summary": "- 国際保健機関への拠出について、どの枠組みに重点を置き、どのような戦略で国際貢献と国益を両立させる考えか",
+        "full_text": "そうした点を踏まえてお伺いいたします。政府として、今後の国際保健機関、さまざまな機関があると思いますけれども、そうした機関に対する拠出について、例えばどの機関、どの枠組みに重点を置き、どのような戦略で日本の国際貢献と国益を両立させていく考えであるか、政府の拠出方針について御答弁をお願いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 国際保健を日本外交の柱の一つとし、WHOなどの国際機関を通じて総合的な支援を進めてきた\n- ポストコロナ時代に求められるUHC達成に向け、日本らしい「顔の見える協力」を含めた多角的な取り組みを継続する方針である",
+        "full_text": "国際保健は国際社会にとって人々の命と健康に直接関わるのみならず、我が国の経済、社会、安全保障上のリスクにも関わる重要な課題であると認識しております。世界保健機関、WHOなどの国際機関を通じ、総合的に支援を進めてきており、これらの取り組みはこれまでも高く評価されてきております。引き続き、国際社会において国際保健に係る議論を主導し、ポストコロナの新たな時代に求められるユニバーサルヘルスカバレッジ達成に向けて、日本らしい顔の見える協力を含め、国際保健分野における多角的な取り組みを継続していく方針です。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=3550.4359999999997",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "国際保健機関への拠出方針と戦略について",
+          "sub_asks": [
+            "どの機関・枠組みに重点を置くか",
+            "どのような戦略で国際貢献と国益を両立させるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国際保健機関",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "世界保健機関、WHO"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ユニバーサルヘルスカバレッジ"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "多角的な取り組みを継続していく方針です",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "国際保健分野における多角的な取り組みを継続していく方針です。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な重点機関や戦略についての問いに対し、抽象的な方針を述べるに留まっており、記録としての価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どの機関に重点を置くか」という選択肢を提示させる形式にすれば、より具体的な回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_023",
+      "segment_index": 4,
+      "topic": "ODAの戦略的位置づけと予算議論",
+      "question": {
+        "speaker": "青柳仁士",
+        "party": "日本維新の会",
+        "summary": "- ODAを外交・経済・安全保障を横断する戦略的な政策手段として明確に位置づけるべきではないか\n- 防衛費、ODA、OSA、海上保安、経済安全保障投資を一体的な「総合的な安全保障投資」として捉える視点が必要ではないか",
+        "full_text": "現在のODAが従来型の国際協力政策にとどまらず、実態として総合的な安全保障政策の重要な一部を担っていると、こういう認識が先ほども大臣の御答弁にもありましたし、これまでも度々議論があったところかと思います。そうであるならば、今後の安保三文書、あるいは来年度予算の骨太の方針等の議論においても、ODAを外交、経済、安全保障を横断する戦略的な政策手段として、より明確に位置づけていくことが重要ではないかと考えております。この政策的な位置づけをぜひ変えていくこと、これが非常に重要だと思いますが、これについての御所見等ですね。併せて、もしそうであれば、これからの議論、安全保障の議論は防衛費のみを個別に積み上げていくということではなくて、防衛費、そしてODA、OSA、海上保安、そして経済安全保障の投資、これらを一体的に総合的な安全保障の投資として捉えていく。こういった視点が必要ではないかと思っております。特に今後拡大していく安全保障予算の中で、非軍事分野への投資という観点でODAを戦略的に位置づけていくこと。この実際政府の中での財政当局との議論、あるいは政府の中での予算の議論、政策の議論の中での位置づけを変えていく必要があるのではないかと考えておりますが、これについての御所見をいただければと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 経済安全保障に資するODAを強化し、地域の平和と安定に貢献したい\n- 今後の安全保障・防衛経費のあり方について、ODAの貢献の重要性が反映されるよう関係省庁と調整する",
+        "full_text": "まず大前提として、これから安保三文書等の見直しを行っていくわけでありますけれど、経済安全保障に資するODAを強化することで、地域の平和と安定や邦人の戦略的な推進に貢献をしていきたいと考えております。なお、新たな国家安全保障戦略をはじめとする3文書を踏まえた、今後の安全保障や防衛に係る経費のあり方については、こうしたODAの安全保障への貢献の重要性、こういったものになるように、関係省庁としっかりと調整してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=5540.636",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "ODAを総合的な安保政策の手段として明確に位置づけるか",
+          "sub_asks": [
+            "ODAを外交・経済・安保を横断する戦略的手段として位置づけるべきか",
+            "防衛費やODA等を一体的な安保投資として捉え、予算議論に反映させるべきか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "安保三文書"
+            },
+            {
+              "type": "other",
+              "excerpt": "来年度予算の骨太の方針"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国家安全保障戦略"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "関係省庁としっかりと調整してまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "経済安全保障に資するODAを強化することで、地域の平和と安定や邦人の戦略的な推進に貢献をしていきたい",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "ODAの戦略的位置づけに関する方向性は示されたが、具体的な予算措置や制度変更への言及はなく、答弁は概論に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「御所見をいただきたい」という形式のため、政府の具体的なコミットメントを引き出しにくい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_024",
+      "segment_index": 4,
+      "topic": "ODAの評価基準の再整理",
+      "question": {
+        "speaker": "青柳仁士",
+        "party": "日本維新の会",
+        "summary": "- 従来の支援額や開発効果中心の評価から、戦略的観点での再整理が必要ではないか\n- 日本企業の海外展開、供給網の安定化、国際ルール形成、同志国との連携強化などの戦略的成果を可視化し、評価基準に位置づけるべきではないか",
+        "full_text": "そういった観点から3つ目の質問に入りますが、これまでODAはですね、そうは言っても支援額であるとか、あるいは開発効果、こういったことが中心となって評価をされてきたものだと認識しております。そういうODAの評価基準であるとか、成果指標、これを戦略的観点から再整理すべきではないかと考えております。そういった中で、従来のようなODA評価、やはり中心は支援額と開発効果という形になって、現状はなっていると思いますが、今後、日本企業の海外展開、供給網の安定化、国際ルールの形成、技術の標準化、対日好感度の向上、同志国との連携強化、こういった戦略的な成果、こういったものをしっかり可視化できるような、そういった総合的な安全保障、経済成長、国際競争力への貢献。こういうものを評価の基準の中に位置づけていって、かつ国民の皆さんにもそれをしっかり理解していただくこと、これがODAの真の意味、重要性を理解していただく上で不可欠だと考えておりますが、この点についての大臣の御所見をお伺いできればと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "今福国際協力局長",
+        "role": "",
+        "summary": "- 外交政策の視点からも検証し、国益への貢献を評価しフィードバックしてきた\n- 安全保障や経済安全保障上の重要課題への対応、日本企業の海外展開促進などの観点からODAを実施することが重要と考えており、今後の評価のあり方についても検討したい",
+        "full_text": "ODAの評価につきましては、これまで第三者の知見も活用しつつ、援助対象国の社会経済開発の視点に加えまして、外交政策の視点からも検証し、ODAによる国益への貢献を評価し、政策決定や事業実施にフィードバックしてきております。国際環境が現在大きく変化する中で、このODAを活用し、我が国の安全保障や経済安全保障上の重要課題に対応するとともに、日本企業の海外展開や民間投資を促進し、日本成長戦略の実現に貢献するといったことがより一層重要となってきております。委員御指摘のとおり、こうした観点も踏まえてODAを実施していくことが重要と考えております。今後のODAの評価のあり方についても、そのように検討していきたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=5540.636",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "ODA評価基準に戦略的観点を導入すべきか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "日本企業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "今後のODAの評価のあり方についても、そのように検討していきたいと考えております。",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "今後のODAの評価のあり方についても、そのように検討していきたいと考えております。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "ODAの評価基準に戦略的視点を盛り込むべきという提案に対し、大臣が検討することを約束したやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "具体的にどのような指標（KPI）を導入すべきかという踏み込んだ提案にすれば、より具体的な回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_025",
+      "segment_index": 4,
+      "topic": "ODA・OSA・防衛協力を統合した国別戦略",
+      "question": {
+        "speaker": "青柳仁士",
+        "party": "日本維新の会",
+        "summary": "- ODA、OSA、防衛協力などが縦割りで実施されている側面があるため、これらを統合した政府横断型の国別戦略設計を強化すべきではないか",
+        "full_text": "続きまして、そういった観点からも、ODA、OSA、防衛協力、こういったものを統合した国別の戦略が必要ではないかと考えております。現在の安全保障環境においては、港湾、通信、海底ケーブル、AI、宇宙、海洋監視、サイバー、人材育成、こういった中で、軍民共用領域の重要性が急速に高まっています。一方で、現状では、ODA、OSA、防衛協力、海上保安支援、経済安全保障の協力、こういったものが、それぞれ縦割りで実施されていると、こういう側面があろうかと思います。しかし、インド太平洋、アセアン、太平洋島嶼国、南アジア、アフリカ、こういったところとの関係性を考えていけば、本来は今申し上げたようなこと、これらは一体的に設計した上で、国別の協力、対応方針というものを考えていくことが必要ではないかと思っております。政府として、こうした政府横断型の戦略設計をさらに強化していくべきと考えますが、これについての御所見をいただければと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 基本となる「国別の外交戦略」があり、そのもとにODA、OSA、防衛協力などのツールが連携して最大限の効果を上げるアプローチが必要である\n- 同志国との安全保障・防衛協力等のツールを有機的に連動させ、望ましい安全保障環境の創出につなげていく",
+        "full_text": "ODA、OSA、防衛協力と統合した国別戦略という話ですけれども、考え方というのは同じなのかもしれないんですが、基本的には国別の外交戦略というものがあって、そのもとにODAであったりOSAであったりとか防衛協力というのがある。そしてそれぞれのものがしっかりとこういった基本的な外交戦略のもとで連携をしていくと、こういうのが本来あるべき姿だと。そしてそのような対策を今取っているところでありまして、国際環境が厳しさを増す中で、日本外交にとって重要なツールでありますODAとOSAを含みます同志国との地域の安全保障、防衛協力等を組み合わせて、戦略的に取り組むことによって、地域の平和と安定に貢献していくことが重要だと考えております。委員御指摘のように、ODA、OSAを含みます同志国との安全保障防衛協力といったツールを有機的に連動させ、各国及び地域の平和と安定に貢献すること、これは我が国にとって望ましい安全保障環境の創出につながると考えているところでありまして、私はそのODA、OSA、防衛協力を組み合わせればいいんじゃない、その前に、その国に対して、その地域に対してどういった外交戦略を取っていくか、これが基本にあって、そのもとにそれぞれのツールというのがあって、それぞれが連携をすることによって最大限の効果を上げる、こういうアプローチが必要なんではないかなと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=5540.636",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "政府横断的な国別戦略設計を強化すべきか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "港湾、通信、海底ケーブル、AI、宇宙、海洋監視、サイバー、人材育成"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "インド太平洋、アセアン、太平洋島嶼国、南アジア、アフリカ",
+          "concreteness": "mid",
+          "score": 0.6
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "戦略的に取り組むことによって、地域の平和と安定に貢献していくことが重要だと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "国別の外交戦略というものがあって、そのもとにODAであったりOSAであったりとか防衛協力というのがある。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "政府の基本的なアプローチ（外交戦略が上位にあり、各ツールが連携する）を確認したやり取りであり、具体的コミットメントはないが方向性は明確。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「強化すべきか」という抽象的な問いであるため、回答が概念的な説明に留まっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_026",
+      "segment_index": 5,
+      "topic": "ODAの戦略的活用とJICAのプラットフォーム化",
+      "question": {
+        "speaker": "深作ヘスス",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- JICAが蓄積した知見やネットワークを、外交・経済安全保障および成長戦略を支えるグローバルサウスへの戦略的プラットフォームとして政府全体で活用すべきではないか",
+        "full_text": "研究機関、市民社会との深い信頼関係を構築して、そして各国の政治経済、安全保障、産業、人材等に関する膨大な知見を蓄積してきたという、こういう実績がございます。さらに今後のODAは、単なる相手国の支援だけではなくて、日本企業、大学、研究機関、スタートアップとこういったところとも連携しながら、共同研究、技術実証、人材育成、サイバー協力、防災協力、こういった日本と相手国双方の戦略的利益を高める、こういう共同的な価値創造型の方向へ進化していく、こういう議論もなされているところであります。こうした観点から、JICAを中心に、こうしたODAの現在の実施体制を、外交安全保障、経済安全保障、そして成長戦略を支える一つのプラットフォームとして、もちろんODAですから途上国のみが対象になりますので、グローバルサウスに対する戦略的なプラットフォームとして、政府全体でより戦略的に活用していくべきというふうに考えておりますけれども、これについての御所見をいただければと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "今福国際協力局長",
+        "role": "",
+        "summary": "- JICAの知見やネットワークが重要な資産であるとの認識に同意する\n- 中小企業SDGsビジネス支援事業などで既に活用しており、JICA法改正により多様な主体との連携を強化した\n- 引き続き知見を活用し、ODAを戦略的に実施してグローバルサウスとの連携を強化したい",
+        "full_text": "JICAが長年の協力を通じて蓄積してきた知見経験、国内外のネットワーク、これは重要な資産であるというのは委員御指摘のとおりだと思います。これまでも外務省としても最大限活用してまいりました。例えば、中小企業SDGsビジネス支援事業、これを通じて、JICAが有するネットワークを活用して、日本企業の海外展開、途上国の社会課題解決に資する取組、これを実施してきております。また、先般、昨年ですね、JICA法改正をいたしまして、多様な主体との連携、これを強化できるようにいたしました。引き続き、こうしたJICAの知見、経験を活用しつつ、ODAを戦略的に実施し、国際社会で発言力を高める、グローバルサウスの国々との連携を強化していきたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=6439.736",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "JICAを戦略的プラットフォームとして活用する所見",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "グローバルサウス",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "中小企業SDGsビジネス支援事業"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "JICA法改正"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "連携を強化していきたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "JICAが長年の協力を通じて蓄積してきた知見経験、国内外のネットワーク、これは重要な資産である",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "ODAの戦略的活用という方向性への同意と、既存の施策（JICA法改正等）の提示に留まっており、具体的な新アクションへの言及はない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「所見をいただきたい」という抽象的な問いであるため、政府側が一般論で回答することを許容してしまっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_027",
+      "segment_index": 5,
+      "topic": "日韓ACSA（相互軍事支援協定）の締結状況",
+      "question": {
+        "speaker": "深作ヘスス",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 日韓間の共同訓練や災害対応等の連携を制度的に後押しするACSA締結に向けた、我が国の基本的な考え方と現在の協議状況はどうか",
+        "full_text": "他方で、今回、ACSAについても、締結に向けた動きがあると当初は言われていたもの、最終的な成果としては出てきませんでした。東アジアの安全保障環境が大変厳しい状況になっていく中で、日韓の間での協力を制度として後押しをしていくことは大変意義があることだと考えます。特に共同訓練や災害対応、後方支援などにおける円滑な連携の体制をつくっていくことは、向上にも資するものであると考えますが、今回、日韓のACSA締結に向けて動いていたというような報道が出ていますが、我が国の基本的な日韓ACSA締結に向けた考え方、そして現在の協議の状況について、大臣にお伺いをいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 日韓・日米間の安保協力を含む戦略的連携の重要性について認識を共有している\n- 詳細な外交上のやり取りについては控えたいが、安保協力は着実に進展させたい\n- 報道にある予測ではなく、やるべきことを一つ一つ進めていく考えである",
+        "full_text": "そこで、今般の日韓首脳会談におきましてでありますが、両首脳の日韓、日米間の安全保障協力を含みます、戦略的な連携の重要性について一致をいたしました。その上で、両首脳は、現下の国際情勢を踏まえて、インド太平洋地域の平和と安定を促進するため、日米同盟、米韓同盟、そしてその戦略的な連携によります抑止力・対処力の維持・強化を含めて、日韓が主体的に取り組んでいくことの重要点について、認識を共有いたしました。お尋ねの点を含めまして、これ以上の詳細につきましては、外交上のやりとりということになってきますので、控えたいと思いますが、日韓の安保協力については、さまざまな取組、着実に進展をさせていきたいと考えております。ということはあるわけでありますけれど、それはあくまで予測報道でありまして、日本としては着実にやるべきことを一つ一つ進めていきたいと、こんなふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=6439.736",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "日韓ACSA締結への考え方と協議状況",
+          "sub_asks": [
+            "日韓ACSA締結に向けた基本的な考え方",
+            "現在の協議の状況"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "日韓のACSA締結に向けて動いていたというような報道"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "日韓",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "日韓の安保協力については、さまざまな取組、着実に進展をさせていきたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "日韓の安保協力については、さまざまな取組、着実に進展をさせていきたいと考えております。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な協議状況についての回答を避け、外交上の機密を理由に抽象的な意向表明に留まった回答である。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「考え方」と「状況」を同時に問うのではなく、まず政府の基本方針を明確に答えさせる形式にすれば、回避しにくかった可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_028",
+      "segment_index": 5,
+      "topic": "日米韓の連携と米国のコミットメント確保",
+      "question": {
+        "speaker": "深作ヘスス",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 米中間で東アジアの安保が頭越しに議論されることを防ぐため、日米韓で共同で動く際にどのように米国のコミットメントを引きつけ、関与を確保していくのか",
+        "full_text": "一つは、先般行われましたトランプ大統領と中国の習近平国家主席との会談に象徴されるように、東アジアにおける安全保障、これが米中間で頭越しに議論をされていくということを防いでいかなければいけない。その中において、日本と韓国は、ある意味でさまざまな脅威も、地理的な意味でもいろいろなものを共有する中で、日米韓の3カ国で物事を共同で動いていくときに、三か国でという考え方もそうですが、どのようにそこにアメリカのコミットメントを引きつけていくのか、必ずそこにアメリカを引きつけておくための努力をどうしていくのかという視点でお伺いをしたいと思います。そういう意味では不測の事態に、どう我が国が、そして日韓で取り組んでいくかということを一緒にやっていこうということだと思いますが、その中にはアメリカへの関与のあり方、アメリカとの向き合い方というのも。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "官房参事官",
+        "role": "",
+        "summary": "- 日米同盟・米韓同盟の戦略的連携による抑止力・対処力の維持強化に日韓が主体的に取り組む重要性について認識を共有している\n- 安全保障および経済安全保障を含む日米間の具体的協力を持続・強化するため、緊密な情報共有と協力を行う意思を確認している",
+        "full_text": "今回の首脳会談におきまして、両首脳が日米同盟、米韓同盟、そしてその戦略的連携による抑止力、対処力の維持強化を含めて、日韓が主体的に取り組んでいくことの重要性について認識を共有したというのは、今日この委員会の中で何度も大臣からもお答えをしておりますけれども、まさに今申し上げたことは、委員が今指摘をされた日米間連携ということの機軸にある考え方だったというふうに思います。また、会談におきまして、両首脳が日韓、そして日米間の安全保障協力を含む戦略的な連携の重要性に一致したということも繰り返し申し上げておりますけれども、こうした認識の上で、両首脳はこれまでも具体的な日米間協力が進んでいることを、今回の会談において歓迎をいたしました。そして安全保障、経済安全保障を含む日米間の具体的な協力を持続、そして強化するために、一層緊密に情報共有をし、協力していくという意思を確認したところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=6439.736",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "米中間の頭越し議論を防ぎ、米国の関与をどう引き出すか",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "トランプ大統領と中国の習近平国家主席との会談"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "アメリカ",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "協力していくという意思を確認した",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "日韓が主体的に取り組んでいくことの重要性について認識を共有した",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的だが、回答は首脳会談の結果をなぞる一般論に終始しており、具体的な手法への言及がない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どうしていくのか」という問いに対し、具体的な手段や戦略を提示させる制約（例：具体策を3つ挙げよ等）が欠けている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_029",
+      "segment_index": 5,
+      "topic": "北朝鮮の非核化に向けた認識とロードマップ",
+      "question": {
+        "speaker": "深作ヘスス",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 北朝鮮の完全な非核化が現在どこまで進んでいると考えているか\n- 非核化実現までのロードマップをどのように策定し、具体的に取り組んでいるのか、また現在はそのどの段階にあるのか",
+        "full_text": "そこで政府参考人で結構ですが、現在、北朝鮮の完全なる非核化、これはどこまで進んでいると日本政府は認識をされているんでしょうか。完全なる非核化の実現までのロードマップをどのように策定をし、具体的にどのように非核化に向けて取り組まれているのか、そして今そのロードマップのどこにいるのか、政府としての見解をお示しください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "官房参事官",
+        "role": "",
+        "summary": "- 北朝鮮の核ミサイル開発は国連安保理決議違反であり、断じて認められない\n- 米韓等と非核化への確固たるコミットメントを確認しており、国連安保理決議の完全履行に向けた取組を通じて核弾道ミサイル計画の完全廃棄を求める",
+        "full_text": "北朝鮮による核ミサイル開発は、関連する国連安保理決議の明白な違反であるとともに、我が国のみならず国際社会の平和と安全を脅かすものであり、断じて認められるものではございません。米国及び韓国を含め、関係国との間では、類似の機会に北朝鮮の完全な非核化に対する確固たるコミットメントを確認してきております。我が国としては、米国及び韓国をはじめとする国際社会とも協力をしながら、関連する国連安保理決議の完全な履行に向けた取組を進め、北朝鮮の核弾道ミサイル計画の完全な廃棄を求めていく、そういう考えでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=6439.736",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "北朝鮮非核化の現状認識とロードマップについて",
+          "sub_asks": [
+            "非核化の進捗状況に関する認識",
+            "ロードマップの策定方法と具体的取り組み",
+            "現在のロードマップ上の位置付け"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "北朝鮮",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国連安保理決議"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "米国及び韓国"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "取組を進め、北朝鮮の核弾道ミサイル計画の完全な廃棄を求めていく",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "米国及び韓国を含め、関係国との間では、北朝鮮の完全な非核化に対する確固たるコミットメントを確認してきております。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的なロードマップの提示を求める問いに対し、一般的・外交的な方針を述べるに留まった回答である。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「ロードマップのどこにいるのか」という具体的な問いを、より限定的な指標（例：特定の合意事項の達成度）で問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_030",
+      "segment_index": 5,
+      "topic": "北朝鮮政策の評価と今後の向き合い方",
+      "question": {
+        "speaker": "深作ヘスス",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- これまでの北朝鮮政策をどのように評価しているか\n- 米国が「コールドピース（冷たい平和）」のような政策転換を検討する兆しがある中で、どのように米国の関与を担保し、有志国の枠組み等を活用して立ち振る舞うのか",
+        "full_text": "続いて経済政策がどれだけ効いているのかという質問を考えていましたが、少し時間の関係上、これについても同じような答弁になってしまうのではないかなと思いましたので、最後にこの北朝鮮政策、この非核化に対する政府の方針と実態には乖離があると言わざるを得ないと思います。これが良い悪いではなくて、大臣ご自身がこれまでの北朝鮮政策をどのように評価をされているのか。そして先ほど取り上げましたコールドピース戦略に関する論文にもあったとおり、米国が北朝鮮の核に対する対応方針をもし仮に変えようとする、そういった兆しを見せている中で、今後もどのように米国の関与を担保していくのか。また北朝鮮に関しては、日米間以外にもインド太平洋地域の有志国、そして有志国の枠組みを活用しなければいけない、そういった検討する中において、どのように我が国が立ち振る舞っていくのか、ぜひ大臣のお考えをお示しください。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 拉致・核・ミサイル等の諸懸案を包括的に解決するため、何が最も効果的か不断に検討している\n- 日本が主導的な役割を果たし、国際社会の理解を広げながら問題解決に取り組みたい",
+        "full_text": "このことは事実なんだと、こんなふうに思っておりますが、拉致、核、ミサイルといった諸懸案は包括的に解決する。これに向けて何が最も効果的かという観点から、不断に検討を行っているところでありますが、どう検討しているかということをお話をすると、声を上げていくということは極めて重要だと思っておりまして、そのために日本としてもですね、主導的な役割を果たしていかなければならないと考えております。こういった形で国際社会の理解というのも広がっていると思っておりまして、そういった国際社会全体で日本が主体的でありながら、こういった問題の解決に取り組んでいきたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=6439.736",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "北朝鮮政策の評価と今後の外交方針について",
+          "sub_asks": [
+            "これまでの北朝鮮政策の評価",
+            "米国の関与をどう担保するか",
+            "有志国枠組みの中で日本はどう立ち振る舞うか"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "コールドピース戦略に関する論文"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "北朝鮮",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "解決に取り組んでいきたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "拉致、核、ミサイルといった諸懸案は包括的に解決する。これに向けて何が最も効果的かという観点から、不断に検討を行っている",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は具体的だが、大臣の答弁は抽象的な意向表明に留まっており、具体的な戦略や評価が示されていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "複数の大きな問いを一度に投げかけているため、答弁が分散し、抽象的な回答を許す構成になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_031",
+      "segment_index": 6,
+      "topic": "国連における日本らしい貢献",
+      "question": {
+        "speaker": "佐々木真琴",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 日本の国連分担金のシェアが低下している現状がある\n- 国連における「日本らしい貢献の核」をどう捉えているか\n- それらを世界に理解してもらうための今後の方針を問う",
+        "full_text": "では続いて併せて伺いますけれども、国連改革しているところでありますけれども、避けて通れないのが財政的な貢献であるかなというふうにも思います。先ほどからもODAの話等もありますけれども、今この国内の状況を見ても、拠出金をたくさん出していくほどの余剰な余力があるところではないと思いますけれども、かつて我が国は国連の分担金全体の約2割を占める大国でございました。やがて今や中国が23.7%という形で拠出、分担をしております。今、我が国のシェアは6.93%ということで、かつてに比べると大幅にシェアを低下させているところでございます。ここで伺いますけれども、国連における日本らしい貢献の核というものを、大臣は何だと捉えていらっしゃるのか、また、それらを世界に理解していただくために、今後どういった方針をとっていかれるのか、お考えを伺いたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 「人間の安全保障」に基づく平和構築・紛争予防、法の支配の維持強化、国連改革の3点を重視している\n- 相手の立場を尊重する「包容力」と、法の支配などの原則を譲らない「力強さ」を兼ね備えた外交を通じてコミットしていく",
+        "full_text": "我が国は、1956年の国連に加盟して以来、国連活動の3本柱、国際の平和と安全、そして開発、さらには人権、人道分野において多国間協力を通じた政策目的の実現を図ってきております。一つが、人間の安全保障の考え方の下での平和の構築、紛争の予防。そして二つ目に、自由で開かれた国際秩序を維持強化する上で重要な法の支配。そして三番目に、国連がその機能を十分に発揮するための、先ほども申し上げましたが、国連改革。日本として今後も包容力と力強さを兼ね備えた外交。それを一つの思想の下で、これが正しいんだというよりも、相手の立場をしっかりと考えて、それを尊重しながら、お互いにいい関係をつくっていく。さらには基本的な原則、法の支配であったりとか、問題が起こったら平和的にこれを話し合いによって解決していく。この包容力と力強さを兼ね備えた外交を通じて、国連を中核とする多国間主義にコミットし、国連とともに平和を築き、法の支配を守り、さらには改革を推進していきたいと思っております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=7752.536",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "国連における日本らしい貢献の核と今後の方針",
+          "sub_asks": [
+            "日本らしい貢献の核をどう捉えているか",
+            "世界に理解してもらうために今後どういう方針をとるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "中国が23.7%"
+            },
+            {
+              "type": "number",
+              "excerpt": "我が国のシェアは6.93%"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "人間の安全保障"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "法の支配"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "改革を推進していきたいと思っております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "包容力と力強さを兼ね備えた外交を通じて、国連を中核とする多国間主義にコミットし、国連とともに平和を築き、法の支配を守り、さらには改革を推進していきたい",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "抽象的な問いに対し、大臣が外交理念を述べるにとどまっており、具体的な次の一手や数値目標などの実質的な記録価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「日本らしい貢献の核」という問いが抽象的であるため、回答も理念的な記述に終始してしまった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_032",
+      "segment_index": 6,
+      "topic": "アジア諸国への農業技術協力",
+      "question": {
+        "speaker": "佐々木真琴",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 日本の高い農業技術や食料安定提供の経験を活かし、アジア諸国を支えることで日本の責任をどう果たしていくか",
+        "full_text": "では、まさに今お話にもあったとおり、日本ならではの強み、日本だからこそできることについて、ちょっと話を移していきたいと思うんですけれども、国連からはちょっと離れてしまうかもしれませんが、やはり食料の安全保障の観点であるとか、エネルギーについても、アジア諸国がまさに今困っているときには、日本として貢献していくことが非常に重要であるというふうにも認識をいたしております。ではですね、過去から現在に至るまでも供給不足に直面している国も少なくないといったところがありますし、また今、日本の農政でも輸出を今約4万トンあるところから40万トン規模まで拡大していくという方針も示されておりますので、そういったところともつなげつつ、日本らしい、日本だからこそできる強みを訴えていくことを大切かなというふうに認識しています。そこで参考人に伺いたいと思いますけれども、この日本が誇る高い農業技術であるとか、安心安全な食料の安定提供の経験も生かして、アジアの国々を支える形で、日本の責任をどう果たしていくのか。これもアジア諸国に対して、日本の信頼や責任を高める道の一つでもあると認識しておりますけれども、どういったお考えをお持ちか、見解を伺いたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "政府参考人",
+        "role": "",
+        "summary": "- 食料分野の開発協力は日本の強みであり、世界的な安定供給確保は日本にとっても重要である\n- インドネシアの食料自給改善計画やフィリピンのバリューチェーン強化など、個別ニーズに応じた支援を推進する",
+        "full_text": "委員御指摘のとおり、食料分野における開発協力は、日本の強みを生かした国際貢献であると認識してございます。また同時に、世界の食料の安定供給確保は、食料の多くを輸入に頼る日本にとっても極めて重要な課題でございます。お尋ねのアジア諸国との協力につきましては、気候変動や自然災害等の各国での異なる課題を踏まえつつ、個別ニーズに応じた協力を進めているところでございます。例えば、インドネシアについては、全国の食料自給改善計画の策定を支援しているほか、フィリピンにおいては、野菜を主といたしました園芸作物のバリューチェーン強化に向けたロードマップの策定を支援しているところでございます。今後も日本の強みを生かしつつ、各国のニーズに応じた支援を通して、食料安全保障の観点からも、アジア諸国への貢献を進めてまいりたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=7752.536",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "日本の農業技術を活かしたアジア諸国への貢献策",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "輸出を今約4万トンあるところから40万トン規模まで拡大していく"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "アジアの国々",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "インドネシア"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "フィリピン"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "全国の食料自給改善計画"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "園芸作物のバリューチェーン強化に向けたロードマップ"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "アジア諸国への貢献を進めてまいりたいと考えてございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "reference",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "インドネシアについては、全国の食料自給改善計画の策定を支援しているほか、フィリピンにおいては、園芸作物のバリューチェーン強化に向けたロードマップの策定を支援している",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は抽象的だが、回答者がインドネシアやフィリピンでの具体的な支援事例を挙げたため、情報の密度は高い。ただし、今後の具体的な新施策へのコミットメントはない。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どういったお考えか」という主観的な問いではなく、具体的にどのような新施策を検討しているかを問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_033",
+      "segment_index": 6,
+      "topic": "アジア諸国のエネルギー安全保障戦略",
+      "question": {
+        "speaker": "佐々木真琴",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 中東情勢の緊迫化等によりアジア新興国がエネルギー供給不足の脆弱性を抱えている\n- 備蓄制度のノウハウ共有や緊急時の協力枠組みなど、エネルギー安全保障分野での戦略を問う",
+        "full_text": "今、食料について伺いましたけれども、エネルギーについても伺いたいと思います。直近の中東情勢の緊迫化も受けまして、輸送リスクであるとか、原油価格の高騰、LNG価格の市場の不安定化等もございます。振り返れば、2022年のウクライナ危機以降の燃料高騰であるとか、それ以前の国際情勢の緊迫化の際にも、アジアの新興国の多くは同様な深刻な事態が繰り返されてきたというふうに認識をいたしております。学校が臨時休校してしまうですとか、政府によるテレワークの強制推奨といった社会活動の制限に追い込まれるような事情も過去発生をいたしております。こうした脆弱性を放置するということは、アジア地域の混乱を招くだけではなくて、我が国にとってもサプライチェーンを通じて経済にも跳ね返ってくるものであるとも認識をしておりますので、こういった分野においても主導的な役割を果たしていくこと、地域における我が国のプレゼンスや信頼を高める上でも極めて重要な戦略だというふうに認識をいたしております。そこで、今後日本としてアジア諸国に対して備蓄制度のノウハウの共有であるとか、緊急時の協力の枠組みを含めてエネルギー安全保障分野でどういった戦略をお持ちなのかについて伺いたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "政府参考人",
+        "role": "",
+        "summary": "- 新たな協力枠組み「パワーアジア」を立ち上げ、金融面での緊急対処と中長期的な備蓄制度構築の両輪で対応する\n- 具体的な案件として、ベトナムの製油所の原油調達支援などで具体化させていく",
+        "full_text": "高市総理が新たな協力の枠組みとして「パワーアジア」を立ち上げた、まさにそうした問題意識に基づくものでございます。パワーアジアは足元の原油・石油製品等の調達やサプライチェーンの維持といった緊急事態を主として金融面を通じて対処するとともに、各国の備蓄制度構築、あるいはその強化を含む中長期の構造的対応をこれに対応するその両輪からなるものでございます。今月2日には、その初の案件といたしまして、ベトナムのニソン製油所の原油等調達について、NEXIを通じて支援する方向で一致したところでございます。政府としては、引き続き平和と繁栄をつくる責任ある日本外交の一翼を担うものとして、これを推進してまいりたいと考えてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=7752.536",
+      "metrics": null
+    },
+    {
+      "id": "qa_034",
+      "segment_index": 6,
+      "topic": "国連加盟70周年の情報発信とレガシー構築",
+      "question": {
+        "speaker": "佐々木真琴",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 国連加盟70周年を、日本の立ち位置を国民や次世代に浸透させる契機としてどう活用するか\n- 教育現場や国際ネットワークを通じた戦略的な情報発信や、国家的な機運として残す計画を問う",
+        "full_text": "では、1問ちょっと飛ばさせていただいて、最後の質問に移りたいと思うんですけれども、この国連加盟70周年という節目をですね、国際社会における日本の立ち位置を、広く国民に対しても示していく契機として、どのように活用されていくのか、情報発信やレガシーの構築について伺っていきたいと思います。今回予定されている各種記念事業であるとかそういったものは、単に外務省内の一過性のイベントで終わらせずに、今国際社会がどのような局面にあるのか、またその中で日本がどういう立ち位置にいるのか、そしてなぜこの多国間主義であるとか国連の枠組みが今のこの社会に重要なのかといったところを、国民、とりわけ次世代を担う子どもたちであるとか学校現場、社会へとも広く浸透させていく節目の年であるので、絶好の機会であるとも考えております。国連加盟70周年という大きな節目を活用して、教育現場であるとか、各種イベント、これまで培ってきたさまざまな国際ネットワークや機運を通じて、国連外交の重要性をどのように戦略的に情報発信をされていくのか、国家的な機運として残していく計画なのかを大臣にお伺いしたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 1年を通じて日本の貢献と重要性を発信し、国民の理解を深める\n- 広報動画の公開、専用SNSアカウントの開設、ロゴ制作、教育現場での啓発活動などを通じて戦略的に発信する",
+        "full_text": "今年、日本が国連加盟70周年ということでありまして、この1年間を通じて、日本のこれまでの国連への貢献であったり、国連活動をさまざまな分野で行っているその重要性を発信することで、日本の国連外交に対する国民の皆さんの理解を深める。アジアで初めての開催となりました国連システム幹部会のため、グテレス事務総長が訪日した機会を捉えまして、国連大学等が主催をしましたシンポジウムで、私、今、基調講演を行いまして、国連を中核とする多国間主義に対する日本のコミットメント、これを発信したところであります。さらに、日本の国連加盟70周年について、私自らが出演しました国連外交の意義を発信する広報動画。これも公開しておりますほか、70周年記念SNSのアカウントを開設しまして、またご覧いただいたかどうか分かりませんが、70周年記念のロゴ。これも制作するなど、国連外交の重要性を戦略的に発信をして、国連活動に対する国民の理解を促進する、これの絶好な機会だと捉えております。日本の国連加盟70周年となります12月18日に向けて、SNSの活用、教育現場における啓発活動であったりとか、記念イベントの開催等を通じて、日本の国連外交に対する国民の理解の促進を図ってまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=7752.536",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "国連加盟70周年を機にした戦略的な情報発信計画",
+          "sub_asks": [
+            "戦略的な情報発信をどのように行うか",
+            "国家的な機運としてどのように残していく計画か"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "国連加盟70周年"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.2
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "子どもたちであるとか学校現場",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国連システム幹部会"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "グテレス事務総長"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "国連大学"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "12月18日"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "国民の理解の促進を図ってまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "SNSの活用、教育現場における啓発活動であったりとか、記念イベントの開催等を通じて、日本の国連外交に対する国民の理解の促進を図ってまいりたい",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "国連加盟70周年の広報戦略に関する質疑。大臣は具体的な実施済み施策（動画、SNS、ロゴ）を列挙して回答したが、今後の具体的な計画は意向表明に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「戦略的に」という抽象的な言葉ではなく、具体的なKPIやターゲット層への到達目標を問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_035",
+      "segment_index": 7,
+      "topic": "AI・データ解析への投資額",
+      "question": {
+        "speaker": "木下敏之",
+        "party": "参政党",
+        "summary": "- 5年で600億円の予算のうち、AIやデータ解析などのソフト面への投資額はいくらか",
+        "full_text": "5年で600億というのは運行経費も含めての合計金額ですよね。その中でAIだとかデータ解析技術、ソフト面の投資というのはどれぐらい行われているんでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "枠田",
+        "role": "",
+        "summary": "- 手元に金額はないが、予算内訳で実施しており、後ほど個別に説明する",
+        "full_text": "金額につきましては今手元にございませんが、その内訳でやっているということでございます。後ほどまた委員には個別にご説明申し上げたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=8952.036",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "投資額の内訳（ソフト面）の確認",
+          "sub_asks": [
+            "合計金額に運行経費が含まれているかの確認",
+            "AI・データ解析・ソフト面への投資額の提示"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "5年で600億"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 3,
+          "trigger_phrase": "後ほどまた委員には個別にご説明申し上げたいと思います",
+          "matched_pattern": "future-tense verb describing a CONCRETE government action with a named mechanism"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": true,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.35
+        },
+        "oc3_quotability": {
+          "quote_candidate": "金額につきましては今手元にございませんが、その内訳でやっているということでございます。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な金額の回答は得られなかったが、後ほど個別説明するという具体的なアクションが提示された。",
+        "would_be_referenced": "low",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_036",
+      "segment_index": 7,
+      "topic": "海外資源探査企業との連携",
+      "question": {
+        "speaker": "木下敏之",
+        "party": "参政党",
+        "summary": "- SLBのような世界最先端の解析AIや海洋データを持つ企業と組むべきではないか\n- すでに連携している企業があるか、または今後連携する意向があるか",
+        "full_text": "そこで改めて経済産業省にお伺いいたします。これはですね、SLBのような世界最先端の解析AIを持つような、そして海洋データを持つような、世界的な資源探査企業と組むべきではないかと思うんですが、既に組んでいらっしゃるとしたら、どこの企業と組んでいるのか、組んでいないとしたら、これからこういう世界的な探査企業と組むおつもりがあるのかどうかについてお答えをください。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "枠田",
+        "role": "",
+        "summary": "- 最新のAI技術導入を検討し、最適な体制構築を進める方針である\n- すでに世界の主要物理探査企業であるTGS社およびデータ解析企業であるSLB社と連携し、データの取得・処理・解析を実施している",
+        "full_text": "現在、JOGMECにおきましても、全体の資源探査技術の組み合わせも考慮しながら、随時、最新のAI技術の導入について検討を進めているところでございます。最新技術の導入も含めた最適な資源探査体制の構築を進めていくというような方針でございます。今現在ジョグメックが実証している物理探査におきましては、世界の主たる物理探査企業であるTGS社、それからデータ解析企業であるSLB社とも連携をいたしまして、データの取得、処理、解析を実施をしているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=8952.036",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "世界的な資源探査企業との連携状況と意向",
+          "sub_asks": [
+            "既に連携している企業の名称",
+            "未連携の場合、今後連携する意向があるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "SLB"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "世界的な資源探査企業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "JOGMEC"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "TGS社"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "SLB社"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "最適な資源探査体制の構築を進めていくというような方針でございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "世界の主たる物理探査企業であるTGS社、それからデータ解析企業であるSLB社とも連携をいたしまして、データの取得、処理、解析を実施をしている",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な連携先企業名（TGS社、SLB社）が明示されており、事実関係の記録として価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_037",
+      "segment_index": 7,
+      "topic": "海外企業との具体的な連携内容",
+      "question": {
+        "speaker": "木下敏之",
+        "party": "参政党",
+        "summary": "- TGS社やSLB社と具体的にどのような連携（データのやり取りやAI解析など）を行っているか",
+        "full_text": "だからTGSと組んでいるというのはよくわかるんですが、具体的にTGSやSLBとはどのような連携をされているんでしょうか。連携、連携といっても、年何回か会っているだけだったり、具体的に何千万、何億円とお金を支払って、何かデータのやりとり、AI解析をしていただいている、いろいろな連携の仕方があると思うんですが、その点について具体的にお答えください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "枠田",
+        "role": "",
+        "summary": "- TGS社とは、音波による地下構造のイメージ化や広域・高精度なデータ取得、ノイズ除去などの解析技術で連携している\n- SLB社とは、データ解析および処理の強みを活用して連携している",
+        "full_text": "まずTGSですけれども、これはまさに船を使って、先進的な物理探査技術を実施している企業でございます。具体的には音波を用いまして地下構造の探査、これ地層のイメージ化をしたりとか、ストリーマーケーブルという長いケーブルを引っ張ってですね、広域・高精度でデータを取得したりとか、それからその解析につきましてもですね、ノイズ除去とか解析処理による鮮明な地下構造イメージを生成する、そういった企業でございます。こういった技術につきまして、先ほどのジョグメックの探査を通じて連携をし、技術を高めているということでございます。SLBにつきましても、データ解析、それからデータの処理、こういったところに強みを有してございますので、ジョグメックと連携しながら技術を高めて、それを活用しているということでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=8952.036",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "TGSおよびSLBとの具体的な連携内容",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "TGS"
+            },
+            {
+              "type": "organization",
+              "excerpt": "SLB"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "TGS, SLB",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.4
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "ストリーマーケーブル"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ジョグメック"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "ジョグメックの探査を通じて連携をし、技術を高めているということでございます。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な連携手法（金銭的やり取りやデータ量等）を問うたが、回答は企業の概要説明と抽象的な「連携」に留まっており、実効的な情報は少ない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「具体的に」と問うているが、回答者が逃げやすいオープンクエスチョンであるため、契約形態や予算額など項目を絞って問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_038",
+      "segment_index": 7,
+      "topic": "海外企業への委託金額",
+      "question": {
+        "speaker": "木下敏之",
+        "party": "参政党",
+        "summary": "- 具体的にどれほどの金額で事業等を委託しているか",
+        "full_text": "具体的にどれぐらいの金額で事業か何か委託されているんでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "枠田",
+        "role": "",
+        "summary": "- 金額は予算の内訳に含まれるため、個別に説明する",
+        "full_text": "大変恐縮ながら金額につきましては先ほどの金額の内訳ということでございまして、また個別に委員にもご説明申し上げると思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=8952.036",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "委託事業の具体的な金額の確認",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "個別に委員にもご説明申し上げると思います",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": null,
+          "score": 0.0
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "具体的な金額の問いに対し、回答を回避し後日の説明に留めたため、記録としての価値は極めて低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "どの事業の委託金額を指しているのか、対象を特定して質問すべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_039",
+      "segment_index": 7,
+      "topic": "東シナ海・日韓共同開発区域の調査対象可否",
+      "question": {
+        "speaker": "木下敏之",
+        "party": "参政党",
+        "summary": "- 日韓共同開発区域や東シナ海日中共同開発線付近が調査対象に含まれているか\n- 含まれていない場合、その理由は何か",
+        "full_text": "この地図の中で日韓共同開発区域、もしくは前回も質問させていただきました東シナ海日中共同開発線近くのところ、ここは調査対象に含まれているのでしょうか。調査対象に含まれていないとしたら、その理由は何かを御説明ください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "枠田",
+        "role": "",
+        "summary": "- 民間事業者から特段の探査要望を受けていないため",
+        "full_text": "まず御指摘の東シナ海でございますけれども、これは民間事業者とはコミュニケーションしてございますが、民間事業者から特段の探査要望を受けていないということでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=8952.036",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "特定海域が調査対象に含まれるか",
+          "sub_asks": [
+            "日韓共同開発区域や日中共同開発線付近が調査対象に含まれているか",
+            "含まれていない場合の理由は何か"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "この地図の中で"
+            },
+            {
+              "type": "other",
+              "excerpt": "日韓共同開発区域"
+            },
+            {
+              "type": "other",
+              "excerpt": "東シナ海日中共同開発線"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "東シナ海"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "民間事業者から特段の探査要望を受けていないということでございます。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "日韓共同開発区域への言及が漏れており、回答が不十分である。また、具体的な調査対象の有無という問いに対し、要望の有無で回答している。",
+        "would_be_referenced": "low",
+        "issue_in_design": "複数の海域を一度に質問しているため、回答者が一部を失念しやすい構成になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_040",
+      "segment_index": 7,
+      "topic": "政府主導による資源調査の意思",
+      "question": {
+        "speaker": "木下敏之",
+        "party": "参政党",
+        "summary": "- 地政学リスクが高く民間から手が上がらない海域について、国家の意思として政府主導で資源調査を行う検討意思があるか",
+        "full_text": "ここでやはり思うのは、こういった妨害が予想される区域、外交上揉めることが予想される区域において、そして資源の眠っている可能性があるというところでは、国家として開発する意識があるのかどうかということが非常に問われているのではないかと思っております。ここで改めて経済産業省に伺いたいと思いますが、こういった民間から手が上がらない、もしくは外交上揉める可能性がある、そういったところに対して開発を行うのは、やはり政府主導でなければ行えないと思うのですが、改めて国家の意思として、この海域で資源調査を行うことを検討する意思がないのかどうかを、経済産業省のお考えを伺いたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "枠田",
+        "role": "",
+        "summary": "- 民間要望に加え、技術的可能性を踏まえ有望度の高い海域での探査を推進する\n- 日韓共同開発区域については、日韓双方で緊密に周知を行い、状況を踏まえ適切に判断する",
+        "full_text": "我が国周辺海域における資源探査につきましては、これは民間事業者からの要望に加えまして、石油天然ガスの開発に進展する技術的な可能性も踏まえまして、有望度の高い海域における資源探査を推進をしていくということでございます。従って、例えば日韓共同開発区域でございますけれども、これは日韓大陸棚南部共同開発協定の実施に関する事項等につきまして、これは引き続き日韓双方で緊密に周知を行っていくことで一致をしてございますし、こういったいろいろな状況を踏まえまして、適切に判断をしてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=8952.036",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "外交上の懸念がある海域での政府主導の資源調査の意思",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "経済産業省",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "日韓共同開発区域"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "日韓大陸棚南部共同開発協定"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "適切に判断をしてまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "有望度の高い海域における資源探査を推進をしていくということでございます。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "政府主導での調査意思を問う質問に対し、既存の枠組み（日韓共同開発区域）への言及に留まり、明確な回答を避けている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「検討する意思がないのか」という否定疑問形のため、回答者が肯定・否定を曖昧にしやすい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_041",
+      "segment_index": 7,
+      "topic": "国家戦略型支援パッケージの検討",
+      "question": {
+        "speaker": "木下敏之",
+        "party": "参政党",
+        "summary": "- 地政学リスクの高い海域での開発に向け、税制優遇や債務保障に加え、操業中断時のリスク分担や海上警備を含む国家戦略型の支援パッケージを検討すべきではないか",
+        "full_text": "なかなか何十年も動かなかった海域に調査、手をつけるのは、タイミングが重要だと思いまして、このホルムズ海域の封鎖によって、日本の石油の確保が大変難しいという、このタイミングを逃しては、なかなかこの海域に調査を始めるということは、難しいのではないかと思います。それで、これからだということになりますが、メジャーと提携するにしても、メジャー側からすると、どれぐらい資源があるのかどうかということと、まず調査で揉めたときに、日本側がまず前面に立って戦ってくれるよね、守ってくれるよね、ということを示す必要があると思っておりまして、こういった地政学リスク非常に高いところでは、通常の企業側に対する税制優遇ですとか、債務保障だとか、特別償却だとか、そういったことに加えて、操業中断のときのリスク分担、もしくは海上保安庁になると思うんですが、海上警備、それから長期的に権益を安定して確保すると、そういった国家戦略型の支援パッケージを、今から検討しておく必要があると思うんですが、経済産業省のお考えをお伺いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "枠田",
+        "role": "",
+        "summary": "- 国内資源開発の推進は重要であり、民間事業者との連携が不可欠である\n- 資源探査海域は民間要望に基づき国が選定しており、具体的な政策措置についても民間事業者の要望を確認し、委員会等で優先順位を決定している",
+        "full_text": "まず国内資源につきましては、これは地政学リスクの影響に左右されず、安定的な供給の確保が可能でございまして、国内資源開発の推進は重要であるというふうに考えてございます。その推進でございますけれども、これはやはり実際に開発を行う民間事業者との連携が、これはやはり必要不可欠でございます。したがって、資源探査を実施する海域は、民間事業者からの要望等に基づいて、国が選定をしているところでございます。具体的な政策措置につきましても、国内資源開発を効率よく進捗させる観点から、民間事業者の要望をよく確認する必要があると考えてございます。その際には、例えば物理探査につきましては、実施検討委員会などを形成いたしまして、その中で様々な民間企業の方の御意見を伺いながら、評価結果の審議、それから優先順位の決定等、こういったものをしっかりやっているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=8952.036",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "地政学リスクの高い海域への国家戦略型支援の検討",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "ホルムズ海域の封鎖"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "メジャー",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": true,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.2
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "実施検討委員会"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "国内資源開発の推進は重要であるというふうに考えてございます。",
+          "score": 0.2
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者はホルムズ海域等の海外リスク海域への戦略的支援を求めたが、回答者は国内資源開発の話にすり替えて回答しており、実質的な回答になっていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "具体的な支援策（税制、警備等）を列挙しているが、最終的な問いが「お考えをお伺いしたい」という抽象的な形式であるため、回答者に逃げ道を与えている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_042",
+      "segment_index": 8,
+      "topic": "安全保障環境の構造的変化への認識",
+      "question": {
+        "speaker": "宇佐美登",
+        "party": "チームみらい",
+        "summary": "- 物理的兵力中心からサイバー、宇宙、経済技術へと変質した現代の安保環境における構造的変化をどう認識しているか",
+        "full_text": "さて、今日5月22日なんですけれども、今日は実は66年前の1960年、衆議院で新日米安保条約が採決された日でございまして、当時は陸海空と物理的兵力が中心でしたが、現在安保の主戦場はサイバーであり、宇宙であり、そして経済技術と、変質をしているわけでございます。先端技術の優位性が国家の主権や同盟関係に直結する現代においても、この66年間における安保環境の構造的変化をどのように認識しているのか、茂木大臣の御見解をお願いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 戦後最も大きな構造的変化の中にあり、外交防衛から経済技術分野へ領域が拡大している\n- 総合的な国力を強化し、同盟国・同志国とサイバー、宇宙、経済安保、AI、量子等の振興技術で協力し対応したい",
+        "full_text": "御指摘のとおり、当時から安全保障環境は60年以上経っているわけでありますから、大きく変化をしておりまして、特にこの5年、10年の変化というのは激しいと考えておりまして、現在世界はパワーバランスの変化であったり、紛争対立の激化を受けて、戦後最も大きな構造的変化の中にあります。これも外交防衛という伝統的な領域から経済技術の分野にも大きく拡大しておりまして、外交力、防衛力、経済力、技術力、情報力、そして人材力といった日本の総合的な国力を徹底的に強くしていかなければいけないと、こんなふうに考えております。こうした考え方のもと、我が国として、同盟国、同志国とサイバー、宇宙、経済安全保障を含みます幅広い分野で協力を進め、ドローンの大量運用であったりとか、非常に造詣の深いAI、量子等などの振興技術の発展といって、新たな安全保障環境の変化にしっかりと対応していきたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=10293.436",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "安保環境の構造的変化に対する認識",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "今日5月22日"
+            },
+            {
+              "type": "date",
+              "excerpt": "66年前の1960年"
+            },
+            {
+              "type": "law",
+              "excerpt": "新日米安保条約"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "サイバー"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "宇宙"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "経済安全保障"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "AI"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "量子"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "新たな安全保障環境の変化にしっかりと対応していきたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "現在世界はパワーバランスの変化であったり、紛争対立の激化を受けて、戦後最も大きな構造的変化の中にあります。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "安保環境の変化という抽象的な問いに対し、大臣が現状認識を述べた形式的なやり取りである。",
+        "would_be_referenced": "low",
+        "issue_in_design": "見解を問う形式であるため、具体的な政策変更や期限付きの約束を引き出す設計になっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_043",
+      "segment_index": 8,
+      "topic": "内閣府による量子戦略の全体戦略と資源配分",
+      "question": {
+        "speaker": "宇佐美登",
+        "party": "チームみらい",
+        "summary": "- 内閣府が量子戦略の司令塔として、省庁間の縦割りを排した全体戦略をどのように策定し、リソース配分を行っているか",
+        "full_text": "現代の安保環境における技術の優位性というのは、まさに今、茂木大臣が言っていただいたとおりであり、その覇権を左右する最先端の領域において、内閣府は日本政府の量子戦略の司令塔でございます。そして、この全体の取りまとめとして、この内閣府、文科省、経産省、防衛省などなどの縦割りを廃止し、最重点の戦略領域に予算やリソースを10点配分してくださっているわけでございますが、内閣府の全体戦略って、なかなかいろいろな議事録を見たんですけれども、載ってございません。私、個人的には、この2日間、何十時間というぐらいレクをいただいたり、ご相談させていただきましたが、ぜひご答弁いただければと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "科学技術イノベーション推進事務次官",
+        "role": "",
+        "summary": "- 量子技術イノベーション会議を設置し、基礎研究から社会実装まで政府全体の戦略を立案している\n- 令和2年に量子技術イノベーション戦略を策定し、現在は日本成長戦略の重点分野として官民投資ロードマップの策定を検討している",
+        "full_text": "この中で、量子分野につきましては、量子技術イノベーション会議を設置いたしまして、関係各省とも協力しながら、我が国として、量子分野への資源の投入が最適なものとなるよう、基礎研究から社会実装に至るまで、量子分野の政府全体としての戦略を立案してきているところでございます。このため、令和2年にまず量子技術イノベーション戦略を策定いたしました。現在では、量子を日本成長戦略の重点分野の一つとして位置づけまして、官民投資ロードマップを策定するための検討を内閣府を中心に行っているところでございます。関係省庁とも協力しながら、供給面でだけでなく、需要も活用しながら、初期需要の創出を図り、研究から社会実装に至るまで、一気通貫で取り組んでまいるということとしてございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=10293.436",
+      "metrics": null
+    },
+    {
+      "id": "qa_044",
+      "segment_index": 8,
+      "topic": "量子コンピューターの産業実装とハイブリッド計算基盤",
+      "question": {
+        "speaker": "宇佐美登",
+        "party": "チームみらい",
+        "summary": "- 量子コンピューターとAIの組み合わせを含め、国内産業界やスタートアップへどのように実装していくか",
+        "full_text": "この量子コンピューター、そして我々がいつも申し上げているAI、人工知能というものの組み合わせも非常に重要だと思っております。国内の産業界、そしてスタートアップへどのように実装していくのか含めて、経産省さんからお答えいただきたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "大臣官房審議官",
+        "role": "",
+        "summary": "- 量子と古典（AI含む）の強みを活かしたハイブリッドコンピューティングの実現が重要である\n- GQUADにおいて世界最高水準のテストベッド環境やインキュベーション施設を整備し、ユースケース実証が可能な環境を整えている",
+        "full_text": "今、先生からもお話がありましたように、量子コンピューターの社会実装のためには、AIを含むいわゆる古典コンピューターと、それから量子コンピューター、それぞれの強みを生かしたハイブリッドコンピューティングを実現していくことが重要というふうに考えております。政府の方針としましても、日本成長戦略本部において検討を進めております、量子の官民投資ロードマップの案、こちらにおきまして、ハイブリッド計算基盤の早期構築が示されております。経済産業省では、産業技術総合研究所の量子AI融合技術ビジネス開発グローバル研究センター、略しましてGQUADにおきまして、量子、それから古典ハイブリッドコンピューティングのための世界最高水準のテストベッド環境、それからインキュベーション施設の整備を進めております。スタートアップを含めた産業界が、量子コンピューターのユースケース実証に利用可能な環境を整えているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=10293.436",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "量子コンピューターとAIの産業・スタートアップへの実装方法",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国内の産業界、スタートアップ",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "日本成長戦略本部"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "量子の官民投資ロードマップ"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "産業技術総合研究所の量子AI融合技術ビジネス開発グローバル研究センター"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "GQUAD"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "整備を進めております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "GQUADにおきまして、量子、それから古典ハイブリッドコンピューティングのための世界最高水準のテストベッド環境、それからインキュベーション施設の整備を進めております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は抽象的だが、回答側が具体的な組織名（GQUAD）やロードマップを挙げて現状の取り組みを具体的に説明しており、情報の密度が高い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「どのように実装していくのか」という問いに対し、具体的な期限や数値目標を求める形式にすれば、より強いコミットメントを引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_045",
+      "segment_index": 8,
+      "topic": "量子・AI分野の人材育成支援",
+      "question": {
+        "speaker": "宇佐美登",
+        "party": "チームみらい",
+        "summary": "- 文部科学省による量子やAI分野における具体的な研究支援および人材育成の取り組みについて伺いたい",
+        "full_text": "そんな中で文部科学省さんが、この量子やAIについてですね、非常に具体的な研究支援とか人材育成をしてくださっております。ご答弁いただければと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "生田大臣官房審議官",
+        "role": "",
+        "summary": "- 世界トップレベルの研究拠点整備や国際卓越研究大学への支援により優秀な人材確保に努めている\n- Q-LEAPプログラムを通じて長期的な研究開発支援を行い、今年度からは高専生・高校生向けプログラムの開発も予定している",
+        "full_text": "このため、文部科学省では、優秀な研究者を引きつけるための世界トップレベルの研究拠点の整備や、国際卓越研究大学への支援などの取り組みを進めるなど、優れた人材の確保に努めております。また、特に国際競争の激しい量子分野におきまして、文部科学省として、光量子飛躍フラッグシッププロジェクト、略してQ-LEAPというプログラムを通じ、理化学研究所をはじめとする大学や研究機関の研究開発を、最長10年間にわたり長期的に支援することで、量子専門人材の育成を行っており、今年度からは新たに高専生や高校生向けの量子技術を学ぶプログラムの開発等も予定しているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=10293.436",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "量子・AIの研究支援と人材育成の状況について",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "国際卓越研究大学"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "光量子飛躍フラッグシッププロジェクト"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "Q-LEAP"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "理化学研究所"
+            },
+            {
+              "type": "number",
+              "excerpt": "最長10年間"
+            }
+          ],
+          "score": 0.9
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "優れた人材の確保に努めております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "Q-LEAPというプログラムを通じ、理化学研究所をはじめとする大学や研究機関の研究開発を、最長10年間にわたり長期的に支援することで、量子専門人材の育成を行っており",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は非常に漠然としているが、回答側が具体的なプロジェクト名（Q-LEAP等）や支援期間を挙げて詳細に説明しており、情報価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "具体的な現状の課題や、改善を求める点を含めた質問形式にすれば、より踏み込んだ答弁が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_046",
+      "segment_index": 8,
+      "topic": "防衛領域における量子・AI技術の社会実装",
+      "question": {
+        "speaker": "宇佐美登",
+        "party": "チームみらい",
+        "summary": "- サイバー防衛やステルス機・潜水艦の探知など、防衛現場への量子・AI技術の適用について伺いたい",
+        "full_text": "さて、この防衛領域における量子やAIなどの社会実装というのも大変重要でございます。例えば、量子やAIを用いたサイバー防衛は、もちろんステルス機、潜水艦の探知とか、防衛現場への適用は急務でございます。この点を含めて防衛省からお答えいただきたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "峰技術戦略部長",
+        "role": "",
+        "summary": "- 量子技術については、特に探知識別能力の高度化（量子センシング等）への活用を検討し研究を推進している\n- AIについては、意思決定の迅速化や負担軽減のため、指揮官の判断を補佐する策量再現などの研究を重点的に進めている",
+        "full_text": "先端技術研究とその成果の安全保障目的の活用などについて、主要国が競争を激化させる中で、量子技術やAIをはじめとする先端技術は、将来の戦闘要素を一変させ得る極めて重要な技術であると考えておりまして、防衛省としてもその育成や活用、取り込みを着実に進めているところでございます。例えば、量子技術につきましては、将来の戦い方を大きく変える可能性を秘めた技術としまして、特に探知識別能力の高度化等への活用を検討しておりまして、安全保障技術研究推進制度等におきまして、量子センシングなどの分野の研究を推進しております。一方、AIでございますが、その活用につきましては、意思決定の迅速化、自衛隊員の負担軽減、精進化、省力化、これらを図るため、例えば、指揮官の判断を補佐する策量をAIで再現しまして、議論させ、対応策を提案させるような研究を実施しておりまして、これは指揮統制などの分野において、応用される可能性のあるもので、重点的に進めているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=10293.436",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "防衛領域における量子・AIの社会実装について",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "安全保障技術研究推進制度"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "量子センシング"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "育成や活用、取り込みを着実に進めている",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "量子技術につきましては、特に探知識別能力の高度化等への活用を検討しておりまして、安全保障技術研究推進制度等において研究を推進しております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は抽象的だが、回答側が具体的な制度名や研究分野（量子センシング等）を挙げて現状を説明している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "具体的な現状把握や期限付きの目標を問う形式にすれば、より拘束力のある回答が得られた。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_047",
+      "segment_index": 8,
+      "topic": "外交カードとしての経済安保・先端技術戦略",
+      "question": {
+        "speaker": "宇佐美登",
+        "party": "チームみらい",
+        "summary": "- 外交上のカードとして、経済安保戦略における量子やAIの重要性を踏まえた外相の方針と決意を伺いたい",
+        "full_text": "さて、最後となりましたけれども、今お聞きいただいたとおり、外務大臣、外交カードとしても、この経済安保戦略の展開の位置カードとして、この量子やAIというもの、最重要だと思っております。外相の方針と決意をお願いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "茂木敏充",
+        "role": "外務大臣",
+        "summary": "- 地政学的緊張の高まりや新興技術の急速な進展により、科学技術と経済が密接に関わっていることを認識している（※答弁途中で終了）",
+        "full_text": "宇佐美の御質問を聞いておりまして、先日は、アンチモンの原子番号51番だと聞いて驚いたところですけれども、今日も、量子技術、量子コンピューターについて、大変わかりやすい説明で、今度お許しがいただいたら、交通渋滞の例を使いながら、私も説明させていただければ、こんなふうにも思っておりますが、地政学的な緊張の高まりであったり、AI、量子をはじめとする新興技術の急速な進展によりまして、科学技術と経済、これが近接、ご協力ありがとうございました。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56265&time=10293.436",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "量子・AI活用に関する外相の方針と決意",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "アンチモン"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": null,
+          "score": 0.0
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "方針と決意を問う抽象的な質問に対し、回答者が世間話のような内容で終えており、実質的な回答が得られていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「方針と決意」という抽象的な問いではなく、具体的な施策や目標を問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    }
+  ],
+  "score_schema_version": "2.0",
+  "prompt_version": "V4"
+}

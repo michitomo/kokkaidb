@@ -1,0 +1,3856 @@
+{
+  "pairs": [
+    {
+      "id": "qa_001",
+      "segment_index": 1,
+      "topic": "災害廃棄物処理計画の策定状況と支援",
+      "question": {
+        "speaker": "中川こういち",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 全国平均に比べ策定率が低い地域（特に北海道）がある要因をどう分析しているか\n- 今後の策定に向けてどのような支援を行うか",
+        "full_text": "まず1点目でありますが、災害廃棄物処理計画の策定状況についてお伺いをいたします。全国の市町村における災害廃棄物処理計画の策定率は今、大体平均で9割程度ということでありますが、これは地域差も非常に大きいものだというふうに理解をしております。ですが、北海道全体で見ますと、かなり全国平均との開きがございます。現在、このほかの地域も含めて、全国平均と比べて策定率が低い地域については、なぜ低いのか、その要因をどのように分析されているのか。また今後のその策定についてのどのような支援をされていくのかということを1点目お伺いをさせていただきます。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "住倉",
+        "role": "",
+        "summary": "- 小規模自治体におけるマンパワーや専門的知見の不足が要因である\n- 専門支援機関により、発生量の推定や仮置き場確保などの実務支援を強化し、策定率100%を目指す",
+        "full_text": "各市町村における災害廃棄物処理計画の策定率は令和6年度末時点で全国で約90%、北海道で見ますと約56%となっております。一般廃棄物処理実態調査によりますと、災害廃棄物処理計画が策定できていない要因といたしましては、自治体のマンパワー不足、もしくは専門的知見の不足などが挙げられており、そのほとんどが人口3万人未満の小規模な自治体となっております。北海道はこの小規模な自治体の割合が全国平均よりも高く、こうした人員不足等の課題を抱える自治体が多いことが、計画策定率が低い要因となっていると考えられます。こうした小規模な自治体に対しましては、本法案により措置する専門支援機関により計画策定に係る災害廃棄物の推定発生量の策定等の検討作業や、仮置き場の確保等における関係者間の調整事務など、自治体の実務への支援を強化してまいりたいと考えております。こうした取組を通じまして、計画策定率100%を目指して、小規模自治体を含め、各自治体の計画策定への取組を支援してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=504.8960000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "災害廃棄物処理計画の策定率が低い要因と支援策",
+          "sub_asks": [
+            "策定率が低い地域の要因分析",
+            "今後の策定に向けた支援策"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "北海道全体"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "北海道",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "令和6年度末時点で全国で約90%"
+            },
+            {
+              "type": "number",
+              "excerpt": "北海道で見ますと約56%"
+            },
+            {
+              "type": "evidence_citation",
+              "excerpt": "一般廃棄物処理実態調査"
+            },
+            {
+              "type": "number",
+              "excerpt": "人口3万人未満の小規模な自治体"
+            }
+          ],
+          "score": 0.9
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "支援を強化してまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "北海道で見ますと約56%となっております。要因としては、自治体のマンパワー不足、もしくは専門的知見の不足などが挙げられており",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "北海道の策定率の低さという具体的事実に基づいた質問に対し、統計データと要因分析を伴う明確な回答がなされている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_002",
+      "segment_index": 1,
+      "topic": "地域特性に応じた災害廃棄物処理支援と防災庁との連携",
+      "question": {
+        "speaker": "中川こういち",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 地域特性や災害類型による廃棄物の違いを踏まえた技術的支援や知見共有をどう行うか\n- 今後設置される防災庁との役割分担および平時の連携についてどう考えるか",
+        "full_text": "一方で、災害廃棄物というのは地域特性であったり、災害の類型によって出てくる廃棄物というものが大きく異なっていくと思います。化学物質含む廃棄物、都市部では大量の生活廃棄物、都心地、地元は私の都心地でございますけれども、そういった畜産地域では家畜糞尿などの災害廃棄物への対応が想定されます。災害自体も例えば地震であっても、それが倒壊による被害なのか、火災なのか、津波による水災なのかによって発生する災害廃棄物も大きく異なります。そのため今回、広域協定を結ぶということが義務化をされますけれども、どの地域でどのような廃棄物が発生し得るのか、この事前分析、リスク分析が重要になってくるんだというふうに考えております。こうした地域特性を踏まえた技術的支援、知見共有、その実務の支援というものをどのように支援をしていくのか、ここも併せてお伺いをいたします。もう一点、今後設置が想定をされております防災庁との役割分担、また平時での連携、ここもどのようなお考えでいらっしゃるのか、お聞かせいただければと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "友野",
+        "role": "",
+        "summary": "- 専門支援機構にて災害の種類に応じた技術的支援を行い、増員した地方環境局を通じて地域特性に応じた事例発信等の支援を行う\n- 防災庁が司令塔機能を担い、環境省が引き続き処理を担うことで、平時から緊密に連携する",
+        "full_text": "議員ご指摘のとおり、地域の特性や災害の種類によって、被害状況や発生する災害廃棄物の組成割合が異なりますので、必要な対応が異なることが想定されております。本法案により設置します専門支援機構におきましては、これまでの災害における知見を蓄積し、災害の種類に応じた技術的支援や知見の共有を行ってまいります。加えまして環境省設置法改正による地方環境局への名称変更と併せまして、地方支分部局の体制強化を行っております。災害廃棄物対策につきましては、全国で29名の増員を図っており、この職員も活用していくことを考えております。例えば地方環境局が地域ブロック協議会等の場において、地域特性に応じた計画策定事例の情報発信を自治体に対して実施することで、小規模な自治体においても実効性ある計画が策定できるように支援をしてまいります。また防災庁の関係という御質問ですけれども、防災庁の役割は徹底した事前防災と、発災時から復旧復興までの一貫した災害対応の司令塔機能を担うものに対しまして、環境省は引き続き災害廃棄物の処理を担うものでございます。御指摘の地域差や災害の種類に応じた適正な災害廃棄物処理を行うためにも、平時から防災庁と緊密に連携をしてまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=504.8960000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "地域特性に応じた災害廃棄物支援と防災庁との連携について",
+          "sub_asks": [
+            "地域特性を踏まえた技術的支援・知見共有・実務支援の方法",
+            "防災庁との役割分担および平時での連携について"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "畜産地域",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "専門支援機構"
+            },
+            {
+              "type": "number",
+              "excerpt": "全国で29名の増員"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "地方環境局"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "地域ブロック協議会"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "知見の共有を行ってまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "防災庁の役割は徹底した事前防災と、発災時から復旧復興までの一貫した災害対応の司令塔機能を担うものに対しまして、環境省は引き続き災害廃棄物の処理を担うものでございます。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "地域特性への対応策として職員増員や専門支援機構の活用を具体的に回答しており、また防災庁との役割分担についても明確に定義している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_003",
+      "segment_index": 1,
+      "topic": "家畜糞尿バイオガスプラントの継続支援",
+      "question": {
+        "speaker": "中川こういち",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 畜産地域における家畜糞尿の環境負荷低減のため、老朽化や事業性悪化に直面しているバイオガスプラントの継続について、環境省としてどのようなリスク認識や観点を持っているか",
+        "full_text": "法律からは若干話が逸れてしまうかもしれないんですが、先ほど申し上げましたとおり、私の畜産の地域ですと家畜糞尿が大量に発生をいたします。今回のような災害が発生した際に、糞尿が流れ出ないようにまとめるという観点、そして家畜糞尿から発生するメタンを空気中に放出しないために環境負荷低減の観点、地元とか地域ではかなりこのバイオガスプラントに力を入れております。そのバイオガスプラントがなければ家畜糞尿を平置きしておいて、そうすると洪水だったり大雨で流れ出てしまうということが想定されます。ですが現在この施設もかなり老朽化をしてきておりますし、建築資材もかなり高騰しているということで、建て替えもしくは新設ができない状況になっております。さらにはフィット環境の変化にもよりまして、このバイオガスプラントの事業性、継続性がないという状況が発生をしてきております。これは本来であれば農政、もしくはエネルギー政策の文脈が色濃い話なのかもしれませんが、この脱炭素、そして環境保全、廃棄物管理の観点から、この環境省として、このバイオガスプラントの継続というところに対して、どのような観点、もしくはリスクを認識されているか、というこの点をお聞かせできればと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "大臣官房地域脱炭素推進審議官",
+        "role": "",
+        "summary": "- 脱炭素や資源循環の観点から意義があると考えている\n- 脱炭素先行地域の事例から採算性向上のノウハウを収集・提供し、関係省庁と連携して必要な施策を検討する",
+        "full_text": "環境省としても廃棄物として処理されていた家畜糞尿をバイオガス発電に活用する取組は、脱炭素や資源循環の観点からも意義のある取組であると考えております。他方で委員御指摘のように、バイオガス発電事業につきましては、資材の高騰等により事業着手に影響が出ている事例があるものと聞いております。環境省に関連する取組といたしましては、脱炭素先行地域におきまして、家畜糞尿を活用したバイオガス発電設備の導入を計画している事例が複数ございます。こうした事例から、採算性を向上させる取組、工夫やノウハウを収集、提供いたしまして、各地への横展開に向けて取り組んでまいりたいと考えております。引き続き関係省庁と連携しつつ、脱炭素とともに地域産業振興を含むさまざまな課題の同時解決を目指す地域脱炭素のさらなる展開に向けて必要な施策を検討してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=504.8960000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "バイオガスプラント継続への環境省の認識とリスク",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "バイオガスプラント事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "脱炭素先行地域"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "必要な施策を検討してまいりたいと考えております",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "脱炭素先行地域におきまして、家畜糞尿を活用したバイオガス発電設備の導入を計画している事例が複数ございます。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "バイオガスプラントの維持管理という具体的課題に対し、環境省が「脱炭素先行地域」の事例活用という方向性で回答している。具体的コミットメントは「検討」レベルに留まる。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "現状の課題（老朽化・資材高騰）に対する具体的な支援策の有無を問う形式にすれば、より踏み込んだ回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_004",
+      "segment_index": 1,
+      "topic": "災害廃棄物処理計画の実効性向上",
+      "question": {
+        "speaker": "中川こういち",
+        "party": "自由民主党・無所属の会",
+        "summary": "- 計画策定の義務化だけでは有事の実効性やスピード感に直結しないため、具体的にどう実効性を高め、関与していくのか",
+        "full_text": "この災害廃棄物に関連しての質問としては最後になりますけれども、今回趣旨の中で「廃棄物を適正、円滑、迅速に処理することは、被災者の生活環境を守り、公衆衛生の悪化を防止し、被災地の速やかな復旧、復興のために重要である」と述べられております。ですが、今回義務化をする、計画をつくる、それがすなわち有事の際の実効性やスピード感に直接つながるものではないというふうにも考えております。一つ一つの計画や、協定の中身の質を高めていくことが求められますが、今後この災害廃棄物処理に対する実効性、効果をどのように高めていくのか、またどのように関与されていくのか、石原環境大臣の御決意をぜひお聞かせください。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "石原良純",
+        "role": "",
+        "summary": "- モデル事業の実施、必要面積の算定支援、協定雛形の提供、マッチング支援、研修・訓練の強化を推進する\n- 増員した地方環境局の体制を最大限活用し、地域に寄り添った技術的支援を行う",
+        "full_text": "災害廃棄物を円滑に処理するためには、平時から災害廃棄物処理に関わる計画策定を通じて、仮置き場の確保や民間代替等の協定締結など事前の準備を行うことが重要であります。このため、本法案では、市町村の災害廃棄物処理に関わる計画策定の義務化や、自治体と民間事業者等との協定締結の努力義務を盛り込んでいるところであります。一方で、発災時に本計画が実際に機能するためには、計画を具体的に具体的にすることで実効性を高めることが重要であります。環境省としては、本法案により設置する専門支援機関とともに、計画策定、改定を支援するモデル事業の実施、仮置き場の必要面積の算定等の支援、また協定の雛形、締結の有効事例の提供や、自治体と民間事業者等とのマッチング支援、仮置き場の設置運営等に関わる研修、訓練の強化などの取組をより一層推進してまいります。また、環境省設置法の改正により名称を変える地方環境局には、災害廃棄物処理対策に当たる定員を全国で29名増員しています。この体制を最大限活用し、これまで以上に地域に寄り添って、都道府県等に対する技術的支援等を適切に行い、しっかりとサポートしてまいります。こうした取組を通じて自治体の災害廃棄処理に関わる計画の実効性を向上してまいりたいというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=504.8960000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "災害廃棄物処理の実効性を高める方策と大臣の決意",
+          "sub_asks": [
+            "実効性・効果をどのように高めるか",
+            "どのように関与していくか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "専門支援機関"
+            },
+            {
+              "type": "number",
+              "excerpt": "定員を全国で29名増員"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "取組をより一層推進してまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "地方環境局には、災害廃棄物処理対策に当たる定員を全国で29名増員しています。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "大臣が具体的な増員数や支援策を挙げて回答しており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「決意」を問う形式のため、具体的な期限や数値目標を求める問い方にすればより実効的な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_005",
+      "segment_index": 2,
+      "topic": "有価物の規制導入と政府の責任",
+      "question": {
+        "speaker": "金子恵美",
+        "party": "中道改革連合・無所属",
+        "summary": "- 海外での不適正な解体や利活用に依存し、放置してきた政府に責任があるのではないか",
+        "full_text": "まず、廃棄物処理法の関係で質問させていただきますけれども、重ねて申し上げますけれども、今回、この廃棄物の適正処理を基本的な対象としてきたこの処理法を改正して、そして有価物というものを対象にしていくという、今ほども申し上げましたけれども、大きく変えるということです。今回の改正で廃棄物処理法の対象範囲は有価物である使用済み金属、プラスチック物品にまで広げ、そして適正管理を図るということであります。これまでそれができていなかった。大変な課題を持って今に至ってきたスクラップヤードへの規制を今こそしなくてはいけないというお話ではありますけれども、この有価物とされながらも国内でほとんど見向きもされなかったそういう物品等が海外へ送られ、そして現地で解体され再生資源として活用されてきたというそういう事例も多々あるわけであります。そもそも国内の資源循環に十分に取り組んできたのかと言うことが、これが大きな課題になってくるのではないかなというふうに思っています。海外での不適正な解体や利活用に依存し、それを放置してきた政府にも責任の一端があるというふうに思いますけれども、いかがでしょうか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "石原裕基",
+        "role": "",
+        "summary": "- 資源獲得競争の激化や輸入依存の状況から、再生資源の確保に向けた取組の強化が課題となっている\n- 循環経済行動計画を決定し、再生資源供給サプライチェーンの強靭化を柱として取り組んでいる",
+        "full_text": "我が国はこれまで自由貿易体制の下で必要とする石油や鉱物資源等を安定的に海外から輸入することで成長してきました。しかし近年やはり状況は変わり、世界で資源の獲得競争が激しさを増しています。また我が国では多くの資源を輸入に依存しているだけではなくて、国内のリサイクルに回すことができる原料の多くが輸入に依存しているところであります。こうした時代の転換期にあって、天然資源のみならず、再生資源の確保に向けた取組のさらなる強化が課題となっています。この点を踏まえて、4月に関係閣僚会議を開催し、循環経済行動計画を決定をいたしました。行動計画の柱の1つが、再生資源供給サプライチェーンの強靭化であります。計画では国内の再資源拠点等の構築を。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=1440.3960000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "海外の不適正処理への依存と政府の責任について",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "廃棄物処理法"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "政府",
+          "concreteness": "abstract",
+          "score": 0.2
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "循環経済行動計画"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "天然資源のみならず、再生資源の確保に向けた取組のさらなる強化が課題となっています。",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "政府の責任を問う質問に対し、現状の資源戦略と行動計画の説明に終始しており、直接的な回答を避けている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「いかがでしょうか」という抽象的な問いかけのため、政府が一般論で回答することを許容してしまっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_006",
+      "segment_index": 2,
+      "topic": "廃棄物処理法の名称変更・新法制定の検討",
+      "question": {
+        "speaker": "金子恵美",
+        "party": "中道改革連合・無所属",
+        "summary": "- 有価物を対象に含めることで概念が大きく転換するため、新法の制定や法律名の変更を検討すべきではないか",
+        "full_text": "行動計画のお話もあり、そしてまた今回の改正をすることによって国内資源循環をしっかりと作り上げていくということでありますが、先ほども申し上げましたように、今回有価物を本格的に対象として加えるというものであれば、その効率の概念として大きな転換点になるというふうに考えます。それで従来の、例えば、自動車の再資源化等に関する法律などの個別リサイクル法では、廃棄物か有価物にかかわらず、循環利用の過程全体を対象として、リサイクルと適正処理を図るという手法が取られてきているということであります。今回、廃棄物ではない有価物を対象とするわけですから、私はこの廃棄物処理法の中で有価物に対する処理をするということに、何となく最初は違和感を感じました。通告をしてレクをさせていただいたときにも、そのような違和感があるというお言葉もいただいたような気がするんですね。そうであれば、実際に国内資源循環の原則を目的とした新法をつくるとか、あるいは廃棄物処理法という法律名の変更というものも、内容に応じた形で変更があってもよかったのかなと思うんですけれども、そのような検討はこれまでされたのかどうかということなんですね。今後、生活環境保全上の支障を生ずる恐れのあるものについては、廃棄物であるとか有価物であるか問わず規制する、そして国内での資源循環を図るという方向性でいいんだと思います。今の大臣の御答弁を拝聴いたしますと、そのような方向だということは私も理解をさせていただきます。そうであれば、一層明確に打ち出すという点で、今私が御提案させていただいたことも検討されてもよかったのかなと思うんですが、いかがでしょうか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "辻副大臣",
+        "role": "",
+        "summary": "- 循環経済行動計画に基づき、本法案のスクラップヤード対策が国内資源循環の一翼を担うものである\n- 他の法制度（再資源化事業等高度化法等）と相まって、制度的な体系の強化・転換を進めている",
+        "full_text": "確かに名称に関しては我々が作って法令審査も受けますが、理念自体は、委員がおっしゃったように、大臣からも答弁ありましたように、今度、循環経済行動計画としてお示ししている中で、この行動計画に基づいて国内での資源循環取組の一翼を担うものが、本法案で措置するスクラップヤード対策でありまして、本法案によって環境対策の不十分な事業者を是正排除して、公正な競争環境を整備することで、国内での適正な資源循環を促し、その結果として資源の海外流出が抑制されることを期待しています。その理念、また加えて、昨年11月に全面施行された再資源化事業等高度化法、本年4月に全面施行された改正資源有効利用促進法、また今国会で御審議いただいていますPV法をはじめとするほかの法制度と相まって、国内資源循環を促進する制度的な体系の強化を、まさに先ほどから転換という言葉が出ていますが、転換、強化を進めています。今回の法改正案を含めて、循環経済行動計画に基づいて取組を政府一丸となって実施していくことで、循環経済への移行を進め、強い経済を実現していきたいと思いますので、よろしくお願いします。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=1440.3960000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "法案の名称変更や新法制定の検討有無",
+          "sub_asks": [
+            "法律名の変更や新法制定の検討はこれまでされたのか",
+            "名称変更等の提案についてどう考えるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "自動車の再資源化等に関する法律"
+            },
+            {
+              "type": "law",
+              "excerpt": "廃棄物処理法"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": true,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": true,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "循環経済行動計画"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "再資源化事業等高度化法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "改正資源有効利用促進法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "PV法"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "循環経済への移行を進め、強い経済を実現していきたいと思います",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "本法案によって環境対策の不十分な事業者を是正排除して、公正な競争環境を整備することで、国内での適正な資源循環を促し",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "法律名の変更という具体的な問いに対し、回答者は法案の理念や他法との体系的な関係性の説明に終始し、検討の有無について直接的に答えていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問の後半が提案形式（いかがでしょうか）になっているため、回答者が理念的な同意のみで逃げられる構成になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_007",
+      "segment_index": 2,
+      "topic": "有価物のトレーサビリティ確保",
+      "question": {
+        "speaker": "金子恵美",
+        "party": "中道改革連合・無所属",
+        "summary": "- 有価物であっても適正に取り扱われるか確認するため、マニフェストのようなトレーサビリティ制度を導入すべきではないか",
+        "full_text": "今回、有価物である使用済み金属プラスチック物品を保管する、または再生する事業について許可制が導入されるということでありますけれども、実際にスクラップヤードへ搬入される個々の有価物がどこから運ばれ、どのように再資源されるかというのは、明らかにならなければならないということであります。廃棄物については廃棄物処理法に産業廃棄物管理票マニフェスト制度がありまして、排出事業者が委託した産業廃棄物の処理状況を最終処分まで確認できるという仕組みがあるわけなんですけれども、今回の有価物対象ということであれば、トレーサビリティをしっかりとやっていかなくてはいけないんじゃないかなと思っています。今回の法改正では、この対象となる使用済みの金属プラスチック物品に対して、そうした制度の導入はなされていない。先ほど申し上げたマニフェストのような制度導入というのはされていません。たとえ有価物であっても、最後まで再生資源等として適正に取り扱われるかを確認する必要があると思います。有価物として事業者に引き取られた後、その物品等が不適正に扱われた場合、たとえずさんな事業者に委ねたとしても、元の所有者は一切責任を問われないということになってはいけないわけであります。ですから、しっかりとした資源循環を進めるためにも、このトレーサビリティの確保というものがあっていいと思うんですが、その必要性についてはどのような御認識を持っておられますでしょうか。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "辻副大臣",
+        "role": "",
+        "summary": "- トレーサビリティの重要性を認識しており、許可業者に帳簿の作成・保管を義務付けることで流れを把握可能とする\n- 有価物は廃棄物のような排出事業者責任が伴わないため、現時点でマニフェストと同様の仕組みは考えていないが、デジタルパスポート等の最新動向も踏まえ運用に努める",
+        "full_text": "トレーサビリティの確保は重要と考えています。適正な保管及び再生を確認するために、本年4月の中央環境審議会の意見具体においても、制度の対象物品の受入れや処分に係る日付や数量等について、帳簿への記載を義務付けること等により、トレーサビリティの仕組みを構築すべきであるとの御意見をいただいています。これを踏まえて本法案においては、使用済みの金属・プラスチック物品の保管業、または再生業の許可業者に対して、適正な保管及び再生を担保するための措置の一環として、帳簿の作成・保管を義務付けることとしました。これによって、使用済み物品の流れが当該許可業者だけではなく、立ち入り検査を行う都道府県等も把握可能となります。産業廃棄物管理表、いわゆるマニフェストに対して委員からも言及ございましたが、排出事業者責任を果たすために、処理を委託した産業廃棄物が適正に最終処分までされたことを、排出事業者が確認するための仕組みでありまして、今回の規制対象物品は有価物でありまして、廃棄物のような排出事業者責任はかからない。そのため、マニフェストと同様の仕組みを設けることは現在では考えていませんが、帳簿の作成・保管を義務付け等の仕組みにより、規制対象物品の流れを把握できるようにしていきたいと考えています。また、私もゴールデンウィーク中にEUとの資源循環の交渉でベルギーを訪れて、現地で交渉をさせていただいたときに、広く今、いわゆるトレーサビリティの確保の一環で、AI等を駆使して、今後、いわゆるデジタルパスポートをさまざまな分野で作ろうという試みが今EUでは図られていますが、今後そういったことも含めて、有価物廃棄物がどこから来てどこに行くのかということをトレースすることは極めて重要だと思いますので、しっかりとその点においては運用の面で頑張ってまいりたいと思っています。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=1440.3960000000002",
+      "metrics": null
+    },
+    {
+      "id": "qa_008",
+      "segment_index": 2,
+      "topic": "有価物と廃棄物の定義および帳簿のシステム化",
+      "question": {
+        "speaker": "金子恵美",
+        "party": "中道改革連合・無所属",
+        "summary": "- 有価物と廃棄物の隙間で規制を免れることがないよう、全体的な制度設計を行うべきではないか\n- 事業者の負担軽減のため、帳簿のシステム化を検討してほしい",
+        "full_text": "金子恵美有価物と廃棄物は違うんですよというところで、できることができないところは違っていますということが今お話をされたんですけれども、まず一点としては問題意識を申し上げさせていただくと、今まで廃棄物に当たるものだから有価物と称されて、この法律に基づいて規制を免れることがあったから何とかしなきゃいけない。一方で、有価物だけれども所有者において適正な管理がなされていないという問題もあった。有価物と廃棄物の定義というのは、廃棄物の定義は総合的な判断ということで、5つの要素を申し上げるまでではないですけれども、物の性質と排出の状況と、通常の取扱い形態と、取引価値の有無と、所有者の意思ということで、それをもって、今までこの廃棄物だと言われていた。そして、ですから、廃棄物じゃない有価物だと言いながら、逃れて脱法していた方々もいるから、今回規制をちゃんとやるんだよという、そういうお話なんですけれども、そもそもこの有価物と廃棄物の隙間に落ちてしまうというようなことがあってはいけないわけなんですね。だからそこがまず前段の大きな問題になってくるんだと思います。その上で、その隙間は絶対ないですということで、先ほど私も申し上げましたように、廃棄物とか有価物ということの括りだけではない、しっかりとした全体としての制度設計をつくった方が、本当にわかりやすいんじゃないかなというふうに思っています。それから帳簿の備え付けについてのお話もありましたので、これについては私は事業内容の透明性の向上及びやはり事業者の負担軽減の観点から、その帳簿のシステム化をしっかりと検討していただきたいというふうに思っていますけれども、副大臣、またさらに何かあればお願いします。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "辻副大臣",
+        "role": "",
+        "summary": "- 懸念点を理解しており、今後しっかりと勉強し取り組んでいく",
+        "full_text": "辻副大臣委員のご懸念点は極めてよく理解しますので、今後しっかりと勉強させていただいて、頑張ってまいりますので、よろしくお願いします。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=1440.3960000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "有価物・廃棄物の制度設計と帳簿システム化の要望",
+          "sub_asks": [
+            "有価物と廃棄物の隙間をなくす全体的な制度設計の検討",
+            "帳簿のシステム化の検討"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "この法律に基づいて規制を免れる"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.2
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "今後しっかりと勉強させていただいて、頑張ってまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "vice_minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": null,
+          "score": 0.0
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は制度設計とシステム化という具体的な要望を述べているが、副大臣の回答は精神論的な意欲表明に留まっており、実質的な合意や回答が得られていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "要望を述べる形式になっており、政府の現状認識や具体的方針を問う形式にすれば、より具体的な回答を引き出せた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_009",
+      "segment_index": 2,
+      "topic": "災害廃棄物処理計画の策定支援",
+      "question": {
+        "speaker": "金子恵美",
+        "party": "中道改革連合・無所属",
+        "summary": "- 計画策定が困難な小規模自治体に対し、マンパワー不足等を解消するためにどのような支援を行うのか",
+        "full_text": "金子恵美災害廃棄物処理計画関係で、質問をさせていただきたいと思いますが、今回の法改正でこの災害廃棄物をしっかりと作成せよという話で義務付けられることになっているということであります。市町村に義務付けでありますけれども、この計画策定率は令和6年度末時点で90%と既になっているということであります。これを高いというか、あるいは一方で10%の市町村ではどうやっても策定が厳しいんだということで、しっかりそこの市町村の皆様をお支えするかどうかだというふうに思うんです。私はどちらかというと後者の部分で質問させていただきたいんですが、策定していないというよりは策定できない状況だと思うんです。これまでももちろん環境省、市町村のこのような処理計画策定については支援をしてきたんだということでありますけれども、しかしそれが十分ではなかったからこそ10%残ってしまっている。災害はいつ起きるかわからないからこそ、しっかりと対応しなくてはいけないわけで、そのことについてこれからどのような形で支援をしていくか。義務化したからには、しっかりとマンパワー不足などの厳しい要因はおそらくあるでしょう。小規模自治体こそ支援を必要とするでしょう。でも一律に義務づけるわけですから、もう徹底的にしっかりと支える仕組みづくりをやっていかなくてはいけないと思うんですね。今までのような一方的に単なる支援というよりは、やはりですね、共に考えながら進めていくという、そういう環境が必要なのではないかというふうに思いますし、環境事務所が環境局になって、どのような前進を見ることができるかというところも、私は関心を持って見ているところでありますけれども、改めて大臣から御答弁いただければと思います。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "石原裕基",
+        "role": "",
+        "summary": "- 未策定の多くが人口3万人未満の自治体であり、マンパワーや専門知識の不足が要因であると考えている",
+        "full_text": "計画が未策定の市町村のうち、そのほとんどが人口3万人未満の自治体であり、言われるようにマンパワーや専門知識の不足により、策定が進まない状況であるというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=1440.3960000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "災害廃棄物処理計画の未策定自治体への支援策について",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "策定率は令和6年度末時点で90%"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "小規模自治体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "人口3万人未満の自治体"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "計画が未策定の市町村のうち、そのほとんどが人口3万人未満の自治体であり、マンパワーや専門知識の不足により、策定が進まない状況である",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問者は具体的な支援策を求めたが、大臣は現状の分析（人口3万人未満の自治体が困難であること）に留まり、今後のアクションへの言及がなかった。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのような形で支援をしていくか」という問いに対し、現状分析で終わらせないよう、具体的な支援メニューの提示を求める形式にすべきだった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_010",
+      "segment_index": 2,
+      "topic": "災害廃棄物処理計画の実効性と一元化",
+      "question": {
+        "speaker": "金子恵美",
+        "party": "中道改革連合・無所属",
+        "summary": "- 災害対策基本法に基づく地域防災計画と廃棄物処理法の計画を、実効性担保のために一元化すべきではないか\n- 計画の見直し頻度や、地域ごとの地理的条件への対応をどう考えているか",
+        "full_text": "私はこれも分かりやすい考え方としては、災害対策基本法の下で作られている災害廃棄物、この計画、処理計画、そしてこれの実効性をとにかく担保していかなくてはいけないわけなんですけれども、実際にやはり災害対策基本法のもとで計画策定は一元化してもいいのではないかなと思った部分もありますし、今後の計画の見直しの頻度をどうするか。あるいは内容的な部分では実効性をどのように担保するか。今ちょっと一部触れていただいたとは思いますけれども、やはり地域地域で地理的な条件なども含めて、それぞれの自治体では大変大きく違った計画になっていく可能性もありますので、その辺のところをどう考えていただいているか、お聞かせいただきたいと思います。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "石原裕基",
+        "role": "",
+        "summary": "- 一般廃棄物処理計画に災害時対応を追記することが効率的であるため、現行の措置としているが、防災庁と連携し柔軟に運用する\n- 計画はおおむね5年ごとに見直し、諸条件に大きな変更があれば適宜見直す\n- 専門支援機関によるモデル事業や研修・訓練の強化を通じて実効性を確保する",
+        "full_text": "こうした整理の前提に災害物処理に関わる計画の義務化を廃棄物処理法において措置することとしております。これは市町村が既に一般廃棄物処理計画を作成済みであり、本計画に災害時の対応を追記することが市町村にとって効率的かつ有効であるということ。また平時から発災時まで切れ目なく自治体が具体的な計画を作成することが重要であることを踏まえた措置となっております。ただし、既存の防災計画と一体的に策定することを許容するなど、防災庁とも連携しながら柔軟な制度運用を行ってまいりたいと考えております。計画の期間についてでありますが、計画については、おおむね5年ごとに見直されることとなります。また、計画の前提となる諸条件に大きな変更があった場合には、適宜見直しを行うことが適切であるとしております。環境省としては、本法案により措置する専門支援機関とともに、計画策定、改定を支援するモデル事業の実施、仮置き場の面積、必要面積の算定等の支援、仮置き場の設置・運営等に関わる研修・訓練の強化などの取組をより一層推進することで、併せてこれらの取組によって災害廃棄処理に関わる計画の実効性を確保してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=1440.3960000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "災害廃棄物処理計画の実効性確保と策定方法への考え",
+          "sub_asks": [
+            "計画策定の一元化の是非",
+            "計画の見直しの頻度",
+            "地域特性に応じた実効性の担保方法"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "災害対策基本法"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.2
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自治体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.9
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "おおむね5年ごとに見直される"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "廃棄物処理法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "防災庁"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "実効性を確保してまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.5
+        },
+        "oc3_quotability": {
+          "quote_candidate": "計画については、おおむね5年ごとに見直されることとなります。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は複数の論点を含んでいたが、回答側は法案の趣旨、見直し頻度（5年）、実効性確保の具体策を明確に回答しており、記録としての価値が高い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "複数の問いを一つの段落にまとめているため、個別の回答漏れが発生しやすい構成になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_011",
+      "segment_index": 2,
+      "topic": "JESCOの施設解体と国の責任",
+      "question": {
+        "speaker": "金子恵美",
+        "party": "中道改革連合・無所属",
+        "summary": "- PCB廃棄物の処理終了後、施設の解体や跡地対応まで国が責任を持って適切に行う決意があるか",
+        "full_text": "最後になりますけれども、PCBの廃棄物の処理についてでありますけれども、JESCOにおける高濃度PCB廃棄物の処理は、本年3月末で終了しております。今回の法改正では、JESCOのPCB処理維持業等を廃止することが規定され、代わりに附則3条の経過措置において、PCB廃棄物の処理に係る施設の解体及びこれにPCB廃棄物の処理終了後の施設解体、廃棄物処理、跡地対応に至るまで、国の責任の下で適切に対応していくことが重要であると思いますが、この不足のとおりにしっかりとやっていくというような、そういう決意をお聞かせいただければと思いますが、いかがでしょうか。私、心配しているのは、例えば福島県もこのJESCO法に基づいて中間処理施設があります。これ、最後までしっかりと国が責任を持つということが重要かと思います。法律上、もう事業が終了して、それで終わりということではないんですよね。答弁をお願いします。",
+        "intent": "other"
+      },
+      "answer": {
+        "speaker": "石原良純",
+        "role": "",
+        "summary": "- 改正法案でPCB処理を事業範囲から削除し、附則に基づき施設の解体撤去を適切に実施する\n- 環境省として、JESCOとともに5つの事業所の土地を現状回復できるよう、解体・撤去にしっかりと取り組む",
+        "full_text": "石原大臣：本年3月にジェスコの高濃度PCB廃棄物処理事業が終了いたしました。今後は5つの事業所全ての施設の解体撤去等を行うこととなります。このことを踏まえ、本改正法案では、ジェスコの事業の範囲からPCB廃棄物の処理を行うことを削除し、不足に、ただしっかりと解体撤去しなければいけないものですから、不足の方に施設の解体撤去等を削除します。ジェスコへの監督権限を有する環境省として、ジェスコの処理施設の5つの土地を現状回復できるように、ジェスコとともに施設の解体、撤去等にしっかりと取り組んでまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5297"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=1440.3960000000002",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "PCB処理終了後の施設解体等の国責任の完遂",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "附則3条の経過措置"
+            },
+            {
+              "type": "organization",
+              "excerpt": "JESCO"
+            },
+            {
+              "type": "date",
+              "excerpt": "本年3月末"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "福島県",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.4
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "5つの事業所"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "環境省"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "ジェスコとともに施設の解体、撤去等にしっかりと取り組んでまいります。",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "ジェスコとともに施設の解体、撤去等にしっかりと取り組んでまいります。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "PCB処理終了後の施設解体について、大臣が責任を持って取り組む意向を示したやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "決意を問う形式であるため、具体的な工程表や期限を求める問いにすればより実効的な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_012",
+      "segment_index": 3,
+      "topic": "室蘭市のPCB処理への貢献評価",
+      "question": {
+        "speaker": "山岡達丸",
+        "party": "中道改革連合・無所属",
+        "summary": "- 室蘭市が最後の砦として高濃度PCB廃棄物処理を担い、国の環境事業に貢献したことを評価するか",
+        "full_text": "大臣に率直にお伺いしたいのですが、この間の室蘭市の取組、国の環境事業への貢献、私は評価されるべきものだと思っております。大臣にお答えいただければと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "石原良純",
+        "role": "",
+        "summary": "- 室蘭市が全国5カ所の処理施設の一つとして、他エリアの廃棄物受入や期限延長など多大な協力をしたことに深く感謝している\n- 地域住民の理解と協力により、環境リスクを大きく低減できたと認識している",
+        "full_text": "石原大臣：お答え申し上げます。最後に改めて、室蘭市の地域住民の皆様の長年にわたるご協力に、改めて感謝を申し上げたいと思います。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5297"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=2965.2960000000003",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "室蘭市の取組への評価について",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "室蘭市"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "室蘭市",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "室蘭市"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "室蘭市の地域住民の皆様の長年にわたるご協力に、改めて感謝を申し上げたいと思います。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問が評価を求める情緒的な内容であり、回答も感謝の意を示すにとどまっているため、実質的な記録価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "評価の是非を問うのではなく、具体的にどのような点が貢献したのかを問う形式にすべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_013",
+      "segment_index": 3,
+      "topic": "PCB処理施設の解体撤去における地元企業の活用",
+      "question": {
+        "speaker": "山岡達丸",
+        "party": "中道改革連合・無所属",
+        "summary": "- 施設解体・現状回復プロセスにおいて、地域の事業者がどのように関わっていくのか環境省の考えを示してほしい",
+        "full_text": "山岡君大臣より本当に心を込めて御答弁をいただいたことに心から感謝を申し上げますし、その中で環境省にもお伺いしたいんですけれども、この高濃度PCB処理施設の解体撤去、更地までには概分すると少なくとも8年程度はかかるんだというふうに聞いております。このプロセスに、もちろんさまざま技術を持つ関連企業も関わると思いますけれども、その際やはり地元の企業はより合理的により安全に関わることができるというふうに私は思っておりますが、もちろんそれは地域経済にとっても重要なことでございますが、現状回復において地域の事業者がいかに関わっていくのか、環境省の考えをお示しいただければと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "住倉和夫",
+        "role": "",
+        "summary": "- 解体撤去に約8年をかける計画であり、仕様書において地元からの資材調達、地元雇用の推進、地元企業の積極的な活用に努めることを定めている\n- JESCOと連携し、地域の実情を踏まえて対応する",
+        "full_text": "住倉環境再生・資源循環局長お答え申し上げます。地域の実情を踏まえながら、引き続き地元雇用の推進、地元企業の積極的な活用について、JESCOと連携して対応してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5297"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=2965.2960000000003",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "PCB処理施設解体への地元企業の関わり方",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "number",
+              "excerpt": "少なくとも8年程度はかかる"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "地元の企業",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "JESCO"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "対応してまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "地元雇用の推進、地元企業の積極的な活用について、JESCOと連携して対応してまいりたい",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "地元企業の活用という要望に対し、抽象的な意向を述べたのみであり、具体的な仕組みや基準への言及がないため記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「考えをお示しください」というオープンクエスチョンであるため、政府が抽象的な回答で逃げられる設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_014",
+      "segment_index": 3,
+      "topic": "事業終了後の後継事業誘致への責任",
+      "question": {
+        "speaker": "山岡達丸",
+        "party": "中道改革連合・無所属",
+        "summary": "- 事業終了後の経済的影響を解消するため、後継事業の誘致について国が責任を持つという室蘭市との約束を果たすか",
+        "full_text": "大臣にまた伺いたいと思いますが、全国の、もちろん環境負荷を背負うということもしてきたわけでありますが、同時にですね、地元の労働力含めて相当程度のリソースをこの事業にも投入してきたというところでございます。その室蘭市との約束に責任を持っていただくと、このことを大臣から改めて御答弁いただきたいと思います。",
+        "intent": "accountability"
+      },
+      "answer": {
+        "speaker": "石原良純",
+        "role": "",
+        "summary": "- 資源循環型産業等の環境関係事業の誘致について、市の意向を踏まえ国が責任を持って取り組むという当時の大臣との約束がある\n- 環境省および責任ある大臣として、しっかりと責任を果たしていく",
+        "full_text": "石原大臣2013年の12月に環境省から北九州、大阪、豊田事業エリアの高濃度PCB廃棄物の受入れを室蘭市に対して要請をさせていただきました。当時の伊藤環境大臣が室蘭市と約束させていただいているこの約束でありますので、環境省として責任者の大臣としても、しっかりと責任を果たしてまいりたいというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=2965.2960000000003",
+      "metrics": null
+    },
+    {
+      "id": "qa_015",
+      "segment_index": 3,
+      "topic": "後継事業誘致の具体的取り組み",
+      "question": {
+        "speaker": "山岡達丸",
+        "party": "中道改革連合・無所属",
+        "summary": "- 抽象的な方針ではなく、誰が何をいつ行うかなど、具体的な取り組み計画を提示してほしい",
+        "full_text": "併せて伺いたいんですけれども、いわゆる責任の果たしていただき方について、これまで抽象的な方針から具体的な計画へのフェーズに移行させていく必要があるんだろうというふうに思っております。環境省として具体的にどう取り組んでいくのか、御答弁をいただければと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "住倉和夫",
+        "role": "",
+        "summary": "- 資源循環型産業拠点の誘致可能性調査を行い、鉄鋼スラグや廃プラスチックなど8種類の資源を対象候補として分析した\n- 「室蘭市高濃度PCB経済連携会議」を設置し、地元事業者や大学等と意見交換を行いながら可能性を追求している",
+        "full_text": "住倉局長、お答え申し上げます。環境省といたしましては、引き続き、様々な関係者とよくコミュニケーションを取りながら、高濃度PCB処理事業の実施を通じて、室蘭地域が培ってこられたPCB処理に関する知見、いわゆる資源循環の事業の誘致、可能性の追求ということでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5297"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=2965.2960000000003",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "責任の果たし方に関する具体的取り組み",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "tangentially",
+          "topic_shift_detected": false,
+          "score": 0.3
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "高濃度PCB処理事業"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "室蘭地域"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "可能性の追求ということでございます",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "室蘭地域が培ってこられたPCB処理に関する知見、いわゆる資源循環の事業の誘致、可能性の追求ということでございます。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問が抽象的であり、回答も具体的な計画を提示せず「可能性の追求」という精神論に留まっているため、記録的価値は低い。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「責任の果たし方」という言葉が曖昧なため、政府が具体策を答えにくい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_016",
+      "segment_index": 3,
+      "topic": "後継事業の継続性を確保するためのインセンティブ",
+      "question": {
+        "speaker": "山岡達丸",
+        "party": "中道改革連合・無所属",
+        "summary": "- 事業者が地域に根付くためには、規制の優位性や補助金などのインセンティブが必要ではないか",
+        "full_text": "山岡達丸なかなか北海道室蘭市、工業都市としては天然の港湾といいますか、深い港湾も持っていて、この鉄鋼船のような重い船も入れる、工業都市として大変有力な、有望な地域であるものの、やはり地域性からいえば、大都市、もちろん東京とか、あるいは名古屋、あるいは北九州の方もそうかもしれませんが、そうした地域に比べれば非常にローカル性の高い工業都市でもあるわけであります。そのことも御答弁をいただきたいと思いますが、お願いいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "住倉和夫",
+        "role": "",
+        "summary": "- 「循環経済行動計画」に基づき、予算面や金融面などの多角的な支援スキームを構築し、2030年までに官民で約1兆円の投資を目指している\n- これらの経済的支援スキームをインセンティブとして活用できるよう具体化を進める",
+        "full_text": "お答え申し上げます。循環経済行動計画に位置づけられた経済的支援スキームについては、インセンティブになり得ると考えており、この検討の過程で何ができるか、今後具体化を進めてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=2965.2960000000003",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "室蘭市の地域的特性への認識について",
+          "sub_asks": [],
+          "score": 0.2
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "北海道室蘭市"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "北海道室蘭市",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "not_at_all",
+          "topic_shift_detected": true,
+          "score": 0.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "循環経済行動計画"
+            }
+          ],
+          "score": 0.2
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "具体化を進めてまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": null,
+          "score": 0.0
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "質問は室蘭市の特性への認識を問うものですが、回答は循環経済行動計画という全く別の話題にすり替わっており、対話が成立していません。",
+        "would_be_referenced": "low",
+        "issue_in_design": "質問が状況説明に終始しており、具体的に何を求めているのか（認識の確認か、支援の要請か）が不明確です。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_017",
+      "segment_index": 3,
+      "topic": "経済支援スキームへの室蘭市の位置づけ",
+      "question": {
+        "speaker": "山岡達丸",
+        "party": "中道改革連合・無所属",
+        "summary": "- 前述の経済支援スキームの中に、室蘭市の地域も位置づけて検討しているか",
+        "full_text": "山岡君このいわゆる経済スキームの中に、こうした室蘭市の地域も位置づけていくという考え方をもって今の御答弁いただいているということでよろしいのか、御答弁いただきたいと思います。住宅局長",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "住倉和夫",
+        "role": "",
+        "summary": "- 室蘭地域の地域振興にどう貢献できるかという観点をしっかり踏まえながら検討を進める",
+        "full_text": "お答え申し上げます。検討に当たりましては、室蘭地域の地域振興に私どもとしてどういう形でお役に立てるのか、そういう観点をしっかり踏まえながら検討を進めてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=2965.2960000000003",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "経済スキームに室蘭市を位置づける考えか",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "室蘭市"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "室蘭市",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": true,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.5
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "室蘭地域"
+            }
+          ],
+          "score": 0.3
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "検討を進めてまいりたいと考えております",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "室蘭地域の地域振興に私どもとしてどういう形でお役に立てるのか、そういう観点をしっかり踏まえながら検討を進めてまいりたい",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "室蘭市をスキームに含めるかという問いに対し、検討するという標準的な回答に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「よろしいのか」というYes/No形式の問いであるため、回答者が「検討する」という曖昧な表現で逃げ道を作りやすい設計になっている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_018",
+      "segment_index": 3,
+      "topic": "環境産業都市としての発展への支援",
+      "question": {
+        "speaker": "山岡達丸",
+        "party": "中道改革連合・無所属",
+        "summary": "- 室蘭市が全国に誇る環境産業都市を目指していくことに対し、環境省としてどのような思いを持っているか",
+        "full_text": "その上で大臣にもお伺いするわけでありますけれども、お話にもございました。環境省としてどのような思いを寄せていただくか、そのことも御答弁いただけますでしょうか。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "石原良純",
+        "role": "",
+        "summary": "- 室蘭市が培った知見を生かし、環境産業都市として今後も発展してほしいと強く考えている\n- 室蘭市に寄り添い、資源循環型産業等の誘致についても引き続きしっかりと取り組む",
+        "full_text": "石原大臣お答え申し上げます。室蘭市等ご要望いただいている資源循環型産業等の環境関連事業の誘致についても、引き続き、室蘭市高濃度PCB処理事業経済連携会議での意見交換も引き続き行いつつ、しっかりと取り組んでまいります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=2965.2960000000003",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "環境省としての思い・考えを問う",
+          "sub_asks": [],
+          "score": 0.8
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "室蘭市"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "室蘭市高濃度PCB処理事業経済連携会議"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "しっかりと取り組んでまいります",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "室蘭市高濃度PCB処理事業経済連携会議での意見交換も引き続き行いつつ、しっかりと取り組んでまいります。",
+          "score": 0.3
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "抽象的な「思い」を問う質問に対し、具体的な会議体への言及はあるが、回答は定型的な意欲表明に留まっている。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのような思いを寄せていただくか」という問い方が抽象的すぎるため、具体的回答を引き出しにくい。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_019",
+      "segment_index": 4,
+      "topic": "スクラップヤードの施設基準策定手続き",
+      "question": {
+        "speaker": "柏倉祐司",
+        "party": "日本維新の会",
+        "summary": "- スクラップヤードの施設基準をどのような手続きで策定するのか詳細を問う",
+        "full_text": "まずスクラップヤードについてお伺いをしたいと思います。これからスクラップヤードそのものの施設基準をつくって、都道府県がしっかりとまた連携して、これをしっかり認可していくという流れだと思います。その中で、このスクラップヤードに取り組もうと考えているさまざまな関係者、業者の皆さんから、どういった施設基準になるんだろうという不安といいますか、参考までにといいますか、そういった声が実際に上がっております。かなり厳しくなるんじゃないかなという一種の懸念も含まれているわけでございますが、どのような手続きで施設基準を策定していくのか、その詳細を教えていただければと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "住倉",
+        "role": "",
+        "summary": "- 政省令で具体的な基準を定める\n- 有害使用済み機器保管等届出制度の基準（流出防止、高さ制限、火災防止等）を参考にする\n- 関係業界の意見を聴取し、適正な事業者が対応できない基準にならないよう検討する",
+        "full_text": "本法案におきましては、使用済み金属、プラスチック物品の保管業、または再生業の許可を受けた事業者は、保管基準、再生基準の遵守が義務付けられることになります。この具体的な基準につきましては、政省令で定めていくことになりますが、例えば、現行の有害使用済み機器保管等届出制度においては、被産流出の防止措置や保管物の高さの制限、火災発生防止措置等の基準を定めております。こうした基準を参考に、今後検討を進めてまいりたいと考えております。その際、これらの基準の検討に当たりましては、適正な事業者が対応できない基準とならないよう、関係業界の皆様の御意見もしっかり伺いながら検討を進めてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=4518.696",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "スクラップヤード施設基準の策定手続きの詳細",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "スクラップヤードに取り組もうと考えている関係者、業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "有害使用済み機器保管等届出制度"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "被産流出の防止措置"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "保管物の高さの制限"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "火災発生防止措置"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "今後検討を進めてまいりたいと考えております",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "適正な事業者が対応できない基準とならないよう、関係業界の皆様の御意見もしっかり伺いながら検討を進めてまいりたい",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "施設基準の策定プロセスについて、既存制度を参考にする方針と業界意見を聴取する姿勢が明確に回答されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_020",
+      "segment_index": 4,
+      "topic": "スクラップヤード施設基準の策定時期",
+      "question": {
+        "speaker": "柏倉祐司",
+        "party": "日本維新の会",
+        "summary": "- 施設整備に時間を要することや住民の悩みがあるため、施設基準をいつまでに策定するのか目安を問う",
+        "full_text": "また、施設基準を明確化するといいますか、これはある程度早くしないと、この法施行自体が2年6ヶ月の間というふうになっているわけですが、施設そのものをしっかりとつくるのにも相当時間がかかると思いますね。一方で、騒音、水質を抱くといったようなところで、現実的に不適切なスクラップヤードに悩んでいる住民もかなり多くいるということを考えますと、可能な限り早くこの施設基準を策定すべきだと思いますが、どれぐらいまでにという目安がもしあれば教えていただければと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "住倉",
+        "role": "",
+        "summary": "- 令和8年度中を目途に関係者の意見を踏まえ、基準を含む制度の詳細を示す予定である",
+        "full_text": "ただ、その一方で、ただいま御指摘いただきましたとおり、基準の内容につきましては、できるだけ早く明確化することが重要であると考えております。このため、環境省といたしましては、これらの準備を円滑に行っていただくことが可能となるよう、時期の目安といたしましては、令和8年度中を目途に関係者の意見を踏まえながら検討を行い、基準をはじめとする制度の詳細をお示しできるようにしたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=4518.696",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "施設基準策定の目安時期の提示",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "2年6ヶ月の間"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "不適切なスクラップヤードに悩んでいる住民",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "deadline",
+              "excerpt": "令和8年度中"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 4,
+          "trigger_phrase": "令和8年度中を目途に...基準をはじめとする制度の詳細をお示しできるようにしたい",
+          "matched_pattern": "Lv3 + an explicit time anchor"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "令和8年度中を目途に関係者の意見を踏まえながら検討を行い、基準をはじめとする制度の詳細をお示しできるようにしたい",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "施設基準の策定時期について、令和8年度中という具体的な期限を伴う回答が得られており、記録価値が高い。",
+        "would_be_referenced": "high",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_021",
+      "segment_index": 4,
+      "topic": "重金属盗難の発生件数推移",
+      "question": {
+        "speaker": "柏倉祐司",
+        "party": "日本維新の会",
+        "summary": "- 金属等対策法施行後の発生件数および過去数年との推移を問う",
+        "full_text": "続きまして、このスクラップヤードと関連して、この重金属の盗難についてお伺いさせていただきたいと思います。この重金属の盗難はかなり問題になって、既に昨年、金属等対策法というものができている。一部は昨年9月の1日から既に施行されているという状況でありますけれども、この施行後の発生件数、金属等なんですね。過去何年間と照らし合わせて、その推移も合わせて伺わせていただければと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "服部",
+        "role": "",
+        "summary": "- 金属等の認知件数は令和6年約2万件から令和7年約1.5万件へ減少した\n- 太陽光発電施設のケーブル窃盗は令和8年4月末時点で1181件であり、前年同期比で約100件減少した",
+        "full_text": "金属等の認知件数は、令和6年は2万701件、令和7年は1万5712件でありまして、約5000件の減少となっております。また、社会問題化した太陽光発電施設における金属ケーブル窃盗の認知件数は、令和7年から統計を開始しておりますところ、令和8年4月末時点で1181件であり、前年同期比で約100件の減少となっております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=4518.696",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "金属等盗難の発生件数とその推移について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "金属等対策法"
+            },
+            {
+              "type": "date",
+              "excerpt": "昨年9月の1日"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "令和6年は2万701件"
+            },
+            {
+              "type": "number",
+              "excerpt": "令和7年は1万5712件"
+            },
+            {
+              "type": "number",
+              "excerpt": "1181件"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "金属等の認知件数は、令和6年は2万701件、令和7年は1万5712件でありまして、約5000件の減少となっております。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "金属等盗難の具体的な認知件数と推移について、数値を用いて明確に回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_022",
+      "segment_index": 4,
+      "topic": "金属売買における本人確認書類の妥当性",
+      "question": {
+        "speaker": "柏倉祐司",
+        "party": "日本維新の会",
+        "summary": "- 免許証には在留期間の記載がなく、外国人の在留期限切れが抜け穴になる懸念がある中で、免許証のみの本人確認で十分と考えているか問う",
+        "full_text": "この既に施行されている部分で、この効果というものがマイナス100件ですか、同月比であるということで、非常に素晴らしいなというふうには思いますが、ただ、今年の6月1日から、もうすぐ金属売買における本人確認の部分が施行されるわけでございます。そこで本人確認、金属売買のときについてちょっとお尋ねしたいんですが、もう既に昨年の令和7年5月23日の内閣委員会のときに、当時の立憲民主党の藤岡議員と、坂井国家公安委員長が、これに関して、本人確認に関して、議論をしております。議員側は、免許証というもので本人確認、特に外国人に関して本人確認をする際に、免許証でこれやるということになっているということに関して懸念を表明した。なぜならば免許証には免許証の有効期間の記載はあるけれども在留の期間というものの記載がない。在留期間が終わってしまっても免許証を見せればそれで売買できるというようなことが抜け穴になるのではないかというような極めて合理的な指摘を行ったわけでございます。そこで坂井国家公安委員長は、ただいろいろ問題があると、私は日本人ですと言って免許証を出してきた場合、それはそこでトラブルになるというようなことをおっしゃっていました。結論からすると、免許証で引き続きやっていきますということになったわけですけれども、本格的な6月1日からの本人確認の義務化を行うに際して、やはり昨年の坂井国家公安委員長がおっしゃったとおり、やはり免許証のみの本人確認で、これ十分であるのかどうかと。その辺の考えをですね、伺わせていただきたいと思います。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "服部",
+        "role": "",
+        "summary": "- マイナンバーカード、運転免許証、在留カード等の顔写真付き書類による確認を義務付けている\n- 運転免許証の記載事項を確認することで本人の確認は可能であり、法の目的を達することができると考えている",
+        "full_text": "金属等対策法におきましては、マイナンバーカード、運転免許証、在留カードをはじめとする顔写真付きの本人確認書類によって、買い受けの相手方の氏名、住居、生年月日等の本人特定事項の確認を義務付けておりまして、これは盗まれた特定金属くずが金属くず買い受け業者に持ち込まれることを防止するためのものでございます。まだ本人確認に係る規定は施行されておりませんが、今申し上げた顔写真付きの本人確認書類、例えば運転免許証の記載事項を確認することによりまして、本人の確認は可能であり、これにより法の目的を達することはできると考えておるところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=4518.696",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "金属売買の本人確認に免許証のみで十分か",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "令和7年5月23日"
+            },
+            {
+              "type": "organization",
+              "excerpt": "内閣委員会"
+            },
+            {
+              "type": "other",
+              "excerpt": "当時の立憲民主党の藤岡議員と、坂井国家公安委員長"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.8
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "外国人",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "金属等対策法"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "マイナンバーカード"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "運転免許証"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "在留カード"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "運転免許証の記載事項を確認することによりまして、本人の確認は可能であり、これにより法の目的を達することはできると考えておるところでございます。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "過去の議論を踏まえた具体的な懸念（在留期間の確認漏れ）を提示しているが、政府側は現状の書類で十分であるという一般論的な回答に留まっている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「十分であるか」という抽象的な問いではなく、「在留期間の確認をどう担保するか」という具体的な運用策を問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_023",
+      "segment_index": 4,
+      "topic": "在留カードおよびマイナンバーカードの提示義務化",
+      "question": {
+        "speaker": "柏倉祐司",
+        "party": "日本維新の会",
+        "summary": "- 在留カードおよびマイナンバーカードの提示を義務付けることについて政府の見解を問う",
+        "full_text": "私が申し上げているのは、本人確認。これツールがあるわけですから、それをどんどん推進していくということの政策にもやはり合致するというふうに思います。この在留カード並びにマイナンバーカードの提示義務付けに関して政府のお考えを伺わせていただきたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "服部",
+        "role": "",
+        "summary": "- 外国籍と思われる方に原則在留カードを求めると、業者に国籍確認の負担を課すため慎重な検討が必要である\n- マイナンバーカードは保有が義務化されていないため、未保有者の便宜を考え義務付けていない\n- 施行後の運用状況を注視していく",
+        "full_text": "外国籍と思われる方に対して原則として在留カードでの本人確認を求めることとした場合、買い受け業者に対し目の前にいる顧客が外国籍であるか否かの確認をさせることになりまして、買い受け業者に負担を課すことにもなりかねず慎重な検討が必要だと考えております。またマイナンバーカードの提示の義務付けにつきましては、現在マイナンバーカードの保有は義務化されていないため、マイナンバーカードを保有していない方も想定されるところ、これらの方の便宜も考え、義務付けることとはしていないところでございます。ただ、6月1日から本人確認に係る規定も施行されますところ、当該規定が的確に運用されているか、施行後の状況について注視してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=4518.696",
+      "metrics": null
+    },
+    {
+      "id": "qa_024",
+      "segment_index": 5,
+      "topic": "災害廃棄物最終処分場の指定におけるインセンティブ",
+      "question": {
+        "speaker": "鍋島勢理",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 災害廃棄物処理業者の負担が重いことへの懸念\n- 積極的な関与を促すためのインセンティブ導入に関する政府の見解",
+        "full_text": "ということを災害の指定を受けた業者なわけですけれども、ただ、かなりの重労働になるのかなというような印象がございます。これは何らかのインセンティブというものがないと積極的に関わるというような形になっていかないんじゃないかという懸念がありますが、そこに関して政府のお考えをお聞かせいただきたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "住倉",
+        "role": "",
+        "summary": "- 指定処分場に対する定期検査の適用免除措置について\n- 事業期間中の優遇措置など、インセンティブとなる措置の検討の重要性\n- 関係省庁と連携し、指定促進のための具体的対応を検討する方針",
+        "full_text": "この改正案では埋め立てざるを得ない災害廃棄物の最終処分場を平時から把握しておくため、すでに産業廃棄物等の最終処分の許可を得ている処分場のうち、災害廃棄物の処分が可能な処分場を平時から指定する制度を盛り込んでいるところでございます。この指定制度について申し上げますと、この指定を受けた最終処分場は、廃棄物処理施設に対して義務付けられている定期検査の適用が免除される形となっております。一方で、最終処分場での災害廃棄物の受入れ促進に当たっては、事業期間中の優遇措置を求める声などが、事業者の皆様からもいただいているところであり、インセンティブとなる措置を検討していくことが重要であると考えております。本改正法案による措置する最終処分場の指定を促進するために、どのような対応があり得るのか、関係省庁とも連携をしながら、今後具体の検討を進めてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=5470.196",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "災害廃棄物指定業者のインセンティブについて",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "災害の指定を受けた業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "evidence_citation",
+              "excerpt": "定期検査の適用が免除される"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "今後具体の検討を進めてまいりたいと考えております",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "指定を受けた最終処分場は、廃棄物処理施設に対して義務付けられている定期検査の適用が免除される形となっております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "現状のインセンティブ（定期検査免除）を提示しつつ、今後の追加措置について検討することを約束した標準的なやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "どのようなインセンティブが有効か、具体的な案を提示して是非を問う形式にすれば、より踏み込んだ回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_025",
+      "segment_index": 5,
+      "topic": "スクラップヤード規制の許可制導入の趣旨",
+      "question": {
+        "speaker": "鍋島勢理",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 現行の届出制では何が不足しており、なぜ審査を行う許可制を導入する必要があるのか",
+        "full_text": "まずは、使用済みの金属、プラスチック製品の保管、または再生を行う場所で、資源循環に重要な役割を担っているスクラップヤードの運営に当たりまして、このたびの廃棄物処理法等の改正法案では、審査を行う許可制を導入したり、保管する物品ごとの基準、例えば高さ制限を設けたり、周辺に崩れをしたりすることを避けるためのルールを設けるなどの内容になっております。まず、今の制度では何が不足しており、なぜこれまでの届出制ではなく、審査を行う許可制まで踏み込む必要があると御判断されたのか、その趣旨を政府参考人に伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "住倉",
+        "role": "",
+        "summary": "- 有価物を扱うため現行法では規制対象外となり、規制逃れや生活環境保全上の支障が生じていた\n- 届出制では対象品目が限定的であり、事前審査による不適正事業者の排除が困難であった\n- 自治体からの見直し要望もあり、対象を包括化し事前審査可能な許可制とした",
+        "full_text": "いわゆるスクラップヤードでは廃棄物ではない有価物が扱われるため、現行の廃棄物処理法では原則規制の対象ではなく、生活環境保全上の支障が生じていたとしても、廃棄物処理法による指導監督は及ばない形と現行法ではなっております。また、このことを利用し、実際に取り扱っているものが廃棄物であっても、これは有価物であると称して規制逃れを行おうとする悪質なケースもございました。ただし、この制度にも2つの課題がございました。第一に、この届出制度の対象品目が電気電子機器に限定されており、これらの機器以外のスクラップ等の物品を扱う事業者には規制が及んでいないこと。第二に、届出制であるため、許可制のように事前審査を行うことができず、不適正な事業者を事業開始前に是正したり排除したりすることができない、こういうような構造でございました。こうした課題について、自治体の皆様からも規制の見直しを求める声があり、対象を電気電子機器だけでなく、使用済みの金属やプラスチックの物品を包括的に制度の対象とさせていただく法律案とさせていただいているところでございます。また、生活環境保全上の配慮がなされていること等が確認できない事業者の参入を防ぐため、届出制ではなく、事前審査が可能な許可制とさせていただいているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=5470.196",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "スクラップヤードの許可制導入の趣旨と必要性",
+          "sub_asks": [
+            "現行制度で何が不足しているか",
+            "なぜ届出制ではなく許可制にする必要があるか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "廃棄物処理法等の改正法案"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "スクラップヤード",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "電気電子機器"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "届出制であるため、許可制のように事前審査を行うことができず、不適正な事業者を事業開始前に是正したり排除したりすることができない",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "法改正の趣旨（届出制から許可制への移行理由）について、現行法の不備と悪質なケースを挙げて明確に回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_026",
+      "segment_index": 5,
+      "topic": "不適切なスクラップヤードによる環境影響の深刻さ",
+      "question": {
+        "speaker": "住倉",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 騒音、悪臭、火災、汚染など不適切な運営による生活環境上の支障を国としてどの程度深刻に受け止めているか",
+        "full_text": "全国で確認をされておりますスクラップヤードの一部では騒音や悪臭、火災、また水質、土壌汚染など悪質な形で運用がされておりますスクラップヤードもございます。もちろんこうした課題もあってこそこのたびの改正につながっていると思うんですけれども、こういった不適切な運営がされておりますスクラップヤードによる生活環境上の支障、そして悪影響につきまして、国としてどの程度深刻に受け止めておられるのかを大臣に伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "石原",
+        "role": "",
+        "summary": "- 近年、騒音や水質・土壌汚染等の支障が報告されており、直近1年間で275件確認されている\n- 国として解決すべき課題であると深刻に受け止めている\n- 自治体による条例規制の状況を踏まえ、法改正による許可制導入と基準遵守を求めることにした",
+        "full_text": "委員御指摘のとおり、近年、一部のスクラップヤードにおいて、騒音、水質、土壌汚染、火災の発生等の生活環境保全上の支障が報告されております。直近1年間では275件確認をされております。環境省としては、こうした問題が現場で生じていることについて、国として解決すべき課題であるというふうに深刻に受け止めているところであります。千葉県のほかにも、今年4月時点で少なくとも13自治体において、スクラップヤードを規制する条例が施行されているというふうに承知をしているところであります。環境省としては、こうした状況も踏まえ、廃棄物処理法を改正し、いわゆるスクラップヤード業に関し、許可制を導入し、保管再生の基準の遵守を求めることといたしました。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=5470.196",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "不適切なスクラップヤード運営への認識",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "スクラップヤード",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "直近1年間では275件"
+            },
+            {
+              "type": "number",
+              "excerpt": "少なくとも13自治体"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "千葉県"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "廃棄物処理法"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.4
+        },
+        "oc3_quotability": {
+          "quote_candidate": "直近1年間では275件確認をされております。環境省としては、こうした問題が現場で生じていることについて、国として解決すべき課題であるというふうに深刻に受け止めているところであります。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "不適切な運営の件数という具体的な数値が提示されており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "認識を問う抽象的な質問にとどまっており、具体的な対策の期限や手法を問う形式にすればより実効的な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_027",
+      "segment_index": 5,
+      "topic": "スクラップヤード規制と盗難車対策の関係性",
+      "question": {
+        "speaker": "鍋島勢理",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 今回の廃棄物処理法改正によるスクラップヤード規制は、盗難車の不正解体や流通防止という治安対策に一定程度対応できるものか",
+        "full_text": "その上でなんですけれども、我が党国民民主党では、以前提出をいたしました法案の中で、自動車ヤード、つまり中古車や廃車、あるいは自動車部品の保管、解体、輸出準備を行うための敷地や、作業上の規制に関するものを、前国会で提出をしておりました。こちらは、前国会で廃案になってしまったんですけれども、この法案は、盗難自動車などの処分を防止する観点から、自動車及び自動車の部品の解体、または保管を行う事業者に対して、公安委員会への届出、本人確認、車検証の確認、取引記録の作成、盗難自動車だと疑われる際の警察官への申告などを求める内容でありました。盗難された自動車がヤードに持ち込まれて不正に解体されたりですとか、コンテナに詰められたりという事案があることが聞かれていると、こういったことを背景にしているのがこの法案なんですけれども、今回の廃棄物処理法の改正案でも使用済み金属などが対象になるということで、今回の審議しております廃棄物処理法の一部改正法案のスクラップヤード規制と、そして前国会から提出をいたしました、盗難車がヤードで解体をされ、部品として流通、輸出される問題との関係性については、どのようになっているのか、自動車ヤードに対して一定程度対応できるものになっているのかを、政府参考人に伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "住倉",
+        "role": "",
+        "summary": "- 本法案は生活環境への悪影響防止を目的としており、盗品の流通防止という観点での対応には一定の限界がある",
+        "full_text": "本法案におきましては、本来の用途による使用済み金属、プラスチックに該当するものにつきましては、本法案の対象となります。なお、本法案は、規制対象の物品の適正な保管や再生がなされないことによる生活環境への悪影響の防止等を目的とした仕組みになっておりますので、盗品の流通防止の観点の対応には一定の限界があるものと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=5470.196",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "廃棄物処理法改正案と盗難車ヤード規制の関係性",
+          "sub_asks": [
+            "改正案と盗難車解体・輸出問題との関係性",
+            "自動車ヤードへの対応が可能か"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "廃棄物処理法の一部改正法案"
+            },
+            {
+              "type": "past_answer",
+              "excerpt": "前国会で提出をいたしました法案"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自動車ヤード（中古車・廃車・部品保管・解体・輸出準備事業者）",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "使用済み金属、プラスチック"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "盗品の流通防止の観点の対応には一定の限界があるものと考えております。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "改正法案の目的（環境保護）と、質問者が意図する目的（盗難防止）の乖離を明確に認めた回答であり、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_028",
+      "segment_index": 5,
+      "topic": "環境規制と治安対策の連携",
+      "question": {
+        "speaker": "鍋島勢理",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 環境規制と治安対策を一体的に進めるため、環境省が警察庁や国交省、税関等と連携し、総合的なヤード対策として位置づける考えはあるか",
+        "full_text": "私自身といたしましては、環境省が警察庁や国土交通省、税関などと連携をいたしまして、環境規制と治安対策を一体的に進める必要があるのではないかと考えておりますが、お考えをお聞かせください。また環境省といたしましては、今回の法案を単なる環境規制にとどめずに、関係省庁と連携した総合的なヤード対策の一部として位置づけるお考えがあるのかを大臣に伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "石原",
+        "role": "",
+        "summary": "- 警察庁等の関係省庁が参画する官民合同プロジェクトチームに環境省も参画し、総合的な対策を進めることが重要と考えている\n- 許可業者に課す帳簿の記載・保存義務が、盗難対策にも資すると考えている",
+        "full_text": "自動車盗難防止対策については、警察庁をはじめとした関係省庁の参画する自動車盗難等の防止に関する官民合同プロジェクトチームにおいて対策が進められております。環境省も構成員として参画をしているところであります。環境対策のみならず、不正な競争環境を整備し、我が国の適正な資源循環を活発化させる観点でも、適切なスクラップヤード対策を総合的に進めていくことは大変重要であるというふうに考えております。ただ一方で、許可業者に対しては、帳簿の記載義務や保存義務を課すこととしております。帳簿には搬入元や搬入先を記載することを検討しており、これらの帳簿の内容が、盗難対策にも資するものというふうに考えているところであります。環境省としては、警察庁をはじめとして、関係省庁とも連携して、不適正なスクラップヤード対策を総合的に進めてまいりたいというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=5470.196",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "環境規制と治安対策の連携および総合的なヤード対策の考え方",
+          "sub_asks": [
+            "環境規制と治安対策を一体的に進める必要性への考え",
+            "法案を関係省庁と連携した総合的なヤード対策の一部と位置づける考え"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "環境省"
+            },
+            {
+              "type": "organization",
+              "excerpt": "警察庁"
+            },
+            {
+              "type": "organization",
+              "excerpt": "国土交通省"
+            },
+            {
+              "type": "organization",
+              "excerpt": "税関"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "自動車盗難等の防止に関する官民合同プロジェクトチーム"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "不適正なスクラップヤード対策を総合的に進めてまいりたい",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "環境省としては、警察庁をはじめとして、関係省庁とも連携して、不適正なスクラップヤード対策を総合的に進めてまいりたい",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "環境省が警察庁等の他省庁と連携してスクラップヤード対策を行う方針を大臣が認めたやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「お考えをお聞かせください」という形式のため、具体的な期限や数値目標を伴う確約を引き出す設計になっていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_029",
+      "segment_index": 5,
+      "topic": "スクラップヤードの環境保全基準の実効性",
+      "question": {
+        "speaker": "鍋島勢理",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 水質・土壌汚染を防ぐため、油水分離装置の導入や排水口整備など、より実効性のある保管基準を設けるべきではないか",
+        "full_text": "水質汚染や土壌汚染は一度発生をしてしまいますと、発生後に現状復帰をしていくことが大変難しいものでございます。以前、一般質疑の際にもお尋ねをいたしました有機フッ素化合物PFASについてもそうなんですけれども、濃度を低減していくことを含めまして、大変なコストと労力がかかっていくものでございます。そこで本法案をきっかけといたしまして、油と水を分離する装置の導入ですとか、排水口の整備、またコンクリートの敷設など、環境影響を抑えるためのスクラップ保管を、より実効性のあるものにすべきであると考えておりますが、今回の改正に伴って、今後の規制のあり方について、どのようにお考えか、大臣に伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "石原",
+        "role": "",
+        "summary": "- 許可制を導入し、維持管理基準の遵守を求める\n- 汚水流出や地下浸透の防止措置など、実効性のある環境保全がなされるよう引き続き検討を深める\n- 適正事業者の過度な負担とならないよう、関係者の意見を伺いながら運営する",
+        "full_text": "こうした課題を解決するため、今回の改正案では、いわゆるスクラップヤード業に関して許可制を導入し、維持管理の基準の遵守を求めることとしております。具体的な基準については、政省令で定めてまいりますが、例えば現行制度において、被産流出の防止措置や保管物の高さの制限、火災発生防止措置等の基準を定めております。本法案におけるスクラップヤード業者が遵守すべき基準については、こうした制度も参考にしつつ、汚水流出や地下浸透の防止措置をはじめ、実効性のある環境保全がなされるものとなるように、引き続き検討を深めてまいりたいと考えております。一方で、今回の規制が適正に事業を行っている事業者に対して、過度な負担とならないように、関係者の御意見も伺いながら丁寧に運営をしてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=5470.196",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "改正に伴う今後の規制のあり方について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "有機フッ素化合物PFAS"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "スクラップヤード業"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "許可制"
+            }
+          ],
+          "score": 0.5
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "引き続き検討を深めてまいりたいと考えております",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "スクラップヤード業に関して許可制を導入し、維持管理の基準の遵守を求めることとしております。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "法案の方向性と今後の基準策定の方針について大臣が回答しており、標準的なやり取りである。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "具体的な設備導入（油水分離装置等）の義務化についてYes/Noで問えば、より踏み込んだ回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_030",
+      "segment_index": 5,
+      "topic": "災害廃棄物処理計画の実効性確保",
+      "question": {
+        "speaker": "鍋島勢理",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 形式的な計画に留まらず、仮置き場候補地や処理フロー、民間協定を含む実効性のある計画にするための施策を検討しているか",
+        "full_text": "災害廃棄物処理に関する計画策定につきましては、今回の改正では、市町村の一般廃棄物処理計画に災害廃棄物における一般廃棄物の適正処理などに関する事項を追加することとしております。形式的な計画の策定ではなく、仮置き場の候補地や推計量、処理フロー、民間協定までを含む計画にする必要があります。このことにつきましては、具体例を示すなど、計画や民間事業者との協定での実効性を確保するための施策が必要であると考えておりますが、政府において何か検討しておられることがございましたら、政府参考人に伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "住倉",
+        "role": "",
+        "summary": "- 好事例の充実、モデル事業の実施、研修訓練の強化などを推進する\n- 専門支援機関により、発生量の算定や仮置き場の確保など、自治体の実務支援を強化する",
+        "full_text": "一方で発災時に実際に機能する実効的な計画としていくためには、ただいま御指摘いただきましたような、仮置き場候補地、廃棄物の推計量、処理フロー、民間協定など、計画内容のさらなる具体化による実効性の向上が重要であると考えております。算定や処理フロー、民間協定等の好事例の充実化、計画策定や民間事業者等との協定締結に関するモデル事業の実施、仮置き場の設置運営等に係る研修訓練の強化などの取組をより一層推進してまいりたいと考えております。また、こうした取組に合わせまして、本法案により措置する専門支援機関により、災害廃棄物の推計発生量の算定等の検討作業や、仮置き場の確保や、効率処理等における関係者間の調整事務など、計画策定協定締結に係る自治体の実務への支援も強化してまいりたいと考えております。こうした取組を通じまして、自治体の災害廃棄物処理に係る計画や協定の実効性の向上を支援してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=5470.196",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "災害廃棄物処理計画の実効性確保に向けた検討状況",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "今回の改正では、市町村の一般廃棄物処理計画に災害廃棄物における一般廃棄物の適正処理などに関する事項を追加することとしております"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "民間事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "専門支援機関"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "取組をより一層推進してまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "好事例の充実化、計画策定や民間事業者等との協定締結に関するモデル事業の実施、仮置き場の設置運営等に係る研修訓練の強化などの取組をより一層推進してまいりたい",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "計画の実効性向上という具体的提案に対し、政府側がモデル事業や専門支援機関による支援という方向性で回答している。ただし、具体的な期限や数値目標はなく、コミットメントレベルは低い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「何か検討しておられることがあれば」というオープンクエスチョンであるため、政府が抽象的な回答で逃げる余地を与えている。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_031",
+      "segment_index": 5,
+      "topic": "民間事業者との災害支援協定が努力義務である理由",
+      "question": {
+        "speaker": "鍋島勢理",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 民間事業者との協定締結を義務ではなく努力義務としている理由は何か",
+        "full_text": "ただいま、民間事業者との協定について、言及がございましたけれども、この協定について義務ではなく努力義務にしている理由をお聞かせください。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "住倉",
+        "role": "",
+        "summary": "- 協定は双方の合意が必要であり、資機材の確保状況など個別の状況を勘案して判断すべき事項であるため、一律の義務化はなじまない",
+        "full_text": "協定の締結は、相手方との双方の合意があって初めて成立するものであるとともに、相手方が支援内容に応じた資機材等を十分に確保しているかといった観点も重要となり、さまざまな状況を勘案して個別に判断する必要があると考えております。こうした観点から、法律で全国一律的に義務づけることはなじまないと考えられるため、努力義務規定とさせていただいておりますが、今般新たに法律に規定されることによって、協定締結が進むよう、自治体の取組をしっかりとサポートし、取組を推進してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=5470.196",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "協定を努力義務とした理由",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "民間事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "取組を推進してまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "法律で全国一律的に義務づけることはなじまないと考えられるため、努力義務規定とさせていただいております",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "協定を義務ではなく努力義務とした法的な判断理由が明確に回答されており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_032",
+      "segment_index": 5,
+      "topic": "災害廃棄物仮置き場の確保支援",
+      "question": {
+        "speaker": "鍋島勢理",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 自治体単独での仮置き場確保は困難であるため、公有地・国有地の活用や広域調整について国が積極的に支援する考えはあるか",
+        "full_text": "そういう意味では、自治体だけで単独で確保していくということは容易ではないと考えております。そのため、仮置き場の候補地を自治体が確保していくためには、国としてもしっかりとサポートしていく支援をしていくことが必要であると考えております。特に、公有地の活用や国有地、あるいは都道府県が有しております候補地の整理、さらには市町村の区域を超えた広域的な調整につきましては、国としても積極的に支援が必要であると考えております。このことにつきまして、公有地の活用ですとか、公益の調整、この支援の意気込みについて、政府にお伺いをいたします。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "政務官",
+        "role": "",
+        "summary": "- 専門支援機構による実務支援やマッチング支援を行う\n- 地方環境局の体制強化（29名増員）により、公有地の利用可能性に関する協議や情報提供など、自治体への支援を一層推進する",
+        "full_text": "今後は、本法案により設置される専門支援機構により、必要面積の算定といった自治体の検討作業の実務的な支援ですとか、関係者のマッチング支援を行っていくことを考えております。また、環境省設置法改正による地方環境局への名称変更と併せて、地方支局の体制強化を行っております。先ほどから何度か出ておりますけれども、災害廃棄物対策については、全国で29名の増員を行いましたので、これらの人員を最大限活用しながら、対策指針等を活用した技術的助言に加えまして、公有地の仮置き場としての利用可能性の関係者間の協議、当該情報の自治体への提供など、自治体等とのより一層綿密なコミュニケーションを行う中で、これまでの取組をより一層推進して、自治体の仮置き場確保を支援していきたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=5470.196",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "仮置き場確保に向けた国の支援の意気込みについて",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自治体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "専門支援機構"
+            },
+            {
+              "type": "number",
+              "excerpt": "全国で29名の増員"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "地方環境局"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "自治体の仮置き場確保を支援していきたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "専門支援機構により、必要面積の算定といった自治体の検討作業の実務的な支援ですとか、関係者のマッチング支援を行っていくことを考えております。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "国の支援体制（専門支援機構や人員増員）について具体的に回答されており、一定の記録価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「意気込み」という抽象的な問い方であるため、具体的な支援策の確約まで引き出せていない。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_033",
+      "segment_index": 5,
+      "topic": "災害廃棄物処理における財政支援スキーム",
+      "question": {
+        "speaker": "鍋島勢理",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 自治体の負担を軽減するため、発災直後から機動的に財政措置を講じられる仕組みや柔軟な補助制度の運用についてどう考えているか",
+        "full_text": "加えて、被災自治体が復旧や復興業務にしっかりと専念ができますように、国として財政的な支援を講じることが極めて重要であると考えております。災害廃棄物処理に関する自治体の費用負担は、皆様ご存じのとおり、相当に大きいものであります。災害廃棄物処理に伴う自治体の負担の軽減を図っていくために、発災直後から機動的に財政措置を講じることができる仕組みづくり、また自治体が安心して初動対応に着手できるような制度設計が重要であると考えております。迅速な財政支援や柔軟な補助制度の運用を行うためのスキームについて、政府参考人に伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "住倉",
+        "role": "",
+        "summary": "- 災害等廃棄物処理事業費補助金等により、通常災害で最大90%、激甚災害で最大95.7%、特定非常災害で最大99.7%の財政支援を行う仕組みがある\n- 現場への職員派遣による技術的助言も併せて行い、円滑迅速な処理を推進する",
+        "full_text": "環境省におきましては、廃棄物処理法第22条に基づき、被災市町村の実施する災害廃棄物の収集運搬及び処分に対して、災害等廃棄物処理事業費補助金等による財政支援を行っているところでございます。この補助制度により、市町村が支出した金額について、通常災害の場合は国庫補助が2分の1、これに地方財政措置を含めたトータルで申し上げますと、90%の財政支援を行う仕組みとなっているところでございます。また災害が激甚災害に指定された場合には、この地方財政措置を拡充し、トータルで最大で95.7%の財政支援を行う形となっております。さらに、災害が特定非常災害に指定された場合は、地方財政措置の拡充等、災害廃棄物処理基金を合わせて97.5%以上、最大で99.7%の財政支援を行う形となり、災害の規模等に応じて必要な対応を行う仕組みとなっているところでございます。こうした財政支援を加えまして、発災以降に環境省職員を災害現場に派遣をし、補助金の活用方法等に関する技術的助言も行うこととしております。環境省といたしましては、引き続き、こうした制度を通じて被災自治体を支援し、適正かつ円滑迅速な災害廃棄物処理を推進してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=5470.196",
+      "metrics": null
+    },
+    {
+      "id": "qa_034",
+      "segment_index": 5,
+      "topic": "JESCOによる自治体実務支援の具体的内容",
+      "question": {
+        "speaker": "鍋島勢理",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 専門支援機関としてのJESCOが、現場に近い形での自治体支援をどの範囲まで想定しているか、具体的なイメージを伺いたい",
+        "full_text": "続いて、JESCO中間貯蔵・環境安全事業株式会社が、災害廃棄物処理計画の策定支援や、災害支援協定に関する技術的な助言、そして、先ほどから質問もございます。デジタル支援ツールの提供、またさらには処理困難物に関する研究や開発などになっていく予定と承知をしております。また、発注や契約、施工管理といった実務面におきましても、事務の支援を行うとされておりまして、先ほど議論いたしました土地の確保ですとか、財政支援よりも、より現場に近い形での自治体を支える仕組みになっていると考えております。このことにつきましては、どの範囲までJESCOが関与し、自治体の実務を支援することを想定しておられるのか、現場における具体的なイメージについて伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "住倉",
+        "role": "",
+        "summary": "- 平時は発生量推計、協定雛形の提供、研修運営、基礎情報の集約、研究開発などを行う\n- 発災時は職員派遣による被害状況調査、ドローン活用による分別状況確認、発注契約等の事務支援を行う",
+        "full_text": "専門支援機関を担うJESCOにおきましては、平時における具体的な業務のイメージとしては、まず計画策定における災害廃棄物発生量の推計などの検討作業、また協定締結における雛形の提供や民間事業者等との調整事務、また自治体等向けの研修訓練の構築運営、さらには災害廃棄物進捗管理システムを活用した支援に必要な基礎情報の集約、そして国が行う災害廃棄物に関する研究開発の遂行などを行うことを今考えております。また発災時における業務といたしましては、JESCO職員の現地派遣等により災害廃棄物発生量の推計に必要となる被害状況調査を行うこと、またドローン等を活用した仮置き場における分別状況等の現地確認による自治体の処理方針検討に向けた支援を行うこと、さらには自治体の発注契約等の各種事務支援などを行うことを現在考えております。このようにJESCOによる災害廃棄物に関する自治体の実務支援の強化を図り、適正かつ円滑迅速な災害廃棄物処理を実務面からしっかりサポートできるよう取組を推進してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=5470.196",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "JESCOによる自治体実務支援の具体的範囲とイメージ",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "JESCO中間貯蔵・環境安全事業株式会社"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.5
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "JESCO中間貯蔵・環境安全事業株式会社",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "災害廃棄物進捗管理システム"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "ドローン等を活用した仮置き場における分別状況等の現地確認"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "取組を推進してまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "JESCO職員の現地派遣等により災害廃棄物発生量の推計に必要となる被害状況調査を行うこと、またドローン等を活用した仮置き場における分別状況等の現地確認による自治体の処理方針検討に向けた支援を行う",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "JESCOの役割について具体的に質問し、回答側も平時と発災時の業務内容を具体的に列挙して回答しているため、実務的な記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_035",
+      "segment_index": 5,
+      "topic": "災害廃棄物の受入れ容量不足への対応",
+      "question": {
+        "speaker": "鍋島勢理",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 想定以上の被害で発災時に受入れ容量が不足した場合、どのように対応するのか",
+        "full_text": "事前に計画で仮置き場の候補地や処理フローなどを定めておりますが、実際に災害が計画通りに起こるということは極めて少なく、いつも想定外のことが発生すると思っております。そのときに思ったよりも被害が大きい場合、災害廃棄物の量も予想していたものよりも大きくなるということも想定できると思います。その際に発災時に受入れ容量の不足が生じた場合の対応はどのようにされていかれるのかを政府参考人に伺います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "住倉",
+        "role": "",
+        "summary": "- 地域ブロック協議会等を通じて構築してきた広域連携体制を活用し、広域的な処理を推進する\n- 専門支援機関による調整事務支援や、地方環境局長による意思決定権者との疎通を図る",
+        "full_text": "ただいま御指摘いただきましたような事態を生じた場合には、広域的な処理を推進する形となります。具体的に申し上げますと、環境省ではこれまで地方環境事務所を中心に、自治体・民間事業者等が参加する地域ブロック協議会において、地域の広域連携体制の構築を進めてまいりました。こうした能登半島地震の経験に加え、今後は本改正案で措置する専門支援機関により、発災時において、広域処理に係る自治体の調整事務を支援してまいりたいと考えております。さらに、環境省設置法改正により、名称を変更する地方環境局においては、局長自らが自治体の市長などの意思決定権者と意思疎通を図ることに加え、"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=5470.196",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "受入れ容量不足時の対応策について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "地域ブロック協議会"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "能登半島地震"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "専門支援機関"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "環境省設置法改正"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "地方環境局"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "支援してまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "事態を生じた場合には、広域的な処理を推進する形となります。",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "災害廃棄物の容量不足という具体的リスクに対し、広域処理の推進と新設される専門支援機関による調整という政府の方針が明確に示されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_036",
+      "segment_index": 5,
+      "topic": "災害廃棄物処理に伴う環境負荷への対応",
+      "question": {
+        "speaker": "鍋島勢理",
+        "party": "国民民主党・無所属クラブ",
+        "summary": "- 迅速な処理を進める中で生じる騒音、粉塵、アスベスト等の不安に対し、環境影響を踏まえた区分や低減措置をどう講じるか",
+        "full_text": "続きましては、災害時に災害廃棄物の迅速な処理を進める上で生じます騒音ですとか、粉塵、あるいはアスベストなどの不安にどう対応していくのか、廃棄物の危険性や有害性、その他の環境への影響を踏まえた区分などをしっかり行うようにするための施策について伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "住倉",
+        "role": "",
+        "summary": "- 対策指針に基づき、住宅地等との距離確保、防塵ネット設置、作業時間の配慮などの低減措置を講じるよう自治体に助言している\n- アスベストは原則として仮置き場に持ち込まず、持ち込まれた場合は分別保管し立入禁止措置をとる",
+        "full_text": "災害廃棄物の処理を円滑迅速に行うことはもちろんでございますけれども、それと同じく騒音、粉塵、アスベスト、悪臭などの不安に適切に対応することも不可欠であると考えております。このため、環境省といたしましては、災害廃棄物対策指針等に基づき、例えば仮置き場について、住宅地や学校等との距離の確保、防塵ネットの設置、作業時間の配慮など、環境負荷の低減措置を講ずるよう、自治体に対して助言を行っているところでございます。特にアスベストにつきましては、有害性も高いため、原則、仮置き場には持ち込まない。仮置き場に持ち込まれた場合は、他の廃棄物と分別して保管して立入禁止措置をとること。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=5470.196",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "災害廃棄物処理に伴う環境不安への対応策",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": null,
+          "concreteness": "abstract",
+          "score": 0.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "災害廃棄物対策指針"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "防塵ネットの設置"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "助言を行っているところでございます",
+          "matched_pattern": "Lv1: aspirational verb only / current state of effort"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "アスベストにつきましては、原則、仮置き場には持ち込まない。持ち込まれた場合は、他の廃棄物と分別して保管して立入禁止措置をとること。",
+          "score": 0.7
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "災害廃棄物処理における環境対策について、指針に基づいた具体的な助言内容（距離確保や防塵ネット等）が回答されており、実務的な基準が示されている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_037",
+      "segment_index": 6,
+      "topic": "許可制の実効性と小規模事業場の脱法行為への対応",
+      "question": {
+        "speaker": "伊藤恵介",
+        "party": "参政党",
+        "summary": "- 許可制導入において、名義貸しやペーパーカンパニーによる実態把握の困難さをどう解消するか\n- 適用除外となる小規模事業場での脱法行為をどう防ぐか",
+        "full_text": "今回の法案では、スクラップヤードに許可制を導入するとのことで、まず許可制の実効性、名義貸し等への対応について伺います。名義貸し、ペーパーカンパニー、法人分割による事業主体の変更が行われた場合、書類審査だけでは実際の事業実態や現場での不適正な保管、これらを十分に把握できない恐れがあります。また、小規模事業場は適用除外に該当するため、そのような事業場での脱法行為を、環境大臣、見解をお伺いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "柏倉祐司",
+        "role": "日本維新の会",
+        "summary": "- 許可時に経理的・技術的基盤を確認し、産廃処分業を参考にした実地確認などの制度運用を検討する\n- 小規模事業場の供用面積を政令で定め、規制の抜け穴とならないよう自治体や有識者と検討する\n- 事前連絡なしの立ち入り検査権限を付与し、ガイドライン整備や地方環境局による支援で実効性を上げる",
+        "full_text": "本法案におきましては、都道府県等が使用済みの金属プラスチック物品の保管業、また再生業の許可を行うにあたっては、適正に事業を行える経理的基礎や技術的基盤等を有しているかを確認することとなります。また、許可時の現地確認につきましては、現行の廃棄物処理法における産業廃棄物処分業では、都道府県等に対し、許可申請に係る施設の実地確認を求めているところでございまして、これを参考に本法案の詳細な制度運用を検討してまいりたいと考えております。不適正に許可を取得することを防止できるよう、丁寧な制度設計に努めてまいりたいと考えております。また、ただいまご指摘いただきました小規模事業場につきましては、適用除外となる保管等のように供用面積を政令で定めることとしており、規制の抜け穴とならないよう、今後、自治体や有識者のご意見も伺いながら、検討を進めてまいりたいと考えております。さらに本法案では、都道府県等に立ち入り検査権限を付与することとしておりますが、産業廃棄物処分業の立ち入り検査と同様に、事業者の保管基準や再生基準の遵守状況等の確認について、事前連絡することなく立ち入ることを周知していきたいと考えております。これらの事務に当たっては、法施行の円滑化に向けて、先行自治体からの知見も反映させたガイドライン等を整備するとともに、先行自治体の指導や監督に係る有効事例を取りまとめ、今後開催予定の説明会などの機会を通じて、全国の都道府県等に水平展開してまいりたいと考えております。また、今国会において成立した環境省設置法の改正により、本年7月から地方環境事務所が地方環境局となることを受け、この地方環境局も全国の自治体の皆様に寄り添いながら、このスクラップヤード問題への制度的対応を支援し、規制の実効性をしっかりと上げてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=7576.996",
+      "metrics": null
+    },
+    {
+      "id": "qa_038",
+      "segment_index": 6,
+      "topic": "外国籍事業者への指導と不法就労対策",
+      "question": {
+        "speaker": "伊藤恵介",
+        "party": "参政党",
+        "summary": "- 外国籍事業者の進出による制度理解不足や書類作成の困難さにどう対応するか\n- ヤード内での違法居住など、不法就労の温床となっている現状にどう対応するか",
+        "full_text": "次に、不適正な外国籍の事業者への指導についてお伺いします。環境省が委託した令和7年度の実態調査において、一部自治体でのスクラップヤード増加の一番の要因として、外国籍の事業者の進出が挙げられております。事業運営に際し、責任者が外国人であるために、制度の理解や日本語での書類作成が困難になっているという指摘があります。また、参政党の議員が視察に伺った際には、外国人がヤード内で違法に居住しているという不法状態に対して、住民の皆様が心配しておられました。このようなヤードは、不法就労の温床になっているのではないでしょうか。不適正な外国籍の事業者に対して、環境省としてどのように対応していくお考えか、大臣の見解をお伺いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "石原陽一",
+        "role": "",
+        "summary": "- 国籍を問わず許可取得を求め、不適正な事業者は是正排除する\n- 先行自治体の多言語チラシなどの工夫を参考に実効性を確保する\n- 関係閣僚会議の総合的対応策に基づき、関係機関の連携を強化して不法就労問題等に対応する",
+        "full_text": "環境省としては、本法案において、国籍を問わず、有価物である使用済みの金属やプラスチックの保管再生を行う事業者に対して、許可取得を求め、不適正な事業者については、是正排除していく所存であります。その際、千葉県のような先行自治体において工夫されている取組を参考にして、実効性を確保して制度を運用してまいりたいと考えております。不適正なスクラップヤードは不法就労の諸問題の温床になっているというご指摘があることも承知をしております。この点は関係閣僚会議で決定した外国人の受け入れ、秩序ある共生のための総合的対応策にも、不適正なスクラップヤード対策に係る関係機関の連携強化を盛り込んでいるところであります。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=7576.996",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "不適正な外国籍事業者への対応策",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "date",
+              "excerpt": "令和7年度の実態調査"
+            },
+            {
+              "type": "organization",
+              "excerpt": "参政党の議員"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "外国籍の事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "千葉県"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "外国人の受け入れ、秩序ある共生のための総合的対応策"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "実効性を確保して制度を運用してまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "国籍を問わず、有価物である使用済みの金属やプラスチックの保管再生を行う事業者に対して、許可取得を求め、不適正な事業者については、是正排除していく所存であります。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "不適正な外国籍事業者への対応について、国籍を問わず許可制を導入し是正排除するという大臣の基本方針が明確に述べられている。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "不法就労の温床になっているかという問いに対し、Yes/Noで答えさせる形式にすれば、より明確な政府認識を記録できた。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_039",
+      "segment_index": 6,
+      "topic": "残置物・汚染処理責任と自治体支援",
+      "question": {
+        "speaker": "伊藤恵介",
+        "party": "参政党",
+        "summary": "- 事業者の倒産や国外逃亡などで残置物や土壌汚染が発生した場合、誰が費用を負担するのか\n- 行政代執行による自治体の費用負担増加に対し、支援を充実させるべきではないか",
+        "full_text": "次に、残置物や汚染処理責任について伺います。今回の法改正では、措置命令や法人の場合、最大3億円の罰金といった厳しい罰則が措置されておりますが、それらだけでは実効性が乏しいのではないかと懸念をしております。許可事業者による処理途中での廃業、倒産、法人解散や、罰則のがれを目的とした所在不明、国外逃亡の場合、残置された使用済み金属、プラスチック物品や土壌汚染の撤去、処理費用は一体誰が負担するのでしょうか。逃げ得を許さない制度設計になっておりますでしょうか。また、規制強化により基準に適合できないために逃亡する事業者も増加すると思われますが、それらの事業者に対して自治体が行政代執行を行う場合、自治体の費用負担の増加が懸念されます。こうした自治体への支援をさらに充実すべきではないかと考えますが、大臣の見解をお伺いしたいと思います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "石原陽一",
+        "role": "",
+        "summary": "- 立入検査や改善・措置命令により、事態に至る前に状況を改善させ、逃げ得を許さない体制を整備する\n- 廃棄物として認定され行政代執行を行う場合は、不法投棄対策基金から費用の一部を支援する",
+        "full_text": "まずは、スクラップヤードの廃業や倒産等により、使用済み金属、プラスチック物品が放置され、生活環境保全上の支障を生ずる事態に至る前に、状況を改善させていくことが重要であると考えております。このため、都道府県等による立入検査や報告聴取、改善命令、措置命令といった規定をこの法案の中に整備しているところであります。これにより、命令を受けた事業者は、生活環境保全上の支障を除去する義務を負い、従わない場合は罰則が適用されます。加えて、この法施行前にも規制対象となり得る事業者に対し、制度の周知を図り、許可の申請を促し、許可を申請するには基準の遵守が必要であり、結果的には法施行後の行政指導と同等の効果があるものと考えています。こうした措置により、逃げ得や捨て得を許さぬよう事業者に改善を促してまいりたいと考えております。その上で、撤退や倒産により放置された使用済み金属プラスチック物品が廃棄物として認定され、都道府県等が行政代執行により撤去等を行う場合は、その費用の一部について国と産業界からの拠出による不法投棄対策のための基金からの支援を行ってまいりたいというふうに考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=7576.996",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "残置物処理費用の負担主体と自治体支援について",
+          "sub_asks": [
+            "事業者が逃亡・倒産した場合の処理費用負担者は誰か",
+            "自治体への支援をさらに充実すべきではないか"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "law",
+              "excerpt": "今回の法改正"
+            },
+            {
+              "type": "number",
+              "excerpt": "最大3億円の罰金"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.4
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "許可事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 0.8
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "不法投棄対策のための基金"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "支援を行ってまいりたいというふうに考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.15
+        },
+        "oc3_quotability": {
+          "quote_candidate": "行政代執行により撤去等を行う場合は、その費用の一部について不法投棄対策のための基金からの支援を行ってまいりたい",
+          "score": 0.6
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "事業者の逃亡・倒産時の費用負担という具体的な懸念に対し、既存の基金による支援という具体的手段を提示して回答している。",
+        "would_be_referenced": "medium",
+        "issue_in_design": "「誰が負担するのか」という問いに対し、最終的な費用負担主体（国か自治体か基金か）の法的責任分担をより明確に問うべきであった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_040",
+      "segment_index": 6,
+      "topic": "農地・水源地周辺の立地規制",
+      "question": {
+        "speaker": "伊藤恵介",
+        "party": "参政党",
+        "summary": "- 農地や水源地、住宅地周辺において、より厳しい立地規制や操業条件を設けるべきではないか\n- 多くの自治体が国レベルの統一規制を求めているのに、立地規制を条例に委ねている理由は何か",
+        "full_text": "次に、農地、水源地周辺の立地規制について伺います。スクラップヤードの問題は、火災や騒音だけでなく、油分、重金属、汚水の流出による農地や水源地への影響に及びます。そのため、農地、水源地、あるいは学校や住宅地の周辺などについては、より厳しい立地規制や操業条件が必要ではないかと考えます。住宅等から屋外保管事業場までの距離を100メートル以上確保するといった独自の設置条件を条例で規制している自治体もございます。しかし、環境省の調査結果では、調査対象の85%に当たる自治体がスクラップヤードの規制のあり方について、国レベルの法制度による規制が望ましいというふうに回答しております。このように多くの自治体が国による統一規制を求めているにもかかわらず、立地規制を条例に委ねている理由について、環境省の見解をお伺いいたします。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "住倉健",
+        "role": "",
+        "summary": "- 全国一律の規制は導入するが、立地基準は地域の実情が多様であるため、あえて一律の基準は設けていない\n- 許可に際して、営業時間の制限など生活環境保全に必要な条件を付与できる規定を設けている\n- 保管・再生基準を遵守させ、従わない場合は罰則や許可取消により是正排除する",
+        "full_text": "今般の法改正はこうした実情も踏まえ、全国一律の規制を行うものでございます。その上で、本法案では住宅等から敷地境界までの距離等、立地に関する一律の基準は設けていないところでございます。これは各地の条例やスクラップヤードの立地状況は様々であるため、地域の実情に応じて対応した方が適切であると考えられるためでございます。なお、事業者への許可に際しましては、生活環境の保全上必要な条件を付与することができる旨を規定させていただいているところでございます。例えば営業時間の制限等、近隣の住宅地に配慮するようなものが条件に該当し得ると考えております。いずれにいたしましても、許可を受けた者は生活環境への悪影響を防止する観点から定められる保管基準や再生基準の遵守が求められます。この基準の遵守がなされない場合において、都道府県等による改善命令や措置命令の対象となり、そうした命令にも従わない場合には、罰則の適用や事業停止命令、許可取消の対象となります。このような制度により、生活環境への悪影響を生じさせる事業者を是正排除してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=7576.996",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "立地規制を条例に委ねている理由について",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "環境省の調査結果"
+            },
+            {
+              "type": "number",
+              "excerpt": "調査対象の85%に当たる自治体"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.7
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "自治体",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.3
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "改善命令や措置命令"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "事業停止命令、許可取消"
+            }
+          ],
+          "score": 0.6
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "是正排除してまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": true,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "各地の条例やスクラップヤードの立地状況は様々であるため、地域の実情に応じて対応した方が適切であると考えられるためでございます。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "国が立地規制を一律に設けない理由（地域の実情への配慮）について明確な回答が得られており、記録としての価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_041",
+      "segment_index": 6,
+      "topic": "国内中小・地域事業者への支援",
+      "question": {
+        "speaker": "伊藤恵介",
+        "party": "参政党",
+        "summary": "- 規制強化により中小事業者が排除され、資源循環インフラが外資に依存する恐れがあるのではないか\n- 適正に操業する中小事業者が継続できるよう、設備投資や技術面での支援を講じるべきではないか",
+        "full_text": "次に、国内中小・地域事業者への支援について伺います。規制強化により、資金力のある大手や外資に市場が集約され、真面目に操業してきた国内の中小地域事業者が排除される恐れがございます。例えば、廃棄物処理業者を例に挙げると、大手は採算の取れるエリアに集中しがちのため、過疎地などの不採算エリアでは処理業者がいなくなり、廃棄物の不法投棄増加や処理の遅延が起きる恐れがございます。また、外資が主要プレイヤーになれば、資源循環という国家インフラを外国資本に依存することになってしまいます。実際に大手による中小の廃棄物処理事業者へのM&A事例も報道されているところでございます。スクラップヤード業者においても、規制強化によって悪質業者を排除することは当然必要であります。しかし同時に、資金面、技術面で弱い立場であっても、適正に事業を行っている中小地域事業者が事業を継続できるような支援も併せて講じる必要があるのではないでしょうか。このような適正な中小地域事業者の立場も考慮した上で、制度設計が行われていくのか確認したいと思います。設備投資、火災対策、土壌排水対策、適正解体技術、記録管理などについて、技術的な支援を行うべきと考えますが、環境省の見解を伺います。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "住倉健",
+        "role": "",
+        "summary": "- 不適正な事業者を排除することで、適正な中小・地元企業が不利益を被らないよう努める\n- 保管・再生基準について、適正な事業者であれば対応可能な水準となるよう業界の声を聞いて検討する",
+        "full_text": "規制強化によって不適正なスクラップヤードを是正排除し、適正な中小企業や地元企業が不利益にならないよう努めてまいりたいと考えております。また、本法案における事業者が遵守すべき保管基準や再生基準等につきましては、適正な事業者であれば対応できる水準となるよう、関係業界の皆様の声にもよく耳を傾けて検討してまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=7576.996",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "中小地域事業者の継続支援と制度設計への考慮",
+          "sub_asks": [
+            "適正な中小地域事業者の立場を考慮した制度設計を行うか",
+            "設備投資や技術面での支援を行うべきかという見解"
+          ],
+          "score": 0.6
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "大手による中小の廃棄物処理事業者へのM&A事例も報道されている"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "国内中小・地域事業者（廃棄物処理業者、スクラップヤード業者）",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [],
+          "score": 0.0
+        },
+        "as4_commitment": {
+          "level": 2,
+          "trigger_phrase": "関係業界の皆様の声にもよく耳を傾けて検討してまいりたい",
+          "matched_pattern": "explicit \"検討\" / \"議論\" verb in future tense with the government as subject"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "適正な事業者であれば対応できる水準となるよう、関係業界の皆様の声にもよく耳を傾けて検討してまいりたい",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "中小事業者の排除懸念に対し、配慮する意向と検討する姿勢を示した標準的な答弁であり、具体的な支援策の提示まで至っていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "具体的な支援策（設備投資補助など）の要否を問うているが、回答を「検討する」に逃がさないための具体的な選択肢の提示が不足している。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_042",
+      "segment_index": 7,
+      "topic": "不適正スクラップヤード対策の実効性と事業者負担",
+      "question": {
+        "speaker": "渡辺真太朗",
+        "party": "無所属",
+        "summary": "- 適正処理事業者の事務負担増加への懸念がある一方、悪質事業者が地下化するリスクがあるのではないか\n- 今回の制度が悪質事業者の排除に実効性を持つのか、あるいは善良な事業者に負担を集中させるものなのか、政府の検証状況を問う",
+        "full_text": "今回の法改正について、不適正ヤード対策ですとか、産業資源循環の適正化を目的とするところでございますけれども、現場では適正処理を行っている事業者ほど、新たな保管基準対応ですとか、記録管理、行政対応など、新たな事務負担が増加するのではないかという懸念が強いです。一方で、本当に問題となるような無許可、選択的事業者については、制度施行後も地下化、所在不明化する可能性がございます。北関東とかは空き地に重機を置くようなヤードとかが多くて、許可基準を満たせずに撤退する事業者が増えるというリスク、こういったものもございます。結果として、解体業者が持ち込み先に困ったり、スクラップ価格の変動が大きくなったり、違法ヤードが潜り込む余地が生まれる副作用が起こりやすくなるのではないかということを考えます。こうしたリスクへの認識と、今回の制度は、そういった悪質事業者の排除に実効性を持つ制度なのか、あるいは善良な既存事業者の皆さんに追加負担を集中させてしまう制度になってしまうのか、政府はどのように検証しているのか、お伺いをしたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "辻副大臣",
+        "role": "",
+        "summary": "- 適正な事業者にとって必要以上に厳しいものとならないことが重要であり、業界の声に耳を傾けていく\n- 許可制の導入に加え、立入検査や改善命令等の規定を整備し、撤退・倒産前の段階で改善を促すことで実効性を確保する",
+        "full_text": "本法案は、生活環境保全上の支障の解消を図るとともに、不適正なスクラップヤードの是正排除を進め、適正な事業者にとっての公正な競争環境の整備を目的とするものです。その際、委員ご指摘のとおり、適正な事業者にとって必要以上に厳しいものとなってはならないことが重要だと考えています。実際、我々もこの間、そういった関係各種団体、特に中小の団体からは、そういった懸念の声が上がっておりますが、実際そうならないため、今後の保管基準等の検討に当たっては、関係業界の声に引き続きしっかりと耳を傾けていきたいと考えています。また、スクラップヤード事業者の撤退や倒産によって、使用済み物品が放置され、生活環境保全上の支障が生ずる事態を未然に防止することも重要でございまして、そのため、本法案では許可制の導入に加えて、都道府県知事による立入検査や報告聴取、改善命令、措置命令といった規定を整備しておりまして、こうした措置によって、事業の撤退や倒産に至る前の段階で、事業者に対し状況の改善を促していきます。さらに法施行前においても、規制対象となり得る事業者に対して制度の周知を図ることで、許可申請に際して基準の遵守を徹底していきます。これらの取組によって不適正なスクラップヤードの是正排除を進めるとともに、適正な事業者が公正な競争環境の下で円滑に事業活動を行えるよう、制度の実効性の確保を図っていきたい考えでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=8846.196",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "法改正による副作用のリスク認識と実効性の検証について",
+          "sub_asks": [
+            "悪質事業者の排除に実効性を持つ制度なのか",
+            "善良な事業者に負担が集中する制度にならないか",
+            "政府はどのように検証しているのか"
+          ],
+          "score": 0.4
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "北関東とかは空き地に重機を置くようなヤードとかが多くて"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.3
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "スクラップヤード事業者",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.6
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "都道府県知事による立入検査や報告聴取、改善命令、措置命令"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "関係業界の声に引き続きしっかりと耳を傾けていきたいと考えています",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "適正な事業者にとって必要以上に厳しいものとなってはならないことが重要だと考えています。",
+          "score": 0.5
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "制度の副作用に関する懸念に対し、政府は一般論的な目的と既存の行政権限（立入検査等）で回答しており、具体的な検証プロセスへの言及が不足している。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのように検証しているのか」という問いに対し、検証手法を具体的に答えさせる形式（例：シミュレーションの有無やヒアリング回数など）にすればより実効的な回答が得られた可能性がある。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_043",
+      "segment_index": 7,
+      "topic": "制度改正に伴う地方自治体の事務負担と支援策",
+      "question": {
+        "speaker": "渡辺真太朗",
+        "party": "無所属",
+        "summary": "- 保管基準の監督や立入検査等により、都道府県の事務負担が大幅に増加し、専門人材不足による監視能力の不足が懸念される\n- 増加する自治体負担をどのように試算し、具体的にどのようなフォローを行うのかを問う",
+        "full_text": "次に地方自治体の執行体制について伺いたいと思います。他の委員の方からもいろいろとご指摘、ご質問あったかと思うんですけれども、今回の改正では保管基準の監督、立入検査、廃棄物該当性判断など、都道府県の実務負担が大幅に増加することが考えられます。実際に団体の方からヒアリングをして、団体、事業者の皆さんは「決まったことをやります」ということなんですけれども、その人たちも懸念するのは、やはり都道府県の負担が相当大きくなるのではないかということでした。環境部門の人材不足、技術系職員不足、専門人材不足が深刻化しております。栃木県も広くて職員の数というのも限られております。広域でヤードが点在もしておりますから、制度は厳しくなるのに監視能力が追いつかないのではないかというギャップが生じるのではないかという懸念がございます。環境省は今回の制度改正によって増加する自治体負担をどのように試算されているでしょうか。具体的にどのような都道府県に事務負担が発生して、国としてどのようにフォローしていくか伺いたいと思います。",
+        "intent": "information_request"
+      },
+      "answer": {
+        "speaker": "辻副大臣",
+        "role": "",
+        "summary": "- 新たな事務として、申請書類の確認、施設実地調査、立入検査、指導監督事務などが挙げられる\n- ガイドライン整備や周知による負担軽減に加え、地方環境局への移行に伴い地域に寄り添った技術的支援を行う",
+        "full_text": "今回の改正法案では、いわゆるスクラップヤード業に関しては許可制を導入し、事業者の申請を受けて都道府県及び政令で定める市において、許可基準に適合することを審査する形となります。これらの都道府県等において、新たに生じ得る事務といたしましては、申請者の書類確認や施設の実地調査等の審査事務が挙げられます。また、立入検査、改善命令等の指導監督に係る事務等もまた発生する形となります。法施行の円滑化に向けましては、先行自治体等からの知見や事務負担についてヒアリングしつつ、政省令の検討やガイドラインの整備等を行うとともに、都道府県等に対して丁寧にその内容を周知するなど、事務負担の軽減に資する取組を進めてまいりたいと考えております。また、環境省設置法の改正により、地方環境事務所が地方環境局となることを踏まえまして、これまで以上に地域に寄り添って、都道府県等に対する技術的支援を適切に行い、しっかりと自治体の取組を環境省としてサポートしてまいりたいと考えております。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5185",
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=8846.196",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "改正による自治体負担の試算とフォロー策について",
+          "sub_asks": [
+            "自治体負担をどのように試算しているか",
+            "具体的にどのような事務負担が発生するか",
+            "国としてどのようにフォローしていくか"
+          ],
+          "score": 0.3
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "organization",
+              "excerpt": "栃木県"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.2
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "都道府県",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "partially",
+          "topic_shift_detected": false,
+          "score": 0.5
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "スクラップヤード業"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "地方環境局"
+            }
+          ],
+          "score": 0.4
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "事務負担の軽減に資する取組を進めてまいりたいと考えております",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": false,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.0
+        },
+        "oc3_quotability": {
+          "quote_candidate": "地方環境事務所が地方環境局となることを踏まえまして、これまで以上に地域に寄り添って、都道府県等に対する技術的支援を適切に行い、しっかりと自治体の取組を環境省としてサポートしてまいりたい",
+          "score": 0.4
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "自治体負担の「試算」という具体的な問いに対し、回答は定性的な説明に留まっており、定量的な回答が得られていない。",
+        "would_be_referenced": "low",
+        "issue_in_design": "「どのように試算しているか」という問いを、「試算した結果、具体的にいくら（何時間）の負担増となるか」と数値回答を求める形式にすれば、より実効的な記録になった。",
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_044",
+      "segment_index": 7,
+      "topic": "市町村における災害廃棄物処理計画の策定率",
+      "question": {
+        "speaker": "渡辺真太朗",
+        "party": "無所属",
+        "summary": "- 現状における市町村の災害廃棄物処理計画の策定率を確認したい",
+        "full_text": "先ほど他の方からもありましたが、今中継を見ている方もいらっしゃると思うので、もう一回お伺いしたいんですけれども、現状、市町村における計画の策定率はどの程度のものであるか、もう一度ここで確認したいと思います。",
+        "intent": "fact_check"
+      },
+      "answer": {
+        "speaker": "住倉局長",
+        "role": "",
+        "summary": "- 令和6年度末時点で、全国で約90%となっている",
+        "full_text": "各市町村における災害廃棄物処理計画の策定率は、令和6年度末時点で、全国で約90%となっているところでございます。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=8846.196",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "市町村の計画策定率の確認",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.0
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "市町村",
+          "concreteness": "mid",
+          "score": 0.5
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.0
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "number",
+              "excerpt": "約90%"
+            },
+            {
+              "type": "deadline",
+              "excerpt": "令和6年度末時点"
+            }
+          ],
+          "score": 0.7
+        },
+        "as4_commitment": {
+          "level": 0,
+          "trigger_phrase": null,
+          "matched_pattern": null
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "bureaucrat",
+          "score": 0.25
+        },
+        "oc3_quotability": {
+          "quote_candidate": "各市町村における災害廃棄物処理計画の策定率は、令和6年度末時点で、全国で約90%となっている",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "単純な数値確認のやり取りであり、政府の公式な策定率が記録された点で価値がある。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    },
+    {
+      "id": "qa_045",
+      "segment_index": 7,
+      "topic": "災害廃棄物処理計画の策定率向上に向けた具体策",
+      "question": {
+        "speaker": "渡辺真太朗",
+        "party": "無所属",
+        "summary": "- 東京都の島しょ部などで未策定の自治体があることを踏まえ、策定率向上のためにどのような策を講じるか伺いたい",
+        "full_text": "この資料のパートを見ていくと、東京都が実は100%ではなくて、東京都のこれ、島しょ部の資料だと未だにない状況でございます。石原大臣の選挙区の島しょ部、これがちょっと丸がついていないところが多いかなというふうに思っております。もちろんこちらはご認識をされていると思うんですけれども、法整備をされていくこの流れとともに、ぜひとも大臣の方からも計画策定に向けて強く背中を押していただきたいと思っております。ここで石原大臣、ぜひとも策定率向上のため、より踏み込んで、どのような策をやっていくか、お考えをお伺いしたいと思っております。",
+        "intent": "policy_proposal"
+      },
+      "answer": {
+        "speaker": "石原大臣",
+        "role": "",
+        "summary": "- 本法案で措定する専門支援機関により、必要面積の算定や関係者調整などの伴走支援をしっかりと行う\n- 地方環境局において、災害廃棄物処理対策に当たる定員を全国で29名増員する",
+        "full_text": "発災時に災害廃棄物を円滑に処理するため、平時から災害廃棄物処理に関わる計画の策定等の事前の準備が重要であります。このため、本法案では、市町村の災害廃棄物処理に関わる計画策定の義務を盛り込んでいるところであります。一方で、全国で見ると、小規模の自治体ほど計画が策定されていない状況にあります。大変お恥ずかしい話なんですが、東京では、私の選挙区の島しょ部の自治体が、2013年に大きな台風被害を受けた大島以外ができていないような状況になっています。2019年に環境副大臣のときに、やはり大田区とかが結構台風19号でやられて、そのときはまだ大田区も品川区もできていなかったんですが、区長に早く作ってくださいとお願いして作った経緯がありますが、島の方ももう少ししっかりとサポートをすればよかったなというふうに少し反省をしているところがありますけれども、こうした実態を踏まえて全ての市町村に計画を策定していただくため、本法案により措定する専門支援機関により、仮置き場の必要面積の算定等の検討作業や、協定締結における関係者間の調整事務など、計画策定に関わる自治体の事務への伴走支援をしっかりと行っていきたいというふうに思います。また、環境省設置法改正により、名称が変更される地方環境局には、災害廃棄物処理対策に当たる定員を全国で29名増員をいたします。"
+      },
+      "follow_up_ids": [],
+      "related_law_ids": [
+        "clb-5295",
+        "clb-5185"
+      ],
+      "video_url": "https://www.shugiintv.go.jp/jp/index.php?ex=VL&media_type=&deli_id=56269&time=8846.196",
+      "metrics": {
+        "qq1_clarity": {
+          "main_question_one_liner": "計画策定率向上のための具体的策への考え",
+          "sub_asks": [],
+          "score": 1.0
+        },
+        "qq2_groundedness": {
+          "cited_sources": [
+            {
+              "type": "other",
+              "excerpt": "この資料のパート"
+            },
+            {
+              "type": "organization",
+              "excerpt": "東京都のこれ、島しょ部"
+            }
+          ],
+          "translates_big_number_to_daily_life": false,
+          "score": 0.6
+        },
+        "qq4_stakeholder": {
+          "stakeholder_category": "東京都島しょ部",
+          "concreteness": "concrete",
+          "score": 1.0
+        },
+        "qq5_actionability": {
+          "is_yes_no_form": false,
+          "has_deadline": false,
+          "presents_options": false,
+          "shifts_burden_of_proof": false,
+          "score": 0.2
+        },
+        "as1_directness": {
+          "addresses_main_question": "directly",
+          "topic_shift_detected": false,
+          "score": 1.0
+        },
+        "as2_information_density": {
+          "concrete_items_in_answer": [
+            {
+              "type": "proper_noun",
+              "excerpt": "大島"
+            },
+            {
+              "type": "number",
+              "excerpt": "29名増員"
+            },
+            {
+              "type": "proper_noun",
+              "excerpt": "専門支援機関"
+            }
+          ],
+          "score": 0.8
+        },
+        "as4_commitment": {
+          "level": 1,
+          "trigger_phrase": "伴走支援をしっかりと行っていきたいというふうに思います",
+          "matched_pattern": "aspirational verb only"
+        },
+        "oc1_record_value": {
+          "pins_legal_interpretation": false,
+          "fixes_official_number": true,
+          "goes_beyond_precedent": false,
+          "surfaces_government_uncertainty": false,
+          "answerer_seniority": "minister",
+          "score": 0.5
+        },
+        "oc3_quotability": {
+          "quote_candidate": "地方環境局には、災害廃棄物処理対策に当たる定員を全国で29名増員をいたします。",
+          "score": 0.8
+        },
+        "scoring_confidence": "high",
+        "evaluation_note": "大臣が自身の選挙区（島しょ部）の策定率の低さを認めた上で、専門支援機関による伴走支援と人員増員という具体的な手段を提示しており、記録的価値が高い。",
+        "would_be_referenced": "medium",
+        "issue_in_design": null,
+        "prompt_version": "V4",
+        "schema_version": "2.0"
+      }
+    }
+  ],
+  "score_schema_version": "2.0",
+  "prompt_version": "V4"
+}
