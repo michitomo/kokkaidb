@@ -1,9 +1,9 @@
 name: Batch ingest sessions
 
 on:
-  schedule:
-    # 毎時 15 分に起動。
-    - cron: '15 * * * *'
+  # schedule:
+  #   # 毎時 15 分に起動。
+  #   - cron: '15 * * * *'
   workflow_dispatch:
     inputs:
       since:
